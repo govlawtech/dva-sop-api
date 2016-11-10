@@ -17,11 +17,11 @@ Azure App Service Application Settings:
 * App Settings:
     - Environment variable 'DEP_ENV' set to 'devtest', 'staging' or 'prod' as appropriate.
     - Deployment slot names: 'dvasopapi-devtest', 'dvasopapi-staging', 'dvasopapi' (production).
-    - devsopapi-devtest automatically swaps to devsopapi-staging
     
-| Environment | DEP_ENV | Deployment Slot |
-|-------------|---------|-----------------|
-| development | devtest | dvasopapi-devtest|
-| staging     | prod    | dvasopapi-staging|
-| production  | prod    | dvasopapi       |
+    
+| Environment | DEP_ENV | Deployment Slot | Git Branch |
+|-------------|---------|-----------------|------------|
+| development | devtest | dvasopapi-devtest| devtest   |
+| staging     | prod    | dvasopapi-staging| master    |
+| production  | prod    | dvasopapi       | master     |
     
