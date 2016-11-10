@@ -5,6 +5,7 @@
  * @author nick_000, @date 8/11/16 3:25 PM
  */
 
+import gov.au.dva.sopapi.{JavaTest, ScalaTest}
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
