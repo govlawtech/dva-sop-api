@@ -18,6 +18,7 @@ Azure App Service Application Settings:
     - Environment variable 'DEP_ENV' set to 'devtest', 'staging' or 'prod' as appropriate.
     - Deployment slot names: 'dvasopapi-devtest', 'dvasopapi-staging', 'dvasopapi' (production).
 * web.config file in the repository root enforces redirection to https:// endpoint.
+* CORS enabled via Azure management interface.
     
     
 | Environment | DEP_ENV | Deployment Slot | Git Branch |
