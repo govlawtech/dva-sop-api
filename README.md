@@ -15,5 +15,5 @@ Azure App Service Application Settings:
 * Java Minor version: Newest
 * Web container: Newest Jetty 9.3
 * App Settings:
-    - Environment variable 'DEP_ENV' set to 'devtest', 'staging' or 'production' as appropriate.
+    - Environment variable 'DEP_ENV' set to 'devtest', 'staging' or 'prod' as appropriate.
     
