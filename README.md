@@ -1,5 +1,5 @@
 # SoP API
-An API exposing regulations and business rules to assist Department of Veterans Affairs (Australia) determine veteran compensation claims.
+An API exposing regulations and business rules to assist Department of Veterans' Affairs (Australia) to determine veteran compensation claims.
 
 # Build Status 
 
