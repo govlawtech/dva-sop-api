@@ -1,4 +1,6 @@
-import au.gov.dva.sopapi.{JavaTest, ScalaTest}
+
+import au.gov.dva.sopapi.javatracers.JavaTest
+import au.gov.dva.sopapi.scalatracers.ScalaTest
 import org.scalatest.FunSuite
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner

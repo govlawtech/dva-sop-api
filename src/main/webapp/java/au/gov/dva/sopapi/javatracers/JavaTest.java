@@ -1,4 +1,4 @@
-package au.gov.dva.sopapi;
+package au.gov.dva.sopapi.javatracers;
 
 public class JavaTest {
 
