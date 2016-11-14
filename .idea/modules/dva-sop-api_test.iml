@@ -11,9 +11,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="dva-sop-api_main" />
+    <orderEntry type="library" name="Gradle: com.sparkjava:spark-core:2.5.2" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang:scala-library:2.12.0" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-parser-combinators_2.12:1.0.4" level="project" />
-    <orderEntry type="library" name="Gradle: com.sparkjava:spark-core:2.5.2" level="project" />
     <orderEntry type="library" name="Gradle: org.scalatest:scalatest_2.12:3.0.0" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.13" level="project" />
