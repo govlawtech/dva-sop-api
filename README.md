@@ -7,6 +7,11 @@ An API exposing regulations and business rules to assist Department of Veterans'
 |-------|----------|
 | [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=devtest)](https://travis-ci.org/govlawtech/dva-sop-api) | [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=master)](https://travis-ci.org/govlawtech/dva-sop-api)  |
 
+# Specifications
+
+[List of SoPs](docs/sops.csv)
+
+
 # Configuration Notes
 
 Azure App Service Application Settings:
