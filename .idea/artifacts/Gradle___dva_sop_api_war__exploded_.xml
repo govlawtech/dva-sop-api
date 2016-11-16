@@ -14,6 +14,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Gradle: com.sparkjava:spark-core:2.5.2" />
           <element id="library" level="project" name="Gradle: org.scala-lang:scala-library:2.12.0" />
+          <element id="library" level="project" name="Gradle: org.scala-lang.modules:scala-parser-combinators_2.12:1.0.4" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.13" />
           <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-server:9.3.6.v20151106" />
           <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-webapp:9.3.6.v20151106" />
@@ -29,7 +30,6 @@
           <element id="library" level="project" name="Gradle: org.eclipse.jetty.websocket:websocket-api:9.3.6.v20151106" />
           <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-util:9.3.6.v20151106" />
           <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-security:9.3.6.v20151106" />
-          <element id="library" level="project" name="Gradle: org.scala-lang.modules:scala-parser-combinators_2.12:1.0.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
