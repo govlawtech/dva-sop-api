@@ -24,11 +24,12 @@ Azure App Service Application Settings:
     - Deployment slot names: 'dvasopapi-devtest', 'dvasopapi-staging', 'dvasopapi' (production).
 * web.config file in the repository root enforces redirection to https:// endpoint.
 * CORS enabled via Azure management interface.
-    
-    
+* DEP_ENV environment setting set via Azure management interface as follows: 
+
 | Environment | DEP_ENV | Deployment Slot | Git Branch |
 |-------------|---------|-----------------|------------|
 | development | devtest | dvasopapi-devtest| devtest   |
 | staging     | prod    | dvasopapi-staging| master    |
 | production  | prod    | dvasopapi       | master     |
-    
+* No handler mappings in Azure management interface
+* Virtual Applications and Directories: '/','site\wwwroot',Application.
