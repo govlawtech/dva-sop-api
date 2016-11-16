@@ -40,6 +40,5 @@ dependencies {
     compile group: 'org.scala-lang.modules', name: 'scala-parser-combinators_2.12', version: '1.0.4'
 
     testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'
-    
     testCompile 'junit:junit:4.12'
 }
