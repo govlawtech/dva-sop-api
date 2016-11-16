@@ -3,12 +3,37 @@ apply plugin: 'scala'
 <<<<<<< HEAD
 apply plugin: 'war'
 apply plugin: 'idea'
-
+apply plugin: 'findbugs'
 
 
 repositories {
     mavenCentral()
 }
+
+war {
+    webAppDirName='src/main'
+}
+
+task copyWar(type: Copy, dependsOn: 'war') {
+    from 'build/libs/dva-sop-api.war'
+    into 'deploy/webapps/'
+    rename {String fileName -> 'ROOT.war'}
+}
+
+
+findbugs {
+    effort = "max"
+    reportLevel = "low"
+    sourceSets = [sourceSets.main]
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
 
 dependencies { 
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.0'
