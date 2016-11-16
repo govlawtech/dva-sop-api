@@ -3,7 +3,7 @@
     <filter-class>spark.servlet.SparkFilter</filter-class>
     <init-param>
         <param-name>applicationClass</param-name>
-        <param-value>SparkApplication</param-value>
+        <param-value>au.dva.sopapi.SparkApplication</param-value>
     </init-param>
 </filter>
 

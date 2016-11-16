@@ -1,3 +1,5 @@
+package au.gov.dva.sopapi;
+
 import static spark.Spark.*;
 
 public class SparkApplication implements spark.servlet.SparkApplication {
