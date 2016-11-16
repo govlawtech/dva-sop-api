@@ -11,6 +11,13 @@ An API exposing regulations and business rules to assist Department of Veterans'
 
 [List of SoPs](docs/sops.csv)
 
+# Deployment Instructions
+
+1. Build .war using Gradle 'war' task.
+1. Rename the .war to 'ROOT.war'.
+1. FTP the war to '/site/wwwroot/webapps' folder for the relevant Azure Deployment Slot. 
+    - Configure the FTP user name and password via the Azure management interface.
+    - The user name is prefaced with the deployment slot name. For example, 'dvasopapi_devtest\yourusername'.  The password is set 'Deployment Credentials' in the Azure management interface.
 
 # Configuration Notes
 
