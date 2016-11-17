@@ -7,4 +7,5 @@ public class Application implements spark.servlet.SparkApplication {
     public void init() {
         get("/hello", (req, res) -> "Hello World");
     }
+    
 }

@@ -11,4 +11,9 @@ public class Conversions {
     public static SoP fromJson(JsonNode jsonNode){
         return null;
     }
+
+    public static JsonNode toJson(SoP sop)
+    {
+        return null;
+    }
 }

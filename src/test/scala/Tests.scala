@@ -9,7 +9,6 @@ class Tests extends FunSuite {
      val underTest = true;
     assert(underTest)
   }
-
 }
 
 

@@ -1,11 +1,15 @@
 package au.gov.dva.sopref.interfaces;
 
 import au.gov.dva.sopref.interfaces.model.InstrumentChange;
-import com.fasterxml.jackson.databind.JsonNode;
+import au.gov.dva.sopref.interfaces.model.Operation;
+import au.gov.dva.sopref.interfaces.model.SoP;
 
 public interface Repository {
-     void saveSop(JsonNode jsonNode);
+     void saveSop(SoP sop);
      void getSop(String registerId);
-     Iterable<JsonNode> getAllSops();
+     Iterable<SoP> getAllSops();
      Iterable<InstrumentChange> getInstrumentChanges();
+     void setOperations(Iterable<Operation> operations);
+     Iterable<Operation> getOperations();
+
 }
