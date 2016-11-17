@@ -13,3 +13,4 @@ trait SoPParser {
   def parseDefinitions(definitionSection : String) : Map[String,String]
   def parseCommencementDate(commencementSection : String) : LocalDate
 }
+

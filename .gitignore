@@ -48,6 +48,7 @@ build/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+.idea/artifacts
 
 # Gradle:
 .idea/gradle.xml

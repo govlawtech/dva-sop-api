@@ -1,8 +1,8 @@
-package au.gov.dva.sopref;
+package au.gov.dva;
 
 import static spark.Spark.*;
 
-public class DvaSopApiSparkApplication implements spark.servlet.SparkApplication {
+public class Application implements spark.servlet.SparkApplication {
     @Override
     public void init() {
         get("/hello", (req, res) -> "Hello World");
