@@ -1,8 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Local Jetty" type="JettyConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Jetty 9.3.13.v20161014" ALTERNATIVE_JRE_ENABLED="false">
-    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/dva-sop-api/" />
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
     <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-    <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
       <artifact name="Gradle : dva-sop-api.war (exploded)">
         <settings DEPLOYMENT_METHOD="contexts" />
@@ -109,6 +108,7 @@
               <option name="path" value="modules\jmx-remote.mod" />
             </JettyConfigFile>
             <JettyConfigFile>
+              <option name="active" value="true" />
               <option name="path" value="modules\jmx.mod" />
             </JettyConfigFile>
             <JettyConfigFile>
@@ -203,6 +203,8 @@
             </JettyConfigFile>
           </list>
         </option>
+        <option name="jndiPort" value="1100" />
+        <jndi-port>1100</jndi-port>
         <option name="myConfigFiles">
           <list>
             <JettyConfigFile>
@@ -302,6 +304,7 @@
               <option name="path" value="modules\jmx-remote.mod" />
             </JettyConfigFile>
             <JettyConfigFile>
+              <option name="active" value="true" />
               <option name="path" value="modules\jmx.mod" />
             </JettyConfigFile>
             <JettyConfigFile>

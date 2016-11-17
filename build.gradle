@@ -4,7 +4,6 @@ apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
 
-
 repositories {
     mavenCentral()
 }
@@ -15,10 +14,9 @@ war {
 
 task copyWar(type: Copy, dependsOn: 'war') {
     from 'build/libs/dva-sop-api.war'
-    into 'deploy/webapps/'
+    into 'webapps/'
     rename {String fileName -> 'ROOT.war'}
 }
-
 
 findbugs {
     effort = "max"
@@ -33,12 +31,10 @@ tasks.withType(FindBugs) {
     }
 }
 
-
 dependencies { 
     compile group: 'com.sparkjava', name: 'spark-core', version: '2.5.2'
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.0'
     compile group: 'org.scala-lang.modules', name: 'scala-parser-combinators_2.12', version: '1.0.4'
-
     testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'
     testCompile 'junit:junit:4.12'
 }
