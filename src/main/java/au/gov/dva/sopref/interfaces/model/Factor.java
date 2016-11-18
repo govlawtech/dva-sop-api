@@ -6,4 +6,5 @@ public interface Factor {
     String getParagraph();
     String getText();
     ImmutableSet<DefinedTerm> getDefinedTerms();
+
 }
