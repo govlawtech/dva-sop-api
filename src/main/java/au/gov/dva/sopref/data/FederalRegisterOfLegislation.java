@@ -2,6 +2,7 @@ package au.gov.dva.sopref.data;
 
 import au.gov.dva.sopref.interfaces.RegisterClient;
 
+import java.net.URL;
 import java.util.concurrent.CompletableFuture;
 
 public class FederalRegisterOfLegislation implements RegisterClient {
@@ -11,6 +12,12 @@ public class FederalRegisterOfLegislation implements RegisterClient {
 
     @Override
     public CompletableFuture<byte[]> getAuthorisedInstrumentPdf(String registerId) {
+        return null;
+    }
+
+
+    public static URL getAuthorisedDocumentLinkFromHtml(String html)
+    {
         return null;
     }
 }
