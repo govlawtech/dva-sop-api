@@ -1,3 +1,4 @@
+package au.gov.dva.dvasopapi.tests;
 
 import org.junit.Test;
 
