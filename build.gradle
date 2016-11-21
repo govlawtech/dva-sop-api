@@ -46,3 +46,9 @@ dependencies {
     testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'
     testCompile 'junit:junit:4.12'
 }
+
+
+ScalaCompileOptions.metaClass.daemonServer = true
+ScalaCompileOptions.metaClass.fork = true
+ScalaCompileOptions.metaClass.useAnt = false
+ScalaCompileOptions.metaClass.useCompileDaemon = false

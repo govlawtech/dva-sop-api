@@ -48,7 +48,6 @@
     <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-api:9.3.6.v20151106" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.3.6.v20151106" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-security:9.3.6.v20151106" level="project" />
-    <orderEntry type="library" name="scala-sdk-2.12.0" level="application" />
   </component>
   <component name="TestModuleProperties" production-module="dva-sop-api_main" />
 </module>
