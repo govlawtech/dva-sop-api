@@ -8,6 +8,7 @@ public interface Operation {
    Date getStartDate();
    Date getEndDate();
    OperationType getOperationType();
+   // Add "Specified Area" date (CADF - MRCA 6(1)(b))?
 }
 
 
