@@ -40,7 +40,7 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
     compile group: 'org.apache.httpcomponents', name: 'httpasyncclient', version: '4.1.2'
     compile group: 'org.apache.poi', name: 'poi', version: '3.15'
-
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
 
     testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'
     testCompile 'junit:junit:4.12'
