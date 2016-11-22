@@ -11,6 +11,10 @@ public class CaseSummaryModelMock implements CaseSummaryModel{
     private ServiceHistory _serviceHistory;
     private SoP _sop;
 
+    public CaseSummaryModelMock() {
+        
+    }
+
     public CaseSummaryModelMock(Condition condition, ServiceHistory serviceHistory, SoP sop) {
         _condition = condition;
         _serviceHistory = serviceHistory;
