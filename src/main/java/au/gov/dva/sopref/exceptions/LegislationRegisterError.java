@@ -17,3 +17,5 @@ public class LegislationRegisterError extends Error {
         super(e);
     }
 }
+
+

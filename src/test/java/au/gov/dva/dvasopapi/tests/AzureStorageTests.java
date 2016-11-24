@@ -10,7 +10,7 @@ public class AzureStorageTests {
     @Category(IntegrationTest.class)
     @Test
     public void saveAndRetrieveSop() {
-        String accountName = AppSettings.DevTest.AzureStorage.accountName;
+ //       String accountName = AppSettings.DevTest.AzureStorage.accountName;
     }
 
 }

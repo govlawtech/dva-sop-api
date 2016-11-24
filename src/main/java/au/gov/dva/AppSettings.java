@@ -1,4 +1,8 @@
 package au.gov.dva;
+// Include the following imports to use blob APIs.
+import com.microsoft.azure.storage.*;
+import com.microsoft.azure.storage.blob.*;
+
 
 public class AppSettings {
 
@@ -28,7 +32,10 @@ public class AppSettings {
 
             if (getEnvironment() == Environment.devtest)
                 return "UseDevelopmentStorage=true";
-            return null;
+            else {
+                return null;
+                // todo: investigate RoleEnvironment in azure sdk
+            }
             // todo: prod settings
         }
 

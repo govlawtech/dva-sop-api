@@ -1,6 +1,7 @@
 package au.gov.dva.sopref.data;
 
 import au.gov.dva.sopref.interfaces.model.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -72,6 +73,11 @@ public class Conversions {
         return rootNode;
     }
 
+    public static String toString(JsonNode jsonNode) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode);
+    }
+
     private static String formatStandardOfProof(StandardOfProof standardOfProof)
     {
         switch (standardOfProof){
@@ -81,6 +87,7 @@ public class Conversions {
         }
 
     }
+
 
     private static JsonNode toJson(Factor factor)
     {
