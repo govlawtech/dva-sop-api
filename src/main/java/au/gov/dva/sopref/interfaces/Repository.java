@@ -6,7 +6,7 @@ import au.gov.dva.sopref.interfaces.model.SoP;
 
 public interface Repository {
      void saveSop(SoP sop);
-     void getSop(String registerId);
+     SoP getSop(String registerId);
      Iterable<SoP> getAllSops();
      Iterable<InstrumentChange> getInstrumentChanges();
      void setOperations(Iterable<Operation> operations);

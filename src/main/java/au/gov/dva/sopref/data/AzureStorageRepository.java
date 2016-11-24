@@ -23,8 +23,8 @@ public class AzureStorageRepository implements Repository {
     }
 
     @Override
-    public void getSop(String registerId) {
-
+    public SoP getSop(String registerId) {
+        return null;
     }
 
     @Override

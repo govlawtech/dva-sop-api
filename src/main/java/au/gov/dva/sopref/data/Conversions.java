@@ -70,7 +70,6 @@ public class Conversions {
             aggravationfactorsNode.add(toJson(factor));
 
         return rootNode;
-
     }
 
     private static String formatStandardOfProof(StandardOfProof standardOfProof)
