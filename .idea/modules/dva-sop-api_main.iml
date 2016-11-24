@@ -46,6 +46,8 @@
     <orderEntry type="library" name="Gradle: org.apache.pdfbox:pdfbox:2.0.3" level="project" />
     <orderEntry type="library" name="Gradle: com.microsoft.azure:azure-storage:4.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.microsoft.azure:azure-core:0.9.7" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.findbugs:annotations:3.0.1u2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.poi:poi:3.15" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.3.6.v20151106" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-webapp:9.3.6.v20151106" level="project" />
@@ -70,6 +72,7 @@
     <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.jersey:jersey-client:1.19" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.jersey:jersey-json:1.19" level="project" />
+    <orderEntry type="library" name="Gradle: net.jcip:jcip-annotations:1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-collections4:4.1" level="project" />
     <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-http:9.3.6.v20151106" level="project" />

@@ -9,8 +9,11 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.collect.ImmutableSet;
 
+import javax.annotation.Nonnull;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,7 +33,7 @@ public class StoredSop implements SoP {
         public static final String DEFINITION = "definition";
         public static final String DEFINED_TERMS = "definedTerms";
     }
-    
+
     private final String registerId;
     private final InstrumentNumber instrumentNumber;
     private final String citation;
@@ -39,7 +42,7 @@ public class StoredSop implements SoP {
     private final LocalDate effectiveFromDate;
     private final StandardOfProof standardOfProof;
 
-    public StoredSop(String registerId, InstrumentNumber instrumentNumber, String citation, ImmutableSet<Factor> onsetFactors, ImmutableSet<Factor> aggravationFactors, LocalDate effectiveFromDate, StandardOfProof standardOfProof) {
+    public StoredSop(@Nonnull String registerId, @Nonnull InstrumentNumber instrumentNumber, @Nonnull String citation, @Nonnull ImmutableSet<Factor> onsetFactors, @Nonnull ImmutableSet<Factor> aggravationFactors, @Nonnull LocalDate effectiveFromDate, @Nonnull StandardOfProof standardOfProof) {
         this.registerId = registerId;
         this.instrumentNumber = instrumentNumber;
         this.citation = citation;
@@ -55,18 +58,25 @@ public class StoredSop implements SoP {
                 jsonNode.findValue(Labels.REGISTER_ID).asText(),
                 fromInstrumentNumberJsonValue(jsonNode.findValue(Labels.INSTRUMENT_NUMBER).asText()),
                 jsonNode.findValue(Labels.CITATION).asText(),
-                ImmutableSet.copyOf(jsonNode.findValues(Labels.ONSET_FACTORS).stream()
-                        .filter(jsonNode1 -> jsonNode1.elements().hasNext())
-                        .map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList())),
-                ImmutableSet.copyOf(jsonNode.findValues(Labels.AGGRAVATION_FACTORS).stream()
-                        .filter(jsonNode1 -> jsonNode1.elements().hasNext())
-                        .map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList())),
+                factorListFromJsonArray(jsonNode.findPath(Labels.ONSET_FACTORS)),
+                factorListFromJsonArray(jsonNode.findPath(Labels.AGGRAVATION_FACTORS)),
                 LocalDate.parse(jsonNode.findValue(Labels.EFFECTIVE_FROM).asText()),
                 fromStandardOfProofJsonValue(jsonNode.findValue(Labels.STANDARD_OF_PROOF).asText())
 
                 );
 
     }
+
+    private static ImmutableSet<Factor> factorListFromJsonArray(JsonNode jsonNode)
+    {
+        assert (jsonNode.isArray());
+
+        ImmutableSet<Factor> factors = ImmutableSet.copyOf(getChildrenOfArrayNode(jsonNode).stream().map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList()));
+
+        return factors;
+    }
+
+
 
 
 
@@ -106,26 +116,38 @@ public class StoredSop implements SoP {
 
         return registerId;
     }
-   
 
 
     private static Factor factorFromJson(JsonNode jsonNode) {
 
-        // bug todo: node is array, not factor object
+        ImmutableSet<JsonNode> definedTermNodes = getChildrenOfArrayNode(jsonNode.findPath(Labels.DEFINED_TERMS));
 
-        List<JsonNode> definedTermNodes = jsonNode.findValues(Labels.DEFINED_TERMS);
-        List<DefinedTerm> definedTerms = definedTermNodes.stream().map(n -> definedTermFromJson(n)).collect(Collectors.toList());
+        ImmutableSet<DefinedTerm> definedTerms = ImmutableSet.copyOf(definedTermNodes.stream().map(n -> definedTermFromJson(n)).collect(Collectors.toList()));
         
         return new StoredFactor(
                 jsonNode.findValue(Labels.PARAGRAPH).asText(),
                 jsonNode.findValue(Labels.TEXT).asText(), 
-                ImmutableSet.copyOf(definedTerms));
+                definedTerms);
     }
 
     private static DefinedTerm definedTermFromJson(JsonNode jsonNode)
     {
         assert(jsonNode.has(Labels.TERM) && jsonNode.has(Labels.DEFINITION));
         return new StoredDefinedTerm(jsonNode.findValue(Labels.TERM).asText(),jsonNode.findValue(Labels.DEFINITION).asText());
+    }
+
+    private static ImmutableSet<JsonNode> getChildrenOfArrayNode(JsonNode jsonNode)
+    {
+        assert (jsonNode.isArray());
+        List<JsonNode> children = new ArrayList<>();
+
+        for (Iterator<JsonNode> it = jsonNode.elements(); it.hasNext(); ) {
+            JsonNode el = it.next();
+            children.add(el);
+        }
+
+        return ImmutableSet.copyOf(children);
+
     }
 
 

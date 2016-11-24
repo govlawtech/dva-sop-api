@@ -46,6 +46,8 @@ dependencies {
     compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.3'
     compile group: 'com.microsoft.azure', name: 'azure-storage', version: '4.4.0'
     compile group: 'com.microsoft.azure', name: 'azure-core', version: '0.9.7'
+    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    compile group: 'com.google.code.findbugs', name: 'annotations', version: '3.0.1u2'
 
     compile group: 'org.apache.poi', name: 'poi', version: '3.15'
 

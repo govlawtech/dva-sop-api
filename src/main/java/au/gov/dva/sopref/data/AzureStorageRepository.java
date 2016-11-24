@@ -19,16 +19,17 @@ import java.nio.charset.Charset;
 import java.util.Optional;
 
 public class AzureStorageRepository implements Repository {
+
+    private static final String storageConnectionString = AppSettings.AzureStorage.storageConnectionString();
+    private static final String SOP_CONTAINER_NAME = "sops";
+    private final CloudStorageAccount _cloudStorageAccount;
+    private final CloudBlobClient _cloudBlobClient;
     private static AzureStorageRepository ourInstance = new AzureStorageRepository();
 
     public static AzureStorageRepository getInstance() {
         return ourInstance;
     }
 
-    private static final String storageConnectionString = AppSettings.AzureStorage.storageConnectionString();
-    private static final String SOP_CONTAINER_NAME = "sops";
-    private final CloudStorageAccount _cloudStorageAccount;
-    private final CloudBlobClient _cloudBlobClient;
 
     private AzureStorageRepository() {
         assert(SOP_CONTAINER_NAME.matches("[a-z]+"));
@@ -59,7 +60,12 @@ public class AzureStorageRepository implements Repository {
             CloudBlockBlob blob = container.getBlockBlobReference(sop.getRegisterId());
             JsonNode jsonNode = StoredSop.toJson(sop);
             blob.uploadText(Conversions.toString(jsonNode));
-        } catch (Exception e) {
+        }
+        catch (RuntimeException e)
+        {
+            throw new RepositoryError(e);
+        }
+        catch (Exception e) {
             throw new RepositoryError(e);
         }
     }
@@ -93,7 +99,12 @@ public class AzureStorageRepository implements Repository {
                 return Optional.of(sop);
             }
 
-        } catch (Exception e) {
+        }
+        catch (RuntimeException e)
+        {
+            throw new RepositoryError(e);
+        }
+        catch (Exception e) {
             throw new RepositoryError(e);
         }
     }

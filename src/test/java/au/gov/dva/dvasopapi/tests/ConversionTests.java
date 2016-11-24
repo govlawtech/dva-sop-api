@@ -14,6 +14,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Iterator;
+
 
 public class ConversionTests {
 
@@ -41,5 +43,40 @@ public class ConversionTests {
         JsonNode jsonNode = objectMapper.readTree(Resources.getResource("storedSop.json"));
         SoP result = StoredSop.fromJson(jsonNode);
 
+        // round trip
+        System.out.print(TestUtils.prettyPrint(StoredSop.toJson(result)));
     }
+
+    @Test
+    public void jacksonEmptyArray() throws IOException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonNode = objectMapper.readTree("{ \"key\": [] }");
+        JsonNode values = jsonNode.findPath("key");
+        Assert.assertTrue(values.size() == 0);
+        Assert.assertTrue(values.isArray());
+
+    }
+
+     @Test
+    public void jacksonPopulatedArray() throws IOException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonNode = objectMapper.readTree("{ \"key\": [{\"some\" : \"value\"}] }");
+        JsonNode values = jsonNode.findPath("key");
+        JsonNode element = values.get(0);
+
+         for (Iterator<JsonNode> it = values.elements(); it.hasNext(); ) {
+             JsonNode el = it.next();
+             System.out.print(el);
+         }
+        Assert.assertTrue(values.size() == 1);
+        Assert.assertTrue(values.isArray());
+        Assert.assertTrue(element.isObject());
+
+
+    }
+
+
+
 }
