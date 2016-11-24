@@ -55,8 +55,12 @@ public class StoredSop implements SoP {
                 jsonNode.findValue(Labels.REGISTER_ID).asText(),
                 fromInstrumentNumberJsonValue(jsonNode.findValue(Labels.INSTRUMENT_NUMBER).asText()),
                 jsonNode.findValue(Labels.CITATION).asText(),
-                ImmutableSet.copyOf(jsonNode.findValues(Labels.ONSET_FACTORS).stream().map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList())),
-                ImmutableSet.copyOf(jsonNode.findValues(Labels.AGGRAVATION_FACTORS).stream().map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList())),
+                ImmutableSet.copyOf(jsonNode.findValues(Labels.ONSET_FACTORS).stream()
+                        .filter(jsonNode1 -> jsonNode1.elements().hasNext())
+                        .map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList())),
+                ImmutableSet.copyOf(jsonNode.findValues(Labels.AGGRAVATION_FACTORS).stream()
+                        .filter(jsonNode1 -> jsonNode1.elements().hasNext())
+                        .map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList())),
                 LocalDate.parse(jsonNode.findValue(Labels.EFFECTIVE_FROM).asText()),
                 fromStandardOfProofJsonValue(jsonNode.findValue(Labels.STANDARD_OF_PROOF).asText())
 
@@ -106,8 +110,9 @@ public class StoredSop implements SoP {
 
 
     private static Factor factorFromJson(JsonNode jsonNode) {
-        assert (jsonNode.has(Labels.TEXT) && jsonNode.has(Labels.PARAGRAPH) && jsonNode.has(Labels.DEFINED_TERMS));
-        
+
+        // bug todo: node is array, not factor object
+
         List<JsonNode> definedTermNodes = jsonNode.findValues(Labels.DEFINED_TERMS);
         List<DefinedTerm> definedTerms = definedTermNodes.stream().map(n -> definedTermFromJson(n)).collect(Collectors.toList());
         
@@ -194,7 +199,7 @@ public class StoredSop implements SoP {
 
     private static InstrumentNumber fromInstrumentNumberJsonValue(String value)
     {
-        String[] parts = value.split("\\");
+        String[] parts = value.split("/");
         assert(parts.length == 2);
         return new InstrumentNumber() {
             @Override

@@ -1,0 +1,20 @@
+{
+  "registerId" : "F2014L0933",
+  "instrumentNumber" : "62/2014",
+  "citation" : "Statement of Principles concerning lumbar spondylosis No. 62 of 2014",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "RH",
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(ee)",
+    "text" : "inability to obtain appropriate clinical management for lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having inflammatory joint disease in the lumbar spine before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "inflammatory joint disease",
+      "definition" : "means rheumatoid arthritis, reactive arthritis, sporiatic arthropathy, ankylosing spondylitis, or arthritis associated with Crohn's disease or ulcerative colitis"
+    } ]
+  } ]
+}
