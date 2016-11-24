@@ -3,6 +3,8 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
 import au.gov.dva.sopref.data.Conversions;
+import au.gov.dva.sopref.data.SoPs.StoredSop;
+import au.gov.dva.sopref.interfaces.model.SoP;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.io.Resources;
@@ -26,8 +28,8 @@ public class ConversionTests {
 
     @Test
     public void sopToJson() throws JsonProcessingException {
-        MockLumbarSpondylosisSop testData = new MockLumbarSpondylosisSop();
-        JsonNode result = Conversions.toJson(testData);
+        SoP testData = new MockLumbarSpondylosisSop();
+        JsonNode result = StoredSop.toJson(testData);
         System.out.print(TestUtils.prettyPrint(result));
         Assert.assertTrue(result.elements().hasNext());
     }
