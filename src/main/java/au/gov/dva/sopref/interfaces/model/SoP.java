@@ -10,5 +10,6 @@ public interface SoP {
     String getCitation();
     ImmutableSet<Factor> getAggravationFactors();
     ImmutableSet<Factor> getOnsetFactors();
-    LocalDate getCommencementDate();
+    LocalDate getEffectiveFromDate();
+    StandardOfProof getStandardOfProof();
 }
