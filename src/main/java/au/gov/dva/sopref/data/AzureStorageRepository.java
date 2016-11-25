@@ -14,34 +14,30 @@ import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.*;
 
 import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.nio.charset.Charset;
+import java.net.URISyntaxException;
+import java.security.InvalidKeyException;
 import java.util.Optional;
 
 public class AzureStorageRepository implements Repository {
 
-    private static final String storageConnectionString = AppSettings.AzureStorage.storageConnectionString();
+    private String _storageConnectionString = null;
     private static final String SOP_CONTAINER_NAME = "sops";
-    private final CloudStorageAccount _cloudStorageAccount;
-    private final CloudBlobClient _cloudBlobClient;
-    private static AzureStorageRepository ourInstance = new AzureStorageRepository();
-
-    public static AzureStorageRepository getInstance() {
-        return ourInstance;
-    }
+    private CloudStorageAccount _cloudStorageAccount = null;
+    private CloudBlobClient _cloudBlobClient = null;
 
 
-    private AzureStorageRepository() {
-        assert(SOP_CONTAINER_NAME.matches("[a-z]+"));
+    public AzureStorageRepository(String storageConnectionString)
+    {
         try {
-            _cloudStorageAccount = CloudStorageAccount.parse(storageConnectionString);
+            _storageConnectionString = storageConnectionString;
+            _cloudStorageAccount = CloudStorageAccount.parse(_storageConnectionString);
             _cloudBlobClient = _cloudStorageAccount.createCloudBlobClient();
         }
-        catch (Exception e) {
+        catch (Exception e)
+        {
             throw new RepositoryError(e);
         }
     }
-
 
     @Override
     public void saveSop(SoP sop) {
