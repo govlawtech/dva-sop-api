@@ -1,6 +1,5 @@
 package au.gov.dva.sopref.data;
 
-import au.gov.dva.AppSettings;
 import au.gov.dva.sopref.data.SoPs.StoredSop;
 import au.gov.dva.sopref.exceptions.RepositoryError;
 import au.gov.dva.sopref.interfaces.Repository;
@@ -15,16 +14,11 @@ import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.*;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
-import java.security.InvalidKeyException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
-import static java.util.stream.StreamSupport.stream;
 
 public class AzureStorageRepository implements Repository {
 
