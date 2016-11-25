@@ -5,6 +5,6 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 abstract class CaseSummaryComponent {
 
-    public abstract IBodyElement addToDocument(XWPFDocument document);
+    public abstract void addToDocument(XWPFDocument document);
 
 }

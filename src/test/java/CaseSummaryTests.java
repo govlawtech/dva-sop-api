@@ -6,6 +6,7 @@ import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.concurrent.ExecutionException;
 
 
@@ -20,28 +21,18 @@ public class CaseSummaryTests {
 
     // TB todo: add further tests here
 
-
-//    public CaseSummaryModelMock() {
-//        _condition.setName("lumbar spondylosis");
-//        _condition.setICDCode("ICD-10-AM");
-//        _condition.setType("acute");
-//        _condition.setOnsetStartDate(LocalDate.of(2008, 2, 18));
-//
-//        _serviceHistory.setEnlistmentDate(LocalDate.of(2006, 1, 10));
-//        _serviceHistory.setSeparationDate(LocalDate.of(2015, 11, 23));
-//        _serviceHistory.setHireDate(LocalDate.of(2006, 6, 28));
-//
-////        _serviceHistory.setServices();
-////        _serviceHistory.setOperations();
-//    }
-
 //    @Test
 //    public void ConditionNotEmpty() throws ExecutionException, InterruptedException {
-//        Condition condition = new ConditionMock();
+//        ConditionMock mockCondition = new ConditionMock();
 //        ServiceHistory serviceHistory = new ServiceHistoryMock();
 //        SoP sop = new SoPMock();
 //
-//        CaseSummaryModel testData = new CaseSummaryModelMock(condition, serviceHistory, sop);
+//        mockCondition.setName("Joint instability");
+//        mockCondition.setICDCode("ICD-2017");
+//        mockCondition.setType("Accumulated over time (wear and tear)");
+//        mockCondition.setOnsetStartDate(LocalDate.of(2009, 12, 1));
+//
+//        CaseSummaryModel testData = new CaseSummaryModelMock(mockCondition, null, null);
 //        byte[] result = CaseSummary.createCaseSummary(testData).get();
 //        Assert.assertTrue(result.length > 0);
 //    }

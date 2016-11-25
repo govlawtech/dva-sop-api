@@ -15,11 +15,13 @@ public class CaseSummaryParagraph extends CaseSummaryComponent {
     }
 
     @Override
-    public IBodyElement addToDocument(XWPFDocument document) {
+    public void addToDocument(XWPFDocument document) {
         _paragraph = document.createParagraph();
         XWPFRun run = _paragraph.createRun();
         run.setText(_text);
+    }
 
+    public XWPFParagraph getApachePoiParagraph() {
         return _paragraph;
     }
 }

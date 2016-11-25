@@ -6,7 +6,5 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 public class CaseSummaryElement extends CaseSummaryComponent {
 
     @Override
-    public IBodyElement addToDocument(XWPFDocument document) {
-        return null;
-    }
+    public void addToDocument(XWPFDocument document) {}
 }

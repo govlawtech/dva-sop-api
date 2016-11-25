@@ -15,12 +15,10 @@ public class CaseSummaryHeading extends CaseSummaryComponent {
     }
 
     @Override
-    public IBodyElement addToDocument(XWPFDocument document) {
+    public void addToDocument(XWPFDocument document) {
         CaseSummaryParagraph paragraph = new CaseSummaryParagraph(_headingText);
-        XWPFParagraph p = (XWPFParagraph) paragraph.addToDocument(document);
-        p.setStyle(_styleId);
-
-        return p;
+        paragraph.addToDocument(document);
+        paragraph.getApachePoiParagraph().setStyle(_styleId);
     }
 
 }

@@ -1,9 +1,12 @@
 package au.gov.dva.sopref.casesummary;
 
 import au.gov.dva.sopref.interfaces.model.Condition;
+import org.apache.poi.xwpf.usermodel.IBodyElement;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
 import java.time.LocalDate;
 
-public class CaseSummaryCondition implements Condition {
+public class CaseSummaryCondition extends CaseSummaryComponent implements Condition {
 
     private String _name;
     private String _icdCode;
@@ -78,5 +81,10 @@ public class CaseSummaryCondition implements Condition {
 
     public void setAggravationEndDate(LocalDate aggravationEndDate) {
         _aggravationEndDate = aggravationEndDate;
+    }
+
+    @Override
+    public void addToDocument(XWPFDocument document) {
+
     }
 }
