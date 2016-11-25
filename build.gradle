@@ -32,9 +32,7 @@ tasks.withType(FindBugs) {
 }
 
 test {
-    useJUnit {
-        excludeCategories 'au.gov.dva.dvasopapi.tests.categories.Integration'
-    }
+    exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
 }
 
 dependencies { 

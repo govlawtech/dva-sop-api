@@ -1,6 +1,7 @@
-package au.gov.dva.dvasopapi.tests;
+package au.gov.dva.dvasopapi.tests.localonly;
 
 import au.gov.dva.AppSettings;
+import au.gov.dva.dvasopapi.tests.TestUtils;
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
 import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
 import au.gov.dva.sopref.data.AzureStorageRepository;
