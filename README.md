@@ -54,3 +54,6 @@ To deploy to production, swap the Azure deployment slots via the Azure managemen
 1. Build the .war using the Gradle 'copyWar' task.  This builds the war and copies it to the 'webapps' directory.
 1. Git commit and push.
 
+# Development Environment Setup
+
+* To run integration tests for Azure Storage, download and install the Azure Storage Emulator and (optionally) the Azure Storage Explorer.  These run on Windows only.
