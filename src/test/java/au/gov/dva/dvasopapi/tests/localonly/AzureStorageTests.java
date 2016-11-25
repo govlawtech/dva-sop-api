@@ -26,6 +26,9 @@ public class AzureStorageTests {
         Optional<SoP> retrieved = underTest.getSop(mockSop.getRegisterId());
         Assert.assertTrue(retrieved.isPresent());
         System.out.print(TestUtils.prettyPrint(StoredSop.toJson(retrieved.get())));
+
+        Iterable<SoP> allSops = underTest.getAllSops();
+        Assert.assertTrue(allSops.iterator().hasNext());
     }
 
 }
