@@ -31,6 +31,12 @@ tasks.withType(FindBugs) {
     }
 }
 
+test {
+    useJUnit {
+        excludeCategories 'au.gov.dva.dvasopapi.tests.categories.Integration'
+    }
+}
+
 dependencies { 
     compile group: 'com.sparkjava', name: 'spark-core', version: '2.5.2'
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.0'
