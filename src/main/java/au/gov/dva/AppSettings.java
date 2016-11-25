@@ -1,45 +1,23 @@
 package au.gov.dva;
-// Include the following imports to use blob APIs.
-import com.microsoft.azure.storage.*;
-import com.microsoft.azure.storage.blob.*;
 
 
 public class AppSettings {
 
     public static Environment getEnvironment() {
-        // todo: load from config file by naming convention
 
         return Environment.devtest;
     }
 
     public static class AzureStorage {
 
-        public static String accountName() {
-            if (getEnvironment() == Environment.devtest)
-                return "devstoreaccount1";
-            // todo: prod settings
-            return null;
+        // todo: get production values from environment variables
+
+        public static class DevTest {
+            // For use with Azure storage emulator.
+            public final static String accountName = "devstoreaccount1";
+            public final static String accountKey = "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==";
+            public final static String storageConnectionString =  "UseDevelopmentStorage=true";
         }
-
-        public static String accountKey() {
-            if (getEnvironment() == Environment.devtest)
-                return "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==";
-            return null;
-            // todo: prod settings
-        }
-
-        public static String storageConnectionString() {
-
-            if (getEnvironment() == Environment.devtest)
-                return "UseDevelopmentStorage=true";
-            else {
-                return null;
-                // todo: investigate RoleEnvironment in azure sdk
-            }
-            // todo: prod settings
-        }
-
-
     }
 
     public static enum Environment {
