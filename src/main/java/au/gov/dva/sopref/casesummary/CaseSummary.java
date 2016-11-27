@@ -154,13 +154,14 @@ public class CaseSummary {
 
         CaseSummarySection sopData = new CaseSummarySection();
         SoP sop = _model.getSop();
-        sopData.add(new CaseSummaryHeading("TITLE", "Heading3"));
-        sopData.add(new CaseSummaryParagraph(serviceHistory.getEnlistmentDate().toString()));
-        sopData.add(new CaseSummaryHeading("STANDARD OF PROOF", "Heading3"));
-        sopData.add(new CaseSummaryParagraph(serviceHistory.getHireDate().toString()));
-        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
-        sopData.add(new CaseSummaryParagraph(serviceHistory.getSeparationDate().toString()));
-        sopData.add(new CaseSummaryHeading("APPLICABLE FACTORS", "Heading3"));
+        // TODO: Add these properties to the SOP interface?
+//        sopData.add(new CaseSummaryHeading("TITLE", "Heading3"));
+//        sopData.add(new CaseSummaryParagraph(sop.getTitle()));
+//        sopData.add(new CaseSummaryHeading("STANDARD OF PROOF", "Heading3"));
+//        sopData.add(new CaseSummaryParagraph(sop.getStandardOfProof()));
+//        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
+//        sopData.add(new CaseSummaryParagraph(sop.getUrl()));
+//        sopData.add(new CaseSummaryHeading("APPLICABLE FACTORS", "Heading3"));
 
         // TODO: Add applicable factors to the Factor interface?
 //        for (Factor factor : sop.getApplicableFactors()) {
