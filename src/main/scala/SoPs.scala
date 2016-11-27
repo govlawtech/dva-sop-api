@@ -17,3 +17,4 @@ trait SoPParser {
   def parseCommencementDate(commencementSection: String): LocalDate
   def parseInstrumentNumber(plainTextSop : String) : InstrumentNumber
 }
+

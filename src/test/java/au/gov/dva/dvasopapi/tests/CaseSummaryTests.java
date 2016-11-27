@@ -13,7 +13,7 @@ public class CaseSummaryTests {
 
 //    @Test
 //    public void ResultNotEmpty() throws ExecutionException, InterruptedException {
-//        CaseSummaryData testData = new au.gov.dva.dvasopapi.tests.CaseSummaryModelMock();
+//        CaseSummaryModel testData = new au.gov.dva.dvasopapi.tests.CaseSummaryModelMock();
 //        byte[] result = CaseSummary.createCaseSummary(testData).get();
 //        Assert.assertTrue(result.length > 0);
 //    }

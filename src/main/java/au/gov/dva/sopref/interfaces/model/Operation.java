@@ -1,14 +1,13 @@
 package au.gov.dva.sopref.interfaces.model;
 
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Optional;
 
 public interface Operation {
    String getName();
-   Date getStartDate();
-   Date getEndDate();
-   OperationType getOperationType();
-   // Add "Specified Area" date (CADF - MRCA 6(1)(b))?
+   LocalDate getStartDate();
+   Optional<LocalDate> getEndDate();
 }
 
 
