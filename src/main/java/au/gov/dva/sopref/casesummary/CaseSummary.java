@@ -1,6 +1,8 @@
 package au.gov.dva.sopref.casesummary;
 
 import au.gov.dva.sopref.interfaces.model.Condition;
+import au.gov.dva.sopref.interfaces.model.Operation;
+import au.gov.dva.sopref.interfaces.model.ServiceHistory;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.poi.xwpf.usermodel.*;
 
@@ -116,6 +118,34 @@ public class CaseSummary {
     private static CaseSummarySection createServiceHistorySection() {
         CaseSummarySection serviceHistorySection = new CaseSummarySection();
         serviceHistorySection.add(new CaseSummaryHeading("SERVICE HISTORY", "Heading2"));
+
+        CaseSummarySection serviceHistoryData = new CaseSummarySection();
+        ServiceHistory serviceHistory = _model.getServiceHistory();
+        serviceHistoryData.add(new CaseSummaryHeading("DATE OF ENLISTMENT", "Heading3"));
+        serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getEnlistmentDate().toString()));
+        serviceHistoryData.add(new CaseSummaryHeading("ORIGINAL HIRE DATE", "Heading3"));
+        serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getHireDate().toString()));
+        serviceHistoryData.add(new CaseSummaryHeading("DATE OF SEPARATION", "Heading3"));
+        serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getSeparationDate().toString()));
+        serviceHistoryData.add(new CaseSummaryHeading("SERVICES", "Heading3"));
+
+        for (Operation operation : serviceHistory.getOperations()) {
+            serviceHistoryData.add(new CaseSummaryHeading("NAME", "Heading4"));
+            serviceHistoryData.add(new CaseSummaryParagraph(operation.getName()));
+            serviceHistoryData.add(new CaseSummaryHeading("TYPE", "Heading4"));
+            serviceHistoryData.add(new CaseSummaryParagraph(operation.getOperationType().toString()));
+//            TODO: Add these to the Operation interface?
+//            serviceHistoryData.add(new CaseSummaryHeading("EVENT", "Heading4"));
+//            serviceHistoryData.add(new CaseSummaryParagraph(operation.getEvent()));
+//            serviceHistoryData.add(new CaseSummaryHeading("ASSIGNED DATE", "Heading4"));
+//            serviceHistoryData.add(new CaseSummaryParagraph(operation.getAssignedDate()));
+            serviceHistoryData.add(new CaseSummaryHeading("START DATE", "Heading4"));
+            serviceHistoryData.add(new CaseSummaryParagraph(operation.getStartDate().toString()));
+            serviceHistoryData.add(new CaseSummaryHeading("END DATE", "Heading4"));
+            serviceHistoryData.add(new CaseSummaryParagraph(operation.getEndDate().toString()));
+        }
+
+        serviceHistorySection.add(serviceHistoryData);
 
         return serviceHistorySection;
     }
