@@ -1,8 +1,6 @@
 package au.gov.dva.sopref.casesummary;
 
-import au.gov.dva.sopref.interfaces.model.Condition;
-import au.gov.dva.sopref.interfaces.model.Operation;
-import au.gov.dva.sopref.interfaces.model.ServiceHistory;
+import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.poi.xwpf.usermodel.*;
 
@@ -153,6 +151,32 @@ public class CaseSummary {
     private static CaseSummarySection createSopSection() {
         CaseSummarySection sopSection = new CaseSummarySection();
         sopSection.add(new CaseSummaryHeading("STATEMENT OF PRINCIPLES", "Heading2"));
+
+        CaseSummarySection sopData = new CaseSummarySection();
+        SoP sop = _model.getSop();
+        sopData.add(new CaseSummaryHeading("TITLE", "Heading3"));
+        sopData.add(new CaseSummaryParagraph(serviceHistory.getEnlistmentDate().toString()));
+        sopData.add(new CaseSummaryHeading("STANDARD OF PROOF", "Heading3"));
+        sopData.add(new CaseSummaryParagraph(serviceHistory.getHireDate().toString()));
+        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
+        sopData.add(new CaseSummaryParagraph(serviceHistory.getSeparationDate().toString()));
+        sopData.add(new CaseSummaryHeading("APPLICABLE FACTORS", "Heading3"));
+
+        // TODO: Add applicable factors to the Factor interface?
+//        for (Factor factor : sop.getApplicableFactors()) {
+//            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
+//        }
+
+        // TODO: Add factors connected to service to the Factor interface?
+//        for (Factor factor : sop.getFactorsConnectedToService()) {
+//            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
+//        }
+
+        // TODO: Where is progress being calculated?
+//        sopData.add(new CaseSummaryHeading("PROGRESS TOWARDS THRESHOLD", "Heading3"));
+//        sopData.add(new CaseSummaryParagraph(sop.getProgressTowardsThreshold()));
+
+        sopSection.add(sopData);
 
         return sopSection;
     }
