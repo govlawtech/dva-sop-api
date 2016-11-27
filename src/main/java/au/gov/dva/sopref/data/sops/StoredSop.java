@@ -1,8 +1,6 @@
-package au.gov.dva.sopref.data.SoPs;
+package au.gov.dva.sopref.data.sops;
 
-import au.gov.dva.sopref.data.Conversions;
 import au.gov.dva.sopref.interfaces.model.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -17,7 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StoredSop implements SoP {
+public class StoredSop implements SoP, JsonSerializable {
 
     private static class Labels {
         public static final String REGISTER_ID = "registerId";
@@ -65,6 +63,11 @@ public class StoredSop implements SoP {
 
                 );
 
+    }
+
+    @Override
+    public JsonNode toJson() {
+        return toJson(this);
     }
 
     private static ImmutableSet<Factor> factorListFromJsonArray(JsonNode jsonNode)
@@ -149,7 +152,6 @@ public class StoredSop implements SoP {
         return ImmutableSet.copyOf(children);
 
     }
-
 
     public static JsonNode toJson(SoP sop)
     {

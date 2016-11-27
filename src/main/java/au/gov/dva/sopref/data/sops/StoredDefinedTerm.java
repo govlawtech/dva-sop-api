@@ -1,4 +1,4 @@
-package au.gov.dva.sopref.data.SoPs;
+package au.gov.dva.sopref.data.sops;
 
 import au.gov.dva.sopref.interfaces.model.DefinedTerm;
 

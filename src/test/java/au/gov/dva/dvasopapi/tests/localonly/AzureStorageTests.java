@@ -1,11 +1,10 @@
 package au.gov.dva.dvasopapi.tests.localonly;
 
-import au.gov.dva.AppSettings;
 import au.gov.dva.dvasopapi.tests.TestUtils;
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
 import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
 import au.gov.dva.sopref.data.AzureStorageRepository;
-import au.gov.dva.sopref.data.SoPs.StoredSop;
+import au.gov.dva.sopref.data.sops.StoredSop;
 import au.gov.dva.sopref.interfaces.Repository;
 import au.gov.dva.sopref.interfaces.model.SoP;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -29,6 +28,16 @@ public class AzureStorageTests {
 
         Iterable<SoP> allSops = underTest.getAllSops();
         Assert.assertTrue(allSops.iterator().hasNext());
+    }
+
+
+    @Category(IntegrationTest.class)
+    @Test
+    public void missingSoPShouldBeEmptyOptional()
+    {
+        Repository underTest = new AzureStorageRepository("UseDevelopmentStorage=true");
+        Optional<SoP> shouldBeEmpty = underTest.getSop("Mr Funny Pants");
+        Assert.assertTrue(!shouldBeEmpty.isPresent());
     }
 
 }

@@ -1,20 +1,24 @@
 package au.gov.dva.sopref.data;
 
-import au.gov.dva.sopref.data.SoPs.StoredSop;
+import au.gov.dva.sopref.data.servicedeterminations.StoredServiceDetermination;
+import au.gov.dva.sopref.data.sops.StoredSop;
 import au.gov.dva.sopref.exceptions.RepositoryError;
 import au.gov.dva.sopref.interfaces.Repository;
 import au.gov.dva.sopref.interfaces.model.InstrumentChange;
-import au.gov.dva.sopref.interfaces.model.Operation;
+import au.gov.dva.sopref.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopref.interfaces.model.SoP;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
+import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,20 +28,17 @@ public class AzureStorageRepository implements Repository {
 
     private String _storageConnectionString = null;
     private static final String SOP_CONTAINER_NAME = "sops";
-    private static final String OPERATIONS_CONTAINER_NAME = "operations";
+    private static final String SERVICE_DETERMINATIONS_CONTAINER_NAME = "servicedeterminations";
     private CloudStorageAccount _cloudStorageAccount = null;
     private CloudBlobClient _cloudBlobClient = null;
 
 
-    public AzureStorageRepository(String storageConnectionString)
-    {
+    public AzureStorageRepository(String storageConnectionString) {
         try {
             _storageConnectionString = storageConnectionString;
             _cloudStorageAccount = CloudStorageAccount.parse(_storageConnectionString);
             _cloudBlobClient = _cloudStorageAccount.createCloudBlobClient();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new RepositoryError(e);
         }
     }
@@ -62,12 +63,9 @@ public class AzureStorageRepository implements Repository {
             CloudBlockBlob blob = container.getBlockBlobReference(sop.getRegisterId());
             JsonNode jsonNode = StoredSop.toJson(sop);
             blob.uploadText(Conversions.toString(jsonNode));
-        }
-        catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
             throw new RepositoryError(e);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new RepositoryError(e);
         }
     }
@@ -80,7 +78,7 @@ public class AzureStorageRepository implements Repository {
             CloudBlob cloudBlob = null;
             for (ListBlobItem blobItem : cloudBlobContainer.listBlobs()) {
                 // If the item is a blob, not a virtual directory.
-                if (blobItem instanceof CloudBlob && ((CloudBlob) blobItem).getName().equalsIgnoreCase(registerId)) {
+                if ((blobItem instanceof CloudBlob) && ((CloudBlob) blobItem).getName().equalsIgnoreCase(registerId)) {
                     CloudBlob blob = (CloudBlob) blobItem;
                     cloudBlob = blob;
                 }
@@ -93,57 +91,64 @@ public class AzureStorageRepository implements Repository {
                 return Optional.of(blobToSoP(cloudBlob));
             }
 
-        }
-        catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
             throw new RepositoryError(e);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new RepositoryError(e);
         }
     }
 
     @Override
-    public Iterable<SoP> getAllSops() {
-          try {
+    public ImmutableSet<SoP> getAllSops() {
+        try {
             CloudBlobContainer cloudBlobContainer = _cloudBlobClient.getContainerReference(SOP_CONTAINER_NAME);
 
-            List<SoP> sops = StreamSupport.stream(cloudBlobContainer.listBlobs().spliterator(),false)
+            List<SoP> sops = StreamSupport.stream(cloudBlobContainer.listBlobs().spliterator(), false)
                     .filter(listBlobItem -> listBlobItem instanceof CloudBlob)
-                    .map(listBlobItem -> blobToSoP((CloudBlob)listBlobItem))
+                    .map(listBlobItem -> blobToSoP((CloudBlob) listBlobItem))
                     .collect(Collectors.toList());
 
-            return sops;
-
-        }
-        catch (RuntimeException e)
-        {
+            return ImmutableSet.copyOf(sops);
+        } catch (RuntimeException e) {
             throw new RepositoryError(e);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new RepositoryError(e);
         }
     }
 
-    private static SoP blobToSoP(CloudBlob cloudBlob)  {
+
+    private static ServiceDetermination blobToServiceDetermination(CloudBlob cloudBlob) {
         try {
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            cloudBlob.download(outputStream);
-            String jsonString = outputStream.toString(Charsets.UTF_8.name());
+            JsonNode jsonNode = getJsonNode(cloudBlob);
+            ServiceDetermination serviceDetermination = StoredServiceDetermination.fromJson(jsonNode);
+            return serviceDetermination;
+        } catch (RuntimeException e) {
+            throw new RepositoryError(e);
+        } catch (Exception e) {
+            throw new RepositoryError(e);
+        }
+    }
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode jsonNode = objectMapper.readTree(jsonString);
 
+    private static SoP blobToSoP(CloudBlob cloudBlob) {
+        try {
+            JsonNode jsonNode = getJsonNode(cloudBlob);
             SoP sop = StoredSop.fromJson(jsonNode);
             return sop;
-        }
-        catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
+            throw new RepositoryError(e);
+        } catch (Exception e) {
             throw new RepositoryError(e);
         }
-        catch (Exception e) {
-            throw new RepositoryError(e);
-        }
+    }
+
+    private static JsonNode getJsonNode(CloudBlob cloudBlob) throws StorageException, IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        cloudBlob.download(outputStream);
+        String jsonString = outputStream.toString(Charsets.UTF_8.name());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readTree(jsonString);
     }
 
     @Override
@@ -152,12 +157,36 @@ public class AzureStorageRepository implements Repository {
     }
 
     @Override
-    public void setOperations(Iterable<Operation> operations) {
-
+    public void addServiceDetermination(ServiceDetermination serviceDetermination) {
+        try {
+            CloudBlobContainer container = getOrCreateContainer(SERVICE_DETERMINATIONS_CONTAINER_NAME);
+            CloudBlockBlob blob = container.getBlockBlobReference(serviceDetermination.getRegisterId());
+            JsonNode jsonNode = StoredServiceDetermination.toJson(serviceDetermination);
+            blob.uploadText(Conversions.toString(jsonNode));
+        } catch (RuntimeException e) {
+            throw new RepositoryError(e);
+        } catch (Exception e) {
+            throw new RepositoryError(e);
+        }
     }
 
     @Override
-    public Iterable<Operation> getOperations() {
-        return null;
+    public ImmutableSet<ServiceDetermination> getServiceDeterminations() {
+
+        try {
+            CloudBlobContainer cloudBlobContainer = _cloudBlobClient.getContainerReference(SERVICE_DETERMINATIONS_CONTAINER_NAME);
+            List<ServiceDetermination> serviceDeterminations = StreamSupport.stream(cloudBlobContainer.listBlobs().spliterator(), false)
+                    .filter(listBlobItem -> listBlobItem instanceof CloudBlob)
+                    .map(listBlobItem -> blobToServiceDetermination((CloudBlob) listBlobItem))
+                    .collect(Collectors.toList());
+
+            return ImmutableSet.copyOf(serviceDeterminations);
+        } catch (RuntimeException e) {
+            throw new RepositoryError(e);
+        } catch (Exception e) {
+            throw new RepositoryError(e);
+        }
     }
+
+
 }

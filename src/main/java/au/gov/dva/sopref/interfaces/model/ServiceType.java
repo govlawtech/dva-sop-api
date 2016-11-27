@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.interfaces.model;
 
-public enum OperationType {
+public enum ServiceType {
     warlike,
     nonWarlike
 }

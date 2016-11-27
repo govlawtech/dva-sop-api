@@ -3,6 +3,7 @@ apply plugin: 'scala'
 apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
+apply plugin: 'pmd'
 
 repositories {
         mavenCentral()
