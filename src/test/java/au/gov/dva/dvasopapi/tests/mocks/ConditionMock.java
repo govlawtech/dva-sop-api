@@ -1,74 +1,38 @@
+package au.gov.dva.dvasopapi.tests.mocks;
+
 import au.gov.dva.sopref.interfaces.model.Condition;
+import au.gov.dva.sopref.interfaces.model.ConditionType;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class ConditionMock implements Condition {
 
-    private String _name;
-    private String _icdCode;
-    private String _type;
-    private LocalDate _onsetStartDate;
-    private LocalDate _onsetEndDate;
-    private LocalDate _aggravationStartDate;
-    private LocalDate _aggravationEndDate;
-
-    public ConditionMock() {
-
-    }
-
     public String getName() {
-        return _name;
-    }
-
-    public void setName(String name) {
-        _name = name;
+        return "lumbar spondylosis";
     }
 
     public String getICDCode() {
-        return _icdCode;
-    }
-
-    public void setICDCode(String icdCode) {
-        _icdCode = icdCode;
+        return "ICD-10-AM-M51.3";
     }
 
     public String getType() {
-        return _type;
-    }
-
-    public void setType(String type) {
-        _type = type;
+        return ConditionType.AccumulatedOverTime.toString();
     }
 
     public LocalDate getOnsetStartDate() {
-        return _onsetStartDate;
+        return LocalDate.of(2004, 11, 1);
     }
 
-    public void setOnsetStartDate(LocalDate onsetStartDate) {
-        _onsetStartDate = onsetStartDate;
+    public Optional<LocalDate> getOnsetEndDate() {
+        return Optional.of(LocalDate.of(2004, 11, 7));
     }
 
-    public LocalDate getOnsetEndDate() {
-        return _onsetEndDate;
+    public Optional<LocalDate> getAggravationStartDate() {
+        return Optional.of(LocalDate.of(2005, 11, 7));
     }
 
-    public void setOnsetEndDate(LocalDate onsetEndDate) {
-        _onsetEndDate = onsetEndDate;
-    }
-
-    public LocalDate getAggravationStartDate() {
-        return _aggravationStartDate;
-    }
-
-    public void setAggravationStartDate(LocalDate aggravationStartDate) {
-        _aggravationStartDate = aggravationStartDate;
-    }
-
-    public LocalDate getAggravationEndDate() {
-        return _aggravationEndDate;
-    }
-
-    public void setAggravationEndDate(LocalDate aggravationEndDate) {
-        _aggravationEndDate = aggravationEndDate;
+    public Optional<LocalDate> getAggravationEndDate() {
+        return Optional.of(LocalDate.of(2005, 11, 7));
     }
 }
