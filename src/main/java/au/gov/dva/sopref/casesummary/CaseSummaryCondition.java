@@ -5,6 +5,7 @@ import org.apache.poi.xwpf.usermodel.IBodyElement;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class CaseSummaryCondition extends CaseSummaryComponent implements Condition {
 
@@ -12,9 +13,9 @@ public class CaseSummaryCondition extends CaseSummaryComponent implements Condit
     private String _icdCode;
     private String _conditionType;
     private LocalDate _onsetStartDate;
-    private LocalDate _onsetEndDate;
-    private LocalDate _aggravationStartDate;
-    private LocalDate _aggravationEndDate;
+    private Optional<LocalDate> _onsetEndDate;
+    private Optional<LocalDate> _aggravationStartDate;
+    private Optional<LocalDate> _aggravationEndDate;
 
     public CaseSummaryCondition() {
 
@@ -57,30 +58,30 @@ public class CaseSummaryCondition extends CaseSummaryComponent implements Condit
     }
 
     @Override
-    public LocalDate getOnsetEndDate() {
+    public Optional<LocalDate> getOnsetEndDate() {
         return _onsetEndDate;
     }
 
     public void setOnsetEndDate(LocalDate onsetEndDate) {
-        _onsetEndDate = onsetEndDate;
+        _onsetEndDate = Optional.of(onsetEndDate);
     }
 
     @Override
-    public LocalDate getAggravationStartDate() {
+    public Optional<LocalDate> getAggravationStartDate() {
         return _aggravationStartDate;
     }
 
     public void setAggravationStartDate(LocalDate aggravationStartDate) {
-        _aggravationStartDate = aggravationStartDate;
+        _aggravationStartDate = Optional.of(aggravationStartDate);
     }
 
     @Override
-    public LocalDate getAggravationEndDate() {
+    public Optional<LocalDate> getAggravationEndDate() {
         return _aggravationEndDate;
     }
 
     public void setAggravationEndDate(LocalDate aggravationEndDate) {
-        _aggravationEndDate = aggravationEndDate;
+        _aggravationEndDate = Optional.of(aggravationEndDate);
     }
 
     @Override
