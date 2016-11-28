@@ -143,9 +143,9 @@ public class CaseSummary {
         for (Operation operation : serviceHistory.getOperations()) {
             serviceHistoryData.add(new CaseSummaryHeading("NAME", "Heading4"));
             serviceHistoryData.add(new CaseSummaryParagraph(operation.getName()));
-            serviceHistoryData.add(new CaseSummaryHeading("TYPE", "Heading4"));
-            serviceHistoryData.add(new CaseSummaryParagraph(operation.getOperationType().toString()));
-//            TODO: Add these to the Operation interface?
+            // TODO: Add these to the Operation interface?
+//            serviceHistoryData.add(new CaseSummaryHeading("TYPE", "Heading4"));
+//            serviceHistoryData.add(new CaseSummaryParagraph(operation.getOperationType().toString()));
 //            serviceHistoryData.add(new CaseSummaryHeading("EVENT", "Heading4"));
 //            serviceHistoryData.add(new CaseSummaryParagraph(operation.getEvent()));
 //            serviceHistoryData.add(new CaseSummaryHeading("ASSIGNED DATE", "Heading4"));
