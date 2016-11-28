@@ -165,11 +165,11 @@ public class CaseSummary {
 
         CaseSummarySection sopData = new CaseSummarySection();
         SoP sop = _model.getSop();
+        sopData.add(new CaseSummaryHeading("CITATION", "Heading3"));
+        sopData.add(new CaseSummaryParagraph(sop.getCitation()));
+        sopData.add(new CaseSummaryHeading("STANDARD OF PROOF", "Heading3"));
+        sopData.add(new CaseSummaryParagraph(sop.getStandardOfProof().toString()));
         // TODO: Add these properties to the SOP interface?
-//        sopData.add(new CaseSummaryHeading("TITLE", "Heading3"));
-//        sopData.add(new CaseSummaryParagraph(sop.getTitle()));
-//        sopData.add(new CaseSummaryHeading("STANDARD OF PROOF", "Heading3"));
-//        sopData.add(new CaseSummaryParagraph(sop.getStandardOfProof()));
 //        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
 //        sopData.add(new CaseSummaryParagraph(sop.getUrl()));
 //        sopData.add(new CaseSummaryHeading("APPLICABLE FACTORS", "Heading3"));
