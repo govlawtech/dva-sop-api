@@ -2,10 +2,8 @@ package au.gov.dva.sopref.casesummary;
 
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
-import org.apache.poi.ss.formula.PlainCellCache;
 import org.apache.poi.xwpf.usermodel.*;
 
-import javax.swing.text.html.Option;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
