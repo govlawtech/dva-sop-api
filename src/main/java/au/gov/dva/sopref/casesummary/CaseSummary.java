@@ -2,11 +2,15 @@ package au.gov.dva.sopref.casesummary;
 
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
+import org.apache.poi.ss.formula.PlainCellCache;
 import org.apache.poi.xwpf.usermodel.*;
 
+import javax.swing.text.html.Option;
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class CaseSummary {
@@ -105,8 +109,17 @@ public class CaseSummary {
         conditionData.add(new CaseSummaryParagraph(condition.getICDCode()));
         conditionData.add(new CaseSummaryHeading("TYPE", "Heading3"));
         conditionData.add(new CaseSummaryParagraph(condition.getType()));
+
         conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading3"));
-        conditionData.add(new CaseSummaryParagraph(condition.getOnsetStartDate().toString()));
+        String onset = getDatesAsRange(condition.getOnsetStartDate(), condition.getOnsetEndDate());
+        conditionData.add(new CaseSummaryParagraph(onset));
+
+        if (condition.getAggravationStartDate().isPresent()) {
+            conditionData.add(new CaseSummaryHeading("DATE OF AGGRAVATION", "Heading3"));
+            String aggravation = getDatesAsRange(condition.getAggravationStartDate().get(),
+                    condition.getAggravationEndDate());
+            conditionData.add(new CaseSummaryParagraph((aggravation)));
+        }
 
         conditionSection.add(conditionData);
 
@@ -180,5 +193,10 @@ public class CaseSummary {
         sopSection.add(sopData);
 
         return sopSection;
+    }
+
+    private static String getDatesAsRange(LocalDate startDate, Optional<LocalDate> endDate) {
+        return endDate.isPresent() ?
+                startDate.toString() + " to " + endDate.get().toString() : startDate.toString();
     }
 }
