@@ -3,6 +3,7 @@ package au.gov.dva.dvasopapi.tests.mocks;
 import au.gov.dva.sopref.interfaces.model.Operation;
 import au.gov.dva.sopref.interfaces.model.Service;
 import au.gov.dva.sopref.interfaces.model.ServiceHistory;
+import au.gov.dva.sopref.interfaces.model.ServiceType;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
@@ -51,6 +52,11 @@ public class ServiceHistoryMock implements ServiceHistory {
             @Override
             public String getName() {
                 return "Operation WARDEN";
+            }
+
+            @Override
+            public ServiceType getServiceType() {
+                return ServiceType.warlike;
             }
 
             @Override
