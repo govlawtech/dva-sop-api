@@ -167,12 +167,6 @@ public class CaseSummary {
         // TODO: Add these properties to the SOP interface?
 //        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
 //        sopData.add(new CaseSummaryParagraph(sop.getUrl()));
-//        sopData.add(new CaseSummaryHeading("APPLICABLE FACTORS", "Heading3"));
-
-        // TODO: Add applicable factors to the Factor interface?
-//        for (Factor factor : sop.getApplicableFactors()) {
-//            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
-//        }
 
         // TODO: Add factors connected to service to the Factor interface?
 //        for (Factor factor : sop.getFactorsConnectedToService()) {
