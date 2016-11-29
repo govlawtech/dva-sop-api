@@ -168,10 +168,9 @@ public class CaseSummary {
 //        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
 //        sopData.add(new CaseSummaryParagraph(sop.getUrl()));
 
-        // TODO: Add factors connected to service to the Factor interface?
-//        for (Factor factor : sop.getFactorsConnectedToService()) {
-//            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
-//        }
+        for (Factor factor : _model.getFactorsConnectedToService()) {
+            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
+        }
 
         // TODO: Where is progress being calculated?
 //        sopData.add(new CaseSummaryHeading("PROGRESS TOWARDS THRESHOLD", "Heading3"));
