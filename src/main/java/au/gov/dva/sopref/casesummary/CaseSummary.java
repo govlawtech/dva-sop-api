@@ -172,9 +172,8 @@ public class CaseSummary {
             sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
         }
 
-        // TODO: Where is progress being calculated?
-//        sopData.add(new CaseSummaryHeading("PROGRESS TOWARDS THRESHOLD", "Heading3"));
-//        sopData.add(new CaseSummaryParagraph(sop.getProgressTowardsThreshold()));
+        sopData.add(new CaseSummaryHeading("PROGRESS TOWARDS THRESHOLD", "Heading3"));
+        sopData.add(new CaseSummaryParagraph(_model.getThresholdProgress()));
 
         sopSection.add(sopData);
 
