@@ -101,11 +101,10 @@ public class CaseSummary {
         Condition condition = _model.getCondition();
 
         CaseSummarySection conditionSection = new CaseSummarySection();
-        conditionSection.add(
-                new CaseSummaryHeading(
-                        "CLAIM FOR " + condition.getName().toUpperCase(), "Heading2"));
-
         CaseSummarySection conditionData = new CaseSummarySection();
+        conditionData.add(new CaseSummaryHeading("CLAIMED CONDITION", "Heading2"));
+        String conditionParagraph = "The claimed condition is " + condition.getName() + ".";
+        conditionData.add(new CaseSummaryParagraph(conditionParagraph));
         conditionData.add(new CaseSummaryHeading("ICD CODE", "Heading3"));
         conditionData.add(new CaseSummaryParagraph(condition.getICDCode()));
         conditionData.add(new CaseSummaryHeading("TYPE", "Heading3"));
