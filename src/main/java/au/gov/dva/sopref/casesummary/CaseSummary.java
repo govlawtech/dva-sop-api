@@ -130,14 +130,6 @@ public class CaseSummary {
                 "Military Rehabilitation and Compensation Act 2004 is:";
         serviceHistoryData.add(new CaseSummaryParagraph(serviceHistoryDefinition));
 
-        serviceHistoryData.add(new CaseSummaryHeading("DATE OF ENLISTMENT", "Heading3"));
-        serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getEnlistmentDate().toString()));
-        serviceHistoryData.add(new CaseSummaryHeading("ORIGINAL HIRE DATE", "Heading3"));
-        serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getHireDate().toString()));
-        serviceHistoryData.add(new CaseSummaryHeading("DATE OF SEPARATION", "Heading3"));
-        serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getSeparationDate().toString()));
-        serviceHistoryData.add(new CaseSummaryHeading("SERVICES", "Heading3"));
-
         for (Service service : serviceHistory.getServices()) {
             serviceHistoryData.add(new CaseSummaryHeading("SERVICE", "Heading4"));
             serviceHistoryData.add(new CaseSummaryParagraph(service.getName()));
