@@ -77,6 +77,8 @@ public class CaseSummary {
             XWPFStyle heading3Style = _styles.getStyle("Heading3");
             XWPFStyle heading4Style = _styles.getStyle("Heading4");
 
+
+
             stylesToImport.add(heading1Style);
             stylesToImport.add(heading2Style);
             stylesToImport.add(heading3Style);
@@ -96,13 +98,14 @@ public class CaseSummary {
     }
 
     private static CaseSummarySection createConditionSection() {
+        Condition condition = _model.getCondition();
+
         CaseSummarySection conditionSection = new CaseSummarySection();
-        conditionSection.add(new CaseSummaryHeading("CLAIMED CONDITION", "Heading2"));
+        conditionSection.add(
+                new CaseSummaryHeading(
+                        "CLAIM FOR " + condition.getName().toUpperCase(), "Heading2"));
 
         CaseSummarySection conditionData = new CaseSummarySection();
-        Condition condition = _model.getCondition();
-        conditionData.add(new CaseSummaryHeading("CONDITION", "Heading3"));
-        conditionData.add(new CaseSummaryParagraph(condition.getName()));
         conditionData.add(new CaseSummaryHeading("ICD CODE", "Heading3"));
         conditionData.add(new CaseSummaryParagraph(condition.getICDCode()));
         conditionData.add(new CaseSummaryHeading("TYPE", "Heading3"));
