@@ -6,9 +6,11 @@ import java.util.Optional;
 public interface Condition {
     String getName();
     String getICDCode();
-    String getType();
+    ConditionType getType();
     LocalDate getOnsetStartDate();
+    // todo: sub interface for aggravated condition
     Optional<LocalDate> getOnsetEndDate();
     Optional<LocalDate> getAggravationStartDate();
     Optional<LocalDate> getAggravationEndDate();
 }
+

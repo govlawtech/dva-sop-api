@@ -65,6 +65,7 @@ public class CaseSummary {
         return outputStream.toByteArray();
     }
 
+    // todo: cache the template document
     private static List<XWPFStyle> getStylesToImport() {
         String templatePath = "docs/Case Summary Template.docx";
         InputStream inputStream = CaseSummary.class.getClassLoader().getResourceAsStream(templatePath);
@@ -110,7 +111,7 @@ public class CaseSummary {
         conditionData.add(new CaseSummaryHeading("ICD CODE", "Heading3"));
         conditionData.add(new CaseSummaryParagraph(condition.getICDCode()));
         conditionData.add(new CaseSummaryHeading("TYPE", "Heading3"));
-        conditionData.add(new CaseSummaryParagraph(condition.getType()));
+        conditionData.add(new CaseSummaryParagraph(condition.getType().toString()));
 
         conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading3"));
         String onset = getDatesAsRange(condition.getOnsetStartDate(), condition.getOnsetEndDate());

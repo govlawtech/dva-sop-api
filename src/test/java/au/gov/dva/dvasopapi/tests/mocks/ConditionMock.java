@@ -16,8 +16,8 @@ public class ConditionMock implements Condition {
         return "ICD-10-AM-M51.3";
     }
 
-    public String getType() {
-        return ConditionType.AccumulatedOverTime.toString();
+    public ConditionType getType() {
+        return ConditionType.ACCUMULATED;
     }
 
     public LocalDate getOnsetStartDate() {
