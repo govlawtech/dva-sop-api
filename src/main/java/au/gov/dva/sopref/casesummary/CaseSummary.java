@@ -105,21 +105,10 @@ public class CaseSummary {
         conditionData.add(new CaseSummaryHeading("CLAIMED CONDITION", "Heading2"));
         String conditionParagraph = "The claimed condition is " + condition.getName() + ".";
         conditionData.add(new CaseSummaryParagraph(conditionParagraph));
-        conditionData.add(new CaseSummaryHeading("ICD CODE", "Heading3"));
-        conditionData.add(new CaseSummaryParagraph(condition.getICDCode()));
-        conditionData.add(new CaseSummaryHeading("TYPE", "Heading3"));
-        conditionData.add(new CaseSummaryParagraph(condition.getType()));
 
         conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading3"));
         String onset = getDatesAsRange(condition.getOnsetStartDate(), condition.getOnsetEndDate());
         conditionData.add(new CaseSummaryParagraph(onset));
-
-        if (condition.getAggravationStartDate().isPresent()) {
-            conditionData.add(new CaseSummaryHeading("DATE OF AGGRAVATION", "Heading3"));
-            String aggravation = getDatesAsRange(condition.getAggravationStartDate().get(),
-                    condition.getAggravationEndDate());
-            conditionData.add(new CaseSummaryParagraph((aggravation)));
-        }
 
         conditionSection.add(conditionData);
 
