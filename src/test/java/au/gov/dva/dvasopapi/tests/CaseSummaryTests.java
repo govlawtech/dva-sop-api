@@ -13,6 +13,7 @@ import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.ExecutionException;
@@ -40,18 +41,14 @@ public class CaseSummaryTests {
         FileOutputStream outputStream = new FileOutputStream(outputFile);
         outputStream.write(result);
         outputStream.close();
-
+        System.out.println("Wrote output to " + outputFile.getAbsolutePath());
         Assert.assertTrue(outputFile.exists());
     }
 
-    private Path getOutputPath()throws URISyntaxException {
-        String templatePath = "Case Summary.docx";
-        URL templateUrl = CaseSummary.class.getClassLoader().getResource(templatePath);
-
-        @Nonnull
-        Path path = Paths.get(templateUrl.toURI());
-
-        return path;
+    private Path getOutputPath() throws URISyntaxException, IOException {
+        String fileName = "Example Case Summary.docx";
+        Path tempFilePath = Files.createTempFile("CaseSummaryTestOutput_",".docx");
+        return tempFilePath;
     }
 
     //    @Test
