@@ -1,5 +1,12 @@
 package au.gov.dva.sopref.interfaces.model.casesummary;
 
+import au.gov.dva.sopref.interfaces.model.*;
+import com.google.common.collect.ImmutableSet;
+
 public interface CaseSummaryModel {
-    // TB todo: add members here for data necessary to generate case summary document
+    Condition getCondition();
+    ServiceHistory getServiceHistory();
+    SoP getSop();
+    String getThresholdProgress();
+    ImmutableSet<Factor> getFactorsConnectedToService();
 }

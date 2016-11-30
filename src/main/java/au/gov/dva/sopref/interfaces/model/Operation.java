@@ -6,6 +6,7 @@ import java.util.Optional;
 
 public interface Operation {
    String getName();
+   ServiceType getServiceType();
    LocalDate getStartDate();
    Optional<LocalDate> getEndDate();
 }
