@@ -29,7 +29,7 @@ public class ConditionMock implements Condition {
     }
 
     public Optional<LocalDate> getAggravationStartDate() {
-        return Optional.of(LocalDate.of(2005, 11, 7));
+        return Optional.of(LocalDate.of(2005, 11, 1));
     }
 
     public Optional<LocalDate> getAggravationEndDate() {
