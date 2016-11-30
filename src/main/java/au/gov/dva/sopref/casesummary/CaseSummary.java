@@ -167,7 +167,12 @@ public class CaseSummary {
                 sop.getRegisterId() + ".";
         sopData.add(new CaseSummaryParagraph(legislationParagraph));
 
-        sopData.add(new CaseSummaryHeading("FACTORS CONNECTED TO SERVICE", "Heading3"));
+        sopData.add(new CaseSummaryHeading("CONNECTION TO SERVICE", "Heading2"));
+
+        String connectionParagraph = "The factor that was used to connect the condition " +
+                "to service was:";
+        sopData.add(new CaseSummaryParagraph(connectionParagraph));
+
         for (Factor factor : _model.getFactorsConnectedToService()) {
             sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
         }
