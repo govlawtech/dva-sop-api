@@ -119,11 +119,17 @@ public class CaseSummary {
     }
 
     private static CaseSummarySection createServiceHistorySection() {
+        ServiceHistory serviceHistory = _model.getServiceHistory();
+
         CaseSummarySection serviceHistorySection = new CaseSummarySection();
         serviceHistorySection.add(new CaseSummaryHeading("SERVICE HISTORY", "Heading2"));
 
         CaseSummarySection serviceHistoryData = new CaseSummarySection();
-        ServiceHistory serviceHistory = _model.getServiceHistory();
+
+        String serviceHistoryDefinition = "The service history as defined in Section 6(1) of the " +
+                "Military Rehabilitation and Compensation Act 2004 is:";
+        serviceHistoryData.add(new CaseSummaryParagraph(serviceHistoryDefinition));
+
         serviceHistoryData.add(new CaseSummaryHeading("DATE OF ENLISTMENT", "Heading3"));
         serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getEnlistmentDate().toString()));
         serviceHistoryData.add(new CaseSummaryHeading("ORIGINAL HIRE DATE", "Heading3"));
