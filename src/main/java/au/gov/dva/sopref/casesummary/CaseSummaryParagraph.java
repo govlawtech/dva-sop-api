@@ -19,6 +19,7 @@ public class CaseSummaryParagraph extends CaseSummaryComponent {
         _paragraph = document.createParagraph();
         XWPFRun run = _paragraph.createRun();
         run.setText(_text);
+        run.setFontFamily("Segoe UI");
     }
 
     public XWPFParagraph getApachePoiParagraph() {
