@@ -1,8 +1,14 @@
 package au.gov.dva.sopref.interfaces.model;
 
 public enum ServiceType {
-    WARLIKE("WARLIKE"),
-    NON_WARLIKE("non-WARLIKE");
+    WARLIKE("warlike"),
+    NON_WARLIKE("non-warlike");
+
+
+    @Override
+    public String toString() {
+        return text;
+    }
 
     private String text;
     ServiceType(String text)
@@ -10,5 +16,4 @@ public enum ServiceType {
         this.text = text;
     }
 
-    public String getText() { return text;};
 }

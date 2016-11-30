@@ -72,7 +72,7 @@ public class StoredOperation implements Operation, JsonSerializable {
         objectNode.put(Labels.START_DATE, operation.getStartDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
         if (operation.getEndDate().isPresent())
             objectNode.put(Labels.END_DATE, operation.getEndDate().get().format(DateTimeFormatter.ISO_LOCAL_DATE));
-        objectNode.put(Labels.TYPE,operation.getServiceType().getText());
+        objectNode.put(Labels.TYPE,operation.getServiceType().toString());
         return objectNode;
     }
 
