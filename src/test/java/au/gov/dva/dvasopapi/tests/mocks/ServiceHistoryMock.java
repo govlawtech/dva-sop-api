@@ -44,31 +44,31 @@ public class ServiceHistoryMock implements ServiceHistory {
             public LocalDate getEndDate() {
                 return LocalDate.of(2010, 6, 30);
             }
+
+            @Override
+            public ImmutableSet<Operation> getOperations() {
+                return ImmutableSet.of(new Operation() {
+                    @Override
+                    public String getName() {
+                        return "Operation WARDEN";
+                    }
+
+                    @Override
+                    public ServiceType getServiceType() {
+                        return ServiceType.warlike;
+                    }
+
+                    @Override
+                    public LocalDate getStartDate() {
+                        return LocalDate.of(2006, 3, 1);
+                    }
+
+                    @Override
+                    public Optional<LocalDate> getEndDate() {
+                        return Optional.of(LocalDate.of(2006, 12, 31));
+                    }
+                });
+            }
         });
     }
-
-    public ImmutableSet<Operation> getOperations() {
-        return ImmutableSet.of(new Operation() {
-            @Override
-            public String getName() {
-                return "Operation WARDEN";
-            }
-
-            @Override
-            public ServiceType getServiceType() {
-                return ServiceType.warlike;
-            }
-
-            @Override
-            public LocalDate getStartDate() {
-                return LocalDate.of(2006, 3, 1);
-            }
-
-            @Override
-            public Optional<LocalDate> getEndDate() {
-                return Optional.of(LocalDate.of(2006, 12, 31));
-            }
-        });
-    }
-
 }

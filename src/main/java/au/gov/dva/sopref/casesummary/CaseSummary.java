@@ -138,15 +138,27 @@ public class CaseSummary {
         serviceHistoryData.add(new CaseSummaryParagraph(serviceHistory.getSeparationDate().toString()));
         serviceHistoryData.add(new CaseSummaryHeading("SERVICES", "Heading3"));
 
-        for (Operation operation : serviceHistory.getOperations()) {
-            serviceHistoryData.add(new CaseSummaryHeading("NAME", "Heading4"));
-            serviceHistoryData.add(new CaseSummaryParagraph(operation.getName()));
+        for (Service service : serviceHistory.getServices()) {
+            serviceHistoryData.add(new CaseSummaryHeading("SERVICE", "Heading4"));
+            serviceHistoryData.add(new CaseSummaryParagraph(service.getName()));
             serviceHistoryData.add(new CaseSummaryHeading("TYPE", "Heading4"));
-            serviceHistoryData.add(new CaseSummaryParagraph(operation.getServiceType().toString()));
+            serviceHistoryData.add(new CaseSummaryParagraph(service.getType()));
             serviceHistoryData.add(new CaseSummaryHeading("START DATE", "Heading4"));
-            serviceHistoryData.add(new CaseSummaryParagraph(operation.getStartDate().toString()));
+            serviceHistoryData.add(new CaseSummaryParagraph(service.getStartDate().toString()));
             serviceHistoryData.add(new CaseSummaryHeading("END DATE", "Heading4"));
-            serviceHistoryData.add(new CaseSummaryParagraph(operation.getEndDate().toString()));
+            serviceHistoryData.add(new CaseSummaryParagraph(service.getEndDate().toString()));
+            serviceHistoryData.add(new CaseSummaryHeading("OPERATIONS", "Heading4"));
+
+            for (Operation operation : service.getOperations()) {
+                serviceHistoryData.add(new CaseSummaryHeading("NAME", "Heading4"));
+                serviceHistoryData.add((new CaseSummaryParagraph(operation.getName())));
+                serviceHistoryData.add(new CaseSummaryHeading("SERVICE TYPE", "Heading4"));
+                serviceHistoryData.add((new CaseSummaryParagraph(operation.getServiceType().toString())));
+                serviceHistoryData.add(new CaseSummaryHeading("START DATE", "Heading4"));
+                serviceHistoryData.add((new CaseSummaryParagraph(operation.getStartDate().toString())));
+                serviceHistoryData.add(new CaseSummaryHeading("END DATE", "Heading4"));
+                serviceHistoryData.add((new CaseSummaryParagraph(operation.getEndDate().toString())));
+            }
         }
 
         serviceHistorySection.add(serviceHistoryData);
@@ -168,6 +180,7 @@ public class CaseSummary {
 //        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
 //        sopData.add(new CaseSummaryParagraph(sop.getUrl()));
 
+        sopData.add(new CaseSummaryHeading("FACTORS CONNECTED TO SERVICE", "Heading3"));
         for (Factor factor : _model.getFactorsConnectedToService()) {
             sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
         }

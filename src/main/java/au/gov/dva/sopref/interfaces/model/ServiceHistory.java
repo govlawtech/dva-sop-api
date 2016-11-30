@@ -9,5 +9,4 @@ public interface ServiceHistory {
     LocalDate getSeparationDate();
     LocalDate getHireDate();
     ImmutableSet<Service> getServices();
-    ImmutableSet<Operation> getOperations();
 }
