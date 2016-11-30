@@ -168,13 +168,12 @@ public class CaseSummary {
         sopData.add(new CaseSummaryParagraph(legislationParagraph));
 
         sopData.add(new CaseSummaryHeading("CONNECTION TO SERVICE", "Heading2"));
-
-        String connectionParagraph = "The factor that was used to connect the condition " +
-                "to service was:";
+        String connectionParagraph = "The factors that were used to connect the condition " +
+                "to service are:";
         sopData.add(new CaseSummaryParagraph(connectionParagraph));
 
         for (Factor factor : _model.getFactorsConnectedToService()) {
-            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
+            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
         }
 
         sopSection.add(sopData);
