@@ -102,13 +102,15 @@ public class CaseSummary {
 
         CaseSummarySection conditionSection = new CaseSummarySection();
         CaseSummarySection conditionData = new CaseSummarySection();
+
         conditionData.add(new CaseSummaryHeading("CLAIMED CONDITION", "Heading2"));
         String conditionParagraph = "The claimed condition is " + condition.getName() + ".";
         conditionData.add(new CaseSummaryParagraph(conditionParagraph));
 
-        conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading3"));
+        conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading2"));
         String onset = getDatesAsRange(condition.getOnsetStartDate(), condition.getOnsetEndDate());
-        conditionData.add(new CaseSummaryParagraph(onset));
+        String onsetParagraph = "This condition related to an incident dated " + onset + ".";
+        conditionData.add(new CaseSummaryParagraph(onsetParagraph));
 
         conditionSection.add(conditionData);
 
