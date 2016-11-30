@@ -6,6 +6,7 @@ import org.apache.poi.xwpf.usermodel.*;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -187,7 +188,10 @@ public class CaseSummary {
     }
 
     private static String getDatesAsRange(LocalDate startDate, Optional<LocalDate> endDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
         return endDate.isPresent() ?
-                startDate.toString() + " to " + endDate.get().toString() : startDate.toString();
+                startDate.format(formatter) + " to " + endDate.get().format(formatter) :
+                startDate.format(formatter);
     }
 }
