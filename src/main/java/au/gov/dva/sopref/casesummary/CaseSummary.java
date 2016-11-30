@@ -150,18 +150,22 @@ public class CaseSummary {
     }
 
     private static CaseSummarySection createSopSection() {
+        SoP sop = _model.getSop();
+
         CaseSummarySection sopSection = new CaseSummarySection();
         sopSection.add(new CaseSummaryHeading("STATEMENT OF PRINCIPLES", "Heading2"));
 
         CaseSummarySection sopData = new CaseSummarySection();
-        SoP sop = _model.getSop();
-        sopData.add(new CaseSummaryHeading("CITATION", "Heading3"));
-        sopData.add(new CaseSummaryParagraph(sop.getCitation()));
-        sopData.add(new CaseSummaryHeading("STANDARD OF PROOF", "Heading3"));
-        sopData.add(new CaseSummaryParagraph(sop.getStandardOfProof().toString()));
-        // TODO: Add these properties to the SOP interface?
-//        sopData.add(new CaseSummaryHeading("URL", "Heading3"));
-//        sopData.add(new CaseSummaryParagraph(sop.getUrl()));
+
+        String sopParagraph = "The relevant Statement of Principles is the " +
+                sop.getCitation() + ". The standard of proof for this instrument is the " +
+                sop.getStandardOfProof() + ".";
+        sopData.add(new CaseSummaryParagraph(sopParagraph));
+
+        String legislationParagraph = "This instrument is available on the Federal Register " +
+                "of Legislative Instruments at https://www.legislation.gov.au/Latest/" +
+                sop.getRegisterId() + ".";
+        sopData.add(new CaseSummaryParagraph(legislationParagraph));
 
         sopData.add(new CaseSummaryHeading("FACTORS CONNECTED TO SERVICE", "Heading3"));
         for (Factor factor : _model.getFactorsConnectedToService()) {
