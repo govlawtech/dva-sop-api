@@ -177,9 +177,6 @@ public class CaseSummary {
             sopData.add(new CaseSummaryParagraph(factor.getParagraph() + " " + factor.getText()));
         }
 
-        sopData.add(new CaseSummaryHeading("PROGRESS TOWARDS THRESHOLD", "Heading3"));
-        sopData.add(new CaseSummaryParagraph(_model.getThresholdProgress()));
-
         sopSection.add(sopData);
 
         return sopSection;
