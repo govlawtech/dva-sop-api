@@ -1,8 +1,6 @@
 package au.gov.dva.sopref.casesummary;
 
-import org.apache.poi.xwpf.usermodel.IBodyElement;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 
 public class CaseSummaryHeading extends CaseSummaryComponent {
 
@@ -18,7 +16,7 @@ public class CaseSummaryHeading extends CaseSummaryComponent {
     public void addToDocument(XWPFDocument document) {
         CaseSummaryParagraph paragraph = new CaseSummaryParagraph(_headingText);
         paragraph.addToDocument(document);
-        paragraph.getApachePoiParagraph().setStyle(_styleId);
+        paragraph.getXWPFParagraph().setStyle(_styleId);
     }
 
 }

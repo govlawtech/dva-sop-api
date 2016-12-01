@@ -1,6 +1,5 @@
 package au.gov.dva.sopref.casesummary;
 
-import org.apache.poi.xwpf.usermodel.IBodyElement;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -22,7 +21,7 @@ public class CaseSummaryParagraph extends CaseSummaryComponent {
         run.setFontFamily("Segoe UI");
     }
 
-    public XWPFParagraph getApachePoiParagraph() {
+    public XWPFParagraph getXWPFParagraph() {
         return _paragraph;
     }
 }
