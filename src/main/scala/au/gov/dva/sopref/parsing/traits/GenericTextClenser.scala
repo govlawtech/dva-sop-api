@@ -1,4 +1,4 @@
-package au.gov.dva.sopref.parsers
+package au.gov.dva.sopref.parsing.traits
 
 import com.typesafe.scalalogging.Logger
 
@@ -22,7 +22,7 @@ trait GenericTextClenser extends SoPClenser  {
     val matchCount = matches.size
     logger.debug("Found and removed " + matchCount + " matches of regex '" + regex.pattern.toString + "'")
     if (matchCount > 0)
-         regex.replaceAllIn(target,replacement);
+      regex.replaceAllIn(target,replacement);
     else target;
   }
 
@@ -54,13 +54,7 @@ trait GenericTextClenser extends SoPClenser  {
       .map(removeAuthorisedFootnote)
       .map(removePageNumberFootNote)
       .map(removePageGaps)
-        .map(compressSpaces)
+      .map(compressSpaces)
       .head
   }
-}
-
-
-
-class GenericClenser extends GenericTextClenser {
-
 }
