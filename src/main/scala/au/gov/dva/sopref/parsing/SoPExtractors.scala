@@ -4,8 +4,8 @@ import scala.collection.mutable.ListBuffer
 import scala.util.matching.Regex
 
 
-protected object SoPExtractors {
-  def getSectionLines(clensedSopText : String, paragraphLineRegex : Regex) : (Int,List[String]) = {
+object SoPExtractors {
+  def getSection(clensedSopText : String, paragraphLineRegex : Regex) : (Int,List[String]) = {
 
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
 
@@ -46,12 +46,4 @@ protected object SoPExtractors {
   }
 }
 
-class LsExtractor extends SoPExtractor {
-  override def extractFactorSection(plainTextSop: String): String = null
 
-  override def extractDefinitionsSection(plainTextSop: String): String = null
-
-  override def extractCommencementSection(plainTextSop: String): String = null
-
-  override def extractCitation(plainTextSop: String): String = null
-}

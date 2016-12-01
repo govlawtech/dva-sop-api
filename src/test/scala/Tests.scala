@@ -1,5 +1,7 @@
 
+import au.gov.dva.sopref.parsing.SoPExtractors._
 import au.gov.dva.sopref.parsing._
+import au.gov.dva.sopref.parsing.implementations.{GenericClenser, LsExtractor}
 import com.google.common.io.Resources
 import org.scalatest.{FlatSpec, FunSuite}
 import org.junit.runner.RunWith
@@ -29,13 +31,12 @@ class ParserTests extends FunSuite
     System.out.println("END")
   }
 
-  test("Extract section from clensed text") {
+  test("Extract Lumbar Spondylosis factors section from clensed text") {
     val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
-    val result = SoPExtractors.getSectionLines(testInput,"""^Factors$""".r)
+    val underTest = new LsExtractor()
+    val result = underTest.extractFactorSection(testInput)
     System.out.print(result);
-
     assert(result._1 == 6)
-
   }
 }
 
