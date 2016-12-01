@@ -57,3 +57,8 @@ To deploy to production, swap the Azure deployment slots via the Azure managemen
 # Development Environment Setup
 
 * To run integration tests for Azure Storage, download and install the Azure Storage Emulator and (optionally) the Azure Storage Explorer.  These run on Windows only.
+
+# Case Summary
+
+[Case summary template](src/main/resources/docs/Case Summary Template.docx)
+[Generated case summary example] (src/test/resources/Case Summary.docx)
