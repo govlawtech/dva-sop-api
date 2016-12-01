@@ -9,9 +9,12 @@ class LsExtractor extends SoPExtractor {
     val factorsSection = SoPExtractors.getSection(plainTextSop,headingRegex)
     (factorsSection._1,factorsSection._2.mkString(" "))
   }
-  
 
-  override def extractDefinitionsSection(plainTextSop: String): String = null
+  override def extractDefinitionsSection(plainTextSop: String): String = {
+    val headingRegex = """^Other definitions$""".r
+    val definitionsSection = SoPExtractors.getSection(plainTextSop,headingRegex);
+    definitionsSection._2.mkString("\n")
+  }
 
   override def extractCommencementSection(plainTextSop: String): String = null
 

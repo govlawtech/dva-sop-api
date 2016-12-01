@@ -38,6 +38,14 @@ class ParserTests extends FunSuite
     System.out.print(result);
     assert(result._1 == 6)
   }
+
+  test("Extract definition section for Lumbar Spondylosis") {
+    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val underTest = new LsExtractor()
+    val result = underTest.extractDefinitionsSection(testInput);
+    assert(result.startsWith("For the purpose") && result.endsWith("surgery to the lumbar spine."))
+    System.out.print(result)
+  }
 }
 
 
