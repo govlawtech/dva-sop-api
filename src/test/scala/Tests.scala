@@ -1,5 +1,5 @@
 
-import au.gov.dva.sopref.parsing.SoPExtractors._
+import au.gov.dva.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopref.parsing._
 import au.gov.dva.sopref.parsing.implementations.{GenericClenser, LsExtractor}
 import com.google.common.io.Resources
@@ -18,8 +18,7 @@ class Tests extends FunSuite {
 }
 
 @RunWith(classOf[JUnitRunner])
-class ParserTests extends FunSuite
-{
+class ParserTests extends FunSuite {
   test("Clense LS raw text") {
     val sourceResourceStream = getClass().getResourceAsStream("lsConvertedToText.txt");
     val rawText = Source.fromInputStream(sourceResourceStream).mkString
@@ -46,6 +45,21 @@ class ParserTests extends FunSuite
     assert(result.startsWith("For the purpose") && result.endsWith("surgery to the lumbar spine."))
     System.out.print(result)
   }
+
+  test("Extract date of effect for Lumbar Spondylosis") {
+    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val underTest = new LsExtractor()
+    val result = underTest.extractDateOfEffectSection(testInput);
+    assert(result == "This Instrument takes effect from 2 July 2014.");
+  }
+
+  test("Extract citation for Lumbar Spondylosis") {
+    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val underTest = new LsExtractor()
+    val result = underTest.extractCitation(testInput);
+    assert(result == "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014.");
+  }
+
 }
 
 

@@ -4,7 +4,10 @@ import scala.collection.mutable.ListBuffer
 import scala.util.matching.Regex
 
 
-object SoPExtractors {
+object SoPExtractorUtilities {
+
+
+
   def getSection(clensedSopText : String, paragraphLineRegex : Regex) : (Int,List[String]) = {
 
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
