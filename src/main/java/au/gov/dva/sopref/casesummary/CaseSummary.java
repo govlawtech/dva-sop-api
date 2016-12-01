@@ -162,10 +162,12 @@ public class CaseSummary {
                 sop.getStandardOfProof() + ".";
         sopData.add(new CaseSummaryParagraph(sopParagraph));
 
-        String legislationParagraph = "This instrument is available on the Federal Register " +
-                "of Legislative Instruments at https://www.legislation.gov.au/Latest/" +
-                sop.getRegisterId() + ".";
+        String legislationParagraph = "This instrument is available on the Federal " +
+                "Register of Legislative Instruments at:";
         sopData.add(new CaseSummaryParagraph(legislationParagraph));
+
+        String url = "https://www.legislation.gov.au/Latest/" + sop.getRegisterId();
+        sopData.add(new CaseSummaryHyperlink(url));
 
         sopData.add(new CaseSummaryHeading("CONNECTION TO SERVICE", "Heading2"));
         String connectionParagraph = "The factors that were used to connect the condition " +
