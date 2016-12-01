@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class MockLumbarSpondylosisSop implements SoP {
     @Override
     public String getRegisterId() {
-        return "F2014L0933";
+        return "F2014L00933";
     }
 
     @Override
