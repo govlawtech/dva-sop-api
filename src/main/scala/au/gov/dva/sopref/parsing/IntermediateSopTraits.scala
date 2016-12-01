@@ -1,4 +1,4 @@
-package au.gov.dva.sopref.parsers
+package au.gov.dva.sopref.parsing
 
 import com.typesafe.scalalogging.Logger
 

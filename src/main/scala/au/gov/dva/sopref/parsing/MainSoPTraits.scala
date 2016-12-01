@@ -1,4 +1,4 @@
-package au.gov.dva.sopref.parsers
+package au.gov.dva.sopref.parsing
 
 import java.time.LocalDate
 
@@ -25,6 +25,8 @@ trait SoPElementsParser {
   def parseCommencementDate(commencementSection: String): LocalDate
   def parseInstrumentNumber(plainTextSop : String) : InstrumentNumber
 }
+
+
 
 
 
