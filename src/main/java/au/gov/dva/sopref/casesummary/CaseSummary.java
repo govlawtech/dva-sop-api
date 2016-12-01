@@ -3,6 +3,7 @@ package au.gov.dva.sopref.casesummary;
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.poi.xwpf.usermodel.*;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTNumbering;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ public class CaseSummary {
 
     private static CaseSummaryModel _model;
     private static XWPFStyles _styles;
+    private static XWPFNumbering _numbering;
 
     public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel) {
         _model = caseSummaryModel;
@@ -37,6 +39,10 @@ public class CaseSummary {
                 document.getStyles().addStyle(s);
             }
         }
+
+        document.createNumbering();
+//        CTNumbering.Factory.
+        document.getNumbering().setNumbering(_numbering.);
 
         // Create the main sections
         CaseSummarySection documentSection = createDocumentSection();
@@ -77,6 +83,10 @@ public class CaseSummary {
             XWPFStyle heading2Style = _styles.getStyle("Heading2");
             XWPFStyle heading3Style = _styles.getStyle("Heading3");
             XWPFStyle heading4Style = _styles.getStyle("Heading4");
+
+            _numbering = template.getNumbering();
+
+            List<XWPFParagraph> paras = template.getParagraphs();
 
 
 
