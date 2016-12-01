@@ -61,4 +61,5 @@ To deploy to production, swap the Azure deployment slots via the Azure managemen
 # Case Summary
 
 [Case summary template](src/main/resources/docs/Case Summary Template.docx)
+
 [Generated case summary example] (src/test/resources/Case Summary.docx)
