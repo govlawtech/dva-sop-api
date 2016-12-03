@@ -24,6 +24,7 @@ class ParserTests extends FunSuite {
     val rawText = Source.fromInputStream(sourceResourceStream).mkString
     val lSClenser = new GenericClenser();
     val result = lSClenser.clense(rawText)
+
     assert(result.length() > 0)
     System.out.println("START:")
     System.out.print(result)
@@ -69,6 +70,5 @@ class ParserTests extends FunSuite {
     assert(result.size == 9)
   }
 }
-
 
 

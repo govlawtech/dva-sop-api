@@ -13,4 +13,3 @@ public interface Condition {
     Optional<LocalDate> getAggravationStartDate();
     Optional<LocalDate> getAggravationEndDate();
 }
-

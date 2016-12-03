@@ -41,9 +41,10 @@ public class CaseSummaryTests {
         FileOutputStream outputStream = new FileOutputStream(outputFile);
         outputStream.write(result);
         outputStream.close();
-        System.out.println("Wrote output to " + outputFile.getAbsolutePath());
+
         Assert.assertTrue(outputFile.exists());
     }
+
 
     private Path getOutputPath() throws URISyntaxException, IOException {
         String fileName = "Example Case Summary.docx";
@@ -51,41 +52,5 @@ public class CaseSummaryTests {
         return tempFilePath;
     }
 
-    //    @Test
-//    public void GenerateCharts() throws FileNotFoundException, ScriptException {
-//        ChartGenerator.generatePieChart();
-//        Assert.assertTrue(5 > 0);
-//    }
-
-//    @Test
-//    public void CompletableFutureIsComplete() {
-//        CaseSummaryModel testData = new CaseSummaryModelMock();
-//        byte[] result = CaseSummary.createCaseSummary(testData).get();
-//        Assert.assertTrue(result.length > 0);
-//    }
-
-//    @Test
-//    public void ConditionNotEmpty() throws ExecutionException, InterruptedException {
-//        au.gov.dva.dvasopapi.tests.mocks.ConditionMock mockCondition = new au.gov.dva.dvasopapi.tests.mocks.ConditionMock();
-//        ServiceHistory serviceHistory = new au.gov.dva.dvasopapi.tests.mocks.ServiceHistoryMock();
-//        SoP sop = new au.gov.dva.dvasopapi.tests.mocks.SoPMock();
-//
-//        mockCondition.setName("Joint instability");
-//        mockCondition.setICDCode("ICD-2017");
-//        mockCondition.setType("Accumulated over time (wear and tear)");
-//        mockCondition.setOnsetStartDate(LocalDate.of(2009, 12, 1));
-
-//            try {
-//        FileOutputStream outputStream = new FileOutputStream("C:\\Code\\DVA\\dva-sop-api\\src\\main\\resources\\docs\\Case Summary.docx");
-//        outputStream.write(result);
-//        outputStream.close();
-//    } catch (IOException e) {
-//
-//    }
-//
-//        CaseSummaryModel testData = new au.gov.dva.dvasopapi.tests.mocks.CaseSummaryModelMock(mockCondition, null, null);
-//        byte[] result = CaseSummary.createCaseSummary(testData).get();
-//        Assert.assertTrue(result.length > 0);
-//    }
 }
 

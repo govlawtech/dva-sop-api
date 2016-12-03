@@ -3,7 +3,6 @@ apply plugin: 'scala'
 apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
-apply plugin: 'pmd'
 
 repositories {
         mavenCentral()
@@ -32,6 +31,7 @@ tasks.withType(FindBugs) {
         html.enabled true
     }
 }
+
 
 test {
     exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
