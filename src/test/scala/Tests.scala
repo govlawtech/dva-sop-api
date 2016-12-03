@@ -60,6 +60,14 @@ class ParserTests extends FunSuite {
     assert(result == "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014.");
   }
 
+
+  test("Extract ICD codes for Lumbar Spondylosis") {
+    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val underTest = new LsExtractor()
+    val result = underTest.extractICDCodes(testInput);
+    result.foreach(c => System.out.print(c))
+    assert(result.size == 9)
+  }
 }
 
 
