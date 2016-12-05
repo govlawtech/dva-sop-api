@@ -2,6 +2,8 @@ package au.gov.dva.sopref.casesummary;
 
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.WordUtils;
 import org.apache.poi.xwpf.usermodel.*;
 import org.apache.xmlbeans.XmlException;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.*;
@@ -164,7 +166,8 @@ public class CaseSummary {
                 String operationNameText = operation.getServiceType() == ServiceType.WARLIKE ?
                         " on " + operation.getName() : "";
 
-                String operationText = operation.getServiceType().toString() + " service from " +
+                String operationText = WordUtils.capitalize(operation.getServiceType().toString()) +
+                        " service from " +
                         getDatesAsRange(operation.getStartDate(), operation.getEndDate()) +
                         operationNameText;
 
