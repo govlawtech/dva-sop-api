@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.collect.ImmutableList;
 
 import javax.annotation.Nonnull;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -20,8 +19,8 @@ import java.util.List;
 public class StoredServiceDetermination implements ServiceDetermination {
 
 
-    private static final String WARLIKE = "warlike";
-    private static final String NON_WARLIKE = "non-warlike";
+    private static final String WARLIKE = "WARLIKE";
+    private static final String NON_WARLIKE = "non-WARLIKE";
     private final String registerId;
     private final String citation;
     private final LocalDate commencementDate;
@@ -106,8 +105,8 @@ public class StoredServiceDetermination implements ServiceDetermination {
     {
         switch (serviceType)
         {
-            case warlike: return WARLIKE;
-            case nonWarlike: return NON_WARLIKE;
+            case WARLIKE: return WARLIKE;
+            case NON_WARLIKE: return NON_WARLIKE;
         }
         throw new IllegalArgumentException(String.format("Do not recognise operation type: %s", serviceType));
     }
@@ -115,9 +114,9 @@ public class StoredServiceDetermination implements ServiceDetermination {
     private static ServiceType serviceTypeFromStringValue(String stringValue)
     {
         if (stringValue.contentEquals(WARLIKE))
-            return ServiceType.warlike;
+            return ServiceType.WARLIKE;
         if (stringValue.contentEquals(NON_WARLIKE))
-            return ServiceType.nonWarlike;
+            return ServiceType.NON_WARLIKE;
 
         throw new IllegalArgumentException(String.format("Do not recognise operation type: %s", stringValue));
     }

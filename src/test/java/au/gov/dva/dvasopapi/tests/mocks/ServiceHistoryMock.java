@@ -55,7 +55,7 @@ public class ServiceHistoryMock implements ServiceHistory {
 
                     @Override
                     public ServiceType getServiceType() {
-                        return ServiceType.warlike;
+                        return ServiceType.WARLIKE;
                     }
 
                     @Override

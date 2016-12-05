@@ -161,7 +161,7 @@ public class CaseSummary {
 
         for (Service service : serviceHistory.getServices()) {
             for (Operation operation : service.getOperations()) {
-                String operationNameText = operation.getServiceType() == ServiceType.warlike ?
+                String operationNameText = operation.getServiceType() == ServiceType.WARLIKE ?
                         " on " + operation.getName() : "";
 
                 String operationText = operation.getServiceType().toString() + " service from " +

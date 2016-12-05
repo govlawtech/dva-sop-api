@@ -9,7 +9,7 @@ import java.io.FileReader;
 public class ChartGenerator {
 
     public static void generatePieChart() throws FileNotFoundException, ScriptException {
-        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+       // ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
     }
 
 }

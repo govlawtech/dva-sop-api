@@ -3,7 +3,6 @@ apply plugin: 'scala'
 apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
-apply plugin: 'pmd'
 
 repositories {
         mavenCentral()
@@ -23,6 +22,7 @@ findbugs {
     effort = "max"
     reportLevel = "low"
     sourceSets = [sourceSets.main]
+    excludeFilter = file("findBugsExcludeFilter.xml")
 }
 
 tasks.withType(FindBugs) {
@@ -32,6 +32,7 @@ tasks.withType(FindBugs) {
     }
 }
 
+
 test {
     exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
 }
@@ -40,6 +41,9 @@ dependencies {
     compile group: 'com.sparkjava', name: 'spark-core', version: '2.5.2'
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.0'
     compile group: 'org.scala-lang.modules', name: 'scala-parser-combinators_2.12', version: '1.0.4'
+    compile group: 'org.scala-lang', name: 'scala-reflect', version: '2.12.0'
+    compile group: 'com.typesafe.scala-logging', name: 'scala-logging_2.12', version: '3.5.0'
+
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.4'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.4'
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
