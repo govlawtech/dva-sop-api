@@ -25,14 +25,16 @@ public class CaseSummary {
     }
 
     private static byte[] buildCaseSummary() {
-        // Set up generated document with styles from the template
         XWPFDocument document = new XWPFDocument();
 
+        // Set up generated document with styles from the template
         getStylesAndNumberingFromTemplate();
         document.createStyles().setStyles(_ctStyles);
 
         // Numbering is required for bullets and lists
         document.createNumbering();
+
+        // Can't get the CTNumbering so need to create manually
         transferTemplateNumbering(document.getNumbering());
 
         // Create the main sections
@@ -67,7 +69,6 @@ public class CaseSummary {
         InputStream inputStream = CaseSummary.class.getClassLoader().getResourceAsStream(templatePath);
 
         try (XWPFDocument template = new XWPFDocument(inputStream);) {
-            // Get styles from the template document so they can be applied to generated document
             _ctStyles = template.getStyle();
             _numbering = template.getNumbering();
         } catch (IOException e) {
