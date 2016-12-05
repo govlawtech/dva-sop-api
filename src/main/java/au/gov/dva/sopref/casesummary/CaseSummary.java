@@ -3,14 +3,17 @@ package au.gov.dva.sopref.casesummary;
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.poi.xwpf.usermodel.*;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTInd;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTLvl;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTNumbering;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.STNumberFormat;
+import scala.collection.mutable.HashTable;
 
 import java.io.*;
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
 public class CaseSummary {
@@ -40,9 +43,9 @@ public class CaseSummary {
             }
         }
 
+        // Numbering is required for bullets and lists
         document.createNumbering();
-//        CTNumbering.Factory.
-        document.getNumbering().setNumbering(_numbering.);
+        transferTemplateNumbering(document.getNumbering());
 
         // Create the main sections
         CaseSummarySection documentSection = createDocumentSection();
@@ -86,10 +89,6 @@ public class CaseSummary {
 
             _numbering = template.getNumbering();
 
-            List<XWPFParagraph> paras = template.getParagraphs();
-
-
-
             stylesToImport.add(heading1Style);
             stylesToImport.add(heading2Style);
             stylesToImport.add(heading3Style);
@@ -99,6 +98,48 @@ public class CaseSummary {
         }
 
         return stylesToImport;
+    }
+
+    private static void setDefaultBullet(int numId, CTLvl[] ctLvls) {
+        BigInteger lowestLeft = BigInteger.valueOf(Integer.MAX_VALUE);
+
+        for (CTLvl ctLvl : ctLvls) {
+            CTInd ctInd = ctLvl.getPPr().getInd();
+
+            if (ctLvl.getNumFmt().getVal() == STNumberFormat.BULLET) {
+                // Look for CTLvl with the lowest left value
+                BigInteger left = ctInd.getLeft();
+
+                if (left.compareTo(lowestLeft) == -1 ) {
+                    lowestLeft = left;
+                    CaseSummaryParagraph.bulletNumId = BigInteger.valueOf(numId);
+                    CaseSummaryParagraph.bulletILvl = ctLvl.getIlvl();
+                }
+            }
+        }
+    }
+
+    private static void transferTemplateNumbering(XWPFNumbering numbering) {
+        // <w:abstractNum w:abstractNumId="1">
+        // </w:abstractNum>
+        // <w:num w:numId="1">
+        //   <w:abstractNumId w:val="1"/>
+        // </w:num>
+
+        // numId begins at 1
+        int i = 1;
+
+        while (_numbering.getNum(BigInteger.valueOf(i)) != null) {
+            XWPFNum num = _numbering.getNum(BigInteger.valueOf(i));
+            BigInteger abstractNumId = num.getCTNum().getAbstractNumId().getVal();
+
+            setDefaultBullet(i, _numbering.getAbstractNum(abstractNumId).getCTAbstractNum().getLvlArray());
+
+            numbering.addAbstractNum(_numbering.getAbstractNum(abstractNumId));
+            numbering.addNum(abstractNumId, BigInteger.valueOf(i));
+
+            i++;
+        }
     }
 
     private static CaseSummarySection createDocumentSection() {
@@ -141,16 +182,18 @@ public class CaseSummary {
         serviceHistoryData.add(new CaseSummaryParagraph(serviceHistoryDefinition));
 
         for (Service service : serviceHistory.getServices()) {
-
             for (Operation operation : service.getOperations()) {
-                serviceHistoryData.add(new CaseSummaryHeading("NAME", "Heading4"));
-                serviceHistoryData.add((new CaseSummaryParagraph(operation.getName())));
-                serviceHistoryData.add(new CaseSummaryHeading("SERVICE TYPE", "Heading4"));
-                serviceHistoryData.add((new CaseSummaryParagraph(operation.getServiceType().toString())));
-                serviceHistoryData.add(new CaseSummaryHeading("START DATE", "Heading4"));
-                serviceHistoryData.add((new CaseSummaryParagraph(operation.getStartDate().toString())));
-                serviceHistoryData.add(new CaseSummaryHeading("END DATE", "Heading4"));
-                serviceHistoryData.add((new CaseSummaryParagraph(operation.getEndDate().toString())));
+                String operationNameText = operation.getServiceType() == ServiceType.warlike ?
+                        " on " + operation.getName() : "";
+
+                String operationText = operation.getServiceType().toString() + " service from " +
+                        getDatesAsRange(operation.getStartDate(), operation.getEndDate()) +
+                        operationNameText;
+
+                CaseSummaryParagraph operationParagraph = new CaseSummaryParagraph(operationText);
+                operationParagraph.hasBullet(true);
+
+                serviceHistoryData.add(operationParagraph);
             }
         }
 
