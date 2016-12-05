@@ -3,11 +3,8 @@ package au.gov.dva.sopref.casesummary;
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.poi.xwpf.usermodel.*;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTInd;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTLvl;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTNumbering;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.STNumberFormat;
-import scala.collection.mutable.HashTable;
+import org.apache.xmlbeans.XmlException;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.*;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -19,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 public class CaseSummary {
 
     private static CaseSummaryModel _model;
-    private static XWPFStyles _styles;
+    private static CTStyles _ctStyles = CTStyles.Factory.newInstance();
     private static XWPFNumbering _numbering;
 
     public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel) {
@@ -28,20 +25,11 @@ public class CaseSummary {
     }
 
     private static byte[] buildCaseSummary() {
-        List<XWPFStyle> stylesToImport = getStylesToImport();
-
-        // Set up generated document
+        // Set up generated document with styles from the template
         XWPFDocument document = new XWPFDocument();
-        document.createStyles();
 
-        // Import styles
-        for (XWPFStyle style : stylesToImport) {
-            List<XWPFStyle> usedStyles = _styles.getUsedStyleList(style);
-
-            for (XWPFStyle s : usedStyles) {
-                document.getStyles().addStyle(s);
-            }
-        }
+        getStylesAndNumberingFromTemplate();
+        document.createStyles().setStyles(_ctStyles);
 
         // Numbering is required for bullets and lists
         document.createNumbering();
@@ -74,30 +62,19 @@ public class CaseSummary {
         return outputStream.toByteArray();
     }
 
-    private static List<XWPFStyle> getStylesToImport() {
+    private static void getStylesAndNumberingFromTemplate() {
         String templatePath = "docs/Case Summary Template.docx";
         InputStream inputStream = CaseSummary.class.getClassLoader().getResourceAsStream(templatePath);
-        List<XWPFStyle> stylesToImport = new ArrayList<XWPFStyle>();
 
         try (XWPFDocument template = new XWPFDocument(inputStream);) {
             // Get styles from the template document so they can be applied to generated document
-            _styles = template.getStyles();
-            XWPFStyle heading1Style = _styles.getStyle("Heading1");
-            XWPFStyle heading2Style = _styles.getStyle("Heading2");
-            XWPFStyle heading3Style = _styles.getStyle("Heading3");
-            XWPFStyle heading4Style = _styles.getStyle("Heading4");
-
+            _ctStyles = template.getStyle();
             _numbering = template.getNumbering();
-
-            stylesToImport.add(heading1Style);
-            stylesToImport.add(heading2Style);
-            stylesToImport.add(heading3Style);
-            stylesToImport.add(heading4Style);
         } catch (IOException e) {
             // TODO: Log exception
+        } catch (XmlException e) {
+            // TODO: Log exception
         }
-
-        return stylesToImport;
     }
 
     private static void setDefaultBullet(int numId, CTLvl[] ctLvls) {
