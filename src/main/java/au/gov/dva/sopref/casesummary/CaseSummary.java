@@ -78,7 +78,7 @@ public class CaseSummary {
         }
     }
 
-    private static void setDefaultBullet(int numId, CTLvl[] ctLvls) {
+    private static void setDefaultBullet(int numId, List<CTLvl> ctLvls) {
         BigInteger lowestLeft = BigInteger.valueOf(Integer.MAX_VALUE);
 
         for (CTLvl ctLvl : ctLvls) {
@@ -111,7 +111,7 @@ public class CaseSummary {
             XWPFNum num = _numbering.getNum(BigInteger.valueOf(i));
             BigInteger abstractNumId = num.getCTNum().getAbstractNumId().getVal();
 
-            setDefaultBullet(i, _numbering.getAbstractNum(abstractNumId).getCTAbstractNum().getLvlArray());
+            setDefaultBullet(i, _numbering.getAbstractNum(abstractNumId).getCTAbstractNum().getLvlList());
 
             numbering.addAbstractNum(_numbering.getAbstractNum(abstractNumId));
             numbering.addNum(abstractNumId, BigInteger.valueOf(i));
