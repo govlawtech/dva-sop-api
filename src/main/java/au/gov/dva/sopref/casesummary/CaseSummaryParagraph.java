@@ -1,15 +1,12 @@
 package au.gov.dva.sopref.casesummary;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFNumbering;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTLvl;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTNumPr;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr;
 
 import java.math.BigInteger;
-import java.util.List;
 
 public class CaseSummaryParagraph extends CaseSummaryComponent {
 

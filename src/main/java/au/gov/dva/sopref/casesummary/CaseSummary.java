@@ -2,7 +2,6 @@ package au.gov.dva.sopref.casesummary;
 
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.WordUtils;
 import org.apache.poi.xwpf.usermodel.*;
 import org.apache.xmlbeans.XmlException;
