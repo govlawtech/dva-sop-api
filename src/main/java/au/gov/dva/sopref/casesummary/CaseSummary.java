@@ -1,5 +1,6 @@
 package au.gov.dva.sopref.casesummary;
 
+import au.gov.dva.sopref.exceptions.CaseSummaryError;
 import au.gov.dva.sopref.interfaces.model.*;
 import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.commons.lang.WordUtils;
@@ -56,10 +57,10 @@ public class CaseSummary {
         try {
             document.write(outputStream);
             outputStream.close();
-        } catch (FileNotFoundException exception) {
-            // TODO: Log exception
-        } catch (IOException exception) {
-            // TODO: Log exception
+        } catch (FileNotFoundException e) {
+            throw new CaseSummaryError(e);
+        } catch (IOException e) {
+            throw new CaseSummaryError(e);
         }
 
         return outputStream.toByteArray();
@@ -73,9 +74,9 @@ public class CaseSummary {
             _ctStyles = template.getStyle();
             _numbering = template.getNumbering();
         } catch (IOException e) {
-            // TODO: Log exception
+            throw new CaseSummaryError(e);
         } catch (XmlException e) {
-            // TODO: Log exception
+            throw new CaseSummaryError(e);
         }
     }
 
