@@ -3,16 +3,16 @@ package au.gov.dva.sopref.casesummary;
 import org.apache.poi.xwpf.usermodel.*;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.*;
 
-public class CaseSummaryHyperlink extends CaseSummaryComponent {
+class CaseSummaryHyperlink extends CaseSummaryComponent {
 
     private String _url = "";
 
-    public CaseSummaryHyperlink(String url) {
+    CaseSummaryHyperlink(String url) {
         _url = url;
     }
 
     @Override
-    public void addToDocument(XWPFDocument document) {
+    void addToDocument(XWPFDocument document) {
         CaseSummaryParagraph paragraph = new CaseSummaryParagraph("");
         paragraph.addToDocument(document);
         XWPFParagraph para = paragraph.getXWPFParagraph();

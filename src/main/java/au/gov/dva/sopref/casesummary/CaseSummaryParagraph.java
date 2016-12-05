@@ -8,26 +8,25 @@ import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTPPr;
 
 import java.math.BigInteger;
 
-public class CaseSummaryParagraph extends CaseSummaryComponent {
+class CaseSummaryParagraph extends CaseSummaryComponent {
 
     private XWPFParagraph _paragraph;
     private String _text = "";
     private boolean _hasBullet = false;
 
-    public static BigInteger bulletNumId;
-    public static BigInteger bulletILvl;
+    static BigInteger bulletNumId;
+    static BigInteger bulletILvl;
 
-
-    public CaseSummaryParagraph(String text) {
+    CaseSummaryParagraph(String text) {
         _text = text;
     }
 
-    public void hasBullet(boolean hasBullet) {
+    void hasBullet(boolean hasBullet) {
         _hasBullet = hasBullet;
     }
 
     @Override
-    public void addToDocument(XWPFDocument document) {
+    void addToDocument(XWPFDocument document) {
         _paragraph = document.createParagraph();
 
         if (_hasBullet) {
@@ -59,7 +58,7 @@ public class CaseSummaryParagraph extends CaseSummaryComponent {
         ctNumPr.addNewNumId().setVal(bulletNumId);
     }
 
-    public XWPFParagraph getXWPFParagraph() {
+    XWPFParagraph getXWPFParagraph() {
         return _paragraph;
     }
 }

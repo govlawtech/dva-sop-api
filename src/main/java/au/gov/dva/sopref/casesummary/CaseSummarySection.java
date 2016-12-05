@@ -4,22 +4,22 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 import java.util.ArrayList;
 
-public class CaseSummarySection extends CaseSummaryComponent {
+class CaseSummarySection extends CaseSummaryComponent {
 
     private ArrayList<CaseSummaryComponent> _children;
 
-    public CaseSummarySection() {
+    CaseSummarySection() {
         _children = new ArrayList<>();
     }
 
     @Override
-    public void addToDocument(XWPFDocument document) {
+    void addToDocument(XWPFDocument document) {
         for (CaseSummaryComponent child : _children) {
             child.addToDocument(document);
         }
     }
 
-    public void add(CaseSummaryComponent component) {
+    void add(CaseSummaryComponent component) {
         _children.add(component);
     }
 }
