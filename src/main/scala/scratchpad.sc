@@ -1,8 +1,14 @@
-import scala.reflect.runtime.{universe => ru}
-case class Person(name: String)
-val m = ru.runtimeMirror(getClass().getClassLoader)
-val classPerson = ru.typeOf[Person].typeSymbol.asClass
-// classPerson is the class symbol
-val cm = m.reflectClass(classPerson)
 
+import scala.util.parsing.combinator.RegexParsers
+
+class TestParser extends RegexParsers {
+
+  def paraParser : Parser[String] = """\([a-z]+\)""".r
+
+
+}
+
+
+val parser = new TestParser
+val result = parser.parseAll(parser.paraParser,"(a)")
 
