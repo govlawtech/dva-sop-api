@@ -21,7 +21,7 @@ public class ConversionTests {
 
     @Test
     public void pdfToText() throws IOException {
-        URL inputPdf = Resources.getResource("F2014L00933.pdf");
+        URL inputPdf = Resources.getResource("F2016L00994.pdf");
         byte[] pdfBytes = Resources.toByteArray(inputPdf);
         String result = Conversions.pdfToPlainText(pdfBytes);
         int lineCount = result.split("[\r\n]").length;

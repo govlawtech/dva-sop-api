@@ -1,7 +1,9 @@
 package au.gov.dva.sopref.parsing.implementations
 
 import java.time.LocalDate
-import java.time.format.{DateTimeFormatter, FormatStyle}
+import java.time.chrono.Chronology
+import java.time.format.{DateTimeFormatter, DateTimeFormatterBuilder, FormatStyle}
+import java.util.Locale
 
 import au.gov.dva.sopref.data.sops.StoredFactor
 import au.gov.dva.sopref.exceptions.SopParserError
@@ -15,7 +17,6 @@ import scala.util.parsing.combinator.RegexParsers
 
 
 object LsParser extends SoPParser with RegexParsers{
-
 
 
   def paraLetterParser : Parser[String] = """\([a-z]+\)""".r
@@ -39,14 +40,6 @@ object LsParser extends SoPParser with RegexParsers{
     case listOfFactors: Seq[(String, String)] => listOfFactors
   }
 
-  def factorListParser : Parser[List[(String,String)]] = rep1(singleParaParser) ^^  {
-    case listOfFactors: Seq[(String, String)] => listOfFactors
-      .sortBy(_._1)
-  }
-
-  def headAndFactorsParser : Parser[(String,List[(String,String)])] = headParser ~ factorListParser ^^ {
-    case head ~ factorList => (head,factorList)
-  }
 
   def completeFactorSectionParser : Parser[(String,List[(String,String)])] = headParser ~ separatedFactorListParser <~ periodTerminator  ^^ {
     case head ~ factorList => (head,factorList)
@@ -99,6 +92,24 @@ object LsParser extends SoPParser with RegexParsers{
     if (m.isEmpty)
       throw new SopParserError("Cannot determine date of effect from: " + dateOfEffectSection)
     return LocalDate.parse(m.get.group(1),DateTimeFormatter.ofPattern("d MMMM yyyy"))
+  }
+
+  override def parseStartAndEndAggravationParas(aggravationSection: String): (String, String) = {
+    val paraIntervalRegex = """Paragraphs [0-9]+(\([a-z]+\)) to [0-9]+(\([a-z]+\))""".r
+    val m = paraIntervalRegex.findFirstMatchIn(aggravationSection)
+    if (m.isEmpty)
+      throw new SopParserError("Cannot determine aggravation paras from: " + aggravationSection)
+    (m.get.group(1),m.get.group(2))
+  }
+
+  override def parseCitation(citationSection: String): String = {
+    val regex = """may be cited as (.*)""".r
+    val m = regex.findFirstMatchIn(citationSection)
+    if (m.isEmpty)
+      throw new SopParserError("Cannot get citation from: " + citationSection)
+    val trimmed = m.get.group(1).stripSuffix(".")
+    trimmed
+
   }
 }
 

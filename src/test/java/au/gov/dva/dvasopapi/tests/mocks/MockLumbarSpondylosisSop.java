@@ -1,6 +1,8 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
+import au.gov.dva.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopref.interfaces.model.*;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
@@ -32,8 +34,8 @@ public class MockLumbarSpondylosisSop implements SoP {
     }
 
     @Override
-    public ImmutableSet<Factor> getAggravationFactors() {
-        return ImmutableSet.of(new Factor() {
+    public ImmutableList<Factor> getAggravationFactors() {
+        return ImmutableList.of(new Factor() {
                                    @Override
                                    public String getParagraph() {
                                        return "6(ee)";
@@ -78,8 +80,8 @@ public class MockLumbarSpondylosisSop implements SoP {
     }
 
     @Override
-    public ImmutableSet<Factor> getOnsetFactors() {
-        return ImmutableSet.of();
+    public ImmutableList<Factor> getOnsetFactors() {
+        return ImmutableList.of();
     }
 
     @Override
@@ -90,6 +92,11 @@ public class MockLumbarSpondylosisSop implements SoP {
     @Override
     public StandardOfProof getStandardOfProof() {
         return StandardOfProof.ReasonableHypothesis;
+    }
+
+    @Override
+    public ImmutableList<ICDCode> getICDCodes() {
+    return ImmutableList.of(new BasicICDCode("ICD-10-AM","M47.16"), new BasicICDCode("ICD-10-AM", "M47.17,"));
     }
 
 }

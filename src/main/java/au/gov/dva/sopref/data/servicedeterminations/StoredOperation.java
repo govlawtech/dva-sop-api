@@ -1,20 +1,17 @@
 package au.gov.dva.sopref.data.servicedeterminations;
 
-import au.gov.dva.sopref.interfaces.model.JsonSerializable;
 import au.gov.dva.sopref.interfaces.model.Operation;
-import au.gov.dva.sopref.interfaces.model.Service;
 import au.gov.dva.sopref.interfaces.model.ServiceType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import javax.annotation.Nonnull;
-import java.awt.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
-public class StoredOperation implements Operation, JsonSerializable {
+public class StoredOperation implements Operation {
 
     @Nonnull
     private final String name;
@@ -51,11 +48,6 @@ public class StoredOperation implements Operation, JsonSerializable {
     @Override
     public Optional<LocalDate> getEndDate() {
         return endDate;
-    }
-
-    @Override
-    public JsonNode toJson() {
-        return toJson(this);
     }
 
     private static class Labels {

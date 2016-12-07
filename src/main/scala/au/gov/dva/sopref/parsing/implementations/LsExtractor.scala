@@ -42,5 +42,8 @@ class LsExtractor extends SoPExtractor {
     individualsCodes.toList
   }
 
-
+  override def extractAggravationSection(plainTextSop: String): String = {
+    val aggravationSectionRegex = """Factors that apply only to material contribution or aggravation""".r
+    SoPExtractorUtilities.getSection(plainTextSop,aggravationSectionRegex)._2.mkString(" ")
+  }
 }
