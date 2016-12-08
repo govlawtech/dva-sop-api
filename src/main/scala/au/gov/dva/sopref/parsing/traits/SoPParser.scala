@@ -1,9 +1,16 @@
 package au.gov.dva.sopref.parsing.traits
 
-import au.gov.dva.sopref.interfaces.model.SoP
+import java.time.LocalDate
+
+import au.gov.dva.sopref.interfaces.model._
 
 trait SoPParser {
-  def parse(rawText : String) : SoP
+  def parseFactors(factorsSection : String) : (StandardOfProof, List[(String,String)])
+  def parseInstrumentNumber(citationSection : String) : InstrumentNumber
+  def parseDefinitions(definitionsSection : String) : List[DefinedTerm]
+  def parseDateOfEffect(dateOfEffectSection : String) : LocalDate
+  def parseStartAndEndAggravationParas(aggravationSection : String) : (String,String)
+  def parseCitation(citationSection : String) : String
 }
 
 

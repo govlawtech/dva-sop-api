@@ -1,10 +1,12 @@
 package au.gov.dva.sopref.data.sops;
 
+import au.gov.dva.sopref.exceptions.RepositoryError;
 import au.gov.dva.sopref.interfaces.model.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import javax.annotation.Nonnull;
@@ -15,9 +17,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StoredSop implements SoP, JsonSerializable {
+public class StoredSop implements SoP, HasSchemaVersion {
+
+
+    private static final Integer SCHEMA_VERSION = 1;
+
+    @Override
+    public Integer getSchemaVersion() {
+        return SCHEMA_VERSION;
+    }
 
     private static class Labels {
+        public static final String SCHEMA_VERSION_LABEL = "schemaVersion";
         public static final String REGISTER_ID = "registerId";
         public static final String INSTRUMENT_NUMBER = "instrumentNumber";
         public static final String CITATION = "citation";
@@ -30,17 +41,22 @@ public class StoredSop implements SoP, JsonSerializable {
         public static final String TERM = "term";
         public static final String DEFINITION = "definition";
         public static final String DEFINED_TERMS = "definedTerms";
+        public static final String ICD_CODES = "icdCodes";
+        public static final String ICD_CODE_VERSION = "version";
+        public static final String ICD_CODE = "code";
     }
 
     private final String registerId;
     private final InstrumentNumber instrumentNumber;
     private final String citation;
-    private final ImmutableSet<Factor> aggravationFactors;
-    private final ImmutableSet<Factor> onsetFactors;
+    private final ImmutableList<Factor> aggravationFactors;
+    private final ImmutableList<Factor> onsetFactors;
     private final LocalDate effectiveFromDate;
     private final StandardOfProof standardOfProof;
+    @Nonnull
+    private final ImmutableList<ICDCode> icdCodes;
 
-    public StoredSop(@Nonnull String registerId, @Nonnull InstrumentNumber instrumentNumber, @Nonnull String citation, @Nonnull ImmutableSet<Factor> onsetFactors, @Nonnull ImmutableSet<Factor> aggravationFactors, @Nonnull LocalDate effectiveFromDate, @Nonnull StandardOfProof standardOfProof) {
+    public StoredSop(@Nonnull String registerId, @Nonnull InstrumentNumber instrumentNumber, @Nonnull String citation, @Nonnull ImmutableList<Factor> onsetFactors, @Nonnull ImmutableList<Factor> aggravationFactors, @Nonnull LocalDate effectiveFromDate, @Nonnull StandardOfProof standardOfProof, @Nonnull ImmutableList<ICDCode> icdCodes) {
         this.registerId = registerId;
         this.instrumentNumber = instrumentNumber;
         this.citation = citation;
@@ -48,10 +64,17 @@ public class StoredSop implements SoP, JsonSerializable {
         this.aggravationFactors = aggravationFactors;
         this.effectiveFromDate = effectiveFromDate;
         this.standardOfProof = standardOfProof;
+        this.icdCodes = icdCodes;
     }
 
     public static SoP fromJson(JsonNode jsonNode)
     {
+        Integer schema = jsonNode.findValue(Labels.SCHEMA_VERSION_LABEL).asInt();
+        if (!schema.equals(SCHEMA_VERSION))
+        {
+            throw new RepositoryError(String.format("Json schema %d does not match expected value of %d", schema, SCHEMA_VERSION));
+        }
+
         return new StoredSop(
                 jsonNode.findValue(Labels.REGISTER_ID).asText(),
                 fromInstrumentNumberJsonValue(jsonNode.findValue(Labels.INSTRUMENT_NUMBER).asText()),
@@ -59,22 +82,18 @@ public class StoredSop implements SoP, JsonSerializable {
                 factorListFromJsonArray(jsonNode.findPath(Labels.ONSET_FACTORS)),
                 factorListFromJsonArray(jsonNode.findPath(Labels.AGGRAVATION_FACTORS)),
                 LocalDate.parse(jsonNode.findValue(Labels.EFFECTIVE_FROM).asText()),
-                fromStandardOfProofJsonValue(jsonNode.findValue(Labels.STANDARD_OF_PROOF).asText())
-
+                StandardOfProof.fromString(jsonNode.findValue(Labels.STANDARD_OF_PROOF).asText()),
+                icdCodeListFromJsonArray(jsonNode.findPath(Labels.ICD_CODES))
                 );
 
     }
 
-    @Override
-    public JsonNode toJson() {
-        return toJson(this);
-    }
 
-    private static ImmutableSet<Factor> factorListFromJsonArray(JsonNode jsonNode)
+    private static ImmutableList<Factor> factorListFromJsonArray(JsonNode jsonNode)
     {
         assert (jsonNode.isArray());
 
-        ImmutableSet<Factor> factors = ImmutableSet.copyOf(getChildrenOfArrayNode(jsonNode).stream().map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList()));
+        ImmutableList<Factor> factors = ImmutableList.copyOf(getChildrenOfArrayNode(jsonNode).stream().map(jsonNode1 -> factorFromJson(jsonNode1)).collect(Collectors.toList()));
 
         return factors;
     }
@@ -82,9 +101,8 @@ public class StoredSop implements SoP, JsonSerializable {
 
 
 
-
     @Override
-    public ImmutableSet<Factor> getAggravationFactors() {
+    public ImmutableList<Factor> getAggravationFactors() {
         return aggravationFactors;
     }
 
@@ -99,7 +117,7 @@ public class StoredSop implements SoP, JsonSerializable {
     }
 
     @Override
-    public ImmutableSet<Factor> getOnsetFactors() {
+    public ImmutableList<Factor> getOnsetFactors() {
         return onsetFactors;
     }
 
@@ -113,6 +131,11 @@ public class StoredSop implements SoP, JsonSerializable {
         return standardOfProof;
     }
 
+    @Override
+    public ImmutableList<ICDCode> getICDCodes() {
+        return icdCodes;
+    }
+
 
     @Override
     public String getRegisterId() {
@@ -123,7 +146,7 @@ public class StoredSop implements SoP, JsonSerializable {
 
     private static Factor factorFromJson(JsonNode jsonNode) {
 
-        ImmutableSet<JsonNode> definedTermNodes = getChildrenOfArrayNode(jsonNode.findPath(Labels.DEFINED_TERMS));
+        ImmutableList<JsonNode> definedTermNodes = getChildrenOfArrayNode(jsonNode.findPath(Labels.DEFINED_TERMS));
 
         ImmutableSet<DefinedTerm> definedTerms = ImmutableSet.copyOf(definedTermNodes.stream().map(n -> definedTermFromJson(n)).collect(Collectors.toList()));
         
@@ -139,7 +162,7 @@ public class StoredSop implements SoP, JsonSerializable {
         return new StoredDefinedTerm(jsonNode.findValue(Labels.TERM).asText(),jsonNode.findValue(Labels.DEFINITION).asText());
     }
 
-    private static ImmutableSet<JsonNode> getChildrenOfArrayNode(JsonNode jsonNode)
+    private static ImmutableList<JsonNode> getChildrenOfArrayNode(JsonNode jsonNode)
     {
         assert (jsonNode.isArray());
         List<JsonNode> children = new ArrayList<>();
@@ -149,19 +172,24 @@ public class StoredSop implements SoP, JsonSerializable {
             children.add(el);
         }
 
-        return ImmutableSet.copyOf(children);
-
+        return ImmutableList.copyOf(children);
     }
 
     public static JsonNode toJson(SoP sop)
     {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode rootNode = objectMapper.createObjectNode();
-               rootNode.put(Labels.REGISTER_ID,sop.getRegisterId());
+        rootNode.put(Labels.SCHEMA_VERSION_LABEL,SCHEMA_VERSION);
+        rootNode.put(Labels.REGISTER_ID,sop.getRegisterId());
         rootNode.put(Labels.INSTRUMENT_NUMBER, formatInstrumentNumber(sop.getInstrumentNumber()));
         rootNode.put(Labels.CITATION,sop.getCitation());
         rootNode.put(Labels.EFFECTIVE_FROM,sop.getEffectiveFromDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
-        rootNode.put(Labels.STANDARD_OF_PROOF,formatStandardOfProof(sop.getStandardOfProof()));
+        rootNode.put(Labels.STANDARD_OF_PROOF,sop.getStandardOfProof().toString());
+
+        ArrayNode icdCodesNode = rootNode.putArray(Labels.ICD_CODES);
+        for (ICDCode icdCode : sop.getICDCodes())
+            icdCodesNode.add(BasicICDCode.toJson(icdCode));
+
 
         ArrayNode onsetFactorsNode =  rootNode.putArray(Labels.ONSET_FACTORS);
         for (Factor factor : sop.getOnsetFactors())
@@ -174,25 +202,6 @@ public class StoredSop implements SoP, JsonSerializable {
         return rootNode;
     }
 
-
-    private static String formatStandardOfProof(StandardOfProof standardOfProof)
-    {
-        switch (standardOfProof){
-            case BalanceOfProbabilities: return "BoP";
-            case ReasonableHypothesis: return "RH";
-            default: throw new IllegalArgumentException(String.format("Unrecognised standard of proof: %s", standardOfProof));
-        }
-
-    }
-
-    private static StandardOfProof fromStandardOfProofJsonValue(String value)
-    {
-        if (value.contentEquals("RH"))
-            return StandardOfProof.ReasonableHypothesis;
-        if (value.contentEquals("BoP"))
-            return StandardOfProof.BalanceOfProbabilities;
-        throw new IllegalArgumentException(String.format("Unrecognised standard of proof: %s", value));
-    }
 
 
     private static JsonNode toJson(Factor factor)
@@ -237,5 +246,22 @@ public class StoredSop implements SoP, JsonSerializable {
             }
         };
     }
+
+    private static ICDCode fromIcdCodeJsonObject(JsonNode icdCode)
+    {
+         return new BasicICDCode(icdCode.findValue(Labels.ICD_CODE_VERSION).asText(),
+                 icdCode.findValue(Labels.ICD_CODE).asText());
+    }
+
+    private static ImmutableList<ICDCode> icdCodeListFromJsonArray(JsonNode jsonNode)
+    {
+        assert (jsonNode.isArray());
+
+        ImmutableList<ICDCode> icdCodes = ImmutableList.copyOf(getChildrenOfArrayNode(jsonNode).stream().map(jsonNode1 -> fromIcdCodeJsonObject(jsonNode1)).collect(Collectors.toList()));
+
+        return icdCodes;
+    }
+
+
 }
 

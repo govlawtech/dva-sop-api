@@ -7,7 +7,7 @@ import scala.util.matching.Regex
 object SoPExtractorUtilities {
 
 
-
+  // todo: can make a simpler recursive version of this that extracts all sections in one pass, as we do for definitions
   def getSection(clensedSopText : String, paragraphLineRegex : Regex) : (Int,List[String]) = {
 
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
