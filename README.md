@@ -37,9 +37,9 @@ Azure App Service Application Settings:
 
 These environment variables need to be set for each deployment slot.
 
-| Envorinment Variable Name | Value | 
-|---------------------------|-------|
-| AZURE_STORAGE_CONNECTION_STRING | The connection string including account name and key. | 
+| Envorinment Variable Name | Value | Example |
+|---------------------------|-------|---------|
+| AZURE_STORAGE_CONNECTION_STRING | The connection string including account name and key. | DefaultEndpointsProtocol=https;AccountName=myAccount;AccountKey=myKey; |
 
 # Deployment Instructions
 
