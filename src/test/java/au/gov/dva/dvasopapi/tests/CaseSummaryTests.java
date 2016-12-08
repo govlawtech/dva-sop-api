@@ -16,14 +16,14 @@ import java.util.concurrent.ExecutionException;
 public class CaseSummaryTests {
 
     @Test
-    public void ResultNotEmpty() throws ExecutionException, InterruptedException {
+    public void resultNotEmpty() throws ExecutionException, InterruptedException {
         CaseSummaryModel testData = new CaseSummaryModelMock();
         byte[] result = CaseSummary.createCaseSummary(testData).get();
         Assert.assertTrue(result.length > 0);
     }
 
     @Test
-    public void ResultSerialisesToWordDoc() throws ExecutionException,
+    public void resultSerialisesToWordDoc() throws ExecutionException,
             InterruptedException, IOException, URISyntaxException {
 
         CaseSummaryModel testData = new CaseSummaryModelMock();
