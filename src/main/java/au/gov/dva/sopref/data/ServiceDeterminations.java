@@ -63,16 +63,8 @@ public class ServiceDeterminations {
                                 opName = "NNMEOAL";
                             }
 
-//                            System.out.print(row.getCell(0).getText());
-//                            System.out.print(" ");
-//                            System.out.print(opName);
-//                            System.out.print(" ");
-//                            System.out.print(row.getCell(4).getText());
-//                            System.out.println();
-
-                            // Replace horizontal white space with space to make parsing easier
+                            // Replace horizontal white space with space to make parsing dates easier
                             String operationPeriod = row.getCell(4).getText().replaceAll("\\h", " ");
-
                             Pattern periodPattern = Pattern.compile("\\d{1,3}\\h[a-zA-Z]+\\h\\d{4}");
                             matcher = periodPattern.matcher(operationPeriod);
 
