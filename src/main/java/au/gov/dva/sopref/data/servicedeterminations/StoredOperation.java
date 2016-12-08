@@ -7,6 +7,7 @@ import au.gov.dva.sopref.interfaces.model.ServiceType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.google.common.base.Objects;
 
 import javax.annotation.Nonnull;
 import java.awt.*;
@@ -84,5 +85,21 @@ public class StoredOperation implements Operation, JsonSerializable {
                 jsonNode.has(Labels.END_DATE) ? Optional.of(LocalDate.parse(jsonNode.findValue(Labels.END_DATE).asText())) : Optional.empty(),
                 ServiceType.valueOf(jsonNode.findValue(Labels.TYPE).asText())
         );
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        StoredOperation that = (StoredOperation) o;
+        return Objects.equal(this.name, that.name) &&
+                Objects.equal(this.startDate, that.startDate) &&
+                Objects.equal(this.endDate, that.endDate) &&
+                this.serviceType == that.serviceType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(this.name, this.startDate, this.endDate, this.serviceType);
     }
 }
