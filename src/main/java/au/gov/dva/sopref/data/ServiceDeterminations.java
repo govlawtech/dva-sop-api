@@ -49,7 +49,7 @@ public class ServiceDeterminations {
 
                 // First cell in the first row indicates if it's the right table
                 XWPFTableCell firstCell = table.getRow(0).getCell(0);
-                String firstCellText = firstCell.getText().toLowerCase();
+                String firstCellText = firstCell.getText().toLowerCase(Locale.ENGLISH);
 
                 if ((firstCellText.equals(nonWarlike) || (firstCellText.equals(warlike)))) {
 
