@@ -33,6 +33,14 @@ Azure App Service Application Settings:
 * No handler mappings in Azure management interface
 * Virtual Applications and Directories: '/','site\wwwroot',Application.
 
+## Required Environment Variable Settings
+
+These environment variables need to be set for each deployment slot.
+
+| Envorinment Variable Name | Value | 
+|---------------------------|-------|
+| AZURE_STORAGE_CONNECTION_STRING | The connection string including account name and key. | 
+
 # Deployment Instructions
 
 To deploy to the devtest and staging environments, deploy either via FTP or source control as described below.  
