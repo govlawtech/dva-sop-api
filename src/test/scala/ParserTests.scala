@@ -1,8 +1,10 @@
 
-import au.gov.dva.sopref.interfaces.model.StandardOfProof
+import au.gov.dva.dvasopapi.tests.TestUtils
+import au.gov.dva.sopref.data.sops.StoredSop
+import au.gov.dva.sopref.interfaces.model.{SoP, StandardOfProof}
 import au.gov.dva.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopref.parsing._
-import au.gov.dva.sopref.parsing.implementations.{DefinitionsParsers, GenericClenser, LsExtractor, LsParser}
+import au.gov.dva.sopref.parsing.implementations._
 import com.google.common.io.Resources
 import org.scalatest.{FlatSpec, FunSuite}
 import org.junit.runner.RunWith
@@ -10,13 +12,6 @@ import org.scalatest.junit.JUnitRunner
 
 import scala.io.Source
 
-@RunWith(classOf[JUnitRunner])
-class Tests extends FunSuite {
-  test("example test") {
-     val underTest = true;
-    assert(underTest)
-  }
-}
 
 @RunWith(classOf[JUnitRunner])
 class ParserTests extends FunSuite {
@@ -78,27 +73,6 @@ class ParserTests extends FunSuite {
     System.out.print(result)
   }
 
-  test("Parse several factors") {
-    val testinput = "(a) being a prisoner of war before the clinical onset of lumbar spondylosis; or (b) having inflammatory joint disease in the lumbar spine before the clinical onset of lumbar spondylosis; or (c) having an infection of the affected joint as specified at least one year before the clinical onset of lumbar spondylosis; or (d) having an intra-articular fracture of the lumbar spine at least one year before the clinical onset of lumbar spondylosis; or (e) having a specified spinal condition affecting the lumbar spine for at least the one year before the clinical onset of lumbar spondylosis; or (f) having leg length inequality for at least the two years before the clinical onset of lumbar spondylosis; or (g) having a depositional joint disease in the lumbar spine before the clinical onset of lumbar spondylosis; or ";
-
-    val underTest =  LsParser
-    val result = underTest.parseAll(underTest.factorListParser, testinput)
-    System.out.print(result)
-    assert(result.successful && result.get.size == 7)
-  }
-
-  test("Parse head and factors") {
-    val testinput = "The factor that must as a minimum exist before it can be said that a reasonable hypothesis has been raised connecting lumbar spondylosis or death from lumbar spondylosis with the circumstances of a person’s relevant service is: (a) being a prisoner of war before the clinical onset of lumbar spondylosis; or (b) having inflammatory joint disease in the lumbar spine before the clinical onset of lumbar spondylosis; or (c) having an infection of the affected joint as specified at least one year before the clinical onset of lumbar spondylosis; or "
-
-    val underTest = LsParser
-    val result = underTest.parseAll(underTest.headAndFactorsParser, testinput)
-
-    System.out.print(result)
-    assert(result.successful && result.get._2.size == 3)
-
-  }
-
-
 
   test("Parse all factors from Lumbar Spondylosis"){
     val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsExtractedFactorsText.txt"),"UTF-8").mkString;
@@ -135,7 +109,7 @@ class ParserTests extends FunSuite {
     val testInput = "\"trauma to the lumbar spine\" means a discrete event involving the\napplication of significant physical force, including G force, to the lumbar spine\nthat causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the lumbar spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the lumbar spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the lumbar spine; or\n(c) surgery to the lumbar spine."
 
     val result = DefinitionsParsers.parseSingleDefinition(testInput)
-    assert(result._1 == "trauma to the lumbar spine" && result._2.startsWith("means a ") && result._2.endsWith("lumbar spine."))
+    assert(result._1 == "trauma to the lumbar spine" && result._2.startsWith("means a ") && result._2.endsWith("lumbar spine"))
   }
 
   test("Parse LS definitions section") {
@@ -148,6 +122,43 @@ class ParserTests extends FunSuite {
     val dateOfEffectSection = "This Instrument takes effect from 2 July 2014."
     val result = LsParser.parseDateOfEffect(dateOfEffectSection)
     assert(result.getYear == 2014)
+  }
+
+  test("Parse entire LS SoP") {
+      val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt"),"UTF-8").mkString;
+      val result: SoP = LsSoPFactory.create("F2014L00933",testInput)
+      val asJson = StoredSop.toJson(result)
+      System.out.print(TestUtils.prettyPrint(asJson))
+      assert(result != null)
+  }
+
+  test("Extract aggravation section from LS SoP")
+  {
+
+    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt"),"UTF-8").mkString;
+    val undertest = new LsExtractor
+    val result =undertest.extractAggravationSection(testInput)
+    assert(result == "Paragraphs 6(q) to 6(ff) applies only to material contribution to, or aggravation of, lumbar spondylosis where the person’s lumbar spondylosis was suffered or contracted before or during (but not arising out of) the person’s relevant service.")
+  }
+
+
+  test("Parse start and end of aggravation paras for LS") {
+    val testInput = "Paragraphs 6(q) to 6(ff) applies only to material contribution to, or aggravation of, lumbar spondylosis where the person’s lumbar spondylosis was suffered or contracted before or during (but not arising out of) the person’s relevant service."
+
+    val result = LsParser.parseStartAndEndAggravationParas(testInput)
+    assert(result._1 == "(q)" && result._2 == "(ff)")
+  }
+
+  test("Divide factors into onset and aggravation") {
+    val testData = List("(a)","(b)","(c)","(d)","(e)")
+    val result = LsSoPFactory.splitFactors(testData,"(b)","(d)")
+    assert(result == (List("(a)","(e)"),List("(b)","(c)","(d)")));
+  }
+
+  test("Get citation from citation section") {
+    val input = "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014."
+    val result = LsParser.parseCitation(input)
+    assert(result == "Statement of Principles concerning lumbar spondylosis No. 62 of 2014" )
   }
 }
 

@@ -27,11 +27,23 @@ Azure App Service Application Settings:
 
 | Environment | DEP_ENV | Deployment Slot | Git Branch |
 |-------------|---------|-----------------|------------|
-| development | devtest | dvasopapi-devtest| devtest   |
+| devtest | devtest | dvasopapi-devtest| devtest   |
 | staging     | prod    | dvasopapi-staging| master    |
 | production  | prod    | dvasopapi       | master     |
+
+
+* If the JVM property ```DEV_ENV``` is set to 'devtestlocal', this indicates the app is running on a local development machine.  This means the local Azure store emulator is used.
+
 * No handler mappings in Azure management interface
 * Virtual Applications and Directories: '/','site\wwwroot',Application.
+
+## Required Environment Variable Settings
+
+These environment variables need to be set for each deployment slot.
+
+| Envorinment Variable Name | Value | Example |
+|---------------------------|-------|---------|
+| AZURE_STORAGE_CONNECTION_STRING | The connection string including account name and key. | DefaultEndpointsProtocol=https;AccountName=myAccount;AccountKey=myKey; |
 
 # Deployment Instructions
 
@@ -63,3 +75,7 @@ To deploy to production, swap the Azure deployment slots via the Azure managemen
 [Case summary template](src/main/resources/docs/Case Summary Template.docx)
 
 [Generated case summary example] (src/test/resources/Case Summary.docx)
+
+# Integration Notes
+The Operation Name for operation with description 'ADF contribution to the NATO no-fly-zone and maritime enforcement operation against Libya' is ```NNMEOAL```.  (The Service Determination omits a name, but we want one to identify the operation.)
+

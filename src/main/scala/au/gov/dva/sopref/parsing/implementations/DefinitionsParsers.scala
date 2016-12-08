@@ -33,7 +33,7 @@ object DefinitionsParsers {
     if (m.isEmpty)
       throw new SopParserError("Cannot find the defined word in this definition: " + definition)
     val toTrim = m.get.matched.size;
-    var remainder = definition.drop(toTrim).trim
+    var remainder = definition.drop(toTrim).trim.stripSuffix(";").stripSuffix(".")
     var word = m.get.matched.drop(1).dropRight(1)
     return (word,remainder)
   }

@@ -1,0 +1,226 @@
+{
+  "schemaVersion" : 1.0,
+  "registerId" : "F2014L00933",
+  "instrumentNumber" : "62/2014",
+  "citation" : "Statement of Principles concerning lumbar spondylosis No. 62 of 2014",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M47.16"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.17"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.26"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.27"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.86"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.87"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.96"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.97"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M51.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being a prisoner of war before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having inflammatory joint disease in the lumbar spine before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "inflammatory joint disease",
+      "definition" : "means rheumatoid arthritis, reactive arthritis,\npsoriatic arthropathy, ankylosing spondylitis, or arthritis associated with\nCrohn’s disease or ulcerative colitis"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having an infection of the affected joint as specified at least one year before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "an infection of the affected joint as specified",
+      "definition" : "means bacterial or fungal\ninfection of the affected joint in the lumbar spine resulting in inflammation\nwithin that joint"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an intra-articular fracture of the lumbar spine at least one year before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "an intra-articular fracture",
+      "definition" : "means a fracture involving any articular surface\nof the affected joint"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a specified spinal condition affecting the lumbar spine for at least the one year before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "a specified spinal condition",
+      "definition" : "means:\n(a) a deformity of a joint of a vertebra;\n(b) a deformity of a vertebra;\n(c) a kyphotic abnormality;\n(d) a lordotic abnormality;\n(e) necrosis of bone;\n(f) retrospondylolisthesis;\n(g) scoliosis; or\n(h) spondylolisthesis"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having leg length inequality for at least the two years before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "leg length inequality",
+      "definition" : "means a clinically significant disparity of at least\nthree percent or three centimetres in leg length, whichever is the lesser, where\nthe inequality remains uncorrected and involves the limb in daily use"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a depositional joint disease in the lumbar spine before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "a depositional joint disease",
+      "definition" : "means gout, calcium pyrophosphate dihydrate\ndeposition disease (also known as pseudogout), haemochromatosis, Wilson’s\ndisease or alkaptonuria (also known as ochronosis)"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having trauma to the lumbar spine at least one year before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "trauma to the lumbar spine",
+      "definition" : "means a discrete event involving the\napplication of significant physical force, including G force, to the lumbar spine\nthat causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the lumbar spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the lumbar spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the lumbar spine; or\n(c) surgery to the lumbar spine"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a lumbar intervertebral disc prolapse before the clinical onset of lumbar spondylosis at the level of the intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "lifting loads of at least 25 kilograms while bearing weight through the lumbar spine to a cumulative total of at least 120 000 kilograms within any ten year period before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "lifting loads",
+      "definition" : "means manually raising an object"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "carrying loads of at least 25 kilograms while bearing weight through the lumbar spine to a cumulative total of at least 3 800 hours within any ten year period before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being obese for at least ten years before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\nThe BMI = W/H\n2\n and where:\nW is the person’s weight in kilograms; and\nH is the person’s height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "flying in a powered aircraft as operational aircrew, for a cumulative total of at least 1 000 hours within the 25 years before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "extreme forward flexion of the lumbar spine for a cumulative total of at least 1 500 hours before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "extreme forward flexion of the lumbar spine",
+      "definition" : "means being in a posture\ninvolving greater than 90 degrees of trunk flexion"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having acromegaly involving the lumbar spine before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having Paget's disease of bone involving the lumbar spine before the clinical onset of lumbar spondylosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(q)",
+    "text" : "having inflammatory joint disease in the lumbar spine before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "inflammatory joint disease",
+      "definition" : "means rheumatoid arthritis, reactive arthritis,\npsoriatic arthropathy, ankylosing spondylitis, or arthritis associated with\nCrohn’s disease or ulcerative colitis"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having an infection of the affected joint as specified at least one year before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "an infection of the affected joint as specified",
+      "definition" : "means bacterial or fungal\ninfection of the affected joint in the lumbar spine resulting in inflammation\nwithin that joint"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having an intra-articular fracture of the lumbar spine at least one year before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "an intra-articular fracture",
+      "definition" : "means a fracture involving any articular surface\nof the affected joint"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a specified spinal condition affecting the lumbar spine for at least the one year before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "a specified spinal condition",
+      "definition" : "means:\n(a) a deformity of a joint of a vertebra;\n(b) a deformity of a vertebra;\n(c) a kyphotic abnormality;\n(d) a lordotic abnormality;\n(e) necrosis of bone;\n(f) retrospondylolisthesis;\n(g) scoliosis; or\n(h) spondylolisthesis"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having leg length inequality for at least the two years before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "leg length inequality",
+      "definition" : "means a clinically significant disparity of at least\nthree percent or three centimetres in leg length, whichever is the lesser, where\nthe inequality remains uncorrected and involves the limb in daily use"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having a depositional joint disease in the lumbar spine before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "a depositional joint disease",
+      "definition" : "means gout, calcium pyrophosphate dihydrate\ndeposition disease (also known as pseudogout), haemochromatosis, Wilson’s\ndisease or alkaptonuria (also known as ochronosis)"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having trauma to the lumbar spine at least one year before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "trauma to the lumbar spine",
+      "definition" : "means a discrete event involving the\napplication of significant physical force, including G force, to the lumbar spine\nthat causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the lumbar spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the lumbar spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the lumbar spine; or\n(c) surgery to the lumbar spine"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having a lumbar intervertebral disc prolapse before the clinical worsening of lumbar spondylosis at the level of the intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "lifting loads of at least 25 kilograms while bearing weight through the lumbar spine to a cumulative total of at least 120 000 kilograms within any ten year period before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "lifting loads",
+      "definition" : "means manually raising an object"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "carrying loads of at least 25 kilograms while bearing weight through the lumbar spine to a cumulative total of at least 3 800 hours within any ten year period before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "being obese for at least ten years before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\nThe BMI = W/H\n2\n and where:\nW is the person’s weight in kilograms; and\nH is the person’s height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "flying in a powered aircraft as operational aircrew, for a cumulative total of at least 1 000 hours within the 25 years before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "extreme forward flexion of the lumbar spine for a cumulative total of at least 1 500 hours before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ {
+      "term" : "extreme forward flexion of the lumbar spine",
+      "definition" : "means being in a posture\ninvolving greater than 90 degrees of trunk flexion"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having acromegaly involving the lumbar spine before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having Paget's disease of bone involving the lumbar spine before the clinical worsening of lumbar spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "inability to obtain appropriate clinical management for lumbar spondylosis",
+    "definedTerms" : [ ]
+  } ]
+}
