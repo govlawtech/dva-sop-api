@@ -1,6 +1,7 @@
 package au.gov.dva.sopref.data;
 
 import au.gov.dva.sopref.data.servicedeterminations.StoredOperation;
+import au.gov.dva.sopref.exceptions.OperationParserError;
 import au.gov.dva.sopref.interfaces.model.Operation;
 import au.gov.dva.sopref.interfaces.model.ServiceType;
 import com.google.common.collect.ImmutableList;
@@ -95,8 +96,7 @@ public class ServiceDeterminations {
             }
 
         } catch (IOException e) {
-            // TODO: wrap exception
-            System.out.println(e);
+            throw new OperationParserError(e);
         }
 
         return ImmutableList.copyOf(operations);
