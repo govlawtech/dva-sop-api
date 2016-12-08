@@ -32,9 +32,10 @@ public class CaseSummaryTests {
         Path outputPath = getOutputPath();
         File outputFile = outputPath.toFile();
 
-        FileOutputStream outputStream = new FileOutputStream(outputFile);
-        outputStream.write(result);
-        outputStream.close();
+        try (FileOutputStream outputStream = new FileOutputStream(outputFile);) {
+            outputStream.write(result);
+            outputStream.close();
+        }
 
         Assert.assertTrue(outputFile.exists());
     }
