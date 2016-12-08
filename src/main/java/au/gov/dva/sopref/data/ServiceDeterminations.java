@@ -25,7 +25,22 @@ public class ServiceDeterminations {
 
         final String nonWarlike = "nonwarlike service";
         final String warlike = "warlike service";
+        String operationPeriod = "";
+
+        Pattern itemPattern = Pattern.compile("\\d+.*");
+        Pattern periodPattern = Pattern.compile("\\d{1,3}\\h[a-zA-Z]+\\h\\d{4}");
+        Matcher matcher;
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy");
+        LocalDate date;
+        List<LocalDate> datesFound = new ArrayList<>();
+
         List<Operation> operations = new ArrayList<>();
+        Operation operation;
+        String opName;
+        LocalDate opStartDate;
+        Optional<LocalDate> opEndDate;
+        ServiceType opServiceType;
 
         InputStream determinationStream = new ByteArrayInputStream(determinationDocx);
         try (XWPFDocument determinationDoc = new XWPFDocument(determinationStream);) {
@@ -37,8 +52,6 @@ public class ServiceDeterminations {
                 String firstCellText = firstCell.getText().toLowerCase();
 
                 if ((firstCellText.equals(nonWarlike) || (firstCellText.equals(warlike)))) {
-
-                    ServiceType opServiceType;
 
                     switch (firstCellText) {
                         case nonWarlike:
@@ -52,12 +65,14 @@ public class ServiceDeterminations {
                     }
 
                     for (XWPFTableRow row : table.getRows()) {
+                        // Reset dates found
+                        datesFound.clear();
+
                         // Only interested in rows where the first cell is a number
-                        Pattern itemPattern = Pattern.compile("\\d+.*");
-                        Matcher matcher = itemPattern.matcher(row.getCell(0).getText());
+                        matcher = itemPattern.matcher(row.getCell(0).getText());
 
                         if (matcher.matches()) {
-                            String opName = row.getCell(1).getText();
+                            opName = row.getCell(1).getText();
 
                             // Handle case where operation name isn't present
                             if (opName.isEmpty()) {
@@ -65,20 +80,16 @@ public class ServiceDeterminations {
                             }
 
                             // Replace horizontal white space with space to make parsing dates easier
-                            String operationPeriod = row.getCell(4).getText().replaceAll("\\h", " ");
-                            Pattern periodPattern = Pattern.compile("\\d{1,3}\\h[a-zA-Z]+\\h\\d{4}");
+                            operationPeriod = row.getCell(4).getText().replaceAll("\\h", " ");
                             matcher = periodPattern.matcher(operationPeriod);
 
-                            List<LocalDate> datesFound = new ArrayList<>();
-
                             while (matcher.find()) {
-                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy");
-                                LocalDate date = LocalDate.parse(matcher.group(), formatter);
+                                date = LocalDate.parse(matcher.group(), formatter);
                                 datesFound.add(date);
                             }
 
-                            LocalDate opStartDate = LocalDate.MIN;
-                            Optional<LocalDate> opEndDate = Optional.empty();
+                            opStartDate = LocalDate.MIN;
+                            opEndDate = Optional.empty();
 
                             if (!datesFound.isEmpty()) {
                                 opStartDate = datesFound.get(0);
@@ -88,7 +99,7 @@ public class ServiceDeterminations {
                                 }
                             }
 
-                            Operation operation = new StoredOperation(opName, opStartDate, opEndDate, opServiceType);
+                            operation = new StoredOperation(opName, opStartDate, opEndDate, opServiceType);
                             operations.add(operation);
                         }
                     }
