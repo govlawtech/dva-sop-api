@@ -32,7 +32,7 @@ Azure App Service Application Settings:
 | production  | prod    | dvasopapi       | master     |
 
 
-* If DEV_ENV is set to 'devtestlocal', this indicates the app is running on a local development machine.  This means the local Azure store emulator is used.
+* If the JVM property ```DEV_ENV``` is set to 'devtestlocal', this indicates the app is running on a local development machine.  This means the local Azure store emulator is used.
 
 * No handler mappings in Azure management interface
 * Virtual Applications and Directories: '/','site\wwwroot',Application.
