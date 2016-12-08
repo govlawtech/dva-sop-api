@@ -71,7 +71,7 @@ public class ServiceDeterminations {
                             List<LocalDate> datesFound = new ArrayList<>();
 
                             while (matcher.find()) {
-                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy", Locale.ENGLISH);
+                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy");
                                 LocalDate date = LocalDate.parse(matcher.group(), formatter);
                                 datesFound.add(date);
                             }
