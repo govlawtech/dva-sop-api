@@ -1,16 +1,35 @@
 package au.gov.dva;
 
 
+import au.gov.dva.sopref.exceptions.ConfigurationError;
+
 public class AppSettings {
+
+    private static final String envVarName = "DEP_ENV";
 
     public static Environment getEnvironment() {
 
-        return Environment.devtest;
+        String envVarValue = System.getenv(envVarName);
+        if (envVarValue == null)
+        {
+            throw new ConfigurationError(String.format("Environment variable %smust have value.", envVarName));
+        }
+        switch (envVarValue)
+        {
+            case "devtest" : return Environment.devtest;
+            case "devtestlocal" : return Environment.devtestlocal;
+            case "prod" : return Environment.prod;
+            default: throw new ConfigurationError(String.format("Value for environment variable %smust be 'devtest','devtestlocal' or 'prod'", envVarValue));
+
+        }
+
     }
 
     public static class AzureStorage {
 
         // todo: get production values from environment variables
+
+
 
         public static class DevTest {
             // For use with Azure storage emulator.
@@ -20,9 +39,10 @@ public class AppSettings {
         }
     }
 
-    public static enum Environment {
+    public enum Environment {
         prod,
-        devtest
+        devtest,
+        devtestlocal
     }
 }
 

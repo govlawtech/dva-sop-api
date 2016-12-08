@@ -20,10 +20,10 @@ import java.util.stream.Collectors;
 public class StoredSop implements SoP, HasSchemaVersion {
 
 
-    private static final Double SCHEMA_VERSION = 1.0;
+    private static final Integer SCHEMA_VERSION = 1;
 
     @Override
-    public Double getSchemaVersion() {
+    public Integer getSchemaVersion() {
         return SCHEMA_VERSION;
     }
 
@@ -69,8 +69,8 @@ public class StoredSop implements SoP, HasSchemaVersion {
 
     public static SoP fromJson(JsonNode jsonNode)
     {
-        Double schema = jsonNode.findValue(Labels.SCHEMA_VERSION_LABEL).asDouble();
-        if (schema.doubleValue() != SCHEMA_VERSION)
+        Integer schema = jsonNode.findValue(Labels.SCHEMA_VERSION_LABEL).asInt();
+        if (!schema.equals(SCHEMA_VERSION))
         {
             throw new RepositoryError(String.format("Json schema %d does not match expected value of %d", schema, SCHEMA_VERSION));
         }
