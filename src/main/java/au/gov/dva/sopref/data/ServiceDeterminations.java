@@ -53,7 +53,7 @@ public class ServiceDeterminations {
 
                     for (XWPFTableRow row : table.getRows()) {
                         // Only interested in rows where the first cell is a number
-                        Pattern itemPattern = Pattern.compile("\\d+");
+                        Pattern itemPattern = Pattern.compile("\\d+.*");
                         Matcher matcher = itemPattern.matcher(row.getCell(0).getText());
 
                         if (matcher.matches()) {
