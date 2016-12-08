@@ -28,7 +28,8 @@ public class ServiceDeterminations {
 
         Pattern itemPattern = Pattern.compile("\\d+.*");
         Pattern periodPattern = Pattern.compile("\\d{1,3}\\h[a-zA-Z]+\\h\\d{4}");
-        Matcher matcher;
+        Matcher rowMatcher;
+        Matcher periodMatcher;
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy");
         LocalDate date;
@@ -68,9 +69,9 @@ public class ServiceDeterminations {
                         datesFound.clear();
 
                         // Only interested in rows where the first cell is a number
-                        matcher = itemPattern.matcher(row.getCell(0).getText());
+                        rowMatcher = itemPattern.matcher(row.getCell(0).getText());
 
-                        if (matcher.matches()) {
+                        if (rowMatcher.matches()) {
                             opName = row.getCell(1).getText();
 
                             // Handle case where operation name isn't present
@@ -80,10 +81,10 @@ public class ServiceDeterminations {
 
                             // Replace horizontal white space with space to make parsing dates easier
                             operationPeriod = row.getCell(4).getText().replaceAll("\\h", " ");
-                            matcher = periodPattern.matcher(operationPeriod);
+                            periodMatcher = periodPattern.matcher(operationPeriod);
 
-                            while (matcher.find()) {
-                                date = LocalDate.parse(matcher.group(), formatter);
+                            while (periodMatcher.find()) {
+                                date = LocalDate.parse(periodMatcher.group(), formatter);
                                 datesFound.add(date);
                             }
 
