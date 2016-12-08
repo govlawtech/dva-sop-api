@@ -22,7 +22,6 @@ import java.util.regex.Pattern;
 public class ServiceDeterminations {
 
     public static ImmutableList<Operation> extractOperations(byte[] determinationDocx) {
-
         final String nonWarlike = "nonwarlike service";
         final String warlike = "warlike service";
         String operationPeriod = "";
@@ -105,7 +104,6 @@ public class ServiceDeterminations {
                     }
                 }
             }
-
         } catch (IOException e) {
             throw new OperationParserError(e);
         }
