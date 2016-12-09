@@ -76,6 +76,10 @@ To deploy to production, swap the Azure deployment slots via the Azure managemen
 
 [Generated case summary example] (src/test/resources/Case Summary.docx)
 
-# Integration Notes
-The Operation Name for operation with description 'ADF contribution to the NATO no-fly-zone and maritime enforcement operation against Libya' is ```NNMEOAL```.  (The Service Determination omits a name, but we want one to identify the operation.)
+# Notes on Operation Names
+
+Operation names are expected to be exactly as they appear in the relevant Service Determinations.
+
+* Note the em-dash in the name "Enduring Freedom&#151;Afghanistan"
+* The Operation Name for operation with description 'ADF contribution to the NATO no-fly-zone and maritime enforcement operation against Libya' is ```NNMEOAL```.  (The Service Determination omits a name, so we made one up to identify the operation.)
 
