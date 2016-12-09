@@ -6,7 +6,7 @@ import au.gov.dva.sopref.interfaces.model._
 import com.google.common.collect.{ImmutableList, ImmutableSet}
 
 class ParsedSop(registerId: String, instrumentNumber: InstrumentNumber, citation: String, aggravationFactors: List[Factor],
-                onsetFactors: List[Factor], effectiveFromDate : LocalDate, standardOfProof: StandardOfProof, icdCodes :  List[ICDCode]) extends SoP
+                onsetFactors: List[Factor], effectiveFromDate : LocalDate, standardOfProof: StandardOfProof, icdCodes :  List[ICDCode], conditionName : String) extends SoP
 {
 
   override def getRegisterId: String = registerId
@@ -23,5 +23,7 @@ class ParsedSop(registerId: String, instrumentNumber: InstrumentNumber, citation
 
   override def getStandardOfProof: StandardOfProof = standardOfProof
 
-  override def getICDCodes: ImmutableList[ICDCode] = ImmutableList.copyOf(icdCodes.toArray)
+  override def getICDCodes: ImmutableSet[ICDCode] = ImmutableSet.copyOf(icdCodes.toArray)
+
+  override def getConditionName: String = conditionName
 }

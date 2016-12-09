@@ -2,7 +2,6 @@ package au.gov.dva.sopref.exceptions;
 
 public class LegislationRegisterError extends DvaSopApiError {
 
-
     public LegislationRegisterError(String msg, Throwable e) {
         super(msg, e);
     }
@@ -15,10 +14,3 @@ public class LegislationRegisterError extends DvaSopApiError {
         super(e);
     }
 }
-
-
-
-
-
-
-

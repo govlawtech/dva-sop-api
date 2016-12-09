@@ -14,5 +14,6 @@ public interface SoP {
     ImmutableList<Factor> getOnsetFactors();
     LocalDate getEffectiveFromDate();
     StandardOfProof getStandardOfProof();
-    ImmutableList<ICDCode> getICDCodes();
+    ImmutableSet<ICDCode> getICDCodes();
+    String getConditionName();
 }

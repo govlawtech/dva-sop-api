@@ -32,6 +32,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
         public static final String REGISTER_ID = "registerId";
         public static final String INSTRUMENT_NUMBER = "instrumentNumber";
         public static final String CITATION = "citation";
+        public static final String CONDITION_NAME = "conditionName";
         public static final String EFFECTIVE_FROM = "effectiveFrom";
         public static final String STANDARD_OF_PROOF = "standardOfProof";
         public static final String ONSET_FACTORS = "onsetFactors";
@@ -54,9 +55,11 @@ public class StoredSop implements SoP, HasSchemaVersion {
     private final LocalDate effectiveFromDate;
     private final StandardOfProof standardOfProof;
     @Nonnull
-    private final ImmutableList<ICDCode> icdCodes;
+    private final ImmutableSet<ICDCode> icdCodes;
+    @Nonnull
+    private final String conditionName;
 
-    public StoredSop(@Nonnull String registerId, @Nonnull InstrumentNumber instrumentNumber, @Nonnull String citation, @Nonnull ImmutableList<Factor> onsetFactors, @Nonnull ImmutableList<Factor> aggravationFactors, @Nonnull LocalDate effectiveFromDate, @Nonnull StandardOfProof standardOfProof, @Nonnull ImmutableList<ICDCode> icdCodes) {
+    public StoredSop(@Nonnull String registerId, @Nonnull InstrumentNumber instrumentNumber, @Nonnull String citation, @Nonnull ImmutableList<Factor> onsetFactors, @Nonnull ImmutableList<Factor> aggravationFactors, @Nonnull LocalDate effectiveFromDate, @Nonnull StandardOfProof standardOfProof, @Nonnull ImmutableSet<ICDCode> icdCodes, @Nonnull String conditionName) {
         this.registerId = registerId;
         this.instrumentNumber = instrumentNumber;
         this.citation = citation;
@@ -65,6 +68,8 @@ public class StoredSop implements SoP, HasSchemaVersion {
         this.effectiveFromDate = effectiveFromDate;
         this.standardOfProof = standardOfProof;
         this.icdCodes = icdCodes;
+
+        this.conditionName = conditionName;
     }
 
     public static SoP fromJson(JsonNode jsonNode)
@@ -83,7 +88,8 @@ public class StoredSop implements SoP, HasSchemaVersion {
                 factorListFromJsonArray(jsonNode.findPath(Labels.AGGRAVATION_FACTORS)),
                 LocalDate.parse(jsonNode.findValue(Labels.EFFECTIVE_FROM).asText()),
                 StandardOfProof.fromString(jsonNode.findValue(Labels.STANDARD_OF_PROOF).asText()),
-                icdCodeListFromJsonArray(jsonNode.findPath(Labels.ICD_CODES))
+                icdCodeListFromJsonArray(jsonNode.findPath(Labels.ICD_CODES)),
+                jsonNode.findValue(Labels.CONDITION_NAME).asText()
                 );
 
     }
@@ -132,8 +138,13 @@ public class StoredSop implements SoP, HasSchemaVersion {
     }
 
     @Override
-    public ImmutableList<ICDCode> getICDCodes() {
+    public ImmutableSet<ICDCode> getICDCodes() {
         return icdCodes;
+    }
+
+    @Override
+    public String getConditionName() {
+        return conditionName;
     }
 
 
@@ -183,6 +194,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
         rootNode.put(Labels.REGISTER_ID,sop.getRegisterId());
         rootNode.put(Labels.INSTRUMENT_NUMBER, formatInstrumentNumber(sop.getInstrumentNumber()));
         rootNode.put(Labels.CITATION,sop.getCitation());
+        rootNode.put(Labels.CONDITION_NAME,sop.getConditionName());
         rootNode.put(Labels.EFFECTIVE_FROM,sop.getEffectiveFromDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
         rootNode.put(Labels.STANDARD_OF_PROOF,sop.getStandardOfProof().toString());
 
@@ -253,15 +265,37 @@ public class StoredSop implements SoP, HasSchemaVersion {
                  icdCode.findValue(Labels.ICD_CODE).asText());
     }
 
-    private static ImmutableList<ICDCode> icdCodeListFromJsonArray(JsonNode jsonNode)
+    private static ImmutableSet<ICDCode> icdCodeListFromJsonArray(JsonNode jsonNode)
     {
         assert (jsonNode.isArray());
 
-        ImmutableList<ICDCode> icdCodes = ImmutableList.copyOf(getChildrenOfArrayNode(jsonNode).stream().map(jsonNode1 -> fromIcdCodeJsonObject(jsonNode1)).collect(Collectors.toList()));
+        ImmutableSet<ICDCode> icdCodes = ImmutableSet.copyOf(getChildrenOfArrayNode(jsonNode).stream().map(jsonNode1 -> fromIcdCodeJsonObject(jsonNode1)).collect(Collectors.toList()));
 
         return icdCodes;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
 
+        StoredSop storedSop = (StoredSop) o;
+
+        if (!this.registerId.equals(storedSop.registerId)) return false;
+        if (!this.instrumentNumber.equals(storedSop.instrumentNumber)) return false;
+        if (!this.citation.equals(storedSop.citation)) return false;
+        if (!this.effectiveFromDate.equals(storedSop.effectiveFromDate)) return false;
+        return this.standardOfProof == storedSop.standardOfProof;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = this.registerId.hashCode();
+        result = 31 * result + this.instrumentNumber.hashCode();
+        result = 31 * result + this.citation.hashCode();
+        result = 31 * result + this.effectiveFromDate.hashCode();
+        result = 31 * result + this.standardOfProof.hashCode();
+        return result;
+    }
 }
 

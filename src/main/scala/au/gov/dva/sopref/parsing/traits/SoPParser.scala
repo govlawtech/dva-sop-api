@@ -11,6 +11,7 @@ trait SoPParser {
   def parseDateOfEffect(dateOfEffectSection : String) : LocalDate
   def parseStartAndEndAggravationParas(aggravationSection : String) : (String,String)
   def parseCitation(citationSection : String) : String
+  def parseConditionNameFromCitation(citation : String) : String
 }
 
 

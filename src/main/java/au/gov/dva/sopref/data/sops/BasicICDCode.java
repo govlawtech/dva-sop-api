@@ -38,14 +38,30 @@ public class BasicICDCode implements au.gov.dva.sopref.interfaces.model.ICDCode 
 
 
 
-
-
     public static JsonNode toJson(ICDCode toSerialize) {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode node = objectMapper.createObjectNode();
         node.put(ICD_CODE_VERSION,toSerialize.getVersion());
         node.put(ICD_CODE,toSerialize.getCode());
         return node;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+
+        BasicICDCode that = (BasicICDCode) o;
+
+        if (!this.version.equals(that.version)) return false;
+        return this.code.equals(that.code);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = this.version.hashCode();
+        result = 31 * result + this.code.hashCode();
+        return result;
     }
 }
 

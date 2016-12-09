@@ -1,8 +1,9 @@
 {
-  "schemaVersion" : 1.0,
+  "schemaVersion" : 1,
   "registerId" : "F2014L00933",
   "instrumentNumber" : "62/2014",
   "citation" : "Statement of Principles concerning lumbar spondylosis No. 62 of 2014",
+  "conditionName" : "lumbar spondylosis",
   "effectiveFrom" : "2014-07-02",
   "standardOfProof" : "Reasonable Hypothesis",
   "icdCodes" : [ {

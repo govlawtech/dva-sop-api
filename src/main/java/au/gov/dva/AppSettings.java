@@ -12,6 +12,9 @@ public class AppSettings {
 
     public static Environment getEnvironment() {
 
+        if (System.getProperty(envVarName).contentEquals("devtestlocal"))
+            return Environment.devtestlocal;
+
         String envVarValue = System.getenv(envVarName);
         if (envVarValue == null)
         {
@@ -20,10 +23,8 @@ public class AppSettings {
         switch (envVarValue)
         {
             case "devtest" : return devtest;
-            case "devtestlocal" : return Environment.devtestlocal;
             case "prod" : return Environment.prod;
             default: throw new ConfigurationError(String.format("Value for environment variable %smust be 'devtest','devtestlocal' or 'prod'", envVarValue));
-
         }
     }
 

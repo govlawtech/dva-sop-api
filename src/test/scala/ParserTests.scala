@@ -160,5 +160,13 @@ class ParserTests extends FunSuite {
     val result = LsParser.parseCitation(input)
     assert(result == "Statement of Principles concerning lumbar spondylosis No. 62 of 2014" )
   }
+
+  test("Get condition name from citation")
+  {
+    val input =  "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014."
+    val result = LsParser.parseConditionNameFromCitation(input);
+    assert(result == "lumbar spondylosis")
+
+  }
 }
 

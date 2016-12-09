@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Local Jetty" type="JettyConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Jetty 9.3.13.v20161014" ALTERNATIVE_JRE_ENABLED="false">
-    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
     <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+    <option name="COMMON_VM_ARGUMENTS" value="-DDEP_ENV=devtestlocal" />
     <deployment>
       <artifact name="Gradle : dva-sop-api.war (exploded)">
         <settings DEPLOYMENT_METHOD="contexts" />

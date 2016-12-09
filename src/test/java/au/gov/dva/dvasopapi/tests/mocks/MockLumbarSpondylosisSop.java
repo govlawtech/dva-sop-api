@@ -95,8 +95,13 @@ public class MockLumbarSpondylosisSop implements SoP {
     }
 
     @Override
-    public ImmutableList<ICDCode> getICDCodes() {
-    return ImmutableList.of(new BasicICDCode("ICD-10-AM","M47.16"), new BasicICDCode("ICD-10-AM", "M47.17,"));
+    public ImmutableSet<ICDCode> getICDCodes() {
+    return ImmutableSet.of(new BasicICDCode("ICD-10-AM","M47.16"), new BasicICDCode("ICD-10-AM", "M47.17,"));
+    }
+
+    @Override
+    public String getConditionName() {
+        return "Lumbar Spondylosis";
     }
 
 }

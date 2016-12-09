@@ -83,15 +83,21 @@ public class StoredOperation implements Operation {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || this.getClass() != o.getClass()) return false;
+
         StoredOperation that = (StoredOperation) o;
-        return Objects.equal(this.name, that.name) &&
-                Objects.equal(this.startDate, that.startDate) &&
-                Objects.equal(this.endDate, that.endDate) &&
-                this.serviceType == that.serviceType;
+
+        if (!this.name.equals(that.name)) return false;
+        if (!this.startDate.equals(that.startDate)) return false;
+        if (!this.endDate.equals(that.endDate)) return false;
+        return this.serviceType == that.serviceType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(this.name, this.startDate, this.endDate, this.serviceType);
+        int result = this.name.hashCode();
+        result = 31 * result + this.startDate.hashCode();
+        result = 31 * result + this.endDate.hashCode();
+        result = 31 * result + this.serviceType.hashCode();
+        return result;
     }
 }

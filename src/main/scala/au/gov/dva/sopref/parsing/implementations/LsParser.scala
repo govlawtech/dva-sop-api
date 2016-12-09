@@ -109,6 +109,15 @@ object LsParser extends SoPParser with RegexParsers{
       throw new SopParserError("Cannot get citation from: " + citationSection)
     val trimmed = m.get.group(1).stripSuffix(".")
     trimmed
+  }
+
+  override def parseConditionNameFromCitation(citation : String) : String = {
+    val regex = """Statement of Principles concerning (([A-Za-z-'\s](?!No\.))*)""".r
+
+    val m = regex.findFirstMatchIn(citation);
+    if (m.isEmpty)
+      throw new SopParserError("Cannot get condition name from this citation: %s".format(citation))
+    return m.get.group(1);
 
   }
 }

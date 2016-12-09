@@ -37,7 +37,9 @@ object LsSoPFactory extends SoPFactory{
 
     val icdCodes: List[ICDCode] = extractor.extractICDCodes(clensedText)
 
-    new ParsedSop(registerId,instrumentNumber,citation,aggravationFactors, onsetFactors, effectiveFromDate,standardOfProof,icdCodes)
+    val conditionName = LsParser.parseConditionNameFromCitation(citation);
+
+    new ParsedSop(registerId,instrumentNumber,citation,aggravationFactors, onsetFactors, effectiveFromDate,standardOfProof,icdCodes,conditionName)
   }
 
 

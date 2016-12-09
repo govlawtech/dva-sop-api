@@ -27,10 +27,10 @@ public class ExtractOperationsFromServiceDetermination {
     @Test
     public void checkAllWarlikeOperationsExist() throws IOException {
         URL inputDocx = Resources.getResource("F2016L00994.docx");
-        byte[] pdfBytes = Resources.toByteArray(inputDocx);
-        ImmutableList<Operation> results = ServiceDeterminations.extractOperations(pdfBytes);
+        byte[] docxBytes = Resources.toByteArray(inputDocx);
+        ImmutableList<Operation> results = ServiceDeterminations.extractOperations(docxBytes);
 
-        Operation opEnduringFreedom = new StoredOperation("Enduring Freedom—Afghanistan",
+        Operation opEnduringFreedom = new StoredOperation("Enduring Freedom\u2014Afghanistan",
                 LocalDate.of(2001, 10, 7), Optional.empty(),
                 ServiceType.WARLIKE);
 
@@ -106,6 +106,7 @@ public class ExtractOperationsFromServiceDetermination {
                 LocalDate.of(2015, 9, 9), Optional.empty(),
                 ServiceType.WARLIKE);
 
+
         Assert.assertTrue(results.contains(opEnduringFreedom));
         Assert.assertTrue(results.contains(opSlipper));
         Assert.assertTrue(results.contains(opAriki));
@@ -138,8 +139,8 @@ public class ExtractOperationsFromServiceDetermination {
     @Test
     public void checkAllNonWarlikeOperationsExist() throws IOException {
         URL inputDocx = Resources.getResource("F2016L00995.docx");
-        byte[] pdfBytes = Resources.toByteArray(inputDocx);
-        ImmutableList<Operation> results = ServiceDeterminations.extractOperations(pdfBytes);
+        byte[] docXBytes = Resources.toByteArray(inputDocx);
+        ImmutableList<Operation> results = ServiceDeterminations.extractOperations(docXBytes);
 
         Operation opMazurka = new StoredOperation("Mazurka",
                 LocalDate.of(1993, 1, 28), Optional.empty(),
