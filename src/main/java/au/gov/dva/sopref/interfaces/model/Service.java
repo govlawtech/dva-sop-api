@@ -9,5 +9,5 @@ public interface Service {
     String getType();
     LocalDate getStartDate();
     LocalDate getEndDate();
-    ImmutableSet<Operation> getOperations();
+    ImmutableSet<Deployment> getDeployments();
 }

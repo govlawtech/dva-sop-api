@@ -162,13 +162,13 @@ public class CaseSummary {
         serviceHistoryData.add(new CaseSummaryParagraph(serviceHistoryDefinition));
 
         for (Service service : serviceHistory.getServices()) {
-            for (Operation operation : service.getOperations()) {
-                String operationNameText = operation.getServiceType() == ServiceType.WARLIKE ?
-                        " on " + operation.getName() : "";
+            for (Deployment deployment : service.getDeployments()) {
+                String operationNameText = deployment.getOperation().getServiceType() == ServiceType.WARLIKE ?
+                        " on " + deployment.getOperation().getName() : "";
 
-                String operationText = WordUtils.capitalize(operation.getServiceType().toString()) +
+                String operationText = WordUtils.capitalize(deployment.getOperation().getServiceType().toString()) +
                         " service from " +
-                        getDatesAsRange(operation.getStartDate(), operation.getEndDate()) +
+                        getDatesAsRange(deployment.getStartDate(), deployment.getEndDate()) +
                         operationNameText;
 
                 CaseSummaryParagraph operationParagraph = new CaseSummaryParagraph(operationText);

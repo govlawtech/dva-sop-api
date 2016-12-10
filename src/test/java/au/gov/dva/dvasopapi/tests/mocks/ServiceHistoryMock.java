@@ -1,9 +1,6 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
-import au.gov.dva.sopref.interfaces.model.Operation;
-import au.gov.dva.sopref.interfaces.model.Service;
-import au.gov.dva.sopref.interfaces.model.ServiceHistory;
-import au.gov.dva.sopref.interfaces.model.ServiceType;
+import au.gov.dva.sopref.interfaces.model.*;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
@@ -46,16 +43,32 @@ public class ServiceHistoryMock implements ServiceHistory {
             }
 
             @Override
-            public ImmutableSet<Operation> getOperations() {
-                return ImmutableSet.of(new Operation() {
-                    @Override
-                    public String getName() {
-                        return "Operation WARDEN";
-                    }
+            public ImmutableSet<Deployment> getDeployments() {
+                return ImmutableSet.of(new Deployment() {
 
                     @Override
-                    public ServiceType getServiceType() {
-                        return ServiceType.WARLIKE;
+                    public Operation getOperation() {
+                        return new Operation() {
+                            @Override
+                            public String getName() {
+                                return "Operation WARDEN";
+                            }
+
+                            @Override
+                            public ServiceType getServiceType() {
+                                return ServiceType.WARLIKE;
+                            }
+
+                            @Override
+                            public LocalDate getStartDate() {
+                                return null;
+                            }
+
+                            @Override
+                            public Optional<LocalDate> getEndDate() {
+                                return null;
+                            }
+                        };
                     }
 
                     @Override
@@ -65,8 +78,11 @@ public class ServiceHistoryMock implements ServiceHistory {
 
                     @Override
                     public Optional<LocalDate> getEndDate() {
-                        return Optional.of(LocalDate.of(2006, 12, 31));
+                            return Optional.of(LocalDate.of(2006, 12, 31));
                     }
+
+
+
                 });
             }
         });
