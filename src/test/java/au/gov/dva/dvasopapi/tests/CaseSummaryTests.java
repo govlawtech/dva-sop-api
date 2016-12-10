@@ -40,8 +40,7 @@ public class CaseSummaryTests {
         Assert.assertTrue(outputFile.exists());
     }
 
-    private Path getOutputPath() throws URISyntaxException, IOException {
-        String fileName = "Example Case Summary.docx";
+    private Path getOutputPath() throws IOException {
         Path tempFilePath = Files.createTempFile("CaseSummaryTestOutput_",".docx");
         return tempFilePath;
     }
