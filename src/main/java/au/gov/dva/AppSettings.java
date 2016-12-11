@@ -12,7 +12,9 @@ public class AppSettings {
 
     public static Environment getEnvironment() {
 
-        if (System.getProperty(envVarName).contentEquals("devtestlocal"))
+        String jvmArg = System.getProperty(envVarName);
+
+        if (jvmArg != null && jvmArg.contentEquals("devtestlocal"))
             return Environment.devtestlocal;
 
         String envVarValue = System.getenv(envVarName);
