@@ -14,7 +14,7 @@ war {
 
 task copyWar(type: Copy, dependsOn: 'war') {
     from 'build/libs/dva-sop-api.war'
-    into 'webapps/'
+    into 'deploy/webapps/'
     rename {String fileName -> 'ROOT.war'}
 }
 
