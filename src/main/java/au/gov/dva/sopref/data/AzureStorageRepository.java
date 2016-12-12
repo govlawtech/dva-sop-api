@@ -98,17 +98,24 @@ public class AzureStorageRepository implements Repository {
         }
     }
 
+
     @Override
     public ImmutableSet<SoP> getAllSops() {
         try {
             CloudBlobContainer cloudBlobContainer = _cloudBlobClient.getContainerReference(SOP_CONTAINER_NAME);
 
-            List<SoP> sops = StreamSupport.stream(cloudBlobContainer.listBlobs().spliterator(), false)
-                    .filter(listBlobItem -> listBlobItem instanceof CloudBlob)
-                    .map(listBlobItem -> blobToSoP((CloudBlob) listBlobItem))
-                    .collect(Collectors.toList());
+            Iterable<ListBlobItem> blobs =  cloudBlobContainer.listBlobs();
 
-            return ImmutableSet.copyOf(sops);
+            List<SoP> retrievedSops = new ArrayList<>();
+            for (ListBlobItem blobItem : blobs) {
+                if (blobItem instanceof  CloudBlob)
+                {
+                    SoP sop = blobToSoP((CloudBlob) blobItem);
+                    retrievedSops.add(sop);
+                }
+            }
+
+            return ImmutableSet.copyOf(retrievedSops);
         } catch (RuntimeException e) {
             throw new RepositoryError(e);
         } catch (Exception e) {

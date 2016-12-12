@@ -4,6 +4,8 @@ package au.gov.dva;
 import au.gov.dva.sopref.exceptions.ConfigurationError;
 
 import static au.gov.dva.AppSettings.Environment.devtest;
+import static au.gov.dva.AppSettings.Environment.devtestlocal;
+import static au.gov.dva.AppSettings.Environment.prod;
 
 public class AppSettings {
 
@@ -12,20 +14,16 @@ public class AppSettings {
 
     public static Environment getEnvironment() {
 
-        String jvmArg = System.getProperty(envVarName);
-
-        if (jvmArg != null && jvmArg.contentEquals("devtestlocal"))
-            return Environment.devtestlocal;
-
         String envVarValue = System.getenv(envVarName);
         if (envVarValue == null)
         {
-            throw new ConfigurationError(String.format("Environment variable %smust have value.", envVarName));
+            throw new ConfigurationError(String.format("Environment variable %s must have value.", envVarName));
         }
         switch (envVarValue)
         {
+            case "devtestlocal" : return devtestlocal;
             case "devtest" : return devtest;
-            case "prod" : return Environment.prod;
+            case "prod" : return prod;
             default: throw new ConfigurationError(String.format("Value for environment variable %smust be 'devtest','devtestlocal' or 'prod'", envVarValue));
         }
     }
@@ -47,6 +45,7 @@ public class AppSettings {
         private static final String AZURE_STORAGE_CONNECTION_STRING = "AZURE_STORAGE_CONNECTION_STRING";
 
         public static String getConnectionString() {
+
             switch (getEnvironment())
             {
                 case devtestlocal: return DevTestLocal.storageConnectionString;
