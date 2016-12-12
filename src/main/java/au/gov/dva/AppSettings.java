@@ -12,30 +12,53 @@ public class AppSettings {
     private static final String envVarName = "DEP_ENV";
 
 
+
     public static Environment getEnvironment() {
 
-        String envVarValue = System.getenv(envVarName);
-        if (envVarValue == null)
-        {
-            throw new ConfigurationError(String.format("Environment variable %s must have value.", envVarName));
+        String jvmArg = System.getProperty("DEP_ENV");
+
+        if (jvmArg != null) {
+            return convertEnvironmentStringEnum(jvmArg);
         }
-        switch (envVarValue)
+
+        else {
+
+            String envVarValue = System.getenv(envVarName);
+            if (envVarValue == null) {
+                throw new ConfigurationError(String.format("Environment variable %s must have value.", envVarName));
+            }
+            return convertEnvironmentStringEnum(envVarValue);
+        }
+    }
+
+    private static Environment convertEnvironmentStringEnum(String environmentStringValue)
+    {
+        switch (environmentStringValue)
         {
             case "devtestlocal" : return devtestlocal;
             case "devtest" : return devtest;
             case "prod" : return prod;
-            default: throw new ConfigurationError(String.format("Value for environment variable %smust be 'devtest','devtestlocal' or 'prod'", envVarValue));
+            default: throw new ConfigurationError(String.format("Value for environment variable %smust be 'devtest','devtestlocal' or 'prod'", environmentStringValue));
         }
     }
 
-    private static String getEnvVarValue(String envVarName)
+    private static String getPropertyValue(String propertyName)
     {
-        String value = System.getenv(envVarName);
-        if (value == null)
+
+        String jvmArg = System.getProperty(propertyName);
+        if (jvmArg != null)
         {
-            throw new ConfigurationError(String.format("Expecting value for environment variable: %s", envVarName));
+            return jvmArg;
         }
-        return value;
+
+        else {
+            String value = System.getenv(propertyName);
+            if (value == null) {
+                throw new ConfigurationError(String.format("Expecting value for environment variable: %s", propertyName));
+            }
+            return value;
+        }
+
     }
 
     public static class AzureStorage {
@@ -49,8 +72,8 @@ public class AppSettings {
             switch (getEnvironment())
             {
                 case devtestlocal: return DevTestLocal.storageConnectionString;
-                case devtest: return getEnvVarValue(AZURE_STORAGE_CONNECTION_STRING);
-                case prod: return getEnvVarValue(AZURE_STORAGE_CONNECTION_STRING);
+                case devtest: return getPropertyValue(AZURE_STORAGE_CONNECTION_STRING);
+                case prod: return getPropertyValue(AZURE_STORAGE_CONNECTION_STRING);
                 default: throw new ConfigurationError("Cannot get Azure connection string");
             }
         }

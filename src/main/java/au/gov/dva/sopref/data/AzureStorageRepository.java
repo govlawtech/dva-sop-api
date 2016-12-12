@@ -182,6 +182,8 @@ public class AzureStorageRepository implements Repository {
 
         try {
             CloudBlobContainer cloudBlobContainer = _cloudBlobClient.getContainerReference(SERVICE_DETERMINATIONS_CONTAINER_NAME);
+
+
             List<ServiceDetermination> serviceDeterminations = StreamSupport.stream(cloudBlobContainer.listBlobs().spliterator(), false)
                     .filter(listBlobItem -> listBlobItem instanceof CloudBlob)
                     .map(listBlobItem -> blobToServiceDetermination((CloudBlob) listBlobItem))
