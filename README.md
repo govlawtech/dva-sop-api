@@ -83,3 +83,8 @@ Operation names are expected to be exactly as they appear in the relevant Servic
 * Note the em-dash (U+2014) in the name "Enduring Freedom&#151;Afghanistan"
 * The Operation Name for operation with description 'ADF contribution to the NATO no-fly-zone and maritime enforcement operation against Libya' is ```NNMEOAL```.  (The Service Determination omits a name, so we made one up to identify the operation.)
 
+# Notes of Variations from Spec
+
+* The array label for the array of legislative instrument ID's in the example response to the Get Operations query is ```registerIDs``` rather than ```legislativeInstrumentIds```, to be consistent with the terminology on Legislation.gov.au and elsewhere.
+
+* The label shown as ```registeredId``` in the example response for the Get Sop Factors query is actually ```registerId```.
