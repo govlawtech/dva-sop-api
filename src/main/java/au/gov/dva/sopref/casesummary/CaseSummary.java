@@ -136,7 +136,7 @@ public class CaseSummary {
         CaseSummarySection conditionData = new CaseSummarySection();
 
         conditionData.add(new CaseSummaryHeading("CLAIMED CONDITION", "Heading2"));
-        String conditionParagraph = "The claimed condition is " + condition.getName() + ".";
+        String conditionParagraph = "The claimed condition is " + condition.getSoP().getConditionName() + ".";
         conditionData.add(new CaseSummaryParagraph(conditionParagraph));
 
         conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading2"));
