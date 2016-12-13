@@ -1,6 +1,10 @@
-/getSopFactors?conditionName=lumbar&nbspspondylosis&standardOfProof=RH&incidentType=onset
+/getSopFactors?conditionName=lumbar spondylosis&standardOfProof=RH&incidentType=onset
 
 /getSopFactors?conditionName=gout&standardOfProof=RH&incidentType=onset
 
 /getSopFactors?icdCodeValue=M47.16&icdCodeVersion=ICD-10-AM&standardOfProof=RH&incidentType=onset
 
+
+/getOperations?queryDate=2010-01-01
+
+/getOperations?queryDate=2018-01-01

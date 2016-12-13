@@ -1,7 +1,7 @@
 package au.gov.dva.sopref.data;
 
 import au.gov.dva.sopref.data.servicedeterminations.StoredOperation;
-import au.gov.dva.sopref.exceptions.OperationParserError;
+import au.gov.dva.sopref.exceptions.ServiceDeterminationParserError;
 import au.gov.dva.sopref.interfaces.model.Operation;
 import au.gov.dva.sopref.interfaces.model.ServiceType;
 import com.google.common.collect.ImmutableList;
@@ -18,33 +18,76 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class ServiceDeterminations {
+
+    public static Optional<LocalDate> extractCommencementDateFromDocx(byte[] determinationDocx) {
+
+        InputStream determinationStream = new ByteArrayInputStream(determinationDocx);
+        try (XWPFDocument doc = new XWPFDocument(determinationStream)) {
+
+            final String commencementTableHeading = "Commencement information";
+
+            List<XWPFTable> tables = getTablesWithHeading(commencementTableHeading,doc);
+            if (tables.isEmpty())
+            {
+                throw new ServiceDeterminationParserError("Could not identify Commencement table with heading: 'Commencement'.");
+            }
+            else {
+                XWPFTable commencementTable = tables.get(0);
+
+                final int row = 3;
+                final int col = 2;
+
+                String commencementText = commencementTable.getRow(row) != null ?
+                        commencementTable.getRow(row).getCell(col) != null ?
+                                commencementTable.getRow(row).getCell(col).getText() != null ?
+                                    commencementTable.getRow(row).getCell(col).getText() : null : null : null;
+
+                if (commencementText == null || commencementText.isEmpty()) {
+                    return Optional.empty();
+                }
+                else {
+                    return Optional.of(LocalDate.parse(commencementText.trim(),DateTimeFormatter.ofPattern("d MMMM yyyy")));
+                }
+
+            }
+
+        } catch (IOException e) {
+            throw new ServiceDeterminationParserError(e);
+        }
+
+
+
+
+    }
+
+
+    private static  List<XWPFTable> getTablesWithHeading(String heading, XWPFDocument xwpfDocument)
+    {
+        return xwpfDocument.getTables().stream().filter(
+                table ->  table.getRow(0) != null &&
+                        table.getRow(0).getCell(0) != null   &&
+                        table.getRow(0).getCell(0).getText().contentEquals(heading))
+                .collect(Collectors.toList());
+    }
+
 
     public static ImmutableList<Operation> extractOperations(byte[] determinationDocx) {
         final String nonWarlike = "nonwarlike service";
         final String warlike = "warlike service";
-        String operationPeriod = "";
-
-        Pattern itemPattern = Pattern.compile("\\d+.*");
-        Pattern periodPattern = Pattern.compile("\\d{1,3}\\h[a-zA-Z]+\\h\\d{4}");
-        Matcher rowMatcher;
-        Matcher periodMatcher;
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy");
-        LocalDate date;
-        List<LocalDate> datesFound = new ArrayList<>();
 
         List<Operation> operations = new ArrayList<>();
-        Operation operation;
-        String opName;
-        LocalDate opStartDate;
-        Optional<LocalDate> opEndDate;
-        ServiceType opServiceType;
 
         InputStream determinationStream = new ByteArrayInputStream(determinationDocx);
-        try (XWPFDocument determinationDoc = new XWPFDocument(determinationStream);) {
+        try (XWPFDocument determinationDoc = new XWPFDocument(determinationStream)) {
 
+            Pattern periodPattern = Pattern.compile("\\d{1,3}\\h[a-zA-Z]+\\h\\d{4}");
+            Pattern itemPattern = Pattern.compile("\\d+.*");
+            List<LocalDate> datesFound = new ArrayList<>();
             for (XWPFTable table : determinationDoc.getTables()) {
 
                 // First cell in the first row indicates if it's the right table
@@ -53,6 +96,7 @@ public class ServiceDeterminations {
 
                 if ((firstCellText.equals(nonWarlike) || (firstCellText.equals(warlike)))) {
 
+                    ServiceType opServiceType;
                     switch (firstCellText) {
                         case nonWarlike:
                             opServiceType = ServiceType.NON_WARLIKE;
@@ -69,47 +113,57 @@ public class ServiceDeterminations {
                         datesFound.clear();
 
                         // Only interested in rows where the first cell is a number
-                        rowMatcher = itemPattern.matcher(row.getCell(0).getText());
+                        Matcher rowMatcher = itemPattern.matcher(row.getCell(0).getText());
 
                         if (rowMatcher.matches()) {
-                            opName = row.getCell(1).getText();
+                            String opName = row.getCell(1).getText();
 
+                            String natureOfOperation = row.getCell(2).getText();
                             // Handle case where operation name isn't present
-                            if (opName.isEmpty()) {
-                                opName = "NNMEOAL";
-                            }
-
-                            // Replace horizontal white space with space to make parsing dates easier
-                            operationPeriod = row.getCell(4).getText().replaceAll("\\h", " ");
-                            periodMatcher = periodPattern.matcher(operationPeriod);
-
-                            while (periodMatcher.find()) {
-                                date = LocalDate.parse(periodMatcher.group(), formatter);
-                                datesFound.add(date);
-                            }
-
-                            opStartDate = LocalDate.MIN;
-                            opEndDate = Optional.empty();
-
-                            if (!datesFound.isEmpty()) {
-                                opStartDate = datesFound.get(0);
-
-                                if (datesFound.size() > 1) {
-                                    opEndDate = Optional.of(datesFound.get(1));
+                            if (opName.isEmpty())
+                            {
+                                if (isNNMEOL(natureOfOperation)) {
+                                    opName = "NNMEOAL";
+                                }
+                                else {
+                                    throw new ServiceDeterminationParserError(String.format("Empty operation name for: %s", natureOfOperation));
                                 }
                             }
 
-                            operation = new StoredOperation(opName, opStartDate, opEndDate, opServiceType);
-                            operations.add(operation);
+                            // Replace horizontal white space with space to make parsing dates easier
+                            String operationPeriod = row.getCell(4).getText().replaceAll("\\h", " ");
+                            Matcher periodMatcher = periodPattern.matcher(operationPeriod);
+
+                            while (periodMatcher.find()) {
+                                LocalDate date = LocalDate.parse(periodMatcher.group(), formatter);
+                                datesFound.add(date);
+                            }
+
+
+                            if (datesFound.isEmpty()) {
+                                throw new ServiceDeterminationParserError("Cannot determine operation start date from: " + operationPeriod);
+                            }
+                            else {
+                                LocalDate opStartDate = datesFound.get(0);
+                                Optional<LocalDate> opEndDate = datesFound.size() > 1 ? Optional.of(datesFound.get(1)) : Optional.empty();
+                                Operation operation = new StoredOperation(opName, opStartDate, opEndDate, opServiceType);
+                                operations.add(operation);
+                            }
+
                         }
                     }
                 }
             }
         } catch (IOException e) {
-            throw new OperationParserError(e);
+            throw new ServiceDeterminationParserError(e);
         }
 
         return ImmutableList.copyOf(operations);
+    }
+
+    private static boolean isNNMEOL(String description)
+    {
+        return description.contentEquals("ADF contribution to the NATO nofly zone and maritime enforcement operation against Libya");
     }
 
 }

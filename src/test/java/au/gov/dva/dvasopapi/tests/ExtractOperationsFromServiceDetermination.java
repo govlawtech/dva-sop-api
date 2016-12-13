@@ -274,4 +274,14 @@ public class ExtractOperationsFromServiceDetermination {
         Assert.assertTrue(results.contains(opHawick));
     }
 
+
+    @Test
+    public void extractCommencementDate() throws IOException {
+
+        URL inputDocx = Resources.getResource("F2016L00994.docx");
+        byte[] docXBytes = Resources.toByteArray(inputDocx);
+        LocalDate commencementDate = ServiceDeterminations.extractCommencementDateFromDocx(docXBytes).get();
+        Assert.assertTrue(commencementDate.isEqual(LocalDate.of(2016,6,7)));
+    }
+
 }

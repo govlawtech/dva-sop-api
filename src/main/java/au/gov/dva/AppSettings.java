@@ -11,8 +11,6 @@ public class AppSettings {
 
     private static final String envVarName = "DEP_ENV";
 
-
-
     public static Environment getEnvironment() {
 
         String jvmArg = System.getProperty("DEP_ENV");
@@ -44,7 +42,6 @@ public class AppSettings {
 
     private static String getPropertyValue(String propertyName)
     {
-
         String jvmArg = System.getProperty(propertyName);
         if (jvmArg != null)
         {

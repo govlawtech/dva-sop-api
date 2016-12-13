@@ -183,13 +183,18 @@ public class AzureStorageRepository implements Repository {
         try {
             CloudBlobContainer cloudBlobContainer = _cloudBlobClient.getContainerReference(SERVICE_DETERMINATIONS_CONTAINER_NAME);
 
+            Iterable<ListBlobItem> blobs =  cloudBlobContainer.listBlobs();
 
-            List<ServiceDetermination> serviceDeterminations = StreamSupport.stream(cloudBlobContainer.listBlobs().spliterator(), false)
-                    .filter(listBlobItem -> listBlobItem instanceof CloudBlob)
-                    .map(listBlobItem -> blobToServiceDetermination((CloudBlob) listBlobItem))
-                    .collect(Collectors.toList());
+            List<ServiceDetermination> retrievedServiceDeterminations = new ArrayList<>();
+            for (ListBlobItem blobItem : blobs) {
+                if (blobItem instanceof  CloudBlob)
+                {
+                    ServiceDetermination serviceDetermination = blobToServiceDetermination((CloudBlob) blobItem);
+                    retrievedServiceDeterminations.add(serviceDetermination);
+                }
+            }
 
-            return ImmutableSet.copyOf(serviceDeterminations);
+            return ImmutableSet.copyOf(retrievedServiceDeterminations);
         } catch (RuntimeException e) {
             throw new RepositoryError(e);
         } catch (Exception e) {

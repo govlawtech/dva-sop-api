@@ -75,7 +75,7 @@ public class StoredOperation implements Operation {
                 jsonNode.findValue(Labels.NAME).asText(),
                 LocalDate.parse(jsonNode.findValue(Labels.START_DATE).asText()),
                 jsonNode.has(Labels.END_DATE) ? Optional.of(LocalDate.parse(jsonNode.findValue(Labels.END_DATE).asText())) : Optional.empty(),
-                ServiceType.valueOf(jsonNode.findValue(Labels.TYPE).asText())
+                ServiceType.fromText(jsonNode.findValue(Labels.TYPE).asText())
         );
     }
 

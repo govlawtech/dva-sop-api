@@ -14,7 +14,7 @@ import scala.io.Source
 
 
 @RunWith(classOf[JUnitRunner])
-class ParserTests extends FunSuite {
+class SopParserTests extends FunSuite {
   test("Clense LS raw text") {
     val sourceResourceStream = getClass().getResourceAsStream("lsConvertedToText.txt");
     val rawText = Source.fromInputStream(sourceResourceStream).mkString

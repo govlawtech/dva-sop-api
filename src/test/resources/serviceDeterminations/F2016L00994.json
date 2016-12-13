@@ -1,0 +1,111 @@
+{
+  "registerId": "F2016L00994",
+  "citation": "Military Rehabilitation and Compensation (Warlike Service) Determination 2016 (No. 1)",
+  "commencementDate": "2016-06-07",
+  "serviceType": "warlike",
+  "operations": [
+    {
+      "name": "Enduring Freedom—Afghanistan",
+      "startDate": "2001-10-07",
+      "type": "warlike"
+    },
+    {
+      "name": "Slipper",
+      "startDate": "2001-10-11",
+      "endDate": "2009-07-30",
+      "type": "warlike"
+    },
+    {
+      "name": "Ariki",
+      "startDate": "2001-12-01",
+      "type": "warlike"
+    },
+    {
+      "name": "Palate",
+      "startDate": "2003-04-18",
+      "endDate": "2004-07-05",
+      "type": "warlike"
+    },
+    {
+      "name": "Catalyst",
+      "startDate": "2003-07-16",
+      "endDate": "2009-07-31",
+      "type": "warlike"
+    },
+    {
+      "name": "Athena",
+      "startDate": "2003-07-17",
+      "type": "warlike"
+    },
+    {
+      "name": "International Security Assistance Force",
+      "startDate": "2003-08-11",
+      "type": "warlike"
+    },
+    {
+      "name": "Herrick",
+      "startDate": "2004-09-01",
+      "type": "warlike"
+    },
+    {
+      "name": "Palate II",
+      "startDate": "2005-06-27",
+      "type": "warlike"
+    },
+    {
+      "name": "Paladin",
+      "startDate": "2006-07-12",
+      "endDate": "2006-08-14",
+      "type": "warlike"
+    },
+    {
+      "name": "Riverbank",
+      "startDate": "2008-07-21",
+      "type": "warlike"
+    },
+    {
+      "name": "Kruger",
+      "startDate": "2009-01-01",
+      "type": "warlike"
+    },
+    {
+      "name": "Slipper",
+      "startDate": "2009-07-31",
+      "endDate": "2012-02-19",
+      "type": "warlike"
+    },
+    {
+      "name": "NNMEOAL",
+      "startDate": "2011-03-31",
+      "endDate": "2011-10-31",
+      "type": "warlike"
+    },
+    {
+      "name": "Slipper",
+      "startDate": "2012-02-20",
+      "endDate": "2014-06-30",
+      "type": "warlike"
+    },
+    {
+      "name": "Slipper",
+      "startDate": "2014-07-01",
+      "type": "warlike"
+    },
+    {
+      "name": "Okra",
+      "startDate": "2014-08-09",
+      "endDate": "2015-09-08",
+      "type": "warlike"
+    },
+    {
+      "name": "Highroad",
+      "startDate": "2015-01-01",
+      "type": "warlike"
+    },
+    {
+      "name": "Okra",
+      "startDate": "2015-09-09",
+      "type": "warlike"
+    }
+  ]
+}

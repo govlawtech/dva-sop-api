@@ -19,8 +19,8 @@ import java.util.List;
 public class StoredServiceDetermination implements ServiceDetermination {
 
 
-    private static final String WARLIKE = "WARLIKE";
-    private static final String NON_WARLIKE = "non-WARLIKE";
+    private static final String WARLIKE = "warlike";
+    private static final String NON_WARLIKE = "non-warlike";
     private final String registerId;
     private final String citation;
     private final LocalDate commencementDate;
