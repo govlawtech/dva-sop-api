@@ -1,6 +1,6 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
-import au.gov.dva.sopref.interfaces.model.*;
+import au.gov.dva.interfaces.model.*;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;

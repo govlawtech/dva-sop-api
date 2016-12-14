@@ -1,11 +1,11 @@
 package au.gov.dva.sopref.data.sops;
 
-import au.gov.dva.sopref.interfaces.model.ICDCode;
+import au.gov.dva.interfaces.model.ICDCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-public class BasicICDCode implements au.gov.dva.sopref.interfaces.model.ICDCode {
+public class BasicICDCode implements au.gov.dva.interfaces.model.ICDCode {
     private final String version;
     private final String code;
 

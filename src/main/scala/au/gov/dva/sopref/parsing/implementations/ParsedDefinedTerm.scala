@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.parsing.implementations
 
-import au.gov.dva.sopref.interfaces.model.DefinedTerm
+import au.gov.dva.interfaces.model.DefinedTerm
 
 class ParsedDefinedTerm(term: String, definition: String) extends DefinedTerm {
   override def getTerm: String = term

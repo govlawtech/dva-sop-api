@@ -3,10 +3,10 @@ package au.gov.dva.sopref.data;
 import au.gov.dva.sopref.data.servicedeterminations.StoredServiceDetermination;
 import au.gov.dva.sopref.data.sops.StoredSop;
 import au.gov.dva.sopref.exceptions.RepositoryError;
-import au.gov.dva.sopref.interfaces.Repository;
-import au.gov.dva.sopref.interfaces.model.InstrumentChange;
-import au.gov.dva.sopref.interfaces.model.ServiceDetermination;
-import au.gov.dva.sopref.interfaces.model.SoP;
+import au.gov.dva.interfaces.Repository;
+import au.gov.dva.interfaces.model.InstrumentChange;
+import au.gov.dva.interfaces.model.ServiceDetermination;
+import au.gov.dva.interfaces.model.SoP;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
@@ -21,8 +21,6 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class AzureStorageRepository implements Repository {
 

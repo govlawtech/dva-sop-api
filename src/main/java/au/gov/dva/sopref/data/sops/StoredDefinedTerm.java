@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.data.sops;
 
-import au.gov.dva.sopref.interfaces.model.DefinedTerm;
+import au.gov.dva.interfaces.model.DefinedTerm;
 
 public class StoredDefinedTerm implements DefinedTerm {
     private final String term;

@@ -1,7 +1,7 @@
 package au.gov.dva.sopref.data;
 
 import au.gov.dva.sopref.exceptions.LegislationRegisterError;
-import au.gov.dva.sopref.interfaces.RegisterClient;
+import au.gov.dva.interfaces.RegisterClient;
 
 import java.net.MalformedURLException;
 import java.net.URI;

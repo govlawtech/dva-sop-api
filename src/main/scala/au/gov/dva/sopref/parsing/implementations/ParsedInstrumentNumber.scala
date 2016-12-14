@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.parsing.implementations
 
-import au.gov.dva.sopref.interfaces.model.InstrumentNumber
+import au.gov.dva.interfaces.model.InstrumentNumber
 
 
 class ParsedInstrumentNumber(number: Int, year: Int) extends InstrumentNumber {

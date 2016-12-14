@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.parsing.implementations
 
-import au.gov.dva.sopref.interfaces.model.ICDCode
+import au.gov.dva.interfaces.model.ICDCode
 import au.gov.dva.sopref.data.sops.BasicICDCode
 import au.gov.dva.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopref.parsing.traits.SoPExtractor

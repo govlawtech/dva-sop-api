@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.parsing.traits
 
-import au.gov.dva.sopref.interfaces.model.{DefinedTerm, Factor, SoP}
+import au.gov.dva.interfaces.model.{DefinedTerm, Factor, SoP}
 import au.gov.dva.sopref.parsing.implementations.ParsedFactor
 
 trait SoPFactory {

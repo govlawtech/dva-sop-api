@@ -1,7 +1,7 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
-import au.gov.dva.sopref.interfaces.model.*;
-import au.gov.dva.sopref.interfaces.model.casesummary.CaseSummaryModel;
+import au.gov.dva.interfaces.model.*;
+import au.gov.dva.interfaces.model.casesummary.CaseSummaryModel;
 import com.google.common.collect.ImmutableSet;
 
 public class CaseSummaryModelMock implements CaseSummaryModel{
@@ -14,7 +14,7 @@ public class CaseSummaryModelMock implements CaseSummaryModel{
         return new ServiceHistoryMock();
     }
 
-    public SoP getSop() {
+    public SoP getApplicableSop() {
         return new MockLumbarSpondylosisSop();
     }
 

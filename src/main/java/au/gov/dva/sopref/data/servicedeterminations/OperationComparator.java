@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.data.servicedeterminations;
 
-import au.gov.dva.sopref.interfaces.model.Operation;
+import au.gov.dva.interfaces.model.Operation;
 
 import java.io.Serializable;
 import java.util.Comparator;

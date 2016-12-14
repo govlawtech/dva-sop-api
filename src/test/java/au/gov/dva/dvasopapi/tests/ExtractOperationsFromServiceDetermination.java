@@ -2,8 +2,8 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.sopref.data.ServiceDeterminations;
 import au.gov.dva.sopref.data.servicedeterminations.StoredOperation;
-import au.gov.dva.sopref.interfaces.model.Operation;
-import au.gov.dva.sopref.interfaces.model.ServiceType;
+import au.gov.dva.interfaces.model.Operation;
+import au.gov.dva.interfaces.model.ServiceType;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.Resources;
 import org.junit.Assert;

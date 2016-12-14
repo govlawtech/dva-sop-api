@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.dtos;
 
-import au.gov.dva.sopref.interfaces.model.DefinedTerm;
+import au.gov.dva.interfaces.model.DefinedTerm;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

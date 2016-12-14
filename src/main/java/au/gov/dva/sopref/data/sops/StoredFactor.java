@@ -1,7 +1,7 @@
 package au.gov.dva.sopref.data.sops;
 
-import au.gov.dva.sopref.interfaces.model.DefinedTerm;
-import au.gov.dva.sopref.interfaces.model.Factor;
+import au.gov.dva.interfaces.model.DefinedTerm;
+import au.gov.dva.interfaces.model.Factor;
 import com.google.common.collect.ImmutableSet;
 
 public class StoredFactor implements Factor {

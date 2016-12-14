@@ -1,7 +1,7 @@
 package au.gov.dva.sopref.data.sops;
 
 import au.gov.dva.sopref.exceptions.RepositoryError;
-import au.gov.dva.sopref.interfaces.model.*;
+import au.gov.dva.interfaces.model.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;

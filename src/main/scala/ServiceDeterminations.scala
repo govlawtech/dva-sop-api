@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopref.data.servicedeterminations.StoredServiceDetermination
 import au.gov.dva.sopref.exceptions.ServiceDeterminationParserError
-import au.gov.dva.sopref.interfaces.model.{ServiceDetermination, ServiceType}
+import au.gov.dva.interfaces.model.{ServiceDetermination, ServiceType}
 
 import scala.util.matching.Regex
 ;

@@ -1,14 +1,13 @@
 package au.gov.dva.sopref.dtos;
 
 import au.gov.dva.sopref.exceptions.DvaSopApiError;
-import au.gov.dva.sopref.interfaces.model.ServiceDetermination;
+import au.gov.dva.interfaces.model.ServiceDetermination;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableSet;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

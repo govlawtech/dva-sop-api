@@ -1,10 +1,9 @@
 package au.gov.dva.sopref.dtos;
 
-import au.gov.dva.sopref.interfaces.model.Factor;
+import au.gov.dva.interfaces.model.Factor;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

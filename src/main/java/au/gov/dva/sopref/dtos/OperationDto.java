@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.dtos;
 
-import au.gov.dva.sopref.interfaces.model.Operation;
+import au.gov.dva.interfaces.model.Operation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;

@@ -1,7 +1,7 @@
 
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopref.data.sops.StoredSop
-import au.gov.dva.sopref.interfaces.model.{SoP, StandardOfProof}
+import au.gov.dva.interfaces.model.{SoP, StandardOfProof}
 import au.gov.dva.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopref.parsing._
 import au.gov.dva.sopref.parsing.implementations._

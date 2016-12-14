@@ -2,7 +2,7 @@ package au.gov.dva.sopref.parsing.traits
 
 import java.time.LocalDate
 
-import au.gov.dva.sopref.interfaces.model._
+import au.gov.dva.interfaces.model._
 
 trait SoPParser {
   def parseFactors(factorsSection : String) : (StandardOfProof, List[(String,String)])

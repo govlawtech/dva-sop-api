@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.parsing.implementations
 
-import au.gov.dva.sopref.interfaces.model.{DefinedTerm, Factor}
+import au.gov.dva.interfaces.model.{DefinedTerm, Factor}
 import com.google.common.collect.ImmutableSet
 
 class ParsedFactor(paragraph : String, text: String, definedTerms: Set[DefinedTerm]) extends Factor{

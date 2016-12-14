@@ -1,10 +1,9 @@
 package au.gov.dva.sopref.dtos;
 
-import au.gov.dva.sopref.exceptions.DvaSopApiError;
-import au.gov.dva.sopref.interfaces.model.Factor;
-import au.gov.dva.sopref.interfaces.model.IncidentType;
-import au.gov.dva.sopref.interfaces.model.SoP;
-import au.gov.dva.sopref.interfaces.model.StandardOfProof;
+import au.gov.dva.interfaces.model.Factor;
+import au.gov.dva.interfaces.model.IncidentType;
+import au.gov.dva.interfaces.model.SoP;
+import au.gov.dva.interfaces.model.StandardOfProof;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.ImmutableList;
 

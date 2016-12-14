@@ -2,7 +2,7 @@ package au.gov.dva.sopref.parsing.traits
 
 import java.time.LocalDate
 
-import au.gov.dva.sopref.interfaces.model.InstrumentNumber
+import au.gov.dva.interfaces.model.InstrumentNumber
 
 trait SoPElementsParser {
   def parseFactors(factorSection: String): Map[String, String]

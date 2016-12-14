@@ -1,26 +1,22 @@
 package au.gov.dva;
 
-import au.gov.dva.sopref.GetOperations;
-import au.gov.dva.sopref.GetSopFactors;
+import au.gov.dva.sopref.Operations;
+import au.gov.dva.sopref.SoPs;
 import au.gov.dva.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopref.dtos.OperationsResponseDto;
-import au.gov.dva.sopref.interfaces.Repository;
-import au.gov.dva.sopref.interfaces.model.*;
-import com.google.common.collect.ImmutableList;
+import au.gov.dva.interfaces.Repository;
+import au.gov.dva.interfaces.model.*;
 import com.google.common.collect.ImmutableSet;
 import spark.QueryParamsMap;
 import spark.Request;
 import spark.Response;
-import spark.Spark;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.*;
@@ -78,7 +74,7 @@ public class Application implements spark.servlet.SparkApplication {
                 return buildQueryParamErrorMessage(QueryParamLabels.QUERY_DATE, "Date must be in ISO local date format: yyyy-mm-dd. For example, 2017-01-01.");
             }
 
-            ImmutableSet<ServiceDetermination> latestServiceDeterminationPair = GetOperations.getLatestDeterminationPair(_allServiceDeterminations, parsedDate);
+            ImmutableSet<ServiceDetermination> latestServiceDeterminationPair = Operations.getLatestDeterminationPair(_allServiceDeterminations, parsedDate);
 
             OperationsResponseDto operationsResponseDto = OperationsResponseDto.build(latestServiceDeterminationPair);
 
@@ -109,7 +105,7 @@ public class Application implements spark.servlet.SparkApplication {
                 return "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
             }
 
-            ImmutableSet<SoP> matchingSops = GetSopFactors.getMatchingSops(conditionName, new BasicICDCode(icdCodeVersion, icdCodeValue), _allSops);
+            ImmutableSet<SoP> matchingSops = SoPs.getMatchingSops(conditionName, new BasicICDCode(icdCodeVersion, icdCodeValue), _allSops);
 
             if (matchingSops.isEmpty()) {
                 setResponseHeaders(res, false, 404);
@@ -121,7 +117,7 @@ public class Application implements spark.servlet.SparkApplication {
                 IncidentType it = IncidentType.fromString(incidentType);
                 StandardOfProof sp = StandardOfProof.fromAbbreviation(standardOfProof);
 
-                String response = GetSopFactors.buildSopRefJsonResponse(matchingSops, it, sp);
+                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp);
                 return response;
             }
         });

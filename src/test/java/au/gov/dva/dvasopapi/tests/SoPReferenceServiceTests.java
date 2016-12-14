@@ -1,19 +1,16 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
-import au.gov.dva.sopref.GetSopFactors;
-import au.gov.dva.sopref.dtos.SoPRefDto;
-import au.gov.dva.sopref.interfaces.model.IncidentType;
-import au.gov.dva.sopref.interfaces.model.SoP;
-import au.gov.dva.sopref.interfaces.model.StandardOfProof;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import au.gov.dva.sopref.SoPs;
+import au.gov.dva.interfaces.model.IncidentType;
+import au.gov.dva.interfaces.model.SoP;
+import au.gov.dva.interfaces.model.StandardOfProof;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,7 +23,7 @@ public class SoPReferenceServiceTests {
         StandardOfProof standardOfProof = StandardOfProof.ReasonableHypothesis;
         IncidentType incidentType = IncidentType.Aggravation;
 
-        String json = GetSopFactors.buildSopRefJsonResponse(ImmutableSet.of(mockSop),incidentType,standardOfProof);
+        String json = SoPs.buildSopRefJsonResponse(ImmutableSet.of(mockSop),incidentType,standardOfProof);
         System.out.print(json);
         Assert.assertTrue(!json.isEmpty());
     }

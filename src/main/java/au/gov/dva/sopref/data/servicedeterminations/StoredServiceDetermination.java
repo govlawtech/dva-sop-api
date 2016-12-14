@@ -1,8 +1,8 @@
 package au.gov.dva.sopref.data.servicedeterminations;
 
-import au.gov.dva.sopref.interfaces.model.Operation;
-import au.gov.dva.sopref.interfaces.model.ServiceDetermination;
-import au.gov.dva.sopref.interfaces.model.ServiceType;
+import au.gov.dva.interfaces.model.Operation;
+import au.gov.dva.interfaces.model.ServiceDetermination;
+import au.gov.dva.interfaces.model.ServiceType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
