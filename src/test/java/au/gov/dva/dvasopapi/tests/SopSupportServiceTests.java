@@ -1,5 +1,6 @@
 package au.gov.dva.dvasopapi.tests;
 
+import java.time.OffsetDateTime;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.sopsupport.RequestDto;
@@ -18,9 +19,10 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class SopSupportServiceTests {
 
@@ -53,7 +55,7 @@ public class SopSupportServiceTests {
                                         "Regular/Permanent Force",
                                         odtOf(2004, 7, 1),
                                         odtOf(2016, 1, 1),
-                                        Rank.OtherRank,
+                                        au.gov.dva.sopapi.dtos.Rank.OtherRank,
                                         ImmutableList.of(
                                                 new OperationalServiceDto(
                                                         odtOf(2006, 7, 1),
