@@ -1,7 +1,7 @@
 package au.gov.dva.sopref.data;
 
 import au.gov.dva.sopref.data.servicedeterminations.StoredOperation;
-import au.gov.dva.sopref.exceptions.ServiceDeterminationParserError;
+import au.gov.dva.exceptions.ServiceDeterminationParserError;
 import au.gov.dva.interfaces.model.Operation;
 import au.gov.dva.interfaces.model.ServiceType;
 import com.google.common.collect.ImmutableList;

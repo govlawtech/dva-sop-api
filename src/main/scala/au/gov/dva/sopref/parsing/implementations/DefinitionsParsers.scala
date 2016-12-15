@@ -1,6 +1,6 @@
 package au.gov.dva.sopref.parsing.implementations
 
-import au.gov.dva.sopref.exceptions.SopParserError
+import au.gov.dva.exceptions.SopParserError
 
 import scala.collection.mutable.ListBuffer
 

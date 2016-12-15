@@ -1,6 +1,6 @@
 package au.gov.dva.sopsupport.casesummary;
 
-import au.gov.dva.sopref.exceptions.CaseSummaryError;
+import au.gov.dva.exceptions.CaseSummaryError;
 import au.gov.dva.interfaces.model.*;
 import au.gov.dva.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.commons.lang.WordUtils;

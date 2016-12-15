@@ -6,7 +6,7 @@ import java.time.format.{DateTimeFormatter, DateTimeFormatterBuilder, FormatStyl
 import java.util.Locale
 
 import au.gov.dva.sopref.data.sops.StoredFactor
-import au.gov.dva.sopref.exceptions.SopParserError
+import au.gov.dva.exceptions.SopParserError
 import au.gov.dva.interfaces.model._
 import au.gov.dva.sopref.parsing.traits.SoPParser
 
