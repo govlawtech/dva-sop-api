@@ -1,6 +1,7 @@
 package au.gov.dva;
 
 import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopref.DtoTransformations;
 import au.gov.dva.sopref.Operations;
@@ -33,16 +34,6 @@ public class Application implements spark.servlet.SparkApplication {
         _allSops = repository.getAllSops();
         _allServiceDeterminations = repository.getServiceDeterminations();
     }
-
-    private static class QueryParamLabels {
-        public static final String ICD_CODE_VERSION = "icdCodeVersion";
-        public static final String ICD_CODE_Value = "icdCodeValue";
-        public static final String CONDITION_NAME = "conditionName";
-        public static final String STANDARD_OF_PROOF = "standardOfProof";
-        public static final String INCIDENT_TYPE = "incidentType";
-        public static final String QUERY_DATE = "declaredAfter";
-    }
-
 
     @Override
     public void init() {
