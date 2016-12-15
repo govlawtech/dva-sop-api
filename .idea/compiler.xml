@@ -14,6 +14,8 @@
     <bytecodeTargetLevel>
       <module name="client_main" target="1.8" />
       <module name="client_test" target="1.8" />
+      <module name="dtos_main" target="1.8" />
+      <module name="dtos_test" target="1.8" />
       <module name="dva-sop-api-shadow_main" target="1.8" />
       <module name="dva-sop-api-shadow_test" target="1.8" />
       <module name="dva-sop-api_main" target="1.8" />

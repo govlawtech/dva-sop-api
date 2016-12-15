@@ -1,6 +1,5 @@
-package au.gov.dva.sopref.dtos;
+package au.gov.dva.sopapi.dtos;
 
-import au.gov.dva.interfaces.model.Operation;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
@@ -29,16 +28,5 @@ public class OperationDto {
         this._type = _type;
     }
 
-    public static OperationDto fromOperation(Operation operation)
-    {
-        return new OperationDto(operation.getName(),
-                formatDate(operation.getStartDate()),
-                operation.getEndDate().isPresent() ? Optional.of(formatDate(operation.getEndDate().get())) : Optional.empty(),
-                operation.getServiceType().toString());
-    }
 
-    private static String formatDate(LocalDate localDate)
-    {
-        return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
-    }
 }

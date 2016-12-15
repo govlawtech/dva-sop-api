@@ -37,7 +37,9 @@ test {
     exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
 }
 
-dependencies { 
+dependencies {
+    compile project(':dtos')
+
     compile group: 'com.sparkjava', name: 'spark-core', version: '2.5.2'
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.0'
     compile group: 'org.scala-lang.modules', name: 'scala-parser-combinators_2.12', version: '1.0.4'
@@ -68,6 +70,14 @@ dependencies {
     testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'
     testCompile 'junit:junit:4.12'
 }
+
+
+project(':client') {
+    dependencies {
+        compile project(':dtos')
+    }
+}
+
 
 
 ScalaCompileOptions.metaClass.daemonServer = true

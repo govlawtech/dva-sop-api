@@ -2,11 +2,9 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.interfaces.model.IncidentType;
 import au.gov.dva.interfaces.model.Rank;
-import au.gov.dva.sopref.dtos.SoPRefDto;
 import au.gov.dva.sopsupport.dtos.request.RequestDto;
 import au.gov.dva.sopsupport.dtos.request.components.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;

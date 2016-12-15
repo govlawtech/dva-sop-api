@@ -1,11 +1,9 @@
-package au.gov.dva.sopref.dtos;
+package au.gov.dva.sopapi.dtos;
 
-import au.gov.dva.interfaces.model.Factor;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FactorDto {
 
@@ -26,10 +24,5 @@ public class FactorDto {
         _definedTerms = definedTermDtos;
     }
 
-    public static FactorDto fromFactor(Factor factor)
-    {
-        return new FactorDto(factor.getParagraph(),factor.getText(),
-                factor.getDefinedTerms().stream().map(t -> DefinedTermDto.fromDefinedTerm(t)).collect(Collectors.toList()));
 
-    }
 }

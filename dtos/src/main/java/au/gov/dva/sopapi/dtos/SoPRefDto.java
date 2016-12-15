@@ -1,7 +1,6 @@
-package au.gov.dva.sopref.dtos;
+package au.gov.dva.sopapi.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 

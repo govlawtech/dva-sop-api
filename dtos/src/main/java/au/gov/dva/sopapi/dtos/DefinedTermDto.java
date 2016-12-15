@@ -1,6 +1,5 @@
-package au.gov.dva.sopref.dtos;
+package au.gov.dva.sopapi.dtos;
 
-import au.gov.dva.interfaces.model.DefinedTerm;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,8 +19,5 @@ public class DefinedTermDto {
     }
 
 
-    public static DefinedTermDto fromDefinedTerm(DefinedTerm definedTerm)
-    {
-        return new DefinedTermDto(definedTerm.getTerm(),definedTerm.getDefinition());
-    }
+
 }

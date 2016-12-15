@@ -1,10 +1,11 @@
 package au.gov.dva;
 
+import au.gov.dva.sopapi.dtos.OperationsResponseDto;
+import au.gov.dva.sopref.DtoTransformations;
 import au.gov.dva.sopref.Operations;
 import au.gov.dva.sopref.SoPs;
 import au.gov.dva.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopref.data.sops.BasicICDCode;
-import au.gov.dva.sopref.dtos.OperationsResponseDto;
 import au.gov.dva.interfaces.Repository;
 import au.gov.dva.interfaces.model.*;
 import com.google.common.collect.ImmutableSet;
@@ -76,7 +77,7 @@ public class Application implements spark.servlet.SparkApplication {
 
             ImmutableSet<ServiceDetermination> latestServiceDeterminationPair = Operations.getLatestDeterminationPair(_allServiceDeterminations, parsedDate);
 
-            OperationsResponseDto operationsResponseDto = OperationsResponseDto.build(latestServiceDeterminationPair);
+            OperationsResponseDto operationsResponseDto = DtoTransformations.buildOperationsResponseDto(latestServiceDeterminationPair);
 
             setResponseHeaders(res, true, 200);
             String json = OperationsResponseDto.toJsonString(operationsResponseDto);

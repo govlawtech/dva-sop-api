@@ -1,9 +1,9 @@
 package au.gov.dva.sopref;
 
-import au.gov.dva.sopref.dtos.SoPDto;
-import au.gov.dva.sopref.dtos.SoPRefDto;
 import au.gov.dva.exceptions.DvaSopApiError;
 import au.gov.dva.interfaces.model.*;
+import au.gov.dva.sopapi.dtos.SoPDto;
+import au.gov.dva.sopapi.dtos.SoPRefDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableSet;
@@ -17,7 +17,7 @@ public class SoPs {
     public static String buildSopRefJsonResponse(ImmutableSet<SoP> matchingSops, IncidentType incidentType, StandardOfProof standardOfProof) {
         ObjectMapper objectMapper = new ObjectMapper();
         List<SoPDto> sopDtos = matchingSops.stream()
-                .map(s -> SoPDto.fromSop(s,standardOfProof,incidentType))
+                .map(s -> DtoTransformations.fromSop(s,standardOfProof,incidentType))
                 .collect(Collectors.toList());
 
         SoPRefDto dtoToReturn = new SoPRefDto(sopDtos);

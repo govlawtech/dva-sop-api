@@ -1,15 +1,11 @@
-package au.gov.dva.sopref.dtos;
+package au.gov.dva.sopapi.dtos;
 
-import au.gov.dva.exceptions.DvaSopApiError;
-import au.gov.dva.interfaces.model.ServiceDetermination;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.collect.ImmutableSet;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class OperationsResponseDto {
 
@@ -24,21 +20,6 @@ public class OperationsResponseDto {
         this._operations = _operations;
     }
 
-    public static OperationsResponseDto build(ImmutableSet<ServiceDetermination> latestServiceDeterminations)
-    {
-
-        List<String> registerIds = latestServiceDeterminations.stream()
-                .map(sd -> sd.getRegisterId())
-                .collect(Collectors.toList());
-
-        List<OperationDto> operationDtos = latestServiceDeterminations.stream()
-                .flatMap(sd -> sd.getOperations().stream())
-                .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
-                .map(OperationDto::fromOperation)
-                .collect(Collectors.toList());
-
-        return new OperationsResponseDto(registerIds,operationDtos);
-    }
 
 
     public static String toJsonString(OperationsResponseDto operationsResponseDto)
@@ -50,7 +31,7 @@ public class OperationsResponseDto {
         try {
             jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(operationsResponseDto);
         } catch (JsonProcessingException e) {
-            throw new DvaSopApiError(e);
+            throw new DvaSopApiDtoError(e);
         }
         return jsonString;
     }
