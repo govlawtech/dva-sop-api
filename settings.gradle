@@ -6,3 +6,5 @@ include 'services:webservice'
 */
 
 rootProject.name = 'dva-sop-api'
+
+include 'client'
