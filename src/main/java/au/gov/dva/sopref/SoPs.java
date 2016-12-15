@@ -2,8 +2,9 @@ package au.gov.dva.sopref;
 
 import au.gov.dva.exceptions.DvaSopApiError;
 import au.gov.dva.interfaces.model.*;
-import au.gov.dva.sopapi.dtos.SoPDto;
-import au.gov.dva.sopapi.dtos.SoPRefDto;
+import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.sopref.SoPDto;
+import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableSet;

@@ -1,9 +1,9 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.interfaces.model.IncidentType;
-import au.gov.dva.interfaces.model.Rank;
-import au.gov.dva.sopsupport.dtos.request.RequestDto;
-import au.gov.dva.sopsupport.dtos.request.components.*;
+import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.sopsupport.RequestDto;
+import au.gov.dva.sopapi.dtos.sopsupport.components.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -18,12 +18,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class SopSupportServiceTests {
 

@@ -1,6 +1,6 @@
-package au.gov.dva.sopsupport.dtos.request.components;
+package au.gov.dva.sopapi.dtos.sopsupport.components;
 
-import au.gov.dva.interfaces.model.IncidentType;
+import au.gov.dva.sopapi.dtos.IncidentType;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

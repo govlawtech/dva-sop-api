@@ -1,8 +1,7 @@
-package au.gov.dva.sopsupport.dtos.request.components;
+package au.gov.dva.sopapi.dtos.sopsupport.components;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 public class ServiceHistoryDto {

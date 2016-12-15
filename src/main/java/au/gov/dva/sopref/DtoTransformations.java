@@ -1,7 +1,8 @@
 package au.gov.dva.sopref;
 
 import au.gov.dva.interfaces.model.*;
-import au.gov.dva.sopapi.dtos.*;
+import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.sopref.*;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 

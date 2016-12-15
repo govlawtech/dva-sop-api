@@ -1,4 +1,4 @@
-package au.gov.dva.sopapi.dtos;
+package au.gov.dva.sopapi.dtos.sopref;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

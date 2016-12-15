@@ -1,5 +1,6 @@
-package au.gov.dva.sopapi.dtos;
+package au.gov.dva.sopapi.dtos.sopref;
 
+import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;

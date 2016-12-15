@@ -2,7 +2,7 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
 import au.gov.dva.sopref.SoPs;
-import au.gov.dva.interfaces.model.IncidentType;
+import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.interfaces.model.SoP;
 import au.gov.dva.interfaces.model.StandardOfProof;
 import com.google.common.collect.ImmutableList;

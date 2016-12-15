@@ -1,4 +1,4 @@
-package au.gov.dva.interfaces.model;
+package au.gov.dva.sopapi.dtos;
 
 public enum Rank {
     Officer,

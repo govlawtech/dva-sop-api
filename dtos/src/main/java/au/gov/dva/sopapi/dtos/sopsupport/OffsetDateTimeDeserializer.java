@@ -1,4 +1,4 @@
-package au.gov.dva.sopsupport.dtos.request;
+package au.gov.dva.sopapi.dtos.sopsupport;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;

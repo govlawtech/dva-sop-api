@@ -1,6 +1,7 @@
 package au.gov.dva;
 
-import au.gov.dva.sopapi.dtos.OperationsResponseDto;
+import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopref.DtoTransformations;
 import au.gov.dva.sopref.Operations;
 import au.gov.dva.sopref.SoPs;

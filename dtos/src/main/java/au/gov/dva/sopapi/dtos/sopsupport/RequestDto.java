@@ -1,16 +1,14 @@
-package au.gov.dva.sopsupport.dtos.request;
+package au.gov.dva.sopapi.dtos.sopsupport;
 
-import au.gov.dva.exceptions.DvaSopApiError;
-import au.gov.dva.sopsupport.dtos.request.components.ConditionDto;
-import au.gov.dva.sopsupport.dtos.request.components.ServiceHistoryDto;
+import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
+import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
+import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceHistoryDto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
 
@@ -42,7 +40,7 @@ public class RequestDto {
             RequestDto requestDto = objectMapper.readValue(json,RequestDto.class);
             return requestDto;
         } catch (IOException e) {
-            throw new DvaSopApiError(e);
+            throw new DvaSopApiDtoError(e);
         }
     }
 
@@ -53,7 +51,7 @@ public class RequestDto {
         try {
             return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
         } catch (JsonProcessingException e) {
-            throw new DvaSopApiError(e);
+            throw new DvaSopApiDtoError(e);
         }
     }
 

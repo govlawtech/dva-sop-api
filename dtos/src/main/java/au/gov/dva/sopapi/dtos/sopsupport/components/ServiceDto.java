@@ -1,8 +1,8 @@
-package au.gov.dva.sopsupport.dtos.request.components;
+package au.gov.dva.sopapi.dtos.sopsupport.components;
 
-import au.gov.dva.interfaces.model.Rank;
-import au.gov.dva.sopsupport.dtos.request.OffsetDateTimeDeserializer;
-import au.gov.dva.sopsupport.dtos.request.OffsetDateTimeSerializer;
+import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeDeserializer;
+import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeSerializer;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
