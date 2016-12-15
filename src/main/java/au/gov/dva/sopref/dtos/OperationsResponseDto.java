@@ -1,6 +1,10 @@
 package au.gov.dva.sopref.dtos;
 
+<<<<<<< HEAD
 import au.gov.dva.sopref.exceptions.DvaSopApiError;
+=======
+import au.gov.dva.exceptions.DvaSopApiError;
+>>>>>>> sopsupport
 import au.gov.dva.interfaces.model.ServiceDetermination;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
