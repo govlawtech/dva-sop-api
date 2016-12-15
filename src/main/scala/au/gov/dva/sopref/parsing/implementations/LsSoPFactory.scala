@@ -2,7 +2,8 @@ package au.gov.dva.sopref.parsing.implementations
 
 import java.time.LocalDate
 
-import au.gov.dva.interfaces.model.{DefinedTerm, ICDCode, SoP, StandardOfProof}
+import au.gov.dva.interfaces.model.{DefinedTerm, ICDCode, SoP}
+import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopref.parsing.traits.SoPFactory
 
 object LsSoPFactory extends SoPFactory{

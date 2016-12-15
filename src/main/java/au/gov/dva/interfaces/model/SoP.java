@@ -1,5 +1,6 @@
 package au.gov.dva.interfaces.model;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 

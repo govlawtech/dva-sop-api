@@ -4,7 +4,7 @@ import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
 import au.gov.dva.sopref.SoPs;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.interfaces.model.SoP;
-import au.gov.dva.interfaces.model.StandardOfProof;
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.junit.Assert;

@@ -1,5 +1,6 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopref.data.sops.BasicICDCode;
 import au.gov.dva.interfaces.model.*;
 import com.google.common.collect.ImmutableList;

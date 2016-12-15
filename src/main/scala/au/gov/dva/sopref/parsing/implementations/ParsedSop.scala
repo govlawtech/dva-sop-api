@@ -3,6 +3,7 @@ package au.gov.dva.sopref.parsing.implementations
 import java.time.LocalDate
 
 import au.gov.dva.interfaces.model._
+import au.gov.dva.sopapi.dtos.StandardOfProof
 import com.google.common.collect.{ImmutableList, ImmutableSet}
 
 class ParsedSop(registerId: String, instrumentNumber: InstrumentNumber, citation: String, aggravationFactors: List[Factor],

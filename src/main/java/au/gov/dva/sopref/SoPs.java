@@ -3,6 +3,7 @@ package au.gov.dva.sopref;
 import au.gov.dva.exceptions.DvaSopApiError;
 import au.gov.dva.interfaces.model.*;
 import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.SoPDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
 import com.fasterxml.jackson.core.JsonProcessingException;

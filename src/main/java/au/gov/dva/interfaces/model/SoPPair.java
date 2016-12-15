@@ -1,5 +1,7 @@
 package au.gov.dva.interfaces.model;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
+
 public class SoPPair {
     private final SoP bopSop;
     private final SoP rhSop;
