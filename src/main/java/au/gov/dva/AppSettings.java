@@ -1,7 +1,7 @@
 package au.gov.dva;
 
 
-import au.gov.dva.exceptions.ConfigurationError;
+import au.gov.dva.sopref.exceptions.ConfigurationError;
 
 import static au.gov.dva.AppSettings.Environment.devtest;
 import static au.gov.dva.AppSettings.Environment.devtestlocal;

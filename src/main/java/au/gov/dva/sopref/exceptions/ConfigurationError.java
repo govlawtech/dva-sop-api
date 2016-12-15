@@ -1,4 +1,4 @@
-package au.gov.dva.exceptions;
+package au.gov.dva.sopref.exceptions;
 
 public class ConfigurationError extends DvaSopApiError {
     public ConfigurationError(String msg, Throwable e) {

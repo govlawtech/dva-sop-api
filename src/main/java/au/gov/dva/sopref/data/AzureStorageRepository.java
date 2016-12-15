@@ -2,11 +2,7 @@ package au.gov.dva.sopref.data;
 
 import au.gov.dva.sopref.data.servicedeterminations.StoredServiceDetermination;
 import au.gov.dva.sopref.data.sops.StoredSop;
-<<<<<<< HEAD
 import au.gov.dva.sopref.exceptions.RepositoryError;
-=======
-import au.gov.dva.exceptions.RepositoryError;
->>>>>>> sopsupport
 import au.gov.dva.interfaces.Repository;
 import au.gov.dva.interfaces.model.InstrumentChange;
 import au.gov.dva.interfaces.model.ServiceDetermination;

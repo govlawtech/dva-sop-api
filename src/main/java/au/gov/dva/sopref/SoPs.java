@@ -2,11 +2,7 @@ package au.gov.dva.sopref;
 
 import au.gov.dva.sopref.dtos.SoPDto;
 import au.gov.dva.sopref.dtos.SoPRefDto;
-<<<<<<< HEAD:src/main/java/au/gov/dva/sopref/SoPs.java
 import au.gov.dva.sopref.exceptions.DvaSopApiError;
-=======
-import au.gov.dva.exceptions.DvaSopApiError;
->>>>>>> sopsupport:src/main/java/au/gov/dva/sopref/SoPs.java
 import au.gov.dva.interfaces.model.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

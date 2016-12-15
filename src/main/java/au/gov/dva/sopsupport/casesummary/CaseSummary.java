@@ -1,10 +1,6 @@
 package au.gov.dva.sopsupport.casesummary;
 
-<<<<<<< HEAD:src/main/java/au/gov/dva/sopsupport/casesummary/CaseSummary.java
 import au.gov.dva.sopref.exceptions.CaseSummaryError;
-=======
-import au.gov.dva.exceptions.CaseSummaryError;
->>>>>>> sopsupport:src/main/java/au/gov/dva/sopsupport/casesummary/CaseSummary.java
 import au.gov.dva.interfaces.model.*;
 import au.gov.dva.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.commons.lang.WordUtils;
