@@ -4,18 +4,13 @@ apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
 
-repositories {
+allprojects {
+
+    repositories {
         mavenCentral()
-}
+    }
 
-war {
-    webAppDirName='src/main'
-}
 
-task copyWar(type: Copy, dependsOn: 'war') {
-    from 'build/libs/dva-sop-api.war'
-    into 'deploy/webapps/'
-    rename {String fileName -> 'ROOT.war'}
 }
 
 findbugs {
@@ -30,6 +25,16 @@ tasks.withType(FindBugs) {
         xml.enabled false
         html.enabled true
     }
+}
+
+war {
+    webAppDirName = 'src/main'
+}
+
+task copyWar(type: Copy, dependsOn: 'war') {
+    from 'build/libs/dva-sop-api.war'
+    into 'deploy/webapps/'
+    rename { String fileName -> 'ROOT.war' }
 }
 
 

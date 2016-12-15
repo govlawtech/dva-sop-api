@@ -8,6 +8,7 @@
  */
 
 apply plugin: 'java'
+apply plugin: 'findbugs'
 
 repositories {
     mavenCentral()
@@ -34,3 +35,17 @@ dependencies {
     compile group: 'com.beust', name: 'jcommander', version: '1.58'
     testCompile 'junit:junit:4.12'
 }
+
+findbugs {
+    effort = "max"
+    reportLevel = "low"
+    sourceSets = [sourceSets.main]
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
