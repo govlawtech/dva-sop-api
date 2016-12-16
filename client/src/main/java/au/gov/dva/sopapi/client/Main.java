@@ -1,8 +1,13 @@
 package au.gov.dva.sopapi.client;
 
+import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import org.apache.commons.cli.*;
 
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class Main {
 
@@ -30,5 +35,36 @@ public class Main {
         options.addOption(urlOption);
         options.addOption(declaredAfterOption);
 
+        CommandLineParser parser = new DefaultParser();
+        try {
+            CommandLine cmd = parser.parse(options, args);
+
+            if(cmd.hasOption("url")) {
+                URL serverUrl = new URL(cmd.getOptionValue("url"));
+                SoPApiClient client = new SoPApiClient(serverUrl);
+
+                LocalDate declaredAfterDate = LocalDate.parse(cmd.getOptionValue("declaredAfter"));
+                OperationsResponseDto operationsResponse =
+                        client.getOperations(declaredAfterDate).get();
+
+                System.out.println(operationsResponse.toJsonString(operationsResponse));
+            }
+        } catch (ParseException e) {
+            printHelp(options);
+            System.out.println(e);
+        } catch (MalformedURLException e) {
+            System.out.println(e);
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        } catch (ExecutionException e) {
+            System.out.println(e);
+        } finally {
+            System.exit(-1);
+        }
+    }
+
+    private static void printHelp(Options options) {
+        HelpFormatter helpFormatter = new HelpFormatter();
+        helpFormatter.printHelp("dva-sop-api", options);
     }
 }
