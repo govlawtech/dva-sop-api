@@ -1,7 +1,7 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
-import au.gov.dva.sopref.data.FederalRegisterOfLegislation;
+import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislation;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 import org.junit.Assert;
@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
-import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 public class LegislationRegisterTests {

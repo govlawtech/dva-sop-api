@@ -6,12 +6,13 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class OffsetDateTimeDeserializer extends JsonDeserializer {
+public class OffsetDateTimeDeserializer extends JsonDeserializer<OffsetDateTime> {
     @Override
-    public Object deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+    public OffsetDateTime deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
         String stringValue = p.getValueAsString();
 
         String withAssumedTime = stringValue.matches("^[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}Z$") ?
@@ -21,3 +22,4 @@ public class OffsetDateTimeDeserializer extends JsonDeserializer {
         return parsed;
     }
 }
+

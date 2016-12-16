@@ -15,7 +15,6 @@ public class SoPApiClient {
 
     public SoPApiClient(URL baseUrl)
     {
-
         this.baseUrl = baseUrl;
     }
 
@@ -24,7 +23,6 @@ public class SoPApiClient {
         // todo:
         // - make async call to getSopFactors endpoint (need to set headers, look at Application.java to see what is expected)
         // - deserialize the response to SoPRefDto using Jackson
-
 
 
         // this is just here to stop Findbugs complaining - can remove later

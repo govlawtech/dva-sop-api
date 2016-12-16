@@ -1,10 +1,10 @@
 import java.io.InputStream
 import java.time.LocalDate
 
-import au.gov.dva.sopref.data.Conversions
-import au.gov.dva.sopref.data.servicedeterminations.StoredServiceDetermination
-import au.gov.dva.interfaces.model.ServiceType
-import au.gov.dva.sopref.parsing.ServiceDeterminations
+import au.gov.dva.sopapi.sopref.data.Conversions
+import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination
+import au.gov.dva.sopapi.interfaces.model.ServiceType
+import au.gov.dva.sopapi.sopref.parsing.ServiceDeterminations
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner

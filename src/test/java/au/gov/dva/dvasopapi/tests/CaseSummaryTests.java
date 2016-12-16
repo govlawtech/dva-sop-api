@@ -1,8 +1,8 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.CaseSummaryModelMock;
-import au.gov.dva.sopsupport.casesummary.CaseSummary;
-import au.gov.dva.interfaces.model.casesummary.CaseSummaryModel;
+import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
+import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.sopref.data.Conversions;
+import au.gov.dva.sopapi.sopref.data.Conversions;
 import com.google.common.io.Resources;
 import org.junit.Test;
 
