@@ -92,8 +92,8 @@ Operation names are expected to be exactly as they appear in the relevant Servic
 # Notes on Processing Rules
 
 * Where a veteran has a service historyincluding multiple service branches (eg, Army and RAN), the standard of proof (Reasonable Hypothesis or Balance of Probabilities) is determined taking into account:
-- the entire service history, including multiple branches;
-- the rank they held in the last service branch in which they started before the condition started.
+    - the entire service history, including multiple branches;
+    - the rank they held in the last service branch in which they started before the condition started.
 
 * The number of days of operational service in a given interval is the number of whole elapsed 24 hour periods, rounded up to the nearest day.  This takes account of time zones, daylight saving and leap seconds etc. 
 
