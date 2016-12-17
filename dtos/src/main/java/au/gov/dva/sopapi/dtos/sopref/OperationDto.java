@@ -20,7 +20,7 @@ public class OperationDto {
     @JsonProperty("type")
     private final String _type;
 
-    public OperationDto(String _name, String _startDate, Optional<String> _endDate, String _type) {
+    public OperationDto(@JsonProperty("operationName") String _name, @JsonProperty("startDate") String _startDate, @JsonProperty("endDate") Optional<String> _endDate, @JsonProperty("type") String _type) {
         this._name = _name;
         this._startDate = _startDate;
         if (_endDate.isPresent())

@@ -16,7 +16,7 @@ public class OperationsResponseDto {
     @JsonProperty("operations")
     private final List<OperationDto> _operations;
 
-    public OperationsResponseDto(List<String> _registerIds, List<OperationDto> _operations) {
+    public OperationsResponseDto(@JsonProperty("registerIds") List<String> _registerIds, @JsonProperty("operations") List<OperationDto> _operations) {
         this._registerIds = _registerIds;
         this._operations = _operations;
     }
