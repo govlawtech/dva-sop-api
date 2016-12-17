@@ -93,4 +93,4 @@ Operation names are expected to be exactly as they appear in the relevant Servic
 
 * Where a veteran has a service history including multiple service branches (eg, Army and RAN), the entire history is taken into account in determining whether the Reasonable Hypothesis or Balance of Probabilities SoP applies.
 
-* The number of days of operational service in a given interval is the number of seconds in the interval, divided by the number of seconds in a day, then rounded up to the nearest whole day.  This takes account of time zones and daylight saving.
+* The number of days of operational service in a given interval is the number of whole elapsed days, rounded up to the nearest day.  This takes account of time zones, daylight saving and leap seconds etc. 
