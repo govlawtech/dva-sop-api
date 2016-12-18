@@ -74,7 +74,7 @@ public class Main {
         urlOption.setRequired(true);
 
         // getOperations options
-        Option declaredAfterOption = new Option("declaredAfter", true,
+        Option declaredAfterOption = new Option(QueryParamLabels.QUERY_DATE, true,
                 "Find operations declared after this ISO local date (yyyy-mm-dd).");
         declaredAfterOption.setRequired(true);
 
