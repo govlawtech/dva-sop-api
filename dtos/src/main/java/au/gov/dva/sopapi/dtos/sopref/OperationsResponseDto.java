@@ -1,10 +1,10 @@
 package au.gov.dva.sopapi.dtos.sopref;
 
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class OperationsResponseDto {
     @JsonProperty("operations")
     private final List<OperationDto> _operations;
 
-    public OperationsResponseDto(List<String> _registerIds, List<OperationDto> _operations) {
+    public OperationsResponseDto(@JsonProperty("registerIds") List<String> _registerIds, @JsonProperty("operations") List<OperationDto> _operations) {
         this._registerIds = _registerIds;
         this._operations = _operations;
     }
@@ -25,8 +25,7 @@ public class OperationsResponseDto {
 
     public static String toJsonString(OperationsResponseDto operationsResponseDto)
     {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
 
         String jsonString = null;
         try {
