@@ -10,10 +10,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
+import org.asynchttpclient.Param;
+import org.asynchttpclient.Response;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class SoPApiClient {
@@ -29,16 +33,32 @@ public class SoPApiClient {
         this._serviceUrl = this.baseUrl + "/" + this._service;
     }
 
-    public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
+    public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, String incidentType, String standardOfProof)
     {
         // todo:
         // - make async call to getSopFactors endpoint (need to set headers, look at Application.java to see what is expected)
         // - deserialize the response to SoPRefDto using Jackson
 
-        // this is just here to stop Findbugs complaining - can remove later
-        System.out.print(baseUrl);
+        List<Param> params = new ArrayList<>();
+        params.add(new Param(QueryParamLabels.CONDITION_NAME, conditionName));
+        params.add(new Param(QueryParamLabels.ICD_CODE_Value, icdCodeValue));
+        params.add(new Param(QueryParamLabels.ICD_CODE_VERSION, icdCodeVersion));
+        params.add(new Param(QueryParamLabels.INCIDENT_TYPE, incidentType));
+        params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof));
 
-        return null;
+        System.out.println(standardOfProof.toString());
+
+        AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
+        CompletableFuture<SoPRefDto> promise = asyncHttpClient
+                .prepareGet(this._serviceUrl)
+                .setHeader("Accept", "application/json")
+                .addQueryParams(params)
+                .execute()
+                .toCompletableFuture()
+                .thenApply(response -> response.getResponseBody())
+                .thenApply(json -> SoPRefDto.fromJsonString(json.toString()));
+
+        return promise;
     }
 
     public CompletableFuture<OperationsResponseDto> getOperations(LocalDate declaredAfter)

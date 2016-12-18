@@ -11,7 +11,7 @@ public class DefinedTermDto {
     @JsonProperty("definition")
     private final String _definition;
 
-    @JsonCreator
+    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public DefinedTermDto(@JsonProperty("term") String term, @JsonProperty("definition") String definition)
     {
         _term = term;
