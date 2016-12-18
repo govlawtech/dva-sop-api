@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopref;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -19,7 +20,8 @@ public class SoPDto {
     @JsonProperty("factors")
     private final List<FactorDto> _factors;
 
-    public SoPDto(String registerId, String citation, String instrumentNumber, List<FactorDto> factors) {
+    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+    public SoPDto(@JsonProperty("registerId") String registerId, @JsonProperty("citation") String citation, @JsonProperty("instrumentNumber") String instrumentNumber, @JsonProperty("factors") List<FactorDto> factors) {
         _registerId = registerId;
         _citation = citation;
         _instrumentNumber = instrumentNumber;

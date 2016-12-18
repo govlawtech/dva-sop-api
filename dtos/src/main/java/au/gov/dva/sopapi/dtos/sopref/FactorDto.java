@@ -16,8 +16,8 @@ public class FactorDto {
     @JsonProperty("definedTerms")
     private final List<DefinedTermDto> _definedTerms;
 
-    @JsonCreator
-    public FactorDto(@JsonProperty("paragraph") String paragraph,@JsonProperty("text") String text, List<DefinedTermDto> definedTermDtos) {
+    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+    public FactorDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTermDto> definedTermDtos) {
 
         _paragraph = paragraph;
         _text = text;
