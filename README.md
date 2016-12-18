@@ -95,6 +95,8 @@ Operation names are expected to be exactly as they appear in the relevant Servic
     - the entire service history, including multiple branches;
     - the rank they held in the last service branch in which they started before the condition started.
 
-* The number of days of operational service in a given interval is the number of whole elapsed 24 hour periods, rounded up to the nearest day.  This takes account of time zones, daylight saving and leap seconds etc. 
+* The number of days of operational service in a given interval is the number of whole elapsed 24 hour periods, rounded up to the nearest day.  This takes account of time zones, daylight saving and leap seconds etc.
+
+* Dates of operations in Service Declarations are assumed to be in the "Australia/ACT" time zone.
 
 
