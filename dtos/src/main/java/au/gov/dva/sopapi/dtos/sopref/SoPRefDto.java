@@ -14,7 +14,7 @@ public class SoPRefDto {
     @JsonProperty("applicableFactors")
     private final List<SoPDto> _sops;
 
-    public SoPRefDto(List<SoPDto> soPDtos)
+    public SoPRefDto(@JsonProperty("applicableFactors") List<SoPDto> soPDtos)
     {
         _sops = soPDtos;
     }
