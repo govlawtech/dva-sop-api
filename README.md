@@ -97,6 +97,8 @@ Operation names are expected to be exactly as they appear in the relevant Servic
 
 * The number of days of operational service in a given interval is the number of whole elapsed 24 hour periods, rounded up to the nearest day.  This takes account of time zones, daylight saving and leap seconds etc.
 
-* Dates of operations in Service Declarations are assumed to be in the "Australia/ACT" IANA TZDB time zone.
+* Dates of operations in Service Declarations are assumed to be in the "Australia/ACT" IANA TZDB time zone.  The start time is assumed to be 12 AM on the date specified in the Declaration.  End dates of operations are assumed to be inclusive: the end time is assumed to be 12 midnight PM on the date specified.
+
+* Commencement dates and dates of effect are assumed to be in the "Australia/ACT" IANA TZDB time zone, at 12AM.
 
 
