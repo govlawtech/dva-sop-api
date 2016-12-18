@@ -16,9 +16,11 @@
     <orderEntry type="library" name="Gradle: org.asynchttpclient:async-http-client:2.0.24" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.5" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.5" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.8.5" level="project" />
     <orderEntry type="library" name="Gradle: com.beust:jcommander:1.58" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-jsonSchema:2.8.5" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:20.0" level="project" />
     <orderEntry type="library" name="Gradle: org.asynchttpclient:async-http-client-netty-utils:2.0.24" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.0.42.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.0.42.Final" level="project" />

@@ -11,10 +11,6 @@ import java.time.OffsetDateTime;
 
 public class OnsetDateRangeDto {
 
-    @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
-    @JsonProperty("singleOnsetDate")
-    private final OffsetDateTime _incidentDate;
 
     @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
     @JsonSerialize(using = OffsetDateTimeSerializer.class)
@@ -27,10 +23,18 @@ public class OnsetDateRangeDto {
     private final OffsetDateTime _endDate;
 
     @JsonCreator
-    public OnsetDateRangeDto(@JsonProperty("singleOnsetDate")  @JsonDeserialize(using = OffsetDateTimeDeserializer.class) OffsetDateTime _incidentDate, @JsonProperty("onsetRangeStartDate") OffsetDateTime _startDate, @JsonProperty("onsetRangeEndDate")  OffsetDateTime _endDate) {
-        this._incidentDate = _incidentDate;
+    public OnsetDateRangeDto( @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeStartDate") OffsetDateTime _startDate,  @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeEndDate")  OffsetDateTime _endDate) {
         this._startDate = _startDate;
         this._endDate = _endDate;
+    }
+
+
+    public OffsetDateTime get_startDate() {
+        return _startDate;
+    }
+
+    public OffsetDateTime get_endDate() {
+        return _endDate;
     }
 }
 

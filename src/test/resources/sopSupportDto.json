@@ -5,9 +5,8 @@
     "icdCodeVersion" : "ICD-10-AM",
     "icdCodeValue" : "M39.89",
     "onsetDates" : {
-      "onsetDate" : "2010-01-01Z",
-      "onsetStartDate" : null,
-      "onsetEndDate" : null
+      "onsetRangeStartDate" : "2010-01-01Z",
+      "onsetRangeEndDate" : "2010-01-01Z"
     },
     "aggravationDates" : null
   },

@@ -1,11 +1,10 @@
 
 import au.gov.dva.dvasopapi.tests.TestUtils
-import au.gov.dva.sopref.data.sops.StoredSop
-import au.gov.dva.interfaces.model.SoP
+import au.gov.dva.sopapi.sopref.data.sops.StoredSop
+import au.gov.dva.sopapi.interfaces.model.SoP
 import au.gov.dva.sopapi.dtos.StandardOfProof
-import au.gov.dva.sopref.parsing.SoPExtractorUtilities._
-import au.gov.dva.sopref.parsing._
-import au.gov.dva.sopref.parsing.implementations._
+import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
+import au.gov.dva.sopapi.sopref.parsing.implementations._
 import com.google.common.io.Resources
 import org.scalatest.{FlatSpec, FunSuite}
 import org.junit.runner.RunWith
