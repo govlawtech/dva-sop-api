@@ -1,10 +1,11 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
-import au.gov.dva.sopapi.interfaces.model.*;
-import com.google.common.collect.ImmutableSet;
+import au.gov.dva.sopapi.interfaces.ProcessingRule;
+import au.gov.dva.sopapi.interfaces.model.Condition;
+import au.gov.dva.sopapi.interfaces.model.SoPPair;
 
-import java.time.LocalDate;
-import java.util.Optional;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 
 public class ConditionMock implements Condition {
 
@@ -13,26 +14,16 @@ public class ConditionMock implements Condition {
         return new SoPPair(null,new MockLumbarSpondylosisSop());
     }
 
-    public LocalDate getOnsetStartDate() {
-        return LocalDate.of(2004, 11, 1);
+    public OffsetDateTime getStartDate() {
+        return OffsetDateTime.of(2004,11,1,0,0,0,0,ZoneOffset.UTC);
     }
 
-    public Optional<LocalDate> getOnsetEndDate() {
-        return Optional.of(LocalDate.of(2004, 11, 7));
-    }
-
-    @Override
-    public ImmutableSet<Factor> getApplicableFactors(ServiceHistory serviceHistory) {
-        return null;
+    public OffsetDateTime getEndDate() {
+        return OffsetDateTime.of(2004, 11, 7,0,0,0,0,ZoneOffset.UTC);
     }
 
     @Override
-    public ImmutableSet<Factor> getSatisfiedFactors(ServiceHistory serviceHistory) {
-        return null;
-    }
-
-    @Override
-    public SoP getApplicableSop() {
+    public ProcessingRule getProcessingRule() {
         return null;
     }
 

@@ -4,7 +4,7 @@ import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.ServiceType;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 
 public class Operations {
 
-    public static Optional<ServiceDetermination> getLatestServiceDetermination(ImmutableSet<ServiceDetermination> allServiceDeterminations, LocalDate commencementDate, ServiceType serviceType)
+    public static Optional<ServiceDetermination> getLatestServiceDetermination(ImmutableSet<ServiceDetermination> allServiceDeterminations, OffsetDateTime commencementDate, ServiceType serviceType)
     {
-        List<LocalDate> commencementDates =  allServiceDeterminations.stream().map(sd -> sd.getCommencementDate()).collect(Collectors.toList());
+        List<OffsetDateTime> commencementDates =  allServiceDeterminations.stream().map(sd -> sd.getCommencementDate()).collect(Collectors.toList());
 
         assert(commencementDates.size() == commencementDates.stream().distinct().count());
 
@@ -26,11 +26,11 @@ public class Operations {
     }
 
 
-    public static ImmutableSet<ServiceDetermination> getLatestDeterminationPair(ImmutableSet<ServiceDetermination> allServiceDeterminations, LocalDate localDate)
+    public static ImmutableSet<ServiceDetermination> getLatestDeterminationPair(ImmutableSet<ServiceDetermination> allServiceDeterminations, OffsetDateTime after)
     {
-        Optional<ServiceDetermination> relevantWarlikeDetermination = Operations.getLatestServiceDetermination(allServiceDeterminations,localDate,ServiceType.WARLIKE);
+        Optional<ServiceDetermination> relevantWarlikeDetermination = Operations.getLatestServiceDetermination(allServiceDeterminations,after,ServiceType.WARLIKE);
 
-        Optional<ServiceDetermination> relevantNonWarlikeDetermination = Operations.getLatestServiceDetermination(allServiceDeterminations,localDate,ServiceType.NON_WARLIKE);
+        Optional<ServiceDetermination> relevantNonWarlikeDetermination = Operations.getLatestServiceDetermination(allServiceDeterminations,after,ServiceType.NON_WARLIKE);
 
         List<ServiceDetermination> present = new ArrayList<>();
         if (relevantNonWarlikeDetermination.isPresent())

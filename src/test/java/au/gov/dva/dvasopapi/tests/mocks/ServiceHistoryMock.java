@@ -1,88 +1,79 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
-import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.dtos.EmploymentType;
+import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.ServiceBranch;
+import au.gov.dva.sopapi.interfaces.model.Deployment;
+import au.gov.dva.sopapi.interfaces.model.Service;
+import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.Optional;
+
+import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
 
 public class ServiceHistoryMock implements ServiceHistory {
 
-    public LocalDate getEnlistmentDate() {
-        return LocalDate.of(2004, 7, 1);
+    public OffsetDateTime getEnlistmentDate() {
+        return odtOf(2004, 7, 1);
     }
 
-    public LocalDate getSeparationDate() {
-        return LocalDate.of(2010, 6, 30);
+    public OffsetDateTime getSeparationDate() {
+        return odtOf(2016,6,30);
     }
 
-    public LocalDate getHireDate() {
-        return LocalDate.of(2004, 7, 20);
+    public OffsetDateTime getHireDate() {
+        return odtOf(2004, 7, 20);
     }
 
     public ImmutableSet<Service> getServices() {
         return ImmutableSet.of(new Service() {
             @Override
-            public String getName() {
-                return "Royal Australian Air Force";
+            public ServiceBranch getBranch() {
+                return ServiceBranch.ARMY;
             }
 
             @Override
-            public String getType() {
-                return "Regular/Permanent Force";
+            public EmploymentType getEmploymentType() {
+                return EmploymentType.CTFS;
             }
 
             @Override
-            public LocalDate getStartDate() {
-                return LocalDate.of(2004, 8, 1);
+            public Rank getRank() {
+                return Rank.OtherRank;
             }
 
             @Override
-            public LocalDate getEndDate() {
-                return LocalDate.of(2010, 6, 30);
+            public OffsetDateTime getStartDate() {
+                return OffsetDateTime.of(2004, 8, 1,0,0,0,0,ZoneOffset.UTC);
+            }
+
+            @Override
+            public Optional<OffsetDateTime> getEndDate() {
+                return Optional.of(OffsetDateTime.of(2010, 6, 30,0,0,0,0,ZoneOffset.UTC));
             }
 
             @Override
             public ImmutableSet<Deployment> getDeployments() {
                 return ImmutableSet.of(new Deployment() {
 
+
                     @Override
-                    public Operation getOperation() {
-                        return new Operation() {
-                            @Override
-                            public String getName() {
-                                return "Operation WARDEN";
-                            }
-
-                            @Override
-                            public ServiceType getServiceType() {
-                                return ServiceType.WARLIKE;
-                            }
-
-                            @Override
-                            public LocalDate getStartDate() {
-                                return null;
-                            }
-
-                            @Override
-                            public Optional<LocalDate> getEndDate() {
-                                return null;
-                            }
-                        };
+                    public String getOperationName() {
+                        return "Operation WARDEN";
                     }
 
                     @Override
-                    public LocalDate getStartDate() {
-                        return LocalDate.of(2006, 3, 1);
+                    public OffsetDateTime getStartDate() {
+                        return OffsetDateTime.of(2006, 3, 1,0,0,0,0, ZoneOffset.UTC);
                     }
 
                     @Override
-                    public Optional<LocalDate> getEndDate() {
-                            return Optional.of(LocalDate.of(2006, 12, 31));
+                    public Optional<OffsetDateTime> getEndDate() {
+                            return Optional.of(OffsetDateTime.of(2006, 12, 31,0,0,0,0,ZoneOffset.UTC));
                     }
-
-
-
                 });
             }
         });

@@ -30,8 +30,7 @@ import spark.QueryParamsMap;
 import spark.Request;
 import spark.Response;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,12 +76,12 @@ public class Application implements spark.servlet.SparkApplication {
                 setResponseHeaders(res, false, 400);
                 return buildQueryParamErrorMessage(QueryParamLabels.QUERY_DATE, "required, missing");
             }
-            LocalDate parsedDate;
+            OffsetDateTime parsedDate;
             try {
-                parsedDate = LocalDate.parse(queryDate, DateTimeFormatter.ISO_LOCAL_DATE);
+                parsedDate =  DateTimeUtils.stringToOffsetDateTime(queryDate);
             } catch (DateTimeParseException e) {
                 setResponseHeaders(res, false, 400);
-                return buildQueryParamErrorMessage(QueryParamLabels.QUERY_DATE, "Date must be in ISO local date format: yyyy-mm-dd. For example, 2017-01-01.");
+                return buildQueryParamErrorMessage(QueryParamLabels.QUERY_DATE, "Date must be in ISO offset date format: yyyy-mm-ddZ for UTC. For example, 2017-01-01Z.");
             }
 
             ImmutableSet<ServiceDetermination> latestServiceDeterminationPair = Operations.getLatestDeterminationPair(_allServiceDeterminations, parsedDate);
@@ -156,11 +155,8 @@ public class Application implements spark.servlet.SparkApplication {
                     sb.append(schema);
                 }
                 return sb.toString();
-
             }
-
         }));
-
     }
 
 

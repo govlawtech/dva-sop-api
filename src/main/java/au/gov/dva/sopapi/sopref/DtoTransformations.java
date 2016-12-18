@@ -1,13 +1,13 @@
 package au.gov.dva.sopapi.sopref;
 
-import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.*;
+import au.gov.dva.sopapi.interfaces.model.*;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
@@ -67,8 +67,8 @@ public class DtoTransformations {
     }
 
 
-    private static String formatDate(LocalDate localDate)
+    private static String formatDate(OffsetDateTime offsetDateTime)
     {
-        return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
+        return offsetDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE);
     }
 }

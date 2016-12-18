@@ -4,16 +4,26 @@ import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import org.apache.commons.lang.WordUtils;
-import org.apache.poi.xwpf.usermodel.*;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFNum;
+import org.apache.poi.xwpf.usermodel.XWPFNumbering;
 import org.apache.xmlbeans.XmlException;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.*;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTInd;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTLvl;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTStyles;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.STNumberFormat;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
 
 public class CaseSummary {
 
@@ -21,12 +31,12 @@ public class CaseSummary {
     private static CTStyles _ctStyles = CTStyles.Factory.newInstance();
     private static XWPFNumbering _numbering;
 
-    public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel) {
+    public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel, Function<String,ServiceType> getServiceTypeForDeploymentName) {
         _model = caseSummaryModel;
-        return CompletableFuture.supplyAsync(CaseSummary::buildCaseSummary);
+        return CompletableFuture.supplyAsync(() -> buildCaseSummary(getServiceTypeForDeploymentName));
     }
 
-    private static byte[] buildCaseSummary() {
+    private static byte[] buildCaseSummary(Function<String,ServiceType> getServiceTypeForDeploymentName) {
         XWPFDocument document = new XWPFDocument();
 
         // Set up generated document with styles from the template
@@ -42,7 +52,7 @@ public class CaseSummary {
         // Create the main sections
         CaseSummarySection documentSection = createDocumentSection();
         CaseSummarySection conditionSection = createConditionSection();
-        CaseSummarySection serviceHistorySection = createServiceHistorySection();
+        CaseSummarySection serviceHistorySection = createServiceHistorySection(getServiceTypeForDeploymentName);
         CaseSummarySection sopSection = createSopSection();
 
         documentSection.add(conditionSection);
@@ -140,7 +150,7 @@ public class CaseSummary {
         conditionData.add(new CaseSummaryParagraph(conditionParagraph));
 
         conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading2"));
-        String onset = getDatesAsRange(condition.getOnsetStartDate(), condition.getOnsetEndDate());
+        String onset = getDatesAsRange(condition.getStartDate(), condition.getEndDate());
         String onsetParagraph = "This condition related to an incident dated " + onset + ".";
         conditionData.add(new CaseSummaryParagraph(onsetParagraph));
 
@@ -149,7 +159,7 @@ public class CaseSummary {
         return conditionSection;
     }
 
-    private static CaseSummarySection createServiceHistorySection() {
+    private static CaseSummarySection createServiceHistorySection(Function<String, ServiceType> getServiceTypeForDeploymentName) {
         ServiceHistory serviceHistory = _model.getServiceHistory();
 
         CaseSummarySection serviceHistorySection = new CaseSummarySection();
@@ -163,10 +173,14 @@ public class CaseSummary {
 
         for (Service service : serviceHistory.getServices()) {
             for (Deployment deployment : service.getDeployments()) {
-                String operationNameText = deployment.getOperation().getServiceType() == ServiceType.WARLIKE ?
-                        " on " + deployment.getOperation().getName() : "";
 
-                String operationText = WordUtils.capitalize(deployment.getOperation().getServiceType().toString()) +
+                ServiceType serviceType = getServiceTypeForDeploymentName.apply(deployment.getOperationName());
+
+
+                String operationNameText = serviceType == ServiceType.WARLIKE ?
+                        " on " + deployment.getOperationName() : "";
+
+                String operationText = WordUtils.capitalize(serviceType.toString()) +
                         " service from " +
                         getDatesAsRange(deployment.getStartDate(), deployment.getEndDate()) +
                         operationNameText;
@@ -217,11 +231,17 @@ public class CaseSummary {
         return sopSection;
     }
 
-    private static String getDatesAsRange(LocalDate startDate, Optional<LocalDate> endDate) {
+    private static String getDatesAsRange(OffsetDateTime startDate, Optional<OffsetDateTime> endDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         return endDate.isPresent() ?
                 startDate.format(formatter) + " to " + endDate.get().format(formatter) :
                 startDate.format(formatter);
+    }
+
+    private static String getDatesAsRange(OffsetDateTime startDate, OffsetDateTime endDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        return startDate.format(formatter) + " to " + endDate.format(formatter);
     }
 }

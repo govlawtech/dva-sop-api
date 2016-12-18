@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopref.data;
 
+import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredOperation;
 import au.gov.dva.sopapi.exceptions.ServiceDeterminationParserError;
 import au.gov.dva.sopapi.interfaces.model.Operation;
@@ -13,7 +14,7 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.LocalDate;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -22,7 +23,7 @@ import java.util.stream.Collectors;
 
 public class ServiceDeterminations {
 
-    public static Optional<LocalDate> extractCommencementDateFromDocx(byte[] determinationDocx) {
+    public static Optional<OffsetDateTime> extractCommencementDateFromDocx(byte[] determinationDocx) {
 
         InputStream determinationStream = new ByteArrayInputStream(determinationDocx);
         try (XWPFDocument doc = new XWPFDocument(determinationStream)) {
@@ -49,7 +50,8 @@ public class ServiceDeterminations {
                     return Optional.empty();
                 }
                 else {
-                    return Optional.of(LocalDate.parse(commencementText.trim(),DateTimeFormatter.ofPattern("d MMMM yyyy")));
+                    LocalDate localDate = LocalDate.parse(commencementText.trim(),DateTimeFormatter.ofPattern("d MMMM yyyy"));
+                    return Optional.of(DateTimeUtils.localDateToMidnightACTDate(localDate));
                 }
 
             }
@@ -145,8 +147,8 @@ public class ServiceDeterminations {
                             }
                             else {
                                 LocalDate opStartDate = datesFound.get(0);
-                                Optional<LocalDate> opEndDate = datesFound.size() > 1 ? Optional.of(datesFound.get(1)) : Optional.empty();
-                                Operation operation = new StoredOperation(opName, opStartDate, opEndDate, opServiceType);
+                                Optional<OffsetDateTime> opEndDate = datesFound.size() > 1 ? Optional.of(DateTimeUtils.localDateToMidnightACTDate(datesFound.get(1))) : Optional.empty();
+                                Operation operation = new StoredOperation(opName, DateTimeUtils.localDateToMidnightACTDate(opStartDate), opEndDate, opServiceType);
                                 operations.add(operation);
                             }
 
@@ -165,5 +167,6 @@ public class ServiceDeterminations {
     {
         return description.contentEquals("ADF contribution to the NATO nofly zone and maritime enforcement operation against Libya");
     }
+
 
 }

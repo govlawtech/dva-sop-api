@@ -1,12 +1,15 @@
 package au.gov.dva.sopapi.interfaces;
 
-import au.gov.dva.sopapi.interfaces.model.Condition;
-import au.gov.dva.sopapi.interfaces.model.Factor;
-import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
+import au.gov.dva.sopapi.interfaces.model.*;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.function.Predicate;
+
 public interface ProcessingRule {
-    ImmutableSet<Factor> getApplicableFactors(Condition condition, ServiceHistory serviceHistory);
+
+    ImmutableSet<String> appliesToInstrumentIds();
+    SoP getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational);
+    ImmutableSet<Factor> getApplicableFactors(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational);
     ImmutableSet<Factor> getSatisfiedFactors(Condition condition, ServiceHistory serviceHistory);
 }
 

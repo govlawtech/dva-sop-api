@@ -7,3 +7,4 @@ public interface Factor {
     String getText();
     ImmutableSet<DefinedTerm> getDefinedTerms();
 }
+

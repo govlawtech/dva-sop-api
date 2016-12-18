@@ -2,12 +2,12 @@ package au.gov.dva.sopapi.interfaces.model;
 
 import com.google.common.collect.ImmutableList;
 
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 public interface ServiceDetermination {
     String getRegisterId();
     String getCitation();
-    LocalDate getCommencementDate();
+    OffsetDateTime getCommencementDate();
     ImmutableList<Operation> getOperations();
     ServiceType getServiceType();
 }

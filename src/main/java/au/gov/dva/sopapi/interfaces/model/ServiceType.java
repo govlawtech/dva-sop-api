@@ -17,6 +17,11 @@ public enum ServiceType {
 
     }
 
+    public boolean isOperational()
+    {
+        return (this == ServiceType.WARLIKE || this == ServiceType.NON_WARLIKE);
+    }
+
     @Override
     public String toString() {
         return text;

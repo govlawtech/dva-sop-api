@@ -1,17 +1,14 @@
 package au.gov.dva.sopapi.interfaces.model;
 
-import com.google.common.collect.ImmutableSet;
+import au.gov.dva.sopapi.interfaces.ProcessingRule;
 
-import java.time.LocalDate;
-import java.util.Optional;
+import java.time.OffsetDateTime;
 
 public interface Condition {
 
     SoPPair getSopPair();
-    LocalDate getOnsetStartDate();
-    Optional<LocalDate> getOnsetEndDate();
-    ImmutableSet<Factor> getApplicableFactors(ServiceHistory serviceHistory);
-    ImmutableSet<Factor> getSatisfiedFactors(ServiceHistory serviceHistory);
-    SoP getApplicableSop();
+    OffsetDateTime getStartDate();
+    OffsetDateTime getEndDate();
+    ProcessingRule getProcessingRule();
 }
 

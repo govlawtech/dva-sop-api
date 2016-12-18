@@ -11,10 +11,6 @@ import java.time.OffsetDateTime;
 
 public class AggravationDateRangeDto {
 
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
-    @JsonProperty("singleAggravationDate")
-    private final OffsetDateTime _incidentDate;
-
     @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
     @JsonSerialize(using = OffsetDateTimeSerializer.class)
     @JsonProperty("aggravationRangeStartDate")
@@ -28,10 +24,6 @@ public class AggravationDateRangeDto {
     @JsonCreator
     public AggravationDateRangeDto(
 
-            @JsonProperty("singleAggravationDate")
-            @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-            OffsetDateTime _incidentDate,
-
             @JsonProperty("aggravationRangeStartDate")
             @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
                     OffsetDateTime _startDate,
@@ -39,7 +31,6 @@ public class AggravationDateRangeDto {
             @JsonProperty("aggravationRangeEndDate")
             @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
             OffsetDateTime _endDate) {
-        this._incidentDate = _incidentDate;
         this._startDate = _startDate;
         this._endDate = _endDate;
     }

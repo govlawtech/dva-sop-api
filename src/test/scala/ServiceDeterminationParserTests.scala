@@ -1,6 +1,7 @@
 import java.io.InputStream
-import java.time.LocalDate
+import java.time.{LocalDate, OffsetDateTime}
 
+import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.sopref.data.Conversions
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination
 import au.gov.dva.sopapi.interfaces.model.ServiceType
@@ -49,20 +50,19 @@ class ServiceDeterminationParserTests extends FunSuite {
   test("Get register date from warlike") {
     val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/warlike.txt")).mkString;
     val result = ServiceDeterminations.getRegisteredDate(text);
-    assert(result.get.isEqual(LocalDate.of(2016, 6, 6)))
+    assert(result.get.isEqual(TestUtils.actOdtOf(2016, 6, 6)))
   }
 
   test("Get register date from non-warlike") {
     val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/non-warlike.txt")).mkString;
-    val result = ServiceDeterminations.getRegisteredDate(text);
-    assert(result.get.isEqual(LocalDate.of(2016, 6, 6)))
+    val result: Option[OffsetDateTime] = ServiceDeterminations.getRegisteredDate(text);
+    assert(result.get.isEqual(TestUtils.actOdtOf(2016, 6, 6)))
   }
 
   test("Get citation from warlike") {
     val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/warlike.txt")).mkString;
     val result = ServiceDeterminations.getCitation(text);
     assert(result == "Military Rehabilitation and Compensation (Warlike Service) Determination 2016 (No. 1)")
-
   }
 
   test("Get citation from non-warlike") {

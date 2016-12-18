@@ -9,6 +9,10 @@ import com.google.common.collect.ImmutableSet;
 public class SopSupport {
     public static ResponseDto applyRules(RequestDto requestDto, ImmutableSet<SoP> sops,ImmutableSet<ServiceDetermination> serviceDeterminations)
     {
+        // make condition
+        // run rule on condition
+        // determine applicable sop factors
         return null;
+
     }
 }

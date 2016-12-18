@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopref.data.servicedeterminations;
 
+import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.interfaces.model.Operation;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.ServiceType;
@@ -10,9 +11,10 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.collect.ImmutableList;
 
 import javax.annotation.Nonnull;
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -23,7 +25,7 @@ public class StoredServiceDetermination implements ServiceDetermination {
     private static final String NON_WARLIKE = "non-warlike";
     private final String registerId;
     private final String citation;
-    private final LocalDate commencementDate;
+    private final OffsetDateTime commencementDate;
     private final ImmutableList<Operation> operations;
     private final ServiceType serviceType;
 
@@ -38,7 +40,7 @@ public class StoredServiceDetermination implements ServiceDetermination {
     }
 
     @Override
-    public LocalDate getCommencementDate() {
+    public OffsetDateTime getCommencementDate() {
         return commencementDate;
     }
 
@@ -65,7 +67,8 @@ public class StoredServiceDetermination implements ServiceDetermination {
         ObjectNode root = objectMapper.createObjectNode();
         root.put(Labels.REGISTER_ID, serviceDetermination.getRegisterId());
         root.put(Labels.CITATION, serviceDetermination.getCitation());
-        root.put(Labels.COMMENCEMENT_DATE, serviceDetermination.getCommencementDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
+        root.put(Labels.COMMENCEMENT_DATE, DateTimeUtils.odtToActLocalDate(serviceDetermination.getCommencementDate())
+                .format(DateTimeFormatter.ISO_LOCAL_DATE));
         root.put(Labels.SERVICE_TYPE,serviceTypeToStringValue(serviceDetermination.getServiceType()));
 
         ArrayNode arrayRoot = root.putArray(Labels.OPERATIONS);
@@ -73,7 +76,7 @@ public class StoredServiceDetermination implements ServiceDetermination {
         return root;
     }
 
-    public StoredServiceDetermination(@Nonnull String registerId,@Nonnull String citation, @Nonnull LocalDate commencementDate, @Nonnull ImmutableList<Operation> operations, @Nonnull ServiceType serviceType) {
+    public StoredServiceDetermination(@Nonnull String registerId, @Nonnull String citation, @Nonnull OffsetDateTime commencementDate, @Nonnull ImmutableList<Operation> operations, @Nonnull ServiceType serviceType) {
 
         this.registerId = registerId;
         this.citation = citation;
@@ -85,7 +88,6 @@ public class StoredServiceDetermination implements ServiceDetermination {
     public static ServiceDetermination fromJson(JsonNode jsonNode)
     {
         Iterator<JsonNode> operations =  jsonNode.findPath(Labels.OPERATIONS).elements();
-        assert (jsonNode.isArray());
         List<Operation> children = new ArrayList<>();
         for (Iterator<JsonNode> it = operations; it.hasNext(); ) {
             JsonNode el = it.next();
@@ -95,7 +97,7 @@ public class StoredServiceDetermination implements ServiceDetermination {
         return new StoredServiceDetermination(
                 jsonNode.findValue(Labels.REGISTER_ID).asText(),
                 jsonNode.findValue(Labels.CITATION).asText(),
-                LocalDate.parse(jsonNode.findValue(Labels.COMMENCEMENT_DATE).asText()),
+                DateTimeUtils.localDateStringToActMidnightOdt(jsonNode.findValue(Labels.COMMENCEMENT_DATE).asText()),
                 ImmutableList.copyOf(children),
                 serviceTypeFromStringValue(jsonNode.findValue(Labels.SERVICE_TYPE).asText())
         );
