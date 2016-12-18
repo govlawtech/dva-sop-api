@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 
+import java.io.IOException;
 import java.util.List;
 
 public class OperationsResponseDto {
@@ -21,8 +22,6 @@ public class OperationsResponseDto {
         this._operations = _operations;
     }
 
-
-
     public static String toJsonString(OperationsResponseDto operationsResponseDto)
     {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
@@ -34,6 +33,19 @@ public class OperationsResponseDto {
             throw new DvaSopApiDtoError(e);
         }
         return jsonString;
+    }
+
+    public static OperationsResponseDto fromJsonString(String json)
+    {
+        ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
+
+        try {
+            OperationsResponseDto operationsResponseDto =
+                    objectMapper.readValue(json, OperationsResponseDto.class);
+            return operationsResponseDto;
+        } catch (IOException e) {
+            throw new DvaSopApiDtoError(e);
+        }
     }
 
 }

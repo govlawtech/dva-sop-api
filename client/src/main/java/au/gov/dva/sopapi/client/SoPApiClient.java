@@ -68,22 +68,9 @@ public class SoPApiClient {
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> response.getResponseBody())
-                .thenApply(json -> fromJsonString(json.toString()));
+                .thenApply(json -> OperationsResponseDto.fromJsonString(json.toString()));
 
         return promise;
-    }
-
-    private static OperationsResponseDto fromJsonString(String json)
-    {
-        ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
-
-        try {
-            OperationsResponseDto operationsResponseDto =
-                    objectMapper.readValue(json, OperationsResponseDto.class);
-            return operationsResponseDto;
-        } catch (IOException e) {
-            throw new DvaSopApiDtoError(e);
-        }
     }
 
     //todo: add method for SoP support once Nick sets up the return type DTOS.
