@@ -34,4 +34,28 @@ public class ConditionDto {
         this._incidentDateRangeDto = _incidentDateRangeDto;
         this._aggravationDateRangeDto = _aggravationDateRangeDto;
     }
+
+    public String get_conditionName() {
+        return _conditionName;
+    }
+
+    public IncidentType get_incidentType() {
+        return _incidentType;
+    }
+
+    public String get_icdCodeVersion() {
+        return _icdCodeVersion;
+    }
+
+    public String get_icdCodeValue() {
+        return _icdCodeValue;
+    }
+
+    public OnsetDateRangeDto get_incidentDateRangeDto() {
+        return _incidentDateRangeDto;
+    }
+
+    public AggravationDateRangeDto get_aggravationDateRangeDto() {
+        return _aggravationDateRangeDto;
+    }
 }

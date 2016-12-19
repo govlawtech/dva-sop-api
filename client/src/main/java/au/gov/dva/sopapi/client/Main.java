@@ -1,8 +1,6 @@
 package au.gov.dva.sopapi.client;
 
-import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
-import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
 import org.apache.commons.cli.*;
@@ -10,7 +8,6 @@ import org.apache.commons.cli.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public class Main {

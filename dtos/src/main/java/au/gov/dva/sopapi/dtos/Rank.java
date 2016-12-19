@@ -3,7 +3,8 @@ package au.gov.dva.sopapi.dtos;
 public enum Rank {
     Officer,
     OtherRank,
-    SpecialForces;
+    SpecialForces,
+    Unknown;
 
     // used for json (de)seriliasation
     @Override
@@ -13,6 +14,7 @@ public enum Rank {
             case Officer : return "officer";
             case OtherRank: return "other rank";
             case SpecialForces: return "special forces";
+            case Unknown: return "unknown";
             default: throw new IllegalArgumentException();
         }
 

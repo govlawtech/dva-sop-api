@@ -1,10 +1,8 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
-import au.gov.dva.sopref.data.Conversions;
-import au.gov.dva.sopref.data.FederalRegisterOfLegislation;
+import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislation;
 import com.google.common.io.Resources;
-import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;

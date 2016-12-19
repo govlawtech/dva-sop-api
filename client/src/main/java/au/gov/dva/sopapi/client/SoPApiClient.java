@@ -14,7 +14,6 @@ import org.asynchttpclient.Param;
 import org.asynchttpclient.Response;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;

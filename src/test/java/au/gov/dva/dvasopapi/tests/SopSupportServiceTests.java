@@ -1,8 +1,12 @@
 package au.gov.dva.dvasopapi.tests;
 
+import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.dtos.sopsupport.RequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
+import au.gov.dva.sopapi.interfaces.model.Deployment;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -12,20 +16,20 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.Resources;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
 
 public class SopSupportServiceTests {
 
-    private static OffsetDateTime odtOf(int year, int month, int day) {
-        return OffsetDateTime.of(year, month, day, 0, 0, 0, 0, ZoneOffset.UTC);
-    }
 
     private static RequestDto buildTestDto() {
         return new RequestDto(
@@ -36,10 +40,8 @@ public class SopSupportServiceTests {
                         "M39.89",
                         new OnsetDateRangeDto(
                                 odtOf(2010, 1, 1),
-                                null,
-                                null)
+                                odtOf(2010, 1, 1))
                         , new AggravationDateRangeDto(
-                              null,
                         odtOf(2005,1,1),
                         odtOf(2005,1,15)
                 )),
@@ -48,11 +50,11 @@ public class SopSupportServiceTests {
                         new ServiceSummaryInfoDto(odtOf(2004, 7, 1)),
                         ImmutableList.of(
                                 new ServiceDto(
-                                        "Royal Australian Air Force",
-                                        "Regular/Permanent Force",
+                                        ServiceBranch.RAN,
+                                        EmploymentType.CTFS,
                                         odtOf(2004, 7, 1),
                                         odtOf(2016, 1, 1),
-                                        au.gov.dva.sopapi.dtos.Rank.OtherRank,
+                                        Rank.OtherRank,
                                         ImmutableList.of(
                                                 new OperationalServiceDto(
                                                         odtOf(2006, 7, 1),
@@ -68,22 +70,20 @@ public class SopSupportServiceTests {
                                                         odtOf(2010, 7, 1)
                                                 )
                                         )
-
                                 )
                         )
-
                 ));
     }
 
     @Test
     public void testDtoSerialization() {
-        RequestDto testData = buildTestDto();
+        RequestDto testData = SopSupportServiceTests.buildTestDto();
         String jsonString = testData.toJsonString();
         System.out.print(jsonString);
         Assert.assertTrue(!jsonString.isEmpty());
     }
 
-    @Ignore
+
     @Test
     public void testDtoDeserialization() throws IOException {
         URL jsonUrl = Resources.getResource("sopSupportDto.json");
@@ -115,4 +115,30 @@ public class SopSupportServiceTests {
         System.out.print(schemaString);
         Assert.assertTrue(schema != null);
     }
+
+    @Test
+    public void getTimeZoneIds()
+    {
+        Set<String> ids =  ZoneId.getAvailableZoneIds();
+        Assert.assertTrue(ids.contains("Australia/ACT"));
+        System.out.print(String.join("\n",ids.stream().filter(i -> i.startsWith("Australia")).sorted().collect(Collectors.toList())));
+
+    }
+
+    @Test
+    public void testDeploymentGenerator() throws IOException {
+        ImmutableList<Deployment> results = TestUtils.getTestDeployments();
+        for (Deployment d : results)
+        {
+            System.out.printf("Start: %s; End: %s Name: %s\n", d.getStartDate(), d.getEndDate().get(), d.getOperationName());
+
+        }
+        Assert.assertTrue(!results.isEmpty());
+    }
+
+
+
+
+
+
 }

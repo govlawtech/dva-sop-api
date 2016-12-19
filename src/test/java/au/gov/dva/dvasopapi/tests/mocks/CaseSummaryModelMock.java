@@ -1,7 +1,7 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
-import au.gov.dva.interfaces.model.*;
-import au.gov.dva.interfaces.model.casesummary.CaseSummaryModel;
+import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import com.google.common.collect.ImmutableSet;
 
 public class CaseSummaryModelMock implements CaseSummaryModel{

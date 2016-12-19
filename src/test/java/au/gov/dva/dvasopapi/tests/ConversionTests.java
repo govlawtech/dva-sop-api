@@ -2,9 +2,9 @@ package au.gov.dva.dvasopapi.tests;
 
 
 import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
-import au.gov.dva.sopref.data.Conversions;
-import au.gov.dva.sopref.data.sops.StoredSop;
-import au.gov.dva.interfaces.model.SoP;
+import au.gov.dva.sopapi.sopref.data.Conversions;
+import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
+import au.gov.dva.sopapi.interfaces.model.SoP;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
