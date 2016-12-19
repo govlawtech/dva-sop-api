@@ -35,10 +35,6 @@ public class SoPApiClient {
 
     public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, String incidentType, String standardOfProof)
     {
-        // todo:
-        // - make async call to getSopFactors endpoint (need to set headers, look at Application.java to see what is expected)
-        // - deserialize the response to SoPRefDto using Jackson
-
         List<Param> params = new ArrayList<>();
         params.add(new Param(QueryParamLabels.CONDITION_NAME, conditionName));
         params.add(new Param(QueryParamLabels.ICD_CODE_Value, icdCodeValue));
@@ -71,22 +67,9 @@ public class SoPApiClient {
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> response.getResponseBody())
-                .thenApply(json -> fromJsonString(json.toString()));
+                .thenApply(json -> OperationsResponseDto.fromJsonString(json.toString()));
 
         return promise;
-    }
-
-    private static OperationsResponseDto fromJsonString(String json)
-    {
-        ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
-
-        try {
-            OperationsResponseDto operationsResponseDto =
-                    objectMapper.readValue(json, OperationsResponseDto.class);
-            return operationsResponseDto;
-        } catch (IOException e) {
-            throw new DvaSopApiDtoError(e);
-        }
     }
 
     //todo: add method for SoP support once Nick sets up the return type DTOS.
