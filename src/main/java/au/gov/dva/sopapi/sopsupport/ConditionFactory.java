@@ -4,7 +4,6 @@ import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
 import au.gov.dva.sopapi.interfaces.model.Condition;
-import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.LumbarSpondylosisRule;
 import com.google.common.collect.ImmutableSet;
@@ -15,7 +14,7 @@ import java.util.Optional;
 // determine whether aggravated or not
 public class ConditionFactory {
 
-    Condition create(ImmutableSet<SoPPair> sops, ConditionDto conditionDto, ServiceDetermination warlikeDetermination, ServiceDetermination nonWarlikeDetermination)
+    public static Condition create(ImmutableSet<SoPPair> sopPairs, ConditionDto conditionDto)
     {
 
         // todo: generic rule for acute conditions
@@ -23,10 +22,9 @@ public class ConditionFactory {
         // match to rule based
         if (conditionDto.get_conditionName().contentEquals("lumbar spondylosis") && conditionDto.get_incidentType() == IncidentType.Onset)
         {
-
             // todo: check instrument ID's
             return new OnsetCondition(
-                    getSopPairForConditionName(sops,conditionDto.get_conditionName()),
+                    getSopPairForConditionName(sopPairs,conditionDto.get_conditionName()),
                     conditionDto.get_incidentDateRangeDto().get_startDate(),
                     conditionDto.get_incidentDateRangeDto().get_endDate(),
                     new LumbarSpondylosisRule());
@@ -36,9 +34,9 @@ public class ConditionFactory {
 
 
 
-    private static SoPPair  getSopPairForConditionName(ImmutableSet<SoPPair> sops, String conditionName)
+    private static SoPPair  getSopPairForConditionName(ImmutableSet<SoPPair> sopPairs, String conditionName)
     {
-        Optional<SoPPair> soPPair =  sops.stream().filter(s -> s.getConditionName().contentEquals(conditionName))
+        Optional<SoPPair> soPPair =  sopPairs.stream().filter(s -> s.getConditionName().contentEquals(conditionName))
                 .findFirst();
         if (!soPPair.isPresent())
         {

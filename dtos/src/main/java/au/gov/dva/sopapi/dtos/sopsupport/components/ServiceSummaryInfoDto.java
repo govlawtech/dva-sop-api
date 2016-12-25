@@ -22,4 +22,8 @@ public class ServiceSummaryInfoDto {
                                           OffsetDateTime _originalHireDate) {
         this._originalHireDate = _originalHireDate;
     }
+
+    public OffsetDateTime get_originalHireDate() {
+        return _originalHireDate;
+    }
 }

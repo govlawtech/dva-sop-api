@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class DateTimeUtils {
 
+    public static final String TZDB_REGION_CODE = "Australia/ACT";
+
     public static OffsetDateTime toMidnightAmNextDay(OffsetDateTime prevDay)
     {
         OffsetDateTime sameTimeNextDay = prevDay.plusDays(1);
@@ -39,13 +41,15 @@ public class DateTimeUtils {
 
     public static OffsetDateTime localDateToMidnightACTDate(LocalDate localDate)
     {
-        ZonedDateTime zonedToACT = ZonedDateTime.of(localDate, LocalTime.MIDNIGHT, ZoneId.of("Australia/ACT"));
+        ZonedDateTime zonedToACT = ZonedDateTime.of(localDate, LocalTime.MIDNIGHT, ZoneId.of(TZDB_REGION_CODE));
         return OffsetDateTime.from(zonedToACT);
     }
 
     public static LocalDate odtToActLocalDate(OffsetDateTime offsetDateTime)
     {
-        ZonedDateTime zonedDateTime =  offsetDateTime.atZoneSameInstant(ZoneId.of("Australia/ACT"));
+        ZonedDateTime zonedDateTime =  offsetDateTime.atZoneSameInstant(ZoneId.of(TZDB_REGION_CODE));
         return LocalDate.of(zonedDateTime.getYear(),zonedDateTime.getMonth(),zonedDateTime.getDayOfMonth());
     }
+
+
 }

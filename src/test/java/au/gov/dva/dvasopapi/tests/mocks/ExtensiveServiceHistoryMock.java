@@ -15,15 +15,7 @@ import java.util.Optional;
 import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
 
 public class ExtensiveServiceHistoryMock implements ServiceHistory {
-    @Override
-    public OffsetDateTime getEnlistmentDate() {
-        return actOdtOf(1993,1,1);
-    }
 
-    @Override
-    public OffsetDateTime getSeparationDate() {
-        return actOdtOf(2016,7,30);
-    }
 
     @Override
     public OffsetDateTime getHireDate() {

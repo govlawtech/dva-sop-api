@@ -1,6 +1,6 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
+import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSopRH;
 import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.interfaces.model.SoP;
@@ -19,7 +19,7 @@ public class SoPReferenceServiceTests {
     @Test
     public void testSerializationOfDto() {
 
-        SoP mockSop = new MockLumbarSpondylosisSop();
+        SoP mockSop = new MockLumbarSpondylosisSopRH();
         StandardOfProof standardOfProof = StandardOfProof.ReasonableHypothesis;
         IncidentType incidentType = IncidentType.Aggravation;
 

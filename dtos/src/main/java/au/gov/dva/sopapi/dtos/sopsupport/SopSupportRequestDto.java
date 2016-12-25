@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.IOException;
 
-public class RequestDto {
+public class SopSupportRequestDto {
 
     @JsonProperty(value = "condition", required = true)
     private final ConditionDto _conditionDto;
@@ -21,13 +21,12 @@ public class RequestDto {
     private final ServiceHistoryDto _serviceHistoryDto;
 
     @JsonCreator
-    public RequestDto(@JsonProperty("condition") ConditionDto _conditionDto, @JsonProperty("serviceHistory") ServiceHistoryDto _serviceHistoryDto) {
+    public SopSupportRequestDto(@JsonProperty("condition") ConditionDto _conditionDto, @JsonProperty("serviceHistory") ServiceHistoryDto _serviceHistoryDto) {
         this._conditionDto = _conditionDto;
         this._serviceHistoryDto = _serviceHistoryDto;
     }
 
-
-    public static RequestDto fromJsonString(String json)
+    public static SopSupportRequestDto fromJsonString(String json)
     {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.READ_ENUMS_USING_TO_STRING, true);
@@ -37,8 +36,8 @@ public class RequestDto {
         objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT,true);
 
         try {
-            RequestDto requestDto = objectMapper.readValue(json,RequestDto.class);
-            return requestDto;
+            SopSupportRequestDto sopSupportRequestDto = objectMapper.readValue(json,SopSupportRequestDto.class);
+            return sopSupportRequestDto;
         } catch (IOException e) {
             throw new DvaSopApiDtoError(e);
         }
@@ -56,5 +55,11 @@ public class RequestDto {
     }
 
 
+    public ConditionDto get_conditionDto() {
+        return _conditionDto;
+    }
 
+    public ServiceHistoryDto get_serviceHistoryDto() {
+        return _serviceHistoryDto;
+    }
 }

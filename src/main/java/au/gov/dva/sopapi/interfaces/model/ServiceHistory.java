@@ -5,8 +5,6 @@ import com.google.common.collect.ImmutableSet;
 import java.time.OffsetDateTime;
 
 public interface ServiceHistory {
-    OffsetDateTime getEnlistmentDate();
-    OffsetDateTime getSeparationDate();
     OffsetDateTime getHireDate();
     ImmutableSet<Service> getServices();
 }

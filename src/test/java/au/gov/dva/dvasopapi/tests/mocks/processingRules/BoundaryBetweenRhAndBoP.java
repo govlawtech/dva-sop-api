@@ -15,15 +15,7 @@ import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
 
 public class BoundaryBetweenRhAndBoP implements ServiceHistory {
 
-    @Override
-    public OffsetDateTime getEnlistmentDate() {
-        return odtOf(2004,7,1);
-    }
 
-    @Override
-    public OffsetDateTime getSeparationDate() {
-        return odtOf(2004,6,30);
-    }
 
     @Override
     public OffsetDateTime getHireDate() {

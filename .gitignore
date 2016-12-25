@@ -64,7 +64,7 @@ build/
 
 # IntelliJ
 /out/
-
+.idea/libraries
 
 
 

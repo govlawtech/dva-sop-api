@@ -6,17 +6,21 @@ import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
-import au.gov.dva.sopapi.dtos.sopsupport.RequestDto;
-import au.gov.dva.sopapi.dtos.sopsupport.ResponseDto;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.interfaces.Repository;
+import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
+import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.AzureStorageRepository;
+import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupport;
+import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,11 +34,10 @@ import spark.QueryParamsMap;
 import spark.Request;
 import spark.Response;
 
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -42,61 +45,47 @@ import static spark.Spark.get;
 public class Application implements spark.servlet.SparkApplication {
 
     private ImmutableSet<SoP> _allSops;
+    private ImmutableSet<SoPPair> _sopPairs;
     private ImmutableSet<ServiceDetermination> _allServiceDeterminations;
+    private Predicate<Deployment> _isOperational;
 
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
     public Application() {
         Repository repository = new AzureStorageRepository(au.gov.dva.sopapi.AppSettings.AzureStorage.getConnectionString());
         _allSops = repository.getAllSops();
+        _sopPairs = SoPs.groupSopsToPairs(_allSops);
         _allServiceDeterminations = repository.getServiceDeterminations();
+        ServiceDeterminationPair latestServiceDeterminations = Operations.getLatestDeterminationPair(_allServiceDeterminations);
+        _isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(latestServiceDeterminations);
     }
 
     @Override
-    public void init() {
+    public void init(){
         get("/hello", (req, res) -> {
-            if (!responseTypeAcceptable(req)) {
-                setResponseHeaders(res, false, 406);
-                return buildAcceptableContentTypesError();
-            }
             return "Hello";
         })
         ;
 
         get(Routes.GET_OPERATIONS, (req, res) -> {
 
-            if (!responseTypeAcceptable(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req)) {
                 setResponseHeaders(res, false, 406);
                 return buildAcceptableContentTypesError();
             }
 
-            QueryParamsMap queryParamMap = req.queryMap();
-            String queryDate = queryParamMap.get(QueryParamLabels.QUERY_DATE).value();
-            if (queryDate == null) {
-                setResponseHeaders(res, false, 400);
-                return buildQueryParamErrorMessage(QueryParamLabels.QUERY_DATE, "required, missing");
-            }
-            OffsetDateTime parsedDate;
-            try {
-                parsedDate =  DateTimeUtils.stringToOffsetDateTime(queryDate);
-            } catch (DateTimeParseException e) {
-                setResponseHeaders(res, false, 400);
-                return buildQueryParamErrorMessage(QueryParamLabels.QUERY_DATE, "Date must be in ISO offset date format: yyyy-mm-ddZ for UTC. For example, 2017-01-01Z.");
-            }
-
-            ImmutableSet<ServiceDetermination> latestServiceDeterminationPair = Operations.getLatestDeterminationPair(_allServiceDeterminations, parsedDate);
+            ServiceDeterminationPair latestServiceDeterminationPair = Operations.getLatestDeterminationPair(_allServiceDeterminations);
 
             OperationsResponseDto operationsResponseDto = DtoTransformations.buildOperationsResponseDto(latestServiceDeterminationPair);
 
             setResponseHeaders(res, true, 200);
             String json = OperationsResponseDto.toJsonString(operationsResponseDto);
             return json;
-
         });
 
         get(Routes.GET_SOPFACTORS, (req, res) -> {
 
-            if (!responseTypeAcceptable(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req)) {
                 setResponseHeaders(res, false, 406);
                 return buildAcceptableContentTypesError();
             }
@@ -133,16 +122,17 @@ public class Application implements spark.servlet.SparkApplication {
         });
 
         get(Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
-            if (!responseTypeAcceptable(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req)) {
                 setResponseHeaders(res, false, 406);
                 return buildAcceptableContentTypesError();
             }
 
             try {
-                RequestDto requestDto = RequestDto.fromJsonString(req.body());
-                ResponseDto responseDto = SopSupport.applyRules(requestDto,_allSops,_allServiceDeterminations);
+                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(req.body());
+
+                SopSupportResponseDto sopSupportResponseDto = SopSupport.applyRules(sopSupportRequestDto,_sopPairs,_isOperational);
                 setResponseHeaders(res,true,200);
-                return responseDto;
+                return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
             }
             catch (DvaSopApiDtoError e) {
                 setResponseHeaders(res,false,400);
@@ -159,15 +149,13 @@ public class Application implements spark.servlet.SparkApplication {
         }));
     }
 
-
-
     private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String standardOfProof, String conditionname, String incidentType) {
         List<String> errors = new ArrayList<>();
 
         if (conditionname == null) {
-            String missingICDCodeError = "Need ICD code (query parameter '" + QueryParamLabels.ICD_CODE_Value + "') and ICD code version (query paramater '" + QueryParamLabels.ICD_CODE_VERSION + "') if condition name (query parameter '" + QueryParamLabels.CONDITION_NAME + "') is not provided.";
+            String missingICDCodeError = "Need ICD code (query parameter '" + QueryParamLabels.ICD_CODE_VALUE + "') and ICD code version (query paramater '" + QueryParamLabels.ICD_CODE_VERSION + "') if condition name (query parameter '" + QueryParamLabels.CONDITION_NAME + "') is not provided.";
             if (icdCodeValue == null)
-                errors.add(buildQueryParamErrorMessage(QueryParamLabels.ICD_CODE_Value, missingICDCodeError));
+                errors.add(buildQueryParamErrorMessage(QueryParamLabels.ICD_CODE_VALUE, missingICDCodeError));
 
             if (icdCodeVersion == null) {
                 errors.add(buildQueryParamErrorMessage(QueryParamLabels.ICD_CODE_VERSION, missingICDCodeError));
@@ -179,7 +167,7 @@ public class Application implements spark.servlet.SparkApplication {
 
         else {
             if (!standardOfProof.contentEquals("RH") && !standardOfProof.contentEquals("BoP"))
-                errors.add(buildQueryParamErrorMessage(QueryParamLabels.STANDARD_OF_PROOF, "acceptable values are 'RH' (for Reasonable Hypthesis) and 'BoP' (for Balance of Probabilities)."));
+                errors.add(buildQueryParamErrorMessage(QueryParamLabels.STANDARD_OF_PROOF, "acceptable values are 'RH' (for Reasonable Hypothesis) and 'BoP' (for Balance of Probabilities)."));
         }
 
         if (incidentType == null)
@@ -198,10 +186,11 @@ public class Application implements spark.servlet.SparkApplication {
     }
 
     private static String buildErrorMessageShowingRecognisedIcdCodesAndConditionNames(ImmutableSet<SoP> sops) {
-        String recognisedConditionNames = String.join("\r\n", sops.stream().map(soP -> "* " + soP.getConditionName()).sorted().collect(toList()));
+        String recognisedConditionNames = String.join("\r\n", sops.stream().map(soP -> "* " + soP.getConditionName()).sorted().distinct().collect(toList()));
 
         String recognisedICDCodes = String.join("\r\n", sops.stream().flatMap(soP -> soP.getICDCodes().stream())
                 .map(code -> String.format("* %s %s", code.getVersion(), code.getCode()))
+                .distinct()
                 .collect(toList()));
 
         StringBuilder sb = new StringBuilder();
@@ -220,7 +209,6 @@ public class Application implements spark.servlet.SparkApplication {
 
     //todo: scheduled task to refresh cache of SoPs from Repository
     // todo: scheduled task to update Repository from Legislation Register
-
 
     private static void setResponseHeaders(Response response, Boolean isJson, Integer statusCode) {
         response.status(statusCode);
@@ -249,7 +237,7 @@ public class Application implements spark.servlet.SparkApplication {
             mapper.configure(SerializationFeature.WRITE_ENUMS_USING_TO_STRING,true);
             JsonSchemaGenerator schemaGen = new JsonSchemaGenerator(mapper);
             try {
-                JsonSchema schema = schemaGen.generateSchema(RequestDto.class);
+                JsonSchema schema = schemaGen.generateSchema(SopSupportRequestDto.class);
                 String schemaString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(schema);
                 return Optional.of(schemaString);
             } catch (JsonMappingException e) {
@@ -263,5 +251,9 @@ public class Application implements spark.servlet.SparkApplication {
 
     private static String buildAcceptableContentTypesError() {
         return "Accept header in request must include 'application/json'.";
+    }
+
+    private static Boolean validateHeaders() {
+        return AppSettings.getEnvironment() == AppSettings.Environment.prod;
     }
 }

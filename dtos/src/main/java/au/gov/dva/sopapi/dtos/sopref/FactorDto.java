@@ -25,4 +25,15 @@ public class FactorDto {
     }
 
 
+    public String get_paragraph() {
+        return _paragraph;
+    }
+
+    public String get_text() {
+        return _text;
+    }
+
+    public List<DefinedTermDto> get_definedTerms() {
+        return _definedTerms;
+    }
 }

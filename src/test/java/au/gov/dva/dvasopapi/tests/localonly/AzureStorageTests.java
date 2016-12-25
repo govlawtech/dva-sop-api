@@ -2,7 +2,7 @@ package au.gov.dva.dvasopapi.tests.localonly;
 
 import au.gov.dva.dvasopapi.tests.TestUtils;
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
-import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSop;
+import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSopRH;
 import au.gov.dva.sopapi.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.interfaces.Repository;
@@ -20,7 +20,7 @@ public class AzureStorageTests {
     @Test
     public void saveAndRetrieveSop() throws JsonProcessingException {
         Repository underTest = new AzureStorageRepository("UseDevelopmentStorage=true");
-        SoP mockSop = new MockLumbarSpondylosisSop();
+        SoP mockSop = new MockLumbarSpondylosisSopRH();
         underTest.saveSop(mockSop);
         Optional<SoP> retrieved = underTest.getSop(mockSop.getRegisterId());
         Assert.assertTrue(retrieved.isPresent());

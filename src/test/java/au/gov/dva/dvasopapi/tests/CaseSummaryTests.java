@@ -53,6 +53,9 @@ public class CaseSummaryTests {
             outputStream.close();
         }
 
+        System.out.println(outputFile.getAbsolutePath());
+
+
         Assert.assertTrue(outputFile.exists());
     }
 

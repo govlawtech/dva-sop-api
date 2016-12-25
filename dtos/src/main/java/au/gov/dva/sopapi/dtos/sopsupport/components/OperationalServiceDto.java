@@ -59,4 +59,24 @@ public class OperationalServiceDto {
         this._startDate = _startDate;
         this._endDate = _endDate;
     }
+
+    public OffsetDateTime get_assigned() {
+        return _assigned;
+    }
+
+    public String get_description() {
+        return _description;
+    }
+
+    public String get_event() {
+        return _event;
+    }
+
+    public OffsetDateTime get_startDate() {
+        return _startDate;
+    }
+
+    public OffsetDateTime get_endDate() {
+        return _endDate;
+    }
 }

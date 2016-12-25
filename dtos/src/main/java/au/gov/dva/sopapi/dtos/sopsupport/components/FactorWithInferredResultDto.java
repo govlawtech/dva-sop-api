@@ -20,6 +20,8 @@ public class FactorWithInferredResultDto {
     private final List<DefinedTermDto> _definedTerms;
     private final Boolean _satisfied;
 
+
+
     @JsonCreator
     public FactorWithInferredResultDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, List<DefinedTermDto> definedTermDtos, Boolean satisfied) {
         _paragraph = paragraph;

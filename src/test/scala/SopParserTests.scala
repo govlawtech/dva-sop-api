@@ -168,5 +168,13 @@ class SopParserTests extends FunSuite {
     assert(result == "lumbar spondylosis")
 
   }
+
+  test("Parse entire RH LS SoP") {
+    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt"),"UTF-8").mkString;
+    val result: SoP = LsSoPFactory.create("F2014L00933",testInput)
+    val asJson = StoredSop.toJson(result)
+    System.out.print(TestUtils.prettyPrint(asJson))
+    assert(result != null)
+  }
 }
 

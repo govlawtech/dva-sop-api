@@ -108,7 +108,6 @@
               <option name="path" value="modules\jmx-remote.mod" />
             </JettyConfigFile>
             <JettyConfigFile>
-              <option name="active" value="true" />
               <option name="path" value="modules\jmx.mod" />
             </JettyConfigFile>
             <JettyConfigFile>
@@ -304,7 +303,6 @@
               <option name="path" value="modules\jmx-remote.mod" />
             </JettyConfigFile>
             <JettyConfigFile>
-              <option name="active" value="true" />
               <option name="path" value="modules\jmx.mod" />
             </JettyConfigFile>
             <JettyConfigFile>

@@ -9,6 +9,7 @@ object SoPFactoryLocator {
     {
       registerId match  {
         case "F2014L00933" => LsSoPFactory
+        case "F2014L00930" => LsSoPFactory
         case _ => null // todo: generic factory for unknown sops
       }
     }

@@ -1,12 +1,18 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.sopapi.dtos.EmploymentType;
-import au.gov.dva.sopapi.dtos.IncidentType;
-import au.gov.dva.sopapi.dtos.Rank;
-import au.gov.dva.sopapi.dtos.ServiceBranch;
-import au.gov.dva.sopapi.dtos.sopsupport.RequestDto;
+import au.gov.dva.dvasopapi.tests.mocks.ConditionMock;
+import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMock;
+import au.gov.dva.dvasopapi.tests.mocks.ExtensiveServiceHistoryMock;
+import au.gov.dva.dvasopapi.tests.mocks.processingRules.SimpleServiceHistory;
+import au.gov.dva.sopapi.dtos.*;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
+import au.gov.dva.sopapi.interfaces.ProcessingRule;
+import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
+import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
+import au.gov.dva.sopapi.interfaces.model.SoP;
+import au.gov.dva.sopapi.sopsupport.processingrules.LumbarSpondylosisRule;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -24,20 +30,66 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
 import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
 
 public class SopSupportServiceTests {
 
+    Predicate<Deployment> isOperational = s -> !s.getOperationName().contains("Peace is Our Profession");
 
-    private static RequestDto buildTestDto() {
-        return new RequestDto(
+
+    private static SopSupportRequestDto buildOnsetTestDto() {
+        return new SopSupportRequestDto(
+                new ConditionDto(
+                        "lumbar spondylosis",
+                        IncidentType.Onset,
+                        "ICD-10-AM",
+                        "M47.16",
+                        new OnsetDateRangeDto(
+                                odtOf(2010, 1, 1),
+                                odtOf(2010, 1, 1))
+                        , null),
+
+                new ServiceHistoryDto(
+                        new ServiceSummaryInfoDto(odtOf(2004, 7, 1)),
+                        ImmutableList.of(
+                                new ServiceDto(
+                                        ServiceBranch.ARMY,
+                                        EmploymentType.CTFS,
+                                        odtOf(2004, 7, 1),
+                                        odtOf(2016, 1, 1),
+                                        Rank.OtherRank,
+                                        ImmutableList.of(
+                                                new OperationalServiceDto(
+                                                        odtOf(2006, 7, 1),
+                                                        "Operation WARDEN",
+                                                        "Within Specified Area",
+                                                        odtOf(2006, 7, 10),
+                                                        odtOf(2007, 7, 1)),
+                                                new OperationalServiceDto(
+                                                        odtOf(2009, 7, 1),
+                                                        "Operation RIVERBANK",
+                                                        "Within Specified Area",
+                                                        odtOf(2009, 7, 10),
+                                                        odtOf(2010, 7, 1)
+                                                )
+                                        )
+                                )
+                        )
+                ));
+    }
+
+    private static SopSupportRequestDto buildTestDto() {
+
+        return new SopSupportRequestDto(
                 new ConditionDto(
                         "lumbar spondylosis",
                         IncidentType.Aggravation,
                         "ICD-10-AM",
-                        "M39.89",
+                        "M47.16",
                         new OnsetDateRangeDto(
                                 odtOf(2010, 1, 1),
                                 odtOf(2010, 1, 1))
@@ -77,7 +129,7 @@ public class SopSupportServiceTests {
 
     @Test
     public void testDtoSerialization() {
-        RequestDto testData = SopSupportServiceTests.buildTestDto();
+        SopSupportRequestDto testData = SopSupportServiceTests.buildTestDto();
         String jsonString = testData.toJsonString();
         System.out.print(jsonString);
         Assert.assertTrue(!jsonString.isEmpty());
@@ -89,7 +141,7 @@ public class SopSupportServiceTests {
         URL jsonUrl = Resources.getResource("sopSupportDto.json");
         String jsonString = Resources.toString(jsonUrl, Charsets.UTF_8);
 
-        RequestDto result = RequestDto.fromJsonString(jsonString);
+        SopSupportRequestDto result = SopSupportRequestDto.fromJsonString(jsonString);
         Assert.assertTrue(result != null);
 
     }
@@ -108,7 +160,7 @@ public class SopSupportServiceTests {
         mapper.configure(SerializationFeature.WRITE_ENUMS_USING_TO_STRING,true);
         JsonSchemaGenerator schemaGen = new JsonSchemaGenerator(mapper);
 
-        JsonSchema schema = schemaGen.generateSchema(RequestDto.class);
+        JsonSchema schema = schemaGen.generateSchema(SopSupportRequestDto.class);
 
         String schemaString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(schema);
 
@@ -136,8 +188,39 @@ public class SopSupportServiceTests {
         Assert.assertTrue(!results.isEmpty());
     }
 
+    @Test
+    public void testLsSopIdentification()
+    {
+
+        ProcessingRule underTest = new LumbarSpondylosisRule();
+        Condition condition = new LumbarSpondylosisConditionMock();
+        SoP applicableSop = underTest.getApplicableSop(condition,new ExtensiveServiceHistoryMock(),isOperational);
+        Assert.assertTrue(applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
 
 
+    }
+
+    @Test
+    public void testFailOperationalServiceReq()
+    {
+        ProcessingRule underTest = new LumbarSpondylosisRule();
+        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,8,1),actOdtOf(2004,8,1),null);
+        ServiceHistory serviceHistory = SimpleServiceHistory.get();
+        SoP applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
+        Assert.assertTrue(applicableSop.getStandardOfProof() == StandardOfProof.BalanceOfProbabilities);
+
+    }
+
+    @Test
+    public void testPassOperationalServiceReq()
+    {
+        ProcessingRule underTest = new LumbarSpondylosisRule();
+        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,10,1),actOdtOf(2004,10,1),null);
+        ServiceHistory serviceHistory = SimpleServiceHistory.get();
+        SoP applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
+        Assert.assertTrue(applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
+
+    }
 
 
 

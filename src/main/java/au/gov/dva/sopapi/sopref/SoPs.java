@@ -1,19 +1,24 @@
 package au.gov.dva.sopapi.sopref;
 
-import au.gov.dva.sopapi.exceptions.DvaSopApiError;
-import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.SoPDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
+import au.gov.dva.sopapi.exceptions.DvaSopApiError;
+import au.gov.dva.sopapi.interfaces.model.ICDCode;
+import au.gov.dva.sopapi.interfaces.model.SoP;
+import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class SoPs {
+
 
 
     public static String buildSopRefJsonResponse(ImmutableSet<SoP> matchingSops, IncidentType incidentType, StandardOfProof standardOfProof) {
@@ -52,8 +57,25 @@ public class SoPs {
 
     public static ImmutableSet<SoPPair> groupSopsToPairs(ImmutableSet<SoP> allSops)
     {
-        return null;
+       Map<String,List<SoP>> groupedByName =  allSops.stream().collect(Collectors.groupingBy(sop -> sop.getConditionName()));
+
+       assert(groupedByName.values().stream().allMatch(soPS -> soPS.size() == 2));
+
+       List<SoPPair> pairs = groupedByName.values()
+               .stream().map(soPS -> {
+                   Optional<SoP> bopSop = soPS.stream().filter(soP -> soP.getStandardOfProof() == StandardOfProof.BalanceOfProbabilities).findFirst();
+                   assert(bopSop.isPresent());
+                   Optional<SoP> rhSop = soPS.stream().filter(soP -> soP.getStandardOfProof() == StandardOfProof.ReasonableHypothesis).findFirst();
+                   assert(rhSop.isPresent());
+                   return new SoPPair(bopSop.get(),rhSop.get());
+               })
+               .collect(Collectors.toList());
+
+       return ImmutableSet.copyOf(pairs);
+
     }
+
+
 
 
 }

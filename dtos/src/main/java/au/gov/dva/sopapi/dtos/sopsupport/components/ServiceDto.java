@@ -33,7 +33,7 @@ public class ServiceDto {
     private final Rank _rank;
 
     @JsonProperty(value = "operationalService", required = true)
-    List<OperationalServiceDto> _operationalServiceDtos;
+    private List<OperationalServiceDto> _operationalServiceDtos;
 
     @JsonCreator
     public ServiceDto(@JsonProperty("serviceName") ServiceBranch _serviceName,
@@ -54,5 +54,29 @@ public class ServiceDto {
         this._endDate = _endDate;
         this._rank = rank;
         this._operationalServiceDtos = _operationalServiceDtos;
+    }
+
+    public ServiceBranch get_serviceName() {
+        return _serviceName;
+    }
+
+    public EmploymentType get_serviceType() {
+        return _serviceType;
+    }
+
+    public OffsetDateTime get_startDate() {
+        return _startDate;
+    }
+
+    public OffsetDateTime get_endDate() {
+        return _endDate;
+    }
+
+    public Rank get_rank() {
+        return _rank;
+    }
+
+    public List<OperationalServiceDto> get_operationalServiceDtos() {
+        return _operationalServiceDtos;
     }
 }

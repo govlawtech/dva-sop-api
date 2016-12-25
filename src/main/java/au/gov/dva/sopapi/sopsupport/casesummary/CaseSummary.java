@@ -3,6 +3,8 @@ package au.gov.dva.sopapi.sopsupport.casesummary;
 import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
+import au.gov.dva.sopref.casesummary.Timeline;
+import com.google.common.collect.ImmutableList;
 import org.apache.commons.lang.WordUtils;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFNum;
@@ -24,6 +26,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class CaseSummary {
 
@@ -194,7 +197,28 @@ public class CaseSummary {
 
         serviceHistorySection.add(serviceHistoryData);
 
+        serviceHistorySection.add(createTimeline(serviceHistory));
+
         return serviceHistorySection;
+    }
+
+    private static CaseSummaryImage createTimeline(ServiceHistory serviceHistory) {
+        Predicate<String> isOperational = s -> {
+            if (s.contains("Peace is Our Profession"))
+                return false;
+            else return true;
+        };
+
+        try {
+            ImmutableList<byte[]> images = Timeline.createTimelineImages(serviceHistory.getServices().asList().get(0), isOperational);
+
+            CaseSummaryImage image = new CaseSummaryImage(images);
+            return image;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
     }
 
     private static CaseSummarySection createSopSection() {

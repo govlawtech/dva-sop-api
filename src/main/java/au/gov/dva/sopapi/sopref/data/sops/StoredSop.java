@@ -238,7 +238,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
         return objectNode;
     }
 
-    private static String formatInstrumentNumber(InstrumentNumber instrumentNumber)
+    public static String formatInstrumentNumber(InstrumentNumber instrumentNumber)
     {
         return String.format("%d/%d", instrumentNumber.getNumber(), instrumentNumber.getYear());
     }

@@ -14,7 +14,6 @@ public enum ServiceType {
         if (text.contentEquals("peacetime"))
             return ServiceType.PEACETIME;
         else throw new IllegalArgumentException(String.format("Unrecognised service type: %s", text));
-
     }
 
     public boolean isOperational()

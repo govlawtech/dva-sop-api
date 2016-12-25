@@ -1,16 +1,21 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.interfaces.AccumulationRule;
 import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.model.*;
-import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.Optional;
 import java.util.function.Predicate;
 
-public class LumbarSpondylosisRule implements ProcessingRule {
+public class LumbarSpondylosisRule implements ProcessingRule, AccumulationRule {
 
-    // todo: CFTS check
+    private static SimpleRuleSpec _simpleRuleSpec = new SimpleRuleSpec(
+                new RankSpec(49,3726,23),
+                new RankSpec(37,3280,26),
+                new RankSpec(6,21267,4));
 
     public LumbarSpondylosisRule() {
     }
@@ -37,28 +42,45 @@ public class LumbarSpondylosisRule implements ProcessingRule {
             return condition.getSopPair().getRhSop();
         }
         else return condition.getSopPair().getBopSop();
-
     }
 
 
     @Override
-    public ImmutableSet<Factor> getApplicableFactors(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory) {
+        ImmutableList<Factor> applicableFactors =  condition.getApplicableFactors(applicableSop);
 
-        // call generic rule based on one day of continuous full time service
-        return null;
+        Optional<Service> serviceDuringWhichConditionStarts =  ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(),condition.getStartDate());
+
+        Rank relevantRank = serviceDuringWhichConditionStarts.get().getRank();
+
+        Integer cftsDaysRequired = _simpleRuleSpec.getSpec(relevantRank).getRequiredWeeksCfts() * 7;
+
+        Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(serviceHistory,condition.getStartDate());
+        if (actualDaysOfCfts >= cftsDaysRequired) {
+            ImmutableList<FactorWithSatisfaction> inferredFactors =
+                    ProcessingRuleFunctions.withSatsifiedFactors(applicableFactors, "6(j)", "6(y)");
+
+            return inferredFactors;
+        }
+        {
+            return ProcessingRuleFunctions.withSatsifiedFactors(applicableFactors);
+        }
     }
 
-    @Override
-    public ImmutableSet<Factor> getSatisfiedFactors(Condition condition, ServiceHistory serviceHistory) {
-        return null;
-    }
 
     private static Integer getMinDaysOfOperationalServiceForRH(Rank rank)
     {
-        return ImmutableMap.of(
-                Rank.Officer,23,
-                Rank.OtherRank,26,
-                Rank.SpecialForces,4,
-                Rank.Unknown,26).get(rank);
+       return _simpleRuleSpec.getSpec(rank).getRhDaysOfOpServiceInLast10Years();
+    }
+
+
+    @Override
+    public Long getAccumulation() {
+        return null;
+    }
+
+    @Override
+    public String getAccumulationUnit() {
+        return "kg";
     }
 }

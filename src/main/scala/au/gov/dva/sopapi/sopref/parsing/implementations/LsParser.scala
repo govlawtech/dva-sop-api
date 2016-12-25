@@ -95,7 +95,7 @@ object LsParser extends SoPParser with RegexParsers{
   }
 
   override def parseStartAndEndAggravationParas(aggravationSection: String): (String, String) = {
-    val paraIntervalRegex = """Paragraphs [0-9]+(\([a-z]+\)) to [0-9]+(\([a-z]+\))""".r
+    val paraIntervalRegex = """Paragraphs [0-9]+(\([a-z]+\)) to [0-9]*(\([a-z]+\))""".r
     val m = paraIntervalRegex.findFirstMatchIn(aggravationSection)
     if (m.isEmpty)
       throw new SopParserError("Cannot determine aggravation paras from: " + aggravationSection)

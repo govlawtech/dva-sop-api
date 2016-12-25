@@ -38,10 +38,10 @@ public class TestUtils {
 
     public static List<Operation> getAllDeclaredOperations() throws IOException {
 
-            URL warlikeDetJson = Resources.getResource("serviceDeterminations\\F2016L00994.json");
+            URL warlikeDetJson = Resources.getResource("serviceDeterminations/F2016L00994.json");
             String warlikeString =  Resources.toString(warlikeDetJson, Charsets.UTF_8);
 
-            URL nonWarlikeDetJson = Resources.getResource("serviceDeterminations\\F2016L00995.json");
+            URL nonWarlikeDetJson = Resources.getResource("serviceDeterminations/F2016L00995.json");
             String nonWarlikeString =   Resources.toString(nonWarlikeDetJson, Charsets.UTF_8);
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -147,10 +147,12 @@ public class TestUtils {
                     return operation.getEndDate();
                 }
                 else {
-                     return Optional.of(operation.getStartDate().plusDays(maxDays));
+                     return Optional.of(deploymentStartDate.plusDays(maxDays));
                 }
             }
         };
     }
+
+
 
 }

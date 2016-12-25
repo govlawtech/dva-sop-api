@@ -8,3 +8,4 @@ public interface Factor {
     ImmutableSet<DefinedTerm> getDefinedTerms();
 }
 
+

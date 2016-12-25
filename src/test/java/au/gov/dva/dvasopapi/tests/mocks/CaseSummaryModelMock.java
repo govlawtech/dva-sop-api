@@ -7,15 +7,15 @@ import com.google.common.collect.ImmutableSet;
 public class CaseSummaryModelMock implements CaseSummaryModel{
 
     public Condition getCondition() {
-        return new ConditionMock();
+        return new LumbarSpondylosisConditionMock();
     }
 
     public ServiceHistory getServiceHistory() {
-        return new ServiceHistoryMock();
+        return new ExtensiveServiceHistoryMock();
     }
 
     public SoP getApplicableSop() {
-        return new MockLumbarSpondylosisSop();
+        return new MockLumbarSpondylosisSopRH();
     }
 
     public String getThresholdProgress() {

@@ -1,52 +1,58 @@
 package au.gov.dva.sopapi.client;
 
-import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
-import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
-import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.Param;
-import org.asynchttpclient.Response;
 
-import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class SoPApiClient {
 
+    // todo : error handling
     private final URL baseUrl;
-    private final String _service;
-    private final String _serviceUrl;
 
-    public SoPApiClient(URL baseUrl, String service)
+    public SoPApiClient(URL baseUrl)
     {
         this.baseUrl = baseUrl;
-        this._service = service;
-        this._serviceUrl = this.baseUrl + "/" + this._service;
+    }
+
+
+    private static URL getServiceUrl(URL baseUrl, String serviceRouteWithLeadingSlash) {
+        try {
+            assert(!baseUrl.toString().endsWith("/"));
+            return URI.create(baseUrl + serviceRouteWithLeadingSlash).toURL();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 
     public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, String incidentType, String standardOfProof)
     {
+
+        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SOPFACTORS);
         List<Param> params = new ArrayList<>();
         params.add(new Param(QueryParamLabels.CONDITION_NAME, conditionName));
-        params.add(new Param(QueryParamLabels.ICD_CODE_Value, icdCodeValue));
+        params.add(new Param(QueryParamLabels.ICD_CODE_VALUE, icdCodeValue));
         params.add(new Param(QueryParamLabels.ICD_CODE_VERSION, icdCodeVersion));
         params.add(new Param(QueryParamLabels.INCIDENT_TYPE, incidentType));
         params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof));
 
-        System.out.println(standardOfProof.toString());
-
         AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<SoPRefDto> promise = asyncHttpClient
-                .prepareGet(this._serviceUrl)
+                .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json")
                 .addQueryParams(params)
                 .execute()
@@ -57,13 +63,13 @@ public class SoPApiClient {
         return promise;
     }
 
-    public CompletableFuture<OperationsResponseDto> getOperations(LocalDate declaredAfter)
+    public CompletableFuture<OperationsResponseDto> getOperations()
     {
+        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_OPERATIONS);
         AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<OperationsResponseDto> promise = asyncHttpClient
-                .prepareGet(this._serviceUrl)
+                .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json")
-                .addQueryParam(QueryParamLabels.QUERY_DATE, declaredAfter.toString())
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> response.getResponseBody())
@@ -72,6 +78,20 @@ public class SoPApiClient {
         return promise;
     }
 
-    //todo: add method for SoP support once Nick sets up the return type DTOS.
+    public CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(String jsonRequestBody) {
+        SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(jsonRequestBody);
+        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SERVICE_CONNECTION);
+
+        AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
+        CompletableFuture<SopSupportResponseDto> promise = asyncHttpClient
+                .prepareGet(serviceUrl.toString())
+                .setHeader("Accept", "application/json")
+                .execute()
+                .toCompletableFuture()
+                .thenApply(response -> response.getResponseBody())
+                .thenApply(json -> SopSupportResponseDto.fromJsonString(json.toString()));
+
+        return promise;
+    }
 
 }

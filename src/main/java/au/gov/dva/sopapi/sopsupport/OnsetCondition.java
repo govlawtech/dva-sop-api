@@ -2,9 +2,13 @@ package au.gov.dva.sopapi.sopsupport;
 
 import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.model.Condition;
+import au.gov.dva.sopapi.interfaces.model.Factor;
+import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
+import com.google.common.collect.ImmutableList;
 
 import java.time.OffsetDateTime;
+
 
 public class OnsetCondition implements Condition {
 
@@ -39,6 +43,11 @@ public class OnsetCondition implements Condition {
     @Override
     public ProcessingRule getProcessingRule() {
         return processingRule;
+    }
+
+    @Override
+    public ImmutableList<Factor> getApplicableFactors(SoP sop) {
+        return sop.getOnsetFactors();
     }
 
 
