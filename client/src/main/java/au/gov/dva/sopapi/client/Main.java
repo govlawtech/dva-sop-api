@@ -19,8 +19,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Main {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Options options = getOptions();
         CommandLineParser parser = new DefaultParser();
 
@@ -30,7 +29,7 @@ public class Main {
             URL serverUrl = new URL(cmd.getOptionValue("url"));
             String service = cmd.getOptionValue("service");
             SoPApiClient client = new SoPApiClient(serverUrl);
-            String result = "";
+            String result;
 
             List<String> missingOptions = new ArrayList<>();
 
@@ -44,7 +43,7 @@ public class Main {
                 case "factors":
                     // Condition and both ICD value and version are missing
                     if (!cmd.hasOption(QueryParamLabels.CONDITION_NAME)
-                        && !cmd.hasOption(QueryParamLabels.ICD_CODE_VALUE)
+                            && !cmd.hasOption(QueryParamLabels.ICD_CODE_VALUE)
                             && !cmd.hasOption(QueryParamLabels.ICD_CODE_VERSION)) {
 
                         missingOptions.add(QueryParamLabels.CONDITION_NAME);
@@ -87,23 +86,24 @@ public class Main {
                     result = SoPRefDto.toJsonString(sopRef);
 
                     break;
-                case "process" :
+                case "process":
 
-                    if (!cmd.hasOption(ParamNames.PROCESSING_REQUEST_PATH)){
+                    if (!cmd.hasOption(ParamNames.PROCESSING_REQUEST_PATH)) {
                         missingOptions.add(ParamNames.PROCESSING_REQUEST_PATH);
                     }
                     if (!missingOptions.isEmpty()) {
                         throw new MissingOptionException(missingOptions);
                     }
                     String path = cmd.getOptionValue(ParamNames.PROCESSING_REQUEST_PATH);
-                    String content =  readFile(path,Charsets.UTF_8);
+                    String content = readFile(path, Charsets.UTF_8);
 
                     SopSupportResponseDto response = client.getSatisfiedFactors(content).get();
                     System.out.println(SopSupportResponseDto.toJsonString(response));
 
 
                 default:
-                    break;
+                    throw new ParseException("Unrecognised value for 'service' option");
+
             }
 
             System.out.println(result);
@@ -116,24 +116,21 @@ public class Main {
             System.out.println(e);
         } catch (ExecutionException e) {
             System.out.println(e);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             System.out.println(e);
-        }
-        finally {
+        } finally {
             System.exit(-1);
         }
     }
 
     private static class ParamNames {
-        public final static String PROCESSING_REQUEST_PATH =  "r";
+        public final static String PROCESSING_REQUEST_PATH = "r";
     }
 
     private static void printHelp(Options options) {
         HelpFormatter helpFormatter = new HelpFormatter();
         // todo: add missing service
-        helpFormatter.printHelp("[-"  +
+        helpFormatter.printHelp("[-" +
                 QueryParamLabels.CONDITION_NAME + " <name> | -" +
                 QueryParamLabels.ICD_CODE_VALUE + " <value> -" +
                 QueryParamLabels.ICD_CODE_VERSION + " <version>] -" +
@@ -171,7 +168,7 @@ public class Main {
 
 
         // connectionToService
-        Option requestBodyFile = new Option("r","request",true,"Path to JSON file containing the request body.");
+        Option requestBodyFile = new Option("r", "request", true, "Path to JSON file containing the request body.");
 
         options.addOption(serviceOption);
         options.addOption(urlOption);
@@ -187,8 +184,7 @@ public class Main {
     }
 
     static String readFile(String path, Charset encoding)
-            throws IOException
-    {
+            throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, encoding);
     }

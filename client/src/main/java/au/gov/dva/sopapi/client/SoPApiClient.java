@@ -4,7 +4,6 @@ import au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
-import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
@@ -79,7 +78,6 @@ public class SoPApiClient {
     }
 
     public CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(String jsonRequestBody) {
-        SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(jsonRequestBody);
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SERVICE_CONNECTION);
 
         AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
