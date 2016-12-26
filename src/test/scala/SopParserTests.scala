@@ -1,4 +1,6 @@
 
+package au.gov.dva.sopapi.tests.parsers;
+
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
 import au.gov.dva.sopapi.interfaces.model.SoP
@@ -16,8 +18,7 @@ import scala.io.Source
 @RunWith(classOf[JUnitRunner])
 class SopParserTests extends FunSuite {
   test("Clense LS raw text") {
-    val sourceResourceStream = getClass().getResourceAsStream("lsConvertedToText.txt");
-    val rawText = Source.fromInputStream(sourceResourceStream).mkString
+    val rawText = ParserTestUtils.resourceToString("lsConvertedToText.txt");
     val lSClenser = new GenericClenser();
     val result = lSClenser.clense(rawText)
 
@@ -28,7 +29,7 @@ class SopParserTests extends FunSuite {
   }
 
   test("Extract Lumbar Spondylosis factors section from clensed text") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
     val underTest = new LsExtractor()
     val result = underTest.extractFactorSection(testInput)
     System.out.print(result);
@@ -36,7 +37,7 @@ class SopParserTests extends FunSuite {
   }
 
   test("Extract definition section for Lumbar Spondylosis") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
     val underTest = new LsExtractor()
     val result = underTest.extractDefinitionsSection(testInput);
     assert(result.startsWith("For the purpose") && result.endsWith("surgery to the lumbar spine."))
@@ -44,14 +45,14 @@ class SopParserTests extends FunSuite {
   }
 
   test("Extract date of effect for Lumbar Spondylosis") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
     val underTest = new LsExtractor()
     val result = underTest.extractDateOfEffectSection(testInput);
     assert(result == "This Instrument takes effect from 2 July 2014.");
   }
 
   test("Extract citation for Lumbar Spondylosis") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
     val underTest = new LsExtractor()
     val result = underTest.extractCitation(testInput);
     assert(result == "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014.");
@@ -59,7 +60,7 @@ class SopParserTests extends FunSuite {
 
 
   test("Extract ICD codes for Lumbar Spondylosis") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt")).mkString;
+    val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
     val underTest = new LsExtractor()
     val result = underTest.extractICDCodes(testInput);
     result.foreach(c => System.out.print(c))
@@ -75,7 +76,7 @@ class SopParserTests extends FunSuite {
 
 
   test("Parse all factors from Lumbar Spondylosis"){
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsExtractedFactorsText.txt"),"UTF-8").mkString;
+    val testInput = ParserTestUtils.resourceToString("lsExtractedFactorsText.txt")
     val underTest = LsParser;
     val result = underTest.parseAll(underTest.completeFactorSectionParser,testInput)
     System.out.print(result)
@@ -85,7 +86,7 @@ class SopParserTests extends FunSuite {
 
   test("Ls parser implements interface correctly") {
 
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsExtractedFactorsText.txt"),"UTF-8").mkString;
+    val testInput = ParserTestUtils.resourceToString("lsExtractedFactorsText.txt")
     val underTest = LsParser;
     val result = underTest.parseFactors(testInput)
     assert(result._1 == StandardOfProof.ReasonableHypothesis)
@@ -100,7 +101,7 @@ class SopParserTests extends FunSuite {
   }
 
   test("Divide definitions section to individual definitions") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsExtractedDefinitionsSection.txt"),"UTF-8").mkString;
+    val testInput = ParserTestUtils.resourceToString("lsExtractedDefinitionsSection.txt")
     val result = DefinitionsParsers.splitToDefinitions(testInput)
     assert(result.size == 17 && result.drop(1).forall(s => s.endsWith(";")))
   }
@@ -113,7 +114,7 @@ class SopParserTests extends FunSuite {
   }
 
   test("Parse LS definitions section") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsExtractedDefinitionsSection.txt"),"UTF-8").mkString;
+    val testInput = ParserTestUtils.resourceToString("lsExtractedDefinitionsSection.txt")
     val result = LsParser.parseDefinitions(testInput)
     assert(result.size == 17)
   }
@@ -125,7 +126,7 @@ class SopParserTests extends FunSuite {
   }
 
   test("Parse entire LS SoP") {
-      val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt"),"UTF-8").mkString;
+      val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
       val result: SoP = LsSoPFactory.create("F2014L00933",testInput)
       val asJson = StoredSop.toJson(result)
       System.out.print(TestUtils.prettyPrint(asJson))
@@ -135,7 +136,7 @@ class SopParserTests extends FunSuite {
   test("Extract aggravation section from LS SoP")
   {
 
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt"),"UTF-8").mkString;
+    val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
     val undertest = new LsExtractor
     val result =undertest.extractAggravationSection(testInput)
     assert(result == "Paragraphs 6(q) to 6(ff) applies only to material contribution to, or aggravation of, lumbar spondylosis where the person’s lumbar spondylosis was suffered or contracted before or during (but not arising out of) the person’s relevant service.")
@@ -170,7 +171,7 @@ class SopParserTests extends FunSuite {
   }
 
   test("Parse entire RH LS SoP") {
-    val testInput = Source.fromInputStream(getClass().getResourceAsStream("lsClensedText.txt"),"UTF-8").mkString;
+    val testInput = ParserTestUtils.resourceToString("lsClensedText.txt")
     val result: SoP = LsSoPFactory.create("F2014L00933",testInput)
     val asJson = StoredSop.toJson(result)
     System.out.print(TestUtils.prettyPrint(asJson))

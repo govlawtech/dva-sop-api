@@ -1,3 +1,6 @@
+
+package au.gov.dva.sopapi.tests.parsers;
+
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.interfaces.model.SoP
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop

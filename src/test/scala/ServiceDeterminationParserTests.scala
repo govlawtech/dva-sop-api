@@ -1,3 +1,6 @@
+
+package au.gov.dva.sopapi.tests.parsers;
+
 import java.io.InputStream
 import java.time.{LocalDate, OffsetDateTime}
 
@@ -18,8 +21,7 @@ class ServiceDeterminationParserTests extends FunSuite {
 
   test("Convert warlike determination to text") {
 
-    val sourceResourceStream: InputStream = getClass().getResourceAsStream("F2016L00994.pdf");
-    val bytes = Stream.continually(sourceResourceStream.read).takeWhile(_ != -1).map(_.toByte).toArray;
+    val bytes = ParserTestUtils.resourceToBytes("F2016L00994.pdf");
     val result = Conversions.pdfToPlainText(bytes);
     println(result)
     assert(result.size > 0)
@@ -27,46 +29,46 @@ class ServiceDeterminationParserTests extends FunSuite {
 
   test("Convert non-warlike determination to text") {
 
-    val sourceResourceStream: InputStream = getClass().getResourceAsStream("F2016L00995.pdf");
-    val bytes = Stream.continually(sourceResourceStream.read).takeWhile(_ != -1).map(_.toByte).toArray;
+    val bytes = ParserTestUtils.resourceToBytes("F2016L00995.pdf");
     val result = Conversions.pdfToPlainText(bytes);
     println(result)
     assert(result.size > 0)
   }
 
   test("Get register ID from warlike") {
-    val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/warlike.txt")).mkString;
+
+    val text = ParserTestUtils.resourceToString("serviceDeterminations/warlike.txt")
     val result = ServiceDeterminations.getRegisterId(text);
     assert(result == "F2016L00994")
 
   }
 
   test("Get register ID from non-warlike") {
-    val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/non-warlike.txt")).mkString
+    val text = ParserTestUtils.resourceToString("serviceDeterminations/non-warlike.txt")
     val result = ServiceDeterminations.getRegisterId(text)
     assert(result == "F2016L00995")
   }
 
   test("Get register date from warlike") {
-    val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/warlike.txt")).mkString;
+    val text = ParserTestUtils.resourceToString("serviceDeterminations/warlike.txt")
     val result = ServiceDeterminations.getRegisteredDate(text);
     assert(result.get.isEqual(TestUtils.actOdtOf(2016, 6, 6)))
   }
 
   test("Get register date from non-warlike") {
-    val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/non-warlike.txt")).mkString;
+    val text = ParserTestUtils.resourceToString("serviceDeterminations/non-warlike.txt")
     val result: Option[OffsetDateTime] = ServiceDeterminations.getRegisteredDate(text);
     assert(result.get.isEqual(TestUtils.actOdtOf(2016, 6, 6)))
   }
 
   test("Get citation from warlike") {
-    val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/warlike.txt")).mkString;
+    val text = ParserTestUtils.resourceToString("serviceDeterminations/warlike.txt")
     val result = ServiceDeterminations.getCitation(text);
     assert(result == "Military Rehabilitation and Compensation (Warlike Service) Determination 2016 (No. 1)")
   }
 
   test("Get citation from non-warlike") {
-    val text = Source.fromInputStream(getClass.getResourceAsStream("serviceDeterminations/non-warlike.txt")).mkString;
+    val text = ParserTestUtils.resourceToString("serviceDeterminations/non-warlike.txt")
     val result = ServiceDeterminations.getCitation(text);
     assert(result == "Military Rehabilitation and Compensation (Non-warlike Service) Determination 2016 (No. 1)")
   }
