@@ -16,12 +16,7 @@ import scala.io.Source
 object ParserTestUtils {
   def resourceToBytes(resourcePath : String) = {
     val sourceUrl = Resources.getResource(resourcePath);
-
-    val sourceResourceStream: InputStream = Resources.asByteSource(sourceUrl).openStream();
-    val bytes =  Stream.continually(sourceResourceStream.read).takeWhile(_ != -1).map(_.toByte).toArray;
-    sourceResourceStream.close()
-    bytes
-
+    Resources.toByteArray(sourceUrl)
   }
 
   def resourceToString(resourcePath : String) = {
