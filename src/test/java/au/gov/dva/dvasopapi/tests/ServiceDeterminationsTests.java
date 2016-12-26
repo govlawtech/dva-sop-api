@@ -29,7 +29,7 @@ public class ServiceDeterminationsTests {
     @Test
     public void deserializeWarlike() throws IOException {
 
-        URL inputPdf = Resources.getResource("serviceDeterminations\\F2016L00994.json");
+        URL inputPdf = Resources.getResource("serviceDeterminations/F2016L00994.json");
         String s = Resources.toString(inputPdf, Charsets.UTF_8);
         ObjectMapper objectMapper = new ObjectMapper();
         ServiceDetermination result = StoredServiceDetermination.fromJson(objectMapper.readTree(s));
