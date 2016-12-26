@@ -4,13 +4,18 @@ import au.gov.dva.sopapi.sopref.data.Conversions
 import au.gov.dva.sopapi.sopref.parsing.factories.SoPFactoryLocator
 import au.gov.dva.sopapi.sopref.parsing.implementations.GenericClenser
 import au.gov.dva.sopapi.sopref.parsing.traits.GenericTextClenser
+import com.google.common.io.Resources
 
 import scala.io.Source
 
 object ParserTestUtils {
   def resourceToBytes(resourcePath : String) = {
-    val sourceResourceStream: InputStream = getClass().getResourceAsStream(resourcePath);
-    Stream.continually(sourceResourceStream.read).takeWhile(_ != -1).map(_.toByte).toArray;
+    val sourceUrl = Resources.getResource(resourcePath);
+
+    val sourceResourceStream: InputStream = Resources.asByteSource(sourceUrl).openStream();
+    val bytes =  Stream.continually(sourceResourceStream.read).takeWhile(_ != -1).map(_.toByte).toArray;
+    sourceResourceStream.close()
+    bytes
 
   }
 
