@@ -11,8 +11,13 @@ import org.scalatest.junit.JUnitRunner
 
 
 @RunWith(classOf[JUnitRunner])
-class LumbarSpondylosisTests extends FunSuite{
+class LumbarSpondylosisTests extends FunSuite {
 
+  test("Load resource")
+  {
+    val result = ParserTestUtils.resourceToBytes("sops_rh/F2014L00933.pdf")
+    assert(result != null)
+  }
 
   test("Parse entire RH LS SoP") {
       val result = ParserTestUtils.executeWholeParsingPipeline("F2014L00933", "sops_rh/F2014L00933.pdf")

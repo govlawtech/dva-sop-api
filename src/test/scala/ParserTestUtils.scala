@@ -27,7 +27,6 @@ object ParserTestUtils {
 
   def executeWholeParsingPipeline(registerId : String, resourcePath : String) = {
 
-    try {
       val bytes = resourceToBytes(resourcePath);
       val rawText = Conversions.pdfToPlainText(bytes);
       val genericClenser = new GenericClenser();
@@ -35,11 +34,6 @@ object ParserTestUtils {
       val sopFactory = SoPFactoryLocator.findFactory(registerId)
       val sop = sopFactory.create(registerId, clensedText)
       sop
-    }
-    catch {
-      case e : AssertionError => System.out.print(e)
-        null
-    }
   }
 
 
