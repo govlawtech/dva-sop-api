@@ -203,7 +203,6 @@ public class StoredSop implements SoP, HasSchemaVersion {
         for (ICDCode icdCode : sop.getICDCodes())
             icdCodesNode.add(BasicICDCode.toJson(icdCode));
 
-
         ArrayNode onsetFactorsNode =  rootNode.putArray(Labels.ONSET_FACTORS);
         for (Factor factor : sop.getOnsetFactors())
             onsetFactorsNode.add(toJson(factor));
