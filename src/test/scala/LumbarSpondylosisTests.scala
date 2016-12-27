@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.tests.parsers;
 
 
 import au.gov.dva.dvasopapi.tests.TestUtils
+import au.gov.dva.sopapi.sopref.data.Conversions
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -13,11 +14,15 @@ import org.scalatest.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class LumbarSpondylosisTests extends FunSuite {
 
-  test("Load resource")
+  test("CI debug")
   {
-    val result = ParserTestUtils.resourceToBytes("sops_rh/F2014L00933.pdf")
-    assert(result != null)
+    val bytes = ParserTestUtils.resourceToBytes("sops_rh/F2014L00933.pdf")
+    val rawText = Conversions.pdfToPlainText(bytes);
+    assert(rawText != null)
   }
+
+
+
 
   test("Parse entire RH LS SoP") {
       val result = ParserTestUtils.executeWholeParsingPipeline("F2014L00933", "sops_rh/F2014L00933.pdf")
