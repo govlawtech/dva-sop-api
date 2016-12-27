@@ -5,6 +5,7 @@ package au.gov.dva.sopapi.tests.parsers;
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.sopref.data.Conversions
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
+import au.gov.dva.sopapi.sopref.parsing.factories.SoPFactoryLocator
 import au.gov.dva.sopapi.sopref.parsing.implementations.GenericClenser
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -21,7 +22,9 @@ class LumbarSpondylosisTests extends FunSuite {
     val rawText = Conversions.pdfToPlainText(bytes);
     val genericClenser = new GenericClenser();
     val clensedText = genericClenser.clense(rawText)
-    assert(clensedText != null)
+    val sopFactory = SoPFactoryLocator.findFactory("F2014L00933")
+    val sop = sopFactory.create("F2014L00933", clensedText)
+    assert(sop != null)
   }
 
 
