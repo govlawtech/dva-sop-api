@@ -27,7 +27,7 @@ class LumbarSpondylosisTests extends FunSuite {
     val sopFactory = SoPFactoryLocator.findFactory("F2014L00933")
     //
     val sop = sopFactory.create("F2014L00933", clensedText)
-    assert(sop != null)
+    assert(sopFactory != null)
   }
 
   ignore("Parse entire RH LS SoP") {
