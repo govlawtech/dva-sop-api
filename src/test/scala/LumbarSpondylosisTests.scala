@@ -17,7 +17,7 @@ import org.scalatest.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class LumbarSpondylosisTests extends FunSuite {
 
-  test("CI debug")
+  ignore("CI debug")
   {
     val bytes = ParserTestUtils.resourceToBytes("sops_rh/F2014L00933.pdf")
     val rawText = Conversions.pdfToPlainText(bytes);
