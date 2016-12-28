@@ -30,6 +30,20 @@ class LumbarSpondylosisTests extends FunSuite {
     assert(sopFactory != null)
   }
 
+  test("Test Scala case match statement for running in CI")
+  {
+    val f = (s : String)  => {
+
+      s match {
+        case "One" => "One"
+        case "Two" => "Two"
+        case _ => null
+      }
+    }
+
+    assert(f("One") != null)
+  }
+
   ignore("Parse entire RH LS SoP") {
       val result = ParserTestUtils.executeWholeParsingPipeline("F2014L00933", "sops_rh/F2014L00933.pdf")
       System.out.print(TestUtils.prettyPrint(StoredSop.toJson(result)))
