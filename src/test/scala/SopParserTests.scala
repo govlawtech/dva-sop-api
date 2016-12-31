@@ -5,6 +5,7 @@ import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
 import au.gov.dva.sopapi.interfaces.model.SoP
 import au.gov.dva.sopapi.dtos.StandardOfProof
+import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
 import com.google.common.io.Resources
@@ -19,8 +20,7 @@ import scala.io.Source
 class SopParserTests extends FunSuite {
   test("Clense LS raw text") {
     val rawText = ParserTestUtils.resourceToString("lsConvertedToText.txt");
-    val lSClenser = new GenericClenser();
-    val result = lSClenser.clense(rawText)
+    val result = GenericClenser.clense(rawText)
 
     assert(result.length() > 0)
     System.out.println("START:")
@@ -167,7 +167,6 @@ class SopParserTests extends FunSuite {
     val input =  "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014."
     val result = LsParser.parseConditionNameFromCitation(input);
     assert(result == "lumbar spondylosis")
-
   }
 
   test("Parse entire RH LS SoP") {
@@ -176,6 +175,36 @@ class SopParserTests extends FunSuite {
     val asJson = StoredSop.toJson(result)
     System.out.print(TestUtils.prettyPrint(asJson))
     assert(result != null)
+  }
+
+  test("Clense LS BoP text")
+  {
+    val rawText = ParserTestUtils.resourceToString("lsBopExtractedText.txt");
+    val result = GenericClenser.clense(rawText)
+    assert(result.length() > 0)
+    System.out.println("START:")
+    System.out.print(result)
+    System.out.println("END")
+  }
+
+  test("Divide LS BoP to sections") {
+    val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
+    val clensedText = ParserTestUtils.resourceToString("lsBopClensedText.txt")
+    val result = SoPExtractorUtilities.getSections(clensedText,sectionHeaderLineRegex)
+    result.foreach(s => System.out.println("\n\n" + s))
+
+    val split = result.map(s =>  SoPExtractorUtilities.parseSectionBlock(s))
+    split.foreach(s => System.out.println(s))
+    assert(result.size == 12)
+  }
+
+  test("Test get factors section with better approach")
+  {
+    val factorsRegex = """^Factors$""".r
+    val clensedText = ParserTestUtils.resourceToString("lsBopClensedText.txt")
+    val result = SoPExtractorUtilities.getSection(clensedText,factorsRegex)
+    assert(result != null)
+    System.out.print(result)
   }
 }
 

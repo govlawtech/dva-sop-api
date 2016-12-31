@@ -39,7 +39,6 @@ trait GenericTextClenser extends SoPClenser  {
   private def removePageGaps(raw : String) : String = {
     val pageGapRegex = """(\x{0020}*[\r\n]+){2,}""".r
     regexReplace(pageGapRegex,raw,"\r\n");
-
   }
 
   private def compressSpaces(raw : String) : String = {
