@@ -188,7 +188,7 @@ class SopParserTests extends FunSuite {
 
   test("Divide LS BoP to sections") {
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
-    val cleansedText = ParserTestUtils.resourceToString("lsBopcleansedText.txt")
+    val cleansedText = ParserTestUtils.resourceToString("lsBopCleansedText.txt")
     val result = SoPExtractorUtilities.getSections(cleansedText,sectionHeaderLineRegex)
     result.foreach(s => System.out.println("\n\n" + s))
 
@@ -200,9 +200,8 @@ class SopParserTests extends FunSuite {
   test("Test get factors section with better approach")
   {
     val factorsRegex = """^Factors$""".r
-    val cleansedText = ParserTestUtils.resourceToString("lsBopcleansedText.txt")
+    val cleansedText = ParserTestUtils.resourceToString("lsBopCleansedText.txt")
     val result = SoPExtractorUtilities.getSection(cleansedText,factorsRegex)
-    val clensedText = ParserTestUtils.resourceToString("lsBopClensedText.txt")
     assert(result != null)
     System.out.print(result)
   }
