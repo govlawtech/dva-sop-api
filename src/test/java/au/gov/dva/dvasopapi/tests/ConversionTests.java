@@ -88,6 +88,20 @@ public class ConversionTests {
 
     }
 
+    @Test
+    public void produceClensedTextForLSBop() throws IOException {
+
+            URL inputPdf = Resources.getResource("sops_bop/F2014L00930.pdf");
+            byte[] pdfBytes = Resources.toByteArray(inputPdf);
+            String result = Conversions.pdfToPlainText(pdfBytes);
+            int lineCount = result.split("[\r\n]+").length;
+            System.out.print(result);
+            Assert.assertTrue(lineCount > 250);
+
+    }
+
+
+
 
 
 

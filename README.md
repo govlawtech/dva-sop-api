@@ -8,6 +8,7 @@ An API exposing regulations and business rules to assist Department of Veterans'
 | [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=devtest)](https://travis-ci.org/govlawtech/dva-sop-api) | [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=master)](https://travis-ci.org/govlawtech/dva-sop-api)  |
 
 # Documentation
+<<<<<<< HEAD
 
 [Documentation](https://govlawtech.github.io/dva-sop-api/index.html)
 
@@ -142,4 +143,7 @@ This works similarly to the previous case, except that the repealing instrument 
 
 
 
+=======
+>>>>>>> 4325f6de4ec500f7cf95bf9584a8be902866bd49
 
+[Documentation](https://govlawtech.github.io/dva-sop-api/index.html)

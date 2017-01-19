@@ -28,7 +28,7 @@ object ParserTestUtils {
   def executeWholeParsingPipeline(registerId : String, resourcePath : String) = {
       val bytes = resourceToBytes(resourcePath);
       val rawText = Conversions.pdfToPlainText(bytes);
-      val clensedText = GenericCleanser.clense(rawText)
+      val clensedText = GenericCleanser.cleanse(rawText)
       val sopFactory = ServiceLocator.findSoPFactory(registerId)
       val sop = sopFactory.create(registerId, clensedText)
       sop

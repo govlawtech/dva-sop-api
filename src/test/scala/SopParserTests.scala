@@ -20,8 +20,7 @@ import scala.io.Source
 class SopParserTests extends FunSuite {
   test("Cleanse LS raw text") {
     val rawText = ParserTestUtils.resourceToString("lsConvertedToText.txt");
-    val result = GenericCleanser.clense(rawText)
-
+    val result = GenericCleanser.cleanse(rawText)
     assert(result.length() > 0)
     System.out.println("START:")
     System.out.print(result)
@@ -180,7 +179,7 @@ class SopParserTests extends FunSuite {
   test("Clense LS BoP text")
   {
     val rawText = ParserTestUtils.resourceToString("lsBopExtractedText.txt");
-    val result = GenericCleanser.clense(rawText)
+    val result = GenericCleanser.cleanse(rawText)
     assert(result.length() > 0)
     System.out.println("START:")
     System.out.print(result)
@@ -203,6 +202,7 @@ class SopParserTests extends FunSuite {
     val factorsRegex = """^Factors$""".r
     val cleansedText = ParserTestUtils.resourceToString("lsBopcleansedText.txt")
     val result = SoPExtractorUtilities.getSection(cleansedText,factorsRegex)
+    val clensedText = ParserTestUtils.resourceToString("lsBopClensedText.txt")
     assert(result != null)
     System.out.print(result)
   }

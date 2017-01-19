@@ -113,7 +113,7 @@ public class SoPLoader {
 
             String cleansedText;
             try {
-                cleansedText = cleanser.clense(text);
+                cleansedText = cleanser.cleanse(text);
             } catch (Error e) {
                 logger.error(buildLoggerMessage(registerId, "Failed to cleanse text."), e);
                 return Optional.empty();

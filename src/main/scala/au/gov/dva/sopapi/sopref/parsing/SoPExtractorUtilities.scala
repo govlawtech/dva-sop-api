@@ -9,9 +9,9 @@ import scala.util.matching.Regex
 
 object SoPExtractorUtilities {
 
-  def getSections(cleansedSoPText : String, sectionHeaderLineRegex : Regex) :  List[List[String]] = {
+  def getSections(clensedSoPText : String, sectionHeaderLineRegex : Regex) :  List[List[String]] = {
     val acc = List[List[String]]();
-    val lines = cleansedSoPText.split("[\r\n]+").toList
+    val lines = clensedSoPText.split("[\r\n]+").toList
     divideRecursive(List.empty,sectionHeaderLineRegex, acc,lines)
   }
 
@@ -26,6 +26,7 @@ object SoPExtractorUtilities {
       divideRecursive(headerForNextSection, sectionHeaderLineRegex,sectionLines :: acc, remaining.drop(sectionLinesWithTitleForNextHeading.size))
     }
   }
+
 
   def parseSectionBlock(sectionBlock : List[String]): (Option[Int], String, List[String]) = {
     val lines = sectionBlock
@@ -45,9 +46,9 @@ object SoPExtractorUtilities {
   }
 
 
-  def getSection(cleansedSopText : String, paragraphLineRegex : Regex) : (Int, List[String]) = {
+  def getSection(clensedSopText : String, paragraphLineRegex : Regex) : (Int, List[String]) = {
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
-    val allSections = getSections(cleansedSopText,sectionHeaderLineRegex).map(s => parseSectionBlock(s))
+    val allSections = getSections(clensedSopText,sectionHeaderLineRegex).map(s => parseSectionBlock(s))
 
     val sectionForSpecifiedPara = allSections.find(s => paragraphLineRegex.findFirstIn(s._2).nonEmpty)
     if (sectionForSpecifiedPara.isEmpty)

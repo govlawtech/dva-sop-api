@@ -47,7 +47,7 @@ trait GenericTextCleanser extends SoPCleanser  {
   }
 
 
-  override def clense(rawText: String) = {
+  override def cleanse(rawText: String) = {
     List(rawText)
       .map(trimStart)
       .map(removeAuthorisedFootnote)

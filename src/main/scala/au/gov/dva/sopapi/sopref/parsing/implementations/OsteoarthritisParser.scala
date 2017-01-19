@@ -79,7 +79,7 @@ object OsteoarthritisParser extends SoPParser with RegexParsers {
   }
 
   def separatedFactorListParser: Parser[List[(String, String, List[(String, String)], String)]] = rep1(paraAndTextParser) ^^ {
-    case listOfFactors: Seq[(String, String)] => listOfFactors
+    case listOfFactors => listOfFactors
   }
 
   def bodyTextParser: Parser[String] = """(([A-Za-z0-9\-'’,\)\(\s]|\.(?=[A-Za-z0-9])))+""".r
