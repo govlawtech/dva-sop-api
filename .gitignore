@@ -65,6 +65,13 @@ build/
 # IntelliJ
 /out/
 .idea/libraries
+<<<<<<< HEAD
+.idea/runConfigurations
+.idea/
+=======
+
+.idea/
 
 
+>>>>>>> instrument-parsing
 

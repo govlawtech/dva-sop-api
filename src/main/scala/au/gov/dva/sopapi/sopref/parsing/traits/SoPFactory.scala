@@ -4,7 +4,7 @@ import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor, SoP}
 import au.gov.dva.sopapi.sopref.parsing.implementations.ParsedFactor
 
 trait SoPFactory {
-  def create(registerId : String, clensedText : String) : SoP
+  def create(registerId : String, cleansedText : String) : SoP
 
   def splitFactors(parasInOrder : List[String], startPara : String, endPara : String) = {
     val onsetParas = parasInOrder.takeWhile(i => i != startPara) ++
@@ -19,7 +19,7 @@ trait SoPFactory {
       .map(f => (factorSectionNumber.toString.concat(f._1),f._2)) // prepend para number to letter
       .map(i =>
         { val relevantDefinitions = definedTerms.filter(d => i._2.contains(d.getTerm)).toSet
-          new ParsedFactor(i._1,i._2,relevantDefinitions)
+          new ParsedFactor(i._1,i._2,null,relevantDefinitions)
         }
       )
   }

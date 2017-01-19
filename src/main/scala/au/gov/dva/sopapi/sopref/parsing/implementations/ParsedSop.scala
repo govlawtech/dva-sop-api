@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations
 
 import java.time.LocalDate
+import java.util.Optional
 
 import au.gov.dva.sopapi.interfaces.model._
 import au.gov.dva.sopapi.dtos.StandardOfProof
@@ -27,4 +28,6 @@ class ParsedSop(registerId: String, instrumentNumber: InstrumentNumber, citation
   override def getICDCodes: ImmutableSet[ICDCode] = ImmutableSet.copyOf(icdCodes.toArray)
 
   override def getConditionName: String = conditionName
+
+  override def getEndDate = Optional.empty()
 }

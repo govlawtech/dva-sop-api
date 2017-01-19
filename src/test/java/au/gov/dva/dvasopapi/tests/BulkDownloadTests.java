@@ -28,7 +28,7 @@ public class BulkDownloadTests {
         FederalRegisterOfLegislation client = new FederalRegisterOfLegislation();
         for (String id : ids) {
             Path targetPath = getOutputPath(id);
-            byte[] pdf = client.getAuthorisedInstrumentPdf(id).get();
+            byte[] pdf = client.getLatestAuthorisedInstrumentPdf(id).get();
             Files.write(targetPath,pdf);
             System.out.print(targetPath);
         }

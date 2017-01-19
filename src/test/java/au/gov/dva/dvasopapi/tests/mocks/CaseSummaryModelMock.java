@@ -4,6 +4,8 @@ import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.List;
+
 public class CaseSummaryModelMock implements CaseSummaryModel{
 
     public Condition getCondition() {
@@ -36,6 +38,11 @@ public class CaseSummaryModelMock implements CaseSummaryModel{
             }
 
             @Override
+            public List<SubFactor> getSubFactors() {
+                return null;
+            }
+
+            @Override
             public ImmutableSet<DefinedTerm> getDefinedTerms() {
                 return ImmutableSet.of(new DefinedTerm() {
                     @Override
@@ -63,6 +70,11 @@ public class CaseSummaryModelMock implements CaseSummaryModel{
                 return "extreme forward flexion of the lumbar spine for a cumulative " +
                         "total of at least 1 500 hours before the clinical onset of " +
                         "lumbar spondylosis";
+            }
+
+            @Override
+            public List<SubFactor> getSubFactors() {
+                return null;
             }
 
             @Override

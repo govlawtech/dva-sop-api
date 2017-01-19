@@ -2,43 +2,71 @@ package au.gov.dva.sopapi.sopref.data;
 
 import au.gov.dva.sopapi.exceptions.LegislationRegisterError;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
+import org.asynchttpclient.AsyncHttpClient;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import org.jsoup.*;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import static org.asynchttpclient.Dsl.*;
-
-import org.asynchttpclient.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.concurrent.ExecutionException;
+import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class FederalRegisterOfLegislation implements RegisterClient {
 
-    // Warlike service: https://www.legislation.gov.au/Latest/F2016L00994
-    // NonWarlike service: https://www.legislation.gov.au/Details/F2016L00995
+    private static final String BASE_URL = "https://www.legislation.gov.au";
+
+     private static class AuthorisedInstrumentResult {
+
+        private final String registerId;
+        private final byte[] pdfBytes;
+
+        public AuthorisedInstrumentResult(String registerId, byte[] pdfBytes) {
+            this.registerId = registerId;
+            this.pdfBytes = pdfBytes.clone();
+        }
+
+        public byte[] getPdfBytes() {
+            return pdfBytes.clone();
+        }
+
+        public String getRegisterId() {
+            return registerId;
+        }
+    }
 
     final static Logger logger = LoggerFactory.getLogger(FederalRegisterOfLegislation.class);
 
-    @Override
-    public CompletableFuture<byte[]> getAuthorisedInstrumentPdf(String registerId) throws ExecutionException, InterruptedException {
-        URL latestDownloadPageUrl;
-        try {
-            latestDownloadPageUrl = new URL(buildUrlForLatestDownloadPage(registerId));
-        }
-        catch (MalformedURLException e) {
-            throw new LegislationRegisterError(e);
-        }
 
-        CompletableFuture<byte[]> promise = getRedirectTarget(latestDownloadPageUrl)
-                .thenCompose(url -> downloadHtml(url) )
+
+    @Override
+    public CompletableFuture<String> getRedirectTargetRegisterId(String registerId) {
+        URL urlForWhichToGetRedirect = BuildUrl.toGetRedirect(registerId);
+        return getRedirectTargetUrl(urlForWhichToGetRedirect)
+                .thenApply(url -> extractTargetRegisterIdFromRedirectUrl(url));
+
+    }
+
+    public static String extractTargetRegisterIdFromRedirectUrl(URL redirectTargetUrl) {
+        String[] pathParts = redirectTargetUrl.getPath().split("/");
+        return pathParts[pathParts.length - 1];
+    }
+
+    @Override
+    public CompletableFuture<byte[]> getLatestAuthorisedInstrumentPdf(String registerId) {
+     // todo: refactor redirects out of this - no longer need them
+        URL latestDownloadPageUrl;
+        latestDownloadPageUrl = BuildUrl.forLatestDownloadPage(registerId);
+        CompletableFuture<byte[]> promise = getRedirectTargetUrl(latestDownloadPageUrl)
+                .thenCompose(url -> downloadHtml(url))
                 .thenApply(htmlString -> {
                     try {
                         return getAuthorisedDocumentLinkFromHtml(htmlString, registerId);
@@ -50,6 +78,7 @@ public class FederalRegisterOfLegislation implements RegisterClient {
 
         return promise;
     }
+
 
     public static CompletableFuture<byte[]> downloadFile(URL url) {
         AsyncHttpClient asyncHttpClient = asyncHttpClient();
@@ -71,7 +100,7 @@ public class FederalRegisterOfLegislation implements RegisterClient {
         return promise;
     }
 
-    public static CompletableFuture<URL> getRedirectTarget(URL originalUrl) {
+    public static CompletableFuture<URL> getRedirectTargetUrl(URL originalUrl) {
         assert (originalUrl.getHost().startsWith("www"));
         AsyncHttpClient asyncHttpClient = asyncHttpClient();
         CompletableFuture<URL> promise = asyncHttpClient
@@ -81,11 +110,11 @@ public class FederalRegisterOfLegislation implements RegisterClient {
                 .thenApply(response -> {
                     assert (response.getStatusCode() == 302);
                     String redirectValue = response.getHeader("Location");
-                if (redirectValue.isEmpty())
+                    if (redirectValue.isEmpty())
                         throw new LegislationRegisterError(String.format("Could not get redirect to Details page from URL: %s\n%s", originalUrl.toString(), response.toString()));
                     try {
                         assert (!URI.create(redirectValue).isAbsolute() && redirectValue.startsWith("/"));
-                        URL   redirectTarget =  URI.create(String.format("%s://%s%s", originalUrl.getProtocol(), originalUrl.getHost(), redirectValue)).toURL();
+                        URL redirectTarget = URI.create(String.format("%s://%s%s", originalUrl.getProtocol(), originalUrl.getHost(), redirectValue)).toURL();
                         return redirectTarget;
                     } catch (MalformedURLException e) {
                         throw new LegislationRegisterError(e);
@@ -107,8 +136,121 @@ public class FederalRegisterOfLegislation implements RegisterClient {
         return URI.create(linkUrl).toURL();
     }
 
-    private static String buildUrlForLatestDownloadPage(String registerId) {
-        return String.format("https://www.legislation.gov.au/Latest/%s/Download", registerId);
+
+    public static Optional<String> getTitleStatus(String html) {
+
+//        <li id="MainContent_ucLegItemPane_liStatus" class="info2">
+//            <span id="MainContent_ucLegItemPane_lblTitleStatus" class="RedText">No longer in force</span>
+//
+//            <span id="MainContent_ucLegItemPane_lblVersionStatus" class="RedText"></span>
+//        </li>
+
+        return getCssIdValue(html, "MainContent_ucLegItemPane_lblTitleStatus");
+    }
+
+
+    public static Optional<String> getVersionStatus(String html) {
+
+        return getCssIdValue(html, "MainContent_ucLegItemPane_lblVersionStatus");
+    }
+
+    @Override
+    public CompletableFuture<Optional<String>> getRepealingRegisterId(String repealedRegisterId) {
+
+        URL urlForSeriesPage = BuildUrl.forSeriesRepealedByPage(repealedRegisterId);
+
+        AsyncHttpClient asyncHttpClient = asyncHttpClient();
+        CompletableFuture<Optional<String>> promise = asyncHttpClient
+                .prepareGet(urlForSeriesPage.toString())
+                .execute()
+                .toCompletableFuture()
+                .thenApply(response -> {
+                    if (response.getStatusCode() == 200)
+                    {
+                        Optional<String> registerIdOfRepealingInstrument = getRegisterIdOfRepealedByCeasedBy(response.getResponseBody());
+                        if (!registerIdOfRepealingInstrument.isPresent())
+                        {
+                            logger.trace("Did not find Register ID of repealing or ceasing instrument on this page: %n" + response.getResponseBody());
+                            return Optional.empty();
+                        }
+                        return Optional.of(registerIdOfRepealingInstrument.get());
+                    }
+                    else {
+                        logger.trace(String.format("Did not find Series page for Register ID: %s.%%nResponse Code: %d", repealedRegisterId, response.getStatusCode()));
+                        return Optional.empty();
+                    }
+                });
+
+        return promise;
+    }
+
+    public static Optional<String> getRegisterIdOfRepealedByCeasedBy(String html) {
+        Document htmlDocument = Jsoup.parse(html);
+        String cssSelector = String.format("a[id*='SeriesRepealedBy']");
+        Elements elements = htmlDocument.select(cssSelector);
+        if (elements.isEmpty())
+        {
+            return Optional.empty();
+        }
+        String linkUrl = elements.attr("href");
+
+        if (linkUrl.isEmpty())
+        {
+            return Optional.empty();
+        }
+        Pattern pattern = Pattern.compile("(F[0-9]{4}[A-Z][0-9]+)");
+        Matcher matcher = pattern.matcher(linkUrl);
+
+        if (!matcher.find())
+            return Optional.empty();
+
+        String registerId = matcher.group(1);
+        return Optional.of(registerId);
+    }
+
+
+    private static Optional<String> getCssIdValue(String html, String id) {
+        Document htmlDocument = Jsoup.parse(html);
+        String cssSelector = String.format("#%s", id);
+        Elements elements = htmlDocument.select(cssSelector);
+        if (elements.isEmpty()) {
+            logger.error(String.format("Could not determine current status of instrument using selector '%s' from HTML: %n%s", cssSelector, html));
+            return Optional.empty();
+        }
+        Element element = elements.first();
+        String status = element.text();
+        if (status.isEmpty()) {
+            logger.error(String.format("Empty string value for status using selector '%s' from HTML: %n%s", cssSelector, html));
+            return Optional.empty();
+        }
+        return Optional.of(status.trim());
+    }
+
+    private static class BuildUrl {
+        public static URL toGetRedirect(String sourceRegisterId) {
+            try {
+                return new URL(String.format("%s/Latest/%s", BASE_URL, sourceRegisterId));
+            } catch (MalformedURLException e) {
+                throw new LegislationRegisterError(e);
+            }
+        }
+
+        public static URL forLatestDownloadPage(String registerId) {
+            try {
+                return new URL(String.format("%s/Latest/%s/Download", BASE_URL, registerId));
+            } catch (MalformedURLException e) {
+                throw new LegislationRegisterError(e);
+            }
+        }
+
+        public static URL forSeriesRepealedByPage(String registerId)
+        {
+            try {
+                return new URL(String.format("%s/Series/%s/RepealedBy",BASE_URL, registerId));
+            } catch (MalformedURLException e) {
+                throw new LegislationRegisterError(e);
+            }
+        }
     }
 
 }

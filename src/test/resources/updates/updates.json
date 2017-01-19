@@ -1,0 +1,31 @@
+[
+  {
+    "type": "new",
+    "date": "2017-01-01T00:00:00+11:00",
+    "registerId": "F2014L00929"
+  },
+  {
+    "type": "new",
+    "date":  "2017-01-01T00:00:00+11:00",
+    "registerId": "F2014L00931"
+  },
+  {
+    "type": "replacement",
+    "date": "2017-01-01T00:00:00+11:00",
+    "repealedRegisterId": "F201484533",
+    "newRegisterId": "F582855555"
+  },
+  {
+    "type": "revocation",
+    "date": "2017-01-01T00:00:00+11:00",
+    "revocationDate": "2018-01-01",
+    "registerId": "F291292922"
+  },
+  {
+    "type": "compilation",
+    "date": "2017-01-01T00:00:00+11:00",
+    "supersededRegisterId": "F383838383",
+    "compilationRegisterId": "F238383838"
+  }
+
+]

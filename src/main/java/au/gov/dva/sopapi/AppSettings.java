@@ -56,6 +56,18 @@ public class AppSettings {
 
     }
 
+    public static class LegislationRegisterEmailSubscription {
+        private static final String LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_USER_ID = "LRS_USERID";
+        private static final String LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_PASSWORD = "LRS_PASSWORD";
+        public static String getUserId() {
+            return getPropertyValue(LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_USER_ID);
+        }
+
+        public static String getPassword(){
+            return getPropertyValue(LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_PASSWORD);
+        }
+    }
+
     public static class AzureStorage {
 
         // todo: get production values from environment variables

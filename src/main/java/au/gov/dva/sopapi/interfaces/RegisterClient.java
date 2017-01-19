@@ -1,9 +1,10 @@
 package au.gov.dva.sopapi.interfaces;
 
-import java.net.MalformedURLException;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 public interface RegisterClient {
-    CompletableFuture<byte[]> getAuthorisedInstrumentPdf(String registerId) throws MalformedURLException, ExecutionException, InterruptedException;
+    CompletableFuture<Optional<String>> getRepealingRegisterId(String repealedRegisterId);
+    CompletableFuture<byte[]> getLatestAuthorisedInstrumentPdf(String registerId);
+    CompletableFuture<String> getRedirectTargetRegisterId(String sourceRegisterId);
 }

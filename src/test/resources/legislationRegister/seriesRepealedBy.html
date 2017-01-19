@@ -1,0 +1,976 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=yes" />
+    <script src="/Scripts/jquery-1.3.2.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><link id="linkCSS" type="text/css" rel="stylesheet" href="/Content/Site.css" /><link type="text/css" rel="Stylesheet" media="print" href="/Content/PrintStyle.css" /><link rel="alternate" type="application/rss+xml" title="ComLaw Rss feed" href="../../rss" /><link id="linkMenuCSS" rel="stylesheet" type="text/css" href="/Content/Skins/Comlaw/Menu.Comlaw.css" /><link type="text/css" rel="Stylesheet" media="screen" href="/Content/Skins/ComlawRefresh/styles/styles.css" />
+    <!--[if gte IE 9]>
+        <link rel="stylesheet" type="text/css" href="/Content/Skins/ComlawRefresh/styles/ie9.css" />
+    <![endif]-->
+    <script type="text/javascript">
+        function bookmarksite(title, url) {
+            if (window.sidebar && window.sidebar.addPanel) // firefox
+                window.sidebar.addPanel(title, url, "");
+            else if (window.opera && window.print) { // opera
+                var elem = document.createElement('a');
+                elem.setAttribute('href', url);
+                elem.setAttribute('title', title);
+                elem.setAttribute('rel', 'sidebar');
+                elem.click();
+            }
+            else if (window.external && ('AddFavorite' in window.external))// ie
+                window.external.AddFavorite(url, title);
+        }
+        function DoSearch() {
+            var searchtext = $find('ctl00_txtRegularSearch').get_value();
+            location.href = "/Search/" + replacestring(searchtext);
+            return false;
+        }
+        function replacestring(stringtoreplace) {
+            stringtoreplace = stringtoreplace.split("&").join("$A$");
+
+            stringtoreplace = stringtoreplace.split('*').join("$ST$");
+            stringtoreplace = stringtoreplace.split("'").join("$SQ$");
+            stringtoreplace = stringtoreplace.split('"').join("$DQ$");
+            stringtoreplace = stringtoreplace.split("/").join("$FS$");
+            stringtoreplace = stringtoreplace.split("\\").join("$BS$");
+            stringtoreplace = stringtoreplace.split(",").join("$C$");
+            stringtoreplace = stringtoreplace.split(";").join("$SC$");
+            stringtoreplace = stringtoreplace.split("(").join("$LB$");
+            stringtoreplace = stringtoreplace.split(")").join("$RB$");
+            stringtoreplace = stringtoreplace.split("{").join("$LCB$");
+            stringtoreplace = stringtoreplace.split("}").join("$RCB$");
+            stringtoreplace = stringtoreplace.split(":").join("$CO$");
+            stringtoreplace = stringtoreplace.split("#").join("$HA$");
+            stringtoreplace = stringtoreplace.split("+").join("$PL$");
+
+            return stringtoreplace
+        }
+
+        function forceLoginout(eventTarget, eventArgument) {
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.action = "/MyAccount";
+            }
+        }
+    </script>
+    <title>
+	Federal Register of Legislation - Australian Government
+</title><link href="http://www.legislation.gov.au/Series/F2008L01116/RepealedBy" rel="canonical" /><link href="/WebResource.axd?d=2UeCcYYN3zrt5oUzgnQQ8nZWQZriwhdOKjbl_nOACxLdCJLkDQUir23c2QhLLBN2xEEfnaRGW9jjqEL2CENXf575xAaBVlqZyL4LnPt7pHraLz_MWv_dVrqUb_OVpgx5e0v0qw2&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=NjQekIEV7BvSQtoTqRF3dEGeqq1Fp3VTo_KHlrEsx_kKKejsdFk5iSHsCBhW2sEexAnCDTPd60Ay_wY-65X1FEv5rqqsYDQVFtr4jLAUtymNTwk44diQ6VdHFHtVngJ65Tg7JqxksYJd4LepBNZmnZ6Okms1&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=kxQ-G5W-1YWVN4mlDmWhr-6P8k6wuW7fVqNsZLgA4mm_HrnFNmpbNO5TtokLs_BtkYj9jgkom3fbpLDNDxOfkMiCADzv1VgH3XpKlrFtlaFZ_nCrHbDk7-UzAAnZoCStUAV32g2&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=sugTjinAMWzjLTbRSh_mwVxnoXyIwE7SZapR8MQgQK42ARdpDBUYJb2gbBA42aiED1K_WjEmLmNvjQdBeKkIRMVA0z2IRisSh0c_Pk02pTZbm-8W6KmtMOsp90JG2xpu4xTMr0Cz_yH2lWCW8dxwAPNdOnQ1&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=TEewOyGjk6t3ZiJ7P2O9jJhB8pDcTwxW4sCcuDLHZ6Omf6YbmUpsb-RlpOMRndh-1j3Rk17QL79vgJPNuBhd24J_8X92r7cYISmwbwQ3gDokrU3idVcpUIlc2k9BRKbG-1y8wg2&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=QgsPSA_nlQIsN9qn4o19aQFqlB8yE2ezPVPBxPXV2auYEQzGcIhc1N08CrVva9HwHFfmyveoiPmic1ZnNYnkDAl1optUoenjYtd4ORUdGnXw_d3fyNKJ5fnWtRiyIWCrfotkbQ2&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=dI92pKJ6YZLH0AURJkponMJm2VqfJ_IekQkYFk8wnsIUhUOTzbGs8QxcRjbdsRoR4hkJR94fmfSERnIgLwcqJ1aHk7BH3EgQ1Z6pGwZBYhvAXZWR6eULQBdtdnMBTuLiL2yyTUWra7mdhX1oO97kPPfq2141&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=VFDNDp4S78DP-NNLOCp3E4HTnP3TlD7kYp1RNrE196teS0_2l03Owi7_Fpy4eqIl0MnyY1G50DE-1nK8WteMnOJUVl8VKx7gri0aQHamgGNo0n7TdkjtN9-ySH5dYEcm1X-Ztw2&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=Mv_yxEQxPHhZSVslSnRLk8Bjsl7X0gUZ9gtCOp3tsbJQAmwGIaa6PZvarjZ5cQzHVv1HRKB4UcOqp_JDS3pgtR3Z-AiFesvOghPOdkE15zB0wQNPrgmBpRRcOQzd95uaVWxr008dPFA-_ulcplfjucmQhKE1&amp;t=636175618025484647" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+<body>
+    <h1 class="sr-only">Federal Register of Legislation - Australian Government</h1>
+    <div class="skip-links">
+        <a href="#primary-nav" class="sr-only sr-only-focusable">Skip to primary navigation</a>
+        <a href="#primary-content" class="sr-only sr-only-focusable">Skip to primary content</a></div>
+    <div class="wrapper-1">
+        
+    </div>
+    <form method="post" action="./RepealedBy" id="Form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=xcP61nvxrwfVSt1xbTxnYB_0brWXHa3VRJEX_Erc37QzBhaxUeq00wI42TnRMb0Abxcju2qsYhjG5agtgHtCP-SPkSA1&amp;t=635901383666179091" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=OlPClH4HlcQeyfXN1_D3wOectzgQg-0UmEJpHJO3L-MMyQcU-JFh1oAzWqVtNMvMZ51SkkZ2Em3eSV-79o6AHEg1fIl6-aBVwm-yTjUoQY--NX8Z_FdxDvBZx30-THtq4K45DxanWtEPUymAMYhuLNrRcIztmV6rT1MkZ8lCYz8We-uo0&amp;t=72e85ccd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=jqISC_YrhJgfyZZtVwj3Je18FTVegUFVypaPw2PJjGHeleVUy62aSZEP7ufVqFhdpJynTWqRDroWOIBQJSNg-jHasvIb2iv93Tb7udaRgyrL_zySJLoIsImuuGIvtXTifjqcemWrkbMFzg-UICrK5SMmlzylFwyuCK8NTeJSTlkaW6T20&amp;t=72e85ccd" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=mfmWOUfooKwFnHIL5rGvz4bmeUJ1sBbcCkXFs_5jXlFqstOlLmMTUH3_S7S9Y3-qBLJlZp3wtkvV-339dWI8zjjL1kvl4M2uHFHYJITj7A1XxxWi4utncAHVtJ1n_CKfT4bysw2&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=wt5B5v6CDwaH3fEdvIP-IXhSmtwv1moD0yMT6CRfNwi2So_Wdz404NdciHY_nqtwNiT6x9MAHPocMkOQ7YPScmL8vmjzSoF9TEcj6jUPoR84feguiN8HXZ6aCHEdt4GqnG760LJ0dZ6bCjBMZ-GTJjWCnINqCKkDIQ39XzhpYbu5fMQL0&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=XxsdmgXJ6IDbk1-tqm1wIyaC7P2fKRSxXqWOuKCT7PYj18tnuMKL2ETwHmn2A_6_DBHRMeTY6e5Z8T0JfGpW4JrHnY7Ib06VP_lpdCO_fsHXzW33J6fvXp9TZgzndvSqtgZSOrIaI61kZI6525JrG9tJRio1&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=zTjPpYMY0G2DK2lRii1tTLWuLP5nV2I2UAfOaCkpYSdcc6Ci_VYO60yfIQxJ6odrLEDkluQWfGFV62a37CVb-WKovCOyKZT95tRA5cp0lmPHYMrjH4qSBE9qeaGtNeoVgkJy8g2&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-zqZzEhQ7AcBEjxF6Hhn_XNaN-4tNwOMUzcHkpNW_UxRuqML0wO812Zmk84Q6xeZo9p1qDNcHGyqPE04kfH026w6dDHHZ5qNA77YmSsOom4muBFN5ksfR6wvLlVGT3G5s5Qarw2&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=29odzC5uXQFzbd9EuaxrvetjbI_ruNbqp1ARaZKetVO7GXezXaArc7vjC7UhcbTjDMYufwAgQ45s6Iiwk8DxyZ11oBhb-s-slnjsB_CZ3rTEbeAX6kUq3Ok6PFFrHSG8TMeFx14BMlfgpvV0ptT_VL7fz141&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=TsQ2DmHnrBBq9hXaAX_h8iqzGBWtpt5t49JlL_z292EZQ8s7kBHaQz-00EZVc4b9QPi2o5HS7itkV8aFMNIaoNZvDh9mt4wkju-tPenVFIPI4xHCHaDaH7s_y24W2eOvxbtU3ih6cUGmrM26z3lwJLSS1GU1&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=p_-9CTaFbgamCiTgu3uxIj4surUKqaNDxshqIQPLHxK3b2wuCcfW6FYfyqV-oABT_NEYZx7Zup50lz9QFTbS4XUJ_E9efjexsLmgGkbtBy8oQ6D_cAGixN2PaU22VSYKJGlxT_aGmy2Z2seBl29zsHEtQ8E1&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=EXEF9T0OU-xk05qzKnV7aL_AbVH2laWi54PtX8HF4mtuJAm2tuPiSDQ5uRvg31_Yn6jP22UYa-rwe7WZdJrLqVniElyQgqWJRzOAu9WB5O_f6QhPWTxu48kgrZDtmEjpiD7ZiIpckDhHLPCCoLuucvH9UBA1&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=bMZ3h69GyyLEVwVlXvGGCyJZ4sRUfmxGpTTue54XCkqIObg7-D8tknlq7i1ULPxPAtT_oS3b-rRoz-R64beCX-cnvwD1GpGNcpFXI4Y2KojZEUgEUilhaz5oGY85joiSGURl7sw6x5CV3_c-JxbvFafx3_81&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pYBrqdznNKEmX9AaAixPT-lMI0_AN7Nokp_vgeO6UA4C2C7zTlKY1dbWo0gF-lPX_9tcyX6FQWS-4ZJKIexm8Gz2da-LMWQNCCiUpGna6lHaEqxmYtQ6O57CWzhmnioaye4THZIbBAr6ZazS6ckyhlvFVFiusNQaqBjKrtbhdQu0vRrO0&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_zk3L6ofHWcyqCSHpg-5P14BUW6MdhJL1Xxf139S9OZRovwmblJdhugZ0MxSCraO-3Q5bX99h9--iTIv3PhB_74zphosAYz4wPy8alsbkG7rEmR0zaLbUMa5nmey-C9AVX5oVQ2&amp;t=5a539fa8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=3U8CUQG6BR2qACpwPHBFbyYsz0PKG-_jiqM9_TCOEhzbb2wvyxvsaULQRa4EbUnjLpjttBA51qWv7QK0o3oPZ1feySl3z582QJfqGx3pCCCMq1rpYgf_AzNw1cLB2nY_6ompnA2&amp;t=5a539fa8" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="83D9DF6E" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAMjVfgg/xc1OkmhI1i5pT3LviG5vGf9GuiJYGgIMxd2tLgzIg2nI46Zf5d3FRLed7UVDsyiIGXwgLDuZ47xCa9SGtrcOQ==" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'Form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        
+        <a id="linkForPopupWindow" href="javascript:void(0)" style="visibility: hidden; position: absolute;"></a>
+
+
+
+        <div class="site-container">
+            <div class="site-container__wrapper">
+
+
+                <div class="header-container">
+                    <div class="header-container__wrapper">
+                        <header>
+                            
+                            <a href="#" class="menu-button">
+                                <i class="icon-bars"></i>
+                                <i class="icon-cross"></i>
+                            </a>
+
+                            <div class="branding">
+                                <span class="branding__logo">
+                                    <a id="lnkimgaustgov" class=" " href="https://www.legislation.gov.au">
+                                        <img src="/Content/Skins/ComlawRefresh/images/logos/aus-gov-logo-stacked-black-70px.png" class="normal" alt="Australian Government Logo">
+                                        <img src="/Content/Skins/ComlawRefresh/images/logos/aus-gov-logo-stacked-black-hdpi.png" class="hdpi"  alt="Australian Government Logo">
+                                        <span class="aus-gov">Australian Government</span>
+                                    </a>
+                                </span>
+                                <span class="branding__name"><a href="/"><span>Federal Register of<strong> Legislation</strong></span></a></span>
+                                <a href="#skipToContent" class="invisibleLink forcehide" accesskey="S">Skip to Content</a>
+                            </div>
+                            <div class="search-block">
+                              <div class="search">
+                                <div class="search__wrapper">
+                                    <a href="/AdvancedSearch" onclick="return false" class="search__trigger"><span class="search__trigger__text">
+                                        Search</span><span class="sr-only">Open search</span>
+                                        <span class="icon-search"></span>
+                                        <span class="icon-cross"></span>
+                                    </a>
+                                  <div class="search__input">
+                                       
+                                       <div id="Panel1" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;btnRegularSearch&#39;)" style="">
+	
+                                            <label visible="false" for="txtRegularSearch" title="Search"></label>
+                                            <!-- 2016.2.607.45 --><span id="ctl00_txtRegularSearch_wrapper" class="riSingle RadInput RadInput_Default" style="width:160px;"><input id="ctl00_txtRegularSearch" name="ctl00$txtRegularSearch" size="20" class="riTextBox riEnabled HeaderRegularSearch" accesskey="4" type="text" value="" /><input id="ctl00_txtRegularSearch_ClientState" name="ctl00_txtRegularSearch_ClientState" type="hidden" /></span>
+                                            <input type="submit" name="ctl00$btnRegularSearch" value="Search" onclick="return DoSearch();" id="btnRegularSearch" />
+                                            <a id="lnkAdvancedSearch" class="advanced-search-link button" href="https://www.legislation.gov.au/AdvancedSearch">Advanced Search</a>
+
+                                        
+</div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="login">
+                                <span class="login__info">Get legislation updates </span>
+                                <span class="login__button">
+                                    <a id="lnkMyComlaw" CausesValidation="false" href="https://www.legislation.gov.au/MyAccount">My Account</a>
+                                </span>
+
+                            </div>
+
+                        </header>
+                    </div>
+                </div>
+
+
+                <div class="menu-container">
+
+
+
+                    <div id="menu" class="menu-container__wrapper">
+                        <nav>
+                            <a href="#" id="primary-nav" class="sr-only">
+                            <h1>Primary navigation</h1></a>
+
+                            <ul class="menu menu-placeholder">
+                                
+                                
+
+    <script>
+        function clickStop(e){e.preventDefault();}
+    </script>
+
+
+    
+            <li>
+                <a href='/Home' onclick="">Home</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/WhatsNew' onclick="">What's new</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/Constitution/InForce#top' onclick="">Constitution</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='#' onclick="clickStop(event);">Acts</a>
+                
+                    <h2><span class="sub-menu__heading"><a href="">Acts</a></span></h2><ul class="sub-menu">
+
+    <script>
+        function clickStop(e){e.preventDefault();}
+    </script>
+
+
+    
+            <li>
+                <a href='/Browse/ByTitle/Acts/InForce/0/0/Principal' onclick="">In force</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/Acts/NoLongerInForce/0/0/Principal' onclick="">No longer in force</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/Acts/Asmade/0/0/All' onclick="">As made</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Content/FutureLaw#top' onclick="">Future law compilations</a>
+                
+                    
+
+            </li>
+        
+
+</ul>
+
+            </li>
+        
+            <li>
+                <a href='#' onclick="clickStop(event);">Legislative instruments</a>
+                
+                    <h2><span class="sub-menu__heading"><a href="">Legislative instruments</a></span></h2><ul class="sub-menu">
+
+    <script>
+        function clickStop(e){e.preventDefault();}
+    </script>
+
+
+    
+            <li>
+                <a href='/Browse/ByTitle/LegislativeInstruments/InForce/0/0/Principal' onclick="">In force</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/LegislativeInstruments/NoLongerInForce/0/0/Principal' onclick="">No longer in force</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/LegislativeInstruments/Asmade/0/0/All' onclick="">As made</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Content/FutureLaw' onclick="">Future law compilations</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/LegislativeInstruments/OpentoDisallowance' onclick="">Currently open to disallowance</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/LegislativeInstruments/Disallowed' onclick="">Disallowed</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/BySunsetDate/LegislativeInstruments/SunsettingSoon/0/' onclick="">Sunsetting soon</a>
+                
+                    
+
+            </li>
+        
+
+</ul>
+
+            </li>
+        
+            <li>
+                <a href='#' onclick="clickStop(event);">Notifiable instruments</a>
+                
+                    <h2><span class="sub-menu__heading"><a href="">Notifiable instruments</a></span></h2><ul class="sub-menu">
+
+    <script>
+        function clickStop(e){e.preventDefault();}
+    </script>
+
+
+    
+            <li>
+                <a href='/Browse/ByTitle/NotifiableInstruments/InForce/0/0/Principal' onclick="">In force</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/NotifiableInstruments/NoLongerInForce/0/0/Principal' onclick="">No longer in force</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/NotifiableInstruments/Asmade/0/0/All' onclick="">As made</a>
+                
+                    
+
+            </li>
+        
+
+</ul>
+
+            </li>
+        
+            <li>
+                <a href='#' onclick="clickStop(event);">Gazettes</a>
+                
+                    <h2><span class="sub-menu__heading"><a href="">Gazettes</a></span></h2><ul class="sub-menu">
+
+    <script>
+        function clickStop(e){e.preventDefault();}
+    </script>
+
+
+    
+            <li>
+                <a href='/Browse/ByTitle/Gazettes/InForce/0/0/' onclick="">Individual Notices (From October 2012)</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Content/HistoricGazettes' onclick="">Historical</a>
+                
+                    
+
+            </li>
+        
+
+</ul>
+
+            </li>
+        
+            <li>
+                <a href='#' onclick="clickStop(event);">Bills</a>
+                
+                    <h2><span class="sub-menu__heading"><a href="">Bills</a></span></h2><ul class="sub-menu">
+
+    <script>
+        function clickStop(e){e.preventDefault();}
+    </script>
+
+
+    
+            <li>
+                <a href='/Browse/ByTitle/Bills/Asmade/0/0' onclick="">As introduced A-Z</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByPrivateMembers/Bills/Asmade/0/0' onclick="">Private members' bills</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByPortfolio/Bills/Asmade/0/0' onclick="">Government bills</a>
+                
+                    
+
+            </li>
+        
+
+</ul>
+
+            </li>
+        
+            <li>
+                <a href='#' onclick="clickStop(event);">Other</a>
+                
+                    <h2><span class="sub-menu__heading"><a href="">Other</a></span></h2><ul class="sub-menu">
+
+    <script>
+        function clickStop(e){e.preventDefault();}
+    </script>
+
+
+    
+            <li>
+                <a href='/Browse/ByRegDate/AdministrativeArrangementsOrders/InForce' onclick="">Administrative arrangements orders</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/NorfolkIslandLegislation/InForce' onclick="">Norfolk Island legislation</a>
+                
+                    
+
+            </li>
+        
+            <li>
+                <a href='/Browse/ByTitle/PrerogativeInstruments/InForce/0/0' onclick="">Prerogative instruments</a>
+                
+                    
+
+            </li>
+        
+
+</ul>
+
+            </li>
+        
+
+
+                                
+                            </ul>
+
+                            
+
+
+                            <ul class="menu-bottom">
+                              <li class="collapsed menu__item">
+                                  <a href="https://www.legislation.gov.au/Feedback" id="lnkFeedback" accesskey="9" class="menu__item__link">Feedback</a>
+                              </li>
+                              <li class="collapsed menu__item">
+                                  <a id="lnkHelp" accesskey="6" class="menu__item__link" href="https://www.legislation.gov.au/Content/Help">Information</a>
+                              </li>
+                              
+                              <li class="menu--terms collapsed menu__item">
+                                  <a id="lnkDisclaimer" accesskey="8" class="" href="https://www.legislation.gov.au/Content/Disclaimer">Terms governing the use of this website.</a>
+                              </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+               
+                <div class="page-container">
+                    <div class="menu-overlay"></div>
+                    <section>
+                        <a class="sr-only" id="primary-content" href="#">
+                            <h1>Primary content</h1>
+                        </a>
+
+                        
+    <script>
+            $(function () {
+                if (window.innerWidth < 1280) {
+                    $('#MainContent_leftDetailMeta').trigger("sticky_kit:detach");
+                } 
+                else
+                {
+                    $('#MainContent_leftDetailMeta').stick_in_parent({ sticky_class: 'has-sticky-now' });
+                } 
+            });
+
+
+            $(window).resize(function () {
+                if ($('.tablet').length > 0 || $('.mobile').length > 0 ||  $('.desktop').length > 0 ) {
+                    $('#MainContent_leftDetailMeta').trigger("sticky_kit:detach");
+                    
+                    //alert('here2')
+                } // Set sticky for mobile device
+                else
+                {
+                    $('#MainContent_leftDetailMeta').stick_in_parent({ sticky_class: 'has-sticky-now' });
+                    
+                } // Set sticky for non mobile device
+            });
+            
+        </script>
+     <section class="series-page">
+        <div class="series-page__wrapper">
+
+        
+
+        <div id="MainContent_leftDetailMeta" class="left detail-meta-info">
+            <div class="wrapper">
+                
+
+
+<div class="bredcrumbs_container">
+    <div class="breadcrumbs">
+        <ul>
+            
+            
+                    <li><a href="https://www.legislation.gov.au"><span>Home</span><i class="icon-chevron-right"></i></a></li>
+                
+                    <li><a href="https://www.legislation.gov.au/Browse/ByTitle/LegislativeInstruments/InForce/0/0/Principal"><span>Legislative Instruments</span><i class="icon-chevron-right"></i></a></li>
+                
+                    <li><a href="https://www.legislation.gov.au/Browse/ByTitle/LegislativeInstruments/NoLongerInForce/0/0/Principal"><span>No longer in force</span><i class="icon-chevron-right"></i></a></li>
+                
+                    <li><a href="https://www.legislation.gov.au/Series/F2008L01116"><span>Series: F2008L01116</span></a></li>
+                
+        </ul>
+    </div>
+</div>
+                
+<script>
+    $(function () {
+        var $legislation_title = $('#MainContent_SeriesPane_legTitle').html();
+        var $legislation_title_full = '';
+        if ($legislation_title.length > 99) {
+            
+            $legislation_title_full = "<a href='#' onclick='return false' >" + $legislation_title + "</a>";
+
+            $legislation_title = "<a href='#' onclick='return false' >" + $legislation_title.substring(0, 99) + "..." + "</a>";
+            $('.left-top h2').hover(
+            function () {
+                $(this).html($legislation_title_full);
+            },
+            function () {
+                $(this).html($legislation_title);
+            }
+        );
+        }
+
+        $('.left-top h2').html($legislation_title);
+    });
+
+    $(function ()
+    {
+        $('#MainContent_SeriesPane_divLeftMiddle').click(
+            function (event)
+            {
+                event.preventDefault();
+                $('#MainContent_SeriesPane_divLeftDetails').slideToggle(
+                    function ()
+                    {
+                        if($('#MainContent_SeriesPane_divLeftDetails').is(":visible"))
+                        {
+                            $('#MainContent_SeriesPane_aExpandCollapse').html('COLLAPSE');                            
+                        }
+                        else
+                        {
+                             $('#MainContent_SeriesPane_aExpandCollapse').html('EXPAND');
+                        }
+                        $('#MainContent_SeriesPane_aExpandCollapse').attr('href', '');
+                    });
+            });
+    });
+
+</script>
+
+ <div class="left-top">
+    <h2 class="wraptext">
+           <a href="../../Controls/#" id="MainContent_SeriesPane_legTitle" onclick="return false">Statement of Principles concerning analgesic nephropathy No. 29 of 2008</a>             
+    </h2>
+     
+    <div class="left-top__image">
+        
+        <img id="MainContent_SeriesPane_imgAuthoritativeVersion" src="https://www.legislation.gov.au/images/AusLittleTickEmbossed.gif" alt="Authoritative Version" />
+    </div>
+    <div class="left-top__moreinfo">
+    <ul>
+        <li class="info1"><span id="MainContent_SeriesPane_CurrentCitation">Series</span></li>
+        <li class="info2"><span id="MainContent_SeriesPane_lblStatus" class="RedText">No longer in force</span></li>
+    </ul>
+    </div>
+
+    <div class="clear-float"></div>
+</div>
+<div id="MainContent_SeriesPane_divLeftDetails" class="left-details">                       
+    <table width="100%">
+        <td id="MainContent_SeriesPane_tdStatus" valign="top" style="width: 100%">
+            <fieldset>
+
+                <table id="MainContent_SeriesPane_tableStatus" width="100%" class="mytable">
+	<tr id="MainContent_SeriesPane_trDetails">
+		<td colspan="2">
+                            <span id="MainContent_SeriesPane_lblDetails">No. 29 of 2008</span><br />
+                        </td>
+	</tr>
+	<tr id="MainContent_SeriesPane_trAdminDepts">
+		<td colspan="2">
+                            <span id="MainContent_SeriesPane_lblAdminDepts">Administered by:  Veterans' Affairs</span>
+                        </td>
+	</tr>
+	<tr id="MainContent_SeriesPane_trUnincorporatedAmendments">
+		<td colspan="2">
+                            <span id="MainContent_SeriesPane_lblUnincorporatedAmendments"></span>
+                            
+
+
+<div style="display:inline-block; width:100%">
+    
+</div>
+
+<div style="display:block; width:100%">
+    
+
+</div>
+                        </td>
+	</tr>
+	<tr id="MainContent_SeriesPane_trSunsetHistoryViewer">
+		<td colspan="2">
+                            
+                        </td>
+	</tr>
+	<tr>
+		<td colspan="2" style="vertical-align: top">
+                            
+                        </td>
+	</tr>
+	<tr id="MainContent_SeriesPane_trRepealed">
+		<td style="vertical-align: top;width:130px;">
+                            <span id="MainContent_SeriesPane_lblRepealedFieldLabel">Date of Repeal</span>                            
+                        </td>
+		<td style="vertical-align: top">
+                            <span id="MainContent_SeriesPane_lblRepealed">28 Nov 2016</span>
+                        </td>
+	</tr>
+	<tr id="MainContent_SeriesPane_trRepealingReason">
+		<td style="vertical-align: top">Repealed by
+                        </td>
+		<td style="vertical-align: top">
+                            <span id="MainContent_SeriesPane_lblRepealingReason"><a href="https://www.legislation.gov.au/Details/F2016L01667">Statement of Principles concerning analgesic nephropathy (Reasonable Hypothesis) (No. 77 of 2016)</a></span>
+                            <a id="MainContent_SeriesPane_hlRepealingTitle" style="text-decoration: none"></a>
+                        </td>
+	</tr>
+</table>
+
+            </fieldset>
+            <fieldset>
+
+                
+
+            </fieldset>
+        </td>
+
+    </table>       
+</div>
+                
+<div id="MainContent_SeriesPane_divLeftMiddle" class="left-middle">
+    <div class="legislation"><a href="">Details</a></div>
+    <div class="expand"><a href="../../Controls/#" id="MainContent_SeriesPane_aExpandCollapse">Collapse</a></div>
+</div>
+
+<div style="display:none">
+    <style>
+        .citation-field-value-half-width-right{
+            display:inline-block;
+            width: -moz-calc(50% - 1px);
+            width: -webkit-calc(50% - 1px);
+            width: calc(50% - 1px);
+            float:right
+        }
+        .citation-field-value-half-width-left{
+            display:inline-block;
+            width: -moz-calc(50% - 1px);
+            width: -webkit-calc(50% - 1px);
+            width: calc(50% - 1px);
+            float:left;
+        }
+        .citation-field-value-item{
+            border:1px solid lightgray; 
+            font-size:small;
+            margin-bottom:5px;
+        }
+        .citation-field{
+            font-weight:bold;
+            padding:5px
+        }
+        .citation-field-value{
+            padding:5px
+        }
+
+    </style>
+
+    <noscript>
+        <style>
+                .left .wrapper .left-details{display: block !important;}
+                .left .wrapper .left-middle{display: none !important;}
+            </style>
+    </noscript>
+</div>
+<div style=" display:none;">
+    <div id="MainContent_SeriesPane_pnlHomePage">
+	
+    <div class="myitem">
+        <table>
+            <tr>
+                
+                <td>
+                    <div>
+                        <b>
+                            </b>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+
+</div>
+
+               
+
+                
+                
+            </div>
+        </div>
+        <div class="right">
+            <div class="wrapper">
+                
+                
+    <div id="ctl00_MainContent_RadTabStrip1" class="RadTabStrip RadTabStrip_Default RadTabStripTop_Default RadTabStripTop SeriesTabStrip">
+	<div class="rtsLevel rtsLevel1">
+		<ul class="rtsUL"><li class="rtsLI rtsFirst"><a class="rtsLink rtsBefore" href="Amendments"><span class="rtsOut"><span class="rtsIn"><span class="rtsTxt">Principal + Amendments</span></span></span></a></li><li class="rtsLI rtsLast"><a class="rtsLink rtsSelected" href="RepealedBy"><span class="rtsOut"><span class="rtsIn"><span class="rtsTxt">Repealed By / Ceased By</span></span></span></a></li></ul>
+	</div><input id="ctl00_MainContent_RadTabStrip1_ClientState" name="ctl00_MainContent_RadTabStrip1_ClientState" type="hidden" />
+</div>
+    <div id="ctl00_MainContent_RadMultiPage1" class="RadMultiPage RadMultiPage_Default">
+	<div id="MainContent_RadPageRepealedBy" class="rmpView">
+		
+            <div id="MainContent_pnlRepealedBy" class="TabPanel">
+			
+                <span id="MainContent_lblRepealedByFragment"></span>
+                <div id="MainContent_SeriesRepealedBy_RadAjaxLoadingPanel1" class="RadAjax RadAjax_Default" style="display:none;height:75px;width:75px;">
+				<div class="raDiv">
+					
+
+				</div><div class="raColor raTransp">
+
+				</div>
+			</div>
+<div id="ctl00_MainContent_SeriesRepealedBy_RadAjaxPanel1">
+				
+    <table width="100%" class="mytable">
+        <tr id="MainContent_SeriesRepealedBy_tr1">
+					<td>
+                <span id="MainContent_SeriesRepealedBy_lblTitle" style="font-weight:bold;"></span>
+            </td>
+				</tr>
+				
+        
+        <tr>
+            <td>
+                <div id="ctl00_MainContent_SeriesRepealedBy_RadGrid1" class="RadGrid RadGrid_Default" style="width:100%;">
+
+				<table class="rgMasterTable rgClipCells" id="ctl00_MainContent_SeriesRepealedBy_RadGrid1_ctl00" style="width:100%;table-layout:fixed;empty-cells:show;">
+					<colgroup>
+		<col style="width:70%" />
+		<col style="width:15%" />
+		<col style="width:15%" />
+	</colgroup>
+<thead>
+						<tr>
+							<th scope="col" class="rgHeader">Title</th><th scope="col" class="rgHeader">RegisterId</th><th scope="col" class="rgHeader">Number</th>
+						</tr>
+					</thead><tbody>
+					<tr class="rgRow" id="ctl00_MainContent_SeriesRepealedBy_RadGrid1_ctl00__0">
+						<td>
+                                    <table>
+                                        <tr>
+                                            <td style="width: 25px">
+                                                <img id="ctl00_MainContent_SeriesRepealedBy_RadGrid1_ctl00_ctl04_imgFRLI" title="Authorised version available" src="../../images/AusLittleTickEmbossed.gif" alt="Authoritative version" />
+                                            </td>
+                                            <td>
+                                                
+                                                <a id="ctl00_MainContent_SeriesRepealedBy_RadGrid1_ctl00_ctl04_hl" class="default" href="../../Details/F2016L01667">Statement of Principles concerning analgesic nephropathy (Reasonable Hypothesis) (No. 77 of 2016)</a>
+                                                <div style="display:block">
+                                                    <span id="ctl00_MainContent_SeriesRepealedBy_RadGrid1_ctl00_ctl04_lblTitleStatus" style="font-style:italic;"></span>                                            
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td><td>F2016L01667</td><td>No. 77 of 2016</td>
+					</tr>
+					</tbody>
+
+				</table><div id="ctl00_MainContent_SeriesRepealedBy_RadGrid1_SharedCalendarContainer" style="display:none;">
+
+				</div><input id="ctl00_MainContent_SeriesRepealedBy_RadGrid1_ClientState" name="ctl00_MainContent_SeriesRepealedBy_RadGrid1_ClientState" type="hidden" />	</div>
+				
+            </td>
+        </tr>
+    </table>
+
+			</div>
+
+
+            
+		</div>
+        
+	</div><input id="ctl00_MainContent_RadMultiPage1_ClientState" name="ctl00_MainContent_RadMultiPage1_ClientState" type="hidden" />
+</div>
+            </div>
+        </div>
+        <div class="clear-float"></div>
+        </div>
+    </section>
+
+
+    <div class="forcehide">
+        
+        
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </section>
+             
+                </div>
+                
+
+                <div class="footer-container">
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTextBox, {"_displayText":"","_focused":false,"_initialValueAsText":"","_postBackEventReferenceScript":"setTimeout(\"__doPostBack(\\\u0027ctl00$txtRegularSearch\\\u0027,\\\u0027\\\u0027)\", 0)","_skin":"Default","_validationText":"","clientStateFieldID":"ctl00_txtRegularSearch_ClientState","enabled":true,"styles":{HoveredStyle: ["width:160px;", "riTextBox riHover HeaderRegularSearch"],InvalidStyle: ["width:160px;", "riTextBox riError HeaderRegularSearch"],DisabledStyle: ["width:160px;", "riTextBox riDisabled HeaderRegularSearch"],FocusedStyle: ["width:160px;", "riTextBox riFocused HeaderRegularSearch"],EmptyMessageStyle: ["width:160px;", "riTextBox riEmpty HeaderRegularSearch"],ReadOnlyStyle: ["width:160px;", "riTextBox riRead HeaderRegularSearch"],EnabledStyle: ["width:160px;", "riTextBox riEnabled HeaderRegularSearch"]}}, null, null, $get("ctl00_txtRegularSearch"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTabStrip, {"_selectedIndex":1,"_skin":"Default","causesValidation":false,"clientStateFieldID":"ctl00_MainContent_RadTabStrip1_ClientState","multiPageID":"ctl00_MainContent_RadMultiPage1","selectedIndexes":["1"],"tabData":[{"value":"1","pageViewID":"MainContent_RadPageAmendments"},{"value":"3","pageViewID":"MainContent_RadPageRepealedBy"}]}, null, null, $get("ctl00_MainContent_RadTabStrip1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":0,"isSticky":false,"minDisplayTime":0,"skin":"Default","uniqueID":"ctl00$MainContent$SeriesRepealedBy$RadAjaxLoadingPanel1","zIndex":90000}, null, null, $get("MainContent_SeriesRepealedBy_RadAjaxLoadingPanel1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadGrid, {"ClientID":"ctl00_MainContent_SeriesRepealedBy_RadGrid1","ClientSettings":{"AllowAutoScrollOnDragDrop":true,"ShouldCreateRows":true,"DataBinding":{},"Selecting":{"CellSelectionMode":0},"Scrolling":{},"Resizing":{},"ClientMessages":{},"KeyboardNavigationSettings":{"AllowActiveRowCycle":false,"EnableKeyboardShortcuts":true,"FocusKey":89,"InitInsertKey":73,"RebindKey":82,"ExitEditInsertModeKey":27,"UpdateInsertItemKey":13,"DeleteActiveRow":127,"ExpandDetailTableKey":39,"CollapseDetailTableKey":37,"MoveDownKey":40,"MoveUpKey":38,"SaveChangesKey":85,"CancelChangesKey":81},"Animation":{},"Virtualization":{}},"Skin":"Default","UniqueID":"ctl00$MainContent$SeriesRepealedBy$RadGrid1","_activeRowIndex":"","_controlToFocus":"","_currentPageIndex":0,"_defaultDateTimeFormat":"d/MM/yyyy h:mm:ss tt","_editIndexes":"[]","_embeddedSkin":true,"_freezeText":"Freeze","_gridTableViewsData":"[{\"ClientID\":\"ctl00_MainContent_SeriesRepealedBy_RadGrid1_ctl00\",\"UniqueID\":\"ctl00$MainContent$SeriesRepealedBy$RadGrid1$ctl00\",\"PageSize\":10,\"PageCount\":1,\"EditMode\":\"EditForms\",\"AllowPaging\":true,\"CurrentPageIndex\":0,\"VirtualItemCount\":1,\"AllowMultiColumnSorting\":false,\"AllowNaturalSort\":true,\"AllowFilteringByColumn\":false,\"PageButtonCount\":10,\"HasDetailTables\":false,\"HasMultiHeaders\":false,\"CheckListWebServicePath\":\"\",\"GroupLoadMode\":\"Server\",\"PagerAlwaysVisible\":false,\"IsItemInserted\":false,\"clientDataKeyNames\":[],\"hasDetailItemTemplate\":false,\"_dataBindTemplates\":false,\"_selectedItemStyle\":\"\",\"_selectedItemStyleClass\":\"rgSelectedRow\",\"_columnsData\":[{\"UniqueName\":\"Title\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridTemplateColumn\",\"ColumnGroupName\":\"\",\"Editable\":false,\"DataTypeName\":\"System.String\",\"DataField\":\"\",\"Display\":true},{\"UniqueName\":\"ComlawId\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"ComlawId\",\"Display\":true},{\"UniqueName\":\"Number\",\"Resizable\":true,\"Reorderable\":true,\"Selectable\":true,\"Groupable\":true,\"ColumnType\":\"GridBoundColumn\",\"ColumnGroupName\":\"\",\"Editable\":true,\"DataTypeName\":\"System.String\",\"DataField\":\"Number\",\"Display\":true}]}]","_masterClientID":"ctl00_MainContent_SeriesRepealedBy_RadGrid1_ctl00","_shouldFocusOnPage":false,"_unfreezeText":"Unfreeze","allowMultiRowSelection":false,"clientStateFieldID":"ctl00_MainContent_SeriesRepealedBy_RadGrid1_ClientState","expandItems":{},"renderMode":1}, null, null, $get("ctl00_MainContent_SeriesRepealedBy_RadGrid1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxPanel, {"clientEvents":{OnRequestStart:"",OnResponseEnd:""},"enableAJAX":true,"enableHistory":false,"links":[],"loadingPanelID":"MainContent_SeriesRepealedBy_RadAjaxLoadingPanel1","styles":[],"uniqueID":"ctl00$MainContent$SeriesRepealedBy$RadAjaxPanel1"}, null, null, $get("ctl00_MainContent_SeriesRepealedBy_RadAjaxPanel1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMultiPage, {"clientStateFieldID":"ctl00_MainContent_RadMultiPage1_ClientState","pageViewData":[{"id":"MainContent_RadPageCompilations"},{"id":"MainContent_RadPageAmendments"},{"id":"MainContent_RadPageEnables"},{"id":"MainContent_RadPageRepealedBy"},{"id":"MainContent_RadPageModifiedBy"},{"id":"MainContent_RadPageRelatedBills"}],"selectedIndex":3}, null, null, $get("ctl00_MainContent_RadMultiPage1"));
+});
+//]]>
+</script>
+</form> <!-- AD: This form tag is wrapping everything in.-->
+
+        <!-- Google Analytics -->
+    <script  type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        var googleCode = 'UA-56105577-1';
+        ga('create', googleCode, 'auto', {
+            anonymizeIp: true
+        });
+        ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Analytics -->
+
+    <!--[if IE]>
+        <script src="/Content/Skins/ComlawRefresh/scripts/media.match.min.js"></script>
+    <![endif]-->
+
+    <script src="/Content/Skins/ComlawRefresh/scripts/main.js"></script>
+    <script src="/Content/Skins/ComlawRefresh/scripts/responsive.js"></script>
+
+
+
+    <noscript>
+            <style>
+                .menu-container {position:absolute !important;bottom: auto; z-index: 1;width:160px;}
+                .menu-container .menu-bottom{position:relative !important; text-align: left}
+                .menu-container .menu-bottom a{padding: 14px 15px !important;}
+                .menu li a{padding:10px !important;}
+                .menu li {display:block; }
+                .sub-menu {visibility:visible !important; display:block !important;}
+                .sub-menu li a:link{font-weight:200 !important;}
+            </style>
+    </noscript>
+</body>
+</html>

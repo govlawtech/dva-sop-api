@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public interface SoP {
     String getRegisterId();
@@ -13,6 +14,7 @@ public interface SoP {
     ImmutableList<Factor> getAggravationFactors();
     ImmutableList<Factor> getOnsetFactors();
     LocalDate getEffectiveFromDate();
+    Optional<LocalDate> getEndDate();
     StandardOfProof getStandardOfProof();
     ImmutableSet<ICDCode> getICDCodes();
     String getConditionName();

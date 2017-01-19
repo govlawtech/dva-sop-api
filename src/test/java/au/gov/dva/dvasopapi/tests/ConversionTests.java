@@ -2,9 +2,9 @@ package au.gov.dva.dvasopapi.tests;
 
 
 import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSopRH;
+import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.sopref.data.Conversions;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
-import au.gov.dva.sopapi.interfaces.model.SoP;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -74,8 +74,20 @@ public class ConversionTests {
         Assert.assertTrue(values.isArray());
         Assert.assertTrue(element.isObject());
 
+    }
+
+    @Test
+    public void producecleansedTextForLSBop() throws IOException {
+
+            URL inputPdf = Resources.getResource("sops_bop/F2014L00930.pdf");
+            byte[] pdfBytes = Resources.toByteArray(inputPdf);
+            String result = Conversions.pdfToPlainText(pdfBytes);
+            int lineCount = result.split("[\r\n]+").length;
+            System.out.print(result);
+            Assert.assertTrue(lineCount > 250);
 
     }
+
 
 
 

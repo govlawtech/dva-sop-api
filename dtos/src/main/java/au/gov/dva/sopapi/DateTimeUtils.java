@@ -51,5 +51,10 @@ public class DateTimeUtils {
         return LocalDate.of(zonedDateTime.getYear(),zonedDateTime.getMonth(),zonedDateTime.getDayOfMonth());
     }
 
+    public static String localDateToUtcLocalDate(LocalDate localDate)
+    {
+        return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
+    }
+
 
 }
