@@ -27,7 +27,6 @@ public class StoredOperation implements Operation {
     }
 
     @Override
-    @Nonnull
     public String getName() {
         return name;
     }
@@ -39,7 +38,6 @@ public class StoredOperation implements Operation {
 
 
     @Override
-    @Nonnull
     public OffsetDateTime getStartDate() {
         return startDate;
     }
