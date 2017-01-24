@@ -182,7 +182,7 @@ public class AutoUpdateTests {
 
         @Override
         public OffsetDateTime getDateReceived() {
-            return null;
+            return OffsetDateTime.now();
         }
     }
 

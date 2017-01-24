@@ -14,9 +14,7 @@ import java.util.Optional;
 
 public class StoredOperation implements Operation {
 
-    @Nonnull
     private final String name;
-    @Nonnull
     private final OffsetDateTime startDate;
     private final Optional<OffsetDateTime> endDate;
     private final ServiceType serviceType;
