@@ -1,10 +1,10 @@
-package au.gov.dva.sopapi.sopref.parsing.implementations
+package au.gov.dva.sopapi.sopref.parsing.implementations.model
 
 import java.time.LocalDate
 import java.util.Optional
 
-import au.gov.dva.sopapi.interfaces.model._
 import au.gov.dva.sopapi.dtos.StandardOfProof
+import au.gov.dva.sopapi.interfaces.model._
 import com.google.common.collect.{ImmutableList, ImmutableSet}
 
 class ParsedSop(registerId: String, instrumentNumber: InstrumentNumber, citation: String, aggravationFactors: List[Factor],

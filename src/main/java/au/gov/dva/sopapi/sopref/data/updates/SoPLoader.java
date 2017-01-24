@@ -99,10 +99,10 @@ public class SoPLoader {
 
     private CompletableFuture<Optional<SoP>> createGetSopTask(String registerId, Function<String, CompletableFuture<byte[]>> authorisedPdfProvider, Function<String, SoPCleanser> sopCleanserProvider, Function<String, SoPFactory> sopFactoryProvider) {
         CompletableFuture<Optional<SoP>> promise = authorisedPdfProvider.apply(registerId).thenApply(bytes -> {
-            String text;
+            String rawText;
 
             try {
-                text = Conversions.pdfToPlainText(bytes);
+                rawText = Conversions.pdfToPlainText(bytes);
                 logger.trace(buildLoggerMessage(registerId, "Successfully converted from PDF to plain text."));
             } catch (IOException ioException) {
                 logger.error(buildLoggerMessage(registerId, "Failed to convert from PDF to plain text."), ioException);
@@ -113,7 +113,7 @@ public class SoPLoader {
 
             String cleansedText;
             try {
-                cleansedText = cleanser.cleanse(text);
+                cleansedText = cleanser.cleanse(rawText);
             } catch (Error e) {
                 logger.error(buildLoggerMessage(registerId, "Failed to cleanse text."), e);
                 return Optional.empty();
@@ -121,7 +121,7 @@ public class SoPLoader {
 
             SoPFactory soPFactory = sopFactoryProvider.apply(registerId);
             try {
-                SoP soP = soPFactory.create(registerId, cleansedText);
+                SoP soP = soPFactory.create(registerId, rawText, cleansedText);
                 return Optional.of(soP);
             } catch (Error e) {
                 logger.error(buildLoggerMessage(registerId, "Failed to create SoP."), e);

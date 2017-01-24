@@ -1,22 +1,28 @@
-package au.gov.dva.sopapi.sopref.parsing.implementations
+package au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories
 
 import java.time.LocalDate
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, ICDCode, SoP}
-import au.gov.dva.sopapi.sopref.parsing.implementations.LsSoPFactory.buildFactorObjects
+import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
+import au.gov.dva.sopapi.sopref.parsing.implementations.extractors.PreAugust2015Extractor
+import au.gov.dva.sopapi.sopref.parsing.implementations.model.ParsedSop
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.OsteoarthritisParser
 import au.gov.dva.sopapi.sopref.parsing.traits.SoPFactory
 
 object OsteoarthritisSoPFactory extends SoPFactory {
 
-  override def create(registerId : String, cleansedText: String): SoP = {
-    val extractor = new LsExtractor();
+  override def create(registerId : String, rawText : String, cleansedText: String): SoP = {
+    val extractor = PreAugust2015Extractor
     val citation = OsteoarthritisParser.parseCitation(extractor.extractCitation(cleansedText));
     val instrumentNumber = OsteoarthritisParser.parseInstrumentNumber(citation);
 
     val definedTermsList: List[DefinedTerm] = OsteoarthritisParser.parseDefinitions(extractor.extractDefinitionsSection(cleansedText))
 
-    val factorsSection: (Int, String) = extractor.extractFactorSection(cleansedText)
+    // Keep extra white space in the raw text to make it easier to capture sub-paras
+    val rawWithoutAuthorisedFooter = GenericCleanser.removeAuthorisedFootnote(rawText)
+    val rawWithoutPageNumberFooter = GenericCleanser.removePageNumberFootNote(rawWithoutAuthorisedFooter)
+    val factorsSection: (Int, String) = extractor.extractFactorSection(rawWithoutPageNumberFooter)
     val factors: (StandardOfProof, List[(String, String)]) = OsteoarthritisParser.parseFactors(factorsSection._2)
 
     val factorObjects = this.buildFactorObjects(factors._2,factorsSection._1,definedTermsList)

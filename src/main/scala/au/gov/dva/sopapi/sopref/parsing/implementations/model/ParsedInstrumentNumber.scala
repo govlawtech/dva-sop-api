@@ -1,4 +1,4 @@
-package au.gov.dva.sopapi.sopref.parsing.implementations
+package au.gov.dva.sopapi.sopref.parsing.implementations.model
 
 import au.gov.dva.sopapi.interfaces.model.InstrumentNumber
 

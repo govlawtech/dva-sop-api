@@ -160,10 +160,6 @@ public class AutoUpdateTests {
             return title;
         }
 
-        @Override
-        public Optional<String> getInstrumentDescription() {
-            return Optional.empty();
-        }
 
         @Override
         public String getUpdateDescription() {
@@ -197,7 +193,7 @@ public class AutoUpdateTests {
                 "Item was published on 4/01/2017");
 
         @Override
-        public CompletableFuture<ImmutableSet<LegislationRegisterEmailUpdate>> getUpdatesFrom(OffsetDateTime fromDate) {
+        public CompletableFuture<ImmutableSet<LegislationRegisterEmailUpdate>> getUpdatesBetween(OffsetDateTime startDateExclusive, OffsetDateTime endDateExclusive) {
             return CompletableFuture.completedFuture(ImmutableSet.of(
                     amendment1,
                     publish1

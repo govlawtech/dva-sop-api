@@ -9,7 +9,7 @@ trait GenericTextCleanser extends SoPCleanser  {
 
   val logger = Logger[GenericTextCleanser]
 
-  private def removeAuthorisedFootnote(raw : String) : String = {
+  def removeAuthorisedFootnote(raw : String) : String = {
     val footNoteRegex1 = """(?i)Federal\s+Register\s+of\s+Legislative\s+Instruments(?-i)\s+F[0-9]{4,4}[A-Z0-9]{6,6}(?-i)""".r
     val footNoteRegex2 = """(?i)Authorised\s+Version\s+F[0-9]{4,4}[A-Z0-9]{6,6}\s+registered\s+[0-9]{2,2}/[0-9]{2,2}/[0-9]{4,4}(?-i)""".r
     List(raw).map(regexReplace(footNoteRegex1,_))
@@ -26,7 +26,7 @@ trait GenericTextCleanser extends SoPCleanser  {
     else target;
   }
 
-  private def removePageNumberFootNote(raw : String) : String = {
+  def removePageNumberFootNote(raw : String) : String = {
     val pageNumberRegex = """(?i)Page\s+[0-9]+\s+of\s+[0-9]+\s+of\s+Instrument\s+No.?\s+[0-9]+\s+of\s+[0-9]{4,4}""".r
     regexReplace(pageNumberRegex,raw)
   }

@@ -8,5 +8,5 @@ import java.time.OffsetDateTime;
 import java.util.concurrent.CompletableFuture;
 
 public interface LegislationRegisterEmailClient {
-    CompletableFuture<ImmutableSet<LegislationRegisterEmailUpdate>> getUpdatesFrom(OffsetDateTime fromDate);
+    CompletableFuture<ImmutableSet<LegislationRegisterEmailUpdate>> getUpdatesBetween(OffsetDateTime startDateExclusive, OffsetDateTime endDateExclusive);
 }

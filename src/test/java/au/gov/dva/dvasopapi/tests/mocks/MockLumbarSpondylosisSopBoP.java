@@ -7,8 +7,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
-import java.util.Optional;
 import java.util.List;
+import java.util.Optional;
 
 public class MockLumbarSpondylosisSopBoP implements SoP {
 
