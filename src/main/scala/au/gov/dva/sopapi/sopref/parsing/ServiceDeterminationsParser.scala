@@ -8,7 +8,7 @@ import au.gov.dva.sopapi.interfaces.model.{ServiceDetermination, ServiceType}
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination
 ;
 
-object ServiceDeterminations {
+object ServiceDeterminationsParser {
   def getRegisterId(determinationText : String) : String  =  {
     val registerIdRegex = """F[0-9]{4,4}L[0-9]{5,5}""".r
     val m = registerIdRegex.findFirstMatchIn(determinationText)

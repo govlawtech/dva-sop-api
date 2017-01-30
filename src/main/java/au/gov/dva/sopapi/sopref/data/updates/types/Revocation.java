@@ -1,22 +1,35 @@
 package au.gov.dva.sopapi.sopref.data.updates.types;
 
 import au.gov.dva.sopapi.interfaces.JsonSerializable;
-import au.gov.dva.sopapi.interfaces.Repository;
-import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChangeBase;
-import au.gov.dva.sopapi.interfaces.model.SoP;
-import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
+import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Optional;
-import java.util.function.Function;
 
 public class Revocation extends InstrumentChangeBase implements InstrumentChange, JsonSerializable {
     private final LocalDate revocationDate;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Revocation that = (Revocation) o;
+
+        return revocationDate.equals(that.revocationDate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + revocationDate.hashCode();
+        return result;
+    }
 
     @Override
     public String toString() {
@@ -32,6 +45,9 @@ public class Revocation extends InstrumentChangeBase implements InstrumentChange
 
     public static final String TYPE_NAME = "revocation";
 
+    public LocalDate getRevocationDate(){
+        return revocationDate;
+    }
 
 
     @Override
@@ -49,17 +65,6 @@ public class Revocation extends InstrumentChangeBase implements InstrumentChange
         return super.getTargetRegisterId();
     }
 
-    @Override
-    public void apply(Repository repository, Function<String, Optional<SoP>> soPProvider) {
-
-        Optional<SoP> existing = repository.getSop(getSourceInstrumentId());
-        if (!existing.isPresent())
-            return;
-
-        repository.archiveSoP(getSourceRegisterId());
-        SoP endDated = StoredSop.withEndDate(existing.get(), revocationDate);
-        repository.saveSop(endDated);
-    }
 
     private static final String REVOCATION_DATE = "revocationDate";
     private static final String REGISTER_ID = "registerId";

@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.interfaces.model;
 
 import au.gov.dva.sopapi.exceptions.AutoUpdateError;
-import au.gov.dva.sopapi.sopref.data.updates.types.Compilation;
+import au.gov.dva.sopapi.sopref.data.updates.types.NewCompilation;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
 import au.gov.dva.sopapi.sopref.data.updates.types.Revocation;
 import au.gov.dva.sopapi.sopref.data.updates.types.Replacement;
@@ -29,8 +29,24 @@ public class InstrumentChangeBase  {
 
    protected static final String TYPE_LABEL = "type";
    protected static final String DATE_LABEL = "date";
-   protected static final String SOURCE_INSTRUMENT_ID_LABEL = "sourceRegisterId";
-   protected static final String TARGET_INSTRUMENT_ID_LABEL = "targetRegisterId";
+
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      InstrumentChangeBase that = (InstrumentChangeBase) o;
+
+      if (!sourceRegisterId.equals(that.sourceRegisterId)) return false;
+      return targetRegisterId.equals(that.targetRegisterId);
+   }
+
+   @Override
+   public int hashCode() {
+      int result = sourceRegisterId.hashCode();
+      result = 31 * result + targetRegisterId.hashCode();
+      return result;
+   }
 
    private final OffsetDateTime date;
 
@@ -60,8 +76,8 @@ public class InstrumentChangeBase  {
             return Replacement.fromJson(jsonNode);
          case Revocation.TYPE_NAME:
             return Revocation.fromJson(jsonNode);
-         case Compilation.TYPE_NAME:
-            return Compilation.fromJson(jsonNode);
+         case NewCompilation.TYPE_NAME:
+            return NewCompilation.fromJson(jsonNode);
          default:
             throw new AutoUpdateError(String.format("Cannot deserialize this type of instrument change from JSON: %s", type));
       }

@@ -1,7 +1,7 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
-import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislation;
+import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import com.google.common.io.Resources;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -25,7 +25,7 @@ public class BulkDownloadTests {
         URL rhRegisterIds = Resources.getResource("rhSopRegisterIds.txt");
         String[] ids = Resources.toString(rhRegisterIds, Charset.forName("UTF-8")).split("[\r\n]+");
 
-        FederalRegisterOfLegislation client = new FederalRegisterOfLegislation();
+        FederalRegisterOfLegislationClient client = new FederalRegisterOfLegislationClient();
         for (String id : ids) {
             Path targetPath = getOutputPath(id);
             byte[] pdf = client.getLatestAuthorisedInstrumentPdf(id).get();

@@ -44,7 +44,9 @@ public class AzureStorageRepository implements Repository {
     private static final String SERVICE_DETERMINATIONS_CONTAINER_NAME = "servicedeterminations";
     private static final String INSTRUMENT_CHANGES_CONTAINER_NAME = "instrumentchanges";
     private static final String ARCHIVED_SOPS_CONTAINER_NAME = "archivedsops";
-    private static final String  LAST_SOPS_UPDATE_BLOB_NAME = "lastsopsupdate";
+    private static final String ARCHIVED_SERVICE_DETERMINATIONS_CONTAINER_NAME = "archivedservicedeterminations";
+    private static final String METADATA_CONTAINER_NAME = "metadata";
+    private static final String LAST_SOPS_UPDATE_BLOB_NAME = "lastsopsupdate";
 
     private CloudStorageAccount _cloudStorageAccount = null;
     private CloudBlobClient _cloudBlobClient = null;
@@ -74,10 +76,12 @@ public class AzureStorageRepository implements Repository {
     }
 
     @Override
-    public void saveSop(SoP sop) {
+    public void addSop(SoP sop) {
         try {
             CloudBlobContainer container = getOrCreateContainer(SOP_CONTAINER_NAME);
             CloudBlockBlob blob = container.getBlockBlobReference(sop.getRegisterId());
+            blob.getProperties().setContentType("application/json");
+            blob.getProperties().setContentEncoding("UTF-8");
             JsonNode jsonNode = StoredSop.toJson(sop);
             blob.uploadText(Conversions.toString(jsonNode));
         } catch (RuntimeException e) {
@@ -87,43 +91,12 @@ public class AzureStorageRepository implements Repository {
         }
     }
 
-    @Override
-    public void deleteSoPIfExists(String registerId) {
-
-        CloudBlobContainer container = null;
-        try {
-            container = getOrCreateContainer(SOP_CONTAINER_NAME);
-        } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
-        } catch (StorageException e) {
-            throw new RepositoryError(e);
-        }
-        CloudBlockBlob blob = null;
-        try {
-            blob = container.getBlockBlobReference(registerId);
-        } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
-        } catch (StorageException e) {
-            throw new RepositoryError(e);
-        }
-        boolean success = false;
-        try {
-            success = blob.deleteIfExists();
-        } catch (StorageException e) {
-            throw new RepositoryError(e);
-        }
-        if (!success) {
-                logger.trace(String.format("SoP not found, therefore not deleted: %s", registerId));
-            }
-
-    }
-
 
     @Override
     public Optional<SoP> getSop(String registerId) {
         try {
 
-            Optional<CloudBlob> cloudBlob = getBlobByName(SOP_CONTAINER_NAME,registerId);
+            Optional<CloudBlob> cloudBlob = getBlobByName(SOP_CONTAINER_NAME, registerId);
 
             if (!cloudBlob.isPresent())
                 return Optional.empty();
@@ -143,7 +116,7 @@ public class AzureStorageRepository implements Repository {
     @Override
     public ImmutableSet<SoP> getAllSops() {
         try {
-            CloudBlobContainer cloudBlobContainer = _cloudBlobClient.getContainerReference(SOP_CONTAINER_NAME);
+            CloudBlobContainer cloudBlobContainer = getOrCreateContainer(SOP_CONTAINER_NAME);
 
             Iterable<ListBlobItem> blobs = cloudBlobContainer.listBlobs();
 
@@ -167,17 +140,16 @@ public class AzureStorageRepository implements Repository {
     public void archiveSoP(String registerId) {
         try {
             Optional<CloudBlob> cloudBlob = getBlobByName(SOP_CONTAINER_NAME, registerId);
-            if (!cloudBlob.isPresent())
-            {
+            if (!cloudBlob.isPresent()) {
                 throw new RepositoryError(String.format("SoP with register ID does not exist: %s", registerId));
             }
 
             byte[] blobBytes = getBlobBytes(cloudBlob.get());
 
             String archivedSopBlobName = String.format("%s_%s", registerId, UUID.randomUUID().toString());
-            saveBlob(ARCHIVED_SOPS_CONTAINER_NAME,archivedSopBlobName,blobBytes);
+            saveBlob(ARCHIVED_SOPS_CONTAINER_NAME, archivedSopBlobName, blobBytes);
 
-            deleteBlob(SOP_CONTAINER_NAME,registerId);
+            deleteBlob(SOP_CONTAINER_NAME, registerId);
 
         } catch (URISyntaxException e) {
             throw new RepositoryError(e);
@@ -239,14 +211,28 @@ public class AzureStorageRepository implements Repository {
     @Override
     public ImmutableSet<InstrumentChange> getInstrumentChanges() {
 
+
         CloudBlobContainer cloudBlobContainer = null;
         try {
-            cloudBlobContainer = _cloudBlobClient.getContainerReference(INSTRUMENT_CHANGES_CONTAINER_NAME);
+
+            cloudBlobContainer = getOrCreateContainer(INSTRUMENT_CHANGES_CONTAINER_NAME);
+            ImmutableSet.Builder<InstrumentChange> builder = new ImmutableSet.Builder<>();
+            for (ListBlobItem listBlobItem : cloudBlobContainer.listBlobs()) {
+                if (listBlobItem instanceof CloudBlob) {
+                    blobToInstrumentChangeStream((CloudBlob) listBlobItem).forEach(builder::add);
+                }
+            }
+
+
         } catch (URISyntaxException e) {
             throw new RepositoryError(e);
         } catch (StorageException e) {
             throw new RepositoryError(e);
+        } catch (IOException e) {
+            throw new RepositoryError(e);
         }
+
+
         Stream<ListBlobItem> blobs = StreamSupport.stream(cloudBlobContainer.listBlobs().spliterator(), false);
         return blobs.flatMap(listBlobItem -> {
             try {
@@ -266,14 +252,15 @@ public class AzureStorageRepository implements Repository {
     }
 
     @Override
-    public void addInstrumentChange(InstrumentChange instrumentChange) {
+    public void addInstrumentChanges(ImmutableSet<InstrumentChange> instrumentChanges) {
         try {
             CloudBlobContainer container = getOrCreateContainer(INSTRUMENT_CHANGES_CONTAINER_NAME);
-            String newBlobName = String.format("%s_%s.json", instrumentChange.getTargetInstrumentId(), UUID.randomUUID());
+
+            String newBlobName = createBlobNameForInstrumentChangeBatch(instrumentChanges);
             CloudBlockBlob blob = container.getBlockBlobReference(newBlobName);
             ObjectMapper objectMapper = new ObjectMapper();
             ArrayNode root = objectMapper.createArrayNode();
-            root.add(instrumentChange.toJson());
+            instrumentChanges.stream().forEach(ic -> root.add(ic.toJson()));
             blob.uploadText(Conversions.toString(root));
         } catch (RuntimeException e) {
             throw new RepositoryError(e);
@@ -282,12 +269,30 @@ public class AzureStorageRepository implements Repository {
         }
     }
 
+    private static String createBlobNameForInstrumentChangeBatch(ImmutableSet<InstrumentChange> instrumentChanges) {
+//        A blob name must conforming to the following naming rules:
+//        A blob name can contain any combination of characters.
+//            A blob name must be at least one character long and cannot be more than 1,024 characters long.
+//            Blob names are case-sensitive.
+//            Reserved URL characters must be properly escaped.
+//        The number of path segments comprising the blob name cannot exceed 254. A path segment is the string between consecutive delimiter characters (e.g., the forward slash '/') that corresponds to the name of a virtual directory.
+
+        int numberOfChanges = instrumentChanges.size();
+        String timeForBlobName = OffsetDateTime.now().format(DateTimeFormatter.ISO_INSTANT).replace(':', '-');
+        String uuid = UUID.randomUUID().toString();
+        String blobName = String.format("%s_%d_changes_%s.json", timeForBlobName, numberOfChanges, uuid);
+        return blobName;
+
+    }
+
     @Override
     public void addServiceDetermination(ServiceDetermination serviceDetermination) {
         try {
             CloudBlobContainer container = getOrCreateContainer(SERVICE_DETERMINATIONS_CONTAINER_NAME);
             CloudBlockBlob blob = container.getBlockBlobReference(serviceDetermination.getRegisterId());
             JsonNode jsonNode = StoredServiceDetermination.toJson(serviceDetermination);
+            blob.getProperties().setContentType("application/json");
+            blob.getProperties().setContentEncoding("UTF-8");
             blob.uploadText(Conversions.toString(jsonNode));
         } catch (RuntimeException e) {
             throw new RepositoryError(e);
@@ -297,10 +302,33 @@ public class AzureStorageRepository implements Repository {
     }
 
     @Override
+    public void archiveServiceDetermination(String registerId) {
+        try {
+            Optional<CloudBlob> cloudBlob = getBlobByName(SERVICE_DETERMINATIONS_CONTAINER_NAME, registerId);
+            if (!cloudBlob.isPresent()) {
+                throw new RepositoryError(String.format("Service Determination with register ID does not exist: %s", registerId));
+            }
+
+            byte[] blobBytes = getBlobBytes(cloudBlob.get());
+
+            String archivedServiceDeterminationBlobName = String.format("%s_%s", registerId, UUID.randomUUID().toString());
+            saveBlob(ARCHIVED_SERVICE_DETERMINATIONS_CONTAINER_NAME, archivedServiceDeterminationBlobName, blobBytes);
+            deleteBlob(SERVICE_DETERMINATIONS_CONTAINER_NAME, registerId);
+
+        } catch (URISyntaxException e) {
+            throw new RepositoryError(e);
+        } catch (StorageException e) {
+            throw new RepositoryError(e);
+        } catch (IOException e) {
+            throw new RepositoryError(e);
+        }
+    }
+
+    @Override
     public ImmutableSet<ServiceDetermination> getServiceDeterminations() {
 
         try {
-            CloudBlobContainer cloudBlobContainer = _cloudBlobClient.getContainerReference(SERVICE_DETERMINATIONS_CONTAINER_NAME);
+            CloudBlobContainer cloudBlobContainer = getOrCreateContainer(SERVICE_DETERMINATIONS_CONTAINER_NAME);
 
             Iterable<ListBlobItem> blobs = cloudBlobContainer.listBlobs();
 
@@ -324,7 +352,7 @@ public class AzureStorageRepository implements Repository {
     public Optional<OffsetDateTime> getLastUpdated() {
 
         try {
-            Optional<CloudBlob> updated = getBlobByName(SOP_CONTAINER_NAME, LAST_SOPS_UPDATE_BLOB_NAME);
+            Optional<CloudBlob> updated = getBlobByName(METADATA_CONTAINER_NAME, LAST_SOPS_UPDATE_BLOB_NAME);
             if (!updated.isPresent()) {
                 return Optional.empty();
             }
@@ -338,8 +366,7 @@ public class AzureStorageRepository implements Repository {
             throw new RepositoryError(e);
         } catch (UnsupportedEncodingException e) {
             throw new RepositoryError(e);
-        } catch (DateTimeParseException e)
-        {
+        } catch (DateTimeParseException e) {
             throw new RepositoryError(e);
         }
     }
@@ -347,8 +374,10 @@ public class AzureStorageRepository implements Repository {
     @Override
     public void setLastUpdated(OffsetDateTime offsetDateTime) {
         try {
-            CloudBlobContainer container = getOrCreateContainer(SOP_CONTAINER_NAME);
+            CloudBlobContainer container = getOrCreateContainer(METADATA_CONTAINER_NAME);
             CloudBlockBlob blob = container.getBlockBlobReference(LAST_SOPS_UPDATE_BLOB_NAME);
+            blob.getProperties().setContentType("text/plain");
+            blob.getProperties().setContentEncoding("UTF-8");
             blob.uploadText(offsetDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME));
         } catch (URISyntaxException e) {
             throw new RepositoryError(e);
@@ -361,7 +390,7 @@ public class AzureStorageRepository implements Repository {
 
     }
 
-    private  Optional<CloudBlob> getBlobByName(String containerName, String blobName) throws URISyntaxException, StorageException {
+    private Optional<CloudBlob> getBlobByName(String containerName, String blobName) throws URISyntaxException, StorageException {
         CloudBlobContainer cloudBlobContainer = getOrCreateContainer(containerName);
         CloudBlob cloudBlob = null;
         for (ListBlobItem blobItem : cloudBlobContainer.listBlobs()) {
@@ -380,7 +409,7 @@ public class AzureStorageRepository implements Repository {
     private void saveBlob(String containerName, String blobName, byte[] blobBytes) throws URISyntaxException, StorageException, IOException {
         CloudBlobContainer container = getOrCreateContainer(containerName);
         CloudBlockBlob blob = container.getBlockBlobReference(blobName);
-        blob.uploadFromByteArray(blobBytes,0,blobBytes.length);
+        blob.uploadFromByteArray(blobBytes, 0, blobBytes.length);
     }
 
     private void deleteBlob(String containerName, String blobName) throws URISyntaxException, StorageException {
@@ -389,6 +418,17 @@ public class AzureStorageRepository implements Repository {
         boolean success = blob.deleteIfExists();
         if (!success) {
             logger.trace(String.format("SoP not found, therefore not deleted: %s", blobName));
+        }
+    }
+
+    @Override
+    public void purge() {
+        for (CloudBlobContainer cloudBlobContainer : _cloudBlobClient.listContainers()) {
+            try {
+                cloudBlobContainer.deleteIfExists();
+            } catch (StorageException e) {
+                throw new RepositoryError(e);
+            }
         }
     }
 

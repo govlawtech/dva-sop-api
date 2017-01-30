@@ -1,10 +1,13 @@
 package au.gov.dva.sopapi.sopref.data;
 
 import au.gov.dva.sopapi.DateTimeUtils;
-import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredOperation;
+import au.gov.dva.sopapi.exceptions.DvaSopApiError;
 import au.gov.dva.sopapi.exceptions.ServiceDeterminationParserError;
+import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.model.Operation;
+import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.ServiceType;
+import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredOperation;
 import com.google.common.collect.ImmutableList;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
@@ -14,14 +17,45 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.*;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ServiceDeterminations {
+
+
+    public static ServiceDetermination create(String registerId, RegisterClient registerClient)
+    {
+        try {
+            byte[] docx = registerClient.getLatestDocxInstrument(registerId).get(30, TimeUnit.SECONDS);
+            byte[] pdf = registerClient.getLatestAuthorisedInstrumentPdf(registerId).get(30, TimeUnit.SECONDS);
+            String plainText = Conversions.pdfToPlainText(pdf);
+            ServiceDetermination serviceDetermination =
+                    au.gov.dva.sopapi.sopref.parsing.ServiceDeterminationsParser.createServiceDetermination(docx,plainText);
+            return serviceDetermination;
+
+        } catch (InterruptedException e) {
+            throw new DvaSopApiError(e);
+        } catch (ExecutionException e) {
+            throw new DvaSopApiError(e);
+        } catch (IOException e) {
+            throw new ServiceDeterminationParserError(e);
+        } catch (TimeoutException e) {
+            throw new DvaSopApiError(e);
+        }
+
+    }
+
 
     public static Optional<OffsetDateTime> extractCommencementDateFromDocx(byte[] determinationDocx) {
 

@@ -20,30 +20,11 @@ import java.util.regex.Pattern;
 
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
-public class FederalRegisterOfLegislation implements RegisterClient {
+public class FederalRegisterOfLegislationClient implements RegisterClient {
 
     private static final String BASE_URL = "https://www.legislation.gov.au";
 
-     private static class AuthorisedInstrumentResult {
-
-        private final String registerId;
-        private final byte[] pdfBytes;
-
-        public AuthorisedInstrumentResult(String registerId, byte[] pdfBytes) {
-            this.registerId = registerId;
-            this.pdfBytes = pdfBytes.clone();
-        }
-
-        public byte[] getPdfBytes() {
-            return pdfBytes.clone();
-        }
-
-        public String getRegisterId() {
-            return registerId;
-        }
-    }
-
-    final static Logger logger = LoggerFactory.getLogger(FederalRegisterOfLegislation.class);
+    final static Logger logger = LoggerFactory.getLogger(FederalRegisterOfLegislationClient.class);
 
 
 
@@ -78,6 +59,26 @@ public class FederalRegisterOfLegislation implements RegisterClient {
 
         return promise;
     }
+
+
+    @Override
+    public CompletableFuture<byte[]> getLatestDocxInstrument(String registerId) {
+        URL urlForDownloadPage = BuildUrl.forDownloadPage(registerId);
+
+        CompletableFuture<byte[]> promise =  downloadHtml(urlForDownloadPage)
+                .thenApply(htmlString -> {
+                    try {
+                        return getDocxDocumentLinkFromHtml(htmlString, registerId);
+                    } catch (MalformedURLException e) {
+                        throw new LegislationRegisterError(e);
+                    }
+                })
+                .thenCompose(url -> downloadFile(url));
+
+        return promise;
+
+    }
+
 
 
     public static CompletableFuture<byte[]> downloadFile(URL url) {
@@ -128,10 +129,20 @@ public class FederalRegisterOfLegislation implements RegisterClient {
         Document htmlDocument = Jsoup.parse(html);
         // Note that currently at legislation.gov.au there is an additional space in the title for this element - probably an error.
         // There is additional selector with one space so this will still work if the devs fix that error.
-        String cssSelector = String.format("a[title*=\"%s  authorised version\"], [a[title*=\"%s authorised version\"]", registerID, registerID);
+        String cssSelector = String.format("a[title*=\"%s  authorised version\"], a[title*=\"%s authorised version\"]", registerID, registerID);
         Elements elements = htmlDocument.select(cssSelector);
         assert !elements.isEmpty();
         String linkUrl = elements.attr("href");
+        assert !linkUrl.isEmpty();
+        return URI.create(linkUrl).toURL();
+    }
+
+    public static URL getDocxDocumentLinkFromHtml(String html, String registerId) throws MalformedURLException {
+        Document htmlDocument = Jsoup.parse(html);
+        String cssSelector = String.format("a[title=\"%s\"]", registerId);
+        Elements elements = htmlDocument.select(cssSelector);
+        assert !elements.isEmpty();
+        String linkUrl = elements.first().attr("href");
         assert !linkUrl.isEmpty();
         return URI.create(linkUrl).toURL();
     }
@@ -235,12 +246,24 @@ public class FederalRegisterOfLegislation implements RegisterClient {
             }
         }
 
+
         public static URL forLatestDownloadPage(String registerId) {
             try {
                 return new URL(String.format("%s/Latest/%s/Download", BASE_URL, registerId));
             } catch (MalformedURLException e) {
                 throw new LegislationRegisterError(e);
             }
+        }
+
+        public static URL forDownloadPage(String registerId) {
+            try {
+                return new URL(String.format("%s/Details/%s/Download",BASE_URL,registerId));
+            } catch (MalformedURLException e)
+            {
+                throw new LegislationRegisterError(e);
+            }
+
+
         }
 
         public static URL forSeriesRepealedByPage(String registerId)

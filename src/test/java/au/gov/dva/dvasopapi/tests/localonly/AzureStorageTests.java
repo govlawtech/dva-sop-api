@@ -26,7 +26,7 @@ public class AzureStorageTests {
     public void saveAndRetrieveSop() throws JsonProcessingException {
         Repository underTest = new AzureStorageRepository("UseDevelopmentStorage=true");
         SoP mockSop = new MockLumbarSpondylosisSopRH();
-        underTest.saveSop(mockSop);
+        underTest.addSop(mockSop);
         Optional<SoP> retrieved = underTest.getSop(mockSop.getRegisterId());
         Assert.assertTrue(retrieved.isPresent());
         System.out.print(TestUtils.prettyPrint(StoredSop.toJson(retrieved.get())));

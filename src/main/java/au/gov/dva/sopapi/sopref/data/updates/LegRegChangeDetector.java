@@ -2,7 +2,7 @@ package au.gov.dva.sopapi.sopref.data.updates;
 
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
-import au.gov.dva.sopapi.sopref.data.updates.types.Compilation;
+import au.gov.dva.sopapi.sopref.data.updates.types.NewCompilation;
 import au.gov.dva.sopapi.sopref.data.updates.types.Replacement;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
@@ -20,7 +20,6 @@ public class LegRegChangeDetector {
     private RegisterClient registerClient;
     private static final Logger logger = LoggerFactory.getLogger(LegRegChangeDetector.class);
 
-    // todo: make this static and pass in logger
     public LegRegChangeDetector(RegisterClient registerClient) {
         this.registerClient = registerClient;
     }
@@ -32,9 +31,9 @@ public class LegRegChangeDetector {
                 .collect(Collectors.toList());
         try {
             List<RedirectResult> results = AsyncUtils.sequence(tasks).get();
-            List<Compilation> compilations = results.stream()
+            List<NewCompilation> compilations = results.stream()
                     .filter(RedirectResult::isUpdatedCompilation)
-                    .map(redirectResult -> new Compilation(redirectResult.getSource(),redirectResult.getTarget().get(), OffsetDateTime.now()))
+                    .map(redirectResult -> new NewCompilation(redirectResult.getSource(),redirectResult.getTarget().get(), OffsetDateTime.now()))
                     .collect(Collectors.toList());
             return ImmutableSet.copyOf(compilations);
 
@@ -72,6 +71,7 @@ public class LegRegChangeDetector {
     }
 
 
+
     private CompletableFuture<ReplacementResult> getReplacementResult(String originalRegisterId)
     {
         return registerClient.getRepealingRegisterId(originalRegisterId)
@@ -92,6 +92,7 @@ public class LegRegChangeDetector {
                     }
                 });
     }
+
 
     private static class ReplacementResult{
         private final String originalRegisterId;

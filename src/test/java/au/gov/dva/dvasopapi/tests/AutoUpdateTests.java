@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.interfaces.LegislationRegisterEmailClient;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChangeBase;
 import au.gov.dva.sopapi.interfaces.model.LegislationRegisterEmailUpdate;
-import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislation;
+import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.JsonUtils;
 import au.gov.dva.sopapi.sopref.data.updates.LegRegChangeDetector;
 import au.gov.dva.sopapi.sopref.data.updates.changefactories.EmailSubscriptionInstrumentChangeFactory;
@@ -34,7 +34,6 @@ import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -88,7 +87,7 @@ public class AutoUpdateTests {
     public void testRedirectUrlGet() throws MalformedURLException {
         URL redirectTarget = URI.create("http://www.legislation.gov.au/Details/F2014C383817").toURL();
 
-        String result = FederalRegisterOfLegislation.extractTargetRegisterIdFromRedirectUrl(redirectTarget);
+        String result = FederalRegisterOfLegislationClient.extractTargetRegisterIdFromRedirectUrl(redirectTarget);
         Assert.assertTrue(result.contentEquals("F2014C383817"));
     }
 
@@ -101,7 +100,7 @@ public class AutoUpdateTests {
                 "F2010L00557"  // Statement of Principles concerning osteoarthritis No. 13 of 2010, already amended with compilation
         );
 
-        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislation());
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
         ImmutableSet<InstrumentChange> newCompilations = underTest.detectNewCompilations(testSourceIds);
 
         for (InstrumentChange s : newCompilations)
@@ -120,7 +119,7 @@ public class AutoUpdateTests {
         );
         String expectedIdOfRepealingInstrument = "F2017L00016";
 
-        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislation());
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
         ImmutableSet<InstrumentChange> results  = underTest.detectReplacements(testSourceIds);
         results.stream().forEach(r -> System.out.println(r));
         Replacement result = (Replacement)results.asList().get(0);
@@ -136,7 +135,7 @@ public class AutoUpdateTests {
         ImmutableSet<String> testSourceIds = ImmutableSet.of(
                 "F2014L00930"
         );
-        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislation());
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
         ImmutableSet<InstrumentChange> results = underTest.detectReplacements(testSourceIds);
         Assert.assertTrue(results.isEmpty());
     }

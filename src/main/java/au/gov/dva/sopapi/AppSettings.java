@@ -27,6 +27,7 @@ public class AppSettings {
         }
     }
 
+
     private static Environment convertEnvironmentStringEnum(String environmentStringValue)
     {
         switch (environmentStringValue)
@@ -98,7 +99,12 @@ public class AppSettings {
     public enum Environment {
         prod,
         devtest,
-        devtestlocal
+        devtestlocal;
+
+        public boolean isDev()
+        {
+            return this.equals(Environment.devtest) || this.equals(Environment.devtestlocal);
+        }
     }
 }
 
