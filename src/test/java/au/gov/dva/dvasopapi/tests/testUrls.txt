@@ -4,7 +4,5 @@
 
 /getSopFactors?icdCodeValue=M47.16&icdCodeVersion=ICD-10-AM&standardOfProof=RH&incidentType=onset
 
+/getOperations
 
-/getOperations?queryDate=2010-01-01
-
-/getOperations?queryDate=2018-01-01

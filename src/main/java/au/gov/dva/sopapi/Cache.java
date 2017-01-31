@@ -31,7 +31,6 @@ class Cache {
         _allSops = allSops;
         _allServiceDeterminations = allServiceDeterminations;
 
-
     }
 
     public ImmutableSet<SoP> get_allSops() {
