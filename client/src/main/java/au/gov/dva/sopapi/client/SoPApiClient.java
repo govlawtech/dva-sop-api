@@ -52,7 +52,8 @@ public class SoPApiClient {
         AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<SoPRefDto> promise = asyncHttpClient
                 .prepareGet(serviceUrl.toString())
-                .setHeader("Accept", "application/json")
+                .setHeader("Accept", "application/json; charset=utf-8")
+                .setHeader("Content-Type","application/json; charset=utf-8")
                 .addQueryParams(params)
                 .execute()
                 .toCompletableFuture()
@@ -68,7 +69,8 @@ public class SoPApiClient {
         AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<OperationsResponseDto> promise = asyncHttpClient
                 .prepareGet(serviceUrl.toString())
-                .setHeader("Accept", "application/json")
+                .setHeader("Accept", "application/json; charset=utf-8")
+                .setHeader("Content-Type","application/json; charset=utf-8")
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> response.getResponseBody())
@@ -83,13 +85,31 @@ public class SoPApiClient {
         AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<SopSupportResponseDto> promise = asyncHttpClient
                 .prepareGet(serviceUrl.toString())
-                .setHeader("Accept", "application/json")
+                .setHeader("Accept", "application/json; charset=utf-8")
+                .setHeader("Content-Type","application/json; charset=utf-8")
+                .setBody(jsonRequestBody)
                 .execute()
                 .toCompletableFuture()
-                .thenApply(response -> response.getResponseBody())
+                .thenApply(response -> {
+                            if (response.getStatusCode() == 200) {
+
+                                return response.getResponseBody();
+
+                            }
+                            else {
+                                throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(),response.getResponseBody()));
+                            }
+                        }
+                    )
+
                 .thenApply(json -> SopSupportResponseDto.fromJsonString(json.toString()));
 
         return promise;
+    }
+
+    private static String buildErrorMsg(Integer statusCode, String msg)
+    {
+        return String.format("HTTP Status Code: %d, %s.", statusCode, msg);
     }
 
 }

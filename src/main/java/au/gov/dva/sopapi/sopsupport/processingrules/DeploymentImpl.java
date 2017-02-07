@@ -18,6 +18,16 @@ public class DeploymentImpl implements Deployment {
     }
 
     @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("DeploymentImpl{");
+        sb.append("operationName='").append(operationName).append('\'');
+        sb.append(", startdate=").append(startdate);
+        sb.append(", endDate=").append(endDate);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    @Override
     public String getOperationName() {
         return operationName;
     }

@@ -1,11 +1,11 @@
 package au.gov.dva.sopapi;
 
-
-import au.gov.dva.sopapi.exceptions.ConfigurationError;
-
-import static au.gov.dva.sopapi.AppSettings.Environment.*;
+import static au.gov.dva.sopapi.AppSettings.Environment.devtest;
+import static au.gov.dva.sopapi.AppSettings.Environment.devtestlocal;
+import static au.gov.dva.sopapi.AppSettings.Environment.prod;
 
 public class AppSettings {
+
 
     private static final String envVarName = "DEP_ENV";
 
@@ -57,6 +57,10 @@ public class AppSettings {
 
     }
 
+    public static String getBaseUrl() {
+        return getPropertyValue("BASE_URL");
+    }
+
     public static class LegislationRegisterEmailSubscription {
         private static final String LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_USER_ID = "LRS_USERID";
         private static final String LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_PASSWORD = "LRS_PASSWORD";
@@ -103,7 +107,7 @@ public class AppSettings {
 
         public boolean isDev()
         {
-            return this.equals(Environment.devtest) || this.equals(Environment.devtestlocal);
+            return this.equals(devtest) || this.equals(devtestlocal);
         }
     }
 }

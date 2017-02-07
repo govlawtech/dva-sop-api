@@ -29,7 +29,7 @@ public class ConditionFactory {
                     conditionDto.get_incidentDateRangeDto().get_endDate(),
                     new LumbarSpondylosisRule());
         }
-        throw new ProcessingRuleError(String.format("No processing rule defined for condition: %s.", conditionDto.get_conditionName()));
+        throw new ProcessingRuleError(String.format("No processing rule defined for condition: '%s' with incident type: '%s'.", conditionDto.get_conditionName(),conditionDto.get_incidentType().toString()));
     }
 
 
@@ -40,7 +40,7 @@ public class ConditionFactory {
                 .findFirst();
         if (!soPPair.isPresent())
         {
-            throw new ProcessingRuleError(String.format("No processing rule defined for condition: %s.", conditionName));
+            throw new ProcessingRuleError(String.format("No pair of BoP and RH sops available for condition '%s'.", conditionName));
         }
         return soPPair.get();
     }

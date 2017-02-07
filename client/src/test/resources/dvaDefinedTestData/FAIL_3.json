@@ -1,0 +1,46 @@
+{
+  "condition": {
+    "conditionName": "lumbar spondylosis",
+    "incidentType": "onset",
+    "icdCodeVersion": "ICD-10-AM",
+    "icdCodeValue": "M47.16",
+    "onsetDates": {
+      "onsetRangeStartDate": "2004-10-01Z",
+      "onsetRangeEndDate": "2004-10-01Z"
+    },
+    "aggravationDates": {
+      "aggravationRangeStartDate": "2005-01-01Z",
+      "aggravationRangeEndDate": "2005-01-15Z"
+    }
+  },
+  "serviceHistory": {
+    "serviceSummaryInformation": {
+      "originalHireDate": "2004-07-01Z"
+    },
+    "serviceDetails": [
+      {
+        "serviceType": "Regular/Permanent Force",
+        "startDate": "2004-07-01Z",
+        "endDate": "2016-01-01Z",
+        "rank": "other rank",
+        "operationalService": [
+          {
+            "assigned": "2006-07-01Z",
+            "description": "Operation WARDEN",
+            "event": "Within Specified Area",
+            "startDate": "2006-07-10Z",
+            "endDate": "2007-07-01Z"
+          },
+          {
+            "assigned": "2009-07-01Z",
+            "description": "Operation RIVERBANK",
+            "event": "Within Specified Area",
+            "startDate": "2009-07-10Z",
+            "endDate": "2010-07-01Z"
+          }
+        ],
+        "service": "Australian Army"
+      }
+    ]
+  }
+}

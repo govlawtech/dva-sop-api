@@ -7,6 +7,8 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
+import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
+import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
@@ -17,6 +19,7 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupport;
+import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -34,6 +37,7 @@ import spark.Response;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
@@ -78,7 +82,7 @@ class Routes {
             QueryParamsMap queryParamsMap = req.queryMap();
             String icdCodeValue = queryParamsMap.get("icdCodeValue").value();
             String icdCodeVersion = queryParamsMap.get("icdCodeVersion").value();
-            String standardOfProof = queryParamsMap.get("standardOfProof").value();
+            String standardOfProof = queryParamsMap.get("standardOfProof").value(); // todo: make optional
             String conditionName = queryParamsMap.get("conditionName").value();
             String incidentType = queryParamsMap.get("incidentType").value();
 
@@ -113,13 +117,17 @@ class Routes {
             }
 
             try {
-                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(req.body());
+                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
 
                 ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
                 ImmutableSet<ServiceDetermination> serviceDeterminations = cache.get_allServiceDeterminations();
                 ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(serviceDeterminations);
                 Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
-                SopSupportResponseDto sopSupportResponseDto = SopSupport.applyRules(sopSupportRequestDto, soPPairs, isOperational);
+                CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+                caseTrace.addTrace(req.body());
+                SopSupportResponseDto sopSupportResponseDto = SopSupport.applyRules(sopSupportRequestDto, soPPairs, isOperational, caseTrace);
+                if (AppSettings.getEnvironment().isDev())
+                    logger.trace(caseTrace.toString());
                 setResponseHeaders(res, true, 200);
                 return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
             } catch (DvaSopApiDtoError e) {
@@ -132,6 +140,12 @@ class Routes {
                     sb.append(schema);
                 }
                 return sb.toString();
+            }
+            catch (ProcessingRuleError e)
+            {
+                logger.error("Error applying rule.", e);
+                setResponseHeaders(res,false,400);
+                return e.getMessage();
             }
         }));
     }
@@ -241,5 +255,8 @@ class Routes {
         return AppSettings.getEnvironment() == AppSettings.Environment.prod;
     }
 
-
+    private static String cleanseJson(String incomingJson)
+    {
+        return incomingJson.replace("\uFEFF","");
+    }
 }
