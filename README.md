@@ -17,4 +17,4 @@ See source for routes.
 
 * [Devtest](https://dvasopapi-devtest.azurewebsites.net/)
 * [Staging](https://dvasopapi-staging.azurewebsites.net/)
-* [Prod](https://dvasopapi-devtest.azurewebsites.net/)
+* [Prod](https://dvasopapi.azurewebsites.net/)
