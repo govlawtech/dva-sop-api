@@ -10,3 +10,11 @@ An API exposing regulations and business rules to assist Department of Veterans'
 # Documentation
 
 [Documentation](https://govlawtech.github.io/dva-sop-api/index.html)
+
+# Host
+
+See source for routes.
+
+[Devtest](https://dvasopapi-devtest.azurewebsites.net/)
+[Staging](https://dvasopapi-staging.azurewebsites.net/)
+[Prod](https://dvasopapi-devtest.azurewebsites.net/)
