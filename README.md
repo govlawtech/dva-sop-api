@@ -11,7 +11,7 @@ An API exposing regulations and business rules to assist Department of Veterans'
 
 [Documentation](https://govlawtech.github.io/dva-sop-api/index.html)
 
-# Host
+# Endpoints
 
 See source for routes.
 
