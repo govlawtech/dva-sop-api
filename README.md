@@ -15,6 +15,6 @@ An API exposing regulations and business rules to assist Department of Veterans'
 
 See source for routes.
 
-[Devtest](https://dvasopapi-devtest.azurewebsites.net/)
-[Staging](https://dvasopapi-staging.azurewebsites.net/)
-[Prod](https://dvasopapi-devtest.azurewebsites.net/)
+* [Devtest](https://dvasopapi-devtest.azurewebsites.net/)
+* [Staging](https://dvasopapi-staging.azurewebsites.net/)
+* [Prod](https://dvasopapi-devtest.azurewebsites.net/)
