@@ -3,6 +3,8 @@ package au.gov.dva.sopapi.dtos.sopsupport;
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,15 +22,24 @@ public class SopSupportResponseDto {
     @JsonProperty("factors")
     private List<FactorWithInferredResultDto> _factors;
 
-    public SopSupportResponseDto(ApplicableInstrumentDto _applicableInstrumentDto, List<FactorWithInferredResultDto> _factors) {
+    @JsonCreator
+    public SopSupportResponseDto(@JsonProperty("applicableInstrument") ApplicableInstrumentDto _applicableInstrumentDto,
+                                 @JsonProperty("factors") List<FactorWithInferredResultDto> _factors) {
         this._applicableInstrumentDto = _applicableInstrumentDto;
         this._factors = _factors;
     }
 
-    public ApplicableInstrumentDto getApplicableInstrumentDto() {
+
+    public static SopSupportResponseDto createEmpty() {
+        return new SopSupportResponseDto(null,ImmutableList.of());
+    }
+
+    @JsonIgnore
+    public ApplicableInstrumentDto getApplicableInstrument() {
         return _applicableInstrumentDto;
     }
 
+    @JsonIgnore
     public ImmutableList<FactorWithInferredResultDto> getFactors() {
         return ImmutableList.copyOf(_factors);
     }

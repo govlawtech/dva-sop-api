@@ -6,11 +6,16 @@ import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.model.*;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.time.OffsetDateTime;
 import java.util.Optional;
 import java.util.function.Predicate;
 
 public class LumbarSpondylosisRule implements ProcessingRule, AccumulationRule {
+
+    private static Logger logger = LoggerFactory.getLogger(LumbarSpondylosisRule.class.getSimpleName());
 
     private static SimpleRuleSpec _simpleRuleSpec = new SimpleRuleSpec(
                 new RankSpec(49,3726,23),
@@ -28,10 +33,17 @@ public class LumbarSpondylosisRule implements ProcessingRule, AccumulationRule {
     @Override
     public SoP getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
 
+        OffsetDateTime startDateForPeriodOfOperationalService = condition.getStartDate().minusYears(10);
+        OffsetDateTime endDateForPeriodOfOperationalService = condition.getStartDate();
+        logger.trace("Determining applicable SoP...");
+        logger.trace("Start date for the period of operational service: " +  startDateForPeriodOfOperationalService);
+        logger.trace("End date for period of operational service: " + endDateForPeriodOfOperationalService);
+
         long daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(
-                condition.getStartDate().minusYears(10),condition.getStartDate(),
+                startDateForPeriodOfOperationalService,endDateForPeriodOfOperationalService,
                 ProcessingRuleFunctions.getDeployments(serviceHistory),
                 isOperational);
+        logger.trace("Days of operational service: " + daysOfOperationalService);
 
         Rank rank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(),condition.getStartDate());
 
@@ -62,6 +74,7 @@ public class LumbarSpondylosisRule implements ProcessingRule, AccumulationRule {
 
             return inferredFactors;
         }
+        else
         {
             return ProcessingRuleFunctions.withSatsifiedFactors(applicableFactors);
         }

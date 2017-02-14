@@ -71,6 +71,7 @@ build/
 
 *.orig
 
+doctrees/
 
 
 

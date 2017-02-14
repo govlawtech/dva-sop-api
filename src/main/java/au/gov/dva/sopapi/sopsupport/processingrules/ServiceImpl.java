@@ -19,6 +19,18 @@ public class ServiceImpl implements Service {
     private final Optional<OffsetDateTime> endDate;
     private final ImmutableSet<Deployment> deployments;
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("ServiceImpl{");
+        sb.append("branch=").append(branch);
+        sb.append(", employmentType=").append(employmentType);
+        sb.append(", rank=").append(rank);
+        sb.append(", startDate=").append(startDate);
+        sb.append(", endDate=").append(endDate);
+        sb.append('}');
+        return sb.toString();
+    }
+
     public ServiceImpl(ServiceBranch branch, EmploymentType employmentType, Rank rank, OffsetDateTime startDate, Optional<OffsetDateTime> endDate, ImmutableSet<Deployment> deployments)
     {
 
