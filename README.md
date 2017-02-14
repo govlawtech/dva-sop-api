@@ -3,9 +3,9 @@ An API exposing regulations and business rules to assist Department of Veterans'
 
 # Build Status 
 
-|devtest|master|
-|-------|----------|
-| [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=devtest)](https://travis-ci.org/govlawtech/dva-sop-api) | [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=master)](https://travis-ci.org/govlawtech/dva-sop-api)  |
+|devtest|master|dvatesting|
+|-------|------|-----------|
+| [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=devtest)](https://travis-ci.org/govlawtech/dva-sop-api) | [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=master)](https://travis-ci.org/govlawtech/dva-sop-api)  | [![Build Status](https://travis-ci.org/govlawtech/dva-sop-api.svg?branch=dvatesting)](https://travis-ci.org/govlawtech/dva-sop-api) 
 
 # Documentation
 
