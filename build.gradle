@@ -51,8 +51,7 @@ task copyWar(type: Copy, dependsOn: 'war') {
 }
 
 test {
-    exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
-    exclude 'au/gov/dva/dvasopapi/systemtests/**'
+   exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
 }
 
 configurations.all {

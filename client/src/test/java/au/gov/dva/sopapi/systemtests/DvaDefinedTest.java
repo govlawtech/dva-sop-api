@@ -8,6 +8,7 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.Resources;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,6 +19,13 @@ import java.util.stream.Collectors;
 
 public class DvaDefinedTest {
 
+
+
+    @Before
+    public void beforeMethod() {
+
+        org.junit.Assume.assumeTrue(AppSettings.getEnvironment() == AppSettings.Environment.devtest);
+    }
 
     private static final String TEST_FILE_DIR = "dvaDefinedTestData";
 

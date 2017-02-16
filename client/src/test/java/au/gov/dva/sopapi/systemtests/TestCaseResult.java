@@ -13,13 +13,13 @@ public class TestCaseResult {
         this.log = log;
     }
 
+
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("TestCaseResult{");
-        sb.append("fileName='").append(fileName).append('\'');
-        sb.append(", passed=").append(passed);
-        sb.append(", log='").append("\r\n").append(log).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "TestCaseResult{" +
+                "fileName='" + fileName + '\'' +
+                ", passed=" + passed  +
+                "," + "\r\n" + "log='" + log + '\'' +
+                '}';
     }
 }

@@ -27,8 +27,6 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.5'
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.8.5'
     compile group: 'com.beust', name: 'jcommander', version: '1.58'
-    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.1.7'
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
     testCompile 'junit:junit:4.12'
 }
 
@@ -45,3 +43,6 @@ tasks.withType(FindBugs) {
     }
 }
 
+test {
+    testLogging.showStandardStreams = true
+}
