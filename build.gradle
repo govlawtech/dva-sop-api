@@ -76,8 +76,12 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
     compile group: 'org.jsoup', name: 'jsoup', version: '1.10.1'
     compile group: 'org.asynchttpclient', name: 'async-http-client', version: '2.0.24'
+
+    // Logging
+    compile 'org.slf4j:slf4j-api:1.7.21'
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.1.7'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
+
     compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.3'
     compile group: 'com.microsoft.azure', name: 'azure-storage', version: '4.4.0'
     compile group: 'com.microsoft.azure', name: 'azure-core', version: '0.9.7'
