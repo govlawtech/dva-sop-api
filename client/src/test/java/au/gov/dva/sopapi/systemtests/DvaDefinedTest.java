@@ -20,15 +20,12 @@ import java.util.stream.Collectors;
 public class DvaDefinedTest {
 
 
-
     @Before
     public void beforeMethod() {
-
-        org.junit.Assume.assumeTrue(AppSettings.getEnvironment() == AppSettings.Environment.devtest);
+        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == AppSettings.Environment.devtest);
     }
 
     private static final String TEST_FILE_DIR = "dvaDefinedTestData";
-
 
     public static ImmutableList<String> data() throws IOException {
 

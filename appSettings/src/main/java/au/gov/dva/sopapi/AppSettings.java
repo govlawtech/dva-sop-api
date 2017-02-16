@@ -9,9 +9,14 @@ public class AppSettings {
 
     private static final String envVarName = "DEP_ENV";
 
+
+    public static Boolean isEnvironmentSet(){
+        return (System.getProperty(envVarName) != null || System.getenv(envVarName) != null);
+    }
+
     public static Environment getEnvironment() {
 
-        String jvmArg = System.getProperty("DEP_ENV");
+        String jvmArg = System.getProperty(envVarName);
 
         if (jvmArg != null) {
             return convertEnvironmentStringEnum(jvmArg);
