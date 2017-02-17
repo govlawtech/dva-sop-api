@@ -5,25 +5,50 @@ import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
-import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.DefaultAsyncHttpClient;
-import org.asynchttpclient.Param;
+import org.asynchttpclient.*;
+import org.asynchttpclient.proxy.ProxyServer;
 
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class SoPApiClient {
 
-    // todo : error handling
     private final URL baseUrl;
+    private final AsyncHttpClient asyncHttpClient;
 
-    public SoPApiClient(URL baseUrl)
+
+    public SoPApiClient(URL baseUrl, Optional<SoPApiProxyClientSettings> proxyConfig)
     {
         this.baseUrl = baseUrl;
+        asyncHttpClient = buildAsyncHttpClient(proxyConfig);
+    }
+
+    private AsyncHttpClient buildAsyncHttpClient(Optional<SoPApiProxyClientSettings> soPApiProxyClientSettings)
+    {
+        if (soPApiProxyClientSettings.isPresent()) {
+            SoPApiProxyClientSettings proxyClientSettings = soPApiProxyClientSettings.get();
+            Realm realm = new Realm.Builder(proxyClientSettings.getUserName(), proxyClientSettings.getPassword()).build();
+            ProxyServer proxyServer = new ProxyServer.Builder(proxyClientSettings.getIpAddress(), proxyClientSettings.getPort())
+                    .setRealm(realm)
+                    .setSecuredPort(proxyClientSettings.getPort())
+                    .build();
+
+            AsyncHttpClientConfig cf = new DefaultAsyncHttpClientConfig.Builder()
+                    .setProxyServer(proxyServer)
+                    .setAcceptAnyCertificate(true)
+                    .setConnectTimeout(proxyClientSettings.getSecondsTimeOut())
+                    .build();
+
+            return new DefaultAsyncHttpClient(cf);
+        }
+        else {
+            return new DefaultAsyncHttpClient();
+        }
     }
 
 
@@ -35,7 +60,6 @@ public class SoPApiClient {
             e.printStackTrace();
         }
         return null;
-
     }
 
     public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, String incidentType, String standardOfProof)
@@ -49,7 +73,6 @@ public class SoPApiClient {
         params.add(new Param(QueryParamLabels.INCIDENT_TYPE, incidentType));
         params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof));
 
-        AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<SoPRefDto> promise = asyncHttpClient
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
@@ -66,7 +89,6 @@ public class SoPApiClient {
     public CompletableFuture<OperationsResponseDto> getOperations()
     {
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_OPERATIONS);
-        AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<OperationsResponseDto> promise = asyncHttpClient
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
@@ -82,7 +104,6 @@ public class SoPApiClient {
     public CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(String jsonRequestBody) {
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SERVICE_CONNECTION);
 
-        AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
         CompletableFuture<SopSupportResponseDto> promise = asyncHttpClient
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
@@ -92,9 +113,7 @@ public class SoPApiClient {
                 .toCompletableFuture()
                 .thenApply(response -> {
                             if (response.getStatusCode() == 200) {
-
                                 return response.getResponseBody();
-
                             }
                             else {
                                 throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(),response.getResponseBody()));

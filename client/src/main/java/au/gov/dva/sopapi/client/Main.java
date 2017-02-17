@@ -15,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
 public class Main {
@@ -28,7 +29,7 @@ public class Main {
 
             URL serverUrl = new URL(cmd.getOptionValue("url"));
             String service = cmd.getOptionValue("service");
-            SoPApiClient client = new SoPApiClient(serverUrl);
+            SoPApiClient client = new SoPApiClient(serverUrl, Optional.empty());
             String result;
 
             List<String> missingOptions = new ArrayList<>();

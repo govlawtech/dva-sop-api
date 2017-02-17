@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
@@ -77,7 +78,7 @@ public class DvaDefinedTest {
             Boolean expectedResult = parsePassOrFail(jsonFileResourcePath);
 
             URL url = new URL(AppSettings.getBaseUrl());
-            SoPApiClient underTest = new SoPApiClient(url);
+            SoPApiClient underTest = new SoPApiClient(url, Optional.empty());
             SopSupportResponseDto result = underTest.getSatisfiedFactors(jsonString).get();
             ImmutableList<FactorWithInferredResultDto> satisfiedFactors =
                     result.getFactors().stream()
