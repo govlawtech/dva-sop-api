@@ -32,7 +32,11 @@ public class SoPApiClient {
     {
         if (soPApiProxyClientSettings.isPresent()) {
             SoPApiProxyClientSettings proxyClientSettings = soPApiProxyClientSettings.get();
-            Realm realm = new Realm.Builder(proxyClientSettings.getUserName(), proxyClientSettings.getPassword()).build();
+
+            Realm realm = new Realm.Builder(proxyClientSettings.getUserName(), proxyClientSettings.getPassword())
+                    .setScheme(Realm.AuthScheme.BASIC)
+                    .build();
+
             ProxyServer proxyServer = new ProxyServer.Builder(proxyClientSettings.getIpAddress(), proxyClientSettings.getPort())
                     .setRealm(realm)
                     .setSecuredPort(proxyClientSettings.getPort())
