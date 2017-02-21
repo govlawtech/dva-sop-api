@@ -75,7 +75,17 @@ public class SoPApiClient {
         return null;
     }
 
-    public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
+    public CompletableFuture<SoPRefDto> getFactorsForConditionName(String conditionName, IncidentType incidentType, StandardOfProof standardOfProof)
+    {
+        return getFactors(conditionName, null, null, incidentType,standardOfProof);
+    }
+
+    public CompletableFuture<SoPRefDto> getFactorsForIcdCode(String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
+    {
+        return getFactors(null, icdCodeVersion,icdCodeValue,incidentType,standardOfProof);
+    }
+
+    private CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
     {
 
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SOPFACTORS);
