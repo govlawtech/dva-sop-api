@@ -50,8 +50,14 @@ task copyWar(type: Copy, dependsOn: 'war') {
     rename { String fileName -> 'ROOT.war' }
 }
 
+task explodeWar(type: Copy, dependsOn: 'copyWar') {
+    from zipTree('deploy/webapps/ROOT.war')
+    into 'deploy/webapps/ROOT'
+}
+
+
 test {
-   exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
+    exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
 }
 
 configurations.all {
