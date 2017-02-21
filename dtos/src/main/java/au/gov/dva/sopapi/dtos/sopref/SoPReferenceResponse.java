@@ -44,4 +44,8 @@ public class SoPReferenceResponse {
             throw new DvaSopApiDtoError(e);
         }
     }
+
+    public List<SoPFactorsResponse> getSoPFactorsResponses() {
+        return _sops;
+    }
 }

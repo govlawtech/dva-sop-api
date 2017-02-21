@@ -29,6 +29,19 @@ public class SoPFactorsResponse {
     }
 
 
+    public String get_registerId() {
+        return _registerId;
+    }
 
+    public String get_citation() {
+        return _citation;
+    }
 
+    public String get_instrumentNumber() {
+        return _instrumentNumber;
+    }
+
+    public List<Factor> get_factors() {
+        return _factors;
+    }
 }
