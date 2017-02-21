@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopsupport.components;
 
-import au.gov.dva.sopapi.dtos.sopref.DefinedTermDto;
+import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.ImmutableList;
@@ -17,7 +17,7 @@ public class FactorWithInferredResultDto {
     private final String _text;
 
     @JsonProperty("definedTerms")
-    private final List<DefinedTermDto> _definedTerms;
+    private final List<DefinedTerm> _definedTerms;
 
     @JsonProperty("satisfied")
     private final Boolean _satisfied;
@@ -26,10 +26,10 @@ public class FactorWithInferredResultDto {
 
 
     @JsonCreator
-    public FactorWithInferredResultDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTermDto> definedTermDtos, @JsonProperty("satisfaction") Boolean satisfied) {
+    public FactorWithInferredResultDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms, @JsonProperty("satisfaction") Boolean satisfied) {
         _paragraph = paragraph;
         _text = text;
-        _definedTerms = definedTermDtos;
+        _definedTerms = definedTerms;
         _satisfied = satisfied;
     }
 
@@ -45,7 +45,7 @@ public class FactorWithInferredResultDto {
         return _satisfied;
     }
 
-    public ImmutableList<DefinedTermDto> getDefinedTerms() {
+    public ImmutableList<DefinedTerm> getDefinedTerms() {
         return ImmutableList.copyOf(_definedTerms);
     }
 }

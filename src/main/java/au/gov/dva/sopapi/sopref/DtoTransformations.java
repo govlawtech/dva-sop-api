@@ -3,6 +3,9 @@ package au.gov.dva.sopapi.sopref;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.*;
+import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
+import au.gov.dva.sopapi.dtos.sopref.Factor;
+import au.gov.dva.sopapi.dtos.sopref.Operation;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.OperationalServiceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceDto;
@@ -23,59 +26,59 @@ import java.util.stream.Collectors;
 
 public class DtoTransformations {
 
-    public static FactorDto fromFactor(Factor factor) {
-        return new FactorDto(factor.getParagraph(), factor.getText(),
+    public static Factor fromFactor(au.gov.dva.sopapi.interfaces.model.Factor factor) {
+        return new Factor(factor.getParagraph(), factor.getText(),
                 factor.getDefinedTerms().stream().map(t -> DtoTransformations.fromDefinedTerm(t)).collect(Collectors.toList()));
 
     }
 
-    public static DefinedTermDto fromDefinedTerm(DefinedTerm definedTerm) {
-        return new DefinedTermDto(definedTerm.getTerm(), definedTerm.getDefinition());
+    public static DefinedTerm fromDefinedTerm(au.gov.dva.sopapi.interfaces.model.DefinedTerm definedTerm) {
+        return new DefinedTerm(definedTerm.getTerm(), definedTerm.getDefinition());
     }
 
-    public static OperationDto fromOperation(Operation operation) {
-        return new OperationDto(operation.getName(),
+    public static Operation fromOperation(au.gov.dva.sopapi.interfaces.model.Operation operation) {
+        return new Operation(operation.getName(),
                 formatDate(operation.getStartDate()),
                 operation.getEndDate().isPresent() ? Optional.of(formatDate(operation.getEndDate().get())) : Optional.empty(),
                 operation.getServiceType().toString());
     }
 
-    public static SoPDto fromSop(SoP sop, StandardOfProof standardOfProof, IncidentType incidentType) {
+    public static SoPFactorsResponse fromSop(SoP sop, StandardOfProof standardOfProof, IncidentType incidentType) {
 
 
-        ImmutableList<Factor> factorsToInclude = (sop.getStandardOfProof() != standardOfProof) ? ImmutableList.of() : (incidentType == IncidentType.Aggravation) ?
+        ImmutableList<au.gov.dva.sopapi.interfaces.model.Factor> factorsToInclude = (sop.getStandardOfProof() != standardOfProof) ? ImmutableList.of() : (incidentType == IncidentType.Aggravation) ?
                 sop.getAggravationFactors() : ((incidentType == IncidentType.Onset) ?
                 sop.getOnsetFactors() : ImmutableList.of());
 
-        List<FactorDto> factorDtos = factorsToInclude.stream().map(f -> DtoTransformations.fromFactor(f)).collect(Collectors.toList());
+        List<Factor> factors = factorsToInclude.stream().map(f -> DtoTransformations.fromFactor(f)).collect(Collectors.toList());
 
         String instrumentNumber = String.format("%d/%d", sop.getInstrumentNumber().getNumber(), sop.getInstrumentNumber().getYear());
 
-        return new SoPDto(sop.getRegisterId(), sop.getCitation(), instrumentNumber, factorDtos);
+        return new SoPFactorsResponse(sop.getRegisterId(), sop.getCitation(), instrumentNumber, factors);
 
     }
 
-    public static OperationsResponseDto buildOperationsResponseDto(ServiceDeterminationPair latestServiceDeterminations) {
+    public static OperationsResponse buildOperationsResponseDto(ServiceDeterminationPair latestServiceDeterminations) {
         List<String> registerIds = latestServiceDeterminations.getBoth().stream()
                 .map(sd -> sd.getRegisterId())
                 .collect(Collectors.toList());
 
-        List<OperationDto> operationDtos = latestServiceDeterminations.getBoth().stream()
+        List<Operation> operations = latestServiceDeterminations.getBoth().stream()
                 .flatMap(sd -> sd.getOperations().stream())
                 .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
                 .map(DtoTransformations::fromOperation)
                 .collect(Collectors.toList());
 
-        return new OperationsResponseDto(registerIds, operationDtos);
+        return new OperationsResponse(registerIds, operations);
     }
 
     public static FactorWithInferredResultDto fromFactorWithSatisfaction(FactorWithSatisfaction factorWithSatisfaction) {
 
-        FactorDto factorDto = fromFactor(factorWithSatisfaction.getFactor());
+        Factor factor = fromFactor(factorWithSatisfaction.getFactor());
         return new FactorWithInferredResultDto(
-                factorDto.get_paragraph(),
-                factorDto.get_text(),
-                factorDto.get_definedTerms(),
+                factor.get_paragraph(),
+                factor.get_text(),
+                factor.get_definedTerms(),
                 factorWithSatisfaction.isSatisfied()
         );
     }

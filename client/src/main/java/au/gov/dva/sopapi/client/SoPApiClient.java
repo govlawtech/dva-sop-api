@@ -4,8 +4,8 @@ import au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
-import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
+import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
+import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import org.asynchttpclient.*;
 import org.asynchttpclient.proxy.ProxyServer;
@@ -75,17 +75,17 @@ public class SoPApiClient {
         return null;
     }
 
-    public CompletableFuture<SoPRefDto> getFactorsForConditionName(String conditionName, IncidentType incidentType, StandardOfProof standardOfProof)
+    public CompletableFuture<SoPReferenceResponse> getFactorsForConditionName(String conditionName, IncidentType incidentType, StandardOfProof standardOfProof)
     {
         return getFactors(conditionName, null, null, incidentType,standardOfProof);
     }
 
-    public CompletableFuture<SoPRefDto> getFactorsForIcdCode(String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
+    public CompletableFuture<SoPReferenceResponse> getFactorsForIcdCode(String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
     {
         return getFactors(null, icdCodeVersion,icdCodeValue,incidentType,standardOfProof);
     }
 
-    private CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
+    private CompletableFuture<SoPReferenceResponse> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
     {
 
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SOPFACTORS);
@@ -96,7 +96,7 @@ public class SoPApiClient {
         params.add(new Param(QueryParamLabels.INCIDENT_TYPE, incidentType.toString()));
         params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof.toString()));
 
-        CompletableFuture<SoPRefDto> promise = getOrCreateAsyncHttpClient()
+        CompletableFuture<SoPReferenceResponse> promise = getOrCreateAsyncHttpClient()
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
                 .setHeader("Content-Type","application/json; charset=utf-8")
@@ -104,22 +104,22 @@ public class SoPApiClient {
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> response.getResponseBody())
-                .thenApply(json -> SoPRefDto.fromJsonString(json.toString()));
+                .thenApply(json -> SoPReferenceResponse.fromJsonString(json.toString()));
 
         return promise;
     }
 
-    public CompletableFuture<OperationsResponseDto> getOperations()
+    public CompletableFuture<OperationsResponse> getOperations()
     {
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_OPERATIONS);
-        CompletableFuture<OperationsResponseDto> promise = getOrCreateAsyncHttpClient()
+        CompletableFuture<OperationsResponse> promise = getOrCreateAsyncHttpClient()
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
                 .setHeader("Content-Type","application/json; charset=utf-8")
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> response.getResponseBody())
-                .thenApply(json -> OperationsResponseDto.fromJsonString(json.toString()));
+                .thenApply(json -> OperationsResponse.fromJsonString(json.toString()));
 
         return promise;
     }

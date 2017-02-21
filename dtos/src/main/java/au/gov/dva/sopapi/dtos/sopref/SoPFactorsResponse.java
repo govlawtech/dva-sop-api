@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class SoPDto {
+public class SoPFactorsResponse {
 
 
     @JsonProperty("registerId")
@@ -18,10 +18,10 @@ public class SoPDto {
     private final String _instrumentNumber;
 
     @JsonProperty("factors")
-    private final List<FactorDto> _factors;
+    private final List<Factor> _factors;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public SoPDto(@JsonProperty("registerId") String registerId, @JsonProperty("citation") String citation, @JsonProperty("instrumentNumber") String instrumentNumber, @JsonProperty("factors") List<FactorDto> factors) {
+    public SoPFactorsResponse(@JsonProperty("registerId") String registerId, @JsonProperty("citation") String citation, @JsonProperty("instrumentNumber") String instrumentNumber, @JsonProperty("factors") List<Factor> factors) {
         _registerId = registerId;
         _citation = citation;
         _instrumentNumber = instrumentNumber;

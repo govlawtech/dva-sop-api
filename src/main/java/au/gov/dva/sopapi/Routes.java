@@ -4,7 +4,7 @@ import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
+import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
@@ -66,10 +66,10 @@ class Routes {
 
             ServiceDeterminationPair latestServiceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
 
-            OperationsResponseDto operationsResponseDto = DtoTransformations.buildOperationsResponseDto(latestServiceDeterminationPair);
+            OperationsResponse operationsResponse = DtoTransformations.buildOperationsResponseDto(latestServiceDeterminationPair);
 
             setResponseHeaders(res, true, 200);
-            String json = OperationsResponseDto.toJsonString(operationsResponseDto);
+            String json = OperationsResponse.toJsonString(operationsResponse);
             return json;
         });
 

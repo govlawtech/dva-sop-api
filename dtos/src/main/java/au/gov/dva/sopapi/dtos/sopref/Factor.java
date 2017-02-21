@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class FactorDto {
+public class Factor {
 
     @JsonProperty("paragraph")
     private final String _paragraph;
@@ -14,14 +14,14 @@ public class FactorDto {
     private final String _text;
 
     @JsonProperty("definedTerms")
-    private final List<DefinedTermDto> _definedTerms;
+    private final List<DefinedTerm> _definedTerms;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public FactorDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTermDto> definedTermDtos) {
+    public Factor(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms) {
 
         _paragraph = paragraph;
         _text = text;
-        _definedTerms = definedTermDtos;
+        _definedTerms = definedTerms;
     }
 
 
@@ -33,7 +33,7 @@ public class FactorDto {
         return _text;
     }
 
-    public List<DefinedTermDto> get_definedTerms() {
+    public List<DefinedTerm> get_definedTerms() {
         return _definedTerms;
     }
 }

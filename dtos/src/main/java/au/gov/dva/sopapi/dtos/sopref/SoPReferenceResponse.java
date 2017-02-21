@@ -9,23 +9,23 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import java.io.IOException;
 import java.util.List;
 
-public class SoPRefDto {
+public class SoPReferenceResponse {
 
     @JsonProperty("applicableFactors")
-    private final List<SoPDto> _sops;
+    private final List<SoPFactorsResponse> _sops;
 
-    public SoPRefDto(@JsonProperty("applicableFactors") List<SoPDto> soPDtos)
+    public SoPReferenceResponse(@JsonProperty("applicableFactors") List<SoPFactorsResponse> soPFactorsResponses)
     {
-        _sops = soPDtos;
+        _sops = soPFactorsResponses;
     }
 
-    public static String toJsonString(SoPRefDto soPRefDto)
+    public static String toJsonString(SoPReferenceResponse soPReferenceResponse)
     {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
         String jsonString = null;
 
         try {
-            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(soPRefDto);
+            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(soPReferenceResponse);
         } catch (JsonProcessingException e) {
             throw new DvaSopApiDtoError(e);
         }
@@ -33,13 +33,13 @@ public class SoPRefDto {
         return jsonString;
     }
 
-    public static SoPRefDto fromJsonString(String json)
+    public static SoPReferenceResponse fromJsonString(String json)
     {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
 
         try {
-            SoPRefDto soPRefDto = objectMapper.readValue(json, SoPRefDto.class);
-            return soPRefDto;
+            SoPReferenceResponse soPReferenceResponse = objectMapper.readValue(json, SoPReferenceResponse.class);
+            return soPReferenceResponse;
         } catch (IOException e) {
             throw new DvaSopApiDtoError(e);
         }
