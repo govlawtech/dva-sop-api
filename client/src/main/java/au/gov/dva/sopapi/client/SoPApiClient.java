@@ -109,7 +109,7 @@ public class SoPApiClient {
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SERVICE_CONNECTION);
 
         CompletableFuture<SopSupportResponseDto> promise = asyncHttpClient
-                .prepareGet(serviceUrl.toString())
+                .preparePost(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
                 .setHeader("Content-Type","application/json; charset=utf-8")
                 .setBody(jsonRequestBody)

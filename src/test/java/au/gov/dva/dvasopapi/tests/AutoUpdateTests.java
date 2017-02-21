@@ -91,54 +91,6 @@ public class AutoUpdateTests {
         Assert.assertTrue(result.contentEquals("F2014C383817"));
     }
 
-    @Test
-    @Category(IntegrationTest.class)
-    public void testBulkRedirectTargetGet() {
-        ImmutableSet<String> testSourceIds = ImmutableSet.of(
-                "F2014L01390", // Statement of Principles concerning anxiety disorder No. 103 of 2014,  already amended with compilation
-                "F2014L01389", // Statement of Principles concerning anxiety disorder No. 102 of 2014,  already amended with compilation
-                "F2010L00557"  // Statement of Principles concerning osteoarthritis No. 13 of 2010, already amended with compilation
-        );
-
-        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
-        ImmutableSet<InstrumentChange> newCompilations = underTest.detectNewCompilations(testSourceIds);
-
-        for (InstrumentChange s : newCompilations)
-        {
-            System.out.println(s);
-        }
-
-        Assert.assertTrue(newCompilations.size() == 3);
-    }
-
-    @Test
-    @Category(IntegrationTest.class)
-    public void testGetRepealingRegisterId() {
-        ImmutableSet<String> testSourceIds = ImmutableSet.of(
-                "F2008L03179"
-        );
-        String expectedIdOfRepealingInstrument = "F2017L00016";
-
-        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
-        ImmutableSet<InstrumentChange> results  = underTest.detectReplacements(testSourceIds);
-        results.stream().forEach(r -> System.out.println(r));
-        Replacement result = (Replacement)results.asList().get(0);
-        Assert.assertTrue(result.getSourceInstrumentId().contentEquals(testSourceIds.asList().get(0)));
-        Assert.assertTrue(result.getTargetInstrumentId().contentEquals(expectedIdOfRepealingInstrument));
-    }
-
-    @Test
-    @Category(IntegrationTest.class)
-    // This test is obviously going to start failing if the instrument is actually repealed.
-    public void testGetRepealingIdWhenNoneExists()
-    {
-        ImmutableSet<String> testSourceIds = ImmutableSet.of(
-                "F2014L00930"
-        );
-        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
-        ImmutableSet<InstrumentChange> results = underTest.detectReplacements(testSourceIds);
-        Assert.assertTrue(results.isEmpty());
-    }
 
 
     private class TestEmailUpdate implements LegislationRegisterEmailUpdate

@@ -1,4 +1,4 @@
-package au.gov.dva.dvasopapi.tests;
+package au.gov.dva.dvasopapi.tests.localonly;
 
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;

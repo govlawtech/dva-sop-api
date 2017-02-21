@@ -61,7 +61,6 @@ public class DvaDefinedTest {
         List<TestCaseResult> results = testFiles.stream().map(f -> runTestCase(f))
                 .collect(Collectors.toList());
 
-
         for (TestCaseResult result : results)
         {
             System.out.println(result);

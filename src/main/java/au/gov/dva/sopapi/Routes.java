@@ -42,6 +42,7 @@ import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
+import static spark.Spark.post;
 
 class Routes {
 
@@ -110,7 +111,7 @@ class Routes {
             }
         });
 
-        get(SharedConstants.Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
+        post(SharedConstants.Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req)) {
                 setResponseHeaders(res, false, 406);
                 return buildAcceptableContentTypesError();
@@ -154,7 +155,7 @@ class Routes {
         List<String> errors = new ArrayList<>();
 
         if (conditionname == null) {
-            String missingICDCodeError = "Need ICD code (query parameter '" + QueryParamLabels.ICD_CODE_VALUE + "') and ICD code version (query paramater '" + QueryParamLabels.ICD_CODE_VERSION + "') if condition name (query parameter '" + QueryParamLabels.CONDITION_NAME + "') is not provided.";
+            String missingICDCodeError = "Need ICD code (query parameter '" + QueryParamLabels.ICD_CODE_VALUE + "') and ICD code version (query parameter '" + QueryParamLabels.ICD_CODE_VERSION + "') if condition name (query parameter '" + QueryParamLabels.CONDITION_NAME + "') is not provided.";
             if (icdCodeValue == null)
                 errors.add(buildQueryParamErrorMessage(QueryParamLabels.ICD_CODE_VALUE, missingICDCodeError));
 

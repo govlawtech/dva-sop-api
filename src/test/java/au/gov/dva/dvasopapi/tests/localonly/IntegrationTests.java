@@ -1,6 +1,8 @@
 package au.gov.dva.dvasopapi.tests.localonly;
 
 import au.gov.dva.dvasopapi.tests.TestUtils;
+import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
+import au.gov.dva.dvasopapi.tests.categories.IntegrationTestImpl;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.interfaces.InstrumentChangeFactory;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
@@ -12,11 +14,13 @@ import au.gov.dva.sopapi.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopref.data.updates.AutoUpdate;
+import au.gov.dva.sopapi.sopref.data.updates.LegRegChangeDetector;
 import au.gov.dva.sopapi.sopref.data.updates.LegislationRegisterEmailClientImpl;
 import au.gov.dva.sopapi.sopref.data.updates.SoPLoaderImpl;
 import au.gov.dva.sopapi.sopref.data.updates.changefactories.EmailSubscriptionInstrumentChangeFactory;
 import au.gov.dva.sopapi.sopref.data.updates.changefactories.LegislationRegisterSiteChangeFactory;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
+import au.gov.dva.sopapi.sopref.data.updates.types.Replacement;
 import au.gov.dva.sopapi.sopref.parsing.factories.ServiceLocator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.common.collect.ImmutableSet;
@@ -37,7 +41,7 @@ import java.util.stream.Collectors;
 
 // You need to use the JUnit runner to run these - they are excluded from the Gradle runner
 // as they require local configuration.
-public class IntegrationTests {
+public class IntegrationTests  {
 
     @Test
     @Category(IntegrationTests.class)
@@ -125,6 +129,55 @@ public class IntegrationTests {
 
 
     }
+    @Test
+    @Category(IntegrationTest.class)
+    public void testBulkRedirectTargetGet() {
+        ImmutableSet<String> testSourceIds = ImmutableSet.of(
+                "F2014L01390", // Statement of Principles concerning anxiety disorder No. 103 of 2014,  already amended with compilation
+                "F2014L01389", // Statement of Principles concerning anxiety disorder No. 102 of 2014,  already amended with compilation
+                "F2010L00557"  // Statement of Principles concerning osteoarthritis No. 13 of 2010, already amended with compilation
+        );
+
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
+        ImmutableSet<InstrumentChange> newCompilations = underTest.detectNewCompilations(testSourceIds);
+
+        for (InstrumentChange s : newCompilations)
+        {
+            System.out.println(s);
+        }
+
+        Assert.assertTrue(newCompilations.size() == 3);
+    }
+
+    @Test
+    @Category(IntegrationTest.class)
+    public void testGetRepealingRegisterId() {
+        ImmutableSet<String> testSourceIds = ImmutableSet.of(
+                "F2008L03179"
+        );
+        String expectedIdOfRepealingInstrument = "F2017L00016";
+
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
+        ImmutableSet<InstrumentChange> results  = underTest.detectReplacements(testSourceIds);
+        results.stream().forEach(r -> System.out.println(r));
+        Replacement result = (Replacement)results.asList().get(0);
+        Assert.assertTrue(result.getSourceInstrumentId().contentEquals(testSourceIds.asList().get(0)));
+        Assert.assertTrue(result.getTargetInstrumentId().contentEquals(expectedIdOfRepealingInstrument));
+    }
+
+    @Test
+    @Category(IntegrationTest.class)
+    // This test is obviously going to start failing if the instrument is actually repealed.
+    public void testGetRepealingIdWhenNoneExists()
+    {
+        ImmutableSet<String> testSourceIds = ImmutableSet.of(
+                "F2014L00930"
+        );
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
+        ImmutableSet<InstrumentChange> results = underTest.detectReplacements(testSourceIds);
+        Assert.assertTrue(results.isEmpty());
+    }
+
 
 
 }

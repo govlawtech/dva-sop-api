@@ -1,6 +1,7 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
+import au.gov.dva.dvasopapi.tests.categories.IntegrationTestImpl;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
@@ -15,7 +16,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
-public class LegislationRegisterTests {
+public class LegislationRegisterTests extends IntegrationTestImpl {
 
     @Test
     public void extractAuthorizedDownloadLinkFromHtml() throws IOException {
