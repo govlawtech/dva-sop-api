@@ -1,7 +1,9 @@
 package au.gov.dva.sopapi.client;
 
 import au.gov.dva.sopapi.SharedConstants;
+import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponseDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPRefDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
@@ -19,13 +21,20 @@ import java.util.concurrent.CompletableFuture;
 public class SoPApiClient {
 
     private final URL baseUrl;
-    private final AsyncHttpClient asyncHttpClient;
-
-
+    private Optional<SoPApiProxyClientSettings> proxyConfig;
+    private static volatile AsyncHttpClient asyncHttpClient;
     public SoPApiClient(URL baseUrl, Optional<SoPApiProxyClientSettings> proxyConfig)
     {
         this.baseUrl = baseUrl;
-        asyncHttpClient = buildAsyncHttpClient(proxyConfig);
+        this.proxyConfig = proxyConfig;
+    }
+
+    private AsyncHttpClient getOrCreateAsyncHttpClient(){
+        if (asyncHttpClient == null)
+        {
+            asyncHttpClient = buildAsyncHttpClient(proxyConfig);
+        }
+        return asyncHttpClient;
     }
 
     private AsyncHttpClient buildAsyncHttpClient(Optional<SoPApiProxyClientSettings> soPApiProxyClientSettings)
@@ -66,7 +75,7 @@ public class SoPApiClient {
         return null;
     }
 
-    public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, String incidentType, String standardOfProof)
+    public CompletableFuture<SoPRefDto> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
     {
 
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SOPFACTORS);
@@ -74,10 +83,10 @@ public class SoPApiClient {
         params.add(new Param(QueryParamLabels.CONDITION_NAME, conditionName));
         params.add(new Param(QueryParamLabels.ICD_CODE_VALUE, icdCodeValue));
         params.add(new Param(QueryParamLabels.ICD_CODE_VERSION, icdCodeVersion));
-        params.add(new Param(QueryParamLabels.INCIDENT_TYPE, incidentType));
-        params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof));
+        params.add(new Param(QueryParamLabels.INCIDENT_TYPE, incidentType.toString()));
+        params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof.toString()));
 
-        CompletableFuture<SoPRefDto> promise = asyncHttpClient
+        CompletableFuture<SoPRefDto> promise = getOrCreateAsyncHttpClient()
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
                 .setHeader("Content-Type","application/json; charset=utf-8")
@@ -93,7 +102,7 @@ public class SoPApiClient {
     public CompletableFuture<OperationsResponseDto> getOperations()
     {
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_OPERATIONS);
-        CompletableFuture<OperationsResponseDto> promise = asyncHttpClient
+        CompletableFuture<OperationsResponseDto> promise = getOrCreateAsyncHttpClient()
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
                 .setHeader("Content-Type","application/json; charset=utf-8")
@@ -108,7 +117,7 @@ public class SoPApiClient {
     public CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(String jsonRequestBody) {
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SERVICE_CONNECTION);
 
-        CompletableFuture<SopSupportResponseDto> promise = asyncHttpClient
+        CompletableFuture<SopSupportResponseDto> promise = getOrCreateAsyncHttpClient()
                 .preparePost(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
                 .setHeader("Content-Type","application/json; charset=utf-8")
@@ -134,5 +143,4 @@ public class SoPApiClient {
     {
         return String.format("HTTP Status Code: %d, %s.", statusCode, msg);
     }
-
 }
