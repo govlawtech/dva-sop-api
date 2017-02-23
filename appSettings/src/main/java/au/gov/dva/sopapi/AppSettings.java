@@ -40,7 +40,7 @@ public class AppSettings {
             case "devtestlocal" : return devtestlocal;
             case "devtest" : return devtest;
             case "prod" : return prod;
-            default: throw new ConfigurationError(String.format("Value for environment variable %smust be 'devtest','devtestlocal' or 'prod'", environmentStringValue));
+            default: throw new ConfigurationError(String.format("Value for environment variable %s must be 'devtest','devtestlocal' or 'prod'.  Current value: '%s'.", envVarName, environmentStringValue));
         }
     }
 
