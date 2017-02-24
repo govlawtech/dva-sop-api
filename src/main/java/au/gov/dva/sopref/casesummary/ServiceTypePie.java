@@ -83,11 +83,4 @@ public class ServiceTypePie {
 
         return ImmutableList.of(imageBytes);
     }
-
-    private static Date convertOdtToActDate(OffsetDateTime offsetDateTime) {
-        // return Date at midnight AM in ACT
-        LocalDate actLocalDate = DateTimeUtils.odtToActLocalDate(offsetDateTime);
-        return Date.from(actLocalDate.atStartOfDay().atZone(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)).toInstant());
-    }
-
 }
