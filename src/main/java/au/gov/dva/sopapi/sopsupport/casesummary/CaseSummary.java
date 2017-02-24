@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.sopsupport.casesummary;
 import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
-import au.gov.dva.sopref.casesummary.Timeline;
+import au.gov.dva.sopref.casesummary.*;
 import com.google.common.collect.ImmutableList;
 import org.apache.commons.lang.WordUtils;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
@@ -22,8 +22,7 @@ import java.io.InputStream;
 import java.math.BigInteger;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -197,12 +196,12 @@ public class CaseSummary {
 
         serviceHistorySection.add(serviceHistoryData);
 
-        serviceHistorySection.add(createTimeline(serviceHistory));
+        serviceHistorySection.addAll(createServiceImages(serviceHistory));
 
         return serviceHistorySection;
     }
 
-    private static CaseSummaryImage createTimeline(ServiceHistory serviceHistory) {
+    private static Collection<CaseSummaryImage> createServiceImages(ServiceHistory serviceHistory) {
         Predicate<String> isOperational = s -> {
             if (s.contains("Peace is Our Profession"))
                 return false;
@@ -210,15 +209,19 @@ public class CaseSummary {
         };
 
         try {
-            ImmutableList<byte[]> images = Timeline.createTimelineImages(serviceHistory.getServices().asList().get(0), isOperational);
+            ImmutableList<byte[]> timelineImages = Timeline.createTimelineImages(serviceHistory.getServices().asList().get(0), isOperational);
+            CaseSummaryImage timelineImage = new CaseSummaryImage(timelineImages, 400, 1000);
 
-            CaseSummaryImage image = new CaseSummaryImage(images);
-            return image;
+            ImmutableList<byte[]> pieImages = ServiceTypePie.createPieImages(serviceHistory.getServices().asList().get(0), isOperational);
+            CaseSummaryImage pieImage = new CaseSummaryImage(pieImages, 600, 500);
+
+            return Arrays.asList(timelineImage, pieImage);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 
-        return null;
+        return Collections.emptyList();
+
     }
 
     private static CaseSummarySection createSopSection() {
