@@ -11,4 +11,5 @@ include 'appSettings'
 include 'dtos'
 include 'client'
 include 'system-tests'
+include 'perf-test'
 
