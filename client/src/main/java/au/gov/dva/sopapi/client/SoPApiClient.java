@@ -7,6 +7,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
+import com.google.common.base.Charsets;
 import org.asynchttpclient.*;
 import org.asynchttpclient.proxy.ProxyServer;
 
@@ -94,7 +95,7 @@ public class SoPApiClient {
         params.add(new Param(QueryParamLabels.ICD_CODE_VALUE, icdCodeValue));
         params.add(new Param(QueryParamLabels.ICD_CODE_VERSION, icdCodeVersion));
         params.add(new Param(QueryParamLabels.INCIDENT_TYPE, incidentType.toString()));
-        params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof.toString()));
+        params.add(new Param(QueryParamLabels.STANDARD_OF_PROOF, standardOfProof.toAbbreviatedString()));
 
         CompletableFuture<SoPReferenceResponse> promise = getOrCreateAsyncHttpClient()
                 .prepareGet(serviceUrl.toString())
@@ -103,8 +104,13 @@ public class SoPApiClient {
                 .addQueryParams(params)
                 .execute()
                 .toCompletableFuture()
-                .thenApply(response -> response.getResponseBody())
-                .thenApply(json -> SoPReferenceResponse.fromJsonString(json.toString()));
+                .thenApply(response -> {
+                    if (response.getStatusCode() == 200) {
+                        return SoPReferenceResponse.fromJsonString(response.getResponseBody());
+                    } else {
+                        throw new SoPApiClientError(response.getResponseBody(Charsets.UTF_8));
+                    }
+                });
 
         return promise;
     }
@@ -118,8 +124,11 @@ public class SoPApiClient {
                 .setHeader("Content-Type","application/json; charset=utf-8")
                 .execute()
                 .toCompletableFuture()
-                .thenApply(response -> response.getResponseBody())
-                .thenApply(json -> OperationsResponse.fromJsonString(json.toString()));
+                .thenApply(response -> {
+                    if (response.getStatusCode() == 200)
+                        return OperationsResponse.fromJsonString(response.getResponseBody(Charsets.UTF_8));
+                    else throw new SoPApiClientError(response.getResponseBody(Charsets.UTF_8));
+                });
 
         return promise;
     }

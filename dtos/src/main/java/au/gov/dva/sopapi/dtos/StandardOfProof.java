@@ -23,6 +23,15 @@ public enum StandardOfProof {
         throw new IllegalArgumentException(String.format("Cannot convert this text to Standard of Proof: %s", abbreviatedText));
     }
 
+    public String toAbbreviatedString()
+    {
+        switch (this)
+        {
+            case BalanceOfProbabilities: return "BoP";
+            case ReasonableHypothesis: return "RH";
+            default: throw new IllegalArgumentException(String.format("Cannot create abbreviated string for enum %s.", this));
+        }
+    }
 
     @Override
     public String toString() {

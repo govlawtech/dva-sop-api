@@ -1,0 +1,136 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2017-02-24T00:06:52.064Z",
+	"__export_source": "insomnia.desktop.app:v4.2.14",
+	"resources": [
+		{
+			"_id": "wrk_3db908866a29462f9497e0b4bcdfdded",
+			"parentId": null,
+			"modified": 1487823497035,
+			"created": 1487823497035,
+			"name": "Insomnia",
+			"description": "",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_a7ae222b77f8473e88e2677f2cdc90c9",
+			"parentId": "wrk_3db908866a29462f9497e0b4bcdfdded",
+			"modified": 1487823502411,
+			"created": 1487823502411,
+			"name": "Base Environment",
+			"data": {},
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_87375350e47642f3947dccc4f0c425ad",
+			"parentId": "wrk_3db908866a29462f9497e0b4bcdfdded",
+			"modified": 1487848625142,
+			"created": 1487823558157,
+			"name": "Default Jar",
+			"cookies": [
+				{
+					"creation": "2017-02-23T04:19:19.424Z",
+					"key": "JSESSIONID",
+					"value": "ht1iv5sbtatgdwedpmvleu52",
+					"path": "/",
+					"hostOnly": true,
+					"domain": "localhost",
+					"lastAccessed": "2017-02-23T11:17:05.137Z"
+				}
+			],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_57b35c298ee943819def0d98f376d474",
+			"parentId": "wrk_3db908866a29462f9497e0b4bcdfdded",
+			"modified": 1487825070934,
+			"created": 1487823531726,
+			"url": "http://localhost:3030/service/testsopapi",
+			"name": "sopapi test on local MyService",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487823531726,
+			"_type": "request"
+		},
+		{
+			"_id": "req_c4a58655747b40f481e4ac055971aa17",
+			"parentId": "wrk_3db908866a29462f9497e0b4bcdfdded",
+			"modified": 1487848633441,
+			"created": 1487825224083,
+			"url": "http://localhost:3030/service/reference.factors",
+			"name": "test FactorsAPI",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"hasSingleIncident\" : true,\n\t\"medicalCondition\": \"lumbar spondylosis\",\n\t\"overseas\": true\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487825224083,
+			"_type": "request"
+		},
+		{
+			"_id": "req_422df9afa0924f14ae267bd330ef8420",
+			"parentId": "wrk_3db908866a29462f9497e0b4bcdfdded",
+			"modified": 1487894696283,
+			"created": 1487894635023,
+			"url": "https://dvasopapi-staging.azurewebsites.net/getOperations",
+			"name": "sop api staging test",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Accept",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487894635023,
+			"_type": "request"
+		},
+		{
+			"_id": "req_239bf35e81604e0b8b9af0cd347ec450",
+			"parentId": "wrk_3db908866a29462f9497e0b4bcdfdded",
+			"modified": 1487894774329,
+			"created": 1487894730054,
+			"url": "https://dvasopapi-staging.azurewebsites.net/getSopFactors?conditionName=lumbar%20spondylosis&standardOfProof=RH&incidentType=onset",
+			"name": "sop api staging test factors",
+			"method": "GET",
+			"body": {
+				"text": ""
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Accept",
+					"value": "application/json"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1487894635022,
+			"_type": "request"
+		}
+	]
+}
