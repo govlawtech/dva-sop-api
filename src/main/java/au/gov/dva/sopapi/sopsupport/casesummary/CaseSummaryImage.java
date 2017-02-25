@@ -14,9 +14,12 @@ import java.io.IOException;
 public class CaseSummaryImage extends CaseSummaryComponent {
 
     private byte[] pngImageData;
+    private int widthInPixels, heightInPixels;
 
-    public CaseSummaryImage(ImmutableList<byte[]> pngImageDataList) {
+    public CaseSummaryImage(ImmutableList<byte[]> pngImageDataList, int widthInPixels, int heightInPixels) {
         this.pngImageData = pngImageDataList.get(0);
+        this.widthInPixels = widthInPixels;
+        this.heightInPixels = heightInPixels;
     }
 
     @Override
@@ -28,7 +31,7 @@ public class CaseSummaryImage extends CaseSummaryComponent {
         XWPFRun run = para.createRun();
 
         try {
-            run.addPicture(new ByteArrayInputStream(pngImageData), Document.PICTURE_TYPE_PNG, "timeline.png", Units.pixelToEMU(400), Units.pixelToEMU(1000));
+            run.addPicture(new ByteArrayInputStream(pngImageData), Document.PICTURE_TYPE_PNG, "timeline.png", Units.pixelToEMU(widthInPixels), Units.pixelToEMU(heightInPixels));
         } catch (InvalidFormatException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
