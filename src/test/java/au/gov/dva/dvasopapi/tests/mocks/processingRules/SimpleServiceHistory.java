@@ -16,6 +16,10 @@ import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
 
 public class SimpleServiceHistory {
 
+    // 31 days of peacetime service
+    // 122 days of operation service
+
+
     public static ServiceHistory get()
     {
         OffsetDateTime startDate = actOdtOf(2004,7,1);

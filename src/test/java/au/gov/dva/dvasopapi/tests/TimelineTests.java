@@ -2,7 +2,7 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.ExtensiveServiceHistoryMock;
 import au.gov.dva.sopapi.interfaces.model.Service;
-import au.gov.dva.sopref.casesummary.Timeline;
+import au.gov.dva.sopapi.sopsupport.casesummary.Timeline;
 import com.google.common.collect.ImmutableList;
 import org.junit.Assert;
 import org.junit.Test;

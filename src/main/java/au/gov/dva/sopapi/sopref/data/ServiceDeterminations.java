@@ -85,7 +85,7 @@ public class ServiceDeterminations {
                 }
                 else {
                     LocalDate localDate = LocalDate.parse(commencementText.trim(),DateTimeFormatter.ofPattern("d MMMM yyyy"));
-                    return Optional.of(DateTimeUtils.localDateToMidnightACTDate(localDate));
+                    return Optional.of(DateTimeUtils.localDateToLastMidnightCanberraTime(localDate));
                 }
 
             }
@@ -181,8 +181,8 @@ public class ServiceDeterminations {
                             }
                             else {
                                 LocalDate opStartDate = datesFound.get(0);
-                                Optional<OffsetDateTime> opEndDate = datesFound.size() > 1 ? Optional.of(DateTimeUtils.localDateToMidnightACTDate(datesFound.get(1))) : Optional.empty();
-                                Operation operation = new StoredOperation(opName, DateTimeUtils.localDateToMidnightACTDate(opStartDate), opEndDate, opServiceType);
+                                Optional<OffsetDateTime> opEndDate = datesFound.size() > 1 ? Optional.of(DateTimeUtils.localDateToLastMidnightCanberraTime(datesFound.get(1))) : Optional.empty();
+                                Operation operation = new StoredOperation(opName, DateTimeUtils.localDateToLastMidnightCanberraTime(opStartDate), opEndDate, opServiceType);
                                 operations.add(operation);
                             }
 

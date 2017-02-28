@@ -285,7 +285,7 @@ public class ExtractOperationsFromServiceDetermination {
         URL inputDocx = Resources.getResource("F2016L00994.docx");
         byte[] docXBytes = Resources.toByteArray(inputDocx);
         OffsetDateTime commencementDate = ServiceDeterminations.extractCommencementDateFromDocx(docXBytes).get();
-        Assert.assertTrue(commencementDate.isEqual(DateTimeUtils.localDateToMidnightACTDate(LocalDate.of(2016,6,7))));
+        Assert.assertTrue(commencementDate.isEqual(DateTimeUtils.localDateToLastMidnightCanberraTime(LocalDate.of(2016,6,7))));
     }
 
 }

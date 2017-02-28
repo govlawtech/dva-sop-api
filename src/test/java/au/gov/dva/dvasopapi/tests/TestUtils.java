@@ -33,7 +33,7 @@ public class TestUtils {
     }
 
     public static OffsetDateTime actOdtOf(int year, int month, int day) {
-        return DateTimeUtils.localDateToMidnightACTDate(LocalDate.of(year,month,day));
+        return DateTimeUtils.localDateToLastMidnightCanberraTime(LocalDate.of(year,month,day));
     }
 
     public static List<Operation> getAllDeclaredOperations() throws IOException {

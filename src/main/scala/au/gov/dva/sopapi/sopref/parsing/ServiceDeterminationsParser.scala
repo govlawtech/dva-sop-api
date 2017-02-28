@@ -29,7 +29,7 @@ object ServiceDeterminationsParser {
       val year = m.get.group(3).toInt
       val month = m.get.group(2).toInt
       val day = m.get.group(1).toInt
-      Some( DateTimeUtils.localDateToMidnightACTDate(LocalDate.of(year,month,day)))
+      Some( DateTimeUtils.localDateToLastMidnightCanberraTime(LocalDate.of(year,month,day)))
     }
   }
 

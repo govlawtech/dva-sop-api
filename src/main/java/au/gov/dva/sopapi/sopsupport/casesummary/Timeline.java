@@ -1,4 +1,4 @@
-package au.gov.dva.sopref.casesummary;
+package au.gov.dva.sopapi.sopsupport.casesummary;
 
 
 import au.gov.dva.sopapi.DateTimeUtils;

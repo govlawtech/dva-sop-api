@@ -73,7 +73,7 @@ public class StoredOperation implements Operation {
                 DateTimeUtils.localDateStringToActMidnightOdt(jsonNode.findValue(Labels.START_DATE).asText()),
 
                         jsonNode.has(Labels.END_DATE) ? Optional.of(
-                        DateTimeUtils.localDateActTimeToNextDayMidnightAm(jsonNode.findValue(Labels.END_DATE).asText())) : Optional.empty(),
+                        DateTimeUtils.localDateToNextMidnightCanberraTime(jsonNode.findValue(Labels.END_DATE).asText())) : Optional.empty(),
                 ServiceType.fromText(jsonNode.findValue(Labels.TYPE).asText())
         );
     }

@@ -2,7 +2,6 @@ package au.gov.dva.dvasopapi.tests.localonly;
 
 import au.gov.dva.dvasopapi.tests.TestUtils;
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
-import au.gov.dva.dvasopapi.tests.categories.IntegrationTestImpl;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.interfaces.InstrumentChangeFactory;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
@@ -67,7 +66,7 @@ public class IntegrationTests  {
         String registerId = "F2014L00933";
 
 
-        NewInstrument newInstrument = new NewInstrument("F2014L00933", DateTimeUtils.localDateToMidnightACTDate(LocalDate.of(2017,1,1)));
+        NewInstrument newInstrument = new NewInstrument("F2014L00933", DateTimeUtils.localDateToLastMidnightCanberraTime(LocalDate.of(2017,1,1)));
         localRepository.addInstrumentChanges(ImmutableSet.of(newInstrument));
         // end setup
 

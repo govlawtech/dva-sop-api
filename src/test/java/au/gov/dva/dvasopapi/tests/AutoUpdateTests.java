@@ -1,6 +1,5 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.interfaces.InstrumentChangeFactory;
 import au.gov.dva.sopapi.interfaces.LegislationRegisterEmailClient;
@@ -9,10 +8,8 @@ import au.gov.dva.sopapi.interfaces.model.InstrumentChangeBase;
 import au.gov.dva.sopapi.interfaces.model.LegislationRegisterEmailUpdate;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.JsonUtils;
-import au.gov.dva.sopapi.sopref.data.updates.LegRegChangeDetector;
 import au.gov.dva.sopapi.sopref.data.updates.changefactories.EmailSubscriptionInstrumentChangeFactory;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
-import au.gov.dva.sopapi.sopref.data.updates.types.Replacement;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,7 +21,6 @@ import com.google.common.io.Resources;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -45,7 +41,7 @@ public class AutoUpdateTests {
 
     @Test
     public void serializeNewInstrument() throws JsonProcessingException {
-        InstrumentChange test = new NewInstrument("F2014L83848", DateTimeUtils.localDateToMidnightACTDate(LocalDate.of(2015,1,1)));
+        InstrumentChange test = new NewInstrument("F2014L83848", DateTimeUtils.localDateToLastMidnightCanberraTime(LocalDate.of(2015,1,1)));
         JsonNode node = test.toJson();
         System.out.print(TestUtils.prettyPrint(node));
         Assert.assertTrue(node != null);
@@ -71,7 +67,7 @@ public class AutoUpdateTests {
         ImmutableList<String> rh = copyOf(rhList);
         ImmutableList<String> bop = copyOf(bopList);
         ImmutableList<String> both =  new ImmutableList.Builder<String>().addAll(rh).addAll(bop).build();
-        OffsetDateTime creationDate = DateTimeUtils.localDateToMidnightACTDate(LocalDate.of(2017,1,6));
+        OffsetDateTime creationDate = DateTimeUtils.localDateToLastMidnightCanberraTime(LocalDate.of(2017,1,6));
         Stream<JsonNode> instrumentChangeStream = both.stream()
                 .map(id -> new NewInstrument(id,creationDate))
                 .map(ni -> ni.toJson());

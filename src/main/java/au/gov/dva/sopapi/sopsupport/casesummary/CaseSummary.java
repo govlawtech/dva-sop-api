@@ -3,7 +3,6 @@ package au.gov.dva.sopapi.sopsupport.casesummary;
 import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
-import au.gov.dva.sopref.casesummary.*;
 import com.google.common.collect.ImmutableList;
 import org.apache.commons.lang.WordUtils;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;

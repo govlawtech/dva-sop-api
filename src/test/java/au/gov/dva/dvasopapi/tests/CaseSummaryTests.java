@@ -1,13 +1,19 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.dvasopapi.tests.mocks.CaseSummaryModelMock;
-import au.gov.dva.sopapi.interfaces.model.ServiceType;
+import au.gov.dva.dvasopapi.tests.mocks.ExtensiveCaseSummaryModelMock;
+import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMock;
+import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSopRH;
+import au.gov.dva.dvasopapi.tests.mocks.SimpleCaseSummaryModelMock;
+import au.gov.dva.dvasopapi.tests.mocks.processingRules.SimpleServiceHistory;
+import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
+import com.google.common.collect.ImmutableSet;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -19,7 +25,7 @@ import java.util.function.Function;
 
 public class CaseSummaryTests {
 
-    Function<String,ServiceType> mockCat = s -> {
+    Function<String, ServiceType> mockCat = s -> {
         if (s.contains("SLIPPER"))
             return ServiceType.WARLIKE;
         if (s.contains("HARWICK"))
@@ -30,11 +36,10 @@ public class CaseSummaryTests {
 
     @Test
     public void resultNotEmpty() throws ExecutionException, InterruptedException {
-        CaseSummaryModel testData = new CaseSummaryModelMock();
+        CaseSummaryModel testData = new ExtensiveCaseSummaryModelMock();
 
 
-
-        byte[] result = CaseSummary.createCaseSummary(testData,mockCat).get();
+        byte[] result = CaseSummary.createCaseSummary(testData, mockCat).get();
         Assert.assertTrue(result.length > 0);
     }
 
@@ -42,26 +47,46 @@ public class CaseSummaryTests {
     public void resultSerialisesToWordDoc() throws ExecutionException,
             InterruptedException, IOException, URISyntaxException {
 
-        CaseSummaryModel testData = new CaseSummaryModelMock();
+        CaseSummaryModel testData = new ExtensiveCaseSummaryModelMock();
         byte[] result = CaseSummary.createCaseSummary(testData, mockCat).get();
 
-        Path outputPath = getOutputPath();
+        File resultFile = writeTempFile(result);
+        System.out.println(resultFile.getAbsolutePath());
+
+        Assert.assertTrue(resultFile.exists());
+    }
+
+    @Test
+    public void caseSummaryWithSimpleServiceHistory() throws ExecutionException, InterruptedException, IOException {
+        CaseSummaryModel simpleCaseSummaryModel = new SimpleCaseSummaryModelMock();
+
+        // expected results from looking at mock data:
+        // peacetime service should be 31
+        // operational service should be 122
+        byte[] result = CaseSummary.createCaseSummary(simpleCaseSummaryModel,mockCat).get();
+        File resultFile = writeTempFile(result);
+        System.out.println(resultFile.getAbsolutePath());
+        Assert.assertTrue(resultFile.exists());
+
+    }
+
+    private File writeTempFile(byte[] data) throws IOException {
+         Path outputPath = getOutputPath();
         File outputFile = outputPath.toFile();
 
-        try (FileOutputStream outputStream = new FileOutputStream(outputFile);) {
-            outputStream.write(result);
+        try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
+            outputStream.write(data);
             outputStream.close();
         }
 
-        System.out.println(outputFile.getAbsolutePath());
+        return outputFile;
 
-
-        Assert.assertTrue(outputFile.exists());
     }
 
     private Path getOutputPath() throws IOException {
-        Path tempFilePath = Files.createTempFile("CaseSummaryTestOutput_",".docx");
+        Path tempFilePath = Files.createTempFile("CaseSummaryTestOutput_", ".docx");
         return tempFilePath;
     }
+
 }
 

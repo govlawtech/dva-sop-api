@@ -1,12 +1,13 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
+import au.gov.dva.dvasopapi.tests.mocks.processingRules.SimpleServiceHistory;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.List;
 
-public class CaseSummaryModelMock implements CaseSummaryModel{
+public class ExtensiveCaseSummaryModelMock implements CaseSummaryModel{
 
     public Condition getCondition() {
         return new LumbarSpondylosisConditionMock();

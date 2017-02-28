@@ -1,4 +1,4 @@
-package au.gov.dva.sopref.casesummary;
+package au.gov.dva.sopapi.sopsupport.casesummary;
 
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
@@ -61,7 +61,7 @@ public class ServiceTypePie {
 
         ChartFactory.setChartTheme(StandardChartTheme.createLegacyTheme());
 
-        JFreeChart chart = ChartFactory.createPieChart("Operational Service (days)", dataset, true, false, false);
+        JFreeChart chart = ChartFactory.createPieChart("Types of service", dataset, true, false, false);
         PiePlot plot = (PiePlot)chart.getPlot();
         plot.setLabelGenerator(new PieSectionLabelGenerator() {
             @Override
