@@ -27,6 +27,21 @@ public class StoredServiceDetermination implements ServiceDetermination {
     private final ServiceType serviceType;
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        StoredServiceDetermination that = (StoredServiceDetermination) o;
+
+        return registerId != null ? registerId.equals(that.registerId) : that.registerId == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return registerId != null ? registerId.hashCode() : 0;
+    }
+
+    @Override
     public String getRegisterId() {
         return registerId;
     }

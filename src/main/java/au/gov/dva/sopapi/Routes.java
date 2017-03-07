@@ -53,8 +53,12 @@ class Routes {
     {
         Routes.cache = cache;
 
-        get("/hello", (req, res) -> {
-            return "Hello";
+
+
+        get("/status", (req, res) -> {
+            int numberOfSopsAvailable = cache.get_allSops().size();
+            setResponseHeaders(res,false,200);
+            return String.format("Number of SoPs available: %d", numberOfSopsAvailable);
         });
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {

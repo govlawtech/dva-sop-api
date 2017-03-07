@@ -43,8 +43,6 @@ public class NewInstrument extends InstrumentChangeBase implements InstrumentCha
     }
 
 
-
-
     @Override
     public String toString() {
         return "NewInstrument{} " + super.toString();

@@ -30,8 +30,7 @@ public class Application implements spark.servlet.SparkApplication {
     }
 
     @Override
-    public void init()
-    {
+    public void init() {
         _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
         if (AppSettings.getEnvironment() == AppSettings.Environment.devtestlocal)
             _repository.purge();
@@ -42,46 +41,33 @@ public class Application implements spark.servlet.SparkApplication {
     }
 
     private void seedStorageIfNecessary() {
-        if (_repository.getAllSops().isEmpty() && _repository.getInstrumentChanges().isEmpty())
-        {
-            Seeds.queueNewSopChanges(_repository);
-        }
-
-        if (_repository.getServiceDeterminations().isEmpty())
-        {
-            Seeds.addServiceDeterminations(_repository,new FederalRegisterOfLegislationClient());
-        }
+        Seeds.queueNewSopChanges(_repository);
+        Seeds.addServiceDeterminations(_repository, new FederalRegisterOfLegislationClient());
     }
 
-    private void autoUpdate(){
+    private void autoUpdate() {
 
         try {
             updateNow();
             startScheduledUpdates();
-        }
-        catch (DvaSopApiError e)
-        {
-            logger.error("Error occurred during update.",e);
+        } catch (DvaSopApiError e) {
+            logger.error("Error occurred during update.", e);
         }
     }
-
 
 
     private void startScheduledUpdates() {
-        startScheduledPollingForSoPChanges(LocalTime.of(3,30));
-        startScheduledLoadingOfSops(LocalTime.of(20,0));
-        startScheduledPollingForServiceDeterminationChanges(LocalTime.of(0,0));
+        startScheduledPollingForSoPChanges(LocalTime.of(3, 30));
+        startScheduledLoadingOfSops(LocalTime.of(20, 0));
+        startScheduledPollingForServiceDeterminationChanges(LocalTime.of(0, 0));
     }
 
-    private void updateNow()
-    {
+    private void updateNow() {
         updateSops().run();
         AutoUpdate.patchSoPChanges(_repository);
         updateServiceDeterminations().run();
         _cache.refresh(_repository);
     }
-
-
 
 
     private Runnable updateSops() {
@@ -110,24 +96,23 @@ public class Application implements spark.servlet.SparkApplication {
     }
 
     private void startScheduledPollingForServiceDeterminationChanges(LocalTime localTime) {
-        startDailyExecutor(localTime,updateServiceDeterminations());
+        startDailyExecutor(localTime, updateServiceDeterminations());
     }
 
     private void startScheduledPollingForSoPChanges(LocalTime runTime) {
-       startDailyExecutor(runTime, updateSops());
+        startDailyExecutor(runTime, updateSops());
     }
 
 
     private void startScheduledLoadingOfSops(LocalTime runTime) {
-        startDailyExecutor(runTime,() -> {
+        startDailyExecutor(runTime, () -> {
             AutoUpdate.patchSoPChanges(_repository);
             _cache.refresh(_repository);
         });
 
     }
 
-    private void startDailyExecutor(LocalTime runTime, Runnable runnable)
-    {
+    private void startDailyExecutor(LocalTime runTime, Runnable runnable) {
         ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
         OffsetDateTime nowCanberraTime = OffsetDateTime.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE));
         OffsetDateTime scheduledTimeTodayCanberraTime = OffsetDateTime.from(
