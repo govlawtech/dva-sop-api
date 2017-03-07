@@ -24,7 +24,7 @@ class SingleFactorParsingTests extends FunSuite {
   {
     val input = "(ii) having an asymmetric gait;\nfor at least three years before the clinical worsening of\nosteoarthritis in that joint; or"
     val result = SoPExtractorUtilities.splitOutTailIfAny(input)
-    assert(result._2.isDefined && result._1.size + result._2.get.size == input.size)
+    assert(result._2.isDefined && result._1.startsWith("(ii)") && result._2.get.endsWith("; or"))
   }
 
   test("Do not split last sub para to sub para and tail with comma end")
