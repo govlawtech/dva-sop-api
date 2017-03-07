@@ -2,10 +2,7 @@ package au.gov.dva.sopapi.sopref.data.sops;
 
 import au.gov.dva.sopapi.interfaces.model.DefinedTerm;
 import au.gov.dva.sopapi.interfaces.model.Factor;
-import au.gov.dva.sopapi.interfaces.model.SubFactor;
 import com.google.common.collect.ImmutableSet;
-
-import java.util.List;
 
 public class StoredFactor implements Factor {
 
@@ -29,10 +26,7 @@ public class StoredFactor implements Factor {
         return text;
     }
 
-    @Override
-    public List<SubFactor> getSubFactors() {
-        return null;
-    }
+
 
     @Override
     public ImmutableSet<DefinedTerm> getDefinedTerms() {

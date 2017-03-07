@@ -64,12 +64,6 @@ public class SoPs {
 
        Stream<Optional<SoPPair>> pairs = groupedByName.keySet()
                .stream().map(conditionName -> {
-                   Integer countOfSopsForThisCondition = groupedByName.get(conditionName).size();
-                   if (countOfSopsForThisCondition != 2)
-                   {
-                       logger.warn(String.format("No complete SoP pair for condition: %s", conditionName));
-                       return Optional.empty();
-                   }
 
                    Optional<SoP> bopSop = groupedByName.get(conditionName).stream().filter(soP -> soP.getStandardOfProof() == StandardOfProof.BalanceOfProbabilities).findFirst();
                    Optional<SoP> rhSop = groupedByName.get(conditionName).stream().filter(soP -> soP.getStandardOfProof() == StandardOfProof.ReasonableHypothesis).findFirst();
@@ -77,7 +71,7 @@ public class SoPs {
                        return Optional.of(new SoPPair(bopSop.get(), rhSop.get()));
                    }
                    else {
-                       logger.warn(String.format("No complete SoP pair for condition: %s", conditionName));
+                       logger.error(String.format("No complete SoP pair for condition: %s", conditionName));
                        return Optional.empty();
                    }
                });

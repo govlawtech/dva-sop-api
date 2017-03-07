@@ -39,4 +39,7 @@ public class SopSupport {
         List<FactorWithInferredResultDto> factorDtos = inferredFactors.stream().map(factorWithSatisfaction -> DtoTransformations.fromFactorWithSatisfaction(factorWithSatisfaction)).collect(Collectors.toList());
         return new SopSupportResponseDto(applicableInstrumentDto,factorDtos);
     }
+
+
+
 }

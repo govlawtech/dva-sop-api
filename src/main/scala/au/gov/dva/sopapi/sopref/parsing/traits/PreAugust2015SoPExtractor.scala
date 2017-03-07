@@ -4,12 +4,14 @@ import au.gov.dva.sopapi.interfaces.model.ICDCode
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 
+import scala.util.Properties
+
 trait PreAugust2015SoPExtractor extends SoPExtractor {
 
-  override def extractFactorSection(plainTextSop: String): (Int,String) = {
+  override def extractFactorsSection(plainTextSop: String): (Int, String) = {
     val headingRegex = """^Factors$""".r;
-    val factorsSection = SoPExtractorUtilities.getSection(plainTextSop,headingRegex)
-    (factorsSection._1,factorsSection._2.mkString(" "))
+    val(sectionNumber,text): (Int, List[String]) = SoPExtractorUtilities.getSection(plainTextSop,headingRegex)
+    (sectionNumber,text.mkString(Properties.lineSeparator))
   }
 
   override def extractDefinitionsSection(plainTextSop: String): String = {

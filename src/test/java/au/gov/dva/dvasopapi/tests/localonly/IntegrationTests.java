@@ -20,7 +20,7 @@ import au.gov.dva.sopapi.sopref.data.updates.changefactories.EmailSubscriptionIn
 import au.gov.dva.sopapi.sopref.data.updates.changefactories.LegislationRegisterSiteChangeFactory;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
 import au.gov.dva.sopapi.sopref.data.updates.types.Replacement;
-import au.gov.dva.sopapi.sopref.parsing.factories.ServiceLocator;
+import au.gov.dva.sopapi.sopref.parsing.ServiceLocator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.StorageException;
@@ -176,7 +176,5 @@ public class IntegrationTests  {
         ImmutableSet<InstrumentChange> results = underTest.detectReplacements(testSourceIds);
         Assert.assertTrue(results.isEmpty());
     }
-
-
 
 }

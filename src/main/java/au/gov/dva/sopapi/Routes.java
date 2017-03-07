@@ -111,6 +111,9 @@ class Routes {
             }
         });
 
+
+
+
         post(SharedConstants.Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req)) {
                 setResponseHeaders(res, false, 406);
@@ -149,7 +152,10 @@ class Routes {
                 return e.getMessage();
             }
         }));
+
+
     }
+
 
     private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String standardOfProof, String conditionname, String incidentType) {
         List<String> errors = new ArrayList<>();

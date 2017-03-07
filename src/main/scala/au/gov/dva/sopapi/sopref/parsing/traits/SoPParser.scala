@@ -4,9 +4,10 @@ import java.time.LocalDate
 
 import au.gov.dva.sopapi.interfaces.model._
 import au.gov.dva.sopapi.dtos.StandardOfProof
+import au.gov.dva.sopapi.sopref.parsing.implementations.model.FactorInfo
 
 trait SoPParser {
-  def parseFactors(factorsSection : String) : (StandardOfProof, List[(String,String)])
+  def parseFactors(factorsSection : String) : (StandardOfProof, List[FactorInfo])
   def parseInstrumentNumber(citationSection : String) : InstrumentNumber
   def parseDefinitions(definitionsSection : String) : List[DefinedTerm]
   def parseDateOfEffect(dateOfEffectSection : String) : LocalDate

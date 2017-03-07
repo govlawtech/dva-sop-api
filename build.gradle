@@ -58,6 +58,7 @@ task explodeWar(type: Copy, dependsOn: 'copyWar') {
 
 test {
     exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
+    exclude 'au/gov/dva/sopapi/tests/parsertests/specificsops/**'
 }
 
 configurations.all {

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<configuration>
+<configuration debug="true">
 
     <appender name="STDOUT"
               class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned by default the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <filter class="au.gov.dva.sopapi.LogFilter"/>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
+
     </appender>
 
 
     <appender name="FILE"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="au.gov.dva.sopapi.LogFilter"/>
         <file>dvasopa pi.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>
@@ -45,5 +48,7 @@
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE"/>
     </logger>
+
+
 
 </configuration>

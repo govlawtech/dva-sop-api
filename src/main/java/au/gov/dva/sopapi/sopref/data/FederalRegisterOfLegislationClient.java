@@ -26,6 +26,7 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
 
     final static Logger logger = LoggerFactory.getLogger(FederalRegisterOfLegislationClient.class);
 
+    private static AsyncHttpClient asyncHttpClient = asyncHttpClient();
     @Override
     public CompletableFuture<String> getRedirectTargetRegisterId(String registerId) {
         URL urlForWhichToGetRedirect = BuildUrl.toGetRedirect(registerId);
@@ -80,7 +81,6 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
 
 
     public static CompletableFuture<byte[]> downloadFile(URL url) {
-        AsyncHttpClient asyncHttpClient = asyncHttpClient();
         CompletableFuture<byte[]> promise = asyncHttpClient
                 .prepareGet(url.toString())
                 .execute()
@@ -90,7 +90,6 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
     }
 
     public static CompletableFuture<String> downloadHtml(URL url) {
-        AsyncHttpClient asyncHttpClient = asyncHttpClient();
         CompletableFuture<String> promise = asyncHttpClient
                 .prepareGet(url.toString())
                 .execute()
@@ -101,7 +100,6 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
 
     public static CompletableFuture<URL> getRedirectTargetUrl(URL originalUrl) {
         assert (originalUrl.getHost().startsWith("www"));
-        AsyncHttpClient asyncHttpClient = asyncHttpClient();
         CompletableFuture<URL> promise = asyncHttpClient
                 .prepareGet(originalUrl.toString())
                 .execute()

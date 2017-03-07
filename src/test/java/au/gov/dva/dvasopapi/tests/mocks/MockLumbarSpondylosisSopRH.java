@@ -1,13 +1,12 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Optional;
 
 public class MockLumbarSpondylosisSopRH implements SoP {
@@ -51,10 +50,6 @@ public class MockLumbarSpondylosisSopRH implements SoP {
                                         return "inability to obtain appropriate clinical management for lumbar spondylosis";
                                     }
 
-                                    @Override
-                                    public List<SubFactor> getSubFactors() {
-                                        return null;
-                                    }
 
                                     @Override
                                     public ImmutableSet<DefinedTerm> getDefinedTerms() {
@@ -72,10 +67,6 @@ public class MockLumbarSpondylosisSopRH implements SoP {
                         return "having inflammatory joint disease in the lumbar spine before the clinical worsening of lumbar spondylosis";
                     }
 
-                    @Override
-                    public List<SubFactor> getSubFactors() {
-                        return null;
-                    }
 
                     @Override
                     public ImmutableSet<DefinedTerm> getDefinedTerms() {

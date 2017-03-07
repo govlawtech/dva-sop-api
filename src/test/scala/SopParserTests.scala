@@ -12,30 +12,23 @@ import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanse
 import au.gov.dva.sopapi.sopref.parsing.implementations.extractors.PreAugust2015Extractor
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{DefinitionsParsers, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.LsSoPFactory
+import au.gov.dva.sopapi.sopref.parsing.traits.FactorsParser
 import com.google.common.io.Resources
 import org.scalatest.{FlatSpec, FunSuite}
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
 import scala.io.Source
+import scala.util.Properties
 
 
 @RunWith(classOf[JUnitRunner])
 class SopParserTests extends FunSuite {
-  test("Cleanse LS raw text") {
-    val rawText = ParserTestUtils.resourceToString("lsConvertedToText.txt");
-    val result = GenericCleanser.cleanse(rawText)
-
-    assert(result.length() > 0)
-    System.out.println("START:")
-    System.out.print(result)
-    System.out.println("END")
-  }
 
   test("Extract Lumbar Spondylosis factors section from cleansed text") {
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
     val underTest = PreAugust2015Extractor
-    val result = underTest.extractFactorSection(testInput)
+    val result = underTest.extractFactorsSection(testInput)
     System.out.print(result);
     assert(result._1 == 6)
   }
@@ -71,31 +64,6 @@ class SopParserTests extends FunSuite {
     assert(result.size == 9)
   }
 
-  test("Parse single factor") {
-    val testInput = "(a) being a prisoner of war before the clinical onset of lumbar spondylosis; or ";
-    val undertest = PreAugust2015Parser
-    val result = undertest.parseAll(undertest.singleParaParser, testInput)
-    System.out.print(result)
-  }
-
-
-  test("Parse all factors from Lumbar Spondylosis"){
-    val testInput = ParserTestUtils.resourceToString("lsExtractedFactorsText.txt")
-    val underTest = PreAugust2015Parser;
-    val result = underTest.parseAll(underTest.completeFactorSectionParser,testInput)
-    System.out.print(result)
-    assert(result.successful)
-     assert(result.get._2.size == 32)
-  }
-
-  test("Ls parser implements interface correctly") {
-
-    val testInput = ParserTestUtils.resourceToString("lsExtractedFactorsText.txt")
-    val underTest = PreAugust2015Parser;
-    val result = underTest.parseFactors(testInput)
-    assert(result._1 == StandardOfProof.ReasonableHypothesis)
-    assert(result._2.size == 32)
-  }
 
   test("Parse instrument number") {
     val testInput = "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014."
@@ -111,7 +79,7 @@ class SopParserTests extends FunSuite {
   }
 
   test("Parse single definition section") {
-    val testInput = "\"trauma to the lumbar spine\" means a discrete event involving the\napplication of significant physical force, including G force, to the lumbar spine\nthat causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the lumbar spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the lumbar spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the lumbar spine; or\n(c) surgery to the lumbar spine."
+    val testInput = "\"trauma to the lumbar spine\" means a discrete event involving the application of significant physical force, including G force, to the lumbar spine that causes the development within twenty-four hours of the injury being sustained, of symptoms and signs of pain and tenderness and either altered mobility or range of movement of the lumbar spine. In the case of sustained unconsciousness or the masking of pain by analgesic medication, these symptoms and signs must appear on return to consciousness or the withdrawal of the analgesic medication. These symptoms and signs must last for a period of at least seven days following their onset; save for where medical intervention has occurred and that medical intervention involves either: (a) immobilisation of the lumbar spine by splinting, or similar external agent; (b) injection of corticosteroids or local anaesthetics into the lumbar spine; or (c) surgery to the lumbar spine."
 
     val result = DefinitionsParsers.parseSingleDefinition(testInput)
     assert(result._1 == "trauma to the lumbar spine" && result._2.startsWith("means a ") && result._2.endsWith("lumbar spine"))
@@ -130,20 +98,18 @@ class SopParserTests extends FunSuite {
   }
 
   test("Parse entire LS SoP") {
-      val cleansedText = ParserTestUtils.resourceToString("lsCleansedText.txt")
-      val rawText = ParserTestUtils.resourceToString("LS-RH-Raw-Text.txt")
-      val result: SoP = LsSoPFactory.create("F2014L00933", rawText, cleansedText)
-      val asJson = StoredSop.toJson(result)
-      System.out.print(TestUtils.prettyPrint(asJson))
-      assert(result != null)
+    val cleansedText = ParserTestUtils.resourceToString("lsCleansedText.txt")
+    val result: SoP = LsSoPFactory.create("F2014L00933", cleansedText)
+    val asJson = StoredSop.toJson(result)
+    System.out.print(TestUtils.prettyPrint(asJson))
+    assert(result != null)
   }
 
-  test("Extract aggravation section from LS SoP")
-  {
+  test("Extract aggravation section from LS SoP") {
 
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
     val undertest = PreAugust2015Extractor
-    val result =undertest.extractAggravationSection(testInput)
+    val result = undertest.extractAggravationSection(testInput)
     assert(result == "Paragraphs 6(q) to 6(ff) applies only to material contribution to, or aggravation of, lumbar spondylosis where the person’s lumbar spondylosis was suffered or contracted before or during (but not arising out of) the person’s relevant service.")
   }
 
@@ -156,35 +122,32 @@ class SopParserTests extends FunSuite {
   }
 
   test("Divide factors into onset and aggravation") {
-    val testData = List("(a)","(b)","(c)","(d)","(e)")
-    val result = LsSoPFactory.splitFactors(testData,"(b)","(d)")
-    assert(result == (List("(a)","(e)"),List("(b)","(c)","(d)")));
+    val testData = List("(a)", "(b)", "(c)", "(d)", "(e)")
+    val result = LsSoPFactory.splitFactors(testData, "(b)", "(d)")
+    assert(result == (List("(a)", "(e)"), List("(b)", "(c)", "(d)")));
   }
 
   test("Get citation from citation section") {
     val input = "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014."
     val result = PreAugust2015Parser.parseCitation(input)
-    assert(result == "Statement of Principles concerning lumbar spondylosis No. 62 of 2014" )
+    assert(result == "Statement of Principles concerning lumbar spondylosis No. 62 of 2014")
   }
 
-  test("Get condition name from citation")
-  {
-    val input =  "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014."
+  test("Get condition name from citation") {
+    val input = "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014."
     val result = PreAugust2015Parser.parseConditionNameFromCitation(input);
     assert(result == "lumbar spondylosis")
   }
 
   test("Parse entire RH LS SoP") {
     val cleansedText = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val rawText = ParserTestUtils.resourceToString("LS-RH-Raw-Text.txt")
-    val result: SoP = LsSoPFactory.create("F2014L00933", rawText, cleansedText)
+    val result: SoP = LsSoPFactory.create("F2014L00933", cleansedText)
     val asJson = StoredSop.toJson(result)
     System.out.print(TestUtils.prettyPrint(asJson))
     assert(result != null)
   }
 
-  test("Clense LS BoP text")
-  {
+  test("Clense LS BoP text") {
     val rawText = ParserTestUtils.resourceToString("lsBopExtractedText.txt");
     val result = GenericCleanser.cleanse(rawText)
     assert(result.length() > 0)
@@ -196,21 +159,27 @@ class SopParserTests extends FunSuite {
   test("Divide LS BoP to sections") {
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
     val cleansedText = ParserTestUtils.resourceToString("lsBopCleansedText.txt")
-    val result = SoPExtractorUtilities.getSections(cleansedText,sectionHeaderLineRegex)
-    result.foreach(s => System.out.println("\n\n" + s))
+    val result = SoPExtractorUtilities.getSections(cleansedText, sectionHeaderLineRegex)
+    result.foreach(s => System.out.println("  " + s))
 
-    val split = result.map(s =>  SoPExtractorUtilities.parseSectionBlock(s))
+    val split = result.map(s => SoPExtractorUtilities.parseSectionBlock(s))
     split.foreach(s => System.out.println(s))
     assert(result.size == 12)
   }
 
-  test("Test get factors section with better approach")
-  {
+  test("Test get factors section with better approach") {
     val factorsRegex = """^Factors$""".r
     val cleansedText = ParserTestUtils.resourceToString("lsBopCleansedText.txt")
-    val result = SoPExtractorUtilities.getSection(cleansedText,factorsRegex)
+    val result = SoPExtractorUtilities.getSection(cleansedText, factorsRegex)
     assert(result != null)
     System.out.print(result)
   }
+
+  test("Take until letter appears a number of times") {
+    val input = List("(hh) blah", "(i) blah blah", "(ii) blah blah", "(iii)", "(iv)", "(ii) main para again","(jj) main para")
+    val result = SoPExtractorUtilities.splitWithSkip(input,2,l => l.startsWith("(ii)"))
+    assert(result._1.size == 5 && result._2.size == 2)
+  }
+
 }
 

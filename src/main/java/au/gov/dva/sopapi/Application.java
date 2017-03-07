@@ -20,18 +20,25 @@ import java.util.stream.Collectors;
 
 public class Application implements spark.servlet.SparkApplication {
 
-    private final Repository _repository;
-    private Cache _cache = null;
+    private Repository _repository;
+    private Cache _cache;
 
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
     public Application() {
+
+    }
+
+    @Override
+    public void init()
+    {
         _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
         if (AppSettings.getEnvironment() == AppSettings.Environment.devtestlocal)
             _repository.purge();
         _cache = Cache.getInstance();
         seedStorageIfNecessary();
         autoUpdate();
+        Routes.init(_cache);
     }
 
     private void seedStorageIfNecessary() {
@@ -74,10 +81,7 @@ public class Application implements spark.servlet.SparkApplication {
         _cache.refresh(_repository);
     }
 
-    @Override
-    public void init() {
-        Routes.init(_cache);
-    }
+
 
 
     private Runnable updateSops() {

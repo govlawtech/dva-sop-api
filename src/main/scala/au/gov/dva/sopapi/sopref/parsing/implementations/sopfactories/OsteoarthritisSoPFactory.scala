@@ -7,47 +7,12 @@ import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, ICDCode, SoP}
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
 import au.gov.dva.sopapi.sopref.parsing.implementations.extractors.PreAugust2015Extractor
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.ParsedSop
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.OsteoarthritisParser
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{OsteoarthritisParser, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.traits.SoPFactory
 
 object OsteoarthritisSoPFactory extends SoPFactory {
 
-  override def create(registerId : String, rawText : String, cleansedText: String): SoP = {
-    val extractor = PreAugust2015Extractor
-    val citation = OsteoarthritisParser.parseCitation(extractor.extractCitation(cleansedText));
-    val instrumentNumber = OsteoarthritisParser.parseInstrumentNumber(citation);
-
-    val definedTermsList: List[DefinedTerm] = OsteoarthritisParser.parseDefinitions(extractor.extractDefinitionsSection(cleansedText))
-
-    // Keep extra white space in the raw text to make it easier to capture sub-paras
-    val rawWithoutAuthorisedFooter = GenericCleanser.removeAuthorisedFootnote(rawText)
-    val rawWithoutPageNumberFooter = GenericCleanser.removePageNumberFootNote(rawWithoutAuthorisedFooter)
-    val factorsSection: (Int, String) = extractor.extractFactorSection(rawWithoutPageNumberFooter)
-    val factors: (StandardOfProof, List[(String, String)]) = OsteoarthritisParser.parseFactors(factorsSection._2)
-
-    val factorObjects = this.buildFactorObjects(factors._2,factorsSection._1,definedTermsList)
-
-    val startAndEndOfAggravationParas = OsteoarthritisParser.parseStartAndEndAggravationParas(extractor.extractAggravationSection(cleansedText))
-    val splitOfOnsetAndAggravationFactors = this.splitFactors(factors._2.map(_._1),startAndEndOfAggravationParas._1,startAndEndOfAggravationParas._2)
-
-    val onsetFactors = buildFactorObjects(
-      factors._2.filter(f =>  splitOfOnsetAndAggravationFactors._1.contains(f._1)),
-      factorsSection._1,
-      definedTermsList)
-
-    val aggravationFactors = buildFactorObjects(
-      factors._2.filter(f =>  splitOfOnsetAndAggravationFactors._2.contains(f._1)),
-      factorsSection._1,
-      definedTermsList)
-
-    val effectiveFromDate: LocalDate = OsteoarthritisParser.parseDateOfEffect(extractor.extractDateOfEffectSection(cleansedText))
-
-    val standardOfProof = factors._1
-
-    val icdCodes: List[ICDCode] = extractor.extractICDCodes(cleansedText)
-
-    val conditionName = OsteoarthritisParser.parseConditionNameFromCitation(citation);
-
-    new ParsedSop(registerId,instrumentNumber,citation,aggravationFactors, onsetFactors, effectiveFromDate,standardOfProof,icdCodes,conditionName)
+  override def create(registerId : String, cleansedText: String): SoP = {
+    create(registerId,cleansedText,PreAugust2015Extractor,PreAugust2015Parser)
   }
 }

@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: au.gov.dva.dvasopapi.tests.RetrievePdfFromLegislationRegis
- ter
-

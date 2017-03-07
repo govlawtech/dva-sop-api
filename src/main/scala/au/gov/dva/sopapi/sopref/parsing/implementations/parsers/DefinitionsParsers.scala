@@ -26,7 +26,7 @@ object DefinitionsParsers {
   }
 
   def parseSingleDefinition(definition : String) : (String,String) = {
-    val definedWordRegex = """"[A-Za-z\-\s0-9']+"""".r
+    val definedWordRegex = """"[A-Za-z\-\s0-9',]+"""".r
     val m = definedWordRegex.findFirstMatchIn(definition)
     if (m.isEmpty)
       throw new SopParserError("Cannot find the defined word in this definition: " + definition)

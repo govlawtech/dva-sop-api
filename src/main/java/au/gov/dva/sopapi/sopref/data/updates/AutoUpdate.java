@@ -9,7 +9,7 @@ import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.ServiceDeterminations;
-import au.gov.dva.sopapi.sopref.parsing.factories.ServiceLocator;
+import au.gov.dva.sopapi.sopref.parsing.ServiceLocator;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import org.slf4j.Logger;

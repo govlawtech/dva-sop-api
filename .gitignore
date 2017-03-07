@@ -70,11 +70,8 @@ build/
 .idea/
 
 *.orig
+.idea/
 
+deploy/
 doctrees/
-
-
-
-
-
 

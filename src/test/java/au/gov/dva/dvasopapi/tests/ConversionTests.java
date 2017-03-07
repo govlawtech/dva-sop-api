@@ -88,7 +88,10 @@ public class ConversionTests {
     }
 
 
-
+    @Test
+    public void extractExponentInPdf() {
+        // todo: make custom PDFTextStripper which detects superscript 2 and replaces it with unicode \u00B2
+    }
 
 
 

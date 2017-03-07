@@ -220,7 +220,8 @@ public class SoPLoaderImpl implements SoPLoader {
 
             SoPFactory soPFactory = sopFactoryProvider.apply(registerId);
             try {
-                SoP soP = soPFactory.create(registerId, rawText, cleansedText);
+                SoP soP = soPFactory.create(registerId, cleansedText);
+                logger.trace(buildLoggerMessage(registerId,"Successfully parsed text to SoP object."));
                 return Optional.of(soP);
             } catch (Error e) {
 
@@ -234,7 +235,7 @@ public class SoPLoaderImpl implements SoPLoader {
 
                         SoPFactory antecedentSopFactory = sopFactoryProvider.apply(antecedent);
                         try {
-                            SoP antecedentResult = antecedentSopFactory.create(registerId, rawText, cleansedText);
+                            SoP antecedentResult = antecedentSopFactory.create(registerId, cleansedText);
                             logger.trace(String.format("Successfully created SoP for instrument ID %s using factory for instrument ID %s.", registerId, antecedent));
                             return Optional.of(antecedentResult);
                         }
