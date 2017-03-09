@@ -18,6 +18,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import static spark.Spark.get;
+
 public class Application implements spark.servlet.SparkApplication {
 
     private Repository _repository;
@@ -38,6 +40,9 @@ public class Application implements spark.servlet.SparkApplication {
         seedStorageIfNecessary();
         autoUpdate();
         Routes.init(_cache);
+        Routes.initStatus(_repository,_cache);
+
+
     }
 
     private void seedStorageIfNecessary() {
