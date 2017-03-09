@@ -36,13 +36,26 @@ public class DateTimeUtils {
         return localDateToLastMidnightCanberraTime(localDate);
     }
 
-    public static OffsetDateTime stringToOffsetDateTime(String input)
+    public static OffsetDateTime stringToOffsetDateTimeWithAssumptions(String input)
     {
-        String withAssumedTime = input.matches("^[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}Z$") ?
-                input.replaceFirst("Z","T00:00:00Z") : input;
-        OffsetDateTime parsed = OffsetDateTime.parse(withAssumedTime, DateTimeFormatter.ISO_OFFSET_DATE_TIME);
-        return parsed;
+        if (input.matches("^[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}$"))
+        {
+            LocalDate localDate = LocalDate.parse(input,DateTimeFormatter.ISO_LOCAL_DATE);
+            return DateTimeUtils.localDateToLastMidnightCanberraTime(localDate);
+        }
+        else if (input.matches("^[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}Z$"))
+        {
+            String convertedToIsoFormat = input.replaceFirst("Z","T00:00:00Z");
+            return OffsetDateTime.parse(convertedToIsoFormat,DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        }
+        else {
+            OffsetDateTime parsed = OffsetDateTime.parse(input, DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+            return parsed;
+        }
+
     }
+
+
 
     public static OffsetDateTime localDateToLastMidnightCanberraTime(LocalDate localDate)
     {
