@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.exceptions.DvaSopApiError;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -15,10 +16,9 @@ import org.slf4j.LoggerFactory;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ProcessingRuleFunctions {
@@ -189,6 +189,30 @@ public class ProcessingRuleFunctions {
         return (deploymentName -> {
             String lowerCasedeploymentNameWithoutOperation = deploymentName.getOperationName().toLowerCase().replace("operation", "").trim();
             return setOfLowerCaseOpNames.contains(lowerCasedeploymentNameWithoutOperation);
+        });
+    }
+
+    public static Function<String, ServiceType> getServiceTypeFromOperationName(ImmutableSet<ServiceDetermination> serviceDeterminations){
+        HashMap<String, ServiceType> resultMap = new HashMap<>();
+        for (ServiceDetermination serviceDetermination : serviceDeterminations) {
+            for (Operation operation : serviceDetermination.getOperations()) {
+                String key = operation.getName();
+                if (resultMap.containsKey(key)) {
+                    // Check to see that we don't have two operations with different service types
+                    if (!resultMap.get(key).equals(operation.getServiceType())) {
+                        throw new ProcessingRuleError("Ambiguous operation name detected. Operation " + key + " might have a service type of " + resultMap.get(key) + " or " + operation.getServiceType());
+                    }
+                }
+                else {
+                    resultMap.put(key, operation.getServiceType());
+                }
+            }
+        }
+
+        return(operationName -> {
+            String lowerCasedeploymentNameWithoutOperation = operationName.toLowerCase().replace("operation", "").trim();
+            if (!resultMap.containsKey(lowerCasedeploymentNameWithoutOperation)) throw new ProcessingRuleError("Operation " + operationName + " has an unknown service type. Cannot continue.");
+            return resultMap.get(lowerCasedeploymentNameWithoutOperation);
         });
     }
 

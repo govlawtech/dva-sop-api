@@ -182,7 +182,9 @@ public class CaseSummary {
                         " on " + deployment.getOperationName() : "";
 
                 String operationText = WordUtils.capitalize(serviceType.toString()) +
-                        " service from " +
+                        " service on operation " +
+                        deployment.getOperationName() +
+                        " from " +
                         getDatesAsRange(deployment.getStartDate(), deployment.getEndDate()) +
                         operationNameText;
 
