@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport;
 
+import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
@@ -23,6 +24,12 @@ public class SopSupport {
 
         if (ProcessingRuleFunctions.conditionIsBeforeService(condition, serviceHistory)) {
             caseTrace.addTrace(String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));
+            return SopSupportResponseDto.createEmpty();
+        }
+
+        if (sopSupportRequestDto.get_conditionDto().get_incidentType() == IncidentType.Aggravation)
+        {
+            caseTrace.addTrace(String.format("Aggravation cases not yet supported."));
             return SopSupportResponseDto.createEmpty();
         }
 
