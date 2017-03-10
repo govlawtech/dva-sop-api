@@ -158,6 +158,28 @@ public class SoPApiClient {
         return promise;
     }
 
+    public CompletableFuture<byte[]> getCaseSummary(String jsonRequestBody) {
+        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_CASESUMMARY);
+
+        CompletableFuture<byte[]> promise = getOrCreateAsyncHttpClient()
+                .preparePost(serviceUrl.toString())
+                .setHeader("Accept", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                .setHeader("Content-Type","application/json; charset=utf-8")
+                .setBody(jsonRequestBody)
+                .execute()
+                .toCompletableFuture()
+                .thenApply(response -> {
+                    if (response.getStatusCode() == 200) {
+                        return response.getResponseBodyAsBytes();
+                    }
+                    else {
+                        throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(),response.getResponseBody()));
+                    }
+                });
+
+        return promise;
+    }
+
     private static String buildErrorMsg(Integer statusCode, String msg)
     {
         return String.format("HTTP Status Code: %d, %s.", statusCode, msg);

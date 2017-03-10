@@ -29,7 +29,7 @@ import java.util.function.Predicate;
  * Created by michael carter on 23/02/2017.
  */
 public class ServiceTypePie {
-    public static ImmutableList<byte[]> createPieImages(Service service, Predicate<String> isOperational) throws IOException {
+    public static ImmutableList<byte[]> createPieImages(Service service, Predicate<Deployment> isOperational) throws IOException {
 
         int warDays = 0;
         int peaceDays = 0;
@@ -46,7 +46,7 @@ public class ServiceTypePie {
 
             long numberOfDays = ChronoUnit.DAYS.between(startDate, endDate) + 1; // +1 to make the dates inclusive
 
-            if (isOperational.test(deployment.getOperationName()))
+            if (isOperational.test(deployment))
             {
                 warDays += numberOfDays;
             }

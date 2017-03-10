@@ -32,12 +32,12 @@ public class CaseSummary {
     private static CTStyles _ctStyles = CTStyles.Factory.newInstance();
     private static XWPFNumbering _numbering;
 
-    public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel, Function<String,ServiceType> getServiceTypeForDeploymentName) {
+    public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel, Predicate<Deployment> isOperational) {
         _model = caseSummaryModel;
-        return CompletableFuture.supplyAsync(() -> buildCaseSummary(getServiceTypeForDeploymentName));
+        return CompletableFuture.supplyAsync(() -> buildCaseSummary(isOperational));
     }
 
-    private static byte[] buildCaseSummary(Function<String,ServiceType> getServiceTypeForDeploymentName) {
+    private static byte[] buildCaseSummary(Predicate<Deployment> isOperational) {
         XWPFDocument document = new XWPFDocument();
 
         // Set up generated document with styles from the template
@@ -53,7 +53,7 @@ public class CaseSummary {
         // Create the main sections
         CaseSummarySection documentSection = createDocumentSection();
         CaseSummarySection conditionSection = createConditionSection();
-        CaseSummarySection serviceHistorySection = createServiceHistorySection(getServiceTypeForDeploymentName);
+        CaseSummarySection serviceHistorySection = createServiceHistorySection(isOperational);
         CaseSummarySection sopSection = createSopSection();
 
         documentSection.add(conditionSection);
@@ -160,7 +160,7 @@ public class CaseSummary {
         return conditionSection;
     }
 
-    private static CaseSummarySection createServiceHistorySection(Function<String, ServiceType> getServiceTypeForDeploymentName) {
+    private static CaseSummarySection createServiceHistorySection(Predicate<Deployment> isOperational) {
         ServiceHistory serviceHistory = _model.getServiceHistory();
 
         CaseSummarySection serviceHistorySection = new CaseSummarySection();
@@ -174,19 +174,12 @@ public class CaseSummary {
 
         for (Service service : serviceHistory.getServices()) {
             for (Deployment deployment : service.getDeployments()) {
-
-                ServiceType serviceType = getServiceTypeForDeploymentName.apply(deployment.getOperationName());
-
-
-                String operationNameText = serviceType == ServiceType.WARLIKE ?
-                        " on " + deployment.getOperationName() : "";
-
-                String operationText = WordUtils.capitalize(serviceType.toString()) +
-                        " service on operation " +
+                String typeOfServiceText = isOperational.test(deployment) ? "Operational" : "Peacetime";
+                String operationText = WordUtils.capitalize(typeOfServiceText) +
+                        " service on " +
                         deployment.getOperationName() +
                         " from " +
-                        getDatesAsRange(deployment.getStartDate(), deployment.getEndDate()) +
-                        operationNameText;
+                        getDatesAsRange(deployment.getStartDate(), deployment.getEndDate());
 
                 CaseSummaryParagraph operationParagraph = new CaseSummaryParagraph(operationText);
                 operationParagraph.hasBullet(true);
@@ -197,18 +190,12 @@ public class CaseSummary {
 
         serviceHistorySection.add(serviceHistoryData);
 
-        serviceHistorySection.addAll(createServiceImages(serviceHistory));
+        serviceHistorySection.addAll(createServiceImages(serviceHistory, isOperational));
 
         return serviceHistorySection;
     }
 
-    private static Collection<CaseSummaryImage> createServiceImages(ServiceHistory serviceHistory) {
-        Predicate<String> isOperational = s -> {
-            if (s.contains("Peace is Our Profession"))
-                return false;
-            else return true;
-        };
-
+    private static Collection<CaseSummaryImage> createServiceImages(ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
         try {
             ImmutableList<byte[]> timelineImages = Timeline.createTimelineImages(serviceHistory.getServices().asList().get(0), isOperational);
             CaseSummaryImage timelineImage = new CaseSummaryImage(timelineImages, 400, 1000);

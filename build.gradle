@@ -8,6 +8,7 @@ allprojects {
 
     repositories {
         mavenCentral()
+        mavenLocal()
         maven {
             url "http://frequal.com/maven-repository"
         }

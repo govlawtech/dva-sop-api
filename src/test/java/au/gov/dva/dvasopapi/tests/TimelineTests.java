@@ -1,6 +1,7 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.ExtensiveServiceHistoryMock;
+import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.sopsupport.casesummary.Timeline;
 import com.google.common.collect.ImmutableList;
@@ -21,8 +22,8 @@ public class TimelineTests {
     public void createServiceHistory() throws IOException {
         Service testdata = new ExtensiveServiceHistoryMock().getServices().asList().get(0);
 
-        Predicate<String> isOperational = s -> {
-            if (s.contains("Peace is Our Profession"))
+        Predicate<Deployment> isOperational = s -> {
+            if (s.getOperationName().contains("Peace is Our Profession"))
                 return false;
             else return true;
         };

@@ -192,30 +192,6 @@ public class ProcessingRuleFunctions {
         });
     }
 
-    public static Function<String, ServiceType> getServiceTypeFromOperationName(ImmutableSet<ServiceDetermination> serviceDeterminations){
-        HashMap<String, ServiceType> resultMap = new HashMap<>();
-        for (ServiceDetermination serviceDetermination : serviceDeterminations) {
-            for (Operation operation : serviceDetermination.getOperations()) {
-                String key = operation.getName();
-                if (resultMap.containsKey(key)) {
-                    // Check to see that we don't have two operations with different service types
-                    if (!resultMap.get(key).equals(operation.getServiceType())) {
-                        throw new ProcessingRuleError("Ambiguous operation name detected. Operation " + key + " might have a service type of " + resultMap.get(key) + " or " + operation.getServiceType());
-                    }
-                }
-                else {
-                    resultMap.put(key, operation.getServiceType());
-                }
-            }
-        }
-
-        return(operationName -> {
-            String lowerCasedeploymentNameWithoutOperation = operationName.toLowerCase().replace("operation", "").trim();
-            if (!resultMap.containsKey(lowerCasedeploymentNameWithoutOperation)) throw new ProcessingRuleError("Operation " + operationName + " has an unknown service type. Cannot continue.");
-            return resultMap.get(lowerCasedeploymentNameWithoutOperation);
-        });
-    }
-
     public static Boolean conditionIsBeforeService(Condition condition, ServiceHistory serviceHistory)
     {
         return condition.getStartDate().isBefore(serviceHistory.getHireDate());

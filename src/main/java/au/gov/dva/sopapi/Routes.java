@@ -172,7 +172,6 @@ class Routes {
                 ImmutableSet<ServiceDetermination> serviceDeterminations = cache.get_allServiceDeterminations();
                 ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(serviceDeterminations);
                 Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
-                Function<String, ServiceType> getServiceTypeFromOperationName = ProcessingRuleFunctions.getServiceTypeFromOperationName(serviceDeterminations);
 
                 if (AppSettings.getEnvironment().isDev()){
                     CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
@@ -181,7 +180,7 @@ class Routes {
                 }
 
                 CaseSummaryModel model = new CaseSummaryModelImpl(sopSupportRequestDto, soPPairs, isOperational);
-                byte[] result = CaseSummary.createCaseSummary(model, getServiceTypeFromOperationName).get();
+                byte[] result = CaseSummary.createCaseSummary(model, isOperational).get();
 
                 setResponseHeadersDocXResponse(res);
                 return result;
