@@ -14,7 +14,8 @@ public class OffsetDateTimeDeserializer extends JsonDeserializer<OffsetDateTime>
     public OffsetDateTime deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
         String stringValue = p.getValueAsString();
 
-        OffsetDateTime parsed = DateTimeUtils.stringToOffsetDateTime(stringValue);
+        OffsetDateTime parsed = DateTimeUtils.stringToOffsetDateTimeWithAssumptions(stringValue);
+
         return parsed;
     }
 }

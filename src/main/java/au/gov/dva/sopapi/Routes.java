@@ -11,6 +11,7 @@ import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
+import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
@@ -27,6 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +36,8 @@ import spark.QueryParamsMap;
 import spark.Request;
 import spark.Response;
 
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -50,17 +54,34 @@ class Routes {
     private static Cache cache;
     static Logger logger = LoggerFactory.getLogger(Routes.class);
 
+    public static void initStatus(Repository repository, Cache cache)
+    {
+
+        get("/status", (req, res) -> {
+            StringBuilder sb = new StringBuilder();
+
+            int cacheSops = cache.get_allSops().size();
+
+            Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();
+
+            String lastUpdateTime = lastUpdated.isPresent() ? lastUpdated.get().toString() : "Unknown";
+
+            setResponseHeaders(res,false,200);
+            sb.append(String.format("Number of SoPs available: %d%n", cacheSops));
+            sb.append(String.format("Last checked for updated SoPs and Service Determinations: %s%n", lastUpdateTime));
+
+
+
+            return sb.toString();
+
+        });
+    }
+
+
     public static void init(Cache cache)
     {
         Routes.cache = cache;
 
-
-
-        get("/status", (req, res) -> {
-            int numberOfSopsAvailable = cache.get_allSops().size();
-            setResponseHeaders(res,false,200);
-            return String.format("Number of SoPs available: %d", numberOfSopsAvailable);
-        });
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
 
