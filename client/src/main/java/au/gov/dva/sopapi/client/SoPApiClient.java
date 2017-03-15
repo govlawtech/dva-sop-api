@@ -43,9 +43,22 @@ public class SoPApiClient {
         if (soPApiProxyClientSettings.isPresent()) {
             SoPApiProxyClientSettings proxyClientSettings = soPApiProxyClientSettings.get();
 
-            Realm realm = new Realm.Builder(proxyClientSettings.getUserName(), proxyClientSettings.getPassword())
-                    .setScheme(Realm.AuthScheme.BASIC)
+	Realm realm = null;
+
+	//I'm assuming ntlm configs are specific
+	if (proxyClientSettings.getAuthScheme().equals(Realm.AuthScheme.NTLM)) {
+            realm = new Realm.Builder(proxyClientSettings.getUserName(), proxyClientSettings.getPassword())
+	  	    .setNtlmDomain(proxyClientSettings.getNtlmDomain())
+                    .setNtlmHost(proxyClientSettings.getNtlmHost())
+                    .setScheme(proxyClientSettings.getAuthScheme())
                     .build();
+	}
+	//Otherwise we'll just go
+	else {
+	    realm = new Realm.Builder(proxyClientSettings.getUserName(), proxyClientSettings.getPassword())
+	            .setScheme(proxyClientSettings.getAuthScheme())
+                    .build();
+	}
 
             ProxyServer proxyServer = new ProxyServer.Builder(proxyClientSettings.getIpAddress(), proxyClientSettings.getPort())
                     .setRealm(realm)
