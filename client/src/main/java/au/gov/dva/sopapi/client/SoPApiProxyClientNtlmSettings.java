@@ -1,9 +1,10 @@
 package au.gov.dva.sopapi.client;
 
 import javax.validation.constraints.NotNull;
+
 import org.asynchttpclient.Realm;
 
-public class SoPApiProxyClientSettings {
+public class SoPApiProxyClientNtlmSettings {
     private final String ipAddress;
     private final int port;
     private final String userName;
@@ -11,18 +12,17 @@ public class SoPApiProxyClientSettings {
     private final int secondsTimeOut;
     private final String ntlmDomain;
     private final String ntlmHost;
-    private final Realm.AuthScheme authScheme;
 
-    public SoPApiProxyClientSettings(@NotNull String ipAddress, @NotNull int securedPort,@NotNull String userName,@NotNull String password,@NotNull int secondsTimeOut,
-	@NotNull String ntlmHost, @NotNull String ntlmDomain, @NotNull String authScheme) {
+
+    public SoPApiProxyClientNtlmSettings(@NotNull String ipAddress, @NotNull int securedPort, @NotNull String userName, @NotNull String password, @NotNull int secondsTimeOut,
+                                         @NotNull String ntlmHost, @NotNull String ntlmDomain) {
         this.ipAddress = ipAddress;
         this.port = securedPort;
         this.userName = userName;
         this.password = password;
         this.secondsTimeOut = secondsTimeOut;
-	this.ntlmHost = ntlmHost;
-	this.ntlmDomain = ntlmDomain;
-	this.authScheme = Realm.AuthScheme.valueOf(authScheme);	
+        this.ntlmHost = ntlmHost;
+        this.ntlmDomain = ntlmDomain;
     }
 
     public String getIpAddress() {
@@ -53,7 +53,5 @@ public class SoPApiProxyClientSettings {
         return ntlmDomain;
     }
 
-    public Realm.AuthScheme getAuthScheme() {
-        return authScheme;
-    }
+
 }
