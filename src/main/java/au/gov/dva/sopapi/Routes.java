@@ -180,9 +180,9 @@ class Routes {
         }));
 
         post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) -> {
-            if (validateHeaders() && !responseTypeAcceptable(req)) {
+            if (validateHeaders() && !responseTypeAcceptableDocx(req)) {
                 setResponseHeaders(res, false, 406);
-                return buildAcceptableContentTypesError();
+                return buildAcceptableContentTypesDocxError();
             }
 
             try {
@@ -313,6 +313,15 @@ class Routes {
         else return false;
     }
 
+    private static boolean responseTypeAcceptableDocx(Request request) {
+        String contentTypeHeader = request.headers("Accept");
+        if (contentTypeHeader == null)
+            return false;
+        if (contentTypeHeader.contains("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
+            return true;
+        else return false;
+    }
+
     private static Optional<String> generateSchemaForSopSupportRequestDto() {
 
         ObjectMapper mapper = new ObjectMapper();
@@ -333,6 +342,10 @@ class Routes {
 
     private static String buildAcceptableContentTypesError() {
         return "Accept header in request must include 'application/json'.";
+    }
+
+    private static String buildAcceptableContentTypesDocxError() {
+        return "Accept header in request must include 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'.";
     }
 
     private static Boolean validateHeaders() {
