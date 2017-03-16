@@ -13,7 +13,6 @@ public class SoPApiProxyClientNtlmSettings {
     private final String ntlmDomain;
     private final String ntlmHost;
 
-
     public SoPApiProxyClientNtlmSettings(@NotNull String ipAddress, @NotNull int securedPort, @NotNull String userName, @NotNull String password, @NotNull int secondsTimeOut,
                                          @NotNull String ntlmHost, @NotNull String ntlmDomain) {
         this.ipAddress = ipAddress;
