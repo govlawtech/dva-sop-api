@@ -22,29 +22,29 @@ import java.util.concurrent.CompletableFuture;
 public class SoPApiClient {
 
     private final URL baseUrl;
-    private Optional<SoPApiProxyClientSettings> proxyConfig;
+    private Optional<SoPApiProxyClientNtlmSettings> proxyConfig;
     private static volatile AsyncHttpClient asyncHttpClient;
-    public SoPApiClient(URL baseUrl, Optional<SoPApiProxyClientSettings> proxyConfig)
-    {
+
+    public SoPApiClient(URL baseUrl, Optional<SoPApiProxyClientNtlmSettings> proxyConfig) {
         this.baseUrl = baseUrl;
         this.proxyConfig = proxyConfig;
     }
 
-    private AsyncHttpClient getOrCreateAsyncHttpClient(){
-        if (asyncHttpClient == null)
-        {
+    private AsyncHttpClient getOrCreateAsyncHttpClient() {
+        if (asyncHttpClient == null) {
             asyncHttpClient = buildAsyncHttpClient(proxyConfig);
         }
         return asyncHttpClient;
     }
 
-    private AsyncHttpClient buildAsyncHttpClient(Optional<SoPApiProxyClientSettings> soPApiProxyClientSettings)
-    {
+    private AsyncHttpClient buildAsyncHttpClient(Optional<SoPApiProxyClientNtlmSettings> soPApiProxyClientSettings) {
         if (soPApiProxyClientSettings.isPresent()) {
-            SoPApiProxyClientSettings proxyClientSettings = soPApiProxyClientSettings.get();
+            SoPApiProxyClientNtlmSettings proxyClientSettings = soPApiProxyClientSettings.get();
 
             Realm realm = new Realm.Builder(proxyClientSettings.getUserName(), proxyClientSettings.getPassword())
-                    .setScheme(Realm.AuthScheme.BASIC)
+                    .setNtlmDomain(proxyClientSettings.getNtlmDomain())
+                    .setNtlmHost(proxyClientSettings.getNtlmHost())
+                    .setScheme(Realm.AuthScheme.NTLM)
                     .build();
 
             ProxyServer proxyServer = new ProxyServer.Builder(proxyClientSettings.getIpAddress(), proxyClientSettings.getPort())
@@ -59,8 +59,7 @@ public class SoPApiClient {
                     .build();
 
             return new DefaultAsyncHttpClient(cf);
-        }
-        else {
+        } else {
             return new DefaultAsyncHttpClient();
         }
     }
@@ -68,7 +67,7 @@ public class SoPApiClient {
 
     private static URL getServiceUrl(URL baseUrl, String serviceRouteWithLeadingSlash) {
         try {
-            assert(!baseUrl.toString().endsWith("/"));
+            assert (!baseUrl.toString().endsWith("/"));
             return URI.create(baseUrl + serviceRouteWithLeadingSlash).toURL();
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -76,18 +75,15 @@ public class SoPApiClient {
         return null;
     }
 
-    public CompletableFuture<SoPReferenceResponse> getFactorsForConditionName(String conditionName, IncidentType incidentType, StandardOfProof standardOfProof)
-    {
-        return getFactors(conditionName, null, null, incidentType,standardOfProof);
+    public CompletableFuture<SoPReferenceResponse> getFactorsForConditionName(String conditionName, IncidentType incidentType, StandardOfProof standardOfProof) {
+        return getFactors(conditionName, null, null, incidentType, standardOfProof);
     }
 
-    public CompletableFuture<SoPReferenceResponse> getFactorsForIcdCode(String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
-    {
-        return getFactors(null, icdCodeVersion,icdCodeValue,incidentType,standardOfProof);
+    public CompletableFuture<SoPReferenceResponse> getFactorsForIcdCode(String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof) {
+        return getFactors(null, icdCodeVersion, icdCodeValue, incidentType, standardOfProof);
     }
 
-    private CompletableFuture<SoPReferenceResponse> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof)
-    {
+    private CompletableFuture<SoPReferenceResponse> getFactors(String conditionName, String icdCodeVersion, String icdCodeValue, IncidentType incidentType, StandardOfProof standardOfProof) {
 
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_SOPFACTORS);
         List<Param> params = new ArrayList<>();
@@ -100,7 +96,7 @@ public class SoPApiClient {
         CompletableFuture<SoPReferenceResponse> promise = getOrCreateAsyncHttpClient()
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
-                .setHeader("Content-Type","application/json; charset=utf-8")
+                .setHeader("Content-Type", "application/json; charset=utf-8")
                 .addQueryParams(params)
                 .execute()
                 .toCompletableFuture()
@@ -115,13 +111,12 @@ public class SoPApiClient {
         return promise;
     }
 
-    public CompletableFuture<OperationsResponse> getOperations()
-    {
+    public CompletableFuture<OperationsResponse> getOperations() {
         URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_OPERATIONS);
         CompletableFuture<OperationsResponse> promise = getOrCreateAsyncHttpClient()
                 .prepareGet(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
-                .setHeader("Content-Type","application/json; charset=utf-8")
+                .setHeader("Content-Type", "application/json; charset=utf-8")
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> {
@@ -139,19 +134,18 @@ public class SoPApiClient {
         CompletableFuture<SopSupportResponseDto> promise = getOrCreateAsyncHttpClient()
                 .preparePost(serviceUrl.toString())
                 .setHeader("Accept", "application/json; charset=utf-8")
-                .setHeader("Content-Type","application/json; charset=utf-8")
+                .setHeader("Content-Type", "application/json; charset=utf-8")
                 .setBody(jsonRequestBody)
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> {
                             if (response.getStatusCode() == 200) {
                                 return response.getResponseBody();
-                            }
-                            else {
-                                throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(),response.getResponseBody()));
+                            } else {
+                                throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(), response.getResponseBody()));
                             }
                         }
-                    )
+                )
 
                 .thenApply(json -> SopSupportResponseDto.fromJsonString(json.toString()));
 
@@ -180,8 +174,7 @@ public class SoPApiClient {
         return promise;
     }
 
-    private static String buildErrorMsg(Integer statusCode, String msg)
-    {
+    private static String buildErrorMsg(Integer statusCode, String msg) {
         return String.format("HTTP Status Code: %d, %s.", statusCode, msg);
     }
 }

@@ -78,7 +78,6 @@ public class SoPs {
 
        List<SoPPair> wherePresent = pairs.filter(p -> p.isPresent()).map(s -> s.get()).collect(Collectors.toList());
        return ImmutableSet.copyOf(wherePresent);
-
     }
 
 
