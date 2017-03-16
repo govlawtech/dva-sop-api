@@ -6,6 +6,7 @@ import au.gov.dva.dvasopapi.tests.mocks.MockLumbarSpondylosisSopRH;
 import au.gov.dva.dvasopapi.tests.mocks.SimpleCaseSummaryModelMock;
 import au.gov.dva.dvasopapi.tests.mocks.processingRules.SimpleServiceHistory;
 import au.gov.dva.sopapi.interfaces.model.*;
+
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
 import com.google.common.collect.ImmutableSet;
@@ -21,17 +22,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 
 public class CaseSummaryTests {
 
-    Function<String, ServiceType> mockCat = s -> {
-        if (s.contains("SLIPPER"))
-            return ServiceType.WARLIKE;
-        if (s.contains("HARWICK"))
-            return ServiceType.NON_WARLIKE;
-
-        else return ServiceType.PEACETIME;
+    Predicate<Deployment> mockCat = s -> {
+        if (s.getOperationName().contains("Peace is Our Profession"))
+            return false;
+        else return true;
     };
 
     @Test

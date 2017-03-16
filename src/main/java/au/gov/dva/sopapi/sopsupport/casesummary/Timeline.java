@@ -41,7 +41,7 @@ import java.util.function.Predicate;
 public class Timeline {
 
 
-    public static ImmutableList<byte[]> createTimelineImages(Service service, Predicate<String> isOperational) throws IOException {
+    public static ImmutableList<byte[]> createTimelineImages(Service service, Predicate<Deployment> isOperational) throws IOException {
 
         TaskSeriesCollection tasks = new TaskSeriesCollection();
         TaskSeries operationalService = new TaskSeries("Operational Service");
@@ -59,7 +59,7 @@ public class Timeline {
                 endDate = new Date();
             }
 
-            if (isOperational.test(deployment.getOperationName()))
+            if (isOperational.test(deployment))
             {
                 operationalService.add(new Task(deployment.getOperationName(), new SimpleTimePeriod(startDate, endDate)));
 

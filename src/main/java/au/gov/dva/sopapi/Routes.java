@@ -9,8 +9,9 @@ import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
+import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
@@ -18,6 +19,8 @@ import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationP
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupport;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
+import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
+import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummaryModelImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -39,6 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
@@ -175,6 +179,50 @@ class Routes {
             }
         }));
 
+        post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) -> {
+            if (validateHeaders() && !responseTypeAcceptableDocx(req)) {
+                setResponseHeaders(res, false, 406);
+                return buildAcceptableContentTypesDocxError();
+            }
+
+            try {
+                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+
+                // Make support objects
+                ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
+                ImmutableSet<ServiceDetermination> serviceDeterminations = cache.get_allServiceDeterminations();
+                ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(serviceDeterminations);
+                Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
+
+                if (AppSettings.getEnvironment().isDev()){
+                    CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+                    caseTrace.addTrace(req.body());
+                    logger.trace(caseTrace.toString());
+                }
+
+                CaseSummaryModel model = new CaseSummaryModelImpl(sopSupportRequestDto, soPPairs, isOperational);
+                byte[] result = CaseSummary.createCaseSummary(model, isOperational).get();
+
+                setResponseHeadersDocXResponse(res);
+                return result;
+            } catch (DvaSopApiDtoError e) {
+                setResponseHeaders(res, false, 400);
+                Optional<String> schema = generateSchemaForSopSupportRequestDto();
+                StringBuilder sb = new StringBuilder();
+                sb.append(String.format("%s\n", e.getMessage()));
+                if (schema.isPresent()) {
+                    sb.append("Request body does not conform to expected schema:\n");
+                    sb.append(schema);
+                }
+                return sb.toString();
+            }
+            catch (ProcessingRuleError e)
+            {
+                logger.error("Error applying rule.", e);
+                setResponseHeaders(res,false,400);
+                return e.getMessage();
+            }
+        }));
 
     }
 
@@ -249,11 +297,27 @@ class Routes {
 
     }
 
+    private static void setResponseHeadersDocXResponse(Response response) {
+        response.status(200);
+        response.type("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+
+        response.header("X-Content-Type-Options", "nosniff");
+    }
+
     private static boolean responseTypeAcceptable(Request request) {
         String contentTypeHeader = request.headers("Accept");
         if (contentTypeHeader == null)
             return false;
         if (contentTypeHeader.contains("application/json"))
+            return true;
+        else return false;
+    }
+
+    private static boolean responseTypeAcceptableDocx(Request request) {
+        String contentTypeHeader = request.headers("Accept");
+        if (contentTypeHeader == null)
+            return false;
+        if (contentTypeHeader.contains("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
             return true;
         else return false;
     }
@@ -278,6 +342,10 @@ class Routes {
 
     private static String buildAcceptableContentTypesError() {
         return "Accept header in request must include 'application/json'.";
+    }
+
+    private static String buildAcceptableContentTypesDocxError() {
+        return "Accept header in request must include 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'.";
     }
 
     private static Boolean validateHeaders() {
