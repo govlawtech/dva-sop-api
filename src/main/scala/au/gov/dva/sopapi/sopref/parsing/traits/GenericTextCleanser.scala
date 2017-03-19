@@ -8,7 +8,7 @@ import scala.util.matching.Regex
 
 trait GenericTextCleanser extends SoPCleanser {
 
-  private val lineEndRegexPattern = """(\r\n?)|\n""""
+  private val lineEndRegexPattern = "[\r\n]+"
 
   val logger = Logger[GenericTextCleanser]
 

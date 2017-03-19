@@ -95,6 +95,8 @@ class AllSopsTest extends FunSuite{
 
     println("FAILED SOPS: " + fails.size)
     fails.foreach(f => println(f))
+
+    assert(passes.size > 30)
   }
 
 
