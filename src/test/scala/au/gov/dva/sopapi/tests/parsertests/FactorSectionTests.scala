@@ -70,4 +70,11 @@ class FactorSectionTests extends FunSuite {
 
   }
 
+
+  test("Parse factors section for anxiety disorder")
+  {
+    val factorsText = ParserTestUtils.produceCleansedText("F2016C00973","allSops/F2016C00973.pdf")
+    println(factorsText)
+  }
+
 }

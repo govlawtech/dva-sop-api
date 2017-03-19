@@ -2,19 +2,42 @@ package au.gov.dva.sopapi.sopref.parsing.traits
 
 import com.typesafe.scalalogging.Logger
 
+import scala.util.Properties
 import scala.util.matching.Regex
 
 
 trait GenericTextCleanser extends SoPCleanser {
 
+  private val lineEndRegexPattern = """(\r\n?)|\n""""
+
   val logger = Logger[GenericTextCleanser]
 
   def removeAuthorisedFootnote(raw: String): String = {
+
+    val asLines = raw.split(lineEndRegexPattern).toList
+
+
     val footNoteRegex1 = """(?i)Federal\s+Register\s+of\s+Legislative\s+Instruments(?-i)\s+F[0-9]{4,4}[A-Z0-9]{6,6}(?-i)""".r
     val footNoteRegex2 = """(?i)Authorised\s+Version\s+F[0-9]{4,4}[A-Z0-9]{6,6}\s+registered\s+[0-9]{2,2}/[0-9]{2,2}/[0-9]{4,4}(?-i)""".r
-    List(raw).map(regexReplace(footNoteRegex1, _))
-      .map(regexReplace(footNoteRegex2, _))
-      .head
+
+    asLines
+      .filter(l => footNoteRegex1.findAllMatchIn(l).isEmpty)
+      .filter(l => footNoteRegex2.findFirstMatchIn(l).isEmpty)
+      .mkString(Properties.lineSeparator)
+  }
+
+  def removeCompilationFootnote(raw: String): String = {
+
+    val asLines = raw.split(lineEndRegexPattern).toList
+
+    val compilationFootNoteRegexLine1 =  """(?i)\s*statement of principles concerning .* [0-9]{4,4} [0-9]+\s*$(?-i)""".r
+    val compilationFootnoteRegexLine2 =  """(?i)\s*compilation no\. [0-9].*$(?-i)""".r
+
+
+    asLines
+      .filter(l => compilationFootNoteRegexLine1.findAllMatchIn(l).isEmpty)
+      .filter(l => compilationFootnoteRegexLine2.findFirstMatchIn(l).isEmpty)
+      .mkString(Properties.lineSeparator)
   }
 
   private def regexReplace(regex: Regex, target: String, replacement: String = "") = {
@@ -71,13 +94,14 @@ trait GenericTextCleanser extends SoPCleanser {
   override def cleanse(rawText: String) = {
     List(rawText)
       .map(trimStart)
+      .map(removeCompilationFootnote)
       .map(removeAuthorisedFootnote)
       .map(removePageNumberFootNote)
+      .map(stripNotes)
       .map(removePageGaps)
       .map(compressSpaces)
       .map(replaceCurlyApostrophe)
       .map(reinsertExponents)
-      .map(stripNotes)
       .head
   }
 }

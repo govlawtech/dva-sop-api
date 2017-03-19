@@ -36,6 +36,15 @@ class CleanserTests extends FunSuite{
     println(cleansedWithdefault)
   }
 
+  test("Cleanse compilation footnotes")
+  {
+    val rawTextFromAnxietyDisorder = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("allSops/F2016C00973.pdf"))
+    val cleansed = GenericCleanser.removeCompilationFootnote(rawTextFromAnxietyDisorder)
+    assert(!cleansed.contains(" Statement of Principles concerning anxiety disorder No. 102 of 2014 8"))
+    assert(!cleansed.contains("Compilation No. 1  Compilation date: 02/11/2016"))
+    println(cleansed)
+  }
+
 
 
 
