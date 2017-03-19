@@ -43,7 +43,9 @@ class PreAug2015Tests extends FunSuite{
       "F2013L01129",
       "F2014L00931",
       "F2012L00016",
-      "F2012L01361"
+      "F2012L01361",
+      "F2014L01784"
+
     )
 
     test("Push all pre Aug BOP 2015 through pipeline")
@@ -55,6 +57,7 @@ class PreAug2015Tests extends FunSuite{
 
         parseResults.foreach(s => println(TestUtils.prettyPrint(StoredSop.toJson(s))))
 
+       assert(parseResults.size == 14)
      }
 
   test("Push all pre Aug  2015 RH through pipeline")
@@ -65,9 +68,10 @@ class PreAug2015Tests extends FunSuite{
 
     })
 
-    assert(parseResults.size == 15)
-
+    parseResults.foreach(s => println(TestUtils.prettyPrint(StoredSop.toJson(s))))
+    assert(parseResults.size == 16)
   }
+
 
 
 

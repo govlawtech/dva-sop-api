@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.tests.parsers
 
+import au.gov.dva.sopapi.sopref.data.Conversions
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -25,6 +26,16 @@ class CleanserTests extends FunSuite{
     val replaced = """m/s[\r\n]+2""".r.replaceAllIn(input,"m/s\u00B2")
     println(replaced)
   }
+
+
+  test("Cleanse notes in post Aug 2015 sops")
+  {
+    val rawText = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
+    val cleansedWithdefault = GenericCleanser.cleanse(rawText)
+    assert(!cleansedWithdefault.contains("Note: "))
+    println(cleansedWithdefault)
+  }
+
 
 
 

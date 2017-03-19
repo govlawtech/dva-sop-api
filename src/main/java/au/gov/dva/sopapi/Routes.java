@@ -60,16 +60,20 @@ class Routes {
         get("/status", (req, res) -> {
             StringBuilder sb = new StringBuilder();
 
-            int cacheSops = cache.get_allSops().size();
+            ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
 
             Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();
 
             String lastUpdateTime = lastUpdated.isPresent() ? lastUpdated.get().toString() : "Unknown";
 
             setResponseHeaders(res,false,200);
-            sb.append(String.format("Number of SoPs available: %d%n", cacheSops));
-            sb.append(String.format("Last checked for updated SoPs and Service Determinations: %s%n", lastUpdateTime));
 
+            List<String> conditionList = soPPairs.stream().map(sp -> "* " + sp.getConditionName()).sorted().collect(toList());
+            String conditionsListString = String.join("\r\n",conditionList);
+            sb.append(String.format("Number of conditions available: %d%n", conditionList.size()));
+            sb.append(String.format("Last checked for updated SoPs and Service Determinations: %s%n", lastUpdateTime));
+            sb.append(String.format("Condition available:\r\n" ));
+            sb.append(conditionsListString);
 
 
             return sb.toString();

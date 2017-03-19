@@ -43,10 +43,10 @@ public class DtoTransformations {
                 operation.getServiceType().toString());
     }
 
-    public static SoPFactorsResponse fromSop(SoP sop, StandardOfProof standardOfProof, IncidentType incidentType) {
+    public static SoPFactorsResponse fromSop(SoP sop,  IncidentType incidentType) {
 
 
-        ImmutableList<au.gov.dva.sopapi.interfaces.model.Factor> factorsToInclude = (sop.getStandardOfProof() != standardOfProof) ? ImmutableList.of() : (incidentType == IncidentType.Aggravation) ?
+        ImmutableList<au.gov.dva.sopapi.interfaces.model.Factor> factorsToInclude = (incidentType == IncidentType.Aggravation) ?
                 sop.getAggravationFactors() : ((incidentType == IncidentType.Onset) ?
                 sop.getOnsetFactors() : ImmutableList.of());
 

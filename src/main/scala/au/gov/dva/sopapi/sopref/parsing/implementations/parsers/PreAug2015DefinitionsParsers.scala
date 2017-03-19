@@ -2,7 +2,7 @@ package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 
 import au.gov.dva.sopapi.exceptions.SopParserError
 
-object DefinitionsParsers {
+object PreAug2015DefinitionsParsers {
 
   def splitToDefinitions(definitionsSection : String) : List[String] = {
      assert(!definitionsSection.startsWith("\""))
@@ -10,7 +10,6 @@ object DefinitionsParsers {
      val lines = definitionsSection.split("[\r\n]+").toList.drop(1)
      val result: List[String] = divideRecursive(acc,lines)
      return result
-
   }
 
   private def divideRecursive(divided : List[String], toDivide: List[String]) : List[String] = {

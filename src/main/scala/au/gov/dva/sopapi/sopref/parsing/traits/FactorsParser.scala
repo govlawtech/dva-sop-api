@@ -37,9 +37,22 @@ trait FactorsParser extends RegexParsers with BodyTextParsers with TerminatorPar
     case letter ~ body => (letter, body)
   }
 
+  private def toLineList(stringWithLinebreaks : String) = {
+    stringWithLinebreaks.split("(\r\n|[\r\n])").toList
+  }
+
+  private def flattenLineBreaks(lines : List[String]) = {
+    lines.mkString(" ")
+  }
+
+  private def flattenLineBreaks(stringWithLineBreaks : String) : String = {
+    flattenLineBreaks(toLineList(stringWithLineBreaks))
+  }
+
   def parseSingleFactor(singleFactorTextInclLineBreaks: String): FactorInfo = {
 
-    val (headOrAll, rest) = SoPExtractorUtilities.splitFactorToHeaderAndRest(singleFactorTextInclLineBreaks.split("[\r\n]+").toList)
+    val (headOrAll, rest) = SoPExtractorUtilities.splitFactorToHeaderAndRest(
+      toLineList(singleFactorTextInclLineBreaks))
     assert(!headOrAll.isEmpty)
 
     if (rest.isEmpty) {
@@ -57,8 +70,9 @@ trait FactorsParser extends RegexParsers with BodyTextParsers with TerminatorPar
       .map(i => i.mkString(Properties.lineSeparator))
 
     val subFactorTextsExceptLast = restSplitToSubParas.dropRight(1)
+      .map(t => flattenLineBreaks(t))
     val parseSubFactorsExceptLast = subFactorTextsExceptLast
-      .map(this.parseAll(this.subPara, _))
+      .map(this.parseAll(this.subPara,_ ))
 
     if (parseSubFactorsExceptLast.exists(p => !p.successful)) {
       val unsuccessful = parseSubFactorsExceptLast.filter(!_.successful)
@@ -68,7 +82,8 @@ trait FactorsParser extends RegexParsers with BodyTextParsers with TerminatorPar
     else {
 
       val (lastPara, tail) = SoPExtractorUtilities.splitOutTailIfAny(restSplitToSubParas.takeRight(1).head)
-      val lastParaParseResult = this.parseAll(this.subPara, lastPara.replaceAll("[\r\n]+"," "))
+
+      val lastParaParseResult = this.parseAll(this.subPara, flattenLineBreaks(lastPara))
       if (!lastParaParseResult.successful) {
         throw new SopParserError(lastParaParseResult.toString)
       }
@@ -79,14 +94,11 @@ trait FactorsParser extends RegexParsers with BodyTextParsers with TerminatorPar
       val lastSubParaInfoResult: (String, String, Option[String]) = lastParaParseResult.get
       val allSubParas = allSubParaInfosButLast :+ lastSubParaInfoResult
       return new FactorInfoWithSubParas(headLetter, headText, allSubParas, tail)
-
     }
-
   }
 
-
   def parseFactorsSection(factorsSectionText: String): (StandardOfProof, List[FactorInfo]) = {
-    val splitToLines: List[String] = factorsSectionText.split("[\r\n]+").toList;
+    val splitToLines: List[String] = toLineList(factorsSectionText)
     val (header: String, rest: List[String]) = SoPExtractorUtilities.splitFactorsSectionToHeaderAndRest(splitToLines)
 
     val groupedToCollectionsOfFactors: List[String] = SoPExtractorUtilities.splitFactorsSectionByFactor(rest)

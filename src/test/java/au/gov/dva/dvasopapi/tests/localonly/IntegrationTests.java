@@ -119,7 +119,7 @@ public class IntegrationTests  {
         // only changes should be one published compilation instrument which came from email:
         //Statement of Principles concerning malignant neoplasm of the oesophagus (Reasonable Hypothesis) (No. 120 of 2015)
         // F2017C00077
-        AutoUpdate.updateChangeList(localRepository,emailChangeFactory,updateChangeFactory);
+        AutoUpdate.patchChangeList(localRepository,emailChangeFactory,updateChangeFactory);
 
         ImmutableSet<InstrumentChange> updatesInRepo = localRepository.getInstrumentChanges();
         Assert.assertTrue(updatesInRepo.size() == 1);

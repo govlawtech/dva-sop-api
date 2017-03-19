@@ -10,7 +10,7 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
 import au.gov.dva.sopapi.sopref.parsing.implementations.extractors.PreAugust2015Extractor
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{DefinitionsParsers, PreAugust2015Parser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{PreAug2015DefinitionsParsers, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.LsSoPFactory
 import au.gov.dva.sopapi.sopref.parsing.traits.FactorsParser
 import com.google.common.io.Resources
@@ -74,14 +74,14 @@ class SopParserTests extends FunSuite {
 
   test("Divide definitions section to individual definitions") {
     val testInput = ParserTestUtils.resourceToString("lsExtractedDefinitionsSection.txt")
-    val result = DefinitionsParsers.splitToDefinitions(testInput)
+    val result = PreAug2015DefinitionsParsers.splitToDefinitions(testInput)
     assert(result.size == 17 && result.drop(1).forall(s => s.endsWith(";")))
   }
 
   test("Parse single definition section") {
     val testInput = "\"trauma to the lumbar spine\" means a discrete event involving the application of significant physical force, including G force, to the lumbar spine that causes the development within twenty-four hours of the injury being sustained, of symptoms and signs of pain and tenderness and either altered mobility or range of movement of the lumbar spine. In the case of sustained unconsciousness or the masking of pain by analgesic medication, these symptoms and signs must appear on return to consciousness or the withdrawal of the analgesic medication. These symptoms and signs must last for a period of at least seven days following their onset; save for where medical intervention has occurred and that medical intervention involves either: (a) immobilisation of the lumbar spine by splinting, or similar external agent; (b) injection of corticosteroids or local anaesthetics into the lumbar spine; or (c) surgery to the lumbar spine."
 
-    val result = DefinitionsParsers.parseSingleDefinition(testInput)
+    val result = PreAug2015DefinitionsParsers.parseSingleDefinition(testInput)
     assert(result._1 == "trauma to the lumbar spine" && result._2.startsWith("means a ") && result._2.endsWith("lumbar spine"))
   }
 

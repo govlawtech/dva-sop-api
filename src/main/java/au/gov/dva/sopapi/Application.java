@@ -35,7 +35,7 @@ public class Application implements spark.servlet.SparkApplication {
     public void init() {
         _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
         if (AppSettings.getEnvironment() == AppSettings.Environment.devtestlocal)
-            _repository.purge();
+//            _repository.purge();
         _cache = Cache.getInstance();
         seedStorageIfNecessary();
         autoUpdate();
@@ -68,16 +68,16 @@ public class Application implements spark.servlet.SparkApplication {
     }
 
     private void updateNow() {
-        updateSops().run();
+        updateSopsChangeList().run();
         AutoUpdate.patchSoPChanges(_repository);
         updateServiceDeterminations().run();
         _cache.refresh(_repository);
     }
 
 
-    private Runnable updateSops() {
+    private Runnable updateSopsChangeList() {
         return () -> {
-            AutoUpdate.updateChangeList(
+            AutoUpdate.patchChangeList(
                     _repository,
                     new EmailSubscriptionInstrumentChangeFactory(
                             new LegislationRegisterEmailClientImpl("noreply@legislation.gov.au"),
@@ -105,7 +105,7 @@ public class Application implements spark.servlet.SparkApplication {
     }
 
     private void startScheduledPollingForSoPChanges(LocalTime runTime) {
-        startDailyExecutor(runTime, updateSops());
+        startDailyExecutor(runTime, updateSopsChangeList());
     }
 
 

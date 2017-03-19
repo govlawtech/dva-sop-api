@@ -61,6 +61,13 @@ trait GenericTextCleanser extends SoPCleanser {
 
   }
 
+  private def stripNotes(raw : String) : String = {
+    val noteRegex = """Note:\s.*[\r\n]+""".r
+    regexReplace(noteRegex,raw)
+  }
+
+
+
   override def cleanse(rawText: String) = {
     List(rawText)
       .map(trimStart)
@@ -70,6 +77,7 @@ trait GenericTextCleanser extends SoPCleanser {
       .map(compressSpaces)
       .map(replaceCurlyApostrophe)
       .map(reinsertExponents)
+      .map(stripNotes)
       .head
   }
 }

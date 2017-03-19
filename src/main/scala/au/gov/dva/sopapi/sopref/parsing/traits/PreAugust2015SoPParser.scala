@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserError
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, InstrumentNumber}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{ParsedDefinedTerm, ParsedInstrumentNumber}
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.DefinitionsParsers
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAug2015DefinitionsParsers
 
 import scala.util.parsing.combinator.RegexParsers
 import scala.collection.immutable.Seq
@@ -39,8 +39,8 @@ trait PreAugust2015SoPParser extends SoPParser with FactorsParser {
   }
 
   override def parseDefinitions(definitionsSection: String): List[DefinedTerm] = {
-    DefinitionsParsers.splitToDefinitions(definitionsSection)
-      .map(DefinitionsParsers.parseSingleDefinition(_))
+    PreAug2015DefinitionsParsers.splitToDefinitions(definitionsSection)
+      .map(PreAug2015DefinitionsParsers.parseSingleDefinition(_))
       .map(t => new ParsedDefinedTerm(t._1, t._2))
   }
 

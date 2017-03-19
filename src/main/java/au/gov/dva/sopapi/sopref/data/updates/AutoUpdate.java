@@ -38,7 +38,7 @@ public class AutoUpdate {
         }
     }
 
-    public static void updateChangeList(Repository repository, InstrumentChangeFactory newInstrumentFactory, InstrumentChangeFactory updatedInstrumentFactory) {
+    public static void patchChangeList(Repository repository, InstrumentChangeFactory newInstrumentFactory, InstrumentChangeFactory updatedInstrumentFactory) {
 
         try {
             logger.trace("Starting to check for SoP updates...");
