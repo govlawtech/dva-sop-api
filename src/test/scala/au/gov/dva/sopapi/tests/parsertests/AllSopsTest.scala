@@ -60,11 +60,6 @@ class AllSopsTest extends FunSuite{
 
   }
 
-  test("Load specs")
-  {
-    val r = specs
-    println(r.size)
-  }
 
   test("All sops in specs parse") {
      val allResults = specs
