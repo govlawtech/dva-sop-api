@@ -22,7 +22,7 @@ class ExtractorTests extends FunSuite{
     println(parsedSections)
   }
 
-  ignore("Post 2015 extractor")
+  test("Post 2015 extractor")
   {
     val rawText = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
     val cleansedWithdefault = GenericCleanser.cleanse(rawText)
@@ -31,7 +31,7 @@ class ExtractorTests extends FunSuite{
     assert(factorSection._1 == 9 && factorSection._2.endsWith("inability to obtain appropriate clinical management for haemorrhoids."))
   }
 
-  ignore("Post 2015 extractor definitions")
+  test("Post 2015 extractor definitions")
   {
     val rawText = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
     val cleansedWithdefault = GenericCleanser.cleanse(rawText)
