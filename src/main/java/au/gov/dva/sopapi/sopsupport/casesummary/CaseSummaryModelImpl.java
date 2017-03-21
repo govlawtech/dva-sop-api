@@ -1,12 +1,15 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
+import au.gov.dva.sopapi.exceptions.CaseSummaryError;
+import au.gov.dva.sopapi.exceptions.DvaSopApiError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.Optional;
 import java.util.function.Predicate;
 
 /**
@@ -22,14 +25,14 @@ public class CaseSummaryModelImpl implements CaseSummaryModel {
     private ImmutableSet<Factor> factorsConnectedToService;
 
     // Construction logic
-    public CaseSummaryModelImpl(SopSupportRequestDto supportRequest, ImmutableSet<SoPPair> soPPairs, Predicate<Deployment> isOperational) throws IllegalArgumentException {
-        if (supportRequest == null) throw new IllegalArgumentException("parameter: supportRequest cannot be null");
+    public CaseSummaryModelImpl(Condition condition, ServiceHistory serviceHistory, SoP applicableSop, ImmutableSet<Factor> factorsConnectedToService) throws IllegalArgumentException {
+        this.condition = condition;
+        this.serviceHistory = serviceHistory;
+        this.applicableSop = applicableSop;
+        this.factorsConnectedToService = factorsConnectedToService;
 
-        condition = ConditionFactory.create(soPPairs, supportRequest.get_conditionDto());
-        serviceHistory = DtoTransformations.serviceHistoryFromDto(supportRequest.get_serviceHistoryDto());
-        applicableSop = condition.getProcessingRule().getApplicableSop(condition, serviceHistory, isOperational);
         thresholdProgress = ""; // What should this be?
-        factorsConnectedToService = ImmutableSet.copyOf(condition.getApplicableFactors(applicableSop));
+
     }
 
     // Implementation of CaseSummaryModel interface

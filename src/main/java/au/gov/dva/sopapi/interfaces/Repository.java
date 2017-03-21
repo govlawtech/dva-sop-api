@@ -20,5 +20,7 @@ public interface Repository {
      ImmutableSet<ServiceDetermination> getServiceDeterminations();
      Optional<OffsetDateTime> getLastUpdated();
      void setLastUpdated(OffsetDateTime offsetDateTime);
+     Optional<RuleConfigurationRepository> getRuleConfigurationRepository();
+     void setRulesConfig(byte[] rhCsv, byte[] bopCsv);
      void purge();
 }

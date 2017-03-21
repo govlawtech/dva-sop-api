@@ -1,0 +1,18 @@
+﻿Condition,Instrument ID,Factor References,Service Branch,Rank,CFTS weeks,Accumulation Rate per week,Accumulation Unit,RH operational services days ,RH operational service test period (years)
+lumbar spondylosis,F2014L00933,"6(j), 6(y)",Australian Army,Officer,49,3726,kg/week,23,10
+lumbar spondylosis,F2014L00933,"6(j), 6(y)",Australian Army,Other Rank,37,3280,kg/week,26,10
+lumbar spondylosis,F2014L00933,"6(j), 6(y)",Australian Army,Special Forces,6,21267,kg/week,4,10
+lumbar spondylosis,F2014L00933,"6(j), 6(y)",Royal Australian Navy,Officer,52,2308,kg/week,23,10
+lumbar spondylosis,F2014L00933,"6(j), 6(y)",Royal Australian Navy,Other Rank,197,610,kg/week,26,10
+lumbar spondylosis,F2014L00933,"6(j), 6(y)",Royal Australian Navy,Special Forces,19,6316,kg/week,4,10
+thoracric spondylosis,F2014L00931,"6(i), 6(u)",Australian Army,Officer,49,,,23,10
+thoracric spondylosis,F2014L00931,"6(i), 6(u)",Australian Army,Other Rank,37,,,26,10
+thoracric spondylosis,F2014L00931,"6(i), 6(u)",Australian Army,Special Forces,6,,,4,10
+thoracric spondylosis,F2014L00931,"6(i), 6(u)",Royal Australian Navy,Officer,52,,,23,10
+thoracric spondylosis,F2014L00931,"6(i), 6(u)",Royal Australian Navy,Other Rank,197,,,26,10
+osteoarthritis,F2011C00491,"6(m)(i),6(gg)(i)",Australian Army,Officer,49,3726,kg/week,23,10
+osteoarthritis,F2011C00491,"6(m)(i),6(gg)(i)",Australian Army,Other Rank,37,3280,kg/week,26,10
+osteoarthritis,F2011C00491,"6(m)(i),6(gg)(i)",Australian Army,Special Forces,6,21267,kg/week,4,10
+osteoarthritis,F2011C00491,"6(m)(i),6(gg)(i)",Royal Australian Navy,Officer,52,,,23,10
+osteoarthritis,F2011C00491,"6(m)(i),6(gg)(i)",Royal Australian Navy,Other Rank,197,,,26,10
+osteoarthritis,F2011C00491,"6(m)(i),6(gg)(i)",Royal Australian Navy,Special Forces,19,6680,kg/week,13,10

@@ -7,12 +7,16 @@ import au.gov.dva.dvasopapi.tests.mocks.processingRules.SimpleServiceHistory;
 import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
+import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.ProcessingRule;
+import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
+import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.interfaces.model.SoP;
-import au.gov.dva.sopapi.sopsupport.processingrules.LumbarSpondylosisRule;
+import au.gov.dva.sopapi.sopsupport.processingrules.rules.LumbarSpondylosisRule;
+import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -20,6 +24,7 @@ import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
 import org.junit.Assert;
 import org.junit.Test;
@@ -29,6 +34,7 @@ import java.net.URL;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -189,39 +195,42 @@ public class SopSupportServiceTests {
     }
 
     @Test
-    public void testLsSopIdentification()
-    {
-
-        ProcessingRule underTest = new LumbarSpondylosisRule();
+    public void testLsSopIdentification() throws IOException {
+        RuleConfigurationRepository ruleConfigurationRepository = getRuleConfig();
+        ProcessingRule underTest = new LumbarSpondylosisRule(ruleConfigurationRepository);
         Condition condition = new LumbarSpondylosisConditionMock();
-        SoP applicableSop = underTest.getApplicableSop(condition,new ExtensiveServiceHistoryMock(),isOperational);
-        Assert.assertTrue(applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
+        Optional<SoP> applicableSop = underTest.getApplicableSop(condition,new ExtensiveServiceHistoryMock(),isOperational);
+        Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
 
 
     }
 
     @Test
-    public void testFailOperationalServiceReq()
-    {
-        ProcessingRule underTest = new LumbarSpondylosisRule();
+    public void testFailOperationalServiceReq() throws IOException {
+        ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
         Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,8,1),actOdtOf(2004,8,1),null);
         ServiceHistory serviceHistory = SimpleServiceHistory.get();
-        SoP applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
-        Assert.assertTrue(applicableSop.getStandardOfProof() == StandardOfProof.BalanceOfProbabilities);
+        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
+        Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.BalanceOfProbabilities);
 
     }
 
     @Test
-    public void testPassOperationalServiceReq()
-    {
-        ProcessingRule underTest = new LumbarSpondylosisRule();
+    public void testPassOperationalServiceReq() throws IOException {
+        ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
         Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,10,1),actOdtOf(2004,10,1),null);
         ServiceHistory serviceHistory = SimpleServiceHistory.get();
-        SoP applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
-        Assert.assertTrue(applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
+        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
+        Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
 
     }
 
+    private RuleConfigurationRepository getRuleConfig() throws IOException {
+        byte[] rhCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/RH.csv"));
+        byte[] boPCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/BoP.csv"));
+        RuleConfigurationRepository repo = new CsvRuleConfigurationRepository(rhCsv, boPCsv);
+        return repo;
+    }
 
 
 }

@@ -17,11 +17,13 @@ import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
+import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import au.gov.dva.sopapi.sopsupport.SopSupport;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummaryModelImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
+import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -44,6 +46,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -54,8 +57,7 @@ class Routes {
     private static Cache cache;
     static Logger logger = LoggerFactory.getLogger(Routes.class);
 
-    public static void initStatus(Repository repository, Cache cache)
-    {
+    public static void initStatus(Repository repository, Cache cache) {
 
         get("/status", (req, res) -> {
             StringBuilder sb = new StringBuilder();
@@ -66,13 +68,13 @@ class Routes {
 
             String lastUpdateTime = lastUpdated.isPresent() ? lastUpdated.get().toString() : "Unknown";
 
-            setResponseHeaders(res,false,200);
+            setResponseHeaders(res, false, 200);
 
             List<String> conditionList = soPPairs.stream().map(sp -> "* " + sp.getConditionName()).sorted().collect(toList());
-            String conditionsListString = String.join("\r\n",conditionList);
+            String conditionsListString = String.join("\r\n", conditionList);
             sb.append(String.format("Number of conditions available: %d%n", conditionList.size()));
             sb.append(String.format("Last checked for updated SoPs and Service Determinations: %s%n", lastUpdateTime));
-            sb.append(String.format("Condition available:\r\n" ));
+            sb.append(String.format("Condition available:\r\n"));
             sb.append(conditionsListString);
 
 
@@ -82,8 +84,7 @@ class Routes {
     }
 
 
-    public static void init(Cache cache)
-    {
+    public static void init(Cache cache) {
         Routes.cache = cache;
 
 
@@ -142,48 +143,41 @@ class Routes {
         });
 
 
-
-
         post(SharedConstants.Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req)) {
                 setResponseHeaders(res, false, 406);
                 return buildAcceptableContentTypesError();
             }
-
+            SopSupportRequestDto sopSupportRequestDto;
             try {
-                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-
-                ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
-                ImmutableSet<ServiceDetermination> serviceDeterminations = cache.get_allServiceDeterminations();
-                ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(serviceDeterminations);
-                Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
-                CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
-                caseTrace.addTrace(req.body());
-                SopSupportResponseDto sopSupportResponseDto = SopSupport.applyRules(sopSupportRequestDto, soPPairs, isOperational, caseTrace);
-                if (AppSettings.getEnvironment().isDev())
-                    logger.trace(caseTrace.toString());
-                setResponseHeaders(res, true, 200);
-                return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
+                sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
             } catch (DvaSopApiDtoError e) {
                 setResponseHeaders(res, false, 400);
-                Optional<String> schema = generateSchemaForSopSupportRequestDto();
-                StringBuilder sb = new StringBuilder();
-                sb.append(String.format("%s\n", e.getMessage()));
-                if (schema.isPresent()) {
-                    sb.append("Request body does not conform to expected schema:\n");
-                    sb.append(schema);
-                }
-                return sb.toString();
+                return buildIncorrectRequestFromatError();
             }
-            catch (ProcessingRuleError e)
-            {
+
+
+            RulesResult rulesResult;
+
+            try {
+                rulesResult = runRules(sopSupportRequestDto);
+            } catch (ProcessingRuleError e) {
                 logger.error("Error applying rule.", e);
-                setResponseHeaders(res,false,400);
+                setResponseHeaders(res, false, 500);
                 return e.getMessage();
             }
+
+            SopSupportResponseDto sopSupportResponseDto = SopSupport.buildSopSupportResponseDtoFromRulesResult(rulesResult);
+
+            setResponseHeaders(res, true, 200);
+            return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
+
+
         }));
 
-        post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) -> {
+        post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) ->
+
+        {
             if (validateHeaders() && !responseTypeAcceptableDocx(req)) {
                 setResponseHeaders(res, false, 406);
                 return buildAcceptableContentTypesDocxError();
@@ -192,46 +186,82 @@ class Routes {
             try {
                 SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
 
-                // Make support objects
-                ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
-                ImmutableSet<ServiceDetermination> serviceDeterminations = cache.get_allServiceDeterminations();
-                ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(serviceDeterminations);
-                Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
-
-                if (AppSettings.getEnvironment().isDev()){
-                    CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
-                    caseTrace.addTrace(req.body());
-                    logger.trace(caseTrace.toString());
+                RulesResult rulesResult;
+                try {
+                    rulesResult = runRules(sopSupportRequestDto);
+                } catch (ProcessingRuleError e) {
+                    logger.error("Error applying rule.", e);
+                    setResponseHeaders(res, false, 500);
+                    return e.getMessage();
                 }
 
-                CaseSummaryModel model = new CaseSummaryModelImpl(sopSupportRequestDto, soPPairs, isOperational);
-                byte[] result = CaseSummary.createCaseSummary(model, isOperational).get();
+                if (rulesResult.isEmpty()) {
+                    setResponseHeaders(res, false, 204);
+                    return "No applicable rules.";
+                }
+                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+                Condition condition = rulesResult.getCondition().get();
+
+                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
+                        .filter(f -> f.isSatisfied())
+                        .map(f -> f.getFactor())
+                        .collect(toList());
+
+                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
+                byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate()).get();
 
                 setResponseHeadersDocXResponse(res);
                 return result;
             } catch (DvaSopApiDtoError e) {
                 setResponseHeaders(res, false, 400);
-                Optional<String> schema = generateSchemaForSopSupportRequestDto();
-                StringBuilder sb = new StringBuilder();
-                sb.append(String.format("%s\n", e.getMessage()));
-                if (schema.isPresent()) {
-                    sb.append("Request body does not conform to expected schema:\n");
-                    sb.append(schema);
-                }
-                return sb.toString();
-            }
-            catch (ProcessingRuleError e)
-            {
+                return buildIncorrectRequestFromatError();
+            } catch (ProcessingRuleError e) {
                 logger.error("Error applying rule.", e);
-                setResponseHeaders(res,false,400);
+                setResponseHeaders(res, false, 500);
                 return e.getMessage();
             }
         }));
 
     }
 
+    private static String buildIncorrectRequestFromatError() {
+        Optional<String> schema = generateSchemaForSopSupportRequestDto();
+        StringBuilder sb = new StringBuilder();
+        if (schema.isPresent()) {
+            sb.append("Request body does not conform to expected schema:\n");
+            sb.append(schema);
+        }
+        return sb.toString();
+    }
 
-    private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String standardOfProof, String conditionname, String incidentType) {
+    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
+        ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
+
+        Optional<Condition> condition = ConditionFactory.create(soPPairs, sopSupportRequestDto.get_conditionDto(), cache.get_ruleConfigurationRepository());
+        if (!condition.isPresent()) {
+            return RulesResult.createEmpty();
+        }
+        else {
+
+            CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+
+            RulesResult rulesResult = SopSupport.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, soPPairs, buildIsOperationalPredicate(), caseTrace);
+
+            if (AppSettings.getEnvironment().isDev())
+                logger.trace(caseTrace.toString());
+
+            return rulesResult;
+        }
+    }
+
+    private static Predicate<Deployment> buildIsOperationalPredicate() {
+        ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
+        Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
+        return isOperational;
+    }
+
+    private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String
+            standardOfProof, String conditionname, String incidentType) {
         List<String> errors = new ArrayList<>();
 
         if (conditionname == null) {
@@ -356,8 +386,7 @@ class Routes {
         return AppSettings.getEnvironment() == AppSettings.Environment.prod;
     }
 
-    private static String cleanseJson(String incomingJson)
-    {
-        return incomingJson.replace("\uFEFF","");
+    private static String cleanseJson(String incomingJson) {
+        return incomingJson.replace("\uFEFF", "");
     }
 }

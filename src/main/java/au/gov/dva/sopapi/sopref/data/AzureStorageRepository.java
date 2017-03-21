@@ -1,13 +1,16 @@
 package au.gov.dva.sopapi.sopref.data;
 
+import au.gov.dva.sopapi.ConfigurationError;
 import au.gov.dva.sopapi.exceptions.RepositoryError;
 import au.gov.dva.sopapi.interfaces.Repository;
+import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChangeBase;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
+import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -47,6 +50,10 @@ public class AzureStorageRepository implements Repository {
     private static final String ARCHIVED_SERVICE_DETERMINATIONS_CONTAINER_NAME = "archivedservicedeterminations";
     private static final String METADATA_CONTAINER_NAME = "metadata";
     private static final String LAST_SOPS_UPDATE_BLOB_NAME = "lastsopsupdate";
+    private static final String RULE_CONFIG_CONTAINER_NAME = "ruleconfiguration";
+    private static final String RH_RULE_CONFIG_CSV_NAME =  "rh.csv";
+    private static final String BOP_RULE_CONFIG_CSV_NAME =  "bop.csv";
+
 
     private CloudStorageAccount _cloudStorageAccount = null;
     private CloudBlobClient _cloudBlobClient = null;
@@ -389,6 +396,47 @@ public class AzureStorageRepository implements Repository {
 
 
     }
+
+    @Override
+    public Optional<RuleConfigurationRepository> getRuleConfigurationRepository() {
+        try {
+            Optional<CloudBlob> rhCsv = getBlobByName(RULE_CONFIG_CONTAINER_NAME, RH_RULE_CONFIG_CSV_NAME);
+            Optional<CloudBlob> bopCsv = getBlobByName(RULE_CONFIG_CONTAINER_NAME,BOP_RULE_CONFIG_CSV_NAME);
+            if (!rhCsv.isPresent() || !bopCsv.isPresent())
+            {
+                return Optional.empty();
+            }
+            byte[] rhCsvUtf8 = getBlobBytes(rhCsv.get());
+            byte[] bopCsvUtf8 = getBlobBytes(bopCsv.get());
+            RuleConfigurationRepository repository = new CsvRuleConfigurationRepository(rhCsvUtf8,bopCsvUtf8);
+            return Optional.of(repository);
+        }
+        catch (ConfigurationError e){
+            throw new RepositoryError(e);
+        }
+        catch (StorageException e) {
+            throw new RepositoryError(e);
+        } catch (URISyntaxException e) {
+            throw new RepositoryError(e);
+        }
+    }
+
+    @Override
+    public void setRulesConfig(byte[] rhCsv, byte[] bopCsv) {
+        try {
+            saveBlob(RULE_CONFIG_CONTAINER_NAME,RH_RULE_CONFIG_CSV_NAME,rhCsv);
+            saveBlob(RULE_CONFIG_CONTAINER_NAME,BOP_RULE_CONFIG_CSV_NAME,bopCsv);
+        } catch (URISyntaxException e) {
+            throw new RepositoryError(e);
+        } catch (StorageException e) {
+            throw new RepositoryError(e);
+        } catch (IOException e) {
+            throw new RepositoryError(e);
+        }
+    }
+
+
+
 
     private Optional<CloudBlob> getBlobByName(String containerName, String blobName) throws URISyntaxException, StorageException {
         CloudBlobContainer cloudBlobContainer = getOrCreateContainer(containerName);

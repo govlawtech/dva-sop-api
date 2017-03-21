@@ -1,11 +1,21 @@
 package au.gov.dva.sopapi.sopsupport;
 
 import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.ServiceBranch;
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
+import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
+import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
+import au.gov.dva.sopapi.interfaces.RuleConfigurationItem;
+import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
+import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
-import au.gov.dva.sopapi.sopsupport.processingrules.LumbarSpondylosisRule;
+import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
+import au.gov.dva.sopapi.sopsupport.processingrules.rules.GenericProcessingRule;
+import au.gov.dva.sopapi.sopsupport.processingrules.rules.LumbarSpondylosisRule;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Optional;
@@ -14,35 +24,54 @@ import java.util.Optional;
 // determine whether aggravated or not
 public class ConditionFactory {
 
-    public static Condition create(ImmutableSet<SoPPair> sopPairs, ConditionDto conditionDto)
+    public static Optional<Condition> create(ImmutableSet<SoPPair> sopPairs, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository)
     {
+        if (conditionDto.get_incidentType() == IncidentType.Aggravation)
+        {
+            return Optional.empty();  // aggravation not yet implemented
+        }
 
-        // todo: generic rule for acute conditions
+        Optional<SoPPair> soPPairOptional = getSopPairForConditionName(sopPairs,conditionDto.get_conditionName());
+        if (!soPPairOptional.isPresent())
+        {
+            return Optional.empty();
+        }
 
-        // match to rule based
         if (conditionDto.get_conditionName().contentEquals("lumbar spondylosis") && conditionDto.get_incidentType() == IncidentType.Onset)
         {
-            // todo: check instrument ID's
-            return new OnsetCondition(
-                    getSopPairForConditionName(sopPairs,conditionDto.get_conditionName()),
+
+            return Optional.of(new OnsetCondition(
+                    soPPairOptional.get() ,
                     conditionDto.get_incidentDateRangeDto().get_startDate(),
                     conditionDto.get_incidentDateRangeDto().get_endDate(),
-                    new LumbarSpondylosisRule());
+                    new LumbarSpondylosisRule(ruleConfigurationRepository)));
         }
-        throw new ProcessingRuleError(String.format("No processing rule defined for condition: '%s' with incident type: '%s'.", conditionDto.get_conditionName(),conditionDto.get_incidentType().toString()));
+
+
+        else if (RuleConfigRepositoryUtils.containsConfigForCondition(conditionDto.get_conditionName(),ruleConfigurationRepository))
+        {
+            return Optional.of(new OnsetCondition(
+                    soPPairOptional.get() ,
+                    conditionDto.get_incidentDateRangeDto().get_startDate(),
+                    conditionDto.get_incidentDateRangeDto().get_endDate(),
+                    new GenericProcessingRule(ruleConfigurationRepository)));
+        }
+
+        else {
+            return Optional.empty();
+        }
+
     }
 
 
 
-    private static SoPPair  getSopPairForConditionName(ImmutableSet<SoPPair> sopPairs, String conditionName)
+    private static Optional<SoPPair>  getSopPairForConditionName(ImmutableSet<SoPPair> sopPairs, String conditionName)
     {
         Optional<SoPPair> soPPair =  sopPairs.stream().filter(s -> s.getConditionName().contentEquals(conditionName))
                 .findFirst();
-        if (!soPPair.isPresent())
-        {
-            throw new ProcessingRuleError(String.format("No pair of BoP and RH sops available for condition '%s'.", conditionName));
-        }
-        return soPPair.get();
+        return soPPair;
     }
+
+
 
 }

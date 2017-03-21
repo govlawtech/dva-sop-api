@@ -7,11 +7,16 @@ public class DateTimeUtils {
 
     public static final String TZDB_REGION_CODE = "Australia/ACT";
 
-    public static OffsetDateTime toMidnightAmNextDay(OffsetDateTime prevDay)
+    public static OffsetDateTime toMidnightAmNextDay(OffsetDateTime timeDuringPrevDay)
     {
-        OffsetDateTime sameTimeNextDay = prevDay.plusDays(1);
+        OffsetDateTime sameTimeNextDay = timeDuringPrevDay.plusDays(1);
         LocalDate nextDayLocalDate = sameTimeNextDay.toLocalDate();
-        return OffsetDateTime.of(nextDayLocalDate,LocalTime.MIDNIGHT,prevDay.getOffset());
+        return OffsetDateTime.of(nextDayLocalDate,LocalTime.MIDNIGHT,timeDuringPrevDay.getOffset());
+    }
+
+    public static OffsetDateTime toMightnightAmThisDay(OffsetDateTime timeDuringDay)
+    {
+        return OffsetDateTime.of(timeDuringDay.toLocalDate(),LocalTime.MIDNIGHT,timeDuringDay.getOffset());
     }
 
     public static LocalDate toPrevDay(OffsetDateTime offsetDateTime)

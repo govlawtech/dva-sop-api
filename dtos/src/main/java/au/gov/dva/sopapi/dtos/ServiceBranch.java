@@ -1,5 +1,7 @@
 package au.gov.dva.sopapi.dtos;
 
+import java.util.Locale;
+
 public enum ServiceBranch {
 
     ARMY,
@@ -16,5 +18,17 @@ public enum ServiceBranch {
             case RAAF: return "Royal Australian Air Force";
             default: throw new IllegalArgumentException();
         }
+    }
+
+    public static ServiceBranch fromString(String value)
+    {
+        String lowered = value.toLowerCase(Locale.ENGLISH);
+        if (lowered.contentEquals("australian army"))
+            return ServiceBranch.ARMY;
+        if (lowered.contentEquals("royal australian navy"))
+            return ServiceBranch.RAN;
+        if (lowered.contentEquals("royal australian air force"))
+            return ServiceBranch.RAAF;
+        throw new IllegalArgumentException(String.format("Unrecognised service branch: %s", value));
     }
 }

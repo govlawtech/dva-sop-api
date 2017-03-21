@@ -3,10 +3,12 @@ package au.gov.dva.sopapi;
 import au.gov.dva.sopapi.exceptions.InitialSeedingError;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.Repository;
+import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.ServiceDeterminations;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
+import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
@@ -59,10 +61,23 @@ class Seeds {
                     });
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new InitialSeedingError(e);
         }
     }
 
+    public static void seedRuleConfiguration(Repository repository)
+    {
+        if (!repository.getRuleConfigurationRepository().isPresent()) {
+            try {
+                byte[] rhCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/RH.csv"));
+                byte[] boPCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/BoP.csv"));
+                repository.setRulesConfig(rhCsv, boPCsv);
 
+            } catch (IOException e) {
+                throw new InitialSeedingError(e);
+            }
+        }
+
+    }
 
 }

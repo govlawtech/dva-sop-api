@@ -49,6 +49,7 @@ public class Application implements spark.servlet.SparkApplication {
     private void seedStorageIfNecessary() {
         Seeds.queueNewSopChanges(_repository);
         Seeds.addServiceDeterminations(_repository, new FederalRegisterOfLegislationClient());
+        Seeds.seedRuleConfiguration(_repository);
     }
 
     private void autoUpdate() {
