@@ -29,8 +29,8 @@ trait GenericTextCleanser extends SoPCleanser {
 
     val asLines = raw.split(lineEndRegexPattern).toList
 
-    val compilationFootNoteRegexLine1 =  """(?i)\s*statement of principles concerning .* [0-9]{4,4} [0-9]+\s*$(?-i)""".r
-    val compilationFootnoteRegexLine2 =  """(?i)\s*compilation no\. [0-9].*$(?-i)""".r
+    val compilationFootNoteRegexLine1 = """(?i)\s*statement of principles concerning .* [0-9]{4,4} [0-9]+\s*$(?-i)""".r
+    val compilationFootnoteRegexLine2 = """(?i)\s*compilation no\. [0-9].*$(?-i)""".r
 
 
     asLines
@@ -39,7 +39,7 @@ trait GenericTextCleanser extends SoPCleanser {
       .mkString(Properties.lineSeparator)
   }
 
-  private def regexReplace(regex: Regex, target: String, replacement: String = "") = {
+  def regexReplace(regex: Regex, target: String, replacement: String = "") = {
     val matches = regex.findAllMatchIn(target);
     val matchCount = matches.size
     if (matchCount > 0)
@@ -57,7 +57,7 @@ trait GenericTextCleanser extends SoPCleanser {
     startRegex.replaceFirstIn(raw, "")
   }
 
-  private def removePageGaps(raw: String): String = {
+  def removePageGaps(raw: String): String = {
     val pageGapRegex = """(\x{0020}*[\r\n]+){2,}""".r
     regexReplace(pageGapRegex, raw, scala.util.Properties.lineSeparator);
   }
@@ -75,17 +75,16 @@ trait GenericTextCleanser extends SoPCleanser {
   // todo: more robust way to do this would be to implement custom PDFTextStripper
   private def reinsertExponents(raw: String): String = {
     val whitelisted = Map(
-      """m/s[\r\n]+2""".r -> "m/s\u00B2",
-      """W/H[\r\n]+2""".r -> "W/H\u00B2")
+      """m/s[\r\n]*2""".r -> "m/s\u00B2",
+      """W/H[\r\n]*2""".r -> "W/H\u00B2")
 
-    val fixed = whitelisted.foldLeft(raw)((currentText,mapItem) => regexReplace(mapItem._1,currentText,mapItem._2))
+    val fixed = whitelisted.foldLeft(raw)((currentText, mapItem) => regexReplace(mapItem._1, currentText, mapItem._2))
     fixed
-
   }
 
-  private def stripNotes(raw : String) : String = {
+  private def stripNotes(raw: String): String = {
     val noteRegex = """Note:\s.*[\r\n]+""".r
-    regexReplace(noteRegex,raw)
+    regexReplace(noteRegex, raw)
   }
 
 

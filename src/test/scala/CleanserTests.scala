@@ -1,10 +1,12 @@
 package au.gov.dva.sopapi.tests.parsers
 
 import au.gov.dva.sopapi.sopref.data.Conversions
-import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
+import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.{GenericCleanser, PostAug2015Cleanser}
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
+
+import scala.util.Properties
 ;
 
 @RunWith(classOf[JUnitRunner])
@@ -45,7 +47,23 @@ class CleanserTests extends FunSuite{
     println(cleansed)
   }
 
+  test("Chomp dictionary footnotes")
+  {
+    val input = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
+    val preCleansed = GenericCleanser.cleanse(input)
+    val result = PostAug2015Cleanser.removeFootnotes(preCleansed)
+    assert(!result.contains("8 of 8"))
+    println(result)
+  }
 
+
+  test("No sch1 dictionary headnotes")
+  {
+    val input = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
+    val result = PostAug2015Cleanser.cleanse(input)
+    assert(!result.contains("Schedule 1 - Dictionary"))
+    println(result)
+  }
 
 
 }
