@@ -1,0 +1,372 @@
+swagger: "2.0"
+
+info:
+  version: 1.0.0
+  title: DVA-SOP-API
+  description: An API for providing information on Department of Veteran's Affaris (DVA) Statement of Practices (SOP)
+
+schemes:
+  - http
+# If host isn't specified, the UI defaults to the current host - which is probably what we want
+#host: where.is.this.hosted.com?
+basePath: /
+
+paths:
+  /getOperations:
+    get:
+      summary: Gets all the operations
+      description: Returns a list containing descriptions of every valid operation.
+      responses:
+        200:
+          description: Successfully found operations
+          schema:
+            $ref: "#/definitions/OperationsResponse"
+        406:
+          description: The client was unable to accept a JSON response
+
+  /getSopFactors:
+    get:
+      summary: Gets a list of SoP factors
+      description: Returns a list SoP Factors, that match a particular condition, incident type and standard of proof.
+      parameters:
+        - name: icdCodeValue
+          in: query
+          description: ICD Code Value
+          type: string
+        - name: icdCodeVersion
+          in: query
+          description: ICD Code Version
+          type: string
+        - name: standardOfProof
+          in: query
+          description: Standard of Proof
+          type: string
+          enum:
+            - RH
+            - BoP
+        - name: conditionName
+          in: query
+          description: Condition Name
+          type: string
+        - name: incidentType
+          in: query
+          description: Incident Type
+          type: string
+          enum:
+            - aggravation
+            - onset
+      responses:
+        200:
+          description: Successfully found SoP Factors
+          schema:
+            $ref: "#/definitions/SoPReferenceResponse"
+        400:
+          description: The provided query parameters make for a malformed request
+        404:
+          description: No matching SoPs were found for the provided query parameters
+        406:
+          description: The client was unable to accept a JSON response
+
+  /getConnectionToService:
+    post:
+      summary: Gets the applicable instrument and factors associated with a condition and service history
+      description: Gets the applicable instrument and factors associated with a condition and service history
+      parameters:
+        - name: supportRequest
+          in: body
+          description: Support request JSON
+          schema:
+            $ref: "#/definitions/SoPSupportRequest"
+      responses:
+        200:
+          description: Successfully serviced the support request
+          schema:
+            $ref: "#/definitions/SoPSupportResponse"
+        400:
+          description: The request body was malformed
+        406:
+          description: The client was unable to accept a JSON response
+
+  /getCaseSummary:
+   post:
+      summary: Gets a Case Summary as a Microsoft Word file
+      description: Returns a .docx file containing the case summary and service history
+      produces:
+        - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+      parameters:
+        - name: supportRequest
+          in: body
+          description: Support request JSON
+          schema:
+            $ref: "#/definitions/SoPSupportRequest"
+      responses:
+        200:
+          description: Successfully genrated the .docx file
+          schema:
+            type: file
+        400:
+          description: The request body was malformed
+        406:
+          description: The client was unable to accept a JSON response
+
+definitions:
+  OperationsResponse:
+    required:
+      - registerIds
+      - operations
+    properties:
+      registerIds:
+        type: array
+        items:
+          type: string
+      operations:
+        type: array
+        items:
+          $ref: "#/definitions/Operation"
+  Operation:
+    required:
+      - operationName
+      - startDate
+      - type
+    properties:
+      operationName:
+        type: string
+      startDate:
+        type: string
+        format: date
+      endDate:
+        type: string
+        format: date
+      type:
+        type: string
+  SoPReferenceResponse:
+    required:
+      - applicableFactors
+    properties:
+      applicableFactors:
+        type: array
+        items:
+          $ref: "#/definitions/SoPFactorsResponse"
+  SoPFactorsResponse:
+    required:
+      - registerId
+      - citation
+      - instrumentNumber
+      - factors
+    properties:
+      registerId:
+        type: string
+      citation:
+        type: string
+      instrumentNumber:
+        type: string
+      factors:
+        type: array
+        items:
+          $ref: "#/definitions/Factor"
+  Factor:
+    required:
+      - paragraph
+      - text
+      - definedTerms
+    properties:
+      paragraph:
+        type: string
+      text:
+        type: string
+      definedTerms:
+        type: array
+        items:
+          $ref: "#/definitions/DefinedTerm"
+  DefinedTerm:
+    required:
+      - term
+      - definition
+    properties:
+      term:
+        type: string
+      definition:
+        type: string
+  SoPSupportRequest:
+    required:
+      - condition
+      - serviceHistory
+    properties:
+      condition:
+        $ref: "#/definitions/Condition"
+      serviceHistory:
+        $ref: "#/definitions/ServiceHistory"
+  Condition:
+    required:
+      - conditionName
+      - incidentType
+      - icdCodeVersion
+      - icdCodeValue
+      - onsetDates
+      - aggravationDates
+    properties:
+      conditionName:
+        type: string
+      incidentType:
+        $ref: "#/definitions/IncidentType"
+      icdCodeVersion:
+        type: string
+      icdCodeValue:
+        type: string
+      onsetDates:
+        $ref: "#/definitions/OnsetDateRange"
+      aggravationDates:
+        $ref: "#/definitions/AggravationDateRange"
+  IncidentType:
+    type: string
+    enum:
+      - onset
+      - aggravation
+  OnsetDateRange:
+    required:
+      - onsetRangeStartDate
+      - onsetRangeEndDate
+    properties:
+      onsetRangeStartDate:
+        type: string
+        format: date-time
+      onsetRangeEndDate:
+        type: string
+        format: date-time
+  AggravationDateRange:
+    required:
+      - aggravationRangeStartDate
+      - aggravationRangeEndDate
+    properties:
+      aggravationRangeStartDate:
+        type: string
+        format: date-time
+      aggravationRangeEndDate:
+        type: string
+        format: date-time
+  ServiceHistory:
+    required:
+      - serviceSummaryInformation
+      - serviceDetails
+    properties:
+      serviceSummaryInformation:
+        $ref: '#/definitions/ServiceSummaryInfo'
+      serviceDetails:
+        type: array
+        items:
+          $ref: '#/definitions/Service'
+  ServiceSummaryInfo:
+    required:
+      - originalHireDate
+    properties:
+      originalHireDate:
+        type: string
+        format: date-time
+  Service:
+    required:
+      - service
+      - serviceType
+      - startDate
+      - endDate
+      - rank
+      - operationalService
+    properties:
+      service:
+        $ref: '#/definitions/ServiceBranch'
+      serviceType:
+        $ref: '#/definitions/EmploymentType'
+      startDate:
+        type: string
+        format: date-time
+      endDate:
+        type: string
+        format: date-time
+      rank:
+        $ref: '#/definitions/Rank'
+      operationalService:
+        type: array
+        items:
+          $ref: '#/definitions/OperationalService'
+  ServiceBranch:
+    type: string
+    enum:
+      - ARMY
+      - RAN
+      - RAAF
+  EmploymentType:
+    type: string
+    enum:
+      - CTFS
+      - NON_CTFS
+  Rank:
+    type: string
+    enum:
+      - Officer
+      - OtherRank
+      - SpecialForces
+      - Unknown
+  OperationalService:
+    required:
+      - assigned
+      - description
+      - event
+      - startDate
+      - endDate
+    properties:
+      assigned:
+        type: string
+        format: date-time
+      description:
+        type: string
+      event:
+        type: string
+      startDate:
+        type: string
+        format: date-time
+      endDate:
+        type: string
+        format: date-time
+  SoPSupportResponse:
+    required:
+      - applicableInstrument
+      - factors
+    properties:
+      applicableInstrument:
+        $ref: "#/definitions/ApplicableInstrument"
+      factors:
+        type: array
+        items:
+          $ref: "#/definitions/FactorWithInferredResultDto"
+  ApplicableInstrument:
+    required:
+      - registerId
+      - instrumentNumber
+      - citation
+      - effectiveFromDate
+    properties:
+      registerId:
+        type: string
+      instrumentNumber:
+        type: string
+      citation:
+        type: string
+      effectiveFromDate:
+        type: string
+        format: date
+  FactorWithInferredResultDto:
+    required:
+      - paragraph
+      - text
+      - definedTerms
+      - satisfied
+    properties:
+      paragraph:
+        type: string
+      text:
+        type: string
+      definedTerms:
+        type: array
+        items:
+          $ref: "#/definitions/DefinedTerm"
+      satisfied:
+        type: boolean
