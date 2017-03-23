@@ -16,6 +16,8 @@ paths:
     get:
       summary: Gets all the operations
       description: Returns a list containing descriptions of every valid operation.
+      tags:
+        - dva-sop-api
       responses:
         200:
           description: Successfully found operations
@@ -28,6 +30,8 @@ paths:
     get:
       summary: Gets a list of SoP factors
       description: Returns a list SoP Factors, that match a particular condition, incident type and standard of proof.
+      tags:
+        - dva-sop-api
       parameters:
         - name: icdCodeValue
           in: query
@@ -71,6 +75,8 @@ paths:
     post:
       summary: Gets the applicable instrument and factors associated with a condition and service history
       description: Gets the applicable instrument and factors associated with a condition and service history
+      tags:
+        - dva-sop-api
       parameters:
         - name: supportRequest
           in: body
@@ -91,6 +97,8 @@ paths:
    post:
       summary: Gets a Case Summary as a Microsoft Word file
       description: Returns a .docx file containing the case summary and service history
+      tags:
+        - dva-sop-api
       produces:
         - application/vnd.openxmlformats-officedocument.wordprocessingml.document
       parameters:
@@ -290,14 +298,14 @@ definitions:
   ServiceBranch:
     type: string
     enum:
-      - ARMY
-      - RAN
-      - RAAF
+      - Australian Army
+      - Royal Australian Navy
+      - Royal Australian Air Force
   EmploymentType:
     type: string
     enum:
-      - CTFS
-      - NON_CTFS
+      - Regular/Permanent Force
+      - Non-Regular/Permanent Force
   Rank:
     type: string
     enum:
