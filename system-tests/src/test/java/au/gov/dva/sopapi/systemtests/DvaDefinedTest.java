@@ -66,8 +66,7 @@ public class DvaDefinedTest {
             System.out.println(result);
         }
 
-        Assert.assertTrue(results.stream().allMatch(testCaseResult -> testCaseResult.passed));
-
+          Assert.assertTrue(results.stream().allMatch(testCaseResult -> testCaseResult.passed));
     }
 
 
