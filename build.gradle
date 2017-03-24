@@ -45,6 +45,11 @@ war {
     webAppDirName = 'src/main'
 }
 
+task copyDocs(type: Copy) {
+    from 'api-docs'
+    into 'deploy/webapps/api-docs'
+}
+
 task copyWar(type: Copy, dependsOn: 'war') {
     from 'build/libs/dva-sop-api.war'
     into 'deploy/webapps/'
