@@ -37,7 +37,9 @@ public class Application implements spark.servlet.SparkApplication {
         _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
         if (AppSettings.getEnvironment() == AppSettings.Environment.devtestlocal) {
             _repository.purge();
+            updateNow();
         }
+
         _cache = Cache.getInstance();
         seedStorageIfNecessary();
         autoUpdate();
@@ -64,19 +66,9 @@ public class Application implements spark.servlet.SparkApplication {
         }
     }
 
+
     private void autoUpdate() {
 
-        try {
-            updateNow();
-        }
-        catch (Exception e) {
-            logger.error("Exception occurred when attempting immediate Repository update.", e);
-        }
-
-        catch (Error e)
-        {
-            logger.error("Error occurred when attempting immediate Repository update.", e);
-        }
 
         try {
             startScheduledUpdates();
@@ -100,10 +92,21 @@ public class Application implements spark.servlet.SparkApplication {
     }
 
     private void updateNow() {
-        updateSopsChangeList().run();
-        AutoUpdate.patchSoPChanges(_repository);
-        updateServiceDeterminations().run();
-        _cache.refresh(_repository);
+
+        try {
+            updateSopsChangeList().run();
+            AutoUpdate.patchSoPChanges(_repository);
+            updateServiceDeterminations().run();
+            _cache.refresh(_repository);
+        }
+         catch (Exception e) {
+            logger.error("Exception occurred when attempting immediate Repository update.", e);
+        }
+
+        catch (Error e)
+        {
+            logger.error("Error occurred when attempting immediate Repository update.", e);
+        }
     }
 
 
