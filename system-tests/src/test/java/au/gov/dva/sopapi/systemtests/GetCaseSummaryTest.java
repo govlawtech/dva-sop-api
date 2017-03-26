@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,23 +32,19 @@ public class GetCaseSummaryTest {
 
     @BeforeClass
     public static void beforeClassMethod() throws IOException{
-        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == AppSettings.Environment.devtest);
+//        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == AppSettings.Environment.devtest);
 
         // Get test data
         ResourceDirectoryLoader resourceDirectoryLoader = new ResourceDirectoryLoader();
-        List<String> testFileNames =  resourceDirectoryLoader.getResourceFiles(TEST_FILE_DIR);
-        testData = Resources.toString(Resources.getResource(TEST_FILE_DIR + "/" + testFileNames.get(0)), Charsets.UTF_8);
+        testData = Resources.toString(Resources.getResource(TEST_FILE_DIR + "/PASS_1.json"), Charsets.UTF_8);
     }
 
     @Test
-    public void getCaseSummaryTest()  {
-        TestCaseResult result = null;
+    public void getCaseSummaryTest() throws IOException, ExecutionException, InterruptedException {
 
-        try {
             URL url = new URL(AppSettings.getBaseUrl());
             SoPApiClient underTest = new SoPApiClient(url, Optional.empty());
             byte[] response = underTest.getCaseSummary(testData).get();
-            result = new TestCaseResult("getCaseSummaryTest",response.length > 0,"Size of response: " + response.length);
 
             // Write results locally
             Path tempFilePath = Files.createTempFile("CaseSummaryTestOutput_", ".docx");
@@ -58,12 +55,5 @@ public class GetCaseSummaryTest {
             }
             System.out.println(outputFile.getAbsolutePath());
 
-        }
-        catch (Exception e){
-            result = new TestCaseResult("getCaseSummaryTest",false,e.toString());
-        }
-
-        System.out.println(result.toString());
-        Assert.assertTrue(result.passed);
     }
 }
