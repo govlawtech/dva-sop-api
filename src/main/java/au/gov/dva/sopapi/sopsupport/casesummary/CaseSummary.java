@@ -174,7 +174,7 @@ public class CaseSummary {
 
         for (Service service : serviceHistory.getServices()) {
             for (Deployment deployment : service.getDeployments()) {
-                String typeOfServiceText = isOperational.test(deployment) ? "Operational" : "Peacetime";
+                String typeOfServiceText = isOperational.test(deployment) ? "Warlike/Non-Warlike" : "Peacetime";
                 String operationText = WordUtils.capitalize(typeOfServiceText) +
                         " service on " +
                         deployment.getOperationName() +
@@ -255,7 +255,12 @@ public class CaseSummary {
     }
 
     private static String getDatesAsRange(OffsetDateTime startDate, OffsetDateTime endDate) {
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        if (startDate.isEqual(endDate))
+        {
+            return startDate.format(formatter);
+        }
 
         return startDate.format(formatter) + " to " + endDate.format(formatter);
     }
