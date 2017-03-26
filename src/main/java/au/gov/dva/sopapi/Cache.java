@@ -5,11 +5,15 @@ import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import com.google.common.collect.ImmutableSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
 class Cache {
+
+    private static Logger logger = LoggerFactory.getLogger("dvasopapi.repositorycache");
 
     private ImmutableSet<SoP> _allSops;
     private ImmutableSet<ServiceDetermination> _allServiceDeterminations;
@@ -29,19 +33,29 @@ class Cache {
 
     public void refresh(Repository repository)
     {
+        try {
 
-        ImmutableSet<SoP> allSops = repository.getAllSops();
-        ImmutableSet<ServiceDetermination> allServiceDeterminations = repository.getServiceDeterminations();
-        Optional<RuleConfigurationRepository> ruleConfigurationRepository =  repository.getRuleConfigurationRepository();
-        if (!ruleConfigurationRepository.isPresent())
+            ImmutableSet<SoP> allSops = repository.getAllSops();
+            ImmutableSet<ServiceDetermination> allServiceDeterminations = repository.getServiceDeterminations();
+            Optional<RuleConfigurationRepository> ruleConfigurationRepository = repository.getRuleConfigurationRepository();
+            if (!ruleConfigurationRepository.isPresent()) {
+                throw new ConfigurationError("Need rules configuration to be repository.");
+            }
+
+            // atomic
+            _allSops = allSops;
+            _allServiceDeterminations = allServiceDeterminations;
+            _ruleConfigurationRepository = ruleConfigurationRepository.get();
+        }
+        catch (Exception e)
         {
-            throw new ConfigurationError("Need rules configuration to be repository.");
+            logger.error("Exception occurred when attempting to refresh cache from Repository.", e);
         }
 
-        // atomic
-        _allSops = allSops;
-        _allServiceDeterminations = allServiceDeterminations;
-        _ruleConfigurationRepository = ruleConfigurationRepository.get();
+        catch (Error e)
+        {
+            logger.error("Error occurred when attempting to refresh cache from Repository.", e);
+        }
 
     }
 

@@ -33,7 +33,7 @@ public class AutoUpdate {
                     s -> ServiceLocator.findSoPFactory(s)
             );
             soPLoader.applyAll(60);
-        } catch (DvaSopApiError e) {
+        } catch (Error e) {
             logger.error("Error occurred when patching repository.", e);
         }
     }
@@ -62,9 +62,11 @@ public class AutoUpdate {
             }
             repository.setLastUpdated(OffsetDateTime.now());
             logger.trace("Finished checking for SoP updates.");
-        } catch (DvaSopApiError e) {
+        } catch (Error e) {
             logger.error("Error occurred when updating change list.", e);
         }
+
+
 
     }
 

@@ -49,6 +49,10 @@
         <appender-ref ref="FILE"/>
     </logger>
 
+    <logger name="dvasopapi.repositorycache" level="trace">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+    </logger>
 
 
 </configuration>
