@@ -2,6 +2,7 @@ package au.gov.dva.sopapi.dtos.sopsupport.components;
 
 import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.ImmutableList;
 
@@ -30,21 +31,25 @@ public class FactorWithInferredResultDto {
         _paragraph = paragraph;
         _text = text;
         _definedTerms = definedTerms;
-        _satisfied = satisfied;
-    }
+    _satisfied = satisfied;
+}
 
+    @JsonIgnore
     public String getParagraph() {
         return _paragraph;
     }
 
+    @JsonIgnore
     public String getText() {
         return _text;
     }
 
+    @JsonIgnore
     public Boolean getSatisfaction() {
         return _satisfied;
     }
 
+    @JsonIgnore
     public ImmutableList<DefinedTerm> getDefinedTerms() {
         return ImmutableList.copyOf(_definedTerms);
     }
