@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.systemtests;
 
 import au.gov.dva.sopapi.AppSettings;
+import au.gov.dva.sopapi.Environment;
 import au.gov.dva.sopapi.client.SoPApiClient;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
@@ -23,7 +24,7 @@ public class DvaDefinedTest {
 
     @Before
     public void beforeMethod() {
-        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == AppSettings.Environment.devtest);
+        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == Environment.devtest);
     }
 
     private static final String TEST_FILE_DIR = "dvaDefinedTestData";

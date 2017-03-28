@@ -1,8 +1,9 @@
 package au.gov.dva.sopapi;
 
-import static au.gov.dva.sopapi.AppSettings.Environment.devtest;
-import static au.gov.dva.sopapi.AppSettings.Environment.devtestlocal;
-import static au.gov.dva.sopapi.AppSettings.Environment.prod;
+
+import static au.gov.dva.sopapi.Environment.devtest;
+import static au.gov.dva.sopapi.Environment.devtestlocal;
+import static au.gov.dva.sopapi.Environment.prod;
 
 public class AppSettings {
 
@@ -37,7 +38,7 @@ public class AppSettings {
     {
         switch (environmentStringValue)
         {
-            case "devtestlocal" : return devtestlocal;
+            case "devtestlocal" : return  devtestlocal;
             case "devtest" : return devtest;
             case "prod" : return prod;
             default: throw new ConfigurationError(String.format("Value for environment variable %s must be 'devtest','devtestlocal' or 'prod'.  Current value: '%s'.", envVarName, environmentStringValue));
@@ -105,16 +106,7 @@ public class AppSettings {
         }
     }
 
-    public enum Environment {
-        prod,
-        devtest,
-        devtestlocal;
 
-        public boolean isDev()
-        {
-            return this.equals(devtest) || this.equals(devtestlocal);
-        }
-    }
 }
 
 

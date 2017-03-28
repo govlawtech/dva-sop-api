@@ -2,8 +2,11 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTest;
 import au.gov.dva.dvasopapi.tests.categories.IntegrationTestImpl;
+import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
+import au.gov.dva.sopapi.sopref.data.updates.LegRegChangeDetector;
 import com.google.common.base.Charsets;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,6 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.util.Optional;
+import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
 public class LegislationRegisterTests extends IntegrationTestImpl {
@@ -98,6 +102,16 @@ public class LegislationRegisterTests extends IntegrationTestImpl {
     public void getUrlOfRepealedCeasedBy() throws IOException {
         Optional<String> result = FederalRegisterOfLegislationClient.getRegisterIdOfRepealedByCeasedBy(Resources.toString(Resources.getResource("legislationRegister/seriesRepealedBy.html"),Charsets.UTF_8));
         Assert.assertTrue(result.get().contentEquals("F2016L01667"));
+    }
+
+
+    @Test
+    public void detectNewCompliationsInBulk() throws IOException {
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
+        String[] toTest = Resources.toString(Resources.getResource("rhSopRegisterIds.txt"), Charsets.UTF_8).split(System.getProperty("line.separator"));
+        ImmutableSet<InstrumentChange> results =  underTest.detectReplacements(ImmutableSet.copyOf(toTest));
+        System.out.println(results.size());
+        assert(results.size() == 2);
     }
 
 

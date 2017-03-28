@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -67,7 +68,9 @@ class Seeds {
 
     public static void seedRuleConfiguration(Repository repository)
     {
-        if (!repository.getRuleConfigurationRepository().isPresent()) {
+        Optional<RuleConfigurationRepository> existingRepository = repository.getRuleConfigurationRepository();
+
+        if (!existingRepository.isPresent()) {
             try {
                 byte[] rhCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/RH.csv"));
                 byte[] boPCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/BoP.csv"));

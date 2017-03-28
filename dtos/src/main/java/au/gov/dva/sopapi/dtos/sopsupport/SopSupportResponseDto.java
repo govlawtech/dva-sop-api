@@ -25,47 +25,47 @@ public class SopSupportResponseDto {
     @JsonCreator
     public SopSupportResponseDto(@JsonProperty("applicableInstrument") ApplicableInstrumentDto _applicableInstrumentDto,
                                  @JsonProperty("factors") List<FactorWithInferredResultDto> _factors) {
-        this._applicableInstrumentDto = _applicableInstrumentDto;
-        this._factors = _factors;
-    }
+                this._applicableInstrumentDto = _applicableInstrumentDto;
+                this._factors = _factors;
+            }
 
 
-    public static SopSupportResponseDto createEmpty() {
-        return new SopSupportResponseDto(null,ImmutableList.of());
-    }
-
-    @JsonIgnore
-    public ApplicableInstrumentDto getApplicableInstrument() {
-        return _applicableInstrumentDto;
-    }
-
-    @JsonIgnore
-    public ImmutableList<FactorWithInferredResultDto> getFactors() {
-        return ImmutableList.copyOf(_factors);
-    }
-
-    public static String toJsonString(SopSupportResponseDto sopSupportResponseDto) {
-        ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
-        String jsonString = null;
-
-        try {
-            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(sopSupportResponseDto);
-        } catch (JsonProcessingException e) {
-            throw new DvaSopApiDtoError(e);
+        public static SopSupportResponseDto createEmpty() {
+            return new SopSupportResponseDto(null,ImmutableList.of());
         }
 
-        return jsonString;
-    }
+        @JsonIgnore
+        public ApplicableInstrumentDto getApplicableInstrument() {
+            return _applicableInstrumentDto;
+        }
 
-    public static SopSupportResponseDto fromJsonString(String jsonString) {
-        ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
+        @JsonIgnore
+        public ImmutableList<FactorWithInferredResultDto> getFactors() {
+            return ImmutableList.copyOf(_factors);
+        }
 
-        try {
-            SopSupportResponseDto operationsResponseDto =
-                    objectMapper.readValue(jsonString, SopSupportResponseDto.class);
-            return operationsResponseDto;
-        } catch (IOException e) {
-            throw new DvaSopApiDtoError(e);
+        public static String toJsonString(SopSupportResponseDto sopSupportResponseDto) {
+            ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
+            String jsonString = null;
+
+            try {
+                jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(sopSupportResponseDto);
+            } catch (JsonProcessingException e) {
+                throw new DvaSopApiDtoError(e);
+            }
+
+            return jsonString;
+        }
+
+        public static SopSupportResponseDto fromJsonString(String jsonString) {
+            ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
+
+            try {
+                SopSupportResponseDto operationsResponseDto =
+                        objectMapper.readValue(jsonString, SopSupportResponseDto.class);
+                return operationsResponseDto;
+            } catch (IOException e) {
+                throw new DvaSopApiDtoError(e);
         }
     }
 }

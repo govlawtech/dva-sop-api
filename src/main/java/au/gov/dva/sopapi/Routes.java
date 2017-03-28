@@ -383,7 +383,7 @@ class Routes {
     }
 
     private static Boolean validateHeaders() {
-        return AppSettings.getEnvironment() == AppSettings.Environment.prod;
+        return AppSettings.getEnvironment() == Environment.prod;
     }
 
     private static String cleanseJson(String incomingJson) {

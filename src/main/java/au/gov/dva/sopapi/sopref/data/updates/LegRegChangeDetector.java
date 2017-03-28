@@ -9,11 +9,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class LegRegChangeDetector {
 
@@ -26,48 +28,40 @@ public class LegRegChangeDetector {
 
     public ImmutableSet<InstrumentChange> detectNewCompilations(ImmutableSet<String> registerIds)
     {
-        List<CompletableFuture<RedirectResult>> tasks = registerIds.stream()
-                .map(s -> getRedirectResult(s))
-                .collect(Collectors.toList());
-        try {
-            List<RedirectResult> results = AsyncUtils.sequence(tasks).get();
-            List<NewCompilation> compilations = results.stream()
-                    .filter(RedirectResult::isUpdatedCompilation)
-                    .map(redirectResult -> new NewCompilation(redirectResult.getSource(),redirectResult.getTarget().get(), OffsetDateTime.now()))
-                    .collect(Collectors.toList());
-            return ImmutableSet.copyOf(compilations);
+        List<InstrumentChange> acc = new ArrayList<>();
 
-        } catch (InterruptedException e) {
-            logger.error("Task to get all redirect targets for all Register IDs was interrupted.",e);
-            return ImmutableSet.of();
-        } catch (ExecutionException e) {
-            logger.error("Task to get all redirect targets for all Register IDs threw execution exception .",e);
-            return ImmutableSet.of();
-        }
+        registerIds.forEach(s -> {
+            CompletableFuture<RedirectResult> task = getRedirectResult(s);
+            try {
+                RedirectResult result = task.get(3, TimeUnit.SECONDS);
+                if (result.isUpdatedCompilation()) {
+                    acc.add(new NewCompilation(result.getSource(), result.getTarget().get(), OffsetDateTime.now()));
+                }
+            } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                logger.error(String.format("Unable to check for new compilation for instrument ID %s", s),e);
+            }
+        });
+
+        return ImmutableSet.copyOf(acc);
     }
 
     public ImmutableSet<InstrumentChange> detectReplacements(ImmutableSet<String> registerIds) {
 
-        List<CompletableFuture<ReplacementResult>> batch = registerIds.stream()
-                .map(s -> getReplacementResult(s))
-                .collect(Collectors.toList());
+        List<InstrumentChange> acc = new ArrayList<>();
 
-        try {
-            List<InstrumentChange> results = AsyncUtils.sequence(batch).get()
-                    .stream()
-                    .filter(r -> r.getNewRegisterId().isPresent())
-                    .map(r -> new Replacement(r.getNewRegisterId().get(),OffsetDateTime.now(),r.getOriginalRegisterId()))
-                    .collect(Collectors.toList());
+        registerIds.forEach(s -> {
+            CompletableFuture<ReplacementResult> task = getReplacementResult(s);
+            try {
+                ReplacementResult result = task.get(3, TimeUnit.SECONDS);
+                if (result.isReplaced()) {
+                    acc.add(new Replacement(result.getNewRegisterId().get(), OffsetDateTime.now(), result.getOriginalRegisterId()));
+                }
+            } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                logger.error(String.format("Unable to check for replacements for instrument ID %s", s),e);
+            }
+        });
 
-            return ImmutableSet.copyOf(results);
-
-        } catch (InterruptedException e) {
-            logger.error("Task to get all replacing instruments was interrupted.",e);
-            return ImmutableSet.of();
-        } catch (ExecutionException e) {
-            logger.error("task to get all replacing instruments threw Execution Exception.",e);
-            return ImmutableSet.of();
-        }
+        return ImmutableSet.copyOf(acc);
     }
 
 
@@ -87,7 +81,7 @@ public class LegRegChangeDetector {
                          return new RedirectResult(registerId,Optional.of(s));
                     }
                     else {
-                        logger.error(String.format("Could not get redirect target for Register ID %s", s));
+                        logger.error(String.format("Could not get redirect target for Register ID %s.",registerId),throwable);
                         return new RedirectResult(registerId,Optional.empty());
                     }
                 });
@@ -109,6 +103,10 @@ public class LegRegChangeDetector {
 
         public String getOriginalRegisterId() {
             return originalRegisterId;
+        }
+
+        public boolean isReplaced(){
+            return this.getNewRegisterId().isPresent() && !this.getOriginalRegisterId().contentEquals(this.getNewRegisterId().get());
         }
     }
 

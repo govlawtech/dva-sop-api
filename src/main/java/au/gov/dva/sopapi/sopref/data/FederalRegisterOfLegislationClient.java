@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.sopref.data;
 import au.gov.dva.sopapi.exceptions.LegislationRegisterError;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import org.asynchttpclient.AsyncHttpClient;
+import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -24,9 +25,10 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
 
     private static final String BASE_URL = "https://www.legislation.gov.au";
 
-    final static Logger logger = LoggerFactory.getLogger(FederalRegisterOfLegislationClient.class);
+    final static Logger logger = LoggerFactory.getLogger("dvasopapi.frlclient");
 
-    private static AsyncHttpClient asyncHttpClient = asyncHttpClient();
+    private static final AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
+
     @Override
     public CompletableFuture<String> getRedirectTargetRegisterId(String registerId) {
         URL urlForWhichToGetRedirect = BuildUrl.toGetRedirect(registerId);

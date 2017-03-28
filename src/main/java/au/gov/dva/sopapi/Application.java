@@ -35,17 +35,12 @@ public class Application implements spark.servlet.SparkApplication {
     public void init() {
 
         _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
-        if (AppSettings.getEnvironment() == AppSettings.Environment.devtestlocal) {
-            _repository.purge();
-            updateNow();
-        }
-
         _cache = Cache.getInstance();
-        seedStorageIfNecessary();
+        _cache.refresh(_repository);
+
         autoUpdate();
         Routes.init(_cache);
         Routes.initStatus(_repository,_cache);
-
     }
 
     private void seedStorageIfNecessary() {
