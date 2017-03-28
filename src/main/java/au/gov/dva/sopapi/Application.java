@@ -38,6 +38,14 @@ public class Application implements spark.servlet.SparkApplication {
         _cache = Cache.getInstance();
         _cache.refresh(_repository);
 
+        Environment environment = AppSettings.getEnvironment();
+        if (environment == Environment.devtestlocal)
+        {
+            _repository.purge();
+            seedStorageIfNecessary();
+            updateNow();
+        }
+
         autoUpdate();
         Routes.init(_cache);
         Routes.initStatus(_repository,_cache);
