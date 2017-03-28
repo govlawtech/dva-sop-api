@@ -7,6 +7,6 @@ import org.junit.Before;
 public class IntegrationTestImpl implements IntegrationTest {
     @Before
     public void beforeMethod() {
-       // org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == Environment.devtest);
+        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == Environment.devtest);
     }
 }
