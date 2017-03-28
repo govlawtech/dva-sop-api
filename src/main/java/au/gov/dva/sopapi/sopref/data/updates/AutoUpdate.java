@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopref.data.updates;
 
+import au.gov.dva.sopapi.Cache;
 import au.gov.dva.sopapi.exceptions.DvaSopApiError;
 import au.gov.dva.sopapi.interfaces.InstrumentChangeFactory;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
@@ -9,6 +10,8 @@ import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.ServiceDeterminations;
+import au.gov.dva.sopapi.sopref.data.updates.changefactories.EmailSubscriptionInstrumentChangeFactory;
+import au.gov.dva.sopapi.sopref.data.updates.changefactories.LegislationRegisterSiteChangeFactory;
 import au.gov.dva.sopapi.sopref.parsing.ServiceLocator;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
@@ -89,6 +92,20 @@ public class AutoUpdate {
         }
 
 
+    }
+
+
+    public static void updateSopsChangeList(Repository _repository) {
+            AutoUpdate.patchChangeList(
+                    _repository,
+                    new EmailSubscriptionInstrumentChangeFactory(
+                            new LegislationRegisterEmailClientImpl("noreply@legislation.gov.au"),
+                            () -> _repository.getLastUpdated().orElse(OffsetDateTime.now().minusDays(1))),
+                    new LegislationRegisterSiteChangeFactory(
+                            new FederalRegisterOfLegislationClient(),
+                            () -> _repository.getAllSops().stream().map(
+                                    s -> s.getRegisterId())
+                                    .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf))));
     }
 
 

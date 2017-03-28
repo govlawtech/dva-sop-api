@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
-class Cache {
+public class Cache {
 
     private static Logger logger = LoggerFactory.getLogger("dvasopapi.repositorycache");
 

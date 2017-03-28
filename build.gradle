@@ -3,6 +3,9 @@ apply plugin: 'scala'
 apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
+apply plugin:  'application'
+
+mainClassName = 'au.gov.dva.sopapi.InitStorage'
 
 allprojects {
 

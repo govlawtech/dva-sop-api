@@ -1,14 +1,9 @@
 package au.gov.dva.sopapi;
 
-import au.gov.dva.sopapi.exceptions.DvaSopApiError;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.updates.AutoUpdate;
-import au.gov.dva.sopapi.sopref.data.updates.LegislationRegisterEmailClientImpl;
-import au.gov.dva.sopapi.sopref.data.updates.changefactories.EmailSubscriptionInstrumentChangeFactory;
-import au.gov.dva.sopapi.sopref.data.updates.changefactories.LegislationRegisterSiteChangeFactory;
-import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +11,6 @@ import java.time.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 import static spark.Spark.get;
 
@@ -38,36 +32,12 @@ public class Application implements spark.servlet.SparkApplication {
         _cache = Cache.getInstance();
         _cache.refresh(_repository);
 
-        Environment environment = AppSettings.getEnvironment();
-        if (environment == Environment.devtestlocal)
-        {
-            _repository.purge();
-            seedStorageIfNecessary();
-            updateNow();
-        }
-
         autoUpdate();
         Routes.init(_cache);
         Routes.initStatus(_repository,_cache);
     }
 
-    private void seedStorageIfNecessary() {
 
-        try {
-
-            Seeds.queueNewSopChanges(_repository);
-            Seeds.addServiceDeterminations(_repository, new FederalRegisterOfLegislationClient());
-            Seeds.seedRuleConfiguration(_repository);
-        }
-        catch (Exception e) {
-            logger.error("Exception occurred when attempting to seed initial data to Repository.", e);
-        }
-
-        catch (Error e)
-        {
-            logger.error("Error occurred when attempting to seed initial data to Repository.", e);
-        }
-    }
 
 
     private void autoUpdate() {
@@ -94,57 +64,19 @@ public class Application implements spark.servlet.SparkApplication {
         startScheduledPollingForServiceDeterminationChanges(LocalTime.of(0, 0));
     }
 
-    private void updateNow() {
-
-        try {
-            updateSopsChangeList().run();
-            AutoUpdate.patchSoPChanges(_repository);
-            updateServiceDeterminations().run();
-            _cache.refresh(_repository);
-        }
-         catch (Exception e) {
-            logger.error("Exception occurred when attempting immediate Repository update.", e);
-        }
-
-        catch (Error e)
-        {
-            logger.error("Error occurred when attempting immediate Repository update.", e);
-        }
-    }
-
-
-    private Runnable updateSopsChangeList() {
-        return () -> {
-            AutoUpdate.patchChangeList(
-                    _repository,
-                    new EmailSubscriptionInstrumentChangeFactory(
-                            new LegislationRegisterEmailClientImpl("noreply@legislation.gov.au"),
-                            () -> _repository.getLastUpdated().orElse(OffsetDateTime.now().minusDays(1))),
-                    new LegislationRegisterSiteChangeFactory(
-                            new FederalRegisterOfLegislationClient(),
-                            () -> _repository.getAllSops().stream().map(
-                                    s -> s.getRegisterId())
-                                    .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf))));
-            _cache.refresh(_repository);
-        };
-    }
-
-    private Runnable updateServiceDeterminations() {
-
-        return () -> {
-            AutoUpdate.updateServiceDeterminations(_repository, new FederalRegisterOfLegislationClient());
-            _cache.refresh(_repository);
-        };
-    }
-
     private void startScheduledPollingForServiceDeterminationChanges(LocalTime localTime) {
-        startDailyExecutor(localTime, updateServiceDeterminations());
+        startDailyExecutor(localTime, () -> {
+          AutoUpdate.updateServiceDeterminations(_repository,new FederalRegisterOfLegislationClient());
+          _cache.refresh(_repository);
+        });
     }
 
     private void startScheduledPollingForSoPChanges(LocalTime runTime) {
-        startDailyExecutor(runTime, updateSopsChangeList());
+        startDailyExecutor(runTime, () -> {
+            AutoUpdate.updateSopsChangeList(_repository);
+            _cache.refresh(_repository);
+        });
     }
-
 
     private void startScheduledLoadingOfSops(LocalTime runTime) {
         startDailyExecutor(runTime, () -> {
