@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.systemtests;
 
 import au.gov.dva.sopapi.AppSettings;
+import au.gov.dva.sopapi.Environment;
 import au.gov.dva.sopapi.client.SoPApiClient;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
@@ -32,7 +33,7 @@ public class GetCaseSummaryTest {
 
     @BeforeClass
     public static void beforeClassMethod() throws IOException{
-//        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == AppSettings.Environment.devtest);
+        org.junit.Assume.assumeTrue(AppSettings.isEnvironmentSet() && AppSettings.getEnvironment() == Environment.devtest);
 
         // Get test data
         ResourceDirectoryLoader resourceDirectoryLoader = new ResourceDirectoryLoader();
