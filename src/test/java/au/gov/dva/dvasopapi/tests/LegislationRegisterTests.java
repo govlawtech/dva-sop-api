@@ -111,7 +111,7 @@ public class LegislationRegisterTests extends IntegrationTestImpl {
         String[] toTest = Resources.toString(Resources.getResource("rhSopRegisterIds.txt"), Charsets.UTF_8).split(System.getProperty("line.separator"));
         ImmutableSet<InstrumentChange> results =  underTest.detectReplacements(ImmutableSet.copyOf(toTest));
         System.out.println(results.size());
-        assert(results.size() == 2);
+        assert(results.size() >= 2);
     }
 
 
