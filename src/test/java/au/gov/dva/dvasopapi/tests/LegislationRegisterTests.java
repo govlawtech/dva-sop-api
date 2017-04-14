@@ -9,6 +9,7 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -20,7 +21,7 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
-public class LegislationRegisterTests extends IntegrationTestImpl {
+public class LegislationRegisterTests{
 
     @Test
     public void extractAuthorizedDownloadLinkFromHtml() throws IOException {
@@ -105,14 +106,6 @@ public class LegislationRegisterTests extends IntegrationTestImpl {
     }
 
 
-    @Test
-    public void detectNewCompliationsInBulk() throws IOException {
-        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
-        String[] toTest = Resources.toString(Resources.getResource("rhSopRegisterIds.txt"), Charsets.UTF_8).split(System.getProperty("line.separator"));
-        ImmutableSet<InstrumentChange> results =  underTest.detectReplacements(ImmutableSet.copyOf(toTest));
-        System.out.println(results.size());
-        assert(results.size() >= 2);
-    }
 
 
 }
