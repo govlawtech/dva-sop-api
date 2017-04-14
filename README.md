@@ -9,7 +9,7 @@ An API exposing regulations and business rules to assist Department of Veterans'
 
 # Documentation
 
-[Documentation](https://govlawtech.github.io/dva-sop-api/index.html)
+[Documentation](https://govlawtech.github.io/dva-sop-api-docs/)
 
 # Endpoints
 
