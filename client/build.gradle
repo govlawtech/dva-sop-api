@@ -7,16 +7,16 @@ repositories {
 }
 
 
-jar {
-    manifest {
-        attributes (
-            'Main-Class': 'au.gov.dva.sopapi.client.Main'
-        )
-    }
+version = '1.0'
 
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'SoP API Client',
+                'Implementation-Version': version
     }
+    baseName = "sopapi-client"
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
 
 
