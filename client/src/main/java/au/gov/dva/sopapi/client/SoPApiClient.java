@@ -6,6 +6,7 @@ import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import com.google.common.base.Charsets;
 import org.asynchttpclient.*;
@@ -126,6 +127,13 @@ public class SoPApiClient {
                 });
 
         return promise;
+    }
+
+
+    public CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(SopSupportRequestDto sopSupportRequestDto)
+    {
+        String jsonString = sopSupportRequestDto.toJsonString();
+        return getSatisfiedFactors(jsonString);
     }
 
     public CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(String jsonRequestBody) {
