@@ -80,7 +80,7 @@ public class ProcessingRuleBase {
     public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(RuleConfigurationRepository ruleConfigurationRepository, Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
 
         ImmutableList<Factor> applicableFactors =  condition.getApplicableFactors(applicableSop);
-        caseTrace.addTrace(String.format("There are %s factors in the applicable SoP.", applicableFactors.size()));
+        caseTrace.addTrace(String.format("There are %s factors in the applicable SoP: %s", applicableFactors.size(),applicableSop.getCitation()));
 
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
         Optional<Service> serviceDuringWhichConditionStarts =  ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(),condition.getStartDate(),caseTrace);

@@ -52,7 +52,7 @@ public class SopSupport {
             return RulesResult.createEmpty(caseTrace);
         }
         SoP applicableSop = applicableSopOpt.get();
-
+        caseTrace.addTrace("Applicable SoP is " + applicableSop.getCitation());
         ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory,caseTrace);
 
         return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace);

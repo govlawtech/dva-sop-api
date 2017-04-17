@@ -39,7 +39,7 @@ public class ProcessingRuleFunctions {
             caseTrace.addTrace("Service during which condition started: " + serviceDuringWhichConditionStarted);
             return serviceDuringWhichConditionStarted;
         } else {
-            caseTrace.addTrace("No services which started and either ended before or were ongoing at condition start date, therefore finding immediately preceeding service...");
+            caseTrace.addTrace("No services which started before and either ended after, or were ongoing at, the condition start date, therefore finding immediately preceeding service...");
             Optional<Service> lastService = services.stream()
                     .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
                     .findFirst();
@@ -203,13 +203,19 @@ public class ProcessingRuleFunctions {
 
     }
 
-    public static boolean conditionStartedWithinXYearsOfLastDayOfMRCAService(Condition condition, ServiceHistory serviceHistory, int numberOfYears) {
+    public static boolean conditionStartedWithinXYearsOfLastDayOfMRCAService(Condition condition, ServiceHistory serviceHistory, int numberOfYears, CaseTrace caseTrace) {
+
         OffsetDateTime lastTimeOfMRCAService = getLastTimeOfMRCAServiceOrDefault(serviceHistory, OffsetDateTime.now());
+        caseTrace.addTrace("The last time of MRCA service or now (if service is ongoing): " + lastTimeOfMRCAService);
+
         OffsetDateTime midnightNextDayAfterLastTimeOfMRCAService = DateTimeUtils.toMidnightAmNextDay(lastTimeOfMRCAService);
+
         OffsetDateTime xYearsFromLastDayOfMrcaService = midnightNextDayAfterLastTimeOfMRCAService.plusYears(numberOfYears);
+        caseTrace.addTrace(String.format("The time %s years from the last day of MRCA service: %s",numberOfYears,xYearsFromLastDayOfMrcaService));
 
         OffsetDateTime conditionStartDate = condition.getStartDate();
         OffsetDateTime midnightAmOnDayOfConditionStart = DateTimeUtils.toMightnightAmThisDay(conditionStartDate);
+        caseTrace.addTrace("Midnight AM on the day the condition started: " + midnightAmOnDayOfConditionStart);
 
         return midnightAmOnDayOfConditionStart.isBefore(xYearsFromLastDayOfMrcaService);
     }
