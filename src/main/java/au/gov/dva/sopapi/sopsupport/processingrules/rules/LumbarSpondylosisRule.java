@@ -28,9 +28,9 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
     public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
         ImmutableList<Factor> applicableFactors =  condition.getApplicableFactors(applicableSop);
 
-        caseTrace.addTrace(String.format("Determining whether condition started within %s year of the last day of MRCA service..."));
+        caseTrace.addTrace(String.format("Determining whether condition started within 25 year of the last day of MRCA service..."));
         if (!ProcessingRuleFunctions.conditionStartedWithinXYearsOfLastDayOfMRCAService(condition,serviceHistory,25, caseTrace)) {
-            caseTrace.addTrace(String.format("Lumbar spondylosis did not start within %s years of the last day of MRCA service, therefore no factors satisfied."));
+            caseTrace.addTrace(String.format("Lumbar spondylosis did not start within 25 years of the last day of MRCA service, therefore no factors satisfied."));
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
         return super.getSatisfiedFactors(ruleConfigurationRepository,condition,applicableSop,serviceHistory, caseTrace);
