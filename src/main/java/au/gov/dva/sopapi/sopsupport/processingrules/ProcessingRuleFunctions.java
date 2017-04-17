@@ -5,6 +5,7 @@ import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.exceptions.DvaSopApiError;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
+import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import com.google.common.collect.ImmutableList;
@@ -27,39 +28,35 @@ public class ProcessingRuleFunctions {
 
     private static Logger logger = LoggerFactory.getLogger(ProcessingRuleFunctions.class.getSimpleName());
 
-    public static Optional<Service> identifyServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, OffsetDateTime conditionStartDate) {
+    public static Optional<Service> identifyServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, OffsetDateTime conditionStartDate, CaseTrace caseTrace) {
 
-
-        logger.trace("Identifying service when condition starts at " + conditionStartDate);
-        logger.trace("Services: " + String.join(";", services.stream().map(s -> s.toString()).collect(Collectors.toList())));
         Optional<Service> serviceDuringWhichConditionStarted = services.stream()
                 .filter(s -> s.getStartDate().isBefore(conditionStartDate))
                 .filter(s -> !s.getEndDate().isPresent() || s.getEndDate().get().isAfter(conditionStartDate))
                 .findFirst();
 
         if (serviceDuringWhichConditionStarted.isPresent()) {
-            logger.trace("Service during which condition started: " + serviceDuringWhichConditionStarted);
+            caseTrace.addTrace("Service during which condition started: " + serviceDuringWhichConditionStarted);
             return serviceDuringWhichConditionStarted;
         } else {
-            logger.trace("No services which started and either ended before or were ongoing at condition start date, therefore finding immediately preceeding service...");
+            caseTrace.addTrace("No services which started and either ended before or were ongoing at condition start date, therefore finding immediately preceeding service...");
             Optional<Service> lastService = services.stream()
                     .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
                     .findFirst();
-            logger.trace("Returning service: " + lastService);
+            caseTrace.addTrace("Using Service: " + lastService);
             return lastService;
         }
-
     }
 
 
-    public static long getNumberOfDaysOfOperationalServiceInInterval(OffsetDateTime startDate, OffsetDateTime endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational) {
-        logger.trace("Getting number of days of operational service in interval starting " + startDate + ", ending on " + endDate + ".");
+    public static long getNumberOfDaysOfOperationalServiceInInterval(OffsetDateTime startDate, OffsetDateTime endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+        caseTrace.addTrace("Getting number of days of operational service in interval starting " + startDate + ", ending on " + endDate + ".");
         long days = deployments.stream()
                 .filter(d -> isOperational.test(d))
                 .map(d -> getElapsedDaysOfDeploymentInInterval(startDate, endDate, d.getStartDate(), d.getEndDate()))
                 .collect(Collectors.summingLong(value -> value));
 
-        logger.trace("returning total number of days of operational service of: " + days);
+        caseTrace.addTrace("Total number of days of operational service: " + days);
         return days;
     }
 
@@ -114,20 +111,22 @@ public class ProcessingRuleFunctions {
         return deployments;
     }
 
-    public static  Optional<Rank> getRankProximateToDate(ImmutableSet<Service> services, OffsetDateTime testDate) {
+    public static  Optional<Rank> getRankProximateToDate(ImmutableSet<Service> services, OffsetDateTime testDate, CaseTrace caseTrace) {
 
-        logger.trace("Getting the rank on the last service before date " + testDate);
+        caseTrace.addTrace("Getting the rank on the last service before date " + testDate);
         Optional<Service> relevantService = services.stream()
                 .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate())) // most recent first
                 .filter(service -> service.getStartDate().isBefore(testDate))
                 .findFirst();
 
+
         if (!relevantService.isPresent()) {
-            logger.trace("No service starting before date: %s.", testDate);
+            caseTrace.addTrace(String.format("No service starting before date: %s.", testDate));
             return Optional.empty();
         }
 
         else {
+            caseTrace.addTrace("Relevant rank: " + relevantService.get().getRank());
             Rank rank = relevantService.get().getRank();
             return Optional.of(rank);
         }
