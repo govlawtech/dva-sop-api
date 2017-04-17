@@ -97,8 +97,9 @@ public class ProcessingRuleBase {
         if (!applicableRuleConfigItemOpt.isPresent())
         {
             caseTrace.addTrace(String.format("No rule configured for condition of %s, for standard of proof of %s, for rank of %s, for service branch of %s.  Therefore, no satisfied factors.",
-                    applicableSop.getStandardOfProof(),
                     condition.getSopPair().getConditionName(),
+                    applicableSop.getStandardOfProof(),
+                    relevantRank.get(),
                     serviceDuringWhichConditionStarts.get().getBranch()
             ));
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors,ImmutableSet.of());
