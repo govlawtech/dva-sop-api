@@ -3,7 +3,6 @@ sudo: required
 env:
         - DEP_ENV=devtest BASE_URL=https://dvasopapi-devtest.azurewebsites.net
 
-
 before_install:
  - chmod +x gradlew
  

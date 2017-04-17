@@ -61,7 +61,6 @@ public class DateTimeUtils {
     }
 
 
-
     public static OffsetDateTime localDateToLastMidnightCanberraTime(LocalDate localDate)
     {
         ZonedDateTime zonedToACT = ZonedDateTime.of(localDate, LocalTime.MIDNIGHT, ZoneId.of(TZDB_REGION_CODE));

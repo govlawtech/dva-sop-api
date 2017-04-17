@@ -26,7 +26,12 @@ public class ConditionDto {
     private final AggravationDateRangeDto _aggravationDateRangeDto;
 
     @JsonCreator
-    public ConditionDto(@JsonProperty("conditionName") String _conditionName, @JsonProperty("incidentType") IncidentType _incidentType, @JsonProperty("icdCodeVersion") String _icdCodeVersion,@JsonProperty("icdCodeValue")  String _icdCodeValue, @JsonProperty("onsetDates") OnsetDateRangeDto _incidentDateRangeDto, @JsonProperty("aggravationDates") AggravationDateRangeDto _aggravationDateRangeDto) {
+    public ConditionDto(@JsonProperty("conditionName") String _conditionName,
+                        @JsonProperty("incidentType") IncidentType _incidentType,
+                        @JsonProperty("icdCodeVersion") String _icdCodeVersion,
+                        @JsonProperty("icdCodeValue")  String _icdCodeValue,
+                        @JsonProperty("onsetDates") OnsetDateRangeDto _incidentDateRangeDto,
+                        @JsonProperty("aggravationDates") AggravationDateRangeDto _aggravationDateRangeDto) {
         this._conditionName = _conditionName;
         this._incidentType = _incidentType;
         this._icdCodeVersion = _icdCodeVersion;
