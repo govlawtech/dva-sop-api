@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopref;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
@@ -29,4 +30,23 @@ public class Operation {
     }
 
 
+    @JsonIgnore
+    public String get_startDate() {
+        return _startDate;
+    }
+
+    @JsonIgnore
+    public String get_endDate() {
+        return _endDate;
+    }
+
+    @JsonIgnore
+    public String get_type() {
+        return _type;
+    }
+
+    @JsonIgnore
+    public String get_name() {
+        return _name;
+    }
 }
