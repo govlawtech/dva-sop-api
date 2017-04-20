@@ -13,7 +13,7 @@ public class OffsetDateTimeSerializer extends JsonSerializer<OffsetDateTime> {
     @Override
     public void serialize(OffsetDateTime value, JsonGenerator gen, SerializerProvider serializers) throws IOException, JsonProcessingException {
 
-        String formattedValue = value.format(DateTimeFormatter.ISO_OFFSET_DATE);
+        String formattedValue = value.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
         gen.writeString(formattedValue);
     }
 }

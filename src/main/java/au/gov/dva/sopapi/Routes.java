@@ -156,7 +156,6 @@ class Routes {
                 return buildIncorrectRequestFromatError();
             }
 
-
             RulesResult rulesResult;
 
             try {
@@ -171,7 +170,6 @@ class Routes {
 
             setResponseHeaders(res, true, 200);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
-
 
         }));
 
@@ -236,22 +234,9 @@ class Routes {
 
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
-
-        Optional<Condition> condition = ConditionFactory.create(soPPairs, sopSupportRequestDto.get_conditionDto(), cache.get_ruleConfigurationRepository());
-        if (!condition.isPresent()) {
-            return RulesResult.createEmpty();
-        }
-        else {
-
             CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
-
             RulesResult rulesResult = SopSupport.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, soPPairs, buildIsOperationalPredicate(), caseTrace);
-
-            if (AppSettings.getEnvironment().isDev())
-                logger.trace(caseTrace.toString());
-
             return rulesResult;
-        }
     }
 
     private static Predicate<Deployment> buildIsOperationalPredicate() {

@@ -7,14 +7,12 @@ import au.gov.dva.dvasopapi.tests.mocks.processingRules.SimpleServiceHistory;
 import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
-import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
-import au.gov.dva.sopapi.interfaces.ProcessingRule;
-import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.interfaces.model.SoP;
+import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.LumbarSpondylosisRule;
 import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -199,7 +197,8 @@ public class SopSupportServiceTests {
         RuleConfigurationRepository ruleConfigurationRepository = getRuleConfig();
         ProcessingRule underTest = new LumbarSpondylosisRule(ruleConfigurationRepository);
         Condition condition = new LumbarSpondylosisConditionMock();
-        Optional<SoP> applicableSop = underTest.getApplicableSop(condition,new ExtensiveServiceHistoryMock(),isOperational);
+        CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
+        Optional<SoP> applicableSop = underTest.getApplicableSop(condition,new ExtensiveServiceHistoryMock(),isOperational, mockCaseTrace);
         Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
 
 
@@ -210,7 +209,8 @@ public class SopSupportServiceTests {
         ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
         Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,8,1),actOdtOf(2004,8,1),null);
         ServiceHistory serviceHistory = SimpleServiceHistory.get();
-        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
+        CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
+        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational,mockCaseTrace);
         Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.BalanceOfProbabilities);
 
     }
@@ -220,7 +220,8 @@ public class SopSupportServiceTests {
         ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
         Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,10,1),actOdtOf(2004,10,1),null);
         ServiceHistory serviceHistory = SimpleServiceHistory.get();
-        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational);
+        CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
+        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational, mockCaseTrace);
         Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
 
     }

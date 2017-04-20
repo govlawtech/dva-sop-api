@@ -23,16 +23,16 @@ public class OnsetDateRangeDto {
     private final OffsetDateTime _endDate;
 
     @JsonCreator
-    public OnsetDateRangeDto( @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeStartDate") OffsetDateTime _startDate,  @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeEndDate")  OffsetDateTime _endDate) {
+    public OnsetDateRangeDto(
+            @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeStartDate") OffsetDateTime _startDate,
+            @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeEndDate")  OffsetDateTime _endDate) {
         this._startDate = _startDate;
         this._endDate = _endDate;
     }
 
-
     public OffsetDateTime get_startDate() {
         return _startDate;
     }
-
     public OffsetDateTime get_endDate() {
         return _endDate;
     }

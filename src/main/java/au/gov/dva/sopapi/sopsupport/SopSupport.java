@@ -28,33 +28,34 @@ public class SopSupport {
         Optional<Condition> conditionOptional = ConditionFactory.create(sopPairs, sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository);
         if (!conditionOptional.isPresent())
         {
-            return RulesResult.createEmpty();
+            caseTrace.addTrace(String.format("SoP for condition %s is not implemented, so cannot apply any processing rules.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
+            return RulesResult.createEmpty(caseTrace);
         }
         Condition condition = conditionOptional.get();
         ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
 
         if (ProcessingRuleFunctions.conditionIsBeforeService(condition, serviceHistory)) {
             caseTrace.addTrace(String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));
-            return  RulesResult.createEmpty();
+            return  RulesResult.createEmpty(caseTrace);
         }
 
         if (sopSupportRequestDto.get_conditionDto().get_incidentType() == IncidentType.Aggravation)
         {
             caseTrace.addTrace(String.format("Aggravation cases not yet supported."));
-            return RulesResult.createEmpty();
+            return RulesResult.createEmpty(caseTrace);
         }
 
-        Optional<SoP> applicableSopOpt = condition.getProcessingRule().getApplicableSop(condition, serviceHistory, isOperational);
+        Optional<SoP> applicableSopOpt = condition.getProcessingRule().getApplicableSop(condition, serviceHistory, isOperational,caseTrace);
         if (!applicableSopOpt.isPresent())
         {
             caseTrace.addTrace("No applicable SoP.");
-            return RulesResult.createEmpty();
+            return RulesResult.createEmpty(caseTrace);
         }
         SoP applicableSop = applicableSopOpt.get();
+        caseTrace.addTrace("Applicable SoP is " + applicableSop.getCitation());
+        ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory,caseTrace);
 
-        ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory);
-
-        return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors);
+        return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace);
 
     }
 
@@ -78,7 +79,7 @@ public class SopSupport {
         List<FactorWithInferredResultDto> factorDtos =
                 inferredFactorsOptional.stream().map(factorWithSatisfaction -> DtoTransformations.fromFactorWithSatisfaction(factorWithSatisfaction)).collect(Collectors.toList());
 
-        return new SopSupportResponseDto(applicableInstrumentDto,factorDtos);
+        return new SopSupportResponseDto(applicableInstrumentDto,factorDtos,rulesResult.getCaseTrace().getTraces());
     }
 
 
