@@ -21,7 +21,10 @@ public class Operation {
     @JsonProperty("type")
     private final String _type;
 
-    public Operation(@JsonProperty("operationName") String _name, @JsonProperty("startDate") String _startDate, @JsonProperty("endDate") Optional<String> _endDate, @JsonProperty("type") String _type) {
+    public Operation(@JsonProperty("operationName") String _name,
+                     @JsonProperty("startDate") String _startDate,
+                     @JsonProperty("endDate") Optional<String> _endDate,
+                      @JsonProperty("type") String _type) {
         this._name = _name;
         this._startDate = _startDate;
         if (_endDate.isPresent())
