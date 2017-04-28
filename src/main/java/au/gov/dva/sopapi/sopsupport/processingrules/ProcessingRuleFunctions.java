@@ -128,7 +128,7 @@ public class ProcessingRuleFunctions {
         else {
             caseTrace.addTrace("Relevant rank: " + relevantService.get().getRank());
             Rank rank = relevantService.get().getRank();
-            return Optional.of(rank);
+            return Optional.ofNullable(rank);
         }
 
     }

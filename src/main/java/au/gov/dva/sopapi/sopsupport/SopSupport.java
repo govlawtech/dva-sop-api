@@ -64,20 +64,21 @@ public class SopSupport {
         Optional<SoP> applicableSopOptional = rulesResult.getApplicableSop();
         ImmutableList<FactorWithSatisfaction> inferredFactorsOptional = rulesResult.getFactorWithSatisfactions();
 
-        if (!applicableSopOptional.isPresent())
+        ApplicableInstrumentDto applicableInstrumentDto = null;
+        List<FactorWithInferredResultDto> factorDtos = ImmutableList.of();
+
+        if (applicableSopOptional.isPresent())
         {
-            return SopSupportResponseDto.createEmpty();
-        }
+            SoP applicableSop = applicableSopOptional.get();
 
-        SoP applicableSop = applicableSopOptional.get();
-
-        ApplicableInstrumentDto applicableInstrumentDto = new ApplicableInstrumentDto(applicableSop.getRegisterId(),
+            applicableInstrumentDto = new ApplicableInstrumentDto(applicableSop.getRegisterId(),
                 StoredSop.formatInstrumentNumber(applicableSop.getInstrumentNumber()),
                 applicableSop.getCitation(),
                 applicableSop.getEffectiveFromDate());
 
-        List<FactorWithInferredResultDto> factorDtos =
+            factorDtos =
                 inferredFactorsOptional.stream().map(factorWithSatisfaction -> DtoTransformations.fromFactorWithSatisfaction(factorWithSatisfaction)).collect(Collectors.toList());
+        }
 
         return new SopSupportResponseDto(applicableInstrumentDto,factorDtos,rulesResult.getCaseTrace().getTraces());
     }

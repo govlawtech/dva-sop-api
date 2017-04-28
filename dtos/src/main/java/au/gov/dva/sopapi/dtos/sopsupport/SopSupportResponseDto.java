@@ -34,11 +34,6 @@ public class SopSupportResponseDto {
         this._factors = _factors;
     }
 
-
-    public static SopSupportResponseDto createEmpty() {
-        return new SopSupportResponseDto(null, ImmutableList.of(),"");
-    }
-
     @JsonIgnore
     public ApplicableInstrumentDto getApplicableInstrument() {
         return _applicableInstrumentDto;
