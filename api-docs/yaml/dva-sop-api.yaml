@@ -73,8 +73,8 @@ paths:
 
   /getConnectionToService:
     post:
-      summary: Gets the applicable instrument and factors associated with a condition and service history
-      description: Gets the applicable instrument and factors associated with a condition and service history
+      summary: Gets the applicable instrument and satisfied factors associated with a condition and service history
+      description: Gets the applicable instrument and satisfied factors associated with a condition and service history. This is used to make straight through processing determinations.
       tags:
         - dva-sop-api
       parameters:
@@ -206,12 +206,7 @@ definitions:
         $ref: "#/definitions/ServiceHistory"
   Condition:
     required:
-      - conditionName
       - incidentType
-      - icdCodeVersion
-      - icdCodeValue
-      - onsetDates
-      - aggravationDates
     properties:
       conditionName:
         type: string
@@ -309,10 +304,9 @@ definitions:
   Rank:
     type: string
     enum:
-      - Officer
-      - OtherRank
-      - SpecialForces
-      - Unknown
+      - officer
+      - other rank
+      - special forces
   OperationalService:
     required:
       - assigned
