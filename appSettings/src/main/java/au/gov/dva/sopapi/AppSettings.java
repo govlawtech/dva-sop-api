@@ -10,7 +10,6 @@ public class AppSettings {
 
     private static final String envVarName = "DEP_ENV";
 
-
     public static Boolean isEnvironmentSet(){
         return (System.getProperty(envVarName) != null || System.getenv(envVarName) != null);
     }
