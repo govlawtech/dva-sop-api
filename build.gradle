@@ -1,13 +1,7 @@
 apply plugin: 'java'
-apply plugin: 'scala'
-apply plugin: 'war'
-apply plugin: 'idea'
 apply plugin: 'findbugs'
-apply plugin:  'application'
 
-mainClassName = 'au.gov.dva.sopapi.InitStorage'
-
-allprojects {
+subprojects {
 
     repositories {
         mavenCentral()
@@ -17,109 +11,21 @@ allprojects {
         }
     }
 
-}
+    findbugs {
+        effort = "max"
+        reportLevel = "low"
+    }
 
-sourceSets {
-    main {
-        scala {
-            srcDirs = ['src/main/scala', 'src/main/java']
-        }
-        java {
-            srcDirs = []
+    tasks.withType(FindBugs) {
+        reports {
+            xml.enabled false
+            html.enabled true
+    //        html.stylesheet resources.text.fromFile('config/xsl/findbugs-custom.xsl')
         }
     }
 }
 
-findbugs {
-    effort = "max"
-    reportLevel = "low"
-    sourceSets = [sourceSets.main]
-    excludeFilter = file("findBugsExcludeFilter.xml")
-}
 
-tasks.withType(FindBugs) {
-    reports {
-        xml.enabled false
-        html.enabled true
-    }
-}
-
-war {
-    webAppDirName = 'src/main'
-}
-
-task copyDocs(type: Copy) {
-    from 'api-docs'
-    into 'deploy/webapps/api-docs'
-}
-
-task copyWar(type: Copy, dependsOn: 'war') {
-    from 'build/libs/dva-sop-api.war'
-    into 'deploy/webapps/'
-    rename { String fileName -> 'ROOT.war' }
-}
-
-task explodeWar(type: Copy, dependsOn: 'copyWar') {
-    from zipTree('deploy/webapps/ROOT.war')
-    into 'deploy/webapps/ROOT'
-}
-
-
-test {
-    exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
-    exclude 'au/gov/dva/sopapi/tests/parsertests/specificsops/**'
-}
-
-configurations.all {
-    exclude group: "org.slf4j", module: "slf4j-log4j12"
-}
-
-dependencies {
-    zinc 'com.typesafe.zinc:zinc:0.3.9'
-    compile project(':dtos')
-    compile project(':appSettings')
-
-    compile group: 'com.sparkjava', name: 'spark-core', version: '2.5.2'
-    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.1'
-    compile group: 'org.scala-lang.modules', name: 'scala-parser-combinators_2.12', version: '1.0.4'
-    compile group: 'org.scala-lang', name: 'scala-reflect', version: '2.12.1'
-    compile group: 'com.typesafe.scala-logging', name: 'scala-logging_2.12', version: '3.5.0'
-
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.5'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.5'
-    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-jsonSchema', version: '2.8.5'
-
-    compile group: 'com.google.guava', name: 'guava', version: '20.0'
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.1'
-    compile group: 'org.asynchttpclient', name: 'async-http-client', version: '2.0.24'
-
-    // Logging
-    compile 'org.slf4j:slf4j-api:1.7.21'
-    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.1.7'
-    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
-
-    compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.3'
-    compile group: 'com.microsoft.azure', name: 'azure-storage', version: '4.4.0'
-    compile group: 'com.microsoft.azure', name: 'azure-core', version: '0.9.7'
-    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    compile group: 'com.google.code.findbugs', name: 'annotations', version: '3.0.1u2'
-    compile group: 'org.docx4j', name: 'docx4j', version: '3.3.1'
-
-    compile group: 'org.apache.poi', name: 'poi', version: '3.15'
-    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
-    compile group: 'org.apache.poi', name: 'ooxml-schemas', version: '1.3'
-    compile group: 'org.jfree', name: 'jfreechart', version: '1.0.19'
-    compile group: 'org.imgscalr', name: 'imgscalr-lib', version: '4.2'
-    compile group: 'com.frequal.romannumerals', name: 'roman-numerals', version: '1.3'
-    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.5.6'
-
-    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.4'
-
-    testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'
-    testCompile 'junit:junit:4.12'
-    testCompile "org.mockito:mockito-core:2.+"
-    testCompile 'info.solidsoft.mockito:mockito-java8:2.0.0'
-}
 
 project(':client') {
     dependencies {
@@ -128,8 +34,15 @@ project(':client') {
     }
 }
 
+project(':app') {
+    dependencies {
+        project(':dtos')
+        project(':appSettings')
+    }
+}
 
-ScalaCompileOptions.metaClass.daemonServer = true
-ScalaCompileOptions.metaClass.fork = true
-ScalaCompileOptions.metaClass.useAnt = false
-ScalaCompileOptions.metaClass.useCompileDaemon = false
+project(':tools') {
+    dependencies {
+        project(':app')
+    }
+}
