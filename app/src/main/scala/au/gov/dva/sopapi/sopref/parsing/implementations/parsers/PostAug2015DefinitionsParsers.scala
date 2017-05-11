@@ -9,10 +9,9 @@ object PostAug2015DefinitionsParsers {
   def splitToDefinitions(definitionsSection : String) : List[String] = {
 
     val acc = List[String]();
-    val lines = definitionsSection.split("[\r\n]+").toList.drop(1)
+    val lines = definitionsSection.split(Properties.lineSeparator).toList.drop(1)
     val result: List[String] = divideRecursive(acc,lines)
     return result
-
   }
 
   private def divideRecursive(divided : List[String], toDivide: List[String]) : List[String] = {
