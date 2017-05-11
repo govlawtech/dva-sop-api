@@ -104,7 +104,7 @@ object SoPExtractorUtilities {
   }
 
   def splitOutTailIfAny(lastSubParaWithLineBreaks: String): (String, Option[String]) = {
-    val asLines = lastSubParaWithLineBreaks.split(Properties.lineSeparator).toList
+    val asLines = lastSubParaWithLineBreaks.split("[\r\n]+").toList
     val reversed = asLines.reverse
     val tail = reversed.takeWhile(l => !l.endsWith(";")).reverse
     if (tail.size < asLines.size) {

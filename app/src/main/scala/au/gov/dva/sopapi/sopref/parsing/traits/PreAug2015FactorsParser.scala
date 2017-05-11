@@ -24,7 +24,7 @@ trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with Ter
   }
 
 
-  def tailParser: Parser[String] = not(orTerminator) ~> """[a-z,\s]+""".r <~ (periodTerminator | orTerminator)
+  def tail: Parser[String] = not(orTerminator) ~> (";" | ",") ~> Properties.lineSeparator ~> """[a-z,\s]+""".r <~ (periodTerminator | orTerminator)
 
   def singleLevelPara: Parser[FactorInfoWithoutSubParas] = mainParaLetter ~ mainFactorBodyText <~ opt(orTerminator | periodTerminator) ^^ {
     case para ~ text => new FactorInfoWithoutSubParas(para, text)
@@ -36,7 +36,7 @@ trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with Ter
   }
 
   private def toLineList(stringWithLinebreaks : String) = {
-    stringWithLinebreaks.split(Properties.lineSeparator).toList
+    stringWithLinebreaks.split("(\r\n|[\r\n])").toList
   }
 
   private def flattenLineBreaks(lines : List[String]) = {
@@ -45,10 +45,6 @@ trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with Ter
 
   private def flattenLineBreaks(stringWithLineBreaks : String) : String = {
     flattenLineBreaks(toLineList(stringWithLineBreaks))
-  }
-
-  private def replaceLineBreaksWithSpace(stringWithLineBreaks: String) : String = {
-    stringWithLineBreaks.replace(Properties.lineSeparator," ")
   }
 
   def parseSingleFactor(singleFactorTextInclLineBreaks: String): FactorInfo = {
@@ -83,7 +79,7 @@ trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with Ter
     }
     else {
 
-      val (lastPara, tailLines) = SoPExtractorUtilities.splitOutTailIfAny(restSplitToSubParas.takeRight(1).head)
+      val (lastPara, tail) = SoPExtractorUtilities.splitOutTailIfAny(restSplitToSubParas.takeRight(1).head)
 
       val lastParaParseResult = this.parseAll(this.subPara, flattenLineBreaks(lastPara))
       if (!lastParaParseResult.successful) {
@@ -95,14 +91,7 @@ trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with Ter
       val allSubParaInfosButLast: List[(String, String, Option[String])] = parseSubFactorsExceptLast.map(r => r.get)
       val lastSubParaInfoResult: (String, String, Option[String]) = lastParaParseResult.get
       val allSubParas = allSubParaInfosButLast :+ lastSubParaInfoResult
-
-      if (tailLines.isDefined) {
-        val parsedTail: ParseResult[String] = this.parseAll(this.tailParser, replaceLineBreaksWithSpace(tailLines.get))
-        if (!parsedTail.successful) throw new SopParserError(parsedTail.toString)
-
-        return new FactorInfoWithSubParas(headLetter, headText, allSubParas, Some(parsedTail.get))
-      }
-      else return new FactorInfoWithSubParas(headLetter, headText, allSubParas, None)
+      return new FactorInfoWithSubParas(headLetter, headText, allSubParas, tail)
     }
   }
 
