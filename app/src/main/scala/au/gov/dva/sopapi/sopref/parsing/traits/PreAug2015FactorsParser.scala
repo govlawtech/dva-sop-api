@@ -11,6 +11,7 @@ import scala.util.parsing.combinator.RegexParsers
 
 trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with TerminatorParsers {
 
+  val platformNeutralLineBreakRegex = "(\r\n|\n)"
   // main para letter, list of sub paras with text, optional tail
   def mainParaLetter: Parser[String] =
     """\(([a-z])+\)""".r
@@ -36,7 +37,7 @@ trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with Ter
   }
 
   private def toLineList(stringWithLinebreaks : String) = {
-    stringWithLinebreaks.split(Properties.lineSeparator).toList
+    stringWithLinebreaks.split(platformNeutralLineBreakRegex).toList
   }
 
   private def flattenLineBreaks(lines : List[String]) = {
@@ -48,7 +49,7 @@ trait PreAug2015FactorsParser extends RegexParsers with BodyTextParsers with Ter
   }
 
   private def replaceLineBreaksWithSpace(stringWithLineBreaks: String) : String = {
-    stringWithLineBreaks.replace(Properties.lineSeparator," ")
+    stringWithLineBreaks.replaceAll(platformNeutralLineBreakRegex," ")
   }
 
   def parseSingleFactor(singleFactorTextInclLineBreaks: String): FactorInfo = {
