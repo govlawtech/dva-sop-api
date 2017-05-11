@@ -50,6 +50,42 @@ public class SopSupportResponseDto {
         return caseTrace;
     }
 
+    @JsonIgnore
+    public int getTotalOperationalDays()
+    {
+        return 0;
+    }
+
+    @JsonIgnore
+    public int getRequiredOperationalDays()
+    {
+        return 0;
+    }
+
+    @JsonIgnore
+    public int getTotalContinuousServiceDays()
+    {
+        return 0;
+    }
+
+    @JsonIgnore
+    public int getRhRequiredContinuousServiceDays   ()
+    {
+        return 0;
+    }
+
+    @JsonIgnore
+    public int getBopRequiredContinuousServiceDays()
+    {
+        return 0;
+    }
+
+    @JsonIgnore
+    public String getStandardOfProof()
+    {
+        return "NI";
+    }
+
     public static String toJsonString(SopSupportResponseDto sopSupportResponseDto) {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
         String jsonString = null;
