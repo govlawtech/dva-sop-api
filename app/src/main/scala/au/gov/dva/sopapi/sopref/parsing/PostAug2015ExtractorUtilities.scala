@@ -27,8 +27,8 @@ object PostAug2015ExtractorUtilities {
     val m = sectionHeaderLineRegex.findFirstMatchIn(titleLine)
     if (m.isDefined) {
       val sectionNumber = m.get.group(1).toInt
-      val title = m.get.group(2)
-      val bodyText: List[String] = lines.drop(1)
+      val title = m.get.group(2).trim
+      val bodyText: List[String] = lines.drop(1).map(_.trim)
       return (Some(sectionNumber), title, bodyText)
     }
     else {
