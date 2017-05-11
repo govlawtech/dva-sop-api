@@ -2,12 +2,14 @@ package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 
 import au.gov.dva.sopapi.exceptions.SopParserError
 
+import scala.util.Properties
+
 object PreAug2015DefinitionsParsers {
 
   def splitToDefinitions(definitionsSection : String) : List[String] = {
      assert(!definitionsSection.startsWith("\""))
     val acc = List[String]();
-     val lines = definitionsSection.split("[\r\n]+").toList.drop(1)
+     val lines = definitionsSection.split(Properties.lineSeparator).toList.drop(1)
      val result: List[String] = divideRecursive(acc,lines)
      return result
   }
@@ -19,7 +21,7 @@ object PreAug2015DefinitionsParsers {
     else {
       assert(toDivide.head.startsWith("\""))
       val definitionLines = (toDivide.head :: toDivide.tail.takeWhile(s => !s.startsWith("\"")))
-      val definition = definitionLines.mkString("\n")
+      val definition = definitionLines.mkString(Properties.lineSeparator)
       divideRecursive(definition :: divided,toDivide.drop(definitionLines.size))
     }
   }
