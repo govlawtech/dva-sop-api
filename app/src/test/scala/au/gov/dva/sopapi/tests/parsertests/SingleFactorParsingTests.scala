@@ -6,8 +6,6 @@ import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
 
-import scala.util.Properties
-
 
 @RunWith(classOf[JUnitRunner])
 class SingleFactorParsingTests extends FunSuite {
@@ -17,21 +15,21 @@ class SingleFactorParsingTests extends FunSuite {
 
   test("Split sub paras") {
 
-    val input = "(i) having an amputation involving either leg; or" + Properties.lineSeparator + "(ii) having an asymmetric gait;" + Properties.lineSeparator + "for at least three years before the clinical worsening of" + Properties.lineSeparator + "osteoarthritis in that joint; or"
-    val result = SoPExtractorUtilities.splitFactorToSubFactors(input.split("[" + Properties.lineSeparator + "]+").toList)
+    val input = "(i) having an amputation involving either leg; or\r\n(ii) having an asymmetric gait;\r\nfor at least three years before the clinical worsening of\r\nosteoarthritis in that joint; or"
+    val result = SoPExtractorUtilities.splitFactorToSubFactors(input.split("[\r\n]+").toList)
     assert(result.size == 2 && result(1).size == 3)
   }
 
   test("Split last sub para to sub para and tail with semi colon end")
   {
-    val input = "(ii) having an asymmetric gait;" + Properties.lineSeparator + "for at least three years before the clinical worsening of" + Properties.lineSeparator + "osteoarthritis in that joint; or"
+    val input = "(ii) having an asymmetric gait;\nfor at least three years before the clinical worsening of\nosteoarthritis in that joint; or"
     val result = SoPExtractorUtilities.splitOutTailIfAny(input)
     assert(result._2.isDefined && result._1.startsWith("(ii)") && result._2.get.endsWith("; or"))
   }
 
   test("Do not split last sub para to sub para and tail with comma end")
   {
-    val input = "(ii) having an asymmetric gait," + Properties.lineSeparator + "for at least three years before the clinical worsening of" + Properties.lineSeparator + "osteoarthritis in that joint; or"
+    val input = "(ii) having an asymmetric gait,\nfor at least three years before the clinical worsening of\nosteoarthritis in that joint; or"
     val result = SoPExtractorUtilities.splitOutTailIfAny(input)
     assert(result._2.isEmpty && result._1.size == input.size)
   }
@@ -45,35 +43,35 @@ class SingleFactorParsingTests extends FunSuite {
   }
 
   test("Parse two level para") {
-    val input ="(h) for obstructive sleep apnoea only," + Properties.lineSeparator + "(i) having chronic obstruction or chronic narrowing of the upper" + Properties.lineSeparator + "airway at the time of the clinical worsening of sleep apnoea; or" + Properties.lineSeparator + "(ii) being obese at the time of the clinical worsening of sleep" + Properties.lineSeparator + "apnoea; or" + Properties.lineSeparator + "(iii) having hypothyroidism at the time of the clinical worsening of" + Properties.lineSeparator + "sleep apnoea; or" + Properties.lineSeparator + "(iv) having acromegaly at the time of the clinical worsening of sleep" + Properties.lineSeparator + "apnoea; or" + Properties.lineSeparator + "(v) being treated with antiretroviral therapy for human" + Properties.lineSeparator + "immunodeficiency virus infection before the clinical worsening" + Properties.lineSeparator + "of sleep apnoea; or"
+    val input ="(h) for obstructive sleep apnoea only,\n(i) having chronic obstruction or chronic narrowing of the upper\nairway at the time of the clinical worsening of sleep apnoea; or\n(ii) being obese at the time of the clinical worsening of sleep\napnoea; or\n(iii) having hypothyroidism at the time of the clinical worsening of\nsleep apnoea; or\n(iv) having acromegaly at the time of the clinical worsening of sleep\napnoea; or\n(v) being treated with antiretroviral therapy for human\nimmunodeficiency virus infection before the clinical worsening\nof sleep apnoea; or"
     val result = factorsParserUnderTest.parseSingleFactor(input)
     println(result)
   }
 
   test("Parse two level para with tail") {
-    val input = "(ee) for osteoarthritis of a joint of the lower limb only," + Properties.lineSeparator + "(i) having an amputation involving either leg; or" + Properties.lineSeparator + "(ii) having an asymmetric gait;" + Properties.lineSeparator + "for at least three years before the clinical worsening of" + Properties.lineSeparator + "osteoarthritis in that joint; or"
+    val input = "(ee) for osteoarthritis of a joint of the lower limb only,\r\n(i) having an amputation involving either leg; or\r\n(ii) having an asymmetric gait;\r\nfor at least three years before the clinical worsening of\r\nosteoarthritis in that joint; or"
     val result = factorsParserUnderTest.parseSingleFactor(input)
     println(result)
   }
 
 
   test("Split head from rest for individual factor") {
-    val input = "(b) for central sleep apnoea only," + Properties.lineSeparator + "(i) having congestive cardiac failure at the time of the clinical" + Properties.lineSeparator + "onset of sleep apnoea; or" + Properties.lineSeparator + "(ii) using a long-acting opioid at an average daily morphine" + Properties.lineSeparator + "equivalent dose of at least 75 milligrams for at least the two" + Properties.lineSeparator + "months before the clinical onset of sleep apnoea; or"
-    val inputSplitToLines = input.split(scala.util.Properties.lineSeparator).toList
+    val input = "(b) for central sleep apnoea only,\n(i) having congestive cardiac failure at the time of the clinical\nonset of sleep apnoea; or\n(ii) using a long-acting opioid at an average daily morphine\nequivalent dose of at least 75 milligrams for at least the two\nmonths before the clinical onset of sleep apnoea; or"
+    val inputSplitToLines = input.split("[\r\n]+").toList
     val result = SoPExtractorUtilities.splitFactorToHeaderAndRest(inputSplitToLines)
     assert(!result._2.isEmpty)
   }
 
   test("Parse single factor from text incl line breaks without tail") {
 
-    val input = "(b) for central sleep apnoea only," + Properties.lineSeparator + "(i) having congestive cardiac failure at the time of the clinical" + Properties.lineSeparator + "onset of sleep apnoea; or" + Properties.lineSeparator + "(ii) using a long-acting opioid at an average daily morphine" + Properties.lineSeparator + "equivalent dose of at least 75 milligrams for at least the two" + Properties.lineSeparator + "months before the clinical onset of sleep apnoea; or"
+    val input = "(b) for central sleep apnoea only,\n(i) having congestive cardiac failure at the time of the clinical\nonset of sleep apnoea; or\n(ii) using a long-acting opioid at an average daily morphine\nequivalent dose of at least 75 milligrams for at least the two\nmonths before the clinical onset of sleep apnoea; or"
     val result = factorsParserUnderTest.parseSingleFactor(input)
     println(result)
 
   }
 
   test("Parse single factor from text incl line breaks and with tail") {
-    val input = "(ee) for osteoarthritis of a joint of the lower limb only," + Properties.lineSeparator + "(i) having an amputation involving either leg; or" + Properties.lineSeparator + "(ii) having an asymmetric gait;" + Properties.lineSeparator + "for at least three years before the clinical worsening of" + Properties.lineSeparator + "osteoarthritis in that joint; or"
+    val input = "(ee) for osteoarthritis of a joint of the lower limb only,\n(i) having an amputation involving either leg; or\n(ii) having an asymmetric gait;\nfor at least three years before the clinical worsening of\nosteoarthritis in that joint; or"
     val result = factorsParserUnderTest.parseSingleFactor(input)
     println(result)
   }
@@ -82,7 +80,7 @@ class SingleFactorParsingTests extends FunSuite {
 
 
   test("Split tail from last factor") {
-     val lastFactor = "(ii) having an asymmetric gait;" + Properties.lineSeparator + "for at least three years before the clinical worsening of" + Properties.lineSeparator + "osteoarthritis in that joint; or";
+     val lastFactor = "(ii) having an asymmetric gait;\nfor at least three years before the clinical worsening of\nosteoarthritis in that joint; or";
       val result = SoPExtractorUtilities.splitOutTailIfAny(lastFactor)
 
     println("PARA: " + result._1)
