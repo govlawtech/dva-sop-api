@@ -7,10 +7,6 @@ import au.gov.dva.sopapi.tools.StorageTool;
 
 public class App {
     public static void main(String[] args) {
-        // methods required:
-        // init storage
-        // update rule configuration from spreadsheet to repository
-
         RegisterClient registerClient = new FederalRegisterOfLegislationClient();
         Repository repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
         repository.purge();
