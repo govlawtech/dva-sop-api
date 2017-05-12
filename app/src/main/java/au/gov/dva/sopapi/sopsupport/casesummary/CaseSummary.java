@@ -4,15 +4,13 @@ import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import com.google.common.collect.ImmutableList;
+import fr.opensagres.poi.xwpf.converter.pdf.PdfOptions;
 import org.apache.commons.lang.WordUtils;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFNum;
 import org.apache.poi.xwpf.usermodel.XWPFNumbering;
 import org.apache.xmlbeans.XmlException;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTInd;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTLvl;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTStyles;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.STNumberFormat;
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -25,19 +23,48 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 
+import fr.opensagres.poi.xwpf.converter.pdf.PdfConverter;
+
 public class CaseSummary {
 
     private static CaseSummaryModel _model;
     private static CTStyles _ctStyles = CTStyles.Factory.newInstance();
     private static XWPFNumbering _numbering;
 
-    public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel, Predicate<Deployment> isOperational) {
+    public static CompletableFuture<byte[]> createCaseSummary(CaseSummaryModel caseSummaryModel, Predicate<Deployment> isOperational, boolean convertToPdf) {
         _model = caseSummaryModel;
-        return CompletableFuture.supplyAsync(() -> buildCaseSummary(isOperational));
+        return CompletableFuture.supplyAsync(() -> buildCaseSummary(isOperational, convertToPdf));
     }
 
-    private static byte[] buildCaseSummary(Predicate<Deployment> isOperational) {
-        XWPFDocument document = new XWPFDocument();
+    // Extension of XWPF document needed to sort out errors in the pdf converter
+    private static class SopApiXWPFDocument extends XWPFDocument {
+        public SopApiXWPFDocument() {
+            super();
+        }
+
+        @Override
+        protected void onDocumentCreate() {
+            super.onDocumentCreate();
+            CTDocument1 doc = this.getDocument();
+            if (!doc.isSetBody()) doc.addNewBody();
+            CTBody body = doc.getBody();
+            if (!body.isSetSectPr()) body.addNewSectPr();
+            CTSectPr sectPr = body.getSectPr();
+            if (!sectPr.isSetPgSz()) sectPr.addNewPgSz();
+            CTPageSz pageSz = sectPr.getPgSz();
+            if (!pageSz.isSetH()) pageSz.setH(BigInteger.valueOf(297 * 80)); // A4 dimensions x 80. Not sure what the units here are supposed to be
+            if (!pageSz.isSetW()) pageSz.setW(BigInteger.valueOf(210 * 80));
+        }
+
+        @Override
+        public CTStyles getStyle() throws XmlException, IOException {
+            return _ctStyles;
+        }
+    }
+
+    private static byte[] buildCaseSummary(Predicate<Deployment> isOperational, boolean convertToPdf) {
+        XWPFDocument document = convertToPdf ? new SopApiXWPFDocument() : new XWPFDocument();
+        document.createHeaderFooterPolicy();
 
         // Set up generated document with styles from the template
         getStylesAndNumberingFromTemplate();
@@ -65,7 +92,14 @@ public class CaseSummary {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
         try {
-            document.write(outputStream);
+            if (convertToPdf) {
+                PdfOptions pdfOptions = PdfOptions.create().fontEncoding("UTF-8");
+                PdfConverter.getInstance().convert(document, outputStream, pdfOptions);
+            }
+            else {
+                document.write(outputStream);
+            }
+
             outputStream.close();
         } catch (FileNotFoundException e) {
             throw new CaseSummaryError(e);
