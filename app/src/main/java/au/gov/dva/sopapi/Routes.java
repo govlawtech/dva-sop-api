@@ -169,7 +169,6 @@ class Routes {
         }));
 
         post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) ->
-
         {
             if (validateHeaders() && !responseTypeAcceptableDocx(req)) {
                 setResponseHeaders(res, false, 406);
@@ -201,7 +200,7 @@ class Routes {
                         .collect(toList());
 
                 CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
-                byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate()).get();
+                byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
 
                 setResponseHeadersDocXResponse(res);
                 return result;
@@ -215,6 +214,51 @@ class Routes {
             }
         }));
 
+        post(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, ((req, res) ->
+        {
+            if (validateHeaders() && !responseTypeAcceptablePdf(req)) {
+                setResponseHeaders(res, false, 406);
+                return buildAcceptableContentTypesPdfError();
+            }
+
+            try {
+                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+
+                RulesResult rulesResult;
+                try {
+                    rulesResult = runRules(sopSupportRequestDto);
+                } catch (ProcessingRuleError e) {
+                    logger.error("Error applying rule.", e);
+                    setResponseHeaders(res, false, 500);
+                    return e.getMessage();
+                }
+
+                if (rulesResult.isEmpty()) {
+                    setResponseHeaders(res, false, 204);
+                    return "No applicable rules.";
+                }
+                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+                Condition condition = rulesResult.getCondition().get();
+
+                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
+                        .filter(f -> f.isSatisfied())
+                        .map(f -> f.getFactor())
+                        .collect(toList());
+
+                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
+                byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
+
+                setResponseHeadersPdfResponse(res);
+                return result;
+            } catch (DvaSopApiDtoError e) {
+                setResponseHeaders(res, false, 400);
+                return buildIncorrectRequestFromatError();
+            } catch (ProcessingRuleError e) {
+                logger.error("Error applying rule.", e);
+                setResponseHeaders(res, false, 500);
+                return e.getMessage();
+            }
+        }));
     }
 
     private static String buildIncorrectRequestFromatError() {
@@ -318,6 +362,13 @@ class Routes {
         response.header("X-Content-Type-Options", "nosniff");
     }
 
+    private static void setResponseHeadersPdfResponse(Response response) {
+        response.status(200);
+        response.type("application/pdf");
+
+        response.header("X-Content-Type-Options", "nosniff");
+    }
+
     private static boolean responseTypeAcceptable(Request request) {
         String contentTypeHeader = request.headers("Accept");
         if (contentTypeHeader == null)
@@ -332,6 +383,15 @@ class Routes {
         if (contentTypeHeader == null)
             return false;
         if (contentTypeHeader.contains("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
+            return true;
+        else return false;
+    }
+
+    private static boolean responseTypeAcceptablePdf(Request request) {
+        String contentTypeHeader = request.headers("Accept");
+        if (contentTypeHeader == null)
+            return false;
+        if (contentTypeHeader.contains("application/pdf"))
             return true;
         else return false;
     }
@@ -360,6 +420,10 @@ class Routes {
 
     private static String buildAcceptableContentTypesDocxError() {
         return "Accept header in request must include 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'.";
+    }
+
+    private static String buildAcceptableContentTypesPdfError() {
+        return "Accept header in request must include 'application/pdf'.";
     }
 
     private static Boolean validateHeaders() {

@@ -6,6 +6,7 @@ public class SharedConstants {
         public static final String GET_SOPFACTORS = "/getSopFactors";
         public static final String GET_SERVICE_CONNECTION = "/getConnectionToService";
         public static final String GET_CASESUMMARY = "/getCaseSummary";
+        public static final String GET_CASESUMMARY_AS_PDF = "/getCaseSummaryAsPdf";
     }
 
 }

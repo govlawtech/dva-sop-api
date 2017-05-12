@@ -183,6 +183,30 @@ public class HttpSoPApiClient implements SoPApiClient {
         return promise;
     }
 
+    @Override
+    public CompletableFuture<byte[]> getCaseSummaryAsPdf(SopSupportRequestDto sopSupportRequestDto) {
+        String jsonRequestBody = sopSupportRequestDto.toJsonString();
+        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_CASESUMMARY_AS_PDF);
+
+        CompletableFuture<byte[]> promise = getOrCreateAsyncHttpClient()
+                .preparePost(serviceUrl.toString())
+                .setHeader("Accept", "application/pdf")
+                .setHeader("Content-Type","application/json; charset=utf-8")
+                .setBody(jsonRequestBody)
+                .execute()
+                .toCompletableFuture()
+                .thenApply(response -> {
+                    if (response.getStatusCode() == 200) {
+                        return response.getResponseBodyAsBytes();
+                    }
+                    else {
+                        throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(),response.getResponseBody()));
+                    }
+                });
+
+        return promise;
+    }
+
     private static String buildErrorMsg(Integer statusCode, String msg) {
         return String.format("HTTP Status Code: %d, %s.", statusCode, msg);
     }

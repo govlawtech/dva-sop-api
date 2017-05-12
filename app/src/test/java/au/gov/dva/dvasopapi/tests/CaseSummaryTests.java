@@ -32,7 +32,7 @@ public class CaseSummaryTests {
         CaseSummaryModel testData = new ExtensiveCaseSummaryModelMock();
 
 
-        byte[] result = CaseSummary.createCaseSummary(testData, mockCat).get();
+        byte[] result = CaseSummary.createCaseSummary(testData, mockCat, false).get();
         Assert.assertTrue(result.length > 0);
     }
 
@@ -41,9 +41,22 @@ public class CaseSummaryTests {
             InterruptedException, IOException, URISyntaxException {
 
         CaseSummaryModel testData = new ExtensiveCaseSummaryModelMock();
-        byte[] result = CaseSummary.createCaseSummary(testData, mockCat).get();
+        byte[] result = CaseSummary.createCaseSummary(testData, mockCat, false).get();
 
-        File resultFile = writeTempFile(result);
+        File resultFile = writeTempFile(result, false);
+        System.out.println(resultFile.getAbsolutePath());
+
+        Assert.assertTrue(resultFile.exists());
+    }
+
+    @Test
+    public void resultSerialisesToPdfDoc() throws ExecutionException,
+            InterruptedException, IOException, URISyntaxException {
+
+        CaseSummaryModel testData = new ExtensiveCaseSummaryModelMock();
+        byte[] result = CaseSummary.createCaseSummary(testData, mockCat, true).get();
+
+        File resultFile = writeTempFile(result, true);
         System.out.println(resultFile.getAbsolutePath());
 
         Assert.assertTrue(resultFile.exists());
@@ -56,15 +69,15 @@ public class CaseSummaryTests {
         // expected results from looking at mock data:
         // peacetime service should be 31
         // operational service should be 122
-        byte[] result = CaseSummary.createCaseSummary(simpleCaseSummaryModel,mockCat).get();
-        File resultFile = writeTempFile(result);
+        byte[] result = CaseSummary.createCaseSummary(simpleCaseSummaryModel,mockCat, false).get();
+        File resultFile = writeTempFile(result, false);
         System.out.println(resultFile.getAbsolutePath());
         Assert.assertTrue(resultFile.exists());
 
     }
 
-    private File writeTempFile(byte[] data) throws IOException {
-         Path outputPath = getOutputPath();
+    private File writeTempFile(byte[] data, boolean usePdfExtension) throws IOException {
+         Path outputPath = getOutputPath(usePdfExtension);
         File outputFile = outputPath.toFile();
 
         try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
@@ -76,8 +89,9 @@ public class CaseSummaryTests {
 
     }
 
-    private Path getOutputPath() throws IOException {
-        Path tempFilePath = Files.createTempFile("CaseSummaryTestOutput_", ".docx");
+    private Path getOutputPath(boolean usePdfExtension) throws IOException {
+        Path tempFilePath = Files.createTempFile("CaseSummaryTestOutput_"
+                , usePdfExtension ? ".pdf" : ".docx");
         return tempFilePath;
     }
 
