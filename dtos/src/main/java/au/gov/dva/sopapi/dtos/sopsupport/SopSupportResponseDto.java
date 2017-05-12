@@ -83,7 +83,7 @@ public class SopSupportResponseDto {
     @JsonIgnore
     public String getStandardOfProof()
     {
-        return "NI";
+        return "RH";
     }
 
     public static String toJsonString(SopSupportResponseDto sopSupportResponseDto) {
