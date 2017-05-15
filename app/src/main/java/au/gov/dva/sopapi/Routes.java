@@ -50,7 +50,7 @@ import static spark.Spark.post;
 class Routes {
 
     private static Cache cache;
-    static Logger logger = LoggerFactory.getLogger(Routes.class);
+    static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
 
     public static void initStatus(Repository repository, Cache cache) {
 
@@ -150,21 +150,22 @@ class Routes {
                 setResponseHeaders(res, false, 400);
                 return buildIncorrectRequestFromatError();
             }
-
-            RulesResult rulesResult;
-
             try {
-                rulesResult = runRules(sopSupportRequestDto);
-            } catch (ProcessingRuleError e) {
-                logger.error("Error applying rule.", e);
+                RulesResult rulesResult = runRules(sopSupportRequestDto);
+                SopSupportResponseDto sopSupportResponseDto = SopSupport.buildSopSupportResponseDtoFromRulesResult(rulesResult);
+                setResponseHeaders(res, true, 200);
+                return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
+            } catch (Exception e) {
+                logger.error("Unknown exception", e);
                 setResponseHeaders(res, false, 500);
-                return e.getMessage();
+                return "";
+
+            } catch (Error e)
+            {
+                logger.error("Unknown error", e);
+                setResponseHeaders(res,false,500);
+                return "";
             }
-
-            SopSupportResponseDto sopSupportResponseDto = SopSupport.buildSopSupportResponseDtoFromRulesResult(rulesResult);
-
-            setResponseHeaders(res, true, 200);
-            return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
 
         }));
 
@@ -210,7 +211,7 @@ class Routes {
             } catch (ProcessingRuleError e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, false, 500);
-                return e.getMessage();
+                return "";
             }
         }));
 
@@ -224,14 +225,7 @@ class Routes {
             try {
                 SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
 
-                RulesResult rulesResult;
-                try {
-                    rulesResult = runRules(sopSupportRequestDto);
-                } catch (ProcessingRuleError e) {
-                    logger.error("Error applying rule.", e);
-                    setResponseHeaders(res, false, 500);
-                    return e.getMessage();
-                }
+                RulesResult rulesResult = runRules(sopSupportRequestDto);
 
                 if (rulesResult.isEmpty()) {
                     setResponseHeaders(res, false, 204);
@@ -256,7 +250,13 @@ class Routes {
             } catch (ProcessingRuleError e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, false, 500);
-                return e.getMessage();
+                return res;
+            }
+            catch (Exception e)
+            {
+                logger.error("Unknown error.",e);
+                setResponseHeaders(res,false,500);
+                return res;
             }
         }));
     }

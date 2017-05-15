@@ -8,65 +8,57 @@ import java.util.Optional;
 
 public class CaseTraceDto {
 
-    @JsonProperty("requiredContinuousServiceDaysForRh")
-    private final int requiredCftsDaysForRh;
-
-    @JsonProperty("requiredContinuousServiceDaysForBoP")
-    private final int requiredCftsDaysForBoP;
+    @JsonProperty("requiredContinuousServiceDays")
+    private final Optional<Integer> _requiredCftsDays;
 
     @JsonProperty("actualDaysOfContinuousService")
-    private final int actualCftsDays;
+    private final Optional<Integer> _actualCftsDays;
 
     @JsonProperty("requiredOperationalDaysForRh")
-    private final int requiredOperationalDaysForRh;
+    private final Optional<Integer> _requiredOperationalDaysForRh;
 
     @JsonProperty("actualOperationalDays")
-    private final int actualOperationalDays;
+    private final Optional<Integer> _actualOperationalDays;
 
     private String logTrace;
 
-    public CaseTraceDto(int requiredCftsDaysForRh,
-                        int requiredCftsDaysForBoP,
-                        int actualCftsDays,
-                        int requiredOperationalDaysForRh,
-                        int actualOperationalDays,
+    public CaseTraceDto(Optional<Integer> requiredCftsDays,
+                        Optional<Integer> actualCftsDays,
+                        Optional<Integer> requiredOperationalDaysForRh,
+                        Optional<Integer> actualOperationalDays,
                         String logTrace)
     {
-        this.requiredCftsDaysForRh = requiredCftsDaysForRh;
-        this.requiredCftsDaysForBoP = requiredCftsDaysForBoP;
-        this.actualCftsDays = actualCftsDays;
-        this.requiredOperationalDaysForRh = requiredOperationalDaysForRh;
-        this.actualOperationalDays = actualOperationalDays;
+        _requiredCftsDays = requiredCftsDays;
+        _actualCftsDays = actualCftsDays;
+        _requiredOperationalDaysForRh = requiredOperationalDaysForRh;
+        _actualOperationalDays = actualOperationalDays;
         this.logTrace = logTrace;
     }
 
-    @JsonIgnore
-    public int getRequiredCftsDaysForRh() {
-        return requiredCftsDaysForRh;
-    }
 
-    @JsonIgnore
-    public int getRequiredCftsDaysForBoP() {
-        return requiredCftsDaysForBoP;
-    }
-
-    @JsonIgnore
-    public int getActualCftsDays() {
-        return actualCftsDays;
-    }
-
-    @JsonIgnore
-    public int getRequiredOperationalDaysForRh() {
-        return requiredOperationalDaysForRh;
-    }
-
-    @JsonIgnore
-    public int getActualOperationalDays() {
-        return actualOperationalDays;
-    }
 
     @JsonIgnore
     public String getLogTrace() {
         return logTrace;
+    }
+
+    @JsonIgnore
+    public Optional<Integer> getRequiredCftsDays() {
+        return _requiredCftsDays;
+    }
+
+    @JsonIgnore
+    public Optional<Integer> getActualCftsDays() {
+        return _actualCftsDays;
+    }
+
+    @JsonIgnore
+    public Optional<Integer> getRequiredOperationalDaysForRh() {
+        return _requiredOperationalDaysForRh;
+    }
+
+    @JsonIgnore
+    public Optional<Integer> getActualOperationalDays() {
+        return _actualOperationalDays;
     }
 }

@@ -116,8 +116,7 @@ public class ProcessingRuleBase {
         RuleConfigurationItem applicableRuleConfig = applicableRuleConfigItemOpt.get();
 
         Integer cftsDaysRequired = applicableRuleConfig.getRequiredCFTSWeeks() * 7;
-        caseTrace.setRequiredCftsDays(applicableRuleConfig instanceof RHRuleConfigurationItem ? StandardOfProof.ReasonableHypothesis : StandardOfProof.BalanceOfProbabilities,
-                cftsDaysRequired);
+        caseTrace.setRequiredCftsDays(cftsDaysRequired);
 
         caseTrace.addLoggingTrace("Required days of continuous full time service: " + cftsDaysRequired);
         Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(serviceHistory,condition.getStartDate());
