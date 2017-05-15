@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopsupport;
 
+
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
@@ -23,16 +24,19 @@ public class SopSupportResponseDto {
     private List<FactorWithInferredResultDto> _factors;
 
     @JsonProperty("caseTrace")
-    private String caseTrace;
+    private CaseTraceDto _caseTrace;
 
     @JsonCreator
     public SopSupportResponseDto(@JsonProperty("applicableInstrument") ApplicableInstrumentDto _applicableInstrumentDto,
                                  @JsonProperty("factors") List<FactorWithInferredResultDto> _factors,
-                                 @JsonProperty("caseTrace") String caseTraceValue) {
-        this.caseTrace = caseTraceValue;
+                                 @JsonProperty("caseTrace") CaseTraceDto _caseTraceDto) {
+        this._caseTrace = _caseTraceDto;
         this._applicableInstrumentDto = _applicableInstrumentDto;
         this._factors = _factors;
     }
+
+    @JsonIgnore
+    public CaseTraceDto getCaseTrace() {return _caseTrace;}
 
     @JsonIgnore
     public ApplicableInstrumentDto getApplicableInstrument() {
@@ -44,47 +48,6 @@ public class SopSupportResponseDto {
         return ImmutableList.copyOf(_factors);
     }
 
-    @JsonIgnore
-    public String getCaseTrace()
-    {
-        return caseTrace;
-    }
-
-    @JsonIgnore
-    public int getTotalOperationalDays()
-    {
-        return 0;
-    }
-
-    @JsonIgnore
-    public int getRequiredOperationalDays()
-    {
-        return 0;
-    }
-
-    @JsonIgnore
-    public int getTotalContinuousServiceDays()
-    {
-        return 0;
-    }
-
-    @JsonIgnore
-    public int getRhRequiredContinuousServiceDays   ()
-    {
-        return 0;
-    }
-
-    @JsonIgnore
-    public int getBopRequiredContinuousServiceDays()
-    {
-        return 0;
-    }
-
-    @JsonIgnore
-    public String getStandardOfProof()
-    {
-        return "RH";
-    }
 
     public static String toJsonString(SopSupportResponseDto sopSupportResponseDto) {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());

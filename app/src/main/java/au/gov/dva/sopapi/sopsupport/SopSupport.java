@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopsupport;
 
 import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
@@ -74,13 +75,15 @@ public class SopSupport {
             applicableInstrumentDto = new ApplicableInstrumentDto(applicableSop.getRegisterId(),
                 StoredSop.formatInstrumentNumber(applicableSop.getInstrumentNumber()),
                 applicableSop.getCitation(),
-                applicableSop.getEffectiveFromDate());
+                applicableSop.getEffectiveFromDate(),
+                    applicableSop.getStandardOfProof());
 
             factorDtos =
                 inferredFactorsOptional.stream().map(factorWithSatisfaction -> DtoTransformations.fromFactorWithSatisfaction(factorWithSatisfaction)).collect(Collectors.toList());
         }
 
-        return new SopSupportResponseDto(applicableInstrumentDto,factorDtos,rulesResult.getCaseTrace().getLoggingTraces());
+        CaseTraceDto caseTraceDto = DtoTransformations.caseTraceDtoFromCaseTrace(rulesResult.getCaseTrace());
+        return new SopSupportResponseDto(applicableInstrumentDto,factorDtos,caseTraceDto);
     }
 
 
