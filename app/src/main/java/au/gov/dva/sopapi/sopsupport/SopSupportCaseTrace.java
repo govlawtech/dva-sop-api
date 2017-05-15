@@ -40,10 +40,12 @@ public class SopSupportCaseTrace implements CaseTrace {
             case ReasonableHypothesis: {
                 assert !rhRequiredCftsDays.isPresent();
                 rhRequiredCftsDays = Optional.of(days);
+                break;
             }
             case BalanceOfProbabilities: {
                 assert !boPRequiredCftsDays.isPresent();
                 boPRequiredCftsDays = Optional.of(days);
+                break;
             }
             default: throw new DvaSopApiError("Unrecognised standard of proof: " + standardOfProof);
         }
