@@ -8,16 +8,16 @@ import java.util.Optional;
 
 public class CaseTraceDto {
 
-    @JsonProperty("requiredContinuousServiceDays")
+    @JsonProperty("requiredDaysOfCfts")
     private final Optional<Integer> _requiredCftsDays;
 
-    @JsonProperty("actualDaysOfContinuousService")
+    @JsonProperty("actualDaysOfCfts")
     private final Optional<Integer> _actualCftsDays;
 
-    @JsonProperty("requiredOperationalDaysForRh")
+    @JsonProperty("requiredDaysOfOperationalServiceForRhStandard")
     private final Optional<Integer> _requiredOperationalDaysForRh;
 
-    @JsonProperty("actualOperationalDays")
+    @JsonProperty("actualDaysOfOperationalServiceInTestPeriod")
     private final Optional<Integer> _actualOperationalDays;
 
     private String logTrace;

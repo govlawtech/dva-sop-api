@@ -47,27 +47,27 @@ public class ApplicableInstrumentDto {
     }
 
     @JsonIgnore
-    public String get_registerId() {
+    public String getRegisterId() {
         return _registerId;
     }
 
     @JsonIgnore
-    public String get_instrumentNumber() {
+    public String getInstrumentNumber() {
         return _instrumentNumber;
     }
 
     @JsonIgnore
-    public String get_citation() {
+    public String getCitation() {
         return _citation;
     }
 
     @JsonIgnore
-    public LocalDate get_effectiveFromDate() {
+    public LocalDate getEffectiveFromDate() {
         return _effectiveFromDate;
     }
 
     @JsonIgnore
-    public StandardOfProof get_standardOfProof() {
+    public StandardOfProof getStandardOfProof() {
         return standardOfProof;
     }
 }
