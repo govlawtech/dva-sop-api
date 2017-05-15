@@ -1,14 +1,14 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
 import au.gov.dva.sopapi.dtos.Rank;
-import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationItem;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
+import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import scala.Int;
 
 import java.time.OffsetDateTime;
 import java.util.Optional;
@@ -24,14 +24,14 @@ public class ProcessingRuleBase {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
         if (!relevantRank.isPresent())
         {
-            caseTrace.addTrace("Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
+            caseTrace.addLoggingTrace("Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
             return Optional.empty();
         }
 
         Optional<Service> serviceDuringWhichConditionStarts =  ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(),condition.getStartDate(), caseTrace);
         if (!serviceDuringWhichConditionStarts.isPresent())
         {
-            caseTrace.addTrace("Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
+            caseTrace.addLoggingTrace("Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
             return Optional.empty();
         }
 
@@ -40,39 +40,47 @@ public class ProcessingRuleBase {
                 relevantRank.get(),
                 serviceDuringWhichConditionStarts.get().getBranch(),
                 ruleConfigurationRepository);
+
         if (!rhRuleConfigurationItemOptional.isPresent())
         {
-            caseTrace.addTrace(String.format("Cannot find any rule for Reasonable Hypothesis for the condition of %s, for the rank of %s, for the service branch of %s.  Therefore, cannot determine whether BoP or RH SoP applies.",
+            caseTrace.addLoggingTrace(String.format("Cannot find any rule for Reasonable Hypothesis for the condition of %s, for the rank of %s, for the service branch of %s.  Therefore, cannot determine whether BoP or RH SoP applies.",
                     condition.getSopPair().getConditionName(),
                     relevantRank.get(),
                     serviceDuringWhichConditionStarts.get().getBranch()));
             return Optional.empty();
         }
+
         RHRuleConfigurationItem rhRuleConfigurationItem = rhRuleConfigurationItemOptional.get();
 
         OffsetDateTime startDateForPeriodOfOperationalService = condition.getStartDate().minusYears(rhRuleConfigurationItem.getYearsLimitForOperationalService());
-        caseTrace.addTrace(String.format("The start date for the test period of operational service is %s years before the condition start date of %s: %s.",
+        caseTrace.addLoggingTrace(String.format("The start date for the test period of operational service is %s years before the condition start date of %s: %s.",
                 rhRuleConfigurationItem.getRequiredDaysOfOperationalService(),
                 condition.getStartDate(),
                 startDateForPeriodOfOperationalService));
         OffsetDateTime endDateForPeriodOfOperationalService = condition.getStartDate();
-        caseTrace.addTrace("The end date for the test period of operational service is the condition start date: " + condition.getStartDate());
-        long daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(
+        caseTrace.addLoggingTrace("The end date for the test period of operational service is the condition start date: " + condition.getStartDate());
+        Long daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(
                 startDateForPeriodOfOperationalService,endDateForPeriodOfOperationalService,
                 ProcessingRuleFunctions.getDeployments(serviceHistory),
                 isOperational, caseTrace);
 
+        if (daysOfOperationalService >= Integer.MAX_VALUE)
+        {
+            throw new ProcessingRuleError("Cannot handle days of operational service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
+        }
+        caseTrace.setActualOperationalDays(daysOfOperationalService.intValue());
+
         Integer minimumRequiredDaysOfOperationalServiceForRank = rhRuleConfigurationItem.getRequiredDaysOfOperationalService();
-        caseTrace.addTrace("Required number of days of operational service: " + minimumRequiredDaysOfOperationalServiceForRank);
+        caseTrace.addLoggingTrace("Required number of days of operational service: " + minimumRequiredDaysOfOperationalServiceForRank);
+        caseTrace.setRequiredOperationalDaysForRh(minimumRequiredDaysOfOperationalServiceForRank);
 
         if (minimumRequiredDaysOfOperationalServiceForRank.longValue() <= daysOfOperationalService)
         {
-            caseTrace.addTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
+            caseTrace.addLoggingTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
             return Optional.of(condition.getSopPair().getRhSop());
         }
         else {
-
-            caseTrace.addTrace("The BoP SoP is applicable as the actual number of days of operational service in the test period is less than the required number.");
+            caseTrace.addLoggingTrace("The BoP SoP is applicable as the actual number of days of operational service in the test period is less than the required number.");
             return Optional.of(condition.getSopPair().getBopSop());
         }
     }
@@ -80,7 +88,7 @@ public class ProcessingRuleBase {
     public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(RuleConfigurationRepository ruleConfigurationRepository, Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
 
         ImmutableList<Factor> applicableFactors =  condition.getApplicableFactors(applicableSop);
-        caseTrace.addTrace(String.format("There are %s factors in the applicable SoP: %s", applicableFactors.size(),applicableSop.getCitation()));
+        caseTrace.addLoggingTrace(String.format("There are %s factors in the applicable SoP: %s", applicableFactors.size(),applicableSop.getCitation()));
 
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
         Optional<Service> serviceDuringWhichConditionStarts =  ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
@@ -96,7 +104,7 @@ public class ProcessingRuleBase {
 
         if (!applicableRuleConfigItemOpt.isPresent())
         {
-            caseTrace.addTrace(String.format("No rule configured for condition of %s, for standard of proof of %s, for rank of %s, for service branch of %s.  Therefore, no satisfied factors.",
+            caseTrace.addLoggingTrace(String.format("No rule configured for condition of %s, for standard of proof of %s, for rank of %s, for service branch of %s.  Therefore, no satisfied factors.",
                     condition.getSopPair().getConditionName(),
                     applicableSop.getStandardOfProof(),
                     relevantRank.get(),
@@ -108,12 +116,20 @@ public class ProcessingRuleBase {
         RuleConfigurationItem applicableRuleConfig = applicableRuleConfigItemOpt.get();
 
         Integer cftsDaysRequired = applicableRuleConfig.getRequiredCFTSWeeks() * 7;
-        caseTrace.addTrace("Required days of continuous full time service: " + cftsDaysRequired);
+        caseTrace.setRequiredCftsDays(applicableRuleConfig instanceof RHRuleConfigurationItem ? StandardOfProof.ReasonableHypothesis : StandardOfProof.BalanceOfProbabilities,
+                cftsDaysRequired);
+
+        caseTrace.addLoggingTrace("Required days of continuous full time service: " + cftsDaysRequired);
         Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(serviceHistory,condition.getStartDate());
-        caseTrace.addTrace("Actual days of continuous full time service:" + actualDaysOfCfts);
+        if (actualDaysOfCfts >= Integer.MAX_VALUE)
+        {
+            throw new ProcessingRuleError("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
+        }
+        caseTrace.setActualCftsDays(actualDaysOfCfts.intValue());
+        caseTrace.addLoggingTrace("Actual days of continuous full time service:" + actualDaysOfCfts);
 
         if (actualDaysOfCfts >= cftsDaysRequired) {
-            caseTrace.addTrace("Actual number of days of continuous full time service is at least the required days.  Therefore, returning satisfied factors according to configuration.");
+            caseTrace.addLoggingTrace("Actual number of days of continuous full time service is at least the required days.  Therefore, returning satisfied factors according to configuration.");
             ImmutableList<FactorWithSatisfaction> inferredFactors =
                     ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, applicableRuleConfig.getFactorReferences());
 
@@ -121,9 +137,8 @@ public class ProcessingRuleBase {
         }
         else
         {
-            caseTrace.addTrace("Actual number of days of continuous full time service is less that the required days.  Therefore, no factors are satisfied.");
+            caseTrace.addLoggingTrace("Actual number of days of continuous full time service is less that the required days.  Therefore, no factors are satisfied.");
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
     }
-
 }

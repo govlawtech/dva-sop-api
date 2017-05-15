@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.ruleconfiguration;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
 
 import java.util.Optional;
@@ -24,4 +25,5 @@ public final class ParsedRhRuleConfigurationItem extends ParsedRuleConfiguration
     public int getYearsLimitForOperationalService() {
         return rhOperationalTestPeriodInYears;
     }
+
 }
