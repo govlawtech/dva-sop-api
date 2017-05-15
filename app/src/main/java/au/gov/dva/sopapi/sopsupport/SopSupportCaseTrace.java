@@ -68,6 +68,11 @@ public class SopSupportCaseTrace implements CaseTrace {
     }
 
     @Override
+    public Optional<Integer> getActualCftsDays() {
+        return actualCftsDays;
+    }
+
+    @Override
     public void setRequiredOperationalDaysForRh(int days) {
         assert !requiredRhOperationalDays.isPresent();
         requiredRhOperationalDays = Optional.of(days);

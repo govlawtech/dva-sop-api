@@ -14,6 +14,7 @@ public interface CaseTrace {
     Optional<Integer> getRequiredCftsDays(StandardOfProof standardOfProof);
 
     void setActualCftsDays(int days);
+    Optional<Integer> getActualCftsDays();
 
     void setRequiredOperationalDaysForRh(int days);
     Optional<Integer> getRequiredOperationalDaysForRh();

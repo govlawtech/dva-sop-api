@@ -1,14 +1,17 @@
 package au.gov.dva.sopapi.sopref;
 
 import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.*;
 import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
 import au.gov.dva.sopapi.dtos.sopref.Factor;
 import au.gov.dva.sopapi.dtos.sopref.Operation;
+import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.OperationalServiceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceHistoryDto;
+import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.DeploymentImpl;
@@ -108,6 +111,15 @@ public class DtoTransformations {
 
     }
 
+    public static CaseTraceDto caseTraceDtoFromCaseTrace(CaseTrace caseTrace)
+    {
+        return new CaseTraceDto(caseTrace.getRequiredOperationalDaysForRh().orElse(null),
+                caseTrace.getRequiredCftsDays(StandardOfProof.BalanceOfProbabilities).orElse(null),
+                caseTrace.getActualCftsDays().orElse(null),
+                caseTrace.getRequiredOperationalDaysForRh().orElse(null),
+                caseTrace.getActualOperationalDays().orElse(null),
+                caseTrace.getLoggingTraces());
+    }
 
     private static String formatDate(OffsetDateTime offsetDateTime)
     {
