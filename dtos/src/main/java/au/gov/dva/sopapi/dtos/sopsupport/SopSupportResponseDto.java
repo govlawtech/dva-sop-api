@@ -8,7 +8,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.google.common.collect.ImmutableList;
 
@@ -36,7 +38,9 @@ public class SopSupportResponseDto {
     }
 
     @JsonIgnore
-    public CaseTraceDto getCaseTrace() {return _caseTrace;}
+    public CaseTraceDto getCaseTrace() {
+        return _caseTrace;
+    }
 
     @JsonIgnore
     public ApplicableInstrumentDto getApplicableInstrument() {
@@ -54,7 +58,9 @@ public class SopSupportResponseDto {
         String jsonString = null;
 
         try {
-            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(sopSupportResponseDto);
+            jsonString = objectMapper.writerWithDefaultPrettyPrinter()
+                    .with(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
+                    .writeValueAsString(sopSupportResponseDto);
         } catch (JsonProcessingException e) {
             throw new DvaSopApiDtoError(e);
         }
@@ -67,7 +73,11 @@ public class SopSupportResponseDto {
 
         try {
             SopSupportResponseDto operationsResponseDto =
-                    objectMapper.readValue(jsonString, SopSupportResponseDto.class);
+                    objectMapper.reader()
+                            .with(DeserializationFeature.READ_ENUMS_USING_TO_STRING)
+                            .forType(SopSupportResponseDto.class)
+                            .readValue(jsonString);
+
             return operationsResponseDto;
         } catch (IOException e) {
             throw new DvaSopApiDtoError(e);
