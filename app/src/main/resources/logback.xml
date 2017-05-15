@@ -35,11 +35,14 @@
 
     </appender>
 
-
     <root level="error">
         <appender-ref ref="STDOUT" />
     </root>
     <logger name="dvasopapi.autoupdate" level="trace">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="dvasopapi.webapi" level="trace">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE"/>
     </logger>

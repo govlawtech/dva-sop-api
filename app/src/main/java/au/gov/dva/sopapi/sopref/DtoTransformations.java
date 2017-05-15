@@ -113,13 +113,13 @@ public class DtoTransformations {
 
     public static CaseTraceDto caseTraceDtoFromCaseTrace(CaseTrace caseTrace)
     {
-        return new CaseTraceDto(caseTrace.getRequiredOperationalDaysForRh().orElse(null),
-                caseTrace.getRequiredCftsDays(StandardOfProof.BalanceOfProbabilities).orElse(null),
-                caseTrace.getActualCftsDays().orElse(null),
-                caseTrace.getRequiredOperationalDaysForRh().orElse(null),
-                caseTrace.getActualOperationalDays().orElse(null),
+        return new CaseTraceDto(caseTrace.getRequiredCftsDays(),
+                caseTrace.getActualCftsDays(),
+                caseTrace.getRequiredOperationalDaysForRh(),
+                caseTrace.getActualOperationalDays(),
                 caseTrace.getLoggingTraces());
     }
+
 
     private static String formatDate(OffsetDateTime offsetDateTime)
     {

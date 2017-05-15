@@ -15,11 +15,11 @@ public class SopSupportCaseTrace implements CaseTrace {
 
     private StringBuilder sb;
 
-    private Optional<Integer> rhRequiredCftsDays = Optional.empty();
-    private Optional<Integer> boPRequiredCftsDays = Optional.empty();
+    private Optional<Integer> requiredCftsDays = Optional.empty();
+    private Optional<Integer> actualCftsDays = Optional.empty();
     private Optional<Integer> requiredRhOperationalDays = Optional.empty();
     private Optional<Integer> actualOperationalDays = Optional.empty();
-    private Optional<Integer> actualCftsDays = Optional.empty();
+    private Optional<StandardOfProof> applicableStandardOfProof = Optional.empty();
 
     public SopSupportCaseTrace(String caseId) {
         sb = new StringBuilder(String.format("Case ID: %s%n", caseId));
@@ -35,30 +35,25 @@ public class SopSupportCaseTrace implements CaseTrace {
     }
 
     @Override
-    public void setRequiredCftsDays(StandardOfProof standardOfProof, int days) {
-        switch (standardOfProof) {
-            case ReasonableHypothesis: {
-                assert !rhRequiredCftsDays.isPresent();
-                rhRequiredCftsDays = Optional.of(days);
-                break;
-            }
-            case BalanceOfProbabilities: {
-                assert !boPRequiredCftsDays.isPresent();
-                boPRequiredCftsDays = Optional.of(days);
-                break;
-            }
-            default: throw new DvaSopApiError("Unrecognised standard of proof: " + standardOfProof);
-        }
+    public void setApplicableStandardOfProof(StandardOfProof standardOfProof) {
+        assert !applicableStandardOfProof.isPresent();
+        applicableStandardOfProof = Optional.of(standardOfProof);
     }
 
     @Override
-    public Optional<Integer> getRequiredCftsDays(StandardOfProof standardOfProof) {
-        switch (standardOfProof)
-        {
-            case ReasonableHypothesis: return rhRequiredCftsDays;
-            case BalanceOfProbabilities: return boPRequiredCftsDays;
-            default: throw new DvaSopApiError("Unrecognised standard of proof: " + standardOfProof);
-        }
+    public StandardOfProof getApplicableStandardOfProof() {
+        return null;
+    }
+
+    @Override
+    public void setRequiredCftsDays(int days) {
+        assert !requiredCftsDays.isPresent();
+        requiredCftsDays = Optional.of(days);
+    }
+
+    @Override
+    public Optional<Integer> getRequiredCftsDays() {
+        return requiredCftsDays;
     }
 
     @Override

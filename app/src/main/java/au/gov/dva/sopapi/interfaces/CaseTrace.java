@@ -10,8 +10,11 @@ public interface CaseTrace {
     void addLoggingTrace(String msg);
     String getLoggingTraces();
 
-    void setRequiredCftsDays(StandardOfProof standardOfProof, int days);
-    Optional<Integer> getRequiredCftsDays(StandardOfProof standardOfProof);
+    void setApplicableStandardOfProof(StandardOfProof standardOfProof);
+    StandardOfProof getApplicableStandardOfProof();
+
+    void setRequiredCftsDays(int days);
+    Optional<Integer> getRequiredCftsDays();
 
     void setActualCftsDays(int days);
     Optional<Integer> getActualCftsDays();
