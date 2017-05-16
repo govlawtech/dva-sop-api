@@ -30,3 +30,4 @@ cache:
     - $HOME/.gradle/wrapper/
 
 script: ./gradlew build
+after_success: ./gradlew uploadArchives
