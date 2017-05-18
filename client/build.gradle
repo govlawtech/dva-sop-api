@@ -62,7 +62,7 @@ uploadArchives {
             configuration = configurations.deployerJars
 
             repository(url: "ftp://waws-prod-sn1-109.ftp.azurewebsites.windows.net/site/wwwroot/") {
-                authentication(userName: "govlawtechmvnrepo\\\$govlawtechmvnrepo", password:"WpwhLPEviSlcW9gRy3smqXWrkbzDHySy26swrM8lxktXJwzKmysrMDhdS3kp")
+                authentication(userName: "govlawtechmvnrepo\\\$govlawtechmvnrepo", password: System.getenv("mvnRepoFtpPassword"))
             }
         }
     }
