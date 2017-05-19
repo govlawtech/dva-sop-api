@@ -29,13 +29,17 @@ war {
     webAppDirName = 'src/main'
 }
 
-task copyWar(type: Copy, dependsOn: 'war') {
-    from 'build/libs/app.war'
+task copyToDeploymentDir(type: Copy, dependsOn: 'war') {
+    from ('build/libs/app.war') {
+        rename { String fileName -> 'ROOT.war' }
+    }
+    from ('.') {
+        include 'api-docs/**'
+    }
     into 'deploy/webapps/'
-    rename { String fileName -> 'ROOT.war' }
 }
 
-task explodeWar(type: Copy, dependsOn: 'copyWar') {
+task explodeWar(type: Copy, dependsOn: 'copyToDeploymentDir') {
     from zipTree('deploy/webapps/ROOT.war')
     into 'deploy/webapps/ROOT'
 }
