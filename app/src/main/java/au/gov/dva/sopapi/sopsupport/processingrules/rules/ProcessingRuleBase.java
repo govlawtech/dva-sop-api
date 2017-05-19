@@ -63,6 +63,7 @@ public class ProcessingRuleBase {
                 startDateForPeriodOfOperationalService,endDateForPeriodOfOperationalService,
                 ProcessingRuleFunctions.getDeployments(serviceHistory),
                 isOperational, caseTrace);
+        daysOfOperationalService = 4l;
 
         if (daysOfOperationalService >= Integer.MAX_VALUE)
         {
@@ -77,10 +78,12 @@ public class ProcessingRuleBase {
         if (minimumRequiredDaysOfOperationalServiceForRank.longValue() <= daysOfOperationalService)
         {
             caseTrace.addLoggingTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
+            caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
             return Optional.of(condition.getSopPair().getRhSop());
         }
         else {
             caseTrace.addLoggingTrace("The BoP SoP is applicable as the actual number of days of operational service in the test period is less than the required number.");
+            caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
             return Optional.of(condition.getSopPair().getBopSop());
         }
     }

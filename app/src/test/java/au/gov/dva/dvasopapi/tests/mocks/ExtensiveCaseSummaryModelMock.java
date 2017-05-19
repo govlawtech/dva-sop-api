@@ -1,7 +1,9 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
+import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
+import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableSet;
 
 public class ExtensiveCaseSummaryModelMock implements CaseSummaryModel{
@@ -85,4 +87,7 @@ public class ExtensiveCaseSummaryModelMock implements CaseSummaryModel{
             }
         });
     }
+
+    public CaseTrace getCaseTrace() { return new SopSupportCaseTrace("mock case"); }
+
 }

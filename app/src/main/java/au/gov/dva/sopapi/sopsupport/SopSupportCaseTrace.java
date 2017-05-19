@@ -1,15 +1,12 @@
 package au.gov.dva.sopapi.sopsupport;
 
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.exceptions.DvaSopApiError;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
-import scala.Int;
+import au.gov.dva.sopapi.interfaces.model.Factor;
+import com.google.common.collect.ImmutableList;
 import scala.util.Properties;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class SopSupportCaseTrace implements CaseTrace {
 
@@ -20,6 +17,7 @@ public class SopSupportCaseTrace implements CaseTrace {
     private Optional<Integer> requiredRhOperationalDays = Optional.empty();
     private Optional<Integer> actualOperationalDays = Optional.empty();
     private Optional<StandardOfProof> applicableStandardOfProof = Optional.empty();
+    private ImmutableList<Factor> rhFactors = ImmutableList.of();
 
     public SopSupportCaseTrace(String caseId) {
         sb = new StringBuilder(String.format("Case ID: %s%n", caseId));
@@ -88,4 +86,12 @@ public class SopSupportCaseTrace implements CaseTrace {
     public Optional<Integer> getActualOperationalDays() {
         return actualOperationalDays;
     }
+
+    @Override
+    public void setRhFactors(ImmutableList<Factor> rhFactors) {
+        this.rhFactors = rhFactors;
+    }
+
+    @Override
+    public ImmutableList<Factor> getRhFactors() { return this.rhFactors; }
 }

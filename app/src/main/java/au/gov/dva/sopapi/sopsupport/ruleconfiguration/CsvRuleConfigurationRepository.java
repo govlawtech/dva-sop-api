@@ -24,7 +24,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         public final static int FACTOR_REFS = 2;
         public final static int SERVICE_BRANCH = 3;
         public final static int RANK = 4;
-        public final static int CFTS_WEESK = 5;
+        public final static int CFTS_WEEKS = 5;
         public final static int ACCUMULATION_RATE_PW = 6;
         public final static int ACCUMULATION_UNIT = 7;
 
@@ -70,7 +70,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                         csvRecord.get(ColumnIndices.FACTOR_REFS),
                         csvRecord.get(ColumnIndices.SERVICE_BRANCH),
                         csvRecord.get(ColumnIndices.RANK),
-                        csvRecord.get(ColumnIndices.CFTS_WEESK),
+                        csvRecord.get(ColumnIndices.CFTS_WEEKS),
                         !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
                         !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty(),
                         csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS),
@@ -109,7 +109,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                         csvRecord.get(ColumnIndices.FACTOR_REFS),
                         csvRecord.get(ColumnIndices.SERVICE_BRANCH),
                         csvRecord.get(ColumnIndices.RANK),
-                        csvRecord.get(ColumnIndices.CFTS_WEESK),
+                        csvRecord.get(ColumnIndices.CFTS_WEEKS),
                         !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
                         !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty()
                 ));
