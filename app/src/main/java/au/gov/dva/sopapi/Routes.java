@@ -49,6 +49,10 @@ import static spark.Spark.post;
 
 class Routes {
 
+    private final static String MIME_JSON = "application/json";
+    private final static String MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+    private final static String MIME_PDF = "application/pdf";
+
     private static Cache cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
 
@@ -85,9 +89,9 @@ class Routes {
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
 
-            if (validateHeaders() && !responseTypeAcceptable(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
                 setResponseHeaders(res, false, 406);
-                return buildAcceptableContentTypesError();
+                return buildAcceptableContentTypesError(MIME_JSON);
             }
 
             ServiceDeterminationPair latestServiceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
@@ -101,9 +105,9 @@ class Routes {
 
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
 
-            if (validateHeaders() && !responseTypeAcceptable(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
                 setResponseHeaders(res, false, 406);
-                return buildAcceptableContentTypesError();
+                return buildAcceptableContentTypesError(MIME_JSON);
             }
 
             QueryParamsMap queryParamsMap = req.queryMap();
@@ -139,9 +143,9 @@ class Routes {
 
 
         post(SharedConstants.Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
-            if (validateHeaders() && !responseTypeAcceptable(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
                 setResponseHeaders(res, false, 406);
-                return buildAcceptableContentTypesError();
+                return buildAcceptableContentTypesError(MIME_JSON);
             }
             SopSupportRequestDto sopSupportRequestDto;
             try {
@@ -171,9 +175,9 @@ class Routes {
 
         post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) ->
         {
-            if (validateHeaders() && !responseTypeAcceptableDocx(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_DOCX)) {
                 setResponseHeaders(res, false, 406);
-                return buildAcceptableContentTypesDocxError();
+                return buildAcceptableContentTypesError(MIME_DOCX);
             }
 
             try {
@@ -217,9 +221,9 @@ class Routes {
 
         post(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, ((req, res) ->
         {
-            if (validateHeaders() && !responseTypeAcceptablePdf(req)) {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_PDF)) {
                 setResponseHeaders(res, false, 406);
-                return buildAcceptableContentTypesPdfError();
+                return buildAcceptableContentTypesError(MIME_PDF);
             }
 
             try {
@@ -369,29 +373,11 @@ class Routes {
         response.header("X-Content-Type-Options", "nosniff");
     }
 
-    private static boolean responseTypeAcceptable(Request request) {
+    private static boolean responseTypeAcceptable(Request request, String mimeType) {
         String contentTypeHeader = request.headers("Accept");
         if (contentTypeHeader == null)
             return false;
-        if (contentTypeHeader.contains("application/json"))
-            return true;
-        else return false;
-    }
-
-    private static boolean responseTypeAcceptableDocx(Request request) {
-        String contentTypeHeader = request.headers("Accept");
-        if (contentTypeHeader == null)
-            return false;
-        if (contentTypeHeader.contains("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
-            return true;
-        else return false;
-    }
-
-    private static boolean responseTypeAcceptablePdf(Request request) {
-        String contentTypeHeader = request.headers("Accept");
-        if (contentTypeHeader == null)
-            return false;
-        if (contentTypeHeader.contains("application/pdf"))
+        if (contentTypeHeader.contains(mimeType))
             return true;
         else return false;
     }
@@ -414,16 +400,8 @@ class Routes {
         }
     }
 
-    private static String buildAcceptableContentTypesError() {
-        return "Accept header in request must include 'application/json'.";
-    }
-
-    private static String buildAcceptableContentTypesDocxError() {
-        return "Accept header in request must include 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'.";
-    }
-
-    private static String buildAcceptableContentTypesPdfError() {
-        return "Accept header in request must include 'application/pdf'.";
+    private static String buildAcceptableContentTypesError(String mimeType) {
+        return "Accept header in request must include '"+mimeType+"'.";
     }
 
     private static Boolean validateHeaders() {
