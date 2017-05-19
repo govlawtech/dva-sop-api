@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
@@ -79,12 +80,12 @@ public class CaseSummary {
         // Create the main sections
         CaseSummarySection documentSection = createDocumentSection();
         CaseSummarySection conditionSection = createConditionSection();
-        CaseSummarySection serviceHistorySection = createServiceHistorySection(isOperational);
         CaseSummarySection sopSection = createSopSection();
+        CaseSummarySection serviceHistorySection = createServiceHistorySection(isOperational);
 
         documentSection.add(conditionSection);
-        documentSection.add(serviceHistorySection);
         documentSection.add(sopSection);
+        documentSection.add(serviceHistorySection);
 
         // Add all sections to the case summary
         documentSection.addToDocument(document);
@@ -258,6 +259,11 @@ public class CaseSummary {
                 sop.getStandardOfProof() + ".";
         sopData.add(new CaseSummaryParagraph(sopParagraph));
 
+        sopData.add(new CaseSummaryParagraph(String.format(
+                "The required number of days of operational service for Reasonable Hypothesis is %d, and the client has %d days of operational service.\n"
+                , _model.getCaseTrace().getRequiredOperationalDaysForRh().get(), _model.getCaseTrace().getActualOperationalDays().get()
+        )));
+
         String legislationParagraph = "This instrument is available on the Federal " +
                 "Register of Legislative Instruments at:";
         sopData.add(new CaseSummaryParagraph(legislationParagraph));
@@ -272,6 +278,18 @@ public class CaseSummary {
 
         for (Factor factor : _model.getFactorsConnectedToService()) {
             sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
+        }
+
+        sopData.add(new CaseSummaryParagraph(String.format(
+                "This is because the required number of days of continuous full time service is %d, and the client has %d days of continuous full time service.\n"
+                , _model.getCaseTrace().getRequiredCftsDays().get(), _model.getCaseTrace().getActualCftsDays().get()
+        )));
+
+        if (_model.getFactorsConnectedToService().size() > 0 && sop.getStandardOfProof() == StandardOfProof.BalanceOfProbabilities) {
+            sopData.add(new CaseSummaryParagraph("The corresponding RH factors NOT met were:"));
+            for (Factor factor : _model.getCaseTrace().getRhFactors()) {
+                sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
+            }
         }
 
         sopSection.add(sopData);

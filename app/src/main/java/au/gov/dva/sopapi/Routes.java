@@ -63,7 +63,7 @@ class Routes {
         get("/status", (req, res) -> {
             StringBuilder sb = new StringBuilder();
 
-            ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
+            ImmutableSet<SoPPair> soPPairs = cache.get_allSopPairs();
 
             Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();
 
@@ -169,7 +169,7 @@ class Routes {
                     .map(f -> f.getFactor())
                     .collect(toList());
 
-            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
+            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
             byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
 
             setResponseHeaders(res, 200, MIME_DOCX);
@@ -193,7 +193,7 @@ class Routes {
                     .map(f -> f.getFactor())
                     .collect(toList());
 
-            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
+            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
             byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
 
             setResponseHeaders(res, 200, MIME_PDF);
@@ -215,7 +215,7 @@ class Routes {
             }
             catch (DvaSopApiDtoError e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFromatError();
+                return buildIncorrectRequestFormatError();
             }
             catch (ProcessingRuleError e) {
                 logger.error("Error applying rule.", e);
@@ -235,7 +235,7 @@ class Routes {
         }));
     }
 
-    private static String buildIncorrectRequestFromatError() {
+    private static String buildIncorrectRequestFormatError() {
         Optional<String> schema = generateSchemaForSopSupportRequestDto();
         StringBuilder sb = new StringBuilder();
         if (schema.isPresent()) {
@@ -246,10 +246,9 @@ class Routes {
     }
 
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
-        ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops());
-            CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
-            RulesResult rulesResult = SopSupport.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, soPPairs, buildIsOperationalPredicate(), caseTrace);
-            return rulesResult;
+        CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+        RulesResult rulesResult = SopSupport.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(), buildIsOperationalPredicate(), caseTrace);
+        return rulesResult;
     }
 
     private static Predicate<Deployment> buildIsOperationalPredicate() {
