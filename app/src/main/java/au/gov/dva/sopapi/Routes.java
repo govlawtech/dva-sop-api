@@ -35,6 +35,7 @@ import org.slf4j.LoggerFactory;
 import spark.QueryParamsMap;
 import spark.Request;
 import spark.Response;
+import spark.Route;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -143,125 +144,93 @@ class Routes {
         });
 
 
-        post(SharedConstants.Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
-            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
-                return buildAcceptableContentTypesError(MIME_JSON);
+        sopPost(SharedConstants.Routes.GET_SERVICE_CONNECTION, MIME_JSON, ((req, res) -> {
+            SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+            RulesResult rulesResult = runRules(sopSupportRequestDto);
+            SopSupportResponseDto sopSupportResponseDto = SopSupport.buildSopSupportResponseDtoFromRulesResult(rulesResult);
+            setResponseHeaders(res, 200, MIME_JSON);
+            return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
+        }));
+
+        sopPost(SharedConstants.Routes.GET_CASESUMMARY, MIME_DOCX, ((req, res) ->
+        {
+            SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+            RulesResult rulesResult = runRules(sopSupportRequestDto);
+
+            if (rulesResult.isEmpty()) {
+                setResponseHeaders(res, 204, MIME_TEXT);
+                return "No applicable rules.";
             }
-            SopSupportRequestDto sopSupportRequestDto;
+            ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+            Condition condition = rulesResult.getCondition().get();
+
+            List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
+                    .filter(f -> f.isSatisfied())
+                    .map(f -> f.getFactor())
+                    .collect(toList());
+
+            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
+            byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
+
+            setResponseHeaders(res, 200, MIME_DOCX);
+            return result;
+        }));
+
+        sopPost(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, MIME_PDF, ((req, res) ->
+        {
+            SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+            RulesResult rulesResult = runRules(sopSupportRequestDto);
+
+            if (rulesResult.isEmpty()) {
+                setResponseHeaders(res, 204, MIME_TEXT);
+                return "No applicable rules.";
+            }
+            ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+            Condition condition = rulesResult.getCondition().get();
+
+            List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
+                    .filter(f -> f.isSatisfied())
+                    .map(f -> f.getFactor())
+                    .collect(toList());
+
+            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
+            byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
+
+            setResponseHeaders(res, 200, MIME_PDF);
+            return result;
+        }));
+    }
+
+    // Set up a post handler with response MIME type handling and exception handling.
+    private static void sopPost(String path, String responseMimeType, Route handler) {
+        post(path, ((req, res) ->
+        {
+            if (validateHeaders() && !responseTypeAcceptable(req, responseMimeType)) {
+                setResponseHeaders(res, 406, MIME_TEXT);
+                return buildAcceptableContentTypesError(responseMimeType);
+            }
+
             try {
-                sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-            } catch (DvaSopApiDtoError e) {
+                return handler.handle(req, res);
+            }
+            catch (DvaSopApiDtoError e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFromatError();
             }
-            try {
-                RulesResult rulesResult = runRules(sopSupportRequestDto);
-                SopSupportResponseDto sopSupportResponseDto = SopSupport.buildSopSupportResponseDtoFromRulesResult(rulesResult);
-                setResponseHeaders(res, 200, MIME_JSON);
-                return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
-            } catch (Exception e) {
+            catch (ProcessingRuleError e) {
+                logger.error("Error applying rule.", e);
+                setResponseHeaders(res, 500, MIME_TEXT);
+                return "";
+            }
+            catch (Exception e) {
                 logger.error("Unknown exception", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
-
-            } catch (Error e)
-            {
+            }
+            catch (Error e) {
                 logger.error("Unknown error", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
-            }
-
-        }));
-
-        post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) ->
-        {
-            if (validateHeaders() && !responseTypeAcceptable(req, MIME_DOCX)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
-                return buildAcceptableContentTypesError(MIME_DOCX);
-            }
-
-            try {
-                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-
-                RulesResult rulesResult;
-                try {
-                    rulesResult = runRules(sopSupportRequestDto);
-                } catch (ProcessingRuleError e) {
-                    logger.error("Error applying rule.", e);
-                    setResponseHeaders(res, 500, MIME_TEXT);
-                    return e.getMessage();
-                }
-
-                if (rulesResult.isEmpty()) {
-                    setResponseHeaders(res, 204, MIME_TEXT);
-                    return "No applicable rules.";
-                }
-                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-                Condition condition = rulesResult.getCondition().get();
-
-                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
-                        .filter(f -> f.isSatisfied())
-                        .map(f -> f.getFactor())
-                        .collect(toList());
-
-                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
-                byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
-
-                setResponseHeaders(res, 200, MIME_DOCX);
-                return result;
-            } catch (DvaSopApiDtoError e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFromatError();
-            } catch (ProcessingRuleError e) {
-                logger.error("Error applying rule.", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
-            }
-        }));
-
-        post(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, ((req, res) ->
-        {
-            if (validateHeaders() && !responseTypeAcceptable(req, MIME_PDF)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
-                return buildAcceptableContentTypesError(MIME_PDF);
-            }
-
-            try {
-                SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-
-                RulesResult rulesResult = runRules(sopSupportRequestDto);
-
-                if (rulesResult.isEmpty()) {
-                    setResponseHeaders(res, 204, MIME_TEXT);
-                    return "No applicable rules.";
-                }
-                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-                Condition condition = rulesResult.getCondition().get();
-
-                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
-                        .filter(f -> f.isSatisfied())
-                        .map(f -> f.getFactor())
-                        .collect(toList());
-
-                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
-                byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
-
-                setResponseHeaders(res, 200, MIME_PDF);
-                return result;
-            } catch (DvaSopApiDtoError e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFromatError();
-            } catch (ProcessingRuleError e) {
-                logger.error("Error applying rule.", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
-                return res;
-            }
-            catch (Exception e)
-            {
-                logger.error("Unknown error.",e);
-                setResponseHeaders(res, 500, MIME_TEXT);
-                return res;
             }
         }));
     }
