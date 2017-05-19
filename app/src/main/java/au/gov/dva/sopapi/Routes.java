@@ -52,6 +52,7 @@ class Routes {
     private final static String MIME_JSON = "application/json";
     private final static String MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
     private final static String MIME_PDF = "application/pdf";
+    private final static String MIME_TEXT = "text/plain";
 
     private static Cache cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
@@ -67,7 +68,7 @@ class Routes {
 
             String lastUpdateTime = lastUpdated.isPresent() ? lastUpdated.get().toString() : "Unknown";
 
-            setResponseHeaders(res, false, 200);
+            setResponseHeaders(res, 200, MIME_TEXT);
 
             List<String> conditionList = soPPairs.stream().map(sp -> "* " + sp.getConditionName()).sorted().collect(toList());
             String conditionsListString = String.join("\r\n", conditionList);
@@ -90,7 +91,7 @@ class Routes {
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
 
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, false, 406);
+                setResponseHeaders(res, 406, MIME_TEXT);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -98,7 +99,7 @@ class Routes {
 
             OperationsResponse operationsResponse = DtoTransformations.buildOperationsResponseDto(latestServiceDeterminationPair);
 
-            setResponseHeaders(res, true, 200);
+            setResponseHeaders(res, 200, MIME_JSON);
             String json = OperationsResponse.toJsonString(operationsResponse);
             return json;
         });
@@ -106,7 +107,7 @@ class Routes {
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
 
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, false, 406);
+                setResponseHeaders(res, 406, MIME_TEXT);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -120,18 +121,18 @@ class Routes {
             List<String> errors = getSopParamsValidationErrors(icdCodeValue, icdCodeVersion, standardOfProof, conditionName, incidentType);
 
             if (errors.size() > 0) {
-                setResponseHeaders(res, false, 400);
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
             }
 
             ImmutableSet<SoP> matchingSops = SoPs.getMatchingSops(conditionName, new BasicICDCode(icdCodeVersion, icdCodeValue), cache.get_allSops());
 
             if (matchingSops.isEmpty()) {
-                setResponseHeaders(res, false, 404);
+                setResponseHeaders(res, 404, MIME_TEXT);
                 return buildErrorMessageShowingRecognisedIcdCodesAndConditionNames(cache.get_allSops());
             } else {
 
-                setResponseHeaders(res, true, 200);
+                setResponseHeaders(res, 200, MIME_JSON);
 
                 IncidentType it = IncidentType.fromString(incidentType);
                 StandardOfProof sp = StandardOfProof.fromAbbreviation(standardOfProof);
@@ -144,30 +145,30 @@ class Routes {
 
         post(SharedConstants.Routes.GET_SERVICE_CONNECTION, ((req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, false, 406);
+                setResponseHeaders(res, 406, MIME_TEXT);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
             SopSupportRequestDto sopSupportRequestDto;
             try {
                 sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
             } catch (DvaSopApiDtoError e) {
-                setResponseHeaders(res, false, 400);
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFromatError();
             }
             try {
                 RulesResult rulesResult = runRules(sopSupportRequestDto);
                 SopSupportResponseDto sopSupportResponseDto = SopSupport.buildSopSupportResponseDtoFromRulesResult(rulesResult);
-                setResponseHeaders(res, true, 200);
+                setResponseHeaders(res, 200, MIME_JSON);
                 return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
             } catch (Exception e) {
                 logger.error("Unknown exception", e);
-                setResponseHeaders(res, false, 500);
+                setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
 
             } catch (Error e)
             {
                 logger.error("Unknown error", e);
-                setResponseHeaders(res,false,500);
+                setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
             }
 
@@ -176,7 +177,7 @@ class Routes {
         post(SharedConstants.Routes.GET_CASESUMMARY, ((req, res) ->
         {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_DOCX)) {
-                setResponseHeaders(res, false, 406);
+                setResponseHeaders(res, 406, MIME_TEXT);
                 return buildAcceptableContentTypesError(MIME_DOCX);
             }
 
@@ -188,12 +189,12 @@ class Routes {
                     rulesResult = runRules(sopSupportRequestDto);
                 } catch (ProcessingRuleError e) {
                     logger.error("Error applying rule.", e);
-                    setResponseHeaders(res, false, 500);
+                    setResponseHeaders(res, 500, MIME_TEXT);
                     return e.getMessage();
                 }
 
                 if (rulesResult.isEmpty()) {
-                    setResponseHeaders(res, false, 204);
+                    setResponseHeaders(res, 204, MIME_TEXT);
                     return "No applicable rules.";
                 }
                 ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
@@ -207,14 +208,14 @@ class Routes {
                 CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
                 byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
 
-                setResponseHeadersDocXResponse(res);
+                setResponseHeaders(res, 200, MIME_DOCX);
                 return result;
             } catch (DvaSopApiDtoError e) {
-                setResponseHeaders(res, false, 400);
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFromatError();
             } catch (ProcessingRuleError e) {
                 logger.error("Error applying rule.", e);
-                setResponseHeaders(res, false, 500);
+                setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
             }
         }));
@@ -222,7 +223,7 @@ class Routes {
         post(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, ((req, res) ->
         {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_PDF)) {
-                setResponseHeaders(res, false, 406);
+                setResponseHeaders(res, 406, MIME_TEXT);
                 return buildAcceptableContentTypesError(MIME_PDF);
             }
 
@@ -232,7 +233,7 @@ class Routes {
                 RulesResult rulesResult = runRules(sopSupportRequestDto);
 
                 if (rulesResult.isEmpty()) {
-                    setResponseHeaders(res, false, 204);
+                    setResponseHeaders(res, 204, MIME_TEXT);
                     return "No applicable rules.";
                 }
                 ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
@@ -246,20 +247,20 @@ class Routes {
                 CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService) );
                 byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
 
-                setResponseHeadersPdfResponse(res);
+                setResponseHeaders(res, 200, MIME_PDF);
                 return result;
             } catch (DvaSopApiDtoError e) {
-                setResponseHeaders(res, false, 400);
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFromatError();
             } catch (ProcessingRuleError e) {
                 logger.error("Error applying rule.", e);
-                setResponseHeaders(res, false, 500);
+                setResponseHeaders(res, 500, MIME_TEXT);
                 return res;
             }
             catch (Exception e)
             {
                 logger.error("Unknown error.",e);
-                setResponseHeaders(res,false,500);
+                setResponseHeaders(res, 500, MIME_TEXT);
                 return res;
             }
         }));
@@ -347,28 +348,14 @@ class Routes {
 
     }
 
-    private static void setResponseHeaders(Response response, Boolean isJson, Integer statusCode) {
+    private static void setResponseHeaders(Response response, Integer statusCode, String mimeType) {
         response.status(statusCode);
-        if (isJson) {
-            response.type("application/json; charset=utf-8");
-        } else {
-            response.type("text/plain; charset=utf-8");
+
+        String responseType = mimeType;
+        if (responseType.equals(MIME_JSON) || responseType.equals(MIME_TEXT)) {
+            responseType += "; charset=utf-8";
         }
-
-        response.header("X-Content-Type-Options", "nosniff");
-
-    }
-
-    private static void setResponseHeadersDocXResponse(Response response) {
-        response.status(200);
-        response.type("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
-
-        response.header("X-Content-Type-Options", "nosniff");
-    }
-
-    private static void setResponseHeadersPdfResponse(Response response) {
-        response.status(200);
-        response.type("application/pdf");
+        response.type(responseType);
 
         response.header("X-Content-Type-Options", "nosniff");
     }
