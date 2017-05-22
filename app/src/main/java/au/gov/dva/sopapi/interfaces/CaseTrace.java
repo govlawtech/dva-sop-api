@@ -30,4 +30,7 @@ public interface CaseTrace {
 
     void setRhFactors(ImmutableList<Factor> rhFactors);
     ImmutableList<Factor> getRhFactors();
+
+    void setBopFactors(ImmutableList<Factor> bopFactors);
+    ImmutableList<Factor> getBopFactors();
 }

@@ -1,21 +1,17 @@
 package au.gov.dva.sopapi.sopsupport;
 
 import au.gov.dva.sopapi.dtos.IncidentType;
-import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
-import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
-import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -59,23 +55,7 @@ public class SopSupport {
         SoP applicableSop = applicableSopOpt.get();
         caseTrace.addLoggingTrace("Applicable SoP is " + applicableSop.getCitation());
         ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory,caseTrace);
-
-        // get rh factors and attach to Case Trace
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
-        Optional<Service> serviceDuringWhichConditionStarts =  ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
-        if (relevantRank.isPresent() && serviceDuringWhichConditionStarts.isPresent())
-        {
-            ImmutableList<Factor> rhFactors = condition.getApplicableFactors(condition.getSopPair().getRhSop());
-            Optional<RHRuleConfigurationItem> RHRuleConfigItemOpt = RuleConfigRepositoryUtils.getRelevantRHConfiguration(condition.getSopPair().getConditionName(),
-                    relevantRank.get(),
-                    serviceDuringWhichConditionStarts.get().getBranch(),
-                    ruleConfigurationRepository);
-            if (RHRuleConfigItemOpt.isPresent()){
-                ImmutableSet<String> rhFactorParagraphs = RHRuleConfigItemOpt.get().getFactorReferences();
-                List<Factor> applicableRhFactors = rhFactors.stream().filter(f -> rhFactorParagraphs.contains(f.getParagraph())).collect(Collectors.toList());
-                caseTrace.setRhFactors(ImmutableList.copyOf(applicableRhFactors));
-            }
-        }
+        condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition,serviceHistory, caseTrace);
 
         return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace);
 

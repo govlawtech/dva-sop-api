@@ -18,6 +18,7 @@ public class SopSupportCaseTrace implements CaseTrace {
     private Optional<Integer> actualOperationalDays = Optional.empty();
     private Optional<StandardOfProof> applicableStandardOfProof = Optional.empty();
     private ImmutableList<Factor> rhFactors = ImmutableList.of();
+    private ImmutableList<Factor> bopFactors = ImmutableList.of();
 
     public SopSupportCaseTrace(String caseId) {
         sb = new StringBuilder(String.format("Case ID: %s%n", caseId));
@@ -94,4 +95,12 @@ public class SopSupportCaseTrace implements CaseTrace {
 
     @Override
     public ImmutableList<Factor> getRhFactors() { return this.rhFactors; }
+
+    @Override
+    public void setBopFactors(ImmutableList<Factor> bopFactors) {
+        this.bopFactors = bopFactors;
+    }
+
+    @Override
+    public ImmutableList<Factor> getBopFactors() { return this.bopFactors; }
 }

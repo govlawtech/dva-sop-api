@@ -286,7 +286,7 @@ public class CaseSummary {
         )));
 
         if (_model.getFactorsConnectedToService().size() > 0 && sop.getStandardOfProof() == StandardOfProof.BalanceOfProbabilities) {
-            sopData.add(new CaseSummaryParagraph("The corresponding RH factors NOT met were:"));
+            sopData.add(new CaseSummaryParagraph("The corresponding RH factors not deemed to be applicable were:"));
             for (Factor factor : _model.getCaseTrace().getRhFactors()) {
                 sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
             }
