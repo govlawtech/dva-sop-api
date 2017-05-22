@@ -153,23 +153,25 @@ class Routes {
 
         sopPost(SharedConstants.Routes.GET_CASESUMMARY, MIME_DOCX, ((req, res) ->
         {
+            byte[] result;
             SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
             RulesResult rulesResult = runRules(sopSupportRequestDto);
 
             if (rulesResult.isEmpty()) {
-                setResponseHeaders(res, 204, MIME_TEXT);
-                return "No applicable rules.";
+                result = CaseSummary.createCaseSummary(rulesResult.getCaseTrace(), buildIsOperationalPredicate(), false).get();
             }
-            ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-            Condition condition = rulesResult.getCondition().get();
+            else {
+                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+                Condition condition = rulesResult.getCondition().get();
 
-            List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
-                    .filter(f -> f.isSatisfied())
-                    .map(f -> f.getFactor())
-                    .collect(toList());
+                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
+                        .filter(f -> f.isSatisfied())
+                        .map(f -> f.getFactor())
+                        .collect(toList());
 
-            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
-            byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
+                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
+                result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
+            }
 
             setResponseHeaders(res, 200, MIME_DOCX);
             return result;
@@ -177,23 +179,25 @@ class Routes {
 
         sopPost(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, MIME_PDF, ((req, res) ->
         {
+            byte[] result;
             SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
             RulesResult rulesResult = runRules(sopSupportRequestDto);
 
             if (rulesResult.isEmpty()) {
-                setResponseHeaders(res, 204, MIME_TEXT);
-                return "No applicable rules.";
+                result = CaseSummary.createCaseSummary(rulesResult.getCaseTrace(), buildIsOperationalPredicate(), true).get();
             }
-            ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-            Condition condition = rulesResult.getCondition().get();
+            else {
+                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+                Condition condition = rulesResult.getCondition().get();
 
-            List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
-                    .filter(f -> f.isSatisfied())
-                    .map(f -> f.getFactor())
-                    .collect(toList());
+                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
+                        .filter(f -> f.isSatisfied())
+                        .map(f -> f.getFactor())
+                        .collect(toList());
 
-            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
-            byte[] result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
+                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
+                result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
+            }
 
             setResponseHeaders(res, 200, MIME_PDF);
             return result;

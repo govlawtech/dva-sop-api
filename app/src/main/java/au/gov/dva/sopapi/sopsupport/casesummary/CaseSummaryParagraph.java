@@ -13,12 +13,18 @@ class CaseSummaryParagraph extends CaseSummaryComponent {
     private XWPFParagraph _paragraph;
     private String _text = "";
     private boolean _hasBullet = false;
+    private String _styleId = "";
 
     static BigInteger bulletNumId;
     static BigInteger bulletILvl;
 
     CaseSummaryParagraph(String text) {
         _text = text;
+    }
+
+    CaseSummaryParagraph(String text, String styleId) {
+        _text = text;
+        _styleId = styleId;
     }
 
     void hasBullet(boolean hasBullet) {
@@ -28,6 +34,7 @@ class CaseSummaryParagraph extends CaseSummaryComponent {
     @Override
     void addToDocument(XWPFDocument document) {
         _paragraph = document.createParagraph();
+        _paragraph.setStyle(_styleId);
 
         if (_hasBullet) {
             createBullet();

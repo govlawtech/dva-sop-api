@@ -10,6 +10,11 @@ import java.util.Set;
 
 public interface CaseTrace {
 
+    enum ReasoningFor { STANDARD_OF_PROOF, ABORT_PROCESSING, MEETING_FACTORS }
+
+    void addReasoningFor(ReasoningFor type, String msg);
+    ImmutableList<String> getReasoningFor(ReasoningFor type);
+
     void addLoggingTrace(String msg);
     String getLoggingTraces();
 
