@@ -35,27 +35,27 @@ public class RulesResult {
         Optional<Condition> conditionOptional = ConditionFactory.create(sopPairs, sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository);
         if (!conditionOptional.isPresent())
         {
-            caseTrace.addLoggingTrace(String.format("SoP for condition %s is not implemented, so cannot apply any processing rules.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
+            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, String.format("SoP for condition %s is not implemented, so cannot apply any processing rules.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
             return RulesResult.createEmpty(caseTrace);
         }
         Condition condition = conditionOptional.get();
         ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
 
         if (ProcessingRuleFunctions.conditionIsBeforeService(condition, serviceHistory)) {
-            caseTrace.addLoggingTrace(String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));
+            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));
             return  RulesResult.createEmpty(caseTrace);
         }
 
         if (sopSupportRequestDto.get_conditionDto().get_incidentType() == IncidentType.Aggravation)
         {
-            caseTrace.addLoggingTrace(String.format("Aggravation cases not yet supported."));
+            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, String.format("Aggravation cases not yet supported."));
             return RulesResult.createEmpty(caseTrace);
         }
 
         Optional<SoP> applicableSopOpt = condition.getProcessingRule().getApplicableSop(condition, serviceHistory, isOperational,caseTrace);
         if (!applicableSopOpt.isPresent())
         {
-            caseTrace.addLoggingTrace("No applicable SoP.");
+            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, "No applicable SoP.");
             return RulesResult.createEmpty(caseTrace);
         }
         SoP applicableSop = applicableSopOpt.get();

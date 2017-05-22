@@ -21,7 +21,7 @@ public class LumbarSpondylosisRule extends GenericProcessingRule implements Proc
 
         caseTrace.addLoggingTrace(String.format("Determining whether condition started within 25 year of the last day of MRCA service..."));
         if (!ProcessingRuleFunctions.conditionStartedWithinXYearsOfLastDayOfMRCAService(condition,serviceHistory,25, caseTrace)) {
-            caseTrace.addLoggingTrace(String.format("Lumbar spondylosis did not start within 25 years of the last day of MRCA service, therefore no factors satisfied."));
+            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, String.format("Lumbar spondylosis did not start within 25 years of the last day of MRCA service, therefore no factors satisfied."));
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory, caseTrace);

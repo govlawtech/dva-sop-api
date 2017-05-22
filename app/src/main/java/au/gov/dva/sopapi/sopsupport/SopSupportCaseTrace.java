@@ -19,9 +19,29 @@ public class SopSupportCaseTrace implements CaseTrace {
     private Optional<StandardOfProof> applicableStandardOfProof = Optional.empty();
     private ImmutableList<Factor> rhFactors = ImmutableList.of();
     private ImmutableList<Factor> bopFactors = ImmutableList.of();
+    private Map<ReasoningFor, List<String>> reasonings = new HashMap<>();
 
     public SopSupportCaseTrace(String caseId) {
         sb = new StringBuilder(String.format("Case ID: %s%n", caseId));
+    }
+
+    @Override
+    public void addReasoningFor(ReasoningFor type, String msg) {
+        if (!reasonings.containsKey(type)) {
+            reasonings.put(type, new ArrayList<>());
+        }
+        reasonings.get(type).add(msg);
+        this.addLoggingTrace(msg);
+    }
+
+    @Override
+    public ImmutableList<String> getReasoningFor(ReasoningFor type) {
+        if (reasonings.containsKey(type)) {
+            return ImmutableList.copyOf(reasonings.get(type));
+        }
+        else {
+            return ImmutableList.of();
+        }
     }
 
     public void addLoggingTrace(String msg) {
@@ -41,7 +61,8 @@ public class SopSupportCaseTrace implements CaseTrace {
 
     @Override
     public StandardOfProof getApplicableStandardOfProof() {
-        return null;
+        assert applicableStandardOfProof.isPresent();
+        return applicableStandardOfProof.get();
     }
 
     @Override
