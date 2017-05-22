@@ -9,20 +9,11 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class LumbarSpondylosisRule extends ProcessingRuleBase implements ProcessingRule, AccumulationRule {
+public class LumbarSpondylosisRule extends GenericProcessingRule implements ProcessingRule, AccumulationRule {
 
-    private RuleConfigurationRepository ruleConfigurationRepository;
     public LumbarSpondylosisRule(RuleConfigurationRepository ruleConfigurationRepository) {
-        this.ruleConfigurationRepository = ruleConfigurationRepository;
+        super(ruleConfigurationRepository);
     }
-
-
-
-    @Override
-    public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
-        return super.getApplicableSop(ruleConfigurationRepository,condition,serviceHistory,isOperational, caseTrace);
-    }
-
 
     @Override
     public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
@@ -33,7 +24,7 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
             caseTrace.addLoggingTrace(String.format("Lumbar spondylosis did not start within 25 years of the last day of MRCA service, therefore no factors satisfied."));
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
-        return super.getSatisfiedFactors(ruleConfigurationRepository,condition,applicableSop,serviceHistory, caseTrace);
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory, caseTrace);
     }
 
     @Override
