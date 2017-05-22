@@ -17,7 +17,6 @@ import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
-import au.gov.dva.sopapi.sopsupport.SopSupport;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummaryModelImpl;
@@ -147,7 +146,7 @@ class Routes {
         sopPost(SharedConstants.Routes.GET_SERVICE_CONNECTION, MIME_JSON, ((req, res) -> {
             SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
             RulesResult rulesResult = runRules(sopSupportRequestDto);
-            SopSupportResponseDto sopSupportResponseDto = SopSupport.buildSopSupportResponseDtoFromRulesResult(rulesResult);
+            SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
         }));
@@ -247,7 +246,7 @@ class Routes {
 
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
-        RulesResult rulesResult = SopSupport.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(), buildIsOperationalPredicate(), caseTrace);
+        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(), buildIsOperationalPredicate(), caseTrace);
         return rulesResult;
     }
 
