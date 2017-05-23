@@ -1,0 +1,53 @@
+{
+    "condition": {
+        "conditionName": "lumbar spondylosis",
+        "incidentType": "onset",
+        "onsetDates": {
+            "onsetRangeEndDate": "2011-11-11",
+            "onsetRangeStartDate": "2011-11-11"
+        }
+    },
+    "serviceHistory": {
+        "serviceDetails": [
+            {
+                "endDate": "2013-04-14",
+                "enlistSeparationDetails": [
+                    {
+                        "action": "HIR",
+                        "date": "2007-04-10",
+                        "reason": "Initial entry to the ADF"
+                    }
+                ],
+                "operationalService": [
+                ],
+                "rank": "other rank",
+                "service": "Australian Army",
+                "serviceType": "Regular/Permanent Force",
+                "startDate": "2007-04-10"
+            },
+            {
+                "endDate": null,
+                "enlistSeparationDetails": [
+                    {
+                        "action": "TER",
+                        "date": "2013-04-15",
+                        "reason": "Military - Resignation"
+                    },
+                    {
+                        "action": "REH",
+                        "date": "2013-04-15",
+                        "reason": "Transfer to Inactive Res Force"
+                    }
+                ],
+                "operationalService": [],
+                "rank": "other rank",
+                "service": "Australian Army",
+                "serviceType": "Non-Regular/Permanent Force",
+                "startDate": "2013-04-15"
+            }
+        ],
+        "serviceSummaryInformation": {
+            "originalHireDate": "2004-10-10"
+        }
+    }
+}

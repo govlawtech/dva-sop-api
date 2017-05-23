@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
 import au.gov.dva.sopapi.DateTimeUtils;
+import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import com.google.common.collect.ImmutableList;
@@ -27,6 +28,8 @@ import java.util.function.Predicate;
  * Created by michael carter on 23/02/2017.
  */
 public class ServiceTypePie {
+    // This version calculates the war days and peace days from the service history before calling the
+    // actual pie creator.
     public static ImmutableList<byte[]> createPieImages(Service service, Predicate<Deployment> isOperational) throws IOException {
 
         int warDays = 0;
@@ -53,8 +56,12 @@ public class ServiceTypePie {
             }
         }
 
+        return createPieImages(warDays, peaceDays);
+    }
+
+    public static ImmutableList<byte[]> createPieImages(int warDays, int peaceDays) throws IOException {
         DefaultPieDataset dataset = new DefaultPieDataset();
-        dataset.setValue("Operational Service (days)", warDays);
+        dataset.setValue("Warlike or Non-warlike Service (days)", warDays);
         dataset.setValue("Peacetime Service (days)", peaceDays);
 
         ChartFactory.setChartTheme(StandardChartTheme.createLegacyTheme());
@@ -80,5 +87,6 @@ public class ServiceTypePie {
         byte[] imageBytes = ChartUtilities.encodeAsPNG(image, true, 9);
 
         return ImmutableList.of(imageBytes);
+
     }
 }

@@ -91,6 +91,7 @@ public class CaseSummary {
         transferTemplateNumbering(document.getNumbering());
 
         // Create the main sections
+        CaseSummarySection recommendationSection = createRecommendationSection();
         CaseSummarySection documentSection = createDocumentSection();
         if (_model == null) {
             CaseSummarySection sopSection = createSopSectionWithNoModel();
@@ -107,6 +108,7 @@ public class CaseSummary {
         }
 
         // Add all sections to the case summary
+        recommendationSection.addToDocument(document);
         documentSection.addToDocument(document);
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -186,6 +188,35 @@ public class CaseSummary {
         }
     }
 
+    private static CaseSummarySection createRecommendationSection() {
+        CaseSummarySection recommendationSection = new CaseSummarySection();
+        if (_model == null) {
+            recommendationSection.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", "RecommendationReviewHeading1"));
+            recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_REJECTED, "RecommendationReviewNormal"));
+        }
+        else {
+            CaseTrace caseTrace = _model.getCaseTrace();
+            ImmutableSet<Factor> factors = _model.getFactorsConnectedToService();
+            boolean usingRh = caseTrace.getApplicableStandardOfProof() == StandardOfProof.ReasonableHypothesis;
+            boolean acceptClaim = factors.size() > 0 && (usingRh || caseTrace.getActualOperationalDays().get() < 1);
+            String recommendationHeadingStyle = acceptClaim ? "RecommendationPositiveHeading1" : "RecommendationReviewHeading1";
+            String recommendationTextStyle = acceptClaim ? "RecommendationPositiveNormal" : "RecommendationReviewNormal";
+
+            recommendationSection.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", recommendationHeadingStyle));
+            if (usingRh) {
+                if (factors.size() > 0) recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_APPROVED, recommendationTextStyle));
+                else recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_CHECK_RH, recommendationTextStyle));
+            }
+            else {
+                if (factors.size() > 0 && caseTrace.getActualOperationalDays().get() > 0) recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_CHECK_RH, recommendationTextStyle));
+                else if (factors.size() > 0) recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_APPROVED, recommendationTextStyle));
+                else recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_REJECTED, recommendationTextStyle));
+            }
+        }
+
+        return recommendationSection;
+    }
+
     private static CaseSummarySection createDocumentSection() {
         CaseSummarySection documentSection = new CaseSummarySection();
         documentSection.add(new CaseSummaryHeading("CASE SUMMARY", "Heading1"));
@@ -205,7 +236,7 @@ public class CaseSummary {
 
         conditionData.add(new CaseSummaryHeading("DATE OF ONSET", "Heading2"));
         String onset = getDatesAsRange(condition.getStartDate(), condition.getEndDate());
-        String onsetParagraph = "This condition related to an incident dated " + onset + ".";
+        String onsetParagraph = "The date of onset for this condition is " + onset + ".";
         conditionData.add(new CaseSummaryParagraph(onsetParagraph));
 
         conditionSection.add(conditionData);
@@ -224,6 +255,9 @@ public class CaseSummary {
         String serviceHistoryDefinition = "The service history as defined in Section 6(1) of the " +
                 "Military Rehabilitation and Compensation Act 2004 is:";
         serviceHistoryData.add(new CaseSummaryParagraph(serviceHistoryDefinition));
+
+        serviceHistoryData.add(new CaseSummaryParagraph("The total number of days on Warlike/Non-Warlike service is " + _model.getCaseTrace().getActualOperationalDays()));
+        serviceHistoryData.add(new CaseSummaryParagraph("The total number of days of continuous full time service is " + _model.getCaseTrace().getActualCftsDays()));
 
         for (Service service : serviceHistory.getServices()) {
             for (Deployment deployment : service.getDeployments()) {
@@ -253,7 +287,17 @@ public class CaseSummary {
             ImmutableList<byte[]> timelineImages = Timeline.createTimelineImages(serviceHistory.getServices().asList().get(0), isOperational);
             CaseSummaryImage timelineImage = new CaseSummaryImage(timelineImages, 400, 1000);
 
-            ImmutableList<byte[]> pieImages = ServiceTypePie.createPieImages(serviceHistory.getServices().asList().get(0), isOperational);
+            ImmutableList<byte[]> pieImages;
+            CaseTrace caseTrace = _model.getCaseTrace();
+            if (caseTrace.getActualOperationalDays().isPresent() && caseTrace.getActualCftsDays().isPresent()) {
+                int warDays = caseTrace.getActualOperationalDays().get();
+                int peaceDays = caseTrace.getActualCftsDays().get() - warDays;
+                pieImages = ServiceTypePie.createPieImages(warDays, peaceDays);
+            }
+            else {
+                // Alternative calculation method - will miss peace days:
+                pieImages = ServiceTypePie.createPieImages(serviceHistory.getServices().asList().get(0), isOperational);
+            }
             CaseSummaryImage pieImage = new CaseSummaryImage(pieImages, 600, 500);
 
             return Arrays.asList(timelineImage, pieImage);
@@ -268,10 +312,6 @@ public class CaseSummary {
     private static CaseSummarySection createSopSectionWithNoModel() {
         CaseSummarySection sopData = new CaseSummarySection();
         ImmutableList<String> abortReasoning = _standaloneCaseTrace.getReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING);
-
-        // Recommendation
-        sopData.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", "RecommendationReviewHeading3"));
-        sopData.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_REJECTED, "RecommendationReviewNormal"));
 
         // Rationale
         sopData.add(new CaseSummaryHeading("RATIONALE", "Heading2"));
@@ -296,9 +336,6 @@ public class CaseSummary {
         ImmutableList<String> factorsReasoning = caseTrace.getReasoningFor(CaseTrace.ReasoningFor.MEETING_FACTORS);
         boolean usingRh = caseTrace.getApplicableStandardOfProof() == StandardOfProof.ReasonableHypothesis;
         ImmutableList<Factor> consideredFactors = usingRh ? caseTrace.getRhFactors() : caseTrace.getBopFactors();
-        boolean acceptClaim = factors.size() > 0 && (usingRh || caseTrace.getActualOperationalDays().get() < 1);
-        String recommendationHeadingStyle = acceptClaim ? "RecommendationPositiveHeading3" : "RecommendationReviewHeading3";
-        String recommendationTextStyle = acceptClaim ? "RecommendationPositiveNormal" : "RecommendationReviewNormal";
 
         // Statement of principles
         CaseSummarySection sopSection = new CaseSummarySection();
@@ -306,20 +343,7 @@ public class CaseSummary {
 
         CaseSummarySection sopData = new CaseSummarySection();
 
-        // Recommendation
-        sopData.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", recommendationHeadingStyle));
-        if (usingRh) {
-            if (factors.size() > 0) sopData.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_APPROVED, recommendationTextStyle));
-            else sopData.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_CHECK_RH, recommendationTextStyle));
-        }
-        else {
-            if (factors.size() > 0 && caseTrace.getActualOperationalDays().get() > 0) sopData.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_CHECK_RH, recommendationTextStyle));
-            else if (factors.size() > 0) sopData.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_APPROVED, recommendationTextStyle));
-            else sopData.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_REJECTED, recommendationTextStyle));
-        }
-
         // Citation
-        sopData.add(new CaseSummaryHeading("CITATION", "Heading3"));
         String sopParagraph = "The relevant Statement of Principles is the " +
                 sop.getCitation() + ". The standard of proof for this instrument is the " +
                 sop.getStandardOfProof() + ".";
@@ -334,12 +358,18 @@ public class CaseSummary {
 
         // Connection to service
         sopData.add(new CaseSummaryHeading("CONNECTION TO SERVICE", "Heading3"));
-        String connectionParagraph = "The factors that were used to connect the condition " +
-                "to service are:";
-        sopData.add(new CaseSummaryParagraph(connectionParagraph));
 
-        for (Factor factor : factors) {
-            sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
+        if (factors.size() > 0) {
+            String connectionParagraph = (factors.size() > 1)
+                ? "The factors that were used to connect the condition to service are:"
+                : "The factor that was used to connect the condition to service is:";
+            sopData.add(new CaseSummaryParagraph(connectionParagraph));
+            for (Factor factor : factors) {
+                sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
+            }
+        }
+        else {
+            sopData.add(new CaseSummaryParagraph("No factors were able to be used for straight through processing to connect the condition to service"));
         }
 
         // Rationale
@@ -358,23 +388,36 @@ public class CaseSummary {
             }
 
             if (factors.size() > 0) {
-                sopData.add(new CaseSummaryParagraph("The factors above were deemed to be met, because:"));
+                String deemingParagraph = (factors.size() > 1)
+                    ? "The factors above were deemed to be met, because:"
+                    : "The factor above was deemed to be met, because:";
+
+                sopData.add(new CaseSummaryParagraph(deemingParagraph));
                 for (String reason : factorsReasoning) {
                     sopData.add(new CaseSummaryParagraph(reason));
                 }
             }
             else {
-                sopData.add(new CaseSummaryParagraph("The following factors were considered:"));
+                String considerationParagraph = (factors.size() > 1)
+                    ? "The following factors were considered:"
+                    : "The following factor was considered:";
+                sopData.add(new CaseSummaryParagraph(considerationParagraph));
                 for (Factor factor : consideredFactors) {
                     sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
                 }
-                sopData.add(new CaseSummaryParagraph("But were considered not met, because:"));
+                String notMetParagraph = (factors.size() > 1)
+                    ? "But were considered not met, because:"
+                    : "But was considered not met, because:";
+                sopData.add(new CaseSummaryParagraph(notMetParagraph));
                 for (String reason : factorsReasoning) {
                     sopData.add(new CaseSummaryParagraph(reason));
                 }
             }
             if (!usingRh && caseTrace.getActualOperationalDays().get() > 0) {
-                sopData.add(new CaseSummaryParagraph("Additionally, the following RH factors were deemed not to be applicable, as the RH standard of proof was not considered applicable:"));
+                String extraRhConsideration = (factors.size() > 1)
+                    ? "Additionally, the following RH factors were deemed not to be applicable, as the RH standard of proof was not considered applicable:"
+                    : "Additionally, the following RH factor was deemed not to be applicable, as the RH standard of proof was not considered applicable:";
+                sopData.add(new CaseSummaryParagraph(extraRhConsideration));
                 for (Factor factor : caseTrace.getRhFactors()) {
                     sopData.add(new CaseSummaryParagraph(factor.getParagraph() + ": " + factor.getText()));
                 }

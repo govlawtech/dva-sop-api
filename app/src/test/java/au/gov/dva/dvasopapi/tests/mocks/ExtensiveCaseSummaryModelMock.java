@@ -1,5 +1,6 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
@@ -88,6 +89,14 @@ public class ExtensiveCaseSummaryModelMock implements CaseSummaryModel{
         });
     }
 
-    public CaseTrace getCaseTrace() { return new SopSupportCaseTrace("mock case"); }
+    public CaseTrace getCaseTrace() {
+        SopSupportCaseTrace caseTrace = new SopSupportCaseTrace("mock case");
+        caseTrace.setActualCftsDays(500);
+        caseTrace.setRequiredCftsDays(400);
+        caseTrace.setActualOperationalDays(100);
+        caseTrace.setRequiredOperationalDaysForRh(50);
+        caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
+        return caseTrace;
+    }
 
 }
