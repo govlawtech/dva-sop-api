@@ -139,7 +139,7 @@ public class GenericProcessingRule implements ProcessingRule {
             throw new ProcessingRuleError("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
         }
         caseTrace.setActualCftsDays(actualDaysOfCfts.intValue());
-        caseTrace.addReasoningFor(CaseTrace.ReasoningFor.MEETING_FACTORS, "Actual days of continuous full time service:" + actualDaysOfCfts);
+        caseTrace.addReasoningFor(CaseTrace.ReasoningFor.MEETING_FACTORS, "Actual days of continuous full time service: " + actualDaysOfCfts);
 
         if (actualDaysOfCfts >= cftsDaysRequired) {
             caseTrace.addLoggingTrace("Actual number of days of continuous full time service is at least the required days.  Therefore, returning satisfied factors according to configuration.");

@@ -44,7 +44,7 @@ public class Timeline {
     public static ImmutableList<byte[]> createTimelineImages(Service service, Predicate<Deployment> isOperational) throws IOException {
 
         TaskSeriesCollection tasks = new TaskSeriesCollection();
-        TaskSeries operationalService = new TaskSeries("Operational Service");
+        TaskSeries operationalService = new TaskSeries("Warlike or Non-warlike Service");
         TaskSeries peacetimeService = new TaskSeries("Peacetime Service");
 
         for (Deployment deployment : service.getDeployments()) {
@@ -70,7 +70,7 @@ public class Timeline {
         }
 
         tasks.add(operationalService);
-        tasks.add(peacetimeService);
+        if (peacetimeService.getItemCount() > 0) tasks.add(peacetimeService);
 
         ChartFactory.setChartTheme(StandardChartTheme.createLegacyTheme());
 
@@ -80,8 +80,10 @@ public class Timeline {
 
         XYPlot plot = (XYPlot) chart.getPlot();
         plot.setRangePannable(true);
-        SymbolAxis xAxis = new SymbolAxis("Service Type", new String[] {"Operational",
-                "Peacetime"});
+        String[] axisLabels = (peacetimeService.getItemCount() > 0)
+                ? new String[] {"Warlike or Non-warlike", "Peacetime"}
+                : new String[] {"Warlike or Non-warlike"};
+        SymbolAxis xAxis = new SymbolAxis("Service Type", axisLabels);
         xAxis.setGridBandsVisible(false);
         plot.setDomainAxis(xAxis);
         XYBarRenderer renderer = (XYBarRenderer) plot.getRenderer();

@@ -1,0 +1,102 @@
+{
+    "condition": {
+        "conditionName": "lumbar spondylosis",
+        "incidentType": "onset",
+        "onsetDates": {
+            "onsetRangeEndDate": "2011-11-11",
+            "onsetRangeStartDate": "2011-11-11"
+        }
+    },
+    "serviceHistory": {
+        "serviceDetails": [
+            {
+                "endDate": "2013-04-14",
+                "enlistSeparationDetails": [
+                    {
+                        "action": "HIR",
+                        "date": "2007-04-10",
+                        "reason": "Initial entry to the ADF"
+                    }
+                ],
+                "operationalService": [
+                    {
+                        "assigned": "2009-11-11",
+                        "description": "Operation SLIPPER",
+                        "endDate": "2009-10-23",
+                        "event": "Force Preparation Training",
+                        "startDate": "2009-10-19"
+                    },
+                    {
+                        "assigned": "2009-11-11",
+                        "description": "Operation SLIPPER",
+                        "endDate": null,
+                        "event": "Departure",
+                        "startDate": "2009-11-17"
+                    },
+                    {
+                        "assigned": "2009-11-11",
+                        "description": "Operation SLIPPER",
+                        "endDate": "2010-01-02",
+                        "event": "Within Specified Area",
+                        "startDate": "2009-11-18"
+                    },
+                    {
+                        "assigned": "2009-11-11",
+                        "description": "Operation SLIPPER",
+                        "endDate": "2010-01-05",
+                        "event": "Within Specified Area",
+                        "startDate": "2010-01-03"
+                    },
+                    {
+                        "assigned": "2009-11-11",
+                        "description": "Operation SLIPPER",
+                        "endDate": "2010-02-25",
+                        "event": "Within Specified Area",
+                        "startDate": "2010-01-06"
+                    },
+                    {
+                        "assigned": "2009-11-11",
+                        "description": "Operation SLIPPER",
+                        "endDate": "2010-02-27",
+                        "event": "Within Specified Area",
+                        "startDate": "2010-02-26"
+                    },
+                    {
+                        "assigned": "2009-11-11",
+                        "description": "Operation SLIPPER",
+                        "endDate": "2010-03-17",
+                        "event": "Within Specified Area",
+                        "startDate": "2010-02-28"
+                    }
+                ],
+                "rank": "other rank",
+                "service": "Australian Army",
+                "serviceType": "Regular/Permanent Force",
+                "startDate": "2007-04-10"
+            },
+            {
+                "endDate": null,
+                "enlistSeparationDetails": [
+                    {
+                        "action": "TER",
+                        "date": "2013-04-15",
+                        "reason": "Military - Resignation"
+                    },
+                    {
+                        "action": "REH",
+                        "date": "2013-04-15",
+                        "reason": "Transfer to Inactive Res Force"
+                    }
+                ],
+                "operationalService": [],
+                "rank": "other rank",
+                "service": "Australian Army",
+                "serviceType": "Non-Regular/Permanent Force",
+                "startDate": "2013-04-15"
+            }
+        ],
+        "serviceSummaryInformation": {
+            "originalHireDate": "2004-10-10"
+        }
+    }
+}
