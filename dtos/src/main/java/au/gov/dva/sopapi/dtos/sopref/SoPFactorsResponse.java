@@ -18,14 +18,14 @@ public class SoPFactorsResponse {
     private final String _instrumentNumber;
 
     @JsonProperty("factors")
-    private final List<Factor> _factors;
+    private final List<FactorDto> _factors;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public SoPFactorsResponse(@JsonProperty("registerId") String registerId, @JsonProperty("citation") String citation, @JsonProperty("instrumentNumber") String instrumentNumber, @JsonProperty("factors") List<Factor> factors) {
+    public SoPFactorsResponse(@JsonProperty("registerId") String registerId, @JsonProperty("citation") String citation, @JsonProperty("instrumentNumber") String instrumentNumber, @JsonProperty("factorDtos") List<FactorDto> factorDtos) {
         _registerId = registerId;
         _citation = citation;
         _instrumentNumber = instrumentNumber;
-        _factors = factors;
+        _factors = factorDtos;
     }
 
 
@@ -41,7 +41,7 @@ public class SoPFactorsResponse {
         return _instrumentNumber;
     }
 
-    public List<Factor> get_factors() {
+    public List<FactorDto> get_factors() {
         return _factors;
     }
 }

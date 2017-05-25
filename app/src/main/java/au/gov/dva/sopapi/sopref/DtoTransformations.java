@@ -1,16 +1,12 @@
 package au.gov.dva.sopapi.sopref;
 
 import au.gov.dva.sopapi.dtos.IncidentType;
-import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.*;
 import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
-import au.gov.dva.sopapi.dtos.sopref.Factor;
+import au.gov.dva.sopapi.dtos.sopref.FactorDto;
 import au.gov.dva.sopapi.dtos.sopref.Operation;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
-import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
-import au.gov.dva.sopapi.dtos.sopsupport.components.OperationalServiceDto;
-import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceDto;
-import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceHistoryDto;
+import au.gov.dva.sopapi.dtos.sopsupport.components.*;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -25,11 +21,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DtoTransformations {
 
-    public static Factor fromFactor(au.gov.dva.sopapi.interfaces.model.Factor factor) {
-        return new Factor(factor.getParagraph(), factor.getText(),
+    public static FactorDto fromFactor(au.gov.dva.sopapi.interfaces.model.Factor factor) {
+        return new FactorDto(factor.getParagraph(), factor.getText(),
                 factor.getDefinedTerms().stream().map(t -> DtoTransformations.fromDefinedTerm(t)).collect(Collectors.toList()));
 
     }
@@ -52,11 +49,11 @@ public class DtoTransformations {
                 sop.getAggravationFactors() : ((incidentType == IncidentType.Onset) ?
                 sop.getOnsetFactors() : ImmutableList.of());
 
-        List<Factor> factors = factorsToInclude.stream().map(f -> DtoTransformations.fromFactor(f)).collect(Collectors.toList());
+        List<FactorDto> factorDtos = factorsToInclude.stream().map(f -> DtoTransformations.fromFactor(f)).collect(Collectors.toList());
 
         String instrumentNumber = String.format("%d/%d", sop.getInstrumentNumber().getNumber(), sop.getInstrumentNumber().getYear());
 
-        return new SoPFactorsResponse(sop.getRegisterId(), sop.getCitation(), instrumentNumber, factors);
+        return new SoPFactorsResponse(sop.getRegisterId(), sop.getCitation(), instrumentNumber, factorDtos);
 
     }
 
@@ -76,11 +73,11 @@ public class DtoTransformations {
 
     public static FactorWithInferredResultDto fromFactorWithSatisfaction(FactorWithSatisfaction factorWithSatisfaction) {
 
-        Factor factor = fromFactor(factorWithSatisfaction.getFactor());
+        FactorDto factorDto = fromFactor(factorWithSatisfaction.getFactor());
         return new FactorWithInferredResultDto(
-                factor.get_paragraph(),
-                factor.get_text(),
-                factor.get_definedTerms(),
+                factorDto.get_paragraph(),
+                factorDto.get_text(),
+                factorDto.get_definedTerms(),
                 factorWithSatisfaction.isSatisfied()
         );
     }
@@ -113,10 +110,15 @@ public class DtoTransformations {
 
     public static CaseTraceDto caseTraceDtoFromCaseTrace(CaseTrace caseTrace)
     {
-        return new CaseTraceDto(caseTrace.getRequiredCftsDays(),
+        return new CaseTraceDto(
+                caseTrace.getApplicableStandardOfProof(),
+                caseTrace.getRequiredCftsDays(),
                 caseTrace.getActualCftsDays(),
                 caseTrace.getRequiredOperationalDaysForRh(),
                 caseTrace.getActualOperationalDays(),
+                caseTrace.getRhFactors().stream().map(f -> fromFactor(f)).collect(Collectors.toList()),
+                caseTrace.getBopFactors().stream().map(f -> fromFactor(f)).collect(Collectors.toList()),
+                caseTrace.getReasonings(),
                 caseTrace.getLoggingTraces());
     }
 

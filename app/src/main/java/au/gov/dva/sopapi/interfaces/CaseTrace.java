@@ -1,19 +1,21 @@
 package au.gov.dva.sopapi.interfaces;
 
+import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.model.Factor;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.ImmutableList;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
 public interface CaseTrace {
 
-    enum ReasoningFor { STANDARD_OF_PROOF, ABORT_PROCESSING, MEETING_FACTORS }
-
     void addReasoningFor(ReasoningFor type, String msg);
     ImmutableList<String> getReasoningFor(ReasoningFor type);
+    Map<ReasoningFor, List<String>> getReasonings();
 
     void addLoggingTrace(String msg);
     String getLoggingTraces();

@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
+import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -311,7 +312,7 @@ public class CaseSummary {
 
     private static CaseSummarySection createSopSectionWithNoModel() {
         CaseSummarySection sopData = new CaseSummarySection();
-        ImmutableList<String> abortReasoning = _standaloneCaseTrace.getReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING);
+        ImmutableList<String> abortReasoning = _standaloneCaseTrace.getReasoningFor(ReasoningFor.ABORT_PROCESSING);
 
         // Rationale
         sopData.add(new CaseSummaryHeading("RATIONALE", "Heading2"));
@@ -331,9 +332,9 @@ public class CaseSummary {
         SoP sop = _model.getApplicableSop();
         ImmutableSet<Factor> factors = _model.getFactorsConnectedToService();
         CaseTrace caseTrace = _model.getCaseTrace();
-        ImmutableList<String> abortReasoning = caseTrace.getReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING);
-        ImmutableList<String> standardOfProofReasoning = caseTrace.getReasoningFor(CaseTrace.ReasoningFor.STANDARD_OF_PROOF);
-        ImmutableList<String> factorsReasoning = caseTrace.getReasoningFor(CaseTrace.ReasoningFor.MEETING_FACTORS);
+        ImmutableList<String> abortReasoning = caseTrace.getReasoningFor(ReasoningFor.ABORT_PROCESSING);
+        ImmutableList<String> standardOfProofReasoning = caseTrace.getReasoningFor(ReasoningFor.STANDARD_OF_PROOF);
+        ImmutableList<String> factorsReasoning = caseTrace.getReasoningFor(ReasoningFor.MEETING_FACTORS);
         boolean usingRh = caseTrace.getApplicableStandardOfProof() == StandardOfProof.ReasonableHypothesis;
         ImmutableList<Factor> consideredFactors = usingRh ? caseTrace.getRhFactors() : caseTrace.getBopFactors();
 

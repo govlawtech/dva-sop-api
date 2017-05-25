@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport;
 
+import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.Factor;
@@ -42,6 +43,11 @@ public class SopSupportCaseTrace implements CaseTrace {
         else {
             return ImmutableList.of();
         }
+    }
+
+    @Override
+    public Map<ReasoningFor, List<String>> getReasonings() {
+        return reasonings;
     }
 
     public void addLoggingTrace(String msg) {
