@@ -168,6 +168,11 @@ public class GenericProcessingRule implements ProcessingRule {
                     serviceDuringWhichConditionStarts.get().getBranch(),
                     ruleConfigurationRepository);
             if (BoPRuleConfigItemOpt.isPresent()){
+                // Days
+                Integer cftsDaysRequiredForBop = BoPRuleConfigItemOpt.get().getRequiredCFTSWeeks() * 7;
+                caseTrace.setRequiredCftsDaysForBop(cftsDaysRequiredForBop);
+
+                // Factors
                 ImmutableSet<String> bopFactorParagraphs = BoPRuleConfigItemOpt.get().getFactorReferences();
                 List<Factor> applicableBopFactors = bopFactors.stream().filter(f -> bopFactorParagraphs.contains(f.getParagraph())).collect(Collectors.toList());
                 caseTrace.setBopFactors(ImmutableList.copyOf(applicableBopFactors));
@@ -180,6 +185,11 @@ public class GenericProcessingRule implements ProcessingRule {
                     serviceDuringWhichConditionStarts.get().getBranch(),
                     ruleConfigurationRepository);
             if (RHRuleConfigItemOpt.isPresent()){
+                // Days
+                Integer cftsDaysRequiredForRh = RHRuleConfigItemOpt.get().getRequiredCFTSWeeks() * 7;
+                caseTrace.setRequiredCftsDaysForRh(cftsDaysRequiredForRh);
+
+                // Factors
                 ImmutableSet<String> rhFactorParagraphs = RHRuleConfigItemOpt.get().getFactorReferences();
                 List<Factor> applicableRhFactors = rhFactors.stream().filter(f -> rhFactorParagraphs.contains(f.getParagraph())).collect(Collectors.toList());
                 caseTrace.setRhFactors(ImmutableList.copyOf(applicableRhFactors));

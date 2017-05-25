@@ -20,6 +20,12 @@ public class CaseTraceDto {
     @JsonProperty("requiredDaysOfCfts")
     private final Optional<Integer> _requiredCftsDays;
 
+    @JsonProperty("requiredDaysOfCftsForRh")
+    private final Optional<Integer> _requiredCftsDaysForRh;
+
+    @JsonProperty("requiredDaysOfCftsForBop")
+    private final Optional<Integer> _requiredCftsDaysForBop;
+
     @JsonProperty("actualDaysOfCfts")
     private final Optional<Integer> _actualCftsDays;
 
@@ -42,6 +48,8 @@ public class CaseTraceDto {
 
     public CaseTraceDto(StandardOfProof standardOfProof,
                         Optional<Integer> requiredCftsDays,
+                        Optional<Integer> requiredCftsDaysForRh,
+                        Optional<Integer> requiredCftsDaysForBop,
                         Optional<Integer> actualCftsDays,
                         Optional<Integer> requiredOperationalDaysForRh,
                         Optional<Integer> actualOperationalDays,
@@ -52,6 +60,8 @@ public class CaseTraceDto {
     {
         _standardOfProof = standardOfProof;
         _requiredCftsDays = requiredCftsDays;
+        _requiredCftsDaysForRh = requiredCftsDaysForRh;
+        _requiredCftsDaysForBop = requiredCftsDaysForBop;
         _actualCftsDays = actualCftsDays;
         _requiredOperationalDaysForRh = requiredOperationalDaysForRh;
         _actualOperationalDays = actualOperationalDays;
@@ -74,6 +84,16 @@ public class CaseTraceDto {
     @JsonIgnore
     public Optional<Integer> getRequiredCftsDays() {
         return _requiredCftsDays;
+    }
+
+    @JsonIgnore
+    public Optional<Integer> getRequiredCftsDaysForRh() {
+        return _requiredCftsDaysForRh;
+    }
+
+    @JsonIgnore
+    public Optional<Integer> getRequiredCftsDaysForBop() {
+        return _requiredCftsDaysForBop;
     }
 
     @JsonIgnore

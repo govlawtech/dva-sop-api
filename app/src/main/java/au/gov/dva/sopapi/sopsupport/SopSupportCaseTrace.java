@@ -14,6 +14,8 @@ public class SopSupportCaseTrace implements CaseTrace {
     private StringBuilder sb;
 
     private Optional<Integer> requiredCftsDays = Optional.empty();
+    private Optional<Integer> requiredCftsDaysForRh = Optional.empty();
+    private Optional<Integer> requiredCftsDaysForBop = Optional.empty();
     private Optional<Integer> actualCftsDays = Optional.empty();
     private Optional<Integer> requiredRhOperationalDays = Optional.empty();
     private Optional<Integer> actualOperationalDays = Optional.empty();
@@ -69,6 +71,28 @@ public class SopSupportCaseTrace implements CaseTrace {
     public StandardOfProof getApplicableStandardOfProof() {
         assert applicableStandardOfProof.isPresent();
         return applicableStandardOfProof.get();
+    }
+
+    @Override
+    public void setRequiredCftsDaysForRh(int days) {
+        assert !requiredCftsDaysForRh.isPresent();
+        requiredCftsDaysForRh = Optional.of(days);
+    }
+
+    @Override
+    public Optional<Integer> getRequiredCftsDaysForRh() {
+        return requiredCftsDaysForRh;
+    }
+
+    @Override
+    public void setRequiredCftsDaysForBop(int days) {
+        assert !requiredCftsDaysForBop.isPresent();
+        requiredCftsDaysForBop = Optional.of(days);
+    }
+
+    @Override
+    public Optional<Integer> getRequiredCftsDaysForBop() {
+        return requiredCftsDaysForBop;
     }
 
     @Override

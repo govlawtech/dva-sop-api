@@ -113,6 +113,8 @@ public class DtoTransformations {
         return new CaseTraceDto(
                 caseTrace.getApplicableStandardOfProof(),
                 caseTrace.getRequiredCftsDays(),
+                caseTrace.getRequiredCftsDaysForRh(),
+                caseTrace.getRequiredCftsDaysForBop(),
                 caseTrace.getActualCftsDays(),
                 caseTrace.getRequiredOperationalDaysForRh(),
                 caseTrace.getActualOperationalDays(),
