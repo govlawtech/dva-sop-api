@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class Factor {
+public class FactorDto {
 
     @JsonProperty("paragraph")
     private final String _paragraph;
@@ -17,7 +17,7 @@ public class Factor {
     private final List<DefinedTerm> _definedTerms;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public Factor(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms) {
+    public FactorDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms) {
 
         _paragraph = paragraph;
         _text = text;

@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
 import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
 import au.gov.dva.sopapi.interfaces.*;
@@ -33,14 +34,14 @@ public class GenericProcessingRule implements ProcessingRule {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
         if (!relevantRank.isPresent())
         {
-            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, "Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
             return Optional.empty();
         }
 
         Optional<Service> serviceDuringWhichConditionStarts =  ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(),condition.getStartDate(), caseTrace);
         if (!serviceDuringWhichConditionStarts.isPresent())
         {
-            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, "Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
             return Optional.empty();
         }
 
@@ -52,7 +53,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
         if (!rhRuleConfigurationItemOptional.isPresent())
         {
-            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING,
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,
                     String.format("Cannot find any rule for Reasonable Hypothesis for the condition of %s, for the rank of %s, for the service branch of %s.  Therefore, cannot determine whether BoP or RH SoP applies.",
                     condition.getSopPair().getConditionName(),
                     relevantRank.get(),
@@ -81,9 +82,9 @@ public class GenericProcessingRule implements ProcessingRule {
         caseTrace.setActualOperationalDays(daysOfOperationalService.intValue());
 
         Integer minimumRequiredDaysOfOperationalServiceForRank = rhRuleConfigurationItem.getRequiredDaysOfOperationalService();
-        caseTrace.addReasoningFor(CaseTrace.ReasoningFor.STANDARD_OF_PROOF, "Required number of days of operational service for Reasonable Hypothesis: " + minimumRequiredDaysOfOperationalServiceForRank);
+        caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, "Required number of days of operational service for Reasonable Hypothesis: " + minimumRequiredDaysOfOperationalServiceForRank);
         caseTrace.setRequiredOperationalDaysForRh(minimumRequiredDaysOfOperationalServiceForRank);
-        caseTrace.addReasoningFor(CaseTrace.ReasoningFor.STANDARD_OF_PROOF, "Actual number of days of operational service: " + daysOfOperationalService);
+        caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, "Actual number of days of operational service: " + daysOfOperationalService);
 
         if (minimumRequiredDaysOfOperationalServiceForRank.longValue() <= daysOfOperationalService)
         {
@@ -107,7 +108,7 @@ public class GenericProcessingRule implements ProcessingRule {
         Optional<Service> serviceDuringWhichConditionStarts =  ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
         if (!relevantRank.isPresent() || !serviceDuringWhichConditionStarts.isPresent())
         {
-            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, "Relevant rank or service during which condition starts not found");
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Relevant rank or service during which condition starts not found");
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
 
@@ -118,7 +119,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
         if (!applicableRuleConfigItemOpt.isPresent())
         {
-            caseTrace.addReasoningFor(CaseTrace.ReasoningFor.ABORT_PROCESSING, String.format("No rule configured for condition of %s, for standard of proof of %s, for rank of %s, for service branch of %s.  Therefore, no satisfied factors.",
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("No rule configured for condition of %s, for standard of proof of %s, for rank of %s, for service branch of %s.  Therefore, no satisfied factors.",
                     condition.getSopPair().getConditionName(),
                     applicableSop.getStandardOfProof(),
                     relevantRank.get(),
@@ -132,14 +133,14 @@ public class GenericProcessingRule implements ProcessingRule {
         Integer cftsDaysRequired = applicableRuleConfig.getRequiredCFTSWeeks() * 7;
         caseTrace.setRequiredCftsDays(cftsDaysRequired);
 
-        caseTrace.addReasoningFor(CaseTrace.ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
+        caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
         Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(serviceHistory,condition.getStartDate());
         if (actualDaysOfCfts >= Integer.MAX_VALUE)
         {
             throw new ProcessingRuleError("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
         }
         caseTrace.setActualCftsDays(actualDaysOfCfts.intValue());
-        caseTrace.addReasoningFor(CaseTrace.ReasoningFor.MEETING_FACTORS, "Actual days of continuous full time service: " + actualDaysOfCfts);
+        caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Actual days of continuous full time service: " + actualDaysOfCfts);
 
         if (actualDaysOfCfts >= cftsDaysRequired) {
             caseTrace.addLoggingTrace("Actual number of days of continuous full time service is at least the required days.  Therefore, returning satisfied factors according to configuration.");
