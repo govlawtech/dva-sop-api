@@ -46,8 +46,8 @@ paths:
           description: Standard of Proof
           type: string
           enum:
-            - RH
-            - BoP
+            - Reasonable Hypothesis
+            - Balance of Probabilities
         - name: conditionName
           in: query
           description: Condition Name
@@ -332,6 +332,7 @@ definitions:
     required:
       - applicableInstrument
       - factors
+      - caseTrace
     properties:
       applicableInstrument:
         $ref: "#/definitions/ApplicableInstrument"
@@ -339,6 +340,8 @@ definitions:
         type: array
         items:
           $ref: "#/definitions/FactorWithInferredResultDto"
+      caseTrace:
+        $ref: "#/definitions/CaseTraceDto"
   ApplicableInstrument:
     required:
       - registerId
@@ -372,3 +375,52 @@ definitions:
           $ref: "#/definitions/DefinedTerm"
       satisfied:
         type: boolean
+  CaseTraceDto:
+    required:
+      - standardOfProof
+      - rhFactors
+      - bopFactors
+      - reasonings
+    properties:
+      standardOfProof:
+        type: string
+        enum:
+          - Reasonable Hypothesis
+          - Balance of Probabilities
+      requiredDaysOfCfts:
+        type: integer
+      requiredDaysOfCftsForRh:
+        type: integer
+      requiredDaysOfCftsForBop:
+        type: integer
+      actualDaysOfCfts:
+        type: integer
+      requiredDaysOfOperationalServiceForRhStandard:
+        type: integer
+      actualDaysOfOperationalServiceInTestPeriod:
+        type: integer
+      rhFactors:
+        type: array
+        items:
+          $ref: "#/definitions/Factor"
+      bopFactors:
+        type: array
+        items:
+          $ref: "#/definitions/Factor"
+      reasonings:
+        $ref: "#/definitions/ReasoningMap"
+  ReasoningMap:
+    properties:
+      ABORT_PROCESSING:
+        type: array
+        items:
+          type: string
+      STANDARD_OF_PROOF:
+        type: array
+        items:
+          type: string
+      MEETING_FACTORS:
+        type: array
+        items:
+          type: string
+

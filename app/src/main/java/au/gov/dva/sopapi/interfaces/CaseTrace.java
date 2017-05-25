@@ -26,6 +26,12 @@ public interface CaseTrace {
     void setRequiredCftsDays(int days);
     Optional<Integer> getRequiredCftsDays();
 
+    void setRequiredCftsDaysForRh(int days);
+    Optional<Integer> getRequiredCftsDaysForRh();
+
+    void setRequiredCftsDaysForBop(int days);
+    Optional<Integer> getRequiredCftsDaysForBop();
+
     void setActualCftsDays(int days);
     Optional<Integer> getActualCftsDays();
 
