@@ -1,5 +1,6 @@
 package au.gov.dva.dvasopapi.tests.mocks;
 
+import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -99,4 +100,5 @@ public class ExtensiveCaseSummaryModelMock implements CaseSummaryModel{
         return caseTrace;
     }
 
+    public Recommendation getRecommendation() { return Recommendation.APPROVED; }
 }

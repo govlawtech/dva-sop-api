@@ -164,12 +164,9 @@ class Routes {
                 ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
                 Condition condition = rulesResult.getCondition().get();
 
-                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
-                        .filter(f -> f.isSatisfied())
-                        .map(f -> f.getFactor())
-                        .collect(toList());
+                List<Factor> factorsConnectedToService = rulesResult.getSatisfiedFactors();
 
-                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
+                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace(), rulesResult.getRecommendation() );
                 result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
             }
 
@@ -190,12 +187,9 @@ class Routes {
                 ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
                 Condition condition = rulesResult.getCondition().get();
 
-                List<Factor> factorsConnectedToService = rulesResult.getFactorWithSatisfactions().stream()
-                        .filter(f -> f.isSatisfied())
-                        .map(f -> f.getFactor())
-                        .collect(toList());
+                List<Factor> factorsConnectedToService = rulesResult.getSatisfiedFactors();
 
-                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace() );
+                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace(), rulesResult.getRecommendation() );
                 result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
             }
 

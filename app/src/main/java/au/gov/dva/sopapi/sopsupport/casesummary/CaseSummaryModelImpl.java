@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
+import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
@@ -18,13 +19,15 @@ public class CaseSummaryModelImpl implements CaseSummaryModel {
     private String thresholdProgress;
     private ImmutableSet<Factor> factorsConnectedToService;
     private CaseTrace caseTrace;
+    private Recommendation recommendation;
 
     // Construction logic
-    public CaseSummaryModelImpl(Condition condition, ServiceHistory serviceHistory, SoP applicableSop, ImmutableSet<Factor> factorsConnectedToService, CaseTrace caseTrace) throws IllegalArgumentException {
+    public CaseSummaryModelImpl(Condition condition, ServiceHistory serviceHistory, SoP applicableSop, ImmutableSet<Factor> factorsConnectedToService, CaseTrace caseTrace, Recommendation recommendation) throws IllegalArgumentException {
         this.condition = condition;
         this.serviceHistory = serviceHistory;
         this.applicableSop = applicableSop;
         this.factorsConnectedToService = factorsConnectedToService;
+        this.recommendation = recommendation;
         this.caseTrace = caseTrace;
         thresholdProgress = ""; // What should this be?
 
@@ -60,4 +63,7 @@ public class CaseSummaryModelImpl implements CaseSummaryModel {
     public CaseTrace getCaseTrace() {
         return caseTrace;
     }
+
+    @Override
+    public Recommendation getRecommendation() { return recommendation; }
 }

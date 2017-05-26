@@ -21,7 +21,7 @@ public interface CaseTrace {
     String getLoggingTraces();
 
     void setApplicableStandardOfProof(StandardOfProof standardOfProof);
-    StandardOfProof getApplicableStandardOfProof();
+    Optional<StandardOfProof> getApplicableStandardOfProof();
 
     void setRequiredCftsDays(int days);
     Optional<Integer> getRequiredCftsDays();

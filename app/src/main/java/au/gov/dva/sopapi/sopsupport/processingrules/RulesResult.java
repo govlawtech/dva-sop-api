@@ -1,7 +1,10 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
+import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
+import au.gov.dva.sopapi.dtos.Recommendation;
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
@@ -15,11 +18,14 @@ import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import scala.App;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 public class RulesResult {
 
@@ -27,9 +33,10 @@ public class RulesResult {
     private final Optional<SoP> applicableSop;
     private final ImmutableList<FactorWithSatisfaction> factorWithSatisfactions;
     private CaseTrace caseTrace;
+    private Recommendation recommendation;
 
     public static RulesResult createEmpty(CaseTrace caseTrace) {
-        return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace);
+        return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECTED);
     }
 
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
@@ -64,17 +71,33 @@ public class RulesResult {
         ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory,caseTrace);
         condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition,serviceHistory, caseTrace);
 
-        return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace);
+        // Generate the recommendation
+        boolean satisfied = getSatisfiedFactorsFromList(inferredFactors).size() > 0;
+        if (AppSettings.mangleServiceSettings() != null) satisfied = mangleCaseTrace(caseTrace);
+        Recommendation recommendation;
+        if (caseTrace.getApplicableStandardOfProof().get() == StandardOfProof.ReasonableHypothesis) {
+            if (satisfied) recommendation = Recommendation.APPROVED;
+            else if (caseTrace.getActualCftsDays().orElse(0) >= caseTrace.getRequiredCftsDaysForBop().orElse(0)) recommendation = Recommendation.CHECK_RH_BOP_MET;
+            else recommendation = Recommendation.CHECK_RH;
+        }
+        else {
+            if (satisfied && caseTrace.getActualOperationalDays().orElse(0) > 0) recommendation = Recommendation.CHECK_RH_BOP_MET;
+            else if (satisfied) recommendation = Recommendation.APPROVED;
+            else recommendation = Recommendation.REJECTED;
+        }
+
+        return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
 
     }
 
-    public RulesResult(Optional<Condition> condition, Optional<SoP> applicableSop, ImmutableList<FactorWithSatisfaction> factorWithSatisfactions,CaseTrace caseTrace)
+    public RulesResult(Optional<Condition> condition, Optional<SoP> applicableSop, ImmutableList<FactorWithSatisfaction> factorWithSatisfactions,CaseTrace caseTrace, Recommendation recommendation)
     {
         this.condition = condition;
 
         this.applicableSop = applicableSop;
         this.factorWithSatisfactions = factorWithSatisfactions;
         this.caseTrace = caseTrace;
+        this.recommendation = recommendation;
     }
 
     public Optional<SoP> getApplicableSop() {
@@ -85,6 +108,17 @@ public class RulesResult {
         return factorWithSatisfactions;
     }
 
+    public List<Factor> getSatisfiedFactors() {
+        return getSatisfiedFactorsFromList(getFactorWithSatisfactions());
+    }
+
+    private static List<Factor> getSatisfiedFactorsFromList(List<FactorWithSatisfaction> factorWithSatisfactions) {
+        return factorWithSatisfactions.stream()
+                .filter(f -> f.isSatisfied())
+                .map(f -> f.getFactor())
+                .collect(toList());
+    }
+
     public Optional<Condition> getCondition() {
         return condition;
     }
@@ -92,6 +126,8 @@ public class RulesResult {
     public CaseTrace getCaseTrace() {
         return caseTrace;
     }
+
+    public Recommendation getRecommendation() { return recommendation; }
 
     public boolean isEmpty() {
         return (!condition.isPresent() || !applicableSop.isPresent() || factorWithSatisfactions.isEmpty());
@@ -120,7 +156,24 @@ public class RulesResult {
         }
 
         CaseTraceDto caseTraceDto = DtoTransformations.caseTraceDtoFromCaseTrace(getCaseTrace());
-        return new SopSupportResponseDto(applicableInstrumentDto,factorDtos,caseTraceDto);
+        return new SopSupportResponseDto(applicableInstrumentDto,factorDtos, recommendation, caseTraceDto);
+    }
+
+    // Dev aid - see AppSettings.mangeServiceSettings
+    private static boolean mangleCaseTrace(CaseTrace caseTrace) {
+        String settings = AppSettings.mangleServiceSettings();
+        String[] parts = settings.split(",");
+        caseTrace.setRequiredOperationalDaysForRh(Integer.parseInt(parts[1]));
+        caseTrace.setActualOperationalDays(Integer.parseInt(parts[2]));
+        caseTrace.setRequiredCftsDaysForRh(Integer.parseInt(parts[3]));
+        caseTrace.setRequiredCftsDaysForBop(Integer.parseInt(parts[4]));
+        caseTrace.setActualCftsDays(Integer.parseInt(parts[5]));
+
+        boolean useRh = Boolean.parseBoolean(parts[6]);
+        if (useRh) caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
+        else caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
+
+        return Boolean.parseBoolean(parts[0]);
     }
 
 }

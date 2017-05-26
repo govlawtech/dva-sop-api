@@ -66,6 +66,15 @@ public class AppSettings {
         return getPropertyValue("BASE_URL");
     }
 
+    // Dev aid to assist in generating different case traces. Don't use this in prod.
+    // Format should be:
+    // factorsMet,reqOp,actualOp,reqCftsRh,reqCftsBop,actualBop,useRhStandardOfProof
+    // with types:
+    // bool,int,int,int,int,int,bool
+    public static String mangleServiceSettings () {
+        return getPropertyValue("MANGLE_SERVICE_SETTINGS");
+    }
+
     public static class LegislationRegisterEmailSubscription {
         private static final String LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_USER_ID = "LRS_USERID";
         private static final String LEGISLATION_REGISTER_SUBSCRIPTION_EMAIL_PASSWORD = "LRS_PASSWORD";

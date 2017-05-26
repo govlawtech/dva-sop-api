@@ -2,6 +2,7 @@ package au.gov.dva.sopapi.dtos.sopsupport;
 
 
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
+import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -25,16 +26,21 @@ public class SopSupportResponseDto {
     @JsonProperty("factors")
     private List<FactorWithInferredResultDto> _factors;
 
+    @JsonProperty("recommendation")
+    private Recommendation _recommendation;
+
     @JsonProperty("caseTrace")
     private CaseTraceDto _caseTrace;
 
     @JsonCreator
     public SopSupportResponseDto(@JsonProperty("applicableInstrument") ApplicableInstrumentDto _applicableInstrumentDto,
                                  @JsonProperty("factors") List<FactorWithInferredResultDto> _factors,
+                                 @JsonProperty("recomendation") Recommendation _recommendation,
                                  @JsonProperty("caseTrace") CaseTraceDto _caseTraceDto) {
         this._caseTrace = _caseTraceDto;
         this._applicableInstrumentDto = _applicableInstrumentDto;
         this._factors = _factors;
+        this._recommendation = _recommendation;
     }
 
     @JsonIgnore
@@ -52,6 +58,8 @@ public class SopSupportResponseDto {
         return ImmutableList.copyOf(_factors);
     }
 
+    @JsonIgnore
+    public Recommendation getRecommendation() { return _recommendation; }
 
     public static String toJsonString(SopSupportResponseDto sopSupportResponseDto) {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
