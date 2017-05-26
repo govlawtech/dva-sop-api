@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
 import au.gov.dva.sopapi.dtos.ReasoningFor;
+import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.exceptions.CaseSummaryError;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -30,10 +31,6 @@ import java.util.function.Predicate;
 import fr.opensagres.poi.xwpf.converter.pdf.PdfConverter;
 
 public class CaseSummary {
-    public final static String RECOMMEDATION_TEXT_APPROVED = "Accept claim";
-    public final static String RECOMMEDATION_TEXT_REJECTED = "Review claim details";
-    public final static String RECOMMEDATION_TEXT_CHECK_RH = "Review operational service to check all factors, otherwise accept as BoP factor met";
-
     private static CaseSummaryModel _model;
     private static CaseTrace _standaloneCaseTrace;
     private static CTStyles _ctStyles = CTStyles.Factory.newInstance();
@@ -193,26 +190,15 @@ public class CaseSummary {
         CaseSummarySection recommendationSection = new CaseSummarySection();
         if (_model == null) {
             recommendationSection.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", "RecommendationReviewHeading1"));
-            recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_REJECTED, "RecommendationReviewNormal"));
+            recommendationSection.add(new CaseSummaryParagraph(Recommendation.REJECTED.toString(), "RecommendationReviewNormal"));
         }
         else {
-            CaseTrace caseTrace = _model.getCaseTrace();
-            ImmutableSet<Factor> factors = _model.getFactorsConnectedToService();
-            boolean usingRh = caseTrace.getApplicableStandardOfProof() == StandardOfProof.ReasonableHypothesis;
-            boolean acceptClaim = factors.size() > 0 && (usingRh || caseTrace.getActualOperationalDays().get() < 1);
+            boolean acceptClaim = _model.getRecommendation() == Recommendation.APPROVED;
             String recommendationHeadingStyle = acceptClaim ? "RecommendationPositiveHeading1" : "RecommendationReviewHeading1";
             String recommendationTextStyle = acceptClaim ? "RecommendationPositiveNormal" : "RecommendationReviewNormal";
 
             recommendationSection.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", recommendationHeadingStyle));
-            if (usingRh) {
-                if (factors.size() > 0) recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_APPROVED, recommendationTextStyle));
-                else recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_CHECK_RH, recommendationTextStyle));
-            }
-            else {
-                if (factors.size() > 0 && caseTrace.getActualOperationalDays().get() > 0) recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_CHECK_RH, recommendationTextStyle));
-                else if (factors.size() > 0) recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_APPROVED, recommendationTextStyle));
-                else recommendationSection.add(new CaseSummaryParagraph(RECOMMEDATION_TEXT_REJECTED, recommendationTextStyle));
-            }
+            recommendationSection.add(new CaseSummaryParagraph(_model.getRecommendation().toString(), recommendationTextStyle));
         }
 
         return recommendationSection;
@@ -335,7 +321,7 @@ public class CaseSummary {
         ImmutableList<String> abortReasoning = caseTrace.getReasoningFor(ReasoningFor.ABORT_PROCESSING);
         ImmutableList<String> standardOfProofReasoning = caseTrace.getReasoningFor(ReasoningFor.STANDARD_OF_PROOF);
         ImmutableList<String> factorsReasoning = caseTrace.getReasoningFor(ReasoningFor.MEETING_FACTORS);
-        boolean usingRh = caseTrace.getApplicableStandardOfProof() == StandardOfProof.ReasonableHypothesis;
+        boolean usingRh = caseTrace.getApplicableStandardOfProof().get() == StandardOfProof.ReasonableHypothesis;
         ImmutableList<Factor> consideredFactors = usingRh ? caseTrace.getRhFactors() : caseTrace.getBopFactors();
 
         // Statement of principles
@@ -382,7 +368,7 @@ public class CaseSummary {
         }
         else {
             if (standardOfProofReasoning.size() > 0) {
-                sopData.add(new CaseSummaryParagraph(String.format("The standard of proof is %s, because:", caseTrace.getApplicableStandardOfProof().toString())));
+                sopData.add(new CaseSummaryParagraph(String.format("The standard of proof is %s, because:", caseTrace.getApplicableStandardOfProof().get().toString())));
                 for (String reason : standardOfProofReasoning) {
                     sopData.add(new CaseSummaryParagraph(reason));
                 }

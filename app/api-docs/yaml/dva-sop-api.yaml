@@ -332,6 +332,7 @@ definitions:
     required:
       - applicableInstrument
       - factors
+      - recommendation
       - caseTrace
     properties:
       applicableInstrument:
@@ -340,6 +341,13 @@ definitions:
         type: array
         items:
           $ref: "#/definitions/FactorWithInferredResultDto"
+      recommendation:
+        type: string
+        enum:
+        - Accept claim
+        - Review claim details
+        - Review operational service to check all factors, otherwise accept as BoP factor met
+        - Review operational service to check all factors
       caseTrace:
         $ref: "#/definitions/CaseTraceDto"
   ApplicableInstrument:

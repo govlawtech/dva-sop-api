@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.interfaces.model.casesummary;
 
+import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import com.google.common.collect.ImmutableList;
@@ -12,4 +13,5 @@ public interface CaseSummaryModel {
     String getThresholdProgress();
     ImmutableSet<Factor> getFactorsConnectedToService();
     CaseTrace getCaseTrace();
+    Recommendation getRecommendation();
 }

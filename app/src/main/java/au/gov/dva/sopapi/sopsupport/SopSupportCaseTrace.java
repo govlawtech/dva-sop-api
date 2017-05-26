@@ -68,9 +68,8 @@ public class SopSupportCaseTrace implements CaseTrace {
     }
 
     @Override
-    public StandardOfProof getApplicableStandardOfProof() {
-        assert applicableStandardOfProof.isPresent();
-        return applicableStandardOfProof.get();
+    public Optional<StandardOfProof> getApplicableStandardOfProof() {
+        return applicableStandardOfProof;
     }
 
     @Override

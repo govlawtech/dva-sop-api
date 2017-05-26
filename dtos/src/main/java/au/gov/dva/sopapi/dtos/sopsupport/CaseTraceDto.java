@@ -15,38 +15,40 @@ import java.util.Optional;
 public class CaseTraceDto {
 
     @JsonProperty("standardOfProof")
-    private final StandardOfProof _standardOfProof;
+    private Optional<StandardOfProof> _standardOfProof;
 
     @JsonProperty("requiredDaysOfCfts")
-    private final Optional<Integer> _requiredCftsDays;
+    private Optional<Integer> _requiredCftsDays;
 
     @JsonProperty("requiredDaysOfCftsForRh")
-    private final Optional<Integer> _requiredCftsDaysForRh;
+    private Optional<Integer> _requiredCftsDaysForRh;
 
     @JsonProperty("requiredDaysOfCftsForBop")
-    private final Optional<Integer> _requiredCftsDaysForBop;
+    private Optional<Integer> _requiredCftsDaysForBop;
 
     @JsonProperty("actualDaysOfCfts")
-    private final Optional<Integer> _actualCftsDays;
+    private Optional<Integer> _actualCftsDays;
 
     @JsonProperty("requiredDaysOfOperationalServiceForRhStandard")
-    private final Optional<Integer> _requiredOperationalDaysForRh;
+    private Optional<Integer> _requiredOperationalDaysForRh;
 
     @JsonProperty("actualDaysOfOperationalServiceInTestPeriod")
-    private final Optional<Integer> _actualOperationalDays;
+    private Optional<Integer> _actualOperationalDays;
 
     @JsonProperty("rhFactors")
-    private final ImmutableList<FactorDto> _rhFactors;
+    private List<FactorDto> _rhFactors;
 
     @JsonProperty("bopFactors")
-    private final ImmutableList<FactorDto> _bopFactors;
+    private List<FactorDto> _bopFactors;
 
     @JsonProperty("reasonings")
-    private final ImmutableMap<ReasoningFor, List<String>> _reasonings;
+    private Map<ReasoningFor, List<String>> _reasonings;
 
     private String logTrace;
 
-    public CaseTraceDto(StandardOfProof standardOfProof,
+    public CaseTraceDto(){}
+
+    public CaseTraceDto(Optional<StandardOfProof> standardOfProof,
                         Optional<Integer> requiredCftsDays,
                         Optional<Integer> requiredCftsDaysForRh,
                         Optional<Integer> requiredCftsDaysForBop,
@@ -77,7 +79,7 @@ public class CaseTraceDto {
     }
 
     @JsonIgnore
-    public StandardOfProof getStandardOfProof() {
+    public Optional<StandardOfProof> getStandardOfProof() {
         return _standardOfProof;
     }
 
@@ -112,11 +114,11 @@ public class CaseTraceDto {
     }
 
     @JsonIgnore
-    public ImmutableList<FactorDto> getRhFactors() { return _rhFactors; }
+    public List<FactorDto> getRhFactors() { return _rhFactors; }
 
     @JsonIgnore
-    public ImmutableList<FactorDto> getBopFactors() { return _bopFactors; }
+    public List<FactorDto> getBopFactors() { return _bopFactors; }
 
     @JsonIgnore
-    public ImmutableMap<ReasoningFor, List<String>> getReasonings() { return _reasonings; }
+    public Map<ReasoningFor, List<String>> getReasonings() { return _reasonings; }
 }
