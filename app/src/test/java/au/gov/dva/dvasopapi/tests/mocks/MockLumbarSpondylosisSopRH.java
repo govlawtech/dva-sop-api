@@ -97,7 +97,7 @@ public class MockLumbarSpondylosisSopRH implements SoP {
 
     @Override
     public Optional<LocalDate> getEndDate() {
-        return null;
+        return Optional.empty();
     }
 
     @Override

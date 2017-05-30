@@ -2,18 +2,19 @@ package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 
 import au.gov.dva.sopapi.exceptions.SopParserError
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithoutSubParas}
-import au.gov.dva.sopapi.sopref.parsing.traits.{BodyTextParsers, TerminatorParsers}
+import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
+import com.typesafe.scalalogging.Logger
 
 import scala.util.Properties
+import scala.util.matching.Regex
 import scala.util.parsing.combinator.RegexParsers
 
-object PostAug2015FactorsParser extends RegexParsers with BodyTextParsers with TerminatorParsers {
+object PostAug2015FactorsParser extends MiscRegexes {
 
-  private val mainFactorLegalRefRegex = """^(\([0-9]+[A-Z]*\))+\s""".r
+  val logger = Logger
 
-  def parseComplexFactor = ???
+  private val mainFactorLegalRefRegex = """^(\([0-9]+[A-Z]*\))""".r
 
-  def parseSimpleFactor = ???
 
   def splitFactorListToHeadAndRest(factorSectionLines: List[String]): (List[String], List[String]) = {
     val headExceptLastLine = factorSectionLines.takeWhile(l => !l.endsWith(":"))
@@ -46,26 +47,10 @@ object PostAug2015FactorsParser extends RegexParsers with BodyTextParsers with T
     if (regexMatch.isDefined) Some(regexMatch.get.group(1)) else None
   }
 
-  def splitFactorToHeadBodyAndTail = ???
-
-  def splitSubFactorToHeadBodyAndTail = ???
-
-  def getParsingFunctionForFactorLines: List[String] => FactorInfo = ???
-
-  def mainParaLetterParser : Parser[String]  = mainFactorLegalRefRegex
-
-  private def singleLevelFactorParser : Parser[(String,String)] = mainParaLetterParser ~ mainFactorBodyText <~ (semiColonTerminator | periodTerminator ) ^^  {
-    case legalRef ~ text => (legalRef,text)
-  }
 
   def parseFactor(lines : List[String]) : FactorInfo = {
-    val result = this.parseAll(this.singleLevelFactorParser,lines.mkString(" "))
-    if (!result.successful){
-      throw new SopParserError("Failed to parse factor: " + lines.mkString(Properties.lineSeparator))
-    }
-    new FactorInfoWithoutSubParas(result.get._1,result.get._2)
+    val result =  FallbackFactorsParser.parseFactorsSection(lines,mainFactorLegalRefRegex)
+    return result;
   }
-
-
 
 }

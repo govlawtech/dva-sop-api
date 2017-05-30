@@ -19,7 +19,6 @@ import java.util.concurrent.CompletableFuture;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class FederalRegisterOfLegislationClient implements RegisterClient {
 
@@ -34,7 +33,6 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
         URL urlForWhichToGetRedirect = BuildUrl.toGetRedirect(registerId);
         return getRedirectTargetUrl(urlForWhichToGetRedirect)
                 .thenApply(url -> extractTargetRegisterIdFromRedirectUrl(url));
-
     }
 
     public static String extractTargetRegisterIdFromRedirectUrl(URL redirectTargetUrl) {
@@ -43,12 +41,9 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
     }
 
     @Override
-    public CompletableFuture<byte[]> getLatestAuthorisedInstrumentPdf(String registerId) {
-     // todo: refactor redirects out of this - no longer need them
-        URL latestDownloadPageUrl;
-        latestDownloadPageUrl = BuildUrl.forLatestDownloadPage(registerId);
-        CompletableFuture<byte[]> promise = getRedirectTargetUrl(latestDownloadPageUrl)
-                .thenCompose(url -> downloadHtml(url))
+    public CompletableFuture<byte[]> getAuthorisedInstrumentPdf(String registerId) {
+        URL downloadPageUrl = BuildUrl.forDownloadPage(registerId);
+        CompletableFuture<byte[]> promise = downloadHtml(downloadPageUrl)
                 .thenApply(htmlString -> {
                     try {
                         return getAuthorisedDocumentLinkFromHtml(htmlString, registerId);
@@ -168,7 +163,6 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
 
         URL urlForSeriesPage = BuildUrl.forSeriesRepealedByPage(repealedRegisterId);
 
-        AsyncHttpClient asyncHttpClient = asyncHttpClient();
         CompletableFuture<Optional<String>> promise = asyncHttpClient
                 .prepareGet(urlForSeriesPage.toString())
                 .execute()
@@ -179,13 +173,13 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
                         Optional<String> registerIdOfRepealingInstrument = getRegisterIdOfRepealedByCeasedBy(response.getResponseBody());
                         if (!registerIdOfRepealingInstrument.isPresent())
                         {
-                            logger.trace("Did not find Register ID of repealing or ceasing instrument on this page: %n" + response.getResponseBody());
+                            //logger.trace(String.format("Did not find Register ID of repealing or ceasing instrument on this page: %s%n", response.getResponseBody()));
                             return Optional.empty();
                         }
                         return Optional.of(registerIdOfRepealingInstrument.get());
                     }
                     else {
-                        logger.trace(String.format("Did not find Series page for Register ID: %s.%%nResponse Code: %d", repealedRegisterId, response.getStatusCode()));
+                        //logger.trace(String.format("Did not find Series page for Register ID: %s.%%nResponse Code: %d", repealedRegisterId, response.getStatusCode()));
                         return Optional.empty();
                     }
                 });
@@ -260,8 +254,6 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
             {
                 throw new LegislationRegisterError(e);
             }
-
-
         }
 
         public static URL forSeriesRepealedByPage(String registerId)

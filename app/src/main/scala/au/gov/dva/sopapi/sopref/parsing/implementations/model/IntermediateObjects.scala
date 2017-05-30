@@ -14,7 +14,7 @@ class FactorInfoWithoutSubParas(mainParaLetter : String, bodyText: String) exten
 
   override def getText: String = bodyText
 
-  override def toString: String = getLetter + " " + bodyText
+  override def toString: String = "Letter: " +  getLetter + Properties.lineSeparator + "Text: " + bodyText
 }
 
 

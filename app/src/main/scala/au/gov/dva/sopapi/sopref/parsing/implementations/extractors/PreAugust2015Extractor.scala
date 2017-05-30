@@ -1,8 +1,5 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.extractors
 
-import au.gov.dva.sopapi.sopref.parsing.traits.PreAugust2015SoPExtractor
+import au.gov.dva.sopapi.sopref.parsing.traits.OldSoPStyleExtractor
 
 
-object PreAugust2015Extractor extends PreAugust2015SoPExtractor {
-
-}

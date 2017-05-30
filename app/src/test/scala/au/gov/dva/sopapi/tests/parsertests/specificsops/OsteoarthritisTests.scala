@@ -3,8 +3,7 @@ package au.gov.dva.sopapi.tests.parsertests.specificsops
 
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
-import au.gov.dva.sopapi.sopref.parsing.implementations.extractors.PreAugust2015Extractor
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.OsteoarthritisParser$PreAug2015
+import au.gov.dva.sopapi.sopref.parsing.traits.OldSoPStyleExtractor
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -32,7 +31,7 @@ class OsteoarthritisTests extends FunSuite {
   }
 
   test("Extract factors section from RH cleansed text") {
-    val result = PreAugust2015Extractor.extractFactorsSection(ParserTestUtils.resourceToString("osteoarthritisCleansedText.txt"))
+    val result = new OldSoPStyleExtractor(ParserTestUtils.resourceToString("osteoarthritisCleansedText.txt")).extractFactorsSection("")
     println(result)
     assert(result != null)
   }

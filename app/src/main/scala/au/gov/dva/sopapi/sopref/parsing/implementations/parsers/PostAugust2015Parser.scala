@@ -57,7 +57,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
     val intervalMatch = paraIntervalRegex.findFirstMatchIn(aggravationSection)
     if (intervalMatch.isDefined) return (intervalMatch.get.group(1), intervalMatch.get.group(2))
 
-    val singleParaRegex = """Subsection ([0-9]+\([0-9]+\))""".r
+    val singleParaRegex = """[Ss]ubsection ([0-9]+\([0-9]+\))""".r
     val singleParaMatch = singleParaRegex.findFirstMatchIn(aggravationSection)
     if (singleParaMatch.isDefined) {
       val para = singleParaMatch.get.group(1)

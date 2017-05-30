@@ -67,6 +67,8 @@ public class AzureStorageRepository implements Repository {
         } catch (Exception e) {
             throw new RepositoryError(e);
         }
+
+
     }
 
     private CloudBlobContainer getOrCreateContainer(String containerName) throws URISyntaxException, StorageException {
@@ -276,6 +278,21 @@ public class AzureStorageRepository implements Repository {
         }
     }
 
+    @Override
+    public void purgeInstrumentChanges() {
+        try {
+            CloudBlobContainer instrumentChangesContainer = getOrCreateContainer(INSTRUMENT_CHANGES_CONTAINER_NAME);
+            Iterable<ListBlobItem> blobs = instrumentChangesContainer.listBlobs();
+            for (ListBlobItem blobItem : blobs) {
+                if (blobItem instanceof CloudBlob) {
+                    ((CloudBlob) blobItem).deleteIfExists();
+                }
+            }
+        } catch (StorageException | URISyntaxException e) {
+            throw new RepositoryError(e);
+        }
+    }
+
     private static String createBlobNameForInstrumentChangeBatch(ImmutableSet<InstrumentChange> instrumentChanges) {
 //        A blob name must conforming to the following naming rules:
 //        A blob name can contain any combination of characters.
@@ -477,6 +494,12 @@ public class AzureStorageRepository implements Repository {
             } catch (StorageException e) {
                 throw new RepositoryError(e);
             }
+        }
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RepositoryError(e);
         }
     }
 

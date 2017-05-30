@@ -38,7 +38,7 @@ public class ServiceDeterminations {
     {
         try {
             byte[] docx = registerClient.getLatestDocxInstrument(registerId).get(30, TimeUnit.SECONDS);
-            byte[] pdf = registerClient.getLatestAuthorisedInstrumentPdf(registerId).get(30, TimeUnit.SECONDS);
+            byte[] pdf = registerClient.getAuthorisedInstrumentPdf(registerId).get(30, TimeUnit.SECONDS);
             String plainText = Conversions.pdfToPlainText(pdf);
             ServiceDetermination serviceDetermination =
                     au.gov.dva.sopapi.sopref.parsing.ServiceDeterminationsParser.createServiceDetermination(docx,plainText);

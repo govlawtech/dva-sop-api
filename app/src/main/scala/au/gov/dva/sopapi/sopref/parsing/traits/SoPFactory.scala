@@ -11,21 +11,25 @@ import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAugust2015Par
 trait SoPFactory {
   def create(registerId: String, cleansedText: String): SoP
 
-  def create(registerId : String, cleansedText: String, extractor : SoPExtractor, parser: SoPParser) = {
-    val citation = parser.parseCitation(extractor.extractCitation(cleansedText));
-    val instrumentNumber = parser.parseInstrumentNumber(citation);
+  def create(registerId : String, cleansedText: String, extractor : SoPExtractor, parser: SoPParser): ParsedSop = {
+    val citation = parser.parseCitation(extractor.extractCitation(cleansedText))
+    val instrumentNumber = parser.parseInstrumentNumber(citation)
 
     val definedTermsList: List[DefinedTerm] = parser.parseDefinitions(extractor.extractDefinitionsSection(cleansedText))
 
-    val(factorsSectionNumber,sectionText): (Int, String) = extractor.extractFactorsSection(cleansedText);
+    val(factorsSectionNumber,sectionText): (Int, String) = extractor.extractFactorsSection(cleansedText)
 
     val(standard, factorInfos) : (StandardOfProof, List[FactorInfo]) =  parser.parseFactors(sectionText)
 
     val factorObjects: List[Factor] = this.buildFactorObjectsFromInfo(factorInfos,factorsSectionNumber,definedTermsList)
 
-    val startAndEndOfAggravationParas = parser.parseStartAndEndAggravationParas(extractor.extractAggravationSection(cleansedText))
-
-    val(onsetFactors,aggravationFactors) = divideFactorObjectsToOnsetAndAggravation(factorObjects,startAndEndOfAggravationParas._1,startAndEndOfAggravationParas._2)
+    val(onsetFactors,aggravationFactors) =  {
+      if (factorObjects.size > 1) {
+        val startAndEndOfAggravationParas = parser.parseStartAndEndAggravationParas(extractor.extractAggravationSection(cleansedText))
+        divideFactorObjectsToOnsetAndAggravation(factorObjects, startAndEndOfAggravationParas._1, startAndEndOfAggravationParas._2)
+      }
+      else (factorObjects,List())
+    }
 
     val effectiveFromDate: LocalDate = parser.parseDateOfEffect(extractor.extractDateOfEffectSection(cleansedText))
 
@@ -41,7 +45,7 @@ trait SoPFactory {
     paraWithNumber.dropWhile(c => c.isDigit)
   }
 
-  def divideFactorObjectsToOnsetAndAggravation(factorObjects: List[Factor], startParaLetterOfAgg : String, endParaLetterOfAgg : String) = {
+  def divideFactorObjectsToOnsetAndAggravation(factorObjects: List[Factor], startParaLetterOfAgg : String, endParaLetterOfAgg : String): (List[Factor], List[Factor]) = {
     val orderedParaLetters = factorObjects.map(f => f.getParagraph.dropWhile(c => c.isDigit)).toList
 
     val splitOfOnsetAndAggravationFactors =  this.splitFactors(
@@ -59,7 +63,7 @@ trait SoPFactory {
 
   }
 
-  def splitFactors(parasInOrder: List[String], startPara: String, endPara: String) = {
+  def splitFactors(parasInOrder: List[String], startPara: String, endPara: String): (List[String], List[String]) = {
     val firstChunkOfOnsetParas = parasInOrder.takeWhile(i => i != startPara);
     val lastChunkOfOnsetParas = parasInOrder.reverse.takeWhile(i => i != endPara).reverse;
     val allOnsetParas = firstChunkOfOnsetParas ++ lastChunkOfOnsetParas
@@ -76,12 +80,9 @@ trait SoPFactory {
         val relevantDefinitions = definedTerms.filter(d => i._2.contains(d.getTerm)).toSet
         new ParsedFactor(i._1, i._2, relevantDefinitions)
       })
-
-
   }
 
   def buildFactorObjects(factorData: List[(String, String)], factorSectionNumber: Int, definedTerms: List[DefinedTerm]): List[Factor] = {
-
     factorData
       .map(f => (factorSectionNumber.toString.concat(f._1), f._2)) // prepend para number to letter
       .map(i => {

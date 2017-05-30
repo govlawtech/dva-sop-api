@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopref;
 
+import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.SoPFactorsResponse;
@@ -11,9 +12,11 @@ import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableSet;
+import org.apache.poi.ss.formula.functions.Offset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -41,27 +44,48 @@ public class SoPs {
         return jsonString;
     }
 
-    public static ImmutableSet<SoP> getMatchingSops(String conditionName, ICDCode icdCode, ImmutableSet<SoP> toMatch)
+    public static ImmutableSet<SoP> getMatchingSopsByConditionName(String conditionName, ImmutableSet<SoP> toMatch, OffsetDateTime testTime)
     {
-        ImmutableSet<SoP> matchingOnIcdCode = ImmutableSet.copyOf(
-                toMatch.stream().filter(
-                        soP -> soP.getICDCodes().stream().anyMatch(
-                                icdCodeInSop -> icdCodeInSop.equals(icdCode))).collect(Collectors.toSet()));
-
-        if (!matchingOnIcdCode.isEmpty())
-            return matchingOnIcdCode;
 
         ImmutableSet<SoP> matchingOnName = ImmutableSet.copyOf(
-                toMatch.stream().filter(soP -> soP.getConditionName().equalsIgnoreCase(conditionName))
+                toMatch.stream()
+                        .filter(s -> isCurrent(s,testTime))
+                        .filter(soP -> soP.getConditionName().equalsIgnoreCase(conditionName))
                         .collect(Collectors.toList()));
 
         return matchingOnName;
     }
 
-
-    public static ImmutableSet<SoPPair> groupSopsToPairs(ImmutableSet<SoP> allSops)
+    public static ImmutableSet<SoP> getMatchingSopsByIcdCode(ICDCode icdCode, ImmutableSet<SoP> toMatch, OffsetDateTime testTime)
     {
-       Map<String,List<SoP>> groupedByName =  allSops.stream().collect(Collectors.groupingBy(sop -> sop.getConditionName()));
+        ImmutableSet<SoP> matchingOnIcdCode = ImmutableSet.copyOf(
+                toMatch.stream()
+                        .filter(s -> isCurrent(s,testTime))
+                        .filter(
+                                soP -> soP.getICDCodes().stream().anyMatch(
+                                        icdCodeInSop -> icdCodeInSop.equals(icdCode)))
+                        .collect(Collectors.toSet()));
+
+        return matchingOnIcdCode;
+    }
+
+    private static Boolean isCurrent(SoP testSop, OffsetDateTime testTime)
+    {
+        OffsetDateTime sopStartDateAsActOdt = DateTimeUtils.localDateToLastMidnightCanberraTime(testSop.getEffectiveFromDate());
+        Optional<OffsetDateTime> endDateAsActOdt = testSop.getEndDate().isPresent() ?
+                Optional.of(DateTimeUtils.localDateToNextMidnightCanberraTime(testSop.getEndDate().get()))
+                : Optional.empty();
+
+        Boolean isCurrent =  sopStartDateAsActOdt.isBefore(testTime) && (!endDateAsActOdt.isPresent() || endDateAsActOdt.get().isAfter(testTime));
+        return isCurrent;
+    }
+
+
+    public static ImmutableSet<SoPPair> groupSopsToPairs(ImmutableSet<SoP> allSops,OffsetDateTime testDate)
+    {
+       Map<String,List<SoP>> groupedByName =  allSops.stream()
+               .filter(s -> isCurrent(s,testDate))
+               .collect(Collectors.groupingBy(sop -> sop.getConditionName()));
 
        Stream<Optional<SoPPair>> pairs = groupedByName.keySet()
                .stream().map(conditionName -> {

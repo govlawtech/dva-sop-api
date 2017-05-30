@@ -53,7 +53,7 @@ public class Replacement extends InstrumentChangeBase implements InstrumentChang
 
     public static Replacement fromJson(JsonNode jsonNode)
     {
-        return new Replacement(jsonNode.findValue(REPEALED_LABEL).asText(), extractDate(jsonNode),jsonNode.findValue(NEW_LABEL).asText());
+        return new Replacement(jsonNode.findValue(NEW_LABEL).asText(),extractDate(jsonNode),jsonNode.findValue(REPEALED_LABEL).asText());
     }
 
 }

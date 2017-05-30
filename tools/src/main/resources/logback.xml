@@ -54,5 +54,15 @@
         <appender-ref ref="FILE"/>
     </logger>
 
+    <logger name="dvasopapi.frlclient" level="trace">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="dvasopapi.frlchangedetector" level="trace">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+    </logger>
+
 
 </configuration>

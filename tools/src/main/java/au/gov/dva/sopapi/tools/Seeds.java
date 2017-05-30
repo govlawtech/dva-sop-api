@@ -15,28 +15,26 @@ import com.google.common.io.Resources;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 class Seeds {
 
-    public static void queueNewSopChanges(Repository repository) {
-       try {
-            String[] registerIdsOfInitialSops =  Resources.toString(Resources.getResource("initialsops.txt"), Charsets.UTF_8).split("\\r?\\n");
-            ImmutableSet<InstrumentChange> newInstruments = Arrays.stream(registerIdsOfInitialSops).map(id -> new NewInstrument(id, OffsetDateTime.now()))
-                    .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf));
 
-            ImmutableSet<InstrumentChange> existingInstrumentChanges = repository.getInstrumentChanges();
 
-            ImmutableSet<InstrumentChange> newInstrumentsNotAlreadyInRepo =
-                    newInstruments.stream().filter(instrumentChange -> !existingInstrumentChanges.contains(instrumentChange))
-                    .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
+    public static void queueNewSopChanges(Repository repository, List<String> registerIdsOfInitialSops) {
+        ImmutableSet<InstrumentChange> newInstruments = registerIdsOfInitialSops.stream().map(id -> new NewInstrument(id, OffsetDateTime.now()))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf));
 
-            if (!newInstrumentsNotAlreadyInRepo.isEmpty()) {
-                repository.addInstrumentChanges(newInstrumentsNotAlreadyInRepo);
-            }
-        } catch (IOException e) {
-            throw new InitialSeedingError(e);
+        ImmutableSet<InstrumentChange> existingInstrumentChanges = repository.getInstrumentChanges();
+
+        ImmutableSet<InstrumentChange> newInstrumentsNotAlreadyInRepo =
+                newInstruments.stream().filter(instrumentChange -> !existingInstrumentChanges.contains(instrumentChange))
+                .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
+
+        if (!newInstrumentsNotAlreadyInRepo.isEmpty()) {
+            repository.addInstrumentChanges(newInstrumentsNotAlreadyInRepo);
         }
     }
 

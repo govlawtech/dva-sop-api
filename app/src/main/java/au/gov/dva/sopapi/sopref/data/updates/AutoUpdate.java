@@ -26,7 +26,7 @@ public class AutoUpdate {
     public static void patchSoPChanges(Repository repository) {
 
         try {
-            logger.trace("Starting to patch SoP changes to repository.");
+            logger.trace("Starting to patch SoP changes to repository...");
             SoPLoader soPLoader = new SoPLoaderImpl(
                     repository,
                     new FederalRegisterOfLegislationClient(),
@@ -34,6 +34,8 @@ public class AutoUpdate {
                     s -> ServiceLocator.findSoPFactory(s)
             );
             soPLoader.applyAll(60);
+
+            logger.trace("Finished patching SoP changes to repository.");
         } catch (Error e) {
             logger.error("Error occurred when patching repository.", e);
         }
@@ -88,6 +90,7 @@ public class AutoUpdate {
                 repository.addServiceDetermination(serviceDetermination);
             });
         }
+        logger.trace("..done updating Service Determinations.");
 
 
     }

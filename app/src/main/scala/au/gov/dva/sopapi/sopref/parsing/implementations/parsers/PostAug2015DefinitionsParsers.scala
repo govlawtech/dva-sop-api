@@ -31,7 +31,7 @@ object PostAug2015DefinitionsParsers {
 
     val words = definition.split("\\s").map(i => i.trim());
     val wordsToMeans = words.takeWhile(w => defKeyWordRegex.findFirstIn(w).isEmpty).mkString(" ").trim()
-    val wordsWithoutDefinedTerm = definition.replace(wordsToMeans,"")
+    val wordsWithoutDefinedTerm = definition.replace(wordsToMeans,"").trim
     (wordsToMeans,wordsWithoutDefinedTerm)
   }
 

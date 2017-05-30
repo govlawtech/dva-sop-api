@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.OffsetDateTime;
 import java.util.Optional;
 
 public class Cache {
@@ -47,7 +48,7 @@ public class Cache {
 
             // atomic
             _allSops = allSops;
-            _allSopPairs = SoPs.groupSopsToPairs(_allSops);
+            _allSopPairs = SoPs.groupSopsToPairs(_allSops, OffsetDateTime.now());
             _allServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
         }
