@@ -59,11 +59,12 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
     (m.get.group(1), m.get.group(1))
   }
 
+
   // Used for aggravation interval (eg. Paragraphs 6(u) to 6(nn) apply)
   override def parseStartAndEndAggravationParas(aggravationSection: String): (String, String) = {
-    val paraIntervalRegex = """Paragraphs [0-9]+(\([a-z]+\)) to [0-9]*(\([a-z]+\))""".r
+    val paraIntervalRegex = """Paragraphs [0-9]+(\([a-z]+\)) (to|and) [0-9]*(\([a-z]+\))""".r
     val intervalMatch = paraIntervalRegex.findFirstMatchIn(aggravationSection)
-    if (intervalMatch.isDefined) return (intervalMatch.get.group(1), intervalMatch.get.group(2))
+    if (intervalMatch.isDefined) return (intervalMatch.get.group(1), intervalMatch.get.group(3))
 
     val singleParaRegex = """Paragraph [0-9]+(\([a-z]+\))""".r
     val singleParaMatch = singleParaRegex.findFirstMatchIn(aggravationSection)
@@ -75,8 +76,9 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
       throw new SopParserError("Cannot determine aggravation paras from: " + aggravationSection)
   }
 
+
   override def parseCitation(citationSection: String): String = {
-    val regex = """may be cited as (.*)""".r
+    val regex = """(Statement of Principles .*)""".r
     val m = regex.findFirstMatchIn(citationSection)
     if (m.isEmpty)
       throw new SopParserError("Cannot get citation from: " + citationSection)

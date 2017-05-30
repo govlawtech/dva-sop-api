@@ -132,8 +132,8 @@ public class IntegrationTests  {
     @Category(IntegrationTest.class)
     public void testBulkRedirectTargetGet() {
         ImmutableSet<String> testSourceIds = ImmutableSet.of(
-                "F2014L01390", // Statement of Principles concerning anxiety disorder No. 103 of 2014,  already amended with compilation
                 "F2014L01389", // Statement of Principles concerning anxiety disorder No. 102 of 2014,  already amended with compilation
+                "F2014L01390", // Statement of Principles concerning anxiety disorder No. 103 of 2014,  already amended with compilation
                 "F2010L00557"  // Statement of Principles concerning osteoarthritis No. 13 of 2010, already amended with compilation
         );
 
@@ -175,6 +175,17 @@ public class IntegrationTests  {
         LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
         ImmutableSet<InstrumentChange> results = underTest.detectReplacements(testSourceIds);
         Assert.assertTrue(results.isEmpty());
+    }
+
+
+    @Test
+    @Category(IntegrationTest.class)
+    public void investigateUrlNotAbsoluteIssue() throws ExecutionException, InterruptedException {
+        String problemId =  "F2014L00522";
+        FederalRegisterOfLegislationClient underTest = new FederalRegisterOfLegislationClient();
+        byte[] result =  underTest.getAuthorisedInstrumentPdf(problemId).get();
+        assert(result.length > 0);
+
     }
 
 }

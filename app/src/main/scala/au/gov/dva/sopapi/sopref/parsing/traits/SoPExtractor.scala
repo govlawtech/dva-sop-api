@@ -10,4 +10,6 @@ trait SoPExtractor {
   def extractICDCodes(plainTextSop : String) : List[ICDCode]
   def extractAggravationSection(plainTextSop : String) : String
 
+  val platformNeutralLineEndingRegex = """(\r\n|\r)""".r
+
 }

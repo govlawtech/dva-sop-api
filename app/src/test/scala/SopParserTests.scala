@@ -9,12 +9,11 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
-import au.gov.dva.sopapi.sopref.parsing.implementations.extractors.PreAugust2015Extractor
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{PreAug2015DefinitionsParsers, PreAugust2015Parser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FallbackFactorsParser, PreAug2015DefinitionsParsers, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.LsSoPFactory
-import au.gov.dva.sopapi.sopref.parsing.traits.PreAug2015FactorsParser
+import au.gov.dva.sopapi.sopref.parsing.traits.{OldSoPStyleExtractor, PreAug2015FactorsParser}
 import com.google.common.io.Resources
-import org.scalatest.{FlatSpec, FunSuite}
+import org.scalatest.{FlatSpec, FunSuite, Matchers}
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
@@ -22,20 +21,21 @@ import scala.io.Source
 import scala.util.Properties
 
 
+
 @RunWith(classOf[JUnitRunner])
-class SopParserTests extends FunSuite {
+class SopParserTests extends FunSuite  {
 
   test("Extract Lumbar Spondylosis factors section from cleansed text") {
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val underTest = PreAugust2015Extractor
+    val underTest = new OldSoPStyleExtractor(testInput)
     val result = underTest.extractFactorsSection(testInput)
-    System.out.print(result);
+    System.out.print(result)
     assert(result._1 == 6)
   }
 
   test("Extract definition section for Lumbar Spondylosis") {
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val underTest = PreAugust2015Extractor
+    val underTest = new OldSoPStyleExtractor(testInput)
     val result = underTest.extractDefinitionsSection(testInput);
     assert(result.startsWith("For the purpose") && result.endsWith("surgery to the lumbar spine."))
     System.out.print(result)
@@ -43,14 +43,14 @@ class SopParserTests extends FunSuite {
 
   test("Extract date of effect for Lumbar Spondylosis") {
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val underTest = PreAugust2015Extractor
+    val underTest = new OldSoPStyleExtractor(testInput)
     val result = underTest.extractDateOfEffectSection(testInput);
     assert(result == "This Instrument takes effect from 2 July 2014.");
   }
 
   test("Extract citation for Lumbar Spondylosis") {
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val underTest = PreAugust2015Extractor
+    val underTest = new OldSoPStyleExtractor(testInput)
     val result = underTest.extractCitation(testInput);
     assert(result == "This Instrument may be cited as Statement of Principles concerning lumbar spondylosis No. 62 of 2014.");
   }
@@ -58,7 +58,8 @@ class SopParserTests extends FunSuite {
 
   test("Extract ICD codes for Lumbar Spondylosis") {
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val underTest = PreAugust2015Extractor
+    val underTest = new OldSoPStyleExtractor(testInput)
+
     val result = underTest.extractICDCodes(testInput);
     result.foreach(c => System.out.print(c))
     assert(result.size == 9)
@@ -108,8 +109,9 @@ class SopParserTests extends FunSuite {
   test("Extract aggravation section from LS SoP") {
 
     val testInput = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val undertest = PreAugust2015Extractor
-    val result = undertest.extractAggravationSection(testInput)
+    val underTest = new OldSoPStyleExtractor(testInput)
+
+    val result = underTest.extractAggravationSection(testInput)
     assert(result == "Paragraphs 6(q) to 6(ff) applies only to material contribution to, or aggravation of, lumbar spondylosis where the person’s lumbar spondylosis was suffered or contracted before or during (but not arising out of) the person’s relevant service.")
   }
 
@@ -176,9 +178,25 @@ class SopParserTests extends FunSuite {
   }
 
   test("Take until letter appears a number of times") {
-    val input = List("(hh) blah", "(i) blah blah", "(ii) blah blah", "(iii)", "(iv)", "(ii) main para again","(jj) main para")
-    val result = SoPExtractorUtilities.splitWithSkip(input,2,l => l.startsWith("(ii)"))
+    val input = List("(hh) blah", "(i) blah blah", "(ii) blah blah", "(iii)", "(iv)", "(ii) main para again", "(jj) main para")
+    val result = SoPExtractorUtilities.splitWithSkip(input, 2, l => l.startsWith("(ii)"))
     assert(result._1.size == 5 && result._2.size == 2)
+  }
+
+
+  test("Extract aggravation paras where two paras are mentioned only")
+  {
+    val input = "Paragraphs 6(e) and 6(f) apply only to material contribution to, or aggravation of, herpes zoster where the person's herpes zoster was suffered or contracted before or during (but not arising out of) the person's relevant service."
+    val underTest: (String, String) = PreAugust2015Parser.parseStartAndEndAggravationParas(input)
+    assert(underTest._1 == "(e)" && underTest._2 == "(f)")
+  }
+
+
+  test("Extract factor from single factor section")
+  {
+    val input = "The factor that must exist before it can be said that, on the balance of\nprobabilities, ganglion or death from ganglion is connected with the\ncircumstances of a person's relevant service is inability to obtain appropriate\nclinical management for ganglion."
+    val result = FallbackFactorsParser.extractFactorFromFactorSectionHead(input.split("\n").toList)
+    assert(result.getText.startsWith("inability to obtain appropriate clinical management for ganglion"))
   }
 
 }

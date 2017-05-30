@@ -1,13 +1,15 @@
 package au.gov.dva.sopapi.sopref.parsing
 
+import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
+
 import scala.util.matching.Regex
 
-object PostAug2015ExtractorUtilities {
+object PostAug2015ExtractorUtilities extends MiscRegexes {
 
   def getSections(cleansedSoPText: String): List[List[String]] = {
     val sectionHeaderLineRegex = """^[0-9]+\s[A-Z][a-z\s]+$""".r
     val acc = List[List[String]]();
-    val lines = cleansedSoPText.split("[\r\n]+").toList
+    val lines = cleansedSoPText.split(platformNeutralLineEndingRegex.regex).toList
     divideRecursive(sectionHeaderLineRegex, acc, lines)
   }
 

@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopref.parsing
 
 import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 
 import scala.collection.immutable.{IndexedSeq, Seq}
 import scala.collection.mutable
@@ -9,7 +10,8 @@ import scala.util.Properties
 import scala.util.matching.Regex
 
 
-object SoPExtractorUtilities {
+object SoPExtractorUtilities extends MiscRegexes
+{
 
   private val regexForRegisterId = """F(20[0-9]{2})([LC])([0-9]{5})""".r
 
@@ -25,7 +27,7 @@ object SoPExtractorUtilities {
 
   def getSections(cleansedSoPText: String, sectionHeaderLineRegex: Regex): List[List[String]] = {
     val acc = List[List[String]]();
-    val lines = cleansedSoPText.split("[\r\n]+").toList // todo: change to platform indep line sep
+    val lines = cleansedSoPText.split(platformNeutralLineEndingRegex.regex).toList
     divideRecursive(List.empty, sectionHeaderLineRegex, acc, lines)
   }
 
@@ -58,6 +60,7 @@ object SoPExtractorUtilities {
   }
 
 
+
   def getSection(cleansedSopText: String, paragraphLineRegex: Regex): (Int, List[String]) = {
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
     val allSections: List[(Option[Int], String, List[String])] = getSections(cleansedSopText, sectionHeaderLineRegex).map(s => parseSectionBlock(s))
@@ -73,6 +76,7 @@ object SoPExtractorUtilities {
   }
 
 
+
   def getMainParaLetterSequence = {
       val aToz = 'a' to 'z'
       val doubled = aToz.map(l => s"$l$l")
@@ -85,11 +89,13 @@ object SoPExtractorUtilities {
       .map(i => ("(" + i + ")"))
   }
 
-  def splitFactorsSectionToHeaderAndRest(factorsSection: List[String]): (String, List[String]) = {
+  def splitFactorsSectionToHeaderAndRest(factorsSection: List[String]): (List[String], List[String]) = {
     val (headerLines, rest) = factorsSection.span(l => !l.startsWith("("))
-    if (headerLines.isEmpty || rest.isEmpty) throw new SopParserError(s"Cannot split this factors section to head and then the rest: ${factorsSection.mkString(Properties.lineSeparator)}")
-    (headerLines.mkString(" "), rest)
+    if (headerLines.isEmpty ) throw new SopParserError(s"Cannot split this factors section to head and then the rest: ${factorsSection.mkString(Properties.lineSeparator)}")
+    (headerLines, rest)
   }
+
+
 
   def splitFactorToHeaderAndRest(singleFactor: List[String]): (String, List[String]) = {
     if (singleFactor.size == 1)
@@ -104,7 +110,7 @@ object SoPExtractorUtilities {
   }
 
   def splitOutTailIfAny(lastSubParaWithLineBreaks: String): (String, Option[String]) = {
-    val asLines = lastSubParaWithLineBreaks.split("[\r\n]+").toList
+    val asLines = lastSubParaWithLineBreaks.split(platformNeutralLineEndingRegex.regex).toList
     val reversed = asLines.reverse
     val tail = reversed.takeWhile(l => !l.endsWith(";")).reverse
     if (tail.size < asLines.size) {
@@ -150,7 +156,6 @@ object SoPExtractorUtilities {
         return splitWithSkip(remainingLines,2, lineStartsWithLetter("(ii)"));
       }
     }
-
 
     val nextLetter = letterSequence(nextLetterIndex)
     remainingLines.span(l => !l.startsWith(nextLetter))

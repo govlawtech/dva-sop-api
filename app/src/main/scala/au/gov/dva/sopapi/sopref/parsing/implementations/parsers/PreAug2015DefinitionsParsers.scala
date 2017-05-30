@@ -4,6 +4,8 @@ import au.gov.dva.sopapi.exceptions.SopParserError
 
 object PreAug2015DefinitionsParsers {
 
+  private val defKeyWordRegex = """(means:?|includes:?)""".r
+
   def splitToDefinitions(definitionsSection : String) : List[String] = {
      assert(!definitionsSection.startsWith("\""))
     val acc = List[String]();
@@ -25,13 +27,14 @@ object PreAug2015DefinitionsParsers {
   }
 
   def parseSingleDefinition(definition : String) : (String,String) = {
-    val definedWordRegex = """"[A-Za-z\-\s0-9',]+"""".r
-    val m = definedWordRegex.findFirstMatchIn(definition)
+
+    val wordsBeforeMeans = definition.split("""(\s|(\n|\r\n))""").takeWhile(w => defKeyWordRegex.findFirstIn(w).isEmpty).mkString(" ")
+    val m = wordsBeforeMeans
     if (m.isEmpty)
       throw new SopParserError("Cannot find the defined word in this definition: " + definition)
-    val toTrim = m.get.matched.size;
+    val toTrim = m.size
     var remainder = definition.drop(toTrim).trim.stripSuffix(";").stripSuffix(".")
-    var word = m.get.matched.drop(1).dropRight(1)
+    var word = m.drop(1).dropRight(1)
     return (word,remainder)
   }
 

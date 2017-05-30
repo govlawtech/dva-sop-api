@@ -47,7 +47,7 @@ public class LegislationRegisterTests{
     public void endToEndPdfRetrieval() throws ExecutionException, InterruptedException {
         String testRegisterId = "F2014L00930";
         FederalRegisterOfLegislationClient underTest = new FederalRegisterOfLegislationClient();
-        byte[] result = underTest.getLatestAuthorisedInstrumentPdf(testRegisterId).get();
+        byte[] result = underTest.getAuthorisedInstrumentPdf(testRegisterId).get();
         Assert.assertTrue(result.length == 391904);
     }
 

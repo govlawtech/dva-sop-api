@@ -204,6 +204,12 @@ public class StoredSop implements SoP, HasSchemaVersion {
         rootNode.put(Labels.CITATION,sop.getCitation());
         rootNode.put(Labels.CONDITION_NAME,sop.getConditionName());
         rootNode.put(Labels.EFFECTIVE_FROM,sop.getEffectiveFromDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
+
+        if (sop.getEndDate().isPresent())
+        {
+            rootNode.put(Labels.END_DATE,sop.getEndDate().get().format(DateTimeFormatter.ISO_LOCAL_DATE));
+        }
+
         rootNode.put(Labels.STANDARD_OF_PROOF,sop.getStandardOfProof().toString());
 
         ArrayNode icdCodesNode = rootNode.putArray(Labels.ICD_CODES);

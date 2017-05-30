@@ -8,7 +8,7 @@ import scala.util.matching.Regex
 
 trait GenericTextCleanser extends SoPCleanser {
 
-  private val lineEndRegexPattern = "[\r\n]+"
+  private val lineEndRegexPattern = "(\n|(\r\n))"
 
   val logger = Logger[GenericTextCleanser]
 
@@ -31,7 +31,6 @@ trait GenericTextCleanser extends SoPCleanser {
 
     val compilationFootNoteRegexLine1 = """(?i)\s*statement of principles concerning .* [0-9]{4,4} [0-9]+\s*$(?-i)""".r
     val compilationFootnoteRegexLine2 = """(?i)\s*compilation no\. [0-9].*$(?-i)""".r
-
 
     asLines
       .filter(l => compilationFootNoteRegexLine1.findAllMatchIn(l).isEmpty)
@@ -82,11 +81,6 @@ trait GenericTextCleanser extends SoPCleanser {
     fixed
   }
 
-  private def stripNotes(raw: String): String = {
-    val noteRegex = """Note:\s.*[\r\n]+""".r
-    regexReplace(noteRegex, raw)
-  }
-
 
 
   override def cleanse(rawText: String) = {
@@ -95,7 +89,6 @@ trait GenericTextCleanser extends SoPCleanser {
       .map(removeCompilationFootnote)
       .map(removeAuthorisedFootnote)
       .map(removePageNumberFootNote)
-      .map(stripNotes)
       .map(removePageGaps)
       .map(compressSpaces)
       .map(replaceCurlyApostrophe)

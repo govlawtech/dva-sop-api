@@ -20,7 +20,7 @@ import java.util.concurrent.TimeoutException;
 public class LegRegChangeDetector {
 
     private RegisterClient registerClient;
-    private static final Logger logger = LoggerFactory.getLogger(LegRegChangeDetector.class);
+    private static final Logger logger = LoggerFactory.getLogger("dvasopapi.frlchangedetector");
 
     public LegRegChangeDetector(RegisterClient registerClient) {
         this.registerClient = registerClient;
@@ -33,10 +33,15 @@ public class LegRegChangeDetector {
         registerIds.forEach(s -> {
             CompletableFuture<RedirectResult> task = getRedirectResult(s);
             try {
-                RedirectResult result = task.get(3, TimeUnit.SECONDS);
+                logger.trace(String.format("Checking for any new compilations for: %s...", s));
+                RedirectResult result = task.get(10, TimeUnit.SECONDS);
                 if (result.isUpdatedCompilation()) {
-                    acc.add(new NewCompilation(result.getSource(), result.getTarget().get(), OffsetDateTime.now()));
+                    NewCompilation newCompilation = new NewCompilation(result.getSource(), result.getTarget().get(), OffsetDateTime.now());
+                    logger.trace(String.format("...new compilation found: %s",newCompilation));
+                    acc.add(newCompilation);
                 }
+                logger.trace("...none found.");
+
             } catch (InterruptedException | ExecutionException | TimeoutException e) {
                 logger.error(String.format("Unable to check for new compilation for instrument ID %s", s),e);
             }
@@ -52,10 +57,14 @@ public class LegRegChangeDetector {
         registerIds.forEach(s -> {
             CompletableFuture<ReplacementResult> task = getReplacementResult(s);
             try {
-                ReplacementResult result = task.get(3, TimeUnit.SECONDS);
+                logger.trace(String.format("Checking for replacement instrument for: %s...", s));
+                ReplacementResult result = task.get(10, TimeUnit.SECONDS);
                 if (result.isReplaced()) {
-                    acc.add(new Replacement(result.getNewRegisterId().get(), OffsetDateTime.now(), result.getOriginalRegisterId()));
+                    Replacement replacement = new Replacement(result.getNewRegisterId().get(), OffsetDateTime.now(), result.getOriginalRegisterId());
+                    logger.trace(String.format("...replacement found: %s",replacement));
+                    acc.add(replacement);
                 }
+                logger.trace("...none found.");
             } catch (InterruptedException | ExecutionException | TimeoutException e) {
                 logger.error(String.format("Unable to check for replacements for instrument ID %s", s),e);
             }

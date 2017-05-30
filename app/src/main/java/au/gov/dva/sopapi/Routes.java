@@ -29,19 +29,31 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 import com.google.common.collect.ImmutableSet;
+import com.microsoft.azure.storage.CloudStorageAccount;
+import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Option;
 import spark.QueryParamsMap;
 import spark.Request;
 import spark.Response;
 import spark.Route;
 
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -53,6 +65,7 @@ class Routes {
     private final static String MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
     private final static String MIME_PDF = "application/pdf";
     private final static String MIME_TEXT = "text/plain";
+    private final static String MIME_HTML = "text/html";
 
     private static Cache cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
@@ -60,26 +73,17 @@ class Routes {
     public static void initStatus(Repository repository, Cache cache) {
 
         get("/status", (req, res) -> {
-            StringBuilder sb = new StringBuilder();
-
-            ImmutableSet<SoPPair> soPPairs = cache.get_allSopPairs();
-
-            Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();
-
-            String lastUpdateTime = lastUpdated.isPresent() ? lastUpdated.get().toString() : "Unknown";
-
-            setResponseHeaders(res, 200, MIME_TEXT);
-
-            List<String> conditionList = soPPairs.stream().map(sp -> "* " + sp.getConditionName()).sorted().collect(toList());
-            String conditionsListString = String.join("\r\n", conditionList);
-            sb.append(String.format("Number of conditions available: %d%n", conditionList.size()));
-            sb.append(String.format("Last checked for updated SoPs and Service Determinations: %s%n", lastUpdateTime));
-            sb.append(String.format("Condition available:\r\n"));
-            sb.append(conditionsListString);
 
 
-            return sb.toString();
+            Optional<URI> blobStorageUri = getBaseUrlForSoPBlobs();
+            if (!blobStorageUri.isPresent()) {
+                logger.error("Need blob storage URI for status page.");
+                res.status(500);
+            }
 
+            String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL());
+            setResponseHeaders(res,200,MIME_HTML);
+            return statusPage;
         });
     }
 
@@ -125,7 +129,12 @@ class Routes {
                 return "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
             }
 
-            ImmutableSet<SoP> matchingSops = SoPs.getMatchingSops(conditionName, new BasicICDCode(icdCodeVersion, icdCodeValue), cache.get_allSops());
+            ImmutableSet<SoP> matchingSops;
+            if (conditionName != null || !conditionName.isEmpty()) {
+                matchingSops = SoPs.getMatchingSopsByConditionName(conditionName, cache.get_allSops(), OffsetDateTime.now());
+            } else {
+                matchingSops = SoPs.getMatchingSopsByIcdCode(new BasicICDCode(icdCodeVersion, icdCodeValue), cache.get_allSops(), OffsetDateTime.now());
+            }
 
             if (matchingSops.isEmpty()) {
                 setResponseHeaders(res, 404, MIME_TEXT);
@@ -362,5 +371,18 @@ class Routes {
 
     private static String cleanseJson(String incomingJson) {
         return incomingJson.replace("\uFEFF", "");
+    }
+
+    private static Optional<URI> getBaseUrlForSoPBlobs() {
+        try {
+            String _storageConnectionString = AppSettings.AzureStorage.getConnectionString();
+            CloudStorageAccount _cloudStorageAccount = CloudStorageAccount.parse(_storageConnectionString);
+            CloudBlobClient _cloudBlobClient = _cloudStorageAccount.createCloudBlobClient();
+            return Optional.of(_cloudBlobClient.getEndpoint());
+
+        } catch (InvalidKeyException | URISyntaxException e) {
+            logger.error("Cannot get base url for sop blobs.", e);
+            return Optional.empty();
+        }
     }
 }

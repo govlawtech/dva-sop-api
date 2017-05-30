@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -30,7 +31,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class SoPLoaderImpl implements SoPLoader {
 
@@ -88,9 +88,10 @@ public class SoPLoaderImpl implements SoPLoader {
 
     @Override
     public void applyAll(long timeOutSeconds) {
-        Stream<InstrumentChange> sequencedInstrumentChanges = repository.getInstrumentChanges()
+        List<InstrumentChange> sequencedInstrumentChanges = repository.getInstrumentChanges()
                 .stream()
-                .sorted(new InstrumentChangeComparator());
+                .sorted(new InstrumentChangeComparator())
+                .collect(Collectors.toList());
 
         sequencedInstrumentChanges.forEach(ic -> {
             try {
@@ -142,6 +143,7 @@ public class SoPLoaderImpl implements SoPLoader {
             LocalDate effectiveDateOfNewSoP = repealingSop.get().getEffectiveFromDate();
             SoP endDated = StoredSop.withEndDate(toEndDate.get(), effectiveDateOfNewSoP.minusDays(1));
             repository.addSop(endDated);
+            repository.archiveSoP(endDated.getRegisterId());
             repository.addSop(repealingSop.get());
         }
 
@@ -193,7 +195,7 @@ public class SoPLoaderImpl implements SoPLoader {
 
 
     public CompletableFuture<Optional<SoP>> createGetSopTask(String registerId) {
-        return createGetSopTask(registerId, s -> registerClient.getLatestAuthorisedInstrumentPdf(s), sopCleanserProvider, sopFactoryProvider);
+        return createGetSopTask(registerId, s -> registerClient.getAuthorisedInstrumentPdf(s), sopCleanserProvider, sopFactoryProvider);
     }
 
     private CompletableFuture<Optional<SoP>> createGetSopTask(String registerId, Function<String, CompletableFuture<byte[]>> authorisedPdfProvider, Function<String, SoPCleanser> sopCleanserProvider, Function<String, SoPFactory> sopFactoryProvider) {

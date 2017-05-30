@@ -9,6 +9,8 @@ import au.gov.dva.sopapi.sopref.data.updates.AutoUpdate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 public class StorageTool {
 
     private static Logger logger = LoggerFactory.getLogger("dvasopapi.initstorage");
@@ -26,11 +28,13 @@ public class StorageTool {
         Seeds.seedRuleConfiguration(repository);
     }
 
-    public void SeedStorage() {
+    public void SeedStorage(List<String> initialRegisterIds) {
 
         try {
-            Seeds.queueNewSopChanges(repository);
+            Seeds.queueNewSopChanges(repository,initialRegisterIds);
             Seeds.addServiceDeterminations(repository, registerClient);
+            AutoUpdate.patchSoPChanges(repository);
+            repository.purgeInstrumentChanges();
         }
         catch (Exception e) {
             logger.error("Exception occurred when attempting to seed initial data to Repository.", e);
@@ -41,6 +45,7 @@ public class StorageTool {
             logger.error("Error occurred when attempting to seed initial data to Repository.", e);
         }
     }
+
 
     public void Update() {
 

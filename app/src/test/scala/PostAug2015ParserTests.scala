@@ -11,7 +11,6 @@ import au.gov.dva.sopapi.sopref.parsing.{RegisterIdInfo, SoPExtractorUtilities}
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
-import au.gov.dva.sopapi.sopref.parsing.implementations.extractors.PreAugust2015Extractor
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{PostAug2015FactorsParser, PostAugust2015Parser, PreAug2015DefinitionsParsers, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.LsSoPFactory
 import au.gov.dva.sopapi.sopref.parsing.traits.PreAug2015FactorsParser

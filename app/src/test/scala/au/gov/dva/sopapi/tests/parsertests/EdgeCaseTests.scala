@@ -21,5 +21,22 @@ class EdgeCaseTests extends FunSuite {
 
   }
 
+  test("anxiety disorder compilation parses")
+  {
+
+    val parsed = ParserTestUtils.executeWholeParsingPipeline("F2016C00973", "allSops/F2016C00973.pdf")
+  }
+
+  test("Fracture")
+  {
+    val parsed = ParserTestUtils.executeWholeParsingPipeline("F2015L01343", "allSops/F2015L01343.pdf")
+  }
+
+  test("Pagets disease RH sop")
+  {
+    val parsed = ParserTestUtils.executeWholeParsingPipeline("F2015L00255","allSops/F2015L00255.pdf")
+    println(parsed)
+  }
+
 
 }

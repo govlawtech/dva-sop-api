@@ -6,5 +6,3 @@ public interface RuleConfigurationRepository {
     ImmutableSet<RHRuleConfigurationItem> getRHItems();
     ImmutableSet<BoPRuleConfigurationItem> getBoPItems();
 }
-
-

@@ -24,6 +24,10 @@ dependencies {
     compile project(':app')
     compile 'com.google.guava:guava:20.0'
 
+    // https://mvnrepository.com/artifact/commons-cli/commons-cli
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
+
+
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
 }

@@ -32,9 +32,9 @@ class CleanserTests extends FunSuite{
 
   test("Cleanse notes in post Aug 2015 sops")
   {
-    val rawText = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
-    val cleansedWithdefault = GenericCleanser.cleanse(rawText)
-    assert(!cleansedWithdefault.contains("Note: "))
+    val rawText = Conversions.croppedPdfToPlaintext(ParserTestUtils.resourceToBytes("allSops/F2016L00564.pdf"),"F2016L00564");
+    val cleansedWithdefault = PostAug2015Cleanser.cleanse(rawText)
+    assert(!cleansedWithdefault.contains("high performance aircraft is defined in the Schedule 1 - Dictionary."))
     println(cleansedWithdefault)
   }
 

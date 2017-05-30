@@ -1,17 +1,19 @@
 package au.gov.dva.sopapi.tests.parsertests
 
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAugust2015Parser
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FallbackFactorsParser, PreAugust2015Parser}
+import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
 
+import scala.collection.immutable
 import scala.util.Properties
 
 
 @RunWith(classOf[JUnitRunner])
-class FactorSectionTests extends FunSuite {
+class FactorSectionTests extends FunSuite with MiscRegexes {
 
   test("Split factors sections to individual factors for ls") {
     val input = ParserTestUtils.resourceToString("factorSections/lsFactorLines.txt").split(scala.util.Properties.lineSeparator).toList
@@ -40,10 +42,6 @@ class FactorSectionTests extends FunSuite {
     assert(numberOfFactorsStartingWithI == 1)
   }
 
-  test("Get sequence of main factors") {
-    val result = SoPExtractorUtilities.getMainParaLetterSequence
-    println(result)
-  }
 
   test("Split factors section to head and rest") {
     val input = ParserTestUtils.resourceToString("factorSections/sleepApnoeaFactorLines.txt").split(scala.util.Properties.lineSeparator).toList
@@ -65,14 +63,25 @@ class FactorSectionTests extends FunSuite {
       {
         case e : Throwable => println(e)
       }
-
-
   }
 
-  test("Parse factors section for anxiety disorder")
+  test("Parse factors section for anxiety disorder with fallback parser")
   {
-    val factorsText = ParserTestUtils.produceCleansedText("F2016C00973", "allSops/F2016C00973.pdf")
-    println(factorsText)
+    val factorsText = ParserTestUtils.resourceToString("factors/anxietyDisorderFactors.txt")
+    val lines = factorsText.split(platformNeutralLineEndingRegex.regex).toList
+
+    val mainParas = FallbackFactorsParser.oldStyleSmallLetterLinesToFactors(lines)
+    mainParas.foreach(m => println(m.getLetter))
+  }
+
+  test("Parse osteo factors with fallback parser")
+  {
+    val factorsText = ParserTestUtils.resourceToString("factors/osteoFactorLinesWithoutHead.txt")
+    val lines = factorsText.split(platformNeutralLineEndingRegex.regex).toList
+
+    val mainParas = FallbackFactorsParser.oldStyleSmallLetterLinesToFactors(lines)
+    mainParas.foreach(m => println(m.getLetter))
+    assert(mainParas.size == 40 )
   }
 
 }
