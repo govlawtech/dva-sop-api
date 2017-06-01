@@ -1,7 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'findbugs'
+apply plugin: 'maven'
 
 subprojects {
+
+    group = "au.gov.dva.sopapi"
 
     repositories {
         mavenCentral()

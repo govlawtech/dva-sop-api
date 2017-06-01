@@ -2,6 +2,14 @@
 
 apply plugin: 'java'
 apply plugin: 'findbugs'
+apply plugin: 'maven'
+
+version = '1.0'
+
+
+configurations {
+    deployerJars
+}
 
 dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.5'
@@ -9,7 +17,7 @@ dependencies {
     compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-jsonSchema', version: '2.8.5'
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.8.5'
     compile group: 'com.google.guava', name: 'guava', version: '20.0'
-
+    deployerJars "org.apache.maven.wagon:wagon-ftp:2.8"
     testCompile 'junit:junit:4.12'
 }
 
@@ -23,5 +31,19 @@ tasks.withType(FindBugs) {
     reports {
         xml.enabled false
         html.enabled true
+    }
+}
+
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            configuration = configurations.deployerJars
+
+            repository(url: "ftp://waws-prod-sn1-109.ftp.azurewebsites.windows.net/site/wwwroot/") {
+                authentication(userName: "govlawtechmvnrepo\\\$govlawtechmvnrepo", password: System.getenv("mvnRepoFtpPassword"))
+            }
+        }
     }
 }
