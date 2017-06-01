@@ -5,5 +5,7 @@ include 'api'
 include 'services:webservice'
 */
 
+include 'dtos'
+include 'appSettings'
 
 

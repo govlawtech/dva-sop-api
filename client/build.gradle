@@ -12,7 +12,7 @@ configurations {
 
 
 version = '1.0'
-group = "au.com.govlawtech"
+group = "au.gov.dva.sopapi"
 
 
 task fatJar(type: Jar) {
@@ -34,7 +34,6 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.5'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.5'
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.8.5'
-    compile group: 'com.beust', name: 'jcommander', version: '1.58'
     testCompile 'junit:junit:4.12'
     deployerJars "org.apache.maven.wagon:wagon-ftp:2.8"
 }
