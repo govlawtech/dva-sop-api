@@ -12,7 +12,6 @@ configurations {
 
 
 version = '1.0'
-group = "au.gov.dva.sopapi"
 
 
 task fatJar(type: Jar) {
