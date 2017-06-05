@@ -72,7 +72,13 @@ public class AppSettings {
     // with types:
     // bool,int,int,int,int,int,bool
     public static String mangleServiceSettings () {
-        return getPropertyValue("MANGLE_SERVICE_SETTINGS");
+        try {
+            return getPropertyValue("MANGLE_SERVICE_SETTINGS");
+        }
+        catch (ConfigurationError e)
+        {
+            return null;
+        }
     }
 
     public static class LegislationRegisterEmailSubscription {
