@@ -35,7 +35,7 @@ public class SopSupportResponseDto {
     @JsonCreator
     public SopSupportResponseDto(@JsonProperty("applicableInstrument") ApplicableInstrumentDto _applicableInstrumentDto,
                                  @JsonProperty("factors") List<FactorWithInferredResultDto> _factors,
-                                 @JsonProperty("recomendation") Recommendation _recommendation,
+                                 @JsonProperty("recommendation") Recommendation _recommendation,
                                  @JsonProperty("caseTrace") CaseTraceDto _caseTraceDto) {
         this._caseTrace = _caseTraceDto;
         this._applicableInstrumentDto = _applicableInstrumentDto;
