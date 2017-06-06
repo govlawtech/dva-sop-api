@@ -65,7 +65,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
         OffsetDateTime startDateForPeriodOfOperationalService = condition.getStartDate().minusYears(rhRuleConfigurationItem.getYearsLimitForOperationalService());
         caseTrace.addLoggingTrace(String.format("The start date for the test period of operational service is %s years before the condition start date of %s: %s.",
-                rhRuleConfigurationItem.getRequiredDaysOfOperationalService(),
+                rhRuleConfigurationItem.getYearsLimitForOperationalService(),
                 condition.getStartDate(),
                 startDateForPeriodOfOperationalService));
         OffsetDateTime endDateForPeriodOfOperationalService = condition.getStartDate();
