@@ -23,9 +23,9 @@ public class StorageTool {
         this.registerClient = registerClient;
     }
 
-    public void SeedRuleConfig()
+    public void SeedRuleConfig(byte[] rhCsv, byte[] bopCsv)
     {
-        Seeds.seedRuleConfiguration(repository);
+        Seeds.seedRuleConfiguration(repository,rhCsv,bopCsv);
     }
 
     public void SeedStorage(List<String> initialRegisterIds) {

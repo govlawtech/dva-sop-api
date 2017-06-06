@@ -96,7 +96,7 @@ public class SoPs {
                        return Optional.of(new SoPPair(bopSop.get(), rhSop.get()));
                    }
                    else {
-                       logger.error(String.format("No complete SoP pair for condition: %s", conditionName));
+                       logger.warn(String.format("No complete SoP pair for condition: %s", conditionName));
                        return Optional.empty();
                    }
                });

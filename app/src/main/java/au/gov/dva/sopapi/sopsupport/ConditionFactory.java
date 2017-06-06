@@ -12,8 +12,6 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Optional;
 
-// match rules to conditions by name
-// determine whether aggravated or not
 public class ConditionFactory {
 
     public static Optional<Condition> create(ImmutableSet<SoPPair> sopPairs, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository)
@@ -31,7 +29,6 @@ public class ConditionFactory {
 
         if (conditionDto.get_conditionName().contentEquals("lumbar spondylosis") && conditionDto.get_incidentType() == IncidentType.Onset)
         {
-
             return Optional.of(new OnsetCondition(
                     soPPairOptional.get() ,
                     conditionDto.get_incidentDateRangeDto().get_startDate(),

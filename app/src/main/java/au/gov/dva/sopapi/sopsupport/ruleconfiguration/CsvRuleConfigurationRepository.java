@@ -4,18 +4,31 @@ import au.gov.dva.sopapi.ConfigurationError;
 import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.io.input.BOMInputStream;
+import scala.util.Properties;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CsvRuleConfigurationRepository implements RuleConfigurationRepository {
+
+    public static final String regexForFactorRef = "[0-9a-z]+\\([()0-9a-z]+\\)";
+
+    private final byte[] _rhCsv;
+    private final byte[] _boPCsv;
+    private final ImmutableSet<BoPRuleConfigurationItem> bopRuleConfigurationItems;
+    private final ImmutableSet<RHRuleConfigurationItem> rhRuleConfigurationItems;
 
     private static class ColumnIndices {
 
@@ -24,7 +37,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         public final static int FACTOR_REFS = 2;
         public final static int SERVICE_BRANCH = 3;
         public final static int RANK = 4;
-        public final static int CFTS_WEEKS = 5;
+        public final static int CFTS_DAYS = 5;
         public final static int ACCUMULATION_RATE_PW = 6;
         public final static int ACCUMULATION_UNIT = 7;
 
@@ -34,51 +47,113 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         }
     }
 
-    private final ImmutableSet<RHRuleConfigurationItem> rhRuleConfigurationItems;
-    private final ImmutableSet<BoPRuleConfigurationItem> boPRuleConfigurationItems;
 
+    public CsvRuleConfigurationRepository(byte[] rhCsv, byte[] boPCsv) {
+        this._rhCsv = rhCsv.clone();
+        this._boPCsv = boPCsv.clone();
 
-    public CsvRuleConfigurationRepository(byte[] rhCsv, byte[] boPCsv)
-    {
-        Reader rhReader = createCsvReader(rhCsv);
-        rhRuleConfigurationItems = buildRhItems(rhReader);
         try {
-            rhReader.close();
+            Optional<List<String>> validationErrors = getValidationErrors(rhCsv,boPCsv);
+            if (validationErrors.isPresent())
+            {
+                throw new ConfigurationError(String.join(Properties.lineSeparator(),validationErrors.get()));
+            }
+
+            this.rhRuleConfigurationItems = buildRhItems();
+            this.bopRuleConfigurationItems = buildBopItems();
+
         } catch (IOException e) {
             throw new ConfigurationError(e);
         }
 
-        Reader bopReader = createCsvReader(boPCsv);
-        boPRuleConfigurationItems = buildBopItems(bopReader);
-        try {
-            bopReader.close();
-        } catch (IOException e) {
-            throw new ConfigurationError(e);
-        }
     }
 
-    private ImmutableSet<RHRuleConfigurationItem> buildRhItems(Reader rhItems) {
-        CSVParser parser = createParser(rhItems);
+    private Optional<List<String>> getValidationErrors(byte[] rhCsv, byte[] bopCsv) throws IOException {
+        List<String> rhErrors = getErrorsForSheet(rhCsv, "RH");
+        List<String> bopErrors = getErrorsForSheet(bopCsv, "BoP");
+        List<String> combined = Stream.concat(rhErrors.stream(),bopErrors.stream()).collect(Collectors.toList());
+        if (!combined.isEmpty())
+        {
+            return Optional.of(combined);
+        }
+        return Optional.empty();
+    }
+
+    private List<String> getErrorsForSheet(byte[] csv, String sheetName) throws IOException {
+        Reader reader = createCsvReader(csv);
+
+
+        CSVParser parser = createParser(reader);
+        List<CSVRecord> recordList = parser.getRecords();
+        List<String> errors = new ArrayList<>();
+        for (CSVRecord csvRecord : recordList)
+        {
+            int rowNum = recordList.indexOf(csvRecord) + 1;
+            List<Integer> emptyIndexesThatShouldNotBe =   ImmutableList
+                    .of(ColumnIndices.CONDITION,
+                            ColumnIndices.INSTRUMENT_ID,
+                            ColumnIndices.FACTOR_REFS,
+                            ColumnIndices.SERVICE_BRANCH,
+                            ColumnIndices.RANK,
+                            ColumnIndices.CFTS_DAYS)
+                    .stream()
+                    .filter(i -> csvRecord.get(i).trim().isEmpty())
+                    .collect(Collectors.toList());
+
+            if (!emptyIndexesThatShouldNotBe.isEmpty() && emptyIndexesThatShouldNotBe.size() < 6)
+            {
+                errors.add(String.format("Sheet %s, row %s has empty required cells: row(s) %s", sheetName, rowNum, String.join(",",emptyIndexesThatShouldNotBe.stream().map(Object::toString).collect(Collectors.toList()))));
+            }
+
+            Stream<String> failingFactorRefs = Arrays.stream(csvRecord.get(ColumnIndices.FACTOR_REFS).split("[,;]"))
+                    .map(i -> i.trim())
+                    .filter(i -> !Pattern.matches(this.regexForFactorRef,i));
+
+            if (failingFactorRefs.findAny().isPresent())
+            {
+                errors.add(String.format("Sheet %s, row %s: factor references must match regex %s", sheetName, rowNum,this.regexForFactorRef));
+            }
+        }
+
+        try {
+            reader.close();
+        } catch (IOException e) {
+            throw new ConfigurationError(e);
+        }
+
+        return errors;
+    }
+
+    private ImmutableSet<RHRuleConfigurationItem> buildRhItems() {
+
+        Reader rhReader = createCsvReader(_rhCsv);
+
+        CSVParser parser = createParser(rhReader);
         List<RHRuleConfigurationItem> acc = new ArrayList<>();
         try {
-            List<CSVRecord> recordList =  parser.getRecords();
-            for (CSVRecord csvRecord : recordList)
-            {
-                acc.add(new ParsedRhRuleConfigurationItem(
-                        csvRecord.get(ColumnIndices.CONDITION),
-                        csvRecord.get(ColumnIndices.INSTRUMENT_ID),
-                        csvRecord.get(ColumnIndices.FACTOR_REFS),
-                        csvRecord.get(ColumnIndices.SERVICE_BRANCH),
-                        csvRecord.get(ColumnIndices.RANK),
-                        csvRecord.get(ColumnIndices.CFTS_WEEKS),
-                        !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
-                        !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty(),
-                        csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS),
-                        csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS)
-                ));
+            List<CSVRecord> recordList = parser.getRecords();
+            for (CSVRecord csvRecord : recordList) {
+                if (!csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS).isEmpty() && !csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS).isEmpty()) {
+
+                    acc.add(new ParsedRhRuleConfigurationItem(
+                            csvRecord.get(ColumnIndices.CONDITION),
+                            csvRecord.get(ColumnIndices.INSTRUMENT_ID),
+                            csvRecord.get(ColumnIndices.FACTOR_REFS),
+                            csvRecord.get(ColumnIndices.SERVICE_BRANCH),
+                            csvRecord.get(ColumnIndices.RANK),
+                            csvRecord.get(ColumnIndices.CFTS_DAYS),
+                            !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
+                            !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty(),
+                            csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS),
+                            csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS)
+                    ));
+                }
+
             }
+
+
         } catch (IOException e) {
-            throw new ConfigurationError("Error parsing RH CSV binary.",e);
+            throw new ConfigurationError("Error parsing RH CSV binary.", e);
         }
         try {
             parser.close();
@@ -88,7 +163,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         return ImmutableSet.copyOf(acc);
     }
 
-    private Reader createCsvReader(byte[] csv) {
+    private static Reader createCsvReader(byte[] csv) {
         try {
             return new InputStreamReader(new BOMInputStream(new ByteArrayInputStream(csv)), "UTF-8");
         } catch (UnsupportedEncodingException e) {
@@ -96,26 +171,28 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         }
     }
 
-    private ImmutableSet<BoPRuleConfigurationItem> buildBopItems(Reader bopCsv) {
-        CSVParser parser = createParser(bopCsv);
+    private ImmutableSet<BoPRuleConfigurationItem> buildBopItems() {
+
+        Reader bopReader = createCsvReader(_boPCsv);
+
+        CSVParser parser = createParser(bopReader);
         List<BoPRuleConfigurationItem> acc = new ArrayList<>();
         try {
-            List<CSVRecord> recordList =  parser.getRecords();
-            for (CSVRecord csvRecord : recordList)
-            {
+            List<CSVRecord> recordList = parser.getRecords();
+            for (CSVRecord csvRecord : recordList) {
                 acc.add(new ParseBoPRuleConfigurationItem(
                         csvRecord.get(ColumnIndices.CONDITION),
                         csvRecord.get(ColumnIndices.INSTRUMENT_ID),
                         csvRecord.get(ColumnIndices.FACTOR_REFS),
                         csvRecord.get(ColumnIndices.SERVICE_BRANCH),
                         csvRecord.get(ColumnIndices.RANK),
-                        csvRecord.get(ColumnIndices.CFTS_WEEKS),
+                        csvRecord.get(ColumnIndices.CFTS_DAYS),
                         !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
                         !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty()
                 ));
             }
         } catch (IOException e) {
-            throw new ConfigurationError("Error parsing BoP CSV binary.",e);
+            throw new ConfigurationError("Error parsing BoP CSV binary.", e);
         }
         try {
             parser.close();
@@ -126,8 +203,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
     }
 
 
-    private static CSVParser createParser(Reader reader)
-    {
+    private static CSVParser createParser(Reader reader) {
         final CSVParser parser;
         try {
             parser = new CSVParser(reader, CSVFormat.EXCEL.withHeader());
@@ -146,6 +222,6 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
 
     @Override
     public ImmutableSet<BoPRuleConfigurationItem> getBoPItems() {
-        return boPRuleConfigurationItems;
+        return bopRuleConfigurationItems;
     }
 }

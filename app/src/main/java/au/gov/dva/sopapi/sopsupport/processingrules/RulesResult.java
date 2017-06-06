@@ -40,13 +40,18 @@ public class RulesResult {
     }
 
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+
+        // TODO: compare register ID in the sop pairs and the rule config.  If different, suggests there has been an update to the SoP.  Hence, the rules need to be updated
+
         Optional<Condition> conditionOptional = ConditionFactory.create(sopPairs, sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository);
         if (!conditionOptional.isPresent())
         {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("SoP for condition %s is not implemented, so cannot apply any processing rules.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
             return RulesResult.createEmpty(caseTrace);
         }
+
         Condition condition = conditionOptional.get();
+
         ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
 
         if (ProcessingRuleFunctions.conditionIsBeforeService(condition, serviceHistory)) {
@@ -151,6 +156,8 @@ public class RulesResult {
                     applicableSop.getEffectiveFromDate(),
                     applicableSop.getStandardOfProof());
 
+
+
             factorDtos =
                     inferredFactorsOptional.stream().map(factorWithSatisfaction -> DtoTransformations.fromFactorWithSatisfaction(factorWithSatisfaction)).collect(Collectors.toList());
         }
@@ -158,6 +165,8 @@ public class RulesResult {
         CaseTraceDto caseTraceDto = DtoTransformations.caseTraceDtoFromCaseTrace(getCaseTrace());
         return new SopSupportResponseDto(applicableInstrumentDto,factorDtos, recommendation, caseTraceDto);
     }
+
+
 
     // Dev aid - see AppSettings.mangeServiceSettings
     private static boolean mangleCaseTrace(CaseTrace caseTrace) {

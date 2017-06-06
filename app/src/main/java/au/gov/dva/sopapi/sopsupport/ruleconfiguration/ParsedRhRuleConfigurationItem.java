@@ -12,8 +12,8 @@ public final class ParsedRhRuleConfigurationItem extends ParsedRuleConfiguration
     public ParsedRhRuleConfigurationItem(String conditionName, String instrumentId, String factorRefs, String serviceBranch, String rank, String cftsWeeks, Optional<String> accumRate, Optional<String> accumUnit, String rhOperationalDaysRequired, String rhOperationalTestPeriodInYears) {
         super(conditionName, instrumentId, factorRefs, serviceBranch, rank, cftsWeeks, accumRate, accumUnit);
 
-        this.rhOperationalDaysRequired = super.toIntOrError(rhOperationalDaysRequired, "Cannot determine days of operational service required for RH from: ");
-        this.rhOperationalTestPeriodInYears = super.toIntOrError(rhOperationalTestPeriodInYears, "Cannot determine the test period for operational service from: ");
+        this.rhOperationalDaysRequired = super.toIntOrError(rhOperationalDaysRequired, "Cannot determine days of operational service required for RH from ");
+        this.rhOperationalTestPeriodInYears = super.toIntOrError(rhOperationalTestPeriodInYears, "Cannot determine the test period for operational service from ");
     }
 
     @Override

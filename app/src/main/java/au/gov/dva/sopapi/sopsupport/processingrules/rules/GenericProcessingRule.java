@@ -130,7 +130,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
         RuleConfigurationItem applicableRuleConfig = applicableRuleConfigItemOpt.get();
 
-        Integer cftsDaysRequired = applicableRuleConfig.getRequiredCFTSWeeks() * 7;
+        Integer cftsDaysRequired = applicableRuleConfig.getRequiredCFTSDays();
         caseTrace.setRequiredCftsDays(cftsDaysRequired);
 
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
@@ -169,7 +169,7 @@ public class GenericProcessingRule implements ProcessingRule {
                     ruleConfigurationRepository);
             if (BoPRuleConfigItemOpt.isPresent()){
                 // Days
-                Integer cftsDaysRequiredForBop = BoPRuleConfigItemOpt.get().getRequiredCFTSWeeks() * 7;
+                Integer cftsDaysRequiredForBop = BoPRuleConfigItemOpt.get().getRequiredCFTSDays();
                 caseTrace.setRequiredCftsDaysForBop(cftsDaysRequiredForBop);
 
                 // Factors
@@ -186,7 +186,7 @@ public class GenericProcessingRule implements ProcessingRule {
                     ruleConfigurationRepository);
             if (RHRuleConfigItemOpt.isPresent()){
                 // Days
-                Integer cftsDaysRequiredForRh = RHRuleConfigItemOpt.get().getRequiredCFTSWeeks() * 7;
+                Integer cftsDaysRequiredForRh = RHRuleConfigItemOpt.get().getRequiredCFTSDays();
                 caseTrace.setRequiredCftsDaysForRh(cftsDaysRequiredForRh);
 
                 // Factors

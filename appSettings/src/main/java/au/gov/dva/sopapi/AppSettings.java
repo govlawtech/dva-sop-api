@@ -95,8 +95,6 @@ public class AppSettings {
 
     public static class AzureStorage {
 
-        // todo: get production values from environment variables
-
         private static final String AZURE_STORAGE_CONNECTION_STRING = "AZURE_STORAGE_CONNECTION_STRING";
 
         public static String getConnectionString() {
