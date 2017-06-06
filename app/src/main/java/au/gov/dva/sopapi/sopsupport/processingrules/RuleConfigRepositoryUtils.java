@@ -51,5 +51,4 @@ public class RuleConfigRepositoryUtils {
                 .anyMatch(i -> i.getConditionName().contentEquals(conditionName));
     }
 
-
 }

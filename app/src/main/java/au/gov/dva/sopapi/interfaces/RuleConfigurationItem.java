@@ -18,7 +18,7 @@ public interface RuleConfigurationItem {
 
     Rank getRank();
 
-    int getRequiredCFTSWeeks();
+    int getRequiredCFTSDays();
 
     Optional<Integer> getAccumulationRatePerWeek();
 

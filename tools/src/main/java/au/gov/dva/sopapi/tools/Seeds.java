@@ -62,18 +62,16 @@ class Seeds {
         }
     }
 
-    public static void seedRuleConfiguration(Repository repository)
+    public static void seedRuleConfiguration(Repository repository, byte[] rhCsv, byte[] bopCsv)
     {
         Optional<RuleConfigurationRepository> existingRepository = repository.getRuleConfigurationRepository();
 
         if (!existingRepository.isPresent()) {
-            try {
-                byte[] rhCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/RH.csv"));
-                byte[] boPCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/BoP.csv"));
-                repository.setRulesConfig(rhCsv, boPCsv);
-            } catch (IOException e) {
-                throw new InitialSeedingError(e);
-            }
+            repository.setRulesConfig(rhCsv, bopCsv);
+        }
+
+        else {
+            repository.setRulesConfig(rhCsv,bopCsv);
         }
     }
 }

@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 
@@ -23,7 +24,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
                 ", factorRefs=" + factorRefs +
                 ", serviceBranch=" + serviceBranch +
                 ", rank=" + rank +
-                ", cftsWeeks=" + cftsWeeks +
+                ", cftsDays=" + cftsDays +
                 ", accumRate=" + accumRate +
                 ", accumUnit=" + accumUnit +
                 '}';
@@ -34,21 +35,23 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     private ImmutableSet<String> factorRefs;
     private final ServiceBranch serviceBranch;
     private final Rank rank;
-    private final int cftsWeeks;
+    private final int cftsDays;
     private final Optional<Integer> accumRate;
     private final Optional<String> accumUnit;
 
-    public ParsedRuleConfigurationItem(@Nonnull String conditionName, @Nonnull String instrumentId, @Nonnull String factorRefs,@Nonnull String serviceBranch,@Nonnull String rank, String cftsWeeks, @Nonnull Optional<String> accumRate, @Nonnull Optional<String> accumUnit)
+    public ParsedRuleConfigurationItem(@Nonnull String conditionName, @Nonnull String instrumentId, @Nonnull String factorRefs,@Nonnull String serviceBranch,@Nonnull String rank, @Nonnull String cftsDays, @Nonnull Optional<String> accumRate, @Nonnull Optional<String> accumUnit)
     {
         this.conditionName = conditionName.trim().toLowerCase(Locale.US);
         this.instrumentId = instrumentId.trim();
         this.factorRefs = splitFactorRefs(factorRefs);
         this.rank = toRank(rank);
         this.serviceBranch = toServiceBranch(serviceBranch);
-        this.cftsWeeks = toIntOrError(cftsWeeks,"Cannot determine number of CFTS weeks from");
+        this.cftsDays = toIntOrError(cftsDays,"Cannot determine number of CFTS days from");
         this.accumRate = accumRate.isPresent() ? Optional.of(toIntOrError(accumRate.get(),"Cannot determine the accumulation rate from")) : Optional.empty();
         this.accumUnit = accumUnit;
     }
+
+
 
     private ImmutableSet<String> splitFactorRefs(String factorRefsCellValue){
 
@@ -59,7 +62,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
 
 
         refs.forEach(r ->  {
-            if (!r.matches("[0-9\\(\\)a-z]+"))
+            if (!Pattern.matches(CsvRuleConfigurationRepository.regexForFactorRef,r))
             {
                 throw new ConfigurationError(String.format("Illegal factor reference in cell: %s", factorRefsCellValue));
             }
@@ -129,8 +132,8 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     }
 
     @Override
-    public int getRequiredCFTSWeeks() {
-        return cftsWeeks;
+    public int getRequiredCFTSDays() {
+        return cftsDays;
     }
 
     @Override

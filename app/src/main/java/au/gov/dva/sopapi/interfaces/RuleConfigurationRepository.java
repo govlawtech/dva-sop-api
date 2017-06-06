@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.interfaces;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 public interface RuleConfigurationRepository {
