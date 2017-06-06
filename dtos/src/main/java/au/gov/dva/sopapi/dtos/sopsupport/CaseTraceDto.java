@@ -44,6 +44,7 @@ public class CaseTraceDto {
     @JsonProperty("reasonings")
     private Map<ReasoningFor, List<String>> _reasonings;
 
+    @JsonProperty("logTrace")
     private String logTrace;
 
     public CaseTraceDto(){}
