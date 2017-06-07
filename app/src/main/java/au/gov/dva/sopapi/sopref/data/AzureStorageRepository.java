@@ -17,7 +17,10 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
 import com.microsoft.azure.storage.CloudStorageAccount;
+import com.microsoft.azure.storage.ServiceProperties;
+import com.microsoft.azure.storage.ServiceStats;
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.*;
 import org.slf4j.Logger;
@@ -64,6 +67,10 @@ public class AzureStorageRepository implements Repository {
             _storageConnectionString = storageConnectionString;
             _cloudStorageAccount = CloudStorageAccount.parse(_storageConnectionString);
             _cloudBlobClient = _cloudStorageAccount.createCloudBlobClient();
+            // to test connection
+            Iterable<CloudBlobContainer> containers = _cloudBlobClient.listContainers();
+            logger.info(String.format("Number of containers in Azure storage: %d.", Iterables.size(containers)));
+
         } catch (Exception e) {
             throw new RepositoryError(e);
         }

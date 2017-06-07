@@ -23,15 +23,14 @@ public class Application implements spark.servlet.SparkApplication {
 
     public Application() {
 
+        _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
+
+        _cache = Cache.getInstance();
+        _cache.refresh(_repository);
     }
 
     @Override
     public void init() {
-
-        _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
-        _cache = Cache.getInstance();
-        _cache.refresh(_repository);
-
         autoUpdate();
         Routes.init(_cache);
         Routes.initStatus(_repository,_cache);
