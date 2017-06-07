@@ -81,6 +81,7 @@ class Routes {
                 res.status(500);
             }
 
+            // todo: mustache template
             String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL());
             setResponseHeaders(res,200,MIME_HTML);
             return statusPage;
