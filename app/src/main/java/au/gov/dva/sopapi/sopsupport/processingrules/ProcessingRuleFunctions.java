@@ -7,7 +7,6 @@ import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
-import au.gov.dva.sopapi.sopref.datecalcs.Interval;
 import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -82,18 +81,18 @@ public class ProcessingRuleFunctions {
         if (testIntervals.size() > 1) {
             caseTrace.addLoggingTrace(String.format("Number of intervals of %s years between %s and %s: %s", intervalDurationInYears, startDate, endDate, testIntervals.size()));
             Comparator<Interval> longestFirst = (o1, o2) -> Long.compare(
-                    getNumberOfDaysOfOperationalServiceInInterval(o2.start(), o2.end(), deployments, isOperational, caseTrace),
-                    getNumberOfDaysOfOperationalServiceInInterval(o1.start(), o1.end(), deployments, isOperational, caseTrace));
+                    getNumberOfDaysOfOperationalServiceInInterval(o2.getStart(), o2.getEnd(), deployments, isOperational, caseTrace),
+                    getNumberOfDaysOfOperationalServiceInInterval(o1.getStart(), o1.getEnd(), deployments, isOperational, caseTrace));
 
-            Comparator<Interval> latestFirst = (o1, o2) -> o2.end().compareTo(o1.end());
+            Comparator<Interval> latestFirst = (o1, o2) -> o2.getEnd().compareTo(o1.getEnd());
 
             List<Interval> intervalsSortedByOpServiceThenLatest = testIntervals.stream()
                     .sorted(longestFirst.thenComparing(latestFirst))
                     .collect(Collectors.toList());
 
             Interval chosenInterval = intervalsSortedByOpServiceThenLatest.get(0);
-            caseTrace.addLoggingTrace(String.format("Interval with the most operational service starts on %s and ends on %s", chosenInterval.start(), chosenInterval.end()));
-            return getNumberOfDaysOfOperationalServiceInInterval(chosenInterval.start(), chosenInterval.end(), deployments, isOperational, caseTrace);
+            caseTrace.addLoggingTrace(String.format("Interval with the most operational service starts on %s and ends on %s", chosenInterval.getStart(), chosenInterval.getEnd()));
+            return getNumberOfDaysOfOperationalServiceInInterval(chosenInterval.getStart(), chosenInterval.getEnd(), deployments, isOperational, caseTrace);
         }
 
         return getNumberOfDaysOfOperationalServiceInInterval(startDate, endDate, deployments, isOperational, caseTrace);

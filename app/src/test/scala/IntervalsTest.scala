@@ -1,7 +1,8 @@
 import java.time.{Duration, OffsetDateTime}
 
 import au.gov.dva.sopapi.DateTimeUtils
-import au.gov.dva.sopapi.sopref.datecalcs.{Interval, Intervals}
+import au.gov.dva.sopapi.sopref.datecalcs.Intervals
+import au.gov.dva.sopapi.sopsupport.processingrules.Interval
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
@@ -14,13 +15,13 @@ class IntervalsTest extends FunSuite {
   {
     val result = Intervals.getSoPFactorTestIntervals(10,DateTimeUtils.localDateStringToActMidnightOdt("2000-01-01"),DateTimeUtils.localDateStringToActMidnightOdt("2001-01-01"))
     println(result)
-    assert(result.head.start.isEqual(DateTimeUtils.localDateStringToActMidnightOdt("2000-01-01")) &&  result.head.end.isEqual(DateTimeUtils.localDateStringToActMidnightOdt("2001-01-01")))
+    assert(result.head.getStart.isEqual(DateTimeUtils.localDateStringToActMidnightOdt("2000-01-01")) &&  result.head.getEnd.isEqual(DateTimeUtils.localDateStringToActMidnightOdt("2001-01-01")))
   }
 
   test("Get correct intervals when bracket more than test period")
   {
     val result: List[Interval] = Intervals.getSoPFactorTestIntervals(10,DateTimeUtils.localDateStringToActMidnightOdt("2004-07-01"),DateTimeUtils.localDateStringToActMidnightOdt("2014-07-05"))
-    val prettyPrinted = result.map(i => i.start.toLocalDate + "," + i.end.toLocalDate + "," + Duration.between(i.start,i.end).toDays)
+    val prettyPrinted = result.map(i => i.getStart.toLocalDate + "," + i.getEnd.toLocalDate + "," + Duration.between(i.getStart,i.getEnd).toDays)
     prettyPrinted.foreach(println(_))
   }
 

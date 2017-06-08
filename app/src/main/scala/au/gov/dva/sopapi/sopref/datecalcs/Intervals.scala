@@ -1,12 +1,13 @@
 package au.gov.dva.sopapi.sopref.datecalcs
 
-import java.time.{Duration, OffsetDateTime}
+import java.time.OffsetDateTime
 import java.util
 
+import au.gov.dva.sopapi.sopsupport.processingrules.Interval
 
 import scala.collection.JavaConverters._
 
-case class Interval(start: OffsetDateTime, end: OffsetDateTime)
+
 
 object Intervals {
 
@@ -17,7 +18,7 @@ object Intervals {
 
   def getSoPFactorTestIntervals(numberOfYears: Int, bracketIntervalStart: OffsetDateTime, bracketIntervalEnd: OffsetDateTime): List[Interval] = {
     if (bracketIntervalEnd.minusYears(numberOfYears).isBefore(bracketIntervalStart)) {
-      return List(Interval(bracketIntervalStart, bracketIntervalEnd))
+      return List( new Interval( bracketIntervalStart, bracketIntervalEnd))
     }
     slide(numberOfYears, bracketIntervalStart, bracketIntervalStart, bracketIntervalEnd)
   }
@@ -30,6 +31,6 @@ object Intervals {
     }
     val newEndDate = slidingUpper.minusDays(1)
     val newStartDate = newEndDate.minusYears(numberOfYears)
-    Interval(newStartDate, slidingUpper) +: slide(numberOfYears, fixedStart, newStartDate, newEndDate)
+    new Interval(newStartDate, slidingUpper) +: slide(numberOfYears, fixedStart, newStartDate, newEndDate)
   }
 }
