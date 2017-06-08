@@ -33,27 +33,17 @@ import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import scala.Option;
-import spark.QueryParamsMap;
-import spark.Request;
-import spark.Response;
-import spark.Route;
+import spark.*;
 
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -74,8 +64,7 @@ class Routes {
 
         get("/status", (req, res) -> {
 
-
-            Optional<URI> blobStorageUri = getBaseUrlForSoPBlobs();
+            Optional<URI> blobStorageUri = getBaseUrlForBlobStorage();
             if (!blobStorageUri.isPresent()) {
                 logger.error("Need blob storage URI for status page.");
                 res.status(500);
@@ -374,7 +363,7 @@ class Routes {
         return incomingJson.replace("\uFEFF", "");
     }
 
-    private static Optional<URI> getBaseUrlForSoPBlobs() {
+    private static Optional<URI> getBaseUrlForBlobStorage() {
         try {
             String _storageConnectionString = AppSettings.AzureStorage.getConnectionString();
             CloudStorageAccount _cloudStorageAccount = CloudStorageAccount.parse(_storageConnectionString);
@@ -382,7 +371,7 @@ class Routes {
             return Optional.of(_cloudBlobClient.getEndpoint());
 
         } catch (InvalidKeyException | URISyntaxException e) {
-            logger.error("Cannot get base url for sop blobs.", e);
+            logger.error("Cannot get base url for blog storage.", e);
             return Optional.empty();
         }
     }

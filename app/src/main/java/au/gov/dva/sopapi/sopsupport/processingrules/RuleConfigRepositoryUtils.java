@@ -7,8 +7,14 @@ import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class RuleConfigRepositoryUtils {
     public static Optional<RHRuleConfigurationItem> getRelevantRHConfiguration(String conditionName, Rank rank, ServiceBranch serviceBranch, RuleConfigurationRepository ruleConfigurationRepository)
@@ -43,6 +49,10 @@ public class RuleConfigRepositoryUtils {
             return r.isPresent() ? Optional.of(r.get()) : Optional.empty();
         }
     }
+
+
+
+
 
     public static boolean containsConfigForCondition(String conditionName, RuleConfigurationRepository ruleConfigurationRepository)
     {
