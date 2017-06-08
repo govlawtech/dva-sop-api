@@ -20,7 +20,7 @@ public class RuleConfigRepositoryUtils {
     public static Optional<RHRuleConfigurationItem> getRelevantRHConfiguration(String conditionName, Rank rank, ServiceBranch serviceBranch, RuleConfigurationRepository ruleConfigurationRepository)
     {
         Optional<RHRuleConfigurationItem> item = ruleConfigurationRepository.getRHItems().stream()
-                .filter(i -> i.getConditionName().contentEquals(conditionName))
+                .filter(i -> i.getConditionName().equalsIgnoreCase(conditionName))
                 .filter(i -> i.getRank() == rank)
                 .filter(i -> i.getServiceBranch() == serviceBranch)
                 .findFirst();
@@ -29,7 +29,7 @@ public class RuleConfigRepositoryUtils {
 
     public static Optional<BoPRuleConfigurationItem> getRelevantBoPConfiguration(String conditionName, Rank rank, ServiceBranch serviceBranch, RuleConfigurationRepository ruleConfigurationRepository) {
         Optional<BoPRuleConfigurationItem> item = ruleConfigurationRepository.getBoPItems().stream()
-                .filter(i -> i.getConditionName().contentEquals(conditionName))
+                .filter(i -> i.getConditionName().equalsIgnoreCase(conditionName))
                 .filter(i -> i.getRank() == rank)
                 .filter(i -> i.getServiceBranch() == serviceBranch)
                 .findFirst();
@@ -58,7 +58,7 @@ public class RuleConfigRepositoryUtils {
     {
         return ruleConfigurationRepository.getRHItems()
                 .stream()
-                .anyMatch(i -> i.getConditionName().contentEquals(conditionName));
+                .anyMatch(i -> i.getConditionName().equalsIgnoreCase(conditionName));
     }
 
 }

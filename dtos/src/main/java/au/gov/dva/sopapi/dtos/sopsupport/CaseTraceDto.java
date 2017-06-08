@@ -45,7 +45,7 @@ public class CaseTraceDto {
     private Map<ReasoningFor, List<String>> _reasonings;
 
     @JsonProperty("logTrace")
-    private String logTrace;
+    private String _logTrace;
 
     public CaseTraceDto(){}
 
@@ -71,12 +71,12 @@ public class CaseTraceDto {
         _rhFactors = ImmutableList.copyOf(rhFactors);
         _bopFactors = ImmutableList.copyOf(bopFactors);
         _reasonings = ImmutableMap.copyOf(reasonings);
-        this.logTrace = logTrace;
+        _logTrace = logTrace;
     }
 
     @JsonIgnore
     public String getLogTrace() {
-        return logTrace;
+        return _logTrace;
     }
 
     @JsonIgnore

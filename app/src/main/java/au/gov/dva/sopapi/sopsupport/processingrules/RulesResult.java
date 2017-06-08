@@ -42,6 +42,11 @@ public class RulesResult {
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
         // TODO: compare register ID in the sop pairs and the rule config.  If different, suggests there has been an update to the SoP.  Hence, the rules need to be updated
+        if (sopSupportRequestDto.get_conditionDto().get_incidentType() == IncidentType.Aggravation)
+        {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Aggravation cases not covered.");
+            return RulesResult .createEmpty(caseTrace);
+        }
 
         Optional<Condition> conditionOptional = ConditionFactory.create(sopPairs, sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository);
         if (!conditionOptional.isPresent())
@@ -59,11 +64,6 @@ public class RulesResult {
             return  RulesResult.createEmpty(caseTrace);
         }
 
-        if (sopSupportRequestDto.get_conditionDto().get_incidentType() == IncidentType.Aggravation)
-        {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Aggravation cases not yet supported."));
-            return RulesResult.createEmpty(caseTrace);
-        }
 
         Optional<SoP> applicableSopOpt = condition.getProcessingRule().getApplicableSop(condition, serviceHistory, isOperational,caseTrace);
         if (!applicableSopOpt.isPresent())
@@ -74,6 +74,7 @@ public class RulesResult {
         SoP applicableSop = applicableSopOpt.get();
         caseTrace.addLoggingTrace("Applicable SoP is " + applicableSop.getCitation());
         ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory,caseTrace);
+
         condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition,serviceHistory, caseTrace);
 
         // Generate the recommendation

@@ -21,7 +21,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("ServiceImpl{");
+        final StringBuffer sb = new StringBuffer("{");
         sb.append("branch=").append(branch);
         sb.append(", employmentType=").append(employmentType);
         sb.append(", rank=").append(rank);
