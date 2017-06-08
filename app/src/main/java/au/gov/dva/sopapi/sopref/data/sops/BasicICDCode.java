@@ -30,13 +30,8 @@ public class BasicICDCode implements au.gov.dva.sopapi.interfaces.model.ICDCode 
 
     @Override
     public String toString() {
-        return "BasicICDCode{" +
-                "version='" + version + '\'' +
-                ", code='" + code + '\'' +
-                '}';
+        return String.format("%s %s", version, code);
     }
-
-
 
     public static JsonNode toJson(ICDCode toSerialize) {
         ObjectMapper objectMapper = new ObjectMapper();

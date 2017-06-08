@@ -39,10 +39,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
@@ -56,6 +55,7 @@ class Routes {
     private final static String MIME_PDF = "application/pdf";
     private final static String MIME_TEXT = "text/plain";
     private final static String MIME_HTML = "text/html";
+    private final static String MIME_CSV = "text/csv";
 
     private static Cache cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
@@ -75,12 +75,28 @@ class Routes {
             setResponseHeaders(res,200,MIME_HTML);
             return statusPage;
         });
+
+
+        get("/status/csv",(req,res) -> {
+
+            Optional<URI> blobStorageUri = getBaseUrlForBlobStorage();
+            if (!blobStorageUri.isPresent()) {
+                logger.error("Need blob storage URI for status page.");
+                res.status(500);
+            }
+
+            String csvFileName = String.format("SoP API Coverage Report Generated UTC %s.csv", OffsetDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-dd-M-HH-mm")));
+            byte[] csvBytes = Status.createStatusCsv(cache, blobStorageUri.get().toURL());
+            res.header("Content-disposition", String.format("attachment;filename=%s",csvFileName));
+            setResponseHeaders(res, 200, MIME_CSV);
+            return csvBytes;
+        });
     }
+
 
 
     public static void init(Cache cache) {
         Routes.cache = cache;
-
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
 

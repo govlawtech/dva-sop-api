@@ -22,11 +22,13 @@ import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
 import au.gov.dva.sopapi.sopref.data.updates.types.Replacement;
 import au.gov.dva.sopapi.sopref.parsing.ServiceLocator;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.StorageException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import scala.Int;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -178,6 +180,7 @@ public class IntegrationTests  {
     }
 
 
+
     @Test
     @Category(IntegrationTest.class)
     public void investigateUrlNotAbsoluteIssue() throws ExecutionException, InterruptedException {
@@ -187,5 +190,20 @@ public class IntegrationTests  {
         assert(result.length > 0);
 
     }
+
+    @Test
+    @Category(IntegrationTest.class)
+    public void investigateWhyCirrhosisNotUpdating()
+    {
+        ImmutableSet<String> testSourceIds = ImmutableSet.of(
+                "F2007L04282"
+        );
+        LegRegChangeDetector underTest = new LegRegChangeDetector(new FederalRegisterOfLegislationClient());
+        ImmutableSet<InstrumentChange> results = underTest.detectReplacements(testSourceIds);
+
+
+    }
+
+
 
 }

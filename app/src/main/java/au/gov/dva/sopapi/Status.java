@@ -2,16 +2,22 @@ package au.gov.dva.sopapi;
 
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.interfaces.model.ICDCode;
+import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopref.SoPs;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 import scala.App;
 import scala.math.Ordering;
 import scala.sys.process.ProcessBuilder;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -19,15 +25,55 @@ import java.net.URL;
 import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
 public class Status {
+
+    public static byte[] createStatusCsv(Cache cache, URL blobsBaseUrl) throws IOException {
+        StringBuilder stringBuilder = new StringBuilder();
+        CSVPrinter csvPrinter = new CSVPrinter(stringBuilder, CSVFormat.EXCEL);
+        csvPrinter.printRecord(ImmutableList.of(
+                "Condition Name",
+                "Effective From",
+                "Source FRL Link RH",
+                "Source FRL Link BoP",
+                "Parsed RH",
+                "Parsed BoP",
+                "ICD codes",
+                "RH Superseded By",
+                "BoP Superseded By"
+        ));
+
+        ImmutableSet<SoPPair> soPPairs = cache.get_allSopPairs();
+        ImmutableSet<InstrumentChange> failedUpdates = cache.get_failedUpdates();
+
+        // condition name, icd codes, FRL RH link, FRL BoP link, Azure RH link, Azure BoP link, Updated by
+
+        List<ImmutableList<String>> records = new ArrayList<>();
+
+        for (SoPPair soPPair : soPPairs) {
+            records.add(ImmutableList.of(
+                    soPPair.getConditionName(),
+                    soPPair.getEffectiveFromDate().format(DateTimeFormatter.ISO_LOCAL_DATE),
+                    buildFrlDetailsLink(soPPair.getRhSop().getRegisterId()),
+                    buildFrlDetailsLink(soPPair.getBopSop().getRegisterId()),
+                    buildAzureLink(soPPair.getRhSop().getRegisterId(), blobsBaseUrl),
+                    buildAzureLink(soPPair.getBopSop().getRegisterId(), blobsBaseUrl),
+                    buildIcdCodeCell(soPPair.getICDCodes()),
+                    findSuperseding(soPPair.getRhSop().getRegisterId(), failedUpdates).orElse(""),
+                    findSuperseding(soPPair.getBopSop().getRegisterId(), failedUpdates).orElse("")
+            ));
+        }
+
+        for (ImmutableList<String> strings : records) {
+            csvPrinter.printRecord(strings);
+        }
+
+        return csvPrinter.getOut().toString().getBytes("UTF-8");
+    }
 
 
     public static String createStatusHtml(Cache cache, Repository repository, URL blobsBaseUrl) {
@@ -51,11 +97,8 @@ public class Status {
         stringBuilder.append("<h1>SoP Reference Service</h1>");
         stringBuilder.append(String.format("<p>Number of conditions available in SoP Reference Service: %s </p>", soPPairs.size()));
         stringBuilder.append(String.format("<p>Last polled Federal Register of Legislation for updated SoPs and Service Determinations: %s </p>", lastUpdateTime));
-
-        stringBuilder.append(createConditionTableHtml(soPPairs, blobsBaseUrl));
-
+        stringBuilder.append(createConditionTableHtml(soPPairs, cache.get_failedUpdates(), blobsBaseUrl));
         stringBuilder.append("</body></html>");
-
         return stringBuilder.toString();
     }
 
@@ -82,14 +125,6 @@ public class Status {
             sb.append("</ol>");
         }
 
-
-        sb.append("</p>");
-
-
-        sb.append("<p>Active rule configuration: ");
-        sb.append(String.format("<a href=%s>RH</a>", buildConfigLink("rh.csv", blogStorageBaseUrl)));
-        sb.append(", ");
-        sb.append(String.format("<a href=%s>BoP</a>", buildConfigLink("bop.csv", blogStorageBaseUrl)));
         sb.append("</p>");
 
 
@@ -137,7 +172,7 @@ public class Status {
     }
 
 
-    public static String createConditionTableHtml(ImmutableSet<SoPPair> soPPairs, URL azureBlobBaseUrl) {
+    public static String createConditionTableHtml(ImmutableSet<SoPPair> soPPairs, ImmutableSet<InstrumentChange> failedUpdates, URL azureBlobBaseUrl) {
         StringBuilder sb = new StringBuilder();
         // condition name
         // commencement date
@@ -145,13 +180,13 @@ public class Status {
         // azure links
         sb.append("<table align=\"left\">");
 
-        sb.append("<tr><th>Condition</th> <th>Effective From (Canberra time)</th> <th>Source</th> <th>Parsed</th> <th>ICD Codes</th> <tr>");
+        sb.append("<tr><th>Condition</th> <th>Effective From (Canberra time)</th> <th>Source</th> <th>Parsed</th> <th>ICD Codes</th> <th>Unapplied updates</th> <tr>");
 
         soPPairs.stream()
                 .sorted(Comparator.comparing(SoPPair::getEffectiveFromDate).reversed())
                 .forEach(soPPair -> {
                     sb.append("<tr>");
-                    sb.append(String.format("<td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td>",
+                    sb.append(String.format("<td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td>",
                             soPPair.getConditionName(),
                             soPPair.getEffectiveFromDate().format(DateTimeFormatter.ISO_LOCAL_DATE),
                             String.format("<a href=%s>RH</a> | <a href=%s>BoP</a>",
@@ -160,7 +195,13 @@ public class Status {
                             String.format("<a href=%s>RH</a> | <a href=%s>BoP</a>",
                                     buildAzureLink(soPPair.getRhSop().getRegisterId(), azureBlobBaseUrl),
                                     buildAzureLink(soPPair.getBopSop().getRegisterId(), azureBlobBaseUrl)),
-                            buildIcdCodeList(soPPair)
+                            buildIcdCodeList(soPPair),
+                            buildUnappliedUpdatesHtml(
+                                    ImmutableList.of(soPPair.getRhSop().getRegisterId(), soPPair.getBopSop().getRegisterId()),
+                                    failedUpdates
+                            )
+
+
                             )
 
                     );
@@ -202,6 +243,32 @@ public class Status {
                 .sorted()
                 .collect(Collectors.toList());
         return String.join("<br>", codes);
+    }
+
+
+    private static String buildIcdCodeCell(ImmutableSet<ICDCode> icdCodes) {
+        List<String> codes = icdCodes.stream().map(c -> String.format("%s %s", c.getVersion(), c.getCode()))
+                .sorted()
+                .collect(Collectors.toList());
+        return String.join(", ", codes);
+    }
+
+    private static Optional<String> findSuperseding(String registerId, ImmutableSet<InstrumentChange> failedUpdates) {
+        // where source is register id, return target
+        Optional<String> superseding = failedUpdates.stream()
+                .filter(instrumentChange -> instrumentChange.getSourceInstrumentId().contentEquals(registerId) && !instrumentChange.getTargetInstrumentId().contentEquals(registerId))
+                .map(c -> c.getTargetInstrumentId())
+                .findFirst();
+        return superseding;
+    }
+
+    private static String buildUnappliedUpdatesHtml(ImmutableList<String> registerIds, ImmutableSet<InstrumentChange> failedUpdates) {
+
+        List<String> links = registerIds.stream()
+                .map(r -> findSuperseding(r, failedUpdates))
+                .filter(r -> r.isPresent())
+                .map(i -> String.format("<a href=%s>%s</a>", buildFrlDetailsLink(i.get()),i.get())).collect(Collectors.toList());
+        return String.join("<br>", links);
     }
 
 
