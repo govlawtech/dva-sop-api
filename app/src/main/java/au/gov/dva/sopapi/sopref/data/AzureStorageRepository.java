@@ -49,13 +49,14 @@ public class AzureStorageRepository implements Repository {
     private static final String SOP_CONTAINER_NAME = "sops";
     private static final String SERVICE_DETERMINATIONS_CONTAINER_NAME = "servicedeterminations";
     private static final String INSTRUMENT_CHANGES_CONTAINER_NAME = "instrumentchanges";
+    private static final String FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME = "failedinstrumentchanges";
     private static final String ARCHIVED_SOPS_CONTAINER_NAME = "archivedsops";
     private static final String ARCHIVED_SERVICE_DETERMINATIONS_CONTAINER_NAME = "archivedservicedeterminations";
     private static final String METADATA_CONTAINER_NAME = "metadata";
     private static final String LAST_SOPS_UPDATE_BLOB_NAME = "lastsopsupdate";
     private static final String RULE_CONFIG_CONTAINER_NAME = "ruleconfiguration";
-    private static final String RH_RULE_CONFIG_CSV_NAME =  "rh.csv";
-    private static final String BOP_RULE_CONFIG_CSV_NAME =  "bop.csv";
+    private static final String RH_RULE_CONFIG_CSV_NAME = "rh.csv";
+    private static final String BOP_RULE_CONFIG_CSV_NAME = "bop.csv";
 
 
     private CloudStorageAccount _cloudStorageAccount = null;
@@ -190,7 +191,6 @@ public class AzureStorageRepository implements Repository {
         }
     }
 
-
     private static SoP blobToSoP(CloudBlob cloudBlob) {
         try {
             JsonNode jsonNode = getJsonNode(cloudBlob);
@@ -227,11 +227,14 @@ public class AzureStorageRepository implements Repository {
     @Override
     public ImmutableSet<InstrumentChange> getInstrumentChanges() {
 
+        return retrieveInstrumentChanges(INSTRUMENT_CHANGES_CONTAINER_NAME);
+    }
 
+    private ImmutableSet<InstrumentChange> retrieveInstrumentChanges(String containerName) {
         CloudBlobContainer cloudBlobContainer = null;
         try {
 
-            cloudBlobContainer = getOrCreateContainer(INSTRUMENT_CHANGES_CONTAINER_NAME);
+            cloudBlobContainer = getOrCreateContainer(containerName);
             ImmutableSet.Builder<InstrumentChange> builder = new ImmutableSet.Builder<>();
             for (ListBlobItem listBlobItem : cloudBlobContainer.listBlobs()) {
                 if (listBlobItem instanceof CloudBlob) {
@@ -240,11 +243,7 @@ public class AzureStorageRepository implements Repository {
             }
 
 
-        } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
-        } catch (StorageException e) {
-            throw new RepositoryError(e);
-        } catch (IOException e) {
+        } catch (URISyntaxException | StorageException | IOException e) {
             throw new RepositoryError(e);
         }
 
@@ -261,6 +260,17 @@ public class AzureStorageRepository implements Repository {
         }).collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf));
     }
 
+
+    @Override
+    public ImmutableSet<InstrumentChange> getRetryQueue() {
+        return retrieveInstrumentChanges(FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME);
+    }
+
+    @Override
+    public void addToRetryQueue(InstrumentChange instrumentChange) {
+        addInstrumentChangesToContainer(ImmutableSet.of(instrumentChange),FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME);
+    }
+
     private static Stream<InstrumentChange> blobToInstrumentChangeStream(CloudBlob cloudBlob) throws IOException, StorageException {
         JsonNode jsonNode = getJsonNode(cloudBlob);
         ImmutableList<JsonNode> jsonObjects = JsonUtils.getChildrenOfArrayNode(jsonNode);
@@ -269,21 +279,24 @@ public class AzureStorageRepository implements Repository {
 
     @Override
     public void addInstrumentChanges(ImmutableSet<InstrumentChange> instrumentChanges) {
-        try {
-            CloudBlobContainer container = getOrCreateContainer(INSTRUMENT_CHANGES_CONTAINER_NAME);
+        addInstrumentChangesToContainer(instrumentChanges,INSTRUMENT_CHANGES_CONTAINER_NAME);
+    }
 
+    private void addInstrumentChangesToContainer(ImmutableSet<InstrumentChange> instrumentChanges, String containerName)
+    {
+        try {
+            CloudBlobContainer container = getOrCreateContainer(containerName);
             String newBlobName = createBlobNameForInstrumentChangeBatch(instrumentChanges);
             CloudBlockBlob blob = container.getBlockBlobReference(newBlobName);
             ObjectMapper objectMapper = new ObjectMapper();
             ArrayNode root = objectMapper.createArrayNode();
             instrumentChanges.stream().forEach(ic -> root.add(ic.toJson()));
             blob.uploadText(Conversions.toString(root));
-        } catch (RuntimeException e) {
-            throw new RepositoryError(e);
         } catch (Exception e) {
             throw new RepositoryError(e);
         }
     }
+
 
     @Override
     public void purgeInstrumentChanges() {
@@ -425,20 +438,17 @@ public class AzureStorageRepository implements Repository {
     public Optional<RuleConfigurationRepository> getRuleConfigurationRepository() {
         try {
             Optional<CloudBlob> rhCsv = getBlobByName(RULE_CONFIG_CONTAINER_NAME, RH_RULE_CONFIG_CSV_NAME);
-            Optional<CloudBlob> bopCsv = getBlobByName(RULE_CONFIG_CONTAINER_NAME,BOP_RULE_CONFIG_CSV_NAME);
-            if (!rhCsv.isPresent() || !bopCsv.isPresent())
-            {
+            Optional<CloudBlob> bopCsv = getBlobByName(RULE_CONFIG_CONTAINER_NAME, BOP_RULE_CONFIG_CSV_NAME);
+            if (!rhCsv.isPresent() || !bopCsv.isPresent()) {
                 return Optional.empty();
             }
             byte[] rhCsvUtf8 = getBlobBytes(rhCsv.get());
             byte[] bopCsvUtf8 = getBlobBytes(bopCsv.get());
-            RuleConfigurationRepository repository = new CsvRuleConfigurationRepository(rhCsvUtf8,bopCsvUtf8);
+            RuleConfigurationRepository repository = new CsvRuleConfigurationRepository(rhCsvUtf8, bopCsvUtf8);
             return Optional.of(repository);
-        }
-        catch (ConfigurationError e){
+        } catch (ConfigurationError e) {
             throw new RepositoryError(e);
-        }
-        catch (StorageException e) {
+        } catch (StorageException e) {
             throw new RepositoryError(e);
         } catch (URISyntaxException e) {
             throw new RepositoryError(e);
@@ -448,8 +458,8 @@ public class AzureStorageRepository implements Repository {
     @Override
     public void setRulesConfig(byte[] rhCsv, byte[] bopCsv) {
         try {
-            saveBlob(RULE_CONFIG_CONTAINER_NAME,RH_RULE_CONFIG_CSV_NAME,rhCsv);
-            saveBlob(RULE_CONFIG_CONTAINER_NAME,BOP_RULE_CONFIG_CSV_NAME,bopCsv);
+            saveBlob(RULE_CONFIG_CONTAINER_NAME, RH_RULE_CONFIG_CSV_NAME, rhCsv);
+            saveBlob(RULE_CONFIG_CONTAINER_NAME, BOP_RULE_CONFIG_CSV_NAME, bopCsv);
         } catch (URISyntaxException e) {
             throw new RepositoryError(e);
         } catch (StorageException e) {
@@ -458,8 +468,6 @@ public class AzureStorageRepository implements Repository {
             throw new RepositoryError(e);
         }
     }
-
-
 
 
     private Optional<CloudBlob> getBlobByName(String containerName, String blobName) throws URISyntaxException, StorageException {

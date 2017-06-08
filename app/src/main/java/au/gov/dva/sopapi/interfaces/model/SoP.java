@@ -18,4 +18,5 @@ public interface SoP {
     StandardOfProof getStandardOfProof();
     ImmutableSet<ICDCode> getICDCodes();
     String getConditionName();
+
 }

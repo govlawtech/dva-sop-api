@@ -117,6 +117,7 @@ public class SoPLoaderImpl implements SoPLoader {
 
             if (!sop.isPresent())
             {
+                repository.addToRetryQueue(instrumentChange);
                 throw new AutoUpdateError(String.format("Cannot get a SoP for instrument ID: %s", instrumentChange.getTargetInstrumentId()));
             }
 
@@ -137,6 +138,7 @@ public class SoPLoaderImpl implements SoPLoader {
             Optional<SoP> repealingSop = soPProvider.apply(instrumentChange.getTargetInstrumentId());
             if (!repealingSop.isPresent())
             {
+                repository.addToRetryQueue(instrumentChange);
                 throw new AutoUpdateError(String.format("Replacement of repealed SoP %s failed because could not obtain new SoP %s", instrumentChange.getSourceInstrumentId(), instrumentChange.getTargetInstrumentId()));
             }
 
@@ -160,6 +162,7 @@ public class SoPLoaderImpl implements SoPLoader {
 
             Optional<SoP> newCompilation = soPProvider.apply(instrumentChange.getTargetInstrumentId());
             if (!newCompilation.isPresent()) {
+                repository.addToRetryQueue(instrumentChange);
                 throw new AutoUpdateError(String.format("Could not get new compilation for SoP: %s", instrumentChange.getTargetInstrumentId()));
             }
 

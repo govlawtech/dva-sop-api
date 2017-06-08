@@ -2,10 +2,12 @@ package au.gov.dva.sopapi;
 
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopref.SoPs;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,7 @@ public class Cache {
     private ImmutableSet<SoPPair> _allSopPairs;
     private ImmutableSet<ServiceDetermination> _allServiceDeterminations;
     private RuleConfigurationRepository _ruleConfigurationRepository;
+    private ImmutableSet<InstrumentChange> _failedUpdates;
 
     private static final Cache INSTANCE = new Cache();
 
@@ -28,6 +31,7 @@ public class Cache {
         _allSops = ImmutableSet.of();
         _allSopPairs = ImmutableSet.of();
         _allServiceDeterminations = ImmutableSet.of();
+        _failedUpdates = ImmutableSet.of();
 
     }
 
@@ -45,12 +49,14 @@ public class Cache {
             if (!ruleConfigurationRepository.isPresent()) {
                 throw new ConfigurationError("Need rules configuration to be repository.");
             }
+            ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
 
             // atomic
             _allSops = allSops;
             _allSopPairs = SoPs.groupSopsToPairs(_allSops, OffsetDateTime.now());
             _allServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
+            _failedUpdates = failed;
         }
         catch (Exception e)
         {
@@ -78,6 +84,10 @@ public class Cache {
 
     public RuleConfigurationRepository get_ruleConfigurationRepository() {
         return _ruleConfigurationRepository;
+    }
+
+    public ImmutableSet<InstrumentChange> get_failedUpdates() {
+        return _failedUpdates;
     }
 }
 

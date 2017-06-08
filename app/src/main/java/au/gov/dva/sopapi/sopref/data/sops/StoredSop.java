@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 
 public class StoredSop implements SoP, HasSchemaVersion {
 
-
     private static final Integer SCHEMA_VERSION = 1;
 
     @Override
@@ -70,7 +69,6 @@ public class StoredSop implements SoP, HasSchemaVersion {
         this.effectiveFromDate = effectiveFromDate;
         this.standardOfProof = standardOfProof;
         this.icdCodes = icdCodes;
-
         this.conditionName = conditionName;
         this.endDate = endDate;
     }
@@ -170,6 +168,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
                 sopToEndDate.getAggravationFactors(),sopToEndDate.getEffectiveFromDate(),
                 sopToEndDate.getStandardOfProof(),sopToEndDate.getICDCodes(),sopToEndDate.getConditionName(),Optional.of(endDate));
     }
+
 
     private static Factor factorFromJson(JsonNode jsonNode) {
 

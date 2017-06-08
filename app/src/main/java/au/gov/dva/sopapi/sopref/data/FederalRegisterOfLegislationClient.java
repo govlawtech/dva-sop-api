@@ -72,7 +72,6 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
                 .thenCompose(url -> downloadFile(url));
 
         return promise;
-
     }
 
 

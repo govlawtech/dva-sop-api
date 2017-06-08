@@ -55,3 +55,4 @@ public class NewInstrument extends InstrumentChangeBase implements InstrumentCha
     }
 
 }
+
