@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 public class CsvRuleConfigurationRepository implements RuleConfigurationRepository {
 
-    public static final String regexForFactorRef = "[0-9a-z]+\\([()0-9a-z]+\\)";
+    public static final String regexForFactorRef = "[0-9a-z]+\\([0-9a-z]+\\)";
 
     private final byte[] _rhCsv;
     private final byte[] _boPCsv;
@@ -89,7 +89,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         for (CSVRecord csvRecord : recordList)
         {
             int rowNum = recordList.indexOf(csvRecord) + 1;
-            List<Integer> emptyIndexesThatShouldNotBe =   ImmutableList
+            List<Integer> emptyIndexesThatShouldNotBeEmpty =   ImmutableList
                     .of(ColumnIndices.CONDITION,
                             ColumnIndices.INSTRUMENT_ID,
                             ColumnIndices.FACTOR_REFS,
@@ -100,9 +100,9 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                     .filter(i -> csvRecord.get(i).trim().isEmpty())
                     .collect(Collectors.toList());
 
-            if (!emptyIndexesThatShouldNotBe.isEmpty() && emptyIndexesThatShouldNotBe.size() < 6)
+            if (!emptyIndexesThatShouldNotBeEmpty.isEmpty() && emptyIndexesThatShouldNotBeEmpty.size() < 6)
             {
-                errors.add(String.format("Sheet %s, row %s has empty required cells: row(s) %s", sheetName, rowNum, String.join(",",emptyIndexesThatShouldNotBe.stream().map(Object::toString).collect(Collectors.toList()))));
+                errors.add(String.format("Sheet %s, row %s has empty required cells: row(s) %s", sheetName, rowNum, String.join(",",emptyIndexesThatShouldNotBeEmpty.stream().map(Object::toString).collect(Collectors.toList()))));
             }
 
             Stream<String> failingFactorRefs = Arrays.stream(csvRecord.get(ColumnIndices.FACTOR_REFS).split("[,;]"))
@@ -133,7 +133,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         try {
             List<CSVRecord> recordList = parser.getRecords();
             for (CSVRecord csvRecord : recordList) {
-                if (!csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS).isEmpty() && !csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS).isEmpty()) {
+                if (!csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS).isEmpty()) {
 
                     acc.add(new ParsedRhRuleConfigurationItem(
                             csvRecord.get(ColumnIndices.CONDITION),
@@ -145,7 +145,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                             !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
                             !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty(),
                             csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS),
-                            csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS)
+                            !csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS)) : Optional.empty()
                     ));
                 }
 

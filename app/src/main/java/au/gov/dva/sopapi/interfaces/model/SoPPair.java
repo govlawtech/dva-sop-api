@@ -9,6 +9,12 @@ import java.util.List;
 public class SoPPair {
     private final String conditionName;
     private final SoP bopSop;
+
+    @Override
+    public String toString() {
+        return conditionName;
+    }
+
     private final SoP rhSop;
 
 

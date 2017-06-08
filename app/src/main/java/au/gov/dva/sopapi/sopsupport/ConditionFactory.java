@@ -8,18 +8,16 @@ import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.GenericProcessingRule;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.LumbarSpondylosisRule;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class ConditionFactory {
 
     public static Optional<Condition> create(ImmutableSet<SoPPair> sopPairs, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository)
     {
-        if (conditionDto.get_incidentType() == IncidentType.Aggravation)
-        {
-            return Optional.empty();  // aggravation not yet implemented
-        }
 
         Optional<SoPPair> soPPairOptional = getSopPairForConditionName(sopPairs,conditionDto.get_conditionName());
         if (!soPPairOptional.isPresent())
@@ -35,7 +33,6 @@ public class ConditionFactory {
                     conditionDto.get_incidentDateRangeDto().get_endDate(),
                     new LumbarSpondylosisRule(ruleConfigurationRepository)));
         }
-
 
         else if (RuleConfigRepositoryUtils.containsConfigForCondition(conditionDto.get_conditionName(),ruleConfigurationRepository))
         {
@@ -53,11 +50,11 @@ public class ConditionFactory {
     }
 
 
-
     private static Optional<SoPPair>  getSopPairForConditionName(ImmutableSet<SoPPair> sopPairs, String conditionName)
     {
-        Optional<SoPPair> soPPair =  sopPairs.stream().filter(s -> s.getConditionName().contentEquals(conditionName))
-                .findFirst();
+
+        Optional<SoPPair> soPPair =  sopPairs.stream().filter(s -> s.getConditionName().equalsIgnoreCase(conditionName.trim()))
+               .findFirst();
         return soPPair;
     }
 
