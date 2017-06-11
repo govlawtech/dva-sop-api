@@ -15,9 +15,8 @@ public interface Repository {
      ImmutableSet<SoP> getAllSops();
      void archiveSoP(String registerId);
      ImmutableSet<InstrumentChange> getInstrumentChanges();
-     ImmutableSet<InstrumentChange> getRetryQueue();
-     void addToRetryQueue(InstrumentChange instrumentChange);
      void addInstrumentChanges(ImmutableSet<InstrumentChange> instrumentChanges);
+     void archiveInstrumentChanges(ImmutableSet<InstrumentChange> instrumentChanges);
      void purgeInstrumentChanges();
      void addServiceDetermination(ServiceDetermination serviceDetermination);
      void archiveServiceDetermination(String registerId);

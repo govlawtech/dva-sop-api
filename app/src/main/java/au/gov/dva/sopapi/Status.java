@@ -9,24 +9,15 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import com.microsoft.azure.storage.CloudStorageAccount;
-import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import scala.App;
-import scala.math.Ordering;
-import scala.sys.process.ProcessBuilder;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
@@ -48,7 +39,7 @@ public class Status {
         ));
 
         ImmutableSet<SoPPair> soPPairs = cache.get_allSopPairs();
-        ImmutableSet<InstrumentChange> failedUpdates = cache.get_failedUpdates();
+        ImmutableSet<InstrumentChange> failedUpdates = cache.get_pendingUpdates();
 
         // condition name, icd codes, FRL RH link, FRL BoP link, Azure RH link, Azure BoP link, Updated by
 
@@ -97,7 +88,7 @@ public class Status {
         stringBuilder.append("<h1>SoP Reference Service</h1>");
         stringBuilder.append(String.format("<p>Number of conditions available in SoP Reference Service: %s </p>", soPPairs.size()));
         stringBuilder.append(String.format("<p>Last polled Federal Register of Legislation for updated SoPs and Service Determinations: %s </p>", lastUpdateTime));
-        stringBuilder.append(createConditionTableHtml(soPPairs, cache.get_failedUpdates(), blobsBaseUrl));
+        stringBuilder.append(createConditionTableHtml(soPPairs, cache.get_pendingUpdates(), blobsBaseUrl));
         stringBuilder.append("</body></html>");
         return stringBuilder.toString();
     }

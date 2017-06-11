@@ -18,10 +18,7 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
-import com.microsoft.azure.storage.CloudStorageAccount;
-import com.microsoft.azure.storage.ServiceProperties;
-import com.microsoft.azure.storage.ServiceStats;
-import com.microsoft.azure.storage.StorageException;
+import com.microsoft.azure.storage.*;
 import com.microsoft.azure.storage.blob.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,9 +46,9 @@ public class AzureStorageRepository implements Repository {
     private static final String SOP_CONTAINER_NAME = "sops";
     private static final String SERVICE_DETERMINATIONS_CONTAINER_NAME = "servicedeterminations";
     private static final String INSTRUMENT_CHANGES_CONTAINER_NAME = "instrumentchanges";
-    private static final String FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME = "failedinstrumentchanges";
     private static final String ARCHIVED_SOPS_CONTAINER_NAME = "archivedsops";
     private static final String ARCHIVED_SERVICE_DETERMINATIONS_CONTAINER_NAME = "archivedservicedeterminations";
+    private static final String ARCHIVED_INSTRUMENT_CHANGES = "archivedinstrumentchanges";
     private static final String METADATA_CONTAINER_NAME = "metadata";
     private static final String LAST_SOPS_UPDATE_BLOB_NAME = "lastsopsupdate";
     private static final String RULE_CONFIG_CONTAINER_NAME = "ruleconfiguration";
@@ -252,24 +249,12 @@ public class AzureStorageRepository implements Repository {
         return blobs.flatMap(listBlobItem -> {
             try {
                 return blobToInstrumentChangeStream((CloudBlob) listBlobItem);
-            } catch (IOException e) {
-                throw new RepositoryError(e);
-            } catch (StorageException e) {
+            } catch (IOException | StorageException e) {
                 throw new RepositoryError(e);
             }
         }).collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf));
     }
 
-
-    @Override
-    public ImmutableSet<InstrumentChange> getRetryQueue() {
-        return retrieveInstrumentChanges(FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME);
-    }
-
-    @Override
-    public void addToRetryQueue(InstrumentChange instrumentChange) {
-        addInstrumentChangesToContainer(ImmutableSet.of(instrumentChange),FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME);
-    }
 
     private static Stream<InstrumentChange> blobToInstrumentChangeStream(CloudBlob cloudBlob) throws IOException, StorageException {
         JsonNode jsonNode = getJsonNode(cloudBlob);
@@ -279,11 +264,15 @@ public class AzureStorageRepository implements Repository {
 
     @Override
     public void addInstrumentChanges(ImmutableSet<InstrumentChange> instrumentChanges) {
-        addInstrumentChangesToContainer(instrumentChanges,INSTRUMENT_CHANGES_CONTAINER_NAME);
+        addInstrumentChangesToContainer(instrumentChanges, INSTRUMENT_CHANGES_CONTAINER_NAME);
     }
 
-    private void addInstrumentChangesToContainer(ImmutableSet<InstrumentChange> instrumentChanges, String containerName)
-    {
+    @Override
+    public void archiveInstrumentChanges(ImmutableSet<InstrumentChange> instrumentChanges) {
+        addInstrumentChangesToContainer(instrumentChanges, ARCHIVED_INSTRUMENT_CHANGES);
+    }
+
+    private void addInstrumentChangesToContainer(ImmutableSet<InstrumentChange> instrumentChanges, String containerName) {
         try {
             CloudBlobContainer container = getOrCreateContainer(containerName);
             String newBlobName = createBlobNameForInstrumentChangeBatch(instrumentChanges);
