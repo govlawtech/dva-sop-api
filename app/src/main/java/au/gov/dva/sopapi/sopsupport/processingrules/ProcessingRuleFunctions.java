@@ -64,13 +64,11 @@ public class ProcessingRuleFunctions {
     }
 
     public static long getNumberOfDaysOfOperationalServiceInInterval(OffsetDateTime startDate, OffsetDateTime endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
-        caseTrace.addLoggingTrace("Getting number of days of operational service in interval starting " + startDate + ", ending on " + endDate + ".");
         long days = deployments.stream()
                 .filter(d -> isOperational.test(d))
                 .map(d -> getElapsedDaysOfDeploymentInInterval(startDate, endDate, d.getStartDate(), d.getEndDate()))
                 .collect(Collectors.summingLong(value -> value));
 
-        //caseTrace.addLoggingTrace("Total number of days of operational service: " + days);
         return days;
     }
 
