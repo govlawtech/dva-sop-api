@@ -79,10 +79,20 @@ public class AzureStorageRepository implements Repository {
 
     }
 
+    private CloudBlobContainer getOrCreatePrivateContainer(String containerName) throws URISyntaxException, StorageException {
+        CloudBlobClient serviceClient = _cloudStorageAccount.createCloudBlobClient();
+        CloudBlobContainer container = serviceClient.getContainerReference(containerName);
+        BlobContainerPermissions blobContainerPermissions = new BlobContainerPermissions();
+        blobContainerPermissions.setPublicAccess(BlobContainerPublicAccessType.OFF);
+        if (!container.exists()) {
+            container.create();
+        }
+        return container;
+    }
+
     private CloudBlobContainer getOrCreateContainer(String containerName) throws URISyntaxException, StorageException {
         CloudBlobClient serviceClient = _cloudStorageAccount.createCloudBlobClient();
         CloudBlobContainer container = serviceClient.getContainerReference(containerName);
-
         if (!container.exists()) {
             container.create();
             BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
@@ -458,6 +468,7 @@ public class AzureStorageRepository implements Repository {
     @Override
     public void setRulesConfig(byte[] rhCsv, byte[] bopCsv) {
         try {
+            getOrCreatePrivateContainer(RULE_CONFIG_CONTAINER_NAME);
             saveBlob(RULE_CONFIG_CONTAINER_NAME, RH_RULE_CONFIG_CSV_NAME, rhCsv);
             saveBlob(RULE_CONFIG_CONTAINER_NAME, BOP_RULE_CONFIG_CSV_NAME, bopCsv);
         } catch (URISyntaxException e) {
