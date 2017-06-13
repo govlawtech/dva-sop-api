@@ -7,7 +7,6 @@ import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopref.SoPs;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +46,7 @@ public class Cache {
             ImmutableSet<ServiceDetermination> allServiceDeterminations = repository.getServiceDeterminations();
             Optional<RuleConfigurationRepository> ruleConfigurationRepository = repository.getRuleConfigurationRepository();
             if (!ruleConfigurationRepository.isPresent()) {
-                throw new ConfigurationError("Need rules configuration to be repository.");
+                throw new ConfigurationRuntimeException("Need rules configuration to be repository.");
             }
             ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
 

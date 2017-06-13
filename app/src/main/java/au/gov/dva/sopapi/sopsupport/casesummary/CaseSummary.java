@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.sopsupport.casesummary;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.exceptions.CaseSummaryError;
+import au.gov.dva.sopapi.exceptions.CaseSummaryRuntimeException;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
@@ -122,9 +122,9 @@ public class CaseSummary {
 
             outputStream.close();
         } catch (FileNotFoundException e) {
-            throw new CaseSummaryError(e);
+            throw new CaseSummaryRuntimeException(e);
         } catch (IOException e) {
-            throw new CaseSummaryError(e);
+            throw new CaseSummaryRuntimeException(e);
         }
 
         return outputStream.toByteArray();
@@ -138,9 +138,9 @@ public class CaseSummary {
             _ctStyles = template.getStyle();
             _numbering = template.getNumbering();
         } catch (IOException e) {
-            throw new CaseSummaryError(e);
+            throw new CaseSummaryRuntimeException(e);
         } catch (XmlException e) {
-            throw new CaseSummaryError(e);
+            throw new CaseSummaryRuntimeException(e);
         }
     }
 

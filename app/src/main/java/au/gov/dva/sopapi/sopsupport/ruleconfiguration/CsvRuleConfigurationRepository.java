@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.ruleconfiguration;
 
-import au.gov.dva.sopapi.ConfigurationError;
+import au.gov.dva.sopapi.ConfigurationRuntimeException;
 import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
@@ -56,14 +56,14 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
             Optional<List<String>> validationErrors = getValidationErrors(rhCsv,boPCsv);
             if (validationErrors.isPresent())
             {
-                throw new ConfigurationError(String.join(Properties.lineSeparator(),validationErrors.get()));
+                throw new ConfigurationRuntimeException(String.join(Properties.lineSeparator(),validationErrors.get()));
             }
 
             this.rhRuleConfigurationItems = buildRhItems();
             this.bopRuleConfigurationItems = buildBopItems();
 
         } catch (IOException e) {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
 
     }
@@ -118,7 +118,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         try {
             reader.close();
         } catch (IOException e) {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
 
         return errors;
@@ -153,12 +153,12 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
 
 
         } catch (IOException e) {
-            throw new ConfigurationError("Error parsing RH CSV binary.", e);
+            throw new ConfigurationRuntimeException("Error parsing RH CSV binary.", e);
         }
         try {
             parser.close();
         } catch (IOException e) {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
         return ImmutableSet.copyOf(acc);
     }
@@ -167,7 +167,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         try {
             return new InputStreamReader(new BOMInputStream(new ByteArrayInputStream(csv)), "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
     }
 
@@ -192,12 +192,12 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                 ));
             }
         } catch (IOException e) {
-            throw new ConfigurationError("Error parsing BoP CSV binary.", e);
+            throw new ConfigurationRuntimeException("Error parsing BoP CSV binary.", e);
         }
         try {
             parser.close();
         } catch (IOException e) {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
         return ImmutableSet.copyOf(acc);
     }
@@ -208,7 +208,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         try {
             parser = new CSVParser(reader, CSVFormat.EXCEL.withHeader());
         } catch (IOException e) {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
         return parser;
 

@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopref.parsing.traits
 
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.ICDCode
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
@@ -19,9 +19,9 @@ class OldSoPStyleExtractor(cleansedText: String) extends SoPExtractor {
   private def getSectionWithTitleMatchingRegexOrThrow(titleRegex: Regex) = {
     val sectionForSpecifiedPara = getSectionWithTitleMatchingRegexOpt(titleRegex)
     if (sectionForSpecifiedPara.isEmpty)
-      throw new SopParserError("No section found with title matching regex: " + titleRegex.regex)
+      throw new SopParserRuntimeException("No section found with title matching regex: " + titleRegex.regex)
     if (sectionForSpecifiedPara.get._1.isEmpty)
-      throw new SopParserError("Could not determine section number using regex: " + sectionHeaderLineRegex.regex)
+      throw new SopParserRuntimeException("Could not determine section number using regex: " + sectionHeaderLineRegex.regex)
     (sectionForSpecifiedPara.get._1.get, sectionForSpecifiedPara.get._3)
   }
 

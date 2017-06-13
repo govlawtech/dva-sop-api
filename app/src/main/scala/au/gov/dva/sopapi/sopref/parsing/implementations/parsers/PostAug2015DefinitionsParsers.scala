@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 
 import scala.util.Properties
 

@@ -1,7 +1,6 @@
 package au.gov.dva.sopapi.sopref.data;
 
-import au.gov.dva.sopapi.exceptions.ConversionToPlainTextError;
-import au.gov.dva.sopapi.exceptions.SopParserError;
+import au.gov.dva.sopapi.exceptions.ConversionToPlainTextRuntimeException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,7 +8,6 @@ import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.io.RandomAccessBuffer;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -19,17 +17,13 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
-import org.apache.tika.parser.AutoDetectParser;
 import org.apache.tika.parser.ParseContext;
 import org.apache.tika.parser.Parser;
 import org.apache.tika.parser.microsoft.OfficeParser;
 import org.apache.tika.parser.microsoft.ooxml.OOXMLParser;
 import org.apache.tika.sax.BodyContentHandler;
 import org.xml.sax.SAXException;
-import scala.Int;
-import scala.util.Properties;
 
-import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.io.*;
 import java.util.regex.Matcher;
@@ -100,7 +94,7 @@ public class Conversions {
         try {
             parser.parse(inputStream, handler, metadata, parseContext);
         } catch (SAXException | TikaException e) {
-            throw new ConversionToPlainTextError(e);
+            throw new ConversionToPlainTextRuntimeException(e);
         }
         return handler.toString();
     }
@@ -153,7 +147,7 @@ public class Conversions {
     private static RegisterIdInfo unpackRegisterId(String registerId) {
         Matcher matcher = patternForRegisterId.matcher(registerId);
         if (!matcher.matches()) {
-            throw new ConversionToPlainTextError("Cannot parse this register id: " + registerId);
+            throw new ConversionToPlainTextRuntimeException("Cannot parse this register id: " + registerId);
         }
 
         int year = Integer.parseInt(matcher.group(1));

@@ -1,12 +1,11 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 
 import scala.util.Properties
 import scala.util.matching.Regex
-import scala.util.parsing.combinator.RegexParsers
 
 object FallbackFactorsParser extends MiscRegexes {
 
@@ -26,7 +25,7 @@ object FallbackFactorsParser extends MiscRegexes {
       return new FactorInfoWithoutSubParas(para, rest)
     }
     else {
-      throw new SopParserError(s"Cannot split the following factors section to para and rest using regex $regexForMainPara: $asSingleStringWithLineBreaks")
+      throw new SopParserRuntimeException(s"Cannot split the following factors section to para and rest using regex $regexForMainPara: $asSingleStringWithLineBreaks")
     }
   }
 

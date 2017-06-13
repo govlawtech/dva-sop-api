@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopref.data;
 
-import au.gov.dva.sopapi.exceptions.LegislationRegisterError;
+import au.gov.dva.sopapi.exceptions.LegislationRegisterRuntimeException;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
@@ -48,7 +48,7 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
                     try {
                         return getAuthorisedDocumentLinkFromHtml(htmlString, registerId);
                     } catch (MalformedURLException e) {
-                        throw new LegislationRegisterError(e);
+                        throw new LegislationRegisterRuntimeException(e);
                     }
                 })
                 .thenCompose(url -> downloadFile(url));
@@ -66,7 +66,7 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
                     try {
                         return getDocxDocumentLinkFromHtml(htmlString, registerId);
                     } catch (MalformedURLException e) {
-                        throw new LegislationRegisterError(e);
+                        throw new LegislationRegisterRuntimeException(e);
                     }
                 })
                 .thenCompose(url -> downloadFile(url));
@@ -104,13 +104,13 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
                     assert (response.getStatusCode() == 302);
                     String redirectValue = response.getHeader("Location");
                     if (redirectValue.isEmpty())
-                        throw new LegislationRegisterError(String.format("Could not get redirect to Details page from URL: %s\n%s", originalUrl.toString(), response.toString()));
+                        throw new LegislationRegisterRuntimeException(String.format("Could not get redirect to Details page from URL: %s\n%s", originalUrl.toString(), response.toString()));
                     try {
                         assert (!URI.create(redirectValue).isAbsolute() && redirectValue.startsWith("/"));
                         URL redirectTarget = URI.create(String.format("%s://%s%s", originalUrl.getProtocol(), originalUrl.getHost(), redirectValue)).toURL();
                         return redirectTarget;
                     } catch (MalformedURLException e) {
-                        throw new LegislationRegisterError(e);
+                        throw new LegislationRegisterRuntimeException(e);
                     }
                 });
 
@@ -233,7 +233,7 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
             try {
                 return new URL(String.format("%s/Latest/%s", BASE_URL, sourceRegisterId));
             } catch (MalformedURLException e) {
-                throw new LegislationRegisterError(e);
+                throw new LegislationRegisterRuntimeException(e);
             }
         }
 
@@ -242,7 +242,7 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
             try {
                 return new URL(String.format("%s/Latest/%s/Download", BASE_URL, registerId));
             } catch (MalformedURLException e) {
-                throw new LegislationRegisterError(e);
+                throw new LegislationRegisterRuntimeException(e);
             }
         }
 
@@ -251,7 +251,7 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
                 return new URL(String.format("%s/Details/%s/Download",BASE_URL,registerId));
             } catch (MalformedURLException e)
             {
-                throw new LegislationRegisterError(e);
+                throw new LegislationRegisterRuntimeException(e);
             }
         }
 
@@ -260,7 +260,7 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
             try {
                 return new URL(String.format("%s/Series/%s/RepealedBy",BASE_URL, registerId));
             } catch (MalformedURLException e) {
-                throw new LegislationRegisterError(e);
+                throw new LegislationRegisterRuntimeException(e);
             }
         }
     }

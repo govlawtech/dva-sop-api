@@ -1,11 +1,8 @@
 package au.gov.dva.sopapi.sopref.parsing
 
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 
-import scala.collection.immutable.{IndexedSeq, Seq}
-import scala.collection.mutable
-import scala.collection.mutable.ListBuffer
 import scala.util.Properties
 import scala.util.matching.Regex
 
@@ -20,7 +17,7 @@ object SoPExtractorUtilities extends MiscRegexes
     registerId match {
       case regexForRegisterId(year,"C",number) => new RegisterIdInfo(year.toInt,true,number.toInt)
       case regexForRegisterId(year,"L",number) => new RegisterIdInfo(year.toInt,false,number.toInt)
-      case _ => throw new SopParserError("Cannot unpack this register ID: " + registerId)
+      case _ => throw new SopParserRuntimeException("Cannot unpack this register ID: " + registerId)
     }
 
   }
@@ -67,10 +64,10 @@ object SoPExtractorUtilities extends MiscRegexes
 
     val sectionForSpecifiedPara = allSections.find(s => paragraphLineRegex.findFirstIn(s._2).nonEmpty)
     if (sectionForSpecifiedPara.isEmpty)
-      throw new SopParserError("No section found with title matching regex: " + paragraphLineRegex.regex)
+      throw new SopParserRuntimeException("No section found with title matching regex: " + paragraphLineRegex.regex)
 
     if (sectionForSpecifiedPara.get._1.isEmpty)
-      throw new SopParserError("Could not determine section number using regex: " + sectionHeaderLineRegex.regex)
+      throw new SopParserRuntimeException("Could not determine section number using regex: " + sectionHeaderLineRegex.regex)
 
     (sectionForSpecifiedPara.get._1.get, sectionForSpecifiedPara.get._3)
   }
@@ -91,7 +88,7 @@ object SoPExtractorUtilities extends MiscRegexes
 
   def splitFactorsSectionToHeaderAndRest(factorsSection: List[String]): (List[String], List[String]) = {
     val (headerLines, rest) = factorsSection.span(l => !l.startsWith("("))
-    if (headerLines.isEmpty ) throw new SopParserError(s"Cannot split this factors section to head and then the rest: ${factorsSection.mkString(Properties.lineSeparator)}")
+    if (headerLines.isEmpty ) throw new SopParserRuntimeException(s"Cannot split this factors section to head and then the rest: ${factorsSection.mkString(Properties.lineSeparator)}")
     (headerLines, rest)
   }
 

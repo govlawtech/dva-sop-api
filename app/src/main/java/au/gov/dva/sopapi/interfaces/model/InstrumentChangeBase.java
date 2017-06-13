@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.interfaces.model;
 
-import au.gov.dva.sopapi.exceptions.AutoUpdateError;
+import au.gov.dva.sopapi.exceptions.AutoUpdateRuntimeException;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewCompilation;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
 import au.gov.dva.sopapi.sopref.data.updates.types.Revocation;
@@ -79,7 +79,7 @@ public class InstrumentChangeBase  {
          case NewCompilation.TYPE_NAME:
             return NewCompilation.fromJson(jsonNode);
          default:
-            throw new AutoUpdateError(String.format("Cannot deserialize this type of instrument change from JSON: %s", type));
+            throw new AutoUpdateRuntimeException(String.format("Cannot deserialize this type of instrument change from JSON: %s", type));
       }
    }
 

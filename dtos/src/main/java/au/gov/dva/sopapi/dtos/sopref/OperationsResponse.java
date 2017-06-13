@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopref;
 
-import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
+import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -31,7 +31,7 @@ public class OperationsResponse {
         try {
             jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(operationsResponse);
         } catch (JsonProcessingException e) {
-            throw new DvaSopApiDtoError(e);
+            throw new DvaSopApiDtoRuntimeException(e);
         }
         return jsonString;
     }
@@ -45,7 +45,7 @@ public class OperationsResponse {
                     objectMapper.readValue(json, OperationsResponse.class);
             return operationsResponse;
         } catch (IOException e) {
-            throw new DvaSopApiDtoError(e);
+            throw new DvaSopApiDtoRuntimeException(e);
         }
     }
 

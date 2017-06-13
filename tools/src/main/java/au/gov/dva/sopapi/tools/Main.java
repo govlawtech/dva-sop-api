@@ -1,20 +1,15 @@
 package au.gov.dva.sopapi.tools;
 
 import au.gov.dva.sopapi.AppSettings;
-import au.gov.dva.sopapi.ConfigurationError;
-import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
+import au.gov.dva.sopapi.ConfigurationRuntimeException;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
-import au.gov.dva.sopapi.tools.StorageTool;
 import org.apache.commons.cli.*;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.ByteBuffer;
 import java.nio.file.*;
 import java.util.List;
 import java.util.concurrent.*;
@@ -162,7 +157,7 @@ public class Main {
             CsvRuleConfigurationRepository csvRuleConfigurationRepository = new CsvRuleConfigurationRepository(rhCsv, bopCsv);
             return true;
         }
-        catch (ConfigurationError e)
+        catch (ConfigurationRuntimeException e)
         {
             System.out.println(e);
             return false;

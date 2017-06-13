@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopref;
 
-import au.gov.dva.sopapi.exceptions.DvaSopApiError;
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.ServiceType;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -34,7 +34,7 @@ public class Operations {
 
         if (!relevantNonWarlikeDetermination.isPresent() || !relevantWarlikeDetermination.isPresent())
         {
-            throw new DvaSopApiError("Missing service determinations.");
+            throw new DvaSopApiRuntimeException("Missing service determinations.");
         }
 
         return new ServiceDeterminationPair(relevantWarlikeDetermination.get(),relevantNonWarlikeDetermination.get());

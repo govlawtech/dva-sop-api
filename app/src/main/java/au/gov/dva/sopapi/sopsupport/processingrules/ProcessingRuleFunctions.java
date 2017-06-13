@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
+import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -267,7 +267,7 @@ public class ProcessingRuleFunctions {
         Optional<Service> mostRecentService = servicesOrderedMostRecentFirst.findFirst();
         // no service
         if (!mostRecentService.isPresent())
-            throw new ProcessingRuleError("No services in service history.");
+            throw new ProcessingRuleRuntimeException("No services in service history.");
 
             // ongoing
         else if (!mostRecentService.get().getEndDate().isPresent()) {

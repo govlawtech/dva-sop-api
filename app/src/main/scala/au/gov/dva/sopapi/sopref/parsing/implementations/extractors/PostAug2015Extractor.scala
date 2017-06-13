@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.extractors
 
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.ICDCode
 import au.gov.dva.sopapi.sopref.parsing.PostAug2015ExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.traits.{OldSoPStyleExtractor, SoPExtractor}
@@ -47,9 +47,9 @@ class PostAug2015Extractor(cleansedText: String) extends SoPExtractor {
 
   private def getSection(titleRegex: Regex) = {
     val section = sections.find(s => titleRegex.findFirstMatchIn(s._2).isDefined)
-    if (section.isEmpty) throw new SopParserError(s"Cannot find section with title matching regex ${titleRegex.pattern.toString} in text: ${Properties.lineSeparator}$cleansedText")
+    if (section.isEmpty) throw new SopParserRuntimeException(s"Cannot find section with title matching regex ${titleRegex.pattern.toString} in text: ${Properties.lineSeparator}$cleansedText")
     val (sectionNumberOpt, sectionTitle, sectionLines) = section.get
-    if (sectionNumberOpt.isEmpty) throw new SopParserError("Cannot find section number for section with title: " + sectionTitle)
+    if (sectionNumberOpt.isEmpty) throw new SopParserRuntimeException("Cannot find section number for section with title: " + sectionTitle)
     (sectionNumberOpt.get, sectionLines.mkString(Properties.lineSeparator))
   }
 

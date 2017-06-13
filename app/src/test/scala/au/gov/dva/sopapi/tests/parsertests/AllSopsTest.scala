@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.tests.parsertests
 
 import au.gov.dva.dvasopapi.tests.TestUtils
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.SoP
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities

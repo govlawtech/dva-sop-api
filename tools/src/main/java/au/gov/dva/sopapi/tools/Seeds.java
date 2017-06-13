@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.tools;
 
-import au.gov.dva.sopapi.exceptions.InitialSeedingError;
+import au.gov.dva.sopapi.exceptions.InitialSeedingRuntimeException;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
@@ -58,7 +58,7 @@ class Seeds {
                     });
 
         } catch (IOException e) {
-            throw new InitialSeedingError(e);
+            throw new InitialSeedingRuntimeException(e);
         }
     }
 

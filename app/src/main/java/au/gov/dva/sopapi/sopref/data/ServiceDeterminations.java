@@ -1,8 +1,8 @@
 package au.gov.dva.sopapi.sopref.data;
 
 import au.gov.dva.sopapi.DateTimeUtils;
-import au.gov.dva.sopapi.exceptions.DvaSopApiError;
-import au.gov.dva.sopapi.exceptions.ServiceDeterminationParserError;
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
+import au.gov.dva.sopapi.exceptions.ServiceDeterminationParserRuntimeException;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.model.Operation;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
@@ -45,13 +45,13 @@ public class ServiceDeterminations {
             return serviceDetermination;
 
         } catch (InterruptedException e) {
-            throw new DvaSopApiError(e);
+            throw new DvaSopApiRuntimeException(e);
         } catch (ExecutionException e) {
-            throw new DvaSopApiError(e);
+            throw new DvaSopApiRuntimeException(e);
         } catch (IOException e) {
-            throw new ServiceDeterminationParserError(e);
+            throw new ServiceDeterminationParserRuntimeException(e);
         } catch (TimeoutException e) {
-            throw new DvaSopApiError(e);
+            throw new DvaSopApiRuntimeException(e);
         }
 
     }
@@ -67,7 +67,7 @@ public class ServiceDeterminations {
             List<XWPFTable> tables = getTablesWithHeading(commencementTableHeading,doc);
             if (tables.isEmpty())
             {
-                throw new ServiceDeterminationParserError("Could not identify Commencement table with heading: 'Commencement'.");
+                throw new ServiceDeterminationParserRuntimeException("Could not identify Commencement table with heading: 'Commencement'.");
             }
             else {
                 XWPFTable commencementTable = tables.get(0);
@@ -91,7 +91,7 @@ public class ServiceDeterminations {
             }
 
         } catch (IOException e) {
-            throw new ServiceDeterminationParserError(e);
+            throw new ServiceDeterminationParserRuntimeException(e);
         }
 
 
@@ -160,7 +160,7 @@ public class ServiceDeterminations {
                                     opName = "NNMEOAL";
                                 }
                                 else {
-                                    throw new ServiceDeterminationParserError(String.format("Empty operation name for: %s", natureOfOperation));
+                                    throw new ServiceDeterminationParserRuntimeException(String.format("Empty operation name for: %s", natureOfOperation));
                                 }
                             }
 
@@ -175,7 +175,7 @@ public class ServiceDeterminations {
 
 
                             if (datesFound.isEmpty()) {
-                                throw new ServiceDeterminationParserError("Cannot determine operation start date from: " + operationPeriod);
+                                throw new ServiceDeterminationParserRuntimeException("Cannot determine operation start date from: " + operationPeriod);
                             }
                             else {
                                 LocalDate opStartDate = datesFound.get(0);
@@ -189,7 +189,7 @@ public class ServiceDeterminations {
                 }
             }
         } catch (IOException e) {
-            throw new ServiceDeterminationParserError(e);
+            throw new ServiceDeterminationParserRuntimeException(e);
         }
 
         return ImmutableList.copyOf(operations);

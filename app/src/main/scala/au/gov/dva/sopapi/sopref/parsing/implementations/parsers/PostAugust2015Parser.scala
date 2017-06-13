@@ -4,10 +4,10 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
-import au.gov.dva.sopapi.exceptions.SopParserError
-import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, InstrumentNumber}
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
+import au.gov.dva.sopapi.interfaces.model.DefinedTerm
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedDefinedTerm}
-import au.gov.dva.sopapi.sopref.parsing.traits.{PreAug2015FactorsParser, PreAugust2015SoPParser, SoPParser}
+import au.gov.dva.sopapi.sopref.parsing.traits.{PreAugust2015SoPParser, SoPParser}
 
 import scala.util.Properties
 
@@ -39,7 +39,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
     val regex = """This is the Statement of Principles concerning (.*)""".r
     val m = regex.findFirstMatchIn(withLineBreaksReplaced)
     if (m.isEmpty)
-      throw new SopParserError("Cannot get citation from: " + withLineBreaksReplaced)
+      throw new SopParserRuntimeException("Cannot get citation from: " + withLineBreaksReplaced)
     val trimmed = m.get.group(1).stripSuffix(".")
     trimmed
   }
@@ -48,7 +48,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
     val doeRegex = """This instrument commences on ([0-9]+\s+[A-Za-z]+\s+[0-9]{4,4})""".r
     val m = doeRegex.findFirstMatchIn(dateOfEffectSection)
     if (m.isEmpty)
-      throw new SopParserError("Cannot determine date of effect from: " + dateOfEffectSection)
+      throw new SopParserRuntimeException("Cannot determine date of effect from: " + dateOfEffectSection)
     return LocalDate.parse(m.get.group(1), DateTimeFormatter.ofPattern("d MMMM yyyy"))
   }
 
@@ -64,7 +64,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
       return (para, para)
     }
     else
-      throw new SopParserError("Cannot determine aggravation paras from: " + aggravationSection)
+      throw new SopParserRuntimeException("Cannot determine aggravation paras from: " + aggravationSection)
   }
 
   override def parseConditionNameFromCitation(citation: String): String = {
@@ -74,7 +74,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
 
     val m = regex.findFirstMatchIn(citation)
     if (m.isEmpty)
-      throw new SopParserError("Cannot get condition name from this citation: %s".format(citation))
+      throw new SopParserRuntimeException("Cannot get condition name from this citation: %s".format(citation))
     return m.get.group(1).trim()
   }
 

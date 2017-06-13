@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.sopref.parsing.traits
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithSubParas, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FallbackFactorsParser
@@ -37,7 +37,7 @@ trait PreAug2015FactorsParser extends MiscRegexes {
     if (headerText.contains("reasonable hypothesis"))
       return StandardOfProof.ReasonableHypothesis
     else {
-      throw new SopParserError("Cannot determine standard of proof from text: " + headerText)
+      throw new SopParserRuntimeException("Cannot determine standard of proof from text: " + headerText)
     }
   }
 

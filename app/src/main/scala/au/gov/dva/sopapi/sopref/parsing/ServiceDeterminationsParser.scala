@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.sopref.parsing
 import java.time.{LocalDate, OffsetDateTime}
 
 import au.gov.dva.sopapi.DateTimeUtils
-import au.gov.dva.sopapi.exceptions.ServiceDeterminationParserError
+import au.gov.dva.sopapi.exceptions.ServiceDeterminationParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.{ServiceDetermination, ServiceType}
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination
 ;
@@ -14,7 +14,7 @@ object ServiceDeterminationsParser {
     val m = registerIdRegex.findFirstMatchIn(determinationText)
     if (m.isEmpty)
       {
-        throw new ServiceDeterminationParserError(s"Could not determine register Id from determination: $determinationText")
+        throw new ServiceDeterminationParserRuntimeException(s"Could not determine register Id from determination: $determinationText")
       }
     m.get.matched
   }
@@ -38,7 +38,7 @@ object ServiceDeterminationsParser {
 
       val m = regex.findFirstMatchIn(determinationText);
     if (m.isEmpty)
-      throw new ServiceDeterminationParserError(s"Could not extract citation from: $determinationText")
+      throw new ServiceDeterminationParserRuntimeException(s"Could not extract citation from: $determinationText")
 
     val lineBreak = """[\r\n]+""".r
     lineBreak.replaceAllIn(m.get.matched," ")
@@ -61,7 +61,7 @@ object ServiceDeterminationsParser {
         val registeredDateFromText = getRegisteredDate(plainText)
         if (registeredDateFromText.isEmpty)
         {
-          throw new ServiceDeterminationParserError(s"Cannot determine commencement date for Service Determination: $plainText")
+          throw new ServiceDeterminationParserRuntimeException(s"Cannot determine commencement date for Service Determination: $plainText")
         }
         else {
           registeredDateFromText.get

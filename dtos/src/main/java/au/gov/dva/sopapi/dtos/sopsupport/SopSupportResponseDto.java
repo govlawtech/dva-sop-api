@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.dtos.sopsupport;
 
 
-import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
+import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
@@ -70,7 +70,7 @@ public class SopSupportResponseDto {
                     .with(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
                     .writeValueAsString(sopSupportResponseDto);
         } catch (JsonProcessingException e) {
-            throw new DvaSopApiDtoError(e);
+            throw new DvaSopApiDtoRuntimeException(e);
         }
 
         return jsonString;
@@ -88,7 +88,7 @@ public class SopSupportResponseDto {
 
             return operationsResponseDto;
         } catch (IOException e) {
-            throw new DvaSopApiDtoError(e);
+            throw new DvaSopApiDtoRuntimeException(e);
         }
     }
 }

@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopref.data.updates.changefactories;
 
-import au.gov.dva.sopapi.exceptions.AutoUpdateError;
+import au.gov.dva.sopapi.exceptions.AutoUpdateRuntimeException;
 import au.gov.dva.sopapi.interfaces.InstrumentChangeFactory;
 import au.gov.dva.sopapi.interfaces.LegislationRegisterEmailClient;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
@@ -47,7 +47,7 @@ public class EmailSubscriptionInstrumentChangeFactory implements InstrumentChang
                                 return Optional.of(new NewInstrument(
                                         extractRegisterIdFromEmailUrl(u.getRegisterLink())
                                         , u.getDateReceived()));
-                            } catch (AutoUpdateError e) {
+                            } catch (AutoUpdateRuntimeException e) {
                                 logger.error("Failed to create new instrument update from email item: %s" + u);
                                 return Optional.empty();
                             }
@@ -67,10 +67,10 @@ public class EmailSubscriptionInstrumentChangeFactory implements InstrumentChang
             if (lastPart.matches("[A-Z0-9]+")) {
                 return lastPart.trim();
             } else {
-                throw new AutoUpdateError("Could not extract a Register ID from link %s in email item.");
+                throw new AutoUpdateRuntimeException("Could not extract a Register ID from link %s in email item.");
             }
         } catch (Exception e) {
-            throw new AutoUpdateError(String.format("Could not extract a Register ID from link %s in email item.", url.toString()), e);
+            throw new AutoUpdateRuntimeException(String.format("Could not extract a Register ID from link %s in email item.", url.toString()), e);
         }
     }
 

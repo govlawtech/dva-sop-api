@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.ruleconfiguration;
 
-import au.gov.dva.sopapi.ConfigurationError;
+import au.gov.dva.sopapi.ConfigurationRuntimeException;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationItem;
@@ -64,7 +64,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         refs.forEach(r ->  {
             if (!Pattern.matches(CsvRuleConfigurationRepository.regexForFactorRef,r))
             {
-                throw new ConfigurationError(String.format("Illegal factor reference in cell: %s", factorRefsCellValue));
+                throw new ConfigurationRuntimeException(String.format("Illegal factor reference in cell: %s", factorRefsCellValue));
             }
         });
 
@@ -79,7 +79,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         }
         catch (Exception e)
         {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
     }
 
@@ -91,7 +91,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         }
         catch (Exception e)
         {
-            throw new ConfigurationError(e);
+            throw new ConfigurationRuntimeException(e);
         }
     }
 
@@ -102,7 +102,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         }
         catch (Exception e)
         {
-            throw new ConfigurationError(errMsg + ": " + intString);
+            throw new ConfigurationRuntimeException(errMsg + ": " + intString);
         }
     }
 

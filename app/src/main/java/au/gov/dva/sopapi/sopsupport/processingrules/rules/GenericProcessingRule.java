@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleError;
+import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
@@ -97,7 +97,7 @@ public class GenericProcessingRule implements ProcessingRule {
         }
 
         if (daysOfOperationalService >= Integer.MAX_VALUE) {
-            throw new ProcessingRuleError("Cannot handle days of operational service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
+            throw new ProcessingRuleRuntimeException("Cannot handle days of operational service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
         }
         caseTrace.setActualOperationalDays(daysOfOperationalService.intValue());
 
@@ -152,7 +152,7 @@ public class GenericProcessingRule implements ProcessingRule {
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
         Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(serviceHistory, condition.getStartDate());
         if (actualDaysOfCfts >= Integer.MAX_VALUE) {
-            throw new ProcessingRuleError("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
+            throw new ProcessingRuleRuntimeException("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
         }
         caseTrace.setActualCftsDays(actualDaysOfCfts.intValue());
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Actual days of continuous full time service: " + actualDaysOfCfts);

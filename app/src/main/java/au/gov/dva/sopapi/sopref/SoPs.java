@@ -5,17 +5,13 @@ import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.SoPFactorsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
-import au.gov.dva.sopapi.exceptions.DvaSopApiError;
-import au.gov.dva.sopapi.interfaces.Repository;
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.ICDCode;
-import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import org.apache.poi.ss.formula.functions.Offset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,7 +39,7 @@ public class SoPs {
         try {
             jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(dtoToReturn);
         } catch (JsonProcessingException e) {
-            throw new DvaSopApiError(e);
+            throw new DvaSopApiRuntimeException(e);
         }
         return jsonString;
     }

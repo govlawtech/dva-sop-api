@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.sopref.data.updates;
 
-import au.gov.dva.sopapi.exceptions.AutoUpdateError;
-import au.gov.dva.sopapi.exceptions.DvaSopApiError;
+import au.gov.dva.sopapi.exceptions.AutoUpdateRuntimeException;
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.SoPLoader;
@@ -97,7 +97,7 @@ public class SoPLoaderImpl implements SoPLoader {
             try {
                 applyInstrumentChange(ic,repository,sopProvider);
             }
-            catch (DvaSopApiError e)
+            catch (DvaSopApiRuntimeException e)
             {
                 logger.error("Failed to apply update to repository for instrument change: " + ic.toString(),e);
             }
@@ -118,7 +118,7 @@ public class SoPLoaderImpl implements SoPLoader {
             if (!sop.isPresent())
             {
                 repository.addToRetryQueue(instrumentChange);
-                throw new AutoUpdateError(String.format("Cannot get a SoP for instrument ID: %s", instrumentChange.getTargetInstrumentId()));
+                throw new AutoUpdateRuntimeException(String.format("Cannot get a SoP for instrument ID: %s", instrumentChange.getTargetInstrumentId()));
             }
 
             repository.addSop(sop.get());
@@ -132,14 +132,14 @@ public class SoPLoaderImpl implements SoPLoader {
             Optional<SoP> toEndDate = repository.getSop(instrumentChange.getSourceInstrumentId());
             if (!toEndDate.isPresent())
             {
-                throw new AutoUpdateError(String.format("Attempt to update the end date of SoP %s failed because it is not present in the Repository.", instrumentChange.getSourceInstrumentId()));
+                throw new AutoUpdateRuntimeException(String.format("Attempt to update the end date of SoP %s failed because it is not present in the Repository.", instrumentChange.getSourceInstrumentId()));
             }
 
             Optional<SoP> repealingSop = soPProvider.apply(instrumentChange.getTargetInstrumentId());
             if (!repealingSop.isPresent())
             {
                 repository.addToRetryQueue(instrumentChange);
-                throw new AutoUpdateError(String.format("Replacement of repealed SoP %s failed because could not obtain new SoP %s", instrumentChange.getSourceInstrumentId(), instrumentChange.getTargetInstrumentId()));
+                throw new AutoUpdateRuntimeException(String.format("Replacement of repealed SoP %s failed because could not obtain new SoP %s", instrumentChange.getSourceInstrumentId(), instrumentChange.getTargetInstrumentId()));
             }
 
             LocalDate effectiveDateOfNewSoP = repealingSop.get().getEffectiveFromDate();
@@ -157,13 +157,13 @@ public class SoPLoaderImpl implements SoPLoader {
 
             Optional<SoP> toEndDate = repository.getSop(instrumentChange.getSourceInstrumentId());
             if (!toEndDate.isPresent()) {
-                throw new AutoUpdateError(String.format("Attempt to update the end date of SoP %s failed because it is not present in the Repository.", instrumentChange.getSourceInstrumentId()));
+                throw new AutoUpdateRuntimeException(String.format("Attempt to update the end date of SoP %s failed because it is not present in the Repository.", instrumentChange.getSourceInstrumentId()));
             }
 
             Optional<SoP> newCompilation = soPProvider.apply(instrumentChange.getTargetInstrumentId());
             if (!newCompilation.isPresent()) {
                 repository.addToRetryQueue(instrumentChange);
-                throw new AutoUpdateError(String.format("Could not get new compilation for SoP: %s", instrumentChange.getTargetInstrumentId()));
+                throw new AutoUpdateRuntimeException(String.format("Could not get new compilation for SoP: %s", instrumentChange.getTargetInstrumentId()));
             }
 
             repository.archiveSoP(instrumentChange.getSourceInstrumentId());
@@ -181,7 +181,7 @@ public class SoPLoaderImpl implements SoPLoader {
             repository.addSop(endDated);
         }
 
-        else throw new AutoUpdateError(String.format("Unable to apply this instrument change type to repository: %s", instrumentChange.getClass().getName()));
+        else throw new AutoUpdateRuntimeException(String.format("Unable to apply this instrument change type to repository: %s", instrumentChange.getClass().getName()));
     }
 
 
@@ -244,7 +244,7 @@ public class SoPLoaderImpl implements SoPLoader {
                             logger.trace(String.format("Successfully created SoP for instrument ID %s using factory for instrument ID %s.", registerId, antecedent));
                             return Optional.of(antecedentResult);
                         }
-                        catch (DvaSopApiError antecedentError)
+                        catch (DvaSopApiRuntimeException antecedentError)
                         {
                             logger.error(String.format("Failed to create SoP with Register ID %s using factory for antecedent SoP with Register ID %s", registerId, antecedent));
                         }

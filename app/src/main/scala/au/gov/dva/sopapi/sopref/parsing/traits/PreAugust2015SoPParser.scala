@@ -4,13 +4,10 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, InstrumentNumber}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{ParsedDefinedTerm, ParsedInstrumentNumber}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAug2015DefinitionsParsers
-
-import scala.util.parsing.combinator.RegexParsers
-import scala.collection.immutable.Seq
 
 trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
 
@@ -20,7 +17,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
     if (headerText.contains("reasonable hypothesis"))
       return StandardOfProof.ReasonableHypothesis
      else {
-      throw new SopParserError("Cannot determine standard of proof from text: " + headerText)
+      throw new SopParserRuntimeException("Cannot determine standard of proof from text: " + headerText)
     }
   }
 
@@ -29,7 +26,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
     val instrumentNumberRegex = """No\.?\s+([0-9]+)\s+of\s+([0-9]{4,4})""".r
     val regexMatch = instrumentNumberRegex.findFirstMatchIn(citationSection)
     if (regexMatch.isEmpty)
-      throw new SopParserError("Cannot determine instrument number from this citation: " + citationSection)
+      throw new SopParserRuntimeException("Cannot determine instrument number from this citation: " + citationSection)
 
     val number = regexMatch.get.group(1).toInt
     val year = regexMatch.get.group(2).toInt
@@ -46,7 +43,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
     val doeRegex = """effect from ([0-9]+\s+[A-Za-z]+\s+[0-9]{4,4})""".r
     val m = doeRegex.findFirstMatchIn(dateOfEffectSection)
     if (m.isEmpty)
-      throw new SopParserError("Cannot determine date of effect from: " + dateOfEffectSection)
+      throw new SopParserRuntimeException("Cannot determine date of effect from: " + dateOfEffectSection)
     return LocalDate.parse(m.get.group(1), DateTimeFormatter.ofPattern("d MMMM yyyy"))
   }
 
@@ -55,7 +52,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
     val paraIntervalRegex = """Paragraph [0-9]+(\([a-z]+\))""".r
     val m = paraIntervalRegex.findFirstMatchIn(aggravationSection)
     if (m.isEmpty)
-      throw new SopParserError("Cannot determine aggravation para from: " + aggravationSection)
+      throw new SopParserRuntimeException("Cannot determine aggravation para from: " + aggravationSection)
     (m.get.group(1), m.get.group(1))
   }
 
@@ -73,7 +70,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
       return (para,para)
     }
     else
-      throw new SopParserError("Cannot determine aggravation paras from: " + aggravationSection)
+      throw new SopParserRuntimeException("Cannot determine aggravation paras from: " + aggravationSection)
   }
 
 
@@ -81,7 +78,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
     val regex = """(Statement of Principles .*)""".r
     val m = regex.findFirstMatchIn(citationSection)
     if (m.isEmpty)
-      throw new SopParserError("Cannot get citation from: " + citationSection)
+      throw new SopParserRuntimeException("Cannot get citation from: " + citationSection)
     val trimmed = m.get.group(1).stripSuffix(".")
     trimmed
   }
@@ -91,7 +88,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
 
     val m = regex.findFirstMatchIn(citation)
     if (m.isEmpty)
-      throw new SopParserError("Cannot get condition name from this citation: %s".format(citation))
+      throw new SopParserRuntimeException("Cannot get condition name from this citation: %s".format(citation))
     return m.get.group(1)
   }
 

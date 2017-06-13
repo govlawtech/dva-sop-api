@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 
-import au.gov.dva.sopapi.exceptions.SopParserError
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 
 object PreAug2015DefinitionsParsers {
 
@@ -31,7 +31,7 @@ object PreAug2015DefinitionsParsers {
     val wordsBeforeMeans = definition.split("""(\s|(\n|\r\n))""").takeWhile(w => defKeyWordRegex.findFirstIn(w).isEmpty).mkString(" ")
     val m = wordsBeforeMeans
     if (m.isEmpty)
-      throw new SopParserError("Cannot find the defined word in this definition: " + definition)
+      throw new SopParserRuntimeException("Cannot find the defined word in this definition: " + definition)
     val toTrim = m.size
     var remainder = definition.drop(toTrim).trim.stripSuffix(";").stripSuffix(".")
     var word = m.drop(1).dropRight(1)

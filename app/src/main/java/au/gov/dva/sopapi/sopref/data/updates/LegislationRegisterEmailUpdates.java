@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.sopref.data.updates;
 
 import au.gov.dva.sopapi.AppSettings;
-import au.gov.dva.sopapi.exceptions.AutoUpdateError;
+import au.gov.dva.sopapi.exceptions.AutoUpdateRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.LegislationRegisterEmailUpdate;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableSet;
@@ -68,7 +68,7 @@ public class LegislationRegisterEmailUpdates {
                             Address sender = ((MimeMessage) m).getSender();
                             return sender.toString().contains(senderAddress);
                         } catch (MessagingException e) {
-                            throw new AutoUpdateError(e);
+                            throw new AutoUpdateRuntimeException(e);
                         }
                     })
                     .filter(m -> {
@@ -76,16 +76,16 @@ public class LegislationRegisterEmailUpdates {
                             OffsetDateTime sentDate = emailDateToOdt(m.getSentDate());
                             return sentDate.isAfter(startDateExclusive) && sentDate.isBefore(endDateExclusive);
                         } catch (MessagingException e) {
-                            throw new AutoUpdateError(e);
+                            throw new AutoUpdateRuntimeException(e);
                         }
                     })
                     .flatMap(m -> {
                         try {
                             return parseMessage(m, emailDateToOdt(m.getSentDate())).stream();
                         } catch (IOException e) {
-                            throw new AutoUpdateError(e);
+                            throw new AutoUpdateRuntimeException(e);
                         } catch (MessagingException e) {
-                            throw new AutoUpdateError(e);
+                            throw new AutoUpdateRuntimeException(e);
                         }
                     })
                     .distinct();
@@ -93,9 +93,9 @@ public class LegislationRegisterEmailUpdates {
             return updates.collect(Collectors.toSet());
 
         } catch (IOException ex) {
-            throw new AutoUpdateError(ex);
+            throw new AutoUpdateRuntimeException(ex);
         } catch (MessagingException ex) {
-            throw new AutoUpdateError(ex);
+            throw new AutoUpdateRuntimeException(ex);
         }
 
     }

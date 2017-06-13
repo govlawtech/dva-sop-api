@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopsupport;
 
-import au.gov.dva.sopapi.dtos.DvaSopApiDtoError;
+import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceHistoryDto;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -40,7 +40,7 @@ public class SopSupportRequestDto {
             SopSupportRequestDto sopSupportRequestDto = objectMapper.readValue(json,SopSupportRequestDto.class);
             return sopSupportRequestDto;
         } catch (IOException e) {
-            throw new DvaSopApiDtoError(e);
+            throw new DvaSopApiDtoRuntimeException(e);
         }
     }
 
@@ -51,7 +51,7 @@ public class SopSupportRequestDto {
         try {
             return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
         } catch (JsonProcessingException e) {
-            throw new DvaSopApiDtoError(e);
+            throw new DvaSopApiDtoRuntimeException(e);
         }
     }
 

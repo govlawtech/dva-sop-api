@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.sopref.data;
 
-import au.gov.dva.sopapi.ConfigurationError;
-import au.gov.dva.sopapi.exceptions.RepositoryError;
+import au.gov.dva.sopapi.ConfigurationRuntimeException;
+import au.gov.dva.sopapi.exceptions.RepositoryRuntimeException;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
@@ -19,8 +19,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.microsoft.azure.storage.CloudStorageAccount;
-import com.microsoft.azure.storage.ServiceProperties;
-import com.microsoft.azure.storage.ServiceStats;
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.*;
 import org.slf4j.Logger;
@@ -73,7 +71,7 @@ public class AzureStorageRepository implements Repository {
             logger.info(String.format("Number of containers in Azure storage: %d.", Iterables.size(containers)));
 
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
 
 
@@ -112,9 +110,9 @@ public class AzureStorageRepository implements Repository {
             JsonNode jsonNode = StoredSop.toJson(sop);
             blob.uploadText(Conversions.toString(jsonNode));
         } catch (RuntimeException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -133,9 +131,9 @@ public class AzureStorageRepository implements Repository {
             }
 
         } catch (RuntimeException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -157,9 +155,9 @@ public class AzureStorageRepository implements Repository {
 
             return ImmutableSet.copyOf(retrievedSops);
         } catch (RuntimeException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -168,7 +166,7 @@ public class AzureStorageRepository implements Repository {
         try {
             Optional<CloudBlob> cloudBlob = getBlobByName(SOP_CONTAINER_NAME, registerId);
             if (!cloudBlob.isPresent()) {
-                throw new RepositoryError(String.format("SoP with register ID does not exist: %s", registerId));
+                throw new RepositoryRuntimeException(String.format("SoP with register ID does not exist: %s", registerId));
             }
 
             byte[] blobBytes = getBlobBytes(cloudBlob.get());
@@ -179,11 +177,11 @@ public class AzureStorageRepository implements Repository {
             deleteBlob(SOP_CONTAINER_NAME, registerId);
 
         } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (StorageException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (IOException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
 
     }
@@ -195,9 +193,9 @@ public class AzureStorageRepository implements Repository {
             ServiceDetermination serviceDetermination = StoredServiceDetermination.fromJson(jsonNode);
             return serviceDetermination;
         } catch (RuntimeException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -207,9 +205,9 @@ public class AzureStorageRepository implements Repository {
             SoP sop = StoredSop.fromJson(jsonNode);
             return sop;
         } catch (RuntimeException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -254,7 +252,7 @@ public class AzureStorageRepository implements Repository {
 
 
         } catch (URISyntaxException | StorageException | IOException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
 
 
@@ -263,9 +261,9 @@ public class AzureStorageRepository implements Repository {
             try {
                 return blobToInstrumentChangeStream((CloudBlob) listBlobItem);
             } catch (IOException e) {
-                throw new RepositoryError(e);
+                throw new RepositoryRuntimeException(e);
             } catch (StorageException e) {
-                throw new RepositoryError(e);
+                throw new RepositoryRuntimeException(e);
             }
         }).collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf));
     }
@@ -303,7 +301,7 @@ public class AzureStorageRepository implements Repository {
             instrumentChanges.stream().forEach(ic -> root.add(ic.toJson()));
             blob.uploadText(Conversions.toString(root));
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -319,7 +317,7 @@ public class AzureStorageRepository implements Repository {
                 }
             }
         } catch (StorageException | URISyntaxException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -349,9 +347,9 @@ public class AzureStorageRepository implements Repository {
             blob.getProperties().setContentEncoding("UTF-8");
             blob.uploadText(Conversions.toString(jsonNode));
         } catch (RuntimeException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -360,7 +358,7 @@ public class AzureStorageRepository implements Repository {
         try {
             Optional<CloudBlob> cloudBlob = getBlobByName(SERVICE_DETERMINATIONS_CONTAINER_NAME, registerId);
             if (!cloudBlob.isPresent()) {
-                throw new RepositoryError(String.format("Service Determination with register ID does not exist: %s", registerId));
+                throw new RepositoryRuntimeException(String.format("Service Determination with register ID does not exist: %s", registerId));
             }
 
             byte[] blobBytes = getBlobBytes(cloudBlob.get());
@@ -370,11 +368,11 @@ public class AzureStorageRepository implements Repository {
             deleteBlob(SERVICE_DETERMINATIONS_CONTAINER_NAME, registerId);
 
         } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (StorageException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (IOException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -396,9 +394,9 @@ public class AzureStorageRepository implements Repository {
 
             return ImmutableSet.copyOf(retrievedServiceDeterminations);
         } catch (RuntimeException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (Exception e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -415,13 +413,13 @@ public class AzureStorageRepository implements Repository {
             return Optional.of(offsetDateTime);
 
         } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (StorageException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (UnsupportedEncodingException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (DateTimeParseException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -434,11 +432,11 @@ public class AzureStorageRepository implements Repository {
             blob.getProperties().setContentEncoding("UTF-8");
             blob.uploadText(offsetDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME));
         } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (StorageException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (IOException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
 
 
@@ -456,12 +454,12 @@ public class AzureStorageRepository implements Repository {
             byte[] bopCsvUtf8 = getBlobBytes(bopCsv.get());
             RuleConfigurationRepository repository = new CsvRuleConfigurationRepository(rhCsvUtf8, bopCsvUtf8);
             return Optional.of(repository);
-        } catch (ConfigurationError e) {
-            throw new RepositoryError(e);
+        } catch (ConfigurationRuntimeException e) {
+            throw new RepositoryRuntimeException(e);
         } catch (StorageException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -472,11 +470,11 @@ public class AzureStorageRepository implements Repository {
             saveBlob(RULE_CONFIG_CONTAINER_NAME, RH_RULE_CONFIG_CSV_NAME, rhCsv);
             saveBlob(RULE_CONFIG_CONTAINER_NAME, BOP_RULE_CONFIG_CSV_NAME, bopCsv);
         } catch (URISyntaxException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (StorageException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         } catch (IOException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
@@ -518,14 +516,14 @@ public class AzureStorageRepository implements Repository {
             try {
                 cloudBlobContainer.deleteIfExists();
             } catch (StorageException e) {
-                throw new RepositoryError(e);
+                throw new RepositoryRuntimeException(e);
             }
         }
 
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
-            throw new RepositoryError(e);
+            throw new RepositoryRuntimeException(e);
         }
     }
 
