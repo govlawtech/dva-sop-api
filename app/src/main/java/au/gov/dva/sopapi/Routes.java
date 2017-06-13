@@ -226,7 +226,7 @@ class Routes {
             }
             catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFormatError();
+                return buildIncorrectRequestFormatError(e.getMessage());
             }
             catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
@@ -246,11 +246,12 @@ class Routes {
         }));
     }
 
-    private static String buildIncorrectRequestFormatError() {
-        Optional<String> schema = generateSchemaForSopSupportRequestDto();
+    private static String buildIncorrectRequestFormatError(String detailedErrorMessage) {
         StringBuilder sb = new StringBuilder();
+        sb.append(detailedErrorMessage);
+        Optional<String> schema = generateSchemaForSopSupportRequestDto();
         if (schema.isPresent()) {
-            sb.append("Request body does not conform to expected schema:\n");
+            sb.append("Request must conform to schema:\n");
             sb.append(schema);
         }
         return sb.toString();
