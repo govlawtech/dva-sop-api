@@ -1,5 +1,7 @@
 package au.gov.dva.sopapi.dtos;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Locale;
 
 public enum Rank {
@@ -22,6 +24,7 @@ public enum Rank {
 
     }
 
+    @JsonCreator
     public static Rank fromString(String rank)
     {
         String lowered = rank.toLowerCase(Locale.ENGLISH);
