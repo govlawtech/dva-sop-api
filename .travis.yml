@@ -21,8 +21,8 @@ branches:
   - master
 deploy:
   provider: azure_web_apps
-  username: "$DEV_USER_NAME"
-  password: "$DEV_PASSWORD"
+  username: ${DEV_USER_NAME}
+  password: ${DEV_PASSWORD}
   site: dvasopapi
   slot: dev
   on: dev
