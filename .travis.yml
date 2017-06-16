@@ -17,6 +17,7 @@ addons:
 
 branches:
   only:
+  - dev
   - devtest
   - master
 
