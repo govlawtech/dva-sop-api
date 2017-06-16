@@ -1,41 +1,39 @@
 sudo: required
-
 env:
-        - DEP_ENV=devtest BASE_URL=https://dvasopapi-devtest.azurewebsites.net
+  matrix:
+  - DEP_ENV=devtest
+  - BASE_URL=https://dvasopapi-devtest.azurewebsites.net
+  global:
+  - secure: vYwX3xumJnWRuOqTdAGs4l3vK0Wj+W2fMNiBwVRjMrs5i+DLKeAsyQIOpy77JJUrTgjZcxpES8u52kDcDe4Op8tuhRBIXCUAJw3MhSZOZHkaq31CCxvLa3sM1sM2pFbVUy4E940rifV9ruhQZyWkbQD55/pQt/IygEdvbhTgQ+IVHTaXuh3NRmqlt6pLagMpk99uwqDNSLjq86X7rzx1O2/0NidOcZoo5OTFOPNgJogmXp14BZoks6SWESIDQkWFcq2jxfoiq4LpBkcBUwspg+QHrksZPRnRAw81EJEU3W9Faow5KGDcDaYtDz3XOJJCSht4xhWf/qpCzk7zKytUpvSShAH1T+IYEnpJBeCBlelmJbokCdZaPofyXMhkGbBXCjoKfbdghqeI8weLgUpe1Ryf0jLhCnPc+EDYX/MJ1CUUMZ5ropxrPA3fdPAVxFhVUUbmKBQRORnko4DKlO7ksg3X5Ae+lbfk85NvJsdLp/Kmly8hMKhg49/KnetDaarnis6KOfQsMFhHFTF+V79GquzlYvn0aEkS6Li03muTl3JxZAbbLXZAgcvScxvgkKg4I8n4c+//TjH9MSJ8omHblv7l3OXEOdkFMuemBbxfME2xM4hd1GGHPNkHdvdhSRJlkY0ASba5vJr0j2C8ikU85MvI0CYpaDUQW82OU6w+uyM=
+  - secure: jFf1Zf9iDej+Itb2groVGTsk/bwmEWHygx+AxdM7Xbo7uqPG/xfyGwCzdnOZpZuzCfydkTPFZn/427hki2q3XtYxGisOvkg31aX9hAa+cIuINEZJ/l1pbNX5uzqlH61XN0ybqoTm2L8CenLULDZGzg5yxUbFn3BK/meI51z0cMPZXPo9Woif+Bzuz5fN9lAuq9V2DtS1jK6YoiLtpa00qvaKYu4G3gMFPoafoJQkTQw5sdDBlaxd7EC6bGMcpaGNp+ul9kh4pMOWhCqy5C5OtJqFMOq/Cu55xVSx6B9aqMGwBmebVw9+LXWPA4fEB1ssB/WAdD5LRv2Kl3Xkl8T2YzSR7xOiHoxBJbg7Qj/aHX3OZGjUU1pGbT2u4usX5SzrwkGAK73mH7RsVOQevbBZ1NbtWXO53HheKmgWq2mxwHSsM8jl0QpurOeJ2/kczR+e5kRow0LFFq12c3m2J0HEAWCIzvalI/wnM2ncf0rSutigFdEWerNo8qO027WGGhXElVBC9mw5xStj3jN85SsagoqW6JcecHbgh2tfAQqIMSBPhnSCzLiw+8GQhqJaFTVKkb9u7d7xMIhzlFPhQsktOgg7dk60R1kl9Xqchv+62yHyOQyKmsxkWuCj7Dk0MwfZZInsHcrut+QB4UtuatL64mosxWvFB71Rm2I22GFvtgM=
 
 before_install:
- - chmod +x gradlew
- 
+- chmod +x gradlew
 language: java
 jdk:
-        - oraclejdk8
-
+- oraclejdk8
 addons:
   apt:
     packages:
-      - oracle-java8-installer
-
+    - oracle-java8-installer
 branches:
   only:
   - dev
   - devtest
   - master
-
 deploy:
   provider: azure_web_apps
-  username: "$DEV_USER_NAME"
-  password: "$DEV_PASSWORD"
+  username: $DEV_USER_NAME
+  password: $DEV_PASSWORD
   site: dvasopapi
   slot: dev
   on: dev
-
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-
-script: ./gradlew build
-after_success: ./gradlew uploadArchives
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+script: "./gradlew build"
+after_success: "./gradlew uploadArchives"
