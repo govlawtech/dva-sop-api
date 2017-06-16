@@ -23,8 +23,8 @@ branches:
 
 deploy:
   provider: azure_web_apps
-  username: biggles
-  password: secret_password
+  username: "$DEV_USER_NAME"
+  password: "$DEV_PASSWORD"
   site: dvasopapi
   slot: dev
   on: dev
