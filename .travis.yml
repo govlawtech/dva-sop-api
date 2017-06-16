@@ -20,6 +20,13 @@ branches:
   - devtest
   - master
 
+deploy:
+  provider: azure_web_apps
+  username: $DEV_USER_NAME
+  password: $DEV_PASSWORD
+  site: dvasopapi
+  slot: dev
+  on: dev
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
