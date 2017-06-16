@@ -18,15 +18,6 @@ branches:
   - dev
   - devtest
   - master
-deploy:
-  provider: azure_web_apps
-  username:
-    secure: "Zj+ITp6Iivbl4xOCeqtANx849Mq9RswOMNtqNqoxiSKe7lu8UpdSlNKnEpif/WVaeCBNtxyV3EHTwnNBBkxA/gwModxtIORa/Ktyhqkh2UpdMaOuJtT8CS+zKiO9HeFMcXmMWbf6rqxoHeLaf5sDVaPlokLMmtI/V1ABmyN5GTnC79FC4AzJc8L+lxt8kq/S/xxUmvntJ4n4QTRL/MB01r8PAbdMEA7Mje0+01X8V4urhA9SJ6MH32R62Qtbt+Rw0SG5OuMz5PI1CLCk2AADLhwv2LM6uJ/FIsMDQVGzRA30/EuUsVv+zq2diCt0KfR8+RiAWWfGet5QoQ9PhhCD2BvIoUEDEPx5ofZ858LDZBfodN/TsvCkzeQAcXjfQPO++rC/00FiNfUhaJmAYfQ8C388LqbVx9fV0TeoU3jwtX1yahL/KVfsKcyCljZqg7zpzt1d4NphHzixaHB21nWPX1L19fehdMrqHfKzDgq0flMFLTqmMw/Dq4vtkvtWi3Pd5vfFlFjOI4rXdyyt2KqIQj5lBLX8AuUnOI1es6j8h1bSaAHXgZQdTdRqyVKrlqZL5KM3jmPYSq3aMGC64g85NYOlvVzyxl5ohCqGR9+SqUyKN63LfDFox+qFt0Hl01QyY6a7vEdQEnHR0RzUZIH+V5z33y5/Jse2PuefHQXLA+A="
-  password:
-    secure: "TVrxSMWZG7MSpfbFuxRU7jyK4OYx8icSjxZwwhArFVzLVH4vIJd0sTAslWIKPIQfWs7cGLSvRxvkm/vlYU57+uvvClz9gvWn6fheYwkEG9L9M7xlEhU9yJSbnH7AQxcEIC16El7drC8uEa2EAJoLr05hJq1kOi1DnfSt9RpORubVQDxcPoZFQ0jCSXR7knk41UTxwTnmK0ptxUj9pQrvhaYCtQb1asu+anM2osOYPTQNv7Y/gwUvONp7u5n/kWcOd0heCQMEi73Lh/EoykKUZWkx5oZ/SH329R3esqPB2mFNeW41pKygDYMlocPonanZbZqCgQVA2cleo3d+yP1ua1xo0yhP+5QQEwfmtgEHA+aamhLf4KJk5PEfI9cKALVPNc95YMY0njexE7IeR0zmosHv9H7+tNb8hqxv21ZiCy6AuGyNQ+p/aJ9dH9uSkwXwlZH3EKgbRsgcvkuCawvNGLQNN0mFVNq+0MEPryzobaXy1OV+nN6gNziEi5RYfggNeqsFPZMyzbfhKNCfIJDaeeqVvbw+lKlSL+NmIVaEX1HcPNYdyx+wmrZnXWOf9D1pkDOfUIJ6YJKq8jZHKII0Xt2Ii9WqCAZw30DUySsw30HypvIoSFnGa1DsKNlc0STKORkIgYU0cwMNmKLyaZ9MLpX3P1He+u79NMCXKSaeSdY="
-  site: dvasopapi
-  slot: dev
-  on: dev
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -34,5 +25,5 @@ cache:
   directories:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
-script: "./gradlew build"
-after_success: "./gradlew uploadArchives"
+script: "./gradlew copyToDeploymentDir"
+after_success: "./deploy.sh"
