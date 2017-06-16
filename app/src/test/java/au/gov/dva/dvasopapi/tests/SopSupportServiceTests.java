@@ -24,6 +24,7 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.Resources;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -191,6 +192,7 @@ public class SopSupportServiceTests {
         Assert.assertTrue(!results.isEmpty());
     }
 
+    @Ignore
     @Test
     public void testLsSopIdentification() throws IOException {
         RuleConfigurationRepository ruleConfigurationRepository = getRuleConfig();
@@ -203,6 +205,7 @@ public class SopSupportServiceTests {
 
     }
 
+    @Ignore
     @Test
     public void testFailOperationalServiceReq() throws IOException {
         ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
@@ -214,6 +217,7 @@ public class SopSupportServiceTests {
 
     }
 
+    @Ignore
     @Test
     public void testPassOperationalServiceReq() throws IOException {
         ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());

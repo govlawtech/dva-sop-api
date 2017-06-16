@@ -4,12 +4,14 @@ package au.gov.dva.dvasopapi.tests;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
 import com.google.common.io.Resources;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
 
 public class RulesConfigurationTests {
 
+    @Ignore
     @Test
     public void loadRulesConfig() throws IOException {
         byte[] rhCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/RH.csv"));
