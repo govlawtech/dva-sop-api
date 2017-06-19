@@ -1,5 +1,7 @@
 package au.gov.dva.sopapi.dtos;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.util.Locale;
 
 public enum ServiceBranch {
@@ -20,6 +22,7 @@ public enum ServiceBranch {
         }
     }
 
+    @JsonCreator
     public static ServiceBranch fromString(String value)
     {
         String lowered = value.toLowerCase(Locale.ENGLISH);

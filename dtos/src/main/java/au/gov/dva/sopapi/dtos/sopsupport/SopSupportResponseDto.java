@@ -78,7 +78,6 @@ public class SopSupportResponseDto {
 
     public static SopSupportResponseDto fromJsonString(String jsonString) {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
-
         try {
             SopSupportResponseDto operationsResponseDto =
                     objectMapper.reader()

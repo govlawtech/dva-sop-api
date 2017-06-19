@@ -1,5 +1,7 @@
 package au.gov.dva.sopapi.dtos;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public enum EmploymentType {
     CTFS,
     NON_CTFS;
@@ -17,6 +19,7 @@ public enum EmploymentType {
         }
     }
 
+    @JsonCreator
     EmploymentType fromString(String value)
     {
         switch (value)
