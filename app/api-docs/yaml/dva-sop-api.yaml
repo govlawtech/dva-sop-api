@@ -7,6 +7,7 @@ info:
 
 schemes:
   - http
+  - https
 # If host isn't specified, the UI defaults to the current host - which is probably what we want
 #host: where.is.this.hosted.com?
 basePath: /
