@@ -15,8 +15,8 @@ basePath: /
 paths:
   /getOperations:
     get:
-      summary: Gets all the operations
-      description: Returns a list containing descriptions of every valid operation.
+      summary: Gets all the configured operations
+      description: Returns a list containing a description of every valid operation.
       tags:
         - dva-sop-api
       responses:
@@ -30,7 +30,7 @@ paths:
   /getSopFactors:
     get:
       summary: Gets a list of SoP factors
-      description: Returns a list SoP Factors, that match a particular condition, incident type and standard of proof.
+      description: Returns a list SoP Factors, that match a particular condition, incident type and standard of proof. The request should contain either an icdCode value and icdVersion, or a text Condition name
       tags:
         - dva-sop-api
       parameters:
@@ -47,8 +47,8 @@ paths:
           description: Standard of Proof
           type: string
           enum:
-            - Reasonable Hypothesis
-            - Balance of Probabilities
+            - RH
+            - BoP
         - name: conditionName
           in: query
           description: Condition Name
@@ -207,6 +207,7 @@ definitions:
         $ref: "#/definitions/ServiceHistory"
   Condition:
     required:
+      - conditionName
       - incidentType
     properties:
       conditionName:
@@ -310,11 +311,9 @@ definitions:
       - special forces
   OperationalService:
     required:
-      - assigned
       - description
       - event
       - startDate
-      - endDate
     properties:
       assigned:
         type: string
@@ -357,6 +356,7 @@ definitions:
       - instrumentNumber
       - citation
       - effectiveFromDate
+      - standardOfProof
     properties:
       registerId:
         type: string
@@ -367,6 +367,11 @@ definitions:
       effectiveFromDate:
         type: string
         format: date
+      standardOfProof:
+        type: string
+        enum:
+          - Reasonable Hypothesis
+          - Balance of Probabilities
   FactorWithInferredResultDto:
     required:
       - paragraph
@@ -386,10 +391,10 @@ definitions:
         type: boolean
   CaseTraceDto:
     required:
-      - standardOfProof
       - rhFactors
       - bopFactors
       - reasonings
+      - logTrace
     properties:
       standardOfProof:
         type: string
@@ -418,6 +423,8 @@ definitions:
           $ref: "#/definitions/Factor"
       reasonings:
         $ref: "#/definitions/ReasoningMap"
+      logTrace:
+        type: string
   ReasoningMap:
     properties:
       ABORT_PROCESSING:
