@@ -123,7 +123,7 @@ public class ProcessingRuleFunctions {
     }
 
     private static long getExclusiveNumberOfDaysBetween(OffsetDateTime start, OffsetDateTime end) {
-        return ChronoUnit.DAYS.between(start, end);
+        return Duration.between(start,end).toDays();
     }
 
     private static OffsetDateTime getEarlierOfDeploymentEndDateOrIntervalEnd(OffsetDateTime intervalEndDate, Optional<OffsetDateTime> deploymentEndDate) {
