@@ -1,24 +1,25 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 public class Interval {
 
-    private final OffsetDateTime start;
-    private final OffsetDateTime end;
+    private final LocalDate start;
+    private final LocalDate end;
 
-    public Interval(OffsetDateTime start, OffsetDateTime end)
+    public Interval(LocalDate start, LocalDate end)
     {
 
         this.start = start;
         this.end = end;
     }
 
-    public OffsetDateTime getStart() {
+    public LocalDate getStart() {
         return start;
     }
 
-    public OffsetDateTime getEnd() {
+    public LocalDate getEnd() {
         return end;
     }
 }

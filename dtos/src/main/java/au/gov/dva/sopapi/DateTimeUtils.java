@@ -2,6 +2,7 @@ package au.gov.dva.sopapi;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class DateTimeUtils {
 
@@ -14,9 +15,20 @@ public class DateTimeUtils {
         return OffsetDateTime.of(nextDayLocalDate,LocalTime.MIDNIGHT,timeDuringPrevDay.getOffset());
     }
 
+    public static OffsetDateTime toMidnightAmNextDayUtc(LocalDate prevDay)
+    {
+        LocalDate nextDay = prevDay.plusDays(1);
+        return OffsetDateTime.of(nextDay,LocalTime.MIDNIGHT,ZoneOffset.UTC);
+    }
+
     public static OffsetDateTime toMightnightAmThisDay(OffsetDateTime timeDuringDay)
     {
         return OffsetDateTime.of(timeDuringDay.toLocalDate(),LocalTime.MIDNIGHT,timeDuringDay.getOffset());
+    }
+
+    public static OffsetDateTime toMidnightAmThisDayUtc(LocalDate localDate)
+    {
+        return OffsetDateTime.of(localDate,LocalTime.MIDNIGHT,ZoneOffset.UTC);
     }
 
     public static LocalDate toPrevDay(OffsetDateTime offsetDateTime)
@@ -39,6 +51,10 @@ public class DateTimeUtils {
     {
         LocalDate localDate = LocalDate.parse(input,DateTimeFormatter.ISO_LOCAL_DATE);
         return localDateToLastMidnightCanberraTime(localDate);
+    }
+
+    public static LocalDate parseLocalDate(String input) {
+        return LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE);
     }
 
     public static OffsetDateTime stringToOffsetDateTimeWithAssumptions(String input)

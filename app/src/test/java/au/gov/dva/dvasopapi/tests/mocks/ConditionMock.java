@@ -7,17 +7,18 @@ import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.google.common.collect.ImmutableList;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 public class ConditionMock implements Condition
 {
 
     private final SoPPair soPPair;
-    private final OffsetDateTime start;
-    private final OffsetDateTime end;
+    private final LocalDate start;
+    private final LocalDate end;
     private final ProcessingRule processingRule;
 
-    public ConditionMock(SoPPair soPPair, OffsetDateTime start, OffsetDateTime end, ProcessingRule processingRule) {
+    public ConditionMock(SoPPair soPPair, LocalDate start, LocalDate end, ProcessingRule processingRule) {
         this.soPPair = soPPair;
         this.start = start;
         this.end = end;
@@ -30,12 +31,12 @@ public class ConditionMock implements Condition
     }
 
     @Override
-    public OffsetDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return start;
     }
 
     @Override
-    public OffsetDateTime getEndDate() {
+    public LocalDate getEndDate() {
         return end;
     }
 

@@ -5,6 +5,7 @@ import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import com.google.common.collect.ImmutableSet;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
@@ -12,7 +13,7 @@ public interface Service {
     ServiceBranch getBranch();
     EmploymentType getEmploymentType();
     Rank getRank();
-    OffsetDateTime getStartDate();
-    Optional<OffsetDateTime> getEndDate();
+    LocalDate getStartDate();
+    Optional<LocalDate> getEndDate();
     ImmutableSet<Deployment> getDeployments();
 }

@@ -24,11 +24,11 @@ import static au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryU
 public class GenericProcessingRule implements ProcessingRule {
 
     protected RuleConfigurationRepository ruleConfigurationRepository;
-    protected final OffsetDateTime mrcaStartDate;
+    protected final LocalDate mrcaStartDate;
 
     public GenericProcessingRule(RuleConfigurationRepository ruleConfigurationRepository) {
         this.ruleConfigurationRepository = ruleConfigurationRepository;
-        this.mrcaStartDate = OffsetDateTime.parse("2004-07-01T00:00:00+00:00");
+        this.mrcaStartDate = LocalDate.parse("2004-07-01");
     }
 
     public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
@@ -67,7 +67,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
         RHRuleConfigurationItem rhRuleConfigurationItem = rhRuleConfigurationItemOptional.get();
 
-        Optional<OffsetDateTime> startOfService = ProcessingRuleFunctions.getStartofService(serviceHistory);
+        Optional<LocalDate> startOfService = ProcessingRuleFunctions.getStartofService(serviceHistory);
         if (!startOfService.isPresent()) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "No service.");
             return Optional.empty();
@@ -76,7 +76,7 @@ public class GenericProcessingRule implements ProcessingRule {
         Long daysOfOperationalService = null;
         if (rhRuleConfigurationItem.getYearsLimitForOperationalService().isPresent()) {
 
-            Optional<OffsetDateTime> firstOperationalServiceStartDate = ProcessingRuleFunctions.getFirstOperationalServiceStartDate(serviceHistory, isOperational);
+            Optional<LocalDate> firstOperationalServiceStartDate = ProcessingRuleFunctions.getFirstOperationalServiceStartDate(serviceHistory, isOperational);
             if (!firstOperationalServiceStartDate.isPresent()) {
                 caseTrace.addLoggingTrace(String.format("No operational service between the start date of service (%s) and the condition onset (%s).  Therefore RH cannot apply.", startOfService, condition.getStartDate()));
                 caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The service history does not show any operational service between the start date of service (%s) and the condition onset (%s).  Therefore the Balance of Probabilities standard applies.",startOfService,condition.getStartDate()));
@@ -86,7 +86,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
             caseTrace.addLoggingTrace(String.format("The start date for the test period of operational service is the start of the earliest operational service: %s", firstOperationalServiceStartDate.get()));
 
-            OffsetDateTime endDateForPeriodOfOperationalService = condition.getStartDate();
+            LocalDate endDateForPeriodOfOperationalService = condition.getStartDate();
             caseTrace.addLoggingTrace(String.format("The end date for the test period of operational service is the condition start date: %s", condition.getStartDate()));
 
             daysOfOperationalService = ProcessingRuleFunctions.getMaximumDaysOfOpServiceInAnyInterval(

@@ -3,6 +3,8 @@ package au.gov.dva.sopapi.dtos.sopsupport.components;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateDeserializer;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateSerializer;
 import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeDeserializer;
 import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeSerializer;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -10,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -21,13 +24,13 @@ public class ServiceDto {
     @JsonProperty(value = "serviceType", required = true)
     private final EmploymentType _serviceType;  // eg "Regular/Permanent Force
 
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty(value = "startDate", required = true)
-    private final OffsetDateTime _startDate;
+    private final LocalDate _startDate;
 
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty("endDate")
-    private final OffsetDateTime _endDate;
+    private final LocalDate _endDate;
 
     @JsonProperty("rank")
     private final Rank _rank;
@@ -39,11 +42,11 @@ public class ServiceDto {
     public ServiceDto(@JsonProperty("serviceName") ServiceBranch _serviceName,
                       @JsonProperty("serviceType") EmploymentType _employmentType,
                       @JsonProperty("startDate")
-                      @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-                              OffsetDateTime _startDate,
+                      @JsonDeserialize(using = LocalDateDeserializer.class)
+                              LocalDate _startDate,
                       @JsonProperty("endDate")
-                      @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-                      OffsetDateTime _endDate,
+                      @JsonDeserialize(using = LocalDateDeserializer.class)
+                      LocalDate _endDate,
                       @JsonProperty("rank")
                       Rank rank,
                       @JsonProperty("operationalService")
@@ -64,11 +67,11 @@ public class ServiceDto {
         return _serviceType;
     }
 
-    public OffsetDateTime get_startDate() {
+    public LocalDate get_startDate() {
         return _startDate;
     }
 
-    public OffsetDateTime get_endDate() {
+    public LocalDate get_endDate() {
         return _endDate;
     }
 
