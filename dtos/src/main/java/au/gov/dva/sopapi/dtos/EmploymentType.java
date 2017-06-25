@@ -20,7 +20,7 @@ public enum EmploymentType {
     }
 
     @JsonCreator
-    EmploymentType fromString(String value)
+    public static EmploymentType fromString(String value)
     {
         switch (value)
         {

@@ -11,7 +11,9 @@ import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.OffsetDateTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -23,9 +25,11 @@ import static au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryU
 public class GenericProcessingRule implements ProcessingRule {
 
     protected RuleConfigurationRepository ruleConfigurationRepository;
+    protected final OffsetDateTime mrcaStartDate;
 
     public GenericProcessingRule(RuleConfigurationRepository ruleConfigurationRepository) {
         this.ruleConfigurationRepository = ruleConfigurationRepository;
+        this.mrcaStartDate = OffsetDateTime.parse("2004-07-01T00:00:00+00:00");
     }
 
     public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
@@ -33,6 +37,19 @@ public class GenericProcessingRule implements ProcessingRule {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         if (!relevantRank.isPresent()) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
+            return Optional.empty();
+        }
+
+        if (serviceHistory.getHireDate().isBefore(mrcaStartDate)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot currently apply STP rules for veterans hired on or before 30 June 2004");
+            return Optional.empty();
+        }
+
+        OffsetDateTime earliestStartDate = serviceHistory.getServices().stream()
+                .sorted(Comparator.comparing(Service::getStartDate))
+                .findFirst().get().getStartDate();
+        if (serviceHistory.getHireDate().isAfter(earliestStartDate)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "The service history begins before the hire date, therefore this service history is corrupt data and an applicable SoP cannot be determined.");
             return Optional.empty();
         }
 
