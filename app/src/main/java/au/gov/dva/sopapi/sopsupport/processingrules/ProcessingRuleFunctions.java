@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -117,13 +118,9 @@ public class ProcessingRuleFunctions {
         LocalDate deploymentOrIntervalEndDate = getEarlierOfDeploymentEndDateOrIntervalEnd(intervalEndDate, deploymentEndDate);
         logger.trace("The earlier of the interval or deployment end date is " + deploymentOrIntervalEndDate);
 
-        long days = getExclusiveNumberOfDaysBetween(deploymentStartDate, deploymentOrIntervalEndDate);
+        long days = ChronoUnit.DAYS.between(deploymentStartDate, deploymentOrIntervalEndDate);
         logger.trace("Number of days between the deployment start date and interval end date: " + days);
         return days;
-    }
-
-    private static long getExclusiveNumberOfDaysBetween(LocalDate start, LocalDate end) {
-        return Duration.between(start,end).toDays();
     }
 
     private static LocalDate getEarlierOfDeploymentEndDateOrIntervalEnd(LocalDate intervalEndDate, Optional<LocalDate> deploymentEndDate) {
@@ -189,14 +186,13 @@ public class ProcessingRuleFunctions {
             LocalDate startDate = service.getStartDate();
             if (service.getEndDate().isPresent() && service.getEndDate().get().isBefore(endDate)) {
                 logger.trace("Service end date is present and before the test date, therefore counting days between start of service and test date...");
-                Duration duration = Duration.between(startDate, service.getEndDate().get());
-                long days = duration.toDays();
+                long days = ChronoUnit.DAYS.between(startDate, service.getEndDate().get());
                 logger.trace("Returning days counted: " + days);
                 return days;
             }
 
             logger.trace("Service ongoing at test date, therefore counting days between start of service and test date...");
-            long days = Duration.between(startDate, endDate).toDays();
+            long days = ChronoUnit.DAYS.between(startDate, endDate);
             logger.trace("Returning days counted: " + days);
             return days;
         }

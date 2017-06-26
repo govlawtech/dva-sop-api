@@ -45,7 +45,7 @@ public class GenericProcessingRule implements ProcessingRule {
             return Optional.empty();
         }
 
-        OffsetDateTime earliestStartDate = serviceHistory.getServices().stream()
+        LocalDate earliestStartDate = serviceHistory.getServices().stream()
                 .sorted(Comparator.comparing(Service::getStartDate))
                 .findFirst().get().getStartDate();
         if (serviceHistory.getHireDate().isAfter(earliestStartDate)) {

@@ -1,3 +1,4 @@
+import java.time.temporal.ChronoUnit
 import java.time.{Duration, OffsetDateTime}
 
 import au.gov.dva.sopapi.DateTimeUtils
@@ -21,7 +22,7 @@ class IntervalsTest extends FunSuite {
   test("Get correct intervals when bracket more than test period")
   {
     val result: List[Interval] = Intervals.getSoPFactorTestIntervals(10,DateTimeUtils.parseLocalDate("2004-07-01"),DateTimeUtils.parseLocalDate("2014-07-05"))
-    val prettyPrinted = result.map(i => i.getStart + "," + i.getEnd + "," + Duration.between(i.getStart,i.getEnd).toDays)
+    val prettyPrinted = result.map(i => i.getStart + "," + i.getEnd + "," + ChronoUnit.DAYS.between(i.getStart,i.getEnd))
     prettyPrinted.foreach(println(_))
   }
 

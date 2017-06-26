@@ -33,6 +33,7 @@ import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
@@ -148,7 +149,6 @@ public class SopSupportServiceTests {
 
         SopSupportRequestDto result = SopSupportRequestDto.fromJsonString(jsonString);
         Assert.assertTrue(result != null);
-
     }
 
     @Test
