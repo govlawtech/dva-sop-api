@@ -9,6 +9,7 @@ import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
@@ -20,6 +21,11 @@ public class BoundaryBetweenRhAndBoP implements ServiceHistory {
     @Override
     public OffsetDateTime getHireDate() {
         return odtOf(2004,7,20);
+    }
+
+    @Override
+    public ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
+        return this;
     }
 
     @Override

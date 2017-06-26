@@ -8,4 +8,5 @@ public interface Deployment {
   String getOperationName();
   OffsetDateTime getStartDate();
   Optional<OffsetDateTime> getEndDate();
+  String getEvent();
 }

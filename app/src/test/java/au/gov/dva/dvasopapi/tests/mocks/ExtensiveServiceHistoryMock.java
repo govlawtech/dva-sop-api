@@ -10,6 +10,7 @@ import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
@@ -20,6 +21,11 @@ public class ExtensiveServiceHistoryMock implements ServiceHistory {
     @Override
     public OffsetDateTime getHireDate() {
         return null;
+    }
+
+    @Override
+    public ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
+        return this;
     }
 
     @Override

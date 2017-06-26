@@ -123,6 +123,11 @@ public class TestUtils {
             public Optional<OffsetDateTime> getEndDate() {
                 return Optional.of(endDate);
             }
+
+            @Override
+            public String getEvent() {
+                return "Within Specified Area";
+            }
         };
     }
 
@@ -150,6 +155,12 @@ public class TestUtils {
                      return Optional.of(deploymentStartDate.plusDays(maxDays));
                 }
             }
+
+            @Override
+            public String getEvent() {
+                return "Within Specified Area";
+            }
+
         };
     }
 
