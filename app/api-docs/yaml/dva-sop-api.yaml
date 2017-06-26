@@ -110,13 +110,36 @@ paths:
             $ref: "#/definitions/SoPSupportRequest"
       responses:
         200:
-          description: Successfully genrated the .docx file
+          description: Successfully generated the .docx file
           schema:
             type: file
         400:
           description: The request body was malformed
         406:
-          description: The client was unable to accept a JSON response
+          description: The client was unable to accept a DOCX response
+  /getCaseSummaryAsPdf:
+   post:
+      summary: Gets a Case Summary as a PDF file
+      description: Returns a .pdf file containing the case summary and service history
+      tags:
+        - dva-sop-api
+      produces:
+        - application/pdf
+      parameters:
+        - name: supportRequest
+          in: body
+          description: Support request JSON
+          schema:
+            $ref: "#/definitions/SoPSupportRequest"
+      responses:
+        200:
+          description: Successfully generated the .pdf file
+          schema:
+            type: file
+        400:
+          description: The request body was malformed
+        406:
+          description: The client was unable to accept PDF response
 
 definitions:
   OperationsResponse:

@@ -9,4 +9,5 @@ public interface Deployment {
   String getOperationName();
   LocalDate getStartDate();
   Optional<LocalDate> getEndDate();
+  String getEvent();
 }

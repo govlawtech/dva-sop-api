@@ -11,6 +11,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
@@ -31,6 +32,11 @@ public class SimpleServiceHistory {
             @Override
             public LocalDate getHireDate() {
                 return startDate;
+            }
+
+            @Override
+            public ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
+                return this;
             }
 
             @Override
@@ -80,6 +86,11 @@ public class SimpleServiceHistory {
                                             public Optional<LocalDate> getEndDate() {
                                                 return Optional.of(LocalDate.of(2004,9,1).minusDays(1));
                                             }
+
+                                            @Override
+                                            public String getEvent() {
+                                                return "Within Specified Area";
+                                            }
                                         },
 
                                         new Deployment() {
@@ -96,6 +107,11 @@ public class SimpleServiceHistory {
                                             @Override
                                             public Optional<LocalDate> getEndDate() {
                                                 return Optional.of(LocalDate.of(2004,12,31));
+                                            }
+
+                                            @Override
+                                            public String getEvent() {
+                                                return "Within Specified Area";
                                             }
                                         }
                                 );

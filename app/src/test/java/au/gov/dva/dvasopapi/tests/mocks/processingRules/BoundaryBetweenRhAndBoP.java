@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
@@ -21,6 +22,11 @@ public class BoundaryBetweenRhAndBoP implements ServiceHistory {
     @Override
     public LocalDate getHireDate() {
         return LocalDate.of(2004,7,20);
+    }
+
+    @Override
+    public ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
+        return this;
     }
 
     @Override

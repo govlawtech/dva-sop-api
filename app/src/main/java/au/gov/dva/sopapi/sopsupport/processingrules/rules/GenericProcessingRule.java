@@ -13,6 +13,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -41,6 +42,14 @@ public class GenericProcessingRule implements ProcessingRule {
 
         if (serviceHistory.getHireDate().isBefore(mrcaStartDate)) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot currently apply STP rules for veterans hired on or before 30 June 2004");
+            return Optional.empty();
+        }
+
+        OffsetDateTime earliestStartDate = serviceHistory.getServices().stream()
+                .sorted(Comparator.comparing(Service::getStartDate))
+                .findFirst().get().getStartDate();
+        if (serviceHistory.getHireDate().isAfter(earliestStartDate)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "The service history begins before the hire date, therefore this service history is corrupt data and an applicable SoP cannot be determined.");
             return Optional.empty();
         }
 

@@ -92,9 +92,10 @@ public class DtoTransformations {
 
     private static Deployment deploymentFromDeploymentDto(OperationalServiceDto operationalServiceDto)
     {
-        return new DeploymentImpl(operationalServiceDto.get_description(),
-                operationalServiceDto.get_startDate(),
-                operationalServiceDto.get_endDate() != null ? Optional.of(operationalServiceDto.get_endDate()) : Optional.empty());
+        return new DeploymentImpl(operationalServiceDto.get_description()
+                ,operationalServiceDto.get_startDate()
+                ,operationalServiceDto.get_endDate() != null ? Optional.of(operationalServiceDto.get_endDate()) : Optional.empty()
+                ,operationalServiceDto.get_event());
 
     }
 
