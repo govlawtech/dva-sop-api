@@ -1,10 +1,10 @@
 package au.gov.dva.sopapi.interfaces.model;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 
 public interface AggravatedCondition extends Condition
 {
-    OffsetDateTime getInitialInjuryStartDate();
+    LocalDate getInitialInjuryStartDate();
 
-    OffsetDateTime getInitialInjuryEndDate();
+    LocalDate getInitialInjuryEndDate();
 }

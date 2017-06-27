@@ -1,7 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 
 public class Interval {
 

@@ -8,7 +8,6 @@ import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.google.common.collect.ImmutableList;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 
 public class ConditionMock implements Condition
 {

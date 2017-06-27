@@ -1,19 +1,17 @@
 package au.gov.dva.sopapi;
 
+import au.gov.dva.sopapi.interfaces.model.HasDateRange;
+import au.gov.dva.sopapi.sopsupport.processingrules.HasDateRangeImpl;
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class DateTimeUtils {
 
     public static final String TZDB_REGION_CODE = "Australia/ACT";
-
-    public static OffsetDateTime toMidnightAmNextDay(OffsetDateTime timeDuringPrevDay)
-    {
-        OffsetDateTime sameTimeNextDay = timeDuringPrevDay.plusDays(1);
-        LocalDate nextDayLocalDate = sameTimeNextDay.toLocalDate();
-        return OffsetDateTime.of(nextDayLocalDate,LocalTime.MIDNIGHT,timeDuringPrevDay.getOffset());
-    }
 
     public static OffsetDateTime toMidnightAmNextDayUtc(LocalDate prevDay)
     {
@@ -21,20 +19,9 @@ public class DateTimeUtils {
         return OffsetDateTime.of(nextDay,LocalTime.MIDNIGHT,ZoneOffset.UTC);
     }
 
-    public static OffsetDateTime toMightnightAmThisDay(OffsetDateTime timeDuringDay)
-    {
-        return OffsetDateTime.of(timeDuringDay.toLocalDate(),LocalTime.MIDNIGHT,timeDuringDay.getOffset());
-    }
-
     public static OffsetDateTime toMidnightAmThisDayUtc(LocalDate localDate)
     {
         return OffsetDateTime.of(localDate,LocalTime.MIDNIGHT,ZoneOffset.UTC);
-    }
-
-    public static LocalDate toPrevDay(OffsetDateTime offsetDateTime)
-    {
-        OffsetDateTime prevDay = offsetDateTime.minusDays(1);
-        return prevDay.toLocalDate();
     }
 
     public static OffsetDateTime localDateToNextMidnightCanberraTime(String input)
@@ -51,10 +38,6 @@ public class DateTimeUtils {
     {
         LocalDate localDate = LocalDate.parse(input,DateTimeFormatter.ISO_LOCAL_DATE);
         return localDateToLastMidnightCanberraTime(localDate);
-    }
-
-    public static LocalDate parseLocalDate(String input) {
-        return LocalDate.parse(input, DateTimeFormatter.ISO_LOCAL_DATE);
     }
 
     public static OffsetDateTime stringToOffsetDateTimeWithAssumptions(String input)
@@ -90,7 +73,43 @@ public class DateTimeUtils {
         return LocalDate.of(zonedDateTime.getYear(),zonedDateTime.getMonth(),zonedDateTime.getDayOfMonth());
     }
 
-
-
-
+    public static List<HasDateRange> flattenDateRanges(List<HasDateRange> toFlatten) {
+        if (toFlatten == null || toFlatten.size() == 0) return new ArrayList<>();
+        ArrayList<HasDateRange> outputs = new ArrayList();
+        ArrayList<HasDateRange> inputs = new ArrayList(toFlatten);
+        while (inputs.size() > 1) {
+            HasDateRange first = inputs.get(0);
+            boolean notOverlapping = true;
+            for(int i=1; i < inputs.size(); ++i) {
+                HasDateRange next = inputs.get(i);
+                notOverlapping = (next.getEndDate().isPresent() && first.getStartDate().isAfter(next.getEndDate().get()))
+                        || (first.getEndDate().isPresent() && next.getStartDate().isAfter(first.getEndDate().get()));
+                // i.e. if overlapping
+                if ( !notOverlapping ) {
+                    LocalDate newStart = first.getStartDate().isBefore(next.getStartDate())
+                            ? first.getStartDate() : next.getStartDate();
+                    Optional<LocalDate> newEnd = Optional.empty();
+                    if (first.getEndDate().isPresent() && next.getEndDate().isPresent()){
+                        newEnd = first.getEndDate().get().isAfter(next.getEndDate().get())
+                            ? first.getEndDate() : next.getEndDate();
+                    }
+                    HasDateRange newDateRange = new HasDateRangeImpl(newStart, newEnd);
+                    inputs.remove(i);
+                    inputs.remove(0);
+                    inputs.add(newDateRange);
+                    break;
+                }
+            }
+            if (notOverlapping) {
+                // Put in the output array
+                outputs.add(first);
+                inputs.remove(0);
+            }
+        }
+        outputs.add(inputs.get(0)); // Add the last remaining element
+////        outputs.sort((s1, s2) -> {
+////            return s1.getStartDate().compareTo(s2.getStartDate());
+////        });
+        return outputs;
+    }
 }

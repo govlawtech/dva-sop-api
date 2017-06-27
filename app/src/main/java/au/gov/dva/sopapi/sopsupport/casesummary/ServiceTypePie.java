@@ -1,7 +1,5 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
-import au.gov.dva.sopapi.DateTimeUtils;
-import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import com.google.common.collect.ImmutableList;
@@ -19,7 +17,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.text.AttributedString;
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.function.Predicate;

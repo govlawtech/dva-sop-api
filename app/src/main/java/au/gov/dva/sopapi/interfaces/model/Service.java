@@ -9,11 +9,9 @@ import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
-public interface Service {
+public interface Service extends HasDateRange {
     ServiceBranch getBranch();
     EmploymentType getEmploymentType();
     Rank getRank();
-    LocalDate getStartDate();
-    Optional<LocalDate> getEndDate();
     ImmutableSet<Deployment> getDeployments();
 }

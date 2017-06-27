@@ -6,7 +6,6 @@ import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

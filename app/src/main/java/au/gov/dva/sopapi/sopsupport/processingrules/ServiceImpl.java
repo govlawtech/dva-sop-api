@@ -8,7 +8,6 @@ import au.gov.dva.sopapi.interfaces.model.Service;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.Optional;
 
 public class ServiceImpl implements Service {

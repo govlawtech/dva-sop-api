@@ -14,7 +14,6 @@ import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
@@ -65,14 +64,16 @@ public class ProcessingRuleFunctions {
     }
 
     public static long getNumberOfDaysOfOperationalServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
-        long days = deployments.stream()
+        List<HasDateRange> toFlatten = deployments.stream()
                 .filter(d -> isOperational.test(d))
-                .map(d -> getElapsedDaysOfDeploymentInInterval(startDate, endDate, d.getStartDate(), d.getEndDate()))
+                .collect(Collectors.toList());
+        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(toFlatten);
+        long days = flattened.stream()
+                .map(d -> getElapsedDaysOfDateRangeInInterval(startDate, endDate, d))
                 .collect(Collectors.summingLong(value -> value));
 
         return days;
     }
-
 
     public static long getMaximumDaysOfOpServiceInAnyInterval(int intervalDurationInYears, LocalDate startDate, LocalDate endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
         List<Interval> testIntervals = Intervals.getSopFactorTestIntervalsJavaList(intervalDurationInYears, startDate, endDate);
@@ -98,40 +99,43 @@ public class ProcessingRuleFunctions {
 
     }
 
-
-    private static long getElapsedDaysOfDeploymentInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, LocalDate deploymentStartDate, Optional<LocalDate> deploymentEndDate) {
+    private static long getElapsedDaysOfDateRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, HasDateRange dateRange) {
         logger.trace("Getting elapsed days in interval with a deployment...");
         logger.trace("Interval start date: " + intervalStartDate);
         logger.trace("Interval end date: " + intervalEndDate);
-        logger.trace("Deployment start date: " + deploymentStartDate);
-        logger.trace("Deployment end date: " + deploymentEndDate);
-        if (deploymentEndDate.isPresent() && deploymentEndDate.get().isBefore(intervalStartDate)) {
-            logger.trace("Deployment end date is before start date, therefore returning 0 days.");
+        logger.trace("Date range start date: " + dateRange.getStartDate());
+        logger.trace("Date range end date: " + dateRange.getEndDate());
+        if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(intervalStartDate)) {
+            logger.trace("date range end date is before start date, therefore returning 0 days.");
             return 0;
         }
 
-        if (deploymentStartDate.isAfter(intervalEndDate)) {
-            logger.trace("Deployment start date is after the interval end date, therefore returning 0 days.");
+        if (dateRange.getStartDate().isAfter(intervalEndDate)) {
+            logger.trace("Date range start date is after the interval end date, therefore returning 0 days.");
             return 0;
         }
 
-        LocalDate deploymentOrIntervalEndDate = getEarlierOfDeploymentEndDateOrIntervalEnd(intervalEndDate, deploymentEndDate);
-        logger.trace("The earlier of the interval or deployment end date is " + deploymentOrIntervalEndDate);
+        LocalDate dateRangeOrIntervalEndDate = getEarlierOfDateRangeEndDateOrIntervalEnd(intervalEndDate, dateRange.getEndDate());
+        logger.trace("The earlier of the interval or date range end date is " + dateRangeOrIntervalEndDate);
 
-        long days = ChronoUnit.DAYS.between(deploymentStartDate, deploymentOrIntervalEndDate);
-        logger.trace("Number of days between the deployment start date and interval end date: " + days);
+        LocalDate dateRangeOrIntervalStartDate = intervalStartDate.isAfter(dateRange.getStartDate()) ?
+                intervalStartDate : dateRange.getStartDate();
+        logger.trace("The later of the interval or date range start date is " + dateRangeOrIntervalStartDate);
+
+        long days = ChronoUnit.DAYS.between(dateRangeOrIntervalStartDate, dateRangeOrIntervalEndDate) + 1;  // Plus one for inclusive dates
+        logger.trace("Number of days between the date range start date and interval end date: " + days);
         return days;
     }
 
-    private static LocalDate getEarlierOfDeploymentEndDateOrIntervalEnd(LocalDate intervalEndDate, Optional<LocalDate> deploymentEndDate) {
-        if (!deploymentEndDate.isPresent()) {
-            logger.trace("No deployment end date, therefore using interval end date.");
+    private static LocalDate getEarlierOfDateRangeEndDateOrIntervalEnd(LocalDate intervalEndDate, Optional<LocalDate> dateRangeEndDate) {
+        if (!dateRangeEndDate.isPresent()) {
+            logger.trace("No date range end date, therefore using interval end date.");
             return intervalEndDate;
         }
 
-        if (deploymentEndDate.get().isBefore(intervalEndDate)) {
-            logger.trace("Deployment ends before interval, therefore using deployment end date.");
-            return deploymentEndDate.get();
+        if (dateRangeEndDate.get().isBefore(intervalEndDate)) {
+            logger.trace("Date range ends before interval, therefore using deployment end date.");
+            return dateRangeEndDate.get();
         }
         return intervalEndDate;
     }

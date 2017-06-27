@@ -5,9 +5,7 @@ import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
-public interface Deployment {
+public interface Deployment extends HasDateRange {
   String getOperationName();
-  LocalDate getStartDate();
-  Optional<LocalDate> getEndDate();
   String getEvent();
 }
