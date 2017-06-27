@@ -1,12 +1,19 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
+import au.gov.dva.sopapi.dtos.EmploymentType;
+import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
+import au.gov.dva.sopapi.interfaces.model.Service;
+import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Optional;
 
 /**
@@ -55,5 +62,61 @@ public class ProcessingRuleFunctionsTest {
 
         // 6 + 3 + 5 + 13 == 27
         Assert.assertTrue(result == 27);
+    }
+
+    public Service makeService(int beginYear, int beginMonth, int beginDay) {
+        return new ServiceImpl(
+            ServiceBranch.ARMY,
+            EmploymentType.CFTS,
+            Rank.Officer,
+            LocalDate.of(beginYear, beginMonth, beginDay),
+            Optional.empty(),
+            null
+        );
+    }
+
+    public Service makeService(int beginYear, int beginMonth, int beginDay, int endYear, int endMonth, int endDay) {
+        return new ServiceImpl(
+                ServiceBranch.ARMY,
+                EmploymentType.CFTS,
+                Rank.Officer,
+                LocalDate.of(beginYear, beginMonth, beginDay),
+                Optional.of(LocalDate.of(endYear, endMonth, endDay)),
+                null
+        );
+    }
+
+    @Test
+    public void testGetDaysOfContinuousFullTimeServiceToDate() {
+        ServiceHistory testData = new ServiceHistoryImpl(
+            null,
+            ImmutableSet.copyOf(Arrays.asList(
+                    makeService(2011, 5, 10, 2011, 10, 10)
+                    ,makeService(2011, 10, 10, 2012, 5, 10) // 367 (including the service before this one - 365 days + 1 leap day + 1 for inclusive)
+                    ,makeService(2013, 1, 4, 2013, 1, 14) // 11
+                    ,makeService(2014, 5, 1)
+            ))
+        );
+
+        // too early for any service
+        long days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2010, 1, 1));
+        Assert.assertTrue(days == 0);
+
+        // midway through the first pair of services
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2011, 6, 9));
+        Assert.assertTrue(days == 31);
+
+        // first pair of services
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2012, 11, 9));
+        Assert.assertTrue(days == 367);
+
+        // second pair of services
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2013, 6, 9));
+        Assert.assertTrue(days == 378);
+
+        // all of them
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2014, 5, 15));
+        Assert.assertTrue(days == 393);
+
     }
 }

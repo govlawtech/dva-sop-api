@@ -1,7 +1,9 @@
 package au.gov.dva.sopapi;
 
 import au.gov.dva.sopapi.interfaces.model.HasDateRange;
+import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.sopsupport.processingrules.HasDateRangeImpl;
+import au.gov.dva.sopapi.sopsupport.processingrules.ServiceHistoryImpl;
 import org.junit.Assert;
 import org.junit.Test;
 

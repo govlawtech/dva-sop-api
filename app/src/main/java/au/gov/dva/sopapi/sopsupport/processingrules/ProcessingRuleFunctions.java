@@ -173,33 +173,33 @@ public class ProcessingRuleFunctions {
 
     public static Long getDaysOfContinuousFullTimeServiceToDate(ServiceHistory serviceHistory, LocalDate toDate) {
 
-        Long days = serviceHistory.getServices().stream()
-                .filter(service -> service.getStartDate().isBefore(toDate))
-                .map(service -> getDurationOfServiceCFTSInDays(service, toDate))
+        List<HasDateRange> toFlatten = serviceHistory.getServices().stream()
+                .filter(service -> !service.getStartDate().isAfter(toDate) && service.getEmploymentType() == EmploymentType.CFTS)
+                .collect(Collectors.toList());
+        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(toFlatten);
+
+        Long days = flattened.stream()
+                .map(dateRange -> getDaysInDateRangeUpTo(dateRange, toDate))
                 .collect(Collectors.summingLong(value -> value));
 
         return days;
     }
 
-    private static Long getDurationOfServiceCFTSInDays(Service service, LocalDate endDate) {
-        logger.trace("Counting number of days CFTS to " + endDate + "...");
-        if (service.getEmploymentType() != EmploymentType.CFTS) {
-            logger.trace("Employment type is not CFTS, therefore returning 0 days.");
-            return 0L;
-        } else {
-            LocalDate startDate = service.getStartDate();
-            if (service.getEndDate().isPresent() && service.getEndDate().get().isBefore(endDate)) {
-                logger.trace("Service end date is present and before the test date, therefore counting days between start of service and test date...");
-                long days = ChronoUnit.DAYS.between(startDate, service.getEndDate().get());
-                logger.trace("Returning days counted: " + days);
-                return days;
-            }
-
-            logger.trace("Service ongoing at test date, therefore counting days between start of service and test date...");
-            long days = ChronoUnit.DAYS.between(startDate, endDate);
-            logger.trace("Returning days counted: " + days);
-            return days;
+    private static Long getDaysInDateRangeUpTo(HasDateRange dateRange, LocalDate endDate) {
+        logger.trace("Counting number of days in date range to " + endDate + "...");
+        LocalDate startDate = dateRange.getStartDate();
+        long days;
+        if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(endDate)) {
+            logger.trace("Date range end date is present and before the test date, therefore counting days between start of date range and test date...");
+            days = ChronoUnit.DAYS.between(startDate, dateRange.getEndDate().get()) + 1; // +1 for inclusive days
         }
+        else {
+            logger.trace("Date range ongoing at test date, therefore counting days between start of date range and test date...");
+            days = ChronoUnit.DAYS.between(startDate, endDate) + 1; // +1 for inclusive days
+        }
+
+        logger.trace("Returning days counted: " + days);
+        return days;
     }
 
 
@@ -211,7 +211,6 @@ public class ProcessingRuleFunctions {
 
         return factorsWithSatisfaction;
     }
-
 
     public static Predicate<Deployment> getIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
         ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
@@ -231,7 +230,6 @@ public class ProcessingRuleFunctions {
             return setOfLowerCaseOpNames.contains(lowerCasedeploymentNameWithoutOperation);
         });
     }
-
 
     public static Boolean conditionIsBeforeService(Condition condition, ServiceHistory serviceHistory) {
         return condition.getStartDate().isBefore(serviceHistory.getHireDate());
