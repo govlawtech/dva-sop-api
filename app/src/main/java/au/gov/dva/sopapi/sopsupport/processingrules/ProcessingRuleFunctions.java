@@ -237,26 +237,22 @@ public class ProcessingRuleFunctions {
     }
 
     public static boolean conditionStartedWithinXYearsOfLastDayOfMRCAService(Condition condition, ServiceHistory serviceHistory, int numberOfYears, CaseTrace caseTrace) {
+        LocalDate lastDateOfMRCAService = getLastDateOfMRCAServiceOrDefault(serviceHistory, LocalDate.now());
+        caseTrace.addLoggingTrace("The last date of MRCA service or now (if service is ongoing): " + lastDateOfMRCAService);
 
-        LocalDate lastTimeOfMRCAService = getLastTimeOfMRCAServiceOrDefault(serviceHistory, LocalDate.now());
-        caseTrace.addLoggingTrace("The last time of MRCA service or now (if service is ongoing): " + lastTimeOfMRCAService);
-
-        OffsetDateTime midnightNextDayAfterLastTimeOfMRCAService = DateTimeUtils.toMidnightAmNextDayUtc(lastTimeOfMRCAService);
-
-        OffsetDateTime xYearsFromLastDayOfMrcaService = midnightNextDayAfterLastTimeOfMRCAService.plusYears(numberOfYears);
-        caseTrace.addLoggingTrace(String.format("The time %s years from the last day of MRCA service: %s", numberOfYears, xYearsFromLastDayOfMrcaService));
+        LocalDate xYearsFromLastDayOfMrcaService = lastDateOfMRCAService.plusYears(numberOfYears);
+        caseTrace.addLoggingTrace(String.format("The date %s years from the last day of MRCA service: %s", numberOfYears, xYearsFromLastDayOfMrcaService));
 
         LocalDate conditionStartDate = condition.getStartDate();
-        OffsetDateTime midnightAmOnDayOfConditionStart = DateTimeUtils.toMidnightAmThisDayUtc(conditionStartDate);
-        caseTrace.addLoggingTrace("Midnight AM on the day the condition started: " + midnightAmOnDayOfConditionStart);
+        caseTrace.addLoggingTrace("The day the condition started: " + conditionStartDate);
 
-        return midnightAmOnDayOfConditionStart.isBefore(xYearsFromLastDayOfMrcaService);
+        return !conditionStartDate.isAfter(xYearsFromLastDayOfMrcaService);
     }
 
-    private static LocalDate getLastTimeOfMRCAServiceOrDefault(ServiceHistory serviceHistory, LocalDate defaultDate) {
+    private static LocalDate getLastDateOfMRCAServiceOrDefault(ServiceHistory serviceHistory, LocalDate defaultDate) {
         Stream<Service> servicesOrderedMostRecentFirst = serviceHistory.getServices().asList()
                 .stream()
-                .sorted((o1, o2) -> o2.getStartDate().compareTo(o2.getStartDate()));
+                .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()));
 
         Optional<Service> mostRecentService = servicesOrderedMostRecentFirst.findFirst();
         // no service
