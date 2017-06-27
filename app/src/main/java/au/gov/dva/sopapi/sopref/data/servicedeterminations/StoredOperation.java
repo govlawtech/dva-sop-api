@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import javax.annotation.Nonnull;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
@@ -15,11 +16,11 @@ import java.util.Optional;
 public class StoredOperation implements Operation {
 
     private final String name;
-    private final OffsetDateTime startDate;
-    private final Optional<OffsetDateTime> endDate;
+    private final LocalDate startDate;
+    private final Optional<LocalDate> endDate;
     private final ServiceType serviceType;
 
-    public StoredOperation(@Nonnull String name, @Nonnull OffsetDateTime startDate, Optional<OffsetDateTime> endDate, ServiceType serviceType) {
+    public StoredOperation(@Nonnull String name, @Nonnull LocalDate startDate, Optional<LocalDate> endDate, ServiceType serviceType) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -38,12 +39,12 @@ public class StoredOperation implements Operation {
 
 
     @Override
-    public OffsetDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
     @Override
-    public Optional<OffsetDateTime> getEndDate() {
+    public Optional<LocalDate> getEndDate() {
         return endDate;
     }
 
@@ -60,7 +61,7 @@ public class StoredOperation implements Operation {
         objectNode.put(Labels.NAME, operation.getName());
         objectNode.put(Labels.START_DATE, operation.getStartDate().format(DateTimeFormatter.ISO_LOCAL_DATE));
         if (operation.getEndDate().isPresent())
-            objectNode.put(Labels.END_DATE, DateTimeUtils.toPrevDay(operation.getEndDate().get()).format(DateTimeFormatter.ISO_LOCAL_DATE));
+            objectNode.put(Labels.END_DATE, operation.getEndDate().get().minusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE));
         objectNode.put(Labels.TYPE,operation.getServiceType().toString());
         return objectNode;
     }
@@ -70,10 +71,10 @@ public class StoredOperation implements Operation {
         return new StoredOperation(
                 jsonNode.findValue(Labels.NAME).asText(),
 
-                DateTimeUtils.localDateStringToActMidnightOdt(jsonNode.findValue(Labels.START_DATE).asText()),
+                DateTimeUtils.localDateStringToActMidnightOdt(jsonNode.findValue(Labels.START_DATE).asText()).toLocalDate(),
 
                         jsonNode.has(Labels.END_DATE) ? Optional.of(
-                        DateTimeUtils.localDateToNextMidnightCanberraTime(jsonNode.findValue(Labels.END_DATE).asText())) : Optional.empty(),
+                        DateTimeUtils.localDateToNextMidnightCanberraTime(jsonNode.findValue(Labels.END_DATE).asText()).toLocalDate()) : Optional.empty(),
                 ServiceType.fromText(jsonNode.findValue(Labels.TYPE).asText())
         );
     }

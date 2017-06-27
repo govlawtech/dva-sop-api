@@ -7,17 +7,18 @@ import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.google.common.collect.ImmutableList;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 
 public class OnsetCondition implements Condition {
 
     private final SoPPair soPPair;
-    private final OffsetDateTime onsetStartDate;
-    private final OffsetDateTime onsetEndDate;
+    private final LocalDate onsetStartDate;
+    private final LocalDate onsetEndDate;
     private ProcessingRule processingRule;
 
-    public OnsetCondition(SoPPair soPPair, OffsetDateTime onsetStartDate, OffsetDateTime onsetEndDate, ProcessingRule processingRule)
+    public OnsetCondition(SoPPair soPPair, LocalDate onsetStartDate, LocalDate onsetEndDate, ProcessingRule processingRule)
     {
         this.soPPair = soPPair;
         this.onsetStartDate = onsetStartDate;
@@ -31,12 +32,12 @@ public class OnsetCondition implements Condition {
     }
 
     @Override
-    public OffsetDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return onsetStartDate;
     }
 
     @Override
-    public OffsetDateTime getEndDate() {
+    public LocalDate getEndDate() {
         return onsetEndDate;
     }
 

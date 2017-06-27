@@ -53,7 +53,7 @@ public class ServiceDeterminationsTests {
 
         Operation result = StoredOperation.fromJson(jsonNode);
 
-        ZonedDateTime expectedEndDateMidnightNextDay = ZonedDateTime.of(LocalDate.of(2009,7,30), LocalTime.MIDNIGHT, ZoneId.of("Australia/ACT"));
-        Assert.assertTrue(result.getEndDate().get().isEqual(expectedEndDateMidnightNextDay.toOffsetDateTime()));
+        LocalDate expectedEndDateMidnightNextDay = LocalDate.of(2009,7,30);
+        Assert.assertTrue(result.getEndDate().get().isEqual(expectedEndDateMidnightNextDay));
     }
 }

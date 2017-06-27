@@ -29,9 +29,11 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
@@ -62,7 +64,7 @@ public class SopSupportServiceTests {
                         ImmutableList.of(
                                 new ServiceDto(
                                         ServiceBranch.ARMY,
-                                        EmploymentType.CTFS,
+                                        EmploymentType.CFTS,
                                         odtOf(2004, 7, 1),
                                         odtOf(2016, 1, 1),
                                         Rank.OtherRank,
@@ -107,7 +109,7 @@ public class SopSupportServiceTests {
                         ImmutableList.of(
                                 new ServiceDto(
                                         ServiceBranch.RAN,
-                                        EmploymentType.CTFS,
+                                        EmploymentType.CFTS,
                                         odtOf(2004, 7, 1),
                                         odtOf(2016, 1, 1),
                                         Rank.OtherRank,
@@ -147,7 +149,6 @@ public class SopSupportServiceTests {
 
         SopSupportRequestDto result = SopSupportRequestDto.fromJsonString(jsonString);
         Assert.assertTrue(result != null);
-
     }
 
     @Test
@@ -209,7 +210,7 @@ public class SopSupportServiceTests {
     @Test
     public void testFailOperationalServiceReq() throws IOException {
         ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
-        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,8,1),actOdtOf(2004,8,1),null);
+        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),LocalDate.of(2004,8,1),LocalDate.of(2004,8,1),null);
         ServiceHistory serviceHistory = SimpleServiceHistory.get();
         CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
         Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational,mockCaseTrace);
@@ -221,7 +222,7 @@ public class SopSupportServiceTests {
     @Test
     public void testPassOperationalServiceReq() throws IOException {
         ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
-        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),actOdtOf(2004,10,1),actOdtOf(2004,10,1),null);
+        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),LocalDate.of(2004,10,1), LocalDate.of(2004,10,1),null);
         ServiceHistory serviceHistory = SimpleServiceHistory.get();
         CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
         Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational, mockCaseTrace);

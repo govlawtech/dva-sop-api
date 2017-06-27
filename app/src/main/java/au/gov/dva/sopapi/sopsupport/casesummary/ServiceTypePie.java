@@ -35,17 +35,16 @@ public class ServiceTypePie {
         int warDays = 0;
         int peaceDays = 0;
         for (Deployment deployment : service.getDeployments()) {
-            LocalDate startDate = DateTimeUtils.odtToActLocalDate(deployment.getStartDate());
-            Optional<OffsetDateTime> optEndDate = deployment.getEndDate();
+            Optional<LocalDate> optEndDate = deployment.getEndDate();
             LocalDate endDate;
 
             if (optEndDate.isPresent()) {
-                endDate = DateTimeUtils.odtToActLocalDate(optEndDate.get());
+                endDate = optEndDate.get();
             } else {
                 endDate = LocalDate.now();
             }
 
-            long numberOfDays = ChronoUnit.DAYS.between(startDate, endDate) + 1; // +1 to make the dates inclusive
+            long numberOfDays = ChronoUnit.DAYS.between(deployment.getStartDate(), endDate) + 1; // +1 to make the dates inclusive
 
             if (isOperational.test(deployment))
             {

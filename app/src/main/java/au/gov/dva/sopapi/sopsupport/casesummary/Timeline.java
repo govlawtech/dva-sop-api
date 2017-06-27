@@ -50,7 +50,7 @@ public class Timeline {
         for (Deployment deployment : service.getDeployments()) {
             Date startDate = convertOdtToActDate(deployment.getStartDate());
 
-            Optional<OffsetDateTime> optEndDate = deployment.getEndDate();
+            Optional<LocalDate> optEndDate = deployment.getEndDate();
             Date endDate;
 
             if (optEndDate.isPresent()) {
@@ -118,10 +118,9 @@ public class Timeline {
         return ImmutableList.of(imageBytes);
     }
 
-    private static Date convertOdtToActDate(OffsetDateTime offsetDateTime) {
+    private static Date convertOdtToActDate(LocalDate localDate) {
         // return Date at midnight AM in ACT
-        LocalDate actLocalDate = DateTimeUtils.odtToActLocalDate(offsetDateTime);
-        return Date.from(actLocalDate.atStartOfDay().atZone(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)).toInstant());
+        return Date.from(localDate.atStartOfDay().atZone(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)).toInstant());
     }
 
 

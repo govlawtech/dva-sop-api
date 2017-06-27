@@ -1,39 +1,39 @@
 package au.gov.dva.sopapi.dtos.sopsupport.components;
 
-import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeDeserializer;
-import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeSerializer;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateDeserializer;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateSerializer;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 
 public class OnsetDateRangeDto {
 
 
-    @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty("onsetRangeStartDate")
-    private final OffsetDateTime _startDate;
+    private final LocalDate _startDate;
 
-    @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty("onsetRangeEndDate")
-    private final OffsetDateTime _endDate;
+    private final LocalDate _endDate;
 
     @JsonCreator
     public OnsetDateRangeDto(
-            @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeStartDate") OffsetDateTime _startDate,
-            @JsonDeserialize(using = OffsetDateTimeDeserializer.class) @JsonProperty("onsetRangeEndDate")  OffsetDateTime _endDate) {
+            @JsonDeserialize(using = LocalDateDeserializer.class) @JsonProperty("onsetRangeStartDate") LocalDate _startDate,
+            @JsonDeserialize(using = LocalDateDeserializer.class) @JsonProperty("onsetRangeEndDate")  LocalDate _endDate) {
         this._startDate = _startDate;
         this._endDate = _endDate;
     }
 
-    public OffsetDateTime get_startDate() {
+    public LocalDate get_startDate() {
         return _startDate;
     }
-    public OffsetDateTime get_endDate() {
+    public LocalDate get_endDate() {
         return _endDate;
     }
 }

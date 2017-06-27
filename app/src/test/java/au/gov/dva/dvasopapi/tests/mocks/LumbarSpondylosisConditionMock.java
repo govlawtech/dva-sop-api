@@ -7,6 +7,7 @@ import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.google.common.collect.ImmutableList;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
@@ -17,12 +18,12 @@ public class LumbarSpondylosisConditionMock implements Condition {
         return new SoPPair("lumbar spondylosis", new MockLumbarSpondylosisSopBoP(),new MockLumbarSpondylosisSopRH());
     }
 
-    public OffsetDateTime getStartDate() {
-        return OffsetDateTime.of(2004,11,1,0,0,0,0,ZoneOffset.UTC);
+    public LocalDate getStartDate() {
+        return LocalDate.of(2004,11,1);
     }
 
-    public OffsetDateTime getEndDate() {
-        return OffsetDateTime.of(2004, 11, 7,0,0,0,0,ZoneOffset.UTC);
+    public LocalDate getEndDate() {
+        return LocalDate.of(2004, 11, 7);
     }
 
     @Override

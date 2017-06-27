@@ -28,8 +28,8 @@ public class TestUtils {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode);
     }
-    public static OffsetDateTime odtOf(int year, int month, int day) {
-        return OffsetDateTime.of(year, month, day, 0, 0, 0, 0, ZoneOffset.UTC);
+    public static LocalDate odtOf(int year, int month, int day) {
+        return LocalDate.of(year, month, day);
     }
 
     public static OffsetDateTime actOdtOf(int year, int month, int day) {
@@ -106,7 +106,7 @@ public class TestUtils {
         }
     }
 
-    private static Deployment createFillerPeactimeOp(OffsetDateTime startDate, OffsetDateTime endDate)
+    private static Deployment createFillerPeactimeOp(LocalDate startDate, LocalDate endDate)
     {
         return new Deployment() {
             @Override
@@ -115,12 +115,12 @@ public class TestUtils {
             }
 
             @Override
-            public OffsetDateTime getStartDate() {
+            public LocalDate getStartDate() {
                 return startDate;
             }
 
             @Override
-            public Optional<OffsetDateTime> getEndDate() {
+            public Optional<LocalDate> getEndDate() {
                 return Optional.of(endDate);
             }
 
@@ -131,7 +131,7 @@ public class TestUtils {
         };
     }
 
-    private static Deployment createDeploymentFromOp(OffsetDateTime deploymentStartDate, Operation operation, long maxDays)
+    private static Deployment createDeploymentFromOp(LocalDate deploymentStartDate, Operation operation, long maxDays)
     {
         assert(deploymentStartDate.isAfter(operation.getStartDate()) || deploymentStartDate.isEqual(operation.getStartDate()));
         return new Deployment() {
@@ -141,12 +141,12 @@ public class TestUtils {
             }
 
             @Override
-            public OffsetDateTime getStartDate() {
+            public LocalDate getStartDate() {
                 return deploymentStartDate;
             }
 
             @Override
-            public Optional<OffsetDateTime> getEndDate() {
+            public Optional<LocalDate> getEndDate() {
                 if (operation.getEndDate().isPresent())
                 {
                     return operation.getEndDate();

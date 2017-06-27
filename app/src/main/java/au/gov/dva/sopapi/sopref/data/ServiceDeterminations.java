@@ -179,8 +179,8 @@ public class ServiceDeterminations {
                             }
                             else {
                                 LocalDate opStartDate = datesFound.get(0);
-                                Optional<OffsetDateTime> opEndDate = datesFound.size() > 1 ? Optional.of(DateTimeUtils.localDateToLastMidnightCanberraTime(datesFound.get(1))) : Optional.empty();
-                                Operation operation = new StoredOperation(opName, DateTimeUtils.localDateToLastMidnightCanberraTime(opStartDate), opEndDate, opServiceType);
+                                Optional<LocalDate> opEndDate = datesFound.size() > 1 ? Optional.of(datesFound.get(1)) : Optional.empty();
+                                Operation operation = new StoredOperation(opName, opStartDate, opEndDate, opServiceType);
                                 operations.add(operation);
                             }
 

@@ -9,6 +9,7 @@ import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import com.google.common.collect.ImmutableSet;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -23,13 +24,13 @@ public class SimpleServiceHistory {
 
     public static ServiceHistory get()
     {
-        OffsetDateTime startDate = actOdtOf(2004,7,1);
-        OffsetDateTime endDate = actOdtOf(2005,6,30);
+        LocalDate startDate = LocalDate.of(2004,7,1);
+        LocalDate endDate = LocalDate.of(2005,6,30);
 
         return new ServiceHistory() {
 
             @Override
-            public OffsetDateTime getHireDate() {
+            public LocalDate getHireDate() {
                 return startDate;
             }
 
@@ -49,7 +50,7 @@ public class SimpleServiceHistory {
 
                             @Override
                             public EmploymentType getEmploymentType() {
-                                return EmploymentType.CTFS;
+                                return EmploymentType.CFTS;
                             }
 
                             @Override
@@ -58,12 +59,12 @@ public class SimpleServiceHistory {
                             }
 
                             @Override
-                            public OffsetDateTime getStartDate() {
+                            public LocalDate getStartDate() {
                                 return startDate;
                             }
 
                             @Override
-                            public Optional<OffsetDateTime> getEndDate() {
+                            public Optional<LocalDate> getEndDate() {
                                 return Optional.of(endDate);
                             }
 
@@ -77,13 +78,13 @@ public class SimpleServiceHistory {
                                             }
 
                                             @Override
-                                            public OffsetDateTime getStartDate() {
-                                                return actOdtOf(2004,8,1);
+                                            public LocalDate getStartDate() {
+                                                return LocalDate.of(2004,8,1);
                                             }
 
                                             @Override
-                                            public Optional<OffsetDateTime> getEndDate() {
-                                                return Optional.of(actOdtOf(2004,9,1).minusDays(1));
+                                            public Optional<LocalDate> getEndDate() {
+                                                return Optional.of(LocalDate.of(2004,9,1).minusDays(1));
                                             }
 
                                             @Override
@@ -99,13 +100,13 @@ public class SimpleServiceHistory {
                                             }
 
                                             @Override
-                                            public OffsetDateTime getStartDate() {
-                                                return actOdtOf(2004,9,1);
+                                            public LocalDate getStartDate() {
+                                                return LocalDate.of(2004,9,1);
                                             }
 
                                             @Override
-                                            public Optional<OffsetDateTime> getEndDate() {
-                                                return Optional.of(actOdtOf(2004,12,31));
+                                            public Optional<LocalDate> getEndDate() {
+                                                return Optional.of(LocalDate.of(2004,12,31));
                                             }
 
                                             @Override
