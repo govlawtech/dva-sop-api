@@ -107,9 +107,9 @@ public class DateTimeUtils {
             }
         }
         outputs.add(inputs.get(0)); // Add the last remaining element
-////        outputs.sort((s1, s2) -> {
-////            return s1.getStartDate().compareTo(s2.getStartDate());
-////        });
+        outputs.sort((s1, s2) -> {
+            return s1.getStartDate().compareTo(s2.getStartDate());
+        });
         return outputs;
     }
 }
