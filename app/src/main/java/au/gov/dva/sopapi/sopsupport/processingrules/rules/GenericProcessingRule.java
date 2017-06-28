@@ -87,8 +87,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
             Optional<LocalDate> firstOperationalServiceStartDate = ProcessingRuleFunctions.getFirstOperationalServiceStartDate(serviceHistory, isOperational);
             if (!firstOperationalServiceStartDate.isPresent()) {
-                caseTrace.addLoggingTrace(String.format("No operational service between the start date of service (%s) and the condition onset (%s).  Therefore RH cannot apply.", startOfService, condition.getStartDate()));
-                caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The service history does not show any operational service between the start date of service (%s) and the condition onset (%s).  Therefore the Balance of Probabilities standard applies.",startOfService,condition.getStartDate()));
+                caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The service history does not show any operational service between the start date of service (%s) and the condition onset (%s).  Therefore the Balance of Probabilities standard applies.",startOfService.get(),condition.getStartDate()));
                 caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
                 return Optional.of(condition.getSopPair().getBopSop());
             }
