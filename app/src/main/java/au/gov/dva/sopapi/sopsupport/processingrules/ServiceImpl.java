@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class ServiceImpl implements Service {
@@ -15,8 +15,8 @@ public class ServiceImpl implements Service {
     private final ServiceBranch branch;
     private final EmploymentType employmentType;
     private final Rank rank;
-    private final OffsetDateTime startDate;
-    private final Optional<OffsetDateTime> endDate;
+    private final LocalDate startDate;
+    private final Optional<LocalDate> endDate;
     private final ImmutableSet<Deployment> deployments;
 
     @Override
@@ -31,7 +31,7 @@ public class ServiceImpl implements Service {
         return sb.toString();
     }
 
-    public ServiceImpl(ServiceBranch branch, EmploymentType employmentType, Rank rank, OffsetDateTime startDate, Optional<OffsetDateTime> endDate, ImmutableSet<Deployment> deployments)
+    public ServiceImpl(ServiceBranch branch, EmploymentType employmentType, Rank rank, LocalDate startDate, Optional<LocalDate> endDate, ImmutableSet<Deployment> deployments)
     {
 
         this.branch = branch;
@@ -58,12 +58,12 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public OffsetDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
     @Override
-    public Optional<OffsetDateTime> getEndDate() {
+    public Optional<LocalDate> getEndDate() {
         return endDate;
     }
 

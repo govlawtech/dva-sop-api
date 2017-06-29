@@ -5,33 +5,33 @@
     "icdCodeVersion" : "ICD-10-AM",
     "icdCodeValue" : "M39.89",
     "onsetDates" : {
-      "onsetRangeStartDate" : "2010-01-01Z",
-      "onsetRangeEndDate" : "2010-01-01Z"
+      "onsetRangeStartDate" : "2010-01-01",
+      "onsetRangeEndDate" : "2010-01-01"
     },
     "aggravationDates" : null
   },
   "serviceHistory" : {
     "serviceSummaryInformation" : {
-      "originalHireDate" : "2004-07-01Z"
+      "originalHireDate" : "2004-07-01"
     },
     "serviceDetails" : [ {
       "service" : "Royal Australian Air Force",
       "serviceType" : "Regular/Permanent Force",
-      "startDate" : "2004-07-01Z",
-      "endDate" : "2016-01-01Z",
+      "startDate" : "2004-07-01",
+      "endDate" : "2016-01-01",
       "rank" : "other rank",
       "operationalService" : [ {
-        "assigned" : "2006-07-01Z",
+        "assigned" : "2006-07-01",
         "description" : "Operation WARDEN",
         "event" : "Within Specified Area",
-        "startDate" : "2006-07-10Z",
-        "endDate" : "2007-07-01Z"
+        "startDate" : "2006-07-10",
+        "endDate" : "2007-07-01"
       }, {
-        "assigned" : "2009-07-01Z",
+        "assigned" : "2009-07-01",
         "description" : "Operation RIVERBANK",
         "event" : "Within Specified Area",
-        "startDate" : "2009-07-10Z",
-        "endDate" : "2010-07-01Z"
+        "startDate" : "2009-07-10",
+        "endDate" : "2010-07-01"
       } ]
     } ]
   }

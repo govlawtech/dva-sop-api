@@ -76,7 +76,7 @@ public class Status {
     }
 
 
-    public static String createStatusHtml(Cache cache, Repository repository, URL blobsBaseUrl) {
+    public static String createStatusHtml(Cache cache, Repository repository, URL blobsBaseUrl, String version) {
         ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops(), OffsetDateTime.now());
 
         Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();
@@ -91,6 +91,7 @@ public class Status {
                 "}\n" +
                 "</style>");
 
+        stringBuilder.append("<span>SoP API version: " + version + "</span>");
         stringBuilder.append("<h1>Straight Through Processing</h1>");
         stringBuilder.append(buildStpStatusSection(cache.get_ruleConfigurationRepository(), soPPairs, blobsBaseUrl));
 

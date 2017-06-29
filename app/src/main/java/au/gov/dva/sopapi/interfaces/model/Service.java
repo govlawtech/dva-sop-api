@@ -5,14 +5,13 @@ import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import com.google.common.collect.ImmutableSet;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
-public interface Service {
+public interface Service extends HasDateRange {
     ServiceBranch getBranch();
     EmploymentType getEmploymentType();
     Rank getRank();
-    OffsetDateTime getStartDate();
-    Optional<OffsetDateTime> getEndDate();
     ImmutableSet<Deployment> getDeployments();
 }

@@ -20,6 +20,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import scala.App;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -58,6 +59,7 @@ public class RulesResult {
         Condition condition = conditionOptional.get();
 
         ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+        serviceHistory = serviceHistory.filterServiceHistoryByEvents(Arrays.asList("within specified area"));
 
         if (ProcessingRuleFunctions.conditionIsBeforeService(condition, serviceHistory)) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));

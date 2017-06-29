@@ -1,29 +1,26 @@
 package au.gov.dva.sopapi.dtos.sopsupport.components;
 
-import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeDeserializer;
-import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeSerializer;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateDeserializer;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateSerializer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import java.time.OffsetDateTime;
-
-
-
+import java.time.LocalDate;
 
 public class ServiceSummaryInfoDto {
 
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty(value = "originalHireDate", required = true)
-    private OffsetDateTime _originalHireDate;
+    private LocalDate _originalHireDate;
 
-    public ServiceSummaryInfoDto( @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
+    public ServiceSummaryInfoDto( @JsonDeserialize(using = LocalDateDeserializer.class)
                                   @JsonProperty("originalHireDate")
-                                          OffsetDateTime _originalHireDate) {
+                                          LocalDate _originalHireDate) {
         this._originalHireDate = _originalHireDate;
     }
 
-    public OffsetDateTime get_originalHireDate() {
+    public LocalDate get_originalHireDate() {
         return _originalHireDate;
     }
 }

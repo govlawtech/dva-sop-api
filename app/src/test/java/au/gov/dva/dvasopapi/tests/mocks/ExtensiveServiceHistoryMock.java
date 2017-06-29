@@ -9,7 +9,9 @@ import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import com.google.common.collect.ImmutableSet;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
@@ -18,8 +20,13 @@ public class ExtensiveServiceHistoryMock implements ServiceHistory {
 
 
     @Override
-    public OffsetDateTime getHireDate() {
+    public LocalDate getHireDate() {
         return null;
+    }
+
+    @Override
+    public ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
+        return this;
     }
 
     @Override
@@ -33,7 +40,7 @@ public class ExtensiveServiceHistoryMock implements ServiceHistory {
 
                     @Override
                     public EmploymentType getEmploymentType() {
-                        return EmploymentType.CTFS;
+                        return EmploymentType.CFTS;
                     }
 
                     @Override
@@ -42,13 +49,13 @@ public class ExtensiveServiceHistoryMock implements ServiceHistory {
                     }
 
                     @Override
-                    public OffsetDateTime getStartDate() {
-                        return actOdtOf(1993,1,1);
+                    public LocalDate getStartDate() {
+                        return LocalDate.of(1993,1,1);
                     }
 
                     @Override
-                    public Optional<OffsetDateTime> getEndDate() {
-                        return Optional.of(actOdtOf(2016,7,30));
+                    public Optional<LocalDate> getEndDate() {
+                        return Optional.of(LocalDate.of(2016,7,30));
                     }
 
                     @Override

@@ -41,6 +41,7 @@ import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
@@ -69,8 +70,13 @@ class Routes {
                 res.status(500);
             }
 
+            // Read version
+            Properties p = new Properties();
+            p.load(req.raw().getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
+            String version = p.getProperty("Implementation-Version");
+
             // todo: mustache template
-            String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL());
+            String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL(), version);
             setResponseHeaders(res,200,MIME_HTML);
             return statusPage;
         });
@@ -167,49 +173,35 @@ class Routes {
 
         sopPost(SharedConstants.Routes.GET_CASESUMMARY, MIME_DOCX, ((req, res) ->
         {
-            byte[] result;
-            SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-            RulesResult rulesResult = runRules(sopSupportRequestDto);
-
-            if (rulesResult.isEmpty()) {
-                result = CaseSummary.createCaseSummary(rulesResult.getCaseTrace(), buildIsOperationalPredicate(), false).get();
-            }
-            else {
-                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-                Condition condition = rulesResult.getCondition().get();
-
-                List<Factor> factorsConnectedToService = rulesResult.getSatisfiedFactors();
-
-                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace(), rulesResult.getRecommendation() );
-                result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), false).get();
-            }
-
-            setResponseHeaders(res, 200, MIME_DOCX);
-            return result;
+            return caseSummaryHandler(MIME_DOCX, false, req, res);
         }));
 
         sopPost(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, MIME_PDF, ((req, res) ->
         {
-            byte[] result;
-            SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-            RulesResult rulesResult = runRules(sopSupportRequestDto);
-
-            if (rulesResult.isEmpty()) {
-                result = CaseSummary.createCaseSummary(rulesResult.getCaseTrace(), buildIsOperationalPredicate(), true).get();
-            }
-            else {
-                ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-                Condition condition = rulesResult.getCondition().get();
-
-                List<Factor> factorsConnectedToService = rulesResult.getSatisfiedFactors();
-
-                CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace(), rulesResult.getRecommendation() );
-                result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), true).get();
-            }
-
-            setResponseHeaders(res, 200, MIME_PDF);
-            return result;
+            return caseSummaryHandler(MIME_PDF, true, req, res);
         }));
+    }
+
+    private static Object caseSummaryHandler(String mimeType, boolean convertToPdf, Request req, Response res) throws ExecutionException, InterruptedException {
+        byte[] result;
+        SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+        RulesResult rulesResult = runRules(sopSupportRequestDto);
+
+        if (rulesResult.isEmpty()) {
+            result = CaseSummary.createCaseSummary(rulesResult.getCaseTrace(), buildIsOperationalPredicate(), convertToPdf).get();
+        }
+        else {
+            ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+            Condition condition = rulesResult.getCondition().get();
+
+            List<Factor> factorsConnectedToService = rulesResult.getSatisfiedFactors();
+
+            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace(), rulesResult.getRecommendation() );
+            result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), convertToPdf).get();
+        }
+
+        setResponseHeaders(res, 200, mimeType);
+        return result;
     }
 
     // Set up a post handler with response MIME type handling and exception handling.

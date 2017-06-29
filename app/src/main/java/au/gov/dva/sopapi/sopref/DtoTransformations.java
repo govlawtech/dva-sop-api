@@ -16,12 +16,11 @@ import au.gov.dva.sopapi.sopsupport.processingrules.ServiceImpl;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DtoTransformations {
 
@@ -91,9 +90,10 @@ public class DtoTransformations {
 
     private static Deployment deploymentFromDeploymentDto(OperationalServiceDto operationalServiceDto)
     {
-        return new DeploymentImpl(operationalServiceDto.get_description(),
-                operationalServiceDto.get_startDate(),
-                operationalServiceDto.get_endDate() != null ? Optional.of(operationalServiceDto.get_endDate()) : Optional.empty());
+        return new DeploymentImpl(operationalServiceDto.get_description()
+                ,operationalServiceDto.get_startDate()
+                ,operationalServiceDto.get_endDate() != null ? Optional.of(operationalServiceDto.get_endDate()) : Optional.empty()
+                ,operationalServiceDto.get_event());
 
     }
 
@@ -125,8 +125,8 @@ public class DtoTransformations {
     }
 
 
-    private static String formatDate(OffsetDateTime offsetDateTime)
+    private static String formatDate(LocalDate localDate)
     {
-        return offsetDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE);
+        return localDate.format(DateTimeFormatter.ISO_LOCAL_DATE);
     }
 }

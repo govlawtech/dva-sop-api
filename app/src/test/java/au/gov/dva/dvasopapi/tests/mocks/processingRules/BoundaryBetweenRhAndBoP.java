@@ -8,7 +8,9 @@ import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import com.google.common.collect.ImmutableSet;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
@@ -18,8 +20,13 @@ public class BoundaryBetweenRhAndBoP implements ServiceHistory {
 
 
     @Override
-    public OffsetDateTime getHireDate() {
-        return odtOf(2004,7,20);
+    public LocalDate getHireDate() {
+        return LocalDate.of(2004,7,20);
+    }
+
+    @Override
+    public ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
+        return this;
     }
 
     @Override
@@ -33,7 +40,7 @@ public class BoundaryBetweenRhAndBoP implements ServiceHistory {
 
                     @Override
                     public EmploymentType getEmploymentType() {
-                        return EmploymentType.CTFS;
+                        return EmploymentType.CFTS;
                     }
 
                     @Override
@@ -42,13 +49,13 @@ public class BoundaryBetweenRhAndBoP implements ServiceHistory {
                     }
 
                     @Override
-                    public OffsetDateTime getStartDate() {
-                        return odtOf(2004,7,1);
+                    public LocalDate getStartDate() {
+                        return LocalDate.of(2004,7,1);
                     }
 
                     @Override
-                    public Optional<OffsetDateTime> getEndDate() {
-                        return Optional.of(odtOf(2004,6,30));
+                    public Optional<LocalDate> getEndDate() {
+                        return Optional.of(LocalDate.of(2004,6,30));
                     }
 
                     @Override

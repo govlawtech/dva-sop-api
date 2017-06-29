@@ -14,7 +14,7 @@ import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -26,8 +26,8 @@ public class ProcessingRuleFunctions {
 
     private static Logger logger = LoggerFactory.getLogger(ProcessingRuleFunctions.class.getSimpleName());
 
-    public static Optional<OffsetDateTime> getFirstOperationalServiceStartDate(ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
-        Optional<OffsetDateTime> start = ProcessingRuleFunctions.getDeployments(serviceHistory)
+    public static Optional<LocalDate> getFirstOperationalServiceStartDate(ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
+        Optional<LocalDate> start = ProcessingRuleFunctions.getDeployments(serviceHistory)
                 .stream()
                 .filter(isOperational::test)
                 .sorted(Comparator.comparing(Deployment::getStartDate))
@@ -37,14 +37,14 @@ public class ProcessingRuleFunctions {
         return start;
     }
 
-    public static Optional<OffsetDateTime> getStartofService(ServiceHistory serviceHistory) {
+    public static Optional<LocalDate> getStartofService(ServiceHistory serviceHistory) {
         Optional<Service> earliestService = serviceHistory.getServices().stream()
                 .sorted(Comparator.comparing(Service::getStartDate))
                 .findFirst();
         return earliestService.map(Service::getStartDate);
     }
 
-    public static Optional<Service> identifyServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, OffsetDateTime conditionStartDate, CaseTrace caseTrace) {
+    public static Optional<Service> identifyServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
 
         Optional<Service> serviceDuringWhichConditionStarted = services.stream()
                 .filter(s -> s.getStartDate().isBefore(conditionStartDate))
@@ -63,17 +63,19 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    public static long getNumberOfDaysOfOperationalServiceInInterval(OffsetDateTime startDate, OffsetDateTime endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
-        long days = deployments.stream()
+    public static long getNumberOfDaysOfOperationalServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+        List<HasDateRange> toFlatten = deployments.stream()
                 .filter(d -> isOperational.test(d))
-                .map(d -> getElapsedDaysOfDeploymentInInterval(startDate, endDate, d.getStartDate(), d.getEndDate()))
+                .collect(Collectors.toList());
+        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(toFlatten);
+        long days = flattened.stream()
+                .map(d -> getElapsedDaysOfDateRangeInInterval(startDate, endDate, d))
                 .collect(Collectors.summingLong(value -> value));
 
         return days;
     }
 
-
-    public static long getMaximumDaysOfOpServiceInAnyInterval(int intervalDurationInYears, OffsetDateTime startDate, OffsetDateTime endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+    public static long getMaximumDaysOfOpServiceInAnyInterval(int intervalDurationInYears, LocalDate startDate, LocalDate endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
         List<Interval> testIntervals = Intervals.getSopFactorTestIntervalsJavaList(intervalDurationInYears, startDate, endDate);
         assert (testIntervals.size() > 0);
         if (testIntervals.size() > 1) {
@@ -97,44 +99,43 @@ public class ProcessingRuleFunctions {
 
     }
 
-
-    private static long getElapsedDaysOfDeploymentInInterval(OffsetDateTime intervalStartDate, OffsetDateTime intervalEndDate, OffsetDateTime deploymentStartDate, Optional<OffsetDateTime> deploymentEndDate) {
+    private static long getElapsedDaysOfDateRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, HasDateRange dateRange) {
         logger.trace("Getting elapsed days in interval with a deployment...");
         logger.trace("Interval start date: " + intervalStartDate);
         logger.trace("Interval end date: " + intervalEndDate);
-        logger.trace("Deployment start date: " + deploymentStartDate);
-        logger.trace("Deployment end date: " + deploymentEndDate);
-        if (deploymentEndDate.isPresent() && deploymentEndDate.get().isBefore(intervalStartDate)) {
-            logger.trace("Deployment end date is before start date, therefore returning 0 days.");
+        logger.trace("Date range start date: " + dateRange.getStartDate());
+        logger.trace("Date range end date: " + dateRange.getEndDate());
+        if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(intervalStartDate)) {
+            logger.trace("date range end date is before start date, therefore returning 0 days.");
             return 0;
         }
 
-        if (deploymentStartDate.isAfter(intervalEndDate)) {
-            logger.trace("Deployment start date is after the interval end date, therefore returning 0 days.");
+        if (dateRange.getStartDate().isAfter(intervalEndDate)) {
+            logger.trace("Date range start date is after the interval end date, therefore returning 0 days.");
             return 0;
         }
 
-        OffsetDateTime deploymentOrIntervalEndDate = getEarlierOfDeploymentEndDateOrIntervalEnd(intervalEndDate, deploymentEndDate);
-        logger.trace("The earlier of the interval or deployment end date is " + deploymentOrIntervalEndDate);
+        LocalDate dateRangeOrIntervalEndDate = getEarlierOfDateRangeEndDateOrIntervalEnd(intervalEndDate, dateRange.getEndDate());
+        logger.trace("The earlier of the interval or date range end date is " + dateRangeOrIntervalEndDate);
 
-        long days = getExclusiveNumberOfDaysBetween(deploymentStartDate, deploymentOrIntervalEndDate);
-        logger.trace("Number of days between the deployment start date and interval end date: " + days);
+        LocalDate dateRangeOrIntervalStartDate = intervalStartDate.isAfter(dateRange.getStartDate()) ?
+                intervalStartDate : dateRange.getStartDate();
+        logger.trace("The later of the interval or date range start date is " + dateRangeOrIntervalStartDate);
+
+        long days = ChronoUnit.DAYS.between(dateRangeOrIntervalStartDate, dateRangeOrIntervalEndDate) + 1;  // Plus one for inclusive dates
+        logger.trace("Number of days between the date range start date and interval end date: " + days);
         return days;
     }
 
-    private static long getExclusiveNumberOfDaysBetween(OffsetDateTime start, OffsetDateTime end) {
-        return ChronoUnit.DAYS.between(start, end);
-    }
-
-    private static OffsetDateTime getEarlierOfDeploymentEndDateOrIntervalEnd(OffsetDateTime intervalEndDate, Optional<OffsetDateTime> deploymentEndDate) {
-        if (!deploymentEndDate.isPresent()) {
-            logger.trace("No deployment end date, therefore using interval end date.");
+    private static LocalDate getEarlierOfDateRangeEndDateOrIntervalEnd(LocalDate intervalEndDate, Optional<LocalDate> dateRangeEndDate) {
+        if (!dateRangeEndDate.isPresent()) {
+            logger.trace("No date range end date, therefore using interval end date.");
             return intervalEndDate;
         }
 
-        if (deploymentEndDate.get().isBefore(intervalEndDate)) {
-            logger.trace("Deployment ends before interval, therefore using deployment end date.");
-            return deploymentEndDate.get();
+        if (dateRangeEndDate.get().isBefore(intervalEndDate)) {
+            logger.trace("Date range ends before interval, therefore using deployment end date.");
+            return dateRangeEndDate.get();
         }
         return intervalEndDate;
     }
@@ -150,7 +151,7 @@ public class ProcessingRuleFunctions {
         return deployments;
     }
 
-    public static Optional<Rank> getRankProximateToDate(ImmutableSet<Service> services, OffsetDateTime testDate, CaseTrace caseTrace) {
+    public static Optional<Rank> getRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
 
        // caseTrace.addLoggingTrace("Getting the rank on the last service before date " + testDate);
         Optional<Service> relevantService = services.stream()
@@ -170,38 +171,35 @@ public class ProcessingRuleFunctions {
 
     }
 
-    public static Long getDaysOfContinuousFullTimeServiceToDate(ServiceHistory serviceHistory, OffsetDateTime toDate) {
+    public static Long getDaysOfContinuousFullTimeServiceToDate(ServiceHistory serviceHistory, LocalDate toDate) {
 
-        Long days = serviceHistory.getServices().stream()
-                .filter(service -> service.getStartDate().isBefore(toDate))
-                .map(service -> getDurationOfServiceCFTSInDays(service, toDate))
+        List<HasDateRange> toFlatten = serviceHistory.getServices().stream()
+                .filter(service -> !service.getStartDate().isAfter(toDate) && service.getEmploymentType() == EmploymentType.CFTS)
+                .collect(Collectors.toList());
+        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(toFlatten);
+
+        Long days = flattened.stream()
+                .map(dateRange -> getDaysInDateRangeUpTo(dateRange, toDate))
                 .collect(Collectors.summingLong(value -> value));
 
         return days;
     }
 
-    private static Long getDurationOfServiceCFTSInDays(Service service, OffsetDateTime endDate) {
-        logger.trace("Counting number of days CFTS to " + endDate + "...");
-        if (service.getEmploymentType() != EmploymentType.CTFS) {
-            logger.trace("Employment type is not CFTS, therefore returning 0 days.");
-            return 0L;
-        } else {
-            OffsetDateTime startDate = service.getStartDate();
-            if (service.getEndDate().isPresent() && service.getEndDate().get().isBefore(endDate)) {
-                logger.trace("Service end date is present and before the test date, therefore counting days between start of service and test date...");
-                OffsetDateTime serviceEndDate = DateTimeUtils.toMidnightAmNextDay(service.getEndDate().get());
-                Duration duration = Duration.between(startDate, serviceEndDate);
-                long days = duration.toDays();
-                logger.trace("Returning days counted: " + days);
-                return days;
-            }
-
-            logger.trace("Service ongoing at test date, therefore counting days between start of service and test date...");
-            OffsetDateTime nextDayMidnightOfSpecifiedEndDate = DateTimeUtils.toMidnightAmNextDay(endDate);
-            long days = Duration.between(startDate, nextDayMidnightOfSpecifiedEndDate).toDays();
-            logger.trace("Returning days counted: " + days);
-            return days;
+    private static Long getDaysInDateRangeUpTo(HasDateRange dateRange, LocalDate endDate) {
+        logger.trace("Counting number of days in date range to " + endDate + "...");
+        LocalDate startDate = dateRange.getStartDate();
+        long days;
+        if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(endDate)) {
+            logger.trace("Date range end date is present and before the test date, therefore counting days between start of date range and test date...");
+            days = ChronoUnit.DAYS.between(startDate, dateRange.getEndDate().get()) + 1; // +1 for inclusive days
         }
+        else {
+            logger.trace("Date range ongoing at test date, therefore counting days between start of date range and test date...");
+            days = ChronoUnit.DAYS.between(startDate, endDate) + 1; // +1 for inclusive days
+        }
+
+        logger.trace("Returning days counted: " + days);
+        return days;
     }
 
 
@@ -213,7 +211,6 @@ public class ProcessingRuleFunctions {
 
         return factorsWithSatisfaction;
     }
-
 
     public static Predicate<Deployment> getIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
         ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
@@ -234,33 +231,28 @@ public class ProcessingRuleFunctions {
         });
     }
 
-
     public static Boolean conditionIsBeforeService(Condition condition, ServiceHistory serviceHistory) {
         return condition.getStartDate().isBefore(serviceHistory.getHireDate());
 
     }
 
     public static boolean conditionStartedWithinXYearsOfLastDayOfMRCAService(Condition condition, ServiceHistory serviceHistory, int numberOfYears, CaseTrace caseTrace) {
+        LocalDate lastDateOfMRCAService = getLastDateOfMRCAServiceOrDefault(serviceHistory, LocalDate.now());
+        caseTrace.addLoggingTrace("The last date of MRCA service or now (if service is ongoing): " + lastDateOfMRCAService);
 
-        OffsetDateTime lastTimeOfMRCAService = getLastTimeOfMRCAServiceOrDefault(serviceHistory, OffsetDateTime.now());
-        caseTrace.addLoggingTrace("The last time of MRCA service or now (if service is ongoing): " + lastTimeOfMRCAService);
+        LocalDate xYearsFromLastDayOfMrcaService = lastDateOfMRCAService.plusYears(numberOfYears);
+        caseTrace.addLoggingTrace(String.format("The date %s years from the last day of MRCA service: %s", numberOfYears, xYearsFromLastDayOfMrcaService));
 
-        OffsetDateTime midnightNextDayAfterLastTimeOfMRCAService = DateTimeUtils.toMidnightAmNextDay(lastTimeOfMRCAService);
+        LocalDate conditionStartDate = condition.getStartDate();
+        caseTrace.addLoggingTrace("The day the condition started: " + conditionStartDate);
 
-        OffsetDateTime xYearsFromLastDayOfMrcaService = midnightNextDayAfterLastTimeOfMRCAService.plusYears(numberOfYears);
-        caseTrace.addLoggingTrace(String.format("The time %s years from the last day of MRCA service: %s", numberOfYears, xYearsFromLastDayOfMrcaService));
-
-        OffsetDateTime conditionStartDate = condition.getStartDate();
-        OffsetDateTime midnightAmOnDayOfConditionStart = DateTimeUtils.toMightnightAmThisDay(conditionStartDate);
-        caseTrace.addLoggingTrace("Midnight AM on the day the condition started: " + midnightAmOnDayOfConditionStart);
-
-        return midnightAmOnDayOfConditionStart.isBefore(xYearsFromLastDayOfMrcaService);
+        return !conditionStartDate.isAfter(xYearsFromLastDayOfMrcaService);
     }
 
-    private static OffsetDateTime getLastTimeOfMRCAServiceOrDefault(ServiceHistory serviceHistory, OffsetDateTime defaultDate) {
+    private static LocalDate getLastDateOfMRCAServiceOrDefault(ServiceHistory serviceHistory, LocalDate defaultDate) {
         Stream<Service> servicesOrderedMostRecentFirst = serviceHistory.getServices().asList()
                 .stream()
-                .sorted((o1, o2) -> o2.getStartDate().compareTo(o2.getStartDate()));
+                .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()));
 
         Optional<Service> mostRecentService = servicesOrderedMostRecentFirst.findFirst();
         // no service

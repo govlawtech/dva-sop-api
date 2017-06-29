@@ -22,7 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -416,7 +416,7 @@ public class CaseSummary {
         return sopSection;
     }
 
-    private static String getDatesAsRange(OffsetDateTime startDate, Optional<OffsetDateTime> endDate) {
+    private static String getDatesAsRange(LocalDate startDate, Optional<LocalDate> endDate) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         return endDate.isPresent() ?
@@ -424,7 +424,7 @@ public class CaseSummary {
                 startDate.format(formatter);
     }
 
-    private static String getDatesAsRange(OffsetDateTime startDate, OffsetDateTime endDate) {
+    private static String getDatesAsRange(LocalDate startDate, LocalDate endDate) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         if (startDate.isEqual(endDate))

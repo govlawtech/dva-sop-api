@@ -1,19 +1,19 @@
 package au.gov.dva.sopapi.dtos.sopsupport.components;
 
-import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeDeserializer;
-import au.gov.dva.sopapi.dtos.sopsupport.OffsetDateTimeSerializer;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateDeserializer;
+import au.gov.dva.sopapi.dtos.sopsupport.LocalDateSerializer;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 
 public class OperationalServiceDto {
 
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty("assigned")
-    private final OffsetDateTime _assigned;
+    private final LocalDate _assigned;
 
 
     @JsonProperty(value = "description", required = true)
@@ -22,22 +22,22 @@ public class OperationalServiceDto {
     @JsonProperty(value = "event", required = true)
     private final String _event; // eg Within Specified Area
 
-    @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty(value = "startDate", required = true)
-    private final OffsetDateTime _startDate;
+    private final LocalDate _startDate;
 
-    @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-    @JsonSerialize(using = OffsetDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty("endDate")
-    private final OffsetDateTime _endDate;
+    private final LocalDate _endDate;
 
     @JsonCreator
     public OperationalServiceDto(
 
             @JsonProperty("assigned")
-            @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-            OffsetDateTime _assigned,
+            @JsonDeserialize(using = LocalDateDeserializer.class)
+            LocalDate _assigned,
 
             @JsonProperty("description")
             String _description,
@@ -46,13 +46,13 @@ public class OperationalServiceDto {
             String _event,
 
             @JsonProperty("startDate")
-            @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-            OffsetDateTime _startDate,
+            @JsonDeserialize(using = LocalDateDeserializer.class)
+            LocalDate _startDate,
 
 
             @JsonProperty("endDate")
-            @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
-            OffsetDateTime _endDate) {
+            @JsonDeserialize(using = LocalDateDeserializer.class)
+            LocalDate _endDate) {
         this._assigned = _assigned;
         this._description = _description;
         this._event = _event;
@@ -60,7 +60,7 @@ public class OperationalServiceDto {
         this._endDate = _endDate;
     }
 
-    public OffsetDateTime get_assigned() {
+    public LocalDate get_assigned() {
         return _assigned;
     }
 
@@ -72,11 +72,11 @@ public class OperationalServiceDto {
         return _event;
     }
 
-    public OffsetDateTime get_startDate() {
+    public LocalDate get_startDate() {
         return _startDate;
     }
 
-    public OffsetDateTime get_endDate() {
+    public LocalDate get_endDate() {
         return _endDate;
     }
 }

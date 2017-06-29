@@ -24,7 +24,6 @@ public class FactorDto {
         _definedTerms = definedTerms;
     }
 
-
     public String get_paragraph() {
         return _paragraph;
     }

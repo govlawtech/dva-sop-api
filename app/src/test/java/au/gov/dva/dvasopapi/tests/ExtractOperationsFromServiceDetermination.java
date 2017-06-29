@@ -16,8 +16,6 @@ import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
-import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
-
 public class ExtractOperationsFromServiceDetermination {
 
     @Test
@@ -35,79 +33,79 @@ public class ExtractOperationsFromServiceDetermination {
         ImmutableList<Operation> results = ServiceDeterminations.extractOperations(docxBytes);
 
         Operation opEnduringFreedom = new StoredOperation("Enduring Freedom\u2014Afghanistan",
-                actOdtOf(2001, 10, 7), Optional.empty(),
+                LocalDate.of(2001, 10, 7), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opSlipper = new StoredOperation("Slipper",
-                actOdtOf(2001, 10, 11), Optional.of(actOdtOf(2009, 7, 30)),
+                LocalDate.of(2001, 10, 11), Optional.of(LocalDate.of(2009, 7, 30)),
                 ServiceType.WARLIKE);
 
         Operation opAriki = new StoredOperation("Ariki",
-                actOdtOf(2001, 12, 1), Optional.empty(),
+                LocalDate.of(2001, 12, 1), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opPalate = new StoredOperation("Palate",
-                actOdtOf(2003, 4, 18), Optional.of(actOdtOf(2004, 7, 5)),
+                LocalDate.of(2003, 4, 18), Optional.of(LocalDate.of(2004, 7, 5)),
                 ServiceType.WARLIKE);
 
         Operation opCatalyst = new StoredOperation("Catalyst",
-                actOdtOf(2003, 7, 16), Optional.of(actOdtOf(2009, 7, 31)),
+                LocalDate.of(2003, 7, 16), Optional.of(LocalDate.of(2009, 7, 31)),
                 ServiceType.WARLIKE);
 
         Operation opAthena = new StoredOperation("Athena",
-                actOdtOf(2003, 7, 17), Optional.empty(),
+                LocalDate.of(2003, 7, 17), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opISAF = new StoredOperation("International Security Assistance Force",
-                actOdtOf(2003, 8, 11), Optional.empty(),
+                LocalDate.of(2003, 8, 11), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opHerrick = new StoredOperation("Herrick",
-                actOdtOf(2004, 9, 1), Optional.empty(),
+                LocalDate.of(2004, 9, 1), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opPalateII = new StoredOperation("Palate II",
-                actOdtOf(2005, 6, 27), Optional.empty(),
+                LocalDate.of(2005, 6, 27), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opPaladin = new StoredOperation("Paladin",
-                actOdtOf(2006, 7, 12), Optional.of(actOdtOf(2006, 8, 14)),
+                LocalDate.of(2006, 7, 12), Optional.of(LocalDate.of(2006, 8, 14)),
                 ServiceType.WARLIKE);
 
         Operation opRiverbank = new StoredOperation("Riverbank",
-                actOdtOf(2008, 7, 21), Optional.empty(),
+                LocalDate.of(2008, 7, 21), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opKruger = new StoredOperation("Kruger",
-                actOdtOf(2009, 1, 1), Optional.empty(),
+                LocalDate.of(2009, 1, 1), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opSlipperII = new StoredOperation("Slipper",
-                actOdtOf(2009, 7, 31), Optional.of(actOdtOf(2012, 2, 19)),
+                LocalDate.of(2009, 7, 31), Optional.of(LocalDate.of(2012, 2, 19)),
                 ServiceType.WARLIKE);
 
         Operation opNNMEOAL = new StoredOperation("NNMEOAL",
-                actOdtOf(2011, 3, 31), Optional.of(actOdtOf(2011, 10, 31)),
+                LocalDate.of(2011, 3, 31), Optional.of(LocalDate.of(2011, 10, 31)),
                 ServiceType.WARLIKE);
 
         Operation opSlipperIII = new StoredOperation("Slipper",
-                actOdtOf(2012, 2, 20), Optional.of(actOdtOf(2014, 6, 30)),
+                LocalDate.of(2012, 2, 20), Optional.of(LocalDate.of(2014, 6, 30)),
                 ServiceType.WARLIKE);
 
         Operation opSlipperIV = new StoredOperation("Slipper",
-                actOdtOf(2014, 7, 1), Optional.empty(),
+                LocalDate.of(2014, 7, 1), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opOkra = new StoredOperation("Okra",
-                actOdtOf(2014, 8, 9), Optional.of(actOdtOf(2015, 9, 8)),
+                LocalDate.of(2014, 8, 9), Optional.of(LocalDate.of(2015, 9, 8)),
                 ServiceType.WARLIKE);
 
         Operation opHighroad = new StoredOperation("Highroad",
-                actOdtOf(2015, 1, 1), Optional.empty(),
+                LocalDate.of(2015, 1, 1), Optional.empty(),
                 ServiceType.WARLIKE);
 
         Operation opOkraII = new StoredOperation("Okra",
-                actOdtOf(2015, 9, 9), Optional.empty(),
+                LocalDate.of(2015, 9, 9), Optional.empty(),
                 ServiceType.WARLIKE);
 
 
@@ -147,107 +145,107 @@ public class ExtractOperationsFromServiceDetermination {
         ImmutableList<Operation> results = ServiceDeterminations.extractOperations(docXBytes);
 
         Operation opMazurka = new StoredOperation("Mazurka",
-                actOdtOf(1993, 1, 28), Optional.empty(),
+                LocalDate.of(1993, 1, 28), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opOsier = new StoredOperation("Osier",
-                actOdtOf(1997, 1, 24), Optional.empty(),
+                LocalDate.of(1997, 1, 24), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opJointGuardian = new StoredOperation("Joint Guardian",
-                actOdtOf(1999, 6, 11), Optional.empty(),
+                LocalDate.of(1999, 6, 11), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opPomelo = new StoredOperation("Pomelo",
-                actOdtOf(2001, 1, 15), Optional.empty(),
+                LocalDate.of(2001, 1, 15), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opPaladin = new StoredOperation("Paladin",
-                actOdtOf(2003, 4, 21), Optional.of(actOdtOf(2006, 7, 11)),
+                LocalDate.of(2003, 4, 21), Optional.of(LocalDate.of(2006, 7, 11)),
                 ServiceType.NON_WARLIKE);
 
         Operation opPaladinII = new StoredOperation("Paladin",
-                actOdtOf(2006, 7, 12), Optional.of(actOdtOf(2006, 8, 14)),
+                LocalDate.of(2006, 7, 12), Optional.of(LocalDate.of(2006, 8, 14)),
                 ServiceType.NON_WARLIKE);
 
         Operation opPaladinIII = new StoredOperation("Paladin",
-                actOdtOf(2006, 8, 15), Optional.empty(),
+                LocalDate.of(2006, 8, 15), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opAnode = new StoredOperation("Anode",
-                actOdtOf(2003, 7, 24), Optional.empty(),
+                LocalDate.of(2003, 7, 24), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opCitadel = new StoredOperation("Citadel",
-                actOdtOf(2003, 8, 18), Optional.empty(),
+                LocalDate.of(2003, 8, 18), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opSpire = new StoredOperation("Spire",
-                actOdtOf(2004, 5, 20), Optional.empty(),
+                LocalDate.of(2004, 5, 20), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opAzure = new StoredOperation("Azure",
-                actOdtOf(2005, 4, 10), Optional.empty(),
+                LocalDate.of(2005, 4, 10), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opAstute = new StoredOperation("Astute",
-                actOdtOf(2006, 5, 12), Optional.empty(),
+                LocalDate.of(2006, 5, 12), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opRamp = new StoredOperation("Ramp",
-                actOdtOf(2006, 7, 20), Optional.empty(),
+                LocalDate.of(2006, 7, 20), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opQuickstep = new StoredOperation("Quickstep",
-                actOdtOf(2006, 10, 31), Optional.of(actOdtOf(2006, 12, 22)),
+                LocalDate.of(2006, 10, 31), Optional.of(LocalDate.of(2006, 12, 22)),
                 ServiceType.NON_WARLIKE);
 
         Operation opQuickstepTonga = new StoredOperation("Quickstep Tonga",
-                actOdtOf(2006, 11, 18), Optional.of(actOdtOf(2006, 11, 30)),
+                LocalDate.of(2006, 11, 18), Optional.of(LocalDate.of(2006, 11, 30)),
                 ServiceType.NON_WARLIKE);
 
         Operation opHedgerow = new StoredOperation("Hedgerow",
-                actOdtOf(2008, 7, 28), Optional.empty(),
+                LocalDate.of(2008, 7, 28), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opNNMEOAL = new StoredOperation("NNMEOAL",
-                actOdtOf(2011, 3, 31), Optional.of(actOdtOf(2011, 10, 31)),
+                LocalDate.of(2011, 3, 31), Optional.of(LocalDate.of(2011, 10, 31)),
                 ServiceType.NON_WARLIKE);
 
         Operation opAslan = new StoredOperation("Aslan",
-                actOdtOf(2011, 9, 23), Optional.empty(),
+                LocalDate.of(2011, 9, 23), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opAccordion = new StoredOperation("Accordion",
-                actOdtOf(2014, 7, 1), Optional.empty(),
+                LocalDate.of(2014, 7, 1), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opManitou = new StoredOperation("Manitou",
-                actOdtOf(2014, 7, 1), Optional.of(actOdtOf(2015, 5, 13)),
+                LocalDate.of(2014, 7, 1), Optional.of(LocalDate.of(2015, 5, 13)),
                 ServiceType.NON_WARLIKE);
 
         Operation opManitouII = new StoredOperation("Manitou",
-                actOdtOf(2015, 5, 14), Optional.empty(),
+                LocalDate.of(2015, 5, 14), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opOkra = new StoredOperation("Okra",
-                actOdtOf(2014, 7, 1), Optional.of(actOdtOf(2014, 8, 8)),
+                LocalDate.of(2014, 7, 1), Optional.of(LocalDate.of(2014, 8, 8)),
                 ServiceType.NON_WARLIKE);
 
         Operation opOkraII = new StoredOperation("Okra",
-                actOdtOf(2014, 8, 9), Optional.of(actOdtOf(2015, 9, 8)),
+                LocalDate.of(2014, 8, 9), Optional.of(LocalDate.of(2015, 9, 8)),
                 ServiceType.NON_WARLIKE);
 
         Operation opOkraIII = new StoredOperation("Okra",
-                actOdtOf(2015, 9, 9), Optional.empty(),
+                LocalDate.of(2015, 9, 9), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opAugury = new StoredOperation("Augury",
-                actOdtOf(2014, 7, 4), Optional.empty(),
+                LocalDate.of(2014, 7, 4), Optional.empty(),
                 ServiceType.NON_WARLIKE);
 
         Operation opHawick = new StoredOperation("Hawick",
-                actOdtOf(2014, 7, 21), Optional.empty(),
+                LocalDate.of(2014, 7, 21), Optional.empty(),
                 ServiceType.NON_WARLIKE);
         
         Assert.assertTrue(results.contains(opMazurka));

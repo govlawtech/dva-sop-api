@@ -1,7 +1,5 @@
 package au.gov.dva.sopapi.sopsupport.casesummary;
 
-import au.gov.dva.sopapi.DateTimeUtils;
-import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import com.google.common.collect.ImmutableList;
@@ -19,7 +17,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.text.AttributedString;
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -35,17 +32,16 @@ public class ServiceTypePie {
         int warDays = 0;
         int peaceDays = 0;
         for (Deployment deployment : service.getDeployments()) {
-            LocalDate startDate = DateTimeUtils.odtToActLocalDate(deployment.getStartDate());
-            Optional<OffsetDateTime> optEndDate = deployment.getEndDate();
+            Optional<LocalDate> optEndDate = deployment.getEndDate();
             LocalDate endDate;
 
             if (optEndDate.isPresent()) {
-                endDate = DateTimeUtils.odtToActLocalDate(optEndDate.get());
+                endDate = optEndDate.get();
             } else {
                 endDate = LocalDate.now();
             }
 
-            long numberOfDays = ChronoUnit.DAYS.between(startDate, endDate) + 1; // +1 to make the dates inclusive
+            long numberOfDays = ChronoUnit.DAYS.between(deployment.getStartDate(), endDate) + 1; // +1 to make the dates inclusive
 
             if (isOperational.test(deployment))
             {
