@@ -25,13 +25,15 @@ findbugs {
         excludeFilter = file("findBugsExcludeFilter.xml")
     }
 
-
 war {
     webAppDirName = 'src/main'
+    manifest {
+        attributes 'Implementation-Version' : version
+    }
 }
 
 task copyToDeploymentDir(type: Copy, dependsOn: 'war') {
-    from ('build/libs/app.war') {
+    from ('build/libs/app-'+version+'.war') {
         rename { String fileName -> 'ROOT.war' }
     }
     from ('.') {

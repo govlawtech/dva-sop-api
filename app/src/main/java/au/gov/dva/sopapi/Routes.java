@@ -70,8 +70,13 @@ class Routes {
                 res.status(500);
             }
 
+            // Read version
+            Properties p = new Properties();
+            p.load(req.raw().getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF"));
+            String version = p.getProperty("Implementation-Version");
+
             // todo: mustache template
-            String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL());
+            String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL(), version);
             setResponseHeaders(res,200,MIME_HTML);
             return statusPage;
         });
