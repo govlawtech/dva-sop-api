@@ -12,7 +12,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -101,14 +100,14 @@ public class GenericProcessingRule implements ProcessingRule {
                     rhRuleConfigurationItem.getYearsLimitForOperationalService().get(),
                     startOfService.get(),
                     endDateForPeriodOfOperationalService,
-                    ProcessingRuleFunctions.getDeployments(serviceHistory),
+                    ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
                     isOperational,
                     caseTrace);
 
         }
         else {
             daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(startOfService.get(),
-                    condition.getStartDate(),ProcessingRuleFunctions.getDeployments(serviceHistory),
+                    condition.getStartDate(),ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
                     isOperational,caseTrace);
         }
 

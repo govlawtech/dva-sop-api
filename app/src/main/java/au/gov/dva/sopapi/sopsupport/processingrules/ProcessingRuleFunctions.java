@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.function.Predicate;
@@ -27,7 +26,7 @@ public class ProcessingRuleFunctions {
     private static Logger logger = LoggerFactory.getLogger(ProcessingRuleFunctions.class.getSimpleName());
 
     public static Optional<LocalDate> getFirstOperationalServiceStartDate(ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
-        Optional<LocalDate> start = ProcessingRuleFunctions.getDeployments(serviceHistory)
+        Optional<LocalDate> start = ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
                 .stream()
                 .filter(isOperational::test)
                 .sorted(Comparator.comparing(Deployment::getStartDate))
@@ -141,8 +140,9 @@ public class ProcessingRuleFunctions {
     }
 
 
-    public static ImmutableList<Deployment> getDeployments(ServiceHistory history) {
+    public static ImmutableList<Deployment> getCFTSDeployments(ServiceHistory history) {
         ImmutableList<Deployment> deployments = history.getServices().stream()
+                .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                 .flatMap(s -> s.getDeployments().stream())
                 .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
 
