@@ -85,7 +85,7 @@ public class RulesResult {
         Recommendation recommendation;
         if (caseTrace.getApplicableStandardOfProof().get() == StandardOfProof.ReasonableHypothesis) {
             if (satisfied) recommendation = Recommendation.APPROVED;
-            else if (caseTrace.getActualCftsDays().orElse(0) >= caseTrace.getRequiredCftsDaysForBop().orElse(0)) recommendation = Recommendation.CHECK_RH_BOP_MET;
+            else if (caseTrace.getActualCftsDays().orElse(0) >= caseTrace.getRequiredCftsDaysForBop().orElse(Integer.MAX_VALUE)) recommendation = Recommendation.CHECK_RH_BOP_MET;
             else recommendation = Recommendation.CHECK_RH;
         }
         else {
