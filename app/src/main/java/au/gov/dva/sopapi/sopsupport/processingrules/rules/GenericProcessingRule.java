@@ -12,7 +12,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +33,7 @@ public class GenericProcessingRule implements ProcessingRule {
 
     public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         if (!relevantRank.isPresent()) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
             return Optional.empty();
@@ -53,7 +52,7 @@ public class GenericProcessingRule implements ProcessingRule {
             return Optional.empty();
         }
 
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         if (!serviceDuringWhichConditionStarts.isPresent()) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
             return Optional.empty();
@@ -101,14 +100,14 @@ public class GenericProcessingRule implements ProcessingRule {
                     rhRuleConfigurationItem.getYearsLimitForOperationalService().get(),
                     startOfService.get(),
                     endDateForPeriodOfOperationalService,
-                    ProcessingRuleFunctions.getDeployments(serviceHistory),
+                    ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
                     isOperational,
                     caseTrace);
 
         }
         else {
             daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(startOfService.get(),
-                    condition.getStartDate(),ProcessingRuleFunctions.getDeployments(serviceHistory),
+                    condition.getStartDate(),ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
                     isOperational,caseTrace);
         }
 
@@ -138,8 +137,8 @@ public class GenericProcessingRule implements ProcessingRule {
         ImmutableList<Factor> applicableFactors = condition.getApplicableFactors(applicableSop);
         caseTrace.addLoggingTrace(String.format("There are %s factors in the applicable SoP: %s.", applicableFactors.size(), applicableSop.getCitation()));
 
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         if (!relevantRank.isPresent() || !serviceDuringWhichConditionStarts.isPresent()) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Relevant rank or service during which condition starts not found");
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
@@ -186,8 +185,8 @@ public class GenericProcessingRule implements ProcessingRule {
     }
 
     public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         if (relevantRank.isPresent() && serviceDuringWhichConditionStarts.isPresent()) {
             // BoP
             ImmutableList<Factor> bopFactors = condition.getApplicableFactors(condition.getSopPair().getBopSop());

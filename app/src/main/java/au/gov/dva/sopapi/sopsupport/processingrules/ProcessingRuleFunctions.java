@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.function.Predicate;
@@ -27,7 +26,7 @@ public class ProcessingRuleFunctions {
     private static Logger logger = LoggerFactory.getLogger(ProcessingRuleFunctions.class.getSimpleName());
 
     public static Optional<LocalDate> getFirstOperationalServiceStartDate(ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
-        Optional<LocalDate> start = ProcessingRuleFunctions.getDeployments(serviceHistory)
+        Optional<LocalDate> start = ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
                 .stream()
                 .filter(isOperational::test)
                 .sorted(Comparator.comparing(Deployment::getStartDate))
@@ -44,9 +43,10 @@ public class ProcessingRuleFunctions {
         return earliestService.map(Service::getStartDate);
     }
 
-    public static Optional<Service> identifyServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
+    public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
 
         Optional<Service> serviceDuringWhichConditionStarted = services.stream()
+                .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                 .filter(s -> s.getStartDate().isBefore(conditionStartDate))
                 .filter(s -> !s.getEndDate().isPresent() || s.getEndDate().get().isAfter(conditionStartDate))
                 .findFirst();
@@ -57,6 +57,7 @@ public class ProcessingRuleFunctions {
         } else {
 //            caseTrace.addLoggingTrace("No services which started before and were ongoing at the condition start date, therefore finding immediately preceding service, if any.");
             Optional<Service> lastService = services.stream()
+                    .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                     .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
                     .findFirst();
             return lastService;
@@ -141,8 +142,9 @@ public class ProcessingRuleFunctions {
     }
 
 
-    public static ImmutableList<Deployment> getDeployments(ServiceHistory history) {
+    public static ImmutableList<Deployment> getCFTSDeployments(ServiceHistory history) {
         ImmutableList<Deployment> deployments = history.getServices().stream()
+                .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                 .flatMap(s -> s.getDeployments().stream())
                 .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
 
@@ -151,12 +153,12 @@ public class ProcessingRuleFunctions {
         return deployments;
     }
 
-    public static Optional<Rank> getRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
+    public static Optional<Rank> getCFTSRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
 
        // caseTrace.addLoggingTrace("Getting the rank on the last service before date " + testDate);
         Optional<Service> relevantService = services.stream()
                 .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate())) // most recent first
-                .filter(service -> service.getStartDate().isBefore(testDate))
+                .filter(service -> service.getStartDate().isBefore(testDate) && service.getEmploymentType() == EmploymentType.CFTS)
                 .findFirst();
 
 
