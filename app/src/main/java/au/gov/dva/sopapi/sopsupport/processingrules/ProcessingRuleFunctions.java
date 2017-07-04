@@ -43,9 +43,10 @@ public class ProcessingRuleFunctions {
         return earliestService.map(Service::getStartDate);
     }
 
-    public static Optional<Service> identifyServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
+    public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
 
         Optional<Service> serviceDuringWhichConditionStarted = services.stream()
+                .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                 .filter(s -> s.getStartDate().isBefore(conditionStartDate))
                 .filter(s -> !s.getEndDate().isPresent() || s.getEndDate().get().isAfter(conditionStartDate))
                 .findFirst();
@@ -56,6 +57,7 @@ public class ProcessingRuleFunctions {
         } else {
 //            caseTrace.addLoggingTrace("No services which started before and were ongoing at the condition start date, therefore finding immediately preceding service, if any.");
             Optional<Service> lastService = services.stream()
+                    .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                     .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
                     .findFirst();
             return lastService;
@@ -151,12 +153,12 @@ public class ProcessingRuleFunctions {
         return deployments;
     }
 
-    public static Optional<Rank> getRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
+    public static Optional<Rank> getCFTSRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
 
        // caseTrace.addLoggingTrace("Getting the rank on the last service before date " + testDate);
         Optional<Service> relevantService = services.stream()
                 .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate())) // most recent first
-                .filter(service -> service.getStartDate().isBefore(testDate))
+                .filter(service -> service.getStartDate().isBefore(testDate) && service.getEmploymentType() == EmploymentType.CFTS)
                 .findFirst();
 
 
