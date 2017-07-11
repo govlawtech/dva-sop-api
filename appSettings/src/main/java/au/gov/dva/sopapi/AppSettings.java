@@ -1,9 +1,7 @@
 package au.gov.dva.sopapi;
 
 
-import static au.gov.dva.sopapi.Environment.devtest;
-import static au.gov.dva.sopapi.Environment.devtestlocal;
-import static au.gov.dva.sopapi.Environment.prod;
+import static au.gov.dva.sopapi.Environment.*;
 
 public class AppSettings {
 
@@ -40,7 +38,8 @@ public class AppSettings {
             case "devtestlocal" : return  devtestlocal;
             case "devtest" : return devtest;
             case "prod" : return prod;
-            default: throw new ConfigurationError(String.format("Value for environment variable %s must be 'devtest','devtestlocal' or 'prod'.  Current value: '%s'.", envVarName, environmentStringValue));
+            case "dev": return dev;
+            default: throw new ConfigurationError(String.format("Value for environment variable %s must be 'dev', 'devtest','devtestlocal' or 'prod'.  Current value: '%s'.", envVarName, environmentStringValue));
         }
     }
 
@@ -104,6 +103,7 @@ public class AppSettings {
                 case devtestlocal: return DevTestLocal.storageConnectionString;
                 case devtest: return getPropertyValue(AZURE_STORAGE_CONNECTION_STRING);
                 case prod: return getPropertyValue(AZURE_STORAGE_CONNECTION_STRING);
+                case dev: return getPropertyValue(AZURE_STORAGE_CONNECTION_STRING);
                 default: throw new ConfigurationError("Cannot get Azure connection string");
             }
         }
