@@ -55,6 +55,7 @@ public class AzureStorageRepository implements Repository {
     private static final String RULE_CONFIG_CONTAINER_NAME = "ruleconfiguration";
     private static final String RH_RULE_CONFIG_CSV_NAME = "rh.csv";
     private static final String BOP_RULE_CONFIG_CSV_NAME = "bop.csv";
+    private static final String SOP_PDFS_CONTAINER_NAME = "soppdfs";
 
 
     private CloudStorageAccount _cloudStorageAccount = null;
@@ -128,6 +129,25 @@ public class AzureStorageRepository implements Repository {
 
             else {
                 return Optional.of(blobToSoP(cloudBlob.get()));
+            }
+
+        } catch (RuntimeException e) {
+            throw new RepositoryRuntimeException(e);
+        } catch (Exception e) {
+            throw new RepositoryRuntimeException(e);
+        }
+    }
+
+    @Override
+    public Optional<byte[]> getSopPdf(String registerId) {
+        try {
+            String blobName = String.format("%s.pdf",registerId);
+            Optional<CloudBlob> cloudBlob = getBlobByName(SOP_PDFS_CONTAINER_NAME, blobName);
+
+            if (!cloudBlob.isPresent())
+                return Optional.empty();
+            else {
+                return Optional.of(getBlobBytes(cloudBlob.get()));
             }
 
         } catch (RuntimeException e) {
@@ -514,7 +534,9 @@ public class AzureStorageRepository implements Repository {
     public void purge() {
         for (CloudBlobContainer cloudBlobContainer : _cloudBlobClient.listContainers()) {
             try {
-                cloudBlobContainer.deleteIfExists();
+                if (cloudBlobContainer.getName() != SOP_PDFS_CONTAINER_NAME) {
+                    cloudBlobContainer.deleteIfExists();
+                }
             } catch (StorageException e) {
                 throw new RepositoryRuntimeException(e);
             }

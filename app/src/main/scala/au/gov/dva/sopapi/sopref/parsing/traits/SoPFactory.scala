@@ -72,6 +72,7 @@ trait SoPFactory {
     (allOnsetParas, aggParas)
   }
 
+
   def buildFactorObjectsFromInfo(factors: List[FactorInfo], factorSectionNumber: Int, definedTerms: List[DefinedTerm]): List[Factor] = {
     factors
       .map(fi => (factorSectionNumber.toString.concat(fi.getLetter), fi.getText))

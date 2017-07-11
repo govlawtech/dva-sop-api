@@ -11,6 +11,7 @@ import java.util.Optional;
 public interface Repository {
      void addSop(SoP sop);
      Optional<SoP> getSop(String registerId);
+     Optional<byte[]> getSopPdf(String registerId);
      ImmutableSet<SoP> getAllSops();
      void archiveSoP(String registerId);
      ImmutableSet<InstrumentChange> getInstrumentChanges();
