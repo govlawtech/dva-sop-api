@@ -145,7 +145,6 @@ public class SoPLoaderImpl implements SoPLoader {
             LocalDate effectiveDateOfNewSoP = repealingSop.get().getEffectiveFromDate();
             SoP endDated = StoredSop.withEndDate(toEndDate.get(), effectiveDateOfNewSoP.minusDays(1));
             repository.addSop(endDated);
-            repository.archiveSoP(endDated.getRegisterId());
             repository.addSop(repealingSop.get());
         }
 
@@ -176,7 +175,6 @@ public class SoPLoaderImpl implements SoPLoader {
             if (!existing.isPresent())
                 return;
 
-            repository.archiveSoP(instrumentChange.getSourceInstrumentId());
             SoP endDated = StoredSop.withEndDate(existing.get(), ((Revocation) instrumentChange).getRevocationDate());
             repository.addSop(endDated);
         }
@@ -190,7 +188,7 @@ public class SoPLoaderImpl implements SoPLoader {
     {
         static final long serialVersionUID = 42L;
         @Override
-        public int compare(InstrumentChange o1, InstrumentChange o2) {
+            public int compare(InstrumentChange o1, InstrumentChange o2) {
             return o1.getDate().compareTo(o2.getDate());
         }
     }

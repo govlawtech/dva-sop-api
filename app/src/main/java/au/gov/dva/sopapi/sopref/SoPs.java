@@ -76,7 +76,8 @@ public class SoPs {
                 Optional.of(DateTimeUtils.localDateToNextMidnightCanberraTime(testSop.getEndDate().get()))
                 : Optional.empty();
 
-        Boolean isCurrent =  sopStartDateAsActOdt.isBefore(testTime) && (!endDateAsActOdt.isPresent() || endDateAsActOdt.get().isAfter(testTime));
+        Boolean isCurrent =  (sopStartDateAsActOdt.isBefore(testTime) || sopStartDateAsActOdt.isEqual(testTime))
+                && (!endDateAsActOdt.isPresent() || endDateAsActOdt.get().isAfter(testTime));
         return isCurrent;
     }
 
@@ -93,7 +94,7 @@ public class SoPs {
                    Optional<SoP> bopSop = groupedByName.get(conditionName).stream().filter(soP -> soP.getStandardOfProof() == StandardOfProof.BalanceOfProbabilities).findFirst();
                    Optional<SoP> rhSop = groupedByName.get(conditionName).stream().filter(soP -> soP.getStandardOfProof() == StandardOfProof.ReasonableHypothesis).findFirst();
                    if (bopSop.isPresent() && rhSop.isPresent()) {
-                       return Optional.of(new SoPPair(bopSop.get(), rhSop.get()));
+                           return Optional.of(new SoPPair(bopSop.get(), rhSop.get()));
                    }
                    else {
                        logger.warn(String.format("No complete SoP pair for condition: %s", conditionName));

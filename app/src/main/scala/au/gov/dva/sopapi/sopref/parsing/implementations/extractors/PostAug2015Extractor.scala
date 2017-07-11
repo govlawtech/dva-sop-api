@@ -13,7 +13,7 @@ class PostAug2015Extractor(cleansedText: String) extends SoPExtractor {
 
   private val logger = Logger("dvasopapi.newsopstyleextractor")
 
-  val sections: List[(Option[Int], String, List[String])] = PostAug2015ExtractorUtilities.getSectionBlocks(cleansedText)
+    val sections: List[(Option[Int], String, List[String])] = PostAug2015ExtractorUtilities.getSectionBlocks(cleansedText)
 
   private def stripLines(startRegex: Regex, endRegex: Regex, toProcess : List[String], processed: List[String], inSection: Boolean, linesRemoved: Int) : List[String] = {
     if (toProcess.isEmpty) return processed.reverse

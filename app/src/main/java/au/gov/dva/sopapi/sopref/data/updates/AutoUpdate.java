@@ -104,7 +104,9 @@ public class AutoUpdate {
                             () -> _repository.getLastUpdated().orElse(OffsetDateTime.now().minusDays(1))),
                     new LegislationRegisterSiteChangeFactory(
                             new FederalRegisterOfLegislationClient(),
-                            () -> _repository.getAllSops().stream().map(
+                            () -> _repository.getAllSops().stream()
+                                    .filter(s -> !s.getEndDate().isPresent())
+                                    .map(
                                     s -> s.getRegisterId())
                                     .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf))));
     }
