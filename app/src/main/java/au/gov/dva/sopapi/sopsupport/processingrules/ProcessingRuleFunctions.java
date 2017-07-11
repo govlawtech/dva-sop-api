@@ -43,6 +43,31 @@ public class ProcessingRuleFunctions {
         return earliestService.map(Service::getStartDate);
     }
 
+    /**
+     * Returns a date a certain period before the given onset date, depending on the period specifier
+     * @param periodSpecifier - indicate the period to back in time. e.g. 2d = 2 days, 3y = 3 years
+     * @param onsetDate - The date to start counting back from
+     * @return The date which is the specified amount back in time e.g. ("7d", 2011-04-14) -> 2011-04-07
+     */
+    public static LocalDate getStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate) {
+        if (periodSpecifier == null || !periodSpecifier.trim().matches("^\\d+(d|y)$"))
+            throw new RuntimeException("period specifier is not valid, expecting 2d, 3y etc. : " + periodSpecifier);
+        if (onsetDate == null)
+            throw new RuntimeException("onsetDate cannot be null");
+
+        String trimmed = periodSpecifier.trim();
+        int index = trimmed.indexOf('d');
+        if (index == -1) {
+            index = trimmed.indexOf('y');
+            int numYears = Integer.parseInt(trimmed.substring(0, index));
+            return onsetDate.minusYears(numYears);
+        }
+        else {
+            int numDays = Integer.parseInt(trimmed.substring(0, index));
+            return onsetDate.minusDays(numDays);
+        }
+    }
+
     public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
 
         Optional<Service> serviceDuringWhichConditionStarted = services.stream()
@@ -173,7 +198,7 @@ public class ProcessingRuleFunctions {
 
     }
 
-    public static Long getDaysOfContinuousFullTimeServiceToDate(ServiceHistory serviceHistory, LocalDate toDate) {
+    public static Long getDaysOfContinuousFullTimeServiceInInterval(ServiceHistory serviceHistory, LocalDate noEarlierThanDate, LocalDate toDate) {
 
         List<HasDateRange> toFlatten = serviceHistory.getServices().stream()
                 .filter(service -> !service.getStartDate().isAfter(toDate) && service.getEmploymentType() == EmploymentType.CFTS)
@@ -181,15 +206,17 @@ public class ProcessingRuleFunctions {
         List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(toFlatten);
 
         Long days = flattened.stream()
-                .map(dateRange -> getDaysInDateRangeUpTo(dateRange, toDate))
+                .map(dateRange -> getDaysInDateRangeInInterval(dateRange, noEarlierThanDate, toDate))
                 .collect(Collectors.summingLong(value -> value));
 
         return days;
     }
 
-    private static Long getDaysInDateRangeUpTo(HasDateRange dateRange, LocalDate endDate) {
-        logger.trace("Counting number of days in date range to " + endDate + "...");
-        LocalDate startDate = dateRange.getStartDate();
+    private static Long getDaysInDateRangeInInterval(HasDateRange dateRange, LocalDate noEarlierThanDate, LocalDate endDate) {
+        logger.trace("Counting number of days in date range: " + noEarlierThanDate + " to " + endDate + "...");
+        LocalDate startDate = dateRange.getStartDate().isAfter(noEarlierThanDate)
+                ? dateRange.getStartDate()
+                : noEarlierThanDate;
         long days;
         if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(endDate)) {
             logger.trace("Date range end date is present and before the test date, therefore counting days between start of date range and test date...");

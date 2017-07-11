@@ -105,6 +105,14 @@ public class GenericProcessingRule implements ProcessingRule {
                     caseTrace);
 
         }
+        else if (rhRuleConfigurationItem.getHardOnsetWindow().isPresent()) {
+            LocalDate startOfWindow = ProcessingRuleFunctions.getStartOfOnsetWindow(rhRuleConfigurationItem.getHardOnsetWindow().get(), condition.getStartDate());
+            daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(
+                    startOfWindow, condition.getStartDate(),
+                    ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
+                    isOperational, caseTrace
+            );
+        }
         else {
             daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(startOfService.get(),
                     condition.getStartDate(),ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
@@ -165,7 +173,10 @@ public class GenericProcessingRule implements ProcessingRule {
         caseTrace.setRequiredCftsDays(cftsDaysRequired);
 
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
-        Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(serviceHistory, condition.getStartDate());
+        LocalDate startOfCftsInterval = applicableRuleConfig.getHardOnsetWindow().isPresent()
+                ? ProcessingRuleFunctions.getStartOfOnsetWindow(applicableRuleConfig.getHardOnsetWindow().get(), condition.getStartDate())
+                : LocalDate.of(1900, 1, 1);
+        Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(serviceHistory, startOfCftsInterval, condition.getStartDate());
         if (actualDaysOfCfts >= Integer.MAX_VALUE) {
             throw new ProcessingRuleRuntimeException("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
         }

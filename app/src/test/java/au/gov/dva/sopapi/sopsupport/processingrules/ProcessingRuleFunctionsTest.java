@@ -100,26 +100,31 @@ public class ProcessingRuleFunctionsTest {
             ))
         );
 
+        LocalDate early = LocalDate.of(1900, 1, 1);
         // too early for any service
-        long days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2010, 1, 1));
+        long days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2010, 1, 1));
         Assert.assertTrue(days == 0);
 
         // midway through the first pair of services
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2011, 6, 9));
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2011, 6, 9));
         Assert.assertTrue(days == 31);
 
         // first pair of services
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2012, 11, 9));
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2012, 11, 9));
         Assert.assertTrue(days == 367);
 
         // second pair of services
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2013, 6, 9));
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2013, 6, 9));
         Assert.assertTrue(days == 378);
 
         // all of them
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(testData, LocalDate.of(2014, 5, 15));
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2014, 5, 15));
         Assert.assertTrue(days == 393);
 
+        // all of them - clamped by a start date
+        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData,
+                LocalDate.of(2012, 5, 7), LocalDate.of(2014, 5, 15));
+        Assert.assertTrue(days == 30); // four days from the big service + 26 from the later services
     }
 
     private Condition makeCondition(int beginYear, int beginMonth, int beginDay) {
@@ -158,5 +163,48 @@ public class ProcessingRuleFunctionsTest {
         Condition edgeNotOk = makeCondition(2023, 1, 15);
         result = ProcessingRuleFunctions.conditionStartedWithinXYearsOfLastDayOfMRCAService(edgeNotOk, testData, 10, new SopSupportCaseTrace("unit test"));
         Assert.assertFalse(result);
+    }
+
+
+    private void failGetStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate) {
+        try {
+            LocalDate result = ProcessingRuleFunctions.getStartOfOnsetWindow(periodSpecifier, onsetDate);
+            Assert.fail("should have thrown an exception");
+        }
+        catch (RuntimeException ex) {
+
+        }
+    }
+
+    private void successGetStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate, LocalDate expectedResult) {
+        LocalDate result = ProcessingRuleFunctions.getStartOfOnsetWindow(periodSpecifier, onsetDate);
+        Assert.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void testGetStartOfOnsetWindow() {
+        LocalDate onsetDate = LocalDate.of(2011, 5, 1);
+
+        // test null onset date
+        failGetStartOfOnsetWindow("1d", null);
+
+        // test null period specifier
+        failGetStartOfOnsetWindow(null, onsetDate);
+
+        // test bad period specifiers
+        failGetStartOfOnsetWindow("d324d", onsetDate);
+        failGetStartOfOnsetWindow("324w", onsetDate);
+
+        // test years
+        successGetStartOfOnsetWindow("1y", onsetDate, LocalDate.of(2010, 5, 1));
+        successGetStartOfOnsetWindow("5y", onsetDate, LocalDate.of(2006, 5, 1));
+        successGetStartOfOnsetWindow("15y", onsetDate, LocalDate.of(1996, 5, 1));
+
+        // test days
+        successGetStartOfOnsetWindow("0d", onsetDate, LocalDate.of(2011, 5, 1));
+        successGetStartOfOnsetWindow("1d", onsetDate, LocalDate.of(2011, 4, 30));
+        successGetStartOfOnsetWindow("5d", onsetDate, LocalDate.of(2011, 4, 26));
+        successGetStartOfOnsetWindow("15d", onsetDate, LocalDate.of(2011, 4, 16));
+        successGetStartOfOnsetWindow("131d", onsetDate, LocalDate.of(2010, 12, 21));
     }
 }

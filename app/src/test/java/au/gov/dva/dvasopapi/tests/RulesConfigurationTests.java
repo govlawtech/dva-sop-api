@@ -8,16 +8,18 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class RulesConfigurationTests {
 
-    @Ignore
     @Test
     public void loadRulesConfig() throws IOException {
-        byte[] rhCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/RH.csv"));
-        byte[] boPCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/BoP.csv"));
+        byte[] rhCsv = Files.readAllBytes(Paths.get("../../dva-sop-api-rule-config/rh.csv"));
+        byte[] boPCsv = Files.readAllBytes(Paths.get("../../dva-sop-api-rule-config/bop.csv"));
         RuleConfigurationRepository underTest = new CsvRuleConfigurationRepository(rhCsv, boPCsv);
-        assert(underTest.getRHItems().size() == 17 && underTest.getBoPItems().size() == 12);
+        assert(underTest.getRHItems().size() == 32 && underTest.getBoPItems().size() == 176);
         underTest.getRHItems().forEach(rhRuleConfigurationItem -> System.out.println(rhRuleConfigurationItem));
         underTest.getBoPItems().forEach(rhRuleConfigurationItem -> System.out.println(rhRuleConfigurationItem));
     }
