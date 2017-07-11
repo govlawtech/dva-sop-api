@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.util.List;
 import java.util.concurrent.*;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,6 +28,7 @@ public class Main {
         Option rhRulesOption = new Option("rh", "RH", true, "Path to CSV containing RH rules");
         Option bopRulesOption = new Option("bop", "BoP", true, "Path to CSV containing BoP rules");
         Option scrapeOption = new Option("scrape", "scrape", false, "Scrape Legislation Register for PDFs for given register ids.");
+        Option getCurrentSops = new Option("getCurrentSops","getCurrentSops",false,"Get a list of the register IDs of all SoPs in storage.");
 
         Options options = new Options()
                 .addOption(sopsFilePath)
@@ -38,7 +40,8 @@ public class Main {
                 .addOption(rhRulesOption)
                 .addOption(bopRulesOption)
                 .addOption(validateRuleConfigOption)
-                .addOption(scrapeOption);
+                .addOption(scrapeOption)
+                .addOption(getCurrentSops);
 
         CommandLineParser parser = new DefaultParser();
         CommandLine commandLine = null;
@@ -57,6 +60,15 @@ public class Main {
         Repository repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
         au.gov.dva.sopapi.tools.StorageTool storageTool = new au.gov.dva.sopapi.tools.StorageTool(repository, registerClient);
 
+        if (commandLine.hasOption("getCurrentSops"))
+        {
+            Stream<String> registerIds = repository.getAllSops().stream()
+                    .map(soP -> soP.getRegisterId());
+
+            System.out.println("Register IDs in repository (note: some may be end-dated):");
+            registerIds.forEach(s -> System.out.println(s));
+        }
+
         if (commandLine.hasOption("p"))
         {
             repository.purge();
@@ -73,7 +85,7 @@ public class Main {
 
             try {
                 List<String> registerIdsOfInitialSops = getRegisterIds(initialSopsListFile);
-                storageTool.SeedStorage(registerIdsOfInitialSops);
+                storageTool.SeedStorageWithSops(registerIdsOfInitialSops);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -112,7 +124,7 @@ public class Main {
         if (commandLine.hasOption("scrape")) {
             try {
 
-                String initialSopsListFile = commandLine.getOptionValue("scape");
+                String initialSopsListFile = commandLine.getOptionValue("sops");
                 Path outputPath = Files.createTempDirectory("scrapedSopPdfs_");
                 List<String> registerIdsOfInitialSops = getRegisterIds(initialSopsListFile);
                 FederalRegisterOfLegislationClient client = new FederalRegisterOfLegislationClient();

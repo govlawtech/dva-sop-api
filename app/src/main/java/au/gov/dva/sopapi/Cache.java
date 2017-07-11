@@ -31,7 +31,6 @@ public class Cache {
         _allSopPairs = ImmutableSet.of();
         _allServiceDeterminations = ImmutableSet.of();
         _failedUpdates = ImmutableSet.of();
-
     }
 
     public static Cache getInstance() {
@@ -41,7 +40,6 @@ public class Cache {
     public void refresh(Repository repository)
     {
         try {
-
             ImmutableSet<SoP> allSops = repository.getAllSops();
             ImmutableSet<ServiceDetermination> allServiceDeterminations = repository.getServiceDeterminations();
             Optional<RuleConfigurationRepository> ruleConfigurationRepository = repository.getRuleConfigurationRepository();

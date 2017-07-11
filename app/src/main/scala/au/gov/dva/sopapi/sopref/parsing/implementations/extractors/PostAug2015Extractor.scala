@@ -11,29 +11,26 @@ import scala.util.matching.Regex
 
 class PostAug2015Extractor(cleansedText: String) extends SoPExtractor {
 
-  private val logger = Logger("dvasopapi.oldsopstyleextractor")
+  private val logger = Logger("dvasopapi.newsopstyleextractor")
 
-  val sections: List[(Option[Int], String, List[String])] = PostAug2015ExtractorUtilities.getSectionBlocks(cleansedText)
+    val sections: List[(Option[Int], String, List[String])] = PostAug2015ExtractorUtilities.getSectionBlocks(cleansedText)
 
-  private def stripLines(startRegex: Regex, endRegex: Regex, maxLines: Int, toProcess : List[String], processed: List[String], inSection: Boolean, linesRemoved: Int) : List[String] = {
+  private def stripLines(startRegex: Regex, endRegex: Regex, toProcess : List[String], processed: List[String], inSection: Boolean, linesRemoved: Int) : List[String] = {
     if (toProcess.isEmpty) return processed.reverse
     if (!inSection)
     {
       val lineIsNote = startRegex.findFirstMatchIn(toProcess.head).isDefined
       if (lineIsNote)
       {
-        println("Removed note line: " + toProcess.head)
-        stripLines(startRegex,endRegex,maxLines,toProcess.tail,processed,inSection = true,linesRemoved + 1)
+        stripLines(startRegex,endRegex,toProcess.tail,processed,inSection = true,linesRemoved + 1)
       }
 
-      else stripLines(startRegex,endRegex,maxLines,toProcess.tail,toProcess.head +: processed,inSection = false,0)
+      else stripLines(startRegex,endRegex,toProcess.tail,toProcess.head +: processed,inSection = false,0)
     }
     else {
-
-      assert(linesRemoved < maxLines)
       val lineIsNextAfterNoteEnds = endRegex.findFirstMatchIn(toProcess.head).isDefined
-      if (lineIsNextAfterNoteEnds) stripLines(startRegex,endRegex,maxLines,toProcess.tail, toProcess.head +: processed,inSection = false,0)
-      else stripLines(startRegex,endRegex,maxLines,toProcess.tail,processed,inSection = true, linesRemoved + 1)
+      if (lineIsNextAfterNoteEnds) stripLines(startRegex,endRegex,toProcess.tail, toProcess.head +: processed,inSection = false,0)
+      else stripLines(startRegex,endRegex,toProcess.tail,processed,inSection = true, linesRemoved + 1)
     }
 
   }
@@ -42,7 +39,7 @@ class PostAug2015Extractor(cleansedText: String) extends SoPExtractor {
     val noteStartRegex = """^Note:""".r
     val noteEndRegex = """^[\(0-9]""".r
 
-    stripLines(noteStartRegex,noteEndRegex,4,lines,List(),inSection = false,0)
+    stripLines(noteStartRegex,noteEndRegex,lines,List(),inSection = false,0)
   }
 
   private def getSection(titleRegex: Regex) = {
