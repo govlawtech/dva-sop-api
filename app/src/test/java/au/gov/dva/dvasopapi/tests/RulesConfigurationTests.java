@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 public class RulesConfigurationTests {
 
     @Test
+    @Ignore
     public void loadRulesConfig() throws IOException {
         byte[] rhCsv = Files.readAllBytes(Paths.get("../../dva-sop-api-rule-config/rh.csv"));
         byte[] boPCsv = Files.readAllBytes(Paths.get("../../dva-sop-api-rule-config/bop.csv"));
