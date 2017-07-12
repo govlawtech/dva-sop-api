@@ -52,14 +52,10 @@ public class ProcessingRuleFunctionsTest {
         // Overlapping
         Deployment thirteenDaysPartialA = makeDeployment(2010, 12, 30, 2011, 1, 4);
         Deployment thirteenDaysPartialB = makeDeployment(2011, 1, 2, 2011, 1, 11);
-        // Not operational
-        Deployment notOperational = makeDeployment(2011, 1, 14, 2011, 1, 24);
 
-        long result = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(testIntervalBegin
+        long result = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(testIntervalBegin
                 , testIntervalEnd
-                , ImmutableList.of(sixDays, threeDays, fiveDays, thirteenDaysPartialA, thirteenDaysPartialB, notOperational)
-                , deployment -> {return !deployment.equals(notOperational);}
-                , new SopSupportCaseTrace("unit test")
+                , ImmutableList.of(sixDays, threeDays, fiveDays, thirteenDaysPartialA, thirteenDaysPartialB)
         );
 
         // 6 + 3 + 5 + 13 == 27
@@ -89,41 +85,42 @@ public class ProcessingRuleFunctionsTest {
     }
 
     @Test
-    public void testGetDaysOfContinuousFullTimeServiceToDate() {
-        ServiceHistory testData = new ServiceHistoryImpl(
-            null,
-            ImmutableSet.copyOf(Arrays.asList(
+    public void testGetDaysOfServiceInInterval() {
+        ImmutableList<Service> testData =
+            ImmutableList.copyOf(Arrays.asList(
                     makeService(2011, 5, 10, 2011, 10, 10)
                     ,makeService(2011, 10, 10, 2012, 5, 10) // 367 (including the service before this one - 365 days + 1 leap day + 1 for inclusive)
                     ,makeService(2013, 1, 4, 2013, 1, 14) // 11
                     ,makeService(2014, 5, 1)
-            ))
-        );
+            ));
+
 
         LocalDate early = LocalDate.of(1900, 1, 1);
         // too early for any service
-        long days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2010, 1, 1));
+        long days = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(early, LocalDate.of(2010, 1, 1), testData);
         Assert.assertTrue(days == 0);
 
         // midway through the first pair of services
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2011, 6, 9));
+        days = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(early, LocalDate.of(2011, 6, 9), testData);
         Assert.assertTrue(days == 31);
 
         // first pair of services
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2012, 11, 9));
+        days = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(early, LocalDate.of(2012, 11, 9), testData);
         Assert.assertTrue(days == 367);
 
         // second pair of services
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2013, 6, 9));
+        days = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(early, LocalDate.of(2013, 6, 9), testData);
         Assert.assertTrue(days == 378);
 
         // all of them
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData, early, LocalDate.of(2014, 5, 15));
+        days = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(early, LocalDate.of(2014, 5, 15), testData);
         Assert.assertTrue(days == 393);
 
         // all of them - clamped by a start date
-        days = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(testData,
-                LocalDate.of(2012, 5, 7), LocalDate.of(2014, 5, 15));
+        days = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(
+                LocalDate.of(2012, 5, 7)
+                , LocalDate.of(2014, 5, 15)
+                , testData);
         Assert.assertTrue(days == 30); // four days from the big service + 26 from the later services
     }
 
