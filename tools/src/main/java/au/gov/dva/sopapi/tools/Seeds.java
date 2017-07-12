@@ -64,14 +64,6 @@ class Seeds {
 
     public static void seedRuleConfiguration(Repository repository, byte[] rhCsv, byte[] bopCsv)
     {
-        Optional<RuleConfigurationRepository> existingRepository = repository.getRuleConfigurationRepository();
-
-        if (!existingRepository.isPresent()) {
             repository.setRulesConfig(rhCsv, bopCsv);
-        }
-
-        else {
-            repository.setRulesConfig(rhCsv,bopCsv);
-        }
     }
 }

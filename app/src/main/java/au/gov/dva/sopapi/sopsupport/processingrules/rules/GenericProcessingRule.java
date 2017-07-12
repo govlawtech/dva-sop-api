@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
+import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
@@ -74,11 +75,20 @@ public class GenericProcessingRule implements ProcessingRule {
         }
 
         RHRuleConfigurationItem rhRuleConfigurationItem = rhRuleConfigurationItemOptional.get();
+        ImmutableList<Deployment> operationalDeployments =
+                ProcessingRuleFunctions.getCFTSDeployments(serviceHistory).stream()
+                .filter(d -> isOperational.test(d))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
 
         Optional<LocalDate> startOfService = ProcessingRuleFunctions.getStartofService(serviceHistory);
         if (!startOfService.isPresent()) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "No service.");
             return Optional.empty();
+        }
+        if (rhRuleConfigurationItem.getHardOnsetWindow().isPresent()) {
+            LocalDate startOfWindow = ProcessingRuleFunctions.getStartOfOnsetWindow(rhRuleConfigurationItem.getHardOnsetWindow().get(), condition.getStartDate());
+            caseTrace.addLoggingTrace("Configuration dictates to only consider operational service from " + startOfWindow + " to " + condition.getStartDate());
+            startOfService = Optional.of(startOfWindow);
         }
 
         Long daysOfOperationalService = null;
@@ -92,23 +102,20 @@ public class GenericProcessingRule implements ProcessingRule {
             }
 
             caseTrace.addLoggingTrace(String.format("The start date for the test period of operational service is the start of the earliest operational service: %s", firstOperationalServiceStartDate.get()));
-
-            LocalDate endDateForPeriodOfOperationalService = condition.getStartDate();
             caseTrace.addLoggingTrace(String.format("The end date for the test period of operational service is the condition start date: %s", condition.getStartDate()));
 
-            daysOfOperationalService = ProcessingRuleFunctions.getMaximumDaysOfOpServiceInAnyInterval(
+            daysOfOperationalService = ProcessingRuleFunctions.getMaximumDaysOfServiceInAnyInterval(
                     rhRuleConfigurationItem.getYearsLimitForOperationalService().get(),
                     startOfService.get(),
-                    endDateForPeriodOfOperationalService,
-                    ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
-                    isOperational,
+                    condition.getStartDate(),
+                    operationalDeployments,
                     caseTrace);
 
         }
         else {
-            daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(startOfService.get(),
-                    condition.getStartDate(),ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
-                    isOperational,caseTrace);
+            daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(
+                    startOfService.get(), condition.getStartDate(),
+                    operationalDeployments);
         }
 
         if (daysOfOperationalService >= Integer.MAX_VALUE) {
@@ -165,10 +172,51 @@ public class GenericProcessingRule implements ProcessingRule {
         caseTrace.setRequiredCftsDays(cftsDaysRequired);
 
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
-        Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceToDate(serviceHistory, condition.getStartDate());
-        if (actualDaysOfCfts >= Integer.MAX_VALUE) {
-            throw new ProcessingRuleRuntimeException("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
+        Optional<LocalDate> startOfService = ProcessingRuleFunctions.getStartofService(serviceHistory);
+        Long actualDaysOfCfts;
+        if (startOfService.isPresent())
+        {
+            // We just want the CFTS services
+            ImmutableList<Service> cftsServices = serviceHistory.getServices().stream()
+                    .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
+                    .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
+
+            // Determine start date according to the start of services or the hard window
+            LocalDate startOfCftsInterval = startOfService.get();
+            if (applicableRuleConfig.getHardOnsetWindow().isPresent()) {
+                LocalDate windowStart = ProcessingRuleFunctions.getStartOfOnsetWindow(applicableRuleConfig.getHardOnsetWindow().get(), condition.getStartDate());
+                caseTrace.addLoggingTrace("Configuration dictates to only consider CFTS service from " + windowStart + " to " + condition.getStartDate());
+                if (windowStart.isAfter(startOfCftsInterval)) startOfCftsInterval = windowStart;
+            }
+
+            // DODGY BIT: UNTIL THE BOP.CSV FILE IS UPDATED TO INCLUDE THE SLIDING WINDOW COLUMN
+            // THIS CODE SOMEWHAT DODGILY READS THE RH CONFIG REGARDLESS OF BOP VS RH APPLICABILITY
+            Optional<RHRuleConfigurationItem> dodgyRhConfigOpt = getRelevantRHConfiguration(condition.getSopPair().getConditionName(),
+                    relevantRank.get(),
+                    serviceDuringWhichConditionStarts.get().getBranch(),
+                    ruleConfigurationRepository);
+            if (dodgyRhConfigOpt.isPresent() && dodgyRhConfigOpt.get().getYearsLimitForOperationalService().isPresent()) {
+                actualDaysOfCfts = ProcessingRuleFunctions.getMaximumDaysOfServiceInAnyInterval(
+                        dodgyRhConfigOpt.get().getYearsLimitForOperationalService().get()
+                        , startOfCftsInterval
+                        , condition.getStartDate()
+                        , cftsServices
+                        , caseTrace
+                );
+            }
+            else{
+                actualDaysOfCfts = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(startOfCftsInterval, condition.getStartDate(), cftsServices);
+            }
+
+            if (actualDaysOfCfts >= Integer.MAX_VALUE) {
+                throw new ProcessingRuleRuntimeException("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
+            }
         }
+        else {
+            actualDaysOfCfts = 0l;
+            caseTrace.addLoggingTrace("Couldn't find any service, so setting CFTS service to 0");
+        }
+
         caseTrace.setActualCftsDays(actualDaysOfCfts.intValue());
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Actual days of continuous full time service: " + actualDaysOfCfts);
 

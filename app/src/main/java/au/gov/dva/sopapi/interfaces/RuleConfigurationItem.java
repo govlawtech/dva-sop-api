@@ -23,6 +23,9 @@ public interface RuleConfigurationItem {
     Optional<Integer> getAccumulationRatePerWeek();
 
     Optional<String> getAccumulationUnit();
+
+    Optional<String> getHardOnsetWindow();
+
 }
 
 

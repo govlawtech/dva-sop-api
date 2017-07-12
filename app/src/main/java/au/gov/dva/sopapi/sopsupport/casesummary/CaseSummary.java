@@ -243,8 +243,8 @@ public class CaseSummary {
                 "Military Rehabilitation and Compensation Act 2004 is:";
         serviceHistoryData.add(new CaseSummaryParagraph(serviceHistoryDefinition));
 
-        serviceHistoryData.add(new CaseSummaryParagraph("The total number of days on Warlike/Non-Warlike service is " + _model.getCaseTrace().getActualOperationalDays()));
-        serviceHistoryData.add(new CaseSummaryParagraph("The total number of days of continuous full time service is " + _model.getCaseTrace().getActualCftsDays()));
+        serviceHistoryData.add(new CaseSummaryParagraph("The total number of days on Warlike/Non-Warlike service is " + _model.getCaseTrace().getActualOperationalDays().orElse(0)));
+        serviceHistoryData.add(new CaseSummaryParagraph("The total number of days of continuous full time service is " + _model.getCaseTrace().getActualCftsDays().orElse(0)));
 
         for (Service service : serviceHistory.getServices()) {
             for (Deployment deployment : service.getDeployments()) {
@@ -400,7 +400,7 @@ public class CaseSummary {
                     sopData.add(new CaseSummaryParagraph(reason));
                 }
             }
-            if (!usingRh && caseTrace.getActualOperationalDays().get() > 0) {
+            if (!usingRh && caseTrace.getActualOperationalDays().orElse(0) > 0) {
                 String extraRhConsideration = (factors.size() > 1)
                     ? "Additionally, the following RH factors were deemed not to be applicable, as the RH standard of proof was not considered applicable:"
                     : "Additionally, the following RH factor was deemed not to be applicable, as the RH standard of proof was not considered applicable:";

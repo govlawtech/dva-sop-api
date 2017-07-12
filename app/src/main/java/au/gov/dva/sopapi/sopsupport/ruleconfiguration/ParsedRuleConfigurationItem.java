@@ -27,6 +27,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
                 ", cftsDays=" + cftsDays +
                 ", accumRate=" + accumRate +
                 ", accumUnit=" + accumUnit +
+                ", onsetWindow=" + hardOnsetWindow +
                 '}';
     }
 
@@ -38,8 +39,9 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     private final int cftsDays;
     private final Optional<Integer> accumRate;
     private final Optional<String> accumUnit;
+    private final Optional<String> hardOnsetWindow;
 
-    public ParsedRuleConfigurationItem(@Nonnull String conditionName, @Nonnull String instrumentId, @Nonnull String factorRefs,@Nonnull String serviceBranch,@Nonnull String rank, @Nonnull String cftsDays, @Nonnull Optional<String> accumRate, @Nonnull Optional<String> accumUnit)
+    public ParsedRuleConfigurationItem(@Nonnull String conditionName, @Nonnull String instrumentId, @Nonnull String factorRefs,@Nonnull String serviceBranch,@Nonnull String rank, @Nonnull String cftsDays, @Nonnull Optional<String> accumRate, @Nonnull Optional<String> accumUnit, @Nonnull Optional<String> hardOnsetWindow)
     {
         this.conditionName = conditionName.trim().toLowerCase(Locale.US);
         this.instrumentId = instrumentId.trim();
@@ -49,6 +51,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         this.cftsDays = toIntOrError(cftsDays,"Cannot determine number of CFTS days from");
         this.accumRate = accumRate.isPresent() ? Optional.of(toIntOrError(accumRate.get(),"Cannot determine the accumulation rate from")) : Optional.empty();
         this.accumUnit = accumUnit;
+        this.hardOnsetWindow = hardOnsetWindow;
     }
 
 
@@ -146,5 +149,9 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         return accumUnit;
     }
 
+    @Override
+    public Optional<String> getHardOnsetWindow() {
+        return hardOnsetWindow;
+    }
 }
 

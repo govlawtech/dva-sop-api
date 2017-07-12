@@ -6,7 +6,7 @@ apply plugin: 'application'
 
 mainClassName = 'au.gov.dva.sopapi.InitStorage'
 
-version = '1.1.5'
+version = '1.1.6'
 
 sourceSets {
     main {
