@@ -89,11 +89,8 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    public static long getNumberOfDaysOfOperationalServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
-        List<HasDateRange> toFlatten = deployments.stream()
-                .filter(d -> isOperational.test(d))
-                .collect(Collectors.toList());
-        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(toFlatten);
+    public static long getNumberOfDaysOfServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<? extends HasDateRange> deploymentsOrService) {
+        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(new ArrayList<>(deploymentsOrService));
         long days = flattened.stream()
                 .map(d -> getElapsedDaysOfDateRangeInInterval(startDate, endDate, d))
                 .collect(Collectors.summingLong(value -> value));
@@ -101,14 +98,14 @@ public class ProcessingRuleFunctions {
         return days;
     }
 
-    public static long getMaximumDaysOfOpServiceInAnyInterval(int intervalDurationInYears, LocalDate startDate, LocalDate endDate, ImmutableList<Deployment> deployments, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+    public static long getMaximumDaysOfServiceInAnyInterval(int intervalDurationInYears, LocalDate startDate, LocalDate endDate, ImmutableList<? extends HasDateRange> deploymentsOrService, CaseTrace caseTrace) {
         List<Interval> testIntervals = Intervals.getSopFactorTestIntervalsJavaList(intervalDurationInYears, startDate, endDate);
         assert (testIntervals.size() > 0);
         if (testIntervals.size() > 1) {
             caseTrace.addLoggingTrace(String.format("Number of intervals of %s years between %s and %s: %s", intervalDurationInYears, startDate, endDate, testIntervals.size()));
             Comparator<Interval> longestFirst = (o1, o2) -> Long.compare(
-                    getNumberOfDaysOfOperationalServiceInInterval(o2.getStart(), o2.getEnd(), deployments, isOperational, caseTrace),
-                    getNumberOfDaysOfOperationalServiceInInterval(o1.getStart(), o1.getEnd(), deployments, isOperational, caseTrace));
+                    getNumberOfDaysOfServiceInInterval(o2.getStart(), o2.getEnd(), deploymentsOrService),
+                    getNumberOfDaysOfServiceInInterval(o1.getStart(), o1.getEnd(), deploymentsOrService));
 
             Comparator<Interval> latestFirst = (o1, o2) -> o2.getEnd().compareTo(o1.getEnd());
 
@@ -117,11 +114,11 @@ public class ProcessingRuleFunctions {
                     .collect(Collectors.toList());
 
             Interval chosenInterval = intervalsSortedByOpServiceThenLatest.get(0);
-            caseTrace.addLoggingTrace(String.format("Interval with the most operational service starts on %s and ends on %s", chosenInterval.getStart(), chosenInterval.getEnd()));
-            return getNumberOfDaysOfOperationalServiceInInterval(chosenInterval.getStart(), chosenInterval.getEnd(), deployments, isOperational, caseTrace);
+            caseTrace.addLoggingTrace(String.format("Interval with the most service starts on %s and ends on %s", chosenInterval.getStart(), chosenInterval.getEnd()));
+            return getNumberOfDaysOfServiceInInterval(chosenInterval.getStart(), chosenInterval.getEnd(), deploymentsOrService);
         }
 
-        return getNumberOfDaysOfOperationalServiceInInterval(startDate, endDate, deployments, isOperational, caseTrace);
+        return getNumberOfDaysOfServiceInInterval(startDate, endDate, deploymentsOrService);
 
     }
 
@@ -197,40 +194,6 @@ public class ProcessingRuleFunctions {
         }
 
     }
-
-    public static Long getDaysOfContinuousFullTimeServiceInInterval(ServiceHistory serviceHistory, LocalDate noEarlierThanDate, LocalDate toDate) {
-
-        List<HasDateRange> toFlatten = serviceHistory.getServices().stream()
-                .filter(service -> !service.getStartDate().isAfter(toDate) && service.getEmploymentType() == EmploymentType.CFTS)
-                .collect(Collectors.toList());
-        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(toFlatten);
-
-        Long days = flattened.stream()
-                .map(dateRange -> getDaysInDateRangeInInterval(dateRange, noEarlierThanDate, toDate))
-                .collect(Collectors.summingLong(value -> value));
-
-        return days;
-    }
-
-    private static Long getDaysInDateRangeInInterval(HasDateRange dateRange, LocalDate noEarlierThanDate, LocalDate endDate) {
-        logger.trace("Counting number of days in date range: " + noEarlierThanDate + " to " + endDate + "...");
-        LocalDate startDate = dateRange.getStartDate().isAfter(noEarlierThanDate)
-                ? dateRange.getStartDate()
-                : noEarlierThanDate;
-        long days;
-        if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(endDate)) {
-            logger.trace("Date range end date is present and before the test date, therefore counting days between start of date range and test date...");
-            days = ChronoUnit.DAYS.between(startDate, dateRange.getEndDate().get()) + 1; // +1 for inclusive days
-        }
-        else {
-            logger.trace("Date range ongoing at test date, therefore counting days between start of date range and test date...");
-            days = ChronoUnit.DAYS.between(startDate, endDate) + 1; // +1 for inclusive days
-        }
-
-        logger.trace("Returning days counted: " + days);
-        return days;
-    }
-
 
     public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs) {
 
