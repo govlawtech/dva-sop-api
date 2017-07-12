@@ -107,6 +107,7 @@ public class GenericProcessingRule implements ProcessingRule {
         }
         else if (rhRuleConfigurationItem.getHardOnsetWindow().isPresent()) {
             LocalDate startOfWindow = ProcessingRuleFunctions.getStartOfOnsetWindow(rhRuleConfigurationItem.getHardOnsetWindow().get(), condition.getStartDate());
+            caseTrace.addLoggingTrace("Configuration dictates to only consider operational service from " + startOfWindow + " to " + condition.getStartDate());
             daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfOperationalServiceInInterval(
                     startOfWindow, condition.getStartDate(),
                     ProcessingRuleFunctions.getCFTSDeployments(serviceHistory),
@@ -173,9 +174,12 @@ public class GenericProcessingRule implements ProcessingRule {
         caseTrace.setRequiredCftsDays(cftsDaysRequired);
 
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
-        LocalDate startOfCftsInterval = applicableRuleConfig.getHardOnsetWindow().isPresent()
-                ? ProcessingRuleFunctions.getStartOfOnsetWindow(applicableRuleConfig.getHardOnsetWindow().get(), condition.getStartDate())
-                : LocalDate.of(1900, 1, 1);
+        LocalDate startOfCftsInterval = LocalDate.of(1900, 1, 1);
+        if (applicableRuleConfig.getHardOnsetWindow().isPresent()) {
+            startOfCftsInterval = ProcessingRuleFunctions.getStartOfOnsetWindow(applicableRuleConfig.getHardOnsetWindow().get(), condition.getStartDate());
+            caseTrace.addLoggingTrace("Configuration dictates to only consider CFTS service from " + startOfCftsInterval + " to " + condition.getStartDate());
+        }
+
         Long actualDaysOfCfts = ProcessingRuleFunctions.getDaysOfContinuousFullTimeServiceInInterval(serviceHistory, startOfCftsInterval, condition.getStartDate());
         if (actualDaysOfCfts >= Integer.MAX_VALUE) {
             throw new ProcessingRuleRuntimeException("Cannot handle days of CFTS service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
