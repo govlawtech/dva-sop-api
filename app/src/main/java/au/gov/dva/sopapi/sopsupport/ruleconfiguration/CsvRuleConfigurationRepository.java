@@ -150,7 +150,6 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                             !csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS)) : Optional.empty()
                     ));
                 }
-
             }
 
 
