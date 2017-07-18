@@ -62,6 +62,36 @@ class Routes {
 
     public static void initStatus(Repository repository, Cache cache) {
 
+        get("/refreshCache", (req,res) -> {
+
+            QueryParamsMap queryParamsMap = req.queryMap();
+            String expectedKey = AppSettings.getCacheRefreshKey();
+            if (expectedKey == null)
+            {
+                setResponseHeaders(res,404,MIME_TEXT);
+                return "Set 'CACHE_REFRESH_KEY' environment variable on server.";
+            }
+
+            String receivedKey = queryParamsMap.get("key").value();
+            if (receivedKey == null)
+            {
+
+                setResponseHeaders(res,400,MIME_TEXT);
+                return "Missing required query parameter: 'key'.";
+            }
+
+            if (receivedKey.contentEquals(expectedKey)) {
+                cache.refresh(repository);
+                setResponseHeaders(res,200,MIME_TEXT);
+                return "Cache refreshed.";
+            }
+            else {
+                setResponseHeaders(res,403,MIME_TEXT);
+                return "Key does not match";
+            }
+
+        });
+
         get("/status", (req, res) -> {
 
             Optional<URI> blobStorageUri = getBaseUrlForBlobStorage();
@@ -102,6 +132,8 @@ class Routes {
 
     public static void init(Cache cache) {
         Routes.cache = cache;
+
+
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
 

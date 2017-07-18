@@ -30,6 +30,20 @@ public class AppSettings {
         }
     }
 
+    public static String getCacheRefreshKey()
+    {
+        String key;
+        try {
+            key = getPropertyValue("CACHE_REFRESH_KEY");
+            return key;
+        }
+        catch (ConfigurationError e)
+        {
+            return null;
+        }
+
+    }
+
 
     private static Environment convertEnvironmentStringEnum(String environmentStringValue)
     {

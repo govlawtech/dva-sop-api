@@ -38,6 +38,7 @@ public class Application implements spark.servlet.SparkApplication {
 
 
 
+
     private void autoUpdate() {
 
 
@@ -54,6 +55,7 @@ public class Application implements spark.servlet.SparkApplication {
         }
 
     }
+
 
 
     private void startScheduledUpdates() {
