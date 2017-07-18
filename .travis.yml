@@ -26,5 +26,4 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
 script: "./gradlew build copyToDeploymentDir"
-after_success: "./deploy.sh"
-after_success: "./gradlew uploadArchives"
+after_success: "./deploy.sh ; ./gradlew uploadArchives"
