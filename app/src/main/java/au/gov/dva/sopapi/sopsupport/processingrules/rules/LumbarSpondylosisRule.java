@@ -43,8 +43,9 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
         Interval testInterval = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
                 rhIntervalUsed : (new SlidingCFTSSelectorWithYearLimit( 10,25).getInterval(serviceHistory,condition.getStartDate()));
 
-        RuleConfigurationItem applicableRuleConfigurationItem  = this.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace)
-                .get().getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
+        ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
+        Optional<? extends  RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
+
 
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval,applicableRuleConfigurationItem,caseTrace);
     }

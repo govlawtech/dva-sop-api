@@ -41,11 +41,10 @@ public class RotatorCuffSyndromeRule extends ProcessingRuleBase implements Proce
         Interval testInterval = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
                 rhIntervalUsed : new FixedDaysPeriodSelector(240).getInterval(serviceHistory,condition.getStartDate());
 
-        RuleConfigurationItem applicableRuleConfigurationItem  = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace)
-                .get().getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
+        ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
+        Optional<? extends  RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
 
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval,applicableRuleConfigurationItem,caseTrace);
-
     }
 
     @Override

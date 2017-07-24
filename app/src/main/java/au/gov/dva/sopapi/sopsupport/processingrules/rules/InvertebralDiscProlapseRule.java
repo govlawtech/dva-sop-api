@@ -13,8 +13,6 @@ import java.util.function.Predicate;
 
 public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements ProcessingRule {
 
-
-
     public InvertebralDiscProlapseRule(ConditionConfiguration conditionConfiguration) {
         super(conditionConfiguration);
     }
@@ -36,8 +34,9 @@ public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements P
 
         IntervalSelector intervalSelector =  applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ? new FixedYearsPeriodSelector(10) : new FixedYearsPeriodSelector(5);
         Interval testInterval = intervalSelector.getInterval(serviceHistory,condition.getStartDate());
-        RuleConfigurationItem applicableRuleConfigurationItem  = this.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace)
+        Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItem  = this.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace)
                 .get().getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
+
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval,applicableRuleConfigurationItem,caseTrace);
     }
 

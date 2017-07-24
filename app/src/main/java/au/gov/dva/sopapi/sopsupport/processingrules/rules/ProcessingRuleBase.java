@@ -82,18 +82,17 @@ public class ProcessingRuleBase {
             return Optional.empty();
         }
 
+        // rh config is mandatory
         Optional<RHRuleConfigurationItem> rhRuleConfigurationItem = conditionConfiguration.getRHRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
         if (!rhRuleConfigurationItem.isPresent())
             return Optional.empty();
 
+        // bop config can be left out
         Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem = conditionConfiguration.getBoPRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
-        if (!boPRuleConfigurationItem.isPresent())
-            return Optional.empty();
-
 
         return Optional.of(new ApplicableRuleConfigurationImpl(
                 rhRuleConfigurationItem.get(),
-                boPRuleConfigurationItem.get())
+                boPRuleConfigurationItem)
         );
     }
 
@@ -143,20 +142,23 @@ public class ProcessingRuleBase {
     }
 
 
-    protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, RuleConfigurationItem applicableRuleConfiguration, CaseTrace caseTrace) {
+    protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, CaseTrace caseTrace) {
+
 
         assert applicableSop.getConditionName().equalsIgnoreCase(condition.getSopPair().getConditionName());
 
-        if (applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis)
-        {
-            assert applicableRuleConfiguration instanceof RHRuleConfigurationItem;
-        }
-        else {
-            assert applicableRuleConfiguration instanceof BoPRuleConfigurationItem;
-        }
-
         ImmutableList<Factor> applicableFactors = condition.getApplicableFactors(applicableSop);
         caseTrace.addLoggingTrace(String.format("There are %s factors in the applicable SoP: %s.", applicableFactors.size(), applicableSop.getCitation()));
+
+        if (!applicableRuleConfigurationOptional.isPresent())
+        {
+            caseTrace.addLoggingTrace("No applicable rule configuration present for this combination of rank and service branch for this standard of proof.  Therefore no factors are satisfied.");
+            return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
+        }
+        RuleConfigurationItem applicableRuleConfiguration = applicableRuleConfigurationOptional.get();
+
+        if (applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis) assert applicableRuleConfiguration instanceof RHRuleConfigurationItem;
+        else assert applicableRuleConfiguration instanceof BoPRuleConfigurationItem;
 
         Integer cftsDaysRequired = applicableRuleConfiguration.getRequiredCFTSDays();
         caseTrace.setRequiredCftsDays(cftsDaysRequired);

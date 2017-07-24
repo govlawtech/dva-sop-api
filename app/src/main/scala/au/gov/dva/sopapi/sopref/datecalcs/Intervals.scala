@@ -23,8 +23,6 @@ object Intervals {
     slide(numberOfYears, bracketIntervalStart, bracketIntervalStart, bracketIntervalEnd)
   }
 
-
-
   private def slide(numberOfYears: Int, fixedStart: LocalDate, slidingLower: LocalDate, slidingUpper: LocalDate): List[Interval] = {
     if (slidingUpper.minusYears(numberOfYears).isBefore(fixedStart)) {
       return List()
