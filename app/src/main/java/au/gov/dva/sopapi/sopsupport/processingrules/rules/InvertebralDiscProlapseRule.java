@@ -34,7 +34,7 @@ public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements P
     @Override
     public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
 
-        IntervalSelector intervalSelector =  applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ? new FixedYearsPeriodSelector(10) : new FixedDaysPeriodSelector(5);
+        IntervalSelector intervalSelector =  applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ? new FixedYearsPeriodSelector(10) : new FixedYearsPeriodSelector(5);
         Interval testInterval = intervalSelector.getInterval(serviceHistory,condition.getStartDate());
         RuleConfigurationItem applicableRuleConfigurationItem  = this.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace)
                 .get().getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
