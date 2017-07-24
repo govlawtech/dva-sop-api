@@ -1,63 +1,64 @@
 package au.gov.dva.sopapi.sopsupport;
 
-import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
+import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
+import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
+import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
-import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
-import au.gov.dva.sopapi.sopsupport.processingrules.rules.GenericProcessingRule;
-import au.gov.dva.sopapi.sopsupport.processingrules.rules.LumbarSpondylosisRule;
-import com.google.common.collect.ImmutableList;
+import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.function.Predicate;
+
 
 public class ConditionFactory {
 
-    public static Optional<Condition> create(ImmutableSet<SoPPair> sopPairs, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository)
-    {
 
-        Optional<SoPPair> soPPairOptional = getSopPairForConditionName(sopPairs,conditionDto.get_conditionName());
-        if (!soPPairOptional.isPresent())
-        {
+    public static Optional<Condition> create(ImmutableSet<SoPPair> sopPairs, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository, Predicate<Deployment> isOperational) {
+
+        Optional<SoPPair> soPPairOptional = getSopPairForConditionName(sopPairs, conditionDto.get_conditionName());
+        if (!soPPairOptional.isPresent()) {
             return Optional.empty();
         }
 
-        if (conditionDto.get_conditionName().contentEquals("lumbar spondylosis") && conditionDto.get_incidentType() == IncidentType.Onset)
-        {
-            return Optional.of(new OnsetCondition(
-                    soPPairOptional.get() ,
-                    conditionDto.get_incidentDateRangeDto().get_startDate(),
-                    conditionDto.get_incidentDateRangeDto().get_endDate(),
-                    new LumbarSpondylosisRule(ruleConfigurationRepository)));
-        }
-
-        else if (RuleConfigRepositoryUtils.containsConfigForCondition(conditionDto.get_conditionName(),ruleConfigurationRepository))
-        {
-            return Optional.of(new OnsetCondition(
-                    soPPairOptional.get() ,
-                    conditionDto.get_incidentDateRangeDto().get_startDate(),
-                    conditionDto.get_incidentDateRangeDto().get_endDate(),
-                    new GenericProcessingRule(ruleConfigurationRepository)));
-        }
-
-        else {
+        Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(conditionDto.get_conditionName());
+        if (!conditionConfiguration.isPresent()) {
             return Optional.empty();
         }
 
+        return Optional.of(new OnsetCondition(
+                soPPairOptional.get(),
+                conditionDto.get_incidentDateRangeDto().get_startDate(),
+                conditionDto.get_incidentDateRangeDto().get_endDate(),
+                BuildRule(conditionConfiguration.get())));
     }
 
 
-    private static Optional<SoPPair>  getSopPairForConditionName(ImmutableSet<SoPPair> sopPairs, String conditionName)
+    private static ProcessingRule BuildRule(ConditionConfiguration conditionConfiguration)
     {
+        switch (conditionConfiguration.getConditionName())
+        {
+            case "lumbar spondylosis": return new LumbarSpondylosisRule(
+                    conditionConfiguration);
+            case "osteoarthritis": return new OsteoarthritisRule(conditionConfiguration);
+            case "intervertebral disc prolapse": return new InvertebralDiscProlapseRule(conditionConfiguration);
+            case "thoracic spondylosis": return new ThoracicSpondylosisRule(conditionConfiguration);
+            case "rotator cuff syndrome": return new RotatorCuffSyndromeRule(conditionConfiguration);
+        }
 
-        Optional<SoPPair> soPPair =  sopPairs.stream().filter(s -> s.getConditionName().equalsIgnoreCase(conditionName.trim()))
-               .findFirst();
+        throw new ProcessingRuleRuntimeException("No rule implemented for " + conditionConfiguration.getConditionName());
+    }
+
+
+    private static Optional<SoPPair> getSopPairForConditionName(ImmutableSet<SoPPair> sopPairs, String conditionName) {
+        Optional<SoPPair> soPPair = sopPairs.stream().filter(s -> s.getConditionName().equalsIgnoreCase(conditionName.trim()))
+                .findFirst();
         return soPPair;
     }
-
 
 
 }

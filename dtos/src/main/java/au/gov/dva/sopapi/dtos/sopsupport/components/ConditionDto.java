@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ConditionDto {
 
-
     @JsonProperty(value = "conditionName", required = true)
     private final String _conditionName;
 

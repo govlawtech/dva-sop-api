@@ -64,7 +64,7 @@ build/
 ## Plugin-specific files:
 
 # IntelliJ
-/out/
+out/
 .idea/libraries
 
 .idea/runConfigurations

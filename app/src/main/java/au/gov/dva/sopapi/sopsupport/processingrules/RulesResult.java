@@ -49,7 +49,7 @@ public class RulesResult {
             return RulesResult .createEmpty(caseTrace);
         }
 
-        Optional<Condition> conditionOptional = ConditionFactory.create(sopPairs, sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository);
+        Optional<Condition> conditionOptional = ConditionFactory.create(sopPairs, sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository,isOperational);
         if (!conditionOptional.isPresent())
         {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("SoP for condition %s is not implemented, so cannot apply any processing rules.",sopSupportRequestDto.get_conditionDto().get_conditionName()));

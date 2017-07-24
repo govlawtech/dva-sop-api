@@ -3,14 +3,12 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.interfaces.BoPRuleConfigurationItem;
-import au.gov.dva.sopapi.interfaces.RHRuleConfigurationItem;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationItem;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.interfaces.*;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -51,7 +49,22 @@ public class RuleConfigRepositoryUtils {
     }
 
 
+    public static Optional<Integer> getOperationalServiceTestPeriodForCondition(RuleConfigurationRepository ruleConfigurationRepository, String conditionName)
+    {
+        Optional<RHRuleConfigurationItem> item = ruleConfigurationRepository.getRHItems().stream()
+                .filter(i -> i.getConditionName().equalsIgnoreCase(conditionName))
+                .filter(i -> i.getYearsLimitForOperationalService().isPresent())
+                .findFirst();
 
+        if (item.isPresent())
+        {
+            return Optional.of(item.get().getYearsLimitForOperationalService().get());
+        }
+        else {
+            return Optional.empty();
+        }
+
+    }
 
 
     public static boolean containsConfigForCondition(String conditionName, RuleConfigurationRepository ruleConfigurationRepository)
@@ -59,6 +72,33 @@ public class RuleConfigRepositoryUtils {
         return ruleConfigurationRepository.getRHItems()
                 .stream()
                 .anyMatch(i -> i.getConditionName().equalsIgnoreCase(conditionName));
+    }
+
+
+
+    public ImmutableSet<ConditionConfiguration> getConditionConfigurations(RuleConfigurationRepository ruleConfigurationRepository)
+    {
+        Set<String> rhConditionNames = ruleConfigurationRepository.getRHItems().stream().map(ruleConfigurationItem -> ruleConfigurationItem.getConditionName().toLowerCase().trim()).collect(Collectors.toSet());
+        Set<String> boPConditionNames = ruleConfigurationRepository.getBoPItems().stream().map(boPRuleConfigurationItem -> boPRuleConfigurationItem.getConditionName().toLowerCase().trim()).collect(Collectors.toSet());
+        ImmutableSet<String> conditionNames = Sets.union(rhConditionNames,boPConditionNames).immutableCopy();
+
+        Map<String,List<RHRuleConfigurationItem>> rhRuleConfigurationItemsGroupedByConditionName = ruleConfigurationRepository.getRHItems()
+                .stream()
+                .collect(Collectors.groupingBy(o -> o.getConditionName()));
+
+        Map<String,List<BoPRuleConfigurationItem>> boPRuleConfigurationItemsGroupedByConditionName = ruleConfigurationRepository.getBoPItems()
+                .stream()
+                .collect(Collectors.groupingBy(o -> o.getConditionName()));
+
+        List<ConditionConfiguration> conditionConfigurations = conditionNames.stream().map(s -> {
+
+            ImmutableSet<RHRuleConfigurationItem> rhRuleConfigurationItems = rhRuleConfigurationItemsGroupedByConditionName.containsKey(s) ? ImmutableSet.copyOf(rhRuleConfigurationItemsGroupedByConditionName.get(s)) : ImmutableSet.of();
+            ImmutableSet<BoPRuleConfigurationItem> boPRuleConfigurationItems = boPRuleConfigurationItemsGroupedByConditionName.containsKey(s) ? ImmutableSet.copyOf(boPRuleConfigurationItemsGroupedByConditionName.get(s)) : ImmutableSet.of();
+            return new ConditionConfigurationImpl(s,rhRuleConfigurationItems,boPRuleConfigurationItems);
+
+        }).collect(Collectors.toList());
+
+        return ImmutableSet.copyOf(conditionConfigurations);
     }
 
 }

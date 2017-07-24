@@ -1,0 +1,59 @@
+{
+  "condition": {
+    "conditionName": "lumbar spondylosis",
+    "incidentType": "onset",
+    "icdCodeVersion": null,
+    "icdCodeValue": null,
+    "onsetDates": {
+      "onsetRangeStartDate": "2017-06-06",
+      "onsetRangeEndDate": "2017-06-06"
+    },
+    "aggravationDates": null
+  },
+  "serviceHistory": {
+    "serviceSummaryInformation": {
+      "originalHireDate": "2004-08-13"
+    },
+    "serviceDetails": [
+      {
+        "serviceType": "Regular/Permanent Force",
+        "startDate": "2005-01-01",
+        "endDate": "2008-05-31",
+        "rank": "officer",
+        "operationalService": [
+          {
+            "assigned": "2005-03-11",
+            "description": "Operation OKRA",
+            "event": "Within Specified Area",
+            "startDate": "2005-04-01",
+            "endDate": "2005-04-22"
+          }
+        ],
+        "service": "Royal Australian Air Force"
+      },
+      {
+        "serviceType": "Regular/Permanent Force",
+        "startDate": "2015-12-01",
+        "endDate": null,
+        "rank": "officer",
+        "operationalService": [
+          {
+            "assigned": "2016-01-01",
+            "description": "Operation RESOLUTE",
+            "event": "Within Specified Area",
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-30"
+          },
+          {
+            "assigned": "2016-04-11",
+            "description": "Operation SLIPPER",
+            "event": "Within Specified Area",
+            "startDate": "2016-10-01",
+            "endDate": "2017-06-01"
+          }
+        ],
+        "service": "Royal Australian Air Force"
+      }
+    ]
+  }
+}

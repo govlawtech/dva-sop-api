@@ -13,10 +13,12 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Int;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -45,8 +47,9 @@ public class ProcessingRuleFunctions {
 
     /**
      * Returns a date a certain period before the given onset date, depending on the period specifier
+     *
      * @param periodSpecifier - indicate the period to back in time. e.g. 2d = 2 days, 3y = 3 years
-     * @param onsetDate - The date to start counting back from
+     * @param onsetDate       - The date to start counting back from
      * @return The date which is the specified amount back in time e.g. ("7d", 2011-04-14) -> 2011-04-07
      */
     public static LocalDate getStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate) {
@@ -61,8 +64,7 @@ public class ProcessingRuleFunctions {
             index = trimmed.indexOf('y');
             int numYears = Integer.parseInt(trimmed.substring(0, index));
             return onsetDate.minusYears(numYears);
-        }
-        else {
+        } else {
             int numDays = Integer.parseInt(trimmed.substring(0, index));
             return onsetDate.minusDays(numDays);
         }
@@ -77,7 +79,7 @@ public class ProcessingRuleFunctions {
                 .findFirst();
 
         if (serviceDuringWhichConditionStarted.isPresent()) {
-        //    caseTrace.addLoggingTrace("Service during which condition started: " + serviceDuringWhichConditionStarted.get());
+            //    caseTrace.addLoggingTrace("Service during which condition started: " + serviceDuringWhichConditionStarted.get());
             return serviceDuringWhichConditionStarted;
         } else {
 //            caseTrace.addLoggingTrace("No services which started before and were ongoing at the condition start date, therefore finding immediately preceding service, if any.");
@@ -98,11 +100,11 @@ public class ProcessingRuleFunctions {
         return days;
     }
 
-    public static long getMaximumDaysOfServiceInAnyInterval(int intervalDurationInYears, LocalDate startDate, LocalDate endDate, ImmutableList<? extends HasDateRange> deploymentsOrService, CaseTrace caseTrace) {
-        List<Interval> testIntervals = Intervals.getSopFactorTestIntervalsJavaList(intervalDurationInYears, startDate, endDate);
+    // sorted latest first
+    public static ImmutableList<Interval> getIntervalsWithMaximumService(int intervalDurationInCalendarYears, LocalDate lowerBoundary, LocalDate upperBoundaryInclusive, ImmutableList<? extends HasDateRange> deploymentsOrService) {
+        List<Interval> testIntervals = Intervals.getSopFactorTestIntervalsJavaList(intervalDurationInCalendarYears, lowerBoundary, upperBoundaryInclusive);
         assert (testIntervals.size() > 0);
         if (testIntervals.size() > 1) {
-            caseTrace.addLoggingTrace(String.format("Number of intervals of %s years between %s and %s: %s", intervalDurationInYears, startDate, endDate, testIntervals.size()));
             Comparator<Interval> longestFirst = (o1, o2) -> Long.compare(
                     getNumberOfDaysOfServiceInInterval(o2.getStart(), o2.getEnd(), deploymentsOrService),
                     getNumberOfDaysOfServiceInInterval(o1.getStart(), o1.getEnd(), deploymentsOrService));
@@ -110,16 +112,20 @@ public class ProcessingRuleFunctions {
             Comparator<Interval> latestFirst = (o1, o2) -> o2.getEnd().compareTo(o1.getEnd());
 
             List<Interval> intervalsSortedByOpServiceThenLatest = testIntervals.stream()
-                    .sorted(longestFirst.thenComparing(latestFirst))
-                    .collect(Collectors.toList());
+                    .sorted(longestFirst.thenComparing(latestFirst)).collect(Collectors.toList());
 
-            Interval chosenInterval = intervalsSortedByOpServiceThenLatest.get(0);
-            caseTrace.addLoggingTrace(String.format("Interval with the most service starts on %s and ends on %s", chosenInterval.getStart(), chosenInterval.getEnd()));
-            return getNumberOfDaysOfServiceInInterval(chosenInterval.getStart(), chosenInterval.getEnd(), deploymentsOrService);
+            Interval head = intervalsSortedByOpServiceThenLatest.get(0);
+            long maxOpServiceDays = getNumberOfDaysOfServiceInInterval(head.getStart(),head.getEnd(),deploymentsOrService);
+
+
+            List<Interval> withLesserDropped = intervalsSortedByOpServiceThenLatest.stream()
+                    .filter(interval -> getNumberOfDaysOfServiceInInterval(interval.getStart(),
+                            interval.getEnd(),deploymentsOrService) == maxOpServiceDays).collect(Collectors.toList());
+
+            return ImmutableList.copyOf(withLesserDropped);
+        } else {
+            return ImmutableList.of(new Interval(lowerBoundary, upperBoundaryInclusive));
         }
-
-        return getNumberOfDaysOfServiceInInterval(startDate, endDate, deploymentsOrService);
-
     }
 
     private static long getElapsedDaysOfDateRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, HasDateRange dateRange) {
@@ -163,6 +169,14 @@ public class ProcessingRuleFunctions {
         return intervalEndDate;
     }
 
+    public static ImmutableList<Service> getCFTSServices(ServiceHistory serviceHistory)
+    {
+        return serviceHistory.getServices()
+                .stream()
+                .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
+                .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+    }
+
 
     public static ImmutableList<Deployment> getCFTSDeployments(ServiceHistory history) {
         ImmutableList<Deployment> deployments = history.getServices().stream()
@@ -170,14 +184,12 @@ public class ProcessingRuleFunctions {
                 .flatMap(s -> s.getDeployments().stream())
                 .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
 
-        logger.trace("Number of deployments in service history: " + deployments.size());
-
         return deployments;
     }
 
     public static Optional<Rank> getCFTSRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
 
-       // caseTrace.addLoggingTrace("Getting the rank on the last service before date " + testDate);
+        // caseTrace.addLoggingTrace("Getting the rank on the last service before date " + testDate);
         Optional<Service> relevantService = services.stream()
                 .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate())) // most recent first
                 .filter(service -> service.getStartDate().isBefore(testDate) && service.getEmploymentType() == EmploymentType.CFTS)

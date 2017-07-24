@@ -193,49 +193,7 @@ public class SopSupportServiceTests {
         Assert.assertTrue(!results.isEmpty());
     }
 
-    @Ignore
-    @Test
-    public void testLsSopIdentification() throws IOException {
-        RuleConfigurationRepository ruleConfigurationRepository = getRuleConfig();
-        ProcessingRule underTest = new LumbarSpondylosisRule(ruleConfigurationRepository);
-        Condition condition = new LumbarSpondylosisConditionMock();
-        CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
-        Optional<SoP> applicableSop = underTest.getApplicableSop(condition,new ExtensiveServiceHistoryMock(),isOperational, mockCaseTrace);
-        Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
 
-
-    }
-
-    @Ignore
-    @Test
-    public void testFailOperationalServiceReq() throws IOException {
-        ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
-        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),LocalDate.of(2004,8,1),LocalDate.of(2004,8,1),null);
-        ServiceHistory serviceHistory = SimpleServiceHistory.get();
-        CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
-        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational,mockCaseTrace);
-        Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.BalanceOfProbabilities);
-
-    }
-
-    @Ignore
-    @Test
-    public void testPassOperationalServiceReq() throws IOException {
-        ProcessingRule underTest = new LumbarSpondylosisRule(getRuleConfig());
-        Condition onsetBeforeAnyOpService = new ConditionMock(new LumbarSpondylosisConditionMock().getSopPair(),LocalDate.of(2004,10,1), LocalDate.of(2004,10,1),null);
-        ServiceHistory serviceHistory = SimpleServiceHistory.get();
-        CaseTrace mockCaseTrace = new SopSupportCaseTrace("test id");
-        Optional<SoP> applicableSop = underTest.getApplicableSop(onsetBeforeAnyOpService,serviceHistory,isOperational, mockCaseTrace);
-        Assert.assertTrue(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis);
-
-    }
-
-    private RuleConfigurationRepository getRuleConfig() throws IOException {
-        byte[] rhCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/RH.csv"));
-        byte[] boPCsv = Resources.toByteArray(Resources.getResource("rulesConfiguration/BoP.csv"));
-        RuleConfigurationRepository repo = new CsvRuleConfigurationRepository(rhCsv, boPCsv);
-        return repo;
-    }
 
 
 }
