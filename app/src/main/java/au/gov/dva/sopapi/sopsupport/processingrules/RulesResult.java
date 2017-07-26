@@ -1,17 +1,13 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.AppSettings;
-import au.gov.dva.sopapi.dtos.IncidentType;
-import au.gov.dva.sopapi.dtos.ReasoningFor;
-import au.gov.dva.sopapi.dtos.Recommendation;
-import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
-import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
@@ -20,7 +16,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import scala.App;
 
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -35,9 +33,74 @@ public class RulesResult {
     private final ImmutableList<FactorWithSatisfaction> factorWithSatisfactions;
     private CaseTrace caseTrace;
     private Recommendation recommendation;
+    private static final LocalDate mrcaStartDate = LocalDate.of(2004,7,1);
 
     public static RulesResult createEmpty(CaseTrace caseTrace) {
         return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECTED);
+    }
+
+    private Optional<ApplicableRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
+    {
+        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        if (!relevantRank.isPresent() || !serviceDuringWhichConditionStarts.isPresent())
+        {
+            return Optional.empty();
+        }
+
+        // rh config is mandatory
+        Optional<RHRuleConfigurationItem> rhRuleConfigurationItem = conditionConfiguration.getRHRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
+        if (!rhRuleConfigurationItem.isPresent())
+            return Optional.empty();
+
+        // bop config can be left out
+        Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem = conditionConfiguration.getBoPRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
+
+        return Optional.of(new ApplicableRuleConfigurationImpl(
+                rhRuleConfigurationItem.get(),
+                boPRuleConfigurationItem)
+        );
+    }
+
+    public static boolean shouldAbortProcessing(ServiceHistory serviceHistory, Condition condition, RuleConfigurationRepository ruleConfigurationRepository, CaseTrace caseTrace) {
+
+        Optional<ConditionConfiguration> applicableRuleConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(condition.getSopPair().getConditionName());
+
+
+        Optional<ApplicableRuleConfiguration> applicableRuleConfigurationOptional = getApplicableRuleConfiguration(servi11ceHistory,condition,caseTrace);
+        if (!applicableRuleConfigurationOptional.isPresent())
+        {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"There are no rules configured for this rank and service branch.");
+            return true;
+        }
+
+        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        if (!relevantRank.isPresent()) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
+            return true;
+        }
+
+        if (serviceHistory.getHireDate().isBefore(mrcaStartDate)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot currently apply STP rules for veterans hired on or before 30 June 2004");
+            return true;
+        }
+
+        LocalDate earliestStartDate = serviceHistory.getServices().stream()
+                .sorted(Comparator.comparing(Service::getStartDate))
+                .findFirst().get().getStartDate();
+        if (serviceHistory.getHireDate().isAfter(earliestStartDate)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "The service history begins before the hire date, therefore this service history is corrupt data and an applicable SoP cannot be determined.");
+            return true;
+        }
+
+        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        if (!serviceDuringWhichConditionStarts.isPresent()) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
+            return true;
+        }
+
+
+        return false;
     }
 
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {

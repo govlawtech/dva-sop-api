@@ -7,10 +7,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
-import au.gov.dva.sopapi.sopsupport.processingrules.ApplicableRuleConfigurationImpl;
-import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
-import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
-import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
+import au.gov.dva.sopapi.sopsupport.processingrules.*;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
@@ -35,43 +32,7 @@ public class ProcessingRuleBase {
         this.conditionConfiguration = conditionConfiguration;
     }
 
-    protected boolean shouldAbortProcessing(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace) {
 
-        Optional<ApplicableRuleConfiguration> applicableRuleConfigurationOptional = getApplicableRuleConfiguration(serviceHistory,condition,caseTrace);
-        if (!applicableRuleConfigurationOptional.isPresent())
-        {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"There are no rules configured for this rank and service branch.");
-            return true;
-        }
-
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        if (!relevantRank.isPresent()) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
-            return true;
-        }
-
-        if (serviceHistory.getHireDate().isBefore(mrcaStartDate)) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot currently apply STP rules for veterans hired on or before 30 June 2004");
-            return true;
-        }
-
-        LocalDate earliestStartDate = serviceHistory.getServices().stream()
-                .sorted(Comparator.comparing(Service::getStartDate))
-                .findFirst().get().getStartDate();
-        if (serviceHistory.getHireDate().isAfter(earliestStartDate)) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "The service history begins before the hire date, therefore this service history is corrupt data and an applicable SoP cannot be determined.");
-            return true;
-        }
-
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        if (!serviceDuringWhichConditionStarts.isPresent()) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
-            return true;
-        }
-
-
-        return false;
-    }
 
     protected Optional<ApplicableRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
     {
@@ -97,7 +58,7 @@ public class ProcessingRuleBase {
     }
 
 
-    protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, CaseTrace caseTrace) {
+    protected ApplicableSopResult getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, CaseTrace caseTrace) {
 
 
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
@@ -133,11 +94,11 @@ public class ProcessingRuleBase {
         if (requiredOperationalServiceDaysToApplyRhSop.longValue() <= daysOfOperationalService) {
             caseTrace.addLoggingTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
-            return Optional.of(condition.getSopPair().getRhSop());
+            return new ApplicableSopResultImpl(Optional.of(condition.getSopPair().getRhSop()),rhInterval);
         } else {
             caseTrace.addLoggingTrace("The BoP SoP is applicable as the actual number of days of operational service in the test period is less than the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
-            return Optional.of(condition.getSopPair().getBopSop());
+            return new ApplicableSopResultImpl(Optional.of(condition.getSopPair().getBopSop()),rhInterval);
         }
     }
 

@@ -20,11 +20,11 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
     }
 
     @Override
-    public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+    public ApplicableSopResult getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
         if (super.shouldAbortProcessing(serviceHistory,condition,caseTrace))
         {
-            return Optional.empty();
+            return new ApplicableSopResultImpl(Optional.empty());
         }
 
         IntervalSelector intervalSelector = new SlidingOperationalServicePeriodSelector(isOperational,10);

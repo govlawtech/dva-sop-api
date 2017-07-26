@@ -283,6 +283,13 @@ class Routes {
 
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+
+        // todo: check config here
+        // todo: check preconditions here
+        //
+        
+
+
         RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(), buildIsOperationalPredicate(), caseTrace);
         return rulesResult;
     }
