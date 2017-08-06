@@ -1,17 +1,17 @@
 package au.gov.dva.sopapi.dtos;
 
-/**
- * Created by MC on 25/05/17.
- */
+
+
+
 public enum Recommendation {
     APPROVED,
-    REJECTED,
+    STP_NOT_APPLICABLE,
     CHECK_RH_BOP_MET,
     CHECK_RH;
 
     // Don't change these without also changing the corresponding yaml.
     private final static String RECOMMEDATION_TEXT_APPROVED = "Accept claim";
-    private final static String RECOMMEDATION_TEXT_REJECTED = "Review claim details";
+    private final static String RECOMMEDATION_TEXT_STP_NOT_APPLICABLE = "Review claim details";
     private final static String RECOMMEDATION_TEXT_CHECK_RH_BOP_MET = "Review operational service to check all factors, otherwise accept as BoP factor met";
     private final static String RECOMMEDATION_TEXT_CHECK_RH = "Review operational service to check all factors";
 
@@ -21,7 +21,7 @@ public enum Recommendation {
         switch (this)
         {
             case APPROVED: return RECOMMEDATION_TEXT_APPROVED;
-            case REJECTED: return RECOMMEDATION_TEXT_REJECTED;
+            case STP_NOT_APPLICABLE: return RECOMMEDATION_TEXT_STP_NOT_APPLICABLE;
             case CHECK_RH_BOP_MET: return RECOMMEDATION_TEXT_CHECK_RH_BOP_MET;
             case CHECK_RH: return RECOMMEDATION_TEXT_CHECK_RH;
             default: throw new IllegalArgumentException();
@@ -32,8 +32,8 @@ public enum Recommendation {
     {
         if (value.contentEquals(RECOMMEDATION_TEXT_APPROVED))
             return APPROVED;
-        if (value.contentEquals(RECOMMEDATION_TEXT_REJECTED))
-            return REJECTED;
+        if (value.contentEquals(RECOMMEDATION_TEXT_STP_NOT_APPLICABLE))
+            return STP_NOT_APPLICABLE;
         if (value.contentEquals(RECOMMEDATION_TEXT_CHECK_RH_BOP_MET))
             return CHECK_RH_BOP_MET;
         if (value.contentEquals(RECOMMEDATION_TEXT_CHECK_RH))

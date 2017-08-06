@@ -190,7 +190,7 @@ public class CaseSummary {
         CaseSummarySection recommendationSection = new CaseSummarySection();
         if (_model == null) {
             recommendationSection.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", "RecommendationReviewHeading1"));
-            recommendationSection.add(new CaseSummaryParagraph(Recommendation.REJECTED.toString(), "RecommendationReviewNormal"));
+            recommendationSection.add(new CaseSummaryParagraph(Recommendation.STP_NOT_APPLICABLE.toString(), "RecommendationReviewNormal"));
         }
         else {
             boolean acceptClaim = _model.getRecommendation() == Recommendation.APPROVED;

@@ -1,17 +1,13 @@
 package au.gov.dva.sopapi;
 
-import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
-import au.gov.dva.sopapi.dtos.IncidentType;
-import au.gov.dva.sopapi.dtos.QueryParamLabels;
-import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
-import au.gov.dva.sopapi.interfaces.CaseTrace;
+import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
-import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
@@ -284,9 +280,31 @@ class Routes {
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
 
+        Optional<ConditionConfiguration> conditionConfiguration = cache.get_ruleConfigurationRepository()
+                .getConditionConfigurationFor(sopSupportRequestDto.get_conditionDto().get_conditionName());
+
+        if (!conditionConfiguration.isPresent())
+        {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("No rules are configured for the condition '%s' for any scenario.",sopSupportRequestDto.get_conditionDto().get_conditionName());
+            return RulesResult.createEmpty(caseTrace);
+        }
+
+        // HERE
+        RHRuleConfigurationItem getRHConfigurationForScenario
+
+        Optional<ApplicableRuleConfiguration> applicableRuleConfigurationOptional = conditionConfiguration.get();
+                getApplicableRuleConfiguration(servi11ceHistory,condition,caseTrace);
+        if (!applicableRuleConfigurationOptional.isPresent())
+        {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"There are no rules configured for this rank and service branch.");
+            return true;
+        }
+
+
         // todo: check config here
         // todo: check preconditions here
-        //
+
+
         
 
 

@@ -14,7 +14,6 @@ import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import scala.App;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -35,31 +34,10 @@ public class RulesResult {
     private Recommendation recommendation;
     private static final LocalDate mrcaStartDate = LocalDate.of(2004,7,1);
 
+
+
     public static RulesResult createEmpty(CaseTrace caseTrace) {
-        return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECTED);
-    }
-
-    private Optional<ApplicableRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
-    {
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        if (!relevantRank.isPresent() || !serviceDuringWhichConditionStarts.isPresent())
-        {
-            return Optional.empty();
-        }
-
-        // rh config is mandatory
-        Optional<RHRuleConfigurationItem> rhRuleConfigurationItem = conditionConfiguration.getRHRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
-        if (!rhRuleConfigurationItem.isPresent())
-            return Optional.empty();
-
-        // bop config can be left out
-        Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem = conditionConfiguration.getBoPRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
-
-        return Optional.of(new ApplicableRuleConfigurationImpl(
-                rhRuleConfigurationItem.get(),
-                boPRuleConfigurationItem)
-        );
+        return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.STP_NOT_APPLICABLE);
     }
 
     public static boolean shouldAbortProcessing(ServiceHistory serviceHistory, Condition condition, RuleConfigurationRepository ruleConfigurationRepository, CaseTrace caseTrace) {
@@ -154,7 +132,7 @@ public class RulesResult {
         else {
             if (satisfied && caseTrace.getActualOperationalDays().orElse(0) > 0) recommendation = Recommendation.CHECK_RH_BOP_MET;
             else if (satisfied) recommendation = Recommendation.APPROVED;
-            else recommendation = Recommendation.REJECTED;
+            else recommendation = Recommendation.STP_NOT_APPLICABLE;
         }
 
         return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
