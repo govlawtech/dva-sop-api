@@ -49,7 +49,7 @@ object PostAug2015FactorsParser extends MiscRegexes {
 
 
   def parseFactor(lines : List[String]) : FactorInfo = {
-    val result =  FallbackFactorsParser.parseFactorsSection(lines,mainFactorLegalRefRegex)
+    val result =  FallbackFactorsParser.parseFactorsSectionWithMultipleFactors(lines,mainFactorLegalRefRegex)
     return result;
   }
 

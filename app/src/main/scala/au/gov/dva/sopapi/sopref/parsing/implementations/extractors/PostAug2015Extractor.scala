@@ -42,7 +42,15 @@ class PostAug2015Extractor(cleansedText: String) extends SoPExtractor {
     stripLines(noteStartRegex,noteEndRegex,lines,List(),inSection = false,0)
   }
 
-  private def getSection(titleRegex: Regex) = {
+  private def getSection(titleRegex : Regex) : Option[(Int,String)] = {
+    val section = sections.find(s => titleRegex.findFirstMatchIn(s._2).isDefined)
+    if (section.isEmpty) return None
+    val (sectionNumberOpt, sectionTitle, sectionLines) = section.get
+    if (sectionNumberOpt.isEmpty) throw new SopParserRuntimeException("Cannot find section number for section with title: " + sectionTitle)
+    else return Some(sectionNumberOpt.get, sectionLines.mkString(Properties.lineSeparator))
+  }
+
+  private def getSectionOrThrow(titleRegex: Regex) = {
     val section = sections.find(s => titleRegex.findFirstMatchIn(s._2).isDefined)
     if (section.isEmpty) throw new SopParserRuntimeException(s"Cannot find section with title matching regex ${titleRegex.pattern.toString} in text: ${Properties.lineSeparator}$cleansedText")
     val (sectionNumberOpt, sectionTitle, sectionLines) = section.get
@@ -50,27 +58,37 @@ class PostAug2015Extractor(cleansedText: String) extends SoPExtractor {
     (sectionNumberOpt.get, sectionLines.mkString(Properties.lineSeparator))
   }
 
+
+
+
   override def extractFactorsSection(plainTextSop: String): (Int, String) =  {
-    val section =  getSection("""^Factors that must exist$""".r)
+    val section =  getSectionOrThrow("""^Factors? that must exist$""".r)
     val sectionLines = section._2.split(platformNeutralLineEndingRegex.regex).toList
     val withNotesRemoved = stripNotes(sectionLines)
     (section._1,withNotesRemoved.mkString(Properties.lineSeparator ))
   }
 
   override def extractDefinitionsSection(plainTextSop: String): String =  {
-    val s = getSection("""^Definitions$""".r)
-    assert(s._1 == 1)
+    val s = getSectionOrThrow("""^Definitions$""".r)
+    if (s._1 != 1) throw new SopParserRuntimeException("Expected number of definition section to be 1.")
     s._2
   }
 
-  override def extractDateOfEffectSection(plainTextSop: String): String = getSection("""^Commencement$""".r)._2
+  override def extractDateOfEffectSection(plainTextSop: String): String = getSectionOrThrow("""^Commencement$""".r)._2
 
-  override def extractCitation(plainTextSop: String): String = getSection("""(^Name$|^Title$)""".r)._2
+  override def extractCitation(plainTextSop: String): String = getSectionOrThrow("""(^Name$|^Title$)""".r)._2
 
   override def extractICDCodes(plainTextSop: String): List[ICDCode] =  {
      new OldSoPStyleExtractor(plainTextSop).extractICDCodes(plainTextSop)
   }
 
-  override def extractAggravationSection(plainTextSop: String): String = getSection("""^Relationship to service$""".r)._2
+  override def extractAggravationSection(plainTextSop: String): Option[String] =  {
+    getSection("""^Relationship to service$""".r) match {
+      case Some(s) =>   Some(s._2)
+      case None => None
+    }
+  }
 
 }
+
+

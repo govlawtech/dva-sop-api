@@ -8,7 +8,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
-import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
+import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericClenser
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FallbackFactorsParser, PreAug2015DefinitionsParsers, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.LsSoPFactory
 import au.gov.dva.sopapi.sopref.parsing.traits.{OldSoPStyleExtractor, PreAug2015FactorsParser}
@@ -112,7 +112,7 @@ class SopParserTests extends FunSuite  {
     val underTest = new OldSoPStyleExtractor(testInput)
 
     val result = underTest.extractAggravationSection(testInput)
-    assert(result == "Paragraphs 6(q) to 6(ff) applies only to material contribution to, or aggravation of, lumbar spondylosis where the person’s lumbar spondylosis was suffered or contracted before or during (but not arising out of) the person’s relevant service.")
+    assert(result.get == "Paragraphs 6(q) to 6(ff) applies only to material contribution to, or aggravation of, lumbar spondylosis where the person’s lumbar spondylosis was suffered or contracted before or during (but not arising out of) the person’s relevant service.")
   }
 
 
@@ -151,7 +151,7 @@ class SopParserTests extends FunSuite  {
 
   test("Clense LS BoP text") {
     val rawText = ParserTestUtils.resourceToString("lsBopExtractedText.txt");
-    val result = GenericCleanser.cleanse(rawText)
+    val result = GenericClenser.clense(rawText)
     assert(result.length() > 0)
     System.out.println("START:")
     System.out.print(result)

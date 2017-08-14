@@ -3,7 +3,6 @@ package au.gov.dva.sopapi.sopref.parsing.traits
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.ICDCode
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode
-import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities.{getSections, parseSectionBlock}
 
 import scala.util.Properties
@@ -82,9 +81,11 @@ class OldSoPStyleExtractor(cleansedText: String) extends SoPExtractor {
     }
   }
 
-  override def extractAggravationSection(plainTextSop: String): String = {
+  override def extractAggravationSection(plainTextSop: String): Option[String] = {
     val aggravationSectionRegex = """Factors that apply only to material contribution or aggravation""".r
-    getSectionWithTitleMatchingRegexOrThrow(aggravationSectionRegex)._2.mkString(" ")
+    getSectionWithTitleMatchingRegexOpt(aggravationSectionRegex) match  {
+      case Some(s) => Some(s._3.mkString(" "))
+      case None => None
+    }
   }
-
 }

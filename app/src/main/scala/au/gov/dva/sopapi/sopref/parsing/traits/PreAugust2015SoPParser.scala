@@ -84,7 +84,7 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
   }
 
   override def parseConditionNameFromCitation(citation: String): String = {
-    val regex = """Statement of Principles concerning (([A-Za-z-'\s](?!No\.))*)""".r
+    val regex = """Statement of Principles concerning (([A-Za-z-'\s0-9](?!No\.))*)""".r
 
     val m = regex.findFirstMatchIn(citation)
     if (m.isEmpty)

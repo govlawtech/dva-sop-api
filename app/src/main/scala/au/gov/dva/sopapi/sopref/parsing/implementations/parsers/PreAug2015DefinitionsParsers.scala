@@ -19,7 +19,7 @@ object PreAug2015DefinitionsParsers {
     if (toDivide.isEmpty)
       return (divided)
     else {
-      assert(toDivide.head.startsWith("\""))
+      if (!toDivide.head.startsWith("\"")) throw new SopParserRuntimeException("Defined term expected to start with quotation mark.")
       val definitionLines = (toDivide.head :: toDivide.tail.takeWhile(s => !s.startsWith("\"")))
       val definition = definitionLines.mkString("\n")
       divideRecursive(definition :: divided,toDivide.drop(definitionLines.size))

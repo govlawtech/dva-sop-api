@@ -29,6 +29,7 @@ public class Main {
         Option bopRulesOption = new Option("bop", "BoP", true, "Path to CSV containing BoP rules");
         Option scrapeOption = new Option("scrape", "scrape", false, "Scrape Legislation Register for PDFs for given register ids.");
         Option getCurrentSops = new Option("getCurrentSops","getCurrentSops",false,"Get a list of the register IDs of all SoPs in storage.");
+        Option storeSopPdfs = new Option("saveSopPdfs", "saveSopPdfs",false,"Update storage with SoP PDFs, retrieving from FRL if necessary.");
 
         Options options = new Options()
                 .addOption(sopsFilePath)
@@ -41,7 +42,9 @@ public class Main {
                 .addOption(bopRulesOption)
                 .addOption(validateRuleConfigOption)
                 .addOption(scrapeOption)
-                .addOption(getCurrentSops);
+                .addOption(getCurrentSops)
+                .addOption(storeSopPdfs);
+
 
         CommandLineParser parser = new DefaultParser();
         CommandLine commandLine = null;
@@ -117,8 +120,6 @@ public class Main {
                 e.printStackTrace();
                 return;
             }
-
-
         }
 
         if (commandLine.hasOption("scrape")) {
@@ -133,11 +134,15 @@ public class Main {
                         .forEach(
                                 s -> {
                                     try {
-                                        byte[] bytes = client.getAuthorisedInstrumentPdf(s).get(20, TimeUnit.SECONDS);
-                                        Thread.sleep(1000); // FRL throttles when brutalized
-                                        Path outputFile = Paths.get(outputPath.toString(), s + ".pdf");
-                                        Files.write(outputFile, bytes, StandardOpenOption.CREATE);
-                                        System.out.println("Wrote: " + outputFile.toAbsolutePath());
+
+                                        if (!repository.getSopPdf(s).isPresent()) {
+
+                                            byte[] bytes = client.getAuthorisedInstrumentPdf(s).get(20, TimeUnit.SECONDS);
+                                            Thread.sleep(1000); // FRL throttles when brutalized
+                                            Path outputFile = Paths.get(outputPath.toString(), s + ".pdf");
+                                            Files.write(outputFile, bytes, StandardOpenOption.CREATE);
+                                            System.out.println("Wrote: " + outputFile.toAbsolutePath());
+                                        }
 
                                     } catch (InterruptedException | ExecutionException | TimeoutException | IOException e) {
                                         System.out.println("Failed to retrieve: " + s);
@@ -154,6 +159,7 @@ public class Main {
         if (commandLine.hasOption('u')) {
             storageTool.Update();
         }
+
 
         System.out.println("Have a nice day.");
     }

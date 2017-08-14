@@ -6,7 +6,7 @@ import java.nio.charset.Charset
 
 import au.gov.dva.sopapi.sopref.data.Conversions
 import au.gov.dva.sopapi.sopref.parsing.ServiceLocator
-import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericCleanser
+import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericClenser
 import com.google.common.base.Charsets
 import com.google.common.io.Resources
 
@@ -27,7 +27,7 @@ object ParserTestUtils {
   def executeWholeParsingPipeline(registerId : String, resourcePath : String) = {
       val bytes = resourceToBytes(resourcePath);
       val rawText = Conversions.croppedPdfToPlaintext(bytes,registerId);
-      val cleansedText = ServiceLocator.findTextCleanser(registerId).cleanse(rawText)
+      val cleansedText = ServiceLocator.findTextCleanser(registerId).clense(rawText)
       val sopFactory = ServiceLocator.findSoPFactory(registerId)
       val sop = sopFactory.create(registerId, cleansedText)
       sop
@@ -36,7 +36,7 @@ object ParserTestUtils {
   def produceCleansedText(registerId: String, resourcePath : String) = {
     val bytes = resourceToBytes(resourcePath);
     val rawText = Conversions.croppedPdfToPlaintext(bytes,registerId);
-    val cleansedText = ServiceLocator.findTextCleanser(registerId).cleanse(rawText)
+    val cleansedText = ServiceLocator.findTextCleanser(registerId).clense(rawText)
     cleansedText
   }
 

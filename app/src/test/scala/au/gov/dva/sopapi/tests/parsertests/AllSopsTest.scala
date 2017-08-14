@@ -53,7 +53,7 @@ class AllSopsTest extends FunSuite{
 
       case e :  Throwable => {
         println("ERROR PARSING: " + name + ", " + id)
-        e.printStackTrace()
+        // e.printStackTrace()
         (name, id, false, None,Some(e.getMessage.take(512).mkString("")))
       }
     }
@@ -97,6 +97,19 @@ class AllSopsTest extends FunSuite{
     fails.foreach(f => println(f))
 
     assert(passes.size >= 33)
+  }
+
+  ignore("Parse all known sops")
+  {
+    val allCurrentRegisterIds = ParserTestUtils.resourceToString("allSops/allKnownSops.txt").split(Properties.lineSeparator).toList
+    val fails = allCurrentRegisterIds
+      .map(id => testSingleSoP(id,id))
+      .filter(r => !r._3)
+
+    fails.foreach(f => println(f))
+
+
+    println("FAILS COUNT: " + fails.size)
   }
 
 }

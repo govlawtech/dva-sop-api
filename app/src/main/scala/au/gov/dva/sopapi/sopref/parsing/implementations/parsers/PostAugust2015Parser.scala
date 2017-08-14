@@ -17,13 +17,19 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
       factorsSection.split(Properties.lineSeparator).toList)
 
     val standardOfProof = extractStandardOfProofFromHeader(
-      factorsSectionHead.mkString(Properties.lineSeparator))
+      factorsSectionHead.mkString(" "))
 
-    val factorSections = PostAug2015FactorsParser.splitFactorListToIndividualFactors(factorsList)
+    if (factorsList.nonEmpty) {
+      val factorSections = PostAug2015FactorsParser.splitFactorListToIndividualFactors(factorsList)
 
-    val parsedFactors: List[FactorInfo] = factorSections.map(f => PostAug2015FactorsParser.parseFactor(f))
+      val parsedFactors: List[FactorInfo] = factorSections.map(f => PostAug2015FactorsParser.parseFactor(f))
 
-    (standardOfProof, parsedFactors)
+      (standardOfProof, parsedFactors)
+    }
+    else {
+      val factor = FallbackFactorsParser.parseFactorsSectionWithSingleFactor(factorsSectionHead)
+      (standardOfProof, List(factor))
+    }
 
   }
 
@@ -36,7 +42,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
   override def parseCitation(citationSection: String): String = {
 
     val withLineBreaksReplaced = citationSection.replaceAll(Properties.lineSeparator, " ")
-    val regex = """This is the Statement of Principles concerning (.*)""".r
+    val regex = """This is the (Statement of Principles concerning .*)""".r
     val m = regex.findFirstMatchIn(withLineBreaksReplaced)
     if (m.isEmpty)
       throw new SopParserRuntimeException("Cannot get citation from: " + withLineBreaksReplaced)
@@ -63,19 +69,17 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
       val para = singleParaMatch.get.group(1)
       return (para, para)
     }
-    else
-      throw new SopParserRuntimeException("Cannot determine aggravation paras from: " + aggravationSection)
+
+    val singleSectionRegex = """[Ss]ection ([0-9]+)""".r
+    val singleSectionMatch = singleSectionRegex.findFirstMatchIn(aggravationSection)
+    if (singleSectionMatch.isDefined) {
+      val sectionNumber = singleSectionMatch.get.group(1)
+      return (sectionNumber,sectionNumber)
+    }
+
+    throw new SopParserRuntimeException("Cannot determine aggravation paras from: " + aggravationSection)
   }
 
-  override def parseConditionNameFromCitation(citation: String): String = {
 
-
-    val regex = """([A-Za-z-'\s]+)\(""".r
-
-    val m = regex.findFirstMatchIn(citation)
-    if (m.isEmpty)
-      throw new SopParserRuntimeException("Cannot get condition name from this citation: %s".format(citation))
-    return m.get.group(1).trim()
-  }
 
 }
