@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
-import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithoutSubParas}
+import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoForFactorSectionWithOnlyOneFactor, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 
 import scala.util.Properties
@@ -12,7 +12,19 @@ object FallbackFactorsParser extends MiscRegexes {
   private val regexForAnySection = """^\([a-z0-9]+\)""".r
   private val smallRomanRegex = """^\([ixv]++\)""".r
 
-  def parseFactorsSection(factorsSectionLines: List[String], regexForMainPara: Regex): FactorInfo = {
+  private val singleFactorHeadPivotText = """relevant service is""".r
+
+  def parseFactorsSectionWithSingleFactor(factorSectionLines: List[String]): FactorInfo = {
+    if (!factorSectionLines.head.startsWith("The factor that must")) throw new SopParserRuntimeException("Expecting text that defines a single factor as part of the section head, got: " + factorSectionLines.mkString(" "))
+
+    val aroundPivot: Array[String] = factorSectionLines.mkString(" ").split("relevant service is");
+
+    if (aroundPivot.size != 2) throw new SopParserRuntimeException("Cannot find the text which indicates start of factor in this factor section: " + factorSectionLines.mkString(" "))
+
+    new FactorInfoForFactorSectionWithOnlyOneFactor(aroundPivot(1).trim)
+  }
+
+  def parseFactorsSectionWithMultipleFactors(factorsSectionLines: List[String], regexForMainPara: Regex): FactorInfo = {
     val regexForSection = (regexForMainPara.regex + """([.\s\r\n]*)$""").r
 
     val asSingleStringWithLineBreaks = factorsSectionLines.mkString(Properties.lineSeparator)
@@ -102,7 +114,7 @@ object FallbackFactorsParser extends MiscRegexes {
 
     List(factorText)
       .map(regexReplace(""";(\n|\r\n)or$""".r, _))
-      .map(regexReplace(""";$""".r,_))
+      .map(regexReplace(""";$""".r, _))
       .map(regexReplace("""; or$""".r, _))
       .map(regexReplace("""^\([a-z0-9]+\)\s?""".r, _))
       .head

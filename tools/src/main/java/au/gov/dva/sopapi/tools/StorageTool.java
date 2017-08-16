@@ -1,16 +1,13 @@
 package au.gov.dva.sopapi.tools;
 
-import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.model.SoP;
-import au.gov.dva.sopapi.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopapi.sopref.data.Conversions;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.updates.AutoUpdate;
 import au.gov.dva.sopapi.sopref.parsing.ServiceLocator;
 import au.gov.dva.sopapi.sopref.parsing.traits.SoPFactory;
-import net.didion.jwnl.data.Exc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +17,6 @@ import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.function.Function;
 
 public class StorageTool {
 
@@ -48,7 +44,7 @@ public class StorageTool {
                 {
                     try {
                         String rawText = Conversions.croppedPdfToPlaintext(sopPdf.get(), registerId);
-                        String cleansedText = ServiceLocator.findTextCleanser(registerId).cleanse(rawText);
+                        String cleansedText = ServiceLocator.findTextCleanser(registerId).clense(rawText);
                         SoPFactory sopFactory = ServiceLocator.findSoPFactory(registerId);
                         SoP sop = sopFactory.create(registerId, cleansedText);
                         repository.addSop(sop);

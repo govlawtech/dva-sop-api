@@ -13,7 +13,7 @@ import au.gov.dva.sopapi.sopref.data.updates.types.NewInstrument;
 import au.gov.dva.sopapi.sopref.data.updates.types.NewCompilation;
 import au.gov.dva.sopapi.sopref.data.updates.types.Replacement;
 import au.gov.dva.sopapi.sopref.data.updates.types.Revocation;
-import au.gov.dva.sopapi.sopref.parsing.traits.SoPCleanser;
+import au.gov.dva.sopapi.sopref.parsing.traits.SoPClenser;
 import au.gov.dva.sopapi.sopref.parsing.traits.SoPFactory;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
@@ -36,11 +36,11 @@ public class SoPLoaderImpl implements SoPLoader {
 
     private Repository repository;
     private final RegisterClient registerClient;
-    private final Function<String, SoPCleanser> sopCleanserProvider;
+    private final Function<String, SoPClenser> sopCleanserProvider;
     private final Function<String, SoPFactory> sopFactoryProvider;
     private final Logger logger = LoggerFactory.getLogger("dvasopapi.soploader");
 
-    public SoPLoaderImpl(Repository repository, RegisterClient registerClient, Function<String, SoPCleanser> sopCleanserProvider, Function<String, SoPFactory> sopFactoryProvider) {
+    public SoPLoaderImpl(Repository repository, RegisterClient registerClient, Function<String, SoPClenser> sopCleanserProvider, Function<String, SoPFactory> sopFactoryProvider) {
         this.repository = repository;
         this.registerClient = registerClient;
         this.sopCleanserProvider = sopCleanserProvider;
@@ -199,7 +199,7 @@ public class SoPLoaderImpl implements SoPLoader {
         return createGetSopTask(registerId, s -> registerClient.getAuthorisedInstrumentPdf(s), sopCleanserProvider, sopFactoryProvider);
     }
 
-    private CompletableFuture<Optional<SoP>> createGetSopTask(String registerId, Function<String, CompletableFuture<byte[]>> authorisedPdfProvider, Function<String, SoPCleanser> sopCleanserProvider, Function<String, SoPFactory> sopFactoryProvider) {
+    private CompletableFuture<Optional<SoP>> createGetSopTask(String registerId, Function<String, CompletableFuture<byte[]>> authorisedPdfProvider, Function<String, SoPClenser> sopCleanserProvider, Function<String, SoPFactory> sopFactoryProvider) {
         CompletableFuture<Optional<SoP>> promise = authorisedPdfProvider.apply(registerId).thenApply(bytes -> {
             String rawText;
 
@@ -211,11 +211,11 @@ public class SoPLoaderImpl implements SoPLoader {
                 return Optional.empty();
             }
 
-            SoPCleanser cleanser = sopCleanserProvider.apply(registerId);
+            SoPClenser cleanser = sopCleanserProvider.apply(registerId);
 
             String cleansedText;
             try {
-                cleansedText = cleanser.cleanse(rawText);
+                cleansedText = cleanser.clense(rawText);
             } catch (Error e) {
                 logger.error(buildLoggerMessage(registerId, "Failed to cleanse text."), e);
                 return Optional.empty();

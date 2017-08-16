@@ -2,7 +2,7 @@ package au.gov.dva.sopapi.sopref.parsing
 
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers._
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories._
-import au.gov.dva.sopapi.sopref.parsing.traits.{SoPCleanser, SoPFactory}
+import au.gov.dva.sopapi.sopref.parsing.traits.{SoPClenser, SoPFactory}
 
 object ServiceLocator {
 
@@ -21,6 +21,7 @@ object ServiceLocator {
         case "F2016C00974" => PreAug2015SoPFactory
         case "F2016C00975" => PreAug2015SoPFactory
         case "F2016C00976" => PreAug2015SoPFactory
+        case "F2010L02303" => BlephartisSoPFactory
         case _ =>
            if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
           else PreAug2015SoPFactory
@@ -28,14 +29,17 @@ object ServiceLocator {
       }
     }
 
-  def findTextCleanser(registerId : String) : SoPCleanser = {
+  def findTextCleanser(registerId : String) : SoPClenser = {
     registerId match {
 
-      case "F2011C00491" => OsteoArthritisCleanser
-      case "F2017L00004" => HemorrhoidsCleanser
-      case "F2017L00005" => HemorrhoidsCleanser
-      case "F2015L00255" => PagetsDiseaseCleanser
-      case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Cleanser else GenericCleanser
+      case "F2011C00491" => OsteoArthritisClenser
+      case "F2017L00004" => HemorrhoidsClenser
+      case "F2017L00005" => HemorrhoidsClenser
+      case "F2015L00255" => PagetsDiseaseClenser
+      case "F2013L00411" => EssentialThrombocythamiaClenser
+      case "F2013L00412" => PrimaryMyelofibrosisClenser
+      case "F2014L01833" => HaemophiliaClenser
+      case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }
   }
 

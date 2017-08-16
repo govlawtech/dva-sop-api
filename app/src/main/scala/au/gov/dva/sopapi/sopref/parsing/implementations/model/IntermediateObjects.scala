@@ -8,6 +8,13 @@ abstract class FactorInfo {
   def getText : String
 }
 
+class FactorInfoForFactorSectionWithOnlyOneFactor(factorText: String) extends FactorInfo
+{
+  override def getLetter: String = ""
+
+  override def getText: String = factorText
+}
+
 class FactorInfoWithoutSubParas(mainParaLetter : String, bodyText: String) extends FactorInfo
 {
   override def getLetter: String = mainParaLetter.toLowerCase()

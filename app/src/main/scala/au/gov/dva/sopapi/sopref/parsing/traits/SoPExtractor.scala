@@ -8,7 +8,7 @@ trait SoPExtractor {
   def extractDateOfEffectSection(plainTextSop : String) : String
   def extractCitation(plainTextSop : String) : String
   def extractICDCodes(plainTextSop : String) : List[ICDCode]
-  def extractAggravationSection(plainTextSop : String) : String
+  def extractAggravationSection(plainTextSop : String) : Option[String]
 
   val platformNeutralLineEndingRegex = """(\r\n|\r)""".r
 
