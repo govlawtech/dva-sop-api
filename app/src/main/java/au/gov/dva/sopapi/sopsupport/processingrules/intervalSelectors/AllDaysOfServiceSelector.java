@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 
 import java.time.LocalDate;
 
-public class DefaultPeriodSelector implements IntervalSelector {
+public class AllDaysOfServiceSelector implements IntervalSelector {
 
     @Override
     public Interval getInterval(ServiceHistory serviceHistory, LocalDate upperBoundaryInclusive) {

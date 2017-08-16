@@ -8,6 +8,8 @@ import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
+import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfServiceSelector;
+import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
 
@@ -42,12 +44,26 @@ public class ConditionFactory {
     {
         switch (conditionConfiguration.getConditionName())
         {
-            case "lumbar spondylosis": return new LumbarSpondylosisRule(
-                    conditionConfiguration);
+            case "lumbar spondylosis": return new LumbarSpondylosisRule(conditionConfiguration);
             case "osteoarthritis": return new OsteoarthritisRule(conditionConfiguration);
             case "intervertebral disc prolapse": return new InvertebralDiscProlapseRule(conditionConfiguration);
             case "thoracic spondylosis": return new ThoracicSpondylosisRule(conditionConfiguration);
             case "rotator cuff syndrome": return new RotatorCuffSyndromeRule(conditionConfiguration);
+            case "acquired cataract": return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "Achilles tendonopathy and bursitis" : return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
+            case "chondromalacia patella" : return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
+            case "Iliotibial band syndrome" : return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
+            case "malignant melanoma of the skin": return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "non-melanotic malignant neoplasm of the skin" :return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "patellar tendinopathy": return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
+            case "plantar fasciitis": return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(365));
+            case "pterygium": return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "sensorineural hearing loss": return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "shin splints": return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
+            case "solar keratosis": return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "tinea": return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+            case "tinnitus": return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "trochanteric bursitis and gluteal tendinopathy": return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
         }
 
         throw new ProcessingRuleRuntimeException("No rule implemented for " + conditionConfiguration.getConditionName());
