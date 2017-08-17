@@ -6,30 +6,44 @@ import au.gov.dva.sopapi.sopref.parsing.traits.{SoPClenser, SoPFactory}
 
 object ServiceLocator {
 
-  def isNewSopFormat(registerIdInfo: RegisterIdInfo) = {
-    registerIdInfo match {
-      case RegisterIdInfo(year, true, _) => year >= 2015
-      case RegisterIdInfo(year, false, number) => (year == 2015 && number > 660) || (year > 2015)
+  private val postAugust2015CompilationsOfPreAugust2015Sops = Set(
+    "F2015C00914",
+    "F2016C00252",
+    "F2016C00253",
+    "F2016C00269",
+    "F2016C00270",
+    "F2016C00279",
+    "F2016C00276",
+    "F2016C00280",
+    "F2016C00973",
+    "F2016C00974",
+    "F2016C00975",
+    "F2016C00976"
+
+  )
+
+  def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
+
+    if (postAugust2015CompilationsOfPreAugust2015Sops.contains(registerIdInfo.registerId)) return false
+    else if (registerIdInfo.isCompilation) {
+      return registerIdInfo.year >= 2015
+    }
+    else return (registerIdInfo.year == 2015 && registerIdInfo.number > 660) || (registerIdInfo.year > 2015)
+  }
+
+
+  def findSoPFactory(registerId: String): SoPFactory = {
+    registerId match {
+      // any factories for specific sops by id go here
+      case "F2010L02303" => BlephartisSoPFactory
+      case _ =>
+        if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
+        else PreAug2015SoPFactory
+
     }
   }
 
-  def findSoPFactory(registerId : String) : SoPFactory =
-    {
-      registerId match  {
-        // any factories for specific sops by id go here
-        case "F2016C00973" => PreAug2015SoPFactory
-        case "F2016C00974" => PreAug2015SoPFactory
-        case "F2016C00975" => PreAug2015SoPFactory
-        case "F2016C00976" => PreAug2015SoPFactory
-        case "F2010L02303" => BlephartisSoPFactory
-        case _ =>
-           if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
-          else PreAug2015SoPFactory
-
-      }
-    }
-
-  def findTextCleanser(registerId : String) : SoPClenser = {
+  def findTextCleanser(registerId: String): SoPClenser = {
     registerId match {
 
       case "F2011C00491" => OsteoArthritisClenser

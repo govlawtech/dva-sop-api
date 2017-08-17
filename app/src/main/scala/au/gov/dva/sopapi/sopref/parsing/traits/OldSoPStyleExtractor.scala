@@ -11,7 +11,7 @@ import scala.util.matching.Regex
 // Pre August 2015 SoPs
 class OldSoPStyleExtractor(cleansedText: String) extends SoPExtractor {
 
-  private val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
+  private val sectionHeaderLineRegex = """^([0-9]+)\.\s+([A-Z]|\().*[^;]$""".r
 
   private val allSections: List[(Option[Int], String, List[String])] = getSections(cleansedText, sectionHeaderLineRegex).map(s => parseSectionBlock(s))
 

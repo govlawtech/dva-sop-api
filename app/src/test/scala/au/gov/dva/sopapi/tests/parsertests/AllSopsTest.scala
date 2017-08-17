@@ -61,43 +61,6 @@ class AllSopsTest extends FunSuite{
   }
 
 
-  test("No regressions in number of SoPs that parse") {
-     val allResults = specs
-      .map(l => testSoPPair(l._1,l._2,l._3))
-
-    val passes = allResults
-      .filter(r => {
-        val(bopResult,rhResult) = r;
-        val bopIsSuccess = bopResult._3;
-        val rhIsSuccess = rhResult._3;
-        bopIsSuccess && rhIsSuccess;
-      } );
-
-    passes.foreach(p => {
-      println("BoP:")
-      println(TestUtils.prettyPrint(StoredSop.toJson(p._1._4.get)))
-      println("RH:")
-      println(TestUtils.prettyPrint(StoredSop.toJson(p._2._4.get)))
-
-    } )
-
-    println("PASSED CONDITIONS: " + passes.size )
-    passes.foreach(p => println(p._1._1))
-
-    val passedSoPIds = passes.flatMap(p => List(p._1._2, p._2._2))
-    println("PASSED SOP IDS: " + passedSoPIds
-        .sortBy(i => i)
-      .mkString(Properties.lineSeparator))
-
-    val fails = allResults
-        .flatMap(i => List(i._1,i._2))
-      .filter(i => !i._3)
-
-    println("FAILED SOPS: " + fails.size)
-    fails.foreach(f => println(f))
-
-    assert(passes.size >= 33)
-  }
 
   ignore("Parse all known sops")
   {

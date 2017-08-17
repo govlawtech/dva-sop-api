@@ -83,9 +83,9 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
     trimmed
   }
 
-  private val hyphenMinusFollowedBySpaceRegex = """- """.r // for some reason the raw text sometimes contains a space after unicode 055
   override def parseConditionNameFromCitation(citation: String): String = {
-    val regex = """Statement of Principles concerning (([A-Za-z-,'&\s0-9](?!No\.))*)""".r
+    val hyphenMinusFollowedBySpaceRegex = """- """.r // for some reason the raw text sometimes contains a space after unicode 055
+    val regex = """Statement of Principles concerning (([A-Za-z-,'&\s0-9/](?!No\.))*)""".r
 
     val m = regex.findFirstMatchIn(citation)
     if (m.isEmpty)

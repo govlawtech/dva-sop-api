@@ -15,8 +15,8 @@ object SoPExtractorUtilities extends MiscRegexes
   def unpackRegisterId(registerId : String) : RegisterIdInfo = {
 
     registerId match {
-      case regexForRegisterId(year,"C",number) => new RegisterIdInfo(year.toInt,true,number.toInt)
-      case regexForRegisterId(year,"L",number) => new RegisterIdInfo(year.toInt,false,number.toInt)
+      case regexForRegisterId(year,"C",number) => new RegisterIdInfo(registerId, year.toInt,true,number.toInt)
+      case regexForRegisterId(year,"L",number) => new RegisterIdInfo(registerId, year.toInt,false,number.toInt)
       case _ => throw new SopParserRuntimeException("Cannot unpack this register ID: " + registerId)
     }
 
@@ -43,6 +43,7 @@ object SoPExtractorUtilities extends MiscRegexes
   def parseSectionBlock(sectionBlock: List[String]): (Option[Int], String, List[String]) = {
     val lines = sectionBlock
     val title: String = lines.head
+    if (lines.tail.isEmpty) throw new SopParserRuntimeException("This does not appear to be a section block: " + sectionBlock.mkString(" "))
     val numberedLine: String = lines.tail(0)
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
     val m = sectionHeaderLineRegex.findFirstMatchIn(numberedLine)
@@ -71,7 +72,6 @@ object SoPExtractorUtilities extends MiscRegexes
 
     (sectionForSpecifiedPara.get._1.get, sectionForSpecifiedPara.get._3)
   }
-
 
 
   def getMainParaLetterSequence = {

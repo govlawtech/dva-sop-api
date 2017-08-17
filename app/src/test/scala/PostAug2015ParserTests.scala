@@ -68,7 +68,7 @@ class PostAug2015ParserTests extends FunSuite{
   test("Unpack register id") {
     val input = "F2016L00001"
     val result = SoPExtractorUtilities.unpackRegisterId(input) match  {
-      case RegisterIdInfo(2016,false,1) => true
+      case RegisterIdInfo(_,2016,false,1) => true
       case _ =>  false
 
     }

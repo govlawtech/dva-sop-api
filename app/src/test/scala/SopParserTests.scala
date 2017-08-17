@@ -170,6 +170,7 @@ class SopParserTests extends FunSuite  {
   }
 
   test("Test get factors section with better approach") {
+    val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
     val factorsRegex = """^Factors$""".r
     val cleansedText = ParserTestUtils.resourceToString("lsBopCleansedText.txt")
     val result = SoPExtractorUtilities.getSection(cleansedText, factorsRegex)
