@@ -76,7 +76,7 @@ class EdgeCaseTests extends FunSuite {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2009C00524", "allSops/F2009C00524.pdf")
   }
 
-  test("Correct section splitting in new style sop")
+  ignore("Correct section splitting in new style sop")
   {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2016L00261", "allSops/F2016L00261.pdf")
   }
