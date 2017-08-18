@@ -12,7 +12,7 @@ import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAugust2015Par
 trait SoPFactory extends MiscRegexes {
   def create(registerId: String, cleansedText: String): SoP
 
-  def create(registerId: String, cleansedText: String, extractor: SoPExtractor, parser: SoPParser): ParsedSop = {
+  def create(registerId: String, cleansedText: String, extractor: SoPExtractor, parser: SoPParser, allocateFactors : List[Factor] => (List[Factor],List[Factor])): ParsedSop = {
     val citation = parser.parseCitation(extractor.extractCitation(cleansedText))
     val instrumentNumber = parser.parseInstrumentNumber(citation)
 
@@ -25,12 +25,7 @@ trait SoPFactory extends MiscRegexes {
 
     val factorObjects: List[Factor] = this.buildFactorObjectsFromInfo(factorInfos, factorsSectionNumber, definedTermsList)
 
-    val aggravationSection = extractor.extractAggravationSection(cleansedText)
-
-    val (onsetFactors, aggravationFactors) = (aggravationSection.isDefined) match {
-      case true => allocateFactorsToOnsetAndAggravationBasedOnAggravationSection(factorObjects, aggravationSection.get, parser.parseStartAndEndAggravationParas)
-      case false => allocateFactorsToOnsetAndAggravationBasedOnFactorsSection(factorObjects,factorsSectionText)
-    }
+    val (onsetFactors, aggravationFactors) =  allocateFactors(factorObjects)
 
     val effectiveFromDate: LocalDate = parser.parseDateOfEffect(extractor.extractDateOfEffectSection(cleansedText))
 
@@ -39,6 +34,24 @@ trait SoPFactory extends MiscRegexes {
     val conditionName = parser.parseConditionNameFromCitation(citation);
 
     new ParsedSop(registerId, instrumentNumber, citation, aggravationFactors, onsetFactors, effectiveFromDate, standard, icdCodes, conditionName)
+  }
+
+  def create(registerId: String, cleansedText: String, extractor: SoPExtractor, parser: SoPParser): ParsedSop = {
+
+
+    val aggravationSection = extractor.extractAggravationSection(cleansedText)
+    val (_, factorsSectionText): (Int, String) = extractor.extractFactorsSection(cleansedText)
+
+    def defaultFactorAllocator(factorObjects : List[Factor]) : (List[Factor], List[Factor]) = {
+      val (onsetFactors, aggravationFactors) = (aggravationSection.isDefined) match {
+        case true => allocateFactorsToOnsetAndAggravationBasedOnAggravationSection(factorObjects, aggravationSection.get, parser.parseStartAndEndAggravationParas)
+        case false => allocateFactorsToOnsetAndAggravationBasedOnFactorsSection(factorObjects,factorsSectionText)
+      }
+      (onsetFactors,aggravationFactors)
+    }
+
+    this.create(registerId,cleansedText,extractor,parser,defaultFactorAllocator)
+
   }
 
   def stripParaNumber(paraWithNumber: String): String = {
@@ -67,6 +80,8 @@ trait SoPFactory extends MiscRegexes {
         new ParsedFactor(i._1, i._2, relevantDefinitions)
       })
   }
+
+
 
   private def allocateFactorsToOnsetAndAggravationBasedOnAggravationSection(factorObjects: List[Factor], aggravationSection: String,
                                                                             functionToIdentifyStartAndEndAggravationParasFromSection: (String => (String, String))): (List[Factor], List[Factor]) = {

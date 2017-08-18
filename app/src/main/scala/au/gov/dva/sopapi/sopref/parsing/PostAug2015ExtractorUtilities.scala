@@ -7,7 +7,7 @@ import scala.util.matching.Regex
 object PostAug2015ExtractorUtilities extends MiscRegexes {
 
   def getSections(cleansedSoPText: String): List[List[String]] = {
-    val sectionHeaderLineRegex = """^[0-9]+\s[A-Z][a-z\s]+$""".r
+    val sectionHeaderLineRegex = """^[0-9]+\s[A-Z][a-zA-Z,\s]+$""".r
     val acc = List[List[String]]();
     val lines = cleansedSoPText.split(platformNeutralLineEndingRegex.regex).toList
     divideRecursive(sectionHeaderLineRegex, acc, lines)

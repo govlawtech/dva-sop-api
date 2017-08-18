@@ -81,8 +81,36 @@ class EdgeCaseTests extends FunSuite {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2016L00261", "allSops/F2016L00261.pdf")
   }
 
-  test("Title extracted correctly in compilations")
-  {
+  test("Title extracted correctly in compilations") {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2015C00914", "allSops/F2015C00914.pdf")
+  }
+
+  test("benign prostatic hyperplasia factors correctly categorised")
+  {
+    val result = ParserTestUtils.executeWholeParsingPipeline("F2016L00240", "allSops/F2016L00240.pdf")
+    assert(result.getAggravationFactors().size() == 2)
+  }
+
+  test("sarcoidosis factors for bop correctly categorised")
+  {
+    val result = ParserTestUtils.executeWholeParsingPipeline("F2016L01143", "allSops/F2016L01143.pdf")
+    assert(result.getAggravationFactors().size() == 2)
+  }
+
+  test("S's disease factors for bop correctly categorised")
+  {
+    val result = ParserTestUtils.executeWholeParsingPipeline("F2016L01344", "allSops/F2016L01344.pdf")
+    assert(result.getAggravationFactors().size() == 2)
+  }
+
+
+  test("HEPATITIS B correctly categorised")
+  {
+    val Rhresult = ParserTestUtils.executeWholeParsingPipeline("F2017L00001", "allSops/F2017L00001.pdf")
+    assert(Rhresult.getAggravationFactors().size() == 3 && Rhresult.getOnsetFactors().size() == 3) // overlapping factor
+
+    val BoPresult = ParserTestUtils.executeWholeParsingPipeline("F2017L00007", "allSops/F2017L00007.pdf")
+    assert(BoPresult.getAggravationFactors().size() == 3 && BoPresult.getOnsetFactors().size() == 2) // overlapping factor
+
   }
 }
