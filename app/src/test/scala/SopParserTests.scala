@@ -10,7 +10,7 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericClenser
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FallbackFactorsParser, PreAug2015DefinitionsParsers, PreAugust2015Parser}
-import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.LsSoPFactory
+import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.PreAug2015SoPFactory
 import au.gov.dva.sopapi.sopref.parsing.traits.{OldSoPStyleExtractor, PreAug2015FactorsParser}
 import com.google.common.io.Resources
 import org.scalatest.{FlatSpec, FunSuite, Matchers}
@@ -100,7 +100,7 @@ class SopParserTests extends FunSuite  {
 
   test("Parse entire LS SoP") {
     val cleansedText = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val result: SoP = LsSoPFactory.create("F2014L00933", cleansedText)
+    val result: SoP = PreAug2015SoPFactory.create("F2014L00933", cleansedText)
     val asJson = StoredSop.toJson(result)
     System.out.print(TestUtils.prettyPrint(asJson))
     assert(result != null)
@@ -125,7 +125,7 @@ class SopParserTests extends FunSuite  {
 
   test("Divide factors into onset and aggravation") {
     val testData = List("(a)", "(b)", "(c)", "(d)", "(e)")
-    val result = LsSoPFactory.splitFactors(testData, "(b)", "(d)")
+    val result = PreAug2015SoPFactory.splitFactors(testData, "(b)", "(d)")
     assert(result == (List("(a)", "(e)"), List("(b)", "(c)", "(d)")));
   }
 
@@ -143,7 +143,7 @@ class SopParserTests extends FunSuite  {
 
   test("Parse entire RH LS SoP") {
     val cleansedText = ParserTestUtils.resourceToString("lsCleansedText.txt")
-    val result: SoP = LsSoPFactory.create("F2014L00933", cleansedText)
+    val result: SoP = PreAug2015SoPFactory.create("F2014L00933", cleansedText)
     val asJson = StoredSop.toJson(result)
     System.out.print(TestUtils.prettyPrint(asJson))
     assert(result != null)

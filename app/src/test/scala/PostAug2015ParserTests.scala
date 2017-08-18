@@ -12,7 +12,6 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericClenser
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{PostAug2015FactorsParser, PostAugust2015Parser, PreAug2015DefinitionsParsers, PreAugust2015Parser}
-import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.LsSoPFactory
 import au.gov.dva.sopapi.sopref.parsing.traits.PreAug2015FactorsParser
 import com.google.common.io.Resources
 import org.scalatest.{FlatSpec, FunSuite}

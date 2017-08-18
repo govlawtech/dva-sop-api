@@ -62,12 +62,14 @@ class AllSopsTest extends FunSuite{
 
 
 
-  ignore("Parse all known sops")
+  test("Parse all known sops")
   {
     val allCurrentRegisterIds = ParserTestUtils.resourceToString("allSops/allKnownSops.txt").split(Properties.lineSeparator).toList
     val fails = allCurrentRegisterIds
       .map(id => testSingleSoP(id,id))
       .filter(r => !r._3)
+
+
 
     fails.foreach(f => println(f))
 

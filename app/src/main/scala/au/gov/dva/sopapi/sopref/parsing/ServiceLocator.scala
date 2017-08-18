@@ -36,10 +36,11 @@ object ServiceLocator {
     registerId match {
       // any factories for specific sops by id go here
       case "F2010L02303" => BlephartisSoPFactory
+      case "F2017L00007" => HepatitsBSoPFactoryForBoP
+      case "F2017L00001" => HepatitsBSoPFactoryForRH
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
-
     }
   }
 
