@@ -3,8 +3,8 @@ package au.gov.dva.sopapi.sopref.parsing.traits
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
-import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithSubParas, FactorInfoWithoutSubParas}
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FallbackFactorsParser
+import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo,  FactorInfoWithoutSubParas}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser
 
 import scala.util.Properties
 import scala.util.parsing.combinator.RegexParsers
@@ -24,10 +24,10 @@ trait PreAug2015FactorsParser extends MiscRegexes {
 
     val standard = extractStandardOfProofFromHeader(header.mkString(" "))
     if (rest.isEmpty) {
-      val singleFactor = FallbackFactorsParser.extractFactorFromFactorSectionHead(header)
+      val singleFactor = FactorsParser.extractFactorFromFactorSectionHead(header)
       return (standard, List(singleFactor))
     }
-    val parsedFactors = FallbackFactorsParser.oldStyleSmallLetterLinesToFactors(rest)
+    val parsedFactors = FactorsParser.oldStyleSmallLetterLinesToFactors(rest)
     (standard, parsedFactors)
   }
 

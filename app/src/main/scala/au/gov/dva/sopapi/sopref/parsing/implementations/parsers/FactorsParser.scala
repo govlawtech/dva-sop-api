@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 import scala.util.Properties
 import scala.util.matching.Regex
 
-object FallbackFactorsParser extends MiscRegexes {
+object FactorsParser extends MiscRegexes {
 
   private val regexForAnySection = """^\([a-z0-9]+\)""".r
   private val smallRomanRegex = """^\([ixv]+\)""".r
@@ -25,7 +25,7 @@ object FallbackFactorsParser extends MiscRegexes {
     new FactorInfoForFactorSectionWithOnlyOneFactor(aroundPivot(1).trim)
   }
 
-  def parseFactorsSectionWithMultipleFactors(factorsSectionLines: List[String], regexForMainPara: Regex): FactorInfo = {
+  def parseNewStyleFactorsSectionWithMultipleFactors(factorsSectionLines: List[String], regexForMainPara: Regex): FactorInfo = {
     val regexForSection = (regexForMainPara.regex + """([.\s\r\n]*)$""").r
 
     val asSingleStringWithLineBreaks = factorsSectionLines.mkString(Properties.lineSeparator)
@@ -99,9 +99,9 @@ object FallbackFactorsParser extends MiscRegexes {
   }
 
   private def oldStyleSmallLetterLinesToParas(lines: List[String]): List[MainPara] = {
-    val paras: List[List[String]] = FallbackFactorsParser.splitToParas(lines)
-    val lineSets = FallbackFactorsParser.lineSetsToClass(paras)
-    val mainParas = FallbackFactorsParser.groupToMainParas(lineSets, List())
+    val paras: List[List[String]] = FactorsParser.splitToParas(lines)
+    val lineSets = FactorsParser.lineSetsToClass(paras)
+    val mainParas = FactorsParser.groupToMainParas(lineSets, List())
     mainParas
   }
 

@@ -9,7 +9,7 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities._
 import au.gov.dva.sopapi.sopref.parsing.implementations._
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers.GenericClenser
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FallbackFactorsParser, PreAug2015DefinitionsParsers, PreAugust2015Parser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FactorsParser, PreAug2015DefinitionsParsers, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories.PreAug2015SoPFactory
 import au.gov.dva.sopapi.sopref.parsing.traits.{OldSoPStyleExtractor, PreAug2015FactorsParser}
 import com.google.common.io.Resources
@@ -196,7 +196,7 @@ class SopParserTests extends FunSuite  {
   test("Extract factor from single factor section")
   {
     val input = "The factor that must exist before it can be said that, on the balance of\nprobabilities, ganglion or death from ganglion is connected with the\ncircumstances of a person's relevant service is inability to obtain appropriate\nclinical management for ganglion."
-    val result = FallbackFactorsParser.extractFactorFromFactorSectionHead(input.split("\n").toList)
+    val result = FactorsParser.extractFactorFromFactorSectionHead(input.split("\n").toList)
     assert(result.getText.startsWith("inability to obtain appropriate clinical management for ganglion"))
   }
 

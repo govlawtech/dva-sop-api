@@ -27,7 +27,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
       (standardOfProof, parsedFactors)
     }
     else {
-      val factor = FallbackFactorsParser.parseFactorsSectionWithSingleFactor(factorsSectionHead)
+      val factor = FactorsParser.parseFactorsSectionWithSingleFactor(factorsSectionHead)
       (standardOfProof, List(factor))
     }
 

@@ -1,7 +1,7 @@
 package au.gov.dva.sopapi.tests.parsertests
 
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FallbackFactorsParser, PreAugust2015Parser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.{FactorsParser, PreAugust2015Parser}
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import org.junit.runner.RunWith
@@ -70,7 +70,7 @@ class FactorSectionTests extends FunSuite with MiscRegexes {
     val factorsText = ParserTestUtils.resourceToString("factors/anxietyDisorderFactors.txt")
     val lines = factorsText.split(platformNeutralLineEndingRegex.regex).toList
 
-    val mainParas = FallbackFactorsParser.oldStyleSmallLetterLinesToFactors(lines)
+    val mainParas = FactorsParser.oldStyleSmallLetterLinesToFactors(lines)
     mainParas.foreach(m => println(m.getLetter))
   }
 
@@ -79,7 +79,7 @@ class FactorSectionTests extends FunSuite with MiscRegexes {
     val factorsText = ParserTestUtils.resourceToString("factors/osteoFactorLinesWithoutHead.txt")
     val lines = factorsText.split(platformNeutralLineEndingRegex.regex).toList
 
-    val mainParas = FallbackFactorsParser.oldStyleSmallLetterLinesToFactors(lines)
+    val mainParas = FactorsParser.oldStyleSmallLetterLinesToFactors(lines)
     mainParas.foreach(m => println(m.getLetter))
     assert(mainParas.size == 40 )
   }
