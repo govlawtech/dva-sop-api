@@ -57,10 +57,7 @@ class AllSopsTest extends FunSuite{
         (name, id, false, None,Some(e.getMessage.take(512).mkString("")))
       }
     }
-
   }
-
-
 
   test("Parse all known sops")
   {
@@ -69,10 +66,7 @@ class AllSopsTest extends FunSuite{
       .map(id => testSingleSoP(id,id))
       .filter(r => !r._3)
 
-
-
     fails.foreach(f => println(f))
-
 
     println("FAILS COUNT: " + fails.size)
   }

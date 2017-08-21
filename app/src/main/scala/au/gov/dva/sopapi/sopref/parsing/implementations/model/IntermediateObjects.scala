@@ -17,6 +17,7 @@ class FactorInfoForFactorSectionWithOnlyOneFactor(factorText: String) extends Fa
 
 class FactorInfoWithoutSubParas(mainParaLetter : String, bodyText: String) extends FactorInfo
 {
+
   override def getLetter: String = mainParaLetter.toLowerCase()
 
   override def getText: String = bodyText

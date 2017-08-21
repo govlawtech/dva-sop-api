@@ -36,6 +36,8 @@ trait PreAug2015FactorsParser extends MiscRegexes {
       return StandardOfProof.BalanceOfProbabilities
     if (headerText.contains("reasonable hypothesis"))
       return StandardOfProof.ReasonableHypothesis
+    if (headerText.startsWith("The factor that must as a minimum exist in relation to the circumstances of a person's relevant service causing or materially contributing to or aggravating"))
+      return StandardOfProof.ReasonableHypothesis
     else {
       throw new SopParserRuntimeException("Cannot determine standard of proof from text: " + headerText)
     }

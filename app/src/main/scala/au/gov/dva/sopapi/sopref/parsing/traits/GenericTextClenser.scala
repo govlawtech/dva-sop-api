@@ -12,31 +12,6 @@ trait GenericTextClenser extends SoPClenser {
 
   val logger = Logger[GenericTextClenser]
 
-  def removeAuthorisedFootnote(raw: String): String = {
-
-    val asLines = raw.split(lineEndRegexPattern).toList
-
-    val footNoteRegex1 = """(?i)Federal\s+Register\s+of\s+Legislative\s+Instruments(?-i)\s+F[0-9]{4,4}[A-Z0-9]{6,6}(?-i)""".r
-    val footNoteRegex2 = """(?i)Authorised\s+Version\s+F[0-9]{4,4}[A-Z0-9]{6,6}\s+registered\s+[0-9]{2,2}/[0-9]{2,2}/[0-9]{4,4}(?-i)""".r
-
-    asLines
-      .filter(l => footNoteRegex1.findAllMatchIn(l).isEmpty)
-      .filter(l => footNoteRegex2.findFirstMatchIn(l).isEmpty)
-      .mkString(Properties.lineSeparator)
-  }
-
-  def removeCompilationFootnote(raw: String): String = {
-
-    val asLines = raw.split(lineEndRegexPattern).toList
-
-    val compilationFootNoteRegexLine1 = """(?i)\s*statement of principles concerning .* [0-9]{4,4} [0-9]+\s*$(?-i)""".r
-    val compilationFootnoteRegexLine2 = """(?i)\s*compilation no\. [0-9].*$(?-i)""".r
-
-    asLines
-      .filter(l => compilationFootNoteRegexLine1.findAllMatchIn(l).isEmpty)
-      .filter(l => compilationFootnoteRegexLine2.findFirstMatchIn(l).isEmpty)
-      .mkString(Properties.lineSeparator)
-  }
 
   def regexReplace(regex: Regex, target: String, replacement: String = "") = {
     val matches = regex.findAllMatchIn(target);
@@ -46,10 +21,7 @@ trait GenericTextClenser extends SoPClenser {
     else target;
   }
 
-  def removePageNumberFootNote(raw: String): String = {
-    val pageNumberRegex = """(?i)Page\s+[0-9]+\s+of\s+[0-9]+\s+of\s+Instrument\s+No.?\s+[0-9]+\s+of\s+[0-9]{4,4}""".r
-    regexReplace(pageNumberRegex, raw)
-  }
+
 
   private def trimStart(raw: String): String = {
     var startRegex = """^[^a-zA-Z0-9]*""".r
@@ -86,9 +58,6 @@ trait GenericTextClenser extends SoPClenser {
   override def clense(rawText: String) = {
     List(rawText)
       .map(trimStart)
-      .map(removeCompilationFootnote)
-      .map(removeAuthorisedFootnote)
-      .map(removePageNumberFootNote)
       .map(removePageGaps)
       .map(compressSpaces)
       .map(replaceCurlyApostrophe)

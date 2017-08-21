@@ -29,41 +29,4 @@ class CleanserTests extends FunSuite{
     println(replaced)
   }
 
-
-  test("Cleanse notes in post Aug 2015 sops")
-  {
-    val rawText = Conversions.croppedPdfToPlaintext(ParserTestUtils.resourceToBytes("allSops/F2016L00564.pdf"),"F2016L00564");
-    val cleansedWithdefault = PostAug2015Clenser.clense(rawText)
-    assert(!cleansedWithdefault.contains("high performance aircraft is defined in the Schedule 1 - Dictionary."))
-    println(cleansedWithdefault)
-  }
-
-  test("Cleanse compilation footnotes")
-  {
-    val rawTextFromAnxietyDisorder = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("allSops/F2016C00973.pdf"))
-    val cleansed = GenericClenser.removeCompilationFootnote(rawTextFromAnxietyDisorder)
-    assert(!cleansed.contains(" Statement of Principles concerning anxiety disorder No. 102 of 2014 8"))
-    assert(!cleansed.contains("Compilation No. 1  Compilation date: 02/11/2016"))
-    println(cleansed)
-  }
-
-  test("Chomp dictionary footnotes")
-  {
-    val input = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
-    val preCleansed = GenericClenser.clense(input)
-    val result = PostAug2015Clenser.removeFootnotes(preCleansed)
-    assert(!result.contains("8 of 8"))
-    println(result)
-  }
-
-
-  test("No sch1 dictionary headnotes")
-  {
-    val input = Conversions.pdfToPlainText(ParserTestUtils.resourceToBytes("sops_rh/F2017L00004.pdf"))
-    val result = PostAug2015Clenser.clense(input)
-    assert(!result.contains("Schedule 1 - Dictionary"))
-    println(result)
-  }
-
-
 }

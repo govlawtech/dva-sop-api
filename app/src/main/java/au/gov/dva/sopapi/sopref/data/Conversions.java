@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.exceptions.ConversionToPlainTextRuntimeException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableList;
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.io.RandomAccessBuffer;
 import org.apache.pdfbox.pdfparser.PDFParser;
@@ -31,6 +32,21 @@ import java.util.regex.Pattern;
 
 
 public class Conversions {
+
+
+    // 2015 or later compilations of old style sops
+    private static ImmutableList<String> compilationsWithKnownShortFootnote = ImmutableList.of(
+          "F2015C00914",
+           "F2015C00915",
+            "F2016C00252",
+            "F2016C00253",
+            "F2016C00269",
+            "F2016C00270",
+            "F2016C00274",
+            "F2016C00276",
+            "F2016C00279",
+            "F2016C00280"
+    );
 
 
     public static String croppedPdfToPlaintext(byte[] pdf, String registerId) throws IOException {
@@ -77,7 +93,6 @@ public class Conversions {
     }
 
 
-
     public static String wordDocToPlainText(byte[] worddoc, boolean isOldWordFormat) throws IOException {
         BodyContentHandler handler = new BodyContentHandler();
 
@@ -119,26 +134,40 @@ public class Conversions {
     }
 
     public static float inferFootNoteHeightFromRegisterId(String registerdId) {
-        // Last non compilation with short footnote is F2015L00655
-        // All compilations starting F2015C have long footnote
-        float heightInPointsOfTallFootnote = 91f;
-        float heightInPointsOfShortFootnote = 63f;
+
+        float heightInPointsOfTallFootNoteForCompilations = 124f;
+        float heightInPointsOfMediumFootnoteForCompilations = 102f;
+        float heightInPointsOfShortFootnoteForCompilations = 60f;
+
+        float heightInPointsForTallFootnoteForPrimaryInstrument = 102f;
+        float heightInPointsForShortFootnoteForPrimaryInstment = heightInPointsOfShortFootnoteForCompilations;
+
         RegisterIdInfo registerIdInfo = unpackRegisterId(registerdId);
-        if (registerIdInfo.isCompilation() && registerIdInfo.getYear() >= 2015)
-        {
-            return heightInPointsOfTallFootnote;
-        }
-        if (registerIdInfo.getYear() == 2015 && registerIdInfo.getNumber() > 660)
-        {
-            return heightInPointsOfTallFootnote;
+        if (registerIdInfo.isCompilation()) {
+
+            if (compilationsWithKnownShortFootnote.contains(registerdId))
+            {
+                return heightInPointsOfShortFootnoteForCompilations;
+            }
+            if (registerIdInfo.getYear() <= 2014) {
+                return heightInPointsOfShortFootnoteForCompilations;
+            }
+            if (registerIdInfo.getYear() <= 2016)
+            {
+                return heightInPointsOfMediumFootnoteForCompilations;
+            }
+
+            else return heightInPointsOfTallFootNoteForCompilations;
+
+        } else {
+            if (registerIdInfo.getYear() < 2015) return heightInPointsForShortFootnoteForPrimaryInstment;
+            if (registerIdInfo.getYear() == 2015) {
+                if (registerIdInfo.getNumber() > 658) return heightInPointsForTallFootnoteForPrimaryInstrument;
+                else return heightInPointsForShortFootnoteForPrimaryInstment;
+            }
+            else return heightInPointsForTallFootnoteForPrimaryInstrument;
         }
 
-        if (registerIdInfo.getYear() >= 2016)
-        {
-            return heightInPointsOfTallFootnote;
-        }
-
-        return heightInPointsOfShortFootnote;
     }
 
     private static String regexForRegisterId = "F(20[0-9]{2})([LC])([0-9]{5})";
@@ -203,7 +232,6 @@ public class Conversions {
         return croppedPdfBytes;
     }
 
-
     private static PDRectangle createCroppedRectangle(float footnoteHeightInPoints) {
 
         PDRectangle pdRectangle = PDRectangle.A4;
@@ -216,8 +244,7 @@ public class Conversions {
 
     }
 
-    private static Rectangle2D createCroppedJavaRectangle(float footnoteHeightInPoints)
-    {
+    private static Rectangle2D createCroppedJavaRectangle(float footnoteHeightInPoints) {
 
         PDRectangle pdRectangle = PDRectangle.A4;
         // anchor coord is at lower left for PdRectangle, but upper left for Rectangle
@@ -225,7 +252,7 @@ public class Conversions {
         float upperLeftY = 0f;
         float width = pdRectangle.getWidth();
         float height = pdRectangle.getHeight() - footnoteHeightInPoints;
-        Rectangle2D r = new Rectangle2D.Float(upperLeftX,upperLeftY,width,height);
+        Rectangle2D r = new Rectangle2D.Float(upperLeftX, upperLeftY, width, height);
         return r;
 
     }

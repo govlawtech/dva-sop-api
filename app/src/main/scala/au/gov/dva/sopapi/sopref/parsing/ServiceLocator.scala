@@ -8,10 +8,12 @@ object ServiceLocator {
 
   private val postAugust2015CompilationsOfPreAugust2015Sops = Set(
     "F2015C00914",
+    "F2015C00915",
     "F2016C00252",
     "F2016C00253",
     "F2016C00269",
     "F2016C00270",
+    "F2016C00274",
     "F2016C00279",
     "F2016C00276",
     "F2016C00280",
@@ -19,8 +21,7 @@ object ServiceLocator {
     "F2016C00974",
     "F2016C00975",
     "F2016C00976"
-
-  )
+   )
 
   def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
 
@@ -46,7 +47,6 @@ object ServiceLocator {
 
   def findTextCleanser(registerId: String): SoPClenser = {
     registerId match {
-
       case "F2011C00491" => OsteoArthritisClenser
       case "F2017L00004" => HemorrhoidsClenser
       case "F2017L00005" => HemorrhoidsClenser
@@ -54,6 +54,7 @@ object ServiceLocator {
       case "F2013L00411" => EssentialThrombocythamiaClenser
       case "F2013L00412" => PrimaryMyelofibrosisClenser
       case "F2014L01833" => HaemophiliaClenser
+      case "F2017C00198" => SuicideRHClenser
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }
   }

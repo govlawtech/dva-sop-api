@@ -1,18 +1,21 @@
 package au.gov.dva.sopapi.sopref.parsing.traits
 
 import java.time.LocalDate
+import java.util.stream.{Collector, StreamSupport}
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor, ICDCode, SoP}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedFactor, ParsedSop}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAugust2015Parser
+import com.google.common.collect.{ImmutableList, ImmutableSet, Iterables, Sets}
+import scala.collection.JavaConverters._
 
 
 trait SoPFactory extends MiscRegexes {
   def create(registerId: String, cleansedText: String): SoP
 
-  def create(registerId: String, cleansedText: String, extractor: SoPExtractor, parser: SoPParser, allocateFactors : List[Factor] => (List[Factor],List[Factor])): ParsedSop = {
+  def create(registerId: String, cleansedText: String, extractor: SoPExtractor, parser: SoPParser, allocateFactors: List[Factor] => (List[Factor], List[Factor])): ParsedSop = {
     val citation = parser.parseCitation(extractor.extractCitation(cleansedText))
     val instrumentNumber = parser.parseInstrumentNumber(citation)
 
@@ -25,7 +28,7 @@ trait SoPFactory extends MiscRegexes {
 
     val factorObjects: List[Factor] = this.buildFactorObjectsFromInfo(factorInfos, factorsSectionNumber, definedTermsList)
 
-    val (onsetFactors, aggravationFactors) =  allocateFactors(factorObjects)
+    val (onsetFactors, aggravationFactors) = allocateFactors(factorObjects)
 
     val effectiveFromDate: LocalDate = parser.parseDateOfEffect(extractor.extractDateOfEffectSection(cleansedText))
 
@@ -33,7 +36,9 @@ trait SoPFactory extends MiscRegexes {
 
     val conditionName = parser.parseConditionNameFromCitation(citation);
 
-    new ParsedSop(registerId, instrumentNumber, citation, aggravationFactors, onsetFactors, effectiveFromDate, standard, icdCodes, conditionName)
+    val sop = new ParsedSop(registerId, instrumentNumber, citation, aggravationFactors, onsetFactors, effectiveFromDate, standard, icdCodes, conditionName)
+    executeRuntimeChecks(sop)
+    sop
   }
 
   def create(registerId: String, cleansedText: String, extractor: SoPExtractor, parser: SoPParser): ParsedSop = {
@@ -42,15 +47,15 @@ trait SoPFactory extends MiscRegexes {
     val aggravationSection = extractor.extractAggravationSection(cleansedText)
     val (_, factorsSectionText): (Int, String) = extractor.extractFactorsSection(cleansedText)
 
-    def defaultFactorAllocator(factorObjects : List[Factor]) : (List[Factor], List[Factor]) = {
+    def defaultFactorAllocator(factorObjects: List[Factor]): (List[Factor], List[Factor]) = {
       val (onsetFactors, aggravationFactors) = (aggravationSection.isDefined) match {
         case true => allocateFactorsToOnsetAndAggravationBasedOnAggravationSection(factorObjects, aggravationSection.get, parser.parseStartAndEndAggravationParas)
-        case false => allocateFactorsToOnsetAndAggravationBasedOnFactorsSection(factorObjects,factorsSectionText)
+        case false => allocateFactorsToOnsetAndAggravationBasedOnFactorsSection(factorObjects, factorsSectionText)
       }
-      (onsetFactors,aggravationFactors)
+      (onsetFactors, aggravationFactors)
     }
 
-    this.create(registerId,cleansedText,extractor,parser,defaultFactorAllocator)
+    this.create(registerId, cleansedText, extractor, parser, defaultFactorAllocator)
 
   }
 
@@ -80,7 +85,6 @@ trait SoPFactory extends MiscRegexes {
         new ParsedFactor(i._1, i._2, relevantDefinitions)
       })
   }
-
 
 
   private def allocateFactorsToOnsetAndAggravationBasedOnAggravationSection(factorObjects: List[Factor], aggravationSection: String,
@@ -124,16 +128,50 @@ trait SoPFactory extends MiscRegexes {
   }
 
 
-  private def allocateFactorsToOnsetAndAggravationBasedOnFactorsSection(factorObjects: List[Factor], factorsSection: String) : (List[Factor],List[Factor]) = {
-    val flattenedFactorsSectionText = factorsSection.replaceAll(platformNeutralLineEndingRegex.regex," ")
-    if  (factorObjects.size != 1) throw new SopParserRuntimeException("Expected only one factor object.")
+  private def allocateFactorsToOnsetAndAggravationBasedOnFactorsSection(factorObjects: List[Factor], factorsSection: String): (List[Factor], List[Factor]) = {
+    val flattenedFactorsSectionText = factorsSection.replaceAll(platformNeutralLineEndingRegex.regex, " ")
+    // if  (factorObjects.size != 1) throw new SopParserRuntimeException("Expected only one factor object.")
     if (!factorsSection.startsWith("The factor that must")) throw new SopParserRuntimeException("Factor section does not looks like a section for a single factor.")
     val textIndicatingFactorIsBothOnsetAndAggravation = "causing or materially contributing to or aggravating"
     if (flattenedFactorsSectionText.contains(textIndicatingFactorIsBothOnsetAndAggravation)) {
-       return (factorObjects,factorObjects)
+      return (factorObjects, factorObjects)
     }
-    else return (factorObjects,List())
+    else return (factorObjects, List())
   }
 
+
+  def executeRuntimeChecks(sop: SoP) = {
+
+    val allFactors = ImmutableList.builder[Factor].addAll(sop.getOnsetFactors).addAll(sop.getAggravationFactors).build()
+    allFactors.forEach(f => {
+      if (f.getText.contains("Veterans' Entitlements Act 1986") || f.getText.contains("Statement of Principles")) {
+        throw new SopParserRuntimeException(sop.getRegisterId + ": factor likely contains erroneous text: " + f.getParagraph + ": " + f.getText)
+      }
+
+      if (f.getText.contains("Note: ")) throw new SopParserRuntimeException("Factor text contains notes.")
+    })
+
+    val factorCount = allFactors.size()
+    val uniqueRefsCount = allFactors.asScala.map(f => f.getParagraph).distinct.size
+    // Hepatitis B has one factor which is half aggravation, half onset
+    if (sop.getRegisterId != "F2017L00001") {
+
+      if (uniqueRefsCount < factorCount && factorCount > 2)  throw new SopParserRuntimeException(sop.getRegisterId + ": likely incorrectly parsed sub paras.")
+
+      if (sop.getOnsetFactors.size() > 1) {
+
+        sop.getOnsetFactors.forEach(f => {
+          if (f.getText.contains("inability to obtain appropriate clinical") || f.getText.contains("clinical worsening")) {
+            throw new SopParserRuntimeException(sop.getRegisterId + ": aggravation factor likely mislabelled as onset factor: " + f.getParagraph + ": " + f.getText)
+
+          }
+        })
+      }
+    }
+
+
+
+
+  }
 
 }

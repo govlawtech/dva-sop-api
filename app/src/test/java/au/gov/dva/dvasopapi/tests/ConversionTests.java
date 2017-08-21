@@ -88,6 +88,15 @@ public class ConversionTests {
     }
 
     @Test
+    public void crop2017CompilationPdf() throws IOException {
+        String result = testExtractTextWithCropping("allSops/F2017C00077.pdf","F2017C00077");
+        Assert.assertTrue(!result.contains("neoplasm of the oesophagus has occurred within 20 years of\n" +
+                "cessation;\n" +
+                "(No. 120 of 2015)\n" +
+                "Veterans' Entitlements Act 1986"));
+    }
+
+    @Test
     public void cropPdfWithSmallFootNote() throws IOException {
      //   Assert.assertNotNull(testPdfCrop("allSops/F2008L02192.pdf"));
     }

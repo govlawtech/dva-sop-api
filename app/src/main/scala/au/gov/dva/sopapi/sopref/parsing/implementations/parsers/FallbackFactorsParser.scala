@@ -10,7 +10,8 @@ import scala.util.matching.Regex
 object FallbackFactorsParser extends MiscRegexes {
 
   private val regexForAnySection = """^\([a-z0-9]+\)""".r
-  private val smallRomanRegex = """^\([ixv]++\)""".r
+  private val smallRomanRegex = """^\([ixv]+\)""".r
+  private val secondLevelChildRegex = (smallRomanRegex.regex + """\s*\([a-z]+\)""").r
 
   private val singleFactorHeadPivotText = """relevant service is""".r
 
@@ -68,14 +69,25 @@ object FallbackFactorsParser extends MiscRegexes {
     // edge cases
     // if prev main factor is '(h)' and ends 'or', this means the (i) para following is a main para, not a small roman
     if (prev.paraLinesParent.legalRef == "(h)" && current.legalRef == "(i)" && prev.getLast.endsWithOr) false
+    // if last child was a small roman and the current is small roman, then it is a following sibling child
     else if (smallRomanRegex.findFirstIn(prev.getLast.legalRef).isDefined && smallRomanRegex.findFirstIn(current.legalRef).isDefined) true
+    // first child after main para
     else if (smallRomanRegex.findFirstIn(current.legalRef).isDefined && prev.getLast.isSubsHead) true
+
     else false
+  }
+
+  private def isSecondLevelChild(prev: ParaLines, current: ParaLines): Boolean = {
+    // first of second level children
+    if (secondLevelChildRegex.findFirstIn(current.legalRef).isDefined) {
+      ???
+    }
+    ???
   }
 
   private def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara]): List[MainPara] = {
     if (paraLines.isEmpty) acc.reverse
-    else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List())))
+    else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List()))) // first para will always be main para
     else if (isChild(acc.head, paraLines.head)) {
       // add as child to prev head
       groupToMainParas(paraLines.tail, acc.head.withExtraChild(paraLines.head) :: acc.tail)
@@ -94,6 +106,7 @@ object FallbackFactorsParser extends MiscRegexes {
   }
 
   def oldStyleSmallLetterLinesToFactors(lines: List[String]): List[FactorInfo] = {
+
     oldStyleSmallLetterLinesToParas(lines).map(mp => new FactorInfoWithoutSubParas(mp.paraLinesParent.legalRef,
       reflowFactorLines(mp.flattenLines)))
   }
@@ -102,7 +115,13 @@ object FallbackFactorsParser extends MiscRegexes {
     // remove trailing '; or' or '.'
     // remove para letter at start
     // replace line break in front of 'or'
+    val knownOkEndings = List("rheumatoid arthritis", "toxic maculopathy")
 
+    if (!factorText.endsWith("or")
+      && !factorText.endsWith(".")
+      && !factorText.endsWith(";")
+      && !knownOkEndings.exists(factorText.endsWith(_))
+    ) throw new SopParserRuntimeException("Suspicious factor text: does not end with 'or' or punctuation " + factorText)
 
     def regexReplace(regex: Regex, target: String, replacement: String = "") = {
       val matches = regex.findAllMatchIn(target)
@@ -112,10 +131,12 @@ object FallbackFactorsParser extends MiscRegexes {
       else target
     }
 
+
     List(factorText)
-      .map(regexReplace(""";(\n|\r\n)or$""".r, _))
-      .map(regexReplace(""";$""".r, _))
-      .map(regexReplace("""; or$""".r, _))
+      .map(regexReplace(""";(\n|\r\n)or""".r, _))
+      .map(_.stripSuffix("."))
+      .map(_.stripSuffix(";"))
+      .map(_.stripSuffix("; or"))
       .map(regexReplace("""^\([a-z0-9]+\)\s?""".r, _))
       .head
   }
@@ -123,7 +144,9 @@ object FallbackFactorsParser extends MiscRegexes {
   case class ParaLines(legalRef: String, lines: List[String]) {
     def endsWithOr = lines.last.endsWith("or")
 
-    def isSubsHead = lines.last.endsWith(":") || lines.last.endsWith(",")
+    def isSubsHead = lines.last.endsWith(":") || lines.last.endsWith(",") || lines.last.endsWith(", and")
+
+
   }
 
   case class MainPara(paraLinesParent: ParaLines, children: List[ParaLines]) {

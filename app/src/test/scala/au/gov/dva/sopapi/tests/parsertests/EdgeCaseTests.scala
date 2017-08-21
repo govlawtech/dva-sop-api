@@ -53,14 +53,13 @@ class EdgeCaseTests extends FunSuite {
   }
 
   test("Primary myelofibrosis") {
-
     val result = ParserTestUtils.executeWholeParsingPipeline("F2013L00412", "allSops/F2013L00412.pdf")
-
   }
 
   test("blephartis") {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2010L02303", "allSops/F2010L02303.pdf")
   }
+
 
   test("Single factor sop") {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2013L01127", "allSops/F2013L01127.pdf")
@@ -76,8 +75,8 @@ class EdgeCaseTests extends FunSuite {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2009C00524", "allSops/F2009C00524.pdf")
   }
 
-  ignore("Correct section splitting in new style sop")
-  {
+
+  ignore("Correct section splitting in new style sop") {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2016L00261", "allSops/F2016L00261.pdf")
   }
 
@@ -85,32 +84,75 @@ class EdgeCaseTests extends FunSuite {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2015C00914", "allSops/F2015C00914.pdf")
   }
 
-  test("benign prostatic hyperplasia factors correctly categorised")
-  {
+  test("benign prostatic hyperplasia factors correctly categorised") {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2016L00240", "allSops/F2016L00240.pdf")
     assert(result.getAggravationFactors().size() == 2)
   }
 
-  test("sarcoidosis factors for bop correctly categorised")
-  {
+  test("sarcoidosis factors for bop correctly categorised") {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2016L01143", "allSops/F2016L01143.pdf")
     assert(result.getAggravationFactors().size() == 2)
   }
 
-  test("S's disease factors for bop correctly categorised")
-  {
+  test("S's disease factors for bop correctly categorised") {
     val result = ParserTestUtils.executeWholeParsingPipeline("F2016L01344", "allSops/F2016L01344.pdf")
     assert(result.getAggravationFactors().size() == 2)
   }
 
 
-  test("HEPATITIS B correctly categorised")
-  {
+  test("HEPATITIS B correctly categorised") {
     val Rhresult = ParserTestUtils.executeWholeParsingPipeline("F2017L00001", "allSops/F2017L00001.pdf")
     assert(Rhresult.getAggravationFactors().size() == 3 && Rhresult.getOnsetFactors().size() == 3) // overlapping factor
 
     val BoPresult = ParserTestUtils.executeWholeParsingPipeline("F2017L00007", "allSops/F2017L00007.pdf")
     assert(BoPresult.getAggravationFactors().size() == 3 && BoPresult.getOnsetFactors().size() == 2) // overlapping factor
+  }
 
+  test("sudden unexplained death") {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2013L01646", "allSops/F2013L01646.pdf")
+  }
+
+  test("Where are my 'other definitions'") {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2016C00252", "allSops/F2016C00252.pdf")
+  }
+
+  test("No factor truncation in 2016 compilation with short footnote") {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2016C00270", "allSops/F2016C00270.pdf")
+    assert(r.getOnsetFactors.get(1).getText.endsWith("lymphocytic lymphoma"))
+  }
+
+  test("Definitions section with two numbers") {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2016L00265", "allSops/F2016L00265.pdf")
+
+  }
+
+  test("Omitted definitions number in F2017C00198 is handled") {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2017C00198", "allSops/F2017C00198.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+  }
+
+  ignore("Third level factors parsed correctly") {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2010L02304", "allSops/F2010L02304.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+
+  }
+
+  test("Chronic obstructive pulmonary with many subparas parsed correctly")
+  {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2015C00915", "allSops/F2015C00915.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+
+  }
+
+  ignore("Non unicode superscripts handled correctly")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2013L00728","allSops/F2013L00728.pdf")
+
+  }
+
+  test("Why are these footnotes not cropped, why, why?")
+  {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2017C00077","allSops/F2017C00077.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
   }
 }

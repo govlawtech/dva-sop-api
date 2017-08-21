@@ -10,27 +10,13 @@ object PostAug2015Clenser extends GenericTextClenser {
 
     List(rawText)
       .map(super.clense)
-      .map(removeFootnotes)
       .map(removeHeadnote)
       .map(removePageGaps)
       .head
   }
 
   def removeHeadnote(raw: String): String = {
-    regexReplace("""Schedule 1 - Dictionary""".r, raw)
+    regexReplace("""Schedule 1 - Dictionary(\r|\r\n)""".r, raw)
   }
-
-  def removeFootnotes(raw: String): String = {
-    val regex = (""".*""" + Properties.lineSeparator
-      +
-      """.*""" + Properties.lineSeparator
-      +
-      """.*""" + Properties.lineSeparator
-      +
-      """([0-9]+ of )?[0-9]+""" + Properties.lineSeparator
-      ).r
-    regexReplace(regex, raw)
-  }
-
 
 }
