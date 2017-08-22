@@ -3,13 +3,13 @@ package au.gov.dva.sopapi.sopref.parsing.implementations.extractors
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.ICDCode
 import au.gov.dva.sopapi.sopref.parsing.PostAug2015ExtractorUtilities
-import au.gov.dva.sopapi.sopref.parsing.traits.{OldSoPStyleExtractor, SoPExtractor}
+import au.gov.dva.sopapi.sopref.parsing.traits.{MiscRegexes, OldSoPStyleExtractor, SoPExtractor}
 import com.typesafe.scalalogging.Logger
 
 import scala.util.Properties
 import scala.util.matching.Regex
 
-class PostAug2015Extractor(cleansedText: String) extends SoPExtractor {
+class PostAug2015Extractor(cleansedText: String) extends SoPExtractor with MiscRegexes {
 
   private val logger = Logger("dvasopapi.newsopstyleextractor")
 

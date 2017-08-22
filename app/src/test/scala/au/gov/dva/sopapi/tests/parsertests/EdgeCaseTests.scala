@@ -28,6 +28,8 @@ class EdgeCaseTests extends FunSuite {
 
   test("Fracture") {
     val parsed = ParserTestUtils.executeWholeParsingPipeline("F2015L01343", "allSops/F2015L01343.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(parsed)))
+
   }
 
   test("Pagets disease RH sop") {
