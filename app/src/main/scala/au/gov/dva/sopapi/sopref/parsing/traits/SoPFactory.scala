@@ -4,11 +4,13 @@ import java.time.LocalDate
 import java.util.stream.{Collector, StreamSupport}
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
+import au.gov.dva.sopapi.exceptions
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor, ICDCode, SoP}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedFactor, ParsedSop}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAugust2015Parser
 import com.google.common.collect.{ImmutableList, ImmutableSet, Iterables, Sets}
+
 import scala.collection.JavaConverters._
 
 
@@ -139,6 +141,7 @@ trait SoPFactory extends MiscRegexes {
     else return (factorObjects, List())
   }
 
+  private val suspiciousParaRegex = """\([a-zA-Z0-9]+\)""".r
 
   def executeRuntimeChecks(sop: SoP) = {
 
@@ -149,6 +152,14 @@ trait SoPFactory extends MiscRegexes {
       }
 
       if (f.getText.contains("Note: ")) throw new SopParserRuntimeException("Factor text contains notes.")
+      val paraMatches = suspiciousParaRegex.findAllMatchIn(f.getParagraph).size
+      if (paraMatches > 1) {
+        throw new SopParserRuntimeException("Suspicious paragraph reference: " + f.getParagraph + " : " + f.getText)
+      }
+
+      if (f.getText.startsWith("(")) throw new SopParserRuntimeException("Suspicious factor text: starts with open paren: " + f.getText)
+
+
     })
 
     val factorCount = allFactors.size()
@@ -156,7 +167,7 @@ trait SoPFactory extends MiscRegexes {
     // Hepatitis B has one factor which is half aggravation, half onset
     if (sop.getRegisterId != "F2017L00001") {
 
-      if (uniqueRefsCount < factorCount && factorCount > 2)  throw new SopParserRuntimeException(sop.getRegisterId + ": likely incorrectly parsed sub paras.")
+      if (uniqueRefsCount < factorCount && factorCount > 2) throw new SopParserRuntimeException(sop.getRegisterId + ": likely incorrectly parsed sub paras.")
 
       if (sop.getOnsetFactors.size() > 1) {
 
@@ -167,9 +178,9 @@ trait SoPFactory extends MiscRegexes {
           }
         })
       }
+
+
     }
-
-
 
 
   }

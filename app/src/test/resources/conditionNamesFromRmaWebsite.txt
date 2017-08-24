@@ -81,7 +81,7 @@ conductive hearing loss
 conjunctivitis
 Creutzfeldt-Jakob disease
 Cushing's syndrome
-cut, stab, abrasion and laceration 
+cut, stab, abrasion and laceration
 decompression sickness
 deep vein thrombosis
 dementia pugilistica
@@ -139,14 +139,14 @@ hepatitis C
 hepatitis D
 hepatitis E
 hereditary spherocytosis
-herpes simplex type 1 & type 2
+herpes simplex
 herpes zoster
 hiatus hernia
 Hodgkin's lymphoma
 hookworm disease
 horseshoe kidney
-human immunodeficiency virus (HIV)
-human T-cell lymphotropic virus type-1 (HTLV-1)
+human immunodeficiency virus
+human T-cell lymphotropic virus type-1
 Huntington's chorea
 hypertension
 hyperthyroidism and thyrotoxicosis
@@ -177,7 +177,7 @@ Lyme disease
 macular degeneration
 malaria
 malignant melanoma of the skin
-malignant neoplasm of bone or articular cartilage
+malignant neoplasm of bone and articular cartilage
 malignant neoplasm of the anus and anal canal
 malignant neoplasm of the bile duct
 malignant neoplasm of the bladder
@@ -188,13 +188,13 @@ malignant neoplasm of the cervix
 malignant neoplasm of the colorectum
 malignant neoplasm of the endometrium
 malignant neoplasm of the eye
-malignant neoplasm of the gallbladder 
+malignant neoplasm of the gallbladder
 malignant neoplasm of the larynx
 malignant neoplasm of the liver
 malignant neoplasm of the lung
 malignant neoplasm of the nasopharynx
 malignant neoplasm of the oesophagus
-malignant neoplasm of the oral cavity, oropharynx and  hypopharynx
+malignant neoplasm of the oral cavity, oropharynx and hypopharynx
 malignant neoplasm of the ovary
 malignant neoplasm of the pancreas
 malignant neoplasm of the prostate
@@ -234,7 +234,7 @@ obstructive and reflux nephropathy
 open-angle glaucoma
 opisthorchiasis
 optochiasmatic arachnoiditis
-osteoarthritis [previously known as: osteoarthrosis]
+osteoarthritis
 osteogenesis imperfecta
 osteomyelitis
 osteoporosis
@@ -304,7 +304,7 @@ somatic symptom disorder
 spasmodic torticollis
 spinal adhesive arachnoiditis
 spondylolisthesis and spondylolysis
-sprain & strain 
+sprain and strain
 steatohepatitis
 strongyloidiasis
 subarachnoid haemorrhage

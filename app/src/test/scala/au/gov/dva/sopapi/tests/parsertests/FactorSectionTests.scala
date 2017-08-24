@@ -70,7 +70,7 @@ class FactorSectionTests extends FunSuite with MiscRegexes {
     val factorsText = ParserTestUtils.resourceToString("factors/anxietyDisorderFactors.txt")
     val lines = factorsText.split(platformNeutralLineEndingRegex.regex).toList
 
-    val mainParas = FactorsParser.oldStyleSmallLetterLinesToFactors(lines)
+    val mainParas = FactorsParser.oldStyleSmallLetterLinesToFactors(lines,(_,_) => false)
     mainParas.foreach(m => println(m.getLetter))
   }
 
@@ -79,7 +79,7 @@ class FactorSectionTests extends FunSuite with MiscRegexes {
     val factorsText = ParserTestUtils.resourceToString("factors/osteoFactorLinesWithoutHead.txt")
     val lines = factorsText.split(platformNeutralLineEndingRegex.regex).toList
 
-    val mainParas = FactorsParser.oldStyleSmallLetterLinesToFactors(lines)
+    val mainParas = FactorsParser.oldStyleSmallLetterLinesToFactors(lines,(_,_) => false)
     mainParas.foreach(m => println(m.getLetter))
     assert(mainParas.size == 40 )
   }

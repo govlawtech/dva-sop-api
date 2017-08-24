@@ -52,7 +52,7 @@ public class ConditionFactory {
             case "acquired cataract": return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
             case "Achilles tendonopathy and bursitis" : return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
             case "chondromalacia patella" : return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
-            case "Iliotibial band syndrome" : return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
+            case "iliotibial band syndrome" : return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
             case "malignant melanoma of the skin": return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "non-melanotic malignant neoplasm of the skin" :return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "patellar tendinopathy": return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));

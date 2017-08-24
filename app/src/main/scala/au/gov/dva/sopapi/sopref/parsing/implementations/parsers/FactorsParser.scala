@@ -3,15 +3,15 @@ package au.gov.dva.sopapi.sopref.parsing.implementations.parsers
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoForFactorSectionWithOnlyOneFactor, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
+import org.apache.poi.hslf.record.MainMaster
 
 import scala.util.Properties
 import scala.util.matching.Regex
 
 object FactorsParser extends MiscRegexes {
 
-  private val regexForAnySection = """^\([a-z0-9]+\)""".r
+  private val regexForAnySection = """^\([a-z0-9]+\)(\s+\([xiv]+\))?""".r
   private val smallRomanRegex = """^\([ixv]+\)""".r
-  private val secondLevelChildRegex = (smallRomanRegex.regex + """\s*\([a-z]+\)""").r
 
   private val singleFactorHeadPivotText = """relevant service is""".r
 
@@ -64,7 +64,7 @@ object FactorsParser extends MiscRegexes {
     })
   }
 
-  private def isChild(prev: MainPara, current: ParaLines): Boolean = {
+  private def isChild(prev: MainPara, current: ParaLines) = {
 
     // edge cases
     // if prev main factor is '(h)' and ends 'or', this means the (i) para following is a main para, not a small roman
@@ -77,45 +77,37 @@ object FactorsParser extends MiscRegexes {
     else false
   }
 
-  private def isSecondLevelChild(prev: ParaLines, current: ParaLines): Boolean = {
-    // first of second level children
-    if (secondLevelChildRegex.findFirstIn(current.legalRef).isDefined) {
-      ???
-    }
-    ???
-  }
-
-  private def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara]): List[MainPara] = {
+  private def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
     if (paraLines.isEmpty) acc.reverse
-    else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List()))) // first para will always be main para
-    else if (isChild(acc.head, paraLines.head)) {
+    else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List())),paraLinesShouldBeChildrenAccordingToCustomRule) // first para will always be main para
+    else if (isChild(acc.head, paraLines.head) || paraLinesShouldBeChildrenAccordingToCustomRule(acc.head,paraLines.head)) {
       // add as child to prev head
-      groupToMainParas(paraLines.tail, acc.head.withExtraChild(paraLines.head) :: acc.tail)
+      groupToMainParas(paraLines.tail, acc.head.withExtraChild(paraLines.head) :: acc.tail,paraLinesShouldBeChildrenAccordingToCustomRule)
     }
     else {
       // new main
-      groupToMainParas(paraLines.tail, MainPara(paraLines.head, List()) :: acc)
+      groupToMainParas(paraLines.tail, MainPara(paraLines.head, List()) :: acc,paraLinesShouldBeChildrenAccordingToCustomRule)
     }
   }
 
-  private def oldStyleSmallLetterLinesToParas(lines: List[String]): List[MainPara] = {
+  private def oldStyleSmallLetterLinesToParas(lines: List[String], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
     val paras: List[List[String]] = FactorsParser.splitToParas(lines)
     val lineSets = FactorsParser.lineSetsToClass(paras)
-    val mainParas = FactorsParser.groupToMainParas(lineSets, List())
+    val mainParas = FactorsParser.groupToMainParas(lineSets, List(), paraLinesShouldBeChildrenAccordingToCustomRule)
     mainParas
   }
 
-  def oldStyleSmallLetterLinesToFactors(lines: List[String]): List[FactorInfo] = {
+  def oldStyleSmallLetterLinesToFactors(lines: List[String], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[FactorInfo] = {
 
-    oldStyleSmallLetterLinesToParas(lines).map(mp => new FactorInfoWithoutSubParas(mp.paraLinesParent.legalRef,
+    val groupedToSetsOfParagraphLines = oldStyleSmallLetterLinesToParas(lines, paraLinesShouldBeChildrenAccordingToCustomRule)
+
+
+     return groupedToSetsOfParagraphLines.map(mp => new FactorInfoWithoutSubParas(mp.paraLinesParent.legalRef,
       reflowFactorLines(mp.flattenLines)))
   }
 
   private def reflowFactorLines(factorText: String): String = {
-    // remove trailing '; or' or '.'
-    // remove para letter at start
-    // replace line break in front of 'or'
-    val knownOkEndings = List("rheumatoid arthritis", "toxic maculopathy")
+    val knownOkEndings = List("rheumatoid arthritis", "toxic maculopathy") // there are typos in these SoPs: omitted punctuation
 
     if (!factorText.endsWith("or")
       && !factorText.endsWith(".")
@@ -143,10 +135,7 @@ object FactorsParser extends MiscRegexes {
 
   case class ParaLines(legalRef: String, lines: List[String]) {
     def endsWithOr = lines.last.endsWith("or")
-
     def isSubsHead = lines.last.endsWith(":") || lines.last.endsWith(",") || lines.last.endsWith(", and")
-
-
   }
 
   case class MainPara(paraLinesParent: ParaLines, children: List[ParaLines]) {

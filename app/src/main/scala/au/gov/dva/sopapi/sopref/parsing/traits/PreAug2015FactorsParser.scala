@@ -3,8 +3,9 @@ package au.gov.dva.sopapi.sopref.parsing.traits
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
-import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo,  FactorInfoWithoutSubParas}
+import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser.{MainPara, ParaLines}
 
 import scala.util.Properties
 import scala.util.parsing.combinator.RegexParsers
@@ -18,17 +19,26 @@ trait PreAug2015FactorsParser extends MiscRegexes {
     stringWithLinebreaks.split(platformNeutralLineEndingRegex.regex).toList
   }
 
-  def parseFactorsSection(factorsSectionText: String): (StandardOfProof, List[FactorInfo]) = {
-    val splitToLines: List[String] = toLineList(factorsSectionText)
-    val (header, rest: List[String]) = SoPExtractorUtilities.splitFactorsSectionToHeaderAndRest(splitToLines)
+
+
+
+  def parseFactorsSection(factorsSectionText: String, paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean = (_,_) => false): (StandardOfProof, List[FactorInfo]) = {
+
+    val (header, rest: List[String]) = splitToHeaderAndRest(factorsSectionText)
 
     val standard = extractStandardOfProofFromHeader(header.mkString(" "))
     if (rest.isEmpty) {
       val singleFactor = FactorsParser.extractFactorFromFactorSectionHead(header)
       return (standard, List(singleFactor))
     }
-    val parsedFactors = FactorsParser.oldStyleSmallLetterLinesToFactors(rest)
+    val parsedFactors = FactorsParser.oldStyleSmallLetterLinesToFactors(rest,paraLinesShouldBeChildrenAccordingToCustomRule)
     (standard, parsedFactors)
+  }
+
+  private def splitToHeaderAndRest(factorsSectionText: String) = {
+    val splitToLines: List[String] = toLineList(factorsSectionText)
+    val (header, rest: List[String]) = SoPExtractorUtilities.splitFactorsSectionToHeaderAndRest(splitToLines)
+    (header,rest)
   }
 
   private def extractStandardOfProofFromHeader(headerText: String): StandardOfProof = {

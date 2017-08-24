@@ -20,7 +20,13 @@ object ServiceLocator {
     "F2016C00973",
     "F2016C00974",
     "F2016C00975",
-    "F2016C00976"
+    "F2016C00976",
+    "F2017C00059",
+    "F2017C00072",
+    "F2017C00073",
+    "F2017C00074",
+    "F2017C00075",
+    "F2017C00076"
    )
 
   def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
@@ -39,6 +45,7 @@ object ServiceLocator {
       case "F2010L02303" => BlephartisSoPFactory
       case "F2017L00007" => HepatitsBSoPFactoryForBoP
       case "F2017L00001" => HepatitsBSoPFactoryForRH
+      case "F2010L02304" => RenalStoneRHSoPFactory
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
@@ -50,11 +57,23 @@ object ServiceLocator {
       case "F2011C00491" => OsteoArthritisClenser
       case "F2017L00004" => HemorrhoidsClenser
       case "F2017L00005" => HemorrhoidsClenser
-      case "F2015L00255" => PagetsDiseaseClenser
       case "F2013L00411" => EssentialThrombocythamiaClenser
       case "F2013L00412" => PrimaryMyelofibrosisClenser
       case "F2014L01833" => HaemophiliaClenser
       case "F2017C00198" => SuicideRHClenser
+      case "F2013L00720" => ClenserToFixSuperscripts
+      case "F2013L00728" => ClenserToFixSuperscripts
+      case "F2013L00722" => ClenserToFixSuperscripts
+      case "F2013L00730" => ClenserToFixSuperscripts
+      case "F2013L00731" => ClenserToFixSuperscripts
+      case "F2013L00736" => ClenserToFixSuperscripts
+      case "F2013L00737" => ClenserToFixSuperscripts
+      case "F2013L01640" => ClenserToFixSuperscripts
+      case "F2015L00657" => ClenserToFixSuperscripts
+      case "F2015L00658" => ClenserToFixSuperscripts
+      case "F2014L00525" => ChronicMultisymptomIllnessBoPClenser
+      case "F2017C00075" => SinusBarotraumaBoPClenser
+
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }
   }

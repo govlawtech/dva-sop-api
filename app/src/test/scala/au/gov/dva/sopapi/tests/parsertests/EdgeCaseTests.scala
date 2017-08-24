@@ -123,6 +123,7 @@ class EdgeCaseTests extends FunSuite {
     assert(r.getOnsetFactors.get(1).getText.endsWith("lymphocytic lymphoma"))
   }
 
+
   test("Definitions section with two numbers") {
     var r = ParserTestUtils.executeWholeParsingPipeline("F2016L00265", "allSops/F2016L00265.pdf")
 
@@ -133,7 +134,7 @@ class EdgeCaseTests extends FunSuite {
     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
   }
 
-  ignore("Third level factors parsed correctly") {
+  test("Third level factors parsed correctly") {
     var r = ParserTestUtils.executeWholeParsingPipeline("F2010L02304", "allSops/F2010L02304.pdf")
     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
 
@@ -146,15 +147,35 @@ class EdgeCaseTests extends FunSuite {
 
   }
 
-  ignore("Non unicode superscripts handled correctly")
+  test("Non unicode superscripts for iodine handled correctly")
   {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2013L00728","allSops/F2013L00728.pdf")
 
   }
 
-  test("Why are these footnotes not cropped, why, why?")
+  test("Non unicode superscripts for yttrium handled correctly")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2013L00720","allSops/F2013L00720.pdf")
+  }
+
+
+  test("Tall footnotes in new compliations cropped")
   {
     var r = ParserTestUtils.executeWholeParsingPipeline("F2017C00077","allSops/F2017C00077.pdf")
     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
   }
+
+  test("Typo in definitions in multi illness fixed")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2014L00525","allSops/F2014L00525.pdf")
+
+  }
+
+  test("Typo in sinus barotrauma addressed")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2017C00075","allSops/F2017C00075.pdf")
+  }
+
+
+
 }

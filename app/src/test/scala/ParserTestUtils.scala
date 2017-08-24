@@ -39,6 +39,4 @@ object ParserTestUtils {
     val cleansedText = ServiceLocator.findTextCleanser(registerId).clense(rawText)
     cleansedText
   }
-
-
 }
