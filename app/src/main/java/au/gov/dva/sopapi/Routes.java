@@ -126,6 +126,20 @@ class Routes {
             setResponseHeaders(res, 200, MIME_CSV);
             return csvBytes;
         });
+
+        get("/status/stats",(req,res) -> {
+            Optional<URI> blobStorageUri = getBaseUrlForBlobStorage();
+            if (!blobStorageUri.isPresent()) {
+                logger.error("Need blob storage URI for status page.");
+                res.status(500);
+            }
+
+            String csvFileName = String.format("SoP Stats Generated UTC %s.csv", OffsetDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-dd-M HH mm")));
+            byte[] csvBytes = Status.createSopStatsCsv(cache, blobStorageUri.get().toURL());
+            res.header("Content-disposition", String.format("attachment;filename=%s",csvFileName));
+            setResponseHeaders(res, 200, MIME_CSV);
+            return csvBytes;
+        });
     }
 
 
@@ -283,7 +297,7 @@ class Routes {
 
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
-        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(), buildIsOperationalPredicate(), caseTrace);
+        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allCurrentSopPairs(), buildIsOperationalPredicate(), caseTrace);
         return rulesResult;
     }
 

@@ -74,7 +74,7 @@ public class Cache {
         return _allSops;
     }
 
-    public ImmutableSet<SoPPair> get_allSopPairs() {
+    public ImmutableSet<SoPPair> get_allCurrentSopPairs() {
         return _allSopPairs;
     }
 

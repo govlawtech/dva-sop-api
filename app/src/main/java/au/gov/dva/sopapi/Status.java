@@ -4,30 +4,21 @@ import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.ICDCode;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
+import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopref.SoPs;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
-import com.microsoft.azure.storage.CloudStorageAccount;
-import com.microsoft.azure.storage.blob.CloudBlobClient;
+import com.google.common.collect.*;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import scala.App;
-import scala.math.Ordering;
-import scala.sys.process.ProcessBuilder;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 
 public class Status {
@@ -47,8 +38,7 @@ public class Status {
                 "BoP Superseded By"
         ));
 
-        ImmutableSet<SoPPair> soPPairs = cache.get_allSopPairs();
-        ImmutableSet<InstrumentChange> failedUpdates = cache.get_failedUpdates();
+        ImmutableSet<SoPPair> soPPairs = cache.get_allCurrentSopPairs();
 
         // condition name, icd codes, FRL RH link, FRL BoP link, Azure RH link, Azure BoP link, Updated by
 
@@ -63,8 +53,8 @@ public class Status {
                     buildAzureLink(soPPair.getRhSop().getRegisterId(), blobsBaseUrl),
                     buildAzureLink(soPPair.getBopSop().getRegisterId(), blobsBaseUrl),
                     buildIcdCodeCell(soPPair.getICDCodes()),
-                    findSuperseding(soPPair.getRhSop().getRegisterId(), failedUpdates).orElse(""),
-                    findSuperseding(soPPair.getBopSop().getRegisterId(), failedUpdates).orElse("")
+                    "",
+                    ""
             ));
         }
 
@@ -75,6 +65,73 @@ public class Status {
         return csvPrinter.getOut().toString().getBytes("UTF-8");
     }
 
+    public static byte[] createSopStatsCsv(Cache cache, URL blobsBaseUrl) throws IOException {
+        StringBuilder stringBuilder = new StringBuilder();
+        CSVPrinter csvPrinter = new CSVPrinter(stringBuilder, CSVFormat.EXCEL);
+        csvPrinter.printRecord(ImmutableList.of(
+                "Condition name",
+                "Effective from date",
+                "Number of factors onset (RH)",
+                "Number of aggravation factors (RH)",
+                "Total words of factor text (RH)",
+                "Total number of definition references in factor text (RH)",
+                "Total number of words in definitions (RH)"
+        ));
+
+        ImmutableSet<SoPPair> soPPairs = cache.get_allCurrentSopPairs();
+
+        List<ImmutableList<String>> records = new ArrayList<>();
+
+        for (SoPPair soPPair : soPPairs) {
+            records.add(ImmutableList.of(
+                    soPPair.getConditionName(),
+                    soPPair.getEffectiveFromDate().format(DateTimeFormatter.ISO_LOCAL_DATE),
+                    Integer.toString(soPPair.getRhSop().getOnsetFactors().size()),
+                    Integer.toString(soPPair.getRhSop().getAggravationFactors().size()),
+                    Long.toString(countFactorTextWords(soPPair.getRhSop())),
+                    Long.toString(countNumberOfEmbeddedDefinitions(soPPair.getRhSop())),
+                    Long.toString(countDefinitionsWords(soPPair.getRhSop()))
+            ));
+        }
+
+        for (ImmutableList<String> strings : records) {
+            csvPrinter.printRecord(strings);
+        }
+
+        return csvPrinter.getOut().toString().getBytes("UTF-8");
+    }
+
+
+    private static long countFactorTextWords(SoP sop)
+    {
+        long count = StreamSupport.stream(Iterables.concat(sop.getOnsetFactors(), sop.getAggravationFactors()).spliterator(), false)
+                .map(factor -> factor.getText().split("\\s").length)
+                .mapToLong(value -> value)
+                .sum();
+        return  count;
+    }
+
+    private static long countDefinitionsWords(SoP sop)
+    {
+        long count = StreamSupport.stream(Iterables.concat(sop.getOnsetFactors(), sop.getAggravationFactors()).spliterator(), false)
+                .flatMap(factor -> factor.getDefinedTerms().stream())
+                .map(definedTerm -> definedTerm.getDefinition())
+                .distinct()
+                .map(words -> words.split("\\s").length)
+                .mapToLong(value -> value)
+                .sum();
+        return  count;
+    }
+
+    private static long countNumberOfEmbeddedDefinitions(SoP sop)
+    {
+        long count = StreamSupport.stream(Iterables.concat(sop.getOnsetFactors(), sop.getAggravationFactors()).spliterator(), false)
+                .flatMap(factor -> factor.getDefinedTerms().stream())
+                .map(definedTerm -> definedTerm.getTerm())
+                .distinct()
+                .count();
+        return count;
+    }
 
     public static String createStatusHtml(Cache cache, Repository repository, URL blobsBaseUrl, String version) {
         ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops(), OffsetDateTime.now());
