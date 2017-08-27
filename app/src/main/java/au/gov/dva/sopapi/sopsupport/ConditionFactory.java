@@ -64,6 +64,7 @@ public class ConditionFactory {
             case "tinea": return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "tinnitus": return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "trochanteric bursitis and gluteal tendinopathy": return new GenericProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(28));
+            case "femoroacetabular impingement syndrome": return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
         }
 
         throw new ProcessingRuleRuntimeException("No rule implemented for " + conditionConfiguration.getConditionName());
