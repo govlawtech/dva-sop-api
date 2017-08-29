@@ -192,7 +192,7 @@ public class ProcessingRuleFunctions {
         // caseTrace.addLoggingTrace("Getting the rank on the last service before date " + testDate);
         Optional<Service> relevantService = services.stream()
                 .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate())) // most recent first
-                .filter(service -> service.getStartDate().isBefore(testDate) && service.getEmploymentType() == EmploymentType.CFTS)
+                .filter(service -> !service.getStartDate().isAfter(testDate) && service.getEmploymentType() == EmploymentType.CFTS)
                 .findFirst();
 
 
