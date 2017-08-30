@@ -17,6 +17,7 @@ import java.net.URL;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -65,7 +66,7 @@ public class Status {
         return csvPrinter.getOut().toString().getBytes("UTF-8");
     }
 
-    public static byte[] createSopStatsCsv(Cache cache, URL blobsBaseUrl) throws IOException {
+    public static byte[] createSopStatsCsv(Cache cache) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         CSVPrinter csvPrinter = new CSVPrinter(stringBuilder, CSVFormat.EXCEL);
         csvPrinter.printRecord(ImmutableList.of(
@@ -99,6 +100,11 @@ public class Status {
         }
 
         return csvPrinter.getOut().toString().getBytes("UTF-8");
+    }
+
+    public static byte[] createConditionAdjacencyList(Cache cache)
+    {
+        return null;
     }
 
 
