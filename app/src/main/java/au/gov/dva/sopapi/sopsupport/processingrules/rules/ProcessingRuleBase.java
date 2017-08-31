@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 import static au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils.getApplicableRuleConfigurationItem;
 import static au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils.getRelevantRHConfiguration;
 
+
 public class ProcessingRuleBase {
 
 
@@ -34,6 +35,7 @@ public class ProcessingRuleBase {
     public ProcessingRuleBase(ConditionConfiguration conditionConfiguration) {
         this.conditionConfiguration = conditionConfiguration;
     }
+
 
     protected boolean shouldAbortProcessing(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace) {
 
@@ -55,20 +57,9 @@ public class ProcessingRuleBase {
             return true;
         }
 
-        LocalDate earliestStartDate = serviceHistory.getServices().stream()
-                .sorted(Comparator.comparing(Service::getStartDate))
-                .findFirst().get().getStartDate();
-        if (serviceHistory.getHireDate().isAfter(earliestStartDate)) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "The service history begins before the hire date, therefore this service history is corrupt data and an applicable SoP cannot be determined.");
-            return true;
-        }
+        if (!RulePreconditions.isServiceHistoryInternallyConsistent(serviceHistory,caseTrace)) return true;
 
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        if (!serviceDuringWhichConditionStarts.isPresent()) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot find any Service during or after which the condition started, therefore there is no applicable SoP.");
-            return true;
-        }
-
+        if (!RulePreconditions.serviceExistsBeforeConditionOnset(serviceHistory,condition,caseTrace)) return true;
 
         return false;
     }
@@ -109,17 +100,12 @@ public class ProcessingRuleBase {
                 .getRequiredDaysOfOperationalService();
 
 
-        ImmutableList<Deployment> operationalDeployments =
-                ProcessingRuleFunctions.getCFTSDeployments(serviceHistory).stream()
-                        .filter(d -> isOperational.test(d))
-                        .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
-
         Interval testInterval = rhInterval;
         caseTrace.addLoggingTrace(String.format("The start date for the test period for RH: %s", testInterval.getStart()));
         caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", condition.getStartDate()));
 
 
-        Long daysOfOperationalService = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(testInterval.getStart(), testInterval.getEnd(), operationalDeployments);
+        Long daysOfOperationalService = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(testInterval.getStart(),testInterval.getEnd(),isOperational);
 
         if (daysOfOperationalService >= Integer.MAX_VALUE) {
             throw new ProcessingRuleRuntimeException("Cannot handle days of operational service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
@@ -193,6 +179,7 @@ public class ProcessingRuleBase {
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
     }
+
 
     protected void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);

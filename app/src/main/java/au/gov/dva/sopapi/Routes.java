@@ -28,6 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
@@ -196,7 +197,24 @@ class Routes {
 
 
         sopPost(SharedConstants.Routes.GET_SERVICE_CONNECTION, MIME_JSON, ((req, res) -> {
-            SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+            SopSupportRequestDto sopSupportRequestDto;
+            try {
+                sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+            }
+            catch (DvaSopApiDtoRuntimeException e)
+            {
+                setResponseHeaders(res,400, MIME_TEXT);
+                return String.format("Request body invalid: %s", e.getMessage());
+            }
+
+            ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
+            if (!semanticErrors.isEmpty())
+            {
+                setResponseHeaders(res,400, MIME_TEXT);
+                return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(),semanticErrors));
+            }
+
+
             RulesResult rulesResult = runRules(sopSupportRequestDto);
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
@@ -216,7 +234,24 @@ class Routes {
 
     private static Object caseSummaryHandler(String mimeType, boolean convertToPdf, Request req, Response res) throws ExecutionException, InterruptedException {
         byte[] result;
-        SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+
+        SopSupportRequestDto sopSupportRequestDto;
+        try {
+            sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+        }
+        catch (DvaSopApiDtoRuntimeException e)
+        {
+            setResponseHeaders(res,400, MIME_TEXT);
+            return String.format("Request body invalid: %n%s", e.getMessage());
+        }
+
+        ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
+        if (!semanticErrors.isEmpty())
+        {
+            setResponseHeaders(res,400, MIME_TEXT);
+            return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(),semanticErrors));
+        }
+
         RulesResult rulesResult = runRules(sopSupportRequestDto);
 
         if (rulesResult.isEmpty()) {

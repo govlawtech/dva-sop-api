@@ -1,10 +1,8 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
-import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.Recommendation;
-import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
@@ -18,7 +16,6 @@ import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import scala.App;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +34,7 @@ public class RulesResult {
     private Recommendation recommendation;
 
     public static RulesResult createEmpty(CaseTrace caseTrace) {
-        return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECTED);
+        return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECT);
     }
 
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
@@ -49,11 +46,20 @@ public class RulesResult {
             return RulesResult .createEmpty(caseTrace);
         }
 
-        Optional<Condition> conditionOptional = ConditionFactory.create(sopPairs, sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository,isOperational);
+        Optional<SoPPair> soPPair = ConditionFactory.getSopPairForConditionName(sopPairs,sopSupportRequestDto.get_conditionDto().get_conditionName());
+
+        if (!soPPair.isPresent())
+        {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("SoP for condition '%s' is not available, so cannot apply any processing rules.  The condition name must match exactly the condition name in the SoP.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
+            return RulesResult.createEmpty(caseTrace);
+        }
+
+        Optional<Condition> conditionOptional = ConditionFactory.create(soPPair.get(), sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository);
+
         if (!conditionOptional.isPresent())
         {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("SoP for condition %s is not implemented, so cannot apply any processing rules.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
-            return RulesResult.createEmpty(caseTrace);
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format(String.format("No processing rule is configured for condition: '%s'.  The condition name must match exactly the name from the SoP.", sopSupportRequestDto.get_conditionDto().get_conditionName())));
+            return  RulesResult.createEmpty(caseTrace);
         }
 
         Condition condition = conditionOptional.get();
@@ -61,8 +67,13 @@ public class RulesResult {
         ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
         serviceHistory = serviceHistory.filterServiceHistoryByEvents(Arrays.asList("within specified area"));
 
-        if (ProcessingRuleFunctions.conditionIsBeforeService(condition, serviceHistory)) {
+        if (ProcessingRuleFunctions.conditionIsBeforeHireDate(condition, serviceHistory)) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));
+            return  RulesResult.createEmpty(caseTrace);
+        }
+
+        if (ProcessingRuleFunctions.conditionIsBeforeFirstDateOfService(condition, serviceHistory)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Service history shows no service before the condition start date (%s), therefore no SoP factors are applicable.", condition.getStartDate()));
             return  RulesResult.createEmpty(caseTrace);
         }
 
@@ -74,25 +85,12 @@ public class RulesResult {
             return RulesResult.createEmpty(caseTrace);
         }
         SoP applicableSop = applicableSopOpt.get();
-        caseTrace.addLoggingTrace("Applicable SoP is " + applicableSop.getCitation());
+
         ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory,caseTrace);
 
         condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition,serviceHistory, caseTrace);
 
-        // Generate the recommendation
-        boolean satisfied = getSatisfiedFactorsFromList(inferredFactors).size() > 0;
-        if (AppSettings.mangleServiceSettings() != null) satisfied = mangleCaseTrace(caseTrace);
-        Recommendation recommendation;
-        if (caseTrace.getApplicableStandardOfProof().get() == StandardOfProof.ReasonableHypothesis) {
-            if (satisfied) recommendation = Recommendation.APPROVED;
-            else if (caseTrace.getActualCftsDays().orElse(0) >= caseTrace.getRequiredCftsDaysForBop().orElse(Integer.MAX_VALUE)) recommendation = Recommendation.CHECK_RH_BOP_MET;
-            else recommendation = Recommendation.CHECK_RH;
-        }
-        else {
-            if (satisfied && caseTrace.getActualOperationalDays().orElse(0) > 0) recommendation = Recommendation.CHECK_RH_BOP_MET;
-            else if (satisfied) recommendation = Recommendation.APPROVED;
-            else recommendation = Recommendation.REJECTED;
-        }
+        Recommendation recommendation = condition.getProcessingRule().inferRecommendation(inferredFactors,serviceHistory,applicableSop,condition,isOperational, caseTrace);
 
         return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
 
@@ -159,8 +157,6 @@ public class RulesResult {
                     applicableSop.getEffectiveFromDate(),
                     applicableSop.getStandardOfProof());
 
-
-
             factorDtos =
                     inferredFactorsOptional.stream().map(factorWithSatisfaction -> DtoTransformations.fromFactorWithSatisfaction(factorWithSatisfaction)).collect(Collectors.toList());
         }
@@ -169,23 +165,5 @@ public class RulesResult {
         return new SopSupportResponseDto(applicableInstrumentDto,factorDtos, recommendation, caseTraceDto);
     }
 
-
-
-    // Dev aid - see AppSettings.mangeServiceSettings
-    private static boolean mangleCaseTrace(CaseTrace caseTrace) {
-        String settings = AppSettings.mangleServiceSettings();
-        String[] parts = settings.split(",");
-        caseTrace.setRequiredOperationalDaysForRh(Integer.parseInt(parts[1]));
-        caseTrace.setActualOperationalDays(Integer.parseInt(parts[2]));
-        caseTrace.setRequiredCftsDaysForRh(Integer.parseInt(parts[3]));
-        caseTrace.setRequiredCftsDaysForBop(Integer.parseInt(parts[4]));
-        caseTrace.setActualCftsDays(Integer.parseInt(parts[5]));
-
-        boolean useRh = Boolean.parseBoolean(parts[6]);
-        if (useRh) caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
-        else caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
-
-        return Boolean.parseBoolean(parts[0]);
-    }
 
 }
