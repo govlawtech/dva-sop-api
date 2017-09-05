@@ -11,6 +11,26 @@ public class SoPPair {
     private final SoP bopSop;
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        SoPPair soPPair = (SoPPair) o;
+
+        if (!conditionName.equals(soPPair.conditionName)) return false;
+        if (!bopSop.equals(soPPair.bopSop)) return false;
+        return rhSop.equals(soPPair.rhSop);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = conditionName.hashCode();
+        result = 31 * result + bopSop.hashCode();
+        result = 31 * result + rhSop.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString() {
         return conditionName;
     }

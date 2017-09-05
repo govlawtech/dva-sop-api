@@ -99,6 +99,9 @@ dependencies {
     compile group: 'org.apache.commons', name: 'commons-csv', version: '1.4'
     compile group: 'fr.opensagres.xdocreport', name: 'fr.opensagres.poi.xwpf.converter.pdf', version: '2.0.0'
 
+    compile group: 'org.scala-graph', name: 'graph-core_2.12', version: '1.11.5'
+    compile group: 'org.scala-graph', name: 'graph-dot', version: '1.11.5'
+
     testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'
     testCompile 'junit:junit:4.12'
 }

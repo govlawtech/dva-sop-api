@@ -19,4 +19,6 @@ public interface SoP {
     ImmutableSet<ICDCode> getICDCodes();
     String getConditionName();
 
+
+
 }

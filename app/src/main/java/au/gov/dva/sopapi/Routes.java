@@ -34,6 +34,7 @@ import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scalax.collection.GraphEdge;
 import spark.*;
 
 import java.net.URI;
@@ -126,6 +127,12 @@ class Routes {
             res.header("Content-disposition", String.format("attachment;filename=%s",csvFileName));
             setResponseHeaders(res, 200, MIME_CSV);
             return csvBytes;
+        });
+
+        get("/status/sopdependencies",(req,res) -> {
+
+            return null;
+
         });
     }
 
