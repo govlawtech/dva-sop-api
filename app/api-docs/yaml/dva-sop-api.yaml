@@ -257,10 +257,10 @@ definitions:
     properties:
       onsetRangeStartDate:
         type: string
-        format: date-time
+        format: date
       onsetRangeEndDate:
         type: string
-        format: date-time
+        format: date
   AggravationDateRange:
     required:
       - aggravationRangeStartDate
@@ -268,10 +268,10 @@ definitions:
     properties:
       aggravationRangeStartDate:
         type: string
-        format: date-time
+        format: date
       aggravationRangeEndDate:
         type: string
-        format: date-time
+        format: date
   ServiceHistory:
     required:
       - serviceSummaryInformation
@@ -289,7 +289,7 @@ definitions:
     properties:
       originalHireDate:
         type: string
-        format: date-time
+        format: date
   Service:
     required:
       - service
@@ -305,10 +305,10 @@ definitions:
         $ref: '#/definitions/EmploymentType'
       startDate:
         type: string
-        format: date-time
+        format: date
       endDate:
         type: string
-        format: date-time
+        format: date
       rank:
         $ref: '#/definitions/Rank'
       operationalService:
@@ -340,17 +340,17 @@ definitions:
     properties:
       assigned:
         type: string
-        format: date-time
+        format: date
       description:
         type: string
       event:
         type: string
       startDate:
         type: string
-        format: date-time
+        format: date
       endDate:
         type: string
-        format: date-time
+        format: date
   SoPSupportResponse:
     required:
       - applicableInstrument
