@@ -135,7 +135,7 @@ class Routes {
             }
 
             String csvFileName = String.format("SoP Stats Generated UTC %s.csv", OffsetDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-dd-M HH mm")));
-            byte[] csvBytes = Status.createSopStatsCsv(cache, blobStorageUri.get().toURL());
+            byte[] csvBytes = Status.createSopStatsCsv(cache);
             res.header("Content-disposition", String.format("attachment;filename=%s",csvFileName));
             setResponseHeaders(res, 200, MIME_CSV);
             return csvBytes;
