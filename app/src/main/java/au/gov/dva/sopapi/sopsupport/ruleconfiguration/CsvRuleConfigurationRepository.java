@@ -38,13 +38,10 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
         public final static int SERVICE_BRANCH = 3;
         public final static int RANK = 4;
         public final static int CFTS_DAYS = 5;
-        public final static int ACCUMULATION_RATE_PW = 6;
-        public final static int ACCUMULATION_UNIT = 7;
-        public final static int HARD_WINDOW_FROM_DATE_OF_ONSET = 8;
 
         public static class RH {
-            public final static int REQUIRED_OPERATIONAL_SERVICE_DAYS = 9;
-            public final static int OPERATIONAL_SERVICE_TEST_YEARS = 10;
+            public final static int REQUIRED_OPERATIONAL_SERVICE_DAYS = 6;
+            public final static int OPERATIONAL_SERVICE_TEST_YEARS = 7;
         }
     }
 
@@ -143,9 +140,6 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                             csvRecord.get(ColumnIndices.SERVICE_BRANCH),
                             csvRecord.get(ColumnIndices.RANK),
                             csvRecord.get(ColumnIndices.CFTS_DAYS),
-                            !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
-                            !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty(),
-                            !csvRecord.get(ColumnIndices.HARD_WINDOW_FROM_DATE_OF_ONSET).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.HARD_WINDOW_FROM_DATE_OF_ONSET)) : Optional.empty(),
                             csvRecord.get(ColumnIndices.RH.REQUIRED_OPERATIONAL_SERVICE_DAYS),
                             !csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.RH.OPERATIONAL_SERVICE_TEST_YEARS)) : Optional.empty()
                     ));
@@ -187,10 +181,7 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                         csvRecord.get(ColumnIndices.FACTOR_REFS),
                         csvRecord.get(ColumnIndices.SERVICE_BRANCH),
                         csvRecord.get(ColumnIndices.RANK),
-                        csvRecord.get(ColumnIndices.CFTS_DAYS),
-                        !csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_RATE_PW)) : Optional.empty(),
-                        !csvRecord.get(ColumnIndices.ACCUMULATION_UNIT).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.ACCUMULATION_UNIT)) : Optional.empty(),
-                        !csvRecord.get(ColumnIndices.HARD_WINDOW_FROM_DATE_OF_ONSET).isEmpty() ? Optional.of(csvRecord.get(ColumnIndices.HARD_WINDOW_FROM_DATE_OF_ONSET)) : Optional.empty()
+                        csvRecord.get(ColumnIndices.CFTS_DAYS)
                 ));
             }
         } catch (IOException e) {

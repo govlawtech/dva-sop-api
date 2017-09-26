@@ -62,7 +62,6 @@ public class ConditionFactory {
             default:
                 return Optional.empty();
         }
-
     }
 
 
