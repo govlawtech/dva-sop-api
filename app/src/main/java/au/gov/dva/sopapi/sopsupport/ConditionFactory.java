@@ -8,6 +8,7 @@ import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
+import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfServiceSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
@@ -55,7 +56,9 @@ public class ConditionFactory {
             case "sprain and strain":
                 return Optional.of(new AcuteConditionRule(
                         "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
-                        "F2011L01727", ImmutableSet.of("6(a)", "6(c)")));
+                        "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
+                        condition -> new Interval(condition.getStartDate().minusDays(7),condition.getEndDate().plusDays(7))
+                        ));
             default:
                 return Optional.empty();
         }
