@@ -17,6 +17,7 @@ import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
+import au.gov.dva.sopapi.sopref.insights.Dependencies;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
 import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummaryModelImpl;
@@ -34,6 +35,8 @@ import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.collection.convert.AsScalaConverters;
+import scala.util.*;
 import scalax.collection.GraphEdge;
 import spark.*;
 
@@ -43,6 +46,7 @@ import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Predicate;
 
@@ -129,13 +133,41 @@ class Routes {
             return csvBytes;
         });
 
-        get("/status/sopdependencies",(req,res) -> {
+        post("/status/dependencies",(req,res) -> {
 
-            return null;
+            ImmutableSet<String> conditions = ImmutableSet.copyOf(req.body().split(scala.util.Properties.lineSeparator()));
+            String dotString = au.gov.dva.sopapi.sopref.insights.Dependencies.buildDotString(cache.get_allSopPairs(),conditions);
+            setResponseHeaders(res, 200, MIME_TEXT);
+            return dotString;
+        });
+
+        get("/status/dependenciesOf",(req, res) -> {
+            String conditionName = req.queryParams("conditionName");
+            if (conditionName == null)
+            {
+                setResponseHeaders(res,400,MIME_TEXT);
+                return "Need condition name";
+            }
+            setResponseHeaders(res,200,MIME_TEXT);
+            String children =
+                    Dependencies.getChildrenOf(conditionName,cache.get_allSopPairs());
+
+            return children;
+        });
+
+        get("/status/containingPhrase",(req,res) -> {
+           String phrase = req.queryParams("phrase");
+           if (phrase == null) {
+                setResponseHeaders(res,400,MIME_TEXT);
+                return "Need phrase";
+            }
+
+            String result = Dependencies.getSopsMentioningPhraseInFactors(phrase,cache.get_allSopPairs());
+            setResponseHeaders(res,200,MIME_TEXT);
+            return result;
 
         });
     }
-
 
 
     public static void init(Cache cache) {

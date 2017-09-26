@@ -1,13 +1,15 @@
-package au.gov.dva.SoPPairapi.SoPPairref.insights
+package au.gov.dva.sopapi.sopref.insights
 
 
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.interfaces.model.{Factor, SoPPair}
+import com.google.common.collect.{ImmutableList, ImmutableSet}
 
 import scalax.collection.GraphEdge.DiEdge
 import collection.JavaConverters._
+import scala.util.Properties
 import scalax.collection.io.dot._
 import scalax.collection.Graph
 import scalax.collection.edge.LDiEdge
@@ -18,11 +20,12 @@ object Dependencies {
   // ideas:
   // make AL with explicit references
   // find factors in common - levenshtein distance, BK tree
-  def buildDotString(sopPairs : List[SoPPair]) : String = {
+  def buildDotString(sopPairs : ImmutableSet[SoPPair], conditionWhitelist: ImmutableSet[String]) : String = {
     val dotRoot = DotRootGraph(
       directed = true,
       id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}"))
     )
+
 
 
     def edgeTransformer(innerEdge: Graph[SoPPair,LDiEdge]#EdgeT): Option[(DotGraph,DotEdgeStmt)] = {
@@ -35,18 +38,34 @@ object Dependencies {
        }
     }
 
+    def whiteFilter = (sp: SoPPair) => conditionWhitelist.asScala.toSet.contains(sp.getConditionName)
 
-
-    val g = buildGraph(sopPairs)
+    val g = buildGraph(sopPairs.asScala.toList, whiteFilter)
     g.toDot(dotRoot, edgeTransformer)
-
-
   }
 
-  private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
+  def getChildrenOf(conditionName : String, conditions: ImmutableSet[SoPPair]) : String= {
+    val g = buildGraph(conditions.asScala.toList, _ => true)
+    val sopPair = conditions.asScala.find(c => c.getConditionName == conditionName)
+    if (sopPair.isEmpty) return ""
+    val conditionNode = g.find(sopPair.get)
+    val children = conditionNode.get.incoming.map(e => e.edge.source.getConditionName)
+
+    children.toList.mkString(Properties.lineSeparator)
+  }
+
+  def getSopsMentioningPhraseInFactors(phrase : String, sopPairs: ImmutableSet[SoPPair]) : String = {
+    val referencingPairs = findSoPPairsReferencingPhraseInFactors(phrase,sopPairs.asScala.toList)
+    referencingPairs.map(p => p.getConditionName).mkString(Properties.lineSeparator)
+  }
 
 
-    val g: Graph[SoPPair, LDiEdge] = Graph.from(SoPPairs,buildEdges(SoPPairs))
+  private def buildGraph(SoPPairs: List[SoPPair], whiteNodeFilter: SoPPair => Boolean): Graph[SoPPair, LDiEdge] = {
+
+    val edges = buildEdges(SoPPairs)
+      .filter(e => whiteNodeFilter(e.source) || whiteNodeFilter(e.target))
+
+    val g: Graph[SoPPair, LDiEdge] = Graph.from(SoPPairs,edges)
     g
   }
 
@@ -60,8 +79,7 @@ object Dependencies {
     createEdgesForSoPPairRecursive(SoPPairs)
   }
 
-
-  private def findSoPPairsReferencingConditionInFactors(conditionName: String, sopPairs: List[SoPPair]): List[SoPPair] = {
+  private def findSoPPairsReferencingPhraseInFactors(phrase: String, sopPairs: List[SoPPair]): List[SoPPair] = {
 
     def findFactorsContainingConditionName(conditionName: String, SoPPair: SoPPair): List[Factor] = {
       val allFactors: List[Factor] = (SoPPair.getRhSop.getOnsetFactors.asScala
@@ -72,16 +90,14 @@ object Dependencies {
       allFactors.filter(f => f.getText.contains(conditionName))
     }
 
-    sopPairs.filter(SoPPair => findFactorsContainingConditionName(conditionName, SoPPair).nonEmpty)
+    sopPairs.filter(SoPPair => findFactorsContainingConditionName(phrase, SoPPair).nonEmpty)
   }
 
   private def createEdgesForSoPPair(sopPair : SoPPair, otherSoPPairs : List[SoPPair]): Seq[LDiEdge[SoPPair]] = {
-    val sources = findSoPPairsReferencingConditionInFactors(sopPair.getConditionName,otherSoPPairs)
+    val sources = findSoPPairsReferencingPhraseInFactors(sopPair.getConditionName,otherSoPPairs)
     val target = sopPair
     sources map (s => LDiEdge(s,target)(""))
   }
-
-
 }
 
 
