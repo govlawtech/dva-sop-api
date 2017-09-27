@@ -20,11 +20,6 @@ public interface RuleConfigurationItem {
 
     int getRequiredCFTSDays();
 
-    Optional<Integer> getAccumulationRatePerWeek();
-
-    Optional<String> getAccumulationUnit();
-
-    Optional<String> getHardOnsetWindow();
 
 }
 

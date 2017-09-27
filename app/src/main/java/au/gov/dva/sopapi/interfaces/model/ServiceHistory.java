@@ -27,6 +27,8 @@ public interface ServiceHistory {
         return earliestService.map(Service::getStartDate);
     }
 
+
+
     default long getNumberOfDaysOfFullTimeOperationalService(LocalDate startDate, LocalDate endDateInclusive, Predicate<Deployment> isOperational)
     {
         ImmutableList<Deployment> operationalDeployments =

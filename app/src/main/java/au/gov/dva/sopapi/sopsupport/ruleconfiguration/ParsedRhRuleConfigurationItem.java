@@ -10,8 +10,8 @@ public final class ParsedRhRuleConfigurationItem extends ParsedRuleConfiguration
     private final Optional<Integer> _operationalTestPeriod;
 
 
-    public ParsedRhRuleConfigurationItem(String conditionName, String instrumentId, String factorRefs, String serviceBranch, String rank, String cftsWeeks, Optional<String> accumRate, Optional<String> accumUnit, Optional<String> hardOnsetWindow, String rhOperationalDaysRequired, Optional<String> rhOperationalTestPeriodInYears) {
-        super(conditionName, instrumentId, factorRefs, serviceBranch, rank, cftsWeeks, accumRate, accumUnit, hardOnsetWindow);
+    public ParsedRhRuleConfigurationItem(String conditionName, String instrumentId, String factorRefs, String serviceBranch, String rank, String cftsWeeks, String rhOperationalDaysRequired, Optional<String> rhOperationalTestPeriodInYears) {
+        super(conditionName, instrumentId, factorRefs, serviceBranch, rank, cftsWeeks);
 
         _rhOperationalDaysRequired = super.toIntOrError(rhOperationalDaysRequired, "Cannot determine days of operational service required for RH from ");
 
