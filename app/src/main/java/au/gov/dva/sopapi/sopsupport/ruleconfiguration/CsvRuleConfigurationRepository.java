@@ -146,7 +146,6 @@ public class CsvRuleConfigurationRepository implements RuleConfigurationReposito
                 }
             }
 
-
         } catch (IOException e) {
             throw new ConfigurationRuntimeException("Error parsing RH CSV binary.", e);
         }

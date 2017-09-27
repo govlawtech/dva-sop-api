@@ -69,8 +69,11 @@ public class AcuteConditionRule implements ProcessingRule {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("The Register ID on the Federal Register of Legislative Instruments for the applicable SoP is %s but the rule is configured for Register IDs %s.  Most likely the SoPs have been updated but the processing rule has not.", applicableSop.get().getRegisterId(),configuredRegisterIds));
             return Optional.empty();
         } else {
+
+
+
             caseTrace.setRequiredOperationalDaysForRh(1);
-            caseTrace.setActualOperationalDays((int) serviceHistory.getNumberOfDaysOfFullTimeOperationalService(serviceHistory.getStartofService().get(),condition.getStartDate(),isOperational));
+            caseTrace.setActualOperationalDays(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis ? 1 : 0);
             caseTrace.setApplicableStandardOfProof(applicableSop.get().getStandardOfProof());
             caseTrace.setRequiredCftsDays(1);
             caseTrace.setRequiredCftsDaysForBop(1);
@@ -121,17 +124,18 @@ public class AcuteConditionRule implements ProcessingRule {
             caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "The condition onset date was during warlike or non-warlike service.");
             return Recommendation.APPROVED;
         }
-
-        boolean hasOperationalServiceInWindow = hasOperationalServiceInWindow(serviceHistory, condition, isOperational);
+        Interval intervalToCheckForOperationalService = _providerForIntervalToCheckForOperationalService.apply(condition);
+        long numberOfDaysOfFullTimeOperationalServiceInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(),intervalToCheckForOperationalService.getEnd(),isOperational);
+        boolean hasOperationalServiceInWindow =  numberOfDaysOfFullTimeOperationalServiceInInterval > 0;
         if (satisfied && standardOfProof == StandardOfProof.BalanceOfProbabilities && hasOperationalServiceInWindow)
         {
-            caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS,"The condition onset date was during peacetime service.  Note there is some previous warlike or non-warlike service.");
+            caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS,String.format("The specified condition onset date was during peacetime service.  Note: the service history shows some full-time warlike or non-warlike service close to the onset date."));
             return Recommendation.CHECK_RH_BOP_MET;
         }
 
         if (satisfied && !hasOperationalServiceInWindow && standardOfProof == StandardOfProof.BalanceOfProbabilities)
         {
-            caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS,"The condition onset date was during peacetime service.  Note there is no previous warlike or non-warlike service.");
+            caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS,"The condition onset date was during peacetime service.  The service history does not show any full-time warlike or non-warlike service close to the onset date.");
             return Recommendation.APPROVED;
         }
 
@@ -142,9 +146,6 @@ public class AcuteConditionRule implements ProcessingRule {
         return Recommendation.REJECT;
     }
 
-    private boolean hasOperationalServiceInWindow(ServiceHistory serviceHistory, Condition condition, Predicate<Deployment> isOperational) {
-        Interval intervalToCheckForOperationalService = _providerForIntervalToCheckForOperationalService.apply(condition);
-        return (serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(),intervalToCheckForOperationalService.getEnd(),isOperational) > 0);
-    }
+
 
 }

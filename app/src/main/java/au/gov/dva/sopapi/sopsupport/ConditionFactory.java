@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport;
 
+import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
@@ -14,6 +15,8 @@ import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysP
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -41,7 +44,6 @@ public class ConditionFactory {
             return Optional.empty();
         }
 
-
         return Optional.of(new OnsetCondition(
                 soPPair,
                 conditionDto.get_incidentDateRangeDto().get_startDate(),
@@ -50,14 +52,24 @@ public class ConditionFactory {
         );
     }
 
-
     private static Optional<ProcessingRule> BuildRuleFromCode(String conditionName) {
         switch (conditionName) {
             case "sprain and strain":
                 return Optional.of(new AcuteConditionRule(
                         "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
-                        condition -> new Interval(condition.getStartDate().minusDays(7),condition.getEndDate().plusDays(7))
+                        condition ->
+                        {
+                            LocalDate currentCanberraLocalDate = LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE));
+                            LocalDate maxUpperBound = condition.getEndDate().plusDays(7);
+                            if (currentCanberraLocalDate.isBefore(maxUpperBound))
+                            {
+                                return new Interval(condition.getStartDate().minusDays(7), currentCanberraLocalDate);
+                            }
+                            else {
+                                return new Interval(condition.getStartDate().minusDays(7),maxUpperBound);
+                            }
+                        }
                         ));
             default:
                 return Optional.empty();
