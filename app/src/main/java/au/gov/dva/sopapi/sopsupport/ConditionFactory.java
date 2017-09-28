@@ -58,19 +58,7 @@ public class ConditionFactory {
                 return Optional.of(new AcuteConditionRule(
                         "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
-                        condition ->
-                        {
-                            LocalDate currentCanberraLocalDate = LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE));
-                            LocalDate maxUpperBound = condition.getEndDate().plusDays(7);
-                            if (currentCanberraLocalDate.isBefore(maxUpperBound))
-                            {
-                                return new Interval(condition.getStartDate().minusDays(7), currentCanberraLocalDate);
-                            }
-                            else {
-                                return new Interval(condition.getStartDate().minusDays(7),maxUpperBound);
-                            }
-                        }
-                        ));
+                        condition -> new Interval(condition.getStartDate().minusDays(7),condition.getStartDate())));
             default:
                 return Optional.empty();
         }
