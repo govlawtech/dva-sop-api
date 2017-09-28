@@ -21,7 +21,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 
-
 public class AcuteConditionRule implements ProcessingRule {
 
     private final ImmutableSet<String> _satisfiedRHFactorParas;
@@ -29,9 +28,9 @@ public class AcuteConditionRule implements ProcessingRule {
     private final ImmutableSet<String> _registerIds;
     private Function<Condition, Interval> _providerForIntervalToCheckForOperationalService;
 
-    public AcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhFactorParas, String bopRegisterId, ImmutableSet<String> bopFactorParas, Function<Condition,Interval> providerForIntervalToCheckForOperationalService ) {
+    public AcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhFactorParas, String bopRegisterId, ImmutableSet<String> bopFactorParas, Function<Condition, Interval> providerForIntervalToCheckForOperationalService) {
         _providerForIntervalToCheckForOperationalService = providerForIntervalToCheckForOperationalService;
-        _registerIds = ImmutableSet.of(rhRegisterId,bopRegisterId);
+        _registerIds = ImmutableSet.of(rhRegisterId, bopRegisterId);
         _satisfiedRHFactorParas = rhFactorParas;
         _satisfiedBoPFactorPara = bopFactorParas;
     }
@@ -40,32 +39,43 @@ public class AcuteConditionRule implements ProcessingRule {
     public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
         Optional<Service> cftsOnOnset = serviceHistory.findCftsOnDate(condition.getStartDate());
-        if (!cftsOnOnset.isPresent())
-        {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,String.format("The service history does not show any continuous full time service on the condition onset date (%s).  This is required for the condition '%s'.",DateTimeFormatter.ISO_LOCAL_DATE.format(condition.getStartDate()),condition.getSopPair().getConditionName()));
+        if (!cftsOnOnset.isPresent()) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("The service history does not show any continuous full time service on the condition onset date (%s).  This is required for the condition '%s'.", DateTimeFormatter.ISO_LOCAL_DATE.format(condition.getStartDate()), condition.getSopPair().getConditionName()));
             return Optional.empty();
         }
+
+        Interval intervalToCheckForOperationalService = _providerForIntervalToCheckForOperationalService.apply(condition);
+        long numberOfDaysOfFullTimeOperationalServiceDaysInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(), intervalToCheckForOperationalService.getEnd(), isOperational);
+        if (numberOfDaysOfFullTimeOperationalServiceDaysInInterval >= Integer.MAX_VALUE)
+            throw new ProcessingRuleRuntimeException("Number of operational days above max value.");
+        caseTrace.setActualOperationalDays((int) numberOfDaysOfFullTimeOperationalServiceDaysInInterval);
+
+        boolean hasOperationalServiceInWindow = numberOfDaysOfFullTimeOperationalServiceDaysInInterval > 0;
 
         Function<ServiceHistory, Optional<SoP>> determineApplicableSop = sh -> {
             Optional<Deployment> deploymentDuringWhichConditionOccurred = serviceHistory.findDeploymentOnDate(condition.getStartDate());
 
-            if (!deploymentDuringWhichConditionOccurred.isPresent()) {
-                caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF,"The standard of proof is balance of probabilities because the service history shows no deployment on the condition start date of " + DateTimeFormatter.ISO_LOCAL_DATE.format(condition.getStartDate()));
-                return Optional.of(condition.getSopPair().getBopSop());
-            } else if (isOperational.test(deploymentDuringWhichConditionOccurred.get())) {
-                caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The standard of proof is reasonable hypothesis because the service history shows a warlike or non-warlike operation on the condition start date (%s): %s", DateTimeFormatter.ISO_LOCAL_DATE.format(condition.getStartDate()), deploymentDuringWhichConditionOccurred.get().getOperationName()));
+            if (deploymentDuringWhichConditionOccurred.isPresent()) {
+                if (isOperational.test(deploymentDuringWhichConditionOccurred.get())) {
+                    caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The standard of proof is reasonable hypothesis because the service history shows a warlike or non-warlike operation on the condition start date (%s): %s", DateTimeFormatter.ISO_LOCAL_DATE.format(condition.getStartDate()), deploymentDuringWhichConditionOccurred.get().getOperationName()));
+
+                    return Optional.of(condition.getSopPair().getRhSop());
+                }
+            } else if (hasOperationalServiceInWindow) {
+                caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, "The standard of proof is reasonable hypothesis because the service history shows warlike or non-warlike service proximate to the condition onset.");
                 return Optional.of(condition.getSopPair().getRhSop());
-            } else {
-                caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF,String.format("The standard of proof is balance of probabilities because the service history shows a peacetime deployment on the condition start date (%s): %s",DateTimeFormatter.ISO_LOCAL_DATE.format(condition.getStartDate()),deploymentDuringWhichConditionOccurred.get().getOperationName()));
-                return Optional.of(condition.getSopPair().getBopSop());
             }
+
+            caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, "The standard of proof is balance of probabilities because the service history does not show any warlike or non-warlike service on, or proximate to, the condition onset.");
+
+            return Optional.of(condition.getSopPair().getBopSop());
         };
 
         Optional<SoP> applicableSop = determineApplicableSop.apply(serviceHistory);
         if (applicableSop.isPresent() && !_registerIds.contains(applicableSop.get().getRegisterId())) {
 
-            String configuredRegisterIds = String.join(", ",_registerIds);
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("The Register ID on the Federal Register of Legislative Instruments for the applicable SoP is %s but the rule is configured for Register IDs %s.  Most likely the SoPs have been updated but the processing rule has not.", applicableSop.get().getRegisterId(),configuredRegisterIds));
+            String configuredRegisterIds = String.join(", ", _registerIds);
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("The Register ID on the Federal Register of Legislative Instruments for the applicable SoP is %s but the rule is configured for Register IDs %s.  Most likely the SoPs have been updated but the processing rule has not.", applicableSop.get().getRegisterId(), configuredRegisterIds));
             return Optional.empty();
         } else {
 
@@ -83,14 +93,17 @@ public class AcuteConditionRule implements ProcessingRule {
 
         ImmutableList<Factor> applicableFactors = condition.getApplicableFactors(applicableSop);
 
-        caseTrace.setActualCftsDays((int)serviceHistory.getNumberOfDaysCftsInIntervalInclusive(serviceHistory.getStartofService().get(),condition.getStartDate()));
+        caseTrace.setActualCftsDays((int) serviceHistory.getNumberOfDaysCftsInIntervalInclusive(serviceHistory.getStartofService().get(), condition.getStartDate()));
 
+        caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The injury '%s' is acute and occurred during continuous full-time service.  Therefore, it is reasonably likely the factor is met.",condition.getSopPair().getConditionName()));
 
-        switch (applicableSop.getStandardOfProof())
-        {
-            case ReasonableHypothesis:  return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors,_satisfiedRHFactorParas);
-            case BalanceOfProbabilities: return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors,_satisfiedBoPFactorPara);
-            default: throw new ProcessingRuleRuntimeException("Unknown standard of proof: " + applicableSop.getStandardOfProof());
+        switch (applicableSop.getStandardOfProof()) {
+            case ReasonableHypothesis:
+                return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, _satisfiedRHFactorParas);
+            case BalanceOfProbabilities:
+                return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, _satisfiedBoPFactorPara);
+            default:
+                throw new ProcessingRuleRuntimeException("Unknown standard of proof: " + applicableSop.getStandardOfProof());
         }
     }
 
@@ -111,42 +124,15 @@ public class AcuteConditionRule implements ProcessingRule {
     }
 
     @Override
-    public Recommendation inferRecommendation(ImmutableList<FactorWithSatisfaction> factors, ServiceHistory serviceHistory, SoP applicableSop, Condition condition, Predicate<Deployment> isOperational, CaseTrace caseTrace)
-    {
+    public Recommendation inferRecommendation(ImmutableList<FactorWithSatisfaction> factors, ServiceHistory serviceHistory, SoP applicableSop, Condition condition, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
         boolean satisfied = factors.stream().anyMatch(f -> f.isSatisfied());
-        StandardOfProof standardOfProof = applicableSop.getStandardOfProof();
 
-        Interval intervalToCheckForOperationalService = _providerForIntervalToCheckForOperationalService.apply(condition);
-        long numberOfDaysOfFullTimeOperationalServiceInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(),intervalToCheckForOperationalService.getEnd(),isOperational);
-
-        if (numberOfDaysOfFullTimeOperationalServiceInInterval >= Integer.MAX_VALUE) throw new ProcessingRuleRuntimeException("Number of days of operational service larger than max value.");
-        caseTrace.setActualOperationalDays((int) numberOfDaysOfFullTimeOperationalServiceInInterval);
-
-        if (satisfied && standardOfProof == StandardOfProof.ReasonableHypothesis)
-        {
-            caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "The condition onset date was during warlike or non-warlike service.");
+        if (satisfied) {
             return Recommendation.APPROVED;
+        } else {
+            return Recommendation.REJECT;
         }
-        boolean hasOperationalServiceInWindow =  numberOfDaysOfFullTimeOperationalServiceInInterval > 0;
-        if (satisfied && standardOfProof == StandardOfProof.BalanceOfProbabilities && hasOperationalServiceInWindow)
-        {
-            caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS,String.format("The specified condition onset date was during peacetime service.  Note: the service history shows some full-time warlike or non-warlike service close to the onset date."));
-            return Recommendation.CHECK_RH_BOP_MET;
-        }
-
-        if (satisfied && !hasOperationalServiceInWindow && standardOfProof == StandardOfProof.BalanceOfProbabilities)
-        {
-            caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS,"The condition onset date was during peacetime service.  The service history does not show any full-time warlike or non-warlike service close to the onset date.");
-            return Recommendation.APPROVED;
-        }
-
-        if (!satisfied && hasOperationalServiceInWindow) {
-
-            return Recommendation.CHECK_RH;
-        }
-        return Recommendation.REJECT;
     }
-
 
 
 }
