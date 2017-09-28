@@ -132,6 +132,7 @@ public class AcuteConditionRule implements ProcessingRule {
         } else {
             return Recommendation.REJECT;
         }
+
     }
 
 
