@@ -24,7 +24,6 @@ import java.util.stream.Collectors;
 
 public class AcuteConditionRule implements ProcessingRule {
 
-
     private final ImmutableSet<String> _satisfiedRHFactorParas;
     private final ImmutableSet<String> _satisfiedBoPFactorPara;
     private final ImmutableSet<String> _registerIds;
@@ -70,10 +69,7 @@ public class AcuteConditionRule implements ProcessingRule {
             return Optional.empty();
         } else {
 
-
-
             caseTrace.setRequiredOperationalDaysForRh(1);
-            caseTrace.setActualOperationalDays(applicableSop.get().getStandardOfProof() == StandardOfProof.ReasonableHypothesis ? 1 : 0);
             caseTrace.setApplicableStandardOfProof(applicableSop.get().getStandardOfProof());
             caseTrace.setRequiredCftsDays(1);
             caseTrace.setRequiredCftsDaysForBop(1);
@@ -88,6 +84,7 @@ public class AcuteConditionRule implements ProcessingRule {
         ImmutableList<Factor> applicableFactors = condition.getApplicableFactors(applicableSop);
 
         caseTrace.setActualCftsDays((int)serviceHistory.getNumberOfDaysCftsInIntervalInclusive(serviceHistory.getStartofService().get(),condition.getStartDate()));
+
 
         switch (applicableSop.getStandardOfProof())
         {
@@ -119,13 +116,17 @@ public class AcuteConditionRule implements ProcessingRule {
         boolean satisfied = factors.stream().anyMatch(f -> f.isSatisfied());
         StandardOfProof standardOfProof = applicableSop.getStandardOfProof();
 
+        Interval intervalToCheckForOperationalService = _providerForIntervalToCheckForOperationalService.apply(condition);
+        long numberOfDaysOfFullTimeOperationalServiceInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(),intervalToCheckForOperationalService.getEnd(),isOperational);
+
+        if (numberOfDaysOfFullTimeOperationalServiceInInterval >= Integer.MAX_VALUE) throw new ProcessingRuleRuntimeException("Number of days of operational service larger than max value.");
+        caseTrace.setActualOperationalDays((int) numberOfDaysOfFullTimeOperationalServiceInInterval);
+
         if (satisfied && standardOfProof == StandardOfProof.ReasonableHypothesis)
         {
             caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "The condition onset date was during warlike or non-warlike service.");
             return Recommendation.APPROVED;
         }
-        Interval intervalToCheckForOperationalService = _providerForIntervalToCheckForOperationalService.apply(condition);
-        long numberOfDaysOfFullTimeOperationalServiceInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(),intervalToCheckForOperationalService.getEnd(),isOperational);
         boolean hasOperationalServiceInWindow =  numberOfDaysOfFullTimeOperationalServiceInInterval > 0;
         if (satisfied && standardOfProof == StandardOfProof.BalanceOfProbabilities && hasOperationalServiceInWindow)
         {
