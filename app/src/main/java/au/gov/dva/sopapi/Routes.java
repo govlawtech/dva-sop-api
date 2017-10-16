@@ -32,6 +32,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
+import org.apache.http.HttpStatus;
+import org.eclipse.jetty.websocket.api.StatusCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.*;
@@ -199,7 +201,7 @@ class Routes {
         sopPost(SharedConstants.Routes.GET_SERVICE_CONNECTION, MIME_JSON, ((req, res) -> {
             SopSupportRequestDto sopSupportRequestDto;
             try {
-                sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
+                sopSupportRequestDto = SopSupportRequestDto.fromJsonString(clenseJson(req.body()));
             }
             catch (DvaSopApiDtoRuntimeException e)
             {
@@ -214,6 +216,18 @@ class Routes {
                 return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(),semanticErrors));
             }
 
+            if (sopSupportRequestDto.get_conditionDto().get_conditionName() == null)
+            {
+                Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(),sopSupportRequestDto.get_conditionDto().get_icdCodeValue(),cache.get_allSopPairs());
+                if (!conditionNameFromICDCode.isPresent())
+                {
+                    setResponseHeaders(res, 204,MIME_TEXT);
+                    return String.format("The given ICD code and version does not map to a single SoP.");
+                }
+                else {
+                    sopSupportRequestDto.get_conditionDto().set_conditionName(conditionNameFromICDCode.get());
+                }
+            }
 
             RulesResult rulesResult = runRules(sopSupportRequestDto);
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
@@ -221,55 +235,9 @@ class Routes {
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
         }));
 
-        sopPost(SharedConstants.Routes.GET_CASESUMMARY, MIME_DOCX, ((req, res) ->
-        {
-            return caseSummaryHandler(MIME_DOCX, false, req, res);
-        }));
 
-        sopPost(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, MIME_PDF, ((req, res) ->
-        {
-            return caseSummaryHandler(MIME_PDF, true, req, res);
-        }));
     }
 
-    private static Object caseSummaryHandler(String mimeType, boolean convertToPdf, Request req, Response res) throws ExecutionException, InterruptedException {
-        byte[] result;
-
-        SopSupportRequestDto sopSupportRequestDto;
-        try {
-            sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-        }
-        catch (DvaSopApiDtoRuntimeException e)
-        {
-            setResponseHeaders(res,400, MIME_TEXT);
-            return String.format("Request body invalid: %n%s", e.getMessage());
-        }
-
-        ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
-        if (!semanticErrors.isEmpty())
-        {
-            setResponseHeaders(res,400, MIME_TEXT);
-            return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(),semanticErrors));
-        }
-
-        RulesResult rulesResult = runRules(sopSupportRequestDto);
-
-        if (rulesResult.isEmpty()) {
-            result = CaseSummary.createCaseSummary(rulesResult.getCaseTrace(), buildIsOperationalPredicate(), convertToPdf).get();
-        }
-        else {
-            ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-            Condition condition = rulesResult.getCondition().get();
-
-            List<Factor> factorsConnectedToService = rulesResult.getSatisfiedFactors();
-
-            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace(), rulesResult.getRecommendation() );
-            result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), convertToPdf).get();
-        }
-
-        setResponseHeaders(res, 200, mimeType);
-        return result;
-    }
 
     // Set up a post handler with response MIME type handling and exception handling.
     private static void sopPost(String path, String responseMimeType, Route handler) {
@@ -434,7 +402,7 @@ class Routes {
         return AppSettings.getEnvironment() == Environment.prod;
     }
 
-    private static String cleanseJson(String incomingJson) {
+    private static String clenseJson(String incomingJson) {
         return incomingJson.replace("\uFEFF", "");
     }
 
@@ -449,5 +417,19 @@ class Routes {
             logger.error("Cannot get base url for blog storage.", e);
             return Optional.empty();
         }
+    }
+
+    private static Optional<String> getConditionNameForICDCode(String icdCodeVersion, String icdCode, ImmutableSet<SoPPair> sopPairs)
+    {
+        List<SoPPair> sopPairsMatchingIcdCode = sopPairs.stream()
+                .filter(soPPair -> soPPair.getICDCodes().stream()
+                        .anyMatch(icdCode1 -> icdCode1.getCode().contentEquals(icdCode) && icdCode1.getVersion().contentEquals(icdCodeVersion)))
+                .collect(toList());
+
+        if (sopPairsMatchingIcdCode.size() == 1)
+        {
+            return Optional.of(sopPairsMatchingIcdCode.get(0).getConditionName());
+        }
+        else return Optional.empty();
     }
 }

@@ -21,7 +21,4 @@ public interface SoPApiClient {
 
     CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(SopSupportRequestDto sopSupportRequestDto);
 
-    CompletableFuture<byte[]> getCaseSummary(SopSupportRequestDto sopSupportRequestDto);
-
-    CompletableFuture<byte[]> getCaseSummaryAsPdf(SopSupportRequestDto sopSupportRequestDto);
 }
