@@ -221,7 +221,7 @@ class Routes {
                 Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(),sopSupportRequestDto.get_conditionDto().get_icdCodeValue(),cache.get_allSopPairs());
                 if (!conditionNameFromICDCode.isPresent())
                 {
-                    setResponseHeaders(res, 204,MIME_TEXT);
+                    setResponseHeaders(res, 400,MIME_TEXT);
                     return String.format("The given ICD code and version does not map to a single SoP.");
                 }
                 else {
