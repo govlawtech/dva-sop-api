@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ConditionDto {
 
-    @JsonProperty(value = "conditionName", required = true)
-    private final String _conditionName;
+    @JsonProperty(value = "conditionName")
+    private String _conditionName;
 
     @JsonProperty(value = "incidentType", required = true)
     private final IncidentType _incidentType;
@@ -47,9 +47,16 @@ public class ConditionDto {
         return _incidentType;
     }
 
-    public String get_icdCodeVersion() {
+    public String get_icdCodeVersion()
+    {
         return _icdCodeVersion;
     }
+
+    public void set_conditionName(String conditionName) {
+        _conditionName = conditionName;
+    }
+
+
 
     public String get_icdCodeValue() {
         return _icdCodeValue;
@@ -62,4 +69,8 @@ public class ConditionDto {
     public AggravationDateRangeDto get_aggravationDateRangeDto() {
         return _aggravationDateRangeDto;
     }
+
+
+
 }
+

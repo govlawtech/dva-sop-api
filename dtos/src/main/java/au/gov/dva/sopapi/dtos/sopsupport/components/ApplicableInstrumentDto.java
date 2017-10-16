@@ -22,6 +22,9 @@ public class ApplicableInstrumentDto {
     @JsonProperty("citation")
     private final String _citation;
 
+    @JsonProperty("condition")
+    private final String _condition;
+
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonProperty("effectiveFromDate")
     private LocalDate _effectiveFromDate;
@@ -33,6 +36,7 @@ public class ApplicableInstrumentDto {
     public ApplicableInstrumentDto(@JsonProperty("registerId") String _registerId,
                                    @JsonProperty("instrumentNumber") String _instrumentNumber,
                                    @JsonProperty("citation") String _citation,
+                                   @JsonProperty("condition") String condition,
 
                                    @JsonProperty("effectiveFromDate")
                                            @JsonDeserialize(using = LocalDateDeserializer.class)
@@ -43,6 +47,7 @@ public class ApplicableInstrumentDto {
         this._instrumentNumber = _instrumentNumber;
         this._citation = _citation;
         this._effectiveFromDate = _effectiveFromDate;
+        this._condition = condition;
         this.standardOfProof = standardOfProof;
     }
 
@@ -70,4 +75,7 @@ public class ApplicableInstrumentDto {
     public StandardOfProof getStandardOfProof() {
         return standardOfProof;
     }
+
+    @JsonIgnore
+    public String getCondition() {return _citation;}
 }

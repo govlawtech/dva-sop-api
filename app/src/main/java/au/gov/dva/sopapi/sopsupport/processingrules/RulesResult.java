@@ -154,6 +154,7 @@ public class RulesResult {
             applicableInstrumentDto = new ApplicableInstrumentDto(applicableSop.getRegisterId(),
                     StoredSop.formatInstrumentNumber(applicableSop.getInstrumentNumber()),
                     applicableSop.getCitation(),
+                    applicableSop.getConditionName(),
                     applicableSop.getEffectiveFromDate(),
                     applicableSop.getStandardOfProof());
 
