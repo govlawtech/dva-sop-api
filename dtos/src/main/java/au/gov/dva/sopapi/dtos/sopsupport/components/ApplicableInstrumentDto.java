@@ -77,5 +77,5 @@ public class ApplicableInstrumentDto {
     }
 
     @JsonIgnore
-    public String getCondition() {return _citation;}
+    public String getCondition() {return _condition;}
 }
