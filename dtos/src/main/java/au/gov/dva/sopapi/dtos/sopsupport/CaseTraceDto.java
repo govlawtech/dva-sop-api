@@ -5,6 +5,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.FactorDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
@@ -13,6 +14,9 @@ import java.util.Map;
 import java.util.Optional;
 
 public class CaseTraceDto {
+
+    @JsonProperty("conditionName")
+    private Optional<String> _conditionName;
 
     @JsonProperty("standardOfProof")
     private Optional<StandardOfProof> _standardOfProof;
@@ -49,7 +53,8 @@ public class CaseTraceDto {
 
     public CaseTraceDto(){}
 
-    public CaseTraceDto(Optional<StandardOfProof> standardOfProof,
+    public CaseTraceDto(Optional<String> conditionName,
+                        Optional<StandardOfProof> standardOfProof,
                         Optional<Integer> requiredCftsDays,
                         Optional<Integer> requiredCftsDaysForRh,
                         Optional<Integer> requiredCftsDaysForBop,
@@ -61,6 +66,7 @@ public class CaseTraceDto {
                         Map<ReasoningFor, List<String>> reasonings,
                         String logTrace)
     {
+        _conditionName = conditionName;
         _standardOfProof = standardOfProof;
         _requiredCftsDays = requiredCftsDays;
         _requiredCftsDaysForRh = requiredCftsDaysForRh;
@@ -73,6 +79,9 @@ public class CaseTraceDto {
         _reasonings = ImmutableMap.copyOf(reasonings);
         _logTrace = logTrace;
     }
+
+    @JsonIgnore
+    public Optional<String> getConditionName() {return _conditionName;}
 
     @JsonIgnore
     public String getLogTrace() {
