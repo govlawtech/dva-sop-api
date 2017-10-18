@@ -23,9 +23,21 @@ public class SopSupportCaseTrace implements CaseTrace {
     private ImmutableList<Factor> rhFactors = ImmutableList.of();
     private ImmutableList<Factor> bopFactors = ImmutableList.of();
     private Map<ReasoningFor, List<String>> reasonings = new HashMap<>();
+    private Optional<String> conditionName = Optional.empty();
+
 
     public SopSupportCaseTrace(String caseId) {
         sb = new StringBuilder(String.format("Case ID: %s%n", caseId));
+    }
+
+    @Override
+    public void setConditionName(String name) {
+        conditionName = Optional.of(name);
+    }
+
+    @Override
+    public Optional<String> getConditionName() {
+        return conditionName;
     }
 
     @Override
