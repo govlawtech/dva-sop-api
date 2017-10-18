@@ -286,6 +286,7 @@ class Routes {
 
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+        caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
         RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(), buildIsOperationalPredicate(), caseTrace);
         return rulesResult;
     }
