@@ -26,10 +26,6 @@ import static au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryU
 
 
 public class ProcessingRuleBase {
-
-
-    protected final static LocalDate mrcaStartDate = LocalDate.of(2004, 7, 1);
-
     protected ConditionConfiguration conditionConfiguration;
 
     public ProcessingRuleBase(ConditionConfiguration conditionConfiguration) {
@@ -49,11 +45,6 @@ public class ProcessingRuleBase {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         if (!relevantRank.isPresent()) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot determine the relevant rank, therefore cannot apply STP rules to determine the applicable SoP.");
-            return true;
-        }
-
-        if (serviceHistory.getHireDate().isBefore(mrcaStartDate)) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Cannot currently apply STP rules for veterans hired on or before 30 June 2004");
             return true;
         }
 

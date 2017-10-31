@@ -111,6 +111,7 @@ public class DtoTransformations {
     public static CaseTraceDto caseTraceDtoFromCaseTrace(CaseTrace caseTrace)
     {
         return new CaseTraceDto(
+                caseTrace.getConditionName(),
                 caseTrace.getApplicableStandardOfProof(),
                 caseTrace.getRequiredCftsDays(),
                 caseTrace.getRequiredCftsDaysForRh(),

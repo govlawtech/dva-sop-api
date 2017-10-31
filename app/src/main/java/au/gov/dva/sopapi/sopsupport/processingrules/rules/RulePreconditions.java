@@ -12,9 +12,6 @@ import java.util.Comparator;
 import java.util.Optional;
 
 public class RulePreconditions {
-
-    protected final static LocalDate mrcaStartDate = LocalDate.of(2004, 7, 1);
-
     public static boolean isServiceHistoryInternallyConsistent(ServiceHistory serviceHistory, CaseTrace caseTrace)
     {
         LocalDate earliestStartDate = serviceHistory.getServices().stream()

@@ -37,13 +37,11 @@ public class SoPPair {
 
     private final SoP rhSop;
 
-
     public SoPPair(SoP bopSop, SoP rhSop) {
         this.bopSop = bopSop;
         this.rhSop = rhSop;
         assert (bopSop.getConditionName().contentEquals(rhSop.getConditionName()));
         conditionName = bopSop.getConditionName();
-
     }
 
     public SoPPair(String conditionName, SoP bopSop, SoP rhSop) {

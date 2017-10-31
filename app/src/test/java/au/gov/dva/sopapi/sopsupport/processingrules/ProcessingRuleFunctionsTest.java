@@ -132,36 +132,6 @@ public class ProcessingRuleFunctionsTest {
             null
         );
     }
-    @Test
-    public void testConditionStartedWithinXYearsOfLastDayOfMRCAService() {
-        ServiceHistory testData = new ServiceHistoryImpl(
-                null,
-                ImmutableSet.copyOf(Arrays.asList(
-                        makeService(2011, 5, 10, 2011, 10, 10)
-                        ,makeService(2011, 10, 10, 2012, 5, 10)
-                        ,makeService(2013, 1, 4, 2013, 1, 14)
-                ))
-        );
-        // Last day of MRCA service should be 2013-1-14
-        boolean result;
-
-        Condition ok = makeCondition(2017, 11, 24);
-        result = ProcessingRuleFunctions.conditionStartedWithinXYearsOfLastDayOfMRCAService(ok, testData, 10, new SopSupportCaseTrace("unit test"));
-        Assert.assertTrue(result);
-
-        Condition notOk = makeCondition(2017, 11, 24);
-        result = ProcessingRuleFunctions.conditionStartedWithinXYearsOfLastDayOfMRCAService(notOk, testData, 2, new SopSupportCaseTrace("unit test"));
-        Assert.assertFalse(result);
-
-        Condition edgeOk = makeCondition(2023, 1, 14);
-        result = ProcessingRuleFunctions.conditionStartedWithinXYearsOfLastDayOfMRCAService(edgeOk, testData, 10, new SopSupportCaseTrace("unit test"));
-        Assert.assertTrue(result);
-
-        Condition edgeNotOk = makeCondition(2023, 1, 15);
-        result = ProcessingRuleFunctions.conditionStartedWithinXYearsOfLastDayOfMRCAService(edgeNotOk, testData, 10, new SopSupportCaseTrace("unit test"));
-        Assert.assertFalse(result);
-    }
-
 
     private void failGetStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate) {
         try {
