@@ -92,7 +92,10 @@ public class ConditionFactory {
             case "patellar tendinopathy":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "plantar fasciitis":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(365));
+                return new GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(conditionConfiguration,
+                        new FixedDaysPeriodSelector(183),
+                        new FixedDaysPeriodSelector(183),
+                        new FixedDaysPeriodSelector(92));
             case "pterygium":
                 return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "sensorineural hearing loss":

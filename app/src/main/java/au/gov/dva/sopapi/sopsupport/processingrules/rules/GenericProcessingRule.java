@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
@@ -41,3 +42,6 @@ public class GenericProcessingRule extends ProcessingRuleBase implements Process
         super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
     }
 }
+
+
+
