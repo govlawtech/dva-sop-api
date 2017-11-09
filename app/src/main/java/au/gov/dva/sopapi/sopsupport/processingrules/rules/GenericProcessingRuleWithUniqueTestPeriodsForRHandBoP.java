@@ -41,12 +41,12 @@ public class GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP extends Proce
         ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
         Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
 
-        Interval testIntervalForCFTSdays = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
-                rhSelector.getInterval(serviceHistory,condition.getStartDate()) :
-                bopSelector.getInterval(serviceHistory,condition.getStartDate());
+    Interval testIntervalForCFTSdays = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
+            rhSelector.getInterval(serviceHistory,condition.getStartDate()) :
+            bopSelector.getInterval(serviceHistory,condition.getStartDate());
 
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testIntervalForCFTSdays,applicableRuleConfigurationItem,caseTrace);
-    }
+}
 
     @Override
     public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
