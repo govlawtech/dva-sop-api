@@ -93,7 +93,7 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "plantar fasciitis":
                 return new GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(conditionConfiguration,
-                        new FixedDaysPeriodSelector(183),
+                        new FixedDaysPeriodSelector(92),
                         new FixedDaysPeriodSelector(183),
                         new FixedDaysPeriodSelector(92));
             case "pterygium":
