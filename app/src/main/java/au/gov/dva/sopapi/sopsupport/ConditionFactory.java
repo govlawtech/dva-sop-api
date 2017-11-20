@@ -58,7 +58,7 @@ public class ConditionFactory {
                 return Optional.of(new AcuteConditionRule(
                         "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
-                        condition -> new Interval(condition.getStartDate().minusDays(7),condition.getStartDate())));
+                        condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())));
             default:
                 return Optional.empty();
         }
@@ -93,9 +93,9 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "plantar fasciitis":
                 return new GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(conditionConfiguration,
-                        new FixedDaysPeriodSelector(92),
-                        new FixedDaysPeriodSelector(183),
-                        new FixedDaysPeriodSelector(92));
+                        new FixedDaysPeriodSelector(92), // test period for standard of proof
+                        new FixedDaysPeriodSelector(92), // RH
+                        new FixedDaysPeriodSelector(183)); // BoP
             case "pterygium":
                 return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "sensorineural hearing loss":
