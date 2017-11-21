@@ -29,7 +29,7 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
 
 
     @Override
-    public CompletableFuture<Boolean> IsOperational(String operationName) {
+    public CompletableFuture<Boolean> isOperational(String operationName) {
         CompletableFuture<Boolean> promise =
                 asyncHttpClient.preparePost(baseUrl + "/operation")
                         .setBody(String.format("{\"operationName\":\"%s\"}",operationName))

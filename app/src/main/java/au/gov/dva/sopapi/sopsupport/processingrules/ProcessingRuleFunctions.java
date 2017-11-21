@@ -4,7 +4,6 @@ import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -13,7 +12,6 @@ import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
-import org.asynchttpclient.AsyncHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ProcessingRuleFunctions {
 
@@ -229,7 +226,7 @@ public class ProcessingRuleFunctions {
     public static Predicate<Deployment> getPreMRCAIsOperationalPredicate(ActDeterminationServiceClient actDeterminationServiceClient) {
         return (deployment -> {
             try {
-                return actDeterminationServiceClient.IsOperational(deployment.getOperationName()).get(1, TimeUnit.SECONDS);
+                return actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(1, TimeUnit.SECONDS);
             } catch (InterruptedException | ExecutionException | TimeoutException e) {
                 throw new DvaSopApiRuntimeException("Failed to call Act Determination Service.");
             }

@@ -32,7 +32,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
-import io.netty.util.Timeout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.*;
@@ -291,7 +290,7 @@ class Routes {
             ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
             return deployment -> {
                 try {
-                    boolean result =  actDeterminationServiceClient.IsOperational(deployment.getOperationName()).get(30, TimeUnit.SECONDS);
+                    boolean result =  actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(30, TimeUnit.SECONDS);
                     return result;
                 } catch (InterruptedException | ExecutionException | TimeoutException | DvaSopApiDtoRuntimeException e) {
                     throw new DvaSopApiDtoRuntimeException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.",e);
