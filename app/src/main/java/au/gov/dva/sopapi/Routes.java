@@ -8,6 +8,7 @@ import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
+import au.gov.dva.sopapi.exceptions.ActDeterminationServiceException;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -293,7 +294,7 @@ class Routes {
                     boolean result =  actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(30, TimeUnit.SECONDS);
                     return result;
                 } catch (InterruptedException | ExecutionException | TimeoutException | DvaSopApiDtoRuntimeException e) {
-                    throw new DvaSopApiDtoRuntimeException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.",e);
+                    throw new ActDeterminationServiceException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.",e);
                 }
             };
         }
