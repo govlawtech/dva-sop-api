@@ -292,8 +292,8 @@ class Routes {
             return deployment -> {
                 try {
                     return actDeterminationServiceClient.IsOperational(deployment.getOperationName()).get(1, TimeUnit.SECONDS);
-                } catch (InterruptedException | ExecutionException | TimeoutException e) {
-                    throw new DvaSopApiDtoRuntimeException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.");
+                } catch (InterruptedException | ExecutionException | TimeoutException | DvaSopApiDtoRuntimeException e) {
+                    throw new DvaSopApiDtoRuntimeException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.",e);
                 }
             };
         }
