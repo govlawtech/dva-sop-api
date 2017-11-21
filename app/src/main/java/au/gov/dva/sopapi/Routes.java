@@ -291,7 +291,8 @@ class Routes {
             ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
             return deployment -> {
                 try {
-                    return actDeterminationServiceClient.IsOperational(deployment.getOperationName()).get(1, TimeUnit.SECONDS);
+                    boolean result =  actDeterminationServiceClient.IsOperational(deployment.getOperationName()).get(1, TimeUnit.SECONDS);
+                    return result;
                 } catch (InterruptedException | ExecutionException | TimeoutException | DvaSopApiDtoRuntimeException e) {
                     throw new DvaSopApiDtoRuntimeException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.",e);
                 }
