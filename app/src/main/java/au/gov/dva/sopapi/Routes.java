@@ -7,10 +7,12 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
+import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
+import au.gov.dva.sopapi.exceptions.ActDeterminationServiceException;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
-import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
@@ -18,10 +20,9 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
-import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
-import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummaryModelImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
+import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,8 +33,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
-import org.apache.http.HttpStatus;
-import org.eclipse.jetty.websocket.api.StatusCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.*;
@@ -41,10 +40,13 @@ import spark.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
@@ -65,31 +67,28 @@ class Routes {
 
     public static void initStatus(Repository repository, Cache cache) {
 
-        get("/refreshCache", (req,res) -> {
+        get("/refreshCache", (req, res) -> {
 
             QueryParamsMap queryParamsMap = req.queryMap();
             String expectedKey = AppSettings.getCacheRefreshKey();
-            if (expectedKey == null)
-            {
-                setResponseHeaders(res,404,MIME_TEXT);
+            if (expectedKey == null) {
+                setResponseHeaders(res, 404, MIME_TEXT);
                 return "Set 'CACHE_REFRESH_KEY' environment variable on server.";
             }
 
             String receivedKey = queryParamsMap.get("key").value();
-            if (receivedKey == null)
-            {
+            if (receivedKey == null) {
 
-                setResponseHeaders(res,400,MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return "Missing required query parameter: 'key'.";
             }
 
             if (receivedKey.contentEquals(expectedKey)) {
                 cache.refresh(repository);
-                setResponseHeaders(res,200,MIME_TEXT);
+                setResponseHeaders(res, 200, MIME_TEXT);
                 return "Cache refreshed.";
-            }
-            else {
-                setResponseHeaders(res,403,MIME_TEXT);
+            } else {
+                setResponseHeaders(res, 403, MIME_TEXT);
                 return "Key does not match";
             }
 
@@ -109,13 +108,13 @@ class Routes {
             String version = p.getProperty("Implementation-Version");
 
             // todo: mustache template
-            String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL(), version);
-            setResponseHeaders(res,200,MIME_HTML);
+            String statusPage = Status.createStatusHtml(cache, repository, blobStorageUri.get().toURL(), version);
+            setResponseHeaders(res, 200, MIME_HTML);
             return statusPage;
         });
 
 
-        get("/status/csv",(req,res) -> {
+        get("/status/csv", (req, res) -> {
 
             Optional<URI> blobStorageUri = getBaseUrlForBlobStorage();
             if (!blobStorageUri.isPresent()) {
@@ -125,17 +124,15 @@ class Routes {
 
             String csvFileName = String.format("SoP API Coverage Report Generated UTC %s.csv", OffsetDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-dd-M-HH-mm")));
             byte[] csvBytes = Status.createStatusCsv(cache, blobStorageUri.get().toURL());
-            res.header("Content-disposition", String.format("attachment;filename=%s",csvFileName));
+            res.header("Content-disposition", String.format("attachment;filename=%s", csvFileName));
             setResponseHeaders(res, 200, MIME_CSV);
             return csvBytes;
         });
     }
 
 
-
     public static void init(Cache cache) {
         Routes.cache = cache;
-
 
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
@@ -202,29 +199,23 @@ class Routes {
             SopSupportRequestDto sopSupportRequestDto;
             try {
                 sopSupportRequestDto = SopSupportRequestDto.fromJsonString(clenseJson(req.body()));
-            }
-            catch (DvaSopApiDtoRuntimeException e)
-            {
-                setResponseHeaders(res,400, MIME_TEXT);
+            } catch (DvaSopApiDtoRuntimeException e) {
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return String.format("Request body invalid: %s", e.getMessage());
             }
 
             ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
-            if (!semanticErrors.isEmpty())
-            {
-                setResponseHeaders(res,400, MIME_TEXT);
-                return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(),semanticErrors));
+            if (!semanticErrors.isEmpty()) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(), semanticErrors));
             }
 
-            if (sopSupportRequestDto.get_conditionDto().get_conditionName() == null)
-            {
-                Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(),sopSupportRequestDto.get_conditionDto().get_icdCodeValue(),cache.get_allSopPairs());
-                if (!conditionNameFromICDCode.isPresent())
-                {
-                    setResponseHeaders(res, 400,MIME_TEXT);
+            if (sopSupportRequestDto.get_conditionDto().get_conditionName() == null) {
+                Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(), sopSupportRequestDto.get_conditionDto().get_icdCodeValue(), cache.get_allSopPairs());
+                if (!conditionNameFromICDCode.isPresent()) {
+                    setResponseHeaders(res, 400, MIME_TEXT);
                     return String.format("The given ICD code and version does not map to a single SoP.");
-                }
-                else {
+                } else {
                     sopSupportRequestDto.get_conditionDto().set_conditionName(conditionNameFromICDCode.get());
                 }
             }
@@ -250,22 +241,18 @@ class Routes {
 
             try {
                 return handler.handle(req, res);
-            }
-            catch (DvaSopApiDtoRuntimeException e) {
+            } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFormatError(e.getMessage());
-            }
-            catch (ProcessingRuleRuntimeException e) {
+            } catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 logger.error("Unknown exception", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
-            }
-            catch (Error e) {
+            } catch (Error e) {
                 logger.error("Unknown error", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
                 return "";
@@ -287,14 +274,30 @@ class Routes {
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
-        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(), buildIsOperationalPredicate(), caseTrace);
+        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
+                buildIsOperationalPredicateForMRCAandVEA(sopSupportRequestDto.get_conditionDto()), caseTrace);
         return rulesResult;
     }
 
-    private static Predicate<Deployment> buildIsOperationalPredicate() {
+    private static Predicate<Deployment> buildMRCAOperationalPredicate() {
         ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
-        Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
+        Predicate<Deployment> isOperational = ProcessingRuleFunctions.getMRCAIsOperationalPredicate(serviceDeterminationPair);
         return isOperational;
+    }
+
+    private static Predicate<Deployment> buildIsOperationalPredicateForMRCAandVEA(ConditionDto conditionDto) {
+        if (conditionDto.get_incidentDateRangeDto().get_startDate().isAfter(LocalDate.of(2004, 06, 30))) return buildMRCAOperationalPredicate();
+        else {
+            ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
+            return deployment -> {
+                try {
+                    boolean result =  actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(30, TimeUnit.SECONDS);
+                    return result;
+                } catch (InterruptedException | ExecutionException | TimeoutException | DvaSopApiDtoRuntimeException e) {
+                    throw new ActDeterminationServiceException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.",e);
+                }
+            };
+        }
     }
 
     private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String
@@ -396,7 +399,7 @@ class Routes {
     }
 
     private static String buildAcceptableContentTypesError(String mimeType) {
-        return "Accept header in request must include '"+mimeType+"'.";
+        return "Accept header in request must include '" + mimeType + "'.";
     }
 
     private static Boolean validateHeaders() {
@@ -420,17 +423,14 @@ class Routes {
         }
     }
 
-    private static Optional<String> getConditionNameForICDCode(String icdCodeVersion, String icdCode, ImmutableSet<SoPPair> sopPairs)
-    {
+    private static Optional<String> getConditionNameForICDCode(String icdCodeVersion, String icdCode, ImmutableSet<SoPPair> sopPairs) {
         List<SoPPair> sopPairsMatchingIcdCode = sopPairs.stream()
                 .filter(soPPair -> soPPair.getICDCodes().stream()
                         .anyMatch(icdCode1 -> icdCode1.getCode().contentEquals(icdCode) && icdCode1.getVersion().contentEquals(icdCodeVersion)))
                 .collect(toList());
 
-        if (sopPairsMatchingIcdCode.size() == 1)
-        {
+        if (sopPairsMatchingIcdCode.size() == 1) {
             return Optional.of(sopPairsMatchingIcdCode.get(0).getConditionName());
-        }
-        else return Optional.empty();
+        } else return Optional.empty();
     }
 }

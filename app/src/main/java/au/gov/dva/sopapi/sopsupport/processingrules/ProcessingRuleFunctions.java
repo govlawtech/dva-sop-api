@@ -3,7 +3,8 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
+import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -17,9 +18,11 @@ import org.slf4j.LoggerFactory;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ProcessingRuleFunctions {
 
@@ -200,7 +203,7 @@ public class ProcessingRuleFunctions {
         return factorsWithSatisfaction;
     }
 
-    public static Predicate<Deployment> getIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
+    public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
         ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
                 serviceDeterminationPair.getWarlike().getOperations(),
                 serviceDeterminationPair.getNonWarlike().getOperations()));
@@ -218,6 +221,19 @@ public class ProcessingRuleFunctions {
             return setOfLowerCaseOpNames.contains(lowerCasedeploymentNameWithoutOperation);
         });
     }
+
+
+    public static Predicate<Deployment> getPreMRCAIsOperationalPredicate(ActDeterminationServiceClient actDeterminationServiceClient) {
+        return (deployment -> {
+            try {
+                return actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(1, TimeUnit.SECONDS);
+            } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                throw new DvaSopApiRuntimeException("Failed to call Act Determination Service.");
+            }
+        });
+    }
+
+
 
     public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {
         return condition.getStartDate().isBefore(serviceHistory.getHireDate());
