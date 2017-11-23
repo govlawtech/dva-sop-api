@@ -203,7 +203,7 @@ public class ProcessingRuleFunctions {
         return factorsWithSatisfaction;
     }
 
-    public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
+    public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair)   {
         ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
                 serviceDeterminationPair.getWarlike().getOperations(),
                 serviceDeterminationPair.getNonWarlike().getOperations()));
@@ -216,24 +216,10 @@ public class ProcessingRuleFunctions {
 
         ImmutableSet<String> setOfLowerCaseOpNames = ImmutableSet.copyOf(opNames);
 
-        return (deploymentName -> {
-            String lowerCasedeploymentNameWithoutOperation = deploymentName.getOperationName().toLowerCase().replace("operation", "").trim();
-            return setOfLowerCaseOpNames.contains(lowerCasedeploymentNameWithoutOperation);
-        });
+        return (deployment -> setOfLowerCaseOpNames
+                .stream()
+                .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s)));
     }
-
-
-    public static Predicate<Deployment> getPreMRCAIsOperationalPredicate(ActDeterminationServiceClient actDeterminationServiceClient) {
-        return (deployment -> {
-            try {
-                return actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(1, TimeUnit.SECONDS);
-            } catch (InterruptedException | ExecutionException | TimeoutException e) {
-                throw new DvaSopApiRuntimeException("Failed to call Act Determination Service.");
-            }
-        });
-    }
-
-
 
     public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {
         return condition.getStartDate().isBefore(serviceHistory.getHireDate());
