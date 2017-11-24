@@ -57,7 +57,8 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
                 .anyMatch(operationJsonResponse ->
                         (operationJsonResponse.isOperational() ||
                          operationJsonResponse.isWarlike() ||
-                         operationJsonResponse.isHazardous()) &&
+                         operationJsonResponse.isHazardous() ||
+                         operationJsonResponse.isPeacekeeping()) &&
                          !operationJsonResponse.isMrcaNonWarlike() &&
                          !operationJsonResponse.isMrcaWarlike());
     }
