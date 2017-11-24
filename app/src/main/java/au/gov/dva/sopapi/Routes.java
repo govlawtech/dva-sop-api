@@ -281,7 +281,7 @@ class Routes {
 
     private static Predicate<Deployment> buildMRCAOperationalPredicate() {
         ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
-        Predicate<Deployment> isOperational = ProcessingRuleFunctions.getMRCAIsOperationalPredicate(serviceDeterminationPair);
+        Predicate<Deployment> isOperational = Operations.getMRCAIsOperationalPredicate(serviceDeterminationPair);
         return isOperational;
     }
 

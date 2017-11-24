@@ -3,6 +3,7 @@ package au.gov.dva.dvasopapi.tests;
 import au.gov.dva.dvasopapi.tests.mocks.ServiceDeterminationMockOperationLittenOnly;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Operation;
+import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.google.common.collect.ImmutableList;
@@ -52,7 +53,7 @@ public class OperationNameMappingTests {
             }
         };
         ServiceDeterminationPair mock = new ServiceDeterminationPair(new ServiceDeterminationMockOperationLittenOnly(), new ServiceDeterminationMockOperationLittenOnly());
-        Predicate<Deployment> underTest = ProcessingRuleFunctions.getMRCAIsOperationalPredicate(mock);
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mock);
 
         boolean result = underTest.test(testData);
         assert result;
@@ -125,7 +126,7 @@ public class OperationNameMappingTests {
                 "UNTAG"
         );
 
-        Predicate<Deployment> underTest = ProcessingRuleFunctions.getMRCAIsOperationalPredicate(mockServiceDeterminationPair);
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mockServiceDeterminationPair);
 
 
         List<String> notMatched = new ArrayList<>();
