@@ -203,23 +203,7 @@ public class ProcessingRuleFunctions {
         return factorsWithSatisfaction;
     }
 
-    public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair)   {
-        ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
-                serviceDeterminationPair.getWarlike().getOperations(),
-                serviceDeterminationPair.getNonWarlike().getOperations()));
 
-        List<String> opNames = allOperations.stream()
-                .map(operation -> operation.getName())
-                .map(name -> name.toLowerCase())
-                .distinct()
-                .collect(Collectors.toList());
-
-        ImmutableSet<String> setOfLowerCaseOpNames = ImmutableSet.copyOf(opNames);
-
-        return (deployment -> setOfLowerCaseOpNames
-                .stream()
-                .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s)));
-    }
 
     public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {
         return condition.getStartDate().isBefore(serviceHistory.getHireDate());

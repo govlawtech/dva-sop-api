@@ -55,9 +55,11 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
     private boolean inferWhetherOperational(List<OperationJsonResponse> actDeterminationServiceResponse) {
         return actDeterminationServiceResponse.stream()
                 .anyMatch(operationJsonResponse ->
-                        operationJsonResponse.isOperational() ||
-                                operationJsonResponse.isWarlike() ||
-                                operationJsonResponse.isHazardous());
+                        (operationJsonResponse.isOperational() ||
+                         operationJsonResponse.isWarlike() ||
+                         operationJsonResponse.isHazardous()) &&
+                         !operationJsonResponse.isMrcaNonWarlike() &&
+                         !operationJsonResponse.isMrcaWarlike());
     }
 
     private List<OperationJsonResponse> deserialiseResponse(String json) {
