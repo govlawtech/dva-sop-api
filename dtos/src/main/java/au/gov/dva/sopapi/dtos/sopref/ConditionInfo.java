@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class ConditionInfoDto {
+public class ConditionInfo {
 
     @JsonProperty("conditionName")
     private final String _conditionName;
@@ -21,10 +21,10 @@ public class ConditionInfoDto {
 
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public ConditionInfoDto(@JsonProperty("conditionName") String conditionName,
-                            @JsonProperty("rhRegisterId") String rhRegisterId,
-                            @JsonProperty("bopRegisterId") String bopRegisterId,
-                            @JsonProperty("icdCodes") List<ICDCodeDto> icdCodes)
+    public ConditionInfo(@JsonProperty("conditionName") String conditionName,
+                         @JsonProperty("rhRegisterId") String rhRegisterId,
+                         @JsonProperty("bopRegisterId") String bopRegisterId,
+                         @JsonProperty("icdCodes") List<ICDCodeDto> icdCodes)
     {
         _conditionName = conditionName;
         _rhRegisterId = rhRegisterId;

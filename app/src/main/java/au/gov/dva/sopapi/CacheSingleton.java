@@ -1,19 +1,21 @@
 package au.gov.dva.sopapi;
 
+import au.gov.dva.sopapi.dtos.sopref.ConditionInfo;
+import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
+import au.gov.dva.sopapi.dtos.sopref.ICDCodeDto;
 import au.gov.dva.sopapi.interfaces.Cache;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
-import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
-import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
-import au.gov.dva.sopapi.interfaces.model.SoP;
-import au.gov.dva.sopapi.interfaces.model.SoPPair;
+import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.SoPs;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import scala.math.Ordering;
 
 import java.time.OffsetDateTime;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -26,7 +28,7 @@ public class CacheSingleton implements Cache {
     private ImmutableSet<ServiceDetermination> _allServiceDeterminations;
     private RuleConfigurationRepository _ruleConfigurationRepository;
     private ImmutableSet<InstrumentChange> _failedUpdates;
-    private ImmutableSet<String> _conditionNames;
+    private ImmutableList<ConditionInfo> _conditionList;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
@@ -35,7 +37,7 @@ public class CacheSingleton implements Cache {
         _allSopPairs = ImmutableSet.of();
         _allServiceDeterminations = ImmutableSet.of();
         _failedUpdates = ImmutableSet.of();
-        _conditionNames = ImmutableSet.of();
+        _conditionList = ImmutableList.of();
     }
 
     public static CacheSingleton getInstance() {
@@ -44,8 +46,7 @@ public class CacheSingleton implements Cache {
 
 
     @Override
-    public void refresh(Repository repository)
-    {
+    public void refresh(Repository repository) {
         try {
             ImmutableSet<SoP> allSops = repository.getAllSops();
             ImmutableSet<ServiceDetermination> allServiceDeterminations = repository.getServiceDeterminations();
@@ -54,8 +55,8 @@ public class CacheSingleton implements Cache {
                 throw new ConfigurationRuntimeException("Need rules configuration to be repository.");
             }
             ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
-            ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(allSops,OffsetDateTime.now());
-            ImmutableSet<String> conditionNames = soPPairs.stream().map(soPPair -> soPPair.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
+            ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(allSops, OffsetDateTime.now());
+            ImmutableList<ConditionInfo> conditionsList = ImmutableList.copyOf(buildConditionsList(soPPairs));
 
             // atomic
             _allSops = allSops;
@@ -63,23 +64,18 @@ public class CacheSingleton implements Cache {
             _allServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
             _failedUpdates = failed;
-            _conditionNames = conditionNames;
-        }
-        catch (Exception e)
-        {
+            _conditionList = conditionsList;
+        } catch (Exception e) {
             logger.error("Exception occurred when attempting to refresh cache from Repository.", e);
-        }
-
-        catch (Error e)
-        {
+        } catch (Error e) {
             logger.error("Error occurred when attempting to refresh cache from Repository.", e);
         }
 
     }
 
     @Override
-    public ImmutableSet<String> get_conditionNames() {
-        return _conditionNames;
+    public ImmutableList<ConditionInfo> get_conditionsList() {
+        return _conditionList;
     }
 
     @Override
@@ -104,6 +100,22 @@ public class CacheSingleton implements Cache {
 
     public ImmutableSet<InstrumentChange> get_failedUpdates() {
         return _failedUpdates;
+    }
+
+    private List<ConditionInfo> buildConditionsList(ImmutableSet<SoPPair> soPPairs) {
+        return soPPairs.stream()
+                .map(soPPair -> new ConditionInfo(
+                        soPPair.getConditionName(),
+                        soPPair.getRhSop().getRegisterId(),
+                        soPPair.getBopSop().getRegisterId(),
+                        soPPair.getICDCodes()
+                                .stream()
+                                .map(icdCode -> new ICDCodeDto(icdCode.getVersion(), icdCode.getCode()))
+                                .collect(Collectors.toList())
+                ))
+                .sorted(Comparator.comparing(ConditionInfo::get_conditionName))
+                .collect(Collectors.toList());
+
     }
 }
 

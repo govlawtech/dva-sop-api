@@ -11,47 +11,47 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import java.io.IOException;
 import java.util.List;
 
-public class ConditionsListResponse {
+public class ConditionsList {
 
     @JsonProperty("conditions")
-    private final List<ConditionInfoDto> _conditions;
+    private final List<ConditionInfo> _conditions;
 
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public ConditionsListResponse(@JsonProperty("conditions") List<ConditionInfoDto> conditions)
+    public ConditionsList(@JsonProperty("conditions") List<ConditionInfo> conditions)
     {
         _conditions = conditions;
     }
 
 
-    public static String toJsonString(ConditionsListResponse conditionsListResponse)
+    public static String toJsonString(ConditionsList conditionsList)
     {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
 
         String jsonString = null;
         try {
-            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(conditionsListResponse);
+            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(conditionsList);
         } catch (JsonProcessingException e) {
             throw new DvaSopApiDtoRuntimeException(e);
         }
         return jsonString;
     }
 
-    public static ConditionsListResponse fromJsonString(String json)
+    public static ConditionsList fromJsonString(String json)
     {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
 
         try {
-            ConditionsListResponse conditionsListResponse =
-                    objectMapper.readValue(json, ConditionsListResponse.class);
-            return conditionsListResponse;
+            ConditionsList conditionsList =
+                    objectMapper.readValue(json, ConditionsList.class);
+            return conditionsList;
         } catch (IOException e) {
             throw new DvaSopApiDtoRuntimeException(e);
         }
     }
 
     @JsonIgnore
-    public List<ConditionInfoDto> get_conditions() {
+    public List<ConditionInfo> get_conditions() {
         return _conditions;
     }
 
