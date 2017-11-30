@@ -17,7 +17,7 @@ import static spark.Spark.get;
 public class Application implements spark.servlet.SparkApplication {
 
     private Repository _repository;
-    private Cache _cache;
+    private CacheSingleton _cache;
 
     private static Logger logger = LoggerFactory.getLogger("dvasopapi.rootapplicationlogger");
 
@@ -25,7 +25,7 @@ public class Application implements spark.servlet.SparkApplication {
 
         _repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
 
-        _cache = Cache.getInstance();
+        _cache = CacheSingleton.getInstance();
         _cache.refresh(_repository);
     }
 

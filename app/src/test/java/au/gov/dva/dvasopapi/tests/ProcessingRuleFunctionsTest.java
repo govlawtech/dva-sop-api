@@ -1,4 +1,4 @@
-package au.gov.dva.sopapi.sopsupport.processingrules;
+package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
@@ -9,6 +9,9 @@ import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.sopsupport.OnsetCondition;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
+import au.gov.dva.sopapi.sopsupport.processingrules.DeploymentImpl;
+import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
+import au.gov.dva.sopapi.sopsupport.processingrules.ServiceImpl;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.junit.Assert;

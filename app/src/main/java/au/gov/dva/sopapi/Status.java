@@ -9,30 +9,21 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import com.microsoft.azure.storage.CloudStorageAccount;
-import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import scala.App;
-import scala.math.Ordering;
-import scala.sys.process.ProcessBuilder;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
 public class Status {
 
-    public static byte[] createStatusCsv(Cache cache, URL blobsBaseUrl) throws IOException {
+    public static byte[] createStatusCsv(CacheSingleton cache, URL blobsBaseUrl) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         CSVPrinter csvPrinter = new CSVPrinter(stringBuilder, CSVFormat.EXCEL);
         csvPrinter.printRecord(ImmutableList.of(
@@ -76,7 +67,7 @@ public class Status {
     }
 
 
-    public static String createStatusHtml(Cache cache, Repository repository, URL blobsBaseUrl, String version) {
+    public static String createStatusHtml(CacheSingleton cache, Repository repository, URL blobsBaseUrl, String version) {
         ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops(), OffsetDateTime.now());
 
         Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();

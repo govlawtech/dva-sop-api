@@ -1,10 +1,11 @@
-package au.gov.dva.sopapi.sopsupport.processingrules;
+package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ServiceHistoryDto;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
+import au.gov.dva.sopapi.sopsupport.processingrules.ServiceHistoryImpl;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 import org.junit.Assert;
@@ -15,9 +16,6 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by work on 26/06/17.
- */
 public class ServiceImplTest {
     @Test
     public void TestFiltering() throws IOException {
