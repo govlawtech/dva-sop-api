@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.dtos.sopref;
 
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -18,6 +19,7 @@ public class OperationsResponse {
     @JsonProperty("operations")
     private final List<Operation> _operations;
 
+    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public OperationsResponse(@JsonProperty("registerIds") List<String> _registerIds, @JsonProperty("operations") List<Operation> _operations) {
         this._registerIds = _registerIds;
         this._operations = _operations;

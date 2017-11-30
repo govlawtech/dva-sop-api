@@ -11,45 +11,49 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import java.io.IOException;
 import java.util.List;
 
-public class SoPReferenceResponse {
+public class ConditionsListResponse {
 
-    @JsonProperty("applicableFactors")
-    private final List<SoPFactorsResponse> _sops;
+    @JsonProperty("conditions")
+    private final List<ConditionInfoDto> _conditions;
+
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public SoPReferenceResponse(@JsonProperty("applicableFactors") List<SoPFactorsResponse> soPFactorsResponses)
+    public ConditionsListResponse(@JsonProperty("conditions") List<ConditionInfoDto> conditions)
     {
-        _sops = soPFactorsResponses;
+        _conditions = conditions;
     }
 
-    public static String toJsonString(SoPReferenceResponse soPReferenceResponse)
+
+    public static String toJsonString(ConditionsListResponse conditionsListResponse)
     {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
-        String jsonString = null;
 
+        String jsonString = null;
         try {
-            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(soPReferenceResponse);
+            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(conditionsListResponse);
         } catch (JsonProcessingException e) {
             throw new DvaSopApiDtoRuntimeException(e);
         }
-
         return jsonString;
     }
 
-    public static SoPReferenceResponse fromJsonString(String json)
+    public static ConditionsListResponse fromJsonString(String json)
     {
         ObjectMapper objectMapper = new ObjectMapper().registerModule(new Jdk8Module());
 
         try {
-            SoPReferenceResponse soPReferenceResponse = objectMapper.readValue(json, SoPReferenceResponse.class);
-            return soPReferenceResponse;
+            ConditionsListResponse conditionsListResponse =
+                    objectMapper.readValue(json, ConditionsListResponse.class);
+            return conditionsListResponse;
         } catch (IOException e) {
             throw new DvaSopApiDtoRuntimeException(e);
         }
     }
 
     @JsonIgnore
-    public List<SoPFactorsResponse> getSoPFactorsResponses() {
-        return _sops;
+    public List<ConditionInfoDto> get_conditions() {
+        return _conditions;
     }
+
+
 }
