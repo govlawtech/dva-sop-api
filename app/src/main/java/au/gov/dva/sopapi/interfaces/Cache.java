@@ -8,6 +8,8 @@ import com.google.common.collect.ImmutableSet;
 public interface Cache {
     void refresh(Repository repository);
 
+    ImmutableSet<String> get_conditionNames();
+
     ImmutableSet<SoP> get_allSops();
 
     ImmutableSet<SoPPair> get_allSopPairs();

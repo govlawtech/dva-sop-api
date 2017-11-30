@@ -11,9 +11,11 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.math.Ordering;
 
 import java.time.OffsetDateTime;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CacheSingleton implements Cache {
 
@@ -24,6 +26,7 @@ public class CacheSingleton implements Cache {
     private ImmutableSet<ServiceDetermination> _allServiceDeterminations;
     private RuleConfigurationRepository _ruleConfigurationRepository;
     private ImmutableSet<InstrumentChange> _failedUpdates;
+    private ImmutableSet<String> _conditionNames;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
@@ -32,6 +35,7 @@ public class CacheSingleton implements Cache {
         _allSopPairs = ImmutableSet.of();
         _allServiceDeterminations = ImmutableSet.of();
         _failedUpdates = ImmutableSet.of();
+        _conditionNames = ImmutableSet.of();
     }
 
     public static CacheSingleton getInstance() {
@@ -52,13 +56,16 @@ public class CacheSingleton implements Cache {
                 throw new ConfigurationRuntimeException("Need rules configuration to be repository.");
             }
             ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
+            ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(allSops,OffsetDateTime.now());
+            ImmutableSet<String> conditionNames = soPPairs.stream().map(soPPair -> soPPair.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
 
             // atomic
             _allSops = allSops;
-            _allSopPairs = SoPs.groupSopsToPairs(_allSops, OffsetDateTime.now());
+            _allSopPairs = soPPairs;
             _allServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
             _failedUpdates = failed;
+            _conditionNames = conditionNames;
         }
         catch (Exception e)
         {
@@ -70,6 +77,11 @@ public class CacheSingleton implements Cache {
             logger.error("Error occurred when attempting to refresh cache from Repository.", e);
         }
 
+    }
+
+    @Override
+    public ImmutableSet<String> get_conditionNames() {
+        return _conditionNames;
     }
 
     @Override

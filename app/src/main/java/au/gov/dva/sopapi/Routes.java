@@ -133,6 +133,16 @@ public class Routes {
     public static void init(CacheSingleton cache) {
         Routes.cache = cache;
 
+        get(SharedConstants.Routes.GET_CONDITIONS, (req,res) -> {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
+                setResponseHeaders(res, 406, MIME_TEXT);
+                return buildAcceptableContentTypesError(MIME_JSON);
+            }
+
+
+
+
+        });
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
 
