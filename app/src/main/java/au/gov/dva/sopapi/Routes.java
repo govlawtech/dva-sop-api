@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
@@ -139,9 +140,9 @@ public class Routes {
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
-
-
-
+            ConditionsList response = new ConditionsList(cache.get_conditionsList());
+            String json = ConditionsList.toJsonString(response);
+            return json;
         });
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
