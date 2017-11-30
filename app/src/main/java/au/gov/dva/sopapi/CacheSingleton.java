@@ -43,8 +43,6 @@ public class CacheSingleton implements Cache {
     }
 
 
-
-
     @Override
     public void refresh(Repository repository)
     {
