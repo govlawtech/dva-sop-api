@@ -31,11 +31,10 @@ public class Application implements spark.servlet.SparkApplication {
 
     @Override
     public void init() {
-        autoUpdate();
+        //autoUpdate();
         Routes.init(_cache);
         Routes.initStatus(_repository,_cache);
     }
-
 
 
 
