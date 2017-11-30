@@ -20,7 +20,6 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
-import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -53,7 +52,7 @@ import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
 import static spark.Spark.post;
 
-class Routes {
+public class Routes {
 
     private final static String MIME_JSON = "application/json";
     private final static String MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
@@ -62,10 +61,10 @@ class Routes {
     private final static String MIME_HTML = "text/html";
     private final static String MIME_CSV = "text/csv";
 
-    private static Cache cache;
+    private static CacheSingleton cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
 
-    public static void initStatus(Repository repository, Cache cache) {
+    public static void initStatus(Repository repository, CacheSingleton cache) {
 
         get("/refreshCache", (req, res) -> {
 
@@ -86,7 +85,7 @@ class Routes {
             if (receivedKey.contentEquals(expectedKey)) {
                 cache.refresh(repository);
                 setResponseHeaders(res, 200, MIME_TEXT);
-                return "Cache refreshed.";
+                return "CacheSingleton refreshed.";
             } else {
                 setResponseHeaders(res, 403, MIME_TEXT);
                 return "Key does not match";
@@ -131,7 +130,7 @@ class Routes {
     }
 
 
-    public static void init(Cache cache) {
+    public static void init(CacheSingleton cache) {
         Routes.cache = cache;
 
 

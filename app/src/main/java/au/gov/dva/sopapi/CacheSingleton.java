@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi;
 
+import au.gov.dva.sopapi.interfaces.Cache;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
@@ -14,7 +15,7 @@ import org.slf4j.LoggerFactory;
 import java.time.OffsetDateTime;
 import java.util.Optional;
 
-public class Cache {
+public class CacheSingleton implements Cache {
 
     private static Logger logger = LoggerFactory.getLogger("dvasopapi.repositorycache");
 
@@ -24,22 +25,23 @@ public class Cache {
     private RuleConfigurationRepository _ruleConfigurationRepository;
     private ImmutableSet<InstrumentChange> _failedUpdates;
 
-    private static final Cache INSTANCE = new Cache();
+    private static final CacheSingleton INSTANCE = new CacheSingleton();
 
-    private Cache() {
+    private CacheSingleton() {
         _allSops = ImmutableSet.of();
         _allSopPairs = ImmutableSet.of();
         _allServiceDeterminations = ImmutableSet.of();
         _failedUpdates = ImmutableSet.of();
     }
 
-    public static Cache getInstance() {
+    public static CacheSingleton getInstance() {
         return INSTANCE;
     }
 
 
 
 
+    @Override
     public void refresh(Repository repository)
     {
         try {
@@ -70,18 +72,22 @@ public class Cache {
 
     }
 
+    @Override
     public ImmutableSet<SoP> get_allSops() {
         return _allSops;
     }
 
+    @Override
     public ImmutableSet<SoPPair> get_allSopPairs() {
         return _allSopPairs;
     }
 
+    @Override
     public ImmutableSet<ServiceDetermination> get_allServiceDeterminations() {
         return _allServiceDeterminations;
     }
 
+    @Override
     public RuleConfigurationRepository get_ruleConfigurationRepository() {
         return _ruleConfigurationRepository;
     }

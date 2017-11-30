@@ -93,9 +93,9 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "plantar fasciitis":
                 return new GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(conditionConfiguration,
-                        new FixedDaysPeriodSelector(92), // test period for standard of proof
-                        new FixedDaysPeriodSelector(92), // RH
-                        new FixedDaysPeriodSelector(183)); // BoP
+                        new FixedDaysPeriodSelector(84), // test period for standard of proof
+                        new FixedDaysPeriodSelector(84), // RH
+                        new FixedDaysPeriodSelector(168)); // BoP
             case "pterygium":
                 return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "sensorineural hearing loss":
