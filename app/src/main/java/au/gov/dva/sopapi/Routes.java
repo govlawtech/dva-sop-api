@@ -141,6 +141,7 @@ public class Routes {
             }
 
             ConditionsList response = new ConditionsList(cache.get_conditionsList());
+            setResponseHeaders(res,200,MIME_JSON);
             String json = ConditionsList.toJsonString(response);
             return json;
         });
