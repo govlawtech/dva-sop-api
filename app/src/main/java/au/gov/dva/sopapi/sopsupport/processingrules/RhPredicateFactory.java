@@ -17,7 +17,14 @@ import java.util.function.Predicate;
 
 public class RhPredicateFactory {
 
-    private Predicate<List<OperationJsonResponse>> actDeterminationServiceClient;
+    private ActDeterminationServiceClient actDeterminationServiceClient;
+
+    public RhPredicateFactory(ActDeterminationServiceClient actDeterminationServiceClient)
+    {
+
+        this.actDeterminationServiceClient = actDeterminationServiceClient;
+    }
+
 
     public static Predicate<Deployment> createMrcaPredicate(String conditionName, ServiceDeterminationPair serviceDeterminationPair) {
         switch (conditionName) {
@@ -32,7 +39,7 @@ public class RhPredicateFactory {
         }
     }
 
-    private static Predicate<Deployment> testDeploymentAgainstAds(Predicate<List<OperationJsonResponse>> whiteFilter, ActDeterminationServiceClient actDeterminationServiceClient) {
+    private Predicate<Deployment> testDeploymentAgainstAds(Predicate<List<OperationJsonResponse>> whiteFilter) {
 
         return deployment -> {
             try {
@@ -45,14 +52,14 @@ public class RhPredicateFactory {
 
     }
 
-    private static Predicate<List<OperationJsonResponse>> isWarlikeAccordingToAds = operationJsonResponses -> operationJsonResponses.stream()
+    private Predicate<List<OperationJsonResponse>> isWarlikeAccordingToAds = operationJsonResponses -> operationJsonResponses.stream()
             .anyMatch(operationJsonResponse ->
                     operationJsonResponse.isWarlike() &&
                             !operationJsonResponse.isMrcaWarlike() &&
                             !operationJsonResponse.isMrcaNonWarlike());
 
 
-    private static Predicate<List<OperationJsonResponse>> isOperationalAccordingToAds = operationJsonResponses -> operationJsonResponses.stream()
+    private Predicate<List<OperationJsonResponse>> isOperationalAccordingToAds = operationJsonResponses -> operationJsonResponses.stream()
             .anyMatch(operationJsonResponse ->
                     operationJsonResponse.isOperational() ||
                             operationJsonResponse.isWarlike() ||
@@ -61,18 +68,18 @@ public class RhPredicateFactory {
                                     !operationJsonResponse.isMrcaNonWarlike() &&
                                     !operationJsonResponse.isMrcaWarlike());
 
-    public static Predicate<Deployment> createVeaPredicate(String conditionName, ActDeterminationServiceClient actDeterminationServiceClient) {
+    public Predicate<Deployment> createVeaPredicate(String conditionName) {
 
         switch (conditionName) {
 
             case "posttraumatic stress disorder":
-                return testDeploymentAgainstAds(isWarlikeAccordingToAds, actDeterminationServiceClient);
+                return testDeploymentAgainstAds(isWarlikeAccordingToAds);
             case "anxiety disorder":
-                return testDeploymentAgainstAds(isWarlikeAccordingToAds, actDeterminationServiceClient);
+                return testDeploymentAgainstAds(isWarlikeAccordingToAds);
             case "adjustment disorder":
-                return testDeploymentAgainstAds(isWarlikeAccordingToAds, actDeterminationServiceClient);
+                return testDeploymentAgainstAds(isWarlikeAccordingToAds);
             default:
-                return testDeploymentAgainstAds(isOperationalAccordingToAds, actDeterminationServiceClient);
+                return testDeploymentAgainstAds(isOperationalAccordingToAds);
         }
     }
 }
