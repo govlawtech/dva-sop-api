@@ -18,15 +18,17 @@ import java.util.function.Predicate;
 public class RhPredicateFactory {
 
     private ActDeterminationServiceClient actDeterminationServiceClient;
+    private ServiceDeterminationPair serviceDeterminationPair;
 
-    public RhPredicateFactory(ActDeterminationServiceClient actDeterminationServiceClient)
+    public RhPredicateFactory(ActDeterminationServiceClient actDeterminationServiceClient, ServiceDeterminationPair serviceDeterminationPair)
     {
 
         this.actDeterminationServiceClient = actDeterminationServiceClient;
+        this.serviceDeterminationPair = serviceDeterminationPair;
     }
 
 
-    public static Predicate<Deployment> createMrcaPredicate(String conditionName, ServiceDeterminationPair serviceDeterminationPair) {
+    public Predicate<Deployment> createMrcaPredicate(String conditionName) {
         switch (conditionName) {
             case "posttraumatic stress disorder":
                 return Operations.getMRCAIsWarlikePredicate(serviceDeterminationPair);
