@@ -234,7 +234,7 @@ public class SoPLoaderImpl implements SoPLoader {
                 if (!antecedentRegisterIds.isEmpty()) {
                     for (String antecedent : antecedentRegisterIds) {
 
-                        logger.trace(String.format("Failed to create SoP with register ID %s using default factory, trying factory for antecedent SoP with register ID: %s...", registerId, antecedent));
+                        logger.trace(String.format("Failed to createMrcaPredicate SoP with register ID %s using default factory, trying factory for antecedent SoP with register ID: %s...", registerId, antecedent));
 
                         SoPFactory antecedentSopFactory = sopFactoryProvider.apply(antecedent);
                         try {
@@ -244,13 +244,13 @@ public class SoPLoaderImpl implements SoPLoader {
                         }
                         catch (DvaSopApiRuntimeException antecedentError)
                         {
-                            logger.error(String.format("Failed to create SoP with Register ID %s using factory for antecedent SoP with Register ID %s", registerId, antecedent));
+                            logger.error(String.format("Failed to createMrcaPredicate SoP with Register ID %s using factory for antecedent SoP with Register ID %s", registerId, antecedent));
                         }
 
                     }
                 }
 
-                logger.error(buildLoggerMessage(registerId, "Failed to create SoP."), e);
+                logger.error(buildLoggerMessage(registerId, "Failed to createMrcaPredicate SoP."), e);
                 return Optional.empty();
             }
         });

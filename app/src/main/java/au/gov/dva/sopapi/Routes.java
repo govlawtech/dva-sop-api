@@ -273,6 +273,9 @@ public class Routes {
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
+
+        Predicate<Deployment> isRhServicePredicate = null;
+
         RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
                 buildIsOperationalPredicateForMRCAandVEA(sopSupportRequestDto.get_conditionDto()), caseTrace);
         return rulesResult;
@@ -293,7 +296,7 @@ public class Routes {
                     boolean result =  actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(30, TimeUnit.SECONDS);
                     return result;
                 } catch (InterruptedException | ExecutionException | TimeoutException | DvaSopApiDtoRuntimeException e) {
-                    throw new ActDeterminationServiceException("Failed to get result from Acts Determination Service to indicate whether deployment was operational.",e);
+                    throw new ActDeterminationServiceException("Failed to get result from Acts Determination Service.",e);
                 }
             };
         }

@@ -16,6 +16,7 @@ import org.asynchttpclient.request.body.multipart.Part;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Predicate;
 
 public class ActDeterminationServiceClientImpl implements ActDeterminationServiceClient {
 
@@ -28,8 +29,9 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
     }
 
 
+
     @Override
-    public CompletableFuture<Boolean> isOperational(String operationName) {
+    public CompletableFuture<Boolean> matchesWhiteFilter(String operationName, Predicate<List<OperationJsonResponse>> whiteFilter) {
         CompletableFuture<Boolean> promise =
                 asyncHttpClient.preparePost(baseUrl + "/operation")
                         .setBody(String.format("{\"operationName\":\"%s\"}",operationName))
@@ -45,11 +47,19 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
                                     }
                                 }
                         )
-                        .thenApply(actDeterminationServiceResponse -> inferWhetherOperational(actDeterminationServiceResponse));
+                        .thenApply(whiteFilter::test);
 
         return promise;
+    }
+
+    @Override
+    public CompletableFuture<Boolean> isOperational(String operationName) {
+
+        return matchesWhiteFilter(operationName, this::inferWhetherOperational);
 
     }
+
+
 
 
     private boolean inferWhetherOperational(List<OperationJsonResponse> actDeterminationServiceResponse) {
