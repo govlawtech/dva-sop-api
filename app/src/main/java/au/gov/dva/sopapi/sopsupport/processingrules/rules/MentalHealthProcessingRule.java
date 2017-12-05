@@ -37,8 +37,4 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements Pr
         super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
     }
 
-    @Override
-    public Recommendation inferRecommendation(ImmutableList<FactorWithSatisfaction> factors, ServiceHistory serviceHistory, SoP applicableSop, Condition condition, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
-        return null;
-    }
 }

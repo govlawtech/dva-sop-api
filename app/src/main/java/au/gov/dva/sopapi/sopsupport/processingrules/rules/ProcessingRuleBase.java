@@ -115,6 +115,7 @@ public class ProcessingRuleBase {
             return Optional.of(condition.getSopPair().getBopSop());
         }
         else {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"Veteran Centric Processing only applies to the reasonable hypothesis standard for this condition.");
             return Optional.empty();
         }
     }
