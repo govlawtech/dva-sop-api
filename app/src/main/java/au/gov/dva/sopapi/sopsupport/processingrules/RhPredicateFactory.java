@@ -1,14 +1,18 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
+import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
+import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.exceptions.ActDeterminationServiceException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Operation;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
+import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import au.gov.dva.sopapi.sopsupport.vea.OperationJsonResponse;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +30,19 @@ public class RhPredicateFactory {
         this.actDeterminationServiceClient = actDeterminationServiceClient;
         this.serviceDeterminationPair = serviceDeterminationPair;
     }
+
+
+    public Predicate<Deployment> createMrcaAndVeaCombinedPredicate(ConditionDto conditionDto)
+    {
+        if (conditionDto.get_incidentDateRangeDto().get_startDate().isAfter(LocalDate.of(2004, 06, 30))) {
+            return createMrcaPredicate(conditionDto.get_conditionName());
+        }
+        else {
+           return createVeaPredicate(conditionDto.get_conditionName());
+        }
+    }
+
+
 
 
     public Predicate<Deployment> createMrcaPredicate(String conditionName) {

@@ -20,6 +20,7 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
+import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -219,7 +220,12 @@ public class Routes {
                 }
             }
 
-            RulesResult rulesResult = runRules(sopSupportRequestDto);
+            ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
+            ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
+            RhPredicateFactory rhPredicateFactory = new RhPredicateFactory(actDeterminationServiceClient, serviceDeterminationPair);
+            // todo: new up conditionFactory here
+
+            RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
@@ -270,36 +276,17 @@ public class Routes {
         return sb.toString();
     }
 
-    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
+    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, RhPredicateFactory rhPredicateFactory) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
-        Predicate<Deployment> isRhServicePredicate = null;
-
+        // todo: inject condition factory
         RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
-                buildIsOperationalPredicateForMRCAandVEA(sopSupportRequestDto.get_conditionDto()), caseTrace);
+                rhPredicateFactory.createMrcaAndVeaCombinedPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
         return rulesResult;
-    }
 
-    private static Predicate<Deployment> buildMRCAOperationalPredicate() {
-        ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
-        Predicate<Deployment> isOperational = Operations.getMRCAIsOperationalPredicate(serviceDeterminationPair);
-        return isOperational;
-    }
 
-    private static Predicate<Deployment> buildIsOperationalPredicateForMRCAandVEA(ConditionDto conditionDto) {
-        if (conditionDto.get_incidentDateRangeDto().get_startDate().isAfter(LocalDate.of(2004, 06, 30))) return buildMRCAOperationalPredicate();
-        else {
-            ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
-            return deployment -> {
-                try {
-                    boolean result =  actDeterminationServiceClient.isOperational(deployment.getOperationName()).get(30, TimeUnit.SECONDS);
-                    return result;
-                } catch (InterruptedException | ExecutionException | TimeoutException | DvaSopApiDtoRuntimeException e) {
-                    throw new ActDeterminationServiceException("Failed to get result from Acts Determination Service.",e);
-                }
-            };
-        }
+
     }
 
     private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String
