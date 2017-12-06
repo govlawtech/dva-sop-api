@@ -14,7 +14,6 @@ import com.google.common.collect.Sets;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -45,11 +44,25 @@ public class Operations {
 
     }
 
+    public static Predicate<Deployment> getMRCAIsWarlikePredicate(ServiceDeterminationPair serviceDeterminationPair) {
+        ImmutableList<Operation> warlikeOperations = serviceDeterminationPair.getWarlike().getOperations();
+        return getPredicateForOperations(warlikeOperations);
+
+    }
+
+
     public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
         ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
                 serviceDeterminationPair.getWarlike().getOperations(),
                 serviceDeterminationPair.getNonWarlike().getOperations()));
 
+        return getPredicateForOperations(allOperations);
+
+    }
+
+
+    private static Predicate<Deployment> getPredicateForOperations(ImmutableList<Operation> allOperations)
+    {
         ImmutableSet<String> opNames = allOperations.stream()
                 .map(operation -> operation.getName())
                 .map(name -> name.toLowerCase())
@@ -57,7 +70,7 @@ public class Operations {
                 .collect(Collectors.collectingAndThen(Collectors.toSet(), ImmutableSet::copyOf));
 
         ImmutableSet<String> specialWhitelist = ImmutableSet.of(
-                "operation enduring freedom (us"); // note omitted final paren is intentional
+                "operation enduring freedom (us"); // note: omitted final paren is intentional
 
         Sets.SetView<String> allToMatch = Sets.union(opNames, specialWhitelist);
 
@@ -68,6 +81,5 @@ public class Operations {
                                 .toLowerCase()
                                 .contains(s)));
     }
-
 
 }

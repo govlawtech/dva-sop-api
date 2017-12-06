@@ -79,7 +79,7 @@ public class ConditionFactory {
                 return new RotatorCuffSyndromeRule(conditionConfiguration);
             case "acquired cataract":
                 return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
-            case "Achilles tendonopathy and bursitis":
+            case "achilles tendinopathy and bursitis":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "chondromalacia patella":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
@@ -112,6 +112,12 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "femoroacetabular impingement syndrome":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+            case "posttraumatic stress disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "anxiety disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "adjustment disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
         }
 
         return null;
