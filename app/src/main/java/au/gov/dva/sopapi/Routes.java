@@ -7,8 +7,6 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
-import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
-import au.gov.dva.sopapi.exceptions.ActDeterminationServiceException;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -40,14 +38,9 @@ import spark.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -282,7 +275,7 @@ public class Routes {
 
         // todo: inject condition factory
         RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
-                rhPredicateFactory.createMrcaAndVeaCombinedPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
+                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
         return rulesResult;
 
 

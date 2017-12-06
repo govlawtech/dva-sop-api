@@ -1,15 +1,12 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
-import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.exceptions.ActDeterminationServiceException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
-import au.gov.dva.sopapi.interfaces.model.Operation;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
-import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import au.gov.dva.sopapi.sopsupport.vea.OperationJsonResponse;
 
 import java.time.LocalDate;
@@ -32,7 +29,7 @@ public class RhPredicateFactory {
     }
 
 
-    public Predicate<Deployment> createMrcaAndVeaCombinedPredicate(ConditionDto conditionDto)
+    public Predicate<Deployment> createMrcaOrVeaPredicate(ConditionDto conditionDto)
     {
         if (conditionDto.get_incidentDateRangeDto().get_startDate().isAfter(LocalDate.of(2004, 06, 30))) {
             return createMrcaPredicate(conditionDto.get_conditionName());
@@ -78,7 +75,7 @@ public class RhPredicateFactory {
                             !operationJsonResponse.isMrcaNonWarlike());
 
 
-    private Predicate<List<OperationJsonResponse>> isOperationalAccordingToAds = operationJsonResponses -> operationJsonResponses.stream()
+    private Predicate<List<OperationJsonResponse>> isRhServiceAccordingToADS = operationJsonResponses -> operationJsonResponses.stream()
             .anyMatch(operationJsonResponse ->
                     operationJsonResponse.isOperational() ||
                             operationJsonResponse.isWarlike() ||
@@ -98,7 +95,7 @@ public class RhPredicateFactory {
             case "adjustment disorder":
                 return testDeploymentAgainstAds(isWarlikeAccordingToAds);
             default:
-                return testDeploymentAgainstAds(isOperationalAccordingToAds);
+                return testDeploymentAgainstAds(isRhServiceAccordingToADS);
         }
     }
 }

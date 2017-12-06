@@ -20,14 +20,13 @@ import java.util.function.Predicate;
 
 public class ActDeterminationServiceClientImpl implements ActDeterminationServiceClient {
 
-    private static final AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
+    private static final AsyncHttpClient asyncHttpClient =  new DefaultAsyncHttpClient();
 
     private final String baseUrl;
 
     public ActDeterminationServiceClientImpl(String baseUrl) {
         this.baseUrl = baseUrl;
     }
-
 
 
     @Override
