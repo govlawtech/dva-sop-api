@@ -85,7 +85,7 @@ public class CaseSummary {
         // Numbering is required for bullets and lists
         document.createNumbering();
 
-        // Can't get the CTNumbering so need to create manually
+        // Can't get the CTNumbering so need to createMrcaPredicate manually
         transferTemplateNumbering(document.getNumbering());
 
         // Create the main sections

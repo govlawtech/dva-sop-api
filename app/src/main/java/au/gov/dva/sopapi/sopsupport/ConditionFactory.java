@@ -112,6 +112,12 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "femoroacetabular impingement syndrome":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+            case "posttraumatic stress disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "anxiety disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "adjustment disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
         }
 
         return null;
