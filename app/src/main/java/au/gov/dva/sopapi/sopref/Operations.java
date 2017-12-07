@@ -167,8 +167,6 @@ public class Operations {
                 }
             }
             return true;
-
-
         });
     }
 
