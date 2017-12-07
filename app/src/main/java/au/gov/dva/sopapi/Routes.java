@@ -18,6 +18,7 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
+import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
@@ -215,7 +216,7 @@ public class Routes {
 
             ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
-            RhPredicateFactory rhPredicateFactory = new RhPredicateFactory(actDeterminationServiceClient, serviceDeterminationPair);
+            IRhPredicateFactory rhPredicateFactory = new RhPredicateFactory(actDeterminationServiceClient, serviceDeterminationPair);
             // todo: new up conditionFactory here
 
             RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);
@@ -269,7 +270,7 @@ public class Routes {
         return sb.toString();
     }
 
-    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, RhPredicateFactory rhPredicateFactory) {
+    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
@@ -277,9 +278,6 @@ public class Routes {
         RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
                 rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
         return rulesResult;
-
-
-
     }
 
     private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String
