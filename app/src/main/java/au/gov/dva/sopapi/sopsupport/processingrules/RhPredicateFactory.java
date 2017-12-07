@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 
-public class RhPredicateFactory {
+public class RhPredicateFactory implements IRhPredicateFactory {
 
     private ActDeterminationServiceClient actDeterminationServiceClient;
     private ServiceDeterminationPair serviceDeterminationPair;
@@ -29,6 +29,7 @@ public class RhPredicateFactory {
     }
 
 
+    @Override
     public Predicate<Deployment> createMrcaOrVeaPredicate(ConditionDto conditionDto)
     {
         if (conditionDto.get_incidentDateRangeDto().get_startDate().isAfter(LocalDate.of(2004, 06, 30))) {
@@ -39,9 +40,7 @@ public class RhPredicateFactory {
         }
     }
 
-
-
-
+    @Override
     public Predicate<Deployment> createMrcaPredicate(String conditionName) {
         switch (conditionName) {
             case "posttraumatic stress disorder":
@@ -84,6 +83,7 @@ public class RhPredicateFactory {
                                     !operationJsonResponse.isMrcaNonWarlike() &&
                                     !operationJsonResponse.isMrcaWarlike());
 
+    @Override
     public Predicate<Deployment> createVeaPredicate(String conditionName) {
 
         switch (conditionName) {

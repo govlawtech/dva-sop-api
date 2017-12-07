@@ -57,5 +57,11 @@
         <appender-ref ref="FILE"/>
     </logger>
 
+    <logger name="dvasopapi.processingrules" level="trace">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+    </logger>
+
+
 
 </configuration>

@@ -10,6 +10,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -18,6 +20,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Operations {
+
+    private static Logger logger = LoggerFactory.getLogger("dvasopapi.processingrules");
 
     public static Optional<ServiceDetermination> getLatestServiceDetermination(ImmutableSet<ServiceDetermination> allServiceDeterminations, ServiceType serviceType) {
         List<OffsetDateTime> commencementDates = allServiceDeterminations.stream().map(sd -> sd.getCommencementDate()).collect(Collectors.toList());
@@ -46,7 +50,7 @@ public class Operations {
 
     public static Predicate<Deployment> getMRCAIsWarlikePredicate(ServiceDeterminationPair serviceDeterminationPair) {
         ImmutableList<Operation> warlikeOperations = serviceDeterminationPair.getWarlike().getOperations();
-        return getPredicateForOperations(warlikeOperations);
+        return getPredicateForMrcaOperations(warlikeOperations);
 
     }
 
@@ -56,13 +60,60 @@ public class Operations {
                 serviceDeterminationPair.getWarlike().getOperations(),
                 serviceDeterminationPair.getNonWarlike().getOperations()));
 
-        return getPredicateForOperations(allOperations);
+        return getPredicateForMrcaOperations(allOperations);
 
     }
 
 
-    private static Predicate<Deployment> getPredicateForOperations(ImmutableList<Operation> allOperations)
+
+
+
+    private static boolean datesAreConsistent(Deployment deployment, Operation operation)
     {
+        if (deployment.getStartDate().isBefore(operation.getStartDate()))
+        {
+            return false;
+        }
+
+        if (!deployment.getEndDate().isPresent() && operation.getEndDate().isPresent())
+        {
+            return false;
+        }
+
+        if (deployment.getEndDate().isPresent() && operation.getEndDate().isPresent())
+        {
+            if (deployment.getEndDate().get().isAfter(operation.getEndDate().get()))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+    private static boolean operationWithConsistentDatesExist(Deployment deployment, ImmutableList<Operation> operations)
+    {
+        boolean matchFound = operations.stream().anyMatch(operation -> datesAreConsistent(deployment,operation));
+        if (!matchFound)
+        {
+            StringBuilder warning = new StringBuilder();
+            warning.append(String.format("Deployment dates not consistent with matching operations.%n"));
+            warning.append(String.format("DEPLOYMENT:%n"));
+            warning.append(String.format("%s%n",deployment.toString()));
+            warning.append(String.format("OPERATIONS:%n"));
+            operations.forEach(operation -> warning.append(String.format("%s%n",operation.toString())));
+            logger.warn(warning.toString());
+
+            return false;
+        }
+        return true;
+    }
+
+
+
+    private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations) {
+
         ImmutableSet<String> opNames = allOperations.stream()
                 .map(operation -> operation.getName())
                 .map(name -> name.toLowerCase())
@@ -72,14 +123,51 @@ public class Operations {
         ImmutableSet<String> specialWhitelist = ImmutableSet.of(
                 "operation enduring freedom (us"); // note: omitted final paren is intentional
 
+        ImmutableList<String> mrcaOpertionNamesForWhichToValidateDates = ImmutableList.of(
+                "Paladin",
+                "Okra",
+                "Augury"
+        );
+
         Sets.SetView<String> allToMatch = Sets.union(opNames, specialWhitelist);
 
-        return (deployment ->
-                allToMatch.stream()
+
+
+        return (deployment -> {
+
+
+            boolean nameMatches =  allToMatch.stream()
                         .anyMatch(s -> deployment
                                 .getOperationName()
                                 .toLowerCase()
-                                .contains(s)));
+                                .contains(s));
+
+            if (!nameMatches)
+            {
+                return false;
+            }
+
+            boolean dateMatchRequired = mrcaOpertionNamesForWhichToValidateDates
+                    .stream()
+                    .map(s -> s.toLowerCase())
+                    .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s));
+
+
+            if (dateMatchRequired)
+            {
+                ImmutableList<Operation> operationsWithSameName = allOperations.stream()
+                        .filter(operation -> deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+
+                if (operationWithConsistentDatesExist(deployment,operationsWithSameName))
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            return true;
+        });
     }
 
 }
