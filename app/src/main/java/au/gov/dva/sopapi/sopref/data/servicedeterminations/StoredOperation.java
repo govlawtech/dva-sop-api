@@ -47,6 +47,16 @@ public class StoredOperation implements Operation {
         return endDate;
     }
 
+    @Override
+    public String toString() {
+        return "StoredOperation{" +
+                "name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", serviceType=" + serviceType +
+                '}';
+    }
+
     private static class Labels {
         public static final String NAME = "name";
         public static final String START_DATE = "startDate";
