@@ -83,6 +83,12 @@ public class ProcessingRuleBase {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         Optional<Service> serviceDuringOrAfterWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
 
+        if (!serviceDuringOrAfterWhichConditionStarts.isPresent())
+        {
+            caseTrace.addLoggingTrace("The service history does not show any continuous full time service before or during the condition onset.");
+            return Optional.empty();
+        }
+
         Integer requiredOperationalServiceDaysToApplyRhSop = conditionConfiguration
                 .getRHRuleConfigurationFor(relevantRank.get(), serviceDuringOrAfterWhichConditionStarts.get().getBranch())
                 .get()
