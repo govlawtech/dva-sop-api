@@ -42,7 +42,7 @@ public class RhPredicateFactory implements IRhPredicateFactory {
 
     @Override
     public Predicate<Deployment> createMrcaPredicate(String conditionName) {
-        switch (conditionName) {
+        switch (conditionName.toLowerCase()) {
             case "posttraumatic stress disorder":
                 return Operations.getMRCAIsWarlikePredicate(serviceDeterminationPair);
             case "anxiety disorder":
