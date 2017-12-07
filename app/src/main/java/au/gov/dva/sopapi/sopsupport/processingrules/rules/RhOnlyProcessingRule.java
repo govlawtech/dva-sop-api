@@ -9,12 +9,12 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class MentalHealthProcessingRule extends ProcessingRuleBase implements ProcessingRule  {
+public class RhOnlyProcessingRule extends ProcessingRuleBase implements ProcessingRule  {
 
     private final IntervalSelector rhIntervalSelector;
     Interval rhInterval;
 
-    public MentalHealthProcessingRule(ConditionConfiguration conditionConfiguration, IntervalSelector rhIntervalSelector) {
+    public RhOnlyProcessingRule(ConditionConfiguration conditionConfiguration, IntervalSelector rhIntervalSelector) {
         super(conditionConfiguration);
         this.rhIntervalSelector = rhIntervalSelector;
     }

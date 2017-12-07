@@ -1,13 +1,10 @@
 package au.gov.dva.sopapi.sopsupport;
 
-import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
 import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
-import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfServiceSelector;
@@ -15,11 +12,8 @@ import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysP
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.Predicate;
 
 
 public class ConditionFactory {
@@ -113,11 +107,19 @@ public class ConditionFactory {
             case "femoroacetabular impingement syndrome":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "posttraumatic stress disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new RhOnlyProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
             case "anxiety disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new RhOnlyProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
             case "adjustment disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new RhOnlyProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "benign neoplasm of the eye and adnexa":
+                return new RhOnlyProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "seborrhoeic keratosis":
+                return new RhOnlyProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "malignant neoplasm of the eye":
+                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "pinguecula":
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
         }
 
         return null;
