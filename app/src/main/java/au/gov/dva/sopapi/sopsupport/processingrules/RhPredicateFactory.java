@@ -86,7 +86,7 @@ public class RhPredicateFactory implements IRhPredicateFactory {
     @Override
     public Predicate<Deployment> createVeaPredicate(String conditionName) {
 
-        switch (conditionName) {
+        switch (conditionName.toLowerCase()) {
 
             case "posttraumatic stress disorder":
                 return testDeploymentAgainstAds(isWarlikeAccordingToAds);
