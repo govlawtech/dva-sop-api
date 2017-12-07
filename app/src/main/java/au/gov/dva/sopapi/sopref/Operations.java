@@ -65,11 +65,7 @@ public class Operations {
     }
 
 
-    private static ImmutableList<String> mrcaOpertionNamesForWhichToValidateDates = ImmutableList.of(
-            "Paladin",
-            "Okra",
-            "Augury"
-    );
+
 
 
     private static boolean datesAreConsistent(Deployment deployment, Operation operation)
@@ -114,8 +110,9 @@ public class Operations {
         return true;
     }
 
+
+
     private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations) {
-        // add date validation
 
         ImmutableSet<String> opNames = allOperations.stream()
                 .map(operation -> operation.getName())
@@ -126,14 +123,53 @@ public class Operations {
         ImmutableSet<String> specialWhitelist = ImmutableSet.of(
                 "operation enduring freedom (us"); // note: omitted final paren is intentional
 
+        ImmutableList<String> mrcaOpertionNamesForWhichToValidateDates = ImmutableList.of(
+                "Paladin",
+                "Okra",
+                "Augury"
+        );
+
         Sets.SetView<String> allToMatch = Sets.union(opNames, specialWhitelist);
 
-        return (deployment ->
-                allToMatch.stream()
+
+
+        return (deployment -> {
+
+
+            boolean nameMatches =  allToMatch.stream()
                         .anyMatch(s -> deployment
                                 .getOperationName()
                                 .toLowerCase()
-                                .contains(s)));
+                                .contains(s));
+
+            if (!nameMatches)
+            {
+                return false;
+            }
+
+            boolean dateMatchRequired = mrcaOpertionNamesForWhichToValidateDates
+                    .stream()
+                    .map(s -> s.toLowerCase())
+                    .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s));
+
+
+            if (dateMatchRequired)
+            {
+                ImmutableList<Operation> operationsWithSameName = allOperations.stream()
+                        .filter(operation -> deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+
+                if (operationWithConsistentDatesExist(deployment,operationsWithSameName))
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            return true;
+
+
+        });
     }
 
 }
