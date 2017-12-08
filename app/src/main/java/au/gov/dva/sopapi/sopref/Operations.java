@@ -112,6 +112,7 @@ public class Operations {
 
 
 
+
     private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations) {
 
         ImmutableSet<String> opNames = allOperations.stream()
@@ -121,7 +122,7 @@ public class Operations {
                 .collect(Collectors.collectingAndThen(Collectors.toSet(), ImmutableSet::copyOf));
 
         ImmutableSet<String> specialWhitelist = ImmutableSet.of(
-                "operation enduring freedom (us"); // note: omitted final paren is intentional
+                "enduring freedom");
 
         ImmutableList<String> mrcaOpertionNamesForWhichToValidateDates = ImmutableList.of(
                 "Paladin",
