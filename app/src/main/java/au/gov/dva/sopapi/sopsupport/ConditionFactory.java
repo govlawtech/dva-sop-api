@@ -12,6 +12,7 @@ import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfServiceSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
+import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedYearsPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
 
@@ -115,9 +116,9 @@ public class ConditionFactory {
             case "posttraumatic stress disorder":
                 return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
             case "anxiety disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new MentalHealthProcessingRule(conditionConfiguration,new FixedYearsPeriodSelector(5));
             case "adjustment disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new MentalHealthProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(84));
         }
 
         return null;
