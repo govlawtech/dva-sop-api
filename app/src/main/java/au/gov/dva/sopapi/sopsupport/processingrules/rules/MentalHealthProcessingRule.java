@@ -21,6 +21,12 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements Pr
 
     @Override
     public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+
+        if (super.shouldAbortProcessing(serviceHistory,condition,caseTrace))
+        {
+            return Optional.empty();
+        }
+
         rhInterval = rhIntervalSelector.getInterval(serviceHistory,condition.getStartDate());
         return super.getApplicableSop(condition,serviceHistory,isOperational,rhInterval,true,caseTrace);
     }
