@@ -8,7 +8,7 @@ elif [ "$TRAVIS_BRANCH" == "devtest" ]; then
   curl --ftp-create-dirs -T "app/web.config" -u "$DEVTEST_USER:$DEVTEST_PASSWORD"  ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot/
   curl --ftp-create-dirs -T "app/deploy/webapps/ROOT.war" -u "$DEVTEST_USER:$DEVTEST_PASSWORD" ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot/webapps/
   curl --ftp-create-dirs -T "app/deploy/webapps/api-docs/yaml/dva-sop-api.yaml" -u "$DEVTEST_USER:$DEVTEST_PASSWORD" ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot/webapps/api-docs/yaml/
-elif [ "$TRAVIS_BRANCH" == "master" ]; then
+elif [ "$TRAVIS_BRANCH" == "prod" ]; then
   curl --ftp-create-dirs -T "app/web.config" -u "$PROD_USER:$PROD_PASSWORD" ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot/
   curl --ftp-create-dirs -T "app/deploy/webapps/ROOT.war" -u "$PROD_USER:$PROD_PASSWORD" ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot/webapps/
   curl --ftp-create-dirs -T "app/deploy/webapps/api-docs/yaml/dva-sop-api.yaml" -u "$PROD_USER:$PROD_PASSWORD" ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot/webapps/api-docs/yaml/
