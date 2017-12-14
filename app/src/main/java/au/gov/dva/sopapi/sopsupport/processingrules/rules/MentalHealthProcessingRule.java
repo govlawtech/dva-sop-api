@@ -24,9 +24,9 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements Pr
     @Override
     public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
-        if (onsetInDrca(condition.getStartDate()))
+        if (condition.getStartDate().isBefore(LocalDate.of(2004,7,1)))
         {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"Veteran Centric Processing does not apply for DRCA claims for this condition.");
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"Veteran Centric Processing does not apply for pre-MRCA claims for this condition.");
             return Optional.empty();
         }
 
@@ -50,11 +50,6 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements Pr
     @Override
     public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
         super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
-    }
-
-    private static boolean onsetInDrca(LocalDate onset)
-    {
-        return onset.isBefore(LocalDate.of(2004,7,1)) && !onset.isBefore(LocalDate.of(1994,4,7));
     }
 
 }
