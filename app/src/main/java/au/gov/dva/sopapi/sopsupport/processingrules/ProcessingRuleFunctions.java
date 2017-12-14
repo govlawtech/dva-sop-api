@@ -77,7 +77,7 @@ public class ProcessingRuleFunctions {
 //            caseTrace.addLoggingTrace("No services which started before and were ongoing at the condition start date, therefore finding immediately preceding service, if any.");
             Optional<Service> lastService = services.stream()
                     .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
-                    .filter(s -> s.getStartDate().isBefore(conditionStartDate))
+                    .filter(s -> !s.getStartDate().isAfter(conditionStartDate))
                     .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
                     .findFirst();
             return lastService;
