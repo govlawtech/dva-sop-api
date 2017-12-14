@@ -1,13 +1,11 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
-import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import com.google.common.collect.ImmutableList;
 
-import java.time.LocalDate;
 import java.util.Optional;
 import java.util.function.Predicate;
 
@@ -24,17 +22,10 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements Pr
     @Override
     public Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
-        if (condition.getStartDate().isBefore(LocalDate.of(2004,7,1)))
-        {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"Veteran Centric Processing does not apply for pre-MRCA claims for this condition.");
-            return Optional.empty();
-        }
-
         if (super.shouldAbortProcessing(serviceHistory,condition,caseTrace))
         {
             return Optional.empty();
         }
-
 
         rhInterval = rhIntervalSelector.getInterval(serviceHistory,condition.getStartDate());
         return super.getApplicableSop(condition,serviceHistory,isOperational,rhInterval,true,caseTrace);
