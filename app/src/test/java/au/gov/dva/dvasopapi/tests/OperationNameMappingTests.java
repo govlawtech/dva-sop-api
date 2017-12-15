@@ -167,6 +167,7 @@ public class OperationNameMappingTests {
     @Test
     public void CompareIshOperations() {
         ImmutableList<String> ishOperationNames = ImmutableList.of(
+                "International Security Assistance Force",
                 "OP ACCORDION",
                 "OP MANITOU",
                 "OP RAMP - NONWARLIKE LEBANON",
@@ -190,7 +191,7 @@ public class OperationNameMappingTests {
                 "Operation CORACLE",
                 "Operation DAMASK X",
                 "OPERATION DESERT STORM",
-                "OPERATION ENDURING FREEDOM (US",
+                "OPERATION ENDURING FREEDOM",
                 "Operation FALCONER",
                 "OPERATION GEMINI",
                 "OPERATION GOODWILL",
