@@ -41,46 +41,84 @@
                     <determination>
                         <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
                         <commencementDate>2007-04-16</commencementDate>
-                        <operation>
-                            <name>BOLTON</name>
-                            <specefiedAreas>
-                                <specifiedArea>Saudi Arabia</specifiedArea>
-                                <specifiedArea>Kuwait</specifiedArea>
-                                <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
-                            </specefiedAreas>
-                            <startDate>1999-03-13</startDate>
-                            <endDate>2003-01-12</endDate>
-                        </operation>
+                        <operations>
+                            <operation>
+                                <name>BOLTON</name>
+                                <specefiedAreas>
+                                    <specifiedArea>Saudi Arabia</specifiedArea>
+                                    <specifiedArea>Kuwait</specifiedArea>
+                                    <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                                </specefiedAreas>
+                                <startDate>1999-03-13</startDate>
+                                <endDate>2003-01-12</endDate>
+                            </operation>
+                        </operations>
                     </determination>
 
 
                     <determination>
                         <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
                         <commencementDate>2007-04-16</commencementDate>
-                        <operation>
-                            <name>SOUTHERN WATCH</name>
-                            <specifiedAreas>
-                                <specifiedArea>Saudi Arabia</specifiedArea>
-                                <specifiedArea>Kuwait</specifiedArea>
-                                <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
-                            </specifiedAreas>
-                            <startDate>1999-09-23</startDate>
-                            <endDate>2003-12-01</endDate>
-                        </operation>
+                        <operations>
+                            <operation>
+                                <name>SOUTHERN WATCH</name>
+                                <specifiedAreas>
+                                    <specifiedArea>Saudi Arabia</specifiedArea>
+                                    <specifiedArea>Kuwait</specifiedArea>
+                                    <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                                </specifiedAreas>
+                                <startDate>1999-09-23</startDate>
+                                <endDate>2003-12-01</endDate>
+                            </operation>
+                        </operations>
                     </determination>
 
+                    <determination>
+                        <federalRegisterOfLegislationReference>F2006B00576</federalRegisterOfLegislationReference>
+                        <commencementDate>2003-10-23</commencementDate>
+                        <operations>
+                            <operation>
+                                <name>BEL ISI</name>
+                                <qualification>serving with the Truce Monitoring Group</qualification>
+                                <specifiedAreas>
+                                    <specifiedArea>Bougainville</specifiedArea>
+                                    <specifiedArea>Buka Islands</specifiedArea>
+                                    <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
+                                        Islands
+                                    </specifiedArea>
+                                </specifiedAreas>
 
+                                <startDate>1997-11-20</startDate>
+                                <endDate>2003-08-26</endDate>
+                            </operation>
+                            <operation>
+                                <name>BEL ISI II</name>
+                                <qualifications>
+                                    <qualification>serving with the Peace Monitoring Group</qualification>
+                                </qualifications>
+                                <specifiedAreas>
+                                    <specifiedArea>Bougainville</specifiedArea>
+                                    <specifiedArea>Buka Islands</specifiedArea>
+                                    <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
+                                        Islands
+                                    </specifiedArea>
+                                </specifiedAreas>
+                                <startDate>1997-11-20</startDate>
+                                <endDate>2003-08-26</endDate>
+                            </operation>
+                        </operations>
+                    </determination>
 
 
                     <federalRegisterOfLegislationReference>F2008L04179</federalRegisterOfLegislationReference>
                     <commencementDate>2008-07-28</commencementDate>
-                    <operation>
-                        <name>BOLTON</name>
-                        <specifiedArea>Sudan</specifiedArea>
-                        <startDate>2008-07-28</startDate>
-                        <endDate></endDate>
-                    </operation>
-
+                    <operations>
+                        <operation>
+                            <name>HEDGEROW</name>
+                            <specifiedArea>Sudan</specifiedArea>
+                            <startDate>2008-07-28</startDate>
+                        </operation>
+                    </operations>
 
 
                 </determination>
@@ -89,6 +127,31 @@
     </warlikeAndNonWarlike>
     <hazardous>
         <veaLegislativeReference></veaLegislativeReference>
+        <determinations>
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02911</federalRegisterOfLegislationReference>
+                <commencementDate>1996-04-01</commencementDate>
+                <specifiedAreas>
+                    <specifiedArea>international waters, contiguous ports and waters used for international navigation
+                        contained with the Arabian Gulf, the Gulf of Oman and the Northern Arabian Sea with an eastern
+                        extremity of 61 degrees, 50 minutes East and a southern extremity of 20 degrees North
+                    </specifiedArea>
+                </specifiedAreas>
+                <startDate>1996-04-01</startDate>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference></federalRegisterOfLegislationReference>
+                <commencementDate>1997-09-17</commencementDate>
+                <qualifications>
+                    <qualification>as part of the United States of America led multi-national force</qualification>
+                </qualifications>
+                <specifiedAreas>
+                    <specifiedArea>Haiti</specifiedArea>
+                </specifiedAreas>
+                <startDate>1997-09-17</startDate>
+            </determination>
+        </determinations>
     </hazardous>
     <peacekeeping>
 
