@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="veaServiceReferenceData" type="veaServiceReferenceDataType"/>
+  <xs:complexType name="warlikeDeterminationsType">
+    <xs:sequence>
+      <xs:element type="determinationType" name="determination" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="qualificationsType">
     <xs:sequence>
       <xs:element type="xs:string" name="qualification"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="non-warlikeDeterminationsType">
+    <xs:sequence>
+      <xs:element type="determinationType" name="determination" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="specifiedAreasType">
@@ -26,30 +36,22 @@
     <xs:sequence>
       <xs:element type="xs:string" name="veaLegislativeReference"/>
       <xs:element type="xs:string" name="description"/>
-      <xs:element type="determinationsType" name="determinations"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="non-warlikeType">
-    <xs:sequence>
-      <xs:element type="determinationType" name="determination"/>
+      <xs:element type="warlikeDeterminationsType" name="warlikeDeterminations"/>
+      <xs:element type="non-warlikeDeterminationsType" name="non-warlikeDeterminations"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="operationType">
     <xs:sequence>
       <xs:element type="xs:string" name="name"/>
-      <xs:element type="specefiedAreasType" name="specefiedAreas" minOccurs="0"/>
       <xs:element type="xs:string" name="qualification" minOccurs="0"/>
       <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
       <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
-      <xs:element type="xs:string" name="specifiedArea" minOccurs="0"/>
       <xs:element type="xs:date" name="startDate"/>
       <xs:element type="xs:date" name="endDate" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="determinationsType">
     <xs:sequence>
-      <xs:element type="warlikeType" name="warlike" minOccurs="0"/>
-      <xs:element type="non-warlikeType" name="non-warlike" minOccurs="0"/>
       <xs:element type="determinationType" name="determination" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
@@ -62,24 +64,11 @@
   </xs:complexType>
   <xs:complexType name="determinationType">
     <xs:sequence>
-      <xs:element type="determinationType" name="determination" maxOccurs="unbounded" minOccurs="0"/>
       <xs:element type="xs:string" name="federalRegisterOfLegislationReference"/>
       <xs:element type="xs:date" name="commencementDate"/>
-      <xs:element type="operationType" name="operation" minOccurs="0"/>
       <xs:element type="operationsType" name="operations" minOccurs="0"/>
       <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
       <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
-      <xs:element type="xs:date" name="startDate" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="warlikeType">
-    <xs:sequence>
-      <xs:element type="determinationType" name="determination" maxOccurs="unbounded" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="specefiedAreasType">
-    <xs:sequence>
-      <xs:element type="xs:string" name="specifiedArea" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
