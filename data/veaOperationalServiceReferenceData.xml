@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<veaOperationalServiceReferenceData>
+    <warlikeAndNonWarlike>
+
+        <veaLegislativeReference>6F</veaLegislativeReference>
+        <description>Operational service—warlike and non‑warlike service</description>
+        <determinations>
+            <warlike>
+                <determination>
+                    <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
+                    <commencementDate>2007-04-16</commencementDate>
+                    <operation>
+                        <name>BOLTON</name>
+                        <specefiedAreas>
+                            <specifiedArea>
+                                Iraq
+                            </specifiedArea>
+                        </specefiedAreas>
+                        <startDate>1992-08-31</startDate>
+                        <endDate>2003-01-12</endDate>
+                    </operation>
+                </determination>
+
+                <determination>
+                    <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
+                    <commencementDate>2007-04-16</commencementDate>
+                    <operation>
+                        <name>SOUTHERN WATCH</name>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1992-08-31</startDate>
+                        <endDate>2003-12-01</endDate>
+                    </operation>
+                </determination>
+
+            </warlike>
+            <non-warlike>
+                <determination>
+                    <determination>
+                        <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
+                        <commencementDate>2007-04-16</commencementDate>
+                        <operation>
+                            <name>BOLTON</name>
+                            <specefiedAreas>
+                                <specifiedArea>Saudi Arabia</specifiedArea>
+                                <specifiedArea>Kuwait</specifiedArea>
+                                <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                            </specefiedAreas>
+                            <startDate>1999-03-13</startDate>
+                            <endDate>2003-01-12</endDate>
+                        </operation>
+                    </determination>
+
+
+                    <determination>
+                        <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
+                        <commencementDate>2007-04-16</commencementDate>
+                        <operation>
+                            <name>SOUTHERN WATCH</name>
+                            <specifiedAreas>
+                                <specifiedArea>Saudi Arabia</specifiedArea>
+                                <specifiedArea>Kuwait</specifiedArea>
+                                <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                            </specifiedAreas>
+                            <startDate>1999-09-23</startDate>
+                            <endDate>2003-12-01</endDate>
+                        </operation>
+                    </determination>
+
+
+
+
+                    <federalRegisterOfLegislationReference>F2008L04179</federalRegisterOfLegislationReference>
+                    <commencementDate>2008-07-28</commencementDate>
+                    <operation>
+                        <name>BOLTON</name>
+                        <specifiedArea>Sudan</specifiedArea>
+                        <startDate>2008-07-28</startDate>
+                        <endDate></endDate>
+                    </operation>
+
+
+
+                </determination>
+            </non-warlike>
+        </determinations>
+    </warlikeAndNonWarlike>
+    <hazardous>
+        <veaLegislativeReference></veaLegislativeReference>
+    </hazardous>
+    <peacekeeping>
+
+    </peacekeeping>
+
+
+</veaOperationalServiceReferenceData>
