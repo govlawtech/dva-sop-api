@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<veaOperationalServiceReferenceData>
+<veaServiceReferenceData
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="veaServiceReferenceData.xsd">
     <warlikeAndNonWarlike>
 
         <veaLegislativeReference>6F</veaLegislativeReference>
@@ -126,7 +128,8 @@
         </determinations>
     </warlikeAndNonWarlike>
     <hazardous>
-        <veaLegislativeReference></veaLegislativeReference>
+        <veaLegislativeReference>69A</veaLegislativeReference>
+
         <determinations>
             <determination>
                 <federalRegisterOfLegislationReference>F2006L02911</federalRegisterOfLegislationReference>
@@ -158,4 +161,4 @@
     </peacekeeping>
 
 
-</veaOperationalServiceReferenceData>
+</veaServiceReferenceData>
