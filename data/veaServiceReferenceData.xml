@@ -11,6 +11,24 @@
         <warlikeDeterminations>
 
             <determination>
+                <federalRegisterOfLegislationReference>F2007L04375</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>JURAL</name>
+                        <startDate>1991-06-30</startDate>
+                        <endDate>2003-01-12</endDate>
+                        <qualifications>
+                            <qualification>with the United Kingdom elements of the coalition force operation to patrol the Iraq No-Fly-Zones</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
                 <federalRegisterOfLegislationReference>F2007L00986</federalRegisterOfLegislationReference>
                 <commencementDate>2007-03-22</commencementDate>
                 <operations>
