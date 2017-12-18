@@ -11,6 +11,23 @@
         <warlikeDeterminations>
 
             <determination>
+                <federalRegisterOfLegislationReference>F2006L01121</federalRegisterOfLegislationReference>
+                <commencementDate>2006-02-13</commencementDate>
+                <operations>
+                    <operation>
+                        <name>TAMAR</name>
+                        <startDate>1994-07-25</startDate>
+                        <endDate>1996-02-16</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Rwanda</specifiedArea>
+                            <specifiedArea>the areas in Uganda, Zaire (now known as the Democratic Republic of the Congo), Burundi and Tanzania that are not more than 50 kilometres from the border with Rwanda</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+
+                </operations>
+            </determination>
+            
+            <determination>
                 <federalRegisterOfLegislationReference>F2007L04375</federalRegisterOfLegislationReference>
                 <commencementDate>2007-04-16</commencementDate>
                 <operations>
