@@ -41,14 +41,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="operationType">
-    <xs:sequence>
+    <xs:all>
       <xs:element type="xs:string" name="name"/>
       <xs:element type="xs:string" name="qualification" minOccurs="0"/>
       <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
       <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
       <xs:element type="xs:date" name="startDate"/>
       <xs:element type="xs:date" name="endDate" minOccurs="0"/>
-    </xs:sequence>
+    </xs:all>
   </xs:complexType>
   <xs:complexType name="determinationsType">
     <xs:sequence>

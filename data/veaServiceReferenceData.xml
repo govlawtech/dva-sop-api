@@ -10,7 +10,23 @@
 
         <warlikeDeterminations>
 
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L00986</federalRegisterOfLegislationReference>
+                <commencementDate>2007-03-22</commencementDate>
+                <operations>
+                    <operation>
+                        <name>HUSKY</name>
+                        <startDate>2001-01-15</startDate>
+                        <endDate>2003-02-28</endDate>
+                        <qualifications>
+                            <qualification>with the International Military Advisory and Training Team</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
 
+            </determination>
+            
+            
             <determination>
                 <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
                 <commencementDate>2007-04-16</commencementDate>
