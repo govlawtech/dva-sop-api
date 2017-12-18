@@ -7,161 +7,199 @@
 
         <veaLegislativeReference>6F</veaLegislativeReference>
         <description>Operational service—warlike and non‑warlike service</description>
+
         <warlikeDeterminations>
-                <determination>
-                    <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
-                    <commencementDate>2007-04-16</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>BOLTON</name>
-                            <specifiedAreas>
-                                <specifiedArea>
-                                    Iraq
-                                </specifiedArea>
-                            </specifiedAreas>
-                            <startDate>1992-08-31</startDate>
-                            <endDate>2003-01-12</endDate>
-                        </operation>
-                    </operations>
-                </determination>
 
-                <determination>
-                    <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
-                    <commencementDate>2007-04-16</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>SOUTHERN WATCH</name>
-                            <specifiedAreas>
-                                <specifiedArea>Iraq</specifiedArea>
-                            </specifiedAreas>
-                            <startDate>1992-08-31</startDate>
-                            <endDate>2003-12-01</endDate>
-                        </operation>
-                    </operations>
-                </determination>
 
-                <determination>
-                    <federalRegisterOfLegislationReference>F2006L02915</federalRegisterOfLegislationReference>
-                    <commencementDate>1997-07-05</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>VISTA</name>
-                            <startDate>1997-07-05</startDate>
-                            <endDate>1997-07-14</endDate>
-                        </operation>
-                    </operations>
-                </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>BOLTON</name>
+                        <specifiedAreas>
+                            <specifiedArea>
+                                Iraq
+                            </specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1992-08-31</startDate>
+                        <endDate>2003-01-12</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SOUTHERN WATCH</name>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1992-08-31</startDate>
+                        <endDate>2003-12-01</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
 
         </warlikeDeterminations>
-            <non-warlikeDeterminations>
 
-                <determination>
-                    <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
-                    <commencementDate>2007-04-16</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>BOLTON</name>
-                            <specifiedAreas>
-                                <specifiedArea>Saudi Arabia</specifiedArea>
-                                <specifiedArea>Kuwait</specifiedArea>
-                                <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
-                            </specifiedAreas>
-                            <startDate>1999-03-13</startDate>
-                            <endDate>2003-01-12</endDate>
-                        </operation>
-                    </operations>
-                </determination>
+        <non-warlikeDeterminations>
 
+            
 
-                <determination>
-                    <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
-                    <commencementDate>2007-04-16</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>SOUTHERN WATCH</name>
-                            <specifiedAreas>
-                                <specifiedArea>Saudi Arabia</specifiedArea>
-                                <specifiedArea>Kuwait</specifiedArea>
-                                <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
-                            </specifiedAreas>
-                            <startDate>1999-09-23</startDate>
-                            <endDate>2003-12-01</endDate>
-                        </operation>
-                    </operations>
-                </determination>
-
-                <determination>
-                    <federalRegisterOfLegislationReference>F2006B00576</federalRegisterOfLegislationReference>
-                    <commencementDate>2003-10-23</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>BEL ISI</name>
-                            <qualification>serving with the Truce Monitoring Group</qualification>
-                            <specifiedAreas>
-                                <specifiedArea>Bougainville</specifiedArea>
-                                <specifiedArea>Buka Islands</specifiedArea>
-                                <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
-                                    Islands
-                                </specifiedArea>
-                            </specifiedAreas>
-
-                            <startDate>1997-11-20</startDate>
-                            <endDate>2003-08-26</endDate>
-                        </operation>
-                        <operation>
-                            <name>BEL ISI II</name>
-                            <qualifications>
-                                <qualification>serving with the Peace Monitoring Group</qualification>
-                            </qualifications>
-                            <specifiedAreas>
-                                <specifiedArea>Bougainville</specifiedArea>
-                                <specifiedArea>Buka Islands</specifiedArea>
-                                <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
-                                    Islands
-                                </specifiedArea>
-                            </specifiedAreas>
-                            <startDate>1997-11-20</startDate>
-                            <endDate>2003-08-26</endDate>
-                        </operation>
-                    </operations>
-                </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02913</federalRegisterOfLegislationReference>
+                <commencementDate>1997-02-13</commencementDate>
+               <specifiedAreas>
+                   <specifiedArea>Guatemala</specifiedArea>
+               </specifiedAreas>
+                <qualifications>
+                    <qualification>part of the United Nations Observer Mission</qualification>
+                </qualifications>
+                <startDate>1997-02-13</startDate>
+                <endDate>1997-05-12</endDate>
+            </determination>
+            
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>BOLTON</name>
+                        <specifiedAreas>
+                            <specifiedArea>Saudi Arabia</specifiedArea>
+                            <specifiedArea>Kuwait</specifiedArea>
+                            <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1999-03-13</startDate>
+                        <endDate>2003-01-12</endDate>
+                    </operation>
+                </operations>
+            </determination>
 
 
-                <determination>
-                    <federalRegisterOfLegislationReference>F2007L04870</federalRegisterOfLegislationReference>
-                    <commencementDate>2007-09-11</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>QUICKSTEP</name>
-                            <specifiedAreas>
-                                <specifiedArea>Fiji: its land, internal waters, archipelagic waters, territorial sea and
-                                    superjacent airspace and the exclusive economic zone
-                                </specifiedArea>
-                            </specifiedAreas>
-                            <startDate>2006-10-31</startDate>
-                            <endDate>2006-12-22</endDate>
-                        </operation>
-                    </operations>
-                </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SOUTHERN WATCH</name>
+                        <specifiedAreas>
+                            <specifiedArea>Saudi Arabia</specifiedArea>
+                            <specifiedArea>Kuwait</specifiedArea>
+                            <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1999-09-23</startDate>
+                        <endDate>2003-12-01</endDate>
+                    </operation>
+                </operations>
+            </determination>
 
-                <determination>
-                    <federalRegisterOfLegislationReference>F2007L02362</federalRegisterOfLegislationReference>
-                    <commencementDate>2006-07-01</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>VIGILANCE</name>
-                            <startDate>2006-07-01</startDate>
-                        </operation>
-                    </operations>
-                </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00576</federalRegisterOfLegislationReference>
+                <commencementDate>2003-10-23</commencementDate>
+                <operations>
+                    <operation>
+                        <name>BEL ISI</name>
+                        <qualification>serving with the Truce Monitoring Group</qualification>
+                        <specifiedAreas>
+                            <specifiedArea>Bougainville</specifiedArea>
+                            <specifiedArea>Buka Islands</specifiedArea>
+                            <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
+                                Islands
+                            </specifiedArea>
+                        </specifiedAreas>
+
+                        <startDate>1997-11-20</startDate>
+                        <endDate>2003-08-26</endDate>
+                    </operation>
+                    <operation>
+                        <name>BEL ISI II</name>
+                        <qualifications>
+                            <qualification>serving with the Peace Monitoring Group</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Bougainville</specifiedArea>
+                            <specifiedArea>Buka Islands</specifiedArea>
+                            <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
+                                Islands
+                            </specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1997-11-20</startDate>
+                        <endDate>2003-08-26</endDate>
+                    </operation>
+                </operations>
+            </determination>
 
 
-            </non-warlikeDeterminations>
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04870</federalRegisterOfLegislationReference>
+                <commencementDate>2007-09-11</commencementDate>
+                <operations>
+                    <operation>
+                        <name>QUICKSTEP</name>
+                        <specifiedAreas>
+                            <specifiedArea>Fiji: its land, internal waters, archipelagic waters, territorial sea and
+                                superjacent airspace and the exclusive economic zone
+                            </specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2006-10-31</startDate>
+                        <endDate>2006-12-22</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L02362</federalRegisterOfLegislationReference>
+                <commencementDate>2006-07-01</commencementDate>
+                <operations>
+                    <operation>
+                        <name>VIGILANCE</name>
+                        <startDate>2006-07-01</startDate>
+                    </operation>
+                </operations>
+            </determination>
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02915</federalRegisterOfLegislationReference>
+                <commencementDate>1997-07-05</commencementDate>
+                <operations>
+                    <operation>
+                        <name>VISTA</name>
+                        <specifiedAreas>
+                            <specifiedArea>Cambodia</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1997-07-05</startDate>
+                        <endDate>1997-07-14</endDate>
+
+                    </operation>
+                </operations>
+            </determination>
+
+        </non-warlikeDeterminations>
     </warlikeAndNonWarlike>
     <hazardous>
         <veaLegislativeReference>69A</veaLegislativeReference>
 
         <determinations>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L01654</federalRegisterOfLegislationReference>
+                <commencementDate>1991-06-08</commencementDate>
+                <qualifications>
+                    <qualification>as a member of the Australian Defence Force with the United Nations Office for Co-ordinating Assistance to Afghanistan (UNOCA) or the United Nations Mine Clearing Training Team (UNMCTT)</qualification>
+                </qualifications>
+                <specifiedAreas>
+                    <specifiedArea>Afghanistan</specifiedArea>
+                </specifiedAreas>
+                <startDate>1991-06-08</startDate>
+            </determination>
+            
             <determination>
                 <federalRegisterOfLegislationReference>F2006L02911</federalRegisterOfLegislationReference>
                 <commencementDate>1996-04-01</commencementDate>
@@ -224,6 +262,25 @@
                     </specifiedArea>
 
                 </specifiedAreas>
+            </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02865</federalRegisterOfLegislationReference>
+                <commencementDate>1994-07-12</commencementDate>
+                <specifiedAreas>
+                    <specifiedArea>Mozambique</specifiedArea>
+                </specifiedAreas>
+                <qualifications>
+                    <qualification>part of the United Nations humanitarian operations</qualification>
+                </qualifications>
+            </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02864</federalRegisterOfLegislationReference>
+                <commencementDate>1986-11-17</commencementDate>
+                <specifiedAreas>
+                    <specifiedArea>the waters of the Gulf of Iran and the Gulf of Oman west of the line joining Rass-Al-Hadd and the southern end of the Iran Pakistan border, and the countries littoral to those waters, to a maximum distance inland of 50 km from the high water mark</specifiedArea>
+                </specifiedAreas>
+                <startDate>1986-11-17</startDate>
+                <endDate>1989-02-28</endDate>
             </determination>
         </determinations>
     </hazardous>
