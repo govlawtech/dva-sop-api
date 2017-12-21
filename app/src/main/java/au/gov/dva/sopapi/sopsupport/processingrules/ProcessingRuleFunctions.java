@@ -9,11 +9,13 @@ import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
+import au.gov.dva.sopapi.sopsupport.processingrules.rules.SatisfiedFactorWithApplicablePart;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Tuple2;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -21,6 +23,8 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -195,6 +199,43 @@ public class ProcessingRuleFunctions {
 
     }
 
+
+    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs, Function<String, Tuple2<String,String>> splitFactorReferenceToMainAndSubPart, BiFunction<String,String,Optional<String>> tryExtractSubPartText)
+    {
+        // pull out sub para from para ref
+        // pull out text from para
+        // add to return value
+
+        ImmutableSet<String> mainFactorReferences = factorParagraphs.stream().map(s -> splitFactorReferenceToMainAndSubPart.apply(s)._1())
+                .collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
+
+        ImmutableList<FactorWithSatisfaction> factorsWithSatisfaction = withSatisfiedFactors(factors,mainFactorReferences);
+
+        ImmutableList<FactorWithSatisfaction> withSubParts = factorsWithSatisfaction.stream()
+                .map(factorWithSatisfaction -> {
+                    if (mainFactorReferences.contains(factorWithSatisfaction.getFactor().getParagraph())) // key search
+                    {
+                        return factorWithSatisfaction;
+                    }
+                    else {
+                        Tuple2<String,String> factorReferenceParts = splitFactorReferenceToMainAndSubPart.apply(factorWithSatisfaction.getFactor().getParagraph());
+                        String subPartRef = factorReferenceParts._2();
+                        Optional<String> applicablePart = tryExtractSubPartText.apply(subPartRef,factorWithSatisfaction.getFactor().getText());
+                        if (applicablePart.isPresent())
+                        {
+                            return new SatisfiedFactorWithApplicablePart(factorWithSatisfaction,applicablePart.get());
+                        }
+                        return factorWithSatisfaction;
+
+                    }
+                })
+                .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+
+        return withSubParts;
+
+    }
+
+
     public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs) {
 
         ImmutableList<FactorWithSatisfaction> factorsWithSatisfaction = factors.stream()
@@ -203,7 +244,6 @@ public class ProcessingRuleFunctions {
 
         return factorsWithSatisfaction;
     }
-
 
 
     public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {

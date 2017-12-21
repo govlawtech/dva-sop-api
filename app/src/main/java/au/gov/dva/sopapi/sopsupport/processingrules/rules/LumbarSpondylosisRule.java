@@ -15,6 +15,8 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
 
     Interval rhIntervalUsed;
 
+
+
     public LumbarSpondylosisRule(ConditionConfiguration conditionConfiguration) {
         super(conditionConfiguration);
     }

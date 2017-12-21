@@ -24,4 +24,5 @@ public class FactorWithSatisfactionImpl implements FactorWithSatisfaction {
         return isSatisfied;
     }
 
+
 }

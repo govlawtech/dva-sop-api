@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.interfaces;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Optional;
@@ -19,7 +20,6 @@ public interface RuleConfigurationItem {
     Rank getRank();
 
     int getRequiredCFTSDays();
-
 
 }
 
