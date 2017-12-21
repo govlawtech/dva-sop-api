@@ -213,7 +213,7 @@ public class ProcessingRuleFunctions {
 
         ImmutableList<FactorWithSatisfaction> withSubParts = factorsWithSatisfaction.stream()
                 .map(factorWithSatisfaction -> {
-                    if (mainFactorReferences.contains(factorWithSatisfaction.getFactor().getParagraph())) // key search
+                    if (!mainFactorReferences.contains(factorWithSatisfaction.getFactor().getParagraph())) // key search
                     {
                         return factorWithSatisfaction;
                     }
