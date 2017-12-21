@@ -78,12 +78,16 @@ public class ProcessingRuleBase {
         );
     }
 
-
-    protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, CaseTrace caseTrace) {
-
+    protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, boolean defaultToNoneIfBoP, CaseTrace caseTrace) {
 
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         Optional<Service> serviceDuringOrAfterWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+
+        if (!serviceDuringOrAfterWhichConditionStarts.isPresent())
+        {
+            caseTrace.addLoggingTrace("The service history does not show any continuous full time service before or during the condition onset.");
+            return Optional.empty();
+        }
 
         Integer requiredOperationalServiceDaysToApplyRhSop = conditionConfiguration
                 .getRHRuleConfigurationFor(relevantRank.get(), serviceDuringOrAfterWhichConditionStarts.get().getBranch())
@@ -111,11 +115,19 @@ public class ProcessingRuleBase {
             caseTrace.addLoggingTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
             return Optional.of(condition.getSopPair().getRhSop());
-        } else {
+        } else if (!defaultToNoneIfBoP) {
             caseTrace.addLoggingTrace("The BoP SoP is applicable as the actual number of days of operational service in the test period is less than the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
             return Optional.of(condition.getSopPair().getBopSop());
         }
+        else {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"Veteran Centric Processing only applies to the reasonable hypothesis standard for this condition.");
+            return Optional.empty();
+        }
+    }
+
+    protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, CaseTrace caseTrace) {
+        return getApplicableSop(condition, serviceHistory,  isOperational, rhInterval, false,  caseTrace);
     }
 
 

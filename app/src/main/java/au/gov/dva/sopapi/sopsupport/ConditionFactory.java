@@ -12,6 +12,7 @@ import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfServiceSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
+import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedYearsPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
 
@@ -79,7 +80,7 @@ public class ConditionFactory {
                 return new RotatorCuffSyndromeRule(conditionConfiguration);
             case "acquired cataract":
                 return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
-            case "Achilles tendonopathy and bursitis":
+            case "achilles tendinopathy and bursitis":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "chondromalacia patella":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
@@ -112,6 +113,12 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "femoroacetabular impingement syndrome":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+            case "posttraumatic stress disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "anxiety disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new FixedYearsPeriodSelector(5));
+            case "adjustment disorder":
+                return new MentalHealthProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(84));
         }
 
         return null;

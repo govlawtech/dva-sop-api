@@ -29,6 +29,110 @@ public class OperationNameMappingTests {
     }
 
     @Test
+    public void PaladinNotMatchedBecauseOfIncorrectDates()
+    {
+        // actual Paladin warlike operation runs 12 July 2006—14 August 2006
+        // actual non-warlike operation runs 21 April 2003–11 July 2006
+
+        Deployment mockDeployment = new Deployment() {
+            @Override
+            public String getOperationName() {
+                return "operation Paladin";
+            }
+
+            @Override
+            public String getEvent() {
+                return null;
+            }
+
+            // one day before the actual start date
+            @Override
+            public LocalDate getStartDate() {
+                return LocalDate.of(2006,7,11);
+            }
+
+            // ends on last date of operation
+            @Override
+            public Optional<LocalDate> getEndDate() {
+                return Optional.of(LocalDate.of(2006,8,14));
+            }
+        };
+
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        boolean result = underTest.test(mockDeployment);
+        assert(result == false);
+
+    }
+
+    @Test
+    public void PaladinNotMatchedBecauseNonWarlike() {
+
+
+        Deployment mockDeployment = new Deployment() {
+            @Override
+            public String getOperationName() {
+                return "OPERATION PALADIN";
+            }
+
+            @Override
+            public String getEvent() {
+                return null;
+            }
+
+            // start of non-warlike paladin - correct dates
+            @Override
+            public LocalDate getStartDate() {
+                return LocalDate.of(2003,4,21);
+            }
+
+            // end of non-warlike palidin - correct dates
+            @Override
+            public Optional<LocalDate> getEndDate() {
+                return Optional.of(LocalDate.of(2006, 7, 11));
+            }
+        };
+
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        boolean result = underTest.test(mockDeployment);
+        assert(result == false);
+
+    }
+
+    @Test
+    public void PaladinMatchedBecauseWarlike() {
+
+        Deployment mockDeployment = new Deployment() {
+            @Override
+            public String getOperationName() {
+                return "OPERATION PALADIN";
+            }
+
+            @Override
+            public String getEvent() {
+                return null;
+            }
+
+            // start of warlike paladin - correct dates
+            @Override
+            public LocalDate getStartDate() {
+                return LocalDate.of(2006,7,12);
+            }
+
+            // end of warlike palidin - correct dates
+            @Override
+            public Optional<LocalDate> getEndDate() {
+                return Optional.of(LocalDate.of(2006, 8, 14));
+            }
+        };
+
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        boolean result = underTest.test(mockDeployment);
+        assert(result == true);
+
+    }
+
+
+    @Test
     public void WorksWithOpPrefix() {
         Deployment testData = new Deployment() {
 
@@ -63,6 +167,7 @@ public class OperationNameMappingTests {
     @Test
     public void CompareIshOperations() {
         ImmutableList<String> ishOperationNames = ImmutableList.of(
+                "International Security Assistance Force",
                 "OP ACCORDION",
                 "OP MANITOU",
                 "OP RAMP - NONWARLIKE LEBANON",
@@ -86,7 +191,7 @@ public class OperationNameMappingTests {
                 "Operation CORACLE",
                 "Operation DAMASK X",
                 "OPERATION DESERT STORM",
-                "OPERATION ENDURING FREEDOM (US",
+                "OPERATION ENDURING FREEDOM",
                 "Operation FALCONER",
                 "OPERATION GEMINI",
                 "OPERATION GOODWILL",
@@ -146,12 +251,12 @@ public class OperationNameMappingTests {
 
                 @Override
                 public LocalDate getStartDate() {
-                    return null;
+                    return LocalDate.of(2000,1,1);
                 }
 
                 @Override
                 public Optional<LocalDate> getEndDate() {
-                    return null;
+                    return Optional.empty();
                 }
             });
 

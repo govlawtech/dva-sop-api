@@ -4,7 +4,8 @@ apply plugin: 'war'
 apply plugin: 'findbugs'
 
 
-version = '1.10.4'
+
+version = '1.11.7'
 
 sourceSets {
     main {

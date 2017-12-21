@@ -45,8 +45,11 @@ public class CacheSingleton implements Cache {
     }
 
 
+
+
     @Override
-    public void refresh(Repository repository) {
+    public void refresh(Repository repository)
+    {
         try {
             ImmutableSet<SoP> allSops = repository.getAllSops();
             ImmutableSet<ServiceDetermination> allServiceDeterminations = repository.getServiceDeterminations();
