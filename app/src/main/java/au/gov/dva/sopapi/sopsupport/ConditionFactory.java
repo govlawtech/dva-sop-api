@@ -15,10 +15,12 @@ import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysP
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedYearsPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
+import scala.Tuple2;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -67,6 +69,8 @@ public class ConditionFactory {
                 return Optional.empty();
         }
     }
+
+
 
 
     private static ProcessingRule BuildRuleFromConfig(ConditionConfiguration conditionConfiguration) {

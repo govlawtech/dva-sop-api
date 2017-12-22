@@ -2,7 +2,7 @@ package au.gov.dva.sopapi.tests.parsertests.subfactors
 
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.SubFactorInfo
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.NewSoPStyleSubFactorParser
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{NewSoPStyleSubFactorParser, SubparaReferences}
 import com.google.common.collect.ImmutableSet
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -11,12 +11,27 @@ import org.scalatest.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class SubfactorParserTests extends FunSuite {
 
-  val underTest = new NewSoPStyleSubFactorParser()
+  test("split to sub paras") {
 
-  val result: List[SubFactorInfo] = underTest.divideFactorsToSubFactors(new mockFactor)
-  result.foreach(println(_))
-  assert(result.size == 5)
+    val underTest = new NewSoPStyleSubFactorParser()
+
+    val result: List[SubFactorInfo] = underTest.divideFactorsToSubFactors(new mockFactor)
+    result.foreach(println(_))
+    assert(result.size == 5)
+  }
+
+
+  test("split para reference")
+   {
+     val testdata = "9(14)(b)"
+     val result = SubparaReferences.splitNewStyleSopSubParaReference(testdata)
+     assert(result._1 == "9(14)" && result._2 == "(b)")
+   }
 }
+
+
+
+
 
 class mockFactor extends Factor
 {

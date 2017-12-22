@@ -196,9 +196,7 @@ public class ProcessingRuleFunctions {
             Rank rank = relevantService.get().getRank();
             return Optional.ofNullable(rank);
         }
-
     }
-
 
     public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs, Function<String, Tuple2<String,String>> splitFactorReferenceToMainAndSubPart, BiFunction<String,String,Optional<String>> tryExtractSubPartText)
     {
@@ -222,17 +220,16 @@ public class ProcessingRuleFunctions {
                             return new SatisfiedFactorWithApplicablePart(factorWithSatisfaction,applicablePart.get());
                         }
                         return factorWithSatisfaction;
-
                     }
                 })
                 .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
 
         return withSubParts;
-
     }
 
 
-    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs) {
+    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs)
+    {
 
         ImmutableList<FactorWithSatisfaction> factorsWithSatisfaction = factors.stream()
                 .map(factor -> factorParagraphs.contains(factor.getParagraph()) ? new FactorWithSatisfactionImpl(factor, true) : new FactorWithSatisfactionImpl(factor, false))
