@@ -60,6 +60,7 @@ public class Routes {
     private static CacheSingleton cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
 
+
     public static void initStatus(Repository repository, CacheSingleton cache) {
 
         get("/refreshCache", (req, res) -> {

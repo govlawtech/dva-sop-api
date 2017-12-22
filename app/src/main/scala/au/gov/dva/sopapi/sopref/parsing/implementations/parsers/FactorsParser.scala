@@ -51,15 +51,15 @@ object FactorsParser extends MiscRegexes {
   }
 
 
-  private def splitToParas(factorSectionLines: List[String]): List[List[String]] = {
+  def splitToParas(factorSectionLines: List[String], paraRegex : Regex): List[List[String]] = {
     if (factorSectionLines.isEmpty) return List()
-    val (paraExclFirst, rest) = factorSectionLines.tail.span(line => regexForAnySection.findFirstIn(line).isEmpty)
-    factorSectionLines.head +: paraExclFirst :: splitToParas(rest)
+    val (paraExclFirst, rest) = factorSectionLines.tail.span(line => paraRegex.findFirstIn(line).isEmpty)
+    factorSectionLines.head +: paraExclFirst :: splitToParas(rest, paraRegex)
   }
 
-  private def lineSetsToClass(linesets: List[List[String]]): List[ParaLines] = {
+   def lineSetsToClass(linesets: List[List[String]], regexForSectionStart: Regex): List[ParaLines] = {
     linesets.map(l => {
-      val legalRef = regexForAnySection.findFirstIn(l.head).get
+      val legalRef = regexForSectionStart.findFirstIn(l.head).get
       ParaLines(legalRef, l)
     })
   }
@@ -77,7 +77,7 @@ object FactorsParser extends MiscRegexes {
     else false
   }
 
-  private def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
+  def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
     if (paraLines.isEmpty) acc.reverse
     else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List())),paraLinesShouldBeChildrenAccordingToCustomRule) // first para will always be main para
     else if (isChild(acc.head, paraLines.head) || paraLinesShouldBeChildrenAccordingToCustomRule(acc.head,paraLines.head)) {
@@ -91,8 +91,8 @@ object FactorsParser extends MiscRegexes {
   }
 
   private def oldStyleSmallLetterLinesToParas(lines: List[String], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
-    val paras: List[List[String]] = FactorsParser.splitToParas(lines)
-    val lineSets = FactorsParser.lineSetsToClass(paras)
+    val paras: List[List[String]] = FactorsParser.splitToParas(lines,regexForAnySection)
+    val lineSets = FactorsParser.lineSetsToClass(paras,regexForAnySection)
     val mainParas = FactorsParser.groupToMainParas(lineSets, List(), paraLinesShouldBeChildrenAccordingToCustomRule)
     mainParas
   }

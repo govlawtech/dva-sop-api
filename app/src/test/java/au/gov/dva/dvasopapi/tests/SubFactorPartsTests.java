@@ -14,9 +14,6 @@ import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/**
- * Created by nick on 12/21/2017.
- */
 public class SubFactorPartsTests {
 
     @Test
@@ -52,5 +49,6 @@ public class SubFactorPartsTests {
         Assert.assertTrue(result.get(0).getApplicablePart().contentEquals("(b) lifting loads of at least 20 kilograms while bearing weight\\r\\nthrough the affected joint to a cumulative total of at least\\r\\n100 000 kilograms within any ten year period before the clinical\\r\\nonset of osteoarthritis in that joint;"));
 
     }
+
 
 }

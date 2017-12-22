@@ -20,8 +20,6 @@ trait PreAug2015FactorsParser extends MiscRegexes {
   }
 
 
-
-
   def parseFactorsSection(factorsSectionText: String, paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean = (_,_) => false): (StandardOfProof, List[FactorInfo]) = {
 
     val (header, rest: List[String]) = splitToHeaderAndRest(factorsSectionText)

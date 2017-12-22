@@ -202,10 +202,6 @@ public class ProcessingRuleFunctions {
 
     public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs, Function<String, Tuple2<String,String>> splitFactorReferenceToMainAndSubPart, BiFunction<String,String,Optional<String>> tryExtractSubPartText)
     {
-        // pull out sub para from para ref
-        // pull out text from para
-        // add to return value
-
         ImmutableSet<String> mainFactorReferences = factorParagraphs.stream().map(s -> splitFactorReferenceToMainAndSubPart.apply(s)._1())
                 .collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
 

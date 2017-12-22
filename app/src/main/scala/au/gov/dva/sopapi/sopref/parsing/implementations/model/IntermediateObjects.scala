@@ -33,5 +33,3 @@ class FactorInfoWithoutSubParas(mainParaLetter : String, bodyText: String) exten
 
 
 
-
-
