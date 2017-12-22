@@ -15,6 +15,7 @@ class SubfactorParserTests extends FunSuite {
 
   val result: List[SubFactorInfo] = underTest.divideFactorsToSubFactors(new mockFactor)
   result.foreach(println(_))
+  assert(result.size == 5)
 }
 
 class mockFactor extends Factor

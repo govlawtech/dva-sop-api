@@ -17,7 +17,7 @@ class NewSoPStyleSubFactorParser extends SubFactorParser with MiscRegexes {
     val paras: List[List[String]] = FactorsParser.splitToParas(lines,regexForParaStart)
     val asClasses = FactorsParser.lineSetsToClass(paras.tail,regexForParaStart)
     val grouped: List[FactorsParser.MainPara] = FactorsParser.groupToMainParas(asClasses,List(), (_, _) => false)
-    val subFactors = grouped.map(mp => new SubFactorInfo(mp.paraLinesParent.legalRef,mp.flattenLines))
+    val subFactors = grouped.map(mp => new SubFactorInfo(mp.paraLinesParent.legalRef,mp.flattenLines).stripTrailingPunctuation)
     subFactors
   }
 
