@@ -21,5 +21,6 @@ class NewSoPStyleSubFactorParser extends SubFactorParser with MiscRegexes {
     subFactors
   }
 
+
   override def tryParseConditionVariant(factor: Factor): Option[String] = ???
 }

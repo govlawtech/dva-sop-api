@@ -20,7 +20,6 @@ class SubfactorParserTests extends FunSuite {
     assert(result.size == 5)
   }
 
-
   test("split para reference")
    {
      val testdata = "9(14)(b)"
@@ -28,8 +27,6 @@ class SubfactorParserTests extends FunSuite {
      assert(result._1 == "9(14)" && result._2 == "(b)")
    }
 }
-
-
 
 
 

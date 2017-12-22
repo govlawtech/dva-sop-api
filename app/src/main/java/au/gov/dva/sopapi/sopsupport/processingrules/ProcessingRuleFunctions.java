@@ -198,7 +198,7 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs, Function<String, Tuple2<String,String>> splitFactorReferenceToMainAndSubPart, BiFunction<String,String,Optional<String>> tryExtractSubPartText)
+    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs, Function<String, Tuple2<String,String>> splitFactorReferenceToMainAndSubPart, BiFunction<String,Factor,Optional<String>> tryExtractSubPartText)
     {
         ImmutableSet<String> mainFactorReferences = factorParagraphs.stream().map(s -> splitFactorReferenceToMainAndSubPart.apply(s)._1())
                 .collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
@@ -214,7 +214,7 @@ public class ProcessingRuleFunctions {
                     else {
                         Tuple2<String,String> factorReferenceParts = splitFactorReferenceToMainAndSubPart.apply(factorWithSatisfaction.getFactor().getParagraph());
                         String subPartRef = factorReferenceParts._2();
-                        Optional<String> applicablePart = tryExtractSubPartText.apply(subPartRef,factorWithSatisfaction.getFactor().getText());
+                        Optional<String> applicablePart = tryExtractSubPartText.apply(subPartRef,factorWithSatisfaction.getFactor());
                         if (applicablePart.isPresent())
                         {
                             return new SatisfiedFactorWithApplicablePart(factorWithSatisfaction,applicablePart.get());
