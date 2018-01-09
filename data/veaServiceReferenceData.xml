@@ -9,6 +9,158 @@
         <description>Operational service—warlike and non‑warlike service</description>
 
         <warlikeDeterminations>
+        
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2009L02442</federalRegisterOfLegislationReference>
+                <commencementDate>2008-07-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>RIVERBANK</name>
+                        <startDate>2008-07-21</startDate>
+                        <qualifications>
+                            <qualification>service with the Australian Defence Force contribution to the United Nations Assistance Mission in Iraq</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00960</federalRegisterOfLegislationReference>
+                <commencementDate>2003-09-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>FALCONER</name>
+                        <startDate>2003-03-18</startDate>
+                        <endDate>2003-07-22</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>The area bounded by the geographical coordinates: 38 00N, 68 00E; 38 00N, 32 00E; 10 00N, 32 00E; 10 00N, 68 00E.
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2010L00699</federalRegisterOfLegislationReference>
+                <commencementDate>2010-02-12</commencementDate>
+                <operations>
+                    <operation>
+                        <name>CATALYST</name>
+                        <startDate>2003-07-16</startDate>
+                        <endDate>2009-07-31</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>Kuwait, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>Bahrain, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>Qatar, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>United Arab Emirates, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>Saudia Arabia, territorial waters and adjacent airspace north of 23 degrees North latitude</specifiedArea>
+                            <specifiedArea>the Persian Gulf</specifiedArea>
+                            <specifiedArea>the Straight of Hormuz</specifiedArea>
+
+
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00579</federalRegisterOfLegislationReference>
+                <commencementDate>2003-09-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>CITADEL</name>
+                        <startDate>2002-05-20</startDate>
+                        <endDate>2003-08-17</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the territorial sea of East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00577</federalRegisterOfLegislationReference>
+                <commencementDate>2004-04-01</commencementDate>
+                <operations>
+                    <operation>
+                        <name>TANAGER</name>
+                        <startDate>2000-02-20</startDate>
+                        <endDate>2002-05-19</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the territorial sea of East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00578</federalRegisterOfLegislationReference>
+                <commencementDate>2000-06-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>WARDEN</name>
+                        <startDate>1999-09-16</startDate>
+                        <endDate>2000-04-10</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the sea area that on 16 September 1999 was the territorial sea of Indonesia adjacent to East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2005L03487</federalRegisterOfLegislationReference>
+                <commencementDate>2005-10-31</commencementDate>
+                <operations>
+                    <operation>
+                        <name>PALATE</name>
+                        <startDate>2003-04-18</startDate>
+                        <endDate>2004-06-30</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2009L00722</federalRegisterOfLegislationReference>
+                <commencementDate>2009-01-01</commencementDate>
+                <operations>
+                    <operation>
+                        <name>KRUGER</name>
+                        <startDate>2009-01-01</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00958</federalRegisterOfLegislationReference>
+                <commencementDate>2000-06-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>FABER</name>
+                        <startDate>1999-09-16</startDate>
+                        <endDate>2000-02-23</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the sea area that on 16 September 1999 was the territorial sea of Indonesia adjacent to East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
 
             <determination>
                 <federalRegisterOfLegislationReference>F2006L01121</federalRegisterOfLegislationReference>
@@ -99,8 +251,74 @@
 
         <non-warlikeDeterminations>
 
-            
+           <determination>
+               <federalRegisterOfLegislationReference>F2005L04103</federalRegisterOfLegislationReference>
+               <commencementDate>2005-12-08</commencementDate>
+               <operations>
+                   <operation>
+                       <name>SPIRE</name>
+                       <startDate>2004-05-20</startDate>
+                       <specifiedAreas>
+                           <specifiedArea>East Timor and the territorial sea of East Timor</specifiedArea>
+                       </specifiedAreas>
+                   </operation>
 
+
+               </operations>
+           </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2005L04106</federalRegisterOfLegislationReference>
+                <commencementDate>2005-12-08</commencementDate>
+                <operations>
+                    <operation>
+                        <name>AZURE</name>
+                        <startDate>2005-04-10</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Sudan and its territorial waters and superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+           <determination>
+               <federalRegisterOfLegislationReference>F2006B00951</federalRegisterOfLegislationReference>
+               <commencementDate>2000-11-23</commencementDate>
+               <operations>
+                   <operation>
+                       <name>TREK</name>
+                       <startDate>2000-11-04</startDate>
+                       <specifiedAreas>
+                           <specifiedArea>the Solomon Islands and its territorial sea</specifiedArea>
+                       </specifiedAreas>
+                   </operation>
+               </operations>
+           </determination> 
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00566</federalRegisterOfLegislationReference>
+                <commencementDate>2004-07-06</commencementDate>
+                <qualifications>
+                    <qualification>service rendered as a member of the Royal Australian Air Force aircrew in the Berlin Airlift</qualification>
+                </qualifications>
+                <startDate>1948-09-15</startDate>
+                <endDate>1949-08-29</endDate>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L03709</federalRegisterOfLegislationReference>
+                <commencementDate>2006-07-20</commencementDate>
+                <operations>
+                    <operation>
+                        <name>RAMP</name>
+                        <startDate>2006-07-20</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Lebanon and its territorial waters and superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
             <determination>
                 <federalRegisterOfLegislationReference>F2006L02913</federalRegisterOfLegislationReference>
                 <commencementDate>1997-02-13</commencementDate>
@@ -308,8 +526,7 @@
                         </table>
                     </html>]]>
                     </specifiedArea>
-                    <specifiedArea>the sea area contained within the Suez Canal and the Mediterranean Sea east of 30°
-                        E
+                    <specifiedArea>the sea area contained within the Suez Canal and the Mediterranean Sea east of 30°E
                     </specifiedArea>
 
                 </specifiedAreas>
