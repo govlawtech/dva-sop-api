@@ -10,6 +10,29 @@
 
         <warlikeDeterminations>
 
+            <determination>
+                <federalRegisterOfLegislationReference>F2010L00176</federalRegisterOfLegislationReference>
+                <commencementDate>2009-12-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SLIPPER</name>
+                        <startDate>2001-10-11</startDate>
+                        <endDate>2009-07-30</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>
+                                <![CDATA[the area bounded by the following coordinates:
+                                <ul>
+                                <li> 48  00N         81 00E</li>
+                                <li>48 00N          35 00E</li>
+                                <li>12 00N          35 00E</li>
+                                <li>12 00N          81 00E</li>
+                                </ul>
+                    ]]></specifiedArea>
+                            <specifiedArea>the Diego Garcia land mass and territorial waters, plus airspace of Diego Garcia out to 250nm radius (from Reference Point 07 18.6S 072 24.6E)</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
             
             <determination>
                 <federalRegisterOfLegislationReference>F2007L04377</federalRegisterOfLegislationReference>
@@ -326,7 +349,45 @@
         </warlikeDeterminations>
 
         <non-warlikeDeterminations>
-        
+      
+            <determination>
+                <federalRegisterOfLegislationReference>F2007B00579</federalRegisterOfLegislationReference>
+                <commencementDate>1999-08-24</commencementDate>
+                <operations>
+                    <operation>
+                        <name>JOINT GUARDIAN</name>
+                        <startDate>1999-06-11</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>the Federal Republic of Yugoslavia</specifiedArea>
+                            <specifiedArea>Albania</specifiedArea>
+                            <specifiedArea>the Former Yugoslav Republic of Macedonia</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2007B00576</federalRegisterOfLegislationReference>
+                <commencementDate>1999-08-24</commencementDate>
+                <operations>
+                    <operation>
+                        <name>ALLIED FORCE</name>
+                        <startDate>1999-04-15</startDate>
+                        <endDate>1999-06-03</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Federal Republic of Yugoslavia</specifiedArea>
+                            <specifiedArea>Albania</specifiedArea>
+                            <specifiedArea>Former Yugoslav Republic of Macedonia</specifiedArea>
+                            <specifiedArea>the Adriatic Sea</specifiedArea>
+                            <specifiedArea>NATO bases in Italy</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>serving with the NATO operation against the Federal Republic of Yugoslavia</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+            
             <determination>
                 <federalRegisterOfLegislationReference>F2007B00578</federalRegisterOfLegislationReference>
                 <commencementDate>1999-08-24</commencementDate>
@@ -636,7 +697,10 @@
                 <operations>
                     <operation>
                         <name>BEL ISI</name>
-                        <qualification>serving with the Truce Monitoring Group</qualification>
+                        <qualifications>
+                            <qualification>serving with the Truce Monitoring Group</qualification>
+                        </qualifications>
+
                         <specifiedAreas>
                             <specifiedArea>Bougainville</specifiedArea>
                             <specifiedArea>Buka Islands</specifiedArea>
@@ -718,6 +782,66 @@
         <veaLegislativeReference>69A</veaLegislativeReference>
 
         <determinations>
+           
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02857</federalRegisterOfLegislationReference>
+                <commencementDate>1991-05-09</commencementDate>
+                <operations>
+                    <operation>
+                        <name>HABITAT</name>
+                        <startDate>1991-05-07</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                            <specifiedArea>the area of Turkey south of latitude 38° north</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                    <operation>
+                        <name>BLAZER</name>
+                        <startDate>1991-07-02</startDate>
+                        <qualifications>
+                            <qualification>with the United Nations Special Commission for the Destruction of Weapons of Mass Destruction</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+                <otherActivities>
+                    <otherActivity>
+                        <startDate>1991-06-09</startDate>
+                        <endDate>1996-03-31</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>the Arabian Gulf</specifiedArea>
+                            <specifiedArea>the Gulf of Oman</specifiedArea>
+                            <specifiedArea>the Northern Arabian Sea</specifiedArea>
+                            <specifiedArea>the Gulf of Aden</specifiedArea>
+                            <specifiedArea>
+                                <![CDATA[<html>
+                                the Red Sea bounded to the south and east by the following coordinates:
+                               <ul>
+                                <li>25°  00°   North  -  61°  50°   East</li>
+                                <li>20°  00°   North  -  61°  50°   East</li>
+                                <li>11°  50°   North  -  51°  17°   East</li>
+                                </ul>
+                                ]]>
+
+                                </specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>afloat in Royal Australian naval or allied naval units</qualification>
+                        </qualifications>
+                    </otherActivity>
+                </otherActivities>
+            </determination>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02912</federalRegisterOfLegislationReference>
+                <commencementDate>1997-01-24</commencementDate>
+                <specifiedAreas>
+                    <specifiedArea>the former Republic of Yugoslavia</specifiedArea>
+                </specifiedAreas>
+                <startDate>1997-01-24</startDate>
+            </determination>
             
             <determination>
                 <federalRegisterOfLegislationReference>F2007L01654</federalRegisterOfLegislationReference>

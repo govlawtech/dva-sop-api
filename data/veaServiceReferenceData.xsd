@@ -8,7 +8,7 @@
   </xs:complexType>
   <xs:complexType name="qualificationsType">
     <xs:sequence>
-      <xs:element type="xs:string" name="qualification"/>
+      <xs:element type="xs:string" name="qualification" minOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="non-warlikeDeterminationsType">
@@ -42,12 +42,26 @@
   </xs:complexType>
   <xs:complexType name="operationType">
     <xs:all>
-      <xs:element type="xs:string" name="name"/>
-      <xs:element type="xs:string" name="qualification" minOccurs="0"/>
+      <xs:element type="xs:string" name="name" minOccurs="1"/>
       <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
       <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
-      <xs:element type="xs:date" name="startDate"/>
+      <xs:element type="xs:date" name="startDate" minOccurs="1"/>
       <xs:element type="xs:date" name="endDate" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="otherActivitiesType">
+   <xs:sequence>
+     <xs:element type="otherActivityType" name="otherActivity" minOccurs="1"/>
+   </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="otherActivityType">
+    <xs:all>
+    <xs:element type="xs:date" name="startDate" minOccurs="1"/>
+    <xs:element type="xs:date" name="endDate"/>
+    <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
+    <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
     </xs:all>
   </xs:complexType>
   <xs:complexType name="determinationsType">
@@ -67,6 +81,7 @@
       <xs:element type="xs:string" name="federalRegisterOfLegislationReference"/>
       <xs:element type="xs:date" name="commencementDate"/>
       <xs:element type="operationsType" name="operations" minOccurs="0"/>
+      <xs:element type="otherActivitiesType" name="otherActivities" minOccurs="0"/>
       <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
       <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
       <xs:element type="xs:date" name="startDate" minOccurs="0"/>
