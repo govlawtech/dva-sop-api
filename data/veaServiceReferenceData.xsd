@@ -59,7 +59,7 @@
   <xs:complexType name="otherActivityType">
     <xs:all>
     <xs:element type="xs:date" name="startDate" minOccurs="1"/>
-    <xs:element type="xs:date" name="endDate"/>
+    <xs:element type="xs:date" name="endDate" minOccurs="0"/>
     <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
     <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
     </xs:all>
@@ -82,8 +82,8 @@
       <xs:element type="xs:date" name="commencementDate"/>
       <xs:element type="operationsType" name="operations" minOccurs="0"/>
       <xs:element type="otherActivitiesType" name="otherActivities" minOccurs="0"/>
-      <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
-      <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
+    <!--  <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
+      <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>-->
       <xs:element type="xs:date" name="startDate" minOccurs="0"/>
       <xs:element type="xs:date" name="endDate" minOccurs="0"/>
     </xs:all>
