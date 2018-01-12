@@ -22,7 +22,7 @@
                             <specifiedArea>
                                 <![CDATA[the area bounded by the following coordinates:
                                 <ul>
-                                <li> 48  00N         81 00E</li>
+                                <li>48 00N         81 00E</li>
                                 <li>48 00N          35 00E</li>
                                 <li>12 00N          35 00E</li>
                                 <li>12 00N          81 00E</li>
@@ -38,7 +38,7 @@
 
             <determination>
                 <federalRegisterOfLegislationReference>F2007L04377</federalRegisterOfLegislationReference>
-                <commencementDate>2007-01-15</commencementDate>
+                <commencementDate>2007-04-16</commencementDate>
                 <operations>
                     <operation>
                         <name>PROVIDE COMFORT</name>
@@ -266,6 +266,11 @@
                         <specifiedAreas>
                             <specifiedArea>Iraq</specifiedArea>
                         </specifiedAreas>
+                        <qualifications>
+                            <qualification>with the Australian Defence Force contribution to the provision of security
+                                to the Australian Embassy in Iraq
+                            </qualification>
+                        </qualifications>
                     </operation>
                 </operations>
             </determination>
@@ -295,7 +300,7 @@
                     <operation>
                         <name>TAMAR</name>
                         <startDate>1994-07-25</startDate>
-                        <endDate>1996-02-16</endDate>
+                        <endDate>1996-01-16</endDate>
                         <specifiedAreas>
                             <specifiedArea>Rwanda</specifiedArea>
                             <specifiedArea>the areas in Uganda, Zaire (now known as the Democratic Republic of the
@@ -337,8 +342,12 @@
                         <startDate>2001-01-15</startDate>
                         <endDate>2003-02-28</endDate>
                         <qualifications>
-                            <qualification>with the International Military Advisory and Training Team</qualification>
+                            <qualification>with the International Military Advisory and Training Team in Sierra Leone
+                            </qualification>
                         </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Sierra Leone</specifiedArea>
+                        </specifiedAreas>
                     </operation>
                 </operations>
 
@@ -356,6 +365,11 @@
                                 Iraq
                             </specifiedArea>
                         </specifiedAreas>
+                        <qualifications>
+                            <qualification>with the United Kingdom elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
                         <startDate>1992-08-31</startDate>
                         <endDate>2003-01-12</endDate>
                     </operation>
@@ -372,7 +386,12 @@
                             <specifiedArea>Iraq</specifiedArea>
                         </specifiedAreas>
                         <startDate>1992-08-31</startDate>
-                        <endDate>2003-12-01</endDate>
+                        <endDate>2003-01-12</endDate>
+                        <qualifications>
+                            <qualification>with the United States elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
                     </operation>
                 </operations>
             </determination>
@@ -463,10 +482,9 @@
                         <startDate>1997-07-25</startDate>
                         <endDate>1997-08-07</endDate>
                         <qualifications>
-                        <qualification>service rendered as a member of the Australian Defence Force as part of the Technical
-                            Survey Team
-                        </qualification>
-                    </qualifications>
+                            <qualification>as part of the Technical Survey Team
+                            </qualification>
+                        </qualifications>
                         <specifiedAreas>
                             <specifiedArea>Libreville (Gabon)</specifiedArea>
                             <specifiedArea>Pointe Noire (Republic of the Congo)</specifiedArea>
@@ -570,7 +588,7 @@
                         <startDate>1999-03-18</startDate>
                         <endDate>2001-10-19</endDate>
                         <qualifications>
-                            <qualification>assigned for service with the Multi-national Maritime Interception Force
+                            <qualification>with the Multi-national Maritime Interception Force
                             </qualification>
                         </qualifications>
                         <specifiedAreas>
@@ -594,6 +612,7 @@
                         <specifiedAreas>
                             <specifiedArea>East Timor and its territorial waters and superjacent airspace
                             </specifiedArea>
+
                         </specifiedAreas>
                     </operation>
                 </operations>
@@ -623,8 +642,7 @@
                         <name>ANODE</name>
                         <startDate>2003-07-24</startDate>
                         <specifiedAreas>
-                            <specifiedArea>the total land areas, territorial waters and superjacent airspace boundaries
-                                of the Solomon Islands
+                            <specifiedArea>the Solomon Islands, territorial waters and superjacent airspace
                             </specifiedArea>
                         </specifiedAreas>
                     </operation>
@@ -681,7 +699,8 @@
                 <activities>
                     <activity>
                         <qualifications>
-                            <qualification>service rendered as a member of the Royal Australian Air Force aircrew in the Berlin
+                            <qualification>service rendered as a member of the Royal Australian Air Force aircrew in the
+                                Berlin
                                 Airlift
                             </qualification>
                         </qualifications>
@@ -713,8 +732,8 @@
                 <activities>
                     <activity>
                         <specifiedAreas>
-                        <specifiedArea>Guatemala</specifiedArea>
-                    </specifiedAreas>
+                            <specifiedArea>Guatemala</specifiedArea>
+                        </specifiedAreas>
                         <qualifications>
                             <qualification>part of the United Nations Observer Mission</qualification>
                         </qualifications>
@@ -723,6 +742,7 @@
 
                     </activity>
                 </activities>
+
 
             </determination>
 
@@ -738,7 +758,12 @@
                             <specifiedArea>Kuwait</specifiedArea>
                             <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
                         </specifiedAreas>
-                        <startDate>1999-03-13</startDate>
+                        <qualifications>
+                            <qualification>with the United Kingdom elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
+                        <startDate>1999-05-13</startDate>
                         <endDate>2003-01-12</endDate>
                     </operation>
                 </operations>
@@ -756,8 +781,13 @@
                             <specifiedArea>Kuwait</specifiedArea>
                             <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
                         </specifiedAreas>
+                        <qualifications>
+                            <qualification>with the United States elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
                         <startDate>1999-09-23</startDate>
-                        <endDate>2003-12-01</endDate>
+                        <endDate>2003-01-12</endDate>
                     </operation>
                 </operations>
             </determination>
@@ -775,7 +805,7 @@
                         <specifiedAreas>
                             <specifiedArea>Bougainville</specifiedArea>
                             <specifiedArea>Buka Islands</specifiedArea>
-                            <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
+                            <specifiedArea>the Papua New Guinea territorial waters surrounding Bogainville and Buka
                                 Islands
                             </specifiedArea>
                         </specifiedAreas>
@@ -791,7 +821,7 @@
                         <specifiedAreas>
                             <specifiedArea>Bougainville</specifiedArea>
                             <specifiedArea>Buka Islands</specifiedArea>
-                            <specifiedArea>Papua New Guinea territorial waters surrounding Bogainville and Buka
+                            <specifiedArea>the Papua New Guinea territorial waters surrounding Bogainville and Buka
                                 Islands
                             </specifiedArea>
                         </specifiedAreas>
@@ -856,7 +886,7 @@
 
             <determination>
                 <federalRegisterOfLegislationReference>F2006L02857</federalRegisterOfLegislationReference>
-                <commencementDate>1991-05-09</commencementDate>
+                <commencementDate>1991-05-07</commencementDate>
                 <operations>
                     <operation>
                         <name>HABITAT</name>
@@ -915,6 +945,9 @@
                         <specifiedAreas>
                             <specifiedArea>the former Republic of Yugoslavia</specifiedArea>
                         </specifiedAreas>
+                        <qualifications>
+                            <qualification>while on exchange with the forces of other countries</qualification>
+                        </qualifications>
                         <startDate>1997-01-24</startDate>
                     </activity>
                 </activities>
@@ -927,9 +960,7 @@
                 <activities>
                     <activity>
                         <qualifications>
-                            <qualification>as a member of the Australian Defence Force with the United Nations Office for
-                                Co-ordinating Assistance to Afghanistan (UNOCA) or the United Nations Mine Clearing Training
-                                Team (UNMCTT)
+                            <qualification>with the the United Nations Office for Co-ordinating Assistance to Afghanistan (UNOCA) or the United Nations Mine Clearing Training Team (UNMCTT)
                             </qualification>
                         </qualifications>
                         <specifiedAreas>
@@ -949,9 +980,7 @@
                     <activity>
                         <startDate>1996-04-01</startDate>
                         <specifiedAreas>
-                            <specifiedArea>international waters, contiguous ports and waters used for international navigation
-                                contained with the Arabian Gulf, the Gulf of Oman and the Northern Arabian Sea with an eastern
-                                extremity of 61 degrees, 50 minutes East and a southern extremity of 20 degrees North
+                            <specifiedArea>international waters, contiguous ports and waters used for international navigation contained with the Arabian Gulf, the Gulf of Oman and the Northern Arabian Sea with an eastern extremity of 61 degrees, 50 minutes East and a southern extremity of 20 degrees North
                             </specifiedArea>
                         </specifiedAreas>
 
@@ -962,12 +991,13 @@
 
             <determination>
                 <federalRegisterOfLegislationReference>F2006L02872</federalRegisterOfLegislationReference>
-                <commencementDate>1997-09-17</commencementDate>
+                <commencementDate>1994-09-17</commencementDate>
                 <activities>
                     <activity>
 
                         <qualifications>
-                            <qualification>as part of the United States of America led multi-national force</qualification>
+                            <qualification>as part of the United States of America led multi-national force
+                            </qualification>
                         </qualifications>
                         <specifiedAreas>
                             <specifiedArea>Haiti</specifiedArea>
@@ -985,16 +1015,15 @@
                     <activity>
                         <startDate>1990-08-02</startDate>
                         <specifiedAreas>
-                        <specifiedArea>Bahrain</specifiedArea>
-                        <specifiedArea>Oman</specifiedArea>
-                        <specifiedArea>Qatar</specifiedArea>
-                        <specifiedArea>Saudi Arabia</specifiedArea>
-                        <specifiedArea>United Arab Emirates</specifiedArea>
-                        <specifiedArea>Island of Cyprus</specifiedArea>
-                        <specifiedArea>the sea areas contained within the Gulf of Suez, the Gulf of Aqaba, the Red Sea, the
-                            Gulf of Aden, the Persian Gulf and the Gulf of Oman
-                        </specifiedArea>
-                        <specifiedArea><![CDATA[<html>the sea area contained within the Arabian Sea north of the boundary formed by the joining of each of the following points to the next:
+                            <specifiedArea>Bahrain</specifiedArea>
+                            <specifiedArea>Oman</specifiedArea>
+                            <specifiedArea>Qatar</specifiedArea>
+                            <specifiedArea>Saudi Arabia</specifiedArea>
+                            <specifiedArea>United Arab Emirates</specifiedArea>
+                            <specifiedArea>Island of Cyprus</specifiedArea>
+                            <specifiedArea>the sea areas contained within the Gulf of Suez, the Gulf of Aqaba, the Red Sea, the Gulf of Aden, the Persian Gulf and the Gulf of Oman
+                            </specifiedArea>
+                            <specifiedArea><![CDATA[<html>the sea area contained within the Arabian Sea north of the boundary formed by the joining of each of the following points to the next:
 <table>
 
 <tr>
@@ -1015,14 +1044,16 @@
 </tr>
                         </table>
                     </html>]]>
-                        </specifiedArea>
-                        <specifiedArea>the sea area contained within the Suez Canal and the Mediterranean Sea east of 30°E
-                        </specifiedArea>
+                            </specifiedArea>
+                            <specifiedArea>the sea area contained within the Suez Canal and the Mediterranean Sea east
+                                of 30°E
+                            </specifiedArea>
 
-                    </specifiedAreas>
+
+                        </specifiedAreas>
                     </activity>
                 </activities>
-               
+
             </determination>
             <determination>
                 <federalRegisterOfLegislationReference>F2006L02865</federalRegisterOfLegislationReference>
@@ -1031,10 +1062,10 @@
                     <activity>
                         <startDate>1994-07-12</startDate>
                         <specifiedAreas>
-                        <specifiedArea>Mozambique</specifiedArea>
-                    </specifiedAreas>
+                            <specifiedArea>Mozambique</specifiedArea>
+                        </specifiedAreas>
                         <qualifications>
-                            <qualification>part of the United Nations humanitarian operations</qualification>
+                            <qualification>as part of the United Nations humanitarian operations</qualification>
                         </qualifications>
                     </activity>
                 </activities>
@@ -1049,8 +1080,8 @@
                         <endDate>1989-02-28</endDate>
                         <specifiedAreas>
                             <specifiedArea>the waters of the Gulf of Iran and the Gulf of Oman west of the line joining
-                            Rass-Al-Hadd and the southern end of the Iran Pakistan border, and the countries littoral to
-                            those waters, to a maximum distance inland of 50 km from the high water mark
+                                Rass-Al-Hadd and the southern end of the Iran Pakistan border, and the countries
+                                littoral to those waters, to a maximum distance inland of 50 km from the high water mark
                             </specifiedArea>
                         </specifiedAreas>
 
@@ -1065,7 +1096,8 @@
         <items>
             <item>
                 <number>1</number>
-                <descriptionOfPeacekeepingForce>Security Council Commission of Investigation on the Balkans</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>Security Council Commission of Investigation on the Balkans
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1947-01-29</initialDateAsAPeaceKeepingForce>
             </item>
 
@@ -1077,7 +1109,8 @@
 
             <item>
                 <number>3</number>
-                <descriptionOfPeacekeepingForce>United Nations Special Commission on the Balkans</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Special Commission on the Balkans
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1947-11-26</initialDateAsAPeaceKeepingForce>
             </item>
 
@@ -1089,7 +1122,8 @@
 
             <item>
                 <number>5</number>
-                <descriptionOfPeacekeepingForce>United Nations Military Observer Group in India and Pakistan</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Military Observer Group in India and Pakistan
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1949-01-01</initialDateAsAPeaceKeepingForce>
             </item>
 
@@ -1101,7 +1135,8 @@
 
             <item>
                 <number>7</number>
-                <descriptionOfPeacekeepingForce>United Nations Truce Supervision Organisation</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Truce Supervision Organisation
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1956-06-01</initialDateAsAPeaceKeepingForce>
             </item>
 
@@ -1113,7 +1148,8 @@
 
             <item>
                 <number>9</number>
-                <descriptionOfPeacekeepingForce>United Nations Yemen Observation Mission</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Yemen Observation Mission
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1963-01-01</initialDateAsAPeaceKeepingForce>
             </item>
 
@@ -1125,13 +1161,15 @@
 
             <item>
                 <number>11</number>
-                <descriptionOfPeacekeepingForce>United Nations India-Pakistan Observation Mission</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations India-Pakistan Observation Mission
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1965-09-20</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>12</number>
-                <descriptionOfPeacekeepingForce>United Nations Disengagement Observer Force</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Disengagement Observer Force
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1974-01-01</initialDateAsAPeaceKeepingForce>
             </item>
 
@@ -1149,65 +1187,78 @@
 
             <item>
                 <number>15</number>
-                <descriptionOfPeacekeepingForce>Commonwealth Monitoring Force in Zimbabwe</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>Commonwealth Monitoring Force in Zimbabwe
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1979-12-24</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>16</number>
-                <descriptionOfPeacekeepingForce>Sinai Multinational Force and Observers established by the Protocol between the Arab Republic of Egypt and the State of Israel dated 3 August 1981</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>Sinai Multinational Force and Observers established by the Protocol
+                    between the Arab Republic of Egypt and the State of Israel dated 3 August 1981
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1982-02-18</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>17</number>
-                <descriptionOfPeacekeepingForce>United Nations Iran/Iraq Military Observer Group</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Iran/Iraq Military Observer Group
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1988-08-11</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>18</number>
-                <descriptionOfPeacekeepingForce>United Nations Border Relief Operation in Cambodia</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Border Relief Operation in Cambodia
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1989-02-01</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>19</number>
-                <descriptionOfPeacekeepingForce>United Nations Transition Assistance Group Namibia</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Transition Assistance Group Namibia
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1989-02-18</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>20</number>
-                <descriptionOfPeacekeepingForce>United Nations Mission for the Referendum in Western Sahara (Mission des Nations Unies pour un Referendum au Sahara Occidental)</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>United Nations Mission for the Referendum in Western Sahara (Mission des
+                    Nations Unies pour un Referendum au Sahara Occidental)
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1991-06-27</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>21</number>
-                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Transitional Authority in Cambodia</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Transitional
+                    Authority in Cambodia
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1992-05-18</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>22</number>
-                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Operation in Mozambique</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Operation in
+                    Mozambique
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1994-03-27</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>23</number>
-                <descriptionOfPeacekeepingForce>Australian Defence Support to a Pacific Peacekeeping Force for a Bougainville Peace Conference</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>Australian Defence Support to a Pacific Peacekeeping Force for a
+                    Bougainville Peace Conference
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1994-09-21</initialDateAsAPeaceKeepingForce>
             </item>
 
             <item>
                 <number>24</number>
-                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the Multi-National Force in Haiti</descriptionOfPeacekeepingForce>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the Multi-National Force in Haiti
+                </descriptionOfPeacekeepingForce>
                 <initialDateAsAPeaceKeepingForce>1994-10-10</initialDateAsAPeaceKeepingForce>
             </item>
-
-
 
 
         </items>
