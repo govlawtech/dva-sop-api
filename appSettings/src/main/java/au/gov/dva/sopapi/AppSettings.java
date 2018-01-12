@@ -123,6 +123,21 @@ public class AppSettings {
         }
     }
 
+    public static class AzureTextAnalyticsApi {
+
+        public static String getAPIKey() {
+            return getPropertyValue("AZURE_TEXT_ANALYTICS_ACCESS_KEY");
+        }
+
+        public static String getHost() {
+            return "https://australiaeast.api.cognitive.microsoft.com";
+        }
+
+
+    }
+
+
+
 
 }
 
