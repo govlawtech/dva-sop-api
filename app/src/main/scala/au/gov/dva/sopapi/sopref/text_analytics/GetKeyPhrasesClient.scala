@@ -1,4 +1,4 @@
-package au.gov.dva.sopapi.sopref.text_analytics.msSampleClient
+package au.gov.dva.sopapi.sopref.text_analytics
 
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 import org.asynchttpclient.{AsyncHttpClient, DefaultAsyncHttpClient}
@@ -62,4 +62,5 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
 
     resultsForEachDoc
   }
+
 }

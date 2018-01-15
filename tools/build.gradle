@@ -1,5 +1,6 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'scala'
 
 // Apply the application plugin to add support for building an application
 apply plugin: 'application'
@@ -14,6 +15,9 @@ dependencies {
     // The production code uses Guava
     compile project(':app')
     compile 'com.google.guava:guava:20.0'
+    // https://mvnrepository.com/artifact/org.scala-lang.modules/scala-xml
+    compile group: 'org.scala-lang.modules', name: 'scala-xml_2.12', version: '1.0.6'
+
 
     // https://mvnrepository.com/artifact/commons-cli/commons-cli
     compile group: 'commons-cli', name: 'commons-cli', version: '1.4'

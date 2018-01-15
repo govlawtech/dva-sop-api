@@ -1,5 +1,5 @@
 import au.gov.dva.sopapi.AppSettings
-import au.gov.dva.sopapi.sopref.text_analytics.msSampleClient._
+import au.gov.dva.sopapi.sopref.text_analytics.GetKeyPhrasesClient
 import org.asynchttpclient.DefaultAsyncHttpClient
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
