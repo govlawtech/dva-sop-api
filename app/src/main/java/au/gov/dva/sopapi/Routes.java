@@ -37,6 +37,7 @@ import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.*;
+import sun.rmi.runtime.Log;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -254,21 +255,24 @@ public class Routes {
 
             try {
                 return handler.handle(req, res);
-            } catch (DvaSopApiDtoRuntimeException e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFormatError(e.getMessage());
+
             } catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
+            }
+            catch (DvaSopApiDtoRuntimeException e) {
+                logger.error("Runtime exception", e);
+                setResponseHeaders(res,500,MIME_TEXT);
+                return e.getMessage();
             } catch (Exception e) {
                 logger.error("Unknown exception", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             } catch (Error e) {
                 logger.error("Unknown error", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             }
         }));
     }
