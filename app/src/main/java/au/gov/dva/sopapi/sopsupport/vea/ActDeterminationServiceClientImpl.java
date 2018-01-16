@@ -1,22 +1,22 @@
 package au.gov.dva.sopapi.sopsupport.vea;
 
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
-import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.exceptions.ActDeterminationServiceException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
-import au.gov.dva.sopapi.interfaces.model.Operation;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableList;
 import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.BoundRequestBuilder;
 import org.asynchttpclient.DefaultAsyncHttpClient;
-import org.asynchttpclient.request.body.multipart.Part;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
+
+
+
 
 public class ActDeterminationServiceClientImpl implements ActDeterminationServiceClient {
 
@@ -30,7 +30,7 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
 
 
     @Override
-    public CompletableFuture<Boolean> matchesWhiteFilter(String operationName, Predicate<List<OperationJsonResponse>> whiteFilter) {
+    public CompletableFuture<Boolean> matchesWhiteFilter(String operationName, Predicate<List<ServiceRegion>> whiteFilter) {
         CompletableFuture<Boolean> promise =
                 asyncHttpClient.preparePost(baseUrl + "/operation")
                         .setBody(String.format("{\"operationName\":\"%s\"}",operationName))
@@ -61,7 +61,7 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
 
 
 
-    private boolean inferWhetherOperational(List<OperationJsonResponse> actDeterminationServiceResponse) {
+    boolean inferWhetherOperational(List<ServiceRegion> actDeterminationServiceResponse) {
         return actDeterminationServiceResponse.stream()
                 .anyMatch(operationJsonResponse ->
                         (operationJsonResponse.isOperational() ||
@@ -72,7 +72,7 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
                          !operationJsonResponse.isMrcaWarlike());
     }
 
-    private List<OperationJsonResponse> deserialiseResponse(String json) {
+    private List<ServiceRegion> deserialiseResponse(String json) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.READ_ENUMS_USING_TO_STRING, true);
         objectMapper.configure(DeserializationFeature.FAIL_ON_NUMBERS_FOR_ENUMS, true);
@@ -82,7 +82,7 @@ public class ActDeterminationServiceClientImpl implements ActDeterminationServic
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
 
         try {
-            List<OperationJsonResponse> actDeterminationServiceResponse = objectMapper.readValue(json, new TypeReference<List<OperationJsonResponse>>() {});
+            List<ServiceRegion> actDeterminationServiceResponse = objectMapper.readValue(json, new TypeReference<List<ServiceRegion>>() {});
             return actDeterminationServiceResponse;
         } catch (IOException e) {
             throw new DvaSopApiDtoRuntimeException(e);

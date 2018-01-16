@@ -23,6 +23,7 @@ import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
+import au.gov.dva.sopapi.sopsupport.vea.LocalAdsDataMirror;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,6 +37,7 @@ import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.*;
+import sun.rmi.runtime.Log;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -226,7 +228,8 @@ public class Routes {
                 }
             }
 
-            ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
+           ActDeterminationServiceClient actDeterminationServiceClient = new LocalAdsDataMirror(cache.getVeaSocfServiceRegions());
+//            ActDeterminationServiceClient actDeterminationServiceClient =  new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
             IRhPredicateFactory rhPredicateFactory = new RhPredicateFactory(actDeterminationServiceClient, serviceDeterminationPair);
             // todo: new up conditionFactory here
@@ -252,21 +255,24 @@ public class Routes {
 
             try {
                 return handler.handle(req, res);
-            } catch (DvaSopApiDtoRuntimeException e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFormatError(e.getMessage());
+
             } catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
+            }
+            catch (DvaSopApiDtoRuntimeException e) {
+                logger.error("Runtime exception", e);
+                setResponseHeaders(res,500,MIME_TEXT);
+                return e.getMessage();
             } catch (Exception e) {
                 logger.error("Unknown exception", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             } catch (Error e) {
                 logger.error("Unknown error", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             }
         }));
     }
