@@ -484,7 +484,7 @@ public class AzureStorageRepository implements Repository {
     @Override
     public Optional<String> getSocfServiceRegionsYaml() {
         try {
-            Optional<CloudBlob> blob =  getBlobByName(SOCF_VEA_OPERATIONS_CONTAINER_NAME,"application.yaml");
+            Optional<CloudBlob> blob =  getBlobByName(SOCF_VEA_OPERATIONS_CONTAINER_NAME,"application.yml");
             if (blob.isPresent())
             {
                 return Optional.of(getBlobString(blob.get()));
