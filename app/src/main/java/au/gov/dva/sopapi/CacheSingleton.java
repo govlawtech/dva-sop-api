@@ -8,12 +8,17 @@ import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopref.SoPs;
+import au.gov.dva.sopapi.sopsupport.vea.ServiceRegion;
+import au.gov.dva.sopapi.sopsupport.vea.SingleOnlineClaimFormOpImpl;
+import au.gov.dva.sopapi.sopsupport.vea.SingleOnlineClaimFormVeaOps;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.OffsetDateTime;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CacheSingleton implements Cache {
 
@@ -24,6 +29,7 @@ public class CacheSingleton implements Cache {
     private ImmutableSet<ServiceDetermination> _allServiceDeterminations;
     private RuleConfigurationRepository _ruleConfigurationRepository;
     private ImmutableSet<InstrumentChange> _failedUpdates;
+    private ImmutableList<ServiceRegion> _serviceRegions;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
@@ -53,12 +59,23 @@ public class CacheSingleton implements Cache {
             }
             ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
 
+            Optional<String> socfYaml = repository.getSocfServiceRegionsYaml();
+            if (!socfYaml.isPresent())
+            {
+                throw new ConfigurationRuntimeException("Need Single Online Claim Form VEA operations to be in repository.");
+            }
+
+            ImmutableList<ServiceRegion> serviceRegions = SingleOnlineClaimFormVeaOps.fromYaml(socfYaml.get()).stream()
+                    .map(SingleOnlineClaimFormOpImpl::toServiceRegion)
+                    .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+
             // atomic
             _allSops = allSops;
             _allSopPairs = SoPs.groupSopsToPairs(_allSops, OffsetDateTime.now());
             _allServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
             _failedUpdates = failed;
+            _serviceRegions = serviceRegions;
         }
         catch (Exception e)
         {
@@ -90,6 +107,11 @@ public class CacheSingleton implements Cache {
     @Override
     public RuleConfigurationRepository get_ruleConfigurationRepository() {
         return _ruleConfigurationRepository;
+    }
+
+    @Override
+    public ImmutableList<ServiceRegion> getVeaSocfServiceRegions() {
+        return null;
     }
 
     public ImmutableSet<InstrumentChange> get_failedUpdates() {
