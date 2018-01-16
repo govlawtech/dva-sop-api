@@ -228,8 +228,7 @@ public class Routes {
                 }
             }
 
-           ActDeterminationServiceClient actDeterminationServiceClient = new LocalAdsDataMirror(cache.getVeaSocfServiceRegions());
-//            ActDeterminationServiceClient actDeterminationServiceClient =  new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
+            ActDeterminationServiceClient actDeterminationServiceClient =  new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
             IRhPredicateFactory rhPredicateFactory = new RhPredicateFactory(actDeterminationServiceClient, serviceDeterminationPair);
             // todo: new up conditionFactory here
