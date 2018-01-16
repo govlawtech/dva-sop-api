@@ -9,8 +9,6 @@ import com.google.common.collect.ImmutableList;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
-import au.gov.dva.sopapi.sopsupport.vea.ServiceRegion;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 public interface Cache {
@@ -25,7 +23,4 @@ public interface Cache {
     ImmutableSet<ServiceDetermination> get_allServiceDeterminations();
 
     RuleConfigurationRepository get_ruleConfigurationRepository();
-
-    ImmutableList<ServiceRegion> getVeaSocfServiceRegions();
-
 }

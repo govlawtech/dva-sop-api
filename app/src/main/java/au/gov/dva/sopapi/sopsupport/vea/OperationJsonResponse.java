@@ -3,8 +3,7 @@ package au.gov.dva.sopapi.sopsupport.vea;
 
 import java.util.List;
 
-public class ServiceRegion {
-
+public class OperationJsonResponse {
 
     private String operationName;
     private String startDate;
@@ -90,7 +89,7 @@ public class ServiceRegion {
 
     @Override
     public String toString() {
-        return "ServiceRegion{" +
+        return "OperationJsonResponse{" +
                 "operationName='" + operationName + '\'' +
                 ", startDate='" + startDate + '\'' +
                 ", endDate='" + endDate + '\'' +
