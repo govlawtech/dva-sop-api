@@ -8,7 +8,7 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
 
   private val path = "/text/analytics/v2.0/keyPhrases"
 
-  def GetKeyPhrases(requests: Map[String, String]): Map[String, Set[String]] = {
+  def GetKeyPhrases(requests: List[(String, String)]): List[(String, List[String])] = {
 
     val body = toJsonString(buildJsonRequest(requests))
 
@@ -25,7 +25,7 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
     asMap
   }
 
-  private def buildJsonRequest(requestData: Map[String, String]): JsonNode = {
+  private def buildJsonRequest(requestData: List[(String, String)]): JsonNode = {
     val om = new ObjectMapper()
     val root = om.createObjectNode()
 
@@ -53,12 +53,12 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
     val objectMapper = new ObjectMapper()
     val deserialisedResponse = objectMapper.readTree(responseBody)
 
-    val resultsForEachDoc: Map[String, Set[String]] = deserialisedResponse.findPath("documents").elements().asScala.toList
+    val resultsForEachDoc: List[(String, List[String])] = deserialisedResponse.findPath("documents").elements().asScala.toList
       .map(jsonNode => {
-        val phrases: Set[String] = jsonNode.get("keyPhrases").elements().asScala.toList.map(_.asText()).toSet
+        val phrases = jsonNode.get("keyPhrases").elements().asScala.toList.map(_.asText())
         val id = jsonNode.get("id").asText()
         (id, phrases)
-      }).toMap
+      })
 
     resultsForEachDoc
   }

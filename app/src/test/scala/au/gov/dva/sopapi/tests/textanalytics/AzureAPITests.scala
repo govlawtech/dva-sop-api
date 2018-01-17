@@ -14,8 +14,7 @@ class AzureAPITests extends FunSuite
   {
     val httpClient = new DefaultAsyncHttpClient()
     val client = new GetKeyPhrasesClient(AppSettings.AzureTextAnalyticsApi.getHost,AppSettings.AzureTextAnalyticsApi.getAPIKey,httpClient)
-    val requests = Map("1" -> "the quick brown fox jumped over the lazy dog",
-                      "2" ->"humpty dumpty fell off the wall")
+    val requests = List(("1", "the quick brown fox jumped over the lazy dog"),("2","humpty dumpty fell off the wall"))
 
 
     val result = client.GetKeyPhrases(requests)

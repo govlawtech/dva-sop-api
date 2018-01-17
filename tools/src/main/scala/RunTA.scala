@@ -19,14 +19,14 @@ val sops = List(repo.getSop("F2017C00851").get())
 
 // for each sop, make id for each factor, add every factor as a document, send request, serialise results
 
-def buildRequestDataForSop(sop: SoP): Map[String, String] = {
-  val data: Map[String, String] = sop.getOnsetFactors.asScala.toList
-    .map(f => f.getParagraph -> f.getText)
-    .toMap
+def buildRequestDataForSop(sop: SoP): List[(String, String)] = {
+  val data: List[(String, String)] = sop.getOnsetFactors.asScala.toList
+    .map(f => (f.getParagraph, f.getText))
+
   data
 }
 
-def createXmlNodeForDocumentResult(sop: SoP, result: Map[String, Set[String]]) = {
+def createXmlNodeForDocumentResult(sop: SoP, result: List[(String, List[String])]) = {
 
   val fullTextMap = sop.getOnsetFactors.asScala.toList
     .map(f => (f.getParagraph -> f.getText))
