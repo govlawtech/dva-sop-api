@@ -19,6 +19,6 @@ object SubparaReferences {
 
   def tryGetSubFactor(subFactorLetter : String, wholeRef : String) : String = {
       val parts = splitNewStyleSopSubParaReference(wholeRef);
-
+      null
   }
 }

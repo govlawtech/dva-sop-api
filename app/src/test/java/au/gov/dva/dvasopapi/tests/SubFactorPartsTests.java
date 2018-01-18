@@ -42,7 +42,7 @@ public class SubFactorPartsTests {
 
         Function<String, Tuple2<String,String>> splitter = s -> new Tuple2<>("9(14)","(b)");
 
-        BiFunction<String,String,Optional<String>> extractor = (s, s2) -> Optional.of("(b) lifting loads of at least 20 kilograms while bearing weight\\r\\nthrough the affected joint to a cumulative total of at least\\r\\n100 000 kilograms within any ten year period before the clinical\\r\\nonset of osteoarthritis in that joint;");
+        BiFunction<String,Factor,Optional<String>> extractor = (subParagraphReference, factor) -> Optional.of("(b) lifting loads of at least 20 kilograms while bearing weight\\r\\nthrough the affected joint to a cumulative total of at least\\r\\n100 000 kilograms within any ten year period before the clinical\\r\\nonset of osteoarthritis in that joint;");
 
         ImmutableList<FactorWithSatisfaction> result = ProcessingRuleFunctions.withSatisfiedFactors(mockFactors,mockFactorParas,splitter,extractor);
 

@@ -22,7 +22,7 @@ public class FactorPartFunctions {
         NewSoPStyleSubFactorParser p = new NewSoPStyleSubFactorParser();
 
         scala.collection.immutable.List<SubFactorInfo> r = p.divideFactorsToSubFactors(factor);
-        r.
+        return null;
 
     };
 
