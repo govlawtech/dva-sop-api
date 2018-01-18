@@ -4,15 +4,22 @@ import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.ConfigurationRuntimeException;
 import au.gov.dva.sopapi.interfaces.RegisterClient;
 import au.gov.dva.sopapi.interfaces.Repository;
+import au.gov.dva.sopapi.interfaces.model.SoP;
+import au.gov.dva.sopapi.interfaces.model.SoPPair;
+import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.AzureStorageRepository;
 import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import org.apache.commons.cli.*;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -30,6 +37,7 @@ public class Main {
         Option scrapeOption = new Option("scrape", "scrape", false, "Scrape Legislation Register for PDFs for given register ids.");
         Option getCurrentSops = new Option("getCurrentSops","getCurrentSops",false,"Get a list of the register IDs of all SoPs in storage.");
         Option storeSopPdfs = new Option("saveSopPdfs", "saveSopPdfs",false,"Update storage with SoP PDFs, retrieving from FRL if necessary.");
+        Option createTextAnalyticsReport = new Option("textanalytics","ta",false,"Write text analytics results to temp file.");
 
         Options options = new Options()
                 .addOption(sopsFilePath)
@@ -43,7 +51,8 @@ public class Main {
                 .addOption(validateRuleConfigOption)
                 .addOption(scrapeOption)
                 .addOption(getCurrentSops)
-                .addOption(storeSopPdfs);
+                .addOption(storeSopPdfs)
+                .addOption(createTextAnalyticsReport);
 
 
         CommandLineParser parser = new DefaultParser();
@@ -62,6 +71,14 @@ public class Main {
         RegisterClient registerClient = new FederalRegisterOfLegislationClient();
         Repository repository = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString());
         au.gov.dva.sopapi.tools.StorageTool storageTool = new au.gov.dva.sopapi.tools.StorageTool(repository, registerClient);
+
+        if (commandLine.hasOption("textanalytics"))
+        {
+            ImmutableSet<SoPPair> sopPairs = SoPs.groupSopsToPairs(repository.getAllSops(), OffsetDateTime.now());
+            List<SoP> sops = sopPairs.stream().flatMap(soPPair -> ImmutableList.of(soPPair.getRhSop(),soPPair.getBopSop()).stream()).collect(Collectors.toList());
+
+
+        }
 
         if (commandLine.hasOption("getCurrentSops"))
         {

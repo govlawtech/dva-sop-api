@@ -41,17 +41,23 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
     val documentsArray = root.putArray("documents")
     documentObjectLiterals.foreach(d => documentsArray.add(d))
     return root
-
-
   }
 
   private def toJsonString(jsonNode: JsonNode) = {
     new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode)
   }
 
-  private def deserializeResponse(responseBody: String) = {
+  private def deserializeResponse(responseBody: String): List[(String, List[String])] = {
     val objectMapper = new ObjectMapper()
     val deserialisedResponse = objectMapper.readTree(responseBody)
+
+    val errors = deserialisedResponse.findPath("errors").elements().asScala.toList
+        .map(error => (error.get("id").asText(),error.get("message").asText()))
+
+    if (!errors.isEmpty) {
+      println("Errors: " + errors)
+      return List()
+    }
 
     val resultsForEachDoc: List[(String, List[String])] = deserialisedResponse.findPath("documents").elements().asScala.toList
       .map(jsonNode => {
@@ -60,7 +66,7 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
         (id, phrases)
       })
 
-    resultsForEachDoc
+    return resultsForEachDoc
   }
 
 }

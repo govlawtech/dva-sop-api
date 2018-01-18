@@ -1,39 +1,89 @@
 import java.io.File
+import java.nio.file.Path
 
 import au.gov.dva.sopapi.AppSettings
-import au.gov.dva.sopapi.interfaces.model.SoP
+import au.gov.dva.sopapi.interfaces.model.{SoP, SoPPair}
 import au.gov.dva.sopapi.sopref.data.AzureStorageRepository
 import au.gov.dva.sopapi.sopref.text_analytics.GetKeyPhrasesClient
 import com.google.common.base.Charsets
 import com.google.common.io.Files
+import org.apache.commons.csv.{CSVFormat, CSVPrinter, CSVRecord}
 import org.asynchttpclient.DefaultAsyncHttpClient
 
-class TextAnalyticsReport(sops: List[SoP]) {
+import scala.collection.JavaConverters._
+
+class TextAnalyticsReport(sops: List[SoP], asyncHttpClient: org.asynchttpclient.AsyncHttpClient) {
 
 
-  val repo = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString)
-  val asyncHttpClient = new DefaultAsyncHttpClient()
   val taClient = new GetKeyPhrasesClient(AppSettings.AzureTextAnalyticsApi.getHost, AppSettings.AzureTextAnalyticsApi.getAPIKey, asyncHttpClient)
 
-  val sops = List(repo.getSop("F2017C00851").get())
 
-  // for each sop, make id for each factor, add every factor as a document, send request, serialise results
+  def writeXmlReport(outputPath : Path) = {
 
-  def buildRequestDataForSop(sop: SoP): List[(String, String)] = {
+    val allNodes = sops.map(sop => {
+
+      val request = buildRequestDataForSop(sop)
+      try {
+        val result = taClient.GetKeyPhrases(request)
+        println()
+        val xmlResult = createXmlNodeForDocumentResult(sop, result)
+        println("Got results for: " + sop.getRegisterId)
+        xmlResult
+
+      }
+      catch {
+        case _: Throwable => println("Failed: " + sop.getRegisterId)
+      }
+    })
+
+
+    val outputXml =
+      <textAnalyticsResults>
+        {allNodes}
+      </textAnalyticsResults>
+
+
+    Files.write(outputXml.toString(), outputPath.toFile , Charsets.UTF_8)
+
+    println("Wrote: " + outputPath.toAbsolutePath.toString)
+
+  }
+
+  private def buildRequestDataForSop(sop: SoP): List[(String, String)] = {
     val data: List[(String, String)] = sop.getOnsetFactors.asScala.toList
       .map(f => (f.getParagraph, f.getText))
 
     data
   }
 
-  def createXmlNodeForDocumentResult(sop: SoP, result: List[(String, List[String])]) = {
+
+  private def createRecordsForResult(sop: SoP, result: List[(String, List[String])]): List[List[String]] = {
+    val fullTextMap = sop.getOnsetFactors.asScala.toList
+      .map(f => (f.getParagraph -> f.getText))
+      .toMap
+
+    val resultMap: Map[String, List[String]] = result.toMap
+
+    val csvLines = fullTextMap.map(para => List(
+      sop.getConditionName,
+      para._1,
+      para._2,
+      resultMap(para._1).mkString(";")
+    )).toList
+
+    csvLines
+
+  }
+
+
+  private def createXmlNodeForDocumentResult(sop: SoP, result: List[(String, List[String])]) = {
 
     val fullTextMap = sop.getOnsetFactors.asScala.toList
       .map(f => (f.getParagraph -> f.getText))
       .toMap
 
     val nodeForSop =
-      <sop frlId={sop.getRegisterId} conditionName={sop.getConditionName}>
+      <sop frlId={sop.getRegisterId} conditionName={sop.getConditionName} standardOfProof={sop.getStandardOfProof.toString}>
         <factors>
           {result.toList.sortBy(i => i._1).map(result => {
           <factor paragraph={result._1}>
@@ -41,7 +91,9 @@ class TextAnalyticsReport(sops: List[SoP]) {
               {fullTextMap(result._1)}
             </fullText>
             <keyPhrases>
-              {result._2.map(kp => <phrase>{kp}</phrase>)}
+              {result._2.map(kp => <phrase>
+              {kp}
+            </phrase>)}
             </keyPhrases>
           </factor>
         })}
@@ -54,20 +106,27 @@ class TextAnalyticsReport(sops: List[SoP]) {
 
   }
 
-  def run(sops : List[SoP]) = {
+
+
+
+  def createCsvReport(sops: List[SoP], target: Appendable) = {
+
+
+    val csvPrinter = new CSVPrinter(target, CSVFormat.EXCEL)
+
 
     val allNodes = sops.map(sop => {
 
       val request = buildRequestDataForSop(sop)
       try {
         val result = taClient.GetKeyPhrases(request)
-        val xmlResult = createXmlNodeForDocumentResult(sop,result)
+        val xmlResult = createXmlNodeForDocumentResult(sop, result)
         println("Got results for: " + sop.getRegisterId)
         xmlResult
 
       }
-      catch  {
-        case _ : Throwable => println("Failed: " + sop.getRegisterId)
+      catch {
+        case _: Throwable => println("Failed: " + sop.getRegisterId)
       }
     })
 
@@ -80,7 +139,7 @@ class TextAnalyticsReport(sops: List[SoP]) {
 
     val tempDir: File = Files.createTempDir()
     val outputFile = tempDir + "/taResults.xml"
-    Files.write(outputXml.toString(),new File(outputFile),Charsets.UTF_8)
+    Files.write(outputXml.toString(), new File(outputFile), Charsets.UTF_8)
 
     println("Wrote: " + outputFile)
     println("Have a nice day.")
