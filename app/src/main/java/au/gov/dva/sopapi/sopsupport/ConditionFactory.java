@@ -126,6 +126,8 @@ public class ConditionFactory {
                 return new MentalHealthProcessingRule(conditionConfiguration,new FixedYearsPeriodSelector(5));
             case "adjustment disorder":
                 return new MentalHealthProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(84));
+            case "malignant neoplasm of the eye":
+                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
         }
 
         return null;
