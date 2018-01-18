@@ -25,7 +25,7 @@ class TextAnalyticsReport(sops: List[SoP], asyncHttpClient: org.asynchttpclient.
       val request = buildRequestDataForSop(sop)
       try {
         val result = taClient.GetKeyPhrases(request)
-        println()
+        Thread.sleep(1000)
         val xmlResult = createXmlNodeForDocumentResult(sop, result)
         println("Got results for: " + sop.getRegisterId)
         xmlResult

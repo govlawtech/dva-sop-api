@@ -10,7 +10,14 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
 
   def GetKeyPhrases(requests: List[(String, String)]): List[(String, List[String])] = {
 
+    if (requests.size > 1000) throw new IllegalArgumentException("Max number of documents is 1000")
+
+    val longDocs = requests.filter(r => r._2.length > 5000)
+    if (!longDocs.isEmpty) throw new IllegalArgumentException("Docs too long: " + longDocs.mkString(util.Properties.lineSeparator))
+
     val body = toJsonString(buildJsonRequest(requests))
+    if (body.size > 1000000) throw new IllegalArgumentException("Max request size is 1MB")
+
 
     val response = asyncHttpClient.preparePost(host + path)
       .addHeader("Content-Type", "text/json")
@@ -19,6 +26,11 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
       .execute()
       .toCompletableFuture()
       .get()
+
+    if (response.getStatusCode != 200) {
+      println(response.getResponseBody)
+      return List()
+    }
 
     val rawResponse = response.getResponseBody
     val asMap = deserializeResponse(rawResponse)
