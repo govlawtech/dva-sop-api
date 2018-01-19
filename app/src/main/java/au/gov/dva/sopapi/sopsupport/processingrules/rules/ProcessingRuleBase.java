@@ -134,6 +134,7 @@ public class ProcessingRuleBase {
 
     //protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, BiFunction<>, CaseTrace caseTrace)
 
+
     protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, CaseTrace caseTrace) {
 
         assert applicableSop.getConditionName().equalsIgnoreCase(condition.getSopPair().getConditionName());

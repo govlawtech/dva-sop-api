@@ -3,6 +3,9 @@ package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.sopref.parsing.traits.ParaReferenceSplitter;
+import au.gov.dva.sopapi.sopref.parsing.traits.SubFactorParser;
+import au.gov.dva.sopapi.sopref.parsing.traits.SubParasHandler;
 import au.gov.dva.sopapi.sopsupport.processingrules.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.SlidingCFTSSelectorWithYearLimit;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.SlidingOperationalServicePeriodSelector;
@@ -11,13 +14,11 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class LumbarSpondylosisRule extends ProcessingRuleBase implements ProcessingRule {
+public class GenericWearAndTearRule extends ProcessingRuleBase implements ProcessingRule {
 
     Interval rhIntervalUsed;
 
-
-
-    public LumbarSpondylosisRule(ConditionConfiguration conditionConfiguration) {
+    public GenericWearAndTearRule(ConditionConfiguration conditionConfiguration) {
         super(conditionConfiguration);
     }
 
@@ -50,12 +51,14 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
 
 
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval,applicableRuleConfigurationItem,caseTrace);
+
     }
 
     @Override
     public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
         super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
     }
+
 
 
 }

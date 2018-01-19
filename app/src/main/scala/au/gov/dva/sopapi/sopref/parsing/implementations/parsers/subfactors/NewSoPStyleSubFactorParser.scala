@@ -12,15 +12,17 @@ class NewSoPStyleSubFactorParser extends SubFactorParser with MiscRegexes {
 
   override def divideFactorsToSubFactors(factor: Factor): List[SubFactorInfo] = {
     // divide to lines starting with part
-
     val lines = factor.getText.split(platformNeutralLineEndingRegex.regex).toList
-    val paras: List[List[String]] = FactorsParser.splitToParas(lines,regexForParaStart)
-    val asClasses = FactorsParser.lineSetsToClass(paras.tail,regexForParaStart)
-    val grouped: List[FactorsParser.MainPara] = FactorsParser.groupToMainParas(asClasses,List(), (_, _) => false)
-    val subFactors = grouped.map(mp => new SubFactorInfo(mp.paraLinesParent.legalRef,mp.flattenLines).stripTrailingPunctuation)
+    val paras: List[List[String]] = FactorsParser.splitToParas(lines, regexForParaStart)
+    val asClasses = FactorsParser.lineSetsToClass(paras.tail,  regexForParaStart)
+    val grouped: List[FactorsParser.MainPara] = FactorsParser.groupToMainParas(asClasses, List(), (_, _) => false)
+    val subFactors = grouped.map(mp => new SubFactorInfo(mp.paraLinesParent.legalRef, mp.flattenLines).stripTrailingPunctuation)
     subFactors
   }
 
 
   override def tryParseConditionVariant(factor: Factor): Option[String] = ???
 }
+
+
+

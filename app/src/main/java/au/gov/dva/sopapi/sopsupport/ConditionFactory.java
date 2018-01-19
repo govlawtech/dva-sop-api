@@ -1,31 +1,23 @@
 package au.gov.dva.sopapi.sopsupport;
 
-import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
 import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
-import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.paragraphReferenceSplitters.NewSoPStyleParaReferenceSplitter;
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.paragraphReferenceSplitters.OldSoPStyleParaReferenceSplitter;
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.NewSoPStyleSubFactorParser;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfServiceSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedYearsPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
 import com.google.common.collect.ImmutableSet;
-import scala.Tuple2;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Optional;
-import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.function.Predicate;
-
-
-
 
 
 public class ConditionFactory {
@@ -76,13 +68,13 @@ public class ConditionFactory {
     private static ProcessingRule BuildRuleFromConfig(ConditionConfiguration conditionConfiguration) {
         switch (conditionConfiguration.getConditionName()) {
             case "lumbar spondylosis":
-                return new LumbarSpondylosisRule(conditionConfiguration);
+                return new GenericWearAndTearRule(conditionConfiguration);
             case "osteoarthritis":
-                return new OsteoarthritisRule(conditionConfiguration);
+                return new GenericWearAndTearRule(conditionConfiguration);
             case "intervertebral disc prolapse":
                 return new InvertebralDiscProlapseRule(conditionConfiguration);
             case "thoracic spondylosis":
-                return new ThoracicSpondylosisRule(conditionConfiguration);
+                    return new ThoracicSpondylosisRule(conditionConfiguration);
             case "rotator cuff syndrome":
                 return new RotatorCuffSyndromeRule(conditionConfiguration);
             case "acquired cataract":

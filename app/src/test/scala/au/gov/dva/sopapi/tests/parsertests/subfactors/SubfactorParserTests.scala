@@ -2,7 +2,8 @@ package au.gov.dva.sopapi.tests.parsertests.subfactors
 
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.SubFactorInfo
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{NewSoPStyleSubFactorParser, SubparaReferences}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.paragraphReferenceSplitters.NewSoPStyleParaReferenceSplitter
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{NewSoPStyleSubFactorParser, OldSoPStyleSubFactorParser}
 import com.google.common.collect.ImmutableSet
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -23,11 +24,31 @@ class SubfactorParserTests extends FunSuite {
   test("split para reference")
    {
      val testdata = "9(14)(b)"
-     val result = SubparaReferences.splitNewStyleSopSubParaReference(testdata)
+
+     val underTest = new NewSoPStyleParaReferenceSplitter
+     val result = underTest.trySplitParagraphReferenceToMainParagraphAndFirstLevelSubParagraph(testdata)
      assert(result._1 == "9(14)" && result._2 == "(b)")
+   
    }
+
+  test("Get subfactors from old style SoP section") {
+    val underTest = new OldSoPStyleSubFactorParser()
+    val mock = new mockOldStyleFactor
+    val result = underTest.divideFactorsToSubFactors(mock)
+
+
+
+  }
 }
 
+
+class mockOldStyleFactor extends  Factor {
+  override def getParagraph: String = ???
+
+  override def getText: String = "for intervertebral disc prolapse of the cervical spine only:\r\n(a) using a hand-held, vibrating, percussive, industrial tool for an\r\naverage of at least 25 hours per week, for a period of at least two\r\nyears within the ten years before the clinical onset of\r\nintervertebral disc prolapse; or\r\n(b) flying in high performance aircraft for a cumulative total of at\r\nleast 500 hours within any ten year period before the clinical\r\nonset of intervertebral disc prolapse\""
+
+  override def getDefinedTerms: ImmutableSet[DefinedTerm] = ???
+}
 
 
 class mockFactor extends Factor

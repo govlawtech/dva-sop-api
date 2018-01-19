@@ -102,7 +102,8 @@ object FactorsParser extends MiscRegexes {
     val groupedToSetsOfParagraphLines = oldStyleSmallLetterLinesToParas(lines, paraLinesShouldBeChildrenAccordingToCustomRule)
 
 
-     return groupedToSetsOfParagraphLines.map(mp => new FactorInfoWithoutSubParas(mp.paraLinesParent.legalRef,
+
+    return groupedToSetsOfParagraphLines.map(mp => new FactorInfoWithoutSubParas(mp.paraLinesParent.legalRef,
       reflowFactorLines(mp.flattenLines)))
   }
 

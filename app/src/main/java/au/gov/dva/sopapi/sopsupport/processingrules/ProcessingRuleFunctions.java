@@ -40,7 +40,7 @@ public class ProcessingRuleFunctions {
         return earliestService.map(Service::getStartDate);
     }
 
-   
+
 
 
     public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
@@ -207,6 +207,10 @@ public class ProcessingRuleFunctions {
 
     public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs)
     {
+
+        // factor is satsified if there is a match in the start of any of the factor paragraphs
+        //
+
         ImmutableList<FactorWithSatisfaction> factorsWithSatisfaction = factors.stream()
                 .map(factor -> factorParagraphs.contains(factor.getParagraph()) ? new FactorWithSatisfactionImpl(factor, true) : new FactorWithSatisfactionImpl(factor, false))
                 .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
