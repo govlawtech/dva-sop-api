@@ -1,9 +1,7 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
 import au.gov.dva.sopapi.dtos.Recommendation;
-import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
-import au.gov.dva.sopapi.interfaces.ProcessingRule;
+import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.parsing.traits.SubParasHandler;
 import com.google.common.collect.ImmutableList;
@@ -11,7 +9,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class FactorSubPartDecorator implements ProcessingRule {
+public class FactorSubPartDecorator extends ProcessingRuleBase implements ProcessingRule {
 
     private final ProcessingRule toDecorate;
     private final ConditionConfiguration conditionConfiguration;
@@ -19,6 +17,7 @@ public class FactorSubPartDecorator implements ProcessingRule {
 
     public FactorSubPartDecorator(ProcessingRule toDecorate, ConditionConfiguration conditionConfiguration, SubParasHandler subParasHandler)
     {
+        super(conditionConfiguration);
 
         this.toDecorate = toDecorate;
         this.conditionConfiguration = conditionConfiguration;
@@ -33,7 +32,14 @@ public class FactorSubPartDecorator implements ProcessingRule {
 
     @Override
     public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        return null;
+
+
+        ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
+        Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
+
+        ImmutableList<String> factorRefereneces =  applicableRuleConfigurationItem.get().getFactorReferences().asList();
+
+
     }
 
     @Override
