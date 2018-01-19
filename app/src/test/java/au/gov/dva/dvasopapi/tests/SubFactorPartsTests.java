@@ -46,7 +46,9 @@ public class SubFactorPartsTests {
 
         ImmutableList<FactorWithSatisfaction> result = ProcessingRuleFunctions.withSatisfiedFactors(mockFactors,mockFactorParas,splitter,extractor);
 
+
         Assert.assertTrue(result.get(0).getApplicablePart().contentEquals("(b) lifting loads of at least 20 kilograms while bearing weight\\r\\nthrough the affected joint to a cumulative total of at least\\r\\n100 000 kilograms within any ten year period before the clinical\\r\\nonset of osteoarthritis in that joint;"));
+
 
     }
 

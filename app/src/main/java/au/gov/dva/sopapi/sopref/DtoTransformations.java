@@ -77,7 +77,8 @@ public class DtoTransformations {
                 factorDto.get_paragraph(),
                 factorDto.get_text(),
                 factorDto.get_definedTerms(),
-                factorWithSatisfaction.isSatisfied()
+                factorWithSatisfaction.isSatisfied(),
+                factorWithSatisfaction.getApplicablePart()
         );
     }
 

@@ -23,16 +23,18 @@ public class FactorWithInferredResultDto {
     @JsonProperty("satisfied")
     private final Boolean _satisfied;
 
-
+    @JsonProperty("applicablePart")
+    private final String _applicablePart;
 
 
     @JsonCreator
-    public FactorWithInferredResultDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms, @JsonProperty("satisfaction") Boolean satisfied) {
+    public FactorWithInferredResultDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms, @JsonProperty("satisfaction") Boolean satisfied, @JsonProperty("applicablePart") String applicablePart) {
         _paragraph = paragraph;
         _text = text;
         _definedTerms = definedTerms;
-    _satisfied = satisfied;
-}
+        _satisfied = satisfied;
+        _applicablePart = applicablePart;
+    }
 
     @JsonIgnore
     public String getParagraph() {
@@ -52,5 +54,10 @@ public class FactorWithInferredResultDto {
     @JsonIgnore
     public ImmutableList<DefinedTerm> getDefinedTerms() {
         return ImmutableList.copyOf(_definedTerms);
+    }
+
+    @JsonIgnore
+    public String getApplicablePart() {
+        return _applicablePart;
     }
 }
