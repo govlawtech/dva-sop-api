@@ -70,7 +70,7 @@ object TAReport extends App {
           None
         }
       }
-    })
+    }).take(12)
 
   val javaImmutableSet: ImmutableSet[SoP] = ImmutableSet.copyOf(allSops.asJava.iterator())
 
@@ -81,17 +81,17 @@ object TAReport extends App {
 
   val taClient = new GetKeyPhrasesClient(AppSettings.AzureTextAnalyticsApi.getHost, AppSettings.AzureTextAnalyticsApi.getAPIKey, asyncHttpClient)
 
-  val requestData: List[(String, String)] = sopPairs.asScala.flatMap(getFactorKvpsForSopPair).toList.take(10)
+  val requestData: List[(String, String)] = sopPairs.asScala.flatMap(getFactorKvpsForSopPair).toList
 
   val rawResults = taClient.GetKeyPhrases(requestData).toList
 
-  // buid report
-  val outputDir: Path = Files.createTempDirectory(null)
   val taResults = resultsToTaResults(rawResults)
   val report = new TextAnalyticsReport(sopPairs.asScala.toList, taResults, asyncHttpClient)
 
+  val outputDir: Path = Files.createTempDirectory(null)
+  val outputPath = Paths.get(outputDir.toAbsolutePath.toString,"taReport.csv")
+  report.createCsvReport(outputPath)
 
-  //val outputPath = Paths.get(outputDir.toAbsolutePath.toString,fn)
   //report.writeXmlReport(outputPath)
   //Thread.sleep(60000)
 
