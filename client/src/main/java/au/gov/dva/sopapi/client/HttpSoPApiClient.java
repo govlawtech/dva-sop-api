@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
@@ -161,6 +162,23 @@ public class HttpSoPApiClient implements SoPApiClient {
         return promise;
     }
 
+    @Override
+    public CompletableFuture<ConditionsList> getConditions() {
+        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_CONDITIONS);
+        CompletableFuture<ConditionsList> promise = getOrCreateAsyncHttpClient()
+                .prepareGet(serviceUrl.toString())
+                .setHeader("Accept", "application/json; charset=utf-8")
+                .setHeader("Content-Type", "application/json; charset=utf-8")
+                .execute()
+                .toCompletableFuture()
+                .thenApply(response -> {
+                    if (response.getStatusCode() == 200)
+                        return ConditionsList.fromJsonString(response.getResponseBody(Charsets.UTF_8));
+                    else throw new SoPApiClientError(response.getResponseBody(Charsets.UTF_8));
+                });
+
+        return promise;
+    }
 
 
     private static String buildErrorMsg(Integer statusCode, String msg) {
