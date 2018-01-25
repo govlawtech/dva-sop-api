@@ -1,3 +1,6 @@
+
+package org.au.dva.sopapi.textanalytics
+
 import java.io.File
 import java.nio.file.{Files, Path, Paths}
 import java.time.{OffsetDateTime, ZoneId}
@@ -14,9 +17,10 @@ import org.asynchttpclient.DefaultAsyncHttpClient
 
 import scala.collection.JavaConverters._
 
-/**
-  * Created by nick on 1/18/2018.
-  */
+
+
+case class TaResultForSingleInstrument(frlId: String, resultsByPara: List[(String, List[String])])
+
 object TAReport extends App {
 
   private def toSoP(jsonString: String) = {
@@ -37,6 +41,16 @@ object TAReport extends App {
 
   }
 
+
+  def getSoPForId(id: String) = id.takeWhile(c => c != '_').mkString
+
+  def getParaForId(id: String) = id.reverse.takeWhile(c => c != '_').reverse.mkString
+
+
+  def resultsToTaResults(rawResults: List[(String,List[String])]): List[TaResultForSingleInstrument] = {
+    val resultsGroupedByFrlKey = rawResults.groupBy(result => getSoPForId(result._1))
+    resultsGroupedByFrlKey.map(r => TaResultForSingleInstrument(r._1, r._2.map(paraPhrases => (getParaForId(paraPhrases._1),paraPhrases._2)))).toList
+  }
 
   val dirName = "C:\\Users\\nick\\OneDrive\\Documents\\GLT\\GLTS\\GLTS Accounts\\DVA\\sops download 18 feb";
 
@@ -67,23 +81,14 @@ object TAReport extends App {
 
   val taClient = new GetKeyPhrasesClient(AppSettings.AzureTextAnalyticsApi.getHost, AppSettings.AzureTextAnalyticsApi.getAPIKey, asyncHttpClient)
 
-  val requestData: List[(String, String)] = sopPairs.asScala.flatMap(getFactorKvpsForSopPair).toList
+  val requestData: List[(String, String)] = sopPairs.asScala.flatMap(getFactorKvpsForSopPair).toList.take(10)
 
-  // try each one until we find the wrong one
-//  for (elem <- requestData) {
+  val rawResults = taClient.GetKeyPhrases(requestData).toList
 
-  //  val result = taClient.GetKeyPhrases(List(elem))
-
-    //println(result)
- // }
-
-  val results = taClient.GetKeyPhrases(requestData).toList
-
-  println(results)
-
-   val outputDir: Path = Files.createTempDirectory(null)
-
-   val report = new TextAnalyticsReport(sopPairs.asScala.toList, asyncHttpClient)
+  // buid report
+  val outputDir: Path = Files.createTempDirectory(null)
+  val taResults = resultsToTaResults(rawResults)
+  val report = new TextAnalyticsReport(sopPairs.asScala.toList, taResults, asyncHttpClient)
 
 
   //val outputPath = Paths.get(outputDir.toAbsolutePath.toString,fn)

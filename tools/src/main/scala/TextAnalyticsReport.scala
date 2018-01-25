@@ -1,3 +1,6 @@
+
+package org.au.dva.sopapi.textanalytics
+
 import java.io.File
 import java.nio.file.Path
 
@@ -13,28 +16,29 @@ import org.asynchttpclient.DefaultAsyncHttpClient
 
 import scala.collection.JavaConverters._
 
-class TextAnalyticsReport(sopPairs: List[SoPPair], results: List[(String,List[String])], asyncHttpClient: org.asynchttpclient.AsyncHttpClient) {
+class TextAnalyticsReport(sopPairs: List[SoPPair], resultsByPara : List[TaResultForSingleInstrument], asyncHttpClient: org.asynchttpclient.AsyncHttpClient) {
 
 
-  def getSoPForId(id: String) = id.takeWhile(c => c != '_').mkString
 
-  def getParaForId(id: String) = id.reverse.takeWhile(c => c != '_').reverse.mkString
+ //   .map(r => {
+ //   val key = r._1
+  ///  val frlId = getSoPForId(key)
+   // val para = getParaForId(key)
+   // val phrases = r._2
 
-  def getResultsForSop(sop : SoP) = {
 
-  }
-
+  //})
 
 
 
   def writeCsvReport(outputPath : Path) = {
 
     val sb = new StringBuilder
-    sb.append("Condition, FRL Link, Paragraph, Full Text, Key Phrases from Microsoft Text Analytics API")
+    sb.append("Condition, Standard of Proof, FRL Link, Paragraph, Full Text, Key Phrases from Microsoft Text Analytics API")
 
+    // for each sop pair
 
-
-    Files.write(outputXml.toString(), outputPath.toFile , Charsets.UTF_8)
+  //  Files.write(outputXml.toString(), outputPath.toFile , Charsets.UTF_8)
 
     println("Wrote: " + outputPath.toAbsolutePath.toString)
 

@@ -46,7 +46,6 @@ task explodeWar(type: Copy, dependsOn: 'copyToDeploymentDir') {
     into 'deploy/webapps/ROOT'
 }
 
-
 test {
     exclude 'au/gov/dva/dvasopapi/tests/localonly/**'
     exclude 'au/gov/dva/sopapi/tests/parsertests/specificsops/**'
