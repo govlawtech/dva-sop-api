@@ -2,11 +2,12 @@ import java.io.File
 import java.nio.file.{Files, Path, Paths}
 import java.time.{OffsetDateTime, ZoneId}
 
-import au.gov.dva.sopapi.interfaces.model.SoP
+import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
 import au.gov.dva.sopapi.{AppSettings, DateTimeUtils}
 import au.gov.dva.sopapi.sopref.SoPs
 import au.gov.dva.sopapi.sopref.data.AzureStorageRepository
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
+import au.gov.dva.sopapi.sopref.text_analytics.GetKeyPhrasesClient
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 import com.google.common.collect.{ImmutableList, ImmutableSet}
 import org.asynchttpclient.DefaultAsyncHttpClient
@@ -23,6 +24,19 @@ object TAReport extends App {
     val jsonNode: JsonNode = om.readTree(jsonString)
     StoredSop.fromJson(jsonNode)
   }
+
+
+  private def getFactorKvpsForSopPair(sopPair: SoPPair): List[(String, String)] = {
+
+    def getFactorsAsKvps(sop: SoP) = {
+      val allFactors = ImmutableList.builder().addAll(sop.getOnsetFactors).addAll(sop.getAggravationFactors).build()
+      allFactors.asScala.toList.map(f => (sop.getRegisterId + "_" + f.getParagraph, f.getText))
+    }
+
+    return getFactorsAsKvps(sopPair.getRhSop) ++ getFactorsAsKvps(sopPair.getBopSop)
+
+  }
+
 
   val dirName = "C:\\Users\\nick\\OneDrive\\Documents\\GLT\\GLTS\\GLTS Accounts\\DVA\\sops download 18 feb";
 
@@ -44,36 +58,37 @@ object TAReport extends App {
       }
     })
 
-
-
-   val javaImmutableSet : ImmutableSet[SoP] = ImmutableSet.copyOf(allSops.asJava.iterator())
+  val javaImmutableSet: ImmutableSet[SoP] = ImmutableSet.copyOf(allSops.asJava.iterator())
 
   // val repo = new AzureStorageRepository(AppSettings.AzureStorage.getConnectionString)
   val asyncHttpClient = new DefaultAsyncHttpClient()
 
   val sopPairs = SoPs.groupSopsToPairs(javaImmutableSet, OffsetDateTime.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)))
 
-  val sops = sopPairs.asScala.flatMap(sp => List(sp.getRhSop, sp.getBopSop)).toList
+  val taClient = new GetKeyPhrasesClient(AppSettings.AzureTextAnalyticsApi.getHost, AppSettings.AzureTextAnalyticsApi.getAPIKey, asyncHttpClient)
 
-  val batched: Iterator[(List[SoP], Int)] =  sops.sliding(50,50) zipWithIndex
+  val requestData: List[(String, String)] = sopPairs.asScala.flatMap(getFactorKvpsForSopPair).toList
 
-  val outputDir: Path = Files.createTempDirectory(null)
+  // try each one until we find the wrong one
+//  for (elem <- requestData) {
 
-//  println(sops.map(s => s.getRegisterId).sorted.mkString(util.Properties.lineSeparator))
-  batched.foreach(batch => {
+  //  val result = taClient.GetKeyPhrases(List(elem))
 
-    val fileName =  "batch " + batch._2 + ".xml"
-    val report = new TextAnalyticsReport(batch._1, asyncHttpClient)
+    //println(result)
+ // }
 
-    val fn = "batch " + batch._2 + ".xml"
-    val outputPath = Paths.get(outputDir.toAbsolutePath.toString,fn)
-    report.writeXmlReport(outputPath)
-    Thread.sleep(60000)
+  val results = taClient.GetKeyPhrases(requestData).toList
+
+  println(results)
+
+   val outputDir: Path = Files.createTempDirectory(null)
+
+   val report = new TextAnalyticsReport(sopPairs.asScala.toList, asyncHttpClient)
 
 
-  })
-
-
+  //val outputPath = Paths.get(outputDir.toAbsolutePath.toString,fn)
+  //report.writeXmlReport(outputPath)
+  //Thread.sleep(60000)
 
 
 }

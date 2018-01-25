@@ -1,8 +1,12 @@
 package au.gov.dva.sopapi.sopref.text_analytics
 
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 import org.asynchttpclient.{AsyncHttpClient, DefaultAsyncHttpClient}
+
 import scala.collection.JavaConverters._
+import scala.collection.mutable
+import scala.collection.mutable.ListBuffer
 
 class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClient: AsyncHttpClient) {
 
@@ -10,31 +14,44 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
 
   def GetKeyPhrases(requests: List[(String, String)]): List[(String, List[String])] = {
 
-    if (requests.size > 1000) throw new IllegalArgumentException("Max number of documents is 1000")
-
     val longDocs = requests.filter(r => r._2.length > 5000)
     if (!longDocs.isEmpty) throw new IllegalArgumentException("Docs too long: " + longDocs.mkString(util.Properties.lineSeparator))
 
-    val body = toJsonString(buildJsonRequest(requests))
-    if (body.size > 1000000) throw new IllegalArgumentException("Max request size is 1MB")
+    val batched = requests.sliding(300, 300).toList
 
+    val jsonRequests = batched.map(batch => toJsonString(buildJsonRequest(batch)))
 
-    val response = asyncHttpClient.preparePost(host + path)
-      .addHeader("Content-Type", "text/json")
-      .addHeader("Ocp-Apim-Subscription-Key", accessKey)
-      .setBody(body)
-      .execute()
-      .toCompletableFuture()
-      .get()
+    val maxRequestSize = jsonRequests.map(_.size).max
 
-    if (response.getStatusCode != 200) {
-      println(response.getResponseBody)
-      return List()
-    }
+    if (maxRequestSize > 1000000) throw new IllegalArgumentException("Max request size is 1MB, actual is " + maxRequestSize + " bytes.")
 
-    val rawResponse = response.getResponseBody
-    val asMap = deserializeResponse(rawResponse)
-    asMap
+    var acc = new ListBuffer[(String,List[String])]()
+
+    val results = batched.foreach(batch => {
+
+      val body = toJsonString(buildJsonRequest(requests))
+
+      val response = asyncHttpClient.preparePost(host + path)
+        .addHeader("Content-Type", "text/json; charset=utf-8")
+        .addHeader("Ocp-Apim-Subscription-Key", accessKey)
+        .setBody(body)
+        .execute()
+        .toCompletableFuture()
+        .get()
+      Thread.sleep(100)
+      if (response.getStatusCode != 200) {
+        throw new DvaSopApiRuntimeException(s"Text Analytics API returned failed response for REQUEST: ${util.Properties.lineSeparator} $body: ${util.Properties.lineSeparator} RESPONSE: $response" )
+      }
+
+      else {
+        val rawResponse = response.getResponseBody
+        val asMap: List[(String, List[String])] = deserializeResponse(rawResponse)
+        acc.appendAll(asMap)
+      }
+    })
+
+    acc.toList
+
   }
 
   private def buildJsonRequest(requestData: List[(String, String)]): JsonNode = {
@@ -64,7 +81,7 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
     val deserialisedResponse = objectMapper.readTree(responseBody)
 
     val errors = deserialisedResponse.findPath("errors").elements().asScala.toList
-        .map(error => (error.get("id").asText(),error.get("message").asText()))
+      .map(error => (error.get("id").asText(), error.get("message").asText()))
 
     if (!errors.isEmpty) {
       println("Errors: " + errors)
