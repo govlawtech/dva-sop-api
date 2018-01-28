@@ -17,19 +17,19 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
     val longDocs = requests.filter(r => r._2.length > 5000)
     if (!longDocs.isEmpty) throw new IllegalArgumentException("Docs too long: " + longDocs.mkString(util.Properties.lineSeparator))
 
-    val batched = requests.sliding(300, 300).toList
+    val batched = requests.sliding(1000, 1000).toList
 
     val jsonRequests = batched.map(batch => toJsonString(buildJsonRequest(batch)))
 
-    val maxRequestSize = jsonRequests.map(_.size).max
+    val maxRequestSize = jsonRequests.map(_.length).max
 
-    if (maxRequestSize > 1000000) throw new IllegalArgumentException("Max request size is 1MB, actual is " + maxRequestSize + " bytes.")
+    if (maxRequestSize > 524288) throw new IllegalArgumentException("Request is over 524288 chars.")
 
     var acc = new ListBuffer[(String,List[String])]()
 
     val results = batched.foreach(batch => {
 
-      val body = toJsonString(buildJsonRequest(requests))
+      val body = toJsonString(buildJsonRequest(batch))
 
       val response = asyncHttpClient.preparePost(host + path)
         .addHeader("Content-Type", "text/json; charset=utf-8")
@@ -38,6 +38,8 @@ class GetKeyPhrasesClient(val host: String, val accessKey: String, asyncHttpClie
         .execute()
         .toCompletableFuture()
         .get()
+
+      println("Response received for batch of " + batch.size)
       Thread.sleep(100)
       if (response.getStatusCode != 200) {
         throw new DvaSopApiRuntimeException(s"Text Analytics API returned failed response for REQUEST: ${util.Properties.lineSeparator} $body: ${util.Properties.lineSeparator} RESPONSE: $response" )

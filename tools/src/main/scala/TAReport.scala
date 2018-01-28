@@ -70,7 +70,7 @@ object TAReport extends App {
           None
         }
       }
-    }).take(12)
+    })
 
   val javaImmutableSet: ImmutableSet[SoP] = ImmutableSet.copyOf(allSops.asJava.iterator())
 

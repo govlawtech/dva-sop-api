@@ -40,7 +40,6 @@ class TextAnalyticsReport(sopPairs: List[SoPPair], resultsByPara: List[TaResultF
 
   def createCsvReport(outputPath: Path) = {
 
-
     val mapOfResultsByFrlId = resultsByPara.map(r => r.frlId -> r.resultsByPara).toMap
 
     val appendable = Files.newWriter(outputPath.toFile,Charsets.UTF_8)
