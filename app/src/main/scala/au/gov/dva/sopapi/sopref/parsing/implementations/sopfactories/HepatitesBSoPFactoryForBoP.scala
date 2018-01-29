@@ -9,10 +9,10 @@ import au.gov.dva.sopapi.sopref.parsing.traits.SoPFactory
 
 object HepatitsBSoPFactoryForBoP extends SoPFactory {
 
-  // There are errors in F2018L00010 and F2018L00011: section 10(2) refers to the wrong section as the aggravation factor
-
   private def factorAllocator(factors: List[Factor]) : (List[Factor],List[Factor]) = {
-    (factors.dropRight(1),factors.takeRight(1))
+    if (factors.size != 5) throw new SopParserRuntimeException("Expected five factors only for Hepatitis B.")
+
+    (factors.take(2),factors.drop(2))
   }
 
   override def create(registerId : String, clensedText: String) : SoP = {

@@ -11,8 +11,8 @@ object MalignantNeoplasmOfTheOverySoPFactory extends SoPFactory  {
 
   private def factorAllocator(factors: List[Factor]) : (List[Factor],List[Factor]) = {
 
-
-    (factors.take(2),factors.drop(2))
+    // There are errors in F2018L00010 and F2018L00011: section 10(2) refers to the wrong section as the aggravation factor
+    (factors.dropRight(1),factors.takeRight(1))
   }
 
   override def create(registerId : String, clensedText: String) : SoP = {
