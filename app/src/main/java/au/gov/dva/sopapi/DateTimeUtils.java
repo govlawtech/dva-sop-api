@@ -75,8 +75,8 @@ public class DateTimeUtils {
 
     public static List<HasDateRange> flattenDateRanges(List<HasDateRange> toFlatten) {
         if (toFlatten == null || toFlatten.size() == 0) return new ArrayList<>();
-        ArrayList<HasDateRange> outputs = new ArrayList();
-        ArrayList<HasDateRange> inputs = new ArrayList(toFlatten);
+        ArrayList<HasDateRange> outputs = new ArrayList<>();
+        ArrayList<HasDateRange> inputs = new ArrayList<>(toFlatten);
         while (inputs.size() > 1) {
             HasDateRange first = inputs.get(0);
             boolean notOverlapping = true;

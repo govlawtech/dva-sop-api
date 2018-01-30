@@ -36,30 +36,6 @@ public class ProcessingRuleFunctions {
         return earliestService.map(Service::getStartDate);
     }
 
-    /**
-     * Returns a date a certain period before the given onset date, depending on the period specifier
-     *
-     * @param periodSpecifier - indicate the period to back in time. e.g. 2d = 2 days, 3y = 3 years
-     * @param onsetDate       - The date to start counting back from
-     * @return The date which is the specified amount back in time e.g. ("7d", 2011-04-14) -> 2011-04-07
-     */
-    public static LocalDate getStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate) {
-        if (periodSpecifier == null || !periodSpecifier.trim().matches("^\\d+(d|y)$"))
-            throw new RuntimeException("period specifier is not valid, expecting 2d, 3y etc. : " + periodSpecifier);
-        if (onsetDate == null)
-            throw new RuntimeException("onsetDate cannot be null");
-
-        String trimmed = periodSpecifier.trim();
-        int index = trimmed.indexOf('d');
-        if (index == -1) {
-            index = trimmed.indexOf('y');
-            int numYears = Integer.parseInt(trimmed.substring(0, index));
-            return onsetDate.minusYears(numYears);
-        } else {
-            int numDays = Integer.parseInt(trimmed.substring(0, index));
-            return onsetDate.minusDays(numDays);
-        }
-    }
 
 
     public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {

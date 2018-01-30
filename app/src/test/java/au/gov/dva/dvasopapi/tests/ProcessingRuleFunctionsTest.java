@@ -136,45 +136,5 @@ public class ProcessingRuleFunctionsTest {
         );
     }
 
-    private void failGetStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate) {
-        try {
-            LocalDate result = ProcessingRuleFunctions.getStartOfOnsetWindow(periodSpecifier, onsetDate);
-            Assert.fail("should have thrown an exception");
-        }
-        catch (RuntimeException ex) {
 
-        }
-    }
-
-    private void successGetStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate, LocalDate expectedResult) {
-        LocalDate result = ProcessingRuleFunctions.getStartOfOnsetWindow(periodSpecifier, onsetDate);
-        Assert.assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void testGetStartOfOnsetWindow() {
-        LocalDate onsetDate = LocalDate.of(2011, 5, 1);
-
-        // test null onset date
-        failGetStartOfOnsetWindow("1d", null);
-
-        // test null period specifier
-        failGetStartOfOnsetWindow(null, onsetDate);
-
-        // test bad period specifiers
-        failGetStartOfOnsetWindow("d324d", onsetDate);
-        failGetStartOfOnsetWindow("324w", onsetDate);
-
-        // test years
-        successGetStartOfOnsetWindow("1y", onsetDate, LocalDate.of(2010, 5, 1));
-        successGetStartOfOnsetWindow("5y", onsetDate, LocalDate.of(2006, 5, 1));
-        successGetStartOfOnsetWindow("15y", onsetDate, LocalDate.of(1996, 5, 1));
-
-        // test days
-        successGetStartOfOnsetWindow("0d", onsetDate, LocalDate.of(2011, 5, 1));
-        successGetStartOfOnsetWindow("1d", onsetDate, LocalDate.of(2011, 4, 30));
-        successGetStartOfOnsetWindow("5d", onsetDate, LocalDate.of(2011, 4, 26));
-        successGetStartOfOnsetWindow("15d", onsetDate, LocalDate.of(2011, 4, 16));
-        successGetStartOfOnsetWindow("131d", onsetDate, LocalDate.of(2010, 12, 21));
-    }
 }
