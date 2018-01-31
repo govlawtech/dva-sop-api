@@ -1,8 +1,10 @@
 
 
+// see http://central.sonatype.org/pages/gradle.html
 apply plugin: 'java'
 apply plugin: 'findbugs'
 apply plugin: 'maven'
+apply plugin: 'signing'
 
 version = '1.3.0'
 
@@ -35,15 +37,72 @@ tasks.withType(FindBugs) {
 }
 
 
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+
+group = "au.com.govlawtech"
+archivesBaseName = "dvasopapi-dtos"
+version = "1.3.0"
 
 uploadArchives {
     repositories {
         mavenDeployer {
-            configuration = configurations.deployerJars
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-            repository(url: "ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot") {
-                authentication(userName: "govlawtechmvnrepo\\\$govlawtechmvnrepo", password: System.getenv("mvnRepoFtpPassword"))
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'DVA SoP API Java Client Data Transfer Types'
+                packaging 'jar'
+                // optionally artifactId can be defined here
+                description 'Types, constants and (de)serialisation functions to help transfer data to and from the SoP API using the Java client.'
+                url 'https://github.com/govlawtech/dva-sop-api'
+
+                scm {
+                    connection 'https://github.com/govlawtech/dva-sop-api.git'
+                    developerConnection 'https://github.com/govlawtech/dva-sop-api.git'
+                    url 'https://github.com/govlawtech/dva-sop-api'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'nicholasamiller'
+                        name 'Nicholas Miller'
+                        email 'nicholas.miller@govlawtech.com.au'
+                    }
+                }
             }
         }
     }
 }
+
+

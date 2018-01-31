@@ -76,3 +76,6 @@ out/
 deploy/
 doctrees/
 
+# No keys
+*.gpg
+

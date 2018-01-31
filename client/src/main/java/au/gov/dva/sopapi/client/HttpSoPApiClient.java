@@ -1,8 +1,8 @@
 package au.gov.dva.sopapi.client;
 
-import au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
+import au.gov.dva.sopapi.dtos.au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;

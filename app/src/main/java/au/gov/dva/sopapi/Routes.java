@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
@@ -129,7 +130,7 @@ public class Routes {
     public static void init(CacheSingleton cache) {
         Routes.cache = cache;
 
-        get(SharedConstants.Routes.GET_CONDITIONS, (req,res) -> {
+        get(SharedConstants.Routes.GET_CONDITIONS, (req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
                 setResponseHeaders(res, 406, MIME_TEXT);
                 return buildAcceptableContentTypesError(MIME_JSON);

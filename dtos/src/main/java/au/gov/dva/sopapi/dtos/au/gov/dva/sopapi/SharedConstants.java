@@ -1,4 +1,4 @@
-package au.gov.dva.sopapi;
+package au.gov.dva.sopapi.dtos.au.gov.dva.sopapi;
 
 public class SharedConstants {
     public static class Routes {
