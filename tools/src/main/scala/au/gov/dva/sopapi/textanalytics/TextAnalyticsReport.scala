@@ -1,18 +1,14 @@
 
-package org.au.dva.sopapi.textanalytics
+package au.gov.dva.sopapi.textanalytics
 
-import java.io.{File, FileWriter}
+import java.lang.String
 import java.nio.file.Path
 
-import au.gov.dva.sopapi.AppSettings
 import au.gov.dva.sopapi.interfaces.model.{SoP, SoPPair}
-import au.gov.dva.sopapi.sopref.data.AzureStorageRepository
-import au.gov.dva.sopapi.sopref.text_analytics.GetKeyPhrasesClient
 import com.google.common.base.Charsets
 import com.google.common.collect.ImmutableList
 import com.google.common.io.Files
-import org.apache.commons.csv.{CSVFormat, CSVPrinter, CSVRecord}
-import org.asynchttpclient.DefaultAsyncHttpClient
+import org.apache.commons.csv.{CSVFormat, CSVPrinter}
 
 import scala.collection.JavaConverters._
 
@@ -46,7 +42,6 @@ class TextAnalyticsReport(sopPairs: List[SoPPair], resultsByPara: List[TaResultF
     val cSVPrinter = new CSVPrinter(appendable,CSVFormat.EXCEL
       .withHeader("Condition","Standard of Proof","FRL Link","Paragraph","Full Text","Key Phrases from Microsoft Text Analytics API"))
 
-
     orderedSoPs.foreach(sop => {
       mapOfResultsByFrlId(sop.getRegisterId).foreach(para => {
         val keyPhrases = para._2.mkString("; ")
@@ -58,7 +53,6 @@ class TextAnalyticsReport(sopPairs: List[SoPPair], resultsByPara: List[TaResultF
           keyPhrases).asJava
 
         cSVPrinter.printRecord(newRecord)
-
       })
     })
 
@@ -66,6 +60,4 @@ class TextAnalyticsReport(sopPairs: List[SoPPair], resultsByPara: List[TaResultF
     appendable.close()
     println("Wrote: " + outputPath.toAbsolutePath.toString)
   }
-
-
 }

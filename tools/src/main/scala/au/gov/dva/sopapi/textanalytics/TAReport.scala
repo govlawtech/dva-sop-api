@@ -1,16 +1,14 @@
 
-package org.au.dva.sopapi.textanalytics
+package au.gov.dva.sopapi.textanalytics
 
-import java.io.File
 import java.nio.file.{Files, Path, Paths}
 import java.time.{OffsetDateTime, ZoneId}
 
-import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
-import au.gov.dva.sopapi.{AppSettings, DateTimeUtils}
+import au.gov.dva.sopapi.interfaces.model.{SoP, SoPPair}
 import au.gov.dva.sopapi.sopref.SoPs
-import au.gov.dva.sopapi.sopref.data.AzureStorageRepository
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
 import au.gov.dva.sopapi.sopref.text_analytics.GetKeyPhrasesClient
+import au.gov.dva.sopapi.{AppSettings, DateTimeUtils}
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 import com.google.common.collect.{ImmutableList, ImmutableSet}
 import org.asynchttpclient.DefaultAsyncHttpClient
@@ -23,11 +21,7 @@ case class TaResultForSingleInstrument(frlId: String, resultsByPara: List[(Strin
 
 object TAReport extends App {
 
-  private def toSoP(jsonString: String) = {
-    val om = new ObjectMapper()
-    val jsonNode: JsonNode = om.readTree(jsonString)
-    StoredSop.fromJson(jsonNode)
-  }
+
 
 
   private def getFactorKvpsForSopPair(sopPair: SoPPair): List[(String, String)] = {
@@ -52,25 +46,13 @@ object TAReport extends App {
     resultsGroupedByFrlKey.map(r => TaResultForSingleInstrument(r._1, r._2.map(paraPhrases => (getParaForId(paraPhrases._1),paraPhrases._2)))).toList
   }
 
-  val dirName = "C:\\Users\\nick\\OneDrive\\Documents\\GLT\\GLTS\\GLTS Accounts\\DVA\\sops download 18 feb";
+  val dirName = args(0)
+  if (dirName.isEmpty) {
+    println("Need dir containing sop files.")
+    throw new IllegalArgumentException
+  }
 
-  val sourceFiles: List[File] = new java.io.File(dirName).listFiles.toList
-
-
-  val allSops: List[SoP] = sourceFiles
-    .flatMap(file => {
-      try {
-        val asString = Files.readAllLines(file.toPath).asScala.mkString(util.Properties.lineSeparator)
-        val asSop = toSoP(asString)
-        Some(asSop)
-      }
-      catch {
-        case e: Throwable => {
-          println(file + ": " + e.getMessage)
-          None
-        }
-      }
-    })
+  val allSops = SoPData.loadFromFileSystem(dirName)
 
   val javaImmutableSet: ImmutableSet[SoP] = ImmutableSet.copyOf(allSops.asJava.iterator())
 
@@ -91,9 +73,6 @@ object TAReport extends App {
   val outputDir: Path = Files.createTempDirectory(null)
   val outputPath = Paths.get(outputDir.toAbsolutePath.toString,"taReport.csv")
   report.createCsvReport(outputPath)
-
-  //report.writeXmlReport(outputPath)
-  //Thread.sleep(60000)
 
 
 }
