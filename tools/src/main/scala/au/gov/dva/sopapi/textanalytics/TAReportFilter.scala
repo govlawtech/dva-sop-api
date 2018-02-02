@@ -37,7 +37,18 @@ object TAReportFilter extends App {
     val sop = sopsMap(sopId)
 
     val filteredPhrases = phrases.filter(p => !kpFilter.shouldRemove(p,sop))
-    val newRecord: List[String] = originalCsvRecord.iterator().asScala.toList :+ filteredPhrases.mkString("; ")
+    val kpOrOriginal = filteredPhrases.isEmpty match  {
+      case true => List(originalCsvRecord.get(4))
+      case false => filteredPhrases
+    }
+
+
+    val originalWordCount = originalCsvRecord.get(4).split("\\s+").size
+    val kpWordCount = kpOrOriginal.mkString.split("\\s+").size
+    val reductionPercentage: Int = 100 - Math.round((kpWordCount.toFloat/originalWordCount.toFloat)*100)
+
+    val newRecord: List[String] = originalCsvRecord.iterator().asScala.toList :+ kpOrOriginal.mkString(" - ") :+ originalWordCount.toString :+ kpWordCount.toString :+ reductionPercentage.toString
+
     csvPrinter.printRecord(newRecord.asJava)
   }
 
@@ -48,7 +59,7 @@ object TAReportFilter extends App {
   val outputPath = Paths.get(outputDir.toAbsolutePath.toString,"taReport.csv")
   val appendable = com.google.common.io.Files.newWriter(outputPath.toFile,Charsets.UTF_8)
   val cSVPrinter = new CSVPrinter(appendable,CSVFormat.EXCEL
-    .withHeader("Condition","Standard of Proof","FRL Link","Paragraph","Full Text","Key Phrases from Direct Microsoft Text Analytics API","With Filtering Heuristics"))
+    .withHeader("Condition","Standard of Proof","FRL Link","Paragraph","Full Text","Raw Key Phrases from Microsoft Text Analytics API","With Filtering Heuristics Applied", "Full text Word Count","Key Phrase Word Count", "Percentage Reduction"))
 
   records.drop(1).foreach(record => printFilteredItem(record,cSVPrinter))
 
