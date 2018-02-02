@@ -66,8 +66,9 @@ class OldSoPStyleExtractor(cleansedText: String) extends SoPExtractor {
     getSectionWithTitleMatchingRegexOrThrow(citationRegex)._2.mkString(" ")
   }
 
+  val icdCodeStatementRegex = """attracts\s+ICD-10-AM\s+code((\s|[0-9]|\.|[A-Z]|,|[\r\n]+|or|and)+(?!\.[\r\n]+))""".r
   override def extractICDCodes(plainTextSop: String): List[ICDCode] = {
-    val icdCodeStatementRegex = """attracts ICD-10-AM code((\s|[0-9]|\.|[A-Z]|,|[\r\n]+|or|and)+(?!\.[\r\n]+))""".r
+
     val firstIcdMatch = icdCodeStatementRegex.findFirstMatchIn(plainTextSop)
 
     if (firstIcdMatch.isEmpty) {
