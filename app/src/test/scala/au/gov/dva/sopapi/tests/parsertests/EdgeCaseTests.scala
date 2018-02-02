@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.tests.parsertests
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.interfaces.model.Factor
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
-import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
+import au.gov.dva.sopapi.sopref.parsing.{PostAug2015ExtractorUtilities, SoPExtractorUtilities}
 import au.gov.dva.sopapi.sopref.parsing.traits.PreAug2015FactorsParser
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import org.junit.runner.RunWith
@@ -180,5 +180,14 @@ class EdgeCaseTests extends FunSuite {
     val icdCodes = r.getICDCodes
     assert(icdCodes.size() == 2)
   }
+
+  test("Eating disorder")
+  {
+
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2016L00261","allSops/F2016L00261.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+  }
+
+
 
 }

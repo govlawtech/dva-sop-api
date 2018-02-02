@@ -36,9 +36,18 @@ class SubfactorParserTests extends FunSuite {
     val mock = new mockOldStyleFactor
     val result = underTest.divideFactorsToSubFactors(mock)
 
+  }
 
+
+  test("Get condition variant") {
+    val mock1 = new mockOldStyleFactor
+    val underTest = new OldSoPStyleSubFactorParser
+    val result = underTest.tryParseConditionVariant(mock1)
+    println(result)
+    assert (result.get == "intervertebral disc prolapse of the cervical spine")
 
   }
+
 }
 
 

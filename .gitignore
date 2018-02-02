@@ -76,3 +76,4 @@ out/
 deploy/
 doctrees/
 
+*.gpg
