@@ -1,6 +1,8 @@
 package au.gov.dva.sopapi.interfaces.model;
 
-public interface ConditionVariantFactor {
+import au.gov.dva.sopapi.interfaces.JsonSerializable;
+
+public interface ConditionVariantFactor extends JsonSerializable {
     String getSubParagraph();
     String getText();
 }
