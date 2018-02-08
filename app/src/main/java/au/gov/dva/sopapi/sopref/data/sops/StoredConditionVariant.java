@@ -41,13 +41,18 @@ public class StoredConditionVariant implements ConditionVariant, JsonSerializabl
 
     @Override
     public JsonNode toJson() {
+       return toJson(this);
+    }
+
+    public static JsonNode toJson(ConditionVariant conditionVariant)
+    {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode root = objectMapper.createObjectNode();
-        root.put(CONDITION_VARIANT_NAME_LABEL,getName());
+        root.put(CONDITION_VARIANT_NAME_LABEL,conditionVariant.getName());
         ArrayNode variantFactors = root.putArray(CONDITION_VARIANT_FACTORS_LABEL);
-        for (ConditionVariantFactor cf : getVariantFactors())
+        for (ConditionVariantFactor cf : conditionVariant.getVariantFactors())
         {
-            variantFactors.add(cf.toJson());
+            variantFactors.add(StoredConditionVariantFactor.toJson(cf));
         }
         return root;
     }

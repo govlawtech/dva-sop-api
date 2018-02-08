@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 public class StoredSop implements SoP, HasSchemaVersion {
 
-    private static final Integer SCHEMA_VERSION = 1;
+    private static final Integer SCHEMA_VERSION = 2;
 
     @Override
     public Integer getSchemaVersion() {
@@ -262,7 +262,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
         Optional<ConditionVariant> conditionVariant = factor.getConditionVariant();
         if (conditionVariant.isPresent())
         {
-            ObjectNode jsonNode = (ObjectNode) conditionVariant.get().toJson();
+            ObjectNode jsonNode = (ObjectNode) StoredConditionVariant.toJson(conditionVariant.get());
             ObjectNode on =  root.putObject(Labels.CONDITION_VARIANT_OBJECT_LABEL);
             on.setAll(jsonNode);
         }

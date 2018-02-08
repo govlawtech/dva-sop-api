@@ -14,7 +14,6 @@ public class StoredFactorWithConditionVariant implements Factor {
 
     public StoredFactorWithConditionVariant(Factor toDecorate, ConditionVariant conditionVariant)
     {
-
         this.toDecorate = toDecorate;
         this.conditionVariant = conditionVariant;
     }

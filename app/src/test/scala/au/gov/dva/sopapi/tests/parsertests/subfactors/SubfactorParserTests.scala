@@ -45,7 +45,6 @@ class SubfactorParserTests extends FunSuite {
     val result = underTest.tryParseConditionVariant(mock1)
     println(result)
     assert (result.get == "intervertebral disc prolapse of the cervical spine")
-
   }
 
 }

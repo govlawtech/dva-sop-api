@@ -40,14 +40,17 @@ public class StoredConditionVariantFactor implements ConditionVariantFactor, Jso
     }
 
 
-    @Override
-    public JsonNode toJson() {
-
+    public static JsonNode toJson(ConditionVariantFactor conditionVariantFactor) {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode factorNode = objectMapper.createObjectNode();
-        factorNode.put(CONDITION_VARIANT_FACTOR_PARA_LABEL,getSubParagraph());
-        factorNode.put(CONDITION_VARIANT_FACTOR_TEXT_LABEL,getText());
+        factorNode.put(CONDITION_VARIANT_FACTOR_PARA_LABEL, conditionVariantFactor.getSubParagraph());
+        factorNode.put(CONDITION_VARIANT_FACTOR_TEXT_LABEL, conditionVariantFactor.getText());
         return factorNode;
+    }
+
+    @Override
+    public JsonNode toJson() {
+        return toJson(this);
     }
 
 

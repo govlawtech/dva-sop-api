@@ -25,7 +25,6 @@ trait SoPFactory extends MiscRegexes {
 
     val (factorsSectionNumber, factorsSectionText): (Int, String) = extractor.extractFactorsSection(cleansedText)
 
-
     val (standard, factorInfos): (StandardOfProof, List[FactorInfo]) = parser.parseFactors(factorsSectionText)
 
     val factorObjects: List[Factor] = this.buildFactorObjectsFromInfo(factorInfos, factorsSectionNumber, definedTermsList)
@@ -186,3 +185,4 @@ trait SoPFactory extends MiscRegexes {
   }
 
 }
+

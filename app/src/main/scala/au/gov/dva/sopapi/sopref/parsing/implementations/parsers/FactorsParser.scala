@@ -134,6 +134,9 @@ object FactorsParser extends MiscRegexes {
       .head
   }
 
+
+
+
   case class ParaLines(legalRef: String, lines: List[String]) {
     def endsWithOr = lines.last.endsWith("or")
     def isSubsHead = lines.last.endsWith(":") || lines.last.endsWith(",") || lines.last.endsWith(", and")
@@ -151,5 +154,6 @@ object FactorsParser extends MiscRegexes {
 
     def flattenLines: String = (paraLinesParent.lines ++ children.flatMap(c => c.lines)).mkString(Properties.lineSeparator)
   }
+
 
 }

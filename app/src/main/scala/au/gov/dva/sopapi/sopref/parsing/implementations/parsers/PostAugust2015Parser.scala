@@ -5,9 +5,9 @@ import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
-import au.gov.dva.sopapi.interfaces.model.DefinedTerm
+import au.gov.dva.sopapi.interfaces.model.{ConditionVariant, DefinedTerm, Factor}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedDefinedTerm}
-import au.gov.dva.sopapi.sopref.parsing.traits.{PreAugust2015SoPParser, SoPParser}
+import au.gov.dva.sopapi.sopref.parsing.traits.{ConditionVariantParser, PreAugust2015SoPParser, SoPParser}
 
 import scala.util.Properties
 
@@ -79,7 +79,5 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
 
     throw new SopParserRuntimeException("Cannot determine aggravation paras from: " + aggravationSection)
   }
-
-
 
 }
