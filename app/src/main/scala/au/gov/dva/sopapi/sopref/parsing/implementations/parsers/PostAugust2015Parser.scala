@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.{ConditionVariant, DefinedTerm, Factor}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedDefinedTerm}
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, NewSoPStyleSubFactorParser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, SubFactorParser}
 import au.gov.dva.sopapi.sopref.parsing.traits.{PreAugust2015SoPParser, SoPParser}
 
 import scala.util.Properties
@@ -26,7 +26,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
       val parsedFactors: List[FactorInfo] = factorSections.map(f => PostAug2015FactorsParser.parseFactor(f))
 
       val parsedFactorsWithConditionVariants = parsedFactors.
-        map(fi => ConditionVariants.addornFactor(fi,NewSoPStyleSubFactorParser))
+        map(fi => ConditionVariants.addornFactor(fi,SubFactorParser))
 
       (standardOfProof, parsedFactorsWithConditionVariants)
     }

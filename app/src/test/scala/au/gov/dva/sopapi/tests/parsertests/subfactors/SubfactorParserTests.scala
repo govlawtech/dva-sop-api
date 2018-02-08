@@ -5,7 +5,7 @@ import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor}
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, SubFactorInfo}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.paragraphReferenceSplitters.NewSoPStyleParaReferenceSplitter
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{NewSoPStyleSubFactorParser, OldSoPStyleSubFactorParser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{SubFactorParser}
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import com.google.common.collect.ImmutableSet
 import org.junit.runner.RunWith
@@ -18,7 +18,7 @@ class SubfactorParserTests extends FunSuite {
 
   test("split to sub paras") {
 
-    val underTest = NewSoPStyleSubFactorParser
+    val underTest = SubFactorParser
 
     val result: List[SubFactorInfo] = underTest.divideFactorsToSubFactors(new mockFactor)
     result.foreach(println(_))
@@ -36,7 +36,7 @@ class SubfactorParserTests extends FunSuite {
    }
 
   test("Get subfactors from old style SoP section") {
-    val underTest = OldSoPStyleSubFactorParser
+    val underTest = SubFactorParser
     val mock = new mockOldStyleFactor
     val result = underTest.divideFactorsToSubFactors(mock)
   }
@@ -44,7 +44,7 @@ class SubfactorParserTests extends FunSuite {
 
   test("Get condition variant") {
     val mock1 = new mockOldStyleFactor
-    val underTest = OldSoPStyleSubFactorParser
+    val underTest = SubFactorParser
     val result = underTest.tryParseConditionVariant(mock1)
     println(result)
     assert (result.get == "intervertebral disc prolapse of the cervical spine")
