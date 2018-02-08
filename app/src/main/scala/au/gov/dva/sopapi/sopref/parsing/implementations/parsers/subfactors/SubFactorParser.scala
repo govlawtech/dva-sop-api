@@ -8,7 +8,7 @@ import au.gov.dva.sopapi.sopref.parsing.traits.{MiscRegexes, SubFactorParser}
 import scala.util.Properties
 import scala.util.matching.Regex
 
-object NewSoPStyleSubFactorParser extends SubFactorParser with MiscRegexes {
+object SubFactorParser extends SubFactorParser with MiscRegexes {
   val regexForParaStart = """\([a-z]+\)""".r
 
   override def divideFactorsToSubFactors(factor: FactorInfo): List[SubFactorInfo] = {
