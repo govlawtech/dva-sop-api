@@ -14,7 +14,7 @@ public interface Factor {
     default Optional<ConditionVariant> getConditionVariant() {
         return Optional.empty();
     }
-
-
 }
+
+
 

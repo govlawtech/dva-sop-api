@@ -69,6 +69,7 @@ class AllSopsTest extends FunSuite{
     fails.foreach(f => println(f))
 
     println("FAILS COUNT: " + fails.size)
+    
   }
 
 }

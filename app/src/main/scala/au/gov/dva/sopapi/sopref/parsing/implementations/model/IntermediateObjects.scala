@@ -1,12 +1,14 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.model
 
+import au.gov.dva.sopapi.interfaces.model.ConditionVariant
+
 import scala.util.Properties
 
 // intermediate objects created by parsing SoP text
-abstract class FactorInfo {
+abstract class FactorInfo  {
   def getLetter : String
   def getText : String
-  def getConditionVariant : Option[ConditionVariantInfo] = None
+  def getConditionVariant : Option[ConditionVariant] = None
 }
 
 class FactorInfoForFactorSectionWithOnlyOneFactor(factorText: String)  extends FactorInfo

@@ -1,6 +1,8 @@
 package au.gov.dva.sopapi.sopref.parsing.implementations.model
 
-import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor}
+import java.util.Optional
+
+import au.gov.dva.sopapi.interfaces.model.{ConditionVariant, DefinedTerm, Factor}
 import com.google.common.base.Objects
 import com.google.common.collect.ImmutableSet
 
@@ -12,6 +14,7 @@ class ParsedFactor(paragraph : String, text: String, definedTerms : Set[DefinedT
   override def getDefinedTerms: ImmutableSet[DefinedTerm] = ImmutableSet.copyOf(definedTerms.toArray)
 
   override def toString = s"ParsedFactor($getParagraph, $getText)"
+
 
   def canEqual(a: Any) = a.isInstanceOf[Factor]
 
@@ -29,4 +32,15 @@ class ParsedFactor(paragraph : String, text: String, definedTerms : Set[DefinedT
   override def hashCode(): Int = Objects.hashCode(this.paragraph, this.text, this.definedTerms)
 }
 
+
+class ParsedFactorWithConditionVariant(toDecorate: ParsedFactor, variant: ConditionVariant) extends Factor
+{
+  override def getParagraph: String = toDecorate.getParagraph
+
+  override def getText: String = toDecorate.getText
+
+  override def getDefinedTerms: ImmutableSet[DefinedTerm] = toDecorate.getDefinedTerms
+
+  override def getConditionVariant: Optional[ConditionVariant] = Optional.of(variant)
+}
 
