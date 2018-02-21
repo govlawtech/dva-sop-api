@@ -127,7 +127,7 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
             case "benign neoplasm of the eye and adnexa":
                 return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
-                
+
 
 
         }
