@@ -4,7 +4,11 @@ import au.gov.dva.sopapi.ConfigurationRuntimeException;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationItem;
+import au.gov.dva.sopapi.interfaces.model.FactorReference;
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.paragraphReferenceSplitters.NewSoPStyleParaReferenceSplitter;
+import au.gov.dva.sopapi.sopref.parsing.traits.ParaReferenceSplitter;
 import com.google.common.collect.ImmutableSet;
+import scala.Tuple2;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
@@ -45,6 +49,40 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         this.cftsDays = toIntOrError(cftsDays,"Cannot determine number of CFTS days from");
     }
 
+
+
+    private FactorReference parseFactorRef(String factorReference)
+    {
+        ParaReferenceSplitter s = new NewSoPStyleParaReferenceSplitter();
+        if (!s.hasSubParas(factorReference))
+        {
+            return new FactorReference() {
+                @Override
+                public String getMainFactorReference() {
+                    return factorReference;
+                }
+
+                @Override
+                public Optional<String> getFactorPartReference() {
+                    return Optional.empty();
+                }
+            };
+        }
+
+        Tuple2<String, String> subParaRef = s.trySplitParagraphReferenceToMainParagraphAndFirstLevelSubParagraph(factorReference);
+        return new FactorReference() {
+            @Override
+            public String getMainFactorReference() {
+                return factorReference;
+            }
+
+            @Override
+            public Optional<String> getFactorPartReference() {
+                return Optional.of(subParaRef._2);
+            }
+        };
+
+    }
 
 
     private ImmutableSet<String> splitFactorRefs(String factorRefsCellValue){
@@ -111,9 +149,10 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     }
 
     @Override
-    public ImmutableSet<String> getFactorReferences() {
-        return factorRefs;
+    public ImmutableSet<FactorReference> getFactorReferences() {
+        return getMainFactorReferences().stream().map(this::parseFactorRef).collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
     }
+
 
     @Override
     public ServiceBranch getServiceBranch() {
