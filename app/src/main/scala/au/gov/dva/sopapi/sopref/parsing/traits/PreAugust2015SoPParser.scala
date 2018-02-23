@@ -9,7 +9,7 @@ import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, InstrumentNumber}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{ParsedDefinedTerm, ParsedInstrumentNumber}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAug2015DefinitionsParsers
 
-trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser {
+trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser   {
 
   def extractStandardOfProofFromHeader(headerText: String): StandardOfProof = {
     if (headerText.contains("balance of probabilities"))

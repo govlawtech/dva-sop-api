@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor, ICDCode, SoP}
-import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedFactor, ParsedSop}
+import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedFactor, ParsedFactorWithConditionVariant, ParsedSop}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.PreAugust2015Parser
 import com.google.common.collect.{ImmutableList, ImmutableSet, Iterables, Sets}
 
@@ -24,7 +24,6 @@ trait SoPFactory extends MiscRegexes {
     val definedTermsList: List[DefinedTerm] = parser.parseDefinitions(extractor.extractDefinitionsSection(cleansedText))
 
     val (factorsSectionNumber, factorsSectionText): (Int, String) = extractor.extractFactorsSection(cleansedText)
-
 
     val (standard, factorInfos): (StandardOfProof, List[FactorInfo]) = parser.parseFactors(factorsSectionText)
 
@@ -66,7 +65,6 @@ trait SoPFactory extends MiscRegexes {
     paraWithNumber.dropWhile(c => c.isDigit)
   }
 
-
   def splitFactors(parasInOrder: List[String], startPara: String, endPara: String): (List[String], List[String]) = {
     val firstChunkOfOnsetParas = parasInOrder.takeWhile(i => i != startPara);
     val lastChunkOfOnsetParas = parasInOrder.reverse.takeWhile(i => i != endPara).reverse;
@@ -76,15 +74,21 @@ trait SoPFactory extends MiscRegexes {
     (allOnsetParas, aggParas)
   }
 
-
   def buildFactorObjectsFromInfo(factors: List[FactorInfo], factorSectionNumber: Int, definedTerms: List[DefinedTerm]): List[Factor] = {
 
     factors
-      .map(fi => (factorSectionNumber.toString.concat(fi.getLetter), fi.getText))
-      .map(i => {
+      .map(factorInfo => {
+        val paraLetterIncludingMainSectionRef = factorSectionNumber.toString.concat(factorInfo.getLetter)
+        val relevantDefinitions = definedTerms.filter(d => factorInfo.getText.contains(d.getTerm)).toSet
 
-        val relevantDefinitions = definedTerms.filter(d => i._2.contains(d.getTerm)).toSet
-        new ParsedFactor(i._1, i._2, relevantDefinitions)
+        val parsedFactor = new ParsedFactor(paraLetterIncludingMainSectionRef, factorInfo.getText, relevantDefinitions)
+        if (factorInfo.getConditionVariant.isEmpty) {
+          parsedFactor
+        }
+        else {
+          new ParsedFactorWithConditionVariant(parsedFactor,factorInfo.getConditionVariant.get)
+        }
+
       })
   }
 
@@ -186,3 +190,4 @@ trait SoPFactory extends MiscRegexes {
   }
 
 }
+

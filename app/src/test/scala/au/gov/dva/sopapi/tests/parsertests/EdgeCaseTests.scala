@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.tests.parsertests
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.interfaces.model.Factor
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
-import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
+import au.gov.dva.sopapi.sopref.parsing.{PostAug2015ExtractorUtilities, SoPExtractorUtilities}
 import au.gov.dva.sopapi.sopref.parsing.traits.PreAug2015FactorsParser
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import org.junit.runner.RunWith
@@ -140,40 +140,52 @@ class EdgeCaseTests extends FunSuite {
 
   }
 
-  test("Chronic obstructive pulmonary with many subparas parsed correctly")
-  {
+  test("Chronic obstructive pulmonary with many subparas parsed correctly") {
     var r = ParserTestUtils.executeWholeParsingPipeline("F2015C00915", "allSops/F2015C00915.pdf")
     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
 
   }
 
-  test("Non unicode superscripts for iodine handled correctly")
-  {
-    val r = ParserTestUtils.executeWholeParsingPipeline("F2013L00728","allSops/F2013L00728.pdf")
+  test("Non unicode superscripts for iodine handled correctly") {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2013L00728", "allSops/F2013L00728.pdf")
 
   }
 
-  test("Non unicode superscripts for yttrium handled correctly")
-  {
-    val r = ParserTestUtils.executeWholeParsingPipeline("F2013L00720","allSops/F2013L00720.pdf")
+  test("Non unicode superscripts for yttrium handled correctly") {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2013L00720", "allSops/F2013L00720.pdf")
   }
 
 
-  test("Tall footnotes in new compliations cropped")
-  {
-    var r = ParserTestUtils.executeWholeParsingPipeline("F2017C00077","allSops/F2017C00077.pdf")
+  test("Tall footnotes in new compliations cropped") {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2017C00077", "allSops/F2017C00077.pdf")
     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
   }
 
-  test("Typo in definitions in multi illness fixed")
-  {
-    val r = ParserTestUtils.executeWholeParsingPipeline("F2014L00525","allSops/F2014L00525.pdf")
+  test("Typo in definitions in multi illness fixed") {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2014L00525", "allSops/F2014L00525.pdf")
 
   }
 
-  test("Typo in sinus barotrauma addressed")
+  test("Typo in sinus barotrauma addressed") {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2017C00075", "allSops/F2017C00075.pdf")
+  }
+
+  test("malig neoplastm of the overy") {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2018L00010", "allSops/F2018L00010.pdf")
+  }
+
+  test("extract icd codes from MALIGNANT NEOPLASM OF THE CEREBRAL MENINGES")
   {
-    val r = ParserTestUtils.executeWholeParsingPipeline("F2017C00075","allSops/F2017C00075.pdf")
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2018L00001", "allSops/F2018L00001.pdf")
+    val icdCodes = r.getICDCodes
+    assert(icdCodes.size() == 2)
+  }
+
+  test("Eating disorder")
+  {
+
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2016L00261","allSops/F2016L00261.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
   }
 
 

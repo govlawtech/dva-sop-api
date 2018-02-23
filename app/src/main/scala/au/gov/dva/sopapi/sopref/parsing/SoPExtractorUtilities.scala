@@ -43,7 +43,10 @@ object SoPExtractorUtilities extends MiscRegexes
   def parseSectionBlock(sectionBlock: List[String]): (Option[Int], String, List[String]) = {
     val lines = sectionBlock
     val title: String = lines.head
-    if (lines.tail.isEmpty) throw new SopParserRuntimeException("This does not appear to be a section block: " + sectionBlock.mkString(" "))
+    if (lines.tail.isEmpty) {
+      return (None,"",lines)
+//      throw new SopParserRuntimeException("This does not appear to be a section block: " + sectionBlock.mkString(" "))
+    }
     val numberedLine: String = lines.tail(0)
     val sectionHeaderLineRegex = """^([0-9]+)\.\s""".r
     val m = sectionHeaderLineRegex.findFirstMatchIn(numberedLine)

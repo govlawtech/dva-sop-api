@@ -27,7 +27,7 @@ class AllSopsTest extends FunSuite{
           getIdfromUrl(i(1).trim),
           getIdfromUrl(i(2).trim)))
     specs
-  }
+    }
 
   private def getIdfromUrl(urlString : String) = {
     val m = """F[0-9A-Z]+$""".r.findFirstIn(urlString)
@@ -69,6 +69,7 @@ class AllSopsTest extends FunSuite{
     fails.foreach(f => println(f))
 
     println("FAILS COUNT: " + fails.size)
+    
   }
 
 }

@@ -10,5 +10,11 @@ public interface Factor {
     String getParagraph();
     String getText();
     ImmutableSet<DefinedTerm> getDefinedTerms();
+
+    default Optional<ConditionVariant> getConditionVariant() {
+        return Optional.empty();
+    }
 }
+
+
 
