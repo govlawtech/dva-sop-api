@@ -117,6 +117,15 @@ public class ConditionFactory {
                 return new MentalHealthProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(84));
             case "malignant neoplasm of the eye":
                 return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "seborrhoeic keratosis":
+                return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "pinguecula":
+                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "benign neoplasm of the eye and adnexa":
+                return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+
+
+
         }
 
         return null;
