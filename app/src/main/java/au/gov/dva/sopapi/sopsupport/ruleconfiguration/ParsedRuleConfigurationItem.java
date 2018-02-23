@@ -39,6 +39,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     private final ServiceBranch serviceBranch;
     private final Rank rank;
     private final int cftsDays;
+    private ImmutableSet<FactorReference> factorRefObjects;
 
     public ParsedRuleConfigurationItem(@Nonnull String conditionName, @Nonnull String instrumentId, @Nonnull String factorRefs,@Nonnull String serviceBranch,@Nonnull String rank, @Nonnull String cftsDays)
     {
@@ -48,6 +49,11 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         this.rank = toRank(rank);
         this.serviceBranch = toServiceBranch(serviceBranch);
         this.cftsDays = toIntOrError(cftsDays,"Cannot determine number of CFTS days from");
+
+        this.factorRefObjects = this.factorRefs.stream().map(this::parseFactorRef).collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
+
+
+
     }
 
 
@@ -150,10 +156,11 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     }
 
     @Override
-    public ImmutableSet<FactorReference> getFactorReferences() {
-        return getMainFactorReferences().stream().map(this::parseFactorRef).collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
-    }
+    public ImmutableSet<FactorReference> getFactorRefObjects() {
 
+        return this.factorRefObjects;
+
+    }
 
     @Override
     public ServiceBranch getServiceBranch() {
