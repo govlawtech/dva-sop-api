@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 
 
 public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
+
     @Override
     public String toString() {
         return "ParsedRuleConfigurationItem{" +

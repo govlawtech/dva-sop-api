@@ -20,8 +20,12 @@ public class RulesConfigurationTests {
         byte[] rhCsv = Files.readAllBytes(Paths.get("../../dva-sop-api-rule-config/rh.csv"));
         byte[] boPCsv = Files.readAllBytes(Paths.get("../../dva-sop-api-rule-config/bop.csv"));
         RuleConfigurationRepository underTest = new CsvRuleConfigurationRepository(rhCsv, boPCsv);
-        assert(underTest.getRHItems().size() == 32 && underTest.getBoPItems().size() == 176);
+        assert(underTest.getRHItems().size() > 0 && underTest.getBoPItems().size() > 0);
         underTest.getRHItems().forEach(rhRuleConfigurationItem -> System.out.println(rhRuleConfigurationItem));
         underTest.getBoPItems().forEach(rhRuleConfigurationItem -> System.out.println(rhRuleConfigurationItem));
+
+        underTest.getRHItems().forEach(rhRuleConfigurationItem -> {
+            rhRuleConfigurationItem.getFactorReferences().forEach(factorReference -> System.out.println(factorReference.getMainFactorReference()));
+        });
     }
 }
