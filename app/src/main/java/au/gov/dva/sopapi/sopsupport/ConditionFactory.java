@@ -127,8 +127,22 @@ public class ConditionFactory {
                 return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
             case "benign neoplasm of the eye and adnexa":
                 return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
-
-
+            case "acute articular cartilage tear":
+                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "acute meniscal tear of the knee":
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "dislocation":
+                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "fracture":
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "joint instability":
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "labral tear":
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "external bruise":
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+            case "external burn":
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
 
         }
 
