@@ -28,6 +28,7 @@ public class AcuteConditionRule implements ProcessingRule {
     private final ImmutableSet<String> _registerIds;
     private Function<Condition, Interval> _providerForIntervalToCheckForOperationalService;
 
+
     public AcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhFactorParas, String bopRegisterId, ImmutableSet<String> bopFactorParas, Function<Condition, Interval> providerForIntervalToCheckForOperationalService) {
         _providerForIntervalToCheckForOperationalService = providerForIntervalToCheckForOperationalService;
         _registerIds = ImmutableSet.of(rhRegisterId, bopRegisterId);
