@@ -71,8 +71,6 @@ public class Status {
     public static String createStatusHtml(CacheSingleton cache, Repository repository, URL blobsBaseUrl, String version) {
         ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops(), OffsetDateTime.now());
 
-        Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();
-
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<html><body>");
 
