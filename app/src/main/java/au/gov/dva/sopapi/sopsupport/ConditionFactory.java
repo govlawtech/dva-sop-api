@@ -29,6 +29,7 @@ public class ConditionFactory {
                 "acute meniscal tear of the knee",
                 "dislocation",
                 "fracture",
+                "joint instability",
                 "labral tear",
                 "external bruise",
                 "external burn"
