@@ -151,6 +151,23 @@ public class ConditionFactory {
                         7
                 ));
 
+             case "concerning physical injury due to munitions discharge":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2012L01789",
+                        ImmutableSet.of("6(a)"),
+                        "F2012L01790",
+                        ImmutableSet.of("6(a)"),
+                        7
+                ));
+
+                 case "cut, stab, abrasion and laceration":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2016L00567",
+                        ImmutableSet.of("9(1)"),
+                        "F2016L00571",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ));
 
 
             default:
