@@ -187,9 +187,6 @@ class EdgeCaseTests extends FunSuite {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00189","allSops/F2018C00189.pdf")
   }
 
-  test("malig neoplasm of overy parses after RMA fixed typo")
-  {
-    var r =
-  }
+  
 
 }
