@@ -46,7 +46,7 @@ object ServiceLocator {
       case "F2017L00007" => HepatitsBSoPFactoryForBoP
       case "F2017L00001" => HepatitsBSoPFactoryForRH
       case "F2010L02304" => RenalStoneRHSoPFactory
- //     case "F2018L00010" => MalignantNeoplasmOfTheOverySoPFactorydd
+      case "F2018L00010" => MalignantNeoplasmOfTheOverySoPFactory
       case "F2018L00011" => MalignantNeoplasmOfTheOverySoPFactory
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
