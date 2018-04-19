@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<veaServiceReferenceData
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="veaServiceReferenceData.xsd">
+    <warlikeAndNonWarlike>
+
+        <veaLegislativeReference>6F</veaLegislativeReference>
+        <description>Operational service—warlike and non‑warlike service</description>
+
+        <warlikeDeterminations>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2010L00176</federalRegisterOfLegislationReference>
+                <commencementDate>2009-12-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SLIPPER</name>
+                        <startDate>2001-10-11</startDate>
+                        <endDate>2009-07-30</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>
+                                <![CDATA[the area bounded by the following coordinates:
+                                <ul>
+                                <li>48 00N         81 00E</li>
+                                <li>48 00N          35 00E</li>
+                                <li>12 00N          35 00E</li>
+                                <li>12 00N          81 00E</li>
+                                </ul>
+                    ]]></specifiedArea>
+                            <specifiedArea>the Diego Garcia land mass and territorial waters, plus airspace of Diego
+                                Garcia out to 250nm radius (from Reference Point 07 18.6S 072 24.6E)
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04377</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>PROVIDE COMFORT</name>
+                        <startDate>1991-08-11</startDate>
+                        <endDate>1996-12-15</endDate>
+                        <qualifications>
+                            <qualification>service with the United States elements of the coalition force operation to
+                                patrol the Iraq No-Fly-Zones
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04376</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>NORTHERN WATCH</name>
+                        <startDate>1997-01-01</startDate>
+                        <endDate>2003-01-12</endDate>
+                        <qualifications>
+                            <qualification>service with the United States elements of the coalition force operation to
+                                patrol the Iraq No-Fly-Zones
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02932</federalRegisterOfLegislationReference>
+                <commencementDate>1973-01-12</commencementDate>
+
+                <activities>
+                    <activity>
+                        <startDate>1973-01-12</startDate>
+                        <endDate>1975-04-29</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Vietnam (Southern Zone)</specifiedArea>
+                        </specifiedAreas>
+
+                    </activity>
+                </activities>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00961</federalRegisterOfLegislationReference>
+                <commencementDate>2000-06-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>STABILISE</name>
+                        <startDate>1999-09-16</startDate>
+                        <endDate>2000-02-23</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the sea area that on 16 September 1999 was the territorial sea of Indonesia
+                                adjacent to East Timor
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2005L04107</federalRegisterOfLegislationReference>
+                <commencementDate>2005-12-08</commencementDate>
+                <operations>
+                    <operation>
+                        <name>PALATE II</name>
+                        <startDate>2005-06-27</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan, including Afghanistan’s land territory, internal waters and
+                                superjacent airspace
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2009L02442</federalRegisterOfLegislationReference>
+                <commencementDate>2008-07-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>RIVERBANK</name>
+                        <startDate>2008-07-21</startDate>
+                        <qualifications>
+                            <qualification>service with the Australian Defence Force contribution to the United Nations
+                                Assistance Mission in Iraq
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00960</federalRegisterOfLegislationReference>
+                <commencementDate>2003-09-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>FALCONER</name>
+                        <startDate>2003-03-18</startDate>
+                        <endDate>2003-07-22</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>The area bounded by the geographical coordinates: 38 00N, 68 00E; 38 00N, 32
+                                00E; 10 00N, 32 00E; 10 00N, 68 00E.
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2010L00699</federalRegisterOfLegislationReference>
+                <commencementDate>2010-02-12</commencementDate>
+                <operations>
+                    <operation>
+                        <name>CATALYST</name>
+                        <startDate>2003-07-16</startDate>
+                        <endDate>2009-07-31</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>Kuwait, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>Bahrain, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>Qatar, territorial waters and adjacent airspace</specifiedArea>
+                            <specifiedArea>United Arab Emirates, territorial waters and adjacent airspace
+                            </specifiedArea>
+                            <specifiedArea>Saudia Arabia, territorial waters and adjacent airspace north of 23 degrees
+                                North latitude
+                            </specifiedArea>
+                            <specifiedArea>the Persian Gulf</specifiedArea>
+                            <specifiedArea>the Straight of Hormuz</specifiedArea>
+
+
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00579</federalRegisterOfLegislationReference>
+                <commencementDate>2003-09-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>CITADEL</name>
+                        <startDate>2002-05-20</startDate>
+                        <endDate>2003-08-17</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the territorial sea of East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00577</federalRegisterOfLegislationReference>
+                <commencementDate>2004-04-01</commencementDate>
+                <operations>
+                    <operation>
+                        <name>TANAGER</name>
+                        <startDate>2000-02-20</startDate>
+                        <endDate>2002-05-19</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the territorial sea of East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00578</federalRegisterOfLegislationReference>
+                <commencementDate>2000-06-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>WARDEN</name>
+                        <startDate>1999-09-16</startDate>
+                        <endDate>2000-04-10</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the sea area that on 16 September 1999 was the territorial sea of Indonesia
+                                adjacent to East Timor
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2005L03487</federalRegisterOfLegislationReference>
+                <commencementDate>2005-10-31</commencementDate>
+                <operations>
+                    <operation>
+                        <name>PALATE</name>
+                        <startDate>2003-04-18</startDate>
+                        <endDate>2004-06-30</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2009L00722</federalRegisterOfLegislationReference>
+                <commencementDate>2009-01-01</commencementDate>
+                <operations>
+                    <operation>
+                        <name>KRUGER</name>
+                        <startDate>2009-01-01</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>with the Australian Defence Force contribution to the provision of security
+                                to the Australian Embassy in Iraq
+                            </qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00958</federalRegisterOfLegislationReference>
+                <commencementDate>2000-06-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>FABER</name>
+                        <startDate>1999-09-16</startDate>
+                        <endDate>2000-02-23</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the sea area that on 16 September 1999 was the territorial sea of Indonesia
+                                adjacent to East Timor
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L01121</federalRegisterOfLegislationReference>
+                <commencementDate>2006-02-13</commencementDate>
+                <operations>
+                    <operation>
+                        <name>TAMAR</name>
+                        <startDate>1994-07-25</startDate>
+                        <endDate>1996-01-16</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Rwanda</specifiedArea>
+                            <specifiedArea>the areas in Uganda, Zaire (now known as the Democratic Republic of the
+                                Congo), Burundi and Tanzania that are not more than 50 kilometres from the border with
+                                Rwanda
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04375</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>JURAL</name>
+                        <startDate>1991-06-30</startDate>
+                        <endDate>2003-01-12</endDate>
+                        <qualifications>
+                            <qualification>with the United Kingdom elements of the coalition force operation to patrol
+                                the Iraq No-Fly-Zones
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L00986</federalRegisterOfLegislationReference>
+                <commencementDate>2007-03-22</commencementDate>
+                <operations>
+                    <operation>
+                        <name>HUSKY</name>
+                        <startDate>2001-01-15</startDate>
+                        <endDate>2003-02-28</endDate>
+                        <qualifications>
+                            <qualification>with the International Military Advisory and Training Team in Sierra Leone
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Sierra Leone</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+
+            </determination>
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>BOLTON</name>
+                        <specifiedAreas>
+                            <specifiedArea>
+                                Iraq
+                            </specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>with the United Kingdom elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
+                        <startDate>1992-08-31</startDate>
+                        <endDate>2003-01-12</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SOUTHERN WATCH</name>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1992-08-31</startDate>
+                        <endDate>2003-01-12</endDate>
+                        <qualifications>
+                            <qualification>with the United States elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+
+        </warlikeDeterminations>
+
+        <non-warlikeDeterminations>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007B00579</federalRegisterOfLegislationReference>
+                <commencementDate>1999-08-24</commencementDate>
+                <operations>
+                    <operation>
+                        <name>JOINT GUARDIAN</name>
+                        <startDate>1999-06-11</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>the Federal Republic of Yugoslavia</specifiedArea>
+                            <specifiedArea>Albania</specifiedArea>
+                            <specifiedArea>the Former Yugoslav Republic of Macedonia</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007B00576</federalRegisterOfLegislationReference>
+                <commencementDate>1999-08-24</commencementDate>
+                <operations>
+                    <operation>
+                        <name>ALLIED FORCE</name>
+                        <startDate>1999-04-15</startDate>
+                        <endDate>1999-06-03</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Federal Republic of Yugoslavia</specifiedArea>
+                            <specifiedArea>Albania</specifiedArea>
+                            <specifiedArea>Former Yugoslav Republic of Macedonia</specifiedArea>
+                            <specifiedArea>the Adriatic Sea</specifiedArea>
+                            <specifiedArea>NATO bases in Italy</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>serving with the NATO operation against the Federal Republic of Yugoslavia
+                            </qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007B00578</federalRegisterOfLegislationReference>
+                <commencementDate>1999-08-24</commencementDate>
+                <operations>
+                    <operation>
+                        <name>AGRICOLA</name>
+                        <startDate>1999-02-25</startDate>
+                        <endDate>1999-06-10</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Federal Republic of Yugoslavia</specifiedArea>
+                            <specifiedArea>Albania</specifiedArea>
+                            <specifiedArea>Former Yugoslav Republic of Macedonia</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00499</federalRegisterOfLegislationReference>
+                <commencementDate>1999-11-02</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SPITFIRE</name>
+                        <startDate>1999-09-06</startDate>
+                        <endDate>1999-09-19</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the territorial sea of Indonesia adjacent to East Timor</specifiedArea>
+                        </specifiedAreas>
+
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02916</federalRegisterOfLegislationReference>
+                <commencementDate>1997-07-25</commencementDate>
+                <activities>
+                    <activity>
+                        <startDate>1997-07-25</startDate>
+                        <endDate>1997-08-07</endDate>
+                        <qualifications>
+                            <qualification>as part of the Technical Survey Team
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Libreville (Gabon)</specifiedArea>
+                            <specifiedArea>Pointe Noire (Republic of the Congo)</specifiedArea>
+                            <specifiedArea>Brazzaville (Republic of the Congo)</specifiedArea>
+                        </specifiedAreas>
+                    </activity>
+                </activities>
+
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00574</federalRegisterOfLegislationReference>
+                <commencementDate>2001-06-22</commencementDate>
+                <operations>
+                    <operation>
+                        <name>PLUMBOB</name>
+                        <startDate>2000-06-08</startDate>
+                        <endDate>2000-06-24</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>the island of Guadalcanal and the adjacent waters extending 12 nautical miles
+                                from the low water mark from Guadalcanal Island
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00950</federalRegisterOfLegislationReference>
+                <commencementDate>2001-09-17</commencementDate>
+                <operations>
+                    <operation>
+                        <name>POLLARD</name>
+                        <startDate>1998-02-17</startDate>
+                        <endDate>2001-10-01</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>all sea, airspace and land North and West from 5 deg 00 min S 68 deg 00 min E
+                                and encompassing the outer boundaries of Pakistan, Afghanistan, Iran, Iraq, Jordan,
+                                Egypt, Sudan and Kenya
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00571</federalRegisterOfLegislationReference>
+                <commencementDate>2003-09-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>CITADEL</name>
+                        <startDate>2003-08-18</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor and the territorial sea of East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00718</federalRegisterOfLegislationReference>
+                <commencementDate>2000-06-21</commencementDate>
+                <operations>
+                    <operation>
+                        <name>BANNER</name>
+                        <startDate>1993-10-08</startDate>
+                        <endDate>1999-10-04</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Cambodia</specifiedArea>
+                            <specifiedArea>the areas of Laos and Thailand that are not more than 50 kilometres from the
+                                border with Cambodia
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00932</federalRegisterOfLegislationReference>
+                <commencementDate>2001-02-28</commencementDate>
+                <operations>
+                    <operation>
+                        <name>POMELO</name>
+                        <startDate>2001-01-15</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Ethiopia</specifiedArea>
+                            <specifiedArea>Eritrea</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B11477</federalRegisterOfLegislationReference>
+                <commencementDate>2004-12-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>DAMASK</name>
+                        <startDate>1999-03-18</startDate>
+                        <endDate>2001-10-19</endDate>
+                        <qualifications>
+                            <qualification>with the Multi-national Maritime Interception Force
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>the Arabian Gulf, the Gulf of Oman and the northern Arabian Sea bounded by 61
+                                degrees 50 minutes east longitude and 20 degrees north latitude, together with the ports
+                                contiguous to that sea area and the airfields and military facilities adjacent to those
+                                ports
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02013</federalRegisterOfLegislationReference>
+                <commencementDate>2006-05-12</commencementDate>
+                <operations>
+                    <operation>
+                        <name>ASTUTE</name>
+                        <startDate>2006-05-12</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor and its territorial waters and superjacent airspace
+                            </specifiedArea>
+
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007B00581</federalRegisterOfLegislationReference>
+                <commencementDate>1999-11-09</commencementDate>
+                <operations>
+                    <operation>
+                        <name>FABER</name>
+                        <startDate>1999-06-19</startDate>
+                        <endDate>1999-09-15</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>the territorial sea of Indonesia adjacent to East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00719</federalRegisterOfLegislationReference>
+                <commencementDate>2003-07-31</commencementDate>
+                <operations>
+                    <operation>
+                        <name>ANODE</name>
+                        <startDate>2003-07-24</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>the Solomon Islands, territorial waters and superjacent airspace
+                            </specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2005L04103</federalRegisterOfLegislationReference>
+                <commencementDate>2005-12-08</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SPIRE</name>
+                        <startDate>2004-05-20</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor and the territorial sea of East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+
+
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2005L04106</federalRegisterOfLegislationReference>
+                <commencementDate>2005-12-08</commencementDate>
+                <operations>
+                    <operation>
+                        <name>AZURE</name>
+                        <startDate>2005-04-10</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Sudan and its territorial waters and superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00951</federalRegisterOfLegislationReference>
+                <commencementDate>2000-11-23</commencementDate>
+                <operations>
+                    <operation>
+                        <name>TREK</name>
+                        <startDate>2000-11-04</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>the Solomon Islands and its territorial sea</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00566</federalRegisterOfLegislationReference>
+                <commencementDate>2004-07-06</commencementDate>
+                <activities>
+                    <activity>
+                        <qualifications>
+                            <qualification>service rendered as a member of the Royal Australian Air Force aircrew in the
+                                Berlin
+                                Airlift
+                            </qualification>
+                        </qualifications>
+                        <startDate>1948-09-15</startDate>
+                        <endDate>1949-08-29</endDate>
+
+                    </activity>
+                </activities>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L03709</federalRegisterOfLegislationReference>
+                <commencementDate>2006-07-20</commencementDate>
+                <operations>
+                    <operation>
+                        <name>RAMP</name>
+                        <startDate>2006-07-20</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Lebanon and its territorial waters and superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02913</federalRegisterOfLegislationReference>
+                <commencementDate>1997-02-13</commencementDate>
+                <activities>
+                    <activity>
+                        <specifiedAreas>
+                            <specifiedArea>Guatemala</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>part of the United Nations Observer Mission</qualification>
+                        </qualifications>
+                        <startDate>1997-02-13</startDate>
+                        <endDate>1997-05-12</endDate>
+
+                    </activity>
+                </activities>
+
+
+            </determination>
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>BOLTON</name>
+                        <specifiedAreas>
+                            <specifiedArea>Saudi Arabia</specifiedArea>
+                            <specifiedArea>Kuwait</specifiedArea>
+                            <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>with the United Kingdom elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
+                        <startDate>1999-05-13</startDate>
+                        <endDate>2003-01-12</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
+                <commencementDate>2007-04-16</commencementDate>
+                <operations>
+                    <operation>
+                        <name>SOUTHERN WATCH</name>
+                        <specifiedAreas>
+                            <specifiedArea>Saudi Arabia</specifiedArea>
+                            <specifiedArea>Kuwait</specifiedArea>
+                            <specifiedArea>Incirlik airbase in Turkey</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>with the United States elements of the coalition force operation to patrol
+                                the Iraq No-fly Zones
+                            </qualification>
+                        </qualifications>
+                        <startDate>1999-09-23</startDate>
+                        <endDate>2003-01-12</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006B00576</federalRegisterOfLegislationReference>
+                <commencementDate>2003-10-23</commencementDate>
+                <operations>
+                    <operation>
+                        <name>BEL ISI</name>
+                        <qualifications>
+                            <qualification>serving with the Truce Monitoring Group</qualification>
+                        </qualifications>
+
+                        <specifiedAreas>
+                            <specifiedArea>Bougainville</specifiedArea>
+                            <specifiedArea>Buka Islands</specifiedArea>
+                            <specifiedArea>the Papua New Guinea territorial waters surrounding Bogainville and Buka
+                                Islands
+                            </specifiedArea>
+                        </specifiedAreas>
+
+                        <startDate>1997-11-20</startDate>
+                        <endDate>2003-08-26</endDate>
+                    </operation>
+                    <operation>
+                        <name>BEL ISI II</name>
+                        <qualifications>
+                            <qualification>serving with the Peace Monitoring Group</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Bougainville</specifiedArea>
+                            <specifiedArea>Buka Islands</specifiedArea>
+                            <specifiedArea>the Papua New Guinea territorial waters surrounding Bogainville and Buka
+                                Islands
+                            </specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1997-11-20</startDate>
+                        <endDate>2003-08-26</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L04870</federalRegisterOfLegislationReference>
+                <commencementDate>2007-09-11</commencementDate>
+                <operations>
+                    <operation>
+                        <name>QUICKSTEP</name>
+                        <specifiedAreas>
+                            <specifiedArea>Fiji: its land, internal waters, archipelagic waters, territorial sea and
+                                superjacent airspace and the exclusive economic zone
+                            </specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2006-10-31</startDate>
+                        <endDate>2006-12-22</endDate>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L02362</federalRegisterOfLegislationReference>
+                <commencementDate>2006-07-01</commencementDate>
+                <operations>
+                    <operation>
+                        <name>VIGILANCE</name>
+                        <startDate>2006-07-01</startDate>
+                    </operation>
+                </operations>
+            </determination>
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02915</federalRegisterOfLegislationReference>
+                <commencementDate>1997-07-05</commencementDate>
+                <operations>
+                    <operation>
+                        <name>VISTA</name>
+                        <specifiedAreas>
+                            <specifiedArea>Cambodia</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1997-07-05</startDate>
+                        <endDate>1997-07-14</endDate>
+
+                    </operation>
+                </operations>
+            </determination>
+
+        </non-warlikeDeterminations>
+    </warlikeAndNonWarlike>
+    <hazardous>
+        <veaLegislativeReference>69A</veaLegislativeReference>
+
+        <determinations>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02857</federalRegisterOfLegislationReference>
+                <commencementDate>1991-05-07</commencementDate>
+                <operations>
+                    <operation>
+                        <name>HABITAT</name>
+                        <startDate>1991-05-07</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                            <specifiedArea>the area of Turkey south of latitude 38° north</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                    <operation>
+                        <name>BLAZER</name>
+                        <startDate>1991-07-02</startDate>
+                        <qualifications>
+                            <qualification>with the United Nations Special Commission for the Destruction of Weapons of
+                                Mass Destruction
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Iraq</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+                <activities>
+                    <activity>
+                        <startDate>1991-06-09</startDate>
+                        <endDate>1996-03-31</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>the Arabian Gulf</specifiedArea>
+                            <specifiedArea>the Gulf of Oman</specifiedArea>
+                            <specifiedArea>the Northern Arabian Sea</specifiedArea>
+                            <specifiedArea>the Gulf of Aden</specifiedArea>
+                            <specifiedArea>
+                                <![CDATA[<html>
+                                the Red Sea bounded to the south and east by the following coordinates:
+                               <ul>
+                                <li>25°  00°   North  -  61°  50°   East</li>
+                                <li>20°  00°   North  -  61°  50°   East</li>
+                                <li>11°  50°   North  -  51°  17°   East</li>
+                                </ul>
+                                ]]>
+
+                            </specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>afloat in Royal Australian naval or allied naval units</qualification>
+                        </qualifications>
+                    </activity>
+                </activities>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02912</federalRegisterOfLegislationReference>
+                <commencementDate>1997-01-24</commencementDate>
+                <activities>
+                    <activity>
+                        <specifiedAreas>
+                            <specifiedArea>the former Republic of Yugoslavia</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>while on exchange with the forces of other countries</qualification>
+                        </qualifications>
+                        <startDate>1997-01-24</startDate>
+                    </activity>
+                </activities>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2007L01654</federalRegisterOfLegislationReference>
+                <commencementDate>1991-06-08</commencementDate>
+                <activities>
+                    <activity>
+                        <qualifications>
+                            <qualification>with the the United Nations Office for Co-ordinating Assistance to Afghanistan (UNOCA) or the United Nations Mine Clearing Training Team (UNMCTT)
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1991-06-08</startDate>
+
+                    </activity>
+                </activities>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02911</federalRegisterOfLegislationReference>
+                <commencementDate>1996-04-01</commencementDate>
+                <activities>
+                    <activity>
+                        <startDate>1996-04-01</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>international waters, contiguous ports and waters used for international navigation contained with the Arabian Gulf, the Gulf of Oman and the Northern Arabian Sea with an eastern extremity of 61 degrees, 50 minutes East and a southern extremity of 20 degrees North
+                            </specifiedArea>
+                        </specifiedAreas>
+
+                    </activity>
+                </activities>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02872</federalRegisterOfLegislationReference>
+                <commencementDate>1994-09-17</commencementDate>
+                <activities>
+                    <activity>
+
+                        <qualifications>
+                            <qualification>as part of the United States of America led multi-national force
+                            </qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Haiti</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>1994-09-17</startDate>
+                    </activity>
+                </activities>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02842</federalRegisterOfLegislationReference>
+                <commencementDate>1990-08-02</commencementDate>
+                <activities>
+                    <activity>
+                        <startDate>1990-08-02</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Bahrain</specifiedArea>
+                            <specifiedArea>Oman</specifiedArea>
+                            <specifiedArea>Qatar</specifiedArea>
+                            <specifiedArea>Saudi Arabia</specifiedArea>
+                            <specifiedArea>United Arab Emirates</specifiedArea>
+                            <specifiedArea>Island of Cyprus</specifiedArea>
+                            <specifiedArea>the sea areas contained within the Gulf of Suez, the Gulf of Aqaba, the Red Sea, the Gulf of Aden, the Persian Gulf and the Gulf of Oman
+                            </specifiedArea>
+                            <specifiedArea><![CDATA[<html>the sea area contained within the Arabian Sea north of the boundary formed by the joining of each of the following points to the next:
+<table>
+
+<tr>
+                        <td>(a)</td>          <td>20° 30´ North</td>            <td>70°  40´  East</td>
+</tr>
+<tr>
+                        <td>(b)</td>          <td>14° 30´   North</td>            <td>67°  35´  East</td>
+</tr>
+<tr>
+                        <td>(c)</td>          <td>8°  30´   North</td>            <td>60°  00´  East</td>
+</tr>
+<tr>
+                        <td>(d)</td>          <td>6°  20´   North</td>           <td>53°  52´  East</td>
+</tr>
+<tr>
+
+                        <td>(e)</td>          <td>5°  48´   North</td>            <td>49°  02´  East</td>
+</tr>
+                        </table>
+                    </html>]]>
+                            </specifiedArea>
+                            <specifiedArea>the sea area contained within the Suez Canal and the Mediterranean Sea east
+                                of 30°E
+                            </specifiedArea>
+
+
+                        </specifiedAreas>
+                    </activity>
+                </activities>
+
+            </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02865</federalRegisterOfLegislationReference>
+                <commencementDate>1994-07-12</commencementDate>
+                <activities>
+                    <activity>
+                        <startDate>1994-07-12</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Mozambique</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>as part of the United Nations humanitarian operations</qualification>
+                        </qualifications>
+                    </activity>
+                </activities>
+
+            </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2006L02864</federalRegisterOfLegislationReference>
+                <commencementDate>1986-11-17</commencementDate>
+                <activities>
+                    <activity>
+                        <startDate>1986-11-17</startDate>
+                        <endDate>1989-02-28</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>the waters of the Gulf of Iran and the Gulf of Oman west of the line joining
+                                Rass-Al-Hadd and the southern end of the Iran Pakistan border, and the countries
+                                littoral to those waters, to a maximum distance inland of 50 km from the high water mark
+                            </specifiedArea>
+                        </specifiedAreas>
+
+                    </activity>
+                </activities>
+
+            </determination>
+        </determinations>
+    </hazardous>
+    <peacekeeping>
+        <veaLegislativeReference>Schedule 3</veaLegislativeReference>
+        <items>
+            <item>
+                <number>1</number>
+                <descriptionOfPeacekeepingForce>Security Council Commission of Investigation on the Balkans
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1947-01-29</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>2</number>
+                <descriptionOfPeacekeepingForce>Committee of Good Offices</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1947-08-25</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>3</number>
+                <descriptionOfPeacekeepingForce>United Nations Special Commission on the Balkans
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1947-11-26</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>4</number>
+                <descriptionOfPeacekeepingForce>United Nations Commission on Korea</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1949-01-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>5</number>
+                <descriptionOfPeacekeepingForce>United Nations Military Observer Group in India and Pakistan
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1949-01-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>6</number>
+                <descriptionOfPeacekeepingForce>United Nations Commission for Indonesia</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1949-01-28</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>7</number>
+                <descriptionOfPeacekeepingForce>United Nations Truce Supervision Organisation
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1956-06-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>8</number>
+                <descriptionOfPeacekeepingForce>United Nations Operations in the Congo</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1960-08-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>9</number>
+                <descriptionOfPeacekeepingForce>United Nations Yemen Observation Mission
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1963-01-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>10</number>
+                <descriptionOfPeacekeepingForce>United Nations Force in Cyprus</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1964-05-14</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>11</number>
+                <descriptionOfPeacekeepingForce>United Nations India-Pakistan Observation Mission
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1965-09-20</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>12</number>
+                <descriptionOfPeacekeepingForce>United Nations Disengagement Observer Force
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1974-01-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>13</number>
+                <descriptionOfPeacekeepingForce>United Nations Emergency Force Two</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1976-07-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>14</number>
+                <descriptionOfPeacekeepingForce>United Nations Interim Force in Lebanon</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1978-03-23</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>15</number>
+                <descriptionOfPeacekeepingForce>Commonwealth Monitoring Force in Zimbabwe
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1979-12-24</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>16</number>
+                <descriptionOfPeacekeepingForce>Sinai Multinational Force and Observers established by the Protocol
+                    between the Arab Republic of Egypt and the State of Israel dated 3 August 1981
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1982-02-18</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>17</number>
+                <descriptionOfPeacekeepingForce>United Nations Iran/Iraq Military Observer Group
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1988-08-11</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>18</number>
+                <descriptionOfPeacekeepingForce>United Nations Border Relief Operation in Cambodia
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1989-02-01</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>19</number>
+                <descriptionOfPeacekeepingForce>United Nations Transition Assistance Group Namibia
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1989-02-18</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>20</number>
+                <descriptionOfPeacekeepingForce>United Nations Mission for the Referendum in Western Sahara (Mission des
+                    Nations Unies pour un Referendum au Sahara Occidental)
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1991-06-27</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>21</number>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Transitional
+                    Authority in Cambodia
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1992-05-18</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>22</number>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Operation in
+                    Mozambique
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1994-03-27</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>23</number>
+                <descriptionOfPeacekeepingForce>Australian Defence Support to a Pacific Peacekeeping Force for a
+                    Bougainville Peace Conference
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1994-09-21</initialDateAsAPeaceKeepingForce>
+            </item>
+
+            <item>
+                <number>24</number>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the Multi-National Force in Haiti
+                </descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>1994-10-10</initialDateAsAPeaceKeepingForce>
+            </item>
+
+
+        </items>
+
+    </peacekeeping>
+
+</veaServiceReferenceData>
