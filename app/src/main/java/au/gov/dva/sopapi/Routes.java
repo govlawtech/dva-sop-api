@@ -9,6 +9,7 @@ import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -255,15 +256,19 @@ public class Routes {
 
             try {
                 return handler.handle(req, res);
-
-            } catch (ProcessingRuleRuntimeException e) {
-                logger.error("Error applying rule.", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
+            } catch (DvaSopApiDtoRuntimeException e) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return buildIncorrectRequestFormatError(e.getMessage());
+            }
+            catch (ServiceHistoryCorruptException e)
+            {
+                logger.error("Service history corrupt.",e);
+                setResponseHeaders(res,400,MIME_TEXT);
                 return e.getMessage();
             }
-            catch (DvaSopApiDtoRuntimeException e) {
-                logger.error("Runtime exception", e);
-                setResponseHeaders(res,500,MIME_TEXT);
+            catch (ProcessingRuleRuntimeException e) {
+                logger.error("Error applying rule.", e);
+                setResponseHeaders(res, 500, MIME_TEXT);
                 return e.getMessage();
             } catch (Exception e) {
                 logger.error("Unknown exception", e);
