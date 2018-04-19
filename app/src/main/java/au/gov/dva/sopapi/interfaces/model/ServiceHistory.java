@@ -2,6 +2,7 @@ package au.gov.dva.sopapi.interfaces.model;
 
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -13,6 +14,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -67,7 +69,11 @@ public interface ServiceHistory {
                 .collect(Collectors.toList());
 
 
-        if (deployments.size() > 1) throw new ProcessingRuleRuntimeException("Service history data appears corrupt: shows two or more concurrent deployments");
+        if (deployments.size() > 1) {
+            String deploymentStarts = String.join(",",deployments.stream().map(d ->  d.getStartDate().toString()).collect(Collectors.toList()));
+
+                throw new ServiceHistoryCorruptException(String.format("Service history data appears corrupt: shows two or more concurrent deployments: the deployments starting %s",deploymentStarts));
+        }
 
         if (deployments.size() == 1)
         {
