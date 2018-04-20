@@ -3,21 +3,58 @@ import java.time.{LocalDate, ZoneId}
 import java.time.format.DateTimeFormatter
 import java.util.Optional
 
+import com.fasterxml.jackson.databind.JsonNode
 import com.google.common.collect.ImmutableSet
+import org.codehaus.jackson.map.ObjectMapper
 import org.joda.time.Interval
 
 import scala.collection.immutable
 import scala.xml._
 
-class VeaOperation(val name : String, val startDate : LocalDate, val endDate : Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications : List[Qualification]) extends VeaOccurance {
+class VeaOperation(val name : String, val startDate : LocalDate, val endDate : Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications : List[Qualification]) extends VeaOccurance with ToJson {
   override def toString: String = name
+
+  override def toJson: JsonNode =  {
+      val om = new ObjectMapper()
+      val root = om.createObjectNode()
+      root.put("name",name)
+      root.put("startDate", startDate.format(DateTimeFormatter.ISO_LOCAL_DATE))
+      if (endDate.isDefined) root.put("endDate",endDate.get.format(DateTimeFormatter.ISO_LOCAL_DATE))
+      if (specifiedAreas.nonEmpty) {
+        val specifiedAreasArray = root.putArray("specifiedAreas")
+        specifiedAreas.foreach(sa => specifiedAreasArray.add(sa.desc))
+      }
+      if (qualifications.nonEmpty)
+      {
+        val qualificationsArray = root.putArray("qualifications")
+        qualifications.foreach(q => qualificationsArray.add(q.text))
+      }
+      root.asInstanceOf[JsonNode]
+    }
 }
 
 class SpecifiedArea(val desc : String)
 
 class Qualification(val text: String)
 
-class VeaActivity(val startDate : LocalDate, val endDate : Option[LocalDate], val specifiedAreas : List[SpecifiedArea], val qualifications : List[Qualification]) extends VeaOccurance
+class VeaActivity(val startDate : LocalDate, val endDate : Option[LocalDate], val specifiedAreas : List[SpecifiedArea], val qualifications : List[Qualification]) extends VeaOccurance with ToJson {
+  override def toJson: JsonNode = {
+    val om = new ObjectMapper()
+    val root = om.createObjectNode()
+    root.put("startDate", startDate.format(DateTimeFormatter.ISO_LOCAL_DATE))
+    if (endDate.isDefined) root.put("endDate",endDate.get.format(DateTimeFormatter.ISO_LOCAL_DATE))
+    if (specifiedAreas.nonEmpty) {
+      val specifiedAreasArray = root.putArray("specifiedAreas")
+      specifiedAreas.foreach(sa => specifiedAreasArray.add(sa.desc))
+    }
+    if (qualifications.nonEmpty)
+      {
+        val qualificationsArray = root.putArray("qualifications")
+        qualifications.foreach(q => qualificationsArray.add(q.text))
+      }
+    root.asInstanceOf[JsonNode]
+  }
+}
 
 abstract class VeaDetermination(val registerId : String, val operations : List[VeaOperation], val activities : List[VeaActivity])
 
@@ -41,9 +78,12 @@ trait HasDates {
   def endDate : Option[LocalDate]
 }
 
-trait VeaOccurance extends HasDates {
+trait VeaOccurance extends HasDates
 
+trait ToJson {
+  def toJson : JsonNode
 }
+
 
 object VeaOperationQueries {
   def getOpsAndActivitiesOnDate(testDate: LocalDate, allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaOccurance]] =
@@ -54,15 +94,18 @@ object VeaOperationQueries {
 
      val ongoingAtDate = allDeterminations
                   .map(d => d -> (getThingsAtDate(testDate, d.operations) ++ getThingsAtDate(testDate,d.activities)))
-                    .filter(i => !i._2.isEmpty)
+                    .filter(i => i._2.nonEmpty)
                   .toMap
 
      ongoingAtDate
   }
 
-  def getOpsAndActivitiesInRange(startOfTestRange: LocalDate, endOfTestRange : LocalDate, allDeterminations: List[VeaDetermination]): List[VeaOccurance] =
+  def getOpsAndActivitiesInRange(startOfTestRange: LocalDate, endOfTestRange : LocalDate, allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaOccurance]] =
   {
-     allDeterminations.flatMap(d => getVeaOccurancesInInterval(startOfTestRange,endOfTestRange,d))
+      allDeterminations
+      .map(d => d -> getVeaOccurancesInInterval(startOfTestRange,endOfTestRange,d))
+      .filter(i => i._2.nonEmpty)
+      .toMap
   }
 
   private def getVeaOccurancesInInterval(startTestDate : LocalDate, endTestDate: LocalDate, veaDetermination: VeaDetermination) = {
@@ -79,6 +122,26 @@ object VeaOperationQueries {
       !startTestDate.isAfter(potentiallyOpenEndedInterval.endDate.get) && !endTestDate.isBefore(potentiallyOpenEndedInterval.startDate)
     }
   }
+}
+
+object Facade {
+
+  def getResponseRangeQuery(startDate : LocalDate, endDate : LocalDate, allDeterminations : List[VeaDetermination]) : JsonNode = {
+
+    val queryResults: Map[VeaDetermination, List[VeaOccurance]] = VeaOperationQueries.getOpsAndActivitiesInRange(startDate,endDate,allDeterminations)
+
+    // splice in the determination register id
+
+
+
+
+  }
+
+  private def buildFlatList(data : Map[VeaDetermination, List[VeaOccurance]]) = {
+    
+  }
+
+
 }
 
 object VeaDeserialisationUtils {
@@ -126,7 +189,3 @@ object VeaDeserialisationUtils {
     (warlike ++ nonWarlikeDeterminations ++ hazardous).toList
   }
 }
-
-
-
-
