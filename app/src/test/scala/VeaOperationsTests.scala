@@ -1,6 +1,6 @@
 import java.time.LocalDate
 
-import au.gov.dva.sopapi.veaops.{VeaActivity, VeaDeserialisationUtils, VeaOperation, VeaOperationQueries}
+import au.gov.dva.sopapi.veaops._
 import com.google.common.io.Resources
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -56,13 +56,30 @@ class VeaOperationsTests extends FunSuite {
 
   test ("Correct things at date")
   {
-    val root: Elem = XML.load (Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
-    val data = VeaDeserialisationUtils.DeterminationsfromXml(root)
-    val testDate = LocalDate.of(2017,1,1)
-    val results = VeaOperationQueries.getDeterminationsOnDate(testDate,data)
-    for (i <- results) {
-      println(i)
-    }
+    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
+    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
+    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
+    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
 
+    val testDets = List(testDet1,testDet2)
+    val testDate = LocalDate.of(2017,1,1)
+    val result = VeaOperationQueries.getDeterminationsOnDate(testDate,testDets)
+    assert(result.values.size == 1)
+    assert(result(testDet1).head.asInstanceOf[VeaOperation].name == "TESTOP1")
   }
+
+  test ("Correct things at date 2")
+  {
+    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
+    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
+    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
+    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
+
+    val testDets = List(testDet1,testDet2)
+    val testDate = LocalDate.of(2018,1,1)
+    val result = VeaOperationQueries.getDeterminationsOnDate(testDate,testDets)
+    assert(result.values.size == 2)
+    assert(result(testDet2).head.asInstanceOf[VeaActivity].endDate.isEmpty)
+  }
+
 }
