@@ -196,7 +196,7 @@ public class Routes {
                 IncidentType it = IncidentType.fromString(incidentType);
                 StandardOfProof sp = StandardOfProof.fromAbbreviation(standardOfProof);
 
-                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp);
+                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp,SoPs.AddStressorDefinitionsToText);
                 return response;
             }
         });
