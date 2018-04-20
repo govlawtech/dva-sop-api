@@ -1,4 +1,6 @@
-import au.gov.dva.sopapi.veaops.{VeaActivity, VeaDeserialisationUtils, VeaOperation}
+import java.time.LocalDate
+
+import au.gov.dva.sopapi.veaops.{VeaActivity, VeaDeserialisationUtils, VeaOperation, VeaOperationQueries}
 import com.google.common.io.Resources
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
@@ -49,6 +51,18 @@ class VeaOperationsTests extends FunSuite {
     val deserialised = VeaDeserialisationUtils.DeterminationsfromXml(root)
     println("Count: " + deserialised.length)
     assert(deserialised.length > 50)
+
+  }
+
+  test ("Correct things at date")
+  {
+    val root: Elem = XML.load (Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
+    val data = VeaDeserialisationUtils.DeterminationsfromXml(root)
+    val testDate = LocalDate.of(2017,1,1)
+    val results = VeaOperationQueries.getDeterminationsOnDate(testDate,data)
+    for (i <- results) {
+      println(i)
+    }
 
   }
 }
