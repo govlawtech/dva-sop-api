@@ -82,4 +82,20 @@ class VeaOperationsTests extends FunSuite {
     assert(result(testDet2).head.asInstanceOf[VeaActivity].endDate.isEmpty)
   }
 
+  test ("Correct things at date 3")
+  {
+    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
+    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
+    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
+    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
+
+    val testDets = List(testDet1,testDet2)
+    val testDate = LocalDate.of(2018,1,2)
+    val result = VeaOperationQueries.getDeterminationsOnDate(testDate,testDets)
+    assert(result.values.size == 1)
+    assert(result(testDet2).head.isInstanceOf[VeaActivity])
+  }
+
+
+
 }
