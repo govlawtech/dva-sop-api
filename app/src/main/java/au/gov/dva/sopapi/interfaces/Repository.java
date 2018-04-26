@@ -26,7 +26,7 @@ public interface Repository {
      void setLastUpdated(OffsetDateTime offsetDateTime);
      Optional<RuleConfigurationRepository> getRuleConfigurationRepository();
      void setRulesConfig(byte[] rhCsv, byte[] bopCsv);
-     Optional<String> getCuratedDefinitionText(String term);
-     Optional<String> getCuratedFactorText(String registerId, String legalReference);
+     Optional<CuratedTextRepository> getCuratedTextRepository();
+
      void purge();
 }

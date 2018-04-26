@@ -8,6 +8,7 @@ import com.uwyn.jhighlight.fastutil.Hash;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.csv.QuoteMode;
 import org.apache.commons.io.input.BOMInputStream;
 import org.xlsx4j.sml.Col;
 import scala.util.Properties;
@@ -66,7 +67,11 @@ public class CuratedTextRepositoryImpl implements CuratedTextRepository {
     private static CSVParser createParser(Reader reader) {
         final CSVParser parser;
         try {
-            parser = new CSVParser(reader, CSVFormat.EXCEL.withHeader());
+            parser = new CSVParser(reader, CSVFormat.EXCEL
+                    .withHeader()
+                    .withTrim(true)
+                    .withIgnoreEmptyLines(true)
+            );
         } catch (IOException e) {
             throw new ConfigurationRuntimeException(e);
         }
@@ -85,28 +90,27 @@ public class CuratedTextRepositoryImpl implements CuratedTextRepository {
             List<CSVRecord> recordList = parser.getRecords();
             for (CSVRecord csvRecord : recordList) {
                 if (csvRecord.size() != 3) {
-                    throw new ConfigurationRuntimeException("Error in curated factor text configuration: row must have three colums: " + csvRecord.toString());
+                    throw new ConfigurationRuntimeException("Error in curated factor text configuration: row must have three columns: " + csvRecord.toString());
                 }
 
-                String registerId = csvRecord.get(ColumnIndices.FactorText.RegisterId).trim();
+                String registerId = stripQuotes(csvRecord.get(ColumnIndices.FactorText.RegisterId).trim());
                 Matcher m = registerIdPattern.matcher(registerId);
                 if (!m.matches()) {
                     throw new ConfigurationRuntimeException("Register ID in curated factor text configuration looks wrong: " + registerId);
                 }
 
-                String legalReference = csvRecord.get(ColumnIndices.FactorText.LegalReference).trim();
-                String factorText = csvRecord.get(ColumnIndices.FactorText.Text);
+                String legalReference = stripQuotes(csvRecord.get(ColumnIndices.FactorText.LegalReference).trim());
+                String factorText = stripQuotes(csvRecord.get(ColumnIndices.FactorText.Text).trim());
 
-                HashMap<String, String> existingInstrumentIfAny = map.get(registerId);
-                if (existingInstrumentIfAny == null) {
+                if (map.get(registerId) == null) {
                     map.put(registerId, new HashMap<>());
                 }
 
-                if (existingInstrumentIfAny.containsKey(legalReference)) {
+                if (map.get(registerId).containsKey(legalReference)) {
                     throw new ConfigurationRuntimeException(String.format("Duplicate factor text configuration for Register ID %s and legal reference %s.", registerId, legalReference));
                 } else {
 
-                    existingInstrumentIfAny.put(legalReference, factorText);
+                    map.get(registerId).put(legalReference, factorText);
                 }
             }
 
@@ -121,6 +125,10 @@ public class CuratedTextRepositoryImpl implements CuratedTextRepository {
         }
     }
 
+    private static String stripQuotes(String s)
+    {
+       return s.replaceAll("^\"","").replaceAll("\"$","");
+    }
 
     private static ImmutableMap<String, String> buildDefinitionMap(byte[] definitionCsv) {
 
@@ -130,23 +138,19 @@ public class CuratedTextRepositoryImpl implements CuratedTextRepository {
 
 
         try {
-            List<CSVRecord> recordList = parser.getRecords();
+            List<CSVRecord> recordList = parser.getRecords().stream().filter(r -> r.size() == 2).collect(Collectors.toList());
             for (CSVRecord csvRecord : recordList) {
-                if (csvRecord.size() != 2) {
-                    throw new ConfigurationRuntimeException(String.format("Error in curated definition text configuration: row must have two columns: %s", csvRecord.toString()));
-                }
 
+                String definedTerm = stripQuotes(csvRecord.get(ColumnIndices.DefinitionText.DefinedTerm).trim());
+                String definition = stripQuotes(csvRecord.get(ColumnIndices.DefinitionText.Definition).trim());
 
-                String definedTerm = csvRecord.get(ColumnIndices.DefinitionText.DefinedTerm).trim();
-                String definition = csvRecord.get(ColumnIndices.DefinitionText.Definition).trim();
-
-
-                if (map.containsKey(definedTerm)) {
-                    throw new ConfigurationRuntimeException(String.format("Error in curated definition text config: duplicate definition for %s.", definedTerm));
+                if (definedTerm != null) {
+                    if (map.containsKey(definedTerm)) {
+                        throw new ConfigurationRuntimeException(String.format("Error in curated definition text config: duplicate definition for %s.", definedTerm));
+                    }
                 }
 
                 map.put(definedTerm, definition);
-
             }
 
             parser.close();
@@ -158,11 +162,13 @@ public class CuratedTextRepositoryImpl implements CuratedTextRepository {
         return ImmutableMap.copyOf(map);
     }
 
+
     @Override
     public Optional<String> getDefinitionFor(String definedTerm) {
-        if (_definitionMap.containsKey(definedTerm)) return Optional.of(_definitionMap.get(definedTerm));
+        if (_definitionMap.containsKey(definedTerm)) return Optional.of( _definitionMap.get(definedTerm));
         else return Optional.empty();
     }
+
 
     @Override
     public Optional<String> getFactorTextFor(String registerId, String legalReference) {

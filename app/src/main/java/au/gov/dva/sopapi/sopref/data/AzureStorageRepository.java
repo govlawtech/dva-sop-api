@@ -61,12 +61,11 @@ public class AzureStorageRepository implements Repository {
     private static final String SOP_PDFS_CONTAINER_NAME = "soppdfs";
     private static final String CURATED_TEXT_CONTAINER_NAME = "curatedtext";
     private static final String CURATED_TEXT_FACTOR_CSV_NAME = "hand-written-factor-text.csv";
-    private static final String CURATED_TEXT_DEFINITIONS_CSV_NAME = "hand-written-definitions-text.csv";
+    private static final String CURATED_TEXT_DEFINITIONS_CSV_NAME = "hand-written-definition-text.csv";
 
 
     private CloudStorageAccount _cloudStorageAccount = null;
     private CloudBlobClient _cloudBlobClient = null;
-
     private Optional<CuratedTextRepository> _curatedTextRepository;
 
 
@@ -532,25 +531,10 @@ public class AzureStorageRepository implements Repository {
     }
 
     @Override
-    public Optional<String> getCuratedDefinitionText(String term) {
-        if (!_curatedTextRepository.isPresent()) {
-            return Optional.empty();
-        }
-        else {
-            return _curatedTextRepository.get().getDefinitionFor(term);
-        }
+    public Optional<CuratedTextRepository> getCuratedTextRepository() {
+       return _curatedTextRepository;
     }
 
-    @Override
-    public Optional<String> getCuratedFactorText(String registerId, String legalReference) {
-        if (!_curatedTextRepository.isPresent())
-        {
-            return Optional.empty();
-        }
-        else {
-            return _curatedTextRepository.get().getFactorTextFor(registerId,legalReference);
-        }
-    }
 
 
     private Optional<CloudBlob> getBlobByName(String containerName, String blobName) throws URISyntaxException, StorageException {

@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.dtos.sopref.ConditionInfo;
 import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.ICDCodeDto;
 import au.gov.dva.sopapi.interfaces.Cache;
+import au.gov.dva.sopapi.interfaces.CuratedTextRepository;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -29,6 +30,7 @@ public class CacheSingleton implements Cache {
     private RuleConfigurationRepository _ruleConfigurationRepository;
     private ImmutableSet<InstrumentChange> _failedUpdates;
     private ImmutableList<ConditionInfo> _conditionList;
+    private Optional<CuratedTextRepository> _curatedTextReporitory;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
@@ -38,6 +40,7 @@ public class CacheSingleton implements Cache {
         _allServiceDeterminations = ImmutableSet.of();
         _failedUpdates = ImmutableSet.of();
         _conditionList = ImmutableList.of();
+        _curatedTextReporitory = Optional.empty();
     }
 
     public static CacheSingleton getInstance() {
@@ -60,6 +63,7 @@ public class CacheSingleton implements Cache {
             ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
             ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(allSops, OffsetDateTime.now());
             ImmutableList<ConditionInfo> conditionsList = ImmutableList.copyOf(buildConditionsList(soPPairs));
+            Optional<CuratedTextRepository> curatedTextRepository = repository.getCuratedTextRepository();
 
             // atomic
             _allSops = allSops;
@@ -68,6 +72,7 @@ public class CacheSingleton implements Cache {
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
             _failedUpdates = failed;
             _conditionList = conditionsList;
+            _curatedTextReporitory = curatedTextRepository;
         } catch (Exception e) {
             logger.error("Exception occurred when attempting to refresh cache from Repository.", e);
         } catch (Error e) {
@@ -119,6 +124,11 @@ public class CacheSingleton implements Cache {
                 .sorted(Comparator.comparing(ConditionInfo::get_conditionName))
                 .collect(Collectors.toList());
 
+    }
+
+    @Override
+    public Optional<CuratedTextRepository> get_curatedTextReporitory() {
+        return _curatedTextReporitory;
     }
 }
 

@@ -11,6 +11,8 @@ import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.Optional;
+
 public interface Cache {
     void refresh(Repository repository);
 
@@ -23,4 +25,6 @@ public interface Cache {
     ImmutableSet<ServiceDetermination> get_allServiceDeterminations();
 
     RuleConfigurationRepository get_ruleConfigurationRepository();
+
+    Optional<CuratedTextRepository> get_curatedTextReporitory();
 }
