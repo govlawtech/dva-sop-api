@@ -2,12 +2,14 @@ package au.gov.dva.sopapi.sopref.data;
 
 import au.gov.dva.sopapi.ConfigurationRuntimeException;
 import au.gov.dva.sopapi.exceptions.RepositoryRuntimeException;
+import au.gov.dva.sopapi.interfaces.CuratedTextRepository;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChangeBase;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
+import au.gov.dva.sopapi.sopref.data.curatedText.CuratedTextRepositoryImpl;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
@@ -21,6 +23,7 @@ import com.google.common.collect.Iterables;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.*;
+import com.microsoft.azure.storage.table.CloudTableClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,10 +59,14 @@ public class AzureStorageRepository implements Repository {
     private static final String RH_RULE_CONFIG_CSV_NAME = "rh.csv";
     private static final String BOP_RULE_CONFIG_CSV_NAME = "bop.csv";
     private static final String SOP_PDFS_CONTAINER_NAME = "soppdfs";
+    private static final String CURATED_TEXT_CONTAINER_NAME = "curatedtext";
+    private static final String CURATED_TEXT_FACTOR_CSV_NAME = "hand-written-factor-text.csv";
+    private static final String CURATED_TEXT_DEFINITIONS_CSV_NAME = "hand-written-definition-text.csv";
 
 
     private CloudStorageAccount _cloudStorageAccount = null;
     private CloudBlobClient _cloudBlobClient = null;
+    private Optional<CuratedTextRepository> _curatedTextRepository;
 
 
     public AzureStorageRepository(String storageConnectionString) {
@@ -70,11 +77,36 @@ public class AzureStorageRepository implements Repository {
             // to test connection
             Iterable<CloudBlobContainer> containers = _cloudBlobClient.listContainers();
             logger.info(String.format("Number of containers in Azure storage: %d.", Iterables.size(containers)));
+            _curatedTextRepository = buildCuratedTextRepository();
+
 
         } catch (Exception e) {
             throw new RepositoryRuntimeException(e);
         }
 
+
+    }
+
+
+    private Optional<CuratedTextRepository> buildCuratedTextRepository() throws URISyntaxException, StorageException {
+
+        try {
+            Optional<CloudBlob> factorCsv = getBlobByName(CURATED_TEXT_CONTAINER_NAME, CURATED_TEXT_FACTOR_CSV_NAME);
+            Optional<CloudBlob> definitionsCsv = getBlobByName(CURATED_TEXT_CONTAINER_NAME, CURATED_TEXT_DEFINITIONS_CSV_NAME);
+            if (!factorCsv.isPresent() || !definitionsCsv.isPresent()) {
+                return Optional.empty();
+            }
+            byte[] factorCsvUtf8 = getBlobBytes(factorCsv.get());
+            byte[] defCsvUtf8 = getBlobBytes(definitionsCsv.get());
+            CuratedTextRepository ctr = new CuratedTextRepositoryImpl(factorCsvUtf8,defCsvUtf8);
+            return Optional.of(ctr);
+        } catch (ConfigurationRuntimeException e) {
+            throw new RepositoryRuntimeException(e);
+        } catch (StorageException e) {
+            throw new RepositoryRuntimeException(e);
+        } catch (URISyntaxException e) {
+            throw new RepositoryRuntimeException(e);
+        }
 
     }
 
@@ -497,6 +529,12 @@ public class AzureStorageRepository implements Repository {
             throw new RepositoryRuntimeException(e);
         }
     }
+
+    @Override
+    public Optional<CuratedTextRepository> getCuratedTextRepository() {
+       return _curatedTextRepository;
+    }
+
 
 
     private Optional<CloudBlob> getBlobByName(String containerName, String blobName) throws URISyntaxException, StorageException {

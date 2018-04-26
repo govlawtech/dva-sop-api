@@ -1,7 +1,6 @@
 package au.gov.dva.sopapi.sopref;
 
 import au.gov.dva.sopapi.DateTimeUtils;
-import au.gov.dva.sopapi.Environment;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
@@ -9,17 +8,19 @@ import au.gov.dva.sopapi.dtos.sopref.FactorDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPFactorsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
-import au.gov.dva.sopapi.interfaces.model.Factor;
+import au.gov.dva.sopapi.interfaces.CuratedTextRepository;
 import au.gov.dva.sopapi.interfaces.model.ICDCode;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.netty.util.internal.chmv8.ConcurrentHashMapV8;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Tuple2;
 import scala.util.Properties;
 
 import java.time.OffsetDateTime;
@@ -32,53 +33,7 @@ public class SoPs {
 
     static Logger logger = LoggerFactory.getLogger(SoPs.class);
 
-    public static Function<SoPReferenceResponse,SoPReferenceResponse> AddStressorDefinitionsToText = (before) ->  {
-
-        ImmutableList<String> stressorTerms = ImmutableList.of(
-                "a category 1A stressor",
-                "a category 1B stressor"
-        );
-
-        Stream<SoPFactorsResponse> soPFactorsResponseWithAppendedFactors =
-                before.getSoPFactorsResponses().stream()
-                .map(soPFactorsResponse -> {
-                    List<FactorDto> factorWithAppendage = soPFactorsResponse.get_factors().stream().map(f -> AppendDefinitions(f,stressorTerms)).collect(Collectors.toList());
-                    return new SoPFactorsResponse(soPFactorsResponse.get_registerId(),soPFactorsResponse.get_citation(),soPFactorsResponse.get_instrumentNumber(),
-                            factorWithAppendage);
-                });
-
-        return new SoPReferenceResponse(soPFactorsResponseWithAppendedFactors.collect(Collectors.toList()));
-
-    };
-
-    private static FactorDto AppendDefinitions(FactorDto factorDto, ImmutableList<String> definedTerms)
-    {
-
-        List<String> definitions = new ArrayList<>();
-        for (String definedTerm: definedTerms) {
-            Optional<DefinedTerm> matchingDefinition = factorDto.get_definedTerms().stream().filter(dt -> dt.get_term().toLowerCase().contentEquals(definedTerm.toLowerCase())).findFirst();
-            if (matchingDefinition.isPresent())
-            {
-                 definitions.add(String.format("<b>'%s'</b> %s",definedTerm,matchingDefinition.get().get_definition()));
-            }
-        }
-
-        if (definitions.isEmpty())
-        {
-            return factorDto;
-        }
-        else {
-            String toAppend = String.format("(%s)", String.join(Properties.lineSeparator(),definitions));
-            String factorText = String.format("%s%n%s",factorDto.get_text(),toAppend);
-            FactorDto newDto = new FactorDto(factorDto.get_paragraph(),factorText,factorDto.get_definedTerms());
-            return newDto;
-        }
-    }
-
-
-
-
-    public static String buildSopRefJsonResponse(ImmutableSet<SoP> matchingSops, IncidentType incidentType, StandardOfProof standardOfProof, Function<SoPReferenceResponse, SoPReferenceResponse> postProcessor) {
+    public static String buildSopRefJsonResponse(ImmutableSet<SoP> matchingSops, IncidentType incidentType, StandardOfProof standardOfProof, ImmutableList<Function<SoPReferenceResponse, SoPReferenceResponse>> postProcessorsOrdered) {
         ObjectMapper objectMapper = new ObjectMapper();
         List<SoPFactorsResponse> sopFactorsResponses = matchingSops.stream()
                 .filter(s -> s.getStandardOfProof() == standardOfProof)
@@ -87,9 +42,12 @@ public class SoPs {
 
         SoPReferenceResponse dtoToReturn = new SoPReferenceResponse(sopFactorsResponses);
 
-        if (postProcessor != null)
+        if (postProcessorsOrdered != null && !postProcessorsOrdered.isEmpty())
         {
-            dtoToReturn = postProcessor.apply(dtoToReturn);
+            for (Function<SoPReferenceResponse,SoPReferenceResponse> pp : postProcessorsOrdered)
+            {
+                dtoToReturn = pp.apply(dtoToReturn);
+            }
         }
 
         String jsonString = null;
