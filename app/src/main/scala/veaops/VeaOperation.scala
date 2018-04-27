@@ -7,9 +7,10 @@ import com.fasterxml.jackson.databind.JsonNode
 import com.google.common.collect.ImmutableSet
 import org.codehaus.jackson.map.ObjectMapper
 import org.joda.time.Interval
+import scala.xml._
 
 import scala.collection.immutable
-import scala.xml._
+
 
 class VeaOperation(val name : String, val startDate : LocalDate, val endDate : Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications : List[Qualification]) extends VeaOccurance with ToJson {
   override def toString: String = name
@@ -132,7 +133,7 @@ object Facade {
 
     // splice in the determination register id
 
-
+    null
 
 
   }

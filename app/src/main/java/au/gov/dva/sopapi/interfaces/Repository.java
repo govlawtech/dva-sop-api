@@ -26,6 +26,6 @@ public interface Repository {
      void setLastUpdated(OffsetDateTime offsetDateTime);
      Optional<RuleConfigurationRepository> getRuleConfigurationRepository();
      void setRulesConfig(byte[] rhCsv, byte[] bopCsv);
-     Optional<String> getSocfServiceRegionsYaml();
+     Optional<CuratedTextRepository> getCuratedTextRepository();
      void purge();
 }

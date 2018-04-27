@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.dtos.sopref.ConditionInfo;
 import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.ICDCodeDto;
 import au.gov.dva.sopapi.interfaces.Cache;
+import au.gov.dva.sopapi.interfaces.CuratedTextRepository;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -33,6 +34,7 @@ public class CacheSingleton implements Cache {
     private ImmutableSet<InstrumentChange> _failedUpdates;
     private ImmutableList<ServiceRegion> _serviceRegions;
     private ImmutableList<ConditionInfo> _conditionList;
+    private Optional<CuratedTextRepository> _curatedTextReporitory;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
@@ -42,6 +44,7 @@ public class CacheSingleton implements Cache {
         _allServiceDeterminations = ImmutableSet.of();
         _failedUpdates = ImmutableSet.of();
         _conditionList = ImmutableList.of();
+        _curatedTextReporitory = Optional.empty();
     }
 
     public static CacheSingleton getInstance() {
@@ -64,16 +67,8 @@ public class CacheSingleton implements Cache {
             ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
             ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(allSops, OffsetDateTime.now());
             ImmutableList<ConditionInfo> conditionsList = ImmutableList.copyOf(buildConditionsList(soPPairs));
+            Optional<CuratedTextRepository> curatedTextRepository = repository.getCuratedTextRepository();
 
-            Optional<String> socfYaml = repository.getSocfServiceRegionsYaml();
-            if (!socfYaml.isPresent())
-            {
-                throw new ConfigurationRuntimeException("Need Single Online Claim Form VEA operations to be in repository.");
-            }
-
-            ImmutableList<ServiceRegion> serviceRegions = SingleOnlineClaimFormVeaOps.fromYaml(socfYaml.get()).stream()
-                    .map(SingleOnlineClaimFormOpImpl::toServiceRegion)
-                    .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
 
             // atomic
             _allSops = allSops;
@@ -81,8 +76,8 @@ public class CacheSingleton implements Cache {
             _allServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
             _failedUpdates = failed;
-            _serviceRegions = serviceRegions;
             _conditionList = conditionsList;
+            _curatedTextReporitory = curatedTextRepository;
         } catch (Exception e) {
             logger.error("Exception occurred when attempting to refresh cache from Repository.", e);
         } catch (Error e) {
@@ -116,10 +111,7 @@ public class CacheSingleton implements Cache {
         return _ruleConfigurationRepository;
     }
 
-    @Override
-    public ImmutableList<ServiceRegion> getVeaSocfServiceRegions() {
-        return _serviceRegions;
-    }
+
 
     public ImmutableSet<InstrumentChange> get_failedUpdates() {
         return _failedUpdates;
@@ -139,6 +131,11 @@ public class CacheSingleton implements Cache {
                 .sorted(Comparator.comparing(ConditionInfo::get_conditionName))
                 .collect(Collectors.toList());
 
+    }
+
+    @Override
+    public Optional<CuratedTextRepository> get_curatedTextReporitory() {
+        return _curatedTextReporitory;
     }
 }
 

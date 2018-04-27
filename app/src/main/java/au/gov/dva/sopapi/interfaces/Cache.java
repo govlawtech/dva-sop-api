@@ -13,6 +13,8 @@ import au.gov.dva.sopapi.sopsupport.vea.ServiceRegion;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.Optional;
+
 public interface Cache {
     void refresh(Repository repository);
 
@@ -26,6 +28,5 @@ public interface Cache {
 
     RuleConfigurationRepository get_ruleConfigurationRepository();
 
-    ImmutableList<ServiceRegion> getVeaSocfServiceRegions();
-
+    Optional<CuratedTextRepository> get_curatedTextReporitory();
 }
