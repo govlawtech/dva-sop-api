@@ -1,5 +1,6 @@
 import java.time.LocalDate
 
+import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.veaops._
 import com.google.common.io.Resources
 import org.junit.runner.RunWith
@@ -11,9 +12,8 @@ import scala.xml.{Elem, XML}
 @RunWith(classOf[JUnitRunner])
 class VeaOperationsTests extends FunSuite {
 
-  test("Deserialise operationXml")
-  {
-    val testXml =   <operation>
+  test("Deserialise operationXml") {
+    val testXml = <operation>
       <name>PROVIDE COMFORT</name>
       <startDate>1991-08-11</startDate>
       <endDate>1996-12-15</endDate>
@@ -30,9 +30,8 @@ class VeaOperationsTests extends FunSuite {
     assert(deserialised.qualifications.length == 2 && deserialised.specifiedAreas.length == 0)
   }
 
-  test("Deserialise activity")
-  {
-    val testXml =  <activity>
+  test("Deserialise activity") {
+    val testXml = <activity>
       <startDate>1973-01-12</startDate>
       <endDate>1975-04-29</endDate>
       <specifiedAreas>
@@ -45,101 +44,99 @@ class VeaOperationsTests extends FunSuite {
     assert(result.specifiedAreas.length == 1)
   }
 
-  test("Deserialise everything")
-  {
-    val root: Elem = XML.load (Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
+  test("Deserialise everything") {
+    val root: Elem = XML.load(Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
     val deserialised = VeaDeserialisationUtils.DeterminationsfromXml(root)
     println("Count: " + deserialised.length)
     assert(deserialised.length > 50)
 
   }
 
-  test ("Correct things at date")
-  {
-    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
-    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
-    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
-    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
+  test("Correct things at date") {
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
+    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+    val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
+    val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
 
-    val testDets = List(testDet1,testDet2)
-    val testDate = LocalDate.of(2017,1,1)
-    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate,testDets)
+    val testDets = List(testDet1, testDet2)
+    val testDate = LocalDate.of(2017, 1, 1)
+    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate, testDets)
     assert(result.values.size == 1)
     assert(result(testDet1).head.asInstanceOf[VeaOperation].name == "TESTOP1")
   }
 
-  test ("Correct things at date 2")
-  {
-    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
-    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
-    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
-    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
+  test("Correct things at date 2") {
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
+    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+    val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
+    val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
 
-    val testDets = List(testDet1,testDet2)
-    val testDate = LocalDate.of(2018,1,1)
-    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate,testDets)
+    val testDets = List(testDet1, testDet2)
+    val testDate = LocalDate.of(2018, 1, 1)
+    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate, testDets)
     assert(result.values.size == 2)
     assert(result(testDet2).head.asInstanceOf[VeaActivity].endDate.isEmpty)
   }
 
-  test ("Correct things at date 3")
-  {
-    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
-    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
-    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
-    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
+  test("Correct things at date 3") {
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
+    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+    val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
+    val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
 
-    val testDets = List(testDet1,testDet2)
-    val testDate = LocalDate.of(2018,1,2)
-    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate,testDets)
+    val testDets = List(testDet1, testDet2)
+    val testDate = LocalDate.of(2018, 1, 2)
+    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate, testDets)
     assert(result.values.size == 1)
     assert(result(testDet2).head.isInstanceOf[VeaActivity])
   }
 
-  test("Correct vea occurances in range")
-  {
-    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
-    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
-    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
-    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
-    val testDets = List(testDet1,testDet2)
+  test("Correct vea occurances in range") {
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
+    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+    val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
+    val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
+    val testDets = List(testDet1, testDet2)
 
-    val testStartDate = LocalDate.of(2000,1,1)
-    val testEndDate = LocalDate.of(2018,1,1)
-    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate,testEndDate,testDets)
+    val testStartDate = LocalDate.of(2000, 1, 1)
+    val testEndDate = LocalDate.of(2018, 1, 1)
+    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
     assert(results.size == 2)
   }
 
-  test("Correct vea occurances in range: none in interval")
-  {
-    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
-    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
-    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
-    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
-    val testDets = List(testDet1,testDet2)
+  test("Correct vea occurances in range: none in interval") {
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
+    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+    val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
+    val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
+    val testDets = List(testDet1, testDet2)
 
-    val testStartDate = LocalDate.of(2000,1,1)
-    val testEndDate = LocalDate.of(2001,1,1)
-    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate,testEndDate,testDets)
+    val testStartDate = LocalDate.of(2000, 1, 1)
+    val testEndDate = LocalDate.of(2001, 1, 1)
+    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
     assert(results.size == 0)
   }
 
-  test("Correct vea occurances in range: one in open ended interval")
-  {
-    val testop = new VeaOperation("TESTOP1",LocalDate.of(2017,1,1),Some(LocalDate.of(2018,1,1)),List(),List())
-    val testact = new VeaActivity(LocalDate.of(2018,1,1),None,List(),List())
-    val testDet1 = new WarlikeDetermination("F0000000",List(testop),List())
-    val testDet2 = new NonWarlikeDetermination("F54545454",List(),List(testact))
-    val testDets = List(testDet1,testDet2)
+  test("Correct vea occurances in range: one in open ended interval") {
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
+    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+    val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
+    val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
+    val testDets = List(testDet1, testDet2)
 
-    val testStartDate = LocalDate.of(2019,1,1)
-    val testEndDate = LocalDate.of(2020,1,1)
-    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate,testEndDate,testDets)
+    val testStartDate = LocalDate.of(2019, 1, 1)
+    val testEndDate = LocalDate.of(2020, 1, 1)
+    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
     assert(results.size == 1)
   }
 
+  test("Test building json response") {
+    val root: Elem = XML.load(Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
+    val deserialised = VeaDeserialisationUtils.DeterminationsfromXml(root)
+    val result = Facade.getResponseRangeQuery(LocalDate.of(2001,1,1), LocalDate.of(2002,1,1),deserialised)
+    println(TestUtils.prettyPrint(result))
 
-
+  }
 
 
 }

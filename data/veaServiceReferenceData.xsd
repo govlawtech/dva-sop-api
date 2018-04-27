@@ -30,6 +30,19 @@
       <xs:element type="xs:string" name="specifiedArea" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="specifiedArea">
+    <xs:sequence>
+
+      <xs:element type="xs:string" name="specifiedArea" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="specifiedArea">
+    <xs:sequence>
+
+      <xs:element type="xs:string" name="specifiedArea" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="operationsType">
     <xs:sequence>
       <xs:element type="operationType" name="operation" maxOccurs="unbounded" minOccurs="0"/>
