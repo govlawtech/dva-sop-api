@@ -12,10 +12,11 @@ import scala.collection.JavaConverters._
 class VeaOperation(val name: String, val startDate: LocalDate, val endDate: Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications: List[Qualification]) extends VeaOccurance {
   override def toString: String = name
 
-  override def toJson(registerId: String): JsonNode = {
+  override def toJson(hostDet: VeaDetermination): JsonNode = {
     val om = new ObjectMapper()
     val root = om.createObjectNode()
-    root.put("name", name)
+    root.put("type",getDeterminationTypeString(hostDet))
+    root.put("operationName", name)
     root.put("startDate", startDate.format(DateTimeFormatter.ISO_LOCAL_DATE))
     if (endDate.isDefined) root.put("endDate", endDate.get.format(DateTimeFormatter.ISO_LOCAL_DATE))
     if (specifiedAreas.nonEmpty) {
@@ -26,7 +27,7 @@ class VeaOperation(val name: String, val startDate: LocalDate, val endDate: Opti
       val qualificationsArray = root.putArray("qualifications")
       qualifications.foreach(q => qualificationsArray.add(q.text))
     }
-    root.put("registerId", registerId)
+    root.put("registerId", hostDet.registerId)
     root.asInstanceOf[JsonNode]
   }
 }
@@ -36,9 +37,10 @@ class SpecifiedArea(val desc: String)
 class Qualification(val text: String)
 
 class VeaActivity(val startDate: LocalDate, val endDate: Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications: List[Qualification]) extends VeaOccurance {
-  override def toJson(registerId: String): JsonNode = {
+  override def toJson(hostDet: VeaDetermination): JsonNode = {
     val om = new ObjectMapper()
     val root = om.createObjectNode()
+    root.put("type",getDeterminationTypeString(hostDet))
     root.put("startDate", startDate.format(DateTimeFormatter.ISO_LOCAL_DATE))
     if (endDate.isDefined) root.put("endDate", endDate.get.format(DateTimeFormatter.ISO_LOCAL_DATE))
     if (specifiedAreas.nonEmpty) {
@@ -49,7 +51,7 @@ class VeaActivity(val startDate: LocalDate, val endDate: Option[LocalDate], val 
       val qualificationsArray = root.putArray("qualifications")
       qualifications.foreach(q => qualificationsArray.add(q.text))
     }
-    root.put("registerId", registerId)
+    root.put("registerId", hostDet.registerId)
     root.asInstanceOf[JsonNode]
   }
 }
@@ -71,14 +73,21 @@ case class HazardousDetermination(override val registerId: String, override val 
 
 trait HasDates {
   def startDate: LocalDate
-
   def endDate: Option[LocalDate]
 }
 
 trait VeaOccurance extends HasDates with ToJson
 
 trait ToJson {
-  def toJson(registerId: String): JsonNode
+  def toJson(hostDetermination: VeaDetermination): JsonNode
+
+  def getDeterminationTypeString(det : VeaDetermination) = {
+    det match {
+      case _: WarlikeDetermination => "warlike"
+      case _: NonWarlikeDetermination => "non-warlike"
+      case _: HazardousDetermination => "hazardous"
+    }
+  }
 }
 
 
@@ -124,7 +133,7 @@ object Facade {
   def getResponseRangeQuery(startDate: LocalDate, endDate: LocalDate, allDeterminations: List[VeaDetermination]): JsonNode = {
 
     val queryResults: Map[VeaDetermination, List[VeaOccurance]] = VeaOperationQueries.getOpsAndActivitiesInRange(startDate, endDate, allDeterminations)
-    val flattened: List[(String, VeaOccurance)] = queryResults.flatMap(t => t._2.map(o => (t._1.registerId,o))).toList
+    val flattened: List[(VeaDetermination, VeaOccurance)] = queryResults.flatMap(t => t._2.map(o => (t._1,o))).toList
     val orderedByStartDate = flattened.sortBy(i => i._2.startDate.toEpochDay)
     val jsonNodes: List[JsonNode] = orderedByStartDate.map(t => t._2.toJson(t._1))
     val om = new ObjectMapper()
@@ -139,10 +148,10 @@ object Facade {
 object VeaDeserialisationUtils {
 
   def specifiedAreas(specifiedAreasNode: scala.xml.Node): List[SpecifiedArea] =
-    (specifiedAreasNode \ "specifiedAreas" \ "specifiedArea").map(i => new SpecifiedArea(i.text)).toList
+    (specifiedAreasNode \ "specifiedAreas" \ "specifiedArea").map(i => new SpecifiedArea(scala.xml.Utility.trim(i).text)).toList
 
   def qualifications(qualificationsNode: scala.xml.Node): List[Qualification] =
-    (qualificationsNode \ "qualifications" \ "qualification").map(i => new Qualification(i.text)).toList
+    (qualificationsNode \ "qualifications" \ "qualification").map(i => new Qualification(scala.xml.Utility.trim(i).text)).toList
 
   def OperationFromXml(node: scala.xml.Node): VeaOperation = {
     val name = (node \ "name").text
