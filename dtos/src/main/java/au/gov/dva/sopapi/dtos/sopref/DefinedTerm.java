@@ -19,5 +19,11 @@ public class DefinedTerm {
     }
 
 
+    public String get_term() {
+        return _term;
+    }
 
+    public String get_definition() {
+        return _definition;
+    }
 }

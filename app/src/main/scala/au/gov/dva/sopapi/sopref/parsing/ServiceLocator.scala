@@ -75,6 +75,8 @@ object ServiceLocator {
       case "F2015L00658" => ClenserToFixSuperscripts
       case "F2014L00525" => ChronicMultisymptomIllnessBoPClenser
       case "F2017C00075" => SinusBarotraumaBoPClenser
+      case "F2018C00189" => SuicideRHClenser
+
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }

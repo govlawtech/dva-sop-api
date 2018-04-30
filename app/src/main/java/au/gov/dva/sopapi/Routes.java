@@ -6,9 +6,11 @@ import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
+import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -16,6 +18,7 @@ import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
+import au.gov.dva.sopapi.sopref.data.PostProcessingFunctions;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
@@ -43,6 +46,7 @@ import java.security.InvalidKeyException;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -195,7 +199,12 @@ public class Routes {
                 IncidentType it = IncidentType.fromString(incidentType);
                 StandardOfProof sp = StandardOfProof.fromAbbreviation(standardOfProof);
 
-                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp);
+                List<Function<SoPReferenceResponse,SoPReferenceResponse>> postProcessors = new ArrayList<>();
+                if (cache.get_curatedTextReporitory().isPresent()) {
+                    postProcessors.add(PostProcessingFunctions.SubInCuratedFactorText(cache.get_curatedTextReporitory().get()));
+                    postProcessors.add(PostProcessingFunctions.SubInCuratedDefinitions(cache.get_curatedTextReporitory().get()));
+                }
+                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp, ImmutableList.copyOf(postProcessors));
                 return response;
             }
         });
@@ -255,7 +264,14 @@ public class Routes {
             } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFormatError(e.getMessage());
-            } catch (ProcessingRuleRuntimeException e) {
+            }
+            catch (ServiceHistoryCorruptException e)
+            {
+                logger.error("Service history corrupt.",e);
+                setResponseHeaders(res,400,MIME_TEXT);
+                return e.getMessage();
+            }
+            catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
                 return "";

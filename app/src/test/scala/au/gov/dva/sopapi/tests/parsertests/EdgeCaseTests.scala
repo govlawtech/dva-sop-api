@@ -181,4 +181,12 @@ class EdgeCaseTests extends FunSuite {
     assert(icdCodes.size() == 2)
   }
 
+  test("attempted suicide 2018 compilation correctly parsed")
+  {
+    // missing the 1 in front of definitions section
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00189","allSops/F2018C00189.pdf")
+  }
+
+
+
 }
