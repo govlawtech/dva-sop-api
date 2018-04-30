@@ -27,5 +27,6 @@ public interface Repository {
      Optional<RuleConfigurationRepository> getRuleConfigurationRepository();
      void setRulesConfig(byte[] rhCsv, byte[] bopCsv);
      Optional<CuratedTextRepository> getCuratedTextRepository();
+     ImmutableSet<au.gov.dva.sopapi.veaops.VeaDetermination> getVeaDeterminations();
      void purge();
 }

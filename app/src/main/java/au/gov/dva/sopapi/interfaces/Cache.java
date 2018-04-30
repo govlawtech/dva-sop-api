@@ -24,7 +24,7 @@ public interface Cache {
 
     ImmutableSet<SoPPair> get_allSopPairs();
 
-    ImmutableSet<ServiceDetermination> get_allServiceDeterminations();
+    ImmutableSet<ServiceDetermination> get_allMrcaServiceDeterminations();
 
     RuleConfigurationRepository get_ruleConfigurationRepository();
 

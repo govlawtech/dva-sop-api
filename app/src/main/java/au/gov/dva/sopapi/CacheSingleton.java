@@ -1,7 +1,6 @@
 package au.gov.dva.sopapi;
 
 import au.gov.dva.sopapi.dtos.sopref.ConditionInfo;
-import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.ICDCodeDto;
 import au.gov.dva.sopapi.interfaces.Cache;
 import au.gov.dva.sopapi.interfaces.CuratedTextRepository;
@@ -9,9 +8,7 @@ import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.SoPs;
-import au.gov.dva.sopapi.sopsupport.vea.ServiceRegion;
-import au.gov.dva.sopapi.sopsupport.vea.SingleOnlineClaimFormOpImpl;
-import au.gov.dva.sopapi.sopsupport.vea.SingleOnlineClaimFormVeaOps;
+import au.gov.dva.sopapi.veaops.VeaDetermination;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
@@ -29,28 +26,28 @@ public class CacheSingleton implements Cache {
 
     private ImmutableSet<SoP> _allSops;
     private ImmutableSet<SoPPair> _allSopPairs;
-    private ImmutableSet<ServiceDetermination> _allServiceDeterminations;
+    private ImmutableSet<ServiceDetermination> _allMrcaServiceDeterminations;
     private RuleConfigurationRepository _ruleConfigurationRepository;
     private ImmutableSet<InstrumentChange> _failedUpdates;
-    private ImmutableList<ServiceRegion> _serviceRegions;
     private ImmutableList<ConditionInfo> _conditionList;
     private Optional<CuratedTextRepository> _curatedTextReporitory;
+    private ImmutableSet<VeaDetermination> _veaDeterminations;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
     private CacheSingleton() {
         _allSops = ImmutableSet.of();
         _allSopPairs = ImmutableSet.of();
-        _allServiceDeterminations = ImmutableSet.of();
+        _allMrcaServiceDeterminations = ImmutableSet.of();
         _failedUpdates = ImmutableSet.of();
         _conditionList = ImmutableList.of();
         _curatedTextReporitory = Optional.empty();
+        _veaDeterminations = ImmutableSet.of();
     }
 
     public static CacheSingleton getInstance() {
         return INSTANCE;
     }
-
 
 
 
@@ -68,16 +65,17 @@ public class CacheSingleton implements Cache {
             ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(allSops, OffsetDateTime.now());
             ImmutableList<ConditionInfo> conditionsList = ImmutableList.copyOf(buildConditionsList(soPPairs));
             Optional<CuratedTextRepository> curatedTextRepository = repository.getCuratedTextRepository();
+            ImmutableSet<VeaDetermination> veaDeterminations = repository.getVeaDeterminations();
 
 
-            // atomic
             _allSops = allSops;
             _allSopPairs = soPPairs;
-            _allServiceDeterminations = allServiceDeterminations;
+            _allMrcaServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
             _failedUpdates = failed;
             _conditionList = conditionsList;
             _curatedTextReporitory = curatedTextRepository;
+            _veaDeterminations = veaDeterminations;
         } catch (Exception e) {
             logger.error("Exception occurred when attempting to refresh cache from Repository.", e);
         } catch (Error e) {
@@ -102,8 +100,8 @@ public class CacheSingleton implements Cache {
     }
 
     @Override
-    public ImmutableSet<ServiceDetermination> get_allServiceDeterminations() {
-        return _allServiceDeterminations;
+    public ImmutableSet<ServiceDetermination> get_allMrcaServiceDeterminations() {
+        return _allMrcaServiceDeterminations;
     }
 
     @Override

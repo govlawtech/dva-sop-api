@@ -1,9 +1,11 @@
 package au.gov.dva.sopapi.veaops
 
+import java.io.{ByteArrayInputStream, InputStream}
 import java.time.{LocalDate, ZoneId}
 import java.time.format.DateTimeFormatter
 
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
+import com.google.common.collect.{ImmutableList, ImmutableSet}
 
 import scala.collection.immutable
 import scala.collection.JavaConverters._
@@ -76,6 +78,7 @@ trait HasDates {
   def endDate: Option[LocalDate]
 }
 
+
 trait VeaOccurance extends HasDates with ToJson
 
 trait ToJson {
@@ -130,6 +133,12 @@ object VeaOperationQueries {
 
 object Facade {
 
+  def getResponseRangeQuery(startDate: LocalDate, endDate: LocalDate, allDeterminations: ImmutableSet[VeaDetermination]): JsonNode = {
+    val asScala = allDeterminations.asScala.toList
+    getResponseRangeQuery(startDate,endDate,asScala)
+
+  }
+
   def getResponseRangeQuery(startDate: LocalDate, endDate: LocalDate, allDeterminations: List[VeaDetermination]): JsonNode = {
 
     val queryResults: Map[VeaDetermination, List[VeaOccurance]] = VeaOperationQueries.getOpsAndActivitiesInRange(startDate, endDate, allDeterminations)
@@ -140,6 +149,16 @@ object Facade {
     val rootArray = om.createArrayNode()
     rootArray.addAll(jsonNodes.asJavaCollection)
     rootArray
+  }
+
+  def deserialiseDeterminations(xmlBytes: Array[Byte]) : ImmutableSet[VeaDetermination] =
+  {
+    val is = new ByteArrayInputStream(xmlBytes)
+    val node = scala.xml.XML.load(is)
+    val determinations = VeaDeserialisationUtils.DeterminationsfromXml(node)
+    is.close()
+    ImmutableSet.copyOf(determinations.asJava.iterator())
+
   }
 
 
