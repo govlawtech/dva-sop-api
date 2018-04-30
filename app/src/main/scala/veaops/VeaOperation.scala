@@ -11,6 +11,11 @@ import scala.collection.immutable
 import scala.collection.JavaConverters._
 
 
+object Constants
+{
+  val frlBaseUrl = "https://legislation.gov.au"
+}
+
 class VeaOperation(val name: String, val startDate: LocalDate, val endDate: Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications: List[Qualification]) extends VeaOccurance {
   override def toString: String = name
 
@@ -30,6 +35,7 @@ class VeaOperation(val name: String, val startDate: LocalDate, val endDate: Opti
       qualifications.foreach(q => qualificationsArray.add(q.text))
     }
     root.put("registerId", hostDet.registerId)
+    root.put("sourceLink", s"${Constants.frlBaseUrl}/Details/${hostDet.registerId}")
     root.asInstanceOf[JsonNode]
   }
 }
@@ -54,6 +60,7 @@ class VeaActivity(val startDate: LocalDate, val endDate: Option[LocalDate], val 
       qualifications.foreach(q => qualificationsArray.add(q.text))
     }
     root.put("registerId", hostDet.registerId)
+    root.put("sourceLink", s"${Constants.frlBaseUrl}/Details/${hostDet.registerId}")
     root.asInstanceOf[JsonNode]
   }
 }
@@ -90,6 +97,8 @@ trait ToJson {
       case _: NonWarlikeDetermination => "non-warlike"
       case _: HazardousDetermination => "hazardous"
     }
+
+
   }
 }
 
