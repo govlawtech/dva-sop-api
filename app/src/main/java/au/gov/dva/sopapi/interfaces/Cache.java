@@ -29,4 +29,6 @@ public interface Cache {
     RuleConfigurationRepository get_ruleConfigurationRepository();
 
     Optional<CuratedTextRepository> get_curatedTextReporitory();
+
+    ImmutableSet<au.gov.dva.sopapi.veaops.VeaDetermination> get_veaDeterminations();
 }

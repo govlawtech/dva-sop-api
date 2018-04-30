@@ -135,5 +135,10 @@ public class CacheSingleton implements Cache {
     public Optional<CuratedTextRepository> get_curatedTextReporitory() {
         return _curatedTextReporitory;
     }
+
+    @Override
+    public ImmutableSet<VeaDetermination> get_veaDeterminations() {
+        return _veaDeterminations;
+    }
 }
 
