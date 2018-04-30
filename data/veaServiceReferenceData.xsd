@@ -72,7 +72,18 @@
       <xs:element type="xs:int" name="number"/>
       <xs:element type="xs:string" name="descriptionOfPeacekeepingForce"/>
       <xs:element type="xs:date" name="initialDateAsAPeaceKeepingForce"/>
+      <xs:element type="mappingsType" name="mappings" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mappingsType">
+    <xs:sequence>
+      <xs:element type="mappingType" name="mapping" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mappingType">
+    <xs:attribute name="regex" type="xs:string"/>
   </xs:complexType>
 
 
