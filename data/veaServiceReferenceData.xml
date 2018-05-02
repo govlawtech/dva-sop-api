@@ -1412,7 +1412,8 @@
 
             </items>
         </veaSch3>
-        <peacekeepingNotices>
+
+        <notices>
             <veaLegislativeReference>Section 68(3A)</veaLegislativeReference>
             <notice>
                 <legalSource>Gazette GN10 of 15 March 2000, page 586</legalSource>
@@ -1444,17 +1445,17 @@
                 <legalSource>Gazette S238 of 21 December 2005</legalSource>
                 <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Mission in Sudan (UNMIS)</descriptionOfPeacekeepingForce>
                 <shortName>UNMIS</shortName>
-                <initialDateAsPeaceKeepingForce>2006-01-01</initialDateAsPeaceKeepingForce>
+                <initialDateAsAPeaceKeepingForce>2006-01-01</initialDateAsAPeaceKeepingForce>
             </notice>
 
             <notice>
                 <legalSource>Unknown</legalSource>
                 <shortName>UNMISET</shortName>
                 <descriptionOfPeacekeepingForce>UNMISET in East Timor</descriptionOfPeacekeepingForce>
-                <initialDateAsPeaceKeepingForce>2002-05-20</initialDateAsPeaceKeepingForce>
+                <initialDateAsAPeaceKeepingForce>2002-05-20</initialDateAsAPeaceKeepingForce>
             </notice>
 
-        </peacekeepingNotices>
+        </notices>
 
     </peacekeeping>
 

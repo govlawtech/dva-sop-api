@@ -36,12 +36,7 @@
       <xs:element type="xs:string" name="specifiedArea" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="specifiedArea">
-    <xs:sequence>
 
-      <xs:element type="xs:string" name="specifiedArea" maxOccurs="unbounded" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
 
   <xs:complexType name="operationsType">
     <xs:sequence>
@@ -57,6 +52,7 @@
   <xs:complexType name="peacekeepingType">
     <xs:sequence>
       <xs:element type="xs:complexType" name="veaSch3"/>
+      <xs:element type="peacekeepingNoticesType" name="notices"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -142,4 +138,21 @@
       <xs:element type="xs:date" name="endDate" minOccurs="0"/>
     </xs:all>
   </xs:complexType>
+  
+  <xs:complexType name="peacekeepingNoticesType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="veaLegislativeReference"/>
+      <xs:element type="peacekeepingNoticeType" name="notice" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+<xs:complexType name="peacekeepingNoticeType" >
+  <xs:all>
+    <xs:element type="xs:string" name="legalSource"/>
+    <xs:element type="xs:string" name="descriptionOfPeacekeepingForce"/>
+    <xs:element type="xs:string" name="shortName"/>
+    <xs:element type="xs:date" name="initialDateAsAPeaceKeepingForce"/>
+    <xs:element type="mappingsType" name="mappings"/>
+  </xs:all>
+</xs:complexType>
 </xs:schema>
