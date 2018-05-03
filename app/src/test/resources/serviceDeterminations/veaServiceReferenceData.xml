@@ -2,7 +2,7 @@
 
 <veaServiceReferenceData
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="veaServiceReferenceData.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../data/veaServiceReferenceData.xsd">
     <warlikeAndNonWarlike>
 
         <veaLegislativeReference>6F</veaLegislativeReference>

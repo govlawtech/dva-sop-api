@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.interfaces;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableSet;
 
 import java.time.OffsetDateTime;
@@ -27,6 +28,6 @@ public interface Repository {
      Optional<RuleConfigurationRepository> getRuleConfigurationRepository();
      void setRulesConfig(byte[] rhCsv, byte[] bopCsv);
      Optional<CuratedTextRepository> getCuratedTextRepository();
-     ImmutableSet<au.gov.dva.sopapi.veaops.VeaDetermination> getVeaDeterminations();
+     Optional<VeaOperationalServiceRepository> getVeaOperationalServiceRepository();
      void purge();
 }

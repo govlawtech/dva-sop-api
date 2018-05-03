@@ -2,10 +2,13 @@ import java.time.LocalDate
 
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.veaops._
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository
+import com.google.common.collect.ImmutableSet
 import com.google.common.io.Resources
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
+import scala.collection.JavaConverters._
 
 import scala.xml.{Elem, XML}
 
@@ -63,7 +66,7 @@ class VeaOperationsTests extends FunSuite {
 
     val testDets = List(testDet1, testDet2)
     val testDate = LocalDate.of(2017, 1, 1)
-    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate, testDets)
+    val result = VeaOperationalServiceQueries.getOpsAndActivitiesOnDate(testDate, testDets)
     assert(result.values.size == 1)
     assert(result(testDet1).head.asInstanceOf[VeaOperation].name == "TESTOP1")
   }
@@ -75,7 +78,7 @@ class VeaOperationsTests extends FunSuite {
 
     val testDets = List(testDet1, testDet2)
     val testDate = LocalDate.of(2018, 1, 1)
-    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate, testDets)
+    val result = VeaOperationalServiceQueries.getOpsAndActivitiesOnDate(testDate, testDets)
     assert(result.values.size == 2)
     assert(result(testDet2).head.asInstanceOf[VeaActivity].endDate.isEmpty)
   }
@@ -86,7 +89,7 @@ class VeaOperationsTests extends FunSuite {
 
     val testDets = List(testDet1, testDet2)
     val testDate = LocalDate.of(2018, 1, 2)
-    val result = VeaOperationQueries.getOpsAndActivitiesOnDate(testDate, testDets)
+    val result = VeaOperationalServiceQueries.getOpsAndActivitiesOnDate(testDate, testDets)
     assert(result.values.size == 1)
     assert(result(testDet2).head.isInstanceOf[VeaActivity])
   }
@@ -98,7 +101,7 @@ class VeaOperationsTests extends FunSuite {
 
     val testStartDate = LocalDate.of(2000, 1, 1)
     val testEndDate = LocalDate.of(2018, 1, 1)
-    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
+    val results = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
     assert(results.size == 2)
   }
 
@@ -109,7 +112,7 @@ class VeaOperationsTests extends FunSuite {
 
     val testStartDate = LocalDate.of(2000, 1, 1)
     val testEndDate = LocalDate.of(2001, 1, 1)
-    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
+    val results = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
     assert(results.size == 0)
   }
 
@@ -120,14 +123,21 @@ class VeaOperationsTests extends FunSuite {
 
     val testStartDate = LocalDate.of(2019, 1, 1)
     val testEndDate = LocalDate.of(2020, 1, 1)
-    val results = VeaOperationQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
+    val results = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(testStartDate, testEndDate, testDets)
     assert(results.size == 1)
   }
 
   test("Test building json response") {
     val root: Elem = XML.load(Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
-    val deserialised = VeaDeserialisationUtils.DeterminationsfromXml(root)
-    val result = Facade.getResponseRangeQuery(LocalDate.of(2001,1,1), LocalDate.of(2002,1,1),deserialised)
+    val deserialisedDeterminations = VeaDeserialisationUtils.DeterminationsfromXml(root)
+    val deserialisedPeacekeeping = VeaDeserialisationUtils.PeacekeeepingActivitiesFromXml(root)
+    val repo = new VeaOperationalServiceRepository {
+
+      override def getPeacekeepingActivities: ImmutableSet[VeaPeacekeepingActivity] = ImmutableSet.copyOf(deserialisedPeacekeeping.asJavaCollection.iterator())
+
+      override def getDeterminations: ImmutableSet[VeaDetermination] = ImmutableSet.copyOf(deserialisedDeterminations.asJavaCollection.iterator())
+    }
+    val result = Facade.getResponseRangeQuery(LocalDate.of(2001,1,1), LocalDate.of(2002,1,1),repo)
     println(TestUtils.prettyPrint(result))
   }
 

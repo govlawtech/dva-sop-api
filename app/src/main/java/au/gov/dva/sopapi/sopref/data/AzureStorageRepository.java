@@ -13,7 +13,9 @@ import au.gov.dva.sopapi.sopref.data.curatedText.CuratedTextRepositoryImpl;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
+import au.gov.dva.sopapi.veaops.Facade;
 import au.gov.dva.sopapi.veaops.VeaDetermination;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -518,17 +520,19 @@ public class AzureStorageRepository implements Repository {
     }
 
     @Override
-    public ImmutableSet<VeaDetermination> getVeaDeterminations() {
+    public Optional<VeaOperationalServiceRepository> getVeaOperationalServiceRepository() {
         try {
             Optional<CloudBlob> b = getBlobByName(VEA_OPERATIONS_CONTAINER_NAME, VEA_OPERATIONS_BLOB_NAME);
             if (!b.isPresent()) {
-                throw new ConfigurationRuntimeException("Missing XML reference data for VEA operations and activities.");
+                return Optional.empty();
             }
 
             byte[] xmlBytes = getBlobBytes(b.get());
 
-            ImmutableSet<VeaDetermination> deserialised = au.gov.dva.sopapi.veaops.Facade.deserialiseDeterminations(xmlBytes);
-            return deserialised;
+            VeaOperationalServiceRepository repo = Facade.deserialiseRepository(xmlBytes);
+            return Optional.of(repo);
+
+
 
         } catch (Exception e) {
             throw new RepositoryRuntimeException(e);

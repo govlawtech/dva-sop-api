@@ -2,13 +2,15 @@ package au.gov.dva.sopapi.veaops
 
 import java.time.LocalDate
 
-import au.gov.dva.sopapi.veaops.interfaces.{HasDates, VeaOccurance}
+import au.gov.dva.sopapi.veaops.interfaces.{HasDates, VeaDeterminationOccurance, VeaOperationalServiceRepository}
 
-object VeaOperationQueries {
-  def getOpsAndActivitiesOnDate(testDate: LocalDate, allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaOccurance]] = {
-    def getThingsAtDate(testDate: LocalDate, things: List[VeaOccurance]): List[VeaOccurance] =
+object VeaOperationalServiceQueries {
+  def getOpsAndActivitiesOnDate(testDate: LocalDate, allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaDeterminationOccurance]] = {
+    def getThingsAtDate(testDate: LocalDate, things: List[VeaDeterminationOccurance]): List[VeaDeterminationOccurance] =
       things
         .filter(o => !o.startDate.isAfter(testDate) && (o.endDate.isEmpty || !o.endDate.get.isBefore(testDate)))
+
+
 
     val ongoingAtDate = allDeterminations
       .map(d => d -> (getThingsAtDate(testDate, d.operations) ++ getThingsAtDate(testDate, d.activities)))
@@ -18,7 +20,11 @@ object VeaOperationQueries {
     ongoingAtDate
   }
 
-  def getOpsAndActivitiesInRange(startOfTestRange: LocalDate, endOfTestRange: LocalDate, allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaOccurance]] = {
+  def getPeacekeepingActivitiesInRange(startDate : LocalDate, endDate: LocalDate, peacekeepingActivities: List[VeaPeacekeepingActivity]): List[VeaPeacekeepingActivity] = {
+    peacekeepingActivities.filter(a => !a.initialDate.isAfter(endDate))
+  }
+
+  def getOpsAndActivitiesInRange(startOfTestRange: LocalDate, endOfTestRange: LocalDate, allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaDeterminationOccurance]] = {
     allDeterminations
       .map(d => d -> getVeaOccurancesInInterval(startOfTestRange, endOfTestRange, d))
       .filter(i => i._2.nonEmpty)
@@ -27,7 +33,7 @@ object VeaOperationQueries {
 
   private def getVeaOccurancesInInterval(startTestDate: LocalDate, endTestDate: LocalDate, veaDetermination: VeaDetermination) = {
     val occurances = veaDetermination.activities ++ veaDetermination.operations
-    val inRange: List[VeaOccurance] = occurances.filter(o => intervalsOverlap(startTestDate, endTestDate, o))
+    val inRange: List[VeaDeterminationOccurance] = occurances.filter(o => intervalsOverlap(startTestDate, endTestDate, o))
     inRange
   }
 

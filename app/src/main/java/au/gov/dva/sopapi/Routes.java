@@ -205,7 +205,7 @@ public class Routes {
                 }
             }
 
-            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate,endDate,cache.get_veaDeterminations());
+            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate,endDate,cache.get_veaOperationalServiceRepository());
             ObjectMapper om = new ObjectMapper();
             String jsonString = om.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse);
             setResponseHeaders(res,200,MIME_JSON);

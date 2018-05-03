@@ -85,9 +85,9 @@ object VeaDeserialisationUtils {
     }
 
 
-    val sch3Activities = (node \ "peacekeeping" \ "veaSch3" \ "items" \ "item").map(n => itemToActivity(n))
+    val sch3Activities = (node \ "peacekeeping" \ "veaSch3" \ "items" \ "item").map(n => itemToActivity(scala.xml.Utility.trim(n)))
 
-    val noticeActivities = (node \ "peacekeeping"  \ "notices" \ "item").map(n => noticeToActivity(n))
+    val noticeActivities = (node \ "peacekeeping"  \ "notices" \ "notice").map(n => noticeToActivity(scala.xml.Utility.trim(n)))
 
     (sch3Activities ++ noticeActivities).sortBy(i => i.initialDate.toEpochDay).toList
 

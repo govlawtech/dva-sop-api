@@ -9,6 +9,7 @@ import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.veaops.VeaDetermination;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class CacheSingleton implements Cache {
     private ImmutableSet<InstrumentChange> _failedUpdates;
     private ImmutableList<ConditionInfo> _conditionList;
     private Optional<CuratedTextRepository> _curatedTextReporitory;
-    private ImmutableSet<VeaDetermination> _veaDeterminations;
+    private VeaOperationalServiceRepository _veaOperationalServiceRepository;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
@@ -42,7 +43,7 @@ public class CacheSingleton implements Cache {
         _failedUpdates = ImmutableSet.of();
         _conditionList = ImmutableList.of();
         _curatedTextReporitory = Optional.empty();
-        _veaDeterminations = ImmutableSet.of();
+        _veaOperationalServiceRepository = null;
     }
 
     public static CacheSingleton getInstance() {
@@ -55,27 +56,24 @@ public class CacheSingleton implements Cache {
     public void refresh(Repository repository)
     {
         try {
-            ImmutableSet<SoP> allSops = repository.getAllSops();
-            ImmutableSet<ServiceDetermination> allServiceDeterminations = repository.getServiceDeterminations();
+            _allSops = repository.getAllSops();
+            _allMrcaServiceDeterminations = repository.getServiceDeterminations();
             Optional<RuleConfigurationRepository> ruleConfigurationRepository = repository.getRuleConfigurationRepository();
             if (!ruleConfigurationRepository.isPresent()) {
                 throw new ConfigurationRuntimeException("Need rules configuration to be repository.");
             }
-            ImmutableSet<InstrumentChange> failed = repository.getRetryQueue();
-            ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(allSops, OffsetDateTime.now());
-            ImmutableList<ConditionInfo> conditionsList = ImmutableList.copyOf(buildConditionsList(soPPairs));
-            Optional<CuratedTextRepository> curatedTextRepository = repository.getCuratedTextRepository();
-            ImmutableSet<VeaDetermination> veaDeterminations = repository.getVeaDeterminations();
-
-
-            _allSops = allSops;
-            _allSopPairs = soPPairs;
-            _allMrcaServiceDeterminations = allServiceDeterminations;
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
-            _failedUpdates = failed;
-            _conditionList = conditionsList;
+            _failedUpdates = repository.getRetryQueue();
+            _allSopPairs = SoPs.groupSopsToPairs(_allSops, OffsetDateTime.now());
+            _conditionList = ImmutableList.copyOf(buildConditionsList(_allSopPairs));
+            Optional<CuratedTextRepository> curatedTextRepository = repository.getCuratedTextRepository();
             _curatedTextReporitory = curatedTextRepository;
-            _veaDeterminations = veaDeterminations;
+            if (!repository.getVeaOperationalServiceRepository().isPresent())
+            {
+                throw new ConfigurationRuntimeException("VEA Operational Service information must be in repository.");
+            }
+            _veaOperationalServiceRepository = repository.getVeaOperationalServiceRepository().get();
+
         } catch (Exception e) {
             logger.error("Exception occurred when attempting to refresh cache from Repository.", e);
         } catch (Error e) {
@@ -128,7 +126,6 @@ public class CacheSingleton implements Cache {
                 ))
                 .sorted(Comparator.comparing(ConditionInfo::get_conditionName))
                 .collect(Collectors.toList());
-
     }
 
     @Override
@@ -137,8 +134,8 @@ public class CacheSingleton implements Cache {
     }
 
     @Override
-    public ImmutableSet<VeaDetermination> get_veaDeterminations() {
-        return _veaDeterminations;
+    public VeaOperationalServiceRepository get_veaOperationalServiceRepository() {
+        return _veaOperationalServiceRepository;
     }
 }
 
