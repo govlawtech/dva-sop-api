@@ -43,6 +43,7 @@ object VeaDeserialisationUtils {
       (registerId, operations, activities)
     }
 
+    assert(node.label == "veaServiceReferenceData")
     val warlikeDeterminationElements = node \ "warlikeAndNonWarlike" \ "warlikeDeterminations" \ "determination"
     val warlike: immutable.Seq[WarlikeDetermination] = warlikeDeterminationElements.map(d => getData(d)).map(o => WarlikeDetermination(o._1, o._2, o._3)).toList
 
@@ -55,19 +56,20 @@ object VeaDeserialisationUtils {
 
 
   private def GetMappings(node : scala.xml.Node) : Set[Regex] = {
-    assert(node.label == "mappings")
-    (node  \ "mapping").map(n => new Regex(n.text)).toSet
+    (node \ "mappings"  \ "mapping").map(n => new Regex(n.text)).toSet
   }
 
   def PeacekeeepingActivitiesFromXml(node: scala.xml.Node) : List[VeaPeacekeepingActivity] = {
-    assert(node.label == "peacekeeping")
+    assert(node.label == "veaServiceReferenceData")
+
+
 
     def noticeToActivity(node: scala.xml.Node) = {
       assert(node.label == "notice")
       val shortName = (node \ "shortName").text
       val desc = (node \ "descriptionOfPeacekeepingForce").text
       val startDate = LocalDate.parse((node \ "initialDateAsAPeaceKeepingForce").text,DateTimeFormatter.ISO_LOCAL_DATE)
-      val mappings = GetMappings((node \ "mappings").head)
+      val mappings = GetMappings(node)
       val legalSource = (node \ "legalSource").text
       VeaPeacekeepingActivity(shortName,desc,startDate,legalSource,mappings)
     }
@@ -77,15 +79,15 @@ object VeaDeserialisationUtils {
       val number = (node \ "number").text
       val desc = (node \ "descriptionOfPeacekeepingForce").text
       val startDate = LocalDate.parse((node \ "initialDateAsAPeaceKeepingForce").text,DateTimeFormatter.ISO_LOCAL_DATE)
-      val mappings = GetMappings((node \ "mappings").head)
+      val mappings = GetMappings(node)
       val legalSource =  s"Veterans Entitlements' Act 1998 Sch 3, item $number"
       VeaPeacekeepingActivity(desc,desc,startDate,legalSource,mappings)
     }
 
 
-    val sch3Activities = (node \ "veaSch3" \ "items").map(n => itemToActivity(n))
+    val sch3Activities = (node \ "peacekeeping" \ "veaSch3" \ "items" \ "item").map(n => itemToActivity(n))
 
-    val noticeActivities = (node  \ "notices").map(n => noticeToActivity(n))
+    val noticeActivities = (node \ "peacekeeping"  \ "notices" \ "item").map(n => noticeToActivity(n))
 
     (sch3Activities ++ noticeActivities).sortBy(i => i.initialDate.toEpochDay).toList
 

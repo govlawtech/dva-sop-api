@@ -129,7 +129,14 @@ class VeaOperationsTests extends FunSuite {
     val deserialised = VeaDeserialisationUtils.DeterminationsfromXml(root)
     val result = Facade.getResponseRangeQuery(LocalDate.of(2001,1,1), LocalDate.of(2002,1,1),deserialised)
     println(TestUtils.prettyPrint(result))
+  }
 
+  test("Deserialise peackeeping")
+  {
+
+    val root: Elem = XML.load(Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
+    val peacekeeping = VeaDeserialisationUtils.PeacekeeepingActivitiesFromXml(root)
+    println(peacekeeping.size)
   }
 
 }
