@@ -1,0 +1,5 @@
+package veaops
+
+object VeaOperationQueries {
+
+}

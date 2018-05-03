@@ -104,6 +104,7 @@
       <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
       <xs:element type="xs:date" name="startDate" minOccurs="1"/>
       <xs:element type="xs:date" name="endDate" minOccurs="0"/>
+      <xs:element type="mappingsType" name="mappings" minOccurs="0"/>
     </xs:all>
   </xs:complexType>
 
@@ -119,6 +120,7 @@
     <xs:element type="xs:date" name="endDate" minOccurs="0"/>
     <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>
     <xs:element type="specifiedAreasType" name="specifiedAreas" minOccurs="0"/>
+      <xs:element type="mappingsType" name="mappings" minOccurs="0"/>
     </xs:all>
   </xs:complexType>
   <xs:complexType name="determinationsType">
@@ -152,7 +154,7 @@
     <xs:element type="xs:string" name="descriptionOfPeacekeepingForce"/>
     <xs:element type="xs:string" name="shortName"/>
     <xs:element type="xs:date" name="initialDateAsAPeaceKeepingForce"/>
-    <xs:element type="mappingsType" name="mappings"/>
+    <xs:element type="mappingsType" name="mappings" minOccurs="0"/>
   </xs:all>
 </xs:complexType>
 </xs:schema>
