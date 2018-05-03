@@ -137,7 +137,7 @@ class VeaOperationsTests extends FunSuite {
 
       override def getDeterminations: ImmutableSet[VeaDetermination] = ImmutableSet.copyOf(deserialisedDeterminations.asJavaCollection.iterator())
     }
-    val result = Facade.getResponseRangeQuery(LocalDate.of(2001,1,1), LocalDate.of(2002,1,1),repo)
+    val result = Facade.getResponseRangeQuery(LocalDate.of(1888,1,1), LocalDate.of(3000,1,1),repo)
     println(TestUtils.prettyPrint(result))
   }
 
