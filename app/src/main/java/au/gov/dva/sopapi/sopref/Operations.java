@@ -61,8 +61,8 @@ public class Operations {
                 serviceDeterminationPair.getNonWarlike().getOperations()));
 
         return getPredicateForMrcaOperations(allOperations);
-
     }
+
 
 
 

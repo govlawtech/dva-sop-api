@@ -111,6 +111,7 @@
 
                 <activities>
                     <activity>
+                        <shortName>Vietnam (Southern Zone)</shortName>
                         <startDate>1973-01-12</startDate>
                         <endDate>1975-04-29</endDate>
                         <specifiedAreas>
@@ -745,6 +746,7 @@
                 <commencementDate>2004-07-06</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>Berlin Airlift</shortName>
                         <qualifications>
                             <qualification>service rendered as a member of the Royal Australian Air Force aircrew in the
                                 Berlin Airlift
@@ -777,6 +779,7 @@
                 <commencementDate>1997-02-13</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>UN Observer Mission in Guatemala</shortName>
                         <specifiedAreas>
                             <specifiedArea>Guatemala</specifiedArea>
                         </specifiedAreas>
@@ -957,6 +960,7 @@
                 </operations>
                 <activities>
                     <activity>
+                        <shortName>RAN and allies in the Middle East 1991 - 1996</shortName>
                         <startDate>1991-06-09</startDate>
                         <endDate>1996-03-31</endDate>
                         <specifiedAreas>
@@ -997,6 +1001,7 @@
                 <commencementDate>1997-01-24</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>On Exchange in former Republic Yugoslavia</shortName>
                         <specifiedAreas>
                             <specifiedArea>the former Republic of Yugoslavia</specifiedArea>
                         </specifiedAreas>
@@ -1014,6 +1019,7 @@
                 <commencementDate>1991-06-08</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>UNOCA or UNMCTT</shortName>
                         <qualifications>
                             <qualification>with the the United Nations Office for Co-ordinating Assistance to
                                 Afghanistan (UNOCA) or the United Nations Mine Clearing Training Team (UNMCTT)
@@ -1038,6 +1044,7 @@
                 <commencementDate>1996-04-01</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>Arabian Gulf, Gulf of Oman and Northern Arabian Sea from 1996 onwards</shortName>
                         <startDate>1996-04-01</startDate>
                         <specifiedAreas>
                             <specifiedArea>international waters, contiguous ports and waters used for international
@@ -1057,7 +1064,7 @@
                 <commencementDate>1994-09-17</commencementDate>
                 <activities>
                     <activity>
-
+                        <shortName>US-led multi-national force in Haiti</shortName>
                         <qualifications>
                             <qualification>as part of the United States of America led multi-national force
                             </qualification>
@@ -1076,6 +1083,7 @@
                 <commencementDate>1990-08-02</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>First Gulf War</shortName>
                         <startDate>1990-08-02</startDate>
                         <specifiedAreas>
                             <specifiedArea>Bahrain</specifiedArea>
@@ -1124,6 +1132,7 @@
                 <commencementDate>1994-07-12</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>UN humanitarian operation in Mozambique</shortName>
                         <startDate>1994-07-12</startDate>
                         <specifiedAreas>
                             <specifiedArea>Mozambique</specifiedArea>
@@ -1143,6 +1152,7 @@
                 <commencementDate>1986-11-17</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>Gulf of Iran</shortName>
                         <startDate>1986-11-17</startDate>
                         <endDate>1989-02-28</endDate>
                         <specifiedAreas>
@@ -1437,7 +1447,6 @@
                     <mapping regex="UNTAET"/>
                 </mappings>
             </notice>
-
 
 
 

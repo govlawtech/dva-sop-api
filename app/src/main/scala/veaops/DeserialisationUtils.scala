@@ -1,5 +1,0 @@
-package veaops
-
-object DeserialisationUtils {
-
-}

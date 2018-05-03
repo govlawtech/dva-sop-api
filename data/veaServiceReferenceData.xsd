@@ -116,6 +116,8 @@
 
   <xs:complexType name="activityType">
     <xs:all>
+
+      <xs:element type="xs:string" name="shortName" minOccurs="1"/>
     <xs:element type="xs:date" name="startDate" minOccurs="1"/>
     <xs:element type="xs:date" name="endDate" minOccurs="0"/>
     <xs:element type="qualificationsType" name="qualifications" minOccurs="0"/>

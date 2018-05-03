@@ -12,6 +12,10 @@ import scala.xml.{Elem, XML}
 @RunWith(classOf[JUnitRunner])
 class VeaOperationsTests extends FunSuite {
 
+
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
+    val testact = new VeaActivity("TESTACTIVITY",LocalDate.of(2018, 1, 1), None, List(), List())
+
   test("Deserialise operationXml") {
     val testXml = <operation>
       <name>PROVIDE COMFORT</name>
@@ -53,8 +57,7 @@ class VeaOperationsTests extends FunSuite {
   }
 
   test("Correct things at date") {
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
-    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+
     val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
     val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
 
@@ -66,8 +69,7 @@ class VeaOperationsTests extends FunSuite {
   }
 
   test("Correct things at date 2") {
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
-    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
+
     val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
     val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
 
@@ -79,8 +81,6 @@ class VeaOperationsTests extends FunSuite {
   }
 
   test("Correct things at date 3") {
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
-    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
     val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
     val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
 
@@ -92,8 +92,6 @@ class VeaOperationsTests extends FunSuite {
   }
 
   test("Correct vea occurances in range") {
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
-    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
     val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
     val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
     val testDets = List(testDet1, testDet2)
@@ -105,8 +103,6 @@ class VeaOperationsTests extends FunSuite {
   }
 
   test("Correct vea occurances in range: none in interval") {
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
-    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
     val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
     val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
     val testDets = List(testDet1, testDet2)
@@ -118,8 +114,6 @@ class VeaOperationsTests extends FunSuite {
   }
 
   test("Correct vea occurances in range: one in open ended interval") {
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
-    val testact = new VeaActivity(LocalDate.of(2018, 1, 1), None, List(), List())
     val testDet1 = new WarlikeDetermination("F0000000", List(testop), List())
     val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
     val testDets = List(testDet1, testDet2)
@@ -137,6 +131,5 @@ class VeaOperationsTests extends FunSuite {
     println(TestUtils.prettyPrint(result))
 
   }
-
 
 }
