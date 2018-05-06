@@ -2,13 +2,30 @@
 
 <veaServiceReferenceData
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="veaServiceReferenceData.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../data/veaServiceReferenceData.xsd">
     <warlikeAndNonWarlike>
 
         <veaLegislativeReference>6F</veaLegislativeReference>
         <description>Operational service—warlike and non‑warlike service</description>
 
         <warlikeDeterminations>
+            
+            <determination>
+                <federalRegisterOfLegislationReference>F2014L00151</federalRegisterOfLegislationReference>
+                <commencementDate>2003-08-11</commencementDate>
+                <operations>
+                    <operation>
+                        <name>International Security Assistance Force</name>
+                        <startDate>2003-08-11</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <mappings>
+                            <mapping regex="ISAF"/>
+                        </mappings>
+                    </operation>
+                </operations>
+            </determination>
 
             <determination>
                 <federalRegisterOfLegislationReference>F2010L00176</federalRegisterOfLegislationReference>
@@ -19,15 +36,27 @@
                         <startDate>2001-10-11</startDate>
                         <endDate>2009-07-30</endDate>
                         <specifiedAreas>
-                            <specifiedArea>
-                                <![CDATA[the area bounded by the following coordinates:
-                                <ul>
-                                <li>48 00N         81 00E</li>
-                                <li>48 00N          35 00E</li>
-                                <li>12 00N          35 00E</li>
-                                <li>12 00N          81 00E</li>
-                                </ul>
-                    ]]></specifiedArea>
+                            <specifiedArea>[[<![CDATA[
+                               <kml xmlns="http://www.opengis.net/kml/2.2>
+                                	<Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+81.0,48.0,0
+35.0,48.0,0
+35.0,12.0,0
+81.0,12.0,0
+81.0,48.0,0
+</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+
+
+                                </kml>
+                            ]]>
+                            </specifiedArea>
                             <specifiedArea>the Diego Garcia land mass and territorial waters, plus airspace of Diego
                                 Garcia out to 250nm radius (from Reference Point 07 18.6S 072 24.6E)
                             </specifiedArea>
@@ -82,6 +111,7 @@
 
                 <activities>
                     <activity>
+                        <shortName>Vietnam (Southern Zone)</shortName>
                         <startDate>1973-01-12</startDate>
                         <endDate>1975-04-29</endDate>
                         <specifiedAreas>
@@ -155,8 +185,26 @@
                         <startDate>2003-03-18</startDate>
                         <endDate>2003-07-22</endDate>
                         <specifiedAreas>
-                            <specifiedArea>The area bounded by the geographical coordinates: 38 00N, 68 00E; 38 00N, 32
-                                00E; 10 00N, 32 00E; 10 00N, 68 00E.
+                            <specifiedArea>
+                                [[<![CDATA[
+	 <kml xmlns="http://www.opengis.net/kml/2.2>
+	<Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+68.0,38.0,0
+32.0,38.0,0
+32.0,10.0,0
+68.0,10.0,0
+68.0,38.0,0
+</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+                             </kml>
+                                ]]>
+
                             </specifiedArea>
                         </specifiedAreas>
                     </operation>
@@ -540,7 +588,7 @@
                         <startDate>2003-08-18</startDate>
                         <specifiedAreas>
                             <specifiedArea>East Timor and the territorial sea of East Timor</specifiedArea>
-                        </specifiedAreas>
+                        </specifiedAreas>+
                     </operation>
                 </operations>
             </determination>
@@ -698,10 +746,10 @@
                 <commencementDate>2004-07-06</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>Berlin Airlift</shortName>
                         <qualifications>
                             <qualification>service rendered as a member of the Royal Australian Air Force aircrew in the
-                                Berlin
-                                Airlift
+                                Berlin Airlift
                             </qualification>
                         </qualifications>
                         <startDate>1948-09-15</startDate>
@@ -731,6 +779,7 @@
                 <commencementDate>1997-02-13</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>UN Observer Mission in Guatemala</shortName>
                         <specifiedAreas>
                             <specifiedArea>Guatemala</specifiedArea>
                         </specifiedAreas>
@@ -911,6 +960,7 @@
                 </operations>
                 <activities>
                     <activity>
+                        <shortName>RAN and allies in the Middle East 1991 - 1996</shortName>
                         <startDate>1991-06-09</startDate>
                         <endDate>1996-03-31</endDate>
                         <specifiedAreas>
@@ -919,15 +969,24 @@
                             <specifiedArea>the Northern Arabian Sea</specifiedArea>
                             <specifiedArea>the Gulf of Aden</specifiedArea>
                             <specifiedArea>
-                                <![CDATA[<html>
-                                the Red Sea bounded to the south and east by the following coordinates:
-                               <ul>
-                                <li>25°  00°   North  -  61°  50°   East</li>
-                                <li>20°  00°   North  -  61°  50°   East</li>
-                                <li>11°  50°   North  -  51°  17°   East</li>
-                                </ul>
-                                ]]>
+                                <![CDATA[
+                                <kml xmlns="http://www.opengis.net/kml/2.2>
+                                <Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+61.8333333,25.0,0
+61.8333333,20.0,0
+51.2833333,11.8333333,0
+61.8333333,25.0,0
+</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+		</kml>
 
+                                ]]>
                             </specifiedArea>
                         </specifiedAreas>
                         <qualifications>
@@ -942,6 +1001,7 @@
                 <commencementDate>1997-01-24</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>On Exchange in former Republic Yugoslavia</shortName>
                         <specifiedAreas>
                             <specifiedArea>the former Republic of Yugoslavia</specifiedArea>
                         </specifiedAreas>
@@ -959,14 +1019,20 @@
                 <commencementDate>1991-06-08</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>UNOCA or UNMCTT</shortName>
                         <qualifications>
-                            <qualification>with the the United Nations Office for Co-ordinating Assistance to Afghanistan (UNOCA) or the United Nations Mine Clearing Training Team (UNMCTT)
+                            <qualification>with the the United Nations Office for Co-ordinating Assistance to
+                                Afghanistan (UNOCA) or the United Nations Mine Clearing Training Team (UNMCTT)
                             </qualification>
                         </qualifications>
                         <specifiedAreas>
                             <specifiedArea>Afghanistan</specifiedArea>
                         </specifiedAreas>
                         <startDate>1991-06-08</startDate>
+                        <mappings>
+                            <mapping regex="UNOCA"/>
+                            <mapping regex="UNMCTT"/>
+                        </mappings>
 
                     </activity>
                 </activities>
@@ -978,9 +1044,13 @@
                 <commencementDate>1996-04-01</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>Arabian Gulf, Gulf of Oman and Northern Arabian Sea from 1996 onwards</shortName>
                         <startDate>1996-04-01</startDate>
                         <specifiedAreas>
-                            <specifiedArea>international waters, contiguous ports and waters used for international navigation contained with the Arabian Gulf, the Gulf of Oman and the Northern Arabian Sea with an eastern extremity of 61 degrees, 50 minutes East and a southern extremity of 20 degrees North
+                            <specifiedArea>international waters, contiguous ports and waters used for international
+                                navigation contained with the Arabian Gulf, the Gulf of Oman and the Northern Arabian
+                                Sea with an eastern extremity of 61 degrees, 50 minutes East and a southern extremity of
+                                20 degrees North
                             </specifiedArea>
                         </specifiedAreas>
 
@@ -994,7 +1064,7 @@
                 <commencementDate>1994-09-17</commencementDate>
                 <activities>
                     <activity>
-
+                        <shortName>US-led multi-national force in Haiti</shortName>
                         <qualifications>
                             <qualification>as part of the United States of America led multi-national force
                             </qualification>
@@ -1013,6 +1083,7 @@
                 <commencementDate>1990-08-02</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>First Gulf War</shortName>
                         <startDate>1990-08-02</startDate>
                         <specifiedAreas>
                             <specifiedArea>Bahrain</specifiedArea>
@@ -1021,35 +1092,36 @@
                             <specifiedArea>Saudi Arabia</specifiedArea>
                             <specifiedArea>United Arab Emirates</specifiedArea>
                             <specifiedArea>Island of Cyprus</specifiedArea>
-                            <specifiedArea>the sea areas contained within the Gulf of Suez, the Gulf of Aqaba, the Red Sea, the Gulf of Aden, the Persian Gulf and the Gulf of Oman
+                            <specifiedArea>the sea areas contained within the Gulf of Suez, the Gulf of Aqaba, the Red
+                                Sea, the Gulf of Aden, the Persian Gulf and the Gulf of Oman
                             </specifiedArea>
-                            <specifiedArea><![CDATA[<html>the sea area contained within the Arabian Sea north of the boundary formed by the joining of each of the following points to the next:
-<table>
+                            <specifiedArea><![CDATA[
 
-<tr>
-                        <td>(a)</td>          <td>20° 30´ North</td>            <td>70°  40´  East</td>
-</tr>
-<tr>
-                        <td>(b)</td>          <td>14° 30´   North</td>            <td>67°  35´  East</td>
-</tr>
-<tr>
-                        <td>(c)</td>          <td>8°  30´   North</td>            <td>60°  00´  East</td>
-</tr>
-<tr>
-                        <td>(d)</td>          <td>6°  20´   North</td>           <td>53°  52´  East</td>
-</tr>
-<tr>
+                            <kml xmlns="http://www.opengis.net/kml/2.2">
+                            		<Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
 
-                        <td>(e)</td>          <td>5°  48´   North</td>            <td>49°  02´  East</td>
-</tr>
-                        </table>
-                    </html>]]>
+
+					<coordinates>
+70.6666666,20.5,0
+67.5833333,14.5,0
+60.0,8.5,0
+53.8666666,6.3333333,0
+49.0666666,5.8,0
+70.6666666,20.5,0
+</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+		</kml>
+
+                    ]]>
                             </specifiedArea>
                             <specifiedArea>the sea area contained within the Suez Canal and the Mediterranean Sea east
                                 of 30°E
                             </specifiedArea>
-
-
                         </specifiedAreas>
                     </activity>
                 </activities>
@@ -1060,6 +1132,7 @@
                 <commencementDate>1994-07-12</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>UN humanitarian operation in Mozambique</shortName>
                         <startDate>1994-07-12</startDate>
                         <specifiedAreas>
                             <specifiedArea>Mozambique</specifiedArea>
@@ -1067,6 +1140,9 @@
                         <qualifications>
                             <qualification>as part of the United Nations humanitarian operations</qualification>
                         </qualifications>
+                        <mappings>
+                            <mapping regex="CORACLE"/>
+                        </mappings>
                     </activity>
                 </activities>
 
@@ -1076,6 +1152,7 @@
                 <commencementDate>1986-11-17</commencementDate>
                 <activities>
                     <activity>
+                        <shortName>Gulf of Iran</shortName>
                         <startDate>1986-11-17</startDate>
                         <endDate>1989-02-28</endDate>
                         <specifiedAreas>
@@ -1092,176 +1169,302 @@
         </determinations>
     </hazardous>
     <peacekeeping>
-        <veaLegislativeReference>Schedule 3</veaLegislativeReference>
-        <items>
-            <item>
-                <number>1</number>
-                <descriptionOfPeacekeepingForce>Security Council Commission of Investigation on the Balkans
+
+        <veaSch3>
+            <veaLegislativeReference>Schedule 3</veaLegislativeReference>
+            <items>
+                <item>
+                    <number>1</number>
+                    <descriptionOfPeacekeepingForce>Security Council Commission of Investigation on the Balkans
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1947-01-29</initialDateAsAPeaceKeepingForce>
+
+                </item>
+
+                <item>
+                    <number>2</number>
+                    <descriptionOfPeacekeepingForce>Committee of Good Offices</descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1947-08-25</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNGOC"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>3</number>
+                    <descriptionOfPeacekeepingForce>United Nations Special Commission on the Balkans
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1947-11-26</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNSCOB"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>4</number>
+                    <descriptionOfPeacekeepingForce>United Nations Commission on Korea</descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1949-01-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNCOK"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>5</number>
+                    <descriptionOfPeacekeepingForce>United Nations Military Observer Group in India and Pakistan
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1949-01-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNMOGIP"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>6</number>
+                    <descriptionOfPeacekeepingForce>United Nations Commission for Indonesia
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1949-01-28</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNCI"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>7</number>
+                    <descriptionOfPeacekeepingForce>United Nations Truce Supervision Organisation
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1956-06-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNTSO"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>8</number>
+                    <descriptionOfPeacekeepingForce>United Nations Operations in the Congo
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1960-08-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNOC"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>9</number>
+                    <descriptionOfPeacekeepingForce>United Nations Yemen Observation Mission
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1963-01-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNYOM"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>10</number>
+                    <descriptionOfPeacekeepingForce>United Nations Force in Cyprus</descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1964-05-14</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNFICYP"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>11</number>
+                    <descriptionOfPeacekeepingForce>United Nations India-Pakistan Observation Mission
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1965-09-20</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNIPOM"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>12</number>
+                    <descriptionOfPeacekeepingForce>United Nations Disengagement Observer Force
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1974-01-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNDOF"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>13</number>
+                    <descriptionOfPeacekeepingForce>United Nations Emergency Force Two</descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1976-07-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNEF\s?II"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>14</number>
+                    <descriptionOfPeacekeepingForce>United Nations Interim Force in Lebanon
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1978-03-23</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNIFIL"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>15</number>
+                    <descriptionOfPeacekeepingForce>Commonwealth Monitoring Force in Zimbabwe
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1979-12-24</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="CMF"/>
+                        <mapping regex="(?i)AUSTRALIAN CONTINGENT RHODESIA"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>16</number>
+                    <descriptionOfPeacekeepingForce>Sinai Multinational Force and Observers established by the Protocol
+                        between the Arab Republic of Egypt and the State of Israel dated 3 August 1981
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1982-02-18</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="S?MFO"/>
+                        <mapping regex="MAZURKA"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>17</number>
+                    <descriptionOfPeacekeepingForce>United Nations Iran/Iraq Military Observer Group
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1988-08-11</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNIIMOG"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>18</number>
+                    <descriptionOfPeacekeepingForce>United Nations Border Relief Operation in Cambodia
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1989-02-01</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNBRO"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>19</number>
+                    <descriptionOfPeacekeepingForce>United Nations Transition Assistance Group Namibia
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1989-02-18</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNTAG"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>20</number>
+                    <descriptionOfPeacekeepingForce>United Nations Mission for the Referendum in Western Sahara (Mission
+                        des
+                        Nations Unies pour un Referendum au Sahara Occidental)
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1991-06-27</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="MINURSO"/>
+                        <mapping regex="CEDILLA"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>21</number>
+                    <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Transitional
+                        Authority in Cambodia
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1992-05-18</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="UNTAC"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>22</number>
+                    <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Operation in
+                        Mozambique
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1994-03-27</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="[OU]NOMOZ"/>
+
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>23</number>
+                    <descriptionOfPeacekeepingForce>Australian Defence Support to a Pacific Peacekeeping Force for a
+                        Bougainville Peace Conference
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1994-09-21</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="SPPKF"/>
+                        <mapping regex="(?i)Lagoon"/>
+                    </mappings>
+                </item>
+
+                <item>
+                    <number>24</number>
+                    <descriptionOfPeacekeepingForce>The Australian Police Contingent of the Multi-National Force in
+                        Haiti
+                    </descriptionOfPeacekeepingForce>
+                    <initialDateAsAPeaceKeepingForce>1994-10-10</initialDateAsAPeaceKeepingForce>
+                    <mappings>
+                        <mapping regex="MNF"/>
+                    </mappings>
+                </item>
+
+
+            </items>
+        </veaSch3>
+
+        <notices>
+            <veaLegislativeReference>Section 68(3A)</veaLegislativeReference>
+            <notice>
+                <legalSource>Gazette GN10 of 15 March 2000, page 586</legalSource>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Assistance
+                    Mission in East Timor (UNAMET) established on 11 June 1999 and ended on 25 October 1999 while in the
+                    area comprising East Timor and its territorial waters
                 </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1947-01-29</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>2</number>
-                <descriptionOfPeacekeepingForce>Committee of Good Offices</descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1947-08-25</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>3</number>
-                <descriptionOfPeacekeepingForce>United Nations Special Commission on the Balkans
+                <shortName>UNAMET</shortName>
+                <initialDateAsAPeaceKeepingForce>1999-06-21</initialDateAsAPeaceKeepingForce>
+                <mappings>
+                    <mapping regex="UNAMET"/>
+                </mappings>
+            </notice>
+            <notice>
+                <legalSource>Gazette GN10 of 15 March 2000, page 587</legalSource>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Transitional Administration in East Timor (UNTAET) established on 25 October 1999 while in the area comprising East Timor and its territorial waters.
                 </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1947-11-26</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>4</number>
-                <descriptionOfPeacekeepingForce>United Nations Commission on Korea</descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1949-01-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>5</number>
-                <descriptionOfPeacekeepingForce>United Nations Military Observer Group in India and Pakistan
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1949-01-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>6</number>
-                <descriptionOfPeacekeepingForce>United Nations Commission for Indonesia</descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1949-01-28</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>7</number>
-                <descriptionOfPeacekeepingForce>United Nations Truce Supervision Organisation
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1956-06-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>8</number>
-                <descriptionOfPeacekeepingForce>United Nations Operations in the Congo</descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1960-08-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>9</number>
-                <descriptionOfPeacekeepingForce>United Nations Yemen Observation Mission
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1963-01-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>10</number>
-                <descriptionOfPeacekeepingForce>United Nations Force in Cyprus</descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1964-05-14</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>11</number>
-                <descriptionOfPeacekeepingForce>United Nations India-Pakistan Observation Mission
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1965-09-20</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>12</number>
-                <descriptionOfPeacekeepingForce>United Nations Disengagement Observer Force
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1974-01-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>13</number>
-                <descriptionOfPeacekeepingForce>United Nations Emergency Force Two</descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1976-07-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>14</number>
-                <descriptionOfPeacekeepingForce>United Nations Interim Force in Lebanon</descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1978-03-23</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>15</number>
-                <descriptionOfPeacekeepingForce>Commonwealth Monitoring Force in Zimbabwe
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1979-12-24</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>16</number>
-                <descriptionOfPeacekeepingForce>Sinai Multinational Force and Observers established by the Protocol
-                    between the Arab Republic of Egypt and the State of Israel dated 3 August 1981
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1982-02-18</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>17</number>
-                <descriptionOfPeacekeepingForce>United Nations Iran/Iraq Military Observer Group
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1988-08-11</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>18</number>
-                <descriptionOfPeacekeepingForce>United Nations Border Relief Operation in Cambodia
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1989-02-01</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>19</number>
-                <descriptionOfPeacekeepingForce>United Nations Transition Assistance Group Namibia
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1989-02-18</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>20</number>
-                <descriptionOfPeacekeepingForce>United Nations Mission for the Referendum in Western Sahara (Mission des
-                    Nations Unies pour un Referendum au Sahara Occidental)
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1991-06-27</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>21</number>
-                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Transitional
-                    Authority in Cambodia
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1992-05-18</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>22</number>
-                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Operation in
-                    Mozambique
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1994-03-27</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>23</number>
-                <descriptionOfPeacekeepingForce>Australian Defence Support to a Pacific Peacekeeping Force for a
-                    Bougainville Peace Conference
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1994-09-21</initialDateAsAPeaceKeepingForce>
-            </item>
-
-            <item>
-                <number>24</number>
-                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the Multi-National Force in Haiti
-                </descriptionOfPeacekeepingForce>
-                <initialDateAsAPeaceKeepingForce>1994-10-10</initialDateAsAPeaceKeepingForce>
-            </item>
+                <shortName>UNTAET</shortName>
+                <initialDateAsAPeaceKeepingForce>1999-10-25</initialDateAsAPeaceKeepingForce>
+                <mappings>
+                    <mapping regex="UNTAET"/>
+                </mappings>
+            </notice>
 
 
-        </items>
+
+            <notice>
+                <legalSource>Gazette S238 of 21 December 2005</legalSource>
+                <descriptionOfPeacekeepingForce>The Australian Police Contingent of the United Nations Mission in Sudan (UNMIS)</descriptionOfPeacekeepingForce>
+                <shortName>UNMIS</shortName>
+                <initialDateAsAPeaceKeepingForce>2006-01-01</initialDateAsAPeaceKeepingForce>
+            </notice>
+
+            <notice>
+                <legalSource>Unknown</legalSource>
+                <shortName>UNMISET</shortName>
+                <descriptionOfPeacekeepingForce>UNMISET in East Timor</descriptionOfPeacekeepingForce>
+                <initialDateAsAPeaceKeepingForce>2002-05-20</initialDateAsAPeaceKeepingForce>
+            </notice>
+
+        </notices>
 
     </peacekeeping>
 

@@ -18,8 +18,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 
 
-
-
 public class RhPredicateFactory implements IRhPredicateFactory {
 
     private ActDeterminationServiceClient actDeterminationServiceClient;

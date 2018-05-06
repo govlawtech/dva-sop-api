@@ -23,7 +23,7 @@ public class SoPReferenceServiceTests {
         StandardOfProof standardOfProof = StandardOfProof.ReasonableHypothesis;
         IncidentType incidentType = IncidentType.Aggravation;
 
-        String json = SoPs.buildSopRefJsonResponse(ImmutableSet.of(mockSop),incidentType,standardOfProof);
+        String json = SoPs.buildSopRefJsonResponse(ImmutableSet.of(mockSop),incidentType,standardOfProof,null);
         System.out.print(json);
         Assert.assertTrue(!json.isEmpty());
     }
@@ -41,9 +41,6 @@ public class SoPReferenceServiceTests {
                 .collect(Collectors.toList());
 
         assert(sorted.get(0).isEqual(d2));
-
     }
-
-
 
 }

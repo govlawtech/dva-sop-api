@@ -1,30 +1,40 @@
 package au.gov.dva.sopapi.sopsupport;
 
-import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
 import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.Condition;
-import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfServiceSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedYearsPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.OffsetDateTime;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.Predicate;
 
 
 public class ConditionFactory {
 
+
+    public static ImmutableList<String> getAcuteConditions() {
+        return ImmutableList.of(
+                "sprain and strain",
+                "acute articular cartilage tear",
+                "acute meniscal tear of the knee",
+                "dislocation",
+                "fracture",
+                "joint instability",
+                "labral tear",
+                "external bruise",
+                "external burn"
+        );
+    }
 
     public static Optional<Condition> create(SoPPair soPPair, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository) {
 
@@ -53,6 +63,14 @@ public class ConditionFactory {
         );
     }
 
+    private static ProcessingRule buildAcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhParas, String bopRegisterId, ImmutableSet<String> bopParas, int daysWindowBeforeOnset)
+    {
+        return new AcuteConditionRule(rhRegisterId,rhParas,bopRegisterId,bopParas,
+                condition -> new Interval(condition.getStartDate().minusDays(daysWindowBeforeOnset), condition.getStartDate()));
+
+
+    }
+
     private static Optional<ProcessingRule> BuildRuleFromCode(String conditionName) {
         switch (conditionName) {
             case "sprain and strain":
@@ -60,10 +78,103 @@ public class ConditionFactory {
                         "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
                         condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())));
+            case "acute articular cartilage tear":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2010L01666",
+                        ImmutableSet.of("6(a)"),
+                        "F2010L01667",
+                        ImmutableSet.of("6(a)"),
+                        7
+                ));
+
+            case "acute meniscal tear of the knee":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2010L01668",
+                        ImmutableSet.of("6(a)"),
+                        "F2010L01669",
+                        ImmutableSet.of("6(a)"),
+                        7
+                ));
+
+            case "dislocation":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2010L01040",
+                        ImmutableSet.of("6(a)"),
+                        "F2010L01041",
+                        ImmutableSet.of("6(a)"),
+                        7
+                ));
+
+            case "fracture":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2015L01340",
+                        ImmutableSet.of("9(1)"),
+                        "F2015L01343",
+                        ImmutableSet.of("9(1)"),
+                        7
+
+                ));
+
+            case "joint instability":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2010L01048",
+                        ImmutableSet.of("6(a)"),
+                        "F2010L01049",
+                        ImmutableSet.of("6(a)"),
+                        7
+                ));
+
+            case "labral tear":
+                return Optional.of(buildAcuteConditionRule(
+                       "F2017L00885",
+                       ImmutableSet.of("9(1)"),
+                        "F2017L00886",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ));
+
+            case "external bruise":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2016L00008",
+                        ImmutableSet.of("9(1)"),
+                        "F2016L00005",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ));
+
+            case "external burn":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2017C00862",
+                        ImmutableSet.of("9(1)"),
+                        "F2017C00861",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ));
+
+             case "concerning physical injury due to munitions discharge":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2012L01789",
+                        ImmutableSet.of("6(a)"),
+                        "F2012L01790",
+                        ImmutableSet.of("6(a)"),
+                        7
+                ));
+
+                 case "cut, stab, abrasion and laceration":
+                return Optional.of(buildAcuteConditionRule(
+                        "F2016L00567",
+                        ImmutableSet.of("9(1)"),
+                        "F2016L00571",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ));
+
+
             default:
                 return Optional.empty();
         }
     }
+
 
 
     private static ProcessingRule BuildRuleFromConfig(ConditionConfiguration conditionConfiguration) {
@@ -121,6 +232,13 @@ public class ConditionFactory {
                 return new MentalHealthProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(84));
             case "malignant neoplasm of the eye":
                 return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "seborrhoeic keratosis":
+                return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "pinguecula":
+                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+            case "benign neoplasm of the eye and adnexa":
+                return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+
         }
 
         return null;
