@@ -37,7 +37,7 @@ object VeaOperationalServiceQueries {
     inRange
   }
 
-  private def intervalsOverlap(startTestDate: LocalDate, endTestDate: LocalDate, potentiallyOpenEndedInterval: HasDates): Boolean = {
+  def intervalsOverlap(startTestDate: LocalDate, endTestDate: LocalDate, potentiallyOpenEndedInterval: HasDates): Boolean = {
     if (potentiallyOpenEndedInterval.endDate.isEmpty) {
       !endTestDate.isBefore(potentiallyOpenEndedInterval.startDate)
     }

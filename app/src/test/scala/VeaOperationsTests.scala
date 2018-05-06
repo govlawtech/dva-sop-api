@@ -16,8 +16,8 @@ import scala.xml.{Elem, XML}
 class VeaOperationsTests extends FunSuite {
 
 
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List())
-    val testact = new VeaActivity("TESTACTIVITY",LocalDate.of(2018, 1, 1), None, List(), List())
+    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List(),Set())
+    val testact = new VeaActivity("TESTACTIVITY",LocalDate.of(2018, 1, 1), None, List(), List(),Set())
 
   test("Deserialise operationXml") {
     val testXml = <operation>
@@ -129,8 +129,11 @@ class VeaOperationsTests extends FunSuite {
 
   test("Test building json response") {
     val root: Elem = XML.load(Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
-    val deserialisedDeterminations = VeaDeserialisationUtils.DeterminationsfromXml(root)
+    val deserialisedDeterminations: List[VeaDetermination] = VeaDeserialisationUtils.DeterminationsfromXml(root)
+    println("det count: " + deserialisedDeterminations.map(d => d.operations.size + d.activities.size).sum)
+
     val deserialisedPeacekeeping = VeaDeserialisationUtils.PeacekeeepingActivitiesFromXml(root)
+    println("peackeeeping count: " + deserialisedPeacekeeping.size)
     val repo = new VeaOperationalServiceRepository {
 
       override def getPeacekeepingActivities: ImmutableSet[VeaPeacekeepingActivity] = ImmutableSet.copyOf(deserialisedPeacekeeping.asJavaCollection.iterator())
@@ -138,7 +141,9 @@ class VeaOperationsTests extends FunSuite {
       override def getDeterminations: ImmutableSet[VeaDetermination] = ImmutableSet.copyOf(deserialisedDeterminations.asJavaCollection.iterator())
     }
     val result = Facade.getResponseRangeQuery(LocalDate.of(1888,1,1), LocalDate.of(3000,1,1),repo)
+
     println(TestUtils.prettyPrint(result))
+
   }
 
   test("Deserialise peackeeping")

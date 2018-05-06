@@ -6,7 +6,9 @@ import java.time.format.DateTimeFormatter
 import au.gov.dva.sopapi.veaops.interfaces.VeaDeterminationOccurance
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 
-class VeaActivity(val shortName: String, val startDate: LocalDate, val endDate: Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications: List[Qualification]) extends VeaDeterminationOccurance {
+import scala.util.matching.Regex
+
+class VeaActivity(val shortName: String, val startDate: LocalDate, val endDate: Option[LocalDate], val specifiedAreas: List[SpecifiedArea], val qualifications: List[Qualification], val mappings: Set[Regex]) extends VeaDeterminationOccurance {
   override def toJson(hostDet: VeaDetermination): JsonNode = {
     val om = new ObjectMapper()
     val root = om.createObjectNode()
@@ -24,4 +26,8 @@ class VeaActivity(val shortName: String, val startDate: LocalDate, val endDate: 
     root.put("legalSource", s"${Constants.frlBaseUrl}/Details/${hostDet.registerId}")
     root.asInstanceOf[JsonNode]
   }
+
+  override def getPrimaryName: String = shortName
+
+  override def getMappings: Set[Regex] = mappings
 }

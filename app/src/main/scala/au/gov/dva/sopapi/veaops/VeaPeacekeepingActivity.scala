@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 
 import scala.util.matching.Regex
 
-case class  VeaPeacekeepingActivity(shortName: String, desc: String, initialDate: LocalDate, legalSource: String, regexMappings : Set[Regex]) extends HasDates {
+case class  VeaPeacekeepingActivity(shortName: String, desc: String, initialDate: LocalDate, legalSource: String, regexMappings : Set[Regex]) extends HasDates with HasMappings {
 
   override def startDate: LocalDate = initialDate
 
@@ -23,4 +23,8 @@ case class  VeaPeacekeepingActivity(shortName: String, desc: String, initialDate
     root.put("legalSource",legalSource)
     root
   }
+
+  override def getPrimaryName: String = shortName
+
+  override def getMappings: Set[Regex] = regexMappings
 }

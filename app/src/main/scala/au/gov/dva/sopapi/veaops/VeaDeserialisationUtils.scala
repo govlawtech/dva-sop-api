@@ -21,7 +21,8 @@ object VeaDeserialisationUtils {
     val endDate = (node \ "endDate").headOption.map(i => LocalDate.parse(i.text, DateTimeFormatter.ISO_LOCAL_DATE))
     val specifiedAreas = VeaDeserialisationUtils.specifiedAreas(node)
     val qualifications = VeaDeserialisationUtils.qualifications(node)
-    new VeaOperation(name, startDate, endDate, specifiedAreas, qualifications)
+    val mappings = GetMappings(node)
+    new VeaOperation(name, startDate, endDate, specifiedAreas, qualifications, mappings)
   }
 
   def ActivityFromXml(node: scala.xml.Node): VeaActivity = {
@@ -31,7 +32,8 @@ object VeaDeserialisationUtils {
     val endDate = (node \ "endDate").headOption.map(i => LocalDate.parse(i.text, DateTimeFormatter.ISO_LOCAL_DATE))
     val specifiedAreas = VeaDeserialisationUtils.specifiedAreas(node)
     val qualifications = VeaDeserialisationUtils.qualifications(node)
-    new VeaActivity(shortName, startDate, endDate, specifiedAreas, qualifications)
+    val mappings = GetMappings(node)
+    new VeaActivity(shortName, startDate, endDate, specifiedAreas, qualifications,mappings)
   }
 
 

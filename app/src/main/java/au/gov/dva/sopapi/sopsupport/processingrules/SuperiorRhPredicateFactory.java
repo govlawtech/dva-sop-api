@@ -8,6 +8,8 @@ import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopsupport.vea.ServiceRegion;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
+import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -19,10 +21,12 @@ import java.util.function.Predicate;
 public class SuperiorRhPredicateFactory implements  IRhPredicateFactory {
 
     private ServiceDeterminationPair serviceDeterminationPair;
+    private final VeaOperationalServiceRepository veaRepo;
 
-    public SuperiorRhPredicateFactory(ServiceDeterminationPair serviceDeterminationPair)
+    public SuperiorRhPredicateFactory(ServiceDeterminationPair serviceDeterminationPair, VeaOperationalServiceRepository veaRepo)
     {
         this.serviceDeterminationPair = serviceDeterminationPair;
+        this.veaRepo = veaRepo;
     }
 
     @Override
@@ -65,6 +69,12 @@ public class SuperiorRhPredicateFactory implements  IRhPredicateFactory {
             default:
          //       return testDeploymentAgainstAds(isRhServiceAccordingToADS);
         }
+        return null;
+    }
+
+
+    private Predicate<Deployment> buildIsOperationalVeaPredicate(VeaOperationalServiceRepository repo)
+    {
         return null;
     }
 
