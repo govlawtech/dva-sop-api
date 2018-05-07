@@ -16,8 +16,8 @@ import scala.xml.{Elem, XML}
 class VeaOperationsTests extends FunSuite {
 
 
-    val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List(),Set())
-    val testact = new VeaActivity("TESTACTIVITY",LocalDate.of(2018, 1, 1), None, List(), List(),Set())
+  val testop = new VeaOperation("TESTOP1", LocalDate.of(2017, 1, 1), Some(LocalDate.of(2018, 1, 1)), List(), List(), Set())
+  val testact = new VeaActivity("TESTACTIVITY", LocalDate.of(2018, 1, 1), None, List(), List(), Set())
 
   test("Deserialise operationXml") {
     val testXml = <operation>
@@ -140,18 +140,80 @@ class VeaOperationsTests extends FunSuite {
 
       override def getDeterminations: ImmutableSet[VeaDetermination] = ImmutableSet.copyOf(deserialisedDeterminations.asJavaCollection.iterator())
     }
-    val result = Facade.getResponseRangeQuery(LocalDate.of(1888,1,1), LocalDate.of(3000,1,1),repo)
+    val result = Facade.getResponseRangeQuery(LocalDate.of(1888, 1, 1), LocalDate.of(3000, 1, 1), repo)
 
     println(TestUtils.prettyPrint(result))
 
   }
 
-  test("Deserialise peackeeping")
-  {
+  test("Deserialise peackeeping") {
 
     val root: Elem = XML.load(Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml"))
     val peacekeeping = VeaDeserialisationUtils.PeacekeeepingActivitiesFromXml(root)
     println(peacekeeping.size)
+  }
+
+  test("Deserialise operation with mappings")
+  {
+    val testData =
+        <operation>
+          <name>International Security Assistance Force</name>
+          <startDate>2003-08-11</startDate>
+          <specifiedAreas>
+            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+          </specifiedAreas>
+          <mappings>
+            <mapping regex="ISAF"/>
+          </mappings>
+        </operation>
+
+    val deserialised = VeaDeserialisationUtils.OperationFromXml(testData)
+    assert(deserialised.mappings.head.pattern.pattern() == "ISAF")
+  }
+
+
+  val testRepo = Facade.deserialiseRepository(Resources.toByteArray(Resources.getResource("serviceDeterminations/veaServiceReferenceData.xml")))
+
+  import au.gov.dva.sopapi.veaops.Extensions._
+
+  test("VEA operations correctly classified when operational") {
+    // ISAF is warlike, starts on 2003-08-11
+    val idOfOpThatIsWarlike = "International Security Assistance Force"
+    val resultWhenStartDateIsOnstartDateOfOp = testRepo.isOperational(idOfOpThatIsWarlike,LocalDate.of(2003,8,11))
+    assert(resultWhenStartDateIsOnstartDateOfOp.isOperational)
+
+    val resultWhenStartDateIsBeforeStartDateOfOp = testRepo.isOperational(idOfOpThatIsWarlike, LocalDate.of(2003,8,10))
+    assert(resultWhenStartDateIsBeforeStartDateOfOp.isOperational)
+
+    val resultWhenTestPeriodEndsBeforeStartDateofOp = testRepo.isOperational(idOfOpThatIsWarlike, LocalDate.of(2003,8,9),Some(LocalDate.of(2003,8,10)))
+    assert(!resultWhenTestPeriodEndsBeforeStartDateofOp.isOperational)
+
+    val resultWhenTestPeriodEndsOnOpStartDate = testRepo.isOperational(idOfOpThatIsWarlike, LocalDate.of(2003,8,9),Some(LocalDate.of(2003,8,11)))
+    assert(resultWhenTestPeriodEndsOnOpStartDate.isOperational)
+  }
+
+  test("Peacekeeping operations correctly classified") {
+    val peackeepingID = "UNMISET"
+    // ends day before peackeeping op starts
+    val activityEndsBeforePeackeepingStarts = testRepo.isOperational(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,19)))
+    assert(!activityEndsBeforePeackeepingStarts.isOperational)
+
+    val activityEndsOnDayPeacekeepingStarts = testRepo.isOperational(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,20)))
+    assert(activityEndsOnDayPeacekeepingStarts.isOperational)
+  }
+
+  test("Regex mappings work for determinations")
+  {
+    val moniker = "ISAF"
+    val knownWarlike = testRepo.isOperational(moniker,LocalDate.of(2003,8,11))
+    assert(knownWarlike.matchingDeterminations.head._1.registerId == "F2014L00151")
+    assert(knownWarlike.isOperational)
+  }
+
+  test("Regex mappings work for peacekeeeping activities")  {
+    val moniker = "UNOMOZ"
+    val knownPeacekeeping = testRepo.isOperational(moniker,LocalDate.of(1994,10,10))
+    assert(knownPeacekeeping.isOperational)
   }
 
 }

@@ -58,7 +58,8 @@ object VeaDeserialisationUtils {
 
 
   private def GetMappings(node : scala.xml.Node) : Set[Regex] = {
-    (node \ "mappings"  \ "mapping").map(n => new Regex(n.text)).toSet
+    val mappingNodes = node \ "mappings" \ "mapping"
+    mappingNodes.map(n => new Regex(n.attribute("regex").get.head.text)).toSet
   }
 
   def PeacekeeepingActivitiesFromXml(node: scala.xml.Node) : List[VeaPeacekeepingActivity] = {

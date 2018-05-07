@@ -25,6 +25,7 @@ import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
+import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -288,9 +289,8 @@ public class Routes {
                 }
             }
 
-            ActDeterminationServiceClient actDeterminationServiceClient =  new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
-            IRhPredicateFactory rhPredicateFactory = new RhPredicateFactory(actDeterminationServiceClient, serviceDeterminationPair);
+            IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair,cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
             RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);

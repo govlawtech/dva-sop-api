@@ -58,7 +58,7 @@ object Facade {
 
 
   def isOperational(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {
-    veaRepo.isOperational(identifierFromServiceHistory,startDate,endDate.toScalaOption())
+    veaRepo.isOperational(identifierFromServiceHistory,startDate,endDate.toScalaOption()).isOperational
   }
 
   def isWarlike(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {
