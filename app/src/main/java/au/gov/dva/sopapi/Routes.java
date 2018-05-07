@@ -90,7 +90,7 @@ public class Routes {
             if (receivedKey.contentEquals(expectedKey)) {
                 cache.refresh(repository);
                 setResponseHeaders(res, 200, MIME_TEXT);
-                return "CacheSingleton refreshed.";
+                return "Cache refreshed.";
             } else {
                 setResponseHeaders(res, 403, MIME_TEXT);
                 return "Key does not match";
