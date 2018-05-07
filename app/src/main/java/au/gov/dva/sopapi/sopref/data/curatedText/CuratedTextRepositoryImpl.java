@@ -71,6 +71,7 @@ public class CuratedTextRepositoryImpl implements CuratedTextRepository {
                     .withHeader()
                     .withTrim(true)
                     .withIgnoreEmptyLines(true)
+                    .withIgnoreSurroundingSpaces(true)
             );
         } catch (IOException e) {
             throw new ConfigurationRuntimeException(e);
