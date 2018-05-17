@@ -212,8 +212,10 @@ public class Routes {
             setResponseHeaders(res,200,MIME_JSON);
             return jsonString;
 
-
         });
+
+
+
 
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
 

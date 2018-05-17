@@ -178,7 +178,7 @@ class VeaOperationsTests extends FunSuite {
 
   test("VEA operations correctly classified when operational") {
     // ISAF is warlike, starts on 2003-08-11
-    val idOfOpThatIsWarlike = "International Security Assistance Force"
+    val idOfOpThatIsWarlike = "INTERNATIONAL SECURITY ASSISTANCE FORCE"
     val resultWhenStartDateIsOnstartDateOfOp = testRepo.isOperational(idOfOpThatIsWarlike,LocalDate.of(2003,8,11))
     assert(resultWhenStartDateIsOnstartDateOfOp.isOperational)
 
@@ -208,6 +208,8 @@ class VeaOperationsTests extends FunSuite {
     val knownWarlike = testRepo.isOperational(moniker,LocalDate.of(2003,8,11))
     assert(knownWarlike.matchingDeterminations.head._1.registerId == "F2014L00151")
     assert(knownWarlike.isOperational)
+
+
   }
 
   test("Regex mappings work for peacekeeeping activities")  {
@@ -215,5 +217,6 @@ class VeaOperationsTests extends FunSuite {
     val knownPeacekeeping = testRepo.isOperational(moniker,LocalDate.of(1994,10,10))
     assert(knownPeacekeeping.isOperational)
   }
+
 
 }

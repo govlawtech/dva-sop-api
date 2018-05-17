@@ -58,14 +58,14 @@ public class TestUtils {
     }
 
     public static ServiceDetermination getWarlikeDetermination() throws IOException {
-        URL warlikeDetJson = Resources.getResource("serviceDeterminations/F2016L00994.json");
+        URL warlikeDetJson = Resources.getResource("serviceDeterminations/F2017L01422.json");
         String warlikeString = Resources.toString(warlikeDetJson, Charsets.UTF_8);
         ObjectMapper objectMapper = new ObjectMapper();
         return StoredServiceDetermination.fromJson(objectMapper.readTree(warlikeString));
     }
 
     public static ServiceDetermination getNonWarlikeDetermination() throws IOException {
-        URL nonWarlikeDetJson = Resources.getResource("serviceDeterminations/F2016L00995.json");
+        URL nonWarlikeDetJson = Resources.getResource("serviceDeterminations/F2017L01411.json");
         String nonWarlikeString = Resources.toString(nonWarlikeDetJson, Charsets.UTF_8);
         ObjectMapper objectMapper = new ObjectMapper();
         return StoredServiceDetermination.fromJson(objectMapper.readTree(nonWarlikeString));
