@@ -51,10 +51,10 @@ public class SuperiorRhPredicateFactory implements IRhPredicateFactory {
 
         if (namesOfMentalConditionsWhereWarlikeServiceIsRequired.contains(conditionName.toLowerCase()))
         {
-            return buildIsOperationalVeaPredicate();
+            return buildIsWarlikeVeaPredicate();
         }
         else {
-            return buildIsWarlikeVeaPredicate();
+            return buildIsOperationalVeaPredicate();
         }
     }
 
