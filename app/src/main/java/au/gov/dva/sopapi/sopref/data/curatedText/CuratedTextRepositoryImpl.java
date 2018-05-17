@@ -166,7 +166,10 @@ public class CuratedTextRepositoryImpl implements CuratedTextRepository {
 
     @Override
     public Optional<String> getDefinitionFor(String definedTerm) {
-        if (_definitionMap.containsKey(definedTerm)) return Optional.of( _definitionMap.get(definedTerm));
+
+        Optional<String> matching = _definitionMap.keySet().stream().filter(k -> k.contains(definedTerm)).findFirst();
+
+        if (matching.isPresent()) return Optional.of( _definitionMap.get(matching.get()));
         else return Optional.empty();
     }
 
