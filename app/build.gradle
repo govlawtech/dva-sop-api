@@ -5,7 +5,7 @@ apply plugin: 'findbugs'
 
 
 
-version = '1.20.0'
+version = '1.20.1'
 
 sourceSets {
     main {
@@ -17,7 +17,6 @@ sourceSets {
         }
     }
 }
-
 
 findbugs {
         sourceSets = [sourceSets.main]
