@@ -13,6 +13,9 @@ import au.gov.dva.sopapi.sopref.data.curatedText.CuratedTextRepositoryImpl;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
+import au.gov.dva.sopapi.veaops.Facade;
+import au.gov.dva.sopapi.veaops.VeaDetermination;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -24,6 +27,7 @@ import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.*;
 import com.microsoft.azure.storage.table.CloudTableClient;
+import net.didion.jwnl.data.Exc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,6 +63,8 @@ public class AzureStorageRepository implements Repository {
     private static final String RH_RULE_CONFIG_CSV_NAME = "rh.csv";
     private static final String BOP_RULE_CONFIG_CSV_NAME = "bop.csv";
     private static final String SOP_PDFS_CONTAINER_NAME = "soppdfs";
+    private static final String VEA_OPERATIONS_CONTAINER_NAME = "veadeterminations";
+    private static final String VEA_OPERATIONS_BLOB_NAME = "veaServiceReferenceData.xml";
     private static final String CURATED_TEXT_CONTAINER_NAME = "curatedtext";
     private static final String CURATED_TEXT_FACTOR_CSV_NAME = "hand-written-factor-text.csv";
     private static final String CURATED_TEXT_DEFINITIONS_CSV_NAME = "hand-written-definition-text.csv";
@@ -98,7 +104,7 @@ public class AzureStorageRepository implements Repository {
             }
             byte[] factorCsvUtf8 = getBlobBytes(factorCsv.get());
             byte[] defCsvUtf8 = getBlobBytes(definitionsCsv.get());
-            CuratedTextRepository ctr = new CuratedTextRepositoryImpl(factorCsvUtf8,defCsvUtf8);
+            CuratedTextRepository ctr = new CuratedTextRepositoryImpl(factorCsvUtf8, defCsvUtf8);
             return Optional.of(ctr);
         } catch (ConfigurationRuntimeException e) {
             throw new RepositoryRuntimeException(e);
@@ -173,7 +179,7 @@ public class AzureStorageRepository implements Repository {
     @Override
     public Optional<byte[]> getSopPdf(String registerId) {
         try {
-            String blobName = String.format("%s.pdf",registerId);
+            String blobName = String.format("%s.pdf", registerId);
             Optional<CloudBlob> cloudBlob = getBlobByName(SOP_PDFS_CONTAINER_NAME, blobName);
 
             if (!cloudBlob.isPresent())
@@ -263,26 +269,6 @@ public class AzureStorageRepository implements Repository {
         }
     }
 
-    private static JsonNode getJsonNode(CloudBlob cloudBlob) throws StorageException, IOException {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        cloudBlob.download(outputStream);
-        String jsonString = outputStream.toString(Charsets.UTF_8.name());
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readTree(jsonString);
-    }
-
-    private static byte[] getBlobBytes(CloudBlob cloudBlob) throws StorageException {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        cloudBlob.download(outputStream);
-        return outputStream.toByteArray();
-    }
-
-    private static String getBlobString(CloudBlob cloudBlob) throws StorageException, UnsupportedEncodingException {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        cloudBlob.download(outputStream);
-        String s = outputStream.toString(Charsets.UTF_8.name());
-        return s;
-    }
 
     @Override
     public ImmutableSet<InstrumentChange> getInstrumentChanges() {
@@ -328,7 +314,7 @@ public class AzureStorageRepository implements Repository {
 
     @Override
     public void addToRetryQueue(InstrumentChange instrumentChange) {
-        addInstrumentChangesToContainer(ImmutableSet.of(instrumentChange),FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME);
+        addInstrumentChangesToContainer(ImmutableSet.of(instrumentChange), FAILED_INSTRUMENT_CHANGES_CONTAINER_NAME);
     }
 
     private static Stream<InstrumentChange> blobToInstrumentChangeStream(CloudBlob cloudBlob) throws IOException, StorageException {
@@ -339,11 +325,10 @@ public class AzureStorageRepository implements Repository {
 
     @Override
     public void addInstrumentChanges(ImmutableSet<InstrumentChange> instrumentChanges) {
-        addInstrumentChangesToContainer(instrumentChanges,INSTRUMENT_CHANGES_CONTAINER_NAME);
+        addInstrumentChangesToContainer(instrumentChanges, INSTRUMENT_CHANGES_CONTAINER_NAME);
     }
 
-    private void addInstrumentChangesToContainer(ImmutableSet<InstrumentChange> instrumentChanges, String containerName)
-    {
+    private void addInstrumentChangesToContainer(ImmutableSet<InstrumentChange> instrumentChanges, String containerName) {
         try {
             CloudBlobContainer container = getOrCreateContainer(containerName);
             String newBlobName = createBlobNameForInstrumentChangeBatch(instrumentChanges);
@@ -530,11 +515,30 @@ public class AzureStorageRepository implements Repository {
         }
     }
 
-    @Override
     public Optional<CuratedTextRepository> getCuratedTextRepository() {
-       return _curatedTextRepository;
+        return _curatedTextRepository;
     }
 
+    @Override
+    public Optional<VeaOperationalServiceRepository> getVeaOperationalServiceRepository() {
+        try {
+            Optional<CloudBlob> b = getBlobByName(VEA_OPERATIONS_CONTAINER_NAME, VEA_OPERATIONS_BLOB_NAME);
+            if (!b.isPresent()) {
+                return Optional.empty();
+            }
+
+            byte[] xmlBytes = getBlobBytes(b.get());
+
+            VeaOperationalServiceRepository repo = Facade.deserialiseRepository(xmlBytes);
+            return Optional.of(repo);
+
+
+
+        } catch (Exception e) {
+            throw new RepositoryRuntimeException(e);
+        }
+
+    }
 
 
     private Optional<CloudBlob> getBlobByName(String containerName, String blobName) throws URISyntaxException, StorageException {
@@ -566,6 +570,27 @@ public class AzureStorageRepository implements Repository {
         if (!success) {
             logger.trace(String.format("SoP not found, therefore not deleted: %s", blobName));
         }
+    }
+
+    private static JsonNode getJsonNode(CloudBlob cloudBlob) throws StorageException, IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        cloudBlob.download(outputStream);
+        String jsonString = outputStream.toString(Charsets.UTF_8.name());
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readTree(jsonString);
+    }
+
+    private static byte[] getBlobBytes(CloudBlob cloudBlob) throws StorageException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        cloudBlob.download(outputStream);
+        return outputStream.toByteArray();
+    }
+
+    private static String getBlobString(CloudBlob cloudBlob) throws StorageException, UnsupportedEncodingException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        cloudBlob.download(outputStream);
+        String s = outputStream.toString(Charsets.UTF_8.name());
+        return s;
     }
 
     @Override
