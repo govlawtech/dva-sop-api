@@ -3,7 +3,8 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
-import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
+import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -13,30 +14,20 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import scala.Int;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.function.BiFunction;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ProcessingRuleFunctions {
 
     private static Logger logger = LoggerFactory.getLogger(ProcessingRuleFunctions.class.getSimpleName());
 
-    public static Optional<LocalDate> getFirstOperationalServiceStartDate(ServiceHistory serviceHistory, Predicate<Deployment> isOperational) {
-        Optional<LocalDate> start = ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
-                .stream()
-                .filter(isOperational::test)
-                .sorted(Comparator.comparing(Deployment::getStartDate))
-                .map(Deployment::getStartDate)
-                .findFirst();
-
-        return start;
-    }
 
     public static Optional<LocalDate> getStartofService(ServiceHistory serviceHistory) {
         Optional<Service> earliestService = serviceHistory.getServices().stream()
@@ -70,6 +61,7 @@ public class ProcessingRuleFunctions {
         }
     }
 
+
     public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
 
         Optional<Service> serviceDuringWhichConditionStarted = services.stream()
@@ -85,6 +77,7 @@ public class ProcessingRuleFunctions {
 //            caseTrace.addLoggingTrace("No services which started before and were ongoing at the condition start date, therefore finding immediately preceding service, if any.");
             Optional<Service> lastService = services.stream()
                     .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
+                    .filter(s -> !s.getStartDate().isAfter(conditionStartDate))
                     .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()))
                     .findFirst();
             return lastService;
@@ -94,7 +87,7 @@ public class ProcessingRuleFunctions {
     public static long getNumberOfDaysOfServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<? extends HasDateRange> deploymentsOrService) {
         List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(new ArrayList<>(deploymentsOrService));
         long days = flattened.stream()
-                .map(d -> getElapsedDaysOfDateRangeInInterval(startDate, endDate, d))
+                .map(d -> getInclusiveDaysFromRangeInInterval(startDate, endDate, d))
                 .collect(Collectors.summingLong(value -> value));
 
         return days;
@@ -115,12 +108,12 @@ public class ProcessingRuleFunctions {
                     .sorted(longestFirst.thenComparing(latestFirst)).collect(Collectors.toList());
 
             Interval head = intervalsSortedByOpServiceThenLatest.get(0);
-            long maxOpServiceDays = getNumberOfDaysOfServiceInInterval(head.getStart(),head.getEnd(),deploymentsOrService);
+            long maxOpServiceDays = getNumberOfDaysOfServiceInInterval(head.getStart(), head.getEnd(), deploymentsOrService);
 
 
             List<Interval> withLesserDropped = intervalsSortedByOpServiceThenLatest.stream()
                     .filter(interval -> getNumberOfDaysOfServiceInInterval(interval.getStart(),
-                            interval.getEnd(),deploymentsOrService) == maxOpServiceDays).collect(Collectors.toList());
+                            interval.getEnd(), deploymentsOrService) == maxOpServiceDays).collect(Collectors.toList());
 
             return ImmutableList.copyOf(withLesserDropped);
         } else {
@@ -128,12 +121,8 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    private static long getElapsedDaysOfDateRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, HasDateRange dateRange) {
-        logger.trace("Getting elapsed days in interval with a deployment...");
-        logger.trace("Interval start date: " + intervalStartDate);
-        logger.trace("Interval end date: " + intervalEndDate);
-        logger.trace("Date range start date: " + dateRange.getStartDate());
-        logger.trace("Date range end date: " + dateRange.getEndDate());
+    private static long getInclusiveDaysFromRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, HasDateRange dateRange) {
+
         if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(intervalStartDate)) {
             logger.trace("date range end date is before start date, therefore returning 0 days.");
             return 0;
@@ -169,12 +158,11 @@ public class ProcessingRuleFunctions {
         return intervalEndDate;
     }
 
-    public static ImmutableList<Service> getCFTSServices(ServiceHistory serviceHistory)
-    {
+    public static ImmutableList<Service> getCFTSServices(ServiceHistory serviceHistory) {
         return serviceHistory.getServices()
                 .stream()
                 .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
-                .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+                .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
     }
 
 
@@ -192,7 +180,7 @@ public class ProcessingRuleFunctions {
         // caseTrace.addLoggingTrace("Getting the rank on the last service before date " + testDate);
         Optional<Service> relevantService = services.stream()
                 .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate())) // most recent first
-                .filter(service -> service.getStartDate().isBefore(testDate) && service.getEmploymentType() == EmploymentType.CFTS)
+                .filter(service -> !service.getStartDate().isAfter(testDate) && service.getEmploymentType() == EmploymentType.CFTS)
                 .findFirst();
 
 
@@ -216,63 +204,21 @@ public class ProcessingRuleFunctions {
         return factorsWithSatisfaction;
     }
 
-    public static Predicate<Deployment> getIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
-        ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
-                serviceDeterminationPair.getWarlike().getOperations(),
-                serviceDeterminationPair.getNonWarlike().getOperations()));
 
-        List<String> opNames = allOperations.stream()
-                .map(operation -> operation.getName())
-                .map(name -> name.toLowerCase())
-                .distinct()
-                .collect(Collectors.toList());
 
-        ImmutableSet<String> setOfLowerCaseOpNames = ImmutableSet.copyOf(opNames);
-
-        return (deploymentName -> {
-            String lowerCasedeploymentNameWithoutOperation = deploymentName.getOperationName().toLowerCase().replace("operation", "").trim();
-            return setOfLowerCaseOpNames.contains(lowerCasedeploymentNameWithoutOperation);
-        });
-    }
-
-    public static Boolean conditionIsBeforeService(Condition condition, ServiceHistory serviceHistory) {
+    public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {
         return condition.getStartDate().isBefore(serviceHistory.getHireDate());
 
     }
 
-    public static boolean conditionStartedWithinXYearsOfLastDayOfMRCAService(Condition condition, ServiceHistory serviceHistory, int numberOfYears, CaseTrace caseTrace) {
-        LocalDate lastDateOfMRCAService = getLastDateOfMRCAServiceOrDefault(serviceHistory, LocalDate.now());
-        caseTrace.addLoggingTrace("The last date of MRCA service or now (if service is ongoing): " + lastDateOfMRCAService);
-
-        LocalDate xYearsFromLastDayOfMrcaService = lastDateOfMRCAService.plusYears(numberOfYears);
-        caseTrace.addLoggingTrace(String.format("The date %s years from the last day of MRCA service: %s", numberOfYears, xYearsFromLastDayOfMrcaService));
-
-        LocalDate conditionStartDate = condition.getStartDate();
-        caseTrace.addLoggingTrace("The day the condition started: " + conditionStartDate);
-
-        return !conditionStartDate.isAfter(xYearsFromLastDayOfMrcaService);
+    public static boolean conditionIsBeforeFirstDateOfService(Condition condition, ServiceHistory serviceHistory) {
+        if (!serviceHistory.getStartofService().isPresent()) return true;
+        return condition.getStartDate().isBefore(serviceHistory.getStartofService().get());
     }
-
-    private static LocalDate getLastDateOfMRCAServiceOrDefault(ServiceHistory serviceHistory, LocalDate defaultDate) {
-        Stream<Service> servicesOrderedMostRecentFirst = serviceHistory.getServices().asList()
-                .stream()
-                .sorted((o1, o2) -> o2.getStartDate().compareTo(o1.getStartDate()));
-
-        Optional<Service> mostRecentService = servicesOrderedMostRecentFirst.findFirst();
-        // no service
-        if (!mostRecentService.isPresent())
-            throw new ProcessingRuleRuntimeException("No services in service history.");
-
-            // ongoing
-        else if (!mostRecentService.get().getEndDate().isPresent()) {
-            return defaultDate;
-        } else {
-            return mostRecentService.get().getEndDate().get();
-        }
-    }
-
-
 }
+
+
+
 
 
 

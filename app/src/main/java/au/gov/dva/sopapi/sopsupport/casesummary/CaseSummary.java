@@ -85,7 +85,7 @@ public class CaseSummary {
         // Numbering is required for bullets and lists
         document.createNumbering();
 
-        // Can't get the CTNumbering so need to create manually
+        // Can't get the CTNumbering so need to createMrcaPredicate manually
         transferTemplateNumbering(document.getNumbering());
 
         // Create the main sections
@@ -190,7 +190,7 @@ public class CaseSummary {
         CaseSummarySection recommendationSection = new CaseSummarySection();
         if (_model == null) {
             recommendationSection.add(new CaseSummaryHeading("RECOMMENDATION TO DELEGATE", "RecommendationReviewHeading1"));
-            recommendationSection.add(new CaseSummaryParagraph(Recommendation.REJECTED.toString(), "RecommendationReviewNormal"));
+            recommendationSection.add(new CaseSummaryParagraph(Recommendation.REJECT.toString(), "RecommendationReviewNormal"));
         }
         else {
             boolean acceptClaim = _model.getRecommendation() == Recommendation.APPROVED;

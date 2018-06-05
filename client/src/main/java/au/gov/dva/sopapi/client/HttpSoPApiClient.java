@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.SharedConstants;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
@@ -133,6 +134,8 @@ public class HttpSoPApiClient implements SoPApiClient {
     }
 
 
+
+
     @Override
     public CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(SopSupportRequestDto sopSupportRequestDto) {
         String jsonRequestBody = sopSupportRequestDto.toJsonString();
@@ -160,52 +163,23 @@ public class HttpSoPApiClient implements SoPApiClient {
     }
 
     @Override
-    public CompletableFuture<byte[]> getCaseSummary(SopSupportRequestDto sopSupportRequestDto) {
-        String jsonRequestBody = sopSupportRequestDto.toJsonString();
-        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_CASESUMMARY);
-
-        CompletableFuture<byte[]> promise = getOrCreateAsyncHttpClient()
-                .preparePost(serviceUrl.toString())
-                .setHeader("Accept", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-                .setHeader("Content-Type","application/json; charset=utf-8")
-                .setBody(jsonRequestBody)
+    public CompletableFuture<ConditionsList> getConditions() {
+        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_CONDITIONS);
+        CompletableFuture<ConditionsList> promise = getOrCreateAsyncHttpClient()
+                .prepareGet(serviceUrl.toString())
+                .setHeader("Accept", "application/json; charset=utf-8")
+                .setHeader("Content-Type", "application/json; charset=utf-8")
                 .execute()
                 .toCompletableFuture()
                 .thenApply(response -> {
-                    if (response.getStatusCode() == 200) {
-                        return response.getResponseBodyAsBytes();
-                    }
-                    else {
-                        throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(),response.getResponseBody()));
-                    }
+                    if (response.getStatusCode() == 200)
+                        return ConditionsList.fromJsonString(response.getResponseBody(Charsets.UTF_8));
+                    else throw new SoPApiClientError(response.getResponseBody(Charsets.UTF_8));
                 });
 
         return promise;
     }
 
-    @Override
-    public CompletableFuture<byte[]> getCaseSummaryAsPdf(SopSupportRequestDto sopSupportRequestDto) {
-        String jsonRequestBody = sopSupportRequestDto.toJsonString();
-        URL serviceUrl = getServiceUrl(baseUrl, SharedConstants.Routes.GET_CASESUMMARY_AS_PDF);
-
-        CompletableFuture<byte[]> promise = getOrCreateAsyncHttpClient()
-                .preparePost(serviceUrl.toString())
-                .setHeader("Accept", "application/pdf")
-                .setHeader("Content-Type","application/json; charset=utf-8")
-                .setBody(jsonRequestBody)
-                .execute()
-                .toCompletableFuture()
-                .thenApply(response -> {
-                    if (response.getStatusCode() == 200) {
-                        return response.getResponseBodyAsBytes();
-                    }
-                    else {
-                        throw new SoPApiClientError(buildErrorMsg(response.getStatusCode(),response.getResponseBody()));
-                    }
-                });
-
-        return promise;
-    }
 
     private static String buildErrorMsg(Integer statusCode, String msg) {
         return String.format("HTTP Status Code: %d, %s.", statusCode, msg);

@@ -1,10 +1,11 @@
 package au.gov.dva.sopapi.sopref.datecalcs
 
-import java.time.{LocalDate}
+import java.time.LocalDate
 import java.util
 
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval
 
+import scala.annotation.tailrec
 import scala.collection.JavaConverters._
 
 
@@ -20,15 +21,17 @@ object Intervals {
     if (bracketIntervalEnd.minusYears(numberOfYears).isBefore(bracketIntervalStart)) {
       return List( new Interval( bracketIntervalStart, bracketIntervalEnd))
     }
-    slide(numberOfYears, bracketIntervalStart, bracketIntervalStart, bracketIntervalEnd)
+
+    slide(numberOfYears, bracketIntervalStart, bracketIntervalStart, bracketIntervalEnd, List())
   }
 
-  private def slide(numberOfYears: Int, fixedStart: LocalDate, slidingLower: LocalDate, slidingUpper: LocalDate): List[Interval] = {
+  @tailrec private def slide(numberOfYears: Int, fixedStart: LocalDate, slidingLower: LocalDate, slidingUpper: LocalDate, acc: List[Interval] ): List[Interval] = {
     if (slidingUpper.minusYears(numberOfYears).isBefore(fixedStart)) {
-      return List()
+      return acc
     }
     val newEndDate = slidingUpper.minusDays(1)
     val newStartDate = newEndDate.minusYears(numberOfYears)
-    new Interval(newStartDate, slidingUpper) +: slide(numberOfYears, fixedStart, newStartDate, newEndDate)
+
+    slide(numberOfYears, fixedStart, newStartDate, newEndDate, new Interval(newStartDate,newEndDate) +: acc)
   }
 }

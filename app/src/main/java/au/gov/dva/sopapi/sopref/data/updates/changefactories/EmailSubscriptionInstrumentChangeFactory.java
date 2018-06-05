@@ -48,7 +48,7 @@ public class EmailSubscriptionInstrumentChangeFactory implements InstrumentChang
                                         extractRegisterIdFromEmailUrl(u.getRegisterLink())
                                         , u.getDateReceived()));
                             } catch (AutoUpdateRuntimeException e) {
-                                logger.error("Failed to create new instrument update from email item: %s" + u);
+                                logger.error("Failed to createMrcaPredicate new instrument update from email item: %s" + u);
                                 return Optional.empty();
                             }
                         }

@@ -34,7 +34,9 @@ public class ServiceHistoryImpl implements ServiceHistory {
 
     @Override
     public ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
-        ArrayList newServices = new ArrayList();
+
+
+        ArrayList<Service> newServices = new ArrayList<>();
         for (Service service : services) {
             ImmutableSet<Deployment> deployments = ImmutableSet.copyOf(
                     service.getDeployments().stream()

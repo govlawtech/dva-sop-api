@@ -7,6 +7,7 @@ public class AppSettings {
 
 
     private static final String envVarName = "DEP_ENV";
+    private static final String adsBaseUrlEnvVarName = "ADS_URL";
 
     public static Boolean isEnvironmentSet(){
         return (System.getProperty(envVarName) != null || System.getenv(envVarName) != null);
@@ -28,6 +29,11 @@ public class AppSettings {
             }
             return convertEnvironmentStringEnum(envVarValue);
         }
+    }
+
+    public static String getActDeterminationServiceBaseUrl()
+    {
+        return getPropertyValue(adsBaseUrlEnvVarName);
     }
 
     public static String getCacheRefreshKey()
@@ -77,21 +83,6 @@ public class AppSettings {
 
     public static String getBaseUrl() {
         return getPropertyValue("BASE_URL");
-    }
-
-    // Dev aid to assist in generating different case traces. Don't use this in prod.
-    // Format should be:
-    // factorsMet,reqOp,actualOp,reqCftsRh,reqCftsBop,actualBop,useRhStandardOfProof
-    // with types:
-    // bool,int,int,int,int,int,bool
-    public static String mangleServiceSettings () {
-        try {
-            return getPropertyValue("MANGLE_SERVICE_SETTINGS");
-        }
-        catch (ConfigurationError e)
-        {
-            return null;
-        }
     }
 
     public static class LegislationRegisterEmailSubscription {

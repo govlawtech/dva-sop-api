@@ -4,30 +4,37 @@ import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
+import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
+import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
-import au.gov.dva.sopapi.interfaces.model.casesummary.CaseSummaryModel;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
+import au.gov.dva.sopapi.sopref.data.PostProcessingFunctions;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
-import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
-import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummaryModelImpl;
-import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
+import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
+import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
+import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
+import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
@@ -38,17 +45,19 @@ import spark.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.function.Predicate;
+import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
 import static spark.Spark.post;
 
-class Routes {
+public class Routes {
 
     private final static String MIME_JSON = "application/json";
     private final static String MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
@@ -57,36 +66,33 @@ class Routes {
     private final static String MIME_HTML = "text/html";
     private final static String MIME_CSV = "text/csv";
 
-    private static Cache cache;
+    private static CacheSingleton cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
 
-    public static void initStatus(Repository repository, Cache cache) {
+    public static void initStatus(Repository repository, CacheSingleton cache) {
 
-        get("/refreshCache", (req,res) -> {
+        get("/refreshCache", (req, res) -> {
 
             QueryParamsMap queryParamsMap = req.queryMap();
             String expectedKey = AppSettings.getCacheRefreshKey();
-            if (expectedKey == null)
-            {
-                setResponseHeaders(res,404,MIME_TEXT);
+            if (expectedKey == null) {
+                setResponseHeaders(res, 404, MIME_TEXT);
                 return "Set 'CACHE_REFRESH_KEY' environment variable on server.";
             }
 
             String receivedKey = queryParamsMap.get("key").value();
-            if (receivedKey == null)
-            {
+            if (receivedKey == null) {
 
-                setResponseHeaders(res,400,MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return "Missing required query parameter: 'key'.";
             }
 
             if (receivedKey.contentEquals(expectedKey)) {
                 cache.refresh(repository);
-                setResponseHeaders(res,200,MIME_TEXT);
+                setResponseHeaders(res, 200, MIME_TEXT);
                 return "Cache refreshed.";
-            }
-            else {
-                setResponseHeaders(res,403,MIME_TEXT);
+            } else {
+                setResponseHeaders(res, 403, MIME_TEXT);
                 return "Key does not match";
             }
 
@@ -106,13 +112,13 @@ class Routes {
             String version = p.getProperty("Implementation-Version");
 
             // todo: mustache template
-            String statusPage = Status.createStatusHtml(cache,repository,blobStorageUri.get().toURL(), version);
-            setResponseHeaders(res,200,MIME_HTML);
+            String statusPage = Status.createStatusHtml(cache, repository, blobStorageUri.get().toURL(), version);
+            setResponseHeaders(res, 200, MIME_HTML);
             return statusPage;
         });
 
 
-        get("/status/csv",(req,res) -> {
+        get("/status/csv", (req, res) -> {
 
             Optional<URI> blobStorageUri = getBaseUrlForBlobStorage();
             if (!blobStorageUri.isPresent()) {
@@ -122,7 +128,7 @@ class Routes {
 
             String csvFileName = String.format("SoP API Coverage Report Generated UTC %s.csv", OffsetDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-dd-M-HH-mm")));
             byte[] csvBytes = Status.createStatusCsv(cache, blobStorageUri.get().toURL());
-            res.header("Content-disposition", String.format("attachment;filename=%s",csvFileName));
+            res.header("Content-disposition", String.format("attachment;filename=%s", csvFileName));
             setResponseHeaders(res, 200, MIME_CSV);
             return csvBytes;
         });
@@ -143,11 +149,20 @@ class Routes {
     }
 
 
-
-    public static void init(Cache cache) {
+    public static void init(CacheSingleton cache) {
         Routes.cache = cache;
 
+        get(SharedConstants.Routes.GET_CONDITIONS, (req,res) -> {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
+                setResponseHeaders(res, 406, MIME_TEXT);
+                return buildAcceptableContentTypesError(MIME_JSON);
+            }
 
+            ConditionsList response = new ConditionsList(cache.get_conditionsList());
+            setResponseHeaders(res,200,MIME_JSON);
+            String json = ConditionsList.toJsonString(response);
+            return json;
+        });
 
         get(SharedConstants.Routes.GET_OPERATIONS, (req, res) -> {
 
@@ -156,7 +171,7 @@ class Routes {
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
-            ServiceDeterminationPair latestServiceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
+            ServiceDeterminationPair latestServiceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
 
             OperationsResponse operationsResponse = DtoTransformations.buildOperationsResponseDto(latestServiceDeterminationPair);
 
@@ -164,6 +179,57 @@ class Routes {
             String json = OperationsResponse.toJsonString(operationsResponse);
             return json;
         });
+
+        get(SharedConstants.Routes.GET_VEA_ACTIVITIES, (req, res) -> {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
+                setResponseHeaders(res, 406, MIME_TEXT);
+                return buildAcceptableContentTypesError(MIME_JSON);
+            }
+
+            QueryParamsMap queryParamsMap = req.queryMap();
+            String startDateString = queryParamsMap.get("startDate").value();
+            if (startDateString == null)
+            {
+                setResponseHeaders(res,406,MIME_TEXT);
+                return "Need 'startDate' query parameter in ISO local date format.  Eg: 2000-01-01";
+            }
+            LocalDate startDate;
+            try {
+               startDate = LocalDate.parse(startDateString, DateTimeFormatter.ISO_LOCAL_DATE);
+            }
+            catch (DateTimeParseException e)
+            {
+                setResponseHeaders(res,406,MIME_TEXT);
+                return "Need 'startDate' query parameter in ISO local date format.  Eg: 2000-01-01";
+            }
+
+            String endDateString = queryParamsMap.get("endDate").value();
+            LocalDate endDate = null;
+            if (endDateString == null)
+            {
+                endDate = LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE));
+            }
+            else {
+                try {
+                    endDate = LocalDate.parse(endDateString, DateTimeFormatter.ISO_LOCAL_DATE);
+                }
+                catch (DateTimeParseException e)
+                {
+                    setResponseHeaders(res,406,MIME_TEXT);
+                    return "Need 'endDate' query parameter in ISO local date format.  Eg: 2000-01-01";
+                }
+            }
+
+            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate,endDate,cache.get_veaOperationalServiceRepository());
+            ObjectMapper om = new ObjectMapper();
+            String jsonString = om.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse);
+            setResponseHeaders(res,200,MIME_JSON);
+            return jsonString;
+
+        });
+
+
+
 
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
 
@@ -203,52 +269,55 @@ class Routes {
                 IncidentType it = IncidentType.fromString(incidentType);
                 StandardOfProof sp = StandardOfProof.fromAbbreviation(standardOfProof);
 
-                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp);
+                List<Function<SoPReferenceResponse,SoPReferenceResponse>> postProcessors = new ArrayList<>();
+                if (cache.get_curatedTextReporitory().isPresent()) {
+                    postProcessors.add(PostProcessingFunctions.SubInCuratedFactorText(cache.get_curatedTextReporitory().get()));
+                    postProcessors.add(PostProcessingFunctions.SubInCuratedDefinitions(cache.get_curatedTextReporitory().get()));
+                }
+                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp, ImmutableList.copyOf(postProcessors));
                 return response;
             }
         });
 
 
         sopPost(SharedConstants.Routes.GET_SERVICE_CONNECTION, MIME_JSON, ((req, res) -> {
-            SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-            RulesResult rulesResult = runRules(sopSupportRequestDto);
+            SopSupportRequestDto sopSupportRequestDto;
+            try {
+                sopSupportRequestDto = SopSupportRequestDto.fromJsonString(clenseJson(req.body()));
+            } catch (DvaSopApiDtoRuntimeException e) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return String.format("Request body invalid: %s", e.getMessage());
+            }
+
+            ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
+            if (!semanticErrors.isEmpty()) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(), semanticErrors));
+            }
+
+            if (sopSupportRequestDto.get_conditionDto().get_conditionName() == null) {
+                Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(), sopSupportRequestDto.get_conditionDto().get_icdCodeValue(), cache.get_allSopPairs());
+                if (!conditionNameFromICDCode.isPresent()) {
+                    setResponseHeaders(res, 400, MIME_TEXT);
+                    return String.format("The given ICD code and version does not map to a single SoP.");
+                } else {
+                    sopSupportRequestDto.get_conditionDto().set_conditionName(conditionNameFromICDCode.get());
+                }
+            }
+
+            ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
+            IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair,cache.get_veaOperationalServiceRepository());
+            // todo: new up conditionFactory here
+
+            RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
         }));
 
-        sopPost(SharedConstants.Routes.GET_CASESUMMARY, MIME_DOCX, ((req, res) ->
-        {
-            return caseSummaryHandler(MIME_DOCX, false, req, res);
-        }));
 
-        sopPost(SharedConstants.Routes.GET_CASESUMMARY_AS_PDF, MIME_PDF, ((req, res) ->
-        {
-            return caseSummaryHandler(MIME_PDF, true, req, res);
-        }));
     }
 
-    private static Object caseSummaryHandler(String mimeType, boolean convertToPdf, Request req, Response res) throws ExecutionException, InterruptedException {
-        byte[] result;
-        SopSupportRequestDto sopSupportRequestDto = SopSupportRequestDto.fromJsonString(cleanseJson(req.body()));
-        RulesResult rulesResult = runRules(sopSupportRequestDto);
-
-        if (rulesResult.isEmpty()) {
-            result = CaseSummary.createCaseSummary(rulesResult.getCaseTrace(), buildIsOperationalPredicate(), convertToPdf).get();
-        }
-        else {
-            ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-            Condition condition = rulesResult.getCondition().get();
-
-            List<Factor> factorsConnectedToService = rulesResult.getSatisfiedFactors();
-
-            CaseSummaryModel model = new CaseSummaryModelImpl(condition, serviceHistory, rulesResult.getApplicableSop().get(), ImmutableSet.copyOf(factorsConnectedToService), rulesResult.getCaseTrace(), rulesResult.getRecommendation() );
-            result = CaseSummary.createCaseSummary(model, buildIsOperationalPredicate(), convertToPdf).get();
-        }
-
-        setResponseHeaders(res, 200, mimeType);
-        return result;
-    }
 
     // Set up a post handler with response MIME type handling and exception handling.
     private static void sopPost(String path, String responseMimeType, Route handler) {
@@ -261,25 +330,28 @@ class Routes {
 
             try {
                 return handler.handle(req, res);
-            }
-            catch (DvaSopApiDtoRuntimeException e) {
+            } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFormatError(e.getMessage());
+            }
+            catch (ServiceHistoryCorruptException e)
+            {
+                logger.error("Service history corrupt.",e);
+                setResponseHeaders(res,400,MIME_TEXT);
+                return e.getMessage();
             }
             catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
-            }
-            catch (Exception e) {
+                return e.getMessage();
+            } catch (Exception e) {
                 logger.error("Unknown exception", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
-            }
-            catch (Error e) {
+                return e.getMessage();
+            } catch (Error e) {
                 logger.error("Unknown error", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             }
         }));
     }
@@ -295,16 +367,14 @@ class Routes {
         return sb.toString();
     }
 
-    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto) {
+    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory) {
         CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
-        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allCurrentSopPairs(), buildIsOperationalPredicate(), caseTrace);
-        return rulesResult;
-    }
+        caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
-    private static Predicate<Deployment> buildIsOperationalPredicate() {
-        ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
-        Predicate<Deployment> isOperational = ProcessingRuleFunctions.getIsOperationalPredicate(serviceDeterminationPair);
-        return isOperational;
+        // todo: inject condition factory
+        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
+                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
+        return rulesResult;
     }
 
     private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String
@@ -406,14 +476,14 @@ class Routes {
     }
 
     private static String buildAcceptableContentTypesError(String mimeType) {
-        return "Accept header in request must include '"+mimeType+"'.";
+        return "Accept header in request must include '" + mimeType + "'.";
     }
 
     private static Boolean validateHeaders() {
         return AppSettings.getEnvironment() == Environment.prod;
     }
 
-    private static String cleanseJson(String incomingJson) {
+    private static String clenseJson(String incomingJson) {
         return incomingJson.replace("\uFEFF", "");
     }
 
@@ -428,5 +498,16 @@ class Routes {
             logger.error("Cannot get base url for blog storage.", e);
             return Optional.empty();
         }
+    }
+
+    private static Optional<String> getConditionNameForICDCode(String icdCodeVersion, String icdCode, ImmutableSet<SoPPair> sopPairs) {
+        List<SoPPair> sopPairsMatchingIcdCode = sopPairs.stream()
+                .filter(soPPair -> soPPair.getICDCodes().stream()
+                        .anyMatch(icdCode1 -> icdCode1.getCode().contentEquals(icdCode) && icdCode1.getVersion().contentEquals(icdCodeVersion)))
+                .collect(toList());
+
+        if (sopPairsMatchingIcdCode.size() == 1) {
+            return Optional.of(sopPairsMatchingIcdCode.get(0).getConditionName());
+        } else return Optional.empty();
     }
 }

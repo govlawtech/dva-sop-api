@@ -3,7 +3,7 @@ swagger: "2.0"
 info:
   version: 1.0.0
   title: DVA-SOP-API
-  description: An API for providing information on Department of Veteran's Affaris (DVA) Statement of Practices (SOP)
+  description: An API providing information about Statements of Principles (SOP) and Veteran Centric Processing for the Department of Veterans' Affairs (Australia).
 
 schemes:
   - http
@@ -75,7 +75,7 @@ paths:
   /getConnectionToService:
     post:
       summary: Gets the applicable instrument and satisfied factors associated with a condition and service history
-      description: Gets the applicable instrument and satisfied factors associated with a condition and service history. This is used to make straight through processing determinations.
+      description: Gets the applicable instrument and satisfied factors associated with a condition and service history. This is used to make Veteran Centric Processing recommendations.
       tags:
         - dva-sop-api
       parameters:
@@ -93,53 +93,6 @@ paths:
           description: The request body was malformed
         406:
           description: The client was unable to accept a JSON response
-
-  /getCaseSummary:
-   post:
-      summary: Gets a Case Summary as a Microsoft Word file
-      description: Returns a .docx file containing the case summary and service history
-      tags:
-        - dva-sop-api
-      produces:
-        - application/vnd.openxmlformats-officedocument.wordprocessingml.document
-      parameters:
-        - name: supportRequest
-          in: body
-          description: Support request JSON
-          schema:
-            $ref: "#/definitions/SoPSupportRequest"
-      responses:
-        200:
-          description: Successfully generated the .docx file
-          schema:
-            type: file
-        400:
-          description: The request body was malformed
-        406:
-          description: The client was unable to accept a DOCX response
-  /getCaseSummaryAsPdf:
-   post:
-      summary: Gets a Case Summary as a PDF file
-      description: Returns a .pdf file containing the case summary and service history
-      tags:
-        - dva-sop-api
-      produces:
-        - application/pdf
-      parameters:
-        - name: supportRequest
-          in: body
-          description: Support request JSON
-          schema:
-            $ref: "#/definitions/SoPSupportRequest"
-      responses:
-        200:
-          description: Successfully generated the .pdf file
-          schema:
-            type: file
-        400:
-          description: The request body was malformed
-        406:
-          description: The client was unable to accept PDF response
 
 definitions:
   OperationsResponse:
@@ -257,10 +210,10 @@ definitions:
     properties:
       onsetRangeStartDate:
         type: string
-        format: date-time
+        format: date
       onsetRangeEndDate:
         type: string
-        format: date-time
+        format: date
   AggravationDateRange:
     required:
       - aggravationRangeStartDate
@@ -268,10 +221,10 @@ definitions:
     properties:
       aggravationRangeStartDate:
         type: string
-        format: date-time
+        format: date
       aggravationRangeEndDate:
         type: string
-        format: date-time
+        format: date
   ServiceHistory:
     required:
       - serviceSummaryInformation
@@ -289,7 +242,7 @@ definitions:
     properties:
       originalHireDate:
         type: string
-        format: date-time
+        format: date
   Service:
     required:
       - service
@@ -305,10 +258,10 @@ definitions:
         $ref: '#/definitions/EmploymentType'
       startDate:
         type: string
-        format: date-time
+        format: date
       endDate:
         type: string
-        format: date-time
+        format: date
       rank:
         $ref: '#/definitions/Rank'
       operationalService:
@@ -340,17 +293,17 @@ definitions:
     properties:
       assigned:
         type: string
-        format: date-time
+        format: date
       description:
         type: string
       event:
         type: string
       startDate:
         type: string
-        format: date-time
+        format: date
       endDate:
         type: string
-        format: date-time
+        format: date
   SoPSupportResponse:
     required:
       - applicableInstrument

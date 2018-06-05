@@ -3,23 +3,29 @@ package au.gov.dva.sopapi.sopref;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
+import au.gov.dva.sopapi.dtos.sopref.FactorDto;
 import au.gov.dva.sopapi.dtos.sopref.SoPFactorsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
+import au.gov.dva.sopapi.interfaces.CuratedTextRepository;
 import au.gov.dva.sopapi.interfaces.model.ICDCode;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import io.netty.util.internal.chmv8.ConcurrentHashMapV8;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Tuple2;
+import scala.util.Properties;
 
 import java.time.OffsetDateTime;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -27,8 +33,7 @@ public class SoPs {
 
     static Logger logger = LoggerFactory.getLogger(SoPs.class);
 
-
-    public static String buildSopRefJsonResponse(ImmutableSet<SoP> matchingSops, IncidentType incidentType, StandardOfProof standardOfProof) {
+    public static String buildSopRefJsonResponse(ImmutableSet<SoP> matchingSops, IncidentType incidentType, StandardOfProof standardOfProof, ImmutableList<Function<SoPReferenceResponse, SoPReferenceResponse>> postProcessorsOrdered) {
         ObjectMapper objectMapper = new ObjectMapper();
         List<SoPFactorsResponse> sopFactorsResponses = matchingSops.stream()
                 .filter(s -> s.getStandardOfProof() == standardOfProof)
@@ -36,6 +41,15 @@ public class SoPs {
                 .collect(Collectors.toList());
 
         SoPReferenceResponse dtoToReturn = new SoPReferenceResponse(sopFactorsResponses);
+
+        if (postProcessorsOrdered != null && !postProcessorsOrdered.isEmpty())
+        {
+            for (Function<SoPReferenceResponse,SoPReferenceResponse> pp : postProcessorsOrdered)
+            {
+                dtoToReturn = pp.apply(dtoToReturn);
+            }
+        }
+
         String jsonString = null;
         try {
             jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(dtoToReturn);

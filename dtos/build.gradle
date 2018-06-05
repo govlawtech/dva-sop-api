@@ -4,7 +4,7 @@ apply plugin: 'java'
 apply plugin: 'findbugs'
 apply plugin: 'maven'
 
-version = '1.1.6'
+version = '1.3.0'
 
 
 configurations {
@@ -41,7 +41,7 @@ uploadArchives {
         mavenDeployer {
             configuration = configurations.deployerJars
 
-            repository(url: "ftp://waws-prod-sn1-109.ftp.azurewebsites.windows.net/site/wwwroot/") {
+            repository(url: "ftp://waws-prod-sy3-011.ftp.azurewebsites.windows.net/site/wwwroot") {
                 authentication(userName: "govlawtechmvnrepo\\\$govlawtechmvnrepo", password: System.getenv("mvnRepoFtpPassword"))
             }
         }

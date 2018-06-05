@@ -13,6 +13,9 @@ import java.util.Set;
 
 public interface CaseTrace {
 
+    void setConditionName(String name);
+    Optional<String> getConditionName();
+
     void addReasoningFor(ReasoningFor type, String msg);
     ImmutableList<String> getReasoningFor(ReasoningFor type);
     Map<ReasoningFor, List<String>> getReasonings();

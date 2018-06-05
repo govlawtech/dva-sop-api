@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.dtos.sopref;
 
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -15,6 +16,7 @@ public class SoPReferenceResponse {
     @JsonProperty("applicableFactors")
     private final List<SoPFactorsResponse> _sops;
 
+    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public SoPReferenceResponse(@JsonProperty("applicableFactors") List<SoPFactorsResponse> soPFactorsResponses)
     {
         _sops = soPFactorsResponses;
