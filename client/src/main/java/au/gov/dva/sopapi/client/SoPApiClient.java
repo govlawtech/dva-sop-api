@@ -2,6 +2,7 @@ package au.gov.dva.sopapi.client;
 
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
@@ -20,5 +21,7 @@ public interface SoPApiClient {
     CompletableFuture<OperationsResponse> getOperations();
 
     CompletableFuture<SopSupportResponseDto> getSatisfiedFactors(SopSupportRequestDto sopSupportRequestDto);
+
+    CompletableFuture<ConditionsList> getConditions();
 
 }

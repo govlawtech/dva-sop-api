@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopref;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -21,6 +22,7 @@ public class Operation {
     @JsonProperty("type")
     private final String _type;
 
+    @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public Operation(@JsonProperty("operationName") String _name,
                      @JsonProperty("startDate") String _startDate,
                      @JsonProperty("endDate") Optional<String> _endDate,

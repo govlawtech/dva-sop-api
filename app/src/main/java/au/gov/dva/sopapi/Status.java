@@ -6,6 +6,7 @@ import au.gov.dva.sopapi.interfaces.model.ICDCode;
 import au.gov.dva.sopapi.interfaces.model.InstrumentChange;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopref.SoPs;
+import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
@@ -70,9 +71,6 @@ public class Status {
     public static String createStatusHtml(CacheSingleton cache, Repository repository, URL blobsBaseUrl, String version) {
         ImmutableSet<SoPPair> soPPairs = SoPs.groupSopsToPairs(cache.get_allSops(), OffsetDateTime.now());
 
-        Optional<OffsetDateTime> lastUpdated = repository.getLastUpdated();
-        String lastUpdateTime = lastUpdated.isPresent() ? lastUpdated.get().toString() : "Unknown";
-
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<html><body>");
 
@@ -88,7 +86,6 @@ public class Status {
 
         stringBuilder.append("<h1>SoP Reference Service</h1>");
         stringBuilder.append(String.format("<p>Number of conditions available in SoP Reference Service: %s </p>", soPPairs.size()));
-        stringBuilder.append(String.format("<p>Last polled Federal Register of Legislation for updated SoPs and Service Determinations: %s </p>", lastUpdateTime));
         stringBuilder.append(createConditionTableHtml(soPPairs, cache.get_failedUpdates(), blobsBaseUrl));
         stringBuilder.append("</body></html>");
         return stringBuilder.toString();
@@ -101,14 +98,26 @@ public class Status {
         StpRulesStatus status = getConditionsWhereBothRhAndBoPRules(ruleConfigurationRepository, conditionsInSopRefService);
 
         StringBuilder sb = new StringBuilder();
-        sb.append("<p>Configured for both RH and BoP standards:</p>");
 
+        sb.append("<h2>Acute conditions:</h2>");
+        sb.append("<ol>");
+        ConditionFactory.getAcuteConditions().stream().sorted().forEach(i -> sb.append(String.format("<li>%s</li>", i)));
+        sb.append("</ol>");
 
+        sb.append("<h2>Wear and tear or exposure conditions:</h2>");
+
+        sb.append("<h3>Configured for both RH and BoP:</h3>");
         sb.append("<ol>");
         status.getBothBopAndRh().stream().sorted().forEach(i -> sb.append(String.format("<li>%s</li>", i)));
         sb.append("</ol>");
 
-        sb.append("<p>Configured for BoP only:");
+        sb.append("<h3>Configured for RH only:</h3>");
+        sb.append("<ol>");
+        status.getRhOnly().stream().sorted().forEach(i -> sb.append(String.format("<li>%s</li>", i)));
+        sb.append("</ol>");
+
+
+        sb.append("<h3>Configured for BoP only:</h3>");
         if (status.getBopOnly().isEmpty()) {
             sb.append(" None");
         } else {
@@ -127,10 +136,13 @@ public class Status {
 
         private final ImmutableSet<String> bothBopAndRh;
         private final ImmutableSet<String> bopOnly;
+        private final ImmutableSet<String> rhOnly;
 
-        public StpRulesStatus(ImmutableSet<String> bothBopAndRh, ImmutableSet<String> bopOnly) {
+        public StpRulesStatus(ImmutableSet<String> bothBopAndRh, ImmutableSet<String> bopOnly, ImmutableSet<String> rhOnly) {
             this.bothBopAndRh = bothBopAndRh;
             this.bopOnly = bopOnly;
+
+            this.rhOnly = rhOnly;
         }
 
         public ImmutableSet<String> getBothBopAndRh() {
@@ -140,10 +152,14 @@ public class Status {
         public ImmutableSet<String> getBopOnly() {
             return bopOnly;
         }
+
+        public ImmutableSet<String> getRhOnly() {
+            return rhOnly;
+        }
     }
 
     public static StpRulesStatus getConditionsWhereBothRhAndBoPRules(RuleConfigurationRepository ruleConfigurationRepository, ImmutableSet<String> conditionsAvailableInSopRefService) {
-        Set<String> rhConditions = ruleConfigurationRepository.getBoPItems().stream()
+        Set<String> rhConditions = ruleConfigurationRepository.getRHItems().stream()
                 .map(r -> r.getConditionName())
                 .distinct()
                 .filter(r -> conditionsAvailableInSopRefService.contains(r))
@@ -156,11 +172,12 @@ public class Status {
                 .filter(r -> conditionsAvailableInSopRefService.contains(r))
                 .collect(Collectors.toSet());
 
+
         Set<String> bothRhAndBop = Sets.intersection(rhConditions, bopConditions);
-
         Set<String> bopOnly = Sets.difference(bopConditions, rhConditions);
+        Set<String> rhOnly = Sets.difference(rhConditions,bopConditions);
 
-        return new StpRulesStatus(ImmutableSet.copyOf(bothRhAndBop), ImmutableSet.copyOf(bopOnly));
+        return new StpRulesStatus(ImmutableSet.copyOf(bothRhAndBop), ImmutableSet.copyOf(bopOnly),ImmutableSet.copyOf(rhOnly));
     }
 
 
