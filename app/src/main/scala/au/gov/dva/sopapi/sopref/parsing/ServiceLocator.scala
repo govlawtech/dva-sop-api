@@ -26,8 +26,12 @@ object ServiceLocator {
     "F2017C00073",
     "F2017C00074",
     "F2017C00075",
-    "F2017C00076"
-   )
+    "F2017C00076",
+    "F2018C00478",
+    "F2018C00480",
+    "F2018C00481",
+    "F2018C00482"
+  )
 
   def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
 
