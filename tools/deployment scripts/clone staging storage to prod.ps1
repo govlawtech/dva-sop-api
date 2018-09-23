@@ -16,7 +16,7 @@
 $SourceStorageContext = New-AzureStorageContext -StorageAccountName $SourceStorageAccount -StorageAccountKey $SourceStorageKey
 $DestStorageContext = New-AzureStorageContext -StorageAccountName $DestStorageAccount -StorageAccountKey $DestStorageKey
 
-$DestinationContainersToDelete = Get-AzureStorageContainer -Context $DestStorageContext
+$DestinationContainersToDelete = Get-AzureStorageContainer -Context $DestStorageContext 
 
 foreach ($SingleDestinationContainerToDelete in $DestinationContainersToDelete)
 {
@@ -26,7 +26,7 @@ foreach ($SingleDestinationContainerToDelete in $DestinationContainersToDelete)
 
 Start-Sleep -Seconds 15
 
-$SourceContainers = Get-AzureStorageContainer -Context $SourceStorageContext
+$SourceContainers = Get-AzureStorageContainer -Context $SourceStorageContext | Where-Object {!$_.Name.StartsWith("$")}
 
 foreach($SingleSourceContainer in $SourceContainers)
 {

@@ -81,6 +81,7 @@ object ServiceLocator {
       case "F2017C00075" => SinusBarotraumaBoPClenser
       case "F2018C00189" => SuicideRHClenser
       case "F2018L00535" => ElectricalInjuryRHClenser
+      case "F2018L01183" => AdrenalInsufficiencyBoPClenser
 
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
