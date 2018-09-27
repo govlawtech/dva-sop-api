@@ -30,7 +30,23 @@ object ServiceLocator {
     "F2018C00478",
     "F2018C00480",
     "F2018C00481",
-    "F2018C00482"
+    "F2018C00482",
+    "F2018C00664",
+    "F2018C00666",
+    "F2018C00658",
+    "F2018C00667",
+    "F2018C00669",
+    "F2018C00636",
+    "F2018C00637",
+    "F2018C00633",
+    "F2018C00638",
+    "F2018C00639",
+    "F2018C00645",
+    "F2018C00671",
+    "F2018C00670",
+    "F2018C00660",
+    "F2018C00672"
+
   )
 
   def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
@@ -77,6 +93,7 @@ object ServiceLocator {
       case "F2013L01640" => ClenserToFixSuperscripts
       case "F2015L00657" => ClenserToFixSuperscripts
       case "F2015L00658" => ClenserToFixSuperscripts
+      case "F2018C00645" => ClenserToFixSuperscripts
       case "F2014L00525" => ChronicMultisymptomIllnessBoPClenser
       case "F2017C00075" => SinusBarotraumaBoPClenser
       case "F2018C00189" => SuicideRHClenser

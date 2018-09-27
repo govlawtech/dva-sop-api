@@ -151,7 +151,9 @@ trait SoPFactory extends MiscRegexes {
         throw new SopParserRuntimeException(sop.getRegisterId + ": factor likely contains erroneous text: " + f.getParagraph + ": " + f.getText)
       }
 
-      if (f.getText.contains("Note: ")) throw new SopParserRuntimeException("Factor text contains notes.")
+      val whiteListOfInstrumentsThatCanContainNotes = Set("F2018C00671","F2018C00670")
+      if (f.getText.contains("Note: ") && !whiteListOfInstrumentsThatCanContainNotes.contains(sop.getRegisterId)) throw new SopParserRuntimeException("Factor text contains notes.")
+
       val paraMatches = suspiciousParaRegex.findAllMatchIn(f.getParagraph).size
       if (paraMatches > 1) {
         throw new SopParserRuntimeException("Suspicious paragraph reference: " + f.getParagraph + " : " + f.getText)
