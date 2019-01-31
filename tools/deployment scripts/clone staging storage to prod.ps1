@@ -24,7 +24,7 @@ foreach ($SingleDestinationContainerToDelete in $DestinationContainersToDelete)
     Write-Output "Removed destination storage container: $SingleDestinationContainerToDelete."
 }
 
-Start-Sleep -Seconds 15
+Start-Sleep -Seconds 30
 
 $SourceContainers = Get-AzureStorageContainer -Context $SourceStorageContext | Where-Object {!$_.Name.StartsWith("$")}
 

@@ -209,6 +209,9 @@ class EdgeCaseTests extends FunSuite {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00672","allSops/F2018C00672.pdf")
   }
 
-
+  test("hypopituitarism factor categorisation")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2019L00009","allSops/F2019L00009.pdf")
+  }
 
 }

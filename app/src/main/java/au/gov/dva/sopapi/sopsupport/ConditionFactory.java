@@ -174,7 +174,7 @@ public class ConditionFactory {
                 return new RotatorCuffSyndromeRule(conditionConfiguration);
             case "acquired cataract":
                 return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
-            case "achilles tendinopathy and bursitis":
+            case "Achilles tendinopathy and bursitis":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "chondromalacia patella":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
