@@ -34,7 +34,7 @@ object ServiceDeterminationsParser {
   }
 
   def getCitation(determinationText : String) : String = {
-    val regex = """Military\s+Rehabilitation\s+and\s+Compensation\s+\((Warlike|Non.warlike)\s+Service\)\s+Determination [0-9]{4,4}\s+\(No.?\s+[0-9]+\)""".r
+    val regex = """Military\s+Rehabilitation\s+and\s+Compensation\s+\((Warlike|Non.warlike)\s+Service\)\s+Determination [0-9]{4,4}(\s+\(No.?\s+[0-9]+\))?""".r
 
       val m = regex.findFirstMatchIn(determinationText);
     if (m.isEmpty)
