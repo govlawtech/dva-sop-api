@@ -45,10 +45,10 @@ public class ConditionFactory {
                         7
                 ))
                 .put("acute meniscal tear of the knee", buildAcuteConditionRule(
-                        "F2010L01668",
-                        ImmutableSet.of("6(a)"),
-                        "F2010L01669",
-                        ImmutableSet.of("6(a)"),
+                        "F2019L00246",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00247",
+                        ImmutableSet.of("9(1)"),
                         7
                 ))
                 .put("dislocation", buildAcuteConditionRule(
