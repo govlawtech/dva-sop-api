@@ -46,7 +46,9 @@ object ServiceLocator {
     "F2018C00670",
     "F2018C00660",
     "F2018C00672",
-      "F2018C00791"
+    "F2018C00791",
+    "F2019C00221",
+    "F2019C00222"
 
   )
 
@@ -83,7 +85,7 @@ object ServiceLocator {
       case "F2013L00411" => EssentialThrombocythamiaClenser
       case "F2013L00412" => PrimaryMyelofibrosisClenser
       case "F2014L01833" => HaemophiliaClenser
-      case "F2017C00198" => SuicideRHClenser
+      case "F2017C00198" => BaldDefinitionsSectionClenser
       case "F2013L00720" => ClenserToFixSuperscripts
       case "F2013L00728" => ClenserToFixSuperscripts
       case "F2013L00722" => ClenserToFixSuperscripts
@@ -97,11 +99,12 @@ object ServiceLocator {
       case "F2018C00645" => ClenserToFixSuperscripts
       case "F2014L00525" => ChronicMultisymptomIllnessBoPClenser
       case "F2017C00075" => SinusBarotraumaBoPClenser
-      case "F2018C00189" => SuicideRHClenser
+      case "F2018C00189" => BaldDefinitionsSectionClenser
       case "F2018L00535" => ElectricalInjuryRHClenser
       case "F2018L01183" => AdrenalInsufficiencyBoPClenser
       case "F2019L00009" => HypopituitarismClenser
       case "F2019L00012" => HypopituitarismClenser
+      case "F2019L00224" => BaldDefinitionsSectionClenser
 
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
