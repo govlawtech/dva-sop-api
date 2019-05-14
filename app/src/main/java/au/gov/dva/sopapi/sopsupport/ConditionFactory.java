@@ -38,10 +38,10 @@ public class ConditionFactory {
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
                         condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())))
                 .put("acute articular cartilage tear", buildAcuteConditionRule(
-                        "F2010L01666",
-                        ImmutableSet.of("6(a)"),
-                        "F2010L01667",
-                        ImmutableSet.of("6(a)"),
+                        "F2019L00233",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00234",
+                        ImmutableSet.of("9(1)"),
                         7
                 ))
                 .put("acute meniscal tear of the knee", buildAcuteConditionRule(
