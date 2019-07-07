@@ -55,6 +55,10 @@ public class ProcessingRuleBase {
         return false;
     }
 
+    // todo: amend this to inject an optional parameter for rank
+    // todo: amend this to inject an optional parameter for service
+    // then add another function to call this multiple times and produce a list of applicable rule configurations
+    //
     protected Optional<ApplicableRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
     {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
