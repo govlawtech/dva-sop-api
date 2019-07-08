@@ -1,6 +1,6 @@
 <FindBugsFilter>
 <Match>
     <!--Findbugs doesn't work with Scala.-->
-    <Package name="~au\.gov\.dva\.sopapi\.sopref.*"/>
+
 </Match>
 </FindBugsFilter>

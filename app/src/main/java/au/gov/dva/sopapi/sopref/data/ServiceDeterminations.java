@@ -159,6 +159,9 @@ public class ServiceDeterminations {
                                 if (isNNMEOL(natureOfOperation)) {
                                     opName = "NNMEOAL";
                                 }
+                                else if (isACGEAT(natureOfOperation)){
+                                    opName = "ACGEAT";
+                                }
                                 else {
                                     throw new ServiceDeterminationParserRuntimeException(String.format("Empty operation name for: %s", natureOfOperation));
                                 }
@@ -198,6 +201,11 @@ public class ServiceDeterminations {
     private static boolean isNNMEOL(String description)
     {
         return description.contentEquals("ADF contribution to the NATO nofly zone and maritime enforcement operation against Libya");
+    }
+
+    private static boolean isACGEAT(String description)
+    {
+        return description.contentEquals("ADF contribution to efforts against global terrorism");
     }
 
 

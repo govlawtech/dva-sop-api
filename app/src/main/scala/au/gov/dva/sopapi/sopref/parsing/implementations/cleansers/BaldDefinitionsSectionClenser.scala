@@ -2,7 +2,7 @@ package au.gov.dva.sopapi.sopref.parsing.implementations.cleansers
 
 import au.gov.dva.sopapi.sopref.parsing.traits.{GenericTextClenser, MiscRegexes}
 
-object SuicideRHClenser extends GenericTextClenser {
+object BaldDefinitionsSectionClenser extends GenericTextClenser {
 
   private val toReplace =
     "Note: See Section 6\\s*Definitions"

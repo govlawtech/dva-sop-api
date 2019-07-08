@@ -447,15 +447,17 @@
 
         </warlikeDeterminations>
 
-        <non-warlikeDeterminations>
+          <non-warlikeDeterminations>
 
+           
             <determination>
-                <federalRegisterOfLegislationReference>F2007B00579</federalRegisterOfLegislationReference>
-                <commencementDate>1999-08-24</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>JOINT GUARDIAN</name>
                         <startDate>1999-06-11</startDate>
+                        <endDate>2011-12-12</endDate>
                         <specifiedAreas>
                             <specifiedArea>the Federal Republic of Yugoslavia</specifiedArea>
                             <specifiedArea>Albania</specifiedArea>
@@ -466,8 +468,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007B00576</federalRegisterOfLegislationReference>
-                <commencementDate>1999-08-24</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>ALLIED FORCE</name>
@@ -489,8 +491,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007B00578</federalRegisterOfLegislationReference>
-                <commencementDate>1999-08-24</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>AGRICOLA</name>
@@ -506,8 +508,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00499</federalRegisterOfLegislationReference>
-                <commencementDate>1999-11-02</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>SPITFIRE</name>
@@ -523,8 +525,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006L02916</federalRegisterOfLegislationReference>
-                <commencementDate>1997-07-25</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <activities>
                     <activity>
                         <startDate>1997-07-25</startDate>
@@ -545,8 +547,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00574</federalRegisterOfLegislationReference>
-                <commencementDate>2001-06-22</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>PLUMBOB</name>
@@ -562,8 +564,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00950</federalRegisterOfLegislationReference>
-                <commencementDate>2001-09-17</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>POLLARD</name>
@@ -580,22 +582,23 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00571</federalRegisterOfLegislationReference>
-                <commencementDate>2003-09-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>CITADEL</name>
                         <startDate>2003-08-18</startDate>
+                        <endDate>2008-06-26</endDate>
                         <specifiedAreas>
                             <specifiedArea>East Timor and the territorial sea of East Timor</specifiedArea>
-                        </specifiedAreas>+
+                        </specifiedAreas>
                     </operation>
                 </operations>
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00718</federalRegisterOfLegislationReference>
-                <commencementDate>2000-06-21</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>BANNER</name>
@@ -613,12 +616,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00932</federalRegisterOfLegislationReference>
-                <commencementDate>2001-02-28</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>POMELO</name>
                         <startDate>2001-01-15</startDate>
+                        <endDate>2005-05-31</endDate>
                         <specifiedAreas>
                             <specifiedArea>Ethiopia</specifiedArea>
                             <specifiedArea>Eritrea</specifiedArea>
@@ -628,8 +632,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B11477</federalRegisterOfLegislationReference>
-                <commencementDate>2004-12-26</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>DAMASK</name>
@@ -651,12 +655,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006L02013</federalRegisterOfLegislationReference>
-                <commencementDate>2006-05-12</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>ASTUTE</name>
                         <startDate>2006-05-12</startDate>
+                        <endDate>2013-04-19</endDate>
                         <specifiedAreas>
                             <specifiedArea>East Timor and its territorial waters and superjacent airspace
                             </specifiedArea>
@@ -667,8 +672,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007B00581</federalRegisterOfLegislationReference>
-                <commencementDate>1999-11-09</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>FABER</name>
@@ -683,12 +688,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00719</federalRegisterOfLegislationReference>
-                <commencementDate>2003-07-31</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>ANODE</name>
                         <startDate>2003-07-24</startDate>
+                        <endDate>2013-09-30</endDate>
                         <specifiedAreas>
                             <specifiedArea>the Solomon Islands, territorial waters and superjacent airspace
                             </specifiedArea>
@@ -698,12 +704,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2005L04103</federalRegisterOfLegislationReference>
-                <commencementDate>2005-12-08</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>SPIRE</name>
                         <startDate>2004-05-20</startDate>
+                        <endDate>2008-06-26</endDate>
                         <specifiedAreas>
                             <specifiedArea>East Timor and the territorial sea of East Timor</specifiedArea>
                         </specifiedAreas>
@@ -714,12 +721,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2005L04106</federalRegisterOfLegislationReference>
-                <commencementDate>2005-12-08</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>AZURE</name>
                         <startDate>2005-04-10</startDate>
+                        <endDate>2011-12-31</endDate>
                         <specifiedAreas>
                             <specifiedArea>Sudan and its territorial waters and superjacent airspace</specifiedArea>
                         </specifiedAreas>
@@ -728,8 +736,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00951</federalRegisterOfLegislationReference>
-                <commencementDate>2000-11-23</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>TREK</name>
@@ -742,8 +750,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00566</federalRegisterOfLegislationReference>
-                <commencementDate>2004-07-06</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <activities>
                     <activity>
                         <shortName>Berlin Airlift</shortName>
@@ -761,12 +769,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006L03709</federalRegisterOfLegislationReference>
-                <commencementDate>2006-07-20</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>RAMP</name>
                         <startDate>2006-07-20</startDate>
+                        <endDate>2008-11-27</endDate>
                         <specifiedAreas>
                             <specifiedArea>Lebanon and its territorial waters and superjacent airspace</specifiedArea>
                         </specifiedAreas>
@@ -775,8 +784,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006L02913</federalRegisterOfLegislationReference>
-                <commencementDate>1997-02-13</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <activities>
                     <activity>
                         <shortName>UN Observer Mission in Guatemala</shortName>
@@ -797,8 +806,8 @@
 
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
-                <commencementDate>2007-04-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>BOLTON</name>
@@ -820,8 +829,8 @@
 
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
-                <commencementDate>2007-04-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>SOUTHERN WATCH</name>
@@ -842,8 +851,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00576</federalRegisterOfLegislationReference>
-                <commencementDate>2003-10-23</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>BEL ISI</name>
@@ -882,8 +891,8 @@
 
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04870</federalRegisterOfLegislationReference>
-                <commencementDate>2007-09-11</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>QUICKSTEP</name>
@@ -898,10 +907,13 @@
                 </operations>
             </determination>
 
+
+
+
             <determination>
                 <federalRegisterOfLegislationReference>F2007L02362</federalRegisterOfLegislationReference>
                 <commencementDate>2006-07-01</commencementDate>
-                <operations>
+                    <operations>
                     <operation>
                         <name>VIGILANCE</name>
                         <startDate>2006-07-01</startDate>
@@ -911,8 +923,8 @@
 
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006L02915</federalRegisterOfLegislationReference>
-                <commencementDate>1997-07-05</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                 <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>VISTA</name>
@@ -926,7 +938,23 @@
                 </operations>
             </determination>
 
+              <determination>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Litten</name>
+                        <specifiedAreas>
+                            <specifiedArea>Libyan Territorial Waters</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2016-08-31</startDate>
+                    </operation>
+                </operations>
+            </determination>
+             
+
         </non-warlikeDeterminations>
+
     </warlikeAndNonWarlike>
     <hazardous>
         <veaLegislativeReference>69A</veaLegislativeReference>

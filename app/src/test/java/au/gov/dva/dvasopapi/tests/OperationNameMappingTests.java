@@ -288,15 +288,13 @@ public class OperationNameMappingTests {
             // WARLIKE AND NON-warlike Augury start on 2016-04-28 for MRCA
             @Override
             public LocalDate getStartDate() {
-                return LocalDate.of(2006, 7, 12);
+                return LocalDate.of(2016, 4, 28);
             }
 
-            // end of warlike palidin - correct dates
             @Override
             public Optional<LocalDate> getEndDate() {
                 return Optional.empty();
             }
-
         };
 
         Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
@@ -325,10 +323,11 @@ public class OperationNameMappingTests {
             //  StoredOperation{name='Okra', startDate=2014-08-09, endDate=Optional[2015-09-08], serviceType=non-warlike}
             //  StoredOperation{name='Okra', startDate=2015-09-09, endDate=Optional.empty, serviceType=non-warlike}
 
-            // test matches the first row
+
+            // should match second row
             @Override
             public LocalDate getStartDate() {
-                return LocalDate.of(2014,8,9);
+                return LocalDate.of(2015,9,9);
             }
 
             @Override

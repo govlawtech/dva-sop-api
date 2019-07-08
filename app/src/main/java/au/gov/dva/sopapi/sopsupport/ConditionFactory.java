@@ -38,24 +38,32 @@ public class ConditionFactory {
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
                         condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())))
                 .put("acute articular cartilage tear", buildAcuteConditionRule(
-                        "F2010L01666",
-                        ImmutableSet.of("6(a)"),
-                        "F2010L01667",
-                        ImmutableSet.of("6(a)"),
+                        "F2019L00233",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00234",
+                        ImmutableSet.of("9(1)"),
                         7
                 ))
                 .put("acute meniscal tear of the knee", buildAcuteConditionRule(
-                        "F2010L01668",
-                        ImmutableSet.of("6(a)"),
-                        "F2010L01669",
-                        ImmutableSet.of("6(a)"),
+                        "F2019L00246",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00247",
+                        ImmutableSet.of("9(1)"),
                         7
                 ))
+                .put("dislocation of a joint and subluxation of a joint", buildAcuteConditionRule(
+                        "F2019L00640",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00647",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                // There is no longer a SoP for 'dislocation'; remove below when MyService updates config
                 .put("dislocation", buildAcuteConditionRule(
-                        "F2010L01040",
-                        ImmutableSet.of("6(a)"),
-                        "F2010L01041",
-                        ImmutableSet.of("6(a)"),
+                        "F2019L00640",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00647",
+                        ImmutableSet.of("9(1)"),
                         7
                 ))
                 .put("fracture", buildAcuteConditionRule(
@@ -67,10 +75,10 @@ public class ConditionFactory {
 
                 ))
                 .put("joint instability", buildAcuteConditionRule(
-                        "F2010L01048",
-                        ImmutableSet.of("6(a)"),
-                        "F2010L01049",
-                        ImmutableSet.of("6(a)"),
+                        "F2019L00645",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00644",
+                        ImmutableSet.of("9(1)"),
                         7
                 ))
                 .put("labral tear", buildAcuteConditionRule(

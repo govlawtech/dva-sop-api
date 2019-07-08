@@ -30,6 +30,7 @@ public class Main {
         Option scrapeOption = new Option("scrape", "scrape", false, "Scrape Legislation Register for PDFs for given register ids.");
         Option getCurrentSops = new Option("getCurrentSops","getCurrentSops",false,"Get a list of the register IDs of all SoPs in storage.");
         Option storeSopPdfs = new Option("saveSopPdfs", "saveSopPdfs",false,"Update storage with SoP PDFs, retrieving from FRL if necessary.");
+        Option updateServiceDeterminationsOnly = new Option("usd","updateServiceDeterminations",false,"Update MRCA service determinations from FRL");
 
         Options options = new Options()
                 .addOption(sopsFilePath)
@@ -43,7 +44,8 @@ public class Main {
                 .addOption(validateRuleConfigOption)
                 .addOption(scrapeOption)
                 .addOption(getCurrentSops)
-                .addOption(storeSopPdfs);
+                .addOption(storeSopPdfs)
+                .addOption(updateServiceDeterminationsOnly);
 
 
         CommandLineParser parser = new DefaultParser();
@@ -158,6 +160,11 @@ public class Main {
 
         if (commandLine.hasOption('u')) {
             storageTool.Update();
+        }
+
+        if (commandLine.hasOption("usd"))
+        {
+            storageTool.UpdateServiceDeterminations();
         }
 
 
