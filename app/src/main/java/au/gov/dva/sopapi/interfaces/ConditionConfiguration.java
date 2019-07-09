@@ -36,9 +36,8 @@ public interface ConditionConfiguration {
 
         long numberOfServiceBranches = serviceHistory.getServices().stream().map(s -> s.getBranch()).distinct().count();
 
-        if (numberOfServiceBranches == 1) {
+        if (numberOfServiceBranches <= 1) {
 
-            // if only one service branch, use same code as previously:
             Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
             Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
             if (!relevantRank.isPresent() || !serviceDuringWhichConditionStarts.isPresent()) {
@@ -57,6 +56,11 @@ public interface ConditionConfiguration {
                     rhRuleConfigurationItem.get(),
                     boPRuleConfigurationItem)
             );
+        }
+
+        else {
+            // find all the configurations where the
+            //
         }
 
         return null;
