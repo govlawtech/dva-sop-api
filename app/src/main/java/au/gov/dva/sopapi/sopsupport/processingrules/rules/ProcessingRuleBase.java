@@ -7,6 +7,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
 import au.gov.dva.sopapi.sopsupport.processingrules.ApplicableRuleConfigurationImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
@@ -58,7 +59,12 @@ public class ProcessingRuleBase {
     // todo: amend this to inject an optional parameter for rank
     // todo: amend this to inject an optional parameter for service
     // then add another function to call this multiple times and produce a list of applicable rule configurations
-    //
+
+    protected ImmutableSet<ApplicableRuleConfiguration> getApplicableRuleConfigurations(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
+    {
+        return null;
+    }
+
     protected Optional<ApplicableRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
     {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
