@@ -13,6 +13,7 @@ import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.ProcessingRuleBase;
 import com.google.common.collect.ImmutableSet;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -280,29 +281,17 @@ public class MultipleBranchesOfServiceTests {
         };
     }
 
-    class ProcessingRuleBaseUnderTest extends ProcessingRuleBase {
 
-        public ProcessingRuleBaseUnderTest(ConditionConfiguration conditionConfiguration) {
-            super(conditionConfiguration);
-        }
-
-        public ImmutableSet<ApplicableRuleConfiguration> methodToTest(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
-        {
-            return this.getApplicableRuleConfigurations(serviceHistory,condition,caseTrace);
-        }
-    }
 
     @Test
     public void ShouldReturnMultipleApplicableRuleConfigurations()
     {
         ConditionConfiguration mockConditionConfig = CreateMockConfigForArmyToAirForce("lumbar spondylosis"); // has to match condition mock name
         Condition mockCondition = new LumbarSpondylosisConditionMock();
-        ProcessingRuleBaseUnderTest underTest = new ProcessingRuleBaseUnderTest(mockConditionConfig);
-        CaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
-        // enough to meet reqs for Army, but not AirForce
         ServiceHistory mockServiceHistory = CreateMockServiceHistoryForArmyToAirForce(150,17,150,17);
-        ImmutableSet<ApplicableRuleConfiguration> results = underTest.methodToTest(mockServiceHistory,mockCondition,mockCaseTrace);
-
+        SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
+        ImmutableSet<ApplicableRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition,mockServiceHistory,mockCaseTrace);
+        Assert.assertTrue(results.size() == 2);
     }
 
 
