@@ -10,7 +10,10 @@ import au.gov.dva.sopapi.sopsupport.processingrules.ApplicableRuleConfigurationI
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public interface ConditionConfiguration {
     String getConditionName();
@@ -59,12 +62,37 @@ public interface ConditionConfiguration {
         }
 
         else {
-            // find all the configurations where the
-            //
+            // find all the configurations that could potentially apply
+            // where the service occurs before the condition
+            ImmutableSet<Service> services = ProcessingRuleFunctions.identifyAllServicesBeforeOrDuringCondition(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
+
+
+            Function<Service, Optional<ApplicableRuleConfiguration>> getApplicableRuleConfigForService = service -> {
+                Optional<Rank> rank = ProcessingRuleFunctions.getCFTSRankProximateToDate(ImmutableSet.of(service),condition.getStartDate(),caseTrace);
+                if (!rank.isPresent()) return Optional.empty();
+                Optional<RHRuleConfigurationItem> rhConfig = getRHRuleConfigurationFor(rank.get(),service.getBranch());
+                if (!rhConfig.isPresent()) return Optional.empty();
+                Optional<BoPRuleConfigurationItem> bopConfig = getBoPRuleConfigurationFor(rank.get(),service.getBranch());
+                return Optional.of(new ApplicableRuleConfigurationImpl(rhConfig.get(),bopConfig));
+            };
+
+
+            List<ApplicableRuleConfiguration> applicableConfigItems =
+                    services
+                    .stream()
+                    .map(s -> getApplicableRuleConfigForService.apply(s))
+                    .filter(Optional::isPresent)
+                    .map(Optional::get)
+                    .collect(Collectors.toList());
+            // HERE
+
+
         }
 
-        return null;
+
     }
+
+
 
 
 }
