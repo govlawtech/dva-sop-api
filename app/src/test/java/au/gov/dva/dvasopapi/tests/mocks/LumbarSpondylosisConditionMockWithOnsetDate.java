@@ -8,23 +8,29 @@ import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import com.google.common.collect.ImmutableList;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 
-public class LumbarSpondylosisConditionMock implements Condition {
+public class LumbarSpondylosisConditionMockWithOnsetDate implements Condition
+{
+    private final LocalDate onsetDate;
 
+    public LumbarSpondylosisConditionMockWithOnsetDate(LocalDate onsetDate)
+    {
+        this.onsetDate = onsetDate;
+    }
 
     @Override
     public SoPPair getSopPair() {
-        return new SoPPair("lumbar spondylosis", new MockLumbarSpondylosisSopBoP(),new MockLumbarSpondylosisSopRH());
+         return new SoPPair("lumbar spondylosis", new MockLumbarSpondylosisSopBoP(),new MockLumbarSpondylosisSopRH());
     }
 
+    @Override
     public LocalDate getStartDate() {
-        return LocalDate.of(2004,11,1);
+        return onsetDate;
     }
 
+    @Override
     public LocalDate getEndDate() {
-        return LocalDate.of(2004, 11, 7);
+        return onsetDate;
     }
 
     @Override
@@ -37,5 +43,3 @@ public class LumbarSpondylosisConditionMock implements Condition {
         return null;
     }
 }
-
-

@@ -61,17 +61,14 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    public static ImmutableSet<Service> identifyAllServicesBeforeOrDuringCondition(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace)
+    public static ImmutableSet<Service> identifyAllServicesStartingBeforeConditionOnset(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace)
     {
-
         List<Service> beforeOrAtSameTimeAsOnset = services.stream()
                 .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                 .filter(s -> s.getStartDate().isBefore(conditionStartDate))
-                .filter(s -> !s.getEndDate().isPresent() || s.getEndDate().get().isAfter(conditionStartDate))
                 .collect(Collectors.toList());
 
         return ImmutableSet.copyOf(beforeOrAtSameTimeAsOnset);
-
     }
 
     public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {

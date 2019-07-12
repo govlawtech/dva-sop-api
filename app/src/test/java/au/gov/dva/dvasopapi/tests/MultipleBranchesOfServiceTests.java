@@ -2,6 +2,7 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.ConditionMock;
 import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMock;
+import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMockWithOnsetDate;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
@@ -23,7 +24,6 @@ import java.util.Optional;
 public class MultipleBranchesOfServiceTests {
 
 
-
     class MockConfigPair {
 
         private final RHRuleConfigurationItem rh;
@@ -31,7 +31,6 @@ public class MultipleBranchesOfServiceTests {
 
         public MockConfigPair(RHRuleConfigurationItem rh, BoPRuleConfigurationItem bop)
         {
-
             this.rh = rh;
             this.bop = bop;
         }
@@ -157,7 +156,7 @@ public class MultipleBranchesOfServiceTests {
         return new ServiceHistory() {
             @Override
             public LocalDate getHireDate() {
-                return LocalDate.of(2005,1,1);
+                return LocalDate.of(2004,7,1);
             }
 
             @Override
@@ -287,12 +286,25 @@ public class MultipleBranchesOfServiceTests {
     public void ShouldReturnMultipleApplicableRuleConfigurations()
     {
         ConditionConfiguration mockConditionConfig = CreateMockConfigForArmyToAirForce("lumbar spondylosis"); // has to match condition mock name
-        Condition mockCondition = new LumbarSpondylosisConditionMock();
+        Condition mockCondition = new LumbarSpondylosisConditionMockWithOnsetDate(LocalDate.of(2010,1,1));
         ServiceHistory mockServiceHistory = CreateMockServiceHistoryForArmyToAirForce(150,17,150,17);
         SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
         ImmutableSet<ApplicableRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition,mockServiceHistory,mockCaseTrace);
         Assert.assertTrue(results.size() == 2);
     }
+
+    @Test
+    public void ShouldReturnNoMatchingConfigAsNoServicesBeforeOnsetDate()
+    {
+        ConditionConfiguration mockConditionConfig = CreateMockConfigForArmyToAirForce("lumbar spondylosis"); // has to match condition mock name
+        Condition mockCondition = new LumbarSpondylosisConditionMockWithOnsetDate(LocalDate.of(2001,1,1));
+        ServiceHistory mockServiceHistory = CreateMockServiceHistoryForArmyToAirForce(150,17,150,17);
+        SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
+        ImmutableSet<ApplicableRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition,mockServiceHistory,mockCaseTrace);
+        Assert.assertTrue(results.size() == 0);
+    }
+
+
 
 
 }

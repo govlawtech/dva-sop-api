@@ -2,7 +2,6 @@ package au.gov.dva.sopapi.interfaces;
 
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
-import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
@@ -64,8 +63,7 @@ public interface ConditionConfiguration {
         else {
             // find all the configurations that could potentially apply
             // where the service occurs before the condition
-            ImmutableSet<Service> services = ProcessingRuleFunctions.identifyAllServicesBeforeOrDuringCondition(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
-
+            ImmutableSet<Service> services = ProcessingRuleFunctions.identifyAllServicesStartingBeforeConditionOnset(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
 
             Function<Service, Optional<ApplicableRuleConfiguration>> getApplicableRuleConfigForService = service -> {
                 Optional<Rank> rank = ProcessingRuleFunctions.getCFTSRankProximateToDate(ImmutableSet.of(service),condition.getStartDate(),caseTrace);
@@ -76,7 +74,6 @@ public interface ConditionConfiguration {
                 return Optional.of(new ApplicableRuleConfigurationImpl(rhConfig.get(),bopConfig));
             };
 
-
             List<ApplicableRuleConfiguration> applicableConfigItems =
                     services
                     .stream()
@@ -84,15 +81,10 @@ public interface ConditionConfiguration {
                     .filter(Optional::isPresent)
                     .map(Optional::get)
                     .collect(Collectors.toList());
-            // HERE
 
-
+            return ImmutableSet.copyOf(applicableConfigItems);
         }
 
-
     }
-
-
-
 
 }
