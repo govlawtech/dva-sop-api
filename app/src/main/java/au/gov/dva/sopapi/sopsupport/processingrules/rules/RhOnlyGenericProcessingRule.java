@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
+import au.gov.dva.sopapi.interfaces.ApplicableWearAndTearRuleConfiguration;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
 import au.gov.dva.sopapi.interfaces.IntervalSelector;
@@ -33,8 +34,8 @@ public class RhOnlyGenericProcessingRule extends GenericProcessingRule {
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,caseTrace);
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
     @Override

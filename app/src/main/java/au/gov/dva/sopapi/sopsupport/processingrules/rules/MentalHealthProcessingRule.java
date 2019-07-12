@@ -1,6 +1,5 @@
 package au.gov.dva.sopapi.sopsupport.processingrules.rules;
 
-import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
@@ -32,10 +31,9 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements Pr
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
-        Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,rhInterval,applicableRuleConfigurationItem,caseTrace);
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
+
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,rhInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
     @Override

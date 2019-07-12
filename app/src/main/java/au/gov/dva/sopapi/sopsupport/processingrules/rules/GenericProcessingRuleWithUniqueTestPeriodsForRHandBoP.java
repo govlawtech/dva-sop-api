@@ -37,15 +37,13 @@ public class GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP extends Proce
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
-        Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
 
     Interval testIntervalForCFTSdays = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
             rhSelector.getInterval(serviceHistory,condition.getStartDate()) :
             bopSelector.getInterval(serviceHistory,condition.getStartDate());
 
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testIntervalForCFTSdays,applicableRuleConfigurationItem,caseTrace);
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testIntervalForCFTSdays, applicableWearAndTearRuleConfiguration,caseTrace);
 }
 
     @Override

@@ -8,8 +8,7 @@ import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
-import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
@@ -86,7 +85,20 @@ public class RulesResult {
         }
         SoP applicableSop = applicableSopOpt.get();
 
-        ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory,caseTrace);
+        // decide whether it is acute or not
+        if (condition.getProcessingRule() instanceof WearAndTearProcessingRule) {
+
+            // get the applicable rule configurations
+            Optional<ConditionConfiguration> wearAndTearConditionConfig = ruleConfigurationRepository.getConditionConfigurationFor(condition.getSopPair().getConditionName());
+
+            if (!wearAndTearConditionConfig.isPresent()) {
+                
+            }
+        }
+        else
+
+
+        ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition,applicableSop, serviceHistory,caseTrace);
 
         condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition,serviceHistory, caseTrace);
 

@@ -33,11 +33,9 @@ public interface ConditionConfiguration {
                 .findFirst();
     }
 
-    default ImmutableSet<ApplicableRuleConfiguration> getApplicableRuleConfigurations(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace)
+    default ImmutableSet<ApplicableWearAndTearRuleConfiguration> getApplicableRuleConfigurations(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace)
     {
-
         long numberOfServiceBranches = serviceHistory.getServices().stream().map(s -> s.getBranch()).distinct().count();
-
         if (numberOfServiceBranches <= 1) {
 
             Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
@@ -65,7 +63,7 @@ public interface ConditionConfiguration {
             // where the service occurs before the condition
             ImmutableSet<Service> services = ProcessingRuleFunctions.identifyAllServicesStartingBeforeConditionOnset(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
 
-            Function<Service, Optional<ApplicableRuleConfiguration>> getApplicableRuleConfigForService = service -> {
+            Function<Service, Optional<ApplicableWearAndTearRuleConfiguration>> getApplicableRuleConfigForService = service -> {
                 Optional<Rank> rank = ProcessingRuleFunctions.getCFTSRankProximateToDate(ImmutableSet.of(service),condition.getStartDate(),caseTrace);
                 if (!rank.isPresent()) return Optional.empty();
                 Optional<RHRuleConfigurationItem> rhConfig = getRHRuleConfigurationFor(rank.get(),service.getBranch());
@@ -74,7 +72,7 @@ public interface ConditionConfiguration {
                 return Optional.of(new ApplicableRuleConfigurationImpl(rhConfig.get(),bopConfig));
             };
 
-            List<ApplicableRuleConfiguration> applicableConfigItems =
+            List<ApplicableWearAndTearRuleConfiguration> applicableConfigItems =
                     services
                     .stream()
                     .map(s -> getApplicableRuleConfigForService.apply(s))

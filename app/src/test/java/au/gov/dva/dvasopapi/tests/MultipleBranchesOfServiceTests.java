@@ -1,7 +1,5 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.dvasopapi.tests.mocks.ConditionMock;
-import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMock;
 import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMockWithOnsetDate;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
@@ -12,7 +10,6 @@ import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Service;
 import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
-import au.gov.dva.sopapi.sopsupport.processingrules.rules.ProcessingRuleBase;
 import com.google.common.collect.ImmutableSet;
 import org.junit.Assert;
 import org.junit.Test;
@@ -289,7 +286,7 @@ public class MultipleBranchesOfServiceTests {
         Condition mockCondition = new LumbarSpondylosisConditionMockWithOnsetDate(LocalDate.of(2010,1,1));
         ServiceHistory mockServiceHistory = CreateMockServiceHistoryForArmyToAirForce(150,17,150,17);
         SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
-        ImmutableSet<ApplicableRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition,mockServiceHistory,mockCaseTrace);
+        ImmutableSet<ApplicableWearAndTearRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition,mockServiceHistory,mockCaseTrace);
         Assert.assertTrue(results.size() == 2);
     }
 
@@ -300,7 +297,7 @@ public class MultipleBranchesOfServiceTests {
         Condition mockCondition = new LumbarSpondylosisConditionMockWithOnsetDate(LocalDate.of(2001,1,1));
         ServiceHistory mockServiceHistory = CreateMockServiceHistoryForArmyToAirForce(150,17,150,17);
         SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
-        ImmutableSet<ApplicableRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition,mockServiceHistory,mockCaseTrace);
+        ImmutableSet<ApplicableWearAndTearRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition,mockServiceHistory,mockCaseTrace);
         Assert.assertTrue(results.size() == 0);
     }
 

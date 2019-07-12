@@ -4,7 +4,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 
 import java.util.Optional;
 
-public interface ApplicableRuleConfiguration {
+public interface ApplicableWearAndTearRuleConfiguration {
     RHRuleConfigurationItem getRHRuleConfigurationItem();
     Optional<BoPRuleConfigurationItem> getBopRuleConfigurationItem();
     default Optional<? extends  RuleConfigurationItem> getRuleConfigurationForStandardOfProof(StandardOfProof standardOfProof) {

@@ -7,23 +7,16 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
-import au.gov.dva.sopapi.sopsupport.casesummary.CaseSummary;
 import au.gov.dva.sopapi.sopsupport.processingrules.ApplicableRuleConfigurationImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
-import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
-import static au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils.getApplicableRuleConfigurationItem;
-import static au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils.getRelevantRHConfiguration;
 
 
 public class ProcessingRuleBase {
@@ -36,7 +29,7 @@ public class ProcessingRuleBase {
 
     protected boolean shouldAbortProcessing(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace) {
 
-        Optional<ApplicableRuleConfiguration> applicableRuleConfigurationOptional = getApplicableRuleConfiguration(serviceHistory,condition,caseTrace);
+        Optional<ApplicableWearAndTearRuleConfiguration> applicableRuleConfigurationOptional = getApplicableRuleConfiguration(serviceHistory,condition,caseTrace);
         if (!applicableRuleConfigurationOptional.isPresent())
         {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"There are no rules configured for this rank and service branch.");
@@ -56,7 +49,7 @@ public class ProcessingRuleBase {
         return false;
     }
 
-    protected Optional<ApplicableRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
+    protected Optional<ApplicableWearAndTearRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
     {
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
@@ -132,25 +125,27 @@ public class ProcessingRuleBase {
     }
 
 
-    protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, CaseTrace caseTrace) {
-
+    protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
 
         assert applicableSop.getConditionName().equalsIgnoreCase(condition.getSopPair().getConditionName());
 
         ImmutableList<Factor> applicableFactors = condition.getApplicableFactors(applicableSop);
         caseTrace.addLoggingTrace(String.format("There are %s factors in the applicable SoP: %s.", applicableFactors.size(), applicableSop.getCitation()));
 
-        if (!applicableRuleConfigurationOptional.isPresent())
-        {
+
+        Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItemOpt
+                = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
+                Optional.of(applicableWearAndTearRuleConfiguration.getRHRuleConfigurationItem())
+                : applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem();
+
+        if (!applicableRuleConfigurationItemOpt.isPresent()) {
             caseTrace.addLoggingTrace("No applicable rule configuration present for this combination of rank and service branch for this standard of proof.  Therefore no factors are satisfied.");
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
-        RuleConfigurationItem applicableRuleConfiguration = applicableRuleConfigurationOptional.get();
 
-        if (applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis) assert applicableRuleConfiguration instanceof RHRuleConfigurationItem;
-        else assert applicableRuleConfiguration instanceof BoPRuleConfigurationItem;
+        RuleConfigurationItem applicableRuleConfigurationItem = applicableRuleConfigurationItemOpt.get();
 
-        Integer cftsDaysRequired = applicableRuleConfiguration.getRequiredCFTSDays();
+        Integer cftsDaysRequired = applicableRuleConfigurationItem.getRequiredCFTSDays();
         caseTrace.setRequiredCftsDays(cftsDaysRequired);
 
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
@@ -173,9 +168,9 @@ public class ProcessingRuleBase {
 
         if (actualDaysOfCfts >= cftsDaysRequired) {
             caseTrace.addLoggingTrace(String.format("Actual number of days of continuous full time service is at least the required days.  According to configuration, the applicable factors are '%s'.",
-                    String.join(", ", applicableRuleConfiguration.getFactorReferences())));
+                    String.join(", ", applicableRuleConfigurationItem.getFactorReferences())));
             ImmutableList<FactorWithSatisfaction> inferredFactors =
-                    ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, applicableRuleConfiguration.getFactorReferences());
+                    ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, applicableRuleConfigurationItem.getFactorReferences());
 
             return inferredFactors;
         } else {

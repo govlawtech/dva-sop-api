@@ -21,7 +21,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 
-public class AcuteConditionRule implements ProcessingRule {
+public class AcuteConditionRule implements AcuteProcessingRule {
 
     private final ImmutableSet<String> _satisfiedRHFactorParas;
     private final ImmutableSet<String> _satisfiedBoPFactorPara;
@@ -90,7 +90,7 @@ public class AcuteConditionRule implements ProcessingRule {
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
         ImmutableList<Factor> applicableFactors = condition.getApplicableFactors(applicableSop);
 

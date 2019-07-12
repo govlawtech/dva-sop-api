@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopsupport;
 
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
+import au.gov.dva.sopapi.interfaces.AcuteProcessingRule;
 import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
 import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
@@ -21,22 +22,21 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-
 public class ConditionFactory {
 
     public static ImmutableList<String> getAcuteConditions() {
         return acuteConditionsMap.keySet().asList().stream().sorted().collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
     }
 
-    private static ImmutableMap<String, ProcessingRule> acuteConditionsMap = buildAcuteConditionMap();
+    private static ImmutableMap<String, AcuteProcessingRule> acuteConditionsMap = buildAcuteConditionMap();
 
     private static ImmutableMap<String, ProcessingRule> buildAcuteConditionMap() {
 
-        ImmutableMap<String, ProcessingRule> map = ImmutableMap.<String, ProcessingRule>builder()
-                .put("sprain and strain", new AcuteConditionRule(
+        ImmutableMap<String, AcuteProcessingRule> map = ImmutableMap.<String, ProcessingRule>builder()
+                .put("sprain and strain", buildAcuteConditionRule(
                         "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
-                        condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())))
+                        7))
                 .put("acute articular cartilage tear", buildAcuteConditionRule(
                         "F2019L00233",
                         ImmutableSet.of("9(1)"),
@@ -119,8 +119,6 @@ public class ConditionFactory {
                 .build();
 
         return map;
-
-
     }
 
 
@@ -151,11 +149,9 @@ public class ConditionFactory {
         );
     }
 
-    private static ProcessingRule buildAcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhParas, String bopRegisterId, ImmutableSet<String> bopParas, int daysWindowBeforeOnset) {
+    private static AcuteProcessingRule buildAcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhParas, String bopRegisterId, ImmutableSet<String> bopParas, int daysWindowBeforeOnset) {
         return new AcuteConditionRule(rhRegisterId, rhParas, bopRegisterId, bopParas,
                 condition -> new Interval(condition.getStartDate().minusDays(daysWindowBeforeOnset), condition.getStartDate()));
-
-
     }
 
     private static Optional<ProcessingRule> BuildRuleFromCode(String conditionName) {
