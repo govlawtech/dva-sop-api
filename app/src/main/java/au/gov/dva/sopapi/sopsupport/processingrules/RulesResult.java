@@ -92,19 +92,20 @@ public class RulesResult {
             Optional<ConditionConfiguration> wearAndTearConditionConfig = ruleConfigurationRepository.getConditionConfigurationFor(condition.getSopPair().getConditionName());
 
             if (!wearAndTearConditionConfig.isPresent()) {
-                
+
             }
         }
         else
+        {
+            ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory, caseTrace);
 
+            // todo: move this out of case trace
+            condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition, serviceHistory, caseTrace);
 
-        ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition,applicableSop, serviceHistory,caseTrace);
+            Recommendation recommendation = condition.getProcessingRule().inferRecommendation(inferredFactors, serviceHistory, applicableSop, condition, isOperational, caseTrace);
 
-        condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition,serviceHistory, caseTrace);
-
-        Recommendation recommendation = condition.getProcessingRule().inferRecommendation(inferredFactors,serviceHistory,applicableSop,condition,isOperational, caseTrace);
-
-        return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
+            return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
+        }
 
     }
 
