@@ -20,21 +20,14 @@ import java.util.stream.Collectors;
 
 
 public class ProcessingRuleBase {
-    protected ConditionConfiguration conditionConfiguration;
+    protected final ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration;
 
-    public ProcessingRuleBase(ConditionConfiguration conditionConfiguration) {
-        this.conditionConfiguration = conditionConfiguration;
+    public ProcessingRuleBase(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+        this.applicableWearAndTearRuleConfiguration = applicableWearAndTearRuleConfiguration;
     }
 
 
     protected boolean shouldAbortProcessing(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace) {
-
-        Optional<ApplicableWearAndTearRuleConfiguration> applicableRuleConfigurationOptional = getApplicableRuleConfiguration(serviceHistory,condition,caseTrace);
-        if (!applicableRuleConfigurationOptional.isPresent())
-        {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"There are no rules configured for this rank and service branch.");
-            return true;
-        }
 
         Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
         if (!relevantRank.isPresent()) {
@@ -49,32 +42,10 @@ public class ProcessingRuleBase {
         return false;
     }
 
-    protected Optional<ApplicableWearAndTearRuleConfiguration> getApplicableRuleConfiguration(ServiceHistory serviceHistory, Condition condition, CaseTrace caseTrace)
-    {
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        if (!relevantRank.isPresent() || !serviceDuringWhichConditionStarts.isPresent())
-        {
-            return Optional.empty();
-        }
-
-        // rh config is mandatory
-        Optional<RHRuleConfigurationItem> rhRuleConfigurationItem = conditionConfiguration.getRHRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
-        if (!rhRuleConfigurationItem.isPresent())
-            return Optional.empty();
-
-        // bop config can be left out
-        Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem = conditionConfiguration.getBoPRuleConfigurationFor(relevantRank.get(),serviceDuringWhichConditionStarts.get().getBranch());
-
-        return Optional.of(new ApplicableRuleConfigurationImpl(
-                rhRuleConfigurationItem.get(),
-                boPRuleConfigurationItem)
-        );
-    }
 
     protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, boolean defaultToNoneIfBoP, CaseTrace caseTrace) {
 
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+        // todo: possibly can remove this check
         Optional<Service> serviceDuringOrAfterWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
 
         if (!serviceDuringOrAfterWhichConditionStarts.isPresent())
@@ -83,16 +54,11 @@ public class ProcessingRuleBase {
             return Optional.empty();
         }
 
-        Integer requiredOperationalServiceDaysToApplyRhSop = conditionConfiguration
-                .getRHRuleConfigurationFor(relevantRank.get(), serviceDuringOrAfterWhichConditionStarts.get().getBranch())
-                .get()
-                .getRequiredDaysOfOperationalService();
-
+        Integer requiredOperationalServiceDaysToApplyRhSop = applicableWearAndTearRuleConfiguration.getRHRuleConfigurationItem().getRequiredDaysOfOperationalService();
 
         Interval testInterval = rhInterval;
         caseTrace.addLoggingTrace(String.format("The start date for the test period for RH: %s", testInterval.getStart()));
         caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", condition.getStartDate()));
-
 
         Long daysOfOperationalService = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(testInterval.getStart(),testInterval.getEnd(),isOperational);
 
@@ -180,50 +146,4 @@ public class ProcessingRuleBase {
     }
 
 
-    protected void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-        if (relevantRank.isPresent() && serviceDuringWhichConditionStarts.isPresent()) {
-            // BoP
-            ImmutableList<Factor> bopFactors = condition.getApplicableFactors(condition.getSopPair().getBopSop());
-
-            Optional<BoPRuleConfigurationItem> BoPRuleConfigItemOpt = conditionConfiguration.getBoPRuleConfigurationItems().stream()
-                    .filter(i -> i.getConditionName().equalsIgnoreCase(conditionConfiguration.getConditionName()))
-                    .filter(i -> i.getRank() == relevantRank.get())
-                    .filter(i -> i.getServiceBranch() == serviceDuringWhichConditionStarts.get().getBranch())
-                    .findFirst();
-
-            if (BoPRuleConfigItemOpt.isPresent()) {
-                // Days
-                Integer cftsDaysRequiredForBop = BoPRuleConfigItemOpt.get().getRequiredCFTSDays();
-                caseTrace.setRequiredCftsDaysForBop(cftsDaysRequiredForBop);
-
-                // Factors
-                ImmutableSet<String> bopFactorParagraphs = BoPRuleConfigItemOpt.get().getFactorReferences();
-                List<Factor> applicableBopFactors = bopFactors.stream().filter(f -> bopFactorParagraphs.contains(f.getParagraph())).collect(Collectors.toList());
-                caseTrace.setBopFactors(ImmutableList.copyOf(applicableBopFactors));
-            }
-
-            // RH
-
-
-            ImmutableList<Factor> rhFactors = condition.getApplicableFactors(condition.getSopPair().getRhSop());
-            Optional<RHRuleConfigurationItem> RHRuleConfigItemOpt = conditionConfiguration.getRHRuleConfigurationItems().stream()
-                    .filter(i -> i.getConditionName().equalsIgnoreCase(conditionConfiguration.getConditionName()))
-                    .filter(i -> i.getRank() == relevantRank.get())
-                    .filter(i -> i.getServiceBranch() == serviceDuringWhichConditionStarts.get().getBranch())
-                    .findFirst();
-
-            if (RHRuleConfigItemOpt.isPresent()) {
-                // Days
-                Integer cftsDaysRequiredForRh = RHRuleConfigItemOpt.get().getRequiredCFTSDays();
-                caseTrace.setRequiredCftsDaysForRh(cftsDaysRequiredForRh);
-
-                // Factors
-                ImmutableSet<String> rhFactorParagraphs = RHRuleConfigItemOpt.get().getFactorReferences();
-                List<Factor> applicableRhFactors = rhFactors.stream().filter(f -> rhFactorParagraphs.contains(f.getParagraph())).collect(Collectors.toList());
-                caseTrace.setRhFactors(ImmutableList.copyOf(applicableRhFactors));
-            }
-        }
-    }
 }

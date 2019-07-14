@@ -11,12 +11,12 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class LumbarSpondylosisRule extends ProcessingRuleBase implements ProcessingRule {
+public class LumbarSpondylosisRule extends ProcessingRuleBase implements WearAndTearProcessingRule {
 
     Interval rhIntervalUsed;
 
-    public LumbarSpondylosisRule(ConditionConfiguration conditionConfiguration) {
-        super(conditionConfiguration);
+    public LumbarSpondylosisRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+        super(applicableWearAndTearRuleConfiguration);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
         if (rhIntervalUsed == null)
         {
@@ -46,10 +46,7 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements Process
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
-    @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
-    }
+
 
 
 }

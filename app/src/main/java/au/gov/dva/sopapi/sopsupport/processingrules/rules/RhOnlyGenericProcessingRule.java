@@ -11,13 +11,13 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class RhOnlyGenericProcessingRule extends GenericProcessingRule {
+public class RhOnlyGenericProcessingRule extends GenericWearAndTearProcessingRule {
 
     private final IntervalSelector _intervalSelector;
 
-    public RhOnlyGenericProcessingRule(ConditionConfiguration conditionConfiguration, IntervalSelector intervalSelectorForRh)
+    public RhOnlyGenericProcessingRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, IntervalSelector intervalSelectorForRh)
     {
-        super(conditionConfiguration,intervalSelectorForRh);
+        super(applicableWearAndTearRuleConfiguration,intervalSelectorForRh);
         _intervalSelector = intervalSelectorForRh;
 
     }
@@ -34,12 +34,9 @@ public class RhOnlyGenericProcessingRule extends GenericProcessingRule {
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory, applicableWearAndTearRuleConfiguration,caseTrace);
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,caseTrace);
     }
 
-    @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
-    }
+
 }

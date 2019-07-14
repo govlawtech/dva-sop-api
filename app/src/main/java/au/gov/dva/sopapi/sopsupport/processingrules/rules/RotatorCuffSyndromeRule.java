@@ -10,12 +10,12 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class RotatorCuffSyndromeRule extends ProcessingRuleBase implements ProcessingRule {
+public class RotatorCuffSyndromeRule extends ProcessingRuleBase implements WearAndTearProcessingRule {
 
     Interval rhIntervalUsed;
 
-    public RotatorCuffSyndromeRule(ConditionConfiguration conditionConfiguration) {
-        super(conditionConfiguration);
+    public RotatorCuffSyndromeRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+        super(applicableWearAndTearRuleConfiguration);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class RotatorCuffSyndromeRule extends ProcessingRuleBase implements Proce
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
         if (rhIntervalUsed == null)
         {
             throw new IllegalStateException("Must determine applicable SoP before getting satisfied factors");
@@ -46,8 +46,5 @@ public class RotatorCuffSyndromeRule extends ProcessingRuleBase implements Proce
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
-    @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
-    }
+
 }

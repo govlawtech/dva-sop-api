@@ -4,17 +4,18 @@ import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import com.google.common.collect.ImmutableList;
+import scala.App;
 
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class MentalHealthProcessingRule extends ProcessingRuleBase implements ProcessingRule  {
+public class MentalHealthProcessingRule extends ProcessingRuleBase implements WearAndTearProcessingRule  {
 
     private final IntervalSelector rhIntervalSelector;
     Interval rhInterval;
 
-    public MentalHealthProcessingRule(ConditionConfiguration conditionConfiguration, IntervalSelector rhIntervalSelector) {
-        super(conditionConfiguration);
+    public MentalHealthProcessingRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, IntervalSelector rhIntervalSelector) {
+        super(applicableWearAndTearRuleConfiguration);
         this.rhIntervalSelector = rhIntervalSelector;
     }
 
@@ -31,14 +32,10 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements Pr
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,rhInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
-    @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
-    }
 
 }

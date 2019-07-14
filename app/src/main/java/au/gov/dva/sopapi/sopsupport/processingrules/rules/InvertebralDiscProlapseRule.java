@@ -10,10 +10,10 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements ProcessingRule {
+public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements WearAndTearProcessingRule {
 
-    public InvertebralDiscProlapseRule(ConditionConfiguration conditionConfiguration) {
-        super(conditionConfiguration);
+    public InvertebralDiscProlapseRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+        super(applicableWearAndTearRuleConfiguration);
     }
 
     @Override
@@ -29,15 +29,11 @@ public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements P
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
         IntervalSelector intervalSelector =  applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ? new FixedYearsPeriodSelector(10) : new FixedYearsPeriodSelector(5);
         Interval testInterval = intervalSelector.getInterval(serviceHistory,condition.getStartDate());
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
-    @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
-    }
 }

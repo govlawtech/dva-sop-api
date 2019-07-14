@@ -1,10 +1,7 @@
 package au.gov.dva.sopapi.sopsupport;
 
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
-import au.gov.dva.sopapi.interfaces.AcuteProcessingRule;
-import au.gov.dva.sopapi.interfaces.ConditionConfiguration;
-import au.gov.dva.sopapi.interfaces.ProcessingRule;
-import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
+import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
@@ -16,8 +13,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.OffsetDateTime;
-import java.util.Comparator;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -30,9 +25,9 @@ public class ConditionFactory {
 
     private static ImmutableMap<String, AcuteProcessingRule> acuteConditionsMap = buildAcuteConditionMap();
 
-    private static ImmutableMap<String, ProcessingRule> buildAcuteConditionMap() {
+    private static ImmutableMap<String, AcuteProcessingRule> buildAcuteConditionMap() {
 
-        ImmutableMap<String, AcuteProcessingRule> map = ImmutableMap.<String, ProcessingRule>builder()
+        ImmutableMap<String, AcuteProcessingRule> map = new ImmutableMap.Builder<String,AcuteProcessingRule>()
                 .put("sprain and strain", buildAcuteConditionRule(
                         "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
                         "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
@@ -122,21 +117,20 @@ public class ConditionFactory {
     }
 
 
-    public static Optional<Condition> create(SoPPair soPPair, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository) {
+    public static Optional<Condition> create(SoPPair soPPair, ConditionDto conditionDto, Optional<ApplicableWearAndTearRuleConfiguration> applicableWearAndTearRuleConfiguration) {
 
 
-        Function<String, Optional<ProcessingRule>> createRule = c -> {
-            Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(c);
+        Function<String, Optional<? extends ProcessingRule>> createRule = c -> {
 
-            Optional<ProcessingRule> processingRuleOptional =
-                    !conditionConfiguration.isPresent() ?
-                            BuildRuleFromCode(c) :
-                            Optional.ofNullable(BuildRuleFromConfig(conditionConfiguration.get()));
+            Optional<? extends ProcessingRule> processingRuleOptional =
+                    !applicableWearAndTearRuleConfiguration.isPresent() ?
+                            BuildAcuteRuleFromCode(c) :
+                            Optional.ofNullable(BuildRuleFromConfig(applicableWearAndTearRuleConfiguration.get()));
 
             return processingRuleOptional;
         };
 
-        Optional<ProcessingRule> processingRuleOptional = createRule.apply(conditionDto.get_conditionName());
+        Optional<? extends ProcessingRule> processingRuleOptional = createRule.apply(conditionDto.get_conditionName());
         if (!processingRuleOptional.isPresent()) {
             return Optional.empty();
         }
@@ -154,7 +148,7 @@ public class ConditionFactory {
                 condition -> new Interval(condition.getStartDate().minusDays(daysWindowBeforeOnset), condition.getStartDate()));
     }
 
-    private static Optional<ProcessingRule> BuildRuleFromCode(String conditionName) {
+    private static Optional<AcuteProcessingRule> BuildAcuteRuleFromCode(String conditionName) {
 
         if (acuteConditionsMap.containsKey(conditionName)) {
             return Optional.of(acuteConditionsMap.get(conditionName));
@@ -164,67 +158,67 @@ public class ConditionFactory {
     }
 
 
-    private static ProcessingRule BuildRuleFromConfig(ConditionConfiguration conditionConfiguration) {
-        switch (conditionConfiguration.getConditionName()) {
+    private static ProcessingRule BuildRuleFromConfig(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+        switch (applicableWearAndTearRuleConfiguration.getConditionName()) {
             case "lumbar spondylosis":
-                return new LumbarSpondylosisRule(conditionConfiguration);
+                return new LumbarSpondylosisRule(applicableWearAndTearRuleConfiguration);
             case "osteoarthritis":
-                return new OsteoarthritisRule(conditionConfiguration);
+                return new OsteoarthritisRule(applicableWearAndTearRuleConfiguration);
             case "intervertebral disc prolapse":
-                return new InvertebralDiscProlapseRule(conditionConfiguration);
+                return new InvertebralDiscProlapseRule(applicableWearAndTearRuleConfiguration);
             case "thoracic spondylosis":
-                return new ThoracicSpondylosisRule(conditionConfiguration);
+                return new ThoracicSpondylosisRule(applicableWearAndTearRuleConfiguration);
             case "rotator cuff syndrome":
-                return new RotatorCuffSyndromeRule(conditionConfiguration);
+                return new RotatorCuffSyndromeRule(applicableWearAndTearRuleConfiguration);
             case "acquired cataract":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "achilles tendinopathy and bursitis":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "chondromalacia patella":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "iliotibial band syndrome":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "malignant melanoma of the skin":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "non-melanotic malignant neoplasm of the skin":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "patellar tendinopathy":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "plantar fasciitis":
-                return new GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(conditionConfiguration,
+                return new GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(applicableWearAndTearRuleConfiguration,
                         new FixedDaysPeriodSelector(84), // test period for standard of proof
                         new FixedDaysPeriodSelector(84), // RH
                         new FixedDaysPeriodSelector(168)); // BoP
             case "pterygium":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "sensorineural hearing loss":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "shin splints":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "solar keratosis":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "tinea":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "tinnitus":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "trochanteric bursitis and gluteal tendinopathy":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "femoroacetabular impingement syndrome":
-                return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "posttraumatic stress disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new MentalHealthProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "anxiety disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration, new FixedYearsPeriodSelector(5));
+                return new MentalHealthProcessingRule(applicableWearAndTearRuleConfiguration, new FixedYearsPeriodSelector(5));
             case "adjustment disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(84));
+                return new MentalHealthProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(84));
             case "malignant neoplasm of the eye":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "seborrhoeic keratosis":
-                return new RhOnlyGenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new RhOnlyGenericProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "pinguecula":
-                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
             case "benign neoplasm of the eye and adnexa":
-                return new RhOnlyGenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
+                return new RhOnlyGenericProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
 
         }
 

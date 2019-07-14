@@ -11,11 +11,16 @@ public class ApplicableRuleConfigurationImpl implements ApplicableWearAndTearRul
     private final RHRuleConfigurationItem rhRuleConfigurationItem;
     private final Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem;
 
-    public ApplicableRuleConfigurationImpl(RHRuleConfigurationItem rhRuleConfigurationItem, Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem)
+    public ApplicableRuleConfigurationImpl(String conditionName, RHRuleConfigurationItem rhRuleConfigurationItem, Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem)
     {
 
         this.rhRuleConfigurationItem = rhRuleConfigurationItem;
         this.boPRuleConfigurationItem = boPRuleConfigurationItem;
+    }
+
+    @Override
+    public String getConditionName() {
+        return null;
     }
 
     @Override

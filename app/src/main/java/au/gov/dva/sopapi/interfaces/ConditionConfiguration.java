@@ -52,7 +52,7 @@ public interface ConditionConfiguration {
             // bop config can be left out
             Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem = this.getBoPRuleConfigurationFor(relevantRank.get(), serviceDuringWhichConditionStarts.get().getBranch());
 
-            return ImmutableSet.of(new ApplicableRuleConfigurationImpl(
+            return ImmutableSet.of(new ApplicableRuleConfigurationImpl(condition.getSopPair().getConditionName(),
                     rhRuleConfigurationItem.get(),
                     boPRuleConfigurationItem)
             );
@@ -69,7 +69,7 @@ public interface ConditionConfiguration {
                 Optional<RHRuleConfigurationItem> rhConfig = getRHRuleConfigurationFor(rank.get(),service.getBranch());
                 if (!rhConfig.isPresent()) return Optional.empty();
                 Optional<BoPRuleConfigurationItem> bopConfig = getBoPRuleConfigurationFor(rank.get(),service.getBranch());
-                return Optional.of(new ApplicableRuleConfigurationImpl(rhConfig.get(),bopConfig));
+                return Optional.of(new ApplicableRuleConfigurationImpl(condition.getSopPair().getConditionName(), rhConfig.get(),bopConfig));
             };
 
             List<ApplicableWearAndTearRuleConfiguration> applicableConfigItems =

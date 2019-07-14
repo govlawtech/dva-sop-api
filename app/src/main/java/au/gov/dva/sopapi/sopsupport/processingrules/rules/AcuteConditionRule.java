@@ -108,21 +108,6 @@ public class AcuteConditionRule implements AcuteProcessingRule {
         }
     }
 
-    @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-
-        List<Factor> rhFactors = condition.getApplicableFactors(condition.getSopPair().getRhSop());
-        List<Factor> bopFactors = condition.getApplicableFactors(condition.getSopPair().getBopSop());
-
-        List<Factor> applicableRhFactors = rhFactors.stream()
-                .filter(f -> _satisfiedRHFactorParas.contains(f.getParagraph()))
-                .collect(Collectors.toList());
-        caseTrace.setRhFactors(ImmutableList.copyOf(applicableRhFactors));
-
-        List<Factor> applicableBopFactors = bopFactors.stream()
-                .filter(f -> _satisfiedBoPFactorPara.contains(f.getParagraph())).collect(Collectors.toList());
-        caseTrace.setBopFactors(ImmutableList.copyOf(applicableBopFactors));
-    }
 
     @Override
     public Recommendation inferRecommendation(ImmutableList<FactorWithSatisfaction> factors, ServiceHistory serviceHistory, SoP applicableSop, Condition condition, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
