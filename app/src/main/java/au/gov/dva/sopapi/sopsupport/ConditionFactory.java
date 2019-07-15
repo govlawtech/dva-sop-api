@@ -14,7 +14,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Optional;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ConditionFactory {
@@ -116,31 +115,32 @@ public class ConditionFactory {
         return map;
     }
 
+    public static Optional<Condition> createAcuteCondition(SoPPair soPPair, ConditionDto conditionDto)
+    {
+        Optional<AcuteProcessingRule> acuteProcessingRule = BuildAcuteRuleFromCode(conditionDto.get_conditionName());
+        if (!acuteProcessingRule.isPresent()) return Optional.empty();
+        return Optional.of(new OnsetCondition(
+                soPPair,
+                conditionDto.get_incidentDateRangeDto().get_startDate(),
+                conditionDto.get_incidentDateRangeDto().get_endDate(),
+                acuteProcessingRule.get())
+        );
 
-    public static Optional<Condition> create(SoPPair soPPair, ConditionDto conditionDto, Optional<ApplicableWearAndTearRuleConfiguration> applicableWearAndTearRuleConfiguration) {
+    }
 
 
-        Function<String, Optional<? extends ProcessingRule>> createRule = c -> {
+    public static Optional<Condition> createWearAndTearCondition(SoPPair soPPair, ConditionDto conditionDto, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
 
-            Optional<? extends ProcessingRule> processingRuleOptional =
-                    !applicableWearAndTearRuleConfiguration.isPresent() ?
-                            BuildAcuteRuleFromCode(c) :
-                            Optional.ofNullable(BuildRuleFromConfig(applicableWearAndTearRuleConfiguration.get()));
 
-            return processingRuleOptional;
-        };
-
-        Optional<? extends ProcessingRule> processingRuleOptional = createRule.apply(conditionDto.get_conditionName());
-        if (!processingRuleOptional.isPresent()) {
-            return Optional.empty();
-        }
+        WearAndTearProcessingRule wearAndTearProcessingRule = BuildWearAndTearRuleFromConfig(applicableWearAndTearRuleConfiguration); // can be null
+        if (wearAndTearProcessingRule == null) return Optional.empty();
 
         return Optional.of(new OnsetCondition(
                 soPPair,
                 conditionDto.get_incidentDateRangeDto().get_startDate(),
                 conditionDto.get_incidentDateRangeDto().get_endDate(),
-                processingRuleOptional.get())
-        );
+                wearAndTearProcessingRule
+        ));
     }
 
     private static AcuteProcessingRule buildAcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhParas, String bopRegisterId, ImmutableSet<String> bopParas, int daysWindowBeforeOnset) {
@@ -158,7 +158,7 @@ public class ConditionFactory {
     }
 
 
-    private static ProcessingRule BuildRuleFromConfig(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+    private static WearAndTearProcessingRule BuildWearAndTearRuleFromConfig(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
         switch (applicableWearAndTearRuleConfiguration.getConditionName()) {
             case "lumbar spondylosis":
                 return new LumbarSpondylosisRule(applicableWearAndTearRuleConfiguration);

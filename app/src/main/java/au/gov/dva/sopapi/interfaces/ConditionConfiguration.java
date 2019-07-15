@@ -9,6 +9,7 @@ import au.gov.dva.sopapi.sopsupport.processingrules.ApplicableRuleConfigurationI
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.google.common.collect.ImmutableSet;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -33,13 +34,13 @@ public interface ConditionConfiguration {
                 .findFirst();
     }
 
-    default ImmutableSet<ApplicableWearAndTearRuleConfiguration> getApplicableRuleConfigurations(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace)
+    default ImmutableSet<ApplicableWearAndTearRuleConfiguration> getApplicableRuleConfigurations(String conditionName, LocalDate conditionStartDate, ServiceHistory serviceHistory, CaseTrace caseTrace)
     {
         long numberOfServiceBranches = serviceHistory.getServices().stream().map(s -> s.getBranch()).distinct().count();
         if (numberOfServiceBranches <= 1) {
 
-            Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
-            Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
+            Optional<Rank> relevantRank = ProcessingRuleFunctions.getCFTSRankProximateToDate(serviceHistory.getServices(), conditionStartDate, caseTrace);
+            Optional<Service> serviceDuringWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), conditionStartDate, caseTrace);
             if (!relevantRank.isPresent() || !serviceDuringWhichConditionStarts.isPresent()) {
                 return ImmutableSet.of();
             }
@@ -52,7 +53,7 @@ public interface ConditionConfiguration {
             // bop config can be left out
             Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem = this.getBoPRuleConfigurationFor(relevantRank.get(), serviceDuringWhichConditionStarts.get().getBranch());
 
-            return ImmutableSet.of(new ApplicableRuleConfigurationImpl(condition.getSopPair().getConditionName(),
+            return ImmutableSet.of(new ApplicableRuleConfigurationImpl(conditionName,
                     rhRuleConfigurationItem.get(),
                     boPRuleConfigurationItem)
             );
@@ -61,15 +62,15 @@ public interface ConditionConfiguration {
         else {
             // find all the configurations that could potentially apply
             // where the service occurs before the condition
-            ImmutableSet<Service> services = ProcessingRuleFunctions.identifyAllServicesStartingBeforeConditionOnset(serviceHistory.getServices(),condition.getStartDate(),caseTrace);
+            ImmutableSet<Service> services = ProcessingRuleFunctions.identifyAllServicesStartingBeforeConditionOnset(serviceHistory.getServices(),conditionStartDate,caseTrace);
 
             Function<Service, Optional<ApplicableWearAndTearRuleConfiguration>> getApplicableRuleConfigForService = service -> {
-                Optional<Rank> rank = ProcessingRuleFunctions.getCFTSRankProximateToDate(ImmutableSet.of(service),condition.getStartDate(),caseTrace);
+                Optional<Rank> rank = ProcessingRuleFunctions.getCFTSRankProximateToDate(ImmutableSet.of(service),conditionStartDate,caseTrace);
                 if (!rank.isPresent()) return Optional.empty();
                 Optional<RHRuleConfigurationItem> rhConfig = getRHRuleConfigurationFor(rank.get(),service.getBranch());
                 if (!rhConfig.isPresent()) return Optional.empty();
                 Optional<BoPRuleConfigurationItem> bopConfig = getBoPRuleConfigurationFor(rank.get(),service.getBranch());
-                return Optional.of(new ApplicableRuleConfigurationImpl(condition.getSopPair().getConditionName(), rhConfig.get(),bopConfig));
+                return Optional.of(new ApplicableRuleConfigurationImpl(conditionName, rhConfig.get(),bopConfig));
             };
 
             List<ApplicableWearAndTearRuleConfiguration> applicableConfigItems =

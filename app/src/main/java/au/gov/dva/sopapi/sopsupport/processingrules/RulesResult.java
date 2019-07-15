@@ -53,7 +53,58 @@ public class RulesResult {
             return RulesResult.createEmpty(caseTrace);
         }
 
-        Optional<Condition> conditionOptional = ConditionFactory.create(soPPair.get(), sopSupportRequestDto.get_conditionDto(),ruleConfigurationRepository);
+        // now we know condition
+
+        Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
+
+        ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
+        serviceHistory = serviceHistory.filterServiceHistoryByEvents(Arrays.asList("within specified area"));
+
+
+        ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.get().getApplicableRuleConfigurations(soPPair.get().getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,caseTrace);
+
+        // bifurcate here based on whether acute or wear and tear condition
+
+        ImmutableSet<Condition> conditions = null;
+        if (!wearAndTearRuleConfigurations.isEmpty()) {
+              conditions = wearAndTearRuleConfigurations.stream()
+                .map(ac -> ConditionFactory.createWearAndTearCondition(soPPair.get(),sopSupportRequestDto.get_conditionDto(),ac))
+                      .filter(c -> c.isPresent())
+                      .map(c -> c.get())
+                      .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
+        }
+        else {
+            // must be acute condition
+ 
+            Optional<Condition> acuteConditionOptional = ConditionFactory.createAcuteCondition(soPPair.get(), sopSupportRequestDto.get_conditionDto());
+            if (acuteConditionOptional.isPresent()) conditions = ImmutableSet.of(acuteConditionOptional.get());
+
+        }
+
+        if (conditions.isEmpty())
+        {
+                caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("No 'Computer Based Decision' rules are configured for the condition '%s'.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
+                return RulesResult.createEmpty(caseTrace);
+        }
+
+
+        // now we have all the conditions
+
+            AcuteProcessingRule acuteProcessingRule = (AcuteProcessingRule) conditionOptional.get().getProcessingRule();
+            Optional<SoP> applicableSopOpt = acuteProcessingRule.getApplicableSop(conditionOptional.get(),serviceHistory,isOperational,caseTrace);
+
+
+            ImmutableList<FactorWithSatisfaction> inferredFactors = acuteProcessingRule.getSatisfiedFactors(conditionOptional.get(), applicableSop, serviceHistory, caseTrace);
+
+            // todo: move this out of case trace
+            condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition, serviceHistory, caseTrace);
+
+            Recommendation recommendation = condition.getProcessingRule().inferRecommendation(inferredFactors, serviceHistory, applicableSop, condition, isOperational, caseTrace);
+
+            return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
+
+
+        }
 
         if (!conditionOptional.isPresent())
         {
@@ -63,8 +114,6 @@ public class RulesResult {
 
         Condition condition = conditionOptional.get();
 
-        ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-        serviceHistory = serviceHistory.filterServiceHistoryByEvents(Arrays.asList("within specified area"));
 
         if (ProcessingRuleFunctions.conditionIsBeforeHireDate(condition, serviceHistory)) {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));
