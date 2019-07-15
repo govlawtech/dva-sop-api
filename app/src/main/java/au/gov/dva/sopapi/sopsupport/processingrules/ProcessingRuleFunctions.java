@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -215,14 +216,14 @@ public class ProcessingRuleFunctions {
 
 
 
-    public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {
-        return condition.getStartDate().isBefore(serviceHistory.getHireDate());
+    public static Boolean conditionIsBeforeHireDate(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory) {
+        return sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate().isBefore(serviceHistory.getHireDate());
 
     }
 
-    public static boolean conditionIsBeforeFirstDateOfService(Condition condition, ServiceHistory serviceHistory) {
+    public static boolean conditionIsBeforeFirstDateOfService(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory) {
         if (!serviceHistory.getStartofService().isPresent()) return true;
-        return condition.getStartDate().isBefore(serviceHistory.getStartofService().get());
+        return sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate().isBefore(serviceHistory.getStartofService().get());
     }
 }
 

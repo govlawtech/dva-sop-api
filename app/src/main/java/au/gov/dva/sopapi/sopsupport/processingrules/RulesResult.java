@@ -13,9 +13,12 @@ import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ConditionFactory;
+import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -36,14 +39,42 @@ public class RulesResult {
         return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECT);
     }
 
-    public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
+    private static RulesResult applyRulesForCondition(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace)
+    {
+            ProcessingRule processingRule = condition.getProcessingRule();
+            Optional<SoP> applicableSopOpt = processingRule.getApplicableSop(condition,serviceHistory,isOperational,caseTrace);
+            if (!applicableSopOpt.isPresent())
+            {
+                caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "No applicable SoP.");
+                return RulesResult.createEmpty(caseTrace);
+            }
 
-        // TODO: compare register ID in the sop pairs and the rule config.  If different, suggests there has been an update to the SoP.  Hence, the rules need to be updated
+            ImmutableList<FactorWithSatisfaction> inferredFactors =  processingRule.getSatisfiedFactors(condition, applicableSopOpt.get(), serviceHistory, caseTrace);
+            Recommendation recommendation = processingRule.inferRecommendation(inferredFactors,serviceHistory,applicableSopOpt.get(),condition,isOperational,caseTrace);
+            return new RulesResult(Optional.of(condition),applicableSopOpt,inferredFactors,caseTrace,recommendation);
+    }
+
+    private static Optional<RulesResult> checkVeteranPreconditions(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, CaseTrace caseTrace)
+    {
         if (sopSupportRequestDto.get_conditionDto().get_incidentType() == IncidentType.Aggravation)
         {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Aggravation cases not covered.");
-            return RulesResult .createEmpty(caseTrace);
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "Computer Based Decision making does not include aggravation cases.");
+            return Optional.of(RulesResult.createEmpty(caseTrace));
         }
+
+        if (ProcessingRuleFunctions.conditionIsBeforeHireDate(sopSupportRequestDto,serviceHistory)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto(), serviceHistory.getHireDate()));
+            return Optional.of(RulesResult.createEmpty(caseTrace));
+        }
+
+        if (ProcessingRuleFunctions.conditionIsBeforeFirstDateOfService(sopSupportRequestDto, serviceHistory)) {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Service history shows no service before the condition start date (%s), therefore no SoP factors are applicable.", sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate()));
+            return Optional.of(RulesResult.createEmpty(caseTrace));
+        }
+        return Optional.empty();
+    }
+
+    public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
         Optional<SoPPair> soPPair = ConditionFactory.getSopPairForConditionName(sopPairs,sopSupportRequestDto.get_conditionDto().get_conditionName());
 
@@ -54,11 +85,17 @@ public class RulesResult {
         }
 
         // now we know condition
+         ServiceHistory serviceHistory =
+                DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto())
+                .filterServiceHistoryByEvents(Arrays.asList("within specified area"));
+
+        Optional<RulesResult> veteranPreconditions = checkVeteranPreconditions(sopSupportRequestDto,serviceHistory,caseTrace);
+        if (veteranPreconditions.isPresent())
+        {
+            return veteranPreconditions.get();
+        }
 
         Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
-
-        ServiceHistory serviceHistory = DtoTransformations.serviceHistoryFromDto(sopSupportRequestDto.get_serviceHistoryDto());
-        serviceHistory = serviceHistory.filterServiceHistoryByEvents(Arrays.asList("within specified area"));
 
 
         ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.get().getApplicableRuleConfigurations(soPPair.get().getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,caseTrace);
@@ -66,6 +103,7 @@ public class RulesResult {
         // bifurcate here based on whether acute or wear and tear condition
 
         ImmutableSet<Condition> conditions = null;
+        boolean isAcute = false;
         if (!wearAndTearRuleConfigurations.isEmpty()) {
               conditions = wearAndTearRuleConfigurations.stream()
                 .map(ac -> ConditionFactory.createWearAndTearCondition(soPPair.get(),sopSupportRequestDto.get_conditionDto(),ac))
@@ -75,10 +113,9 @@ public class RulesResult {
         }
         else {
             // must be acute condition
- 
+            isAcute = true;
             Optional<Condition> acuteConditionOptional = ConditionFactory.createAcuteCondition(soPPair.get(), sopSupportRequestDto.get_conditionDto());
             if (acuteConditionOptional.isPresent()) conditions = ImmutableSet.of(acuteConditionOptional.get());
-
         }
 
         if (conditions.isEmpty())
@@ -89,72 +126,23 @@ public class RulesResult {
 
 
         // now we have all the conditions
+        if (isAcute) {
 
-            AcuteProcessingRule acuteProcessingRule = (AcuteProcessingRule) conditionOptional.get().getProcessingRule();
-            Optional<SoP> applicableSopOpt = acuteProcessingRule.getApplicableSop(conditionOptional.get(),serviceHistory,isOperational,caseTrace);
+            RulesResult acuteRulesResult = applyRulesForCondition(conditions.asList().get(0),serviceHistory,isOperational,caseTrace);
+            return acuteRulesResult;
+        }
+        else {
+            // wear and tear
+            ImmutableList<RulesResult> wearAndTearRulesResults =
+                    conditions.stream()
+                            .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace("tofix")))
+                            .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
 
-
-            ImmutableList<FactorWithSatisfaction> inferredFactors = acuteProcessingRule.getSatisfiedFactors(conditionOptional.get(), applicableSop, serviceHistory, caseTrace);
-
-            // todo: move this out of case trace
-            condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition, serviceHistory, caseTrace);
-
-            Recommendation recommendation = condition.getProcessingRule().inferRecommendation(inferredFactors, serviceHistory, applicableSop, condition, isOperational, caseTrace);
-
-            return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
-
+            throw new NotImplementedException();
 
         }
 
-        if (!conditionOptional.isPresent())
-        {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format(String.format("No processing rule is configured for condition: '%s'.  The condition name must match exactly the name from the SoP.", sopSupportRequestDto.get_conditionDto().get_conditionName())));
-            return  RulesResult.createEmpty(caseTrace);
-        }
 
-        Condition condition = conditionOptional.get();
-
-
-        if (ProcessingRuleFunctions.conditionIsBeforeHireDate(condition, serviceHistory)) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", condition.getStartDate(), serviceHistory.getHireDate()));
-            return  RulesResult.createEmpty(caseTrace);
-        }
-
-        if (ProcessingRuleFunctions.conditionIsBeforeFirstDateOfService(condition, serviceHistory)) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Service history shows no service before the condition start date (%s), therefore no SoP factors are applicable.", condition.getStartDate()));
-            return  RulesResult.createEmpty(caseTrace);
-        }
-
-
-        Optional<SoP> applicableSopOpt = condition.getProcessingRule().getApplicableSop(condition, serviceHistory, isOperational,caseTrace);
-        if (!applicableSopOpt.isPresent())
-        {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "No applicable SoP.");
-            return RulesResult.createEmpty(caseTrace);
-        }
-        SoP applicableSop = applicableSopOpt.get();
-
-        // decide whether it is acute or not
-        if (condition.getProcessingRule() instanceof WearAndTearProcessingRule) {
-
-            // get the applicable rule configurations
-            Optional<ConditionConfiguration> wearAndTearConditionConfig = ruleConfigurationRepository.getConditionConfigurationFor(condition.getSopPair().getConditionName());
-
-            if (!wearAndTearConditionConfig.isPresent()) {
-
-            }
-        }
-        else
-        {
-            ImmutableList<FactorWithSatisfaction> inferredFactors = condition.getProcessingRule().getSatisfiedFactors(condition, applicableSop, serviceHistory, caseTrace);
-
-            // todo: move this out of case trace
-            condition.getProcessingRule().attachConfiguredFactorsToCaseTrace(condition, serviceHistory, caseTrace);
-
-            Recommendation recommendation = condition.getProcessingRule().inferRecommendation(inferredFactors, serviceHistory, applicableSop, condition, isOperational, caseTrace);
-
-            return new RulesResult(Optional.of(condition), Optional.of(applicableSop), inferredFactors, caseTrace, recommendation);
-        }
 
     }
 
