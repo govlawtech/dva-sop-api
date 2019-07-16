@@ -36,6 +36,10 @@ public class GenericWearAndTearProcessingRule extends ProcessingRuleBase impleme
     }
 
 
+    @Override
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
+    }
 }
 
 

@@ -46,6 +46,11 @@ public class LumbarSpondylosisRule extends ProcessingRuleBase implements WearAnd
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
+    @Override
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
+    }
+
 
 
 

@@ -37,5 +37,8 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements We
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,rhInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
-
+    @Override
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
+    }
 }

@@ -46,5 +46,9 @@ public class RotatorCuffSyndromeRule extends ProcessingRuleBase implements WearA
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
+    @Override
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
+    }
 
 }

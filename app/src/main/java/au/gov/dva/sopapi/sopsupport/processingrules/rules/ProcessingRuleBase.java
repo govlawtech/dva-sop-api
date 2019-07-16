@@ -45,7 +45,6 @@ public class ProcessingRuleBase {
 
     protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, boolean defaultToNoneIfBoP, CaseTrace caseTrace) {
 
-        // todo: possibly can remove this check
         Optional<Service> serviceDuringOrAfterWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
 
         if (!serviceDuringOrAfterWhichConditionStarts.isPresent())
@@ -74,10 +73,12 @@ public class ProcessingRuleBase {
         if (requiredOperationalServiceDaysToApplyRhSop.longValue() <= daysOfOperationalService) {
             caseTrace.addLoggingTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
+            caseTrace.setRhFactors(condition.getSopPair().getRhSop().getOnsetFactors());
             return Optional.of(condition.getSopPair().getRhSop());
         } else if (!defaultToNoneIfBoP) {
             caseTrace.addLoggingTrace("The BoP SoP is applicable as the actual number of days of operational service in the test period is less than the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
+            caseTrace.setBopFactors(condition.getSopPair().getBopSop().getOnsetFactors());
             return Optional.of(condition.getSopPair().getBopSop());
         }
         else {
@@ -144,6 +145,5 @@ public class ProcessingRuleBase {
             return ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, ImmutableSet.of());
         }
     }
-
 
 }

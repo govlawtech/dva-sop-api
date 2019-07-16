@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.dtos.IncidentType;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.Recommendation;
+import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
@@ -36,6 +37,8 @@ public class RulesResult {
     private final ImmutableList<FactorWithSatisfaction> factorWithSatisfactions;
     private CaseTrace caseTrace;
     private Recommendation recommendation;
+
+
 
     public static RulesResult createEmpty(CaseTrace caseTrace) {
         return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECT);
@@ -144,7 +147,6 @@ public class RulesResult {
                 return RulesResult.createEmpty(caseTrace);
         }
 
-
         // now we have all the conditions
         if (isAcute) {
 
@@ -153,24 +155,33 @@ public class RulesResult {
         }
         else {
             // wear and tear
+            // we need a separate case trace for each run
             ImmutableList<RulesResult> wearAndTearRulesResults =
                     conditions.stream()
-                            .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace("tofix")))
+                            .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace()))
                             .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+            if (wearAndTearRuleConfigurations.size() > 1) {
+                ImmutableList<RulesResult> orderedResults = orderResultsFromMostBeneficialToLeast(wearAndTearRulesResults);
+                RulesResult bestResult = orderedResults.get(0);
 
-            ImmutableList<RulesResult> orderedResults = orderResultsFromMostBeneficialToLeast(wearAndTearRulesResults);
-            RulesResult bestResult = orderedResults.get(0);
-            return bestResult;
+                if (bestResult.condition.isPresent() && bestResult.condition.get().getProcessingRule() instanceof WearAndTearProcessingRule)
+                {
+                   WearAndTearProcessingRule appliedRule = (WearAndTearProcessingRule)bestResult.condition.get().getProcessingRule();
+                   ApplicableWearAndTearRuleConfiguration appliedConfig = appliedRule.getApplicableWearAndTearRuleConfiguration();
+                   ServiceBranch serviceBranch = appliedConfig.getRHRuleConfigurationItem().getServiceBranch();
+                   caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
+                   caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
+                }
+
+                return bestResult;
+            }
+            return wearAndTearRulesResults.get(0);
         }
-
-
-
     }
 
     public RulesResult(Optional<Condition> condition, Optional<SoP> applicableSop, ImmutableList<FactorWithSatisfaction> factorWithSatisfactions,CaseTrace caseTrace, Recommendation recommendation)
     {
         this.condition = condition;
-
         this.applicableSop = applicableSop;
         this.factorWithSatisfactions = factorWithSatisfactions;
         this.caseTrace = caseTrace;

@@ -354,7 +354,7 @@ public class Routes {
     }
 
     private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory) {
-        CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+        CaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
         // todo: inject condition factory

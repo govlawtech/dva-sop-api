@@ -45,7 +45,12 @@ public class GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP extends Proce
             bopSelector.getInterval(serviceHistory,condition.getStartDate());
 
         return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testIntervalForCFTSdays, applicableWearAndTearRuleConfiguration,caseTrace);
-}
+    }
+
+    @Override
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
+    }
 
 
 }

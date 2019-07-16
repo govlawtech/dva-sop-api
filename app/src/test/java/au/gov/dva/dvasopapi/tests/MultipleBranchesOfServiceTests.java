@@ -285,7 +285,7 @@ public class MultipleBranchesOfServiceTests {
         ConditionConfiguration mockConditionConfig = CreateMockConfigForArmyToAirForce("lumbar spondylosis"); // has to match condition mock name
         Condition mockCondition = new LumbarSpondylosisConditionMockWithOnsetDate(LocalDate.of(2010,1,1));
         ServiceHistory mockServiceHistory = CreateMockServiceHistoryForArmyToAirForce(150,17,150,17);
-        SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
+        SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace();
         ImmutableSet<ApplicableWearAndTearRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition.getSopPair().getConditionName(),mockCondition.getStartDate(),mockServiceHistory,mockCaseTrace);
         Assert.assertTrue(results.size() == 2);
     }
@@ -296,7 +296,7 @@ public class MultipleBranchesOfServiceTests {
         ConditionConfiguration mockConditionConfig = CreateMockConfigForArmyToAirForce("lumbar spondylosis"); // has to match condition mock name
         Condition mockCondition = new LumbarSpondylosisConditionMockWithOnsetDate(LocalDate.of(2001,1,1));
         ServiceHistory mockServiceHistory = CreateMockServiceHistoryForArmyToAirForce(150,17,150,17);
-        SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace("mock case ID");
+        SopSupportCaseTrace mockCaseTrace = new SopSupportCaseTrace();
         ImmutableSet<ApplicableWearAndTearRuleConfiguration> results = mockConditionConfig.getApplicableRuleConfigurations(mockCondition.getSopPair().getConditionName(),mockCondition.getStartDate(),mockServiceHistory,mockCaseTrace);
         Assert.assertTrue(results.size() == 0);
     }

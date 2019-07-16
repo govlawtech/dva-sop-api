@@ -15,4 +15,5 @@ public interface ApplicableWearAndTearRuleConfiguration {
         }
         else return getBopRuleConfigurationItem();
     }
+
 }

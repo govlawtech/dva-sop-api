@@ -7,4 +7,5 @@ import au.gov.dva.sopapi.interfaces.model.SoP;
 import com.google.common.collect.ImmutableList;
 
 public interface WearAndTearProcessingRule extends ProcessingRule {
+    ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration();
 }
