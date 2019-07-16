@@ -15,11 +15,13 @@ import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -72,6 +74,24 @@ public class RulesResult {
             return Optional.of(RulesResult.createEmpty(caseTrace));
         }
         return Optional.empty();
+    }
+
+    public static class ResultComparator implements Comparator<RulesResult>
+    {
+        ImmutableList recommendationsOrderedBestToWorst =
+                ImmutableList.of(Recommendation.APPROVED,Recommendation.CHECK_RH_BOP_MET, Recommendation.CHECK_RH,Recommendation.REJECT);
+
+
+        @Override
+        public int compare(RulesResult o1, RulesResult o2) {
+            return Integer.compare(recommendationsOrderedBestToWorst.indexOf(o1),recommendationsOrderedBestToWorst.indexOf(o2));
+        }
+
+    }
+
+    public static ImmutableList<RulesResult> orderResultsFromMostBeneficialToLeast(ImmutableList<RulesResult> results)
+    {
+        return results.stream().sorted(new ResultComparator()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
     }
 
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
@@ -138,8 +158,9 @@ public class RulesResult {
                             .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace("tofix")))
                             .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
 
-            throw new NotImplementedException();
-
+            ImmutableList<RulesResult> orderedResults = orderResultsFromMostBeneficialToLeast(wearAndTearRulesResults);
+            RulesResult bestResult = orderedResults.get(0);
+            return bestResult;
         }
 
 

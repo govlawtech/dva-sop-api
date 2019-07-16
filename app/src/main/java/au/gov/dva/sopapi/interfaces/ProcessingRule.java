@@ -24,10 +24,11 @@ public interface ProcessingRule {
         Recommendation recommendation;
         if (applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis) {
             if (satisfied) recommendation = Recommendation.APPROVED;
-            else if (caseTrace.getActualCftsDays().orElse(0) >= caseTrace.getRequiredCftsDaysForBop().orElse(Integer.MAX_VALUE)) recommendation = Recommendation.CHECK_RH_BOP_MET;
-            else recommendation = Recommendation.CHECK_RH;
+            // no satisfied factors but standard of proof is RH
+            else if (caseTrace.getActualCftsDays().orElse(0) >= caseTrace.getRequiredCftsDaysForBop().orElse(Integer.MAX_VALUE)) recommendation = Recommendation.CHECK_RH_BOP_MET;  // where the standard of proof is RH, but there are not enough days for that.  So we test if the number of days is greater than the BoP reqs.  There is still a chance for an 'upgrade' to RH.
+            else recommendation = Recommendation.CHECK_RH;  // The standard of proof is RH, but there are not enough days
         }
-        else {
+        else { // standard of proof is BoP
             if (satisfied && caseTrace.getActualOperationalDays().orElse(0) > 0) recommendation = Recommendation.CHECK_RH_BOP_MET;
             else if (satisfied) recommendation = Recommendation.APPROVED;
             else recommendation = Recommendation.REJECT;
