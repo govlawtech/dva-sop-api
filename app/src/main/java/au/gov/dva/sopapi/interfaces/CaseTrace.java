@@ -49,4 +49,6 @@ public interface CaseTrace {
 
     void setBopFactors(ImmutableList<Factor> bopFactors);
     ImmutableList<Factor> getBopFactors();
+
+
 }

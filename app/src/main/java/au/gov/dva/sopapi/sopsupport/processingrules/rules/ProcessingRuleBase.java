@@ -42,6 +42,13 @@ public class ProcessingRuleBase {
         return false;
     }
 
+    public ImmutableList<Factor> getApplicableFactors(SoP sop, ImmutableSet<String> configuredFactors)
+    {
+        return sop.getOnsetFactors().stream()
+        .filter(f -> configuredFactors.contains(f.getParagraph()))
+                .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+    }
+
 
     protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, boolean defaultToNoneIfBoP, CaseTrace caseTrace) {
 
@@ -66,6 +73,13 @@ public class ProcessingRuleBase {
         }
         caseTrace.setActualOperationalDays(daysOfOperationalService.intValue());
 
+        // applicable factors
+        ImmutableList<Factor> applicableRhFactors = getApplicableFactors(condition.getSopPair().getRhSop(),applicableWearAndTearRuleConfiguration.getRHRuleConfigurationItem().getFactorReferences());
+        ImmutableList<Factor> applicableBoPFactors = applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().isPresent() ? getApplicableFactors(condition.getSopPair().getBopSop(), applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().get().getFactorReferences()) : ImmutableList.of();
+
+        caseTrace.setRhFactors(applicableRhFactors);
+        caseTrace.setBopFactors(applicableBoPFactors);
+
         caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("Required number of days of operational service for Reasonable Hypothesis: %d.", requiredOperationalServiceDaysToApplyRhSop));
         caseTrace.setRequiredOperationalDaysForRh(requiredOperationalServiceDaysToApplyRhSop);
         caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("Actual number of days of operational service: %d.", daysOfOperationalService));
@@ -73,6 +87,7 @@ public class ProcessingRuleBase {
         if (requiredOperationalServiceDaysToApplyRhSop.longValue() <= daysOfOperationalService) {
             caseTrace.addLoggingTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
+
             caseTrace.setRhFactors(condition.getSopPair().getRhSop().getOnsetFactors());
             return Optional.of(condition.getSopPair().getRhSop());
         } else if (!defaultToNoneIfBoP) {
