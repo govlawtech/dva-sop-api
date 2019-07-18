@@ -50,5 +50,21 @@ public interface CaseTrace {
     void setBopFactors(ImmutableList<Factor> bopFactors);
     ImmutableList<Factor> getBopFactors();
 
+    default boolean isComplete() {
+        if (!getReasonings().containsKey(ReasoningFor.ABORT_PROCESSING))
+        {
+            return  getConditionName().isPresent() &&
+                    getApplicableStandardOfProof().isPresent() &&
+                    getRequiredCftsDays().isPresent() &&
+                    getRequiredCftsDaysForRh().isPresent() &&
+                     getRequiredCftsDaysForBop().isPresent() &&
+                    getActualCftsDays().isPresent() &&
+                    getRequiredOperationalDaysForRh().isPresent() &&
+                    getActualOperationalDays().isPresent() &&
+                     !getRhFactors().isEmpty();
+            // bop factors can be empty
 
+        }
+        return true;
+    }
 }

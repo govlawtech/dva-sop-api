@@ -30,6 +30,11 @@ public class SopSupportCaseTrace implements CaseTrace {
 
     }
 
+    public SopSupportCaseTrace(String conditionName)
+    {
+        setConditionName(conditionName);
+    }
+
     @Override
     public void setConditionName(String name) {
         conditionName = Optional.of(name);

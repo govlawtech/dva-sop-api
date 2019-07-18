@@ -39,7 +39,6 @@ public class RulesResult {
     private Recommendation recommendation;
 
 
-
     public static RulesResult createEmpty(CaseTrace caseTrace) {
         return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECT);
     }
@@ -158,7 +157,7 @@ public class RulesResult {
             // we need a separate case trace for each run
             ImmutableList<RulesResult> wearAndTearRulesResults =
                     conditions.stream()
-                            .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace()))
+                            .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace(c.getSopPair().getConditionName())))
                             .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
             if (wearAndTearRuleConfigurations.size() > 1) {
                 ImmutableList<RulesResult> orderedResults = orderResultsFromMostBeneficialToLeast(wearAndTearRulesResults);
