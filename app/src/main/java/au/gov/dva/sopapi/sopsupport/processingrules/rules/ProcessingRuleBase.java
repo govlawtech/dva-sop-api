@@ -42,7 +42,7 @@ public class ProcessingRuleBase {
         return false;
     }
 
-    public ImmutableList<Factor> getApplicableFactors(SoP sop, ImmutableSet<String> configuredFactors)
+    public static ImmutableList<Factor> getApplicableFactors(SoP sop, ImmutableSet<String> configuredFactors)
     {
         return sop.getOnsetFactors().stream()
         .filter(f -> configuredFactors.contains(f.getParagraph()))

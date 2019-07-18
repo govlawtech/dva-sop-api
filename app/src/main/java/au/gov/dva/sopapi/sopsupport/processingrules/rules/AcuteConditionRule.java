@@ -49,7 +49,10 @@ public class AcuteConditionRule implements AcuteProcessingRule {
         long numberOfDaysOfFullTimeOperationalServiceDaysInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(), intervalToCheckForOperationalService.getEnd(), isOperational);
         if (numberOfDaysOfFullTimeOperationalServiceDaysInInterval >= Integer.MAX_VALUE)
             throw new ProcessingRuleRuntimeException("Number of operational days above max value.");
+
+
         caseTrace.setActualOperationalDays((int) numberOfDaysOfFullTimeOperationalServiceDaysInInterval);
+
 
         boolean hasOperationalServiceInWindow = numberOfDaysOfFullTimeOperationalServiceDaysInInterval > 0;
 
@@ -85,6 +88,13 @@ public class AcuteConditionRule implements AcuteProcessingRule {
             caseTrace.setRequiredCftsDays(1);
             caseTrace.setRequiredCftsDaysForBop(1);
             caseTrace.setRequiredCftsDaysForRh(1);
+
+            // applicable factors
+            ImmutableList<Factor> applicableRhFactors =  ProcessingRuleBase.getApplicableFactors(condition.getSopPair().getRhSop(), _satisfiedRHFactorParas);
+            ImmutableList<Factor> applicableBoPFactors = ProcessingRuleBase.getApplicableFactors(condition.getSopPair().getBopSop(),_satisfiedBoPFactorPara);
+            caseTrace.setRhFactors(applicableRhFactors);
+            caseTrace.setBopFactors(applicableBoPFactors);
+
             return applicableSop;
         }
     }
