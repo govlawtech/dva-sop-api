@@ -11,7 +11,7 @@ import java.util.*;
 
 public class SopSupportCaseTrace implements CaseTrace {
 
-    private StringBuilder sb;
+    private StringBuilder sb = new StringBuilder();
 
     private Optional<Integer> requiredCftsDays = Optional.empty();
     private Optional<Integer> requiredCftsDaysForRh = Optional.empty();

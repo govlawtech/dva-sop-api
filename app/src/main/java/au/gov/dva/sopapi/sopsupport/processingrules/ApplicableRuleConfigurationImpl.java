@@ -8,11 +8,13 @@ import java.util.Optional;
 
 public class ApplicableRuleConfigurationImpl implements ApplicableWearAndTearRuleConfiguration {
 
+    private final String conditionName;
     private final RHRuleConfigurationItem rhRuleConfigurationItem;
     private final Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem;
 
     public ApplicableRuleConfigurationImpl(String conditionName, RHRuleConfigurationItem rhRuleConfigurationItem, Optional<BoPRuleConfigurationItem> boPRuleConfigurationItem)
     {
+        this.conditionName = conditionName;
 
         this.rhRuleConfigurationItem = rhRuleConfigurationItem;
         this.boPRuleConfigurationItem = boPRuleConfigurationItem;
@@ -20,7 +22,7 @@ public class ApplicableRuleConfigurationImpl implements ApplicableWearAndTearRul
 
     @Override
     public String getConditionName() {
-        return null;
+        return conditionName;
     }
 
     @Override

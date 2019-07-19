@@ -563,7 +563,7 @@ public class MultipleBranchesOfServiceTests {
 
     @Test
     public void TestMultipleBranchesOfService(){
-        String conditionName = "mockConditionName";
+        String conditionName = "lumbar spondylosis";
         LocalDate startOfServiceDate = LocalDate.of(2004,7,1);
         int seedDaysForRuleConfig = 100;
         int daysInArmy = 150;
@@ -572,10 +572,13 @@ public class MultipleBranchesOfServiceTests {
 
         // 10 days RH service, 100 days CFTS for RH, double for BoP
         RuleConfigurationRepository mockRepo = createMockRulesConfigurationRepo(conditionName,seedDaysForRuleConfig);
+        int rhSize =  mockRepo.getRHItems().size();
+
         SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
         CaseTrace caseTrace = new SopSupportCaseTrace();
         RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName)),isOperationalMock, caseTrace);
-        
+
+
     }
 
 }

@@ -68,6 +68,7 @@ public interface ServiceHistory {
     default ImmutableList<Deployment> getCftsDeployments()
     {
         return ProcessingRuleFunctions.getCFTSDeployments(this);
+
     }
 
     default long getNumberOfDaysCftsInIntervalInclusive(LocalDate startDateInclusive, LocalDate endDateInclusive) {

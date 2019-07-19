@@ -8,7 +8,6 @@ import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
-import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -17,10 +16,8 @@ import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import au.gov.dva.sopapi.sopsupport.ConditionFactory;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -58,6 +55,18 @@ public class RulesResult {
             return new RulesResult(Optional.of(condition),applicableSopOpt,inferredFactors,caseTrace,recommendation);
     }
 
+    private static Optional<RulesResult> checkServiceHistoryPreconditions(ServiceHistory serviceHistory, CaseTrace caseTrace)
+    {
+        ImmutableList<Deployment> deploymentsWhereEndDateIsBeforeStartDate =
+                serviceHistory.getCftsDeployments().stream().filter(d -> !d.isValid()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+        if (!deploymentsWhereEndDateIsBeforeStartDate.isEmpty())
+        {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"The service history is not internally consistent: at least one end date is before the corresponding start date.");
+            return Optional.of(RulesResult.createEmpty(caseTrace));
+        }
+        return Optional.empty();
+    }
+
     private static Optional<RulesResult> checkVeteranPreconditions(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, CaseTrace caseTrace)
     {
         if (sopSupportRequestDto.get_conditionDto().get_incidentType() == IncidentType.Aggravation)
@@ -75,6 +84,9 @@ public class RulesResult {
             caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Service history shows no service before the condition start date (%s), therefore no SoP factors are applicable.", sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate()));
             return Optional.of(RulesResult.createEmpty(caseTrace));
         }
+
+
+
         return Optional.empty();
     }
 
@@ -118,6 +130,13 @@ public class RulesResult {
         {
             return veteranPreconditions.get();
         }
+
+        Optional<RulesResult> serviceHistoryConsistency = checkServiceHistoryPreconditions(serviceHistory,caseTrace);
+        if (serviceHistoryConsistency.isPresent())
+        {
+            return serviceHistoryConsistency.get();
+        }
+
 
         Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
 
