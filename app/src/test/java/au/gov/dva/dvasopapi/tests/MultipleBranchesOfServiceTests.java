@@ -547,7 +547,7 @@ public class MultipleBranchesOfServiceTests {
                                 )),
                         new ServiceDto(ServiceBranch.RAN,EmploymentType.CFTS,startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy + daysInAirForce),Rank.OtherRank,
                                 ImmutableList.of(
-                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate.plusDays(daysInArmy),startDate.plusDays(daysInAirForce/10))
+                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy).plusDays(daysInAirForce/10))
                                 )
                 )
         ));
@@ -578,7 +578,8 @@ public class MultipleBranchesOfServiceTests {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName)),isOperationalMock, caseTrace);
 
-
+        // todo: bug where only one applicable w and t rule config is being picked out
+        // todo: bug where configured factors are not attached
     }
 
 }
