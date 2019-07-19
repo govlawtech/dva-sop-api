@@ -5,6 +5,7 @@ import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -35,6 +36,7 @@ public class LegislationRegisterTests{
     }
 
     @Category(IntegrationTest.class)
+    @Ignore
     @Test
     public void getRedirectForDetails() throws MalformedURLException, ExecutionException, InterruptedException {
         URL testInstrumentPage = URI.create("https://www.legislation.gov.au/Latest/F2014L00930/Download").toURL();

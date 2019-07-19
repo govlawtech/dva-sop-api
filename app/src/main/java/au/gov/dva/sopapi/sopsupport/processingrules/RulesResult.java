@@ -8,6 +8,7 @@ import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
+import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -18,7 +19,6 @@ import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -96,6 +96,8 @@ public class RulesResult {
         return results.stream().sorted(new ResultComparator()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
     }
 
+
+
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
 
         Optional<SoPPair> soPPair = ConditionFactory.getSopPairForConditionName(sopPairs,sopSupportRequestDto.get_conditionDto().get_conditionName());
@@ -119,6 +121,10 @@ public class RulesResult {
 
         Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
 
+        if (!conditionConfiguration.isPresent())
+        {
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,String.format("No rules are configured to process condition '%s'.",soPPair.get().getConditionName()));
+        }
 
         ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.get().getApplicableRuleConfigurations(soPPair.get().getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,caseTrace);
 
