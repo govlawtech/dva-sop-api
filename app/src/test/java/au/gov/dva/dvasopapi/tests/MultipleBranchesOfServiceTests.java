@@ -441,17 +441,17 @@ public class MultipleBranchesOfServiceTests {
 
                             @Override
                             public ServiceBranch getServiceBranch() {
-                                return null;
+                                return ServiceBranch.RAAF;
                             }
 
                             @Override
                             public Rank getRank() {
-                                return null;
+                                return Rank.OtherRank;
                             }
 
                             @Override
                             public int getRequiredCFTSDays() {
-                                return 0;
+                                return seedCftsDays * 4;
                             }
                         }
                 );
@@ -545,7 +545,7 @@ public class MultipleBranchesOfServiceTests {
                                 ImmutableList.of(
                                         new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate,startDate.plusDays(daysInArmy/10))
                                 )),
-                        new ServiceDto(ServiceBranch.RAN,EmploymentType.CFTS,startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy + daysInAirForce),Rank.OtherRank,
+                        new ServiceDto(ServiceBranch.RAAF,EmploymentType.CFTS,startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy + daysInAirForce),Rank.OtherRank,
                                 ImmutableList.of(
                                         new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy).plusDays(daysInAirForce/10))
                                 )
@@ -572,12 +572,12 @@ public class MultipleBranchesOfServiceTests {
 
         // 10 days RH service, 100 days CFTS for RH, double for BoP
         RuleConfigurationRepository mockRepo = createMockRulesConfigurationRepo(conditionName,seedDaysForRuleConfig);
-        int rhSize =  mockRepo.getRHItems().size();
 
         SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
         CaseTrace caseTrace = new SopSupportCaseTrace();
         RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName)),isOperationalMock, caseTrace);
 
+        System.out.println(result.getCaseTrace());
         // todo: bug where only one applicable w and t rule config is being picked out
         // todo: bug where configured factors are not attached
     }

@@ -175,4 +175,21 @@ public class SopSupportCaseTrace implements CaseTrace {
         return _bopFactors;
     }
 
+    @Override
+    public String toString() {
+        return "SopSupportCaseTrace{" +
+                "sb=" + sb +
+                ", requiredCftsDays=" + requiredCftsDays +
+                ", requiredCftsDaysForRh=" + requiredCftsDaysForRh +
+                ", requiredCftsDaysForBop=" + requiredCftsDaysForBop +
+                ", actualCftsDays=" + actualCftsDays +
+                ", requiredRhOperationalDays=" + requiredRhOperationalDays +
+                ", actualOperationalDays=" + actualOperationalDays +
+                ", applicableStandardOfProof=" + applicableStandardOfProof +
+                ", reasonings=" + reasonings +
+                ", conditionName=" + conditionName +
+                ", _rhFactors=" + _rhFactors +
+                ", _bopFactors=" + _bopFactors +
+                '}';
+    }
 }

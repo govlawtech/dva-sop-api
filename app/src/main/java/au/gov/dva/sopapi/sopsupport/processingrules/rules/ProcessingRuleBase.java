@@ -49,6 +49,18 @@ public class ProcessingRuleBase {
                 .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
     }
 
+    protected void setRequirementsInCaseTrace(CaseTrace caseTrace, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, SoPPair soPPair)
+    {
+        // applicable factors
+        ImmutableList<Factor> applicableRhFactors = getApplicableFactors(soPPair.getRhSop(),applicableWearAndTearRuleConfiguration.getRHRuleConfigurationItem().getFactorReferences());
+        ImmutableList<Factor> applicableBoPFactors = applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().isPresent() ? getApplicableFactors(soPPair.getBopSop(), applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().get().getFactorReferences()) : ImmutableList.of();
+
+        caseTrace.setRhFactors(applicableRhFactors);
+        caseTrace.setBopFactors(applicableBoPFactors);
+
+        caseTrace.setRequiredCftsDaysForRh(applicableWearAndTearRuleConfiguration.getRHRuleConfigurationItem().getRequiredCFTSDays());
+        if (applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().isPresent()) caseTrace.setRequiredCftsDaysForBop(applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().get().getRequiredCFTSDays());
+    }
 
     protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, boolean defaultToNoneIfBoP, CaseTrace caseTrace) {
 
@@ -62,6 +74,8 @@ public class ProcessingRuleBase {
 
         Integer requiredOperationalServiceDaysToApplyRhSop = applicableWearAndTearRuleConfiguration.getRHRuleConfigurationItem().getRequiredDaysOfOperationalService();
 
+        setRequirementsInCaseTrace(caseTrace,applicableWearAndTearRuleConfiguration,condition.getSopPair());
+
         Interval testInterval = rhInterval;
         caseTrace.addLoggingTrace(String.format("The start date for the test period for RH: %s", testInterval.getStart()));
         caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", condition.getStartDate()));
@@ -73,12 +87,6 @@ public class ProcessingRuleBase {
         }
         caseTrace.setActualOperationalDays(daysOfOperationalService.intValue());
 
-        // applicable factors
-        ImmutableList<Factor> applicableRhFactors = getApplicableFactors(condition.getSopPair().getRhSop(),applicableWearAndTearRuleConfiguration.getRHRuleConfigurationItem().getFactorReferences());
-        ImmutableList<Factor> applicableBoPFactors = applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().isPresent() ? getApplicableFactors(condition.getSopPair().getBopSop(), applicableWearAndTearRuleConfiguration.getBopRuleConfigurationItem().get().getFactorReferences()) : ImmutableList.of();
-
-        caseTrace.setRhFactors(applicableRhFactors);
-        caseTrace.setBopFactors(applicableBoPFactors);
 
         caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("Required number of days of operational service for Reasonable Hypothesis: %d.", requiredOperationalServiceDaysToApplyRhSop));
         caseTrace.setRequiredOperationalDaysForRh(requiredOperationalServiceDaysToApplyRhSop);
@@ -87,13 +95,11 @@ public class ProcessingRuleBase {
         if (requiredOperationalServiceDaysToApplyRhSop.longValue() <= daysOfOperationalService) {
             caseTrace.addLoggingTrace("The RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.ReasonableHypothesis);
-
-            caseTrace.setRhFactors(condition.getSopPair().getRhSop().getOnsetFactors());
             return Optional.of(condition.getSopPair().getRhSop());
+
         } else if (!defaultToNoneIfBoP) {
             caseTrace.addLoggingTrace("The BoP SoP is applicable as the actual number of days of operational service in the test period is less than the required number.");
             caseTrace.setApplicableStandardOfProof(StandardOfProof.BalanceOfProbabilities);
-            caseTrace.setBopFactors(condition.getSopPair().getBopSop().getOnsetFactors());
             return Optional.of(condition.getSopPair().getBopSop());
         }
         else {

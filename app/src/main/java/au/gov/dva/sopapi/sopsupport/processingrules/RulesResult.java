@@ -193,8 +193,8 @@ public class RulesResult {
                    WearAndTearProcessingRule appliedRule = (WearAndTearProcessingRule)bestResult.condition.get().getProcessingRule();
                    ApplicableWearAndTearRuleConfiguration appliedConfig = appliedRule.getApplicableWearAndTearRuleConfiguration();
                    ServiceBranch serviceBranch = appliedConfig.getRHRuleConfigurationItem().getServiceBranch();
-                   caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
-                   caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
+                   bestResult.caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
+                   bestResult.caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
                 }
 
                 return bestResult;
@@ -202,6 +202,7 @@ public class RulesResult {
             return wearAndTearRulesResults.get(0);
         }
     }
+
 
     public RulesResult(Optional<Condition> condition, Optional<SoP> applicableSop, ImmutableList<FactorWithSatisfaction> factorWithSatisfactions,CaseTrace caseTrace, Recommendation recommendation)
     {
