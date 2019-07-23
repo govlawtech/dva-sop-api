@@ -195,7 +195,7 @@ public class ProcessingRuleFunctions {
 
 
         if (!relevantService.isPresent()) {
-            caseTrace.addLoggingTrace(String.format("No service starting before date: %s.", testDate));
+            caseTrace.addLoggingTrace(String.format("No continuous full-time service starting before date: %s.", testDate));
             return Optional.empty();
         } else {
 //            caseTrace.addLoggingTrace("Relevant rank: " + relevantService.get().getRank());

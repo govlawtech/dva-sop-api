@@ -81,7 +81,7 @@ public class RulesResult {
         }
 
         if (ProcessingRuleFunctions.conditionIsBeforeHireDate(sopSupportRequestDto,serviceHistory)) {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto(), serviceHistory.getHireDate()));
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("Condition onset started on %s, before hire date of %s, therefore no SoP factors are applicable.", sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(), serviceHistory.getHireDate()));
             return Optional.of(RulesResult.createEmpty(caseTrace));
         }
 
@@ -126,6 +126,11 @@ public class RulesResult {
         CaseTrace localCt = new SopSupportCaseTrace();
         ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.getApplicableRuleConfigurations(soPPair.getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,localCt);
 
+        if (wearAndTearRuleConfigurations.isEmpty())
+        {
+            localCt.addReasoningFor(ReasoningFor.ABORT_PROCESSING,"None of the configured processing rules match the service history.");
+            return RulesResult.createEmpty(localCt);
+        }
 
         ImmutableSet<Condition> conditions = wearAndTearRuleConfigurations.stream()
                 .map(ac -> ConditionFactory.createWearAndTearCondition(soPPair,sopSupportRequestDto.get_conditionDto(),ac))
@@ -145,8 +150,10 @@ public class RulesResult {
             WearAndTearProcessingRule appliedRule = (WearAndTearProcessingRule)bestResult.condition.get().getProcessingRule();
             ApplicableWearAndTearRuleConfiguration appliedConfig = appliedRule.getApplicableWearAndTearRuleConfiguration();
             ServiceBranch serviceBranch = appliedConfig.getRHRuleConfigurationItem().getServiceBranch();
-            bestResult.caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
-            bestResult.caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
+            if (wearAndTearRulesResults.size() > 1) {
+                bestResult.caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The Computer Based Decision rules for the service branch '%s' applied because this yielded the most beneficial result.", serviceBranch.toString()));
+                bestResult.caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The Computer Based Decision rules for the service branch '%s' applied because this yielded the most beneficial result.", serviceBranch.toString()));
+            }
         }
 
 

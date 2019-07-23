@@ -553,6 +553,9 @@ public class MultipleBranchesOfServiceTests {
         ));
     }
 
+
+
+
     private static ConditionDto createMockConditionDto(String conditionName, LocalDate onsetDate)
     {
         return new ConditionDto(conditionName,IncidentType.Onset,null,null,new OnsetDateRangeDto(onsetDate,onsetDate),null);
@@ -615,6 +618,24 @@ public class MultipleBranchesOfServiceTests {
         Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
     }
 
+    @Test
+    public void TestPreconditionsFailed() {
+        String conditionName = "external burn";
+        LocalDate startOfServiceDate = LocalDate.of(2019,7,1);
+        int daysInArmy = 150;
+        int daysInAirForce = 150;
+        LocalDate onsetDate = LocalDate.of(2004,8,1); // during army service
+
+        // 10 days RH service, 100 days CFTS for RH, double for BoP
+        RuleConfigurationRepository mockRepo = createMockEmptyRuleConfigRepo();
+
+        SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
+        CaseTrace caseTrace = new SopSupportCaseTrace();
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,"F2017C00862","F2017C00861")),isOperationalMock, caseTrace);
+
+        Assert.assertTrue(result.getCaseTrace().isComplete());
+        Assert.assertTrue(result.getCaseTrace().getReasonings().containsKey(ReasoningFor.ABORT_PROCESSING));
+    }
 
 }
 
