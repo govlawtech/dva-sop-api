@@ -83,6 +83,7 @@ public class AcuteConditionRule implements AcuteProcessingRule {
             return Optional.empty();
         } else {
 
+            caseTrace.setConditionName(condition.getSopPair().getConditionName());
             caseTrace.setRequiredOperationalDaysForRh(1);
             caseTrace.setApplicableStandardOfProof(applicableSop.get().getStandardOfProof());
             caseTrace.setRequiredCftsDays(1);

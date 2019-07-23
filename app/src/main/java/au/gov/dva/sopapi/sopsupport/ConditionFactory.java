@@ -52,14 +52,6 @@ public class ConditionFactory {
                         ImmutableSet.of("9(1)"),
                         7
                 ))
-                // There is no longer a SoP for 'dislocation'; remove below when MyService updates config
-                .put("dislocation", buildAcuteConditionRule(
-                        "F2019L00640",
-                        ImmutableSet.of("9(1)"),
-                        "F2019L00647",
-                        ImmutableSet.of("9(1)"),
-                        7
-                ))
                 .put("fracture", buildAcuteConditionRule(
                         "F2015L01340",
                         ImmutableSet.of("9(1)"),

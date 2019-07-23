@@ -40,6 +40,11 @@ public class RulesResult {
         return new RulesResult(Optional.empty(),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECT);
     }
 
+    public static RulesResult createEmpty(Condition condition, CaseTrace caseTrace)
+    {
+        return new RulesResult(Optional.of(condition),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECT);
+    }
+
     private static RulesResult applyRulesForCondition(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, CaseTrace caseTrace)
     {
             ProcessingRule processingRule = condition.getProcessingRule();
@@ -47,7 +52,7 @@ public class RulesResult {
             if (!applicableSopOpt.isPresent())
             {
                 caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "No applicable SoP.");
-                return RulesResult.createEmpty(caseTrace);
+                return RulesResult.createEmpty(condition, caseTrace);
             }
 
             ImmutableList<FactorWithSatisfaction> inferredFactors =  processingRule.getSatisfiedFactors(condition, applicableSopOpt.get(), serviceHistory, caseTrace);
@@ -108,6 +113,58 @@ public class RulesResult {
         return results.stream().sorted(new ResultComparator()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
     }
 
+    private static RulesResult applyRulesForAcuteCondition(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, SoPPair soPPair, Predicate<Deployment> isOperational, CaseTrace caseTrace)
+    {
+        Optional<Condition> acuteConditionOptional = ConditionFactory.createAcuteCondition(soPPair, sopSupportRequestDto.get_conditionDto());
+        assert acuteConditionOptional.isPresent() : "check config before creating";
+        RulesResult rulesResult = applyRulesForCondition(acuteConditionOptional.get(),serviceHistory,isOperational,caseTrace);
+        return rulesResult;
+    }
+
+    private static RulesResult applyRulesForWearAndTearCondition(ConditionConfiguration conditionConfiguration, SoPPair soPPair, SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, Predicate<Deployment> isOperational)
+    {
+        CaseTrace localCt = new SopSupportCaseTrace();
+        ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.getApplicableRuleConfigurations(soPPair.getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,localCt);
+
+
+        ImmutableSet<Condition> conditions = wearAndTearRuleConfigurations.stream()
+                .map(ac -> ConditionFactory.createWearAndTearCondition(soPPair,sopSupportRequestDto.get_conditionDto(),ac))
+                .filter(c -> c.isPresent())
+                .map(c -> c.get())
+                .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
+
+        ImmutableList<RulesResult> wearAndTearRulesResults =
+                conditions.stream()
+                        .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace(c.getSopPair().getConditionName())))
+                        .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+        ImmutableList<RulesResult> orderedResults = orderResultsFromMostBeneficialToLeast(wearAndTearRulesResults);
+        RulesResult bestResult = orderedResults.get(0);
+
+        if (bestResult.condition.isPresent() && bestResult.condition.get().getProcessingRule() instanceof WearAndTearProcessingRule)
+        {
+            WearAndTearProcessingRule appliedRule = (WearAndTearProcessingRule)bestResult.condition.get().getProcessingRule();
+            ApplicableWearAndTearRuleConfiguration appliedConfig = appliedRule.getApplicableWearAndTearRuleConfiguration();
+            ServiceBranch serviceBranch = appliedConfig.getRHRuleConfigurationItem().getServiceBranch();
+            bestResult.caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
+            bestResult.caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
+        }
+
+
+        return wearAndTearRulesResults.get(0);
+    }
+
+    private enum ConditionType {
+        Acute,
+        WearAndTear,
+        NotConfigured
+    }
+
+    private static ConditionType getConditionType(String conditionName, RuleConfigurationRepository repository)
+    {
+        if (ConditionFactory.getAcuteConditions().contains(conditionName)) return ConditionType.Acute;
+        if (repository.getConditionConfigurationFor(conditionName).isPresent()) return ConditionType.WearAndTear;
+        return ConditionType.NotConfigured;
+    }
 
 
     public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, CaseTrace caseTrace) {
@@ -137,70 +194,28 @@ public class RulesResult {
             return serviceHistoryConsistency.get();
         }
 
-
-        Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
-
-        if (!conditionConfiguration.isPresent())
+        ConditionType conditionType = getConditionType(soPPair.get().getConditionName(),ruleConfigurationRepository);
+        if (conditionType == ConditionType.NotConfigured)
         {
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING,String.format("No rules are configured to process condition '%s'.",soPPair.get().getConditionName()));
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("No 'Computer Based Decision' rules are configured for the condition '%s'.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
+            return RulesResult.createEmpty(caseTrace);
         }
 
-        ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.get().getApplicableRuleConfigurations(soPPair.get().getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,caseTrace);
-
-        // bifurcate here based on whether acute or wear and tear condition
-
-        ImmutableSet<Condition> conditions = null;
-        boolean isAcute = false;
-        if (!wearAndTearRuleConfigurations.isEmpty()) {
-              conditions = wearAndTearRuleConfigurations.stream()
-                .map(ac -> ConditionFactory.createWearAndTearCondition(soPPair.get(),sopSupportRequestDto.get_conditionDto(),ac))
-                      .filter(c -> c.isPresent())
-                      .map(c -> c.get())
-                      .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
-        }
-        else {
-            // must be acute condition
-            isAcute = true;
-            Optional<Condition> acuteConditionOptional = ConditionFactory.createAcuteCondition(soPPair.get(), sopSupportRequestDto.get_conditionDto());
-            if (acuteConditionOptional.isPresent()) conditions = ImmutableSet.of(acuteConditionOptional.get());
-        }
-
-        if (conditions.isEmpty())
+        if (conditionType == ConditionType.Acute)
         {
-                caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("No 'Computer Based Decision' rules are configured for the condition '%s'.",sopSupportRequestDto.get_conditionDto().get_conditionName()));
-                return RulesResult.createEmpty(caseTrace);
+            RulesResult rulesResult = applyRulesForAcuteCondition(sopSupportRequestDto, serviceHistory, soPPair.get(), isOperational,caseTrace);
+            return rulesResult;
+        }
+        else // (conditionType == ConditionType.WearAndTear)
+        {
+            assert conditionType == ConditionType.WearAndTear;
+            Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
+            assert conditionConfiguration.isPresent() : "Check whether wear and tear configuration present before getting.";
+            RulesResult rulesResult = applyRulesForWearAndTearCondition(conditionConfiguration.get(),soPPair.get(), sopSupportRequestDto,serviceHistory,isOperational);
+            return rulesResult;
         }
 
-        // now we have all the conditions
-        if (isAcute) {
 
-            RulesResult acuteRulesResult = applyRulesForCondition(conditions.asList().get(0),serviceHistory,isOperational,caseTrace);
-            return acuteRulesResult;
-        }
-        else {
-            // wear and tear
-            // we need a separate case trace for each run
-            ImmutableList<RulesResult> wearAndTearRulesResults =
-                    conditions.stream()
-                            .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, new SopSupportCaseTrace(c.getSopPair().getConditionName())))
-                            .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
-            if (wearAndTearRuleConfigurations.size() > 1) {
-                ImmutableList<RulesResult> orderedResults = orderResultsFromMostBeneficialToLeast(wearAndTearRulesResults);
-                RulesResult bestResult = orderedResults.get(0);
-
-                if (bestResult.condition.isPresent() && bestResult.condition.get().getProcessingRule() instanceof WearAndTearProcessingRule)
-                {
-                   WearAndTearProcessingRule appliedRule = (WearAndTearProcessingRule)bestResult.condition.get().getProcessingRule();
-                   ApplicableWearAndTearRuleConfiguration appliedConfig = appliedRule.getApplicableWearAndTearRuleConfiguration();
-                   ServiceBranch serviceBranch = appliedConfig.getRHRuleConfigurationItem().getServiceBranch();
-                   bestResult.caseTrace.addReasoningFor(ReasoningFor.STANDARD_OF_PROOF, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
-                   bestResult.caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, String.format("The Computer Based Decision rules for the service branch '%s' applied -- these yielded the most beneficial result.",serviceBranch.toString()));
-                }
-
-                return bestResult;
-            }
-            return wearAndTearRulesResults.get(0);
-        }
     }
 
 

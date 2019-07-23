@@ -436,7 +436,7 @@ public class MultipleBranchesOfServiceTests {
 
                             @Override
                             public ImmutableSet<String> getFactorReferences() {
-                                return ImmutableSet.of("1");
+                                return ImmutableSet.of("9(1)");
                             }
 
                             @Override
@@ -459,12 +459,12 @@ public class MultipleBranchesOfServiceTests {
         };
     }
 
-    private static SoP createMockSoP(boolean isRH, String conditionName)
+    private static SoP createMockSoP(boolean isRH, String conditionName, String registerId)
     {
         return new SoP() {
             @Override
             public String getRegisterId() {
-                return null;
+                return registerId;
             }
 
             @Override
@@ -488,7 +488,7 @@ public class MultipleBranchesOfServiceTests {
                         new Factor() {
                             @Override
                             public String getParagraph() {
-                                return "1";
+                                return "9(1)";
                             }
 
                             @Override
@@ -531,8 +531,8 @@ public class MultipleBranchesOfServiceTests {
         };
     }
 
-    private static SoPPair createMockSopPair(String conditionName) {
-        return new SoPPair(conditionName,createMockSoP(false,conditionName),createMockSoP(true,conditionName));
+    private static SoPPair createMockSopPair(String conditionName, String rhRegisterId, String bopRegisterId) {
+        return new SoPPair(conditionName,createMockSoP(false,conditionName,bopRegisterId),createMockSoP(true,conditionName,rhRegisterId));
     }
 
     // Army, then RAAF.  Operational service is days / 10, occurs at start of time in branch of service.
@@ -575,14 +575,46 @@ public class MultipleBranchesOfServiceTests {
 
         SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
         CaseTrace caseTrace = new SopSupportCaseTrace();
-        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName)),isOperationalMock, caseTrace);
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,null,null)),isOperationalMock, caseTrace);
 
 
         Assert.assertTrue(result.getCaseTrace().isComplete());
         Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
-        // todo: bug where only one applicable w and t rule config is being picked out
-        // todo: bug where configured factors are not attached
     }
+
+    RuleConfigurationRepository createMockEmptyRuleConfigRepo() {
+        return new RuleConfigurationRepository() {
+            @Override
+            public ImmutableSet<RHRuleConfigurationItem> getRHItems() {
+                return ImmutableSet.of();
+            }
+
+            @Override
+            public ImmutableSet<BoPRuleConfigurationItem> getBoPItems() {
+                return ImmutableSet.of();
+            }
+        };
+    }
+
+    @Test
+    public void AcuteConditionRegressionTestForMultipleBranchesOfService() {
+        String conditionName = "external burn";
+        LocalDate startOfServiceDate = LocalDate.of(2004,7,1);
+        int daysInArmy = 150;
+        int daysInAirForce = 150;
+        LocalDate onsetDate = LocalDate.of(2004,8,1); // during army service
+
+        // 10 days RH service, 100 days CFTS for RH, double for BoP
+        RuleConfigurationRepository mockRepo = createMockEmptyRuleConfigRepo();
+
+        SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
+        CaseTrace caseTrace = new SopSupportCaseTrace();
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,"F2017C00862","F2017C00861")),isOperationalMock, caseTrace);
+
+        Assert.assertTrue(result.getCaseTrace().isComplete());
+        Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
+    }
+
 
 }
 
