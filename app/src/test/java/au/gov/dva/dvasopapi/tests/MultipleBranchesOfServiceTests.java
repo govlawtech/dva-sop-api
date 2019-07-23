@@ -577,7 +577,8 @@ public class MultipleBranchesOfServiceTests {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName)),isOperationalMock, caseTrace);
 
-        System.out.println(result.getCaseTrace());
+
+        Assert.assertTrue(result.getCaseTrace().isComplete());
         // todo: bug where only one applicable w and t rule config is being picked out
         // todo: bug where configured factors are not attached
     }
