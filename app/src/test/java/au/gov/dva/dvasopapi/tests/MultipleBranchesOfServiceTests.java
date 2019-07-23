@@ -326,7 +326,7 @@ public class MultipleBranchesOfServiceTests {
 
                             @Override
                             public ImmutableSet<String> getFactorReferences() {
-                                return ImmutableSet.of("1");
+                                return ImmutableSet.of("9(1)");
                             }
 
                             @Override
@@ -367,7 +367,7 @@ public class MultipleBranchesOfServiceTests {
 
                             @Override
                             public ImmutableSet<String> getFactorReferences() {
-                                return ImmutableSet.of("1");
+                                return ImmutableSet.of("9(1)");
                             }
 
                             @Override
@@ -553,8 +553,17 @@ public class MultipleBranchesOfServiceTests {
         ));
     }
 
-
-
+    private static ServiceHistoryDto createMockServiceHistoryDtoSingleBranch(LocalDate startDate, int daysInArmy)
+    {
+        return new ServiceHistoryDto(
+                new ServiceSummaryInfoDto(startDate),
+                ImmutableList.of(
+                        new ServiceDto(ServiceBranch.ARMY,EmploymentType.CFTS,startDate,startDate.plusDays(daysInArmy),Rank.OtherRank,
+                                ImmutableList.of(
+                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate,startDate.plusDays(daysInArmy/10))
+                                )
+                )));
+    }
 
     private static ConditionDto createMockConditionDto(String conditionName, LocalDate onsetDate)
     {
@@ -637,6 +646,26 @@ public class MultipleBranchesOfServiceTests {
         Assert.assertTrue(result.getCaseTrace().getReasonings().containsKey(ReasoningFor.ABORT_PROCESSING));
     }
 
+
+    @Test
+    public void TestSingleBranchOfService() {
+        String conditionName = "lumbar spondylosis";
+        LocalDate startOfServiceDate = LocalDate.of(2004,7,1);
+        int seedDaysForRuleConfig = 100;
+        int daysInArmy = 150;
+        LocalDate onsetDate = startOfServiceDate.plusDays(daysInArmy - 10);
+
+        // 10 days RH service, 100 days CFTS for RH, double for BoP
+        RuleConfigurationRepository mockRepo = createMockRulesConfigurationRepo(conditionName,seedDaysForRuleConfig);
+
+        SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDtoSingleBranch(startOfServiceDate,daysInArmy));
+        CaseTrace caseTrace = new SopSupportCaseTrace();
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,null,null)),isOperationalMock, caseTrace);
+
+
+        Assert.assertTrue(result.getCaseTrace().isComplete());
+        Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
+    }
 }
 
 
