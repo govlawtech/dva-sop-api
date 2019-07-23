@@ -579,6 +579,7 @@ public class MultipleBranchesOfServiceTests {
 
 
         Assert.assertTrue(result.getCaseTrace().isComplete());
+        Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
         // todo: bug where only one applicable w and t rule config is being picked out
         // todo: bug where configured factors are not attached
     }
