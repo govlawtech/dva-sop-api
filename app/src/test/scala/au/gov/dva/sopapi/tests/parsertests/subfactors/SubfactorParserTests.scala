@@ -1,26 +1,30 @@
 package au.gov.dva.sopapi.tests.parsertests.subfactors
 
 import au.gov.dva.dvasopapi.tests.TestUtils
-import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor}
+import au.gov.dva.sopapi.interfaces.model.{DefinedTerm, Factor, SoP}
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, SubFactorInfo}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.paragraphReferenceSplitters.NewSoPStyleParaReferenceSplitter
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{SubFactorParser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.GenericSubFactorParser
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import com.google.common.collect.ImmutableSet
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
+
 import scala.collection.JavaConverters._
 
 @RunWith(classOf[JUnitRunner])
 class SubfactorParserTests extends FunSuite {
 
+  val newStyleRegexForParaStart = """\([a-z]+\)""".r
+  val oldStyleRegexForParaStart = """\([ixv]+\)""".r
+  val newStyleParser = new GenericSubFactorParser(newStyleRegexForParaStart)
+  val oldStyleParser = new GenericSubFactorParser(oldStyleRegexForParaStart)
   test("split to sub paras") {
 
-    val underTest = SubFactorParser
 
-    val result: List[SubFactorInfo] = underTest.divideFactorsToSubFactors(new mockFactor)
+    val result: List[SubFactorInfo] = newStyleParser.divideFactorsToSubFactors(new mockFactor)
     result.foreach(println(_))
     assert(result.size == 5)
   }
@@ -36,7 +40,7 @@ class SubfactorParserTests extends FunSuite {
    }
 
   test("Get subfactors from old style SoP section") {
-    val underTest = SubFactorParser
+    val underTest = newStyleParser
     val mock = new mockOldStyleFactor
     val result = underTest.divideFactorsToSubFactors(mock)
   }
@@ -44,7 +48,7 @@ class SubfactorParserTests extends FunSuite {
 
   test("Get condition variant") {
     val mock1 = new mockOldStyleFactor
-    val underTest = SubFactorParser
+    val underTest = newStyleParser
     val result = underTest.tryParseConditionVariant(mock1)
     println(result)
     assert (result.get == "intervertebral disc prolapse of the cervical spine")
@@ -52,14 +56,38 @@ class SubfactorParserTests extends FunSuite {
 
   test("Parse entire osteoarthritis SoP to check for condition variants")
    {
-     val r = ParserTestUtils.executeWholeParsingPipeline("F2017L01443","allSops/F2017L01443.pdf")
+     val r: SoP = ParserTestUtils.executeWholeParsingPipeline("F2019C00582","allSops/F2019C00582.pdf")
 
-     val numberOfConditionVariants = (r.getOnsetFactors.asScala ++ r.getAggravationFactors.asScala)
-       .filter(f => f.getConditionVariant.isPresent).size
+     val conditionVariants = (r.getOnsetFactors.asScala).filter(f => f.getConditionVariant.isPresent)
+       .map(f => (f.getConditionVariant.get().getName,f.getText))
 
-     println("number of condition variants: " + numberOfConditionVariants)
-     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+    println(conditionVariants.mkString("\n"))
+    assert (conditionVariants.size == 7)
+
+
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
    }
+
+  test("Parse entire ischaemic heart disease SoP to check for condition variants")
+  {
+    val r: SoP = ParserTestUtils.executeWholeParsingPipeline("F2018C00631","allSops/F2018C00631.pdf")
+     val conditionVariants = (r.getOnsetFactors.asScala).filter(f => f.getConditionVariant.isPresent)
+       .map(f => (f.getConditionVariant.get().getName,f.getText))
+
+    //assert (numberOfConditionVariants == 2)
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+  }
+
+
+  test("Parse old style diabetes SoP for condition variants")
+  {
+     val r: SoP = ParserTestUtils.executeWholeParsingPipeline("F2016C00252","allSops/F2016C00252.pdf")
+     val conditionVariants = (r.getOnsetFactors.asScala).filter(f => f.getConditionVariant.isPresent)
+       .map(f => (f.getConditionVariant.get().getName,f.getText))
+
+    println(conditionVariants.mkString("\n"))
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+  }
 
 }
 

@@ -6,6 +6,7 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser.{MainPara, ParaLines}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, GenericSubFactorParser}
 
 import scala.util.Properties
 import scala.util.parsing.combinator.RegexParsers
@@ -30,7 +31,11 @@ trait PreAug2015FactorsParser extends MiscRegexes {
       return (standard, List(singleFactor))
     }
     val parsedFactors = FactorsParser.oldStyleSmallLetterLinesToFactors(rest,paraLinesShouldBeChildrenAccordingToCustomRule)
-    (standard, parsedFactors)
+
+    val parsedFactorsWithConditionVariants = parsedFactors.
+      map(fi => ConditionVariants.addornFactor(fi,true))
+
+    (standard, parsedFactorsWithConditionVariants)
   }
 
   private def splitToHeaderAndRest(factorsSectionText: String) = {

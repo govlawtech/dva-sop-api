@@ -8,24 +8,22 @@ import au.gov.dva.sopapi.sopref.parsing.traits.{MiscRegexes, SubFactorParser}
 import scala.util.Properties
 import scala.util.matching.Regex
 
-object SubFactorParser extends SubFactorParser with MiscRegexes {
-  val regexForParaStart = """\([a-z]+\)""".r
+
+
+class GenericSubFactorParser(val paraStartRegex: Regex) extends SubFactorParser with MiscRegexes {
 
   override def divideFactorsToSubFactors(factor: FactorInfo): List[SubFactorInfo] = {
 
-    val regexMatch = conditionVariantRegexMatch.findFirstMatchIn(factor.getText)
-    assert(regexMatch.isDefined)
-
     val lines = factor.getText.split(platformNeutralLineEndingRegex.regex).toList
     if (lines.size > 1) {
-      val paras: List[List[String]] = FactorsParser.splitToParas(lines, regexForParaStart)
-      val asClasses = FactorsParser.lineSetsToClass(paras.tail, regexForParaStart)
+      val paras: List[List[String]] = FactorsParser.splitToParas(lines, paraStartRegex)
+      val asClasses = FactorsParser.lineSetsToClass(paras.tail, paraStartRegex)
       val grouped: List[FactorsParser.MainPara] = FactorsParser.groupToMainParas(asClasses, List(), (_, _) => false)
 
       val subFactors = grouped.map(mp =>
         {
           val letter = mp.paraLinesParent.legalRef
-          val lines = stripLeadingPara(stripTrailingPunctuation(mp.flattenLines),regexForParaStart)
+          val lines = stripLeadingPara(stripTrailingPunctuation(mp.flattenLines),paraStartRegex)
           new SubFactorInfo(letter,lines)
         })
       subFactors
@@ -52,8 +50,8 @@ object SubFactorParser extends SubFactorParser with MiscRegexes {
   val conditionVariantRegexMatch = """for (.*) only(:|,)""".r
 
   override def tryParseConditionVariant(factor: FactorInfo): Option[String] = {
-
-    val regexMatch = conditionVariantRegexMatch.findFirstMatchIn(factor.getText)
+    val textWithLineEndingsConvertedToSpaces = platformNeutralLineEndingRegex.replaceAllIn(factor.getText," ")
+    val regexMatch = conditionVariantRegexMatch.findFirstMatchIn(textWithLineEndingsConvertedToSpaces)
     if(regexMatch.isEmpty) return None
     else {
       val variant = regexMatch.get.group(1)
@@ -62,6 +60,5 @@ object SubFactorParser extends SubFactorParser with MiscRegexes {
 
   }
 }
-
 
 

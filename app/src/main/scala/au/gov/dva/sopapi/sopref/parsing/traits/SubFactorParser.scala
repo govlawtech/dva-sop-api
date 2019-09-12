@@ -11,5 +11,4 @@ trait SubFactorParser extends MiscRegexes {
   def tryParseConditionVariant(factor: FactorInfo) : Option[String]
 
 
-
 }

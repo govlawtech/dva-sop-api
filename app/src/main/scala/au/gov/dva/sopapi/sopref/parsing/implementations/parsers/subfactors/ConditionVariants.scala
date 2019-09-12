@@ -9,7 +9,15 @@ import com.google.common.collect.ImmutableSet
 
 object ConditionVariants {
 
-  def addornFactor(f : FactorInfo, variantParser : SubFactorParser) : FactorInfo = {
+  def addornFactor(f : FactorInfo, isOldStyle : Boolean) : FactorInfo = {
+
+    val newStyleRegexForParaStart = """\([a-z]+\)""".r
+    val oldStyleRegexForParaStart = """\([ixv]+\)""".r
+    val variantParser = isOldStyle match {
+      case true => new GenericSubFactorParser(oldStyleRegexForParaStart)
+      case false => new GenericSubFactorParser(newStyleRegexForParaStart)
+    }
+
     val variant: Option[String] = variantParser.tryParseConditionVariant(f)
     if (variant.isDefined)
       {
