@@ -11,17 +11,15 @@ object ConditionVariants {
 
   def addornFactor(f : FactorInfo, isOldStyle : Boolean) : FactorInfo = {
 
-    val newStyleRegexForParaStart = """\([a-z]+\)""".r
-    val oldStyleRegexForParaStart = """\([ixv]+\)""".r
     val variantParser = isOldStyle match {
-      case true => new GenericSubFactorParser(oldStyleRegexForParaStart)
-      case false => new GenericSubFactorParser(newStyleRegexForParaStart)
+      case true => new OldStyleSubfactorParser()
+      case false => new NewStyleSubFactorParser()
     }
 
     val variant: Option[String] = variantParser.tryParseConditionVariant(f)
     if (variant.isDefined)
       {
-        val subFactors = variantParser.divideFactorsToSubFactors(f)
+        val subFactors = variantParser.divideToSubfactors(f)
           .map(sfi => new ParsedConditionVariantFactor(sfi.para,sfi.text))
 
         val conditionVariant = new ParsedConditionVariant(variant.get,subFactors)

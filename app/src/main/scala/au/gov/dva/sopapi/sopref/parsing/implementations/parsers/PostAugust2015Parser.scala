@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
 import au.gov.dva.sopapi.interfaces.model.{ConditionVariant, DefinedTerm, Factor}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedDefinedTerm}
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, GenericSubFactorParser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, NewStyleSubFactorParser}
 import au.gov.dva.sopapi.sopref.parsing.traits.{PreAugust2015SoPParser, SoPParser}
 
 import scala.util.Properties

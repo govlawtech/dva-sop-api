@@ -64,18 +64,34 @@ object FactorsParser extends MiscRegexes {
     })
   }
 
+
   private def isChild(prev: MainPara, current: ParaLines) = {
 
     // edge cases
     // if prev main factor is '(h)' and ends 'or', this means the (i) para following is a main para, not a small roman
     if (prev.paraLinesParent.legalRef == "(h)" && current.legalRef == "(i)" && prev.getLast.endsWithOr) false
     // if last child was a small roman and the current is small roman, then it is a following sibling child
+    if (prev.paraLinesParent.legalRef == "(h)" && current.legalRef == "(i)" && prev.children.exists(c => c.legalRef == "(i)")) false // for subsections with tail
     else if (smallRomanRegex.findFirstIn(prev.getLast.legalRef).isDefined && smallRomanRegex.findFirstIn(current.legalRef).isDefined) true
     // first child after main para
     else if (smallRomanRegex.findFirstIn(current.legalRef).isDefined && prev.getLast.isSubsHead) true
 
     else false
   }
+
+  def groupToMainParasWithCustomRule(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
+    if (paraLines.isEmpty) acc.reverse
+    else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List())),paraLinesShouldBeChildrenAccordingToCustomRule) // first para will always be main para
+    else if (paraLinesShouldBeChildrenAccordingToCustomRule(acc.head,paraLines.head)) {
+      // add as child to prev head
+      groupToMainParas(paraLines.tail, acc.head.withExtraChild(paraLines.head) :: acc.tail,paraLinesShouldBeChildrenAccordingToCustomRule)
+    }
+    else {
+      // new main
+      groupToMainParas(paraLines.tail, MainPara(paraLines.head, List()) :: acc,paraLinesShouldBeChildrenAccordingToCustomRule)
+    }
+  }
+
 
   def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
     if (paraLines.isEmpty) acc.reverse

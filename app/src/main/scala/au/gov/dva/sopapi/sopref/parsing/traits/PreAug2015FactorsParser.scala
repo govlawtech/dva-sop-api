@@ -6,7 +6,7 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser.{MainPara, ParaLines}
-import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, GenericSubFactorParser}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, NewStyleSubFactorParser}
 
 import scala.util.Properties
 import scala.util.parsing.combinator.RegexParsers

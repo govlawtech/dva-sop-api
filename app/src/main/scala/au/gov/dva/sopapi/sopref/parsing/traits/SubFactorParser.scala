@@ -7,7 +7,7 @@ import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser
 import scala.util.matching.Regex
 
 trait SubFactorParser extends MiscRegexes {
-  def divideFactorsToSubFactors(factor: FactorInfo) : List[SubFactorInfo]
+  def divideToSubfactors(factor: FactorInfo) : List[SubFactorInfo]
   def tryParseConditionVariant(factor: FactorInfo) : Option[String]
 
 
