@@ -70,19 +70,20 @@ class SubfactorParserTests extends FunSuite {
   {
     val r: SoP = ParserTestUtils.executeWholeParsingPipeline("F2018C00631","allSops/F2018C00631.pdf")
      val conditionVariants = (r.getOnsetFactors.asScala).filter(f => f.getConditionVariant.isPresent)
-       .map(f => (f.getConditionVariant.get().getName,f.getText))
+       .map(f => (f.getConditionVariant.get()))
 
     assert (conditionVariants.size == 1)
+    assert (conditionVariants.head.getVariantFactors.size() == 13)
     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
   }
-
 
   test("Parse old style diabetes SoP for condition variants")
   {
      val r: SoP = ParserTestUtils.executeWholeParsingPipeline("F2016C00252","allSops/F2016C00252.pdf")
      val conditionVariants = (r.getOnsetFactors.asScala).filter(f => f.getConditionVariant.isPresent)
-       .map(f => (f.getConditionVariant.get().getName,f.getText))
-
+       .map(f => (f.getConditionVariant.get()))
+    assert (conditionVariants.size == 2)
+    assert (conditionVariants.drop(1).head.getVariantFactors.size == 14)
     println(conditionVariants.mkString("\n"))
     println(TestUtils.prettyPrint(StoredSop.toJson(r)))
   }
