@@ -7,7 +7,8 @@ import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
-import au.gov.dva.sopapi.sopsupport.vea.OperationJsonResponse;
+import au.gov.dva.sopapi.sopsupport.vea.ServiceRegion;
+import com.google.common.collect.ImmutableList;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
+
 
 public class RhPredicateFactory implements IRhPredicateFactory {
 
@@ -54,7 +56,7 @@ public class RhPredicateFactory implements IRhPredicateFactory {
         }
     }
 
-    private Predicate<Deployment> testDeploymentAgainstAds(Predicate<List<OperationJsonResponse>> whiteFilter) {
+    private Predicate<Deployment> testDeploymentAgainstAds(Predicate<List<ServiceRegion>> whiteFilter) {
 
         return deployment -> {
             try {
@@ -67,14 +69,14 @@ public class RhPredicateFactory implements IRhPredicateFactory {
 
     }
 
-    private Predicate<List<OperationJsonResponse>> isWarlikeAccordingToAds = operationJsonResponses -> operationJsonResponses.stream()
+    private Predicate<List<ServiceRegion>> isWarlikeAccordingToAds = operationJsonResponses -> operationJsonResponses.stream()
             .anyMatch(operationJsonResponse ->
                     operationJsonResponse.isWarlike() &&
                             !operationJsonResponse.isMrcaWarlike() &&
                             !operationJsonResponse.isMrcaNonWarlike());
 
 
-    private Predicate<List<OperationJsonResponse>> isRhServiceAccordingToADS = operationJsonResponses -> operationJsonResponses.stream()
+    private Predicate<List<ServiceRegion>> isRhServiceAccordingToADS = operationJsonResponses -> operationJsonResponses.stream()
             .anyMatch(operationJsonResponse ->
                     operationJsonResponse.isOperational() ||
                             operationJsonResponse.isWarlike() ||

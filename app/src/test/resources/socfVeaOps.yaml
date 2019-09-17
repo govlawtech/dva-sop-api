@@ -1,0 +1,1356 @@
+referenceData:
+  serviceRegions:
+    - id: 1
+      operation: AFGHANISTAN (OPERATION PALATE II)
+      startDate: 2005-06-27
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 2
+      operation: AFGHANISTAN (OPERATION PALATE) (2003-2004)
+      startDate: 2003-04-18
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 201
+      operation: AFGHANISTAN (OPERATION PALATE) (2003-2004)
+      startDate: 2004-07-01
+      endDate: 2004-07-05
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 3
+      operation: AFGHANISTAN (OPERATION SLIPPER) (OPERATION SLIPPER PRT)
+      startDate: 2001-10-11
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 301
+      operation: AFGHANISTAN (OPERATION SLIPPER) (OPERATION SLIPPER PRT)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 4
+      operation: AFGHANISTAN (UNMCTT)
+      startDate: 1991-06-08
+      endDate: 1993-12-31
+      isHazardous: true
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 5
+      operation: AFGHANISTAN and Superjacent Airspace (OPERATION ARIKI) (OPERATION ARIKI (NZ))
+      startDate: 2001-12-01
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 501
+      operation: AFGHANISTAN and Superjacent Airspace (OPERATION ARIKI) (OPERATION ARIKI (NZ))
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 6
+      operation: AFGHANISTAN and Superjacent Airspace (OPERATION ATHENA) (OPERATION ATHENA (CANADA))
+      startDate: 2003-07-17
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 601
+      operation: AFGHANISTAN and Superjacent Airspace (OPERATION ATHENA) (OPERATION ATHENA (CANADA))
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 7
+      operation: AFGHANISTAN and Superjacent Airspace (OPERATION ENDURING FREEDOM) (OPERATION ENDURING FREEDOM (US))
+      startDate: 2001-10-07
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 701
+      operation: AFGHANISTAN and Superjacent Airspace (OPERATION ENDURING FREEDOM) (OPERATION ENDURING FREEDOM (US))
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 8
+      operation: AFGHANISTAN and Superjacent Airspace (OPERATION HERRICK) (OPERATION HERRICK (UK))
+      startDate: 2004-09-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 9
+      operation: AFGHANISTAN OPERATIONS Superjacent Air Space (INTERNATIONAL SECURITY ASSISTANCE FORCE)
+      startDate: 2003-08-11
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 10
+      operation: AFRICA Ethiopia and Eritrea (UNMEE) (OPERATION POMELO)
+      startDate: 2001-01-15
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 1001
+      operation: AFRICA Ethiopia and Eritrea (UNMEE) (OPERATION POMELO)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 11
+      operation: AFRICA Gabon & the Congo
+      startDate: 1997-07-25
+      endDate: 1997-08-07
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 12
+      operation: AFRICA Mozambique (OPERATION CORACLE)
+      startDate: 1994-07-12
+      endDate: 2002-02-27
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 13
+      operation: AFRICA UN Mission in the Sudan (OPERATION AZURE) (OPERATION ASLAN) (OPERATION ASLAN ZONE A) (OPERATION ASLAN ZONE B) (OPERATION HEDGEROW)
+      startDate: 2005-04-10
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 14
+      operation: BALKANS Kosovo (OPERATION APPLIED FORCE)
+      startDate: 1999-04-15
+      endDate: 1999-06-03
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 15
+      operation: BALKANS Kosovo (OPERATION JOINT GARDIAN) (OPERATION JOINT GUARDIAN)
+      startDate: 1999-06-11
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 1501
+      operation: BALKANS Kosovo (OPERATION JOINT GARDIAN) (OPERATION JOINT GUARDIAN)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 16
+      operation: BALKANS Yugoslavia (OPERATION AGRICOLA)
+      startDate: 1999-02-25
+      endDate: 1999-06-10
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 17
+      operation: BALKANS Yugoslavia (OPERATION OSIER)
+      startDate: 1997-01-24
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 18
+      operation: BORNEO (BRUNEI, SABAH, SARAWAK) (1962-1964)
+      startDate: 1962-12-08
+      endDate: 1964-08-16
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 19
+      operation: CAMBODIA (OPERATION VISTA)
+      startDate: 1997-07-05
+      endDate: 1997-07-14
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 20
+      operation: CAMBODIA including (OPERATION BANNER)
+      startDate: 1993-10-08
+      endDate: 1999-10-04
+      isHazardous: true
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 21
+      operation: CAMBODIA/LAOS/THAILAND (1991-1993) (OPERATION GEMINI) (OPERATION GOODWILL)
+      startDate: 1991-10-20
+      endDate: 1993-10-07
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 22
+      operation: EAST TIMOR (OPERATION SPIRE) (OPERATION ASTUTE)
+      startDate: 2004-05-20
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 2201
+      operation: EAST TIMOR (OPERATION SPIRE) (OPERATION ASTUTE)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 23
+      operation: EAST TIMOR (OPERATION SPITFIRE) (OPERATION FABER) (OPERATION STABILISE) (OPERATION WARDEN) (OPERATION TANAGER) (OPERATION CITADEL) (1999-2003) (OPERATION CITADEL - EAST TIMOR)
+      startDate: 1999-09-06
+      endDate: 2003-08-17
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 24
+      operation: EAST TIMOR (UNMISET) (OPERATION CITADEL) (OPERATION CITADEL - EAST TIMOR) (OPERATION CHIRON)
+      startDate: 2002-05-20
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 2401
+      operation: EAST TIMOR (UNMISET) (OPERATION CITADEL) (OPERATION CITADEL - EAST TIMOR) (OPERATION CHIRON)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 25
+      operation: EASTERN/MIDDLE AFRICA (RWANDA OPERATION TAMAR) (1994-1996) (OPERATION TAMAR)
+      startDate: 1994-07-25
+      endDate: 1996-01-16
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 26
+      operation: FIJI (OPERATION QUICKSTEP)
+      startDate: 2006-10-31
+      endDate: 2006-12-22
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 27
+      operation: GERMANY  Berlin Airlift
+      startDate: 1948-09-15
+      endDate: 1949-08-29
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 28
+      operation: GUATEMALA
+      startDate: 1997-02-13
+      endDate: 1997-05-21
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 29
+      operation: GULF WAR  Gulf Sea Area
+      startDate: 1986-11-17
+      endDate: 1989-02-28
+      isHazardous: true
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 30
+      operation: GULF WAR  Gulf Sea Area including (OPERATION POLLARD) (OPERATION DAMASK) (OPERATION HABITAT) (OPERATION DAMASK X)
+      startDate: 1991-05-07
+      endDate: 2018-01-01
+      isHazardous: true
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 31
+      operation: GULF WAR Iraq (UNSCOM WMD) (OPERATION BLAZER)
+      startDate: 2001-07-02
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 32
+      operation: IRAQ (OPERATION JURAL) (OPERATION PROVIDE COMFORT) (OPERATION BOLTON) (OPERATION SOUTHERN WATCH) (OPERATION NORTHERN WATCH) (1991-2003)
+      startDate: 1991-06-30
+      endDate: 2003-01-12
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 33
+      operation: IRAQ (OPERATION RIVERBANK) (2008-)
+      startDate: 2008-07-21
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 3301
+      operation: IRAQ (OPERATION KRUGER) (2008-)
+      startDate: 2009-01-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 34
+      operation: IRAQ/KUWAIT (1991) (OPERATION BASTILLE) (OPERATION DESERT STORM)
+      startDate: 1991-02-23
+      endDate: 1991-06-09
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 35
+      operation: IRAQ/WESTERN ASIA (OPERATION CATALYST) (2003-2009)
+      startDate: 2003-07-16
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 3501
+      operation: IRAQ/WESTERN ASIA (OPERATION CATALYST) (2003-2009)
+      startDate: 2004-07-01
+      endDate: 2009-07-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 36
+      operation: JAPAN (1952-1956)
+      startDate: 1952-04-28
+      endDate: 1956-04-19
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 37
+      operation: KOREA (1950-1956)
+      startDate: 1950-06-27
+      endDate: 1956-04-11
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 38
+      operation: KOREA Demilitarised Zone between North & South Korea
+      startDate: 1956-04-18
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 40
+      operation: LEBANON (OPERATION RAMP) (OP RAMP - NONWARLIKE LEBANON)
+      startDate: 2006-07-20
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 4001
+      operation: LEBANON (RAMP-PEACE TURKEY/CYPRUS/LEBAN)
+      startDate: 2006-07-20
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 41
+      operation: LIBYA NATO (2011) *
+      startDate: 2011-03-31
+      endDate: 2011-10-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 42
+      operation: LIBYA NATO (2001)*
+      startDate: 2011-03-31
+      endDate: 2011-10-31
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 43
+      operation: MALAYA (1950-1964)
+      startDate: 1950-06-29
+      endDate: 1964-08-16
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 44
+      operation: MALAYSIA/BRUNEI/SINGAPORE (1964-1967)
+      startDate: 1964-08-17
+      endDate: 1967-09-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 45
+      operation: MIDDLE EAST (OPERATION PALADIN) (Israel, Jordon, Syria, Lebanon, Egypt)
+      startDate: 2003-04-21
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 4501
+      operation: MIDDLE EAST (OPERATION PALADIN) (Israel, Jordon, Syria, Lebanon, Egypt)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 46
+      operation: MIDDLE EAST (OPERATION PALADIN) Lebanon
+      startDate: 2006-07-12
+      endDate: 2006-08-14
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 47
+      operation: NORTH EAST THAILAND (1962-1965) (1965-1968)
+      startDate: 1962-07-28
+      endDate: 1968-08-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 48
+      operation: NORTH EAST THAILAND (UBON only) (1962)
+      startDate: 1962-05-31
+      endDate: 1962-07-27
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 49
+      operation: NORTHERN/EASTERN AFRICA (OPERATION FALCONER) (2003)
+      startDate: 2003-03-18
+      endDate: 2003-07-22
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 50
+      operation: PERSIAN GULF (OPERATION ACCORDION) (OP ACCORDION)
+      startDate: 2014-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 51
+      operation: PERSIAN GULF (OPERATION MANITOU) (OP MANITOU)
+      startDate: 2014-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 52
+      operation: POST WORLD WAR 2 BOMB/MINE CLEARANCE (1945-1955)
+      startDate: 1945-10-30
+      endDate: 1955-01-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 53
+      operation: RED SEA (OPERATION DAMASK VI) (1993)
+      startDate: 1993-01-13
+      endDate: 1993-01-19
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 54
+      operation: SIERRA LEONE (OPERATION HUSKY) (2001-2003)
+      startDate: 2001-01-15
+      endDate: 2003-02-28
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 55
+      operation: SINGAPORE
+      startDate: 1950-06-29
+      endDate: 1960-07-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 56
+      operation: SOLOMON ISLANDS (OPERATION ANODE)
+      startDate: 2003-07-23
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 5601
+      operation: SOLOMON ISLANDS (OPERATION ANODE)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 57
+      operation: SOLOMON ISLANDS (OPERATION TREK)
+      startDate: 2000-11-04
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 58
+      operation: SOLOMONS Guadalcanal (OPERATION PLUMBOB)
+      startDate: 2000-06-08
+      endDate: 2000-06-14
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 59
+      operation: TONGA (OPERATION QUICKSTEP)
+      startDate: 2006-11-18
+      endDate: 2006-11-30
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 60
+      operation: UKRAINE and Superjacent Airspace (OPERATION HARWICK) (OPERATION HARWICK (ZONE A)) (OPERATION HARWICK (ZONE B)) (OPERATION HAWICK) (OPERATION HAWICK (ZONE A)) (OPERATION HAWICK (ZONE B))
+      startDate: 2014-07-21
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 61
+      operation: VIETNAM (1962-1975)
+      startDate: 1962-01-25
+      endDate: 1975-04-29
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 62
+      operation: WESTERN ASIA/PERSIAN GULF (1990-1991)
+      startDate: 1990-08-02
+      endDate: 1991-06-09
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 63
+      operation: WESTERN/SOUTHERN/CENTRAL ASIA (OPERATION FALCONER) (2003)
+      startDate: 2003-03-18
+      endDate: 2003-07-22
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 64
+      operation: WESTERN/SOUTHERN/CENTRAL ASIA (OPERATION SLIPPER) (2001-)
+      startDate: 2001-10-11
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 6401
+      operation: WESTERN/SOUTHERN/CENTRAL ASIA (OPERATION SLIPPER) (2001-)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 6402
+      operation: Counter terrorism efforts (OPERATION AUGURY)
+      startDate: 2014-07-04
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+
+    -
+      id: 6404
+      operation: Counter terrorism efforts (OPERATION AUGURY)
+      startDate: 2016-04-28
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+
+    -
+      id: 6403
+      operation: International peace and security (OPERATION VIGILANCE)
+      startDate: 2006-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 65
+      operation: WORLD WAR 1 (1914-1921)
+      startDate: 1914-08-04
+      endDate: 1921-09-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 66
+      operation: WORLD WAR 2 (1939-1951)
+      startDate: 1939-09-03
+      endDate: 1951-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 67
+      operation: YUGOSLAVIA (1992-1994)
+      startDate: 1992-01-12
+      endDate: 1994-04-06
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 68
+      operation: YUGOSLAVIA (1994-1997)
+      startDate: 1994-04-07
+      endDate: 1997-01-24
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 69
+      operation: AFRICA Commonwealth Monitoring Force in Zimbabwe
+      startDate: 1979-12-24
+      endDate: 1980-12-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 70
+      operation: AFRICA UN Mission for Western Sahara (MINURSO) (OPERATION CEDILLA)
+      startDate: 1991-06-27
+      endDate: 1994-12-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 71
+      operation: AFRICA UN Operations in the Congo (UNUC)
+      startDate: 1960-08-01
+      endDate: 1961-02-28
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 72
+      operation: BALKANS United Nations Special Commission on the Balkans
+      startDate: 1947-11-26
+      endDate: 1949-12-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 73
+      operation: BALKANS United Nations Security Council on the BALKANS
+      startDate: 1947-01-29
+      endDate: 1947-12-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 74
+      operation: CYPRUS United Nations Force in Cyprus (UNFICYP)
+      startDate: 1964-05-14
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 75
+      operation: EASTERN/MIDDLE/SOUTHERN AFRICA (NAMIBIA) (1989-1990) (UNTAG) (OPERATION UNTAG)
+      startDate: 1989-02-18
+      endDate: 1990-04-10
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 76
+      operation: GULF WAR  United Nations Iran/Iraq Military Observer Group (UNIIMOG)
+      startDate: 1988-08-11
+      endDate: 1991-02-28
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 77
+      operation: INDIA & PAKISTAN India Pakistan Observer Mission (UNIPOM)
+      startDate: 1965-09-20
+      endDate: 1966-03-22
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 78
+      operation: INDIA & PAKISTAN United Nations MOG in Indian & Pakistan (UNMOGIP)
+      startDate: 1949-01-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 79
+      operation: KOREA United Nations Commission on Korea (UNCOK) (1949 � 1950)
+      startDate: 1949-01-01
+      endDate: 1950-06-27
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 80
+      operation: LEBANON UN Force in Lebanon (UNIFIL)
+      startDate: 1978-03-23
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 81
+      operation: LEBANON UN Truce Supervision Organisation (UNTSO) (OPERATION UNTSO)
+      startDate: 1956-06-01
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 82
+      operation: MIDDLE EAST Sinai Multi National Force and Observers (SMFO) (OPERATION MAZURKA)
+      startDate: 1982-02-18
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 83
+      operation: MIDDLE EAST United Nations Disengagement Observer Force (UNDOF)
+      startDate: 1974-01-01
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 84
+      operation: MIDDLE EAST United Nations Emergency Force Two (UNEF II)
+      startDate: 1976-07-01
+      endDate: 1979-07-24
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 85
+      operation: MIDDLE EAST United Nations Yemen Observation Mission (UNYOM)
+      startDate: 1963-01-01
+      endDate: 1964-09-04
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 86
+      operation: SOMALIA (OPERATION SOLACE) (1992-1994)
+      startDate: 1992-10-20
+      endDate: 1994-11-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 99997
+      operation: Other overseas
+      startDate: 0001-01-01
+      endDate: 0001-01-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 99999
+      operation: None of the above
+      startDate: 0001-01-01
+      endDate: 0001-01-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 100000
+      operation: Service within Australia
+      startDate: 0001-01-01
+      endDate: 0001-01-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 100001
+      operation: Australian Police Force on a UN Peacekeeping Mission
+      startDate: 0001-01-01
+      endDate: 0001-01-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 100002
+      operation: Merchant Mariner
+      startDate: 0001-01-01
+      endDate: 0001-01-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 100003
+      operation: British Nuclear Testing
+      startDate: 0001-01-01
+      endDate: 0001-01-01
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 87
+      operation: Unknown
+      startDate: 2014-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 88
+      operation: SUBMARINE SPECIAL FORCE
+      startDate: 1978-01-01
+      endDate: 1992-12-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 89
+      operation: Peacekeeping Zimbabwe (AUSTRALIAN CONTINGENT RHODESIA)
+      startDate: 1979-12-24
+      endDate: 1980-03-31
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 90
+      operation: Somalia (OPERATION IGUANA)
+      startDate: 1992-10-20
+      endDate: 1994-11-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: true
+      isWarlike: false
+    -
+      id: 91
+      operation: Afghanistan (OPERATION HIGHROAD) (2015-)
+      startDate: 2015-01-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: true
+    -
+      id: 92
+      operation: Bougainville & Buka Islands (OPERATION BEL ISI II) (1997-2003)
+      startDate: 1997-11-20
+      endDate: 2003-08-26
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 93
+      operation: Iraq (OPERATION OKRA ZONE A) (OKRA) (2014-)
+      startDate: 2014-08-09
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 94
+      operation: Middle East & Eastern Europe (OPERATION OKRA ZONE B) (OKRA) (2014-)
+      startDate: 2014-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 95
+      operation: EAST TIMOR (OPERATION TOWER) (UNMIT)
+      startDate: 1999-06-19
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 9501
+      operation: EAST TIMOR (OPERATION TOWER) (UNMIT)
+      startDate: 2004-07-01
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 96
+      operation: EAST TIMOR DETACHMENT (UNTAET) (OPERATION CONCORD)
+      startDate: 1999-10-25
+      endDate: 2002-05-19
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 97
+      operation: Gulf War (OPERATION TELIC (UK)) (OPERATION TELIC)
+      startDate: 1990-08-02
+      endDate: 2004-06-30
+      isHazardous: false
+      isMrcaNonWarlike: false
+      isMrcaWarlike: false
+      isOperational: true
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 98
+      operation: NATO no-fly zone and maritime enforcement in Libya(NNMEOAL)
+      startDate: 2011-03-31
+      endDate: 2011-10-30
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: true
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false
+    -
+      id: 99
+      operation: (OPERATION LITTEN) (LITTEN)
+      startDate: 2016-08-31
+      endDate:
+      isHazardous: false
+      isMrcaNonWarlike: true
+      isMrcaWarlike: false
+      isOperational: false
+      isPeacekeeping: false
+      isWarlike: false

@@ -12,12 +12,11 @@ object ClenserToFixSuperscripts extends GenericTextClenser with MiscRegexes {
     Some(initial)
       .map(insertSuperscriptsForIsotopes(_))
       .map(removeFloatingIsotopeNumbers(_))
-      .map(removeFloatingIsotopeNumbers(_))
       .get
   }
 
   private def insertSuperscriptsForIsotopes(text: String) = {
-    val iodineReplacement = "iodine ¹³¹I"
+    val iodineReplacement = "iodine¹³¹I"
     val yttriumReplacement = "⁹⁰Yttrium"
 
     Some(text)

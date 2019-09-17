@@ -188,5 +188,42 @@ class EdgeCaseTests extends FunSuite {
   }
 
 
+  test("attempted suicide 2018 compilation correctly parsed")
+  {
+    // missing the 1 in front of definitions section
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00189","allSops/F2018C00189.pdf")
+  }
+
+
+  test("cat 1B updates fail 1 - gastric ulcer")
+  {
+      val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00645","allSops/F2018C00645.pdf")
+  }
+
+  test("cat 1B updates fail 2 - breast neoplasm ")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00671","allSops/F2018C00671.pdf")
+
+  }
+
+  test("cat 1B updates fail 3 - breast neoplasm 2 ")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00670","allSops/F2018C00670.pdf")
+  }
+
+  test("cat 1B updates fail 4 - cerebrovascular accident")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00672","allSops/F2018C00672.pdf")
+  }
+
+  test("hypopituitarism factor categorisation")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2019L00009","allSops/F2019L00009.pdf")
+  }
+
+  test("dental maloccusion")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2019L00224","allSops/F2019L00224.pdf")
+  }
 
 }

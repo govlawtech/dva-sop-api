@@ -11,13 +11,115 @@ import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.AllDaysOfS
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedYearsPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.*;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 public class ConditionFactory {
+
+    public static ImmutableList<String> getAcuteConditions() {
+        return acuteConditionsMap.keySet().asList().stream().sorted().collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
+    }
+
+    private static ImmutableMap<String, ProcessingRule> acuteConditionsMap = buildAcuteConditionMap();
+
+    private static ImmutableMap<String, ProcessingRule> buildAcuteConditionMap() {
+
+        ImmutableMap<String, ProcessingRule> map = ImmutableMap.<String, ProcessingRule>builder()
+                .put("sprain and strain", new AcuteConditionRule(
+                        "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
+                        "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
+                        condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())))
+                .put("acute articular cartilage tear", buildAcuteConditionRule(
+                        "F2019L00233",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00234",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("acute meniscal tear of the knee", buildAcuteConditionRule(
+                        "F2019L00246",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00247",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("dislocation of a joint and subluxation of a joint", buildAcuteConditionRule(
+                        "F2019L00640",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00647",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                // There is no longer a SoP for 'dislocation'; remove below when MyService updates config
+                .put("dislocation", buildAcuteConditionRule(
+                        "F2019L00640",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00647",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("fracture", buildAcuteConditionRule(
+                        "F2015L01340",
+                        ImmutableSet.of("9(1)"),
+                        "F2015L01343",
+                        ImmutableSet.of("9(1)"),
+                        7
+
+                ))
+                .put("joint instability", buildAcuteConditionRule(
+                        "F2019L00645",
+                        ImmutableSet.of("9(1)"),
+                        "F2019L00644",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("labral tear", buildAcuteConditionRule(
+                        "F2017L00885",
+                        ImmutableSet.of("9(1)"),
+                        "F2017L00886",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("external bruise", buildAcuteConditionRule(
+                        "F2016L00008",
+                        ImmutableSet.of("9(1)"),
+                        "F2016L00005",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("external burn", buildAcuteConditionRule(
+                        "F2017C00862",
+                        ImmutableSet.of("9(1)"),
+                        "F2017C00861",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("physical injury due to munitions discharge", buildAcuteConditionRule(
+                        "F2012L01789",
+                        ImmutableSet.of("6(a)"),
+                        "F2012L01790",
+                        ImmutableSet.of("6(a)"),
+                        7
+                ))
+                .put("cut, stab, abrasion and laceration", buildAcuteConditionRule(
+                        "F2016L00567",
+                        ImmutableSet.of("9(1)"),
+                        "F2016L00571",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .build();
+
+        return map;
+
+
+    }
 
 
     public static Optional<Condition> create(SoPPair soPPair, ConditionDto conditionDto, RuleConfigurationRepository ruleConfigurationRepository) {
@@ -47,16 +149,20 @@ public class ConditionFactory {
         );
     }
 
+    private static ProcessingRule buildAcuteConditionRule(String rhRegisterId, ImmutableSet<String> rhParas, String bopRegisterId, ImmutableSet<String> bopParas, int daysWindowBeforeOnset) {
+        return new AcuteConditionRule(rhRegisterId, rhParas, bopRegisterId, bopParas,
+                condition -> new Interval(condition.getStartDate().minusDays(daysWindowBeforeOnset), condition.getStartDate()));
+
+
+    }
+
     private static Optional<ProcessingRule> BuildRuleFromCode(String conditionName) {
-        switch (conditionName) {
-            case "sprain and strain":
-                return Optional.of(new AcuteConditionRule(
-                        "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
-                        "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
-                        condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())));
-            default:
-                return Optional.empty();
+
+        if (acuteConditionsMap.containsKey(conditionName)) {
+            return Optional.of(acuteConditionsMap.get(conditionName));
         }
+
+        return Optional.empty();
     }
 
 
@@ -110,21 +216,19 @@ public class ConditionFactory {
             case "femoroacetabular impingement syndrome":
                 return new GenericProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(28));
             case "posttraumatic stress disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new MentalHealthProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "anxiety disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new FixedYearsPeriodSelector(5));
+                return new MentalHealthProcessingRule(conditionConfiguration, new FixedYearsPeriodSelector(5));
             case "adjustment disorder":
-                return new MentalHealthProcessingRule(conditionConfiguration,new FixedDaysPeriodSelector(84));
+                return new MentalHealthProcessingRule(conditionConfiguration, new FixedDaysPeriodSelector(84));
             case "malignant neoplasm of the eye":
-                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "seborrhoeic keratosis":
-                return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new RhOnlyGenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "pinguecula":
-                return new GenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
+                return new GenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
             case "benign neoplasm of the eye and adnexa":
-                return new RhOnlyGenericProcessingRule(conditionConfiguration,new AllDaysOfServiceSelector());
-
-
+                return new RhOnlyGenericProcessingRule(conditionConfiguration, new AllDaysOfServiceSelector());
 
         }
 

@@ -6,9 +6,11 @@ import au.gov.dva.sopapi.dtos.QueryParamLabels;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
+import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
+import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
@@ -16,15 +18,18 @@ import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.SoPs;
+import au.gov.dva.sopapi.sopref.data.PostProcessingFunctions;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
+import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
@@ -40,9 +45,13 @@ import spark.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
+import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -82,7 +91,7 @@ public class Routes {
             if (receivedKey.contentEquals(expectedKey)) {
                 cache.refresh(repository);
                 setResponseHeaders(res, 200, MIME_TEXT);
-                return "CacheSingleton refreshed.";
+                return "Cache refreshed.";
             } else {
                 setResponseHeaders(res, 403, MIME_TEXT);
                 return "Key does not match";
@@ -149,7 +158,7 @@ public class Routes {
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
-            ServiceDeterminationPair latestServiceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
+            ServiceDeterminationPair latestServiceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
 
             OperationsResponse operationsResponse = DtoTransformations.buildOperationsResponseDto(latestServiceDeterminationPair);
 
@@ -157,6 +166,57 @@ public class Routes {
             String json = OperationsResponse.toJsonString(operationsResponse);
             return json;
         });
+
+        get(SharedConstants.Routes.GET_VEA_ACTIVITIES, (req, res) -> {
+            if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
+                setResponseHeaders(res, 406, MIME_TEXT);
+                return buildAcceptableContentTypesError(MIME_JSON);
+            }
+
+            QueryParamsMap queryParamsMap = req.queryMap();
+            String startDateString = queryParamsMap.get("startDate").value();
+            if (startDateString == null)
+            {
+                setResponseHeaders(res,406,MIME_TEXT);
+                return "Need 'startDate' query parameter in ISO local date format.  Eg: 2000-01-01";
+            }
+            LocalDate startDate;
+            try {
+               startDate = LocalDate.parse(startDateString, DateTimeFormatter.ISO_LOCAL_DATE);
+            }
+            catch (DateTimeParseException e)
+            {
+                setResponseHeaders(res,406,MIME_TEXT);
+                return "Need 'startDate' query parameter in ISO local date format.  Eg: 2000-01-01";
+            }
+
+            String endDateString = queryParamsMap.get("endDate").value();
+            LocalDate endDate = null;
+            if (endDateString == null)
+            {
+                endDate = LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE));
+            }
+            else {
+                try {
+                    endDate = LocalDate.parse(endDateString, DateTimeFormatter.ISO_LOCAL_DATE);
+                }
+                catch (DateTimeParseException e)
+                {
+                    setResponseHeaders(res,406,MIME_TEXT);
+                    return "Need 'endDate' query parameter in ISO local date format.  Eg: 2000-01-01";
+                }
+            }
+
+            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate,endDate,cache.get_veaOperationalServiceRepository());
+            ObjectMapper om = new ObjectMapper();
+            String jsonString = om.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse);
+            setResponseHeaders(res,200,MIME_JSON);
+            return jsonString;
+
+        });
+
+
+
 
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
 
@@ -196,7 +256,12 @@ public class Routes {
                 IncidentType it = IncidentType.fromString(incidentType);
                 StandardOfProof sp = StandardOfProof.fromAbbreviation(standardOfProof);
 
-                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp);
+                List<Function<SoPReferenceResponse,SoPReferenceResponse>> postProcessors = new ArrayList<>();
+                if (cache.get_curatedTextReporitory().isPresent()) {
+                    postProcessors.add(PostProcessingFunctions.SubInCuratedFactorText(cache.get_curatedTextReporitory().get()));
+                    postProcessors.add(PostProcessingFunctions.SubInCuratedDefinitions(cache.get_curatedTextReporitory().get()));
+                }
+                String response = SoPs.buildSopRefJsonResponse(matchingSops, it, sp, ImmutableList.copyOf(postProcessors));
                 return response;
             }
         });
@@ -227,9 +292,8 @@ public class Routes {
                 }
             }
 
-            ActDeterminationServiceClient actDeterminationServiceClient = new ActDeterminationServiceClientImpl(AppSettings.getActDeterminationServiceBaseUrl());
-            ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allServiceDeterminations());
-            IRhPredicateFactory rhPredicateFactory = new RhPredicateFactory(actDeterminationServiceClient, serviceDeterminationPair);
+            ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
+            IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair,cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
             RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);
@@ -256,18 +320,25 @@ public class Routes {
             } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFormatError(e.getMessage());
-            } catch (ProcessingRuleRuntimeException e) {
+            }
+            catch (ServiceHistoryCorruptException e)
+            {
+                logger.error("Service history corrupt.",e);
+                setResponseHeaders(res,400,MIME_TEXT);
+                return e.getMessage();
+            }
+            catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             } catch (Exception e) {
                 logger.error("Unknown exception", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             } catch (Error e) {
                 logger.error("Unknown error", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return "";
+                return e.getMessage();
             }
         }));
     }

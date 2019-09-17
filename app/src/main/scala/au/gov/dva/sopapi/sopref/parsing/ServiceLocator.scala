@@ -26,8 +26,36 @@ object ServiceLocator {
     "F2017C00073",
     "F2017C00074",
     "F2017C00075",
-    "F2017C00076"
-   )
+    "F2017C00076",
+    "F2018C00478",
+    "F2018C00480",
+    "F2018C00481",
+    "F2018C00482",
+    "F2018C00664",
+    "F2018C00666",
+    "F2018C00658",
+    "F2018C00667",
+    "F2018C00669",
+    "F2018C00636",
+    "F2018C00637",
+    "F2018C00633",
+    "F2018C00638",
+    "F2018C00639",
+    "F2018C00645",
+    "F2018C00671",
+    "F2018C00670",
+    "F2018C00660",
+    "F2018C00672",
+    "F2018C00791",
+    "F2019C00221",
+    "F2019C00222",
+    "F2019C00584",
+    "F2019C00583",
+    "F2019C00544",
+    "F2019C00538",
+    "F2019C00669"
+
+  )
 
   def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
 
@@ -62,7 +90,7 @@ object ServiceLocator {
       case "F2013L00411" => EssentialThrombocythamiaClenser
       case "F2013L00412" => PrimaryMyelofibrosisClenser
       case "F2014L01833" => HaemophiliaClenser
-      case "F2017C00198" => SuicideRHClenser
+      case "F2017C00198" => BaldDefinitionsSectionClenser
       case "F2013L00720" => ClenserToFixSuperscripts
       case "F2013L00728" => ClenserToFixSuperscripts
       case "F2013L00722" => ClenserToFixSuperscripts
@@ -73,8 +101,16 @@ object ServiceLocator {
       case "F2013L01640" => ClenserToFixSuperscripts
       case "F2015L00657" => ClenserToFixSuperscripts
       case "F2015L00658" => ClenserToFixSuperscripts
+      case "F2018C00645" => ClenserToFixSuperscripts
       case "F2014L00525" => ChronicMultisymptomIllnessBoPClenser
       case "F2017C00075" => SinusBarotraumaBoPClenser
+      case "F2018C00189" => BaldDefinitionsSectionClenser
+      case "F2018L00535" => ElectricalInjuryRHClenser
+      case "F2018L01183" => AdrenalInsufficiencyBoPClenser
+      case "F2019L00009" => HypopituitarismClenser
+      case "F2019L00012" => HypopituitarismClenser
+      case "F2019L00224" => BaldDefinitionsSectionClenser
+
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }
