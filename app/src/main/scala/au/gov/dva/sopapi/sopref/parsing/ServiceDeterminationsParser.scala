@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopref.parsing
 
 import java.time.{LocalDate, OffsetDateTime}
+import java.util.Optional
 
 import au.gov.dva.sopapi.DateTimeUtils
 import au.gov.dva.sopapi.exceptions.ServiceDeterminationParserRuntimeException
@@ -51,25 +52,36 @@ object ServiceDeterminationsParser {
   }
 
   def createServiceDetermination(docx : Array[Byte], plainText: String) : ServiceDetermination = {
+
+    val registerId = getRegisterId(plainText)
+
     val operations = au.gov.dva.sopapi.sopref.data.ServiceDeterminations.extractOperations(docx);
 
     val commencementDate: OffsetDateTime = {
+
+      // special case for F2019L01198 - commencement date specified to be day after registration
+      if (registerId == "F2019L01198")
+        {
+          DateTimeUtils.localDateToLastMidnightCanberraTime(LocalDate.of(2019,9,17))
+        }
+      else {
+
+
       val commencementDateFromDocX = au.gov.dva.sopapi.sopref.data.ServiceDeterminations.extractCommencementDateFromDocx(docx);
       if (commencementDateFromDocX.isPresent)
         commencementDateFromDocX.get()
       else {
         val registeredDateFromText = getRegisteredDate(plainText)
-        if (registeredDateFromText.isEmpty)
-        {
+        if (registeredDateFromText.isEmpty) {
           throw new ServiceDeterminationParserRuntimeException(s"Cannot determine commencement date for Service Determination: $plainText")
         }
         else {
           registeredDateFromText.get
         }
       }
+      }
     }
 
-    val registerId = getRegisterId(plainText)
 
     val citation = getCitation(plainText)
 

@@ -86,7 +86,7 @@ public class AutoUpdate {
             logger.trace(String.format("Service Determination replacements found: %s.", String.join("\n", replacements.stream().map(r -> r.toString()).collect(Collectors.toList()))));
             replacements.forEach(r -> {
                 ServiceDetermination serviceDetermination = ServiceDeterminations.create(r.getTargetInstrumentId(), registerClient);
-                repository.archiveServiceDetermination(r.getSourceInstrumentId());
+          //      repository.archiveServiceDetermination(r.getSourceInstrumentId());
                 repository.addServiceDetermination(serviceDetermination);
             });
         }

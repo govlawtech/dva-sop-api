@@ -9,14 +9,123 @@
         <description>Operational service—warlike and non‑warlike service</description>
 
         <warlikeDeterminations>
-            
+
+
             <determination>
-                <federalRegisterOfLegislationReference>F2014L00151</federalRegisterOfLegislationReference>
-                <commencementDate>2003-08-11</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Augury</name>
+                        <startDate>2016-04-28</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Supporting the Defence Force’s understanding of Islamist terrorist threats to Australia and the region</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Okra</name>
+                        <startDate>2014-08-09</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>The land area, territorial waters and superjacent airspace of Iraq and Syria</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the Iraq and Syria crises</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Highroad</name>
+                        <startDate>2015-01-01</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the NATO-led Resolute Support Mission in Afghanistan.</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Herrick</name>
+                        <startDate>2004-09-01</startDate>
+                        <endDate>2014-12-31</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>United Kingdom contribution to the International Security Assistance Force mission in Afghanistan</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Athena</name>
+                        <startDate>2003-07-17</startDate>
+                        <endDate>2014-12-31</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Canadian contribution to the International Security Assistance Force mission in Afghanistan</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Enduring Freedom – Afghanistan</name>
+                        <startDate>2001-10-07</startDate>
+                        <endDate>2014-12-31</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <mappings>
+                            <mapping regex="(?i)Enduring\s+Freedom\s+Afghanistan(?-i)"/>
+                        </mappings>
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>International Security Assistance Force</name>
                         <startDate>2003-08-11</startDate>
+                        <endDate>2014-12-31</endDate>
                         <specifiedAreas>
                             <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
                         </specifiedAreas>
@@ -28,13 +137,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2010L00176</federalRegisterOfLegislationReference>
-                <commencementDate>2009-12-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>SLIPPER</name>
                         <startDate>2001-10-11</startDate>
-                        <endDate>2009-07-30</endDate>
+                        <endDate>2014-12-31</endDate>
                         <specifiedAreas>
                             <specifiedArea>[[<![CDATA[
                                <kml xmlns="http://www.opengis.net/kml/2.2>
@@ -66,8 +175,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04377</federalRegisterOfLegislationReference>
-                <commencementDate>2007-04-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>PROVIDE COMFORT</name>
@@ -86,8 +195,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04376</federalRegisterOfLegislationReference>
-                <commencementDate>2007-04-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>NORTHERN WATCH</name>
@@ -106,8 +215,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006L02932</federalRegisterOfLegislationReference>
-                <commencementDate>1973-01-12</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
 
                 <activities>
                     <activity>
@@ -124,8 +233,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00961</federalRegisterOfLegislationReference>
-                <commencementDate>2000-06-21</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>STABILISE</name>
@@ -142,12 +251,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2005L04107</federalRegisterOfLegislationReference>
-                <commencementDate>2005-12-08</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>PALATE II</name>
                         <startDate>2005-06-27</startDate>
+                        <endDate>2017-03-10</endDate>
                         <specifiedAreas>
                             <specifiedArea>Afghanistan, including Afghanistan’s land territory, internal waters and
                                 superjacent airspace
@@ -158,12 +268,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2009L02442</federalRegisterOfLegislationReference>
-                <commencementDate>2008-07-21</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>RIVERBANK</name>
                         <startDate>2008-07-21</startDate>
+                        <endDate>2013-12-14</endDate>
                         <qualifications>
                             <qualification>service with the Australian Defence Force contribution to the United Nations
                                 Assistance Mission in Iraq
@@ -177,8 +288,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00960</federalRegisterOfLegislationReference>
-                <commencementDate>2003-09-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>FALCONER</name>
@@ -212,8 +323,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2010L00699</federalRegisterOfLegislationReference>
-                <commencementDate>2010-02-12</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>CATALYST</name>
@@ -239,8 +350,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00579</federalRegisterOfLegislationReference>
-                <commencementDate>2003-09-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>CITADEL</name>
@@ -255,8 +366,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00577</federalRegisterOfLegislationReference>
-                <commencementDate>2004-04-01</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>TANAGER</name>
@@ -271,8 +382,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00578</federalRegisterOfLegislationReference>
-                <commencementDate>2000-06-21</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>WARDEN</name>
@@ -290,8 +401,8 @@
 
 
             <determination>
-                <federalRegisterOfLegislationReference>F2005L03487</federalRegisterOfLegislationReference>
-                <commencementDate>2005-10-31</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>PALATE</name>
@@ -305,12 +416,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2009L00722</federalRegisterOfLegislationReference>
-                <commencementDate>2009-01-01</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>KRUGER</name>
                         <startDate>2009-01-01</startDate>
+                        <endDate>2011-08-09</endDate>
                         <specifiedAreas>
                             <specifiedArea>Iraq</specifiedArea>
                         </specifiedAreas>
@@ -324,8 +436,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006B00958</federalRegisterOfLegislationReference>
-                <commencementDate>2000-06-21</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>FABER</name>
@@ -342,8 +454,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2006L01121</federalRegisterOfLegislationReference>
-                <commencementDate>2006-02-13</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>TAMAR</name>
@@ -362,8 +474,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04375</federalRegisterOfLegislationReference>
-                <commencementDate>2007-04-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>JURAL</name>
@@ -382,8 +494,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L00986</federalRegisterOfLegislationReference>
-                <commencementDate>2007-03-22</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>HUSKY</name>
@@ -403,8 +515,8 @@
 
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04378</federalRegisterOfLegislationReference>
-                <commencementDate>2007-04-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>BOLTON</name>
@@ -425,8 +537,8 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2007L04379</federalRegisterOfLegislationReference>
-                <commencementDate>2007-04-16</commencementDate>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>SOUTHERN WATCH</name>
@@ -443,6 +555,42 @@
                     </operation>
                 </operations>
             </determination>
+
+
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Ariki</name>
+                        <specifiedAreas>
+                            <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2001-12-01</startDate>
+                        <endDate>2014-12-31</endDate>
+                        <qualifications>
+                            <qualification>New Zealand contribution to Operation Enduring Freedom – Afghanistan and the International Security Assistance Force mission in Afghanistan</qualification>
+                        </qualifications>
+
+                    </operation>
+                </operations>
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Steadfast</name>
+                        <specifiedAreas>
+                            <specifiedArea>The land area, territorial waters and superjacent airspace of Iraq</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2018-09-10</startDate>
+                    </operation>
+                </operations>
+            </determination>
+
 
 
         </warlikeDeterminations>
