@@ -13,7 +13,7 @@ import scalax.collection.io.dot._
 import scalax.collection.Graph
 import scalax.collection.edge.LDiEdge
 
-case class FactorRef()
+abstract class FactorRef
 case class FactorConditionReference(dependentSop: SoP, dependentSopFactor: Factor, targetCondition: String) extends FactorRef
 case class FactorConditionReferenceWithTime(dependentSop: SoP, dependentSopFactor: Factor, targetCondition: String, days: Int) extends FactorRef
 

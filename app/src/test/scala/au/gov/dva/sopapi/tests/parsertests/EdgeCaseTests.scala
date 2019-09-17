@@ -46,7 +46,6 @@ class EdgeCaseTests extends FunSuite {
     val bopparsed = ParserTestUtils.executeWholeParsingPipeline("F2017L00173", "allSops/F2017L00173.pdf")
     println(TestUtils.prettyPrint(StoredSop.toJson(bopparsed)))
 
-
   }
 
   test("EssentialThrombocythamia") {

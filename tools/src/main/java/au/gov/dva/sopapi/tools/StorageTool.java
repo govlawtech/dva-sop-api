@@ -8,6 +8,7 @@ import au.gov.dva.sopapi.sopref.data.FederalRegisterOfLegislationClient;
 import au.gov.dva.sopapi.sopref.data.updates.AutoUpdate;
 import au.gov.dva.sopapi.sopref.parsing.ServiceLocator;
 import au.gov.dva.sopapi.sopref.parsing.traits.SoPFactory;
+import com.mchange.v2.c3p0.util.TestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,6 +44,7 @@ public class StorageTool {
                 if (sopPdf.isPresent())
                 {
                     try {
+
                         String rawText = Conversions.croppedPdfToPlaintext(sopPdf.get(), registerId);
                         String cleansedText = ServiceLocator.findTextCleanser(registerId).clense(rawText);
                         SoPFactory sopFactory = ServiceLocator.findSoPFactory(registerId);
