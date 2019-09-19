@@ -32,8 +32,8 @@ object Dependencies {
       innerEdge.edge match {
         case LDiEdge(source,target,label) => Some(
           (dotRoot,DotEdgeStmt(
-            NodeId(source.toString()),
-            NodeId(target.toString())
+            NodeId(target.toString()),
+            NodeId(source.toString())
           )))
       }
     }
