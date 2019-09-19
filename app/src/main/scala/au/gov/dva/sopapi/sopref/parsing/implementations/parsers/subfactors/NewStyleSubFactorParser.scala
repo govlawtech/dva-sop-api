@@ -50,7 +50,7 @@ class NewStyleSubFactorParser extends SubFactorParser with MiscRegexes {
     text
   }
 
-  val conditionVariantRegexMatch = """for (.*) only(:|,)""".r
+  val conditionVariantRegexMatch = """for (.*?) only(:|,)""".r
 
   override def tryParseConditionVariant(factor: FactorInfo): Option[String] = {
     val textWithLineEndingsConvertedToSpaces = platformNeutralLineEndingRegex.replaceAllIn(factor.getText," ")
@@ -58,6 +58,7 @@ class NewStyleSubFactorParser extends SubFactorParser with MiscRegexes {
     if(regexMatch.isEmpty) return None
     else {
       val variant = regexMatch.get.group(1)
+      assert(!variant.contains(':'),"Parsed condition variant contains suspicious characters: " + variant)
       return Some(variant)
     }
 
