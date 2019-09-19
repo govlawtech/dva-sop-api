@@ -54,8 +54,10 @@ public class StorageTool {
                     }
                     catch (Exception e)
                     {
-                        System.out.println("Failed to extract SoP: " + registerId);
-                        System.out.println(e);
+
+                            System.out.println("Failed to extract SoP: " + registerId);
+                          //  System.out.println(e);
+
                     }
                 }
                 else {

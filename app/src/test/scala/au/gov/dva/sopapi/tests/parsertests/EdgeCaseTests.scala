@@ -203,7 +203,6 @@ class EdgeCaseTests extends FunSuite {
   test("cat 1B updates fail 2 - breast neoplasm ")
   {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00671","allSops/F2018C00671.pdf")
-
   }
 
   test("cat 1B updates fail 3 - breast neoplasm 2 ")
@@ -225,5 +224,13 @@ class EdgeCaseTests extends FunSuite {
   {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2019L00224","allSops/F2019L00224.pdf")
   }
+
+  test("fail with subfactors parser")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2017C00764","allSops/F2017C00764.pdf")
+  }
+
+
+
 
 }
