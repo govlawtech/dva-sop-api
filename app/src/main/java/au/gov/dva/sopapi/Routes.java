@@ -135,12 +135,14 @@ public class Routes {
             return csvBytes;
         });
 
-        post("/status/dependencies",(req,res) -> {
+        post("/status/dependencies", (req,res) -> {
 
-            ImmutableSet<String> conditions = ImmutableSet.copyOf(req.body().split(scala.util.Properties.lineSeparator()));
-            String dotString = Dependencies.buildDotString(cache.get_allSopPairs(),conditions);
-            setResponseHeaders(res, 200, MIME_TEXT);
-            return dotString;
+           ImmutableSet<String> conditions = ImmutableSet.copyOf(req.body().split(scala.util.Properties.lineSeparator()));
+           String dotString = Dependencies.buildDotString(cache.get_allSopPairs(),conditions);
+           //setResponseHeaders(res, 200, MIME_TEXT);
+           //return dotString;
+
+            return "SANITY!";
         });
     }
 
