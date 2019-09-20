@@ -5,12 +5,14 @@ import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
 import com.google.common.collect.{ImmutableList, ImmutableSet}
+import org.w3c.dom.traversal.NodeFilter
 import scalax.collection.GraphEdge.DiEdge
 
 import collection.JavaConverters._
 import scala.util.Properties
 import scalax.collection.io.dot._
 import scalax.collection.Graph
+import scalax.collection.GraphTraversal.{Predecessors, Successors}
 import scalax.collection.edge.LDiEdge
 
 abstract class FactorRef
@@ -42,9 +44,10 @@ object Dependencies {
 
     val testCondition = sopPairs.asScala.filter(sp => conditionWhitelist.asScala.contains(sp.getConditionName)).head
 
-    
+    val subGraph = liftSubGraphForCondition(g,testCondition)
 
-    g.toDot(dotRoot, edgeTransformer)
+
+    subGraph.toDot(dotRoot, edgeTransformer)
   }
 
   def getChildrenOf(conditionName : String, conditions: ImmutableSet[SoPPair]) : String= {
@@ -107,7 +110,7 @@ object Dependencies {
 
   private def liftSubGraphForCondition(graph : Graph[SoPPair, LDiEdge], condition : SoPPair): Graph[SoPPair,LDiEdge] = {
     val root = graph get condition
-    val subGraph = root.innerNodeTraverser.toGraph
+    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(1).toGraph
     subGraph
   }
 
