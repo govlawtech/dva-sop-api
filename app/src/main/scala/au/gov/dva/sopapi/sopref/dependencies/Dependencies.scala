@@ -32,8 +32,8 @@ object Dependencies {
       innerEdge.edge match {
         case LDiEdge(source,target,label) => Some(
           (dotRoot,DotEdgeStmt(
-            NodeId(target.toString()),
-            NodeId(source.toString())
+            NodeId(source.toString()),
+            NodeId(target.toString())
           )))
       }
     }
@@ -79,13 +79,18 @@ object Dependencies {
 
   private def findSoPPairsReferencingPhraseInFactors(phrase: String, sopPairs: List[SoPPair]): List[SoPPair] = {
 
+    def definedTermsContainsPhrase(conditionName: String,  factor: Factor) = {
+            val definitions = factor.getDefinedTerms.asScala
+            definitions.exists(d => d.getDefinition.contains(phrase))
+    }
+
     def findFactorsContainingConditionName(conditionName: String, SoPPair: SoPPair): List[Factor] = {
       val allFactors: List[Factor] = (SoPPair.getRhSop.getOnsetFactors.asScala
         ++ SoPPair.getRhSop.getAggravationFactors.asScala
         ++ SoPPair.getBopSop.getOnsetFactors.asScala
         ++ SoPPair.getBopSop.getAggravationFactors.asScala) toList
 
-      allFactors.filter(f => f.getText.contains(conditionName))
+      allFactors.filter(f => f.getText.contains(conditionName) || definedTermsContainsPhrase(conditionName, f))
     }
 
     sopPairs.filter(SoPPair => findFactorsContainingConditionName(phrase, SoPPair).nonEmpty)
