@@ -32,22 +32,20 @@ object Dependencies {
       innerEdge.edge match {
         case LDiEdge(source,target,label) => Some(
           (dotRoot,DotEdgeStmt(
-            NodeId(source.toString()),
-            NodeId(target.toString())
+            NodeId(target.toString()),
+            NodeId(source.toString())
           )))
       }
     }
 
+    def whiteFilter = (sp: SoPPair) => conditionWhitelist.asScala.toSet.contains(sp.getConditionName)
 
-    val g = buildGraph(sopPairs.asScala.toList)
-    val submittedConditions = sopPairs.asScala.filter(sp => conditionWhitelist.contains(sp.getConditionName))
-    val subgraphs = submittedConditions.map(sp => liftSubGraphForCondition(g,sp))
-    val unionOfSubgraphs: Graph[SoPPair, LDiEdge] = subgraphs.fold(subgraphs.head)((g1, g2) => g1 union g2)
-    unionOfSubgraphs.toDot(dotRoot, edgeTransformer)
+    val g = buildGraph(sopPairs.asScala.toList, whiteFilter)
+    g.toDot(dotRoot, edgeTransformer)
   }
 
   def getChildrenOf(conditionName : String, conditions: ImmutableSet[SoPPair]) : String= {
-    val g = buildGraph(conditions.asScala.toList)
+    val g = buildGraph(conditions.asScala.toList, _ => true)
     val sopPair = conditions.asScala.find(c => c.getConditionName == conditionName)
     if (sopPair.isEmpty) return ""
     val conditionNode: Option[g.NodeT] = g.find(sopPair.get)
@@ -60,15 +58,10 @@ object Dependencies {
     referencingPairs.map(p => p.getConditionName).mkString(Properties.lineSeparator)
   }
 
-  private def liftSubGraphForCondition(graph : Graph[SoPPair, LDiEdge], condition : SoPPair): Graph[SoPPair,LDiEdge] = {
-    val root = graph get condition
-    val subGraph = root.innerNodeTraverser.toGraph
-    subGraph
-  }
-
-  private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
+  private def buildGraph(SoPPairs: List[SoPPair], whiteNodeFilter: SoPPair => Boolean): Graph[SoPPair, LDiEdge] = {
 
     val edges = buildEdges(SoPPairs)
+      .filter(e => whiteNodeFilter(e.source) || whiteNodeFilter(e.target))
 
     val g: Graph[SoPPair, LDiEdge] = Graph.from(SoPPairs,edges)
     g
@@ -86,18 +79,13 @@ object Dependencies {
 
   private def findSoPPairsReferencingPhraseInFactors(phrase: String, sopPairs: List[SoPPair]): List[SoPPair] = {
 
-    def definedTermsContainsPhrase(factor: Factor) = {
-      val definitions = factor.getDefinedTerms.asScala
-      definitions.exists(d => d.getDefinition.contains(phrase))
-    }
-
     def findFactorsContainingConditionName(conditionName: String, SoPPair: SoPPair): List[Factor] = {
       val allFactors: List[Factor] = (SoPPair.getRhSop.getOnsetFactors.asScala
         ++ SoPPair.getRhSop.getAggravationFactors.asScala
         ++ SoPPair.getBopSop.getOnsetFactors.asScala
         ++ SoPPair.getBopSop.getAggravationFactors.asScala) toList
 
-      allFactors.filter(f => f.getText.contains(conditionName) || definedTermsContainsPhrase(f))
+      allFactors.filter(f => f.getText.contains(conditionName))
     }
 
     sopPairs.filter(SoPPair => findFactorsContainingConditionName(phrase, SoPPair).nonEmpty)
