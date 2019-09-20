@@ -38,14 +38,17 @@ object Dependencies {
       }
     }
 
-    def whiteFilter = (sp: SoPPair) => conditionWhitelist.asScala.toSet.contains(sp.getConditionName)
+    val g = buildGraph(sopPairs.asScala.toList)
 
-    val g = buildGraph(sopPairs.asScala.toList, whiteFilter)
+    val testCondition = sopPairs.asScala.filter(sp => conditionWhitelist.asScala.contains(sp.getConditionName)).head
+
+    
+
     g.toDot(dotRoot, edgeTransformer)
   }
 
   def getChildrenOf(conditionName : String, conditions: ImmutableSet[SoPPair]) : String= {
-    val g = buildGraph(conditions.asScala.toList, _ => true)
+    val g = buildGraph(conditions.asScala.toList)
     val sopPair = conditions.asScala.find(c => c.getConditionName == conditionName)
     if (sopPair.isEmpty) return ""
     val conditionNode: Option[g.NodeT] = g.find(sopPair.get)
@@ -58,10 +61,10 @@ object Dependencies {
     referencingPairs.map(p => p.getConditionName).mkString(Properties.lineSeparator)
   }
 
-  private def buildGraph(SoPPairs: List[SoPPair], whiteNodeFilter: SoPPair => Boolean): Graph[SoPPair, LDiEdge] = {
+  private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
 
     val edges = buildEdges(SoPPairs)
-      .filter(e => whiteNodeFilter(e.source) || whiteNodeFilter(e.target))
+
 
     val g: Graph[SoPPair, LDiEdge] = Graph.from(SoPPairs,edges)
     g
@@ -100,6 +103,12 @@ object Dependencies {
     val sources = findSoPPairsReferencingPhraseInFactors(sopPair.getConditionName,otherSoPPairs)
     val target = sopPair
     sources map (s => LDiEdge(s,target)(""))
+  }
+
+  private def liftSubGraphForCondition(graph : Graph[SoPPair, LDiEdge], condition : SoPPair): Graph[SoPPair,LDiEdge] = {
+    val root = graph get condition
+    val subGraph = root.innerNodeTraverser.toGraph
+    subGraph
   }
 
   // need function to link a factor to a condition, including in definitions
