@@ -60,7 +60,7 @@ public class StoredConditionVariant implements ConditionVariant, JsonSerializabl
     public static ConditionVariant fromJson(JsonNode jsonNode)
     {
         assert(jsonNode.has(CONDITION_VARIANT_FACTORS_LABEL) && jsonNode.findPath(CONDITION_VARIANT_FACTORS_LABEL).isArray());
-        String name = jsonNode.findValue(CONDITION_VARIANT_FACTORS_LABEL).asText();
+        String name = jsonNode.findValue(CONDITION_VARIANT_NAME_LABEL).asText();
         ImmutableList<JsonNode> factors = JsonUtils.getChildrenOfArrayNode(jsonNode.findPath(CONDITION_VARIANT_FACTORS_LABEL));
         ImmutableList<ConditionVariantFactor> deserialisedFactors = factors.stream().map(StoredConditionVariantFactor::fromJson)
                 .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));

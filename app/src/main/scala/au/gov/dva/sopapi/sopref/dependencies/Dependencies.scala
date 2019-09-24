@@ -19,10 +19,17 @@ import scala.collection.immutable
 
 case class FactorRef(linkingFactor: Factor) {
 
-    override def toString: String = linkingFactor.getParagraph
+    override def toString: String =  {
+      if (linkingFactor.getConditionVariant.isPresent)
+        s"${linkingFactor.getParagraph} (${linkingFactor.getConditionVariant.get().getName})"
+          else s"${linkingFactor.getParagraph}"
+      }
+
 }
 
-case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair, rhRefs: List[FactorRef], bopRefs: List[FactorRef])
+case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair, rhRefs: List[FactorRef], bopRefs: List[FactorRef]) {
+  override def toString = if (rhRefs != bopRefs) s"RH: ${rhRefs.mkString(", ")}; BoP: ${bopRefs.mkString(", ")}" else s"${rhRefs.mkString(", ")}"
+}
 
 
 object Dependencies {

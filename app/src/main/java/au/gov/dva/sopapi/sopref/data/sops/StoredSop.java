@@ -97,6 +97,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
                 icdCodeListFromJsonArray(jsonNode.findPath(Labels.ICD_CODES)),
                 jsonNode.findValue(Labels.CONDITION_NAME).asText(),
                 jsonNode.hasNonNull(Labels.END_DATE) ? Optional.of(LocalDate.parse(jsonNode.findValue(Labels.END_DATE).asText(),DateTimeFormatter.ISO_LOCAL_DATE)) : Optional.empty()
+
                 );
 
     }
@@ -159,7 +160,6 @@ public class StoredSop implements SoP, HasSchemaVersion {
     public String getConditionName() {
         return conditionName;
     }
-
 
     @Override
     public String getRegisterId() {
