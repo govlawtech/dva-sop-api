@@ -11,32 +11,23 @@ import scalax.collection.GraphEdge.DiEdge
 import collection.JavaConverters._
 import scala.util.Properties
 import scalax.collection.io.dot._
-import scalax.collection.Graph
+import scalax.collection.{Graph, GraphEdge}
 import scalax.collection.GraphTraversal.{Predecessors, Successors}
 import scalax.collection.edge.LDiEdge
 
-case class FactorRef(dependentSop: SoP, linkingFactor: Factor, targetSoPPair : SoPPair) {
-    private def isOnset = dependentSop.getOnsetFactors.asScala.exists(f => f.getParagraph == linkingFactor.getParagraph)
-    private def getStandardOfProof = dependentSop.getStandardOfProof.toAbbreviatedString
-    private def getVariant = linkingFactor.getConditionVariant
-    def getLabel : String = {
-      val onsetLabel = if (isOnset) "onset" else "clinical worsening";
-      val para = linkingFactor.getParagraph
-      val variantLabel = if (getVariant.isPresent) s",${getVariant.get().getName}" else ""
-      s"($para: $onsetLabel,$getStandardOfProof$variantLabel)"
-    }
+import scala.collection.immutable
 
-  override def toString: String = getLabel
+case class FactorRef(linkingFactor: Factor) {
+
+    override def toString: String = linkingFactor.getParagraph
 }
 
-
-
+case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair, rhRefs: List[FactorRef], bopRefs: List[FactorRef])
 
 
 object Dependencies {
 
   // ideas:
-  // make AL with explicit references
   // find factors in common - levenshtein distance, BK tree
   def buildDotString(sopPairs : ImmutableSet[SoPPair], conditionWhitelist: ImmutableSet[String]) : String = {
     val dotRoot = DotRootGraph(
@@ -60,16 +51,6 @@ object Dependencies {
     subGraph.toDot(dotRoot, edgeTransformer)
   }
 
-  def getChildrenOf(conditionName : String, conditions: ImmutableSet[SoPPair]) : String= {
-    val g = buildGraph(conditions.asScala.toList)
-    val sopPair = conditions.asScala.find(c => c.getConditionName == conditionName)
-    if (sopPair.isEmpty) return ""
-    val conditionNode: Option[g.NodeT] = g.find(sopPair.get)
-    val children = conditionNode.get.incoming.map(e => e.edge.sources.head.getConditionName)
-    children.toList.mkString(Properties.lineSeparator)
-  }
-
-
   private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
     val edges = buildEdges(SoPPairs)
     val g: Graph[SoPPair, LDiEdge] = Graph.from(SoPPairs,edges)
@@ -84,31 +65,34 @@ object Dependencies {
     createEdgesForSoPPairRecursive(SoPPairs)
   }
 
-  private def findFactorReferences(dependentSoPPair : SoPPair, otherSoPPairs : List[SoPPair]) : Map[SoPPair, List[FactorRef]] = {
+  private def findFactorReferences(dependentSoPPair : SoPPair, otherSoPPairs : List[SoPPair]) : List[FactorRefForSoPPair] = {
     def definedTermsContainsPhrase(conditionName: String,  factor: Factor) = {
       val definitions = factor.getDefinedTerms.asScala
       definitions.exists(d => d.getDefinition.contains(conditionName))
     }
 
     def gatherFactorRefs(dependentSop: SoP, targetSopPair: SoPPair) : List[FactorRef] = {
-      def getFactorsReferencesingCondition(factors: List[Factor] ) = factors.filter(f => f.getText.contains(target  SopPair.getConditionName) || definedTermsContainsPhrase(targetSopPair.getConditionName,f))
-      def toFactorRef(f : Factor) = FactorRef(dependentSop,f,targetSopPair)
+      def getFactorsReferencesingCondition(factors: List[Factor] ) = factors.filter(f => f.getText.contains(targetSopPair.getConditionName) || definedTermsContainsPhrase(targetSopPair.getConditionName,f))
+      def toFactorRef(f : Factor) = FactorRef(f)
       val onsetFactorsReferencingCondition = getFactorsReferencesingCondition(dependentSop.getOnsetFactors.asScala.toList)
       val aggFactorsReferencingCondition = getFactorsReferencesingCondition(dependentSop.getAggravationFactors.asScala.toList)
       (onsetFactorsReferencingCondition ++ aggFactorsReferencingCondition).map(toFactorRef(_))
     }
 
-    otherSoPPairs.flatMap(
+    def getFactorRefForSopPair(dependentSoPPair : SoPPair, targetSoPPair : SoPPair) : FactorRefForSoPPair = {
+      val rhRefs = gatherFactorRefs(dependentSoPPair.getRhSop,targetSoPPair)
+      val bopRefs = gatherFactorRefs(dependentSoPPair.getRhSop,targetSoPPair)
+      FactorRefForSoPPair(dependentSoPPair, targetSoPPair, rhRefs,bopRefs)
+    }
 
-    )
+    otherSoPPairs.map(ts => getFactorRefForSopPair(dependentSoPPair,ts))
   }
 
-
-  private def createEdgesForSoPPair(sopPair : SoPPair, otherSoPPairs : List[SoPPair]): Seq[LDiEdge[SoPPair]] = {
-    val factorReferencesFromDependentSop:  List[FactorRef] = findFactorReferences(sopPair,otherSoPPairs)
-    val groupedByTarget: Map[SoPPair, List[FactorRef]] = factorReferencesFromDependentSop.groupBy(f => f.targetSoPPair)
-    groupedByTarget.map(fr => LDiEdge())
-    factorReferencesFromDependentSop.map(fr => LDiEdge(sopPair,fr.)(fr._2))
+  private def createEdgesForSoPPair(sopPair : SoPPair, otherSoPPairs : List[SoPPair]): immutable.Seq[LDiEdge[SoPPair] with GraphEdge.EdgeCopy[LDiEdge] {
+    type L1 = FactorRefForSoPPair
+  }] = {
+    val factorReferencesFromDependentSop = findFactorReferences(sopPair,otherSoPPairs).filter(fr => !fr.bopRefs.isEmpty || !fr.rhRefs.isEmpty)
+    factorReferencesFromDependentSop.map(fr => LDiEdge(fr.dependentSoPPair,fr.targetSoPPair)(fr))
   }
 
   private def liftSubGraphForCondition(graph : Graph[SoPPair, LDiEdge], condition : SoPPair): Graph[SoPPair,LDiEdge] = {
