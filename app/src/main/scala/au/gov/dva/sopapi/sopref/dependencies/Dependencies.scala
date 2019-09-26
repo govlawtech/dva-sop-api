@@ -58,6 +58,11 @@ object Dependencies {
     subGraph.toDot(dotRoot, edgeTransformer)
   }
 
+  def buildGraphP(sopPairs : ImmutableSet[SoPPair]) = {
+    val g = buildGraph(sopPairs.asScala.toList)
+    g
+  }
+
   private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
     val edges = buildEdges(SoPPairs)
     val g: Graph[SoPPair, LDiEdge] = Graph.from(SoPPairs,edges)
