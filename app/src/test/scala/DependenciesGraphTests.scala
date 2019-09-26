@@ -1,12 +1,18 @@
-import java.time.OffsetDateTime
+import java.time.{LocalDate, OffsetDateTime}
 
+import au.gov.dva.sopapi.dtos.StandardOfProof
+import au.gov.dva.sopapi.interfaces.model.SoPPair
 import au.gov.dva.sopapi.sopref.SoPs
-import au.gov.dva.sopapi.sopref.dependencies.Dependencies
+import au.gov.dva.sopapi.sopref.dependencies.{AcceptedCondition, Dependencies, DiagnosedCondition}
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import com.google.common.collect.ImmutableSet
+import com.sun.xml.bind.api.impl.NameConverter.Standard
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
+import scalax.collection.Graph
+import scalax.collection.edge.LDiEdge
+
 import collection.JavaConverters._
 
 
@@ -41,8 +47,18 @@ class DependenciesGraphTests extends  FunSuite {
     val diagnosed = sopPairs.asScala.find(sp => sp.getConditionName == "bruxism").get
     val accepted = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
     val other = sopPairs.asScala.find(sp => sp.getConditionName == "tooth wear").get
-    val g = Dependencies.buildGraphP(ImmutableSet.of(diagnosed,accepted,other))
-    println(g)
+    val g: Graph[SoPPair, LDiEdge] = Dependencies.buildGraphP(ImmutableSet.of(diagnosed,accepted,other))
+    val sorted = Dependencies.topoSort(g)
+    println(sorted)
+  }
+
+  test("Build instant graph") {
+    val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "bruxism").get
+    val acceptedSoP = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
+    val diagnosed = DiagnosedCondition(diagnosedSop,LocalDate.of(2019,1,1))
+    val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis, acceptedSoP.getRhSop.getOnsetFactors.get(0),LocalDate.of(2018,1,1))
+    val result = Dependencies.getInstantGraph(List(accepted),List(diagnosed))
+    println(result)
 
   }
 

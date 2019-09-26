@@ -35,7 +35,7 @@ case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair
 abstract class InstantCondition(soPPair: SoPPair){
   def getSoPair = soPPair
 }
-case class AcceptedCondition(soPPair: SoPPair, acceptedStandardOfProof : StandardOfProof, acceptedFactor : Factor) extends InstantCondition(soPPair)
+case class AcceptedCondition(soPPair: SoPPair, acceptedStandardOfProof : StandardOfProof, acceptedFactor : Factor, onsetDate: LocalDate) extends InstantCondition(soPPair)
 case class DiagnosedCondition(soPPair: SoPPair, date : LocalDate) extends InstantCondition(soPPair)
 
 case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
@@ -71,8 +71,6 @@ object Dependencies {
     val g = buildGraph(sopPairs.asScala.toList)
     g
   }
-
-  
 
   private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
     val edges = buildEdges(SoPPairs)
@@ -134,11 +132,23 @@ object Dependencies {
   // return paths with hop of one step
 
   // build graph containing only diagnosed and accepted conditions
-  // tag nodes with diagnosed and accepted
   // topo sort to find order
+  //
 
+  def topoSort(graph: Graph[SoPPair,LDiEdge]) = {
+    graph.topologicalSort
+  }
 
-
+  def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]) = {
+    // check if edge can be traversed
+    val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
+    val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)
+    // find edges that cannot be traversed
+    // create subgraph without those edges
+    val nodes = graph.nodes.map(_.toOuter)
+    val edges = graph.edges.map(_.toOuter)
+    Graph.from(nodes,edges)
+  }
 
 }
 
