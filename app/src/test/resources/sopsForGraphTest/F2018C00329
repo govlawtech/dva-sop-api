@@ -1,0 +1,82 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00329",
+  "instrumentNumber" : "73/2013",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the pancreas No. 73 of 2013",
+  "conditionName" : "malignant neoplasm of the pancreas",
+  "effectiveFrom" : "2013-11-13",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C25.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.7"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.8"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the pancreas, and\r\n(i) smoking commenced at least five years before the clinical onset\r\nof malignant neoplasm of the pancreas; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the pancreas has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "the oral use of smokeless tobacco on more days than not, for at least 20\r\nyears before the clinical onset of malignant neoplasm of the pancreas,\r\nand where the oral use of smokeless tobacco has ceased, the clinical\r\nonset of malignant neoplasm of the pancreas has occurred within 20\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "smokeless tobacco",
+      "definition" : "means tobacco products without combustion or\npyrolysis at the time of use, including chewing tobacco and tobacco snuff"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus for at least five years before the clinical onset\r\nof malignant neoplasm of the pancreas",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having chronic pancreatitis for at least two years before the clinical\r\nonset of malignant neoplasm of the pancreas",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inhaling, ingesting or having cutaneous contact with DDT for a\r\ncumulative period of at least 1 000 hours before the clinical onset of\r\nmalignant neoplasm of the pancreas, where the first exposure occurred\r\nat least five years before the clinical onset of malignant neoplasm of\r\nthe pancreas",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with DDT",
+      "definition" : "means:\n(a) being involved in the manufacture of DDT;\n(b) being sprayed with DDT;\n(c) cleaning or maintaining equipment used to apply DDT;\n(d) decanting or spraying DDT; or\n(e) wearing or handling clothes contaminated with DDT"
+    }, {
+      "term" : "DDT",
+      "definition" : "means a complex synthetic mixture in which para,para'-\ndichlorodiphenyltrichloroethane predominates"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being obese for at least five years within the 30 years before the\r\nclinical onset of malignant neoplasm of the pancreas",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "undergoing a partial gastrectomy at least 20 years before the clinical\r\nonset of malignant neoplasm of the pancreas",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having received a cumulative dose of at least 0.1 sievert of ionising\r\nradiation to the affected site, from internal deposition of a substance\r\nwhich emits alpha particles, at least five years before the clinical onset\r\nof malignant neoplasm of the pancreas",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having cholelithiasis or having undergone a cholecystectomy at least\r\ntwo years before the clinical onset of malignant neoplasm of the\r\npancreas",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the pancreas",
+    "definedTerms" : [ ]
+  } ]
+}

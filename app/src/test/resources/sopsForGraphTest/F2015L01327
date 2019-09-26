@@ -1,0 +1,105 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01327",
+  "instrumentNumber" : "107/2015",
+  "citation" : "Statement of Principles concerning ingrowing nail (Balance of Probabilities) (No. 107 of 2015)",
+  "conditionName" : "ingrowing nail",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L60.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an acquired deformity of the affected digit, affected nail or the\r\naffected nail bed at the time of the clinical onset of ingrowing nail",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having an injury to the affected nail or the affected nail bed, within the\r\nsix months before the clinical onset of ingrowing nail",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being treated with an epidermal growth factor receptor inhibitor or\r\nreceiving antiviral treatment with indinavir, at the time of the clinical\r\nonset of ingrowing nail",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "for ingrowing toenail only:\r\n(a) having poor nail care of the affected toenail within the 14 days\r\nbefore the clinical onset of ingrowing nail;\r\n(b) wearing ill-fitting footwear on the affected foot, for at least eight\r\nhours within the four weeks before the clinical onset of\r\ningrowing nail;\r\n(c) having hyperhidrosis affecting the feet within the seven days\r\nbefore the clinical onset of ingrowing nail; or\r\n(d) having an inability to keep the skin of the feet dry within the\r\nseven days before the clinical onset of ingrowing nail",
+    "definedTerms" : [ {
+      "term" : "poor nail care of the affected toenail",
+      "definition" : "means excessive trimming of the\r\naffected toenail or the practice of rounding the corners of the affected toenail\r\nrather than cutting the nail straight across the top."
+    }, {
+      "term" : "ill-fitting footwear",
+      "definition" : "means footwear that causes compression of the toes or"
+    } ],
+    "conditionVariant" : {
+      "name" : "ingrowing toenail",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having poor nail care of the affected toenail within the 14 days\r\nbefore the clinical onset of ingrowing nail"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "wearing ill-fitting footwear on the affected foot, for at least eight\r\nhours within the four weeks before the clinical onset of\r\ningrowing nail"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having hyperhidrosis affecting the feet within the seven days\r\nbefore the clinical onset of ingrowing nail"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having an inability to keep the skin of the feet dry within the\r\nseven days before the clinical onset of ingrowing nail"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a fungal infection involving the affected nail within the one\r\nyear before the clinical onset of ingrowing nail",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(6)",
+    "text" : "having an injury to the affected nail or the affected nail bed, within the\r\nsix months before the clinical worsening of ingrowing nail",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being treated with an epidermal growth factor receptor inhibitor or\r\nreceiving antiviral treatment with indinavir, at the time of the clinical\r\nworsening of ingrowing nail",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for ingrowing toenail only:\r\n(a) having poor nail care of the affected toenail within the 14 days\r\nbefore the clinical worsening of ingrowing nail;\r\n(b) having poor foot hygiene within the seven days before the\r\nclinical worsening of ingrowing nail;\r\n(c) wearing ill-fitting footwear on the affected foot, for at least eight\r\nhours within the four weeks before the clinical worsening of\r\ningrowing nail;\r\n(d) having hyperhidrosis affecting the feet within the seven days\r\nbefore the clinical worsening of ingrowing nail; or\r\n(e) having an inability to keep the skin of the feet dry within the\r\nseven days before the clinical worsening of ingrowing nail",
+    "definedTerms" : [ {
+      "term" : "poor nail care of the affected toenail",
+      "definition" : "means excessive trimming of the\r\naffected toenail or the practice of rounding the corners of the affected toenail\r\nrather than cutting the nail straight across the top."
+    }, {
+      "term" : "poor foot hygiene",
+      "definition" : "means an inability to regularly wash either feet or socks."
+    }, {
+      "term" : "ill-fitting footwear",
+      "definition" : "means footwear that causes compression of the toes or"
+    } ],
+    "conditionVariant" : {
+      "name" : "ingrowing toenail",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having poor nail care of the affected toenail within the 14 days\r\nbefore the clinical worsening of ingrowing nail"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having poor foot hygiene within the seven days before the\r\nclinical worsening of ingrowing nail"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "wearing ill-fitting footwear on the affected foot, for at least eight\r\nhours within the four weeks before the clinical worsening of\r\ningrowing nail"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having hyperhidrosis affecting the feet within the seven days\r\nbefore the clinical worsening of ingrowing nail"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "having an inability to keep the skin of the feet dry within the\r\nseven days before the clinical worsening of ingrowing nail"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having a fungal infection involving the affected nail within the one\r\nyear before the clinical worsening of ingrowing nail",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "inability to obtain appropriate clinical management for ingrowing nail",
+    "definedTerms" : [ ]
+  } ]
+}

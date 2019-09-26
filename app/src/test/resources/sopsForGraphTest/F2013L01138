@@ -1,0 +1,90 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01138",
+  "instrumentNumber" : "35/2013",
+  "citation" : "Statement of Principles concerning colorectal adenoma No. 35 of 2013",
+  "conditionName" : "colorectal adenoma",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D12.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of colorectal\r\nadenoma, and smoking commenced at least five years before the\r\nclinical onset of colorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "drinking at least 250 kilograms of alcohol before the clinical onset of\r\ncolorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least ten consecutive years within the 30 years before the clinical\r\nonset of colorectal adenoma",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being obese for at least five years within the 30 years before the clinical\r\nonset of colorectal adenoma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "consuming an average daily intake of at least 100 grams per day of red\r\nmeat, for at least five years within the ten years before the clinical\r\nonset of colorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "consuming an average daily intake of at least 25 grams per day of\r\nprocessed meat product, for at least five years within the ten years\r\nbefore the clinical onset of colorectal adenoma",
+    "definedTerms" : [ {
+      "term" : "processed meat product",
+      "definition" : "means preserved or cured meats, including ham,\nfrankfurters, salami and bacon"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "an inability to consume an average daily intake of 20 grams of fibre in\r\nfood for a period of at least five consecutive years within the ten years\r\nbefore the clinical onset of colorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "an inability to consume an average daily intake of 150 micrograms of\r\nfolate in food for a period of at least five consecutive years within the\r\nten years before the clinical onset of colorectal adenoma",
+    "definedTerms" : [ {
+      "term" : "folate in food",
+      "definition" : "means a B group vitamin found in natural foods, which\nconsists of a family of monoglutamates or polyglutamates of pteroic acid that\nis used in DNA methylation, synthesis and repair"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "an inability to consume an average daily intake of 100 millilitres of\r\ndairy milk for at least five consecutive years within the ten years before\r\nthe clinical onset of colorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having ulcerative colitis for at least one year before the clinical onset of\r\ncolorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having Crohn's disease of the colorectum for at least one year before\r\nthe clinical onset of colorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having diabetes mellitus for at least five years before the clinical onset\r\nof colorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "for adenoma of the colon only, having acromegaly before the clinical\r\nonset of colorectal adenoma",
+    "definedTerms" : [ {
+      "term" : "adenoma of the colon",
+      "definition" : "means a benign epithelial neoplasm of the colon.\nAnatomically the colon is defined as extending from the caecum, including the\nileocaecal junction, to the sigmoid colon, not including the rectosigmoid\njunction"
+    } ],
+    "conditionVariant" : {
+      "name" : "adenoma of the colon",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "inability to obtain appropriate clinical management for colorectal\r\nadenoma",
+    "definedTerms" : [ ]
+  } ]
+}

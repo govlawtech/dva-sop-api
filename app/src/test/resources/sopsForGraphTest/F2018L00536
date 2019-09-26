@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00536",
+  "instrumentNumber" : "42/2018",
+  "citation" : "Statement of Principles concerning electrical injury (Balance of Probabilities) (No. 42 of 2018)",
+  "conditionName" : "electrical injury",
+  "effectiveFrom" : "2018-05-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T75.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "T75.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having exposure to electrical current before the clinical onset of\r\nelectrical injury",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for electrical injury",
+    "definedTerms" : [ ]
+  } ]
+}

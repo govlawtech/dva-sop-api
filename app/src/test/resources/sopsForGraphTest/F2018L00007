@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00007",
+  "instrumentNumber" : "2/2018",
+  "citation" : "Statement of Principles concerning cerebral meningioma (Balance of Probabilities) (No. 2 of 2018)",
+  "conditionName" : "cerebral meningioma",
+  "effectiveFrom" : "2018-01-29",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D32.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D32.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the brain at least ten years before the clinical onset\r\nof cerebral meningioma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\r\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\r\nleading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being obese for at least ten years within the 20 years before the clinical\r\nonset of cerebral meningioma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being in the second or third trimester of pregnancy, or within the\r\n30 days postpartum, at the time of the clinical onset of cerebral\r\nmeningioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated daily with cyproterone acetate at a dose rate of at least\r\n15 milligrams per day for a continuous period of at least one year,\r\nwithin the ten years before the clinical onset of cerebral meningioma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(5)",
+    "text" : "being in the second or third trimester of pregnancy, or within the\r\n30 days postpartum, at the time of the clinical worsening of cerebral\r\nmeningioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being treated daily with cyproterone acetate at a dose rate of at least\r\n15 milligrams per day for a continuous period of at least one year,\r\nwithin the ten years before the clinical worsening of cerebral\r\nmeningioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "inability to obtain appropriate clinical management for cerebral\r\nmeningioma",
+    "definedTerms" : [ ]
+  } ]
+}

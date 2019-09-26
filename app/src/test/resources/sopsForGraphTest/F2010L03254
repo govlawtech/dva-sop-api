@@ -1,0 +1,298 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03254",
+  "instrumentNumber" : "6/2011",
+  "citation" : "Statement of Principles concerning sensorineural hearing loss No. 6 of 2011",
+  "conditionName" : "sensorineural hearing loss",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to a peak sound pressure level at the tympanic\r\nmembrane of at least 140 dB(C), before the clinical onset of\r\nsensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "dB(C)",
+      "definition" : "means C-weighted sound pressure level in decibels, where\nC-weighting is a standardised frequency response used in sound measuring\ninstruments"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being exposed to a sound pressure level at the tympanic membrane of\r\nat least 85 dB(A) as an 8-hour time-weighted average (TWA) with a 3\r\ndB exchange rate for a cumulative period of at least one year, before\r\nthe clinical onset of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "dB(A)",
+      "definition" : "means A-weighted sound pressure level in decibels, where\nA-weighting is a standardised frequency response used in sound measuring\ninstruments"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "experiencing otitic barotrauma involving the affected side, or\r\ndecompression sickness, within the 30 days before the clinical onset of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing a course of treatment with a drug or a drug from a class of\r\ndrugs from the specified list within the one year before the clinical\r\nonset of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "receiving a specified ototopical medication directly into the inner ear,\r\nin the presence of tympanic membrane perforation, before the clinical\r\nonset of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "a specified ototopical medication",
+      "definition" : "means ear drops containing agents from\nthe following list:\n(a) acetic acid;\n(b) chloramphenicol;\n(c) chlorhexidine;\n(d) chloromycetin;\n(e) cresylate;\n(f) ethanol;\n(g) gentian violet;\n(h) povidone iodine; or\n(i) salicylates"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "taking aspirin, paracetamol or a nonsteroidal anti-inflammatory drug\r\nmore than twice per week, for at least the two years before the clinical\r\nonset of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having suppurative labyrinthitis of the affected ear within the 30 days\r\nbefore the clinical onset of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "suppurative labyrinthitis",
+      "definition" : "means inflammation of the inner ear\ncharacterised by the presence of pus"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having chronic suppurative otitis media on the affected side before the\r\nclinical onset of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "chronic suppurative otitis media",
+      "definition" : "means a recurrent or continuous\ninfective disorder of the middle ear characterised by perforation of the\ntympanic membrane and aural discharge"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having an acute viral infection from the specified list of viruses within\r\nthe 30 days before the clinical onset of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "specified list of viruses",
+      "definition" : "means:\n(a) measles virus;\n(b) mumps virus; or\n(c) varicella-zoster virus"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having meningitis within the six months before the clinical onset of\r\nsensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "meningitis",
+      "definition" : "means inflammation of the lining of the brain, which may be of\nbacterial, viral, fungal or parasitic origin"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having neurosyphilis before the clinical onset of sensorineural hearing\r\nloss",
+    "definedTerms" : [ {
+      "term" : "neurosyphilis",
+      "definition" : "means inflammation of the central nervous system as a\nmanifestation of syphilis"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having tuberculosis involving the temporal bone on the affected side\r\nbefore the clinical onset of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having leprosy before the clinical onset of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having Meniere's disease at the time of the clinical onset of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having Paget's disease of bone, affecting the petrous temporal bone or\r\nmiddle ear ossicles, at the time of the clinical onset of sensorineural\r\nhearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having a specified autoimmune disorder at the time of the clinical onset\r\nof sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune disorder",
+      "definition" : "means one of the following:\n(a) Behçet's syndrome;\n(b) Cogan's syndrome;\n(c) immune thrombocytopaenic purpura;\n(d) inflammatory myopathies, e.g., dermatomyositis, polymyositis,\ninclusion-body myositis;\n(e) microscopic polyangiitis;\n(f) polyarteritis nodosa;\n(g) relapsing polychondritis;\n(h) rheumatoid arthritis;\n(i) Sjogren's syndrome;\n(j) Susac's syndrome;\n(k) systemic lupus erythematosus;\n(l) systemic sclerosis (scleroderma); or\n(m) Wegener's granulomatosis"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having multiple sclerosis at the time of the clinical onset of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a hyperviscosity syndrome for at least the 30 days before the\r\nclinical onset of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "a hyperviscosity syndrome",
+      "definition" : "means a disorder causing an increased\nviscosity of the blood, including leukaemia, polycythaemia or\nmacroglobulinaemia"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a lesion interrupting the supply of blood to the cochlea of the\r\naffected ear at the time of the clinical onset of sensorineural hearing\r\nloss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having structural injury or physiological disruption to the inner ear or\r\nthe auditory nerve as a result of blunt trauma, penetrating trauma or\r\nsurgery, within the five years before the clinical onset of sensorineural\r\nhearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having a neoplasm that involves the auditory nerve or the inner ear at\r\nthe time of the clinical onset of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "undergoing a course of therapeutic radiation to the head or neck region\r\nwithin the 18 months before the clinical onset of sensorineural hearing\r\nloss",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a specified\r\norganic solvent, on more days than not for a continuous period of at\r\nleast four years before the clinical onset of sensorineural hearing loss,\r\nand where that exposure has ceased, the clinical onset of sensorineural\r\nhearing loss occurred within two years after cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "inhaling, ingesting or having cutaneous contact with lead or emissions\r\ncontaining lead, for a cumulative period of at least 7000 hours, before\r\nthe clinical onset of sensorineural hearing loss, and where that\r\nexposure has ceased, the clinical onset of sensorineural hearing loss\r\noccurred within two years after cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "smoking at least 40 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of sensorineural\r\nhearing loss, and where smoking has ceased, the clinical onset of\r\nsensorineural hearing loss has occurred within five years after\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "being vaccinated with the measles-mumps vaccine within the 30 days\r\nbefore the clinical onset of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(bb)",
+    "text" : "being exposed to a peak sound pressure level at the tympanic\r\nmembrane of at least 140 dB(C), before the clinical worsening of\r\nsensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "dB(C)",
+      "definition" : "means C-weighted sound pressure level in decibels, where\nC-weighting is a standardised frequency response used in sound measuring\ninstruments"
+    } ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "being exposed to a sound pressure level at the tympanic membrane of\r\nat least 85 dB(A) as an 8-hour time-weighted average (TWA) with a 3\r\ndB exchange rate for a cumulative period of at least one year, before\r\nthe clinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "dB(A)",
+      "definition" : "means A-weighted sound pressure level in decibels, where\nA-weighting is a standardised frequency response used in sound measuring\ninstruments"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "experiencing otitic barotrauma involving the affected side, or\r\ndecompression sickness, within the 30 days before the clinical\r\nworsening of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "undergoing a course of treatment with a drug or a drug from a class of\r\ndrugs from the specified list within the one year before the clinical\r\nworsening of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "receiving a specified ototopical medication directly into the inner ear,\r\nin the presence of tympanic membrane perforation, before the clinical\r\nworsening of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "a specified ototopical medication",
+      "definition" : "means ear drops containing agents from\nthe following list:\n(a) acetic acid;\n(b) chloramphenicol;\n(c) chlorhexidine;\n(d) chloromycetin;\n(e) cresylate;\n(f) ethanol;\n(g) gentian violet;\n(h) povidone iodine; or\n(i) salicylates"
+    } ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "taking aspirin, paracetamol or a nonsteroidal anti-inflammatory drug\r\nmore than twice per week, for at least the two years before the clinical\r\nworsening of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having suppurative labyrinthitis of the affected ear within the 30 days\r\nbefore the clinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "suppurative labyrinthitis",
+      "definition" : "means inflammation of the inner ear\ncharacterised by the presence of pus"
+    } ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "having chronic suppurative otitis media on the affected side before the\r\nclinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "chronic suppurative otitis media",
+      "definition" : "means a recurrent or continuous\ninfective disorder of the middle ear characterised by perforation of the\ntympanic membrane and aural discharge"
+    } ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "having an acute viral infection from the specified list of viruses within\r\nthe 30 days before the clinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "specified list of viruses",
+      "definition" : "means:\n(a) measles virus;\n(b) mumps virus; or\n(c) varicella-zoster virus"
+    } ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "having meningitis within the 6 months before the clinical worsening of\r\nsensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "meningitis",
+      "definition" : "means inflammation of the lining of the brain, which may be of\nbacterial, viral, fungal or parasitic origin"
+    } ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "having neurosyphilis before the clinical worsening of sensorineural\r\nhearing loss",
+    "definedTerms" : [ {
+      "term" : "neurosyphilis",
+      "definition" : "means inflammation of the central nervous system as a\nmanifestation of syphilis"
+    } ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "having tuberculosis involving the temporal bone on the affected side\r\nbefore the clinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(nn)",
+    "text" : "having leprosy before the clinical worsening of sensorineural hearing\r\nloss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(oo)",
+    "text" : "having Meniere's disease at the time of the clinical worsening of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(pp)",
+    "text" : "having Paget's disease of bone, affecting the petrous temporal bone or\r\nmiddle ear ossicles, at the time of the clinical worsening of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qq)",
+    "text" : "having a specified autoimmune disorder at the time of the clinical\r\nworsening of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune disorder",
+      "definition" : "means one of the following:\n(a) Behçet's syndrome;\n(b) Cogan's syndrome;\n(c) immune thrombocytopaenic purpura;\n(d) inflammatory myopathies, e.g., dermatomyositis, polymyositis,\ninclusion-body myositis;\n(e) microscopic polyangiitis;\n(f) polyarteritis nodosa;\n(g) relapsing polychondritis;\n(h) rheumatoid arthritis;\n(i) Sjogren's syndrome;\n(j) Susac's syndrome;\n(k) systemic lupus erythematosus;\n(l) systemic sclerosis (scleroderma); or\n(m) Wegener's granulomatosis"
+    } ]
+  }, {
+    "paragraph" : "6(rr)",
+    "text" : "having multiple sclerosis at the time of the clinical worsening of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ss)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(tt)",
+    "text" : "having a hyperviscosity syndrome for at least the 30 days before the\r\nclinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ {
+      "term" : "a hyperviscosity syndrome",
+      "definition" : "means a disorder causing an increased\nviscosity of the blood, including leukaemia, polycythaemia or\nmacroglobulinaemia"
+    } ]
+  }, {
+    "paragraph" : "6(uu)",
+    "text" : "having a lesion interrupting the supply of blood to the cochlea of the\r\naffected ear at the time of the clinical worsening of sensorineural\r\nhearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(vv)",
+    "text" : "having structural injury or physiological disruption to the inner ear or\r\nthe auditory nerve as a result of blunt trauma, penetrating trauma or\r\nsurgery, within the five years before the clinical worsening of\r\nsensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ww)",
+    "text" : "having a neoplasm that involves the auditory nerve or the inner ear at\r\nthe time of the clinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(xx)",
+    "text" : "undergoing a course of therapeutic radiation to the head or neck region\r\nwithin the 18 months before the clinical worsening of sensorineural\r\nhearing loss",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  }, {
+    "paragraph" : "6(yy)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a specified\r\norganic solvent, on more days than not for a continuous period of at\r\nleast four years before the clinical worsening of sensorineural hearing\r\nloss, and where that exposure has ceased, the clinical worsening of\r\nsensorineural hearing loss occurred within two years after cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(zz)",
+    "text" : "inhaling, ingesting or having cutaneous contact with lead or emissions\r\ncontaining lead, for a cumulative period of at least 7000 hours, before\r\nthe clinical worsening of sensorineural hearing loss, and where that\r\nexposure has ceased, the clinical worsening of sensorineural hearing\r\nloss occurred within two years after cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aaa)",
+    "text" : "smoking at least 40 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of\r\nsensorineural hearing loss, and where smoking has ceased, the clinical\r\nworsening of sensorineural hearing loss has occurred within five years\r\nafter cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bbb)",
+    "text" : "being vaccinated with the measles-mumps vaccine within the 30 days\r\nbefore the clinical worsening of sensorineural hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ccc)",
+    "text" : "inability to obtain appropriate clinical management for sensorineural\r\nhearing loss",
+    "definedTerms" : [ ]
+  } ]
+}

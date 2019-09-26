@@ -1,0 +1,100 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00461",
+  "instrumentNumber" : "30/2012",
+  "citation" : "Statement of Principles concerning chronic venous insufficiency of the lower limb No. 30 of 2012",
+  "conditionName" : "chronic venous insufficiency of the lower limb",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I87.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I87.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having deep vein thrombosis within a deep vein draining the affected\r\nlower limb before the clinical onset of chronic venous insufficiency of\r\nthe lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having chronic complete or partial obstruction of a vein draining the\r\naffected lower limb before the clinical onset of chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being pregnant at the time of the clinical onset of chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having varicose veins of the affected lower limb at the time of the\r\nclinical onset of chronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "non-ambulatory standing for at least six hours per day, on more days\r\nthan not, for a continuous period of at least the five years before the\r\nclinical onset of chronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having chronic dysfunction of the calf muscle pump in the affected\r\nlower limb due to musculoskeletal or neurological disease or injury at\r\nthe time of the clinical onset of chronic venous insufficiency of the\r\nlower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being obese at the time of the clinical onset of chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having an acquired arteriovenous fistula involving the blood vessels\r\nsupplying the affected lower limb at the time of the clinical onset of\r\nchronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having trauma to a valve in a vein of the affected lower limb causing\r\ndysfunction or incompetence of that valve, before the clinical onset of\r\nchronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "having deep vein thrombosis within a deep vein draining the affected\r\nlower limb before the clinical worsening of chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having chronic complete or partial obstruction of a vein draining the\r\naffected lower limb before the clinical worsening of chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being pregnant at the time of the clinical worsening of chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having varicose veins of the affected lower limb at the time of the\r\nclinical worsening of chronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "non-ambulatory standing for at least six hours per day, on more days\r\nthan not, for a continuous period of at least the five years before the\r\nclinical worsening of chronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having chronic dysfunction of the calf muscle pump in the affected\r\nlower limb due to musculoskeletal or neurological disease or injury at\r\nthe time of the clinical worsening of chronic venous insufficiency of\r\nthe lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "being obese at the time of the clinical worsening of chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having an acquired arteriovenous fistula involving the blood vessels\r\nsupplying the affected lower limb at the time of the clinical worsening\r\nof chronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having trauma to a valve in a vein of the affected lower limb causing\r\ndysfunction or incompetence of that valve, before the clinical\r\nworsening of chronic venous insufficiency of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "inability to obtain appropriate clinical management for chronic venous\r\ninsufficiency of the lower limb",
+    "definedTerms" : [ ]
+  } ]
+}

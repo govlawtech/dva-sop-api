@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00473",
+  "instrumentNumber" : "44/2014",
+  "citation" : "Statement of Principles concerning mitral valve prolapse No. 44 of 2014",
+  "conditionName" : "mitral valve prolapse",
+  "effectiveFrom" : "2014-05-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I34.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for mitral valve prolapse",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for mitral valve prolapse",
+    "definedTerms" : [ ]
+  } ]
+}

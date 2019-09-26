@@ -1,0 +1,170 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00872",
+  "instrumentNumber" : "65/2018",
+  "citation" : "Statement of Principles concerning knee bursitis (Reasonable Hypothesis) (No. 65 of 2018)",
+  "conditionName" : "knee bursitis",
+  "effectiveFrom" : "2018-07-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M70.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M70.5"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "for knee bursitis other than prepatellar and superficial infrapatellar\r\nbursitis, running or jogging an average of at least 30 kilometres per\r\nweek for the four weeks before the clinical onset of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "for prepatellar bursitis or superficial infrapatellar bursitis only, working\r\nwhilst kneeling, crawling or pressing the anterior knee against a hard\r\nvertical surface for a cumulative period of at least 60 hours within the\r\ntwo months before the clinical onset of knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "prepatellar bursitis or superficial infrapatellar bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "for medial collateral ligament bursitis only, pressing the medial side of\r\nthe knee against a hard surface for a cumulative period of at least\r\n60 hours within the two months before the clinical onset of knee\r\nbursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "medial collateral ligament bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having trauma to the affected knee bursa in the 30 days before the\r\nclinical onset of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having surgery to the knee of the affected side in the 30 days before the\r\nclinical onset of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "having a bacterial, fungal or algal infection of the affected knee bursa\r\nat the time of the clinical onset of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "for septic knee bursitis only, being in an immunocompromised state as\r\nspecified at the time of the clinical onset of knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "septic knee bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "for prepatellar, superficial infrapatellar or pretibial bursitis only, having\r\npsoriasis, atopic dermatitis or other inflammatory skin disorder, where\r\nthe skin disorder involves the skin of the extensor surface of the\r\naffected knee, at the time of the clinical onset of knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "prepatellar, superficial infrapatellar or pretibial bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "having a disease from the specified list of diseases at the time of the\r\nclinical onset of knee bursitis",
+    "definedTerms" : [ {
+      "term" : "specified list of diseases",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) enteropathic spondyloarthropathy;\r\n(c) gout, pseudogout, or other crystal-induced arthropathy;\r\n(d) pigmented villonodular proliferation;\r\n(e) polymyalgia rheumatica;\r\n(f) psoriatic arthropathy;\r\n(g) reactive arthritis;\r\n(h) rheumatoid arthritis;\r\n(i) sarcoidosis; or\r\n(j) undifferentiated spondyloarthropathy.\r\nNote: crystal-induced arthropathy is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "for medial compartment bursitis only, having medial compartment\r\nosteoarthritis at the time of the clinical onset of knee bursitis",
+    "definedTerms" : [ {
+      "term" : "medial compartment bursitis",
+      "definition" : "means pes anserine bursitis, medial collateral\r\nligament bursitis and semimembranosus-tibial collateral ligament bursitis."
+    } ],
+    "conditionVariant" : {
+      "name" : "medial compartment bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "for pes anserine bursitis only, having a significant biomechanical\r\nabnormality involving the affected knee at the time of the clinical onset\r\nof knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "pes anserine bursitis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(12)",
+    "text" : "for knee bursitis other than prepatellar and superficial infrapatellar\r\nbursitis, running or jogging an average of at least 30 kilometres per\r\nweek for the four weeks before the clinical worsening of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "for prepatellar bursitis or superficial infrapatellar bursitis only, working\r\nwhilst kneeling, crawling or pressing the anterior knee against a hard\r\nvertical surface for a cumulative period of at least 60 hours within the\r\ntwo months before the clinical worsening of knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "prepatellar bursitis or superficial infrapatellar bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "for medial collateral ligament bursitis only, pressing the medial side of\r\nthe knee against a hard surface for a cumulative period of at least\r\n60 hours within the two months before the clinical worsening of knee\r\nbursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "medial collateral ligament bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "having trauma to the affected knee bursa in the 30 days before the\r\nclinical worsening of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(16)",
+    "text" : "having surgery to the knee of the affected side in the 30 days before the\r\nclinical worsening of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(17)",
+    "text" : "having a bacterial, fungal or algal infection of the affected knee bursa\r\nat the time of the clinical worsening of knee bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(18)",
+    "text" : "for septic knee bursitis only, being in an immunocompromised state as\r\nspecified at the time of the clinical worsening of knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "septic knee bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(19)",
+    "text" : "for prepatellar, superficial infrapatellar or pretibial bursitis only, having\r\npsoriasis, atopic dermatitis or other inflammatory skin disorder, where\r\nthe skin disorder involves the skin of the extensor surface of the\r\naffected knee, at the time of the clinical worsening of knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "prepatellar, superficial infrapatellar or pretibial bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(20)",
+    "text" : "having a disease from the specified list of diseases at the time of the\r\nclinical worsening of knee bursitis",
+    "definedTerms" : [ {
+      "term" : "specified list of diseases",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) enteropathic spondyloarthropathy;\r\n(c) gout, pseudogout, or other crystal-induced arthropathy;\r\n(d) pigmented villonodular proliferation;\r\n(e) polymyalgia rheumatica;\r\n(f) psoriatic arthropathy;\r\n(g) reactive arthritis;\r\n(h) rheumatoid arthritis;\r\n(i) sarcoidosis; or\r\n(j) undifferentiated spondyloarthropathy.\r\nNote: crystal-induced arthropathy is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(21)",
+    "text" : "for medial compartment bursitis only, having medial compartment\r\nosteoarthritis at the time of the clinical worsening of knee bursitis",
+    "definedTerms" : [ {
+      "term" : "medial compartment bursitis",
+      "definition" : "means pes anserine bursitis, medial collateral\r\nligament bursitis and semimembranosus-tibial collateral ligament bursitis."
+    } ],
+    "conditionVariant" : {
+      "name" : "medial compartment bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(22)",
+    "text" : "for pes anserine bursitis only, having a significant biomechanical\r\nabnormality involving the affected knee at the time of the clinical\r\nworsening of knee bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "pes anserine bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(23)",
+    "text" : "inability to obtain appropriate clinical management for knee bursitis",
+    "definedTerms" : [ ]
+  } ]
+}

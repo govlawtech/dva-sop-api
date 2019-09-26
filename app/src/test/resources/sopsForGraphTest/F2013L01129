@@ -1,0 +1,203 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01129",
+  "instrumentNumber" : "41/2013",
+  "citation" : "Statement of Principles concerning sleep apnoea No. 41 of 2013",
+  "conditionName" : "sleep apnoea",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G47.30"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G47.31"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G47.32"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G47.33"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G47.39"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for obstructive sleep apnoea only,\r\n(i) having chronic obstruction or chronic narrowing of the upper\r\nairway at the time of the clinical onset of sleep apnoea; or\r\n(ii) being obese at the time of the clinical onset of sleep apnoea; or\r\n(iii) having hypothyroidism at the time of the clinical onset of sleep\r\napnoea; or\r\n(iv) having acromegaly at the time of the clinical onset of sleep\r\napnoea; or\r\n(v) being treated with antiretroviral therapy for human\r\nimmunodeficiency virus infection before the clinical onset of\r\nsleep apnoea",
+    "definedTerms" : [ {
+      "term" : "obstructive sleep apnoea",
+      "definition" : "means a type of sleep apnoea characterized on\nsleep study by repetitive cessation or decrease of airflow in the presence of\nrespiratory effort during sleep"
+    }, {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    }, {
+      "term" : "acromegaly",
+      "definition" : "means a chronic disease of adults resulting from hypersecretion\nof growth hormone after closure of the epiphyses"
+    } ],
+    "conditionVariant" : {
+      "name" : "obstructive sleep apnoea",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having chronic obstruction or chronic narrowing of the upper\r\nairway at the time of the clinical onset of sleep apnoea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being obese at the time of the clinical onset of sleep apnoea"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having hypothyroidism at the time of the clinical onset of sleep\r\napnoea"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "having acromegaly at the time of the clinical onset of sleep\r\napnoea"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "being treated with antiretroviral therapy for human\r\nimmunodeficiency virus infection before the clinical onset of\r\nsleep apnoea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for central sleep apnoea only,\r\n(i) having congestive cardiac failure at the time of the clinical\r\nonset of sleep apnoea; or\r\n(ii) using a long-acting opioid at an average daily morphine\r\nequivalent dose of at least 75 milligrams for at least the two\r\nmonths before the clinical onset of sleep apnoea",
+    "definedTerms" : [ {
+      "term" : "congestive cardiac failure",
+      "definition" : "means a clinical syndrome due to heart disease,\nresulting in congestion in the peripheral circulation with or without congestion\nof the lungs"
+    }, {
+      "term" : "central sleep apnoea",
+      "definition" : "means a type of sleep apnoea characterized on sleep\nstudy by repetitive cessation or decrease of both airflow and respiratory effort\nduring sleep"
+    }, {
+      "term" : "a long-acting opioid",
+      "definition" : "means an opioid drug with a duration of action of at\nleast three hours, and used to treat chronic pain or narcotic addiction"
+    } ],
+    "conditionVariant" : {
+      "name" : "central sleep apnoea",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having congestive cardiac failure at the time of the clinical\r\nonset of sleep apnoea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "using a long-acting opioid at an average daily morphine\r\nequivalent dose of at least 75 milligrams for at least the two\r\nmonths before the clinical onset of sleep apnoea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a central nervous system lesion or disorder involving the upper\r\nor mid-cervical cord, brain stem, cerebrum or extrapyramidal system at\r\nthe time of the clinical onset of sleep apnoea",
+    "definedTerms" : [ {
+      "term" : "a central nervous system lesion or disorder",
+      "definition" : "means a condition such as a\ntumour or trauma-induced lesion, cerebrovascular accident, Parkinson's\ndisease, multiple sclerosis or Alzheimer-type dementia"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having autonomic neuropathy at the time of the clinical onset of sleep\r\napnoea",
+    "definedTerms" : [ {
+      "term" : "autonomic neuropathy",
+      "definition" : "means any neuropathy of the autonomic nervous\nsystem, affecting mostly the internal organs such as the bladder, the\ncardiovascular system, the digestive tract and the genital organs. It is a\ncomplication of many diseases including Adie's syndrome, chronic\nalcoholism, diabetes mellitus, dysautonomia and Shy-Drager syndrome"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical onset of sleep apnoea",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a neuromuscular disease affecting the diaphragm, other\r\nrespiratory muscles or upper airway muscles at the time of the clinical\r\nonset of sleep apnoea",
+    "definedTerms" : [ {
+      "term" : "a neuromuscular disease",
+      "definition" : "means a condition such as muscular dystrophy,\nmyasthenia gravis or Charcot-Marie-tooth disease"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being treated daily with an atypical antipsychotic drug, for a condition\r\nfor which the drug cannot be ceased or substituted, for at least the two\r\nmonths before the clinical onset of sleep apnoea",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "for obstructive sleep apnoea only,\r\n(i) having chronic obstruction or chronic narrowing of the upper\r\nairway at the time of the clinical worsening of sleep apnoea; or\r\n(ii) being obese at the time of the clinical worsening of sleep\r\napnoea; or\r\n(iii) having hypothyroidism at the time of the clinical worsening of\r\nsleep apnoea; or\r\n(iv) having acromegaly at the time of the clinical worsening of sleep\r\napnoea; or\r\n(v) being treated with antiretroviral therapy for human\r\nimmunodeficiency virus infection before the clinical worsening\r\nof sleep apnoea",
+    "definedTerms" : [ {
+      "term" : "obstructive sleep apnoea",
+      "definition" : "means a type of sleep apnoea characterized on\nsleep study by repetitive cessation or decrease of airflow in the presence of\nrespiratory effort during sleep"
+    }, {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    }, {
+      "term" : "acromegaly",
+      "definition" : "means a chronic disease of adults resulting from hypersecretion\nof growth hormone after closure of the epiphyses"
+    } ],
+    "conditionVariant" : {
+      "name" : "obstructive sleep apnoea",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having chronic obstruction or chronic narrowing of the upper\r\nairway at the time of the clinical worsening of sleep apnoea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being obese at the time of the clinical worsening of sleep\r\napnoea"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having hypothyroidism at the time of the clinical worsening of\r\nsleep apnoea"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "having acromegaly at the time of the clinical worsening of sleep\r\napnoea"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "being treated with antiretroviral therapy for human\r\nimmunodeficiency virus infection before the clinical worsening\r\nof sleep apnoea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "for central sleep apnoea only,\r\n(i) having congestive cardiac failure at the time of the clinical\r\nworsening of sleep apnoea; or\r\n(ii) using a long-acting opioid at an average daily morphine\r\nequivalent dose of at least 75 milligrams for at least the two\r\nmonths before the clinical worsening of sleep apnoea",
+    "definedTerms" : [ {
+      "term" : "congestive cardiac failure",
+      "definition" : "means a clinical syndrome due to heart disease,\nresulting in congestion in the peripheral circulation with or without congestion\nof the lungs"
+    }, {
+      "term" : "central sleep apnoea",
+      "definition" : "means a type of sleep apnoea characterized on sleep\nstudy by repetitive cessation or decrease of both airflow and respiratory effort\nduring sleep"
+    }, {
+      "term" : "a long-acting opioid",
+      "definition" : "means an opioid drug with a duration of action of at\nleast three hours, and used to treat chronic pain or narcotic addiction"
+    } ],
+    "conditionVariant" : {
+      "name" : "central sleep apnoea",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having congestive cardiac failure at the time of the clinical\r\nworsening of sleep apnoea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "using a long-acting opioid at an average daily morphine\r\nequivalent dose of at least 75 milligrams for at least the two\r\nmonths before the clinical worsening of sleep apnoea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a central nervous system lesion or disorder involving the upper\r\nor mid-cervical cord, brain stem, cerebrum or extrapyramidal system at\r\nthe time of the clinical worsening of sleep apnoea",
+    "definedTerms" : [ {
+      "term" : "a central nervous system lesion or disorder",
+      "definition" : "means a condition such as a\ntumour or trauma-induced lesion, cerebrovascular accident, Parkinson's\ndisease, multiple sclerosis or Alzheimer-type dementia"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having autonomic neuropathy at the time of the clinical worsening of\r\nsleep apnoea",
+    "definedTerms" : [ {
+      "term" : "autonomic neuropathy",
+      "definition" : "means any neuropathy of the autonomic nervous\nsystem, affecting mostly the internal organs such as the bladder, the\ncardiovascular system, the digestive tract and the genital organs. It is a\ncomplication of many diseases including Adie's syndrome, chronic\nalcoholism, diabetes mellitus, dysautonomia and Shy-Drager syndrome"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical worsening of sleep apnoea",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a neuromuscular disease affecting the diaphragm, other\r\nrespiratory muscles or upper airway muscles at the time of the clinical\r\nworsening of sleep apnoea",
+    "definedTerms" : [ {
+      "term" : "a neuromuscular disease",
+      "definition" : "means a condition such as muscular dystrophy,\nmyasthenia gravis or Charcot-Marie-tooth disease"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "being treated daily with an atypical antipsychotic drug, for a condition\r\nfor which the drug cannot be ceased or substituted, for at least the two\r\nmonths before the clinical worsening of sleep apnoea",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "consuming an average of at least 30 grams of alcohol per day for at\r\nleast the six months before the clinical worsening of sleep apnoea",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "inability to obtain appropriate clinical management for sleep apnoea",
+    "definedTerms" : [ ]
+  } ]
+}

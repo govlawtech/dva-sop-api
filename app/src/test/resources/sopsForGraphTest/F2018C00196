@@ -1,0 +1,105 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00196",
+  "instrumentNumber" : "9/2018",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the ovary (Reasonable Hypothesis) (No. 9 of 2018)",
+  "conditionName" : "malignant neoplasm of the ovary",
+  "effectiveFrom" : "2018-01-29",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C56"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D39.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having endometriosis for at least five years before the clinical onset of\r\nmalignant neoplasm of the ovary",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the ovary at least five years before the clinical\r\nonset of malignant neoplasm of the ovary",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\r\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\r\nleading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being obese for at least five years within the 20 years before the\r\nclinical onset of malignant neoplasm of the ovary",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(a) for a cumulative period of at least 1 000 hours before the clinical\r\nonset of malignant neoplasm of the ovary; and\r\n(b) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(c) where the first inhalation of respirable asbestos fibres occurred at\r\nleast five years before the clinical onset of malignant neoplasm of\r\nthe ovary",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(a) for a cumulative period of at least 3 000 hours before the clinical\r\nonset of malignant neoplasm of the ovary; and\r\n(b) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(c) where the first inhalation of respirable asbestos fibres occurred at\r\nleast five years before the clinical onset of malignant neoplasm of\r\nthe ovary",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for parous women only, an inability to breast feed for a cumulative\r\nperiod of at least six months before the clinical onset of malignant\r\nneoplasm of the ovary",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "parous women",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least ten years within the 30 years before the clinical onset of\r\nmalignant neoplasm of the ovary",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "an inability to consume an average of at least 150 grams per day of\r\nvegetables, for at least five consecutive years within the 20 years\r\nbefore the clinical onset of malignant neoplasm of the ovary",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "applying talc to the perineal area on more days than not, for a period of\r\nat least five years, before the clinical onset of malignant neoplasm of\r\nthe ovary",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for epithelial ovarian cancer only:\r\n(a) being nulliparous at the time of the clinical onset of malignant\r\nneoplasm of the ovary; or\r\n(b) having hormone replacement therapy for at least five consecutive\r\nyears before the clinical onset of malignant neoplasm of the\r\novary, and where the use of hormone replacement therapy has\r\nceased, the clinical onset of malignant neoplasm of the ovary has\r\noccurred within ten years of that period",
+    "definedTerms" : [ {
+      "term" : "nulliparous",
+      "definition" : "means never having experienced a gestation period of at least\r\n20 weeks.\r\npack-years of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    }, {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of estrogen\r\npreparations often in combination with progesterone to offset a hormone\r\ndeficiency following surgically induced or naturally occurring menopause.\r\nmalignant neoplasm of the ovary—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "epithelial ovarian cancer",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "being nulliparous at the time of the clinical onset of malignant\r\nneoplasm of the ovary"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having hormone replacement therapy for at least five consecutive\r\nyears before the clinical onset of malignant neoplasm of the\r\novary, and where the use of hormone replacement therapy has\r\nceased, the clinical onset of malignant neoplasm of the ovary has\r\noccurred within ten years of that period"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for mucinous ovarian tumours only, smoking at least five pack-years of\r\ncigarettes, or the equivalent thereof in other tobacco products, before\r\nthe clinical onset of malignant neoplasm of the ovary, and:\r\n(a) smoking commenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the ovary; and\r\n(b) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the ovary, has occurred within 30 years of cessation",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "mucinous ovarian tumours",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "smoking commenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the ovary; and"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the ovary, has occurred within 30 years of cessation"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(12)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the ovary",
+    "definedTerms" : [ ]
+  } ]
+}

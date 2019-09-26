@@ -1,0 +1,32 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01675",
+  "instrumentNumber" : "97/2016",
+  "citation" : "Statement of Principles concerning complex regional pain syndrome (Reasonable Hypothesis) (No. 97 of 2016)",
+  "conditionName" : "complex regional pain syndrome",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having an injury or a disease involving a major peripheral nerve in the\r\nsix months before the clinical onset of complex regional pain\r\nsyndrome, where the pain originates in the region of the affected\r\nperipheral nerve",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having an injury or a disease from the specified list of injuries or\r\ndiseases in the six months before the clinical onset of complex\r\nregional pain syndrome, where the pain originates in the region of the\r\nbody affected by the injury or disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having surgery in the six months before the clinical onset of complex\r\nregional pain syndrome, where the pain originates in the region of the\r\nsurgical procedure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "being treated with phenobarbital at the time of the clinical onset of\r\ncomplex regional pain syndrome",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(5)",
+    "text" : "inability to obtain appropriate clinical management for complex\r\nregional pain syndrome",
+    "definedTerms" : [ ]
+  } ]
+}

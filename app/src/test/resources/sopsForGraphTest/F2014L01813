@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01813",
+  "instrumentNumber" : "3/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the testis and paratesticular tissues No. 3 of 2015",
+  "conditionName" : "malignant neoplasm of the testis and paratesticular tissues",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of malignant neoplasm of the testis and paratesticular tissues",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the testis and paratesticular tissues",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,175 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01441",
+  "instrumentNumber" : "84/2011",
+  "citation" : "Statement of Principles concerning retinal vascular occlusive disease No. 84 of 2011",
+  "conditionName" : "retinal vascular occlusive disease",
+  "effectiveFrom" : "2011-07-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H34"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of retinal vascular\r\nocclusive disease, and where smoking has ceased, the clinical onset has\r\noccurred within 30 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having hypertension at the time of the clinical onset of retinal vascular\r\nocclusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of retinal\r\nvascular occlusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having dyslipidaemia before the clinical onset of retinal vascular\r\nocclusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having hyperhomocysteinaemia at the time of the clinical onset of\r\nretinal vascular occlusive disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "using a drug from the specified list within the 72 hours before the\r\nclinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ {
+      "term" : "a drug from the specified list",
+      "definition" : "means:\n(a) amphetamines and amphetamine-like compounds, including\ndextroamphetamine, methamphetamine, methylphenidate (Ritalin),\nephedrine, pseudoephedrine, phenylpropanolamine, phentermine,\nphendimetrazine, and 3,4-methylenedioxymethamphetamine (ecstasy);\n(b) cocaine;\n(c) D-lysergic acid diethylamide (LSD);\n(d) ergot compounds including ergometrine and ergotamine;\n(e) heroin;\n(f) marijuana; or\n(g) phencyclidine (angel dust)"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "using a drug belonging to the nonsteroidal anti-inflammatory class of\r\ndrugs, excluding aspirin, on at least 22 days per month for a continuous\r\nperiod of at least two months before the clinical onset of retinal\r\nvascular occlusive disease, where the last dose of the drug was taken\r\nwithin the three days before the clinical onset of retinal vascular\r\nocclusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being obese for at least five years before the clinical onset of retinal\r\nvascular occlusive disease",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having trauma, including surgical trauma, to the affected eye or the\r\nblood vessels supplying or draining the affected eye, within the seven\r\ndays before the clinical onset of retinal vascular occlusive disease, and\r\nin the case of prolonged unconsciousness associated with such trauma,\r\nthe seven day period is taken to commence upon regaining\r\nconsciousness",
+    "definedTerms" : [ {
+      "term" : "trauma, including surgical trauma",
+      "definition" : "means blunt trauma of sufficient force\nto deform the antero-posterior axis of the globe and to disrupt the intima of\nrelevant blood vessels, or a penetrating eye injury, including such injury\narising from a surgical procedure"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having antiphospholipid antibody syndrome at the time of the clinical\r\nonset of retinal vascular occlusive disease",
+    "definedTerms" : [ {
+      "term" : "antiphospholipid antibody syndrome",
+      "definition" : "means the presence of\nantiphospholipid antibodies or lupus anticoagulant antibodies, plus one or\nmore of the following clinical manifestations:\n(a) arterial thrombosis;\n(b) foetal loss;\n(c) thrombocytopaenia; or\n(d) venous thrombosis"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "for retinal vein occlusion only,\r\n(i) having open-angle glaucoma, angle-closure glaucoma or ocular\r\nhypertension at the time of the clinical onset of retinal vascular\r\nocclusive disease; or\r\n(ii) being at least five percent dehydrated at the time of the clinical\r\nonset of retinal vascular occlusive disease; or\r\n(iii) having paroxysmal nocturnal haemoglobinuria at the time of the\r\nclinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ {
+      "term" : "paroxysmal nocturnal haemoglobinuria",
+      "definition" : "means a chronic acquired blood\ncell dysplasia in which there is proliferation of a clone of stem cells producing\nerythrocytes, platelets and granulocytes that are abnormally susceptible to lysis\nby complement. It is characterised by the presence of free haemoglobin in the\nurine, intravascular haemolysis and venous thrombosis"
+    }, {
+      "term" : "dehydrated",
+      "definition" : "means deficient in body water, such as could occur after\nstrenuous physical activity, vomiting, diarrhoea or febrile illness, without\nadequate rehydration"
+    } ],
+    "conditionVariant" : {
+      "name" : "retinal vein occlusion",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having open-angle glaucoma, angle-closure glaucoma or ocular\r\nhypertension at the time of the clinical onset of retinal vascular\r\nocclusive disease"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being at least five percent dehydrated at the time of the clinical\r\nonset of retinal vascular occlusive disease"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having paroxysmal nocturnal haemoglobinuria at the time of the\r\nclinical onset of retinal vascular occlusive disease"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "for retinal arterial occlusion only,\r\n(i) having a potential source of embolus to the eye at the time of\r\nthe clinical onset of retinal vascular occlusive disease; or\r\n(ii) having giant cell arteritis, polyarteritis nodosa or Takayasu's\r\narteritis at the time of the clinical onset of retinal vascular\r\nocclusive disease; or\r\n(iii) having ipsilateral carotid arterial disease at the time of the\r\nclinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ {
+      "term" : "a potential source of embolus to the eye",
+      "definition" : "means the presence of at least\none of the following:\n(a) acute myocardial infarction;\n(b) any of the following causes of arterial embolism to the eye:\n(i) bone fracture;\n(ii) cardiac hydatid cysts;\n(iii) decompression sickness;\n(iv) foreign body penetration into an artery within the head, neck\nor chest;\n(v) intravenous amniotic fluid;\n(vi) intravenous talc;\n(vii) primary or secondary cardiac tumours;\n(viii) primary or secondary lung tumours; or\n(ix) pulmonary barotrauma;\n(c) any of the following means of paradoxical embolism:\n(i) atrial septal defect;\n(ii) patent foramen ovale;\n(iii) pulmonary arteriovenous fistula; or\n(iv) ventricular septal defect;\n(d) any of the following mitral or aortic valve disorders:\n(i) calcification;\n(ii) Lambl's excrescences;\n(iii) mitral valve prolapse;\n(iv) prosthetic valve;\n(v) regurgitation;\n(vi) stenosis; or\n(vii) valvulitis;\n(e) any of the following procedures within the seven days before the\nclinical onset of retinal arterial occlusion:\n(i) cardiac surgery or cardiac catheterisation;\n(ii) catheterisation of or injection into the arteries supplying the\nretina;\n(iii) orthopaedic surgery;\n(iv) surgery involving the arteries supplying the retina; or\n(v) surgery or medical procedures involving the pulmonary veins;\n(f) atrial fibrillation (intermittent or sustained);\n(g) cardiomyopathy;\n(h) infective or non-infective (marantic) endocarditis;\n(i) left atrial aneurysm or dilatation;\n(j) left ventricular aneurysm;\n(k) left ventricular dyskinesia;\n(l) sick sinus syndrome; or\n(m) thrombus formation within the pulmonary vein, left atrium, left\nventricle or arteries supplying the retina"
+    } ],
+    "conditionVariant" : {
+      "name" : "retinal arterial occlusion",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having a potential source of embolus to the eye at the time of\r\nthe clinical onset of retinal vascular occlusive disease"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having giant cell arteritis, polyarteritis nodosa or Takayasu's\r\narteritis at the time of the clinical onset of retinal vascular\r\nocclusive disease"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having ipsilateral carotid arterial disease at the time of the\r\nclinical onset of retinal vascular occlusive disease"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "ingesting a combined oral contraceptive pill for a continuous period of\r\nat least 21 days within the one year before the clinical onset of retinal\r\nvascular occlusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a haematological disorder from the specified list of\r\nhaematological disorders that are associated with a hypercoagulable\r\nstate at the time of the clinical onset of retinal vascular occlusive\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having vasculitis of the retinal artery or retinal vein or their branches at\r\nthe time of the clinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having microscopic polyangiitis at the time of the clinical onset of\r\nretinal vascular occlusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having thromboangiitis obliterans (Buerger's disease) at the time of the\r\nclinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having systemic lupus erythematosus at the time of the clinical onset of\r\nretinal vascular occlusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a disease from the specified list affecting the cerebral or retinal\r\nvessels at the time of the clinical onset of retinal vascular occlusive\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "a disease from the specified list",
+      "definition" : "means:\n(a) fibromuscular dysplasia;\n(b) intravascular lymphomatosus;\n(c) Moyamoya disease/syndrome;\n(d) radiation injury; or\n(e) Sneddon's syndrome"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having migraine at the time of the clinical onset of retinal vascular\r\nocclusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having ocular or orbital infection of the affected eye at the time of the\r\nclinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ {
+      "term" : "ocular or orbital infection",
+      "definition" : "means having an infection of the eye or the\ntissues of the orbit, excluding isolated conjunctivitis"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having a lesion of the tissues within the orbit, a lesion of the optic\r\nnerve or a lesion within the eye, causing compression of a retinal vessel\r\nof the affected eye at the time of the clinical onset of retinal vascular\r\nocclusive disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having an ipsilateral neoplasm infiltrating the optic nerve or within the\r\neye at the time of the clinical onset of retinal vascular occlusive\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having a vascular abnormality of the retinal vessels of the affected eye,\r\nsuch as aneurysm, arterio-venous malformation or angioma, at the time\r\nof the clinical onset of retinal vascular occlusive disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(z)",
+    "text" : "inability to obtain appropriate clinical management for retinal vascular\r\nocclusive disease",
+    "definedTerms" : [ ]
+  } ]
+}

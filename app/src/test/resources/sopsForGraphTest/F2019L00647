@@ -1,0 +1,71 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00647",
+  "instrumentNumber" : "56/2019",
+  "citation" : "Statement of Principles concerning dislocation of a joint and subluxation of a joint (Balance of Probabilities) (No. 56 of 2019)",
+  "conditionName" : "dislocation of a joint and subluxation of a joint",
+  "effectiveFrom" : "2019-05-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having physical trauma to the affected joint at the time of the clinical\r\nonset of dislocation of a joint or subluxation of a joint",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having damage to a soft tissue structure as specified at the time of the\r\nclinical onset of dislocation of a joint or subluxation of a joint",
+    "definedTerms" : [ {
+      "term" : "soft tissue structure as specified",
+      "definition" : "means a joint capsule, tendon, ligament or\r\nfibrocartilaginous structure that contributes to joint stability in the affected\r\njoint."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a fracture, avulsion or bony abnormality involving the\r\narticulating surfaces of the affected joint, at the time of the clinical\r\nonset of dislocation of a joint or subluxation of a joint",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a disease process as specified affecting the normal structural or\r\nfunctional relationship between the articulating surfaces of the affected\r\njoint at the time of the clinical onset of dislocation of a joint or\r\nsubluxation of a joint",
+    "definedTerms" : [ {
+      "term" : "disease process as specified",
+      "definition" : "means:\r\n(a) a neurological, neuromuscular or muscular condition, including, but\r\nnot limited to, brain or spinal injuries with spasticity or flaccid\r\nparalysis, cerebrovascular accident, Parkinson's disease, myasthenia\r\ngravis, poliomyelitis, dyskinesia caused by neuroleptic drugs, and\r\nperipheral neuropathy; or\r\n(b) an infective, inflammatory or degenerative condition of the affected\r\njoint, including, but limited to, septic arthritis, rheumatoid arthritis,\r\nankylosing spondylitis, psoriatic arthropathy, crystal arthropathy,\r\nGrisel syndrome and osteoarthritis; or\r\n(c) an intra-articular space occupying lesion, including, but not limited to,\r\nneoplastic lesions such as sarcoma, osteosarcoma, chondrosarcoma and\r\npigmented villonodular synovitis.\r\nNote: Grisel syndrome is atlantoaxial joint subluxation due to contiguous inflammation from the ear,\r\nnose or throat.\r\ndislocation of a joint and subluxation of a joint—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "for dislocation of a temporomandibular joint or subluxation of a\r\ntemporomandibular joint only, undertaking an activity or undergoing a\r\nmedical procedure that involves wide opening of the mouth at the time\r\nof the clinical onset of dislocation of a joint or subluxation of a joint;\r\nNote 1: Examples of activities which may involve wide mouth opening include, but are not\r\nlimited to, yawning, laughing, vomiting, coughing, and chewing large pieces of food.\r\nNote 2: Examples of medical procedures that involve wide mouth opening include, but are not\r\nlimited to, dental procedures, direct laryngoscopy, and intravenous administration of\r\nmedications which cause drug-induced yawning",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "dislocation of a temporomandibular joint or subluxation of a temporomandibular joint",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for dislocation of a tibiofemoral joint or subluxation of a tibiofemoral\r\njoint only, having morbid obesity at the time of the clinical onset of\r\ndislocation of a joint or subluxation of a joint",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "dislocation of a tibiofemoral joint or subluxation of a tibiofemoral joint",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for dislocation of a total hip joint prosthesis only:\r\n(a) being obese at the time of the clinical onset of dislocation of a\r\njoint; or\r\n(b) having lumbar spondylosis, lumbar intervertebral disc prolapse,\r\nlumbar spondylolisthesis, lumbar spinal stenosis or lumbar\r\nspinal fusion at the time of the clinical onset of dislocation of a\r\njoint",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "dislocation of a total hip joint prosthesis",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "being obese at the time of the clinical onset of dislocation of a\r\njoint"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having lumbar spondylosis, lumbar intervertebral disc prolapse,\r\nlumbar spondylolisthesis, lumbar spinal stenosis or lumbar\r\nspinal fusion at the time of the clinical onset of dislocation of a\r\njoint"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(8)",
+    "text" : "inability to obtain appropriate clinical management for dislocation of a\r\njoint or subluxation of a joint",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01835",
+  "instrumentNumber" : "25/2015",
+  "citation" : "Statement of Principles concerning Marfan syndrome No. 25 of 2015",
+  "conditionName" : "Marfan syndrome",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "Q87.4"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being pregnant before the clinical worsening of Marfan syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for Marfan\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

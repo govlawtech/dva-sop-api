@@ -1,0 +1,185 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00914",
+  "instrumentNumber" : "82/2015",
+  "citation" : "Statement of Principles concerning tuberculosis (No. 82 of 2015)",
+  "conditionName" : "tuberculosis",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to bacteria belonging to the Mycobacterium\r\ntuberculosis complex at least 14 days before the clinical onset of\r\ntuberculosis",
+    "definedTerms" : [ {
+      "term" : "complex",
+      "definition" : "means:\r\n(a) inhaling droplet nuclei or aerosols contaminated with organisms\r\nbelonging to the Mycobacterium tuberculosis ;\r\n(b) having close exposure to a person or an animal with infectious\r\ntuberculosis;\r\n(c) being in the same household or immediate work environment as a\r\nperson with infectious tuberculosis;\r\n(d) being involved in handling biological material infected with organisms\r\nbelonging to the Mycobacterium tuberculosis ; or\r\n(e) having a tissue or solid organ transplant which is infected with\r\norganisms belonging to the Mycobacterium tuberculosis .\r\nNote: biological material and infectious tuberculosis are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "living or working in an area which, at that time, has an incidence of\r\ntuberculosis of at least 50 cases per 100 000 of population per year,\r\nbefore the clinical onset of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for tuberculosis due to infection with Mycobacterium bovis or\r\nMycobacterium caprae only:\r\n(a) consuming unpasteurised milk, unpasteurised dairy products or\r\nmeat from an animal infected with the corresponding organism\r\nat least 14 days before the clinical onset of tuberculosis",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals twenty tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ],
+    "conditionVariant" : {
+      "name" : "tuberculosis due to infection with Mycobacterium bovis or Mycobacterium caprae",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "consuming unpasteurised milk, unpasteurised dairy products or\r\nmeat from an animal infected with the corresponding organism\r\nat least 14 days before the clinical onset of tuberculosis"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "for active tuberculosis disease due to infection with Mycobacterium\r\nbovis BCG only:\r\n(a) having intravesical BCG therapy for malignant neoplasm of the\r\nbladder; or\r\n(b) being vaccinated with BCG vaccine;\r\nbefore the clinical onset of tuberculosis",
+    "definedTerms" : [ {
+      "term" : "BCG",
+      "definition" : "means Bacille Calmette-Guérin.\r\nbeing exposed to bacteria belonging to the Mycobacterium tuberculosis"
+    }, {
+      "term" : "active tuberculosis disease",
+      "definition" : "means an illness in which tuberculosis bacteria\r\nare multiplying and inducing an inflammatory response.\r\nalcohol is measured by the alcohol consumption calculations utilising the\r\nAustralian Standard of ten grams of alcohol per standard alcoholic drink."
+    } ],
+    "conditionVariant" : {
+      "name" : "active tuberculosis disease due to infection with Mycobacterium bovis BCG",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having intravesical BCG therapy for malignant neoplasm of the\r\nbladder"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "being vaccinated with BCG vaccine;\r\nbefore the clinical onset of tuberculosis"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of tuberculosis",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having chronic renal failure;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: being treated with an immunosuppressive drug, chronic renal failure and severe\r\nmalnutrition are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having cirrhosis of the liver or diabetes mellitus at the time of the\r\nclinical onset of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "inhaling respirable crystalline silica dust in an enclosed space:\r\n(a) for a cumulative period of at least 3 000 hours before the clinical\r\nonset of tuberculosis; and\r\n(b) at the time material containing crystalline silica was being\r\nproduced, excavated, drilled, cut or ground, or used in\r\nconstruction, manufacturing, cleaning or blasting;\r\nbefore the clinical onset of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "inhaling respirable crystalline silica dust in an open environment:\r\n(a) for a cumulative period of at least 6 000 hours before the clinical\r\nonset of tuberculosis; and\r\n(b) at the time material containing crystalline silica was being\r\nproduced, excavated, drilled, cut or ground, or used in\r\nconstruction, manufacturing, cleaning or blasting;\r\nbefore the clinical onset of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, within the ten years before the clinical onset\r\nof tuberculosis",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals twenty tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours within the ten years before the\r\nclinical onset of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for pulmonary tuberculosis only:\r\n(a) smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\ntuberculosis; or\r\n(b) being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours before the clinical onset\r\nof tuberculosis",
+    "definedTerms" : [ {
+      "term" : "pulmonary tuberculosis",
+      "definition" : "means tuberculosis infection that occurs in the lung\r\nor respiratory tract."
+    }, {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals twenty tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ],
+    "conditionVariant" : {
+      "name" : "pulmonary tuberculosis",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\ntuberculosis"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours before the clinical onset\r\nof tuberculosis"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a gastrectomy or jejunoileal bypass before the clinical onset of\r\ntuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "consuming at least 44 kilograms of alcohol within the three years\r\nbefore the clinical onset of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having alcohol use disorder before the clinical onset of tuberculosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(15)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of tuberculosis",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having chronic renal failure;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: being treated with an immunosuppressive drug, chronic renal failure and severe\r\nmalnutrition are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having cirrhosis of the liver or diabetes mellitus at the time of the\r\nclinical worsening of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "inhaling respirable crystalline silica dust in an enclosed space:\r\n(a) for a cumulative period of at least 3 000 hours before the clinical\r\nworsening of tuberculosis; and\r\n(b) at the time material containing crystalline silica was being\r\nproduced, excavated, drilled, cut or ground, or used in\r\nconstruction, manufacturing, cleaning or blasting;\r\nbefore the clinical worsening of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "inhaling respirable crystalline silica dust in an open environment:\r\n(a) for a cumulative period of at least 6 000 hours before the clinical\r\nworsening of tuberculosis; and\r\n(b) at the time material containing crystalline silica was being\r\nproduced, excavated, drilled, cut or ground, or used in\r\nconstruction, manufacturing, cleaning or blasting;\r\nbefore the clinical worsening of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, within the ten years before the clinical\r\nworsening of tuberculosis",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals twenty tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours within the ten years before the\r\nclinical worsening of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "for pulmonary tuberculosis only:\r\n(a) smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening\r\nof tuberculosis; or\r\n(b) being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours before the clinical\r\nworsening of tuberculosis",
+    "definedTerms" : [ {
+      "term" : "pulmonary tuberculosis",
+      "definition" : "means tuberculosis infection that occurs in the lung\r\nor respiratory tract."
+    }, {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals twenty tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ],
+    "conditionVariant" : {
+      "name" : "pulmonary tuberculosis",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening\r\nof tuberculosis"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours before the clinical\r\nworsening of tuberculosis"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having a gastrectomy or jejunoileal bypass before the clinical",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "consuming at least 44 kilograms of alcohol within the three years\r\nbefore the clinical worsening of tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having alcohol use disorder before the clinical worsening of\r\ntuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "inability to obtain appropriate clinical management for tuberculosis",
+    "definedTerms" : [ ]
+  } ]
+}

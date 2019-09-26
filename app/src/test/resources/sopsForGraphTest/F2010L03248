@@ -1,0 +1,35 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03248",
+  "instrumentNumber" : "1/2011",
+  "citation" : "Statement of Principles concerning coeliac disease No. 1 of 2011",
+  "conditionName" : "coeliac disease",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K90.0"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being treated with interferon alpha or ribavirin within the six months\r\nbefore the clinical worsening of coeliac disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having surgery to resect any part of the oesophagus, stomach, small or\r\nlarge intestine, within the one year before the clinical worsening of\r\ncoeliac disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being pregnant within the six months before the clinical worsening of\r\ncoeliac disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inability to maintain a gluten-free diet at the time of the clinical\r\nworsening of coeliac disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for coeliac disease",
+    "definedTerms" : [ ]
+  } ]
+}

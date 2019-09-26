@@ -1,0 +1,113 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01361",
+  "instrumentNumber" : "45/2012",
+  "citation" : "Statement of Principles concerning pes planus No. 45 of 2012",
+  "conditionName" : "pes planus",
+  "effectiveFrom" : "2012-07-11",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M21.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "Q66.5"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for acquired pes planus only,\r\n(i) having a fracture of one or more tarsal or metatarsal bones of\r\nthe affected foot before the clinical onset of pes planus; or\r\n(ii) having a subluxation or dislocation of one or more of the tarsal\r\nor tarso-metatarsal joints of the affected foot before the clinical\r\nonset of pes planus; or\r\n(iii) having a discrete ligamentous, muscular or tendon injury,\r\nincluding that from surgery, resulting in instability of one or\r\nmore of the tarsal or tarso-metatarsal joints of the affected foot\r\nbefore the clinical onset of pes planus; or\r\n(iv) having weakness or paralysis of supinators or small muscles of\r\nthe sole of the affected foot at the time of the clinical onset of\r\npes planus; or\r\n(v) having tightening of pronators of the affected foot at the time of\r\nthe clinical onset of pes planus; or\r\n(vi) having arthritis or other destructive lesion of one or more of the\r\ntarsal or tarso-metatarsal joints of the affected foot at the time\r\nof the clinical onset of pes planus; or\r\n(vii) having rupture or division of the plantar fascia of the affected\r\nfoot before the clinical onset of pes planus; or\r\n(viii) having a space occupying lesion limiting the ability of the\r\naffected foot to supinate at the time of the clinical onset of pes\r\nplanus; or\r\n(ix) being obese at the time of the clinical onset of pes planus",
+    "definedTerms" : [ {
+      "term" : "tightening of pronators",
+      "definition" : "means spasticity of the pronator muscles or\nshortening of the pronator muscles or tendons from:\n(a) a nerve lesion;\n(b) a muscle lesion; or\n(c) skeletal deformity"
+    }, {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ],
+    "conditionVariant" : {
+      "name" : "acquired pes planus",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having a fracture of one or more tarsal or metatarsal bones of\r\nthe affected foot before the clinical onset of pes planus"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having a subluxation or dislocation of one or more of the tarsal\r\nor tarso-metatarsal joints of the affected foot before the clinical\r\nonset of pes planus"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having a discrete ligamentous, muscular or tendon injury,\r\nincluding that from surgery, resulting in instability of one or\r\nmore of the tarsal or tarso-metatarsal joints of the affected foot\r\nbefore the clinical onset of pes planus"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "having weakness or paralysis of supinators or small muscles of\r\nthe sole of the affected foot at the time of the clinical onset of\r\npes planus"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "having tightening of pronators of the affected foot at the time of\r\nthe clinical onset of pes planus"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "having arthritis or other destructive lesion of one or more of the\r\ntarsal or tarso-metatarsal joints of the affected foot at the time\r\nof the clinical onset of pes planus"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "having rupture or division of the plantar fascia of the affected\r\nfoot before the clinical onset of pes planus"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "having a space occupying lesion limiting the ability of the\r\naffected foot to supinate at the time of the clinical onset of pes\r\nplanus"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "being obese at the time of the clinical onset of pes planus"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "having a fracture of one or more tarsal or metatarsal bones of the\r\naffected foot before the clinical worsening of pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a subluxation or dislocation of one or more of the tarsal or\r\ntarso-metatarsal joints of the affected foot before the clinical worsening\r\nof pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a discrete ligamentous, muscular or tendon injury, including\r\nthat from surgery, resulting in instability of one or more of the tarsal or\r\ntarso-metatarsal joints of the affected foot before the clinical worsening\r\nof pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having weakness or paralysis of supinators or small muscles of the sole\r\nof the affected foot at the time of the clinical worsening of pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having tightening of pronators of the affected foot at the time of the\r\nclinical worsening of pes planus",
+    "definedTerms" : [ {
+      "term" : "tightening of pronators",
+      "definition" : "means spasticity of the pronator muscles or\nshortening of the pronator muscles or tendons from:\n(a) a nerve lesion;\n(b) a muscle lesion; or\n(c) skeletal deformity"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having arthritis or other destructive lesion of one or more of the tarsal\r\nor tarso-metatarsal joints of the affected foot at the time of the clinical\r\nworsening of pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having rupture or division of the plantar fascia of the affected foot\r\nbefore the clinical worsening of pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a space occupying lesion limiting the ability of the affected foot\r\nto supinate at the time of the clinical worsening of pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being obese at the time of the clinical worsening of pes planus",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "running an average of at least ten kilometres per week, for the one\r\nmonth before the clinical worsening of pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "walking while carrying loads of at least 15 kilograms, an average of at\r\nleast ten kilometres per week, for the one month before the clinical\r\nworsening of pes planus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "inability to obtain appropriate clinical management for pes planus",
+    "definedTerms" : [ ]
+  } ]
+}

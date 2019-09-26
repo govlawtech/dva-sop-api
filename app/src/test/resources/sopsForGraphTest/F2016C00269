@@ -1,0 +1,69 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016C00269",
+  "instrumentNumber" : "51/2012",
+  "citation" : "Statement of Principles concerning aplastic anaemia No. 51 of 2012",
+  "conditionName" : "aplastic anaemia",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D60"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.8"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, within the three months before the clinical onset of\r\naplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having acute hepatitis within the three months before the clinical onset\r\nof aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing a course of therapeutic radiation for ankylosing spondylitis\r\nwithin the three months before the clinical onset of aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a liver transplant within the three months before the clinical\r\nonset of aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being exposed to benzene as specified on at least 45 days within the six\r\nmonths before the clinical onset of aplastic anaemia",
+    "definedTerms" : [ {
+      "term" : "being exposed to benzene as specified",
+      "definition" : "means:\n(a) having cutaneous contact with liquids containing benzene greater than\n5% by volume; or\n(b) ingesting liquids containing benzene greater than 5% by volume; or\n(c) inhaling benzene vapour where such exposure occurs at an ambient 8-\nhour time-weighted average benzene concentration exceeding five parts\nper million"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having an autoimmune disease from the specified list within the one\r\nyear before the clinical onset of aplastic anaemia",
+    "definedTerms" : [ {
+      "term" : "an autoimmune disease from the specified list",
+      "definition" : "means:\n(a) eosinophilic fasciitis;\n(b) graft versus host disease;\n(c) hyperimmunoglobulinaemia; or\n(d) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being pregnant at the time of the clinical onset of aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a thymoma or thymic carcinoma at the time of the clinical onset\r\nof aplastic anaemia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "inability to obtain appropriate clinical management for aplastic\r\nanaemia",
+    "definedTerms" : [ ]
+  } ]
+}

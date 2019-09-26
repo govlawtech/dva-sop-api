@@ -1,0 +1,71 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00072",
+  "instrumentNumber" : "36/2012",
+  "citation" : "Statement of Principles concerning otitic barotrauma No. 36 of 2012",
+  "conditionName" : "otitic barotrauma",
+  "effectiveFrom" : "2012-05-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T70.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "experiencing a change in ambient barometric pressure as specified,\r\nwithin the 24 hours before the clinical onset of otitic barotrauma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being exposed to a blast, including the blast from a lightning strike,\r\nwithin the 24 hours before the clinical onset of otitic barotrauma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "receiving mechanical ventilation involving a face mask within the 24\r\nhours before the clinical onset of otitic barotrauma",
+    "definedTerms" : [ {
+      "term" : "mechanical ventilation",
+      "definition" : "means an artificial method of ventilation in which\nair is forced into the lungs of a person via mechanical means, and includes\nanaesthetic and continuous positive airway pressure (CPAP) use"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "breathing 100 percent oxygen for at least 30 minutes within the 24\r\nhours before the clinical onset of otitic barotrauma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having eustachian tube dysfunction within the 24 hours before the\r\nclinical onset of otitic barotrauma",
+    "definedTerms" : [ {
+      "term" : "eustachian tube dysfunction",
+      "definition" : "means an inability to equalise pressure in the\nmiddle ear to the pressure surrounding the individual from any of several\nconditions including:\n(a) deviation of nasal septum;\n(b) rhinitis (including allergic rhinitis and non-allergic rhinitis);\n(c) sinusitis; or\n(d) upper respiratory tract infection"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "experiencing a change in ambient barometric pressure as specified,\r\nwithin the 24 hours before the clinical worsening of otitic barotrauma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being exposed to a blast, including the blast from a lightning strike,\r\nwithin the 24 hours before the clinical worsening of otitic barotrauma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "receiving mechanical ventilation involving a face mask within the 24\r\nhours before the clinical worsening of otitic barotrauma",
+    "definedTerms" : [ {
+      "term" : "mechanical ventilation",
+      "definition" : "means an artificial method of ventilation in which\nair is forced into the lungs of a person via mechanical means, and includes\nanaesthetic and continuous positive airway pressure (CPAP) use"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "breathing 100 percent oxygen for at least 30 minutes within the 24\r\nhours before the clinical worsening of otitic barotrauma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having eustachian tube dysfunction within the 24 hours before the\r\nclinical worsening of otitic barotrauma",
+    "definedTerms" : [ {
+      "term" : "eustachian tube dysfunction",
+      "definition" : "means an inability to equalise pressure in the\nmiddle ear to the pressure surrounding the individual from any of several\nconditions including:\n(a) deviation of nasal septum;\n(b) rhinitis (including allergic rhinitis and non-allergic rhinitis);\n(c) sinusitis; or\n(d) upper respiratory tract infection"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for otitic\r\nbarotrauma",
+    "definedTerms" : [ ]
+  } ]
+}

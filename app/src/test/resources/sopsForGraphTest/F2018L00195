@@ -1,0 +1,54 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00195",
+  "instrumentNumber" : "26/2018",
+  "citation" : "Statement of Principles concerning systemic sclerosis (Balance of Probabilities) (No. 26 of 2018)",
+  "conditionName" : "systemic sclerosis",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M34"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(a) produced;\r\n(b) excavated;\r\n(c) drilled, cut or ground; or\r\n(d) used in construction, manufacturing, cleaning or blasting,\r\nfor a cumulative period of at least 5 000 hours before the clinical onset\r\nof systemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being treated with bleomycin at the time of the clinical onset of\r\nsystemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "inhaling, ingesting or having cutaneous contact with trichloroethylene\r\nfor a cumulative period of at least 5 000 hours within a period of ten\r\nconsecutive years, before the clinical onset of systemic sclerosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(a) produced;\r\n(b) excavated;\r\n(c) drilled, cut or ground; or\r\n(d) used in construction, manufacturing, cleaning or blasting,\r\nfor a cumulative period of at least 5 000 hours before the clinical\r\nworsening of systemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with bleomycin at the time of the clinical worsening of\r\nsystemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "inhaling, ingesting or having cutaneous contact with trichloroethylene\r\nfor a cumulative period of at least 5 000 hours within a period of ten\r\nconsecutive years, before the clinical worsening of systemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for clinical worsening of systemic sclerosis manifesting as scleroderma\r\nrenal crisis only, being treated with 15 milligrams or more per day of\r\nprednisone, or equivalent oral glucocorticoid therapy, for a period of at\r\nleast four weeks within the six months before the clinical worsening of\r\nsystemic sclerosis",
+    "definedTerms" : [ {
+      "term" : "equivalent oral glucocorticoid therapy",
+      "definition" : "means a glucocorticoid in the\r\nfollowing table, at the doses specified in the table, or a therapeutically\r\nequivalent dose of another glucocorticoid:\r\nGlucocorticoid Minimum average\r\nrate (milligrams/day)\r\ncortisone 75\r\nhydrocortisone 60\r\nprednisone 15\r\nprednisolone 15"
+    } ],
+    "conditionVariant" : {
+      "name" : "clinical worsening of systemic sclerosis manifesting as scleroderma renal crisis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "inability to obtain appropriate clinical management for systemic\r\nsclerosis",
+    "definedTerms" : [ ]
+  } ]
+}

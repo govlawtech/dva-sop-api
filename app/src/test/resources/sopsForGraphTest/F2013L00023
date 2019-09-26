@@ -1,0 +1,237 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00023",
+  "instrumentNumber" : "8/2013",
+  "citation" : "Statement of Principles concerning carpal tunnel syndrome No. 8 of 2013",
+  "conditionName" : "carpal tunnel syndrome",
+  "effectiveFrom" : "2013-01-09",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G56.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "performing any combination of repetitive activities or forceful activities\r\nwith the affected hand for at least 260 hours within a period of 210\r\nconsecutive days before the clinical onset of carpal tunnel syndrome,\r\nand where the repetitive or forceful activities have not ceased more\r\nthan 30 days before the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "daily self-propulsion of a manual wheelchair for at least a cumulative\r\nperiod of 260 hours within a period of 210 consecutive days before the\r\nclinical onset of carpal tunnel syndrome, and where the self-propulsion\r\nof a manual wheelchair has not ceased more than 30 days before the\r\nclinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "performing activities where the affected hand or forearm is directly\r\nvibrated for at least 260 hours within a period of 210 consecutive days\r\nbefore the clinical onset of carpal tunnel syndrome, and where those\r\nactivities have not ceased more than 30 days before the clinical onset of\r\ncarpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an injury to the affected wrist or hand which does not involve a\r\nfracture or a dislocation but which:\r\n(i) alters the normal contour of the carpal tunnel; or\r\n(ii) damages the flexor tendons within the carpal tunnel,\r\nwithin the one year before the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a fracture or dislocation to the distal radius, the distal ulna, a\r\ncarpal bone or a metacarpal bone of the affected side which:\r\n(i) alters the normal contour of the carpal tunnel; or\r\n(ii) damages the flexor tendons within the carpal tunnel,\r\nbefore the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having surgery to the affected wrist or hand which:\r\n(i) alters the normal contour of the carpal tunnel; or\r\n(ii) damages the flexor tendons within the carpal tunnel,\r\nwithin the one year before the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being obese at the time of the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing haemodialysis or peritoneal dialysis for at least the one year\r\nbefore the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having hypothyroidism at the time of the clinical onset of carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having acromegaly before the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "acromegaly",
+      "definition" : "means a chronic disease of adults due to hypersecretion of the\npituitary growth hormone and characterised by enlargement of many parts of\nthe skeleton especially the distal portions, the nose, ears, jaws, fingers and\ntoes"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having amyloidosis at the time of the clinical onset of carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "amyloidosis",
+      "definition" : "means the accumulation of insoluble fibrillar proteins in\norgans or tissues of the body such that vital function is compromised"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having gout in the affected wrist or hand at the time of the clinical\r\nonset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a space-occupying lesion in the affected carpal tunnel at the\r\ntime of the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "space-occupying lesion in the affected carpal tunnel",
+      "definition" : "means one of the\nfollowing entities occupying space within the carpal tunnel:\n(a) aneurysm;\n(b) calcification;\n(c) cyst;\n(d) ganglion; or\n(e) neoplasm"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having oedema involving the affected carpal tunnel at the time of the\r\nclinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "oedema",
+      "definition" : "means the presence of abnormally large amounts of fluid in the\nintercellular tissue spaces of the body and demonstrated by accumulation of\nexcessive fluid in the subcutaneous tissues"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having an external burn involving the affected wrist or palm requiring\r\nhospitalisation within the five years before the clinical onset of carpal\r\ntunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having haemorrhage involving the affected carpal tunnel at the time of\r\nthe clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having infection involving the affected carpal tunnel at the time of the\r\nclinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having inflammatory arthritis of the affected wrist or hand at the time\r\nof the clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "inflammatory arthritis",
+      "definition" : "means one of the following diseases:\n(a) ankylosing spondylitis;\n(b) arthropathy associated with inflammatory bowel disease;\n(c) chondrocalcinosis (also known as pseudogout);\n(d) dermatomyositis;\n(e) eosinophilia myalgia syndrome;\n(f) eosinophilic fasciitis;\n(g) multifocal fibrosclerosis;\n(h) other inflammatory arthritis requiring treatment with a disease\nmodifying agent or a biological agent;\n(i) polymyositis;\n(j) psoriatic arthropathy;\n(k) reactive arthritis;\n(l) rheumatoid arthritis;\n(m) sarcoidosis;\n(n) sicca syndrome (which includes keratoconjunctivitis sicca and Sjogren's\ndisease);\n(o) systemic fibrosclerosing syndrome;\n(p) systemic lupus erythematosus;\n(q) systemic sclerosis (which includes circumscribed scleroderma and\nCREST syndrome); or\n(r) unspecified diffuse connective tissue disease"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having osteoarthritis of the affected wrist, carpus or trapezio-\r\nmetacarpal joint of the thumb at the time of the clinical onset of carpal\r\ntunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of carpal\r\ntunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "being treated with an aromatase inhibitor within the six months before\r\nthe clinical onset of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "an aromatase inhibitor",
+      "definition" : "means:\n(a) anastrozole;\n(b) exemestane; or\n(c) letrozole"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "being pregnant within the three months before the clinical onset of\r\ncarpal tunnel syndrome",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(w)",
+    "text" : "performing any combination of repetitive activities or forceful activities\r\nwith the affected hand for at least 260 hours within a period of 210\r\nconsecutive days before the clinical worsening of carpal tunnel\r\nsyndrome, and where the repetitive or forceful activities have not\r\nceased more than 30 days before the clinical worsening of carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "daily self-propulsion of a manual wheelchair for at least a cumulative\r\nperiod of 260 hours within a period of 210 consecutive days before the\r\nclinical worsening of carpal tunnel syndrome, and where the self-\r\npropulsion of a manual wheelchair has not ceased more than 30 days\r\nbefore the clinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "performing activities where the affected hand or forearm is directly\r\nvibrated for at least 260 hours within a period of 210 consecutive days\r\nbefore the clinical worsening of carpal tunnel syndrome, and where\r\nthose activities have not ceased more than 30 days before the clinical\r\nworsening of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having an injury to the affected wrist or hand which does not involve a\r\nfracture or a dislocation but which:\r\n(i) alters the normal contour of the carpal tunnel; or\r\n(ii) damages the flexor tendons within the carpal tunnel,\r\nwithin the one year before the clinical worsening of carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having a fracture or dislocation to the distal radius, the distal ulna, a\r\ncarpal bone or a metacarpal bone of the affected side which:\r\n(i) alters the normal contour of the carpal tunnel; or\r\n(ii) damages the flexor tendons within the carpal tunnel,\r\nbefore the clinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having surgery to the affected wrist or hand which:\r\n(i) alters the normal contour of the carpal tunnel; or\r\n(ii) damages the flexor tendons within the carpal tunnel,\r\nwithin the one year before the clinical worsening of carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "being obese at the time of the clinical worsening of carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "undergoing haemodialysis or peritoneal dialysis for at least the one year\r\nbefore the clinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having hypothyroidism at the time of the clinical worsening of carpal\r\ntunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having acromegaly before the clinical worsening of carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "acromegaly",
+      "definition" : "means a chronic disease of adults due to hypersecretion of the\npituitary growth hormone and characterised by enlargement of many parts of\nthe skeleton especially the distal portions, the nose, ears, jaws, fingers and\ntoes"
+    } ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "having amyloidosis at the time of the clinical worsening of carpal\r\ntunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "amyloidosis",
+      "definition" : "means the accumulation of insoluble fibrillar proteins in\norgans or tissues of the body such that vital function is compromised"
+    } ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having gout in the affected wrist or hand at the time of the clinical\r\nworsening of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "having a space-occupying lesion in the affected carpal tunnel at the\r\ntime of the clinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "space-occupying lesion in the affected carpal tunnel",
+      "definition" : "means one of the\nfollowing entities occupying space within the carpal tunnel:\n(a) aneurysm;\n(b) calcification;\n(c) cyst;\n(d) ganglion; or\n(e) neoplasm"
+    } ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "having oedema involving the affected carpal tunnel at the time of the\r\nclinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "oedema",
+      "definition" : "means the presence of abnormally large amounts of fluid in the\nintercellular tissue spaces of the body and demonstrated by accumulation of\nexcessive fluid in the subcutaneous tissues"
+    } ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "having an external burn involving the affected wrist or palm requiring\r\nhospitalisation within the five years before the clinical worsening of\r\ncarpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "having haemorrhage involving the affected carpal tunnel at the time of\r\nthe clinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "having infection involving the affected carpal tunnel at the time of the\r\nclinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(nn)",
+    "text" : "having inflammatory arthritis of the affected wrist or hand at the time\r\nof the clinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "inflammatory arthritis",
+      "definition" : "means one of the following diseases:\n(a) ankylosing spondylitis;\n(b) arthropathy associated with inflammatory bowel disease;\n(c) chondrocalcinosis (also known as pseudogout);\n(d) dermatomyositis;\n(e) eosinophilia myalgia syndrome;\n(f) eosinophilic fasciitis;\n(g) multifocal fibrosclerosis;\n(h) other inflammatory arthritis requiring treatment with a disease\nmodifying agent or a biological agent;\n(i) polymyositis;\n(j) psoriatic arthropathy;\n(k) reactive arthritis;\n(l) rheumatoid arthritis;\n(m) sarcoidosis;\n(n) sicca syndrome (which includes keratoconjunctivitis sicca and Sjogren's\ndisease);\n(o) systemic fibrosclerosing syndrome;\n(p) systemic lupus erythematosus;\n(q) systemic sclerosis (which includes circumscribed scleroderma and\nCREST syndrome); or\n(r) unspecified diffuse connective tissue disease"
+    } ]
+  }, {
+    "paragraph" : "6(oo)",
+    "text" : "having osteoarthritis of the affected wrist, carpus or trapezio-\r\nmetacarpal joint of the thumb at the time of the clinical worsening of\r\ncarpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(pp)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of carpal\r\ntunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qq)",
+    "text" : "being treated with an aromatase inhibitor within the six months before\r\nthe clinical worsening of carpal tunnel syndrome",
+    "definedTerms" : [ {
+      "term" : "an aromatase inhibitor",
+      "definition" : "means:\n(a) anastrozole;\n(b) exemestane; or\n(c) letrozole"
+    } ]
+  }, {
+    "paragraph" : "6(rr)",
+    "text" : "being pregnant within the three months before the clinical worsening of\r\ncarpal tunnel syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ss)",
+    "text" : "inability to obtain appropriate clinical management for carpal tunnel\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

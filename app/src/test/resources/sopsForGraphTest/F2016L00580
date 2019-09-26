@@ -1,0 +1,34 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00580",
+  "instrumentNumber" : "49/2016",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the urethra (Reasonable Hypothesis) (No. 49 of 2016)",
+  "conditionName" : "malignant neoplasm of the urethra",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C68"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for squamous cell carcinoma only, acquiring persistent infection with\r\nan oncogenic human papilloma virus (HPV) before the clinical onset\r\nof malignant neoplasm of the urethra",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "squamous cell carcinoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\nmalignant neoplasm of the urethra, where the first exposure to arsenic\r\noccurred at least ten years before the clinical onset of malignant\r\nneoplasm of the urethra",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\r\n(a) consuming arsenic containing compounds (for example Fowler's\r\nsolution) for a cumulative period of at least three months; or\r\n(b) consuming drinking water with an average arsenic concentration of at\r\nleast 50 micrograms per litre for a cumulative period of at least two\r\nyears; or\r\n(c) having clinical evidence of chronic arsenic toxicity.\r\nmalignant neoplasm of the urethra—see subsection 7(2)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the urethra",
+    "definedTerms" : [ ]
+  } ]
+}

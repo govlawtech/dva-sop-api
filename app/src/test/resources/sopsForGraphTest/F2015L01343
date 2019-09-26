@@ -1,0 +1,168 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01343",
+  "instrumentNumber" : "95/2015",
+  "citation" : "Statement of Principles concerning fracture (Balance of Probabilities) (No. 95 of 2015)",
+  "conditionName" : "fracture",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having physical trauma to the affected bone at the time of the clinical\r\nonset of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for stress fracture only, having repetitive loading stress to the affected\r\nregion of the body at the time of the clinical onset of fracture",
+    "definedTerms" : [ {
+      "term" : "repetitive loading stress",
+      "definition" : "means ongoing physical activity which involves at\r\nleast a moderate level of weight bearing exercise such as speed walking,\r\njogging, athletics or running, or weight training for the upper limbs."
+    } ],
+    "conditionVariant" : {
+      "name" : "stress fracture",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for stress fracture of the lower limb only, having a significant\r\nbiomechanical abnormality affecting the lower limb at the time of the\r\nclinical onset of fracture",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "stress fracture of the lower limb",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having Paget's disease of bone involving the affected region of bone at\r\nthe time of the clinical onset of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having osteoporosis involving the affected region of bone at the time\r\nof the clinical onset of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having osteomalacia involving the affected region of bone at the time\r\nof the clinical onset of fracture",
+    "definedTerms" : [ {
+      "term" : "osteomalacia",
+      "definition" : "means a disease of bone in which there is a reduction in the\r\nmineralisation of its organic matrix and bone softening, due to a deficiency\r\nof vitamin D or problems with the metabolism of vitamin D."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having osteonecrosis involving the affected region of bone at the time\r\nof the clinical onset of fracture",
+    "definedTerms" : [ {
+      "term" : "osteonecrosis",
+      "definition" : "means a disease of bone where death of bone tissue occurs as\r\na result of the temporary or permanent loss of blood supply to bone.\r\nOsteonecrosis is also known as avascular necrosis, aseptic necrosis or\r\nischaemic necrosis.\r\npack-years of cigarettes, or the equivalent thereof in other tobacco"
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having osteomyelitis involving the affected region of bone at the time\r\nof the clinical onset of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having a malignant neoplasm involving the affected region of bone at\r\nthe time of the clinical onset of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a benign neoplasm involving the affected region of bone at the\r\ntime of the clinical onset of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having osteogenesis imperfecta at the time of the clinical onset of\r\nfracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for minimal trauma fracture only:\r\n(a) smoking at least 20 pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\nfracture, and where smoking has ceased, the clinical onset of\r\nfracture has occurred within ten years of cessation;\r\n(b) drinking at least 55 kilograms of alcohol within the five years\r\nbefore the clinical onset of fracture;\r\n(c) having diabetes mellitus at the time of the clinical onset of\r\nfracture;\r\n(d) being infected with human immunodeficiency virus at the time\r\nof the clinical onset of fracture;\r\n(e) being treated with a glucocorticoid drug as specified before the\r\nclinical onset of fracture;\r\n(f) having rheumatoid arthritis at the time of the clinical onset of\r\nfracture; or\r\n(g) being treated with an aromatase inhibitor before the clinical\r\nonset of fracture",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals 20 tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    }, {
+      "term" : "minimal trauma fracture",
+      "definition" : "means a fracture that results from mechanical\r\nforces that would not ordinarily result in a fracture."
+    }, {
+      "term" : "glucocorticoid drug as specified",
+      "definition" : "means any of the corticosteroid drugs listed\r\nin the following table, in the specified combinations of administration, dose\r\nlevel and duration of treatment:\r\nDrug or Class of Mode* Dose Minimum Duration\r\nDrugs Duration of\r\nTreatment\r\nprednisolone or  0.5 within the\r\npharmacologically grams 6 months 5 years\r\nequivalent over 6\r\nglucocorticoid IV, IM, months\r\nO within the\r\n 3\r\nNS 10 years\r\ngrams\r\n 10 NS NS\r\ngrams\r\nAbbreviations: IV = intravenous; IM = intramuscular; O = oral; NS = not specified."
+    } ],
+    "conditionVariant" : {
+      "name" : "minimal trauma fracture",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\nfracture, and where smoking has ceased, the clinical onset of\r\nfracture has occurred within ten years of cessation"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "drinking at least 55 kilograms of alcohol within the five years\r\nbefore the clinical onset of fracture"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having diabetes mellitus at the time of the clinical onset of\r\nfracture"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "being infected with human immunodeficiency virus at the time\r\nof the clinical onset of fracture"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "being treated with a glucocorticoid drug as specified before the\r\nclinical onset of fracture"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "having rheumatoid arthritis at the time of the clinical onset of\r\nfracture"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "being treated with an aromatase inhibitor before the clinical\r\nonset of fracture"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(13)",
+    "text" : "having physical trauma to the affected bone at the time of the clinical\r\nworsening of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "for stress fracture only, having repetitive loading stress to the affected\r\nregion of the body at the time of the clinical worsening of fracture",
+    "definedTerms" : [ {
+      "term" : "repetitive loading stress",
+      "definition" : "means ongoing physical activity which involves at\r\nleast a moderate level of weight bearing exercise such as speed walking,\r\njogging, athletics or running, or weight training for the upper limbs."
+    } ],
+    "conditionVariant" : {
+      "name" : "stress fracture",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having osteonecrosis involving the affected region of bone at the time\r\nof the clinical worsening of fracture",
+    "definedTerms" : [ {
+      "term" : "osteonecrosis",
+      "definition" : "means a disease of bone where death of bone tissue occurs as\r\na result of the temporary or permanent loss of blood supply to bone.\r\nOsteonecrosis is also known as avascular necrosis, aseptic necrosis or\r\nischaemic necrosis.\r\npack-years of cigarettes, or the equivalent thereof in other tobacco"
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having osteomyelitis involving the affected region of bone at the time\r\nof the clinical worsening of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having osteogenesis imperfecta at the time of the clinical worsening of\r\nfracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\nfracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "being treated with a glucocorticoid drug as specified before the clinical\r\nworsening of fracture",
+    "definedTerms" : [ {
+      "term" : "glucocorticoid drug as specified",
+      "definition" : "means any of the corticosteroid drugs listed\r\nin the following table, in the specified combinations of administration, dose\r\nlevel and duration of treatment:\r\nDrug or Class of Mode* Dose Minimum Duration\r\nDrugs Duration of\r\nTreatment\r\nprednisolone or  0.5 within the\r\npharmacologically grams 6 months 5 years\r\nequivalent over 6\r\nglucocorticoid IV, IM, months\r\nO within the\r\n 3\r\nNS 10 years\r\ngrams\r\n 10 NS NS\r\ngrams\r\nAbbreviations: IV = intravenous; IM = intramuscular; O = oral; NS = not specified."
+    } ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having rheumatoid arthritis at the time of the clinical worsening of\r\nfracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "being treated with an aromatase inhibitor before the clinical worsening\r\nof fracture",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "inability to obtain appropriate clinical management for fracture",
+    "definedTerms" : [ ]
+  } ]
+}

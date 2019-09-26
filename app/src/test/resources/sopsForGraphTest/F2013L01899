@@ -1,0 +1,192 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01899",
+  "instrumentNumber" : "78/2013",
+  "citation" : "Statement of Principles concerning epileptic seizure No. 78 of 2013",
+  "conditionName" : "epileptic seizure",
+  "effectiveFrom" : "2013-11-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a moderate to severe traumatic brain injury within the ten years\r\nbefore the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having concussion within the three months before the clinical onset of\r\nan epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a surgical procedure which involves a craniotomy within the ten\r\nyears before the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a cerebrovascular accident or subarachnoid haemorrhage within\r\nthe ten years before the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having an hypoxic cerebral insult within the one month before the\r\nclinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "an hypoxic cerebral insult",
+      "definition" : "means an event which results in either a\ndecreased rate of cerebral blood flow or decreased oxygen content of cerebral\narterial blood for a sustained period"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having central nervous system systemic lupus erythematosus at the\r\ntime of the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having an autoimmune disorder affecting the brain at the time of the\r\nclinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "an autoimmune disorder affecting the brain",
+      "definition" : "means an autoimmune\ndisorder with central nervous system involvement and includes paraneoplastic\nencephalitis, Hashimoto's encephalopathy and Behcet's disease"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having carbon monoxide poisoning within the one month before the\r\nclinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having an intracranial space-occupying lesion within the ten years\r\nbefore the clinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "an intracranial space-occupying lesion",
+      "definition" : "means a pathological entity\noccupying a delineated area within the cranial cavity, including intracranial\naneurysm, cerebral cyst, intracranial neoplasm or cerebral, subdural or\nextradural abscess"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an infection of the brain or meninges within the six months\r\nbefore the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "using a drug from Specified List 1 within the 24 hours before the\r\nclinical onset of an epileptic seizure, and where multiple seizures\r\noccur, the first seizure occurred within the 24 hours of using the drug",
+    "definedTerms" : [ {
+      "term" : "a drug from Specified List 1",
+      "definition" : "means:\n(a) an inhalant;\n(b) amphetamine and its derivatives, including\nmethylenedioxymethamphetamine (MDMA);\n(c) cocaine;\n(d) ephedrine;\n(e) gamma hydroxybutyrate (GHB);\n(f) heroin;\n(g) methylphenidate;\n(h) phencyclidine; or\n(i) phenylpropanolamine"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having dementia at the time of the clinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "dementia",
+      "definition" : "means:\n(a) Alzheimer-type dementia;\n(b) Creutzfeldt-Jakob disease;\n(c) dementia pugilistica;\n(d) dementia with Lewy bodies;\n(e) frontotemporal dementia;\n(f) Huntington's chorea;\n(g) Parkinson's disease with dementia;\n(h) vascular dementia; or\n(i) any other type of dementia"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "experiencing a specified physical stimulus immediately before the\r\nclinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "a specified physical stimulus",
+      "definition" : "means a specified activity or physical\nprocess from the following list:\n(a) dehydration;\n(b) heat stroke;\n(c) sleep deprivation; or\n(d) strenuous exercise"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having alcohol intoxication, alcohol withdrawal or a moderate to\r\nsevere alcohol use disorder, including alcohol dependence, at the time\r\nof the clinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "alcohol withdrawal",
+      "definition" : "means ceasing or reducing the intake of alcohol after a\ncontinuous period of at least two weeks of heavy alcohol use"
+    }, {
+      "term" : "alcohol intoxication",
+      "definition" : "means recently consuming a quantity of alcohol such\nthat the person exhibits the following behaviours and signs and symptoms:\n(a) clinically significant problematic behavioural or psychological changes\n(e.g., inappropriate sexual or aggressive behaviour, mood lability,\nimpaired judgment) that developed during, or shortly after, alcohol\ningestion;\n(b) one (or more) of the following signs or symptoms developing during,\nor shortly after, alcohol use:\n(i) slurred speech;\n(ii) incoordination;\n(iii) unsteady gait;\n(iv) nystagmus;\n(v) impairment in attention or memory; or\n(vi) stupor or coma; and\n(c) the signs or symptoms are not attributable to another medical condition\nand are not better explained by another mental disorder, including\nintoxication with another substance"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having an electrolyte imbalance at the time of the clinical onset of an\r\nepileptic seizure",
+    "definedTerms" : [ {
+      "term" : "an electrolyte imbalance",
+      "definition" : "means hyponatraemia, hypocalcaemia,\nhypercalcaemia, hypomagnesaemia or hypophosphataemia"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having hypoglycaemia at the time of the clinical onset of an epileptic\r\nseizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having non-ketotic hyperglycaemia at the time of the clinical onset of\r\nan epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having acute liver failure at the time of the clinical onset of an epileptic\r\nseizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having:\r\n(i) acute renal failure; or\r\n(ii) chronic renal disease requiring renal transplantation or dialysis;\r\nat the time of the clinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "acute renal failure",
+      "definition" : "means a kidney disorder characterised by rapid decline\nof glomerular filtration rate and retention of nitrogenous waste products"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "undergoing renal dialysis at the time of the clinical onset of an epileptic\r\nseizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "undergoing a solid organ or stem cell transplantation within the one\r\nmonth before the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, within the 24 hours before the clinical onset of an\r\nepileptic seizure, and where multiple seizures occur, the first seizure\r\noccurred within the 24 hours of being treated with the drug or the drug\r\nfrom the class of drugs",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "taking a drug which is associated in the individual with the\r\ndevelopment of an epileptic seizure within the 24 hours of first taking\r\nthe drug, and the redevelopment of an epileptic seizure on rechallenge\r\nwith the same drug",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "reducing the intake of, or withdrawing from, a chronically administered\r\nsedative drug within the two weeks before the clinical onset of an\r\nepileptic seizure",
+    "definedTerms" : [ {
+      "term" : "sedative drug",
+      "definition" : "means a psychoactive agent used therapeutically to suppress\ncentral nervous system activity, including barbiturates, benzodiazepines,\nanticonvulsants, sedatives and hypnotics"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having malignant hypertension, hypertensive encephalopathy or\r\neclampsia within the four weeks before the clinical onset of an epileptic\r\nseizure",
+    "definedTerms" : [ {
+      "term" : "malignant hypertension",
+      "definition" : "means a severe hypertensive state characterised\nby papilloedema of the ocular fundus, retinal haemorrhage and exudates,\ncardiac decompensation and declining renal function"
+    }, {
+      "term" : "eclampsia",
+      "definition" : "means a condition occurring in pregnant or puerperal women,\ncharacterised by hypertension, coma, convulsions, oedema or proteinuria"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having a medical condition from the specified list affecting the brain at\r\nthe time of the clinical onset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "a medical condition from the specified list",
+      "definition" : "means:\n(a) acute hepatic porphyria;\n(b) acute intermittent porphyria;\n(c) cerebral hyperperfusion syndrome;\n(d) Erdheim-Chester disease;\n(e) iron overload;\n(f) multiple sclerosis;\n(g) posterior reversible encephalopathy syndrome;\n(h) sarcoidosis;\n(i) sickle cell disease;\n(j) type 3 Gaucher disease;\n(k) Wegener's granulomatosis; or\n(l) Wilson's disease"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "being exposed to partial pressures of oxygen above 1.2 atmospheres\r\nabsolute (120 kPa) from:\r\n(i) the use of closed or semi-closed rebreathing apparatus;\r\n(ii) saturation diving;\r\n(iii) receiving hyperbaric oxygen therapy; or\r\n(iv) breathing oxygen enriched air during diving;\r\nwithin the 24 hours before the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "being exposed to an abrupt reduction in the pressure of the air\r\nsurrounding the person, resulting in the development of pulmonary\r\nbarotrauma, arterial gas embolism or decompression illness, within the\r\n24 hours before the clinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a neurotoxic\r\nsubstance, or a food or compound containing a neurotoxic substance,\r\nwithin the 24 hours before the clinical onset of an epileptic seizure, and\r\n(i) other signs and symptoms of poisoning are present; and\r\n(ii) where multiple seizures occur, the first seizure occurred within\r\nthe 24 hours of inhaling, ingesting or having cutaneous contact\r\nwith the neurotoxic substance, or a food or compound\r\ncontaining the neurotoxic substance",
+    "definedTerms" : [ {
+      "term" : "signs and symptoms of poisoning",
+      "definition" : "means one of the following signs and\nsymptoms which are not attributable to epileptic seizure:\n(a) behavioural impairments including loss of motor control and loss of\nconsciousness;\n(b) blurred vision and eye irritation;\n(c) central nervous system excitation and depression, including agitation,\nlethargy and perceptual disturbances;\n(d) cough, acute lung injury and respiratory depression or failure;\n(e) dermatitis and skin irritation;\n(f) ear, nose and throat irritation and hypersalivation;\n(g) gastrointestinal symptoms, including nausea, diarrhoea and vomiting;\nor\n(h) neurocognitive deficits, including stupor, confusion and memory\ndeficits"
+    } ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "being poisoned with a specified metal, as demonstrated by clinical,\r\nhaematological or biochemical evidence, at the time of the clinical\r\nonset of an epileptic seizure",
+    "definedTerms" : [ {
+      "term" : "a specified metal",
+      "definition" : "means:\n(a) lead;\n(b) nickel; or\n(c) tungsten"
+    } ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "experiencing animal envenomation within the 24 hours before the\r\nclinical onset of an epileptic seizure",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(gg)",
+    "text" : "inability to obtain appropriate clinical management for epileptic\r\nseizure",
+    "definedTerms" : [ ]
+  } ]
+}

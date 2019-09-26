@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00008",
+  "instrumentNumber" : "43/2015",
+  "citation" : "Statement of Principles concerning multiple osteochondromatosis No. 43 of 2015",
+  "conditionName" : "multiple osteochondromatosis",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "Q78.6"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for multiple osteochondromatosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for multiple osteochondromatosis",
+    "definedTerms" : [ ]
+  } ]
+}

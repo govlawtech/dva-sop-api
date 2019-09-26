@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01789",
+  "instrumentNumber" : "48/2012",
+  "citation" : "Statement of Principles concerning physical injury due to munitions discharge No. 48 of 2012",
+  "conditionName" : "physical injury due to munitions discharge",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "sustaining physical injury due to munitions discharge",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for physical injury\r\ndue to munitions discharge",
+    "definedTerms" : [ ]
+  } ]
+}

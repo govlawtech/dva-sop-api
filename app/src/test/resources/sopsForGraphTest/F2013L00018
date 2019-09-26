@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00018",
+  "instrumentNumber" : "3/2013",
+  "citation" : "Statement of Principles concerning ankylosing spondylitis No. 3 of 2013",
+  "conditionName" : "ankylosing spondylitis",
+  "effectiveFrom" : "2013-01-09",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M45"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of ankylosing\r\nspondylitis, and where smoking has ceased, the clinical worsening of\r\nankylosing spondylitis has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for ankylosing\r\nspondylitis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01349",
+  "instrumentNumber" : "74/2016",
+  "citation" : "Statement of Principles concerning incisional hernia (Balance of Probabilities) (No. 74 of 2016)",
+  "conditionName" : "incisional hernia",
+  "effectiveFrom" : "2016-09-26",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K43.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K43.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K43.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having an incision for a surgical procedure before the clinical onset of\r\nincisional hernia, where the hernia is at the site of that incision",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having a pre-existing scar at the site of the incision for a surgical\r\nprocedure before the clinical onset of incisional hernia, where the\r\nhernia is at the site of that incision",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having a superficial infection of the affected incision within 30 days of\r\nthe surgical procedure, in the five years before the clinical onset of\r\nincisional hernia",
+    "definedTerms" : [ {
+      "term" : "superficial infection of the affected incision",
+      "definition" : "means an infection involving\r\nonly the skin or subcutaneous tissue of the incision, other than a stitch\r\nabscess in which there is minimal inflammation and discharge confined to\r\nthe points of suture penetration."
+    } ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having a deep infection of the affected incision within 90 days of the\r\nsurgical procedure, in the five years before the clinical onset of\r\nincisional hernia",
+    "definedTerms" : [ {
+      "term" : "deep infection of the affected incision",
+      "definition" : "means:\r\n(a) an infection involving the deep soft tissues (fascial and muscle layers)\r\nof the incision; or\r\n(b) an infection of any part of the anatomy, other than the incision, which\r\nwas opened or manipulated during the surgical procedure, including\r\norgans and spaces.\r\nincisional hernia—see subsection 6(2)."
+    } ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having wound dehiscence as specified of the affected incision before\r\nthe clinical onset of incisional hernia",
+    "definedTerms" : [ {
+      "term" : "wound dehiscence as specified",
+      "definition" : "means disruption of all layers of a surgical\r\nwound, including the fascia, that occurs within 30 days of the surgical\r\nprocedure."
+    } ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "being obese before the clinical onset of incisional hernia, and at the\r\ntime of the surgical incision at the affected site",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "being treated with sirolimus or everolimus as specified before the\r\nclinical onset of incisional hernia, where the treatment occurred within\r\nthe three years following the surgical incision",
+    "definedTerms" : [ {
+      "term" : "being treated with sirolimus or everolimus as specified",
+      "definition" : "means treatment\r\nwith sirolimus or everolimus for the purpose of immunosuppression, and\r\ndoes not include drug eluting stents that slowly release these drugs."
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having Marfan syndrome before the clinical onset of incisional hernia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(9)",
+    "text" : "having increased intra-abdominal pressure as specified at the time of\r\nthe clinical worsening of incisional hernia",
+    "definedTerms" : [ {
+      "term" : "increased intra-abdominal pressure as specified",
+      "definition" : "means acute or chronic\r\n(intermittent or continuous) elevation of pressure within the abdominal\r\ncavity due to:\r\n(a) anti-G straining manoeuvre;\r\n(b) ascites;\r\n(c) chronic ambulatory peritoneal dialysis;\r\n(d) extensive intra-abdominal neoplastic disease;\r\n(e) lifting heavy weights;\r\n(f) physical trauma to the abdomen involving a direct blow to the\r\nabdomen;\r\n(g) pneumoperitoneum;\r\n(h) pregnancy;\r\n(i) significant coughing;\r\n(j) significant sneezing;\r\n(k) straining at micturition due to bladder outlet or urethral obstruction; or\r\n(l) straining at stool due to constipation or diarrhoea."
+    } ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "inability to obtain appropriate clinical management for incisional\r\nhernia",
+    "definedTerms" : [ ]
+  } ]
+}

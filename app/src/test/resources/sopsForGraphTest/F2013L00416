@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00416",
+  "instrumentNumber" : "17/2013",
+  "citation" : "Statement of Principles concerning primary myelofibrosis No. 17 of 2013",
+  "conditionName" : "primary myelofibrosis",
+  "effectiveFrom" : "2013-03-13",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for primary myelofibrosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for primary myelofibrosis",
+    "definedTerms" : [ ]
+  } ]
+}

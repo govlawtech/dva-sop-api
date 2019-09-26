@@ -1,0 +1,33 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00254",
+  "instrumentNumber" : "25/2016",
+  "citation" : "Statement of Principles concerning Lyme disease (Reasonable Hypothesis) (No. 25 of 2016)",
+  "conditionName" : "Lyme disease",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A69.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "being in an area that is endemic for Lyme disease at least three days\r\nbefore the clinical onset of Lyme disease",
+    "definedTerms" : [ {
+      "term" : "an area that is endemic for Lyme disease",
+      "definition" : "means an area with an established\r\nvector tick population and evidence of enzootic transmission of relevant\r\nBorrelia species between the tick and the resident animal population. This\r\ndefinition applies to the United States of America, Europe, the United\r\nKingdom, Russia, Japan, China, Iraq, Iran and Afghanistan.\r\nNote: vector tick is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "for cases presenting with erythema migrans, being in an area that is\r\nendemic for Lyme disease between three and 32 days before the\r\nclinical onset of Lyme disease",
+    "definedTerms" : [ {
+      "term" : "erythema migrans",
+      "definition" : "means an expanding red or bluish-red patch with or\r\nwithout central clearing that is at least five centimetres in diameter; or if less\r\nthan five centimetres in diameter, there is also a history of a bite from a\r\nvector tick, a delay in appearance after the tick bite of at least two days and\r\nan expanding rash at the site of the tick bite.\r\nNote: vector tick is also defined in the Schedule 1 - Dictionary."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(3)",
+    "text" : "inability to obtain appropriate clinical management for Lyme disease",
+    "definedTerms" : [ ]
+  } ]
+}

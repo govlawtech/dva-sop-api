@@ -1,0 +1,223 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00638",
+  "instrumentNumber" : "60/2019",
+  "citation" : "Statement of Principles concerning gout (Balance of Probabilities) (No. 60 of 2019)",
+  "conditionName" : "gout",
+  "effectiveFrom" : "2019-05-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M10"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a haematological disorder from the specified list of\r\nhaematological disorders at the time of the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being treated with a drug from a class of drugs from the specified list of\r\nantihypertensive drugs for a continuous period of at least seven days,\r\nbefore the clinical onset of gout, where the last dose of the drug was\r\ntaken within the three months before the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being treated with daily doses of low-dose aspirin (≤ 325 milligrams)\r\nfor two consecutive days, before the clinical onset of gout, where the\r\nlast dose of the drug was taken within the 48 hours before the clinical\r\nonset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nSpecified List 1 of drugs within the 48 hours before the clinical onset\r\nof gout",
+    "definedTerms" : [ {
+      "term" : "Specified List 1 of drugs",
+      "definition" : "means:\r\n(a) allopurinol;\r\n(b) azathioprine;\r\n(c) cyclosporine;\r\n(d) ethambutol;\r\n(e) mycophenolate;\r\n(f) non-losartan angiotensin II receptor blockers (ARBs);\r\n(g) probenecid;\r\n(h) pyrazinamide; or\r\n(i) tacrolimus (excluding topical application)."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "undergoing chemotherapy for a malignant neoplasm within the seven\r\ndays before the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being overweight at the time of the clinical onset of gout",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "consuming an average of at least 120 grams per week of alcohol, for at\r\nleast the three months before the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "consuming at least 70 grams of alcohol within the 48 hours before the\r\nclinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "consuming an average of at least 750 grams per week of meat or offal,\r\nfor at least the three months before the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "consuming at least 300 grams of meat or offal within the 48 hours\r\nbefore the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "consuming an average of at least 120 grams per week of seafood, for at\r\nleast the three months before the clinical onset of gout",
+    "definedTerms" : [ {
+      "term" : "seafood",
+      "definition" : "means shellfish or fish."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "consuming at least 120 grams of seafood within the 48 hours before the\r\nclinical onset of gout",
+    "definedTerms" : [ {
+      "term" : "seafood",
+      "definition" : "means shellfish or fish."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "consuming an average of at least 400 millilitres per day of:\r\n(a) fruit juice; or\r\n(b) non-diet soft drink or other manufactured drink sweetened with\r\nfructose or sucrose;\r\nalone or in any combination, for at least the three months before the\r\nclinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "fasting for a continuous period of at least 24 hours within the 48 hours\r\nbefore the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "being dehydrated for a continuous period of at least 24 hours within the\r\n48 hours before the clinical onset of gout",
+    "definedTerms" : [ {
+      "term" : "being dehydrated",
+      "definition" : "means being deficient in body water, such as could occur\r\nafter strenuous physical activity, vomiting, diarrhoea or febrile illness,\r\nwithout adequate rehydration."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "being postmenopausal at the time of the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having a solid organ transplant, stem cell transplant or bone marrow\r\ntransplant before the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having surgery within the 48 hours before the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having lead nephropathy before the clinical onset of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having psoriasis or psoriatic arthritis at the time of the clinical onset of\r\ngout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having chronic kidney disease at the time of the clinical onset of gout",
+    "definedTerms" : [ {
+      "term" : "chronic kidney disease",
+      "definition" : "means an abnormality of kidney structure or function\r\nthat has been present for at least three months.\r\nNote: abnormality of kidney structure or function is also defined in the Schedule 1 - Dictionary.\r\ngout—see subsection 7(2)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(22)",
+    "text" : "having a haematological disorder from the specified list of\r\nhaematological disorders at the time of the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "being treated with a drug from a class of drugs from the specified list of\r\nantihypertensive drugs for a continuous period of at least seven days,\r\nbefore the clinical worsening of gout, where the last dose of the drug\r\nwas taken within the three months before the clinical worsening of\r\ngout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "being treated with daily doses of low-dose aspirin (≤ 325 milligrams)\r\nfor two consecutive days, before the clinical worsening of gout, where\r\nthe last dose of the drug was taken within the 48 hours before the\r\nclinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nSpecified List 2 of drugs at the time of the clinical worsening of gout",
+    "definedTerms" : [ {
+      "term" : "Specified List 2 of drugs",
+      "definition" : "means:\r\n(a) allopurinol;\r\n(b) azathioprine;\r\n(c) cyclosporine;\r\n(d) ethambutol;\r\n(e) febuxostat;\r\n(f) mycophenolate;\r\n(g) non-losartan angiotensin II receptor blockers (ARBs);\r\n(h) probenecid;\r\n(i) pyrazinamide; or\r\n(j) tacrolimus (excluding topical application)."
+    } ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "undergoing chemotherapy for a malignant neoplasm within the seven\r\ndays before the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "being overweight at the time of the clinical worsening of gout",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "consuming an average of at least 120 grams per week of alcohol, for at\r\nleast the three months before the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "consuming at least 70 grams of alcohol within the 48 hours before the\r\nclinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "consuming an average of at least 750 grams per week of meat or offal,\r\nfor at least the three months before the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "consuming at least 300 grams of meat or offal within the 48 hours\r\nbefore the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "consuming an average of at least 120 grams per week of seafood, for at\r\nleast the three months before the clinical worsening of gout",
+    "definedTerms" : [ {
+      "term" : "seafood",
+      "definition" : "means shellfish or fish."
+    } ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "consuming at least 120 grams of seafood within the 48 hours before the\r\nclinical worsening of gout",
+    "definedTerms" : [ {
+      "term" : "seafood",
+      "definition" : "means shellfish or fish."
+    } ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "consuming an average of at least 400 millilitres per day of:\r\n(a) fruit juice; or\r\n(b) non-diet soft drink or other manufactured drink sweetened with\r\nfructose or sucrose;\r\nalone or in any combination, for at least the three months before the\r\nclinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "fasting for a continuous period of at least 24 hours within the 48 hours\r\nbefore the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "being dehydrated for a continuous period of at least 24 hours within the\r\n48 hours before the clinical worsening of gout",
+    "definedTerms" : [ {
+      "term" : "being dehydrated",
+      "definition" : "means being deficient in body water, such as could occur\r\nafter strenuous physical activity, vomiting, diarrhoea or febrile illness,\r\nwithout adequate rehydration."
+    } ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "being postmenopausal at the time of the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(38)",
+    "text" : "having a solid organ transplant, stem cell transplant or bone marrow\r\ntransplant before the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(39)",
+    "text" : "having surgery within the 48 hours before the clinical worsening of\r\ngout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(40)",
+    "text" : "having lead nephropathy before the clinical worsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(41)",
+    "text" : "having psoriasis or psoriatic arthritis at the time of the clinical\r\nworsening of gout",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(42)",
+    "text" : "having chronic kidney disease at the time of the clinical worsening of\r\ngout",
+    "definedTerms" : [ {
+      "term" : "chronic kidney disease",
+      "definition" : "means an abnormality of kidney structure or function\r\nthat has been present for at least three months.\r\nNote: abnormality of kidney structure or function is also defined in the Schedule 1 - Dictionary.\r\ngout—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(43)",
+    "text" : "inability to obtain appropriate clinical management for gout",
+    "definedTerms" : [ ]
+  } ]
+}

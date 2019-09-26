@@ -1,0 +1,164 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00564",
+  "instrumentNumber" : "44/2016",
+  "citation" : "Statement of Principles concerning intervertebral disc prolapse (Balance of Probabilities) (No. 44 of 2016)",
+  "conditionName" : "intervertebral disc prolapse",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M50.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M50.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M50.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M51.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M51.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M51.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a trauma to the relevant disc within the 24 hours before the\r\nclinical onset of intervertebral disc prolapse",
+    "definedTerms" : [ {
+      "term" : "trauma to the relevant disc",
+      "definition" : "means an injury, including G force-induced\r\ninjury, to the affected intervertebral disc that causes the development of\r\nsymptoms and signs of pain, and tenderness, and either altered mobility or\r\nrange of movement of that part of the spine. These symptoms and signs\r\nmust last for a period of at least seven days following their onset; save for\r\nwhere medical intervention for the  has occurred\r\nand that medical intervention involves either:\r\n(a) immobilisation of that part of the spine by splinting, or similar external\r\nagent;\r\n(b) injection of corticosteroids or local anaesthetics into that part of the\r\nspine; or\r\n(c) surgery to that part of the spine.\r\nNote: G force is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a penetrating injury to the relevant disc or adjacent vertebral\r\nbody, within the 24 hours before the clinical onset of intervertebral\r\ndisc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "physically carrying or lifting loads of at least ten kilograms, to a\r\ncumulative total Load-Factor of at least 300 000, within the five years\r\nbefore the clinical onset of intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "for intervertebral disc prolapse of the cervical spine only:\r\n(a) using a hand-held, vibrating, percussive, industrial tool for an\r\naverage of at least 30 hours per week, for a period of at least two\r\nyears within the ten years before the clinical onset of\r\nintervertebral disc prolapse; or\r\n(b) flying in high performance aircraft for a cumulative total of at\r\nleast 1 000 hours within any ten year period before the clinical\r\nonset of intervertebral disc prolapse, and where the clinical onset\r\nof intervertebral disc prolapse occurs within the 25 years\r\nfollowing that period",
+    "definedTerms" : [ {
+      "term" : "high performance aircraft",
+      "definition" : "means an aircraft capable of generating an\r\nacceleration force (G force) of four G or more, during routine, normal\r\noperations.\r\nNote: G force is also defined in the Schedule 1 - Dictionary.\r\nintervertebral disc prolapse—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "intervertebral disc prolapse of the cervical spine",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "using a hand-held, vibrating, percussive, industrial tool for an\r\naverage of at least 30 hours per week, for a period of at least two\r\nyears within the ten years before the clinical onset of\r\nintervertebral disc prolapse"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "flying in high performance aircraft for a cumulative total of at\r\nleast 1 000 hours within any ten year period before the clinical\r\nonset of intervertebral disc prolapse, and where the clinical onset\r\nof intervertebral disc prolapse occurs within the 25 years\r\nfollowing that period"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "driving a motor vehicle for an average of at least 30 hours per week,\r\nfor a period of at least two years within the ten years before the clinical\r\nonset of intervertebral disc prolapse",
+    "definedTerms" : [ {
+      "term" : "motor vehicle",
+      "definition" : "means a motorised vehicle which imparts vibration to the\r\nwhole body, such as a car, truck, motor cycle, tractor, jeep, armoured\r\npersonnel carrier, tank, or a construction vehicle, such as a forklift,\r\nbulldozer, crane, steam shovel, backhoe or steam roller."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "flying a powered aircraft for a cumulative total of at least 5 000 hours\r\nwithin the ten years before the clinical onset of intervertebral disc\r\nprolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "flying in a helicopter as operational aircrew, for a cumulative total of\r\nat least 5 000 hours within the ten years before the clinical onset of\r\nintervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of intervertebral\r\ndisc prolapse, and where smoking has ceased, the clinical onset of\r\nintervertebral disc prolapse has occurred within five years of cessation",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals 20 tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having bacterial infection of the relevant disc at the time of the clinical\r\nworsening of intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being obese for at least five years within the 25 years before the\r\nclinical onset of intervertebral disc prolapse",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(11)",
+    "text" : "having a trauma to the relevant disc within the 24 hours before the\r\nclinical worsening of intervertebral disc prolapse",
+    "definedTerms" : [ {
+      "term" : "trauma to the relevant disc",
+      "definition" : "means an injury, including G force-induced\r\ninjury, to the affected intervertebral disc that causes the development of\r\nsymptoms and signs of pain, and tenderness, and either altered mobility or\r\nrange of movement of that part of the spine. These symptoms and signs\r\nmust last for a period of at least seven days following their onset; save for\r\nwhere medical intervention for the  has occurred\r\nand that medical intervention involves either:\r\n(a) immobilisation of that part of the spine by splinting, or similar external\r\nagent;\r\n(b) injection of corticosteroids or local anaesthetics into that part of the\r\nspine; or\r\n(c) surgery to that part of the spine.\r\nNote: G force is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a penetrating injury to the relevant disc or adjacent vertebral\r\nbody, within the 24 hours before the clinical worsening of\r\nintervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "physically carrying or lifting loads of at least ten kilograms, to a\r\ncumulative total Load-Factor of at least 300 000, within the five years\r\nbefore the clinical worsening of intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "for intervertebral disc prolapse of the cervical spine only:\r\n(a) using a hand-held, vibrating, percussive, industrial tool for an\r\naverage of at least 30 hours per week, for a period of at least two\r\nyears within the ten years before the clinical worsening of\r\nintervertebral disc prolapse; or\r\n(b) flying in high performance aircraft for a cumulative total of at\r\nleast 1 000 hours within any ten year period before the clinical\r\nworsening of intervertebral disc prolapse, and where the clinical\r\nworsening of intervertebral disc prolapse occurs within the 25\r\nyears following that period",
+    "definedTerms" : [ {
+      "term" : "high performance aircraft",
+      "definition" : "means an aircraft capable of generating an\r\nacceleration force (G force) of four G or more, during routine, normal\r\noperations.\r\nNote: G force is also defined in the Schedule 1 - Dictionary.\r\nintervertebral disc prolapse—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "intervertebral disc prolapse of the cervical spine",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "using a hand-held, vibrating, percussive, industrial tool for an\r\naverage of at least 30 hours per week, for a period of at least two\r\nyears within the ten years before the clinical worsening of\r\nintervertebral disc prolapse"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "flying in high performance aircraft for a cumulative total of at\r\nleast 1 000 hours within any ten year period before the clinical\r\nworsening of intervertebral disc prolapse, and where the clinical\r\nworsening of intervertebral disc prolapse occurs within the 25\r\nyears following that period"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "driving a motor vehicle for an average of at least 30 hours per week,\r\nfor a period of at least two years within the ten years before the clinical\r\nworsening of intervertebral disc prolapse",
+    "definedTerms" : [ {
+      "term" : "motor vehicle",
+      "definition" : "means a motorised vehicle which imparts vibration to the\r\nwhole body, such as a car, truck, motor cycle, tractor, jeep, armoured\r\npersonnel carrier, tank, or a construction vehicle, such as a forklift,\r\nbulldozer, crane, steam shovel, backhoe or steam roller."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "flying a powered aircraft for a cumulative total of at least 5 000 hours\r\nwithin the ten years before the clinical worsening of intervertebral disc\r\nprolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "flying in a helicopter as operational aircrew, for a cumulative total of\r\nat least 5 000 hours within the ten years before the clinical worsening\r\nof intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of\r\nintervertebral disc prolapse, and where smoking has ceased, the\r\nclinical worsening of intervertebral disc prolapse has occurred within\r\nfive years of cessation",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals 20 tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having bacterial infection of the relevant disc at the time of the clinical\r\nworsening of intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "being obese for at least five years within the 25 years before the\r\nclinical worsening of intervertebral disc prolapse",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "inability to obtain appropriate clinical management for intervertebral\r\ndisc prolapse",
+    "definedTerms" : [ ]
+  } ]
+}

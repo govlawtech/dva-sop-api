@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01638",
+  "instrumentNumber" : "51/2013",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the anus and anal canal No. 51 of 2013",
+  "conditionName" : "malignant neoplasm of the anus and anal canal",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C21.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C21.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C21.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D01.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the anus or anal canal, and\r\n(i) smoking commenced at least five years before the clinical onset\r\nof malignant neoplasm of the anus or anal canal; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the anus or anal canal has occurred within 20 years\r\nof cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "acquiring persistent infection of the epithelium of the anal canal with\r\nan oncogenic human papilloma virus before the clinical onset of\r\nmalignant neoplasm of the anus or anal canal",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having receptive anal intercourse at least two years before the clinical\r\nonset of malignant neoplasm of the anus or anal canal",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of malignant neoplasm of the anus or anal canal",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with systemic immunosuppressive therapy for organ\r\ntransplantation or stem cell transplantation before the clinical onset of\r\nmalignant neoplasm of the anus or anal canal",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having perianal Crohn's disease for a continuous period of at least the\r\nten years before the clinical onset of malignant neoplasm of the anus or\r\nanal canal",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the anus or anal canal",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00908",
+  "instrumentNumber" : "76/2015",
+  "citation" : "Statement of Principles concerning myasthenia gravis (No. 76 of 2015)",
+  "conditionName" : "myasthenia gravis",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G70.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having systemic treatment with a drug from Specified List of Drugs\r\nNo. 1 at the time of the clinical onset of myasthenia gravis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "undergoing stem cell or bone marrow transplantation before the\r\nclinical onset of myasthenia gravis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "being treated with a drug from a class of drugs from Specified List of\r\nDrugs No. 2 at the time of the clinical worsening of myasthenia gravis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with a drug from Specified List of Drugs No. 3 at the\r\ntime of the clinical worsening of myasthenia gravis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having an injection of iothalamic acid, diatrizoate meglumine or\r\ndiatrizoate sodium, within the 24 hours before the clinical worsening\r\nof myasthenia gravis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "undergoing stem cell or bone marrow transplantation before the\r\nclinical worsening of myasthenia gravis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being pregnant within the six weeks before the clinical worsening of\r\nmyasthenia gravis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "inability to obtain appropriate clinical management for myasthenia\r\ngravis",
+    "definedTerms" : [ ]
+  } ]
+}

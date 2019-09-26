@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01147",
+  "instrumentNumber" : "85/2014",
+  "citation" : "Statement of Principles concerning chronic lymphocytic leukaemia/small lymphocytic lymphoma No. 85 of 2014",
+  "conditionName" : "chronic lymphocytic leukaemia/small lymphocytic lymphoma",
+  "effectiveFrom" : "2014-09-22",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for chronic lymphocytic leukaemia/small lymphocytic lymphoma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for chronic lymphocytic leukaemia/small lymphocytic lymphoma",
+    "definedTerms" : [ ]
+  } ]
+}

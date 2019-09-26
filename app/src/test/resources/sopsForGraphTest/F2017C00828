@@ -1,0 +1,145 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00828",
+  "instrumentNumber" : "93/2014",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the lung No. 93 of 2014",
+  "conditionName" : "malignant neoplasm of the lung",
+  "effectiveFrom" : "2014-11-17",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C33"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C34"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least one half of a pack-year of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\nmalignant neoplasm of the lung, where smoking commenced at least\r\nten years before the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space:\r\n(i) for at least 5 000 hours before the clinical onset of malignant\r\nneoplasm of the lung; and\r\n(ii) where the first exposure to that atmosphere commenced at least\r\nten years before the clinical onset of malignant neoplasm of the\r\nlung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(i) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(ii) where the first inhalation of respirable asbestos fibres\r\ncommenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(i) for a cumulative period of at least 1 000 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) where the first inhalation of respirable asbestos fibres\r\ncommenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being within 100 metres of an industrial coke oven for a cumulative\r\nperiod of at least 4 500 hours, at least ten years before the clinical\r\nonset of malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being heavily exposed to diesel engine exhaust for a cumulative period\r\nof at least 15 000 hours, at least ten years before the clinical onset of\r\nmalignant neoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "being heavily exposed to diesel engine exhaust",
+      "definition" : "means:\n(a) being an occupant in an enclosed diesel powered vehicle cabin\ncontaminated with diesel fumes;\n(b) repairing or servicing diesel engines; or\n(c) working in an enclosed space where diesel powered engines or motors\nare being operated"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being exposed to mustard gas at least ten years before the clinical onset\r\nof malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the lung, at least ten years before the clinical onset\r\nof malignant neoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being exposed to at least 100 Working Level Months of radon in an\r\nenclosed space before the clinical onset of malignant neoplasm of the\r\nlung, where the first exposure to radon occurred at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a pulmonary disease from the specified list at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "a pulmonary disease from the specified list",
+      "definition" : "means:\n(a) bacterial pneumonia;\n(b) chronic obstructive pulmonary disease; or\n(c) pulmonary tuberculosis"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "working as a painter for a cumulative period of at least 10 000 hours\r\nbefore the clinical onset of malignant neoplasm of the lung, where the\r\nfirst inhalation occurred at least ten years before the clinical onset of\r\nmalignant neoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "working as a painter",
+      "definition" : "means applying paint, including solvent- or water-\nbased conventional paint, spray paint, varnish, enamel, lacquer, water-\nemulsion and solution finish, nonaqueous dispersion or organosol, plastisol,\nand powder coating, during the course of activities such as building,\nmaintenance and construction, interior and exterior decoration, artistic\npainting, and wood and metal painting. This definition includes mixed\nactivities in which application of paint occurs with other tasks such as\nwallpapering and plastering. This definition includes activities that are\npreparatory to painting, such as mixing paints, maintaining painting\nequipment, and background preparation of surfaces for application of paint"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inhaling respirable crystalline silica dust in an enclosed space:\r\n(i) for a cumulative period of at least 3 000 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) at the time material containing crystalline silica was being\r\nproduced, excavated, drilled, cut or ground, or used in\r\nconstruction, manufacturing, cleaning or blasting; and\r\n(iii) where the first inhalation of respirable crystalline silica dust\r\ncommenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "inhaling respirable crystalline silica dust in an open environment:\r\n(i) for a cumulative period of at least 6 000 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) at the time material containing crystalline silica was being\r\nproduced, excavated, drilled, cut or ground, or used in\r\nconstruction, manufacturing, cleaning or blasting; and\r\n(iii) where the first inhalation of respirable crystalline silica dust\r\ncommenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "inhaling fumes, vapours or dusts of a metal or metalloid from the\r\nspecified list:\r\n(i) for a cumulative period of at least 3 500 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of fumes, vapours or dusts occurred at\r\nleast ten years before the clinical onset of malignant neoplasm of\r\nthe lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "inhaling fumes of bis(chloromethyl)ether or chloromethyl methyl\r\nether:\r\n(i) for a cumulative period of at least 3 500 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of fumes occurred at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having berylliosis at the time of the clinical onset of malignant\r\nneoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\nmalignant neoplasm of the lung, where the first exposure to arsenic\r\noccurred at least ten years before the clinical onset of malignant\r\nneoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten\nyears;\n(b) consuming drinking water resulting in a cumulative total arsenic\nexposure equivalent to having consumed drinking water containing at\nleast 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "inhaling smoke from the combustion of coal, wood, charcoal or\r\nanother solid biomass fuel while in an enclosed space with a visible\r\nsmoke haze:\r\n(i) for a cumulative period of at least 15 000 hours before the\r\nclinical onset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of smoke commenced at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "inhaling ambient polluted air as specified:\r\n(i) for a cumulative period of at least 70 000 hours before the\r\nclinical onset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of ambient polluted air occurred at least\r\nten years before the clinical onset of malignant neoplasm of the\r\nlung",
+    "definedTerms" : [ {
+      "term" : "ambient polluted air as specified",
+      "definition" : "means air with annual average levels of:\n(a) particulates with an aerodynamic diameter <2.5 μm (PM2.5) exceeding\n3\n30 μg/m ; or\n(b) particulates with an aerodynamic diameter <10 μm (PM10) exceeding\n3\n50 μg/m "
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "inhaling soot, whilst engaged in the cleaning of chimneys or flues:\r\n(i) for a cumulative period of at least 3 500 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of soot occurred at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "soot",
+      "definition" : "means a carbonaceous by-product material produced from the\nincomplete combustion of fossil fuel or other carbon-containing material,\nincluding airborne residual pyrolysed fuel particles such as coal, cenospheres,\ncharred wood, petroleum coke"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "inhaling mist from a strong inorganic acid:\r\n(i) for a cumulative period of at least 3 500 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of mist from a strong inorganic acid\r\ncommenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the lung; or\r\n(v) inhaling fumes in an enclosed space, while working in a specified\r\nindustry or manufacturing process generating high concentrations of\r\nvolatile polycyclic aromatic hydrocarbons:\r\n(i) for a cumulative period of at least 3 500 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of fumes occurred at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "mist from a strong inorganic acid",
+      "definition" : "means a visible suspension of liquid\nsulphuric, nitric or hydrochloric acid in gas"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "inhaling fumes of coal tar pitch or concentrated coal tar distillates\r\ninvolving exposure to high levels of volatile polycyclic aromatic\r\nhydrocarbons:\r\n(i) for a cumulative period of at least 3 500 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of fumes occurred at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung; or\r\n(x) inhaling fumes generated during iron and steel founding or in rubber\r\nproduction, while in an enclosed space in immediate proximity to\r\nproduction facilities:\r\n(i) for a cumulative period of at least 3 500 hours before the clinical\r\nonset of malignant neoplasm of the lung; and\r\n(ii) where the first inhalation of fumes occurred at least ten years\r\nbefore the clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "receiving MOPP at least five years before the clinical onset of\r\nmalignant neoplasm of the lung",
+    "definedTerms" : [ {
+      "term" : "MOPP",
+      "definition" : "means chemotherapy involving a combination of mechlorethamine,\noncovin, procarbazine and prednisone"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "in current smokers only, receiving 20 milligrams of beta-carotene\r\nsupplement daily for a continuous period of at least five years before\r\nthe clinical onset of malignant neoplasm of the lung",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(aa)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the lung",
+    "definedTerms" : [ ]
+  } ]
+}

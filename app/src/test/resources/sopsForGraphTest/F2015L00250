@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00250",
+  "instrumentNumber" : "55/2015",
+  "citation" : "Statement of Principles concerning seborrhoeic keratosis No. 55 of 2015",
+  "conditionName" : "seborrhoeic keratosis",
+  "effectiveFrom" : "2015-03-30",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L82"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having sunlight exposure to unprotected skin at the affected site for at\r\nleast 2 250 hours while in a tropical area, or having equivalent sunlight\r\nexposure in other latitude zones, before the clinical onset of\r\nseborrhoeic keratosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for seborrhoeic\r\nkeratosis",
+    "definedTerms" : [ ]
+  } ]
+}

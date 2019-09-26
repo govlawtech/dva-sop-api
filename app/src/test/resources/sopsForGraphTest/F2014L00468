@@ -1,0 +1,63 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00468",
+  "instrumentNumber" : "36/2014",
+  "citation" : "Statement of Principles concerning Hodgkin's lymphoma No. 36 of 2014",
+  "conditionName" : "Hodgkin's lymphoma",
+  "effectiveFrom" : "2014-05-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C81"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of Hodgkin's lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being infected with Epstein-Barr virus before the clinical onset of\r\nHodgkin's lymphoma",
+    "definedTerms" : [ {
+      "term" : "being infected with Epstein-Barr virus",
+      "definition" : "means serological evidence of\ninfection with Epstein-Barr virus"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "smoking at least 15 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of Hodgkin's\r\nlymphoma, and\r\n(i) smoking commenced at least ten years before the clinical onset\r\nof Hodgkin's lymphoma; and\r\n(ii) where smoking has ceased, the clinical onset of Hodgkin's\r\nlymphoma has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an autoimmune disease from the specified list before the\r\nclinical onset of Hodgkin's lymphoma",
+    "definedTerms" : [ {
+      "term" : "an autoimmune disease from the specified list",
+      "definition" : "means:\n(a) coeliac disease;\n(b) immune thrombocytopaenic purpura;\n(c) rheumatoid arthritis;\n(d) sarcoidosis;\n(e) Sjogren's syndrome; or\n(f) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing stem cell, bone marrow or solid organ transplantation\r\nbefore the clinical onset of Hodgkin's lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for Richter's syndrome only, having chronic lymphocytic\r\nleukaemia/small lymphocytic lymphoma at the time of the clinical\r\nonset of Hodgkin's lymphoma",
+    "definedTerms" : [ {
+      "term" : "Richter's syndrome",
+      "definition" : "means a form of high-grade large cell lymphoma,\ncharacterised by systemic symptoms, rapid tumour growth and extra-nodal\ninvolvement, which develops in patients with chronic lymphocytic leukaemia"
+    } ],
+    "conditionVariant" : {
+      "name" : "Richter's syndrome",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being obese for a continuous period of at least five years within the 20\r\nyears before the clinical onset of Hodgkin's lymphoma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "inability to obtain appropriate clinical management for Hodgkin's\r\nlymphoma",
+    "definedTerms" : [ ]
+  } ]
+}

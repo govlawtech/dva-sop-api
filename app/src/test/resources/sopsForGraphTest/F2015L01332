@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01332",
+  "instrumentNumber" : "112/2015",
+  "citation" : "Statement of Principles concerning hepatitis E (Reasonable Hypothesis) (No. 112 of 2015)",
+  "conditionName" : "hepatitis E",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B17.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to the hepatitis E virus between 15 and 64 days before\r\nthe clinical onset of hepatitis E",
+    "definedTerms" : [ {
+      "term" : "being exposed to the hepatitis E virus",
+      "definition" : "means:\r\n(a) being in the same household or immediate work environment as a\r\nperson infected with the hepatitis E virus;\r\n(b) consuming water or food contaminated with the hepatitis E virus;\r\n(c) having direct contact with human or animal faecal material\r\ncontaminated with the hepatitis E virus;\r\n(d) having direct physical contact with a human or animal infected with the\r\nhepatitis E virus;\r\n(e) having percutaneous exposure to blood or body fluids contaminated\r\nwith the hepatitis E virus;\r\n(f) receiving a liver transplant contaminated with the hepatitis E virus; or\r\n(g) receiving a transfusion of blood or blood products contaminated with\r\nthe hepatitis E virus.\r\nhepatitis E—see subsection 7(2)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for hepatitis E",
+    "definedTerms" : [ ]
+  } ]
+}

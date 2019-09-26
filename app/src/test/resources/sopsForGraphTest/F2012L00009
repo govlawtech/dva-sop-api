@@ -1,0 +1,31 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00009",
+  "instrumentNumber" : "5/2012",
+  "citation" : "Statement of Principles concerning psoriatic arthropathy No. 5 of 2012",
+  "conditionName" : "psoriatic arthropathy",
+  "effectiveFrom" : "2012-01-11",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M07.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having psoriasis at the time of the clinical onset of psoriatic\r\narthropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a discrete injury to the affected joint, sufficient to warrant\r\nmedical consultation, in the one month before the clinical onset of\r\npsoriatic arthropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being treated with efalizumab at the time of clinical onset of psoriatic\r\narthropathy",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for psoriatic\r\narthropathy",
+    "definedTerms" : [ ]
+  } ]
+}

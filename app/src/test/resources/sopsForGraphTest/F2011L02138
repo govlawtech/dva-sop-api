@@ -1,0 +1,84 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L02138",
+  "instrumentNumber" : "121/2011",
+  "citation" : "Statement of Principles concerning varicose veins of the lower limb No. 121 of 2011",
+  "conditionName" : "varicose veins of the lower limb",
+  "effectiveFrom" : "2011-11-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I83"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "O22.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having thrombosis of a deep vein draining the affected lower limb\r\nbefore the clinical onset of varicose veins of the lower limb",
+    "definedTerms" : [ {
+      "term" : "a deep vein draining the affected lower limb",
+      "definition" : "means a vein contained\nwithin the deep fascia of the limb or pelvis (such as the veins of the calf pump,\npopliteal veins, femoral veins and iliac veins), which drains the affected limb"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having complete or partial obstruction of a vein draining the affected\r\nlower limb at the time of the clinical onset of varicose veins of the\r\nlower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being pregnant at the time of the clinical onset of varicose veins of the\r\nlower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an acquired arteriovenous fistula involving the blood vessels\r\nsupplying the affected lower limb at the time of the clinical onset of\r\nvaricose veins of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "non-ambulatory standing for at least six hours per day, on more days\r\nthan not, for a continuous period of at least the five years before the\r\nclinical onset of varicose veins of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for varicose veins of the thigh only, having a varicosity of an\r\nabdominal or pelvic vein, leading to reflux into the affected thigh vein\r\nvia interconnecting or collateral veins, at the time of the clinical onset\r\nof varicose veins of the lower limb",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "varicose veins of the thigh",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "having thrombosis of a deep vein draining the affected lower limb\r\nbefore the clinical worsening of varicose veins of the lower limb",
+    "definedTerms" : [ {
+      "term" : "a deep vein draining the affected lower limb",
+      "definition" : "means a vein contained\nwithin the deep fascia of the limb or pelvis (such as the veins of the calf pump,\npopliteal veins, femoral veins and iliac veins), which drains the affected limb"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having complete or partial obstruction of a vein draining the affected\r\nlower limb at the time of the clinical worsening of varicose veins of the\r\nlower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being pregnant at the time of the clinical worsening of varicose veins of\r\nthe lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an acquired arteriovenous fistula involving the blood vessels\r\nsupplying the affected lower limb at the time of the clinical worsening\r\nof varicose veins of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "non-ambulatory standing for at least six hours per day, on more days\r\nthan not, for a continuous period of at least the five years before the\r\nclinical worsening of varicose veins of the lower limb",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "for varicose veins of the thigh only, having a varicosity of an\r\nabdominal or pelvic vein, leading to reflux into the affected thigh vein\r\nvia interconnecting or collateral veins, at the time of the clinical\r\nworsening of varicose veins of the lower limb",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "varicose veins of the thigh",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "inability to obtain appropriate clinical management for varicose veins\r\nof the lower limb",
+    "definedTerms" : [ ]
+  } ]
+}

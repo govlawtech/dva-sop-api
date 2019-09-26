@@ -1,0 +1,24 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00233",
+  "instrumentNumber" : "21/2019",
+  "citation" : "Statement of Principles concerning acute articular cartilage tear (Reasonable Hypothesis) (No. 21 of 2019)",
+  "conditionName" : "acute articular cartilage tear",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a significant physical force applied to or through the affected\r\njoint at the time of the clinical onset of acute articular cartilage tear",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having intra-articular surgery of the affected joint at the time of the\r\nclinical onset of acute articular cartilage tear",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for acute articular\r\ncartilage tear",
+    "definedTerms" : [ ]
+  } ]
+}

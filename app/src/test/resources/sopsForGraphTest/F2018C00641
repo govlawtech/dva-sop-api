@@ -1,0 +1,153 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00641",
+  "instrumentNumber" : "14/2016",
+  "citation" : "Statement of Principles concerning eating disorder (Balance of Probabilities) (No. 14 of 2016)",
+  "conditionName" : "eating disorder",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F50.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "experiencing a category 1A stressor within the one year before the\r\nclinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a category 1B stressor within the one year before the\r\nclinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being the subject of weight-based bullying within the one year before\r\nthe clinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "weight-based bullying",
+      "definition" : "means:\r\n(a) unwanted, aggressive behaviour which focusses negatively on another\r\nperson's weight or body shape with the intention to harm or disturb\r\nthat person; and\r\n(b) occurs repeatedly over time; and\r\n(c) involves a real or perceived power imbalance.\r\nThe types of bullying are physical bullying, verbal bullying (including\r\nelectronic and social media), and social bullying, such as spreading rumours\r\nand social exclusion.\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nThe endnotes provide information about this compilation and the compiled law.\r\nThe following endnotes are included in every compilation:\r\nEndnote 1—About the endnotes\r\nEndnote 2—Abbreviation key\r\nEndnote 3—Legislation history\r\nEndnote 4—Amendment history\r\nAbbreviation key—Endnote 2\r\nThe abbreviation key sets out abbreviations that may be used in the endnotes.\r\nLegislation history and amendment history—Endnotes 3 and 4\r\nAmending laws are annotated in the legislation history and amendment history.\r\nThe legislation history in endnote 3 provides information about each law that has amended (or"
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "experiencing the death of a significant other within the one year before\r\nthe clinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the one year before the clinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) agoraphobia;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) attention deficit hyperactivity disorder;\r\n(e) bipolar disorder;\r\n(f) depressive disorder;\r\n(g) obsessive compulsive disorder;\r\n(h) obsessive compulsive personality disorder;\r\n(i) panic disorder;\r\n(j) posttraumatic stress disorder;\r\n(k) social anxiety disorder; or\r\n(l) substance use disorder."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for bulimia nervosa, binge-eating disorder, other specified feeding or\r\neating disorder and unspecified feeding or eating disorder (excluding\r\nrestricting types of eating disorders) only, having a borderline\r\npersonality disorder within the one year before the clinical onset of\r\neating disorder",
+    "definedTerms" : [ {
+      "term" : "restricting types of eating disorders",
+      "definition" : "means eating disorders where the weight\r\nloss is accomplished primarily through dieting, fasting or excessive exercise,\r\nsuch as subtypes of anorexia nervosa and atypical anorexia nervosa."
+    }, {
+      "term" : "bulimia nervosa",
+      "definition" : "means a disorder of mental health meeting the following\r\ndiagnostic criteria (derived from DSM-5):\r\nA. Recurrent episodes of binge eating. An episode of binge eating is\r\ncharacterised by both of the following:\r\n1. Eating, in a discrete period of time (for example, within any two-\r\nhour period), an amount of food that is definitely larger than what\r\nmost individuals would eat in a similar period of time under similar\r\ncircumstances; and\r\n2. A sense of lack of control over eating during the episode (for\r\nexample, a feeling that one cannot stop eating or control what or how\r\nmuch one is eating).\r\nB. Recurrent inappropriate compensatory behaviours in order to prevent\r\nweight gain, such as self-induced vomiting; misuse of laxatives,\r\ndiuretics or other medications; fasting; or excessive exercise.\r\nC. The binge eating and inappropriate compensatory behaviours both\r\noccur, on average, at least once a week for three months.\r\nD. Self-evaluation is unduly influenced by body shape and weight.\r\nE. The disturbance does not occur exclusively during episodes of\r\nanorexia nervosa.\r\nNote: DSM-5 is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "binge-eating disorder",
+      "definition" : "means a disorder of mental health meeting the\r\nfollowing diagnostic criteria (derived from DSM-5):\r\nA. Recurrent episodes of binge eating. An episode of binge eating is\r\ncharacterised by both of the following:\r\n1. Eating, in a discrete period of time (for example, within any two-\r\nhour period), an amount of food that is definitely larger than what\r\nmost people would eat in a similar period of time under similar\r\ncircumstances.\r\n2. A sense of lack of control over eating during the episode (for\r\nexample, a feeling that one cannot stop eating or control what or how\r\nmuch one is eating).\r\nB. The binge-eating episodes are associated with three (or more) of the\r\nfollowing:\r\n1. Eating much more rapidly than normal;\r\n2. Eating until feeling uncomfortably full;\r\n3. Eating large amounts of food when not feeling physically hungry;\r\n4. Eating alone because of feeling embarrassed by how much one is\r\neating; or\r\n5. Feeling disgusted with oneself, depressed, or very guilty afterward.\r\nC. Marked distress regarding binge eating is present.\r\nD. The binge eating occurs, on average, at least once a week for three\r\nmonths.\r\nE. The binge eating is not associated with the recurrent use of\r\ninappropriate compensatory behaviour as in bulimia nervosa and does\r\nnot occur exclusively during the course of bulimia nervosa or\r\nanorexia nervosa.\r\nNote: DSM-5 is also defined in the Schedule 1 - Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "bulimia nervosa, binge-eating disorder, other specified feeding or eating disorder and unspecified feeding or eating disorder (excluding restricting types of eating disorders)",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a medical illness or injury which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the one year\r\nbefore the clinical onset of eating disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having experienced severe childhood abuse before the clinical onset of\r\neating disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(9)",
+    "text" : "experiencing a category 1A stressor within the one year before the\r\nclinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "experiencing a category 1B stressor within the one year before the\r\nclinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel on-going\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation, or divorce;\r\n(c) having concerns in the work or school environment including on-going\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, on-going involvement with the police concerning violations\r\nof the law, or court appearances associated with personal legal\r\nproblems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "experiencing the death of a significant other within the one year before\r\nthe clinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the two years before the clinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) agoraphobia;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) attention deficit hyperactivity disorder;\r\n(e) bipolar disorder;\r\n(f) depressive disorder;\r\n(g) obsessive compulsive disorder;\r\n(h) obsessive compulsive personality disorder;\r\n(i) panic disorder;\r\n(j) posttraumatic stress disorder;\r\n(k) social anxiety disorder; or\r\n(l) substance use disorder."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "for bulimia nervosa, binge-eating disorder, other specified feeding or\r\neating disorder and unspecified feeding or eating disorder (excluding\r\nrestricting types of eating disorders) only, having a borderline\r\npersonality disorder within the one year before the clinical worsening\r\nof eating disorder",
+    "definedTerms" : [ {
+      "term" : "restricting types of eating disorders",
+      "definition" : "means eating disorders where the weight\r\nloss is accomplished primarily through dieting, fasting or excessive exercise,\r\nsuch as subtypes of anorexia nervosa and atypical anorexia nervosa."
+    }, {
+      "term" : "bulimia nervosa",
+      "definition" : "means a disorder of mental health meeting the following\r\ndiagnostic criteria (derived from DSM-5):\r\nA. Recurrent episodes of binge eating. An episode of binge eating is\r\ncharacterised by both of the following:\r\n1. Eating, in a discrete period of time (for example, within any two-\r\nhour period), an amount of food that is definitely larger than what\r\nmost individuals would eat in a similar period of time under similar\r\ncircumstances; and\r\n2. A sense of lack of control over eating during the episode (for\r\nexample, a feeling that one cannot stop eating or control what or how\r\nmuch one is eating).\r\nB. Recurrent inappropriate compensatory behaviours in order to prevent\r\nweight gain, such as self-induced vomiting; misuse of laxatives,\r\ndiuretics or other medications; fasting; or excessive exercise.\r\nC. The binge eating and inappropriate compensatory behaviours both\r\noccur, on average, at least once a week for three months.\r\nD. Self-evaluation is unduly influenced by body shape and weight.\r\nE. The disturbance does not occur exclusively during episodes of\r\nanorexia nervosa.\r\nNote: DSM-5 is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "binge-eating disorder",
+      "definition" : "means a disorder of mental health meeting the\r\nfollowing diagnostic criteria (derived from DSM-5):\r\nA. Recurrent episodes of binge eating. An episode of binge eating is\r\ncharacterised by both of the following:\r\n1. Eating, in a discrete period of time (for example, within any two-\r\nhour period), an amount of food that is definitely larger than what\r\nmost people would eat in a similar period of time under similar\r\ncircumstances.\r\n2. A sense of lack of control over eating during the episode (for\r\nexample, a feeling that one cannot stop eating or control what or how\r\nmuch one is eating).\r\nB. The binge-eating episodes are associated with three (or more) of the\r\nfollowing:\r\n1. Eating much more rapidly than normal;\r\n2. Eating until feeling uncomfortably full;\r\n3. Eating large amounts of food when not feeling physically hungry;\r\n4. Eating alone because of feeling embarrassed by how much one is\r\neating; or\r\n5. Feeling disgusted with oneself, depressed, or very guilty afterward.\r\nC. Marked distress regarding binge eating is present.\r\nD. The binge eating occurs, on average, at least once a week for three\r\nmonths.\r\nE. The binge eating is not associated with the recurrent use of\r\ninappropriate compensatory behaviour as in bulimia nervosa and does\r\nnot occur exclusively during the course of bulimia nervosa or\r\nanorexia nervosa.\r\nNote: DSM-5 is also defined in the Schedule 1 - Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "bulimia nervosa, binge-eating disorder, other specified feeding or eating disorder and unspecified feeding or eating disorder (excluding restricting types of eating disorders)",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having a medical illness or injury which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the one year\r\nbefore the clinical worsening of eating disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "inability to obtain appropriate clinical management for eating disorder",
+    "definedTerms" : [ ]
+  } ]
+}

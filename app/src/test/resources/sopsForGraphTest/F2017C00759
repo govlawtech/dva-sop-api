@@ -1,0 +1,266 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00759",
+  "instrumentNumber" : "54/2013",
+  "citation" : "Statement of Principles concerning fibrosing interstitial lung disease No. 54 of 2013",
+  "conditionName" : "fibrosing interstitial lung disease",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of fibrosing\r\ninterstitial lung disease, and where smoking has ceased, the clinical\r\nonset of fibrosing interstitial lung disease has occurred within 25 years\r\nof cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(i) for a cumulative period of at least 1 500 hours before the\r\nclinical onset of fibrosing interstitial lung disease; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of asbestos fibres commenced at least ten\r\nyears before the clinical onset of fibrosing interstitial lung\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(i) for a cumulative period of at least 5 000 hours before the\r\nclinical onset of fibrosing interstitial lung disease; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of asbestos fibres commenced at least ten\r\nyears before the clinical onset of fibrosing interstitial lung\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling beryllium dust or fumes before the clinical onset of fibrosing\r\ninterstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "inhaling beryllium dust or fumes",
+      "definition" : "means having a history of exposure to\nberyllium dust or beryllium fumes, for a cumulative period of at least 240\nhours or clinical evidence of sensitisation to beryllium by positive findings on\nberyllium lymphocyte proliferation testing of blood or bronchoalveolar lavage\nfluid"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inhaling respirable crystalline silica dust in an enclosed space:\r\n(i) for a cumulative period of at least 3 000 hours before the\r\nclinical onset of fibrosing interstitial lung disease; and\r\n(ii) at the time material containing respirable crystalline silica dust\r\nwas being produced, excavated, drilled, cut or ground, or used\r\nin construction, manufacturing, cleaning or blasting; and\r\n(iii) the first inhalation of respirable crystalline silica dust\r\ncommenced at least ten years before the clinical onset of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "inhaling respirable crystalline silica dust in an open environment:\r\n(i) for a cumulative period of at least 6 000 hours before the\r\nclinical onset of fibrosing interstitial lung disease; and\r\n(ii) at the time material containing respirable crystalline silica dust\r\nwas being produced, excavated, drilled, cut or ground, or used\r\nin construction, manufacturing, cleaning or blasting; and\r\n(iii) the first inhalation of respirable crystalline silica dust\r\ncommenced at least ten years before the clinical onset of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having acute silicosis within the three months before the clinical onset\r\nof fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "acute silicosis",
+      "definition" : "means a pulmonary disease characterised by basilar filling of\nalveoli with lipid and proteinaceous exudative material, following exposure to\nexcessive levels of respirable crystalline silica dust over a short time span"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "inhaling or intravenously injecting a talc-containing compound or\r\nmixture, on more days than not, for a period of at least three years,\r\nwithin the forty years before the clinical onset of fibrosing interstitial\r\nlung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "inhaling respirable coal dust in an enclosed space for a cumulative\r\nperiod of at least 6 000 hours, and the first inhalation of respirable coal\r\ndust occurred at least ten years before the clinical onset of fibrosing\r\ninterstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inhaling respirable dust generated from hard metal or diamond-cobalt,\r\nwhile engaged in the manufacture, utilisation, or maintenance of tools\r\ncomposed of hard metal or diamond-cobalt, for a cumulative period of\r\nat least 240 hours before the clinical onset of fibrosing interstitial lung\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "hard metal",
+      "definition" : "means material composed predominantly of cobalt and tungsten\ncarbide"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "developing inflammation of the pulmonary interstitium due to\r\ninhalation of toxic gases or fumes within the 12 months before the\r\nclinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "toxic gases or fumes",
+      "definition" : "means toxic agents, including anhydrous ammonia\nfumes, smoke, oxides of sulphur, oxides of nitrogen, chlorine or phosgene"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having paraquat poisoning within the three months before the clinical\r\nonset of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "paraquat",
+      "definition" : "means a dipyridilium compound whose dichloride and\ndimethylsulphate salts are used as contact herbicides"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "inhaling mustard gas within the 20 years before the clinical onset of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having received a cumulative equivalent dose of at least 0.4 sievert of\r\nionising radiation to the lung at least six months before the clinical\r\nonset of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected lung was in the field of radiation, at least six months before\r\nthe clinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having received Iodine as therapy for widespread pulmonary\r\nmetastases from a malignant neoplasm of the thyroid, at least six\r\nmonths before the clinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "90having received ⁹⁰Yttrium microspheres as therapy for primary or\r\nmetastatic liver tumours, at least six months before the clinical onset of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having acute respiratory distress syndrome within the six months\r\nbefore the clinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "acute respiratory distress syndrome",
+      "definition" : "means a clinical syndrome of severe\ndyspnoea of rapid onset, hypoxaemia, and diffuse pulmonary infiltrates\nleading to respiratory failure"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "being treated with a cytotoxic agent for a malignant disease or in\r\nassociation with haematopoietic stem cell transplantation, before the\r\nclinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "being treated with a drug from the specified list within the six months\r\nbefore the clinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "a drug from the specified list",
+      "definition" : "means:\n(a) amiodarone;\n(b) azathioprine;\n(c) D-penicillamine;\n(d) erlotinib;\n(e) gefitinib;\n(f) gold salts;\n(g) methotrexate;\n(h) mycophenolate mofetil;\n(i) nitrofurantoin;\n(j) rituximab;\n(k) sirolimus;\n(l) sulphasalazine; or\n(m) tocainide"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having chronic or recurrent diffuse alveolar haemorrhage before the\r\nclinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "diffuse alveolar haemorrhage",
+      "definition" : "means extravasation of blood into the\nalveoli and interstitium from injury to the pulmonary microcirculation"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having exogenous lipoid pneumonitis at the time of the clinical onset\r\nof fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "exogenous lipoid pneumonitis",
+      "definition" : "means inflammation of the pulmonary\ninterstitium due to the aspiration or inhalation of oil-based substances"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having tropical pulmonary eosinophilia for at least the six months\r\nbefore the clinical onset of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "tropical pulmonary eosinophilia",
+      "definition" : "means a disorder which is characterised\nby pulmonary infiltrations of eosinophils and blood eosinophilia, and is caused\nby infection with the microfilariae Wuchereria bancrofti, Brugia malayi or\nDirofilaria immitis"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(x)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of fibrosing\r\ninterstitial lung disease, and where smoking has ceased, the clinical\r\nworsening of fibrosing interstitial lung disease has occurred within five\r\nyears of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "inhaling respirable asbestos fibres:\r\n(i) for a cumulative period of at least 1 500 hours before the clinical\r\nworsening of fibrosing interstitial lung disease; and\r\n(ii) at the time material containing respirable asbestos fibres was being\r\napplied, removed, dislodged, cut or drilled; and\r\n(iii)within the two years before the clinical worsening of fibrosing\r\ninterstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "inhaling beryllium dust or fumes before the clinical worsening of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "inhaling beryllium dust or fumes",
+      "definition" : "means having a history of exposure to\nberyllium dust or beryllium fumes, for a cumulative period of at least 240\nhours or clinical evidence of sensitisation to beryllium by positive findings on\nberyllium lymphocyte proliferation testing of blood or bronchoalveolar lavage\nfluid"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "inhaling respirable crystalline silica dust in an enclosed space:\r\n(i) for a cumulative period of at least 3 000 hours before the\r\nclinical worsening of fibrosing interstitial lung disease; and\r\n(ii) at the time material containing respirable crystalline silica dust\r\nwas being produced, excavated, drilled, cut or ground, or used\r\nin construction, manufacturing, cleaning or blasting; and\r\n(iii) the first inhalation of respirable crystalline silica dust\r\ncommenced at least ten years before the clinical worsening of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "inhaling respirable crystalline silica dust in an open environment:\r\n(i) for a cumulative period of at least 6 000 hours before the\r\nclinical worsening of fibrosing interstitial lung disease; and\r\n(ii) at the time material containing respirable crystalline silica dust\r\nwas being produced, excavated, drilled, cut or ground, or used\r\nin construction, manufacturing, cleaning or blasting; and\r\n(iii) the first inhalation of respirable crystalline silica dust\r\ncommenced at least ten years before the clinical worsening of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having acute silicosis within the three months before the clinical\r\nworsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "acute silicosis",
+      "definition" : "means a pulmonary disease characterised by basilar filling of\nalveoli with lipid and proteinaceous exudative material, following exposure to\nexcessive levels of respirable crystalline silica dust over a short time span"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "inhaling or intravenously injecting a talc-containing compound or\r\nmixture, on more days than not, for a period of at least three years,\r\nwithin the forty years before the clinical worsening of fibrosing\r\ninterstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "inhaling respirable coal dust in an enclosed space for a cumulative\r\nperiod of at least 6 000 hours, and the first inhalation of respirable coal\r\ndust occurred at least ten years before the clinical worsening of\r\nfibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "inhaling respirable dust generated from hard metal or diamond-cobalt,\r\nwhile engaged in the manufacture, utilisation, or maintenance of tools\r\ncomposed of hard metal or diamond-cobalt, for a cumulative period of\r\nat least 240 hours before the clinical worsening of fibrosing interstitial\r\nlung disease",
+    "definedTerms" : [ {
+      "term" : "hard metal",
+      "definition" : "means material composed predominantly of cobalt and tungsten\ncarbide"
+    } ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "developing inflammation of the pulmonary interstitium due to\r\ninhalation of toxic gases or fumes within the 12 months before the\r\nclinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "toxic gases or fumes",
+      "definition" : "means toxic agents, including anhydrous ammonia\nfumes, smoke, oxides of sulphur, oxides of nitrogen, chlorine or phosgene"
+    } ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having paraquat poisoning within the three months before the clinical\r\nworsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "paraquat",
+      "definition" : "means a dipyridilium compound whose dichloride and\ndimethylsulphate salts are used as contact herbicides"
+    } ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "inhaling mustard gas within the 20 years before the clinical worsening\r\nof fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "having received a cumulative equivalent dose of at least 0.4 sievert of\r\nionising radiation to the lung at least six months before the clinical\r\nworsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected lung was in the field of radiation, at least six months before\r\nthe clinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "131having received Iodine as therapy for widespread pulmonary\r\nmetastases from a malignant neoplasm of the thyroid, at least six\r\nmonths before the clinical worsening of fibrosing interstitial lung\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "having received ⁹⁰Yttrium microspheres as therapy for primary or\r\nmetastatic liver tumours, at least six months before the clinical\r\nworsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(nn)",
+    "text" : "having acute respiratory distress syndrome within the six months\r\nbefore the clinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "acute respiratory distress syndrome",
+      "definition" : "means a clinical syndrome of severe\ndyspnoea of rapid onset, hypoxaemia, and diffuse pulmonary infiltrates\nleading to respiratory failure"
+    } ]
+  }, {
+    "paragraph" : "6(oo)",
+    "text" : "being treated with a cytotoxic agent for a malignant disease or in\r\nassociation with haematopoietic stem cell transplantation, before the\r\nclinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(pp)",
+    "text" : "being treated with a drug from the specified list within the six months\r\nbefore the clinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "a drug from the specified list",
+      "definition" : "means:\n(a) amiodarone;\n(b) azathioprine;\n(c) D-penicillamine;\n(d) erlotinib;\n(e) gefitinib;\n(f) gold salts;\n(g) methotrexate;\n(h) mycophenolate mofetil;\n(i) nitrofurantoin;\n(j) rituximab;\n(k) sirolimus;\n(l) sulphasalazine; or\n(m) tocainide"
+    } ]
+  }, {
+    "paragraph" : "6(qq)",
+    "text" : "having chronic or recurrent diffuse alveolar haemorrhage before the\r\nclinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "diffuse alveolar haemorrhage",
+      "definition" : "means extravasation of blood into the\nalveoli and interstitium from injury to the pulmonary microcirculation"
+    } ]
+  }, {
+    "paragraph" : "6(rr)",
+    "text" : "having exogenous lipoid pneumonitis at the time of the clinical\r\nworsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "exogenous lipoid pneumonitis",
+      "definition" : "means inflammation of the pulmonary\ninterstitium due to the aspiration or inhalation of oil-based substances"
+    } ]
+  }, {
+    "paragraph" : "6(ss)",
+    "text" : "having tropical pulmonary eosinophilia for at least the six months\r\nbefore the clinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ {
+      "term" : "tropical pulmonary eosinophilia",
+      "definition" : "means a disorder which is characterised\nby pulmonary infiltrations of eosinophils and blood eosinophilia, and is caused\nby infection with the microfilariae Wuchereria bancrofti, Brugia malayi or\nDirofilaria immitis"
+    } ]
+  }, {
+    "paragraph" : "6(tt)",
+    "text" : "having gastro-oesophageal reflux disease for at least the five years\r\nbefore the clinical worsening of fibrosing interstitial lung disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(uu)",
+    "text" : "inability to obtain appropriate clinical management for fibrosing\r\ninterstitial lung disease",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00903",
+  "instrumentNumber" : "58/2018",
+  "citation" : "Statement of Principles concerning cluster headache (Balance of Probabilities) (No. 58 of 2018)",
+  "conditionName" : "cluster headache",
+  "effectiveFrom" : "2018-07-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G44.0"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "taking glyceryl trinitrate, isosorbide mononitrate or isosorbide dinitrate\r\nwithin the 24 hours before the clinical worsening of cluster headache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "consuming alcohol within the 24 hours before the clinical worsening of\r\ncluster headache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for cluster\r\nheadache",
+    "definedTerms" : [ ]
+  } ]
+}

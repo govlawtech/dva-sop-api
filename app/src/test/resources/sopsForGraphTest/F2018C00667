@@ -1,0 +1,227 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00667",
+  "instrumentNumber" : "45/2013",
+  "citation" : "Statement of Principles concerning gingivitis No. 45 of 2013",
+  "conditionName" : "gingivitis",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A69.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K05.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K05.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being prevented from cleaning the teeth, including toothbrushing and\r\ninterdental cleansing, for a continuous period of at least seven days,\r\nwithin the two months before the clinical onset of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a foreign body embedded in the affected region of the gums at\r\nthe time of the clinical onset of gingivitis",
+    "definedTerms" : [ {
+      "term" : "a foreign body",
+      "definition" : "means:\n(a) a fixed orthodontic appliance;\n(b) an osseointegrated implant or dental prosthesis, including single\ncrowns, fixed partial dentures, all-ceramic crowns, resin-bonded\nprostheses or posts and cores;\n(c) microscopic materials derived from dental procedures; or\n(d) shrapnel or other exogenous macroscopic material"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an oral piercing adjacent to the affected region of the gums for\r\na continuous period of at least the six months before the clinical onset\r\nof gingivitis",
+    "definedTerms" : [ {
+      "term" : "an oral piercing",
+      "definition" : "means permanent insertion of an ornament into an\nopening made in the skin or mucosa of the tongue, lips or cheek"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having trauma to the affected region of the gums within the four weeks\r\nbefore the clinical onset of gingivitis",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected region of the gums",
+      "definition" : "means physical injury to the\ngingival tissues by mechanisms including thermal, electrical and chemical\nburns, abrasion, and blunt or penetrating trauma"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being pregnant at the time of the clinical onset of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having neutropaenia, agranulocytosis or leukaemia at the time of the\r\nclinical onset of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "using the combined oral contraceptive pill or a progesterone oral\r\ncontraceptive pill, for a continuous period of at least the four weeks\r\nbefore the clinical onset of gingivitis",
+    "definedTerms" : [ {
+      "term" : "combined oral contraceptive pill",
+      "definition" : "means an oral contraceptive compound\ncontaining both oestrogen and progestogen"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical onset of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having an autoimmune and mucocutaneous disease from the specified\r\nlist at the time of the clinical onset of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having direct exposure of the affected area to an irritant substance\r\nwithin the three days before the clinical onset of gingivitis",
+    "definedTerms" : [ {
+      "term" : "an irritant substance",
+      "definition" : "means a chemical agent which causes an\ninflammatory effect on living tissue at the site of contact. This includes\nreactions attributable to toothpaste or dentrifices, mouthwashes, chewing gum\nadditives or foods, or dental restoration materials"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "for acute necrotising ulcerative gingivitis only,\r\n(i) smoking at least two pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\ngingivitis, and where smoking has ceased, the clinical onset of\r\ngingivitis has occurred within three months of cessation; or\r\n(ii) having a nutritional deficiency at the time of the clinical onset of\r\ngingivitis",
+    "definedTerms" : [ {
+      "term" : "acute necrotising ulcerative gingivitis",
+      "definition" : "means a painful and rapidly\nprogressive inflammation of the gums characterised by gingival bleeding with\ninterdental soft tissue necrosis and ulceration, and is also known as Vincent's\ndisease and trenchmouth"
+    }, {
+      "term" : "a nutritional deficiency",
+      "definition" : "means:\n(a) scurvy; or\n(b) clinical or biochemical evidence of a severe protein energy\nmalnutrition due to:\n(i) inadequate intake of protein or energy; or\n(ii) systemic disease that impairs intake or utilisation of nutrients or\nthat increases nutrient requirements or metabolic losses"
+    } ],
+    "conditionVariant" : {
+      "name" : "acute necrotising ulcerative gingivitis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "smoking at least two pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\ngingivitis, and where smoking has ceased, the clinical onset of\r\ngingivitis has occurred within three months of cessation"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having a nutritional deficiency at the time of the clinical onset of\r\ngingivitis"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "experiencing a category 1A stressor or a category 1B stressor within\r\nthe fourteen days before the clinical onset of gingivitis",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    }, {
+      "term" : "a category 1A stressor",
+      "definition" : "means one or more of the following severe\ntraumatic events:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a depressive disorder at the time of the clinical onset of\r\ngingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having drug-induced gingival hyperplasia at the time of the clinical\r\nonset of gingivitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(q)",
+    "text" : "being prevented from cleaning the teeth, including toothbrushing and\r\ninterdental cleansing, for a continuous period of at least seven days,\r\nwithin the two months before the clinical worsening of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\ngingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a foreign body embedded in the affected region of the gums at\r\nthe time of the clinical worsening of gingivitis",
+    "definedTerms" : [ {
+      "term" : "a foreign body",
+      "definition" : "means:\n(a) a fixed orthodontic appliance;\n(b) an osseointegrated implant or dental prosthesis, including single\ncrowns, fixed partial dentures, all-ceramic crowns, resin-bonded\nprostheses or posts and cores;\n(c) microscopic materials derived from dental procedures; or\n(d) shrapnel or other exogenous macroscopic material"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having an oral piercing adjacent to the affected region of the gums for\r\na continuous period of at least the six months before the clinical\r\nworsening of gingivitis",
+    "definedTerms" : [ {
+      "term" : "an oral piercing",
+      "definition" : "means permanent insertion of an ornament into an\nopening made in the skin or mucosa of the tongue, lips or cheek"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having trauma to the affected region of the gums within the four weeks\r\nbefore the clinical worsening of gingivitis",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected region of the gums",
+      "definition" : "means physical injury to the\ngingival tissues by mechanisms including thermal, electrical and chemical\nburns, abrasion, and blunt or penetrating trauma"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "being pregnant at the time of the clinical worsening of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having neutropaenia, agranulocytosis or leukaemia at the time of the\r\nclinical worsening of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "using the combined oral contraceptive pill or a progesterone oral\r\ncontraceptive pill, for a continuous period of at least the four weeks\r\nbefore the clinical worsening of gingivitis",
+    "definedTerms" : [ {
+      "term" : "combined oral contraceptive pill",
+      "definition" : "means an oral contraceptive compound\ncontaining both oestrogen and progestogen"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical worsening of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having an autoimmune and mucocutaneous disease from the specified\r\nlist at the time of the clinical worsening of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having direct exposure of the affected area to an irritant substance\r\nwithin the three days before the clinical worsening of gingivitis",
+    "definedTerms" : [ {
+      "term" : "an irritant substance",
+      "definition" : "means a chemical agent which causes an\ninflammatory effect on living tissue at the site of contact. This includes\nreactions attributable to toothpaste or dentrifices, mouthwashes, chewing gum\nadditives or foods, or dental restoration materials"
+    } ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "for acute necrotising ulcerative gingivitis only,\r\n(i) smoking at least two pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening\r\nof gingivitis, and where smoking has ceased, the clinical\r\nworsening of gingivitis has occurred within three months of\r\ncessation; or\r\n(ii) having a nutritional deficiency at the time of the clinical\r\nworsening of gingivitis",
+    "definedTerms" : [ {
+      "term" : "acute necrotising ulcerative gingivitis",
+      "definition" : "means a painful and rapidly\nprogressive inflammation of the gums characterised by gingival bleeding with\ninterdental soft tissue necrosis and ulceration, and is also known as Vincent's\ndisease and trenchmouth"
+    }, {
+      "term" : "a nutritional deficiency",
+      "definition" : "means:\n(a) scurvy; or\n(b) clinical or biochemical evidence of a severe protein energy\nmalnutrition due to:\n(i) inadequate intake of protein or energy; or\n(ii) systemic disease that impairs intake or utilisation of nutrients or\nthat increases nutrient requirements or metabolic losses"
+    } ],
+    "conditionVariant" : {
+      "name" : "acute necrotising ulcerative gingivitis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "smoking at least two pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening\r\nof gingivitis, and where smoking has ceased, the clinical\r\nworsening of gingivitis has occurred within three months of\r\ncessation"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having a nutritional deficiency at the time of the clinical\r\nworsening of gingivitis"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "experiencing a category 1A stressor or a category 1B stressor within\r\nthe fourteen days before the clinical worsening of gingivitis",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    }, {
+      "term" : "a category 1A stressor",
+      "definition" : "means one or more of the following severe\ntraumatic events:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having a depressive disorder at the time of the clinical worsening of\r\ngingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having drug-induced gingival hyperplasia at the time of the clinical\r\nworsening of gingivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "inability to obtain appropriate clinical management for gingivitis",
+    "definedTerms" : [ ]
+  } ]
+}

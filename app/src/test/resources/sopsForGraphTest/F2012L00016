@@ -1,0 +1,111 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00016",
+  "instrumentNumber" : "8/2012",
+  "citation" : "Statement of Principles concerning adhesive capsulitis of the shoulder No. 8 of 2012",
+  "conditionName" : "adhesive capsulitis of the shoulder",
+  "effectiveFrom" : "2012-01-11",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M75.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having an injury involving the affected shoulder within the six months\r\nbefore the clinical onset of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ {
+      "term" : "injury involving the affected shoulder",
+      "definition" : "means a fracture of a bone of the\naffected shoulder (humerus, scapula or clavicle), penetrating injury to the\nshoulder joint, internal derangement or dislocation of the shoulder, or partial-\nor full-thickness tear of the soft tissues of the shoulder joint, including rotator\ncuff tear, excluding a surgical procedure of the shoulder"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having paralysis of the affected shoulder, including cerebrovascular\r\naccident with shoulder paralysis, within the one year before the clinical\r\nonset of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of adhesive\r\ncapsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a musculoskeletal disorder, as specified, of the affected\r\nshoulder within the six months before the clinical onset of adhesive\r\ncapsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a malignant neoplasm involving the region of the affected\r\nshoulder, including ipsilateral breast cancer and ipsilateral chest wall\r\ntumour, within the one year before the clinical onset of adhesive\r\ncapsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a malignant neoplasm of the lung within the one year before the\r\nclinical onset of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having hyperthyroidism or hypothyroidism at the time of the clinical\r\nonset of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having Parkinson's disease at the time of the clinical onset of adhesive\r\ncapsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having highly active antiretroviral therapy for human\r\nimmunodeficiency virus infection at the time of the clinical onset of\r\nadhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having immobilisation of the affected shoulder for a continuous period\r\nof at least four weeks within the 12 weeks before the clinical onset of\r\nadhesive capsulitis of the shoulder",
+    "definedTerms" : [ {
+      "term" : "immobilisation of the affected shoulder",
+      "definition" : "means elimination of spontaneous\ngross movement of the affected shoulder joint. Causes include having the arm\nheld in a sling, by splinting or similar external mode of external fixation, being\ncomatose, being in an intensive care unit or comparable situation of shoulder\nrestraint"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(k)",
+    "text" : "having an injury involving the affected shoulder within the six months\r\nbefore the clinical worsening of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ {
+      "term" : "injury involving the affected shoulder",
+      "definition" : "means a fracture of a bone of the\naffected shoulder (humerus, scapula or clavicle), penetrating injury to the\nshoulder joint, internal derangement or dislocation of the shoulder, or partial-\nor full-thickness tear of the soft tissues of the shoulder joint, including rotator\ncuff tear, excluding a surgical procedure of the shoulder"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having paralysis of the affected shoulder, including cerebrovascular\r\naccident with shoulder paralysis, within the one year before the clinical\r\nworsening of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\nadhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having a musculoskeletal disorder, as specified, of the affected\r\nshoulder within the six months before the clinical worsening of\r\nadhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a malignant neoplasm involving the region of the affected\r\nshoulder, including ipsilateral breast cancer and ipsilateral chest wall\r\ntumour, within the one year before the clinical worsening of adhesive\r\ncapsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having a malignant neoplasm of the lung within the one year before the\r\nclinical worsening of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having hyperthyroidism or hypothyroidism at the time of the clinical\r\nworsening of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having Parkinson's disease at the time of the clinical worsening of\r\nadhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having highly active antiretroviral therapy for human\r\nimmunodeficiency virus infection at the time of the clinical worsening\r\nof adhesive capsulitis of the shoulder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having immobilisation of the affected shoulder for a continuous period\r\nof at least four weeks within the 12 weeks before the clinical\r\nworsening of adhesive capsulitis of the shoulder",
+    "definedTerms" : [ {
+      "term" : "immobilisation of the affected shoulder",
+      "definition" : "means elimination of spontaneous\ngross movement of the affected shoulder joint. Causes include having the arm\nheld in a sling, by splinting or similar external mode of external fixation, being\ncomatose, being in an intensive care unit or comparable situation of shoulder\nrestraint"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "inability to obtain appropriate clinical management for adhesive\r\ncapsulitis of the shoulder",
+    "definedTerms" : [ ]
+  } ]
+}

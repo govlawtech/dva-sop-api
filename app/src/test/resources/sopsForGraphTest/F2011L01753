@@ -1,0 +1,33 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01753",
+  "instrumentNumber" : "113/2011",
+  "citation" : "Statement of Principles concerning allergic contact dermatitis No. 113 of 2011",
+  "conditionName" : "allergic contact dermatitis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L23"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having exposure to the allergen responsible for the allergic contact\r\ndermatitis, before the clinical onset of allergic contact dermatitis",
+    "definedTerms" : [ {
+      "term" : "allergen",
+      "definition" : "means any substance which is capable of inducing a specific\nimmune response and of reacting with the products of that response, that is,\nwith specific antibody or specifically sensitised T-lymphocytes"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "having direct cutaneous re-exposure to the allergen responsible for the\r\nallergic contact dermatitis, within the five days before the clinical\r\nworsening of allergic contact dermatitis",
+    "definedTerms" : [ {
+      "term" : "allergen",
+      "definition" : "means any substance which is capable of inducing a specific\nimmune response and of reacting with the products of that response, that is,\nwith specific antibody or specifically sensitised T-lymphocytes"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for allergic contact\r\ndermatitis",
+    "definedTerms" : [ ]
+  } ]
+}

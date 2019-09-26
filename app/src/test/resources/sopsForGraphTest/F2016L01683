@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01683",
+  "instrumentNumber" : "80/2016",
+  "citation" : "Statement of Principles concerning fibromuscular dysplasia (Balance of Probabilities) (No. 80 of 2016)",
+  "conditionName" : "fibromuscular dysplasia",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I77.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of fibromuscular\r\ndysplasia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of\r\nfibromuscular dysplasia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for fibromuscular\r\ndysplasia",
+    "definedTerms" : [ ]
+  } ]
+}

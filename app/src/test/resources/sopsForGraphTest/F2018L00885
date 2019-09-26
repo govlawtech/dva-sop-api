@@ -1,0 +1,143 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00885",
+  "instrumentNumber" : "59/2018",
+  "citation" : "Statement of Principles concerning macular degeneration (Reasonable Hypothesis) (No. 59 of 2018)",
+  "conditionName" : "macular degeneration",
+  "effectiveFrom" : "2018-07-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of macular\r\ndegeneration, and:\r\n(a) smoking commenced at least five years before the clinical onset\r\nof macular degeneration; and\r\n(b) where smoking has ceased, the clinical onset of macular\r\ndegeneration has occurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being exposed to second-hand smoke:\r\n(a) for at least 10 000 hours before the clinical onset of macular\r\ndegeneration; and\r\n(b) where the first exposure to second-hand smoke commenced at\r\nleast five years before the clinical onset of macular degeneration;\r\nand\r\n(c) where the last exposure to second-hand smoke occurred within\r\nthe 20 years before the clinical onset of macular degeneration",
+    "definedTerms" : [ {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space and\r\ninhaling smoke from burning tobacco products or smoke that has been\r\nexhaled by a person who is smoking."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "consuming a cumulative total of at least 15 kilograms of alcohol in a\r\ncontinuous period of two years, within the five years before the clinical\r\nonset of macular degeneration",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being obese for at least the five years before the clinical onset of\r\nmacular degeneration",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having chronic kidney disease within the five years before the clinical\r\nonset of macular degeneration",
+    "definedTerms" : [ {
+      "term" : "chronic kidney disease",
+      "definition" : "means an abnormality of kidney structure or function\r\nthat has been present for at least three months.\r\nNote: an abnormality of kidney structure or function is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a lipid profile as specified, within the five years before the\r\nclinical onset of macular degeneration",
+    "definedTerms" : [ {
+      "term" : "lipid profile as specified",
+      "definition" : "means a high density lipoprotein cholesterol level\r\ngreater than or equal to 1.7 mmol/L after the accurate evaluation of serum\r\nlipids following a 12 hour overnight fast, and estimated on a minimum of\r\ntwo occasions.\r\nmacular degeneration—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of macular\r\ndegeneration",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having hypertension at the time of the clinical onset of macular\r\ndegeneration",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for wet macular degeneration only, undergoing cataract surgery\r\ninvolving the affected eye within the five years before the clinical onset\r\nof macular degeneration",
+    "definedTerms" : [ {
+      "term" : "wet macular degeneration",
+      "definition" : "means choroidal neovascularisation and retinal\r\nangiomatous proliferation. It is also known as neovascular or exudative\r\nmacular degeneration. Complications include subretinal haemorrhage."
+    } ],
+    "conditionVariant" : {
+      "name" : "wet macular degeneration",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(10)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of macular\r\ndegeneration, and:\r\n(a) smoking commenced at least five years before the clinical\r\nworsening of macular degeneration; and\r\n(b) where smoking has ceased, the clinical worsening of macular\r\ndegeneration has occurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "being exposed to second-hand smoke:\r\n(a) for at least 10 000 hours before the clinical worsening of macular\r\ndegeneration; and\r\n(b) where the first exposure to second-hand smoke commenced at\r\nleast five years before the clinical worsening of macular\r\ndegeneration; and\r\n(c) where the last exposure to second-hand smoke occurred within\r\nthe 20 years before the clinical worsening of macular\r\ndegeneration",
+    "definedTerms" : [ {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space and\r\ninhaling smoke from burning tobacco products or smoke that has been\r\nexhaled by a person who is smoking."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "consuming a cumulative total of at least 15 kilograms of alcohol in a\r\ncontinuous period of two years, within the five years before the clinical\r\nworsening of macular degeneration",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "being obese for at least the five years before the clinical worsening of\r\nmacular degeneration",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having chronic kidney disease within the five years before the clinical\r\nworsening of macular degeneration",
+    "definedTerms" : [ {
+      "term" : "chronic kidney disease",
+      "definition" : "means an abnormality of kidney structure or function\r\nthat has been present for at least three months.\r\nNote: an abnormality of kidney structure or function is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having a lipid profile as specified, within the five years before the\r\nclinical worsening of macular degeneration",
+    "definedTerms" : [ {
+      "term" : "lipid profile as specified",
+      "definition" : "means a high density lipoprotein cholesterol level\r\ngreater than or equal to 1.7 mmol/L after the accurate evaluation of serum\r\nlipids following a 12 hour overnight fast, and estimated on a minimum of\r\ntwo occasions.\r\nmacular degeneration—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\nmacular degeneration",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having hypertension at the time of the clinical worsening of macular\r\ndegeneration",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "for wet macular degeneration only, undergoing cataract surgery\r\ninvolving the affected eye within the five years before the clinical\r\nworsening of macular degeneration",
+    "definedTerms" : [ {
+      "term" : "wet macular degeneration",
+      "definition" : "means choroidal neovascularisation and retinal\r\nangiomatous proliferation. It is also known as neovascular or exudative\r\nmacular degeneration. Complications include subretinal haemorrhage."
+    } ],
+    "conditionVariant" : {
+      "name" : "wet macular degeneration",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "for clinical worsening of wet macular degeneration manifesting as\r\nsubretinal haemorrhage only, having anticoagulant therapy or\r\nthrombolytic therapy, within the seven days before the clinical\r\nworsening of macular degeneration",
+    "definedTerms" : [ {
+      "term" : "wet macular degeneration",
+      "definition" : "means choroidal neovascularisation and retinal\r\nangiomatous proliferation. It is also known as neovascular or exudative\r\nmacular degeneration. Complications include subretinal haemorrhage."
+    }, {
+      "term" : "thrombolytic therapy",
+      "definition" : "means therapeutic administration of a pharmacological\r\nagent which breaks up or dissolves blood clots (such as streptokinase or\r\ntissue plasminogen activator)."
+    }, {
+      "term" : "anticoagulant therapy",
+      "definition" : "means therapeutic administration of a\r\npharmacological agent which suppresses, delays or nullifies blood\r\ncoagulation (such as heparin, warfarin or dicumarol), but excludes\r\nantiplatelet therapy (such as aspirin, clopidogrel, ticlopidine or monoclonal\r\nantibodies and recombinant and chemically synthesised peptides that block\r\nplatelet adhesion or aggregation)."
+    } ],
+    "conditionVariant" : {
+      "name" : "clinical worsening of wet macular degeneration manifesting as subretinal haemorrhage",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "inability to obtain appropriate clinical management for macular\r\ndegeneration",
+    "definedTerms" : [ ]
+  } ]
+}

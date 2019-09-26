@@ -1,0 +1,94 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L01055",
+  "instrumentNumber" : "50/2017",
+  "citation" : "Statement of Principles concerning rheumatoid arthritis (Reasonable Hypothesis) (No. 50 of 2017)",
+  "conditionName" : "rheumatoid arthritis",
+  "effectiveFrom" : "2017-09-18",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M05"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M06"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of rheumatoid\r\narthritis, and where smoking has ceased, the clinical onset of\r\nrheumatoid arthritis has occurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(a) produced;\r\n(b) excavated;\r\n(c) drilled, cut or ground; or\r\n(d) used in construction, manufacturing, cleaning or blasting;\r\nfor a cumulative period of at least 2 500 hours within a continuous",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being treated with a drug from Specified List 1 of drugs within the\r\neight weeks before the clinical onset of rheumatoid arthritis",
+    "definedTerms" : [ {
+      "term" : "Specified List 1 of drugs",
+      "definition" : "means:\r\n(a) granulocyte colony-stimulating factors (G-CSF);\r\n(b) granulocyte-macrophage colony-stimulating factors (GM-CSF);\r\n(c) interferon-α;\r\n(d) interleukin 2; or\r\n(e) intradermal or intravesical bacillus Calmette-Guérin (BCG)."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having periodontitis for at least the three months before the clinical\r\nonset of rheumatoid arthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being obese for at least five years within the ten years before the\r\nclinical onset of rheumatoid arthritis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "consuming an average of at least 400 millilitres per day of beverages\r\nsweetened with high fructose corn syrup, for a period of at least one\r\nyear within the five years before the clinical onset of rheumatoid\r\narthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having vitamin D deficiency, with a serum 25(OH)D level of less than\r\n50 nanomoles per litre, for a continuous period of at least one year\r\nwithin the ten years before the clinical onset of rheumatoid arthritis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(8)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of rheumatoid\r\narthritis, and where smoking has ceased, the clinical worsening of\r\nrheumatoid arthritis has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(a) produced;\r\n(b) excavated;\r\n(c) drilled, cut or ground; or\r\n(d) used in construction, manufacturing, cleaning or blasting;\r\nfor a cumulative period of at least 2 500 hours within a continuous\r\nperiod of ten years, before the clinical worsening of rheumatoid\r\narthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being treated with a drug from Specified List 2 of drugs within the\r\neight weeks before the clinical worsening of rheumatoid arthritis",
+    "definedTerms" : [ {
+      "term" : "Specified List 2 of drugs",
+      "definition" : "means:\r\n(a) arsenic trioxide;\r\n(b) granulocyte colony-stimulating factors (G-CSF);\r\n(c) granulocyte-macrophage colony-stimulating factors (GM-CSF);\r\n(d) interferon-α;\r\n(e) interleukin 2;\r\n(f) intradermal or intravesical bacillus Calmette-Guérin (BCG); or\r\n(g) intravenous iron dextran."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "suddenly discontinuing treatment with a disease modifying\r\nantirheumatic drug after undergoing continuous disease modifying\r\nantirheumatic drug treatment for at least six months, within the six\r\nmonths before the clinical worsening of rheumatoid arthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having periodontitis for at least the three months before the clinical\r\nworsening of rheumatoid arthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "being obese for at least five years within the ten years before the\r\nclinical worsening of rheumatoid arthritis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "consuming an average of at least 400 millilitres per day of beverages\r\nsweetened with high fructose corn syrup, for a period of at least one\r\nyear within the five years before the clinical worsening of rheumatoid\r\narthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having vitamin D deficiency, with a serum 25(OH)D level of less than\r\n50 nanomoles per litre, for a continuous period of at least one year\r\nwithin the ten years before the clinical worsening of rheumatoid\r\narthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "inability to obtain appropriate clinical management for rheumatoid\r\narthritis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,147 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00628",
+  "instrumentNumber" : "66/2016",
+  "citation" : "Statement of Principles concerning suicide and attempted suicide (Balance of Probabilities) (No. 66 of 2016)",
+  "conditionName" : "suicide and attempted suicide",
+  "effectiveFrom" : "2016-07-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the suicide or the attempted suicide",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) acute stress disorder;\r\n(b) adjustment disorder;\r\n(c) alcohol use disorder;\r\n(d) anxiety disorder;\r\n(e) attention-deficit/hyperactivity disorder;\r\n(f) bipolar disorder;\r\n(g) body dysmorphic disorder;\r\n(h) brief psychotic disorder;\r\n(i) conduct disorder;\r\n(j) depressive disorder;\r\n(k) eating disorder;\r\n(l) obsessive-compulsive disorder;\r\n(m) oppositional defiant disorder;\r\n(n) panic disorder;\r\n(o) personality disorder;\r\n(p) phobic anxiety;\r\n(q) posttraumatic stress disorder;\r\n(r) schizoaffective disorder;\r\n(s) schizophrenia;\r\n(t) substance/medication-induced anxiety disorder;\r\n(u) substance/medication-induced psychotic disorder; or\r\n(v) substance use disorder."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a category 1A stressor before the suicide or the attempted\r\nsuicide",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "experiencing a category 1B stressor before the suicide or the attempted\r\nsuicide",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a significant other who experiences a category 1A stressor\r\nwithin the one year before the suicide or the attempted suicide",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "experiencing the death of a significant other within the two years\r\nbefore the suicide or the attempted suicide",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "experiencing the death of a parent due to suicide within the 25 years\r\nbefore the suicide or the attempted suicide, where the person was aged\r\n18 years or younger at the time of the parent's death",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for persons 18 years of age and younger only, experiencing the suicide\r\nof a peer within the two years before the suicide or the attempted\r\nsuicide",
+    "definedTerms" : [ {
+      "term" : "peer",
+      "definition" : "means an individual of a similar age, with whom the person has a\r\npersonal association, such as a classmate."
+    } ],
+    "conditionVariant" : {
+      "name" : "persons 18 years of age and younger",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "experiencing a category 2 stressor within the ten years before the\r\nsuicide or the attempted suicide;\r\nNote 1: A category 2 stressor can arise in a variety of circumstances connected with service.\r\nSuch circumstances can arise during the course of service, as a result of separation from\r\nservice and the conditions associated with that separation, and in the transition to civilian life\r\nin the years following separation.\r\nNote 2: category 2 stressor is defined in the Schedule 1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability,\r\nmedical illness or psychiatric symptomatology;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation or divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, experiencing\r\ndemotion at work, or experiencing bullying in the workplace or school\r\nenvironment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property, or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability.\r\nNote: significant other is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being a perpetrator of bullying within the two years before the suicide\r\nor the attempted suicide",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having experienced severe childhood abuse before the suicide or the\r\nattempted suicide",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "attempting suicide or performing a self-injurious act, within the five\r\nyears before the suicide or the attempted suicide",
+    "definedTerms" : [ {
+      "term" : "performing a self-injurious act",
+      "definition" : "means committing deliberate harm to one's\r\nown body and may include cutting, burning, hitting or poisoning. The injury\r\nis done independently, without the aid of another person, and is severe\r\nenough for tissue damage (such as scarring) to result. This definition\r\nexcludes acts associated with suicidal intent and acts related to social and\r\ncultural rites of passage which result in cosmetic scarring."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a medical illness or injury which has resulted in, or where the\r\nprognosis involves, a severe level of disability at the time of the\r\nsuicide or the attempted suicide",
+    "definedTerms" : [ {
+      "term" : "severe level of disability",
+      "definition" : "means needing help with some or all activities of\r\ndaily living (communication, mobility and self-care). This definition\r\nincludes, for example, individuals with serious spinal injury, motor neurone\r\ndisease or a disseminated malignancy."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having epilepsy at the time of the suicide or the attempted suicide",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having persistent pain as specified of at least six months duration at the\r\ntime of the suicide or the attempted suicide",
+    "definedTerms" : [ {
+      "term" : "persistent pain as specified",
+      "definition" : "means:\r\n(a) continuous pain; or\r\n(b) almost continuous pain; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich is severe enough to interfere with usual work or leisure activities or\r\nactivities of daily living."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having failed an academic examination or other academic assessment\r\nwithin the 30 days before the suicide or the attempted suicide",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "for persons 18 years of age and younger only, commencing a course of\r\nSelective Serotonin Reuptake Inhibitor (SSRI) or Serotonin-\r\nNorepinephrine Reuptake Inhibitor (SNRI) drug therapy, or increasing\r\nor reducing the dose of that drug therapy, within the eight weeks\r\nbefore the suicide or the attempted suicide, and during that time\r\nreporting new or worse symptoms of agitation, aggression, insomnia,\r\nirritability, hyperkinesia, mania, hypomania or worsening of\r\ndepressive symptoms",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "persons 18 years of age and younger",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, within the 14 days before the suicide or the attempted suicide",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "taking mefloquine within the three months before the suicide or the\r\nattempted suicide",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "using methylenedioxypyrovalerone (MDPV) or 4-iodo-2,5-dimethoxy-\r\nN-(2-methoxybenzyl)-phenylethylamine (25I-NBOMe) within the 12\r\nhours before the suicide or the attempted suicide",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having a moderate to severe traumatic brain injury before the suicide\r\nor the attempted suicide",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "undergoing bariatric surgery within the ten years before the suicide or\r\nthe attempted suicide",
+    "definedTerms" : [ {
+      "term" : "bariatric surgery",
+      "definition" : "means weight reduction surgical procedures including\r\ngastrojejunostomy, gastric stapling, vertical banded gastroplasty and\r\ngastrectomy with Roux-en-Y anastomosis."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(22)",
+    "text" : "inability to obtain appropriate clinical management for the attempted\r\nsuicide",
+    "definedTerms" : [ ]
+  } ]
+}

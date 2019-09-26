@@ -1,0 +1,162 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00758",
+  "instrumentNumber" : "62/2015",
+  "citation" : "Statement of Principles concerning gastric ulcer and duodenal ulcer No. 62 of 2015",
+  "conditionName" : "gastric ulcer and duodenal ulcer",
+  "effectiveFrom" : "2015-06-01",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K25"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K26"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K27"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K28"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having Helicobacter pylori infection of the stomach or duodenum at\r\nthe time of the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of gastric ulcer or\r\nduodenal ulcer, and:\r\n(i) smoking commenced at least one year before the clinical onset\r\nof gastric ulcer or duodenal ulcer; and\r\n(ii) where smoking has ceased, the clinical onset of gastric ulcer or\r\nduodenal ulcer has occurred within six months of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a gastrin-secreting tumour at the time of the clinical onset of\r\ngastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a critical illness or injury within the 14 days before the clinical\r\nonset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a critical illness or injury",
+      "definition" : "means any physical injury or illness requiring\nmechanical ventilation support or admission to an intensive care unit, or which\ncauses septicaemia, adult respiratory distress syndrome, acute renal tubular\nnecrosis, disseminated intravascular coagulation or multiple organ failure"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with a non-topical non-steroidal anti-inflammatory drug,\r\nincluding aspirin, at least every other day during a continuous period of\r\nat least 14 days, within the three months before the clinical onset of\r\ngastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 1 at the time of the clinical onset of gastric ulcer or\r\nduodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 2 for at least two weeks, within the three months before\r\nthe clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a specified infection of the gastric or duodenal mucosa at the\r\ntime of the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) cytomegalovirus infection;\n(b) herpes simplex virus infection;\n(c) fungal infection; or\n(d) Helicobacter heilmannii infection"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nstomach or duodenum was in the field of radiation, within the six\r\nmonths before the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the stomach or duodenum within the six months\r\nbefore the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having received ⁹⁰Yttrium microspheres as therapy for primary and\r\nmetastatic liver tumours, within the six months before the clinical onset\r\nof gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "for gastric ulcer only:\r\n(i) having partial gastrectomy within the five years before the\r\nclinical onset of gastric ulcer, where the ulcer occurs at the site\r\nof the surgical anastomosis; or\r\n(ii) having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical onset of gastric ulcer",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "gastric ulcer",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having partial gastrectomy within the five years before the\r\nclinical onset of gastric ulcer, where the ulcer occurs at the site\r\nof the surgical anastomosis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical onset of gastric ulcer"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(m)",
+    "text" : "having Helicobacter pylori infection of the stomach or duodenum at\r\nthe time of the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of gastric ulcer\r\nor duodenal ulcer, and:\r\n(i) smoking commenced at least one year before the clinical\r\nworsening of gastric ulcer or duodenal ulcer; and\r\n(ii) where smoking has ceased, the clinical worsening of gastric\r\nulcer or duodenal ulcer has occurred within six months of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a gastrin-secreting tumour at the time of the clinical worsening\r\nof gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having a critical illness or injury within the 14 days before the clinical\r\nworsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a critical illness or injury",
+      "definition" : "means any physical injury or illness requiring\nmechanical ventilation support or admission to an intensive care unit, or which\ncauses septicaemia, adult respiratory distress syndrome, acute renal tubular\nnecrosis, disseminated intravascular coagulation or multiple organ failure"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "being treated with a non-topical non-steroidal anti-inflammatory drug,\r\nincluding aspirin, at least every other day during a continuous period of\r\nat least 14 days, within the three months before the clinical worsening\r\nof gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 1 at the time of the clinical worsening of gastric ulcer or\r\nduodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 3 for at least two weeks, within the three months before\r\nthe clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a specified infection of the gastric or duodenal mucosa at the\r\ntime of the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) cytomegalovirus infection;\n(b) herpes simplex virus infection;\n(c) fungal infection; or\n(d) Helicobacter heilmannii infection"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nstomach or duodenum was in the field of radiation, within the six\r\nmonths before the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the stomach or duodenum within the six months\r\nbefore the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having received ⁹⁰Yttrium microspheres as therapy for primary and\r\nmetastatic liver tumours, within the six months before the clinical\r\nworsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "for gastric ulcer only:\r\n(i) having partial gastrectomy within the five years before the\r\nclinical worsening of gastric ulcer, where the ulcer occurs at the\r\nsite of the surgical anastomosis; or\r\n(ii) having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical worsening of gastric ulcer",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "gastric ulcer",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having partial gastrectomy within the five years before the\r\nclinical worsening of gastric ulcer, where the ulcer occurs at the\r\nsite of the surgical anastomosis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical worsening of gastric ulcer"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "inability to obtain appropriate clinical management for gastric ulcer or\r\nduodenal ulcer",
+    "definedTerms" : [ ]
+  } ]
+}

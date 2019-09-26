@@ -1,0 +1,30 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015C00801",
+  "instrumentNumber" : "101/2015",
+  "citation" : "Statement of Principles concerning lipoma (Balance of Probabilities) (No. 101 of 2015)",
+  "conditionName" : "lipoma",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D17"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for benign symmetrical lipomatosis only, having alcohol use disorder\r\nat the time of the clinical onset of lipoma",
+    "definedTerms" : [ {
+      "term" : "benign symmetrical lipomatosis",
+      "definition" : "means a cutaneous condition characterised\r\nby multiple symmetrical fat deposits in the head, neck and shoulder girdle\r\narea. It is also known as multiple symmetrical lipomatosis or Madelung\r\ndisease.\r\nlipoma—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "benign symmetrical lipomatosis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for lipoma",
+    "definedTerms" : [ ]
+  } ]
+}

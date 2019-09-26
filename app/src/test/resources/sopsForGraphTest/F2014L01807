@@ -1,0 +1,49 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01807",
+  "instrumentNumber" : "1/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the small intestine No. 1 of 2015",
+  "conditionName" : "malignant neoplasm of the small intestine",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C17"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having Crohn's disease of the small intestine before the clinical onset\r\nof malignant neoplasm of the small intestine",
+    "definedTerms" : [ {
+      "term" : "Crohn's disease",
+      "definition" : "means a type of inflammatory bowel disease characterised\nby chronic granulomatous inflammation which may extend through all layers\nof the gastrointestinal tract wall"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having coeliac disease before the clinical onset of malignant neoplasm\r\nof the small intestine",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having an adenoma of the small intestine before the clinical onset of\r\nmalignant neoplasm of the small intestine",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for adenocarcinoma involving an ileostomy or ileal pouch only, having\r\nan ileostomy or ileal pouch for at least two years before the clinical\r\nonset of malignant neoplasm of the small intestine",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "adenocarcinoma involving an ileostomy or ileal pouch",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being obese for at least ten years before the clinical onset of malignant\r\nneoplasm of the small intestine",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the small intestine",
+    "definedTerms" : [ ]
+  } ]
+}

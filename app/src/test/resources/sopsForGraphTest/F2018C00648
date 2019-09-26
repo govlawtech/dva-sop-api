@@ -1,0 +1,122 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00648",
+  "instrumentNumber" : "48/2017",
+  "citation" : "Statement of Principles concerning alcohol use disorder (Reasonable Hypothesis) (No. 48 of 2017)",
+  "conditionName" : "alcohol use disorder",
+  "effectiveFrom" : "2017-09-18",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the clinical onset of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) acute stress disorder;\r\n(b) adjustment disorder;\r\n(c) agoraphobia;\r\n(d) Alzheimer-type dementia;\r\n(e) anxiety disorder;\r\n(f) attention-deficit/hyperactivity disorder;\r\n(g) bipolar disorder;\r\n(h) conduct disorder;\r\n(i) depressive disorder;\r\n(j) eating disorder;\r\n(k) gambling disorder;\r\n(l) gender dysphoria;\r\n(m) insomnia disorder;\r\n(n) obsessive-compulsive disorder;\r\n(o) panic disorder;\r\n(p) paraphilic disorder;\r\n(q) personality disorder;\r\n(r) posttraumatic stress disorder;\r\n(s) schizophrenia;\r\n(t) sexual dysfunction;\r\n(u) social anxiety disorder;\r\n(v) somatic symptom disorder;\r\n(w) specific phobia;\r\n(x) substance use disorder; or\r\n(y) vascular dementia.\r\nNote 1: \"Management\" of the condition may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner.\r\nNote 2: To \"warrant ongoing management\" does not require that any actual management was\r\nreceived or given for the condition."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a category 1A stressor within the five years before the\r\nclinical onset of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "experiencing a category 1B stressor within the five years before the\r\nclinical onset of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "experiencing the death of a significant other within the ten years\r\nbefore the clinical onset of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "experiencing severe childhood abuse before the clinical onset of\r\nalcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical onset of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation or divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having persistent pain of at least three months duration at the time of\r\nthe clinical onset of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous pain; or\r\n(b) almost continuous pain; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich is severe enough to interfere with usual work or leisure activities or\r\nactivities of daily living."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "undergoing Roux-en-Y gastric bypass surgery within the two years\r\nbefore the clinical onset of alcohol use disorder",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(9)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the clinical worsening of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) acute stress disorder;\r\n(b) adjustment disorder;\r\n(c) agoraphobia;\r\n(d) Alzheimer-type dementia;\r\n(e) anxiety disorder;\r\n(f) attention-deficit/hyperactivity disorder;\r\n(g) bipolar disorder;\r\n(h) conduct disorder;\r\n(i) depressive disorder;\r\n(j) eating disorder;\r\n(k) gambling disorder;\r\n(l) gender dysphoria;\r\n(m) insomnia disorder;\r\n(n) obsessive-compulsive disorder;\r\n(o) panic disorder;\r\n(p) paraphilic disorder;\r\n(q) personality disorder;\r\n(r) posttraumatic stress disorder;\r\n(s) schizophrenia;\r\n(t) sexual dysfunction;\r\n(u) social anxiety disorder;\r\n(v) somatic symptom disorder;\r\n(w) specific phobia;\r\n(x) substance use disorder; or\r\n(y) vascular dementia.\r\nNote 1: \"Management\" of the condition may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner.\r\nNote 2: To \"warrant ongoing management\" does not require that any actual management was\r\nreceived or given for the condition."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "experiencing a category 1A stressor within the five years before the\r\nclinical worsening of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "experiencing a category 1B stressor within the five years before the\r\nclinical worsening of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "experiencing the death of a significant other within the ten years\r\nbefore the clinical worsening of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "experiencing severe childhood abuse before the clinical worsening of\r\nalcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical worsening of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation or divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having persistent pain of at least three months duration at the time of\r\nthe clinical worsening of alcohol use disorder",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous pain; or\r\n(b) almost continuous pain; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich is severe enough to interfere with usual work or leisure activities or\r\nactivities of daily living."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "undergoing Roux-en-Y gastric bypass surgery within the two years\r\nbefore the clinical worsening of alcohol use disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "inability to obtain appropriate clinical management for alcohol use\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

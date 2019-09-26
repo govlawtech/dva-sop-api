@@ -1,0 +1,69 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00902",
+  "instrumentNumber" : "57/2018",
+  "citation" : "Statement of Principles concerning cluster headache (Reasonable Hypothesis) (No. 57 of 2018)",
+  "conditionName" : "cluster headache",
+  "effectiveFrom" : "2018-07-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G44.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having trauma to the skull or face of the affected side within the seven\r\ndays before the clinical onset of cluster headache",
+    "definedTerms" : [ {
+      "term" : "trauma to the skull or face",
+      "definition" : "means an injury to any or all of those areas of the\r\nhead, resulting in:\r\n(a) fracture of the underlying bones; or\r\n(b) laceration of the overlying skin; or\r\n(c) external bruise at the site of the trauma."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having concussion or moderate to severe traumatic brain injury before\r\nthe clinical onset of cluster headache, where cluster headache has\r\ndeveloped within the seven days of:\r\n(a) injury to the head; or\r\n(b) regaining consciousness following the injury to the head; or\r\n(c) discontinuing medication that impairs the ability to sense or\r\nreport headache following the injury to the head",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "undergoing eye exenteration of the affected side within the two years\r\nbefore the clinical onset of cluster headache",
+    "definedTerms" : [ {
+      "term" : "exenteration",
+      "definition" : "means removal of the entire contents of the orbit of the eye\r\nincluding the eye and extraocular muscles."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having sleep apnoea at the time of the clinical onset of cluster\r\nheadache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of cluster headache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "using intranasal cocaine at least four times per month for the one year\r\nbefore the clinical onset of cluster headache",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(7)",
+    "text" : "having sleep apnoea at the time of the clinical worsening of cluster\r\nheadache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of cluster\r\nheadache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "taking glyceryl trinitrate, isosorbide mononitrate or isosorbide dinitrate\r\nwithin the 24 hours before the clinical worsening of cluster headache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "consuming alcohol within the 24 hours before the clinical worsening of\r\ncluster headache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "being treated with sildenafil within the 24 hours before the clinical\r\nworsening of cluster headache",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "inability to obtain appropriate clinical management for cluster\r\nheadache",
+    "definedTerms" : [ ]
+  } ]
+}

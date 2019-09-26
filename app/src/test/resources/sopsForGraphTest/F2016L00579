@@ -1,0 +1,47 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00579",
+  "instrumentNumber" : "45/2016",
+  "citation" : "Statement of Principles concerning opisthorchiasis (Reasonable Hypothesis) (No. 45 of 2016)",
+  "conditionName" : "opisthorchiasis",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B66.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for infection with Opisthorchis viverrini only:\r\n(a) ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish containing encysted larvae of\r\nOpisthorchis viverrini, at least three weeks before the clinical\r\nonset of opisthorchiasis; or\r\n(b) ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish from a country from Specified List 1 of\r\ncountries, at least three weeks before the clinical onset of\r\nopisthorchiasis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "infection with Opisthorchis viverrini",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish containing encysted larvae of\r\nOpisthorchis viverrini, at least three weeks before the clinical\r\nonset of opisthorchiasis"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish from a country from Specified List 1 of\r\ncountries, at least three weeks before the clinical onset of\r\nopisthorchiasis"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for infection with Opisthorchis felineus only:\r\n(a) ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish containing encysted larvae of\r\nOpisthorchis felineus, at least three weeks before the clinical\r\nonset of opisthorchiasis; or\r\n(b) ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish from a country from Specified List 2 of\r\ncountries, at least three weeks before the clinical onset of\r\nopisthorchiasis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "infection with Opisthorchis felineus",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish containing encysted larvae of\r\nOpisthorchis felineus, at least three weeks before the clinical\r\nonset of opisthorchiasis"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "ingesting the skin or flesh of raw, undercooked, iced, pickled or\r\nsmoked freshwater fish from a country from Specified List 2 of\r\ncountries, at least three weeks before the clinical onset of\r\nopisthorchiasis"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for opisthorchiasis",
+    "definedTerms" : [ ]
+  } ]
+}

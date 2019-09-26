@@ -1,0 +1,124 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011C00669",
+  "instrumentNumber" : "15/2009",
+  "citation" : "Statement of Principles concerning schizophrenia No. 15 of 2009",
+  "conditionName" : "schizophrenia",
+  "effectiveFrom" : "2009-05-06",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F20.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having experienced severe childhood abuse within the ten years\r\nbefore the clinical onset of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\n(a) serious physical, emotional, psychological or sexual harm whilst a\nchild aged under 16 years; or\n(b) neglect involving a serious failure to provide the necessities for\nhealth, physical and emotional development, or wellbeing whilst a\nchild aged under 16 years;\nwhere such serious harm or neglect has been perpetrated by a parent, a\ncare provider, an adult who works with or around that child, or any other\nadult in contact with that child"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "experiencing the death of a related child within the five years\r\nbefore the clinical onset of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "a related child",
+      "definition" : "means your biological, adopted, step- or foster child"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "experiencing the early-death of a parent within the ten years\r\nbefore the clinical onset of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "early-death of a parent",
+      "definition" : "means the death of a parent before the child\nattains the age of 18 years"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having drug dependence or drug abuse, involving cannabis,\r\nwithin the ten years before the clinical onset of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "using cannabis at least twice a week for a continuous period of at\r\nleast six months before the age of 18 years, within the ten years\r\nbefore the clinical onset of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having viral meningitis, encephalitis or meningoencephalitis,\r\nbefore the age of sixteen years, where the clinical onset of\r\nschizophrenia occurs within the fifteen years following the\r\ninfection with that viral meningitis, encephalitis or\r\nmeningoencephalitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being infected with Toxoplasma gondii before the clinical onset\r\nof schizophrenia",
+    "definedTerms" : [ {
+      "term" : "being infected with Toxoplasma gondii",
+      "definition" : "means serological evidence\nof infection with Toxoplasma gondii"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a moderate to severe cerebral trauma at least one year, but\r\nnot more than five years, before the clinical onset of\r\nschizophrenia",
+    "definedTerms" : [ {
+      "term" : "moderate to severe cerebral trauma",
+      "definition" : "means structural injury or\nphysiological disruption of brain function as a result of external force,\naccompanied by at least one of the following clinical signs immediately\nfollowing the event:\n(a) loss of consciousness lasting at least 30 minutes or posttraumatic\nanterograde amnesia lasting at least 24 hours;\n(b) leakage of cerebrospinal fluid;\n(c) injury involving penetration of the dura mater;\n(d) seizures;\n(e) intracranial abnormalities, including intracranial haemorrhage;\nintracranial haematoma; cerebral contusion; hydrocephaly and\ndiffuse axonal injury; or\n(f) a Glasgow Coma Scale score of 12 or less.\nIn this definition, external force includes blunt trauma; acceleration or\ndeceleration forces; blast force or a foreign body penetrating the brain"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "having experienced severe childhood abuse within the ten years\r\nbefore the clinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\n(a) serious physical, emotional, psychological or sexual harm whilst a\nchild aged under 16 years; or\n(b) neglect involving a serious failure to provide the necessities for\nhealth, physical and emotional development, or wellbeing whilst a\nchild aged under 16 years;\nwhere such serious harm or neglect has been perpetrated by a parent, a\ncare provider, an adult who works with or around that child, or any other\nadult in contact with that child"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "experiencing the death of a related child within the five years\r\nbefore the clinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "a related child",
+      "definition" : "means your biological, adopted, step- or foster child"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "experiencing a category 1A stressor within the six months before\r\nthe clinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one or more of the following severe\ntraumatic events:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape\nand sexual molestation; or\n(c) being threatened with a weapon, being held captive, being\nkidnapped, or being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "experiencing a category 1B stressor within the six months before\r\nthe clinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) being an eyewitness to a person being killed or critically injured;\n(b) viewing corpses or critically injured casualties as an eyewitness;\n(c) being an eyewitness to atrocities inflicted on another person or\npersons;\n(d) killing or maiming a person; or\n(e) being an eyewitness to or participating in, the clearance of\ncritically injured casualties"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having drug dependence or drug abuse at the time of the clinical\r\nworsening of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having alcohol dependence or alcohol abuse at the time of the\r\nclinical worsening of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "being treated with a drug which is associated in the individual\r\nwith the development of psychotic symptoms during drug therapy,\r\nand the cessation or significant reduction of the psychotic\r\nsymptoms within days or weeks of discontinuing drug therapy,\r\nwhere treatment with the drug continued for at least the two days\r\nbefore the clinical worsening of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "taking a drug or a drug from the class of drugs in specified list 1\r\nwithin the one month before the clinical worsening of\r\nschizophrenia",
+    "definedTerms" : [ {
+      "term" : "a drug or a drug from the class of drugs in specified list 1",
+      "definition" : "means:\n(a) amphetamines, including methamphetamine and 3,4-\nmethylenedioxymethamphetamine (ecstasy);\n(b) anabolic-androgenic steroids;\n(c) cannabis;\n(d) cocaine;\n(e) ephedrine;\n(f) fenfluramine;\n(g) hallucinogens;\n(h) inhalants;\n(i) interferons;\n(j) opiates;\n(k) phencyclidine;\n(l) phentermine;\n(m) phenylephrine;\n(n) phenylpropanolamine; or\n(o) pseudoephedrine"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having ceased or reduced antipsychotic drug therapy, within the\r\nseven days before the clinical worsening of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having a clinically significant psychiatric condition at the time of\r\nthe clinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "a clinically significant psychiatric condition",
+      "definition" : "means any Axis 1\ndisorder of mental health that attracts a diagnosis under DSM-IV-TR\nwhich is sufficient to warrant ongoing management, which may involve\nregular visits (for example, at least monthly), to a psychiatrist, clinical\npsychologist or general practitioner"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "inability to obtain appropriate clinical management for\r\nschizophrenia",
+    "definedTerms" : [ ]
+  } ]
+}

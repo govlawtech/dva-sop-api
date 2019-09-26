@@ -1,0 +1,41 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015C00802",
+  "instrumentNumber" : "100/2015",
+  "citation" : "Statement of Principles concerning lipoma (Reasonable Hypothesis) (No. 100 of 2015)",
+  "conditionName" : "lipoma",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D17"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for benign symmetrical lipomatosis only, having alcohol use disorder\r\nat the time of the clinical onset of lipoma",
+    "definedTerms" : [ {
+      "term" : "benign symmetrical lipomatosis",
+      "definition" : "means a cutaneous condition characterised\r\nby multiple symmetrical fat deposits in the head, neck and shoulder girdle\r\narea. It is also known as multiple symmetrical lipomatosis or Madelung\r\ndisease."
+    } ],
+    "conditionVariant" : {
+      "name" : "benign symmetrical lipomatosis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for hepatic lipoma only, having hepatic steatosis or steatohepatitis at\r\nthe time of the clinical onset of lipoma",
+    "definedTerms" : [ {
+      "term" : "hepatic steatosis",
+      "definition" : "means the accumulation of fat within the cells of the liver.\r\nIt is also known as fatty liver.\r\nlipoma—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "hepatic lipoma",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for lipoma",
+    "definedTerms" : [ ]
+  } ]
+}

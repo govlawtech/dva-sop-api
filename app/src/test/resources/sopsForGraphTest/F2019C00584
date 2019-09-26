@@ -1,0 +1,199 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019C00584",
+  "instrumentNumber" : "10/2012",
+  "citation" : "Statement of Principles concerning aortic aneurysm No. 10 of 2012",
+  "conditionName" : "aortic aneurysm",
+  "effectiveFrom" : "2012-01-11",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I71.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least two pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ab)",
+    "text" : "where exposure to second-hand smoke has not ceased, being exposed\r\nto second-hand smoke for at least 1 000 hours before the clinical onset\r\nof aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ac)",
+    "text" : "where exposure to second-hand smoke has ceased:\r\n(i) being exposed to second-hand smoke for at least 1 000 hours,\r\nbut less than 5 000 hours, before the clinical onset of aortic\r\naneurysm, and the clinical onset of aortic aneurysm has\r\noccurred within five years of the last exposure to second-hand\r\nsmoke; or\r\n(ii) being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical onset of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space\nand inhaling smoke from burning tobacco products or smoke that has been\nexhaled by a person who is smoking"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having hypertension before the clinical onset of aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having dyslipidaemia before the clinical onset of aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having Marfan syndrome, Ehler-Danlos type IV syndrome, cutis laxa\r\nor bicuspid aortic valve before the clinical onset of aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having cystic medial necrosis before the clinical onset of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "cystic medial necrosis",
+      "definition" : "means changes in the medial layer of the aorta,\nconsisting of degeneration and loss of elastic and muscle fibres, and formation\nof multiple clefts of mucoid material"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having infective aortitis before the clinical onset of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "infective aortitis",
+      "definition" : "means the infection of the aortic wall by bacteria or fungi,\nand resultant inflammation within the aortic wall"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "undergoing therapy with BCG vaccine, where this therapy has been\r\nadministered within the five years before the clinical onset of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "undergoing therapy with BCG vaccine",
+      "definition" : "means treatment with the Bacille\nCalmette-Guerin vaccine for cancer. The Bacille Calmette-Guerin vaccine is\nmade from a strain of Mycobacterium bovis"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having tertiary syphilis before the clinical onset of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "tertiary syphilis",
+      "definition" : "means the last stage of syphilis which develops soon after\nthe lesions of secondary syphilis resolve or many years later, and is\ncharacterised by destructive lesions involving many organs and tissues, such\nas mucocutaneous, musculoskeletal, cardiovascular or central nervous system\nlesions"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having trauma to the aorta before the clinical onset of aortic aneurysm\r\nwhich has occurred at the site of the trauma",
+    "definedTerms" : [ {
+      "term" : "trauma to the aorta",
+      "definition" : "means damage to the wall of the aorta as a result of\npenetrating or blunt major thoracic or abdominal trauma"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having rheumatic aortitis due to a specified condition before the\r\nclinical onset of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "a specified condition",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) Behcet's syndrome;\n(c) inflammatory bowel disease;\n(d) psoriatic arthropathy;\n(e) reactive arthritis;\n(f) relapsing polychondritis;\n(g) rheumatoid arthritis; or\n(h) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having Takayasu's arteritis or giant cell arteritis before the clinical\r\nonset of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "Takayasu's arteritis",
+      "definition" : "means an inflammatory disease of the aorta and its\nmajor arteries often resulting in occlusion and involves a panarteritis"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having coarctation of the aorta before the clinical onset of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "coarctation of the aorta",
+      "definition" : "means a localised malformation characterised by\ndeformity of the aortic media, causing narrowing of the lumen of the aorta"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having hyperhomocysteinaemia before the clinical onset of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "smoking at least two pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of aortic\r\naneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(na)",
+    "text" : "where exposure to second-hand smoke has not ceased, being exposed\r\nto second-hand smoke for at least 1 000 hours before the clinical\r\nworsening of aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(nb)",
+    "text" : "where exposure to second-hand smoke has ceased:\r\n(i) being exposed to second-hand smoke for at least 1 000 hours,\r\nbut less than 5 000 hours, before the clinical worsening of aortic\r\naneurysm, and the clinical worsening of aortic aneurysm has\r\noccurred within five years of the last exposure to second-hand\r\nsmoke; or\r\n(ii) being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical worsening of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space\nand inhaling smoke from burning tobacco products or smoke that has been\nexhaled by a person who is smoking"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having hypertension before the clinical worsening of aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having dyslipidaemia before the clinical worsening of aortic aneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having Marfan syndrome, Ehler-Danlos type IV syndrome, cutis laxa\r\nor bicuspid aortic valve before the clinical worsening of aortic\r\naneurysm",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having cystic medial necrosis before the clinical worsening of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "cystic medial necrosis",
+      "definition" : "means changes in the medial layer of the aorta,\nconsisting of degeneration and loss of elastic and muscle fibres, and formation\nof multiple clefts of mucoid material"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having infective aortitis before the clinical worsening of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "infective aortitis",
+      "definition" : "means the infection of the aortic wall by bacteria or fungi,\nand resultant inflammation within the aortic wall"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "undergoing therapy with BCG vaccine, where this therapy has been\r\nadministered within the five years before the clinical worsening of\r\naortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "undergoing therapy with BCG vaccine",
+      "definition" : "means treatment with the Bacille\nCalmette-Guerin vaccine for cancer. The Bacille Calmette-Guerin vaccine is\nmade from a strain of Mycobacterium bovis"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having tertiary syphilis before the clinical worsening of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "tertiary syphilis",
+      "definition" : "means the last stage of syphilis which develops soon after\nthe lesions of secondary syphilis resolve or many years later, and is\ncharacterised by destructive lesions involving many organs and tissues, such\nas mucocutaneous, musculoskeletal, cardiovascular or central nervous system\nlesions"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having trauma to the aorta before the clinical worsening of aortic\r\naneurysm which has occurred at the site of the trauma",
+    "definedTerms" : [ {
+      "term" : "trauma to the aorta",
+      "definition" : "means damage to the wall of the aorta as a result of\npenetrating or blunt major thoracic or abdominal trauma"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having rheumatic aortitis due to a specified condition before the\r\nclinical worsening of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "a specified condition",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) Behcet's syndrome;\n(c) inflammatory bowel disease;\n(d) psoriatic arthropathy;\n(e) reactive arthritis;\n(f) relapsing polychondritis;\n(g) rheumatoid arthritis; or\n(h) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having Takayasu's arteritis or giant cell arteritis before the clinical\r\nworsening of aortic aneurysm",
+    "definedTerms" : [ {
+      "term" : "Takayasu's arteritis",
+      "definition" : "means an inflammatory disease of the aorta and its\nmajor arteries often resulting in occlusion and involves a panarteritis"
+    } ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having coarctation of the aorta before the clinical worsening of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "coarctation of the aorta",
+      "definition" : "means a localised malformation characterised by\ndeformity of the aortic media, causing narrowing of the lumen of the aorta"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having hyperhomocysteinaemia before the clinical worsening of aortic\r\naneurysm",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "inability to obtain appropriate clinical management for aortic\r\naneurysm",
+    "definedTerms" : [ ]
+  } ]
+}

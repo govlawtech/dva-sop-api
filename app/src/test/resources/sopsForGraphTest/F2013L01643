@@ -1,0 +1,31 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01643",
+  "instrumentNumber" : "55/2013",
+  "citation" : "Statement of Principles concerning asbestosis No. 55 of 2013",
+  "conditionName" : "asbestosis",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "J61"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(i) for a cumulative period of at least 1 000 hours before the\r\nclinical onset of asbestosis; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of asbestos fibres commenced at least five\r\nyears before the clinical onset of asbestosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(i) for a cumulative period of at least 3 000 hours before the\r\nclinical onset of asbestosis; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of asbestos fibres commenced at least five\r\nyears before the clinical onset of asbestosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inhaling respirable asbestos fibres:\r\n(i) for a cumulative period of at least 1 000 hours before the\r\nclinical worsening of asbestosis; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) within the two years before the clinical worsening of\r\nasbestosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for asbestosis",
+    "definedTerms" : [ ]
+  } ]
+}

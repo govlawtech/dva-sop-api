@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01815",
+  "instrumentNumber" : "4/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the testis and paratesticular tissues No. 4 of 2015",
+  "conditionName" : "malignant neoplasm of the testis and paratesticular tissues",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for malignant neoplasm of the testis and paratesticular tissues",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for malignant neoplasm of the testis and paratesticular tissues",
+    "definedTerms" : [ ]
+  } ]
+}

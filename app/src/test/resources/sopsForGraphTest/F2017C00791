@@ -1,0 +1,90 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00791",
+  "instrumentNumber" : "22/2013",
+  "citation" : "Statement of Principles concerning aortic stenosis No. 22 of 2013",
+  "conditionName" : "aortic stenosis",
+  "effectiveFrom" : "2013-05-08",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I35.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I35.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having infective endocarditis before the clinical onset of aortic\r\nstenosis",
+    "definedTerms" : [ {
+      "term" : "infective endocarditis",
+      "definition" : "means inflammation of the endocardium caused by\ninfection with microorganisms"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having systemic lupus erythematosus or rheumatoid arthritis before the\r\nclinical onset of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having received a cumulative equivalent dose of at least 1.0 sievert of\r\nionising radiation to the heart before the clinical onset of aortic\r\nstenosis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons, undergoing\ndiagnostic or therapeutic medical procedures involving ionising radiation, and being a\nmember of an aircrew, leading to increased levels of exposure to cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the heart\r\nwas in the field of radiation, before the clinical onset of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nbefore the clinical onset of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having dyslipidaemia before the clinical onset of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having alkaptonuria before the clinical onset of aortic stenosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "having infective endocarditis before the clinical worsening of aortic\r\nstenosis",
+    "definedTerms" : [ {
+      "term" : "infective endocarditis",
+      "definition" : "means inflammation of the endocardium caused by\ninfection with microorganisms"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having systemic lupus erythematosus or rheumatoid arthritis before the\r\nclinical worsening of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having received a cumulative equivalent dose of at least 1.0 sievert of\r\nionising radiation to the heart before the clinical worsening of aortic\r\nstenosis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons, undergoing\ndiagnostic or therapeutic medical procedures involving ionising radiation, and being a\nmember of an aircrew, leading to increased levels of exposure to cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the heart\r\nwas in the field of radiation, before the clinical worsening of aortic\r\nstenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nbefore the clinical worsening of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having dyslipidaemia before the clinical worsening of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having alkaptonuria before the clinical worsening of aortic stenosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "inability to obtain appropriate clinical management for aortic stenosis",
+    "definedTerms" : [ ]
+  } ]
+}

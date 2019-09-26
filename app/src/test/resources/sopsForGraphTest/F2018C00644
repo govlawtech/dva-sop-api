@@ -1,0 +1,388 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00644",
+  "instrumentNumber" : "86/2015",
+  "citation" : "Statement of Principles concerning cardiomyopathy (No. 86 of 2015)",
+  "conditionName" : "cardiomyopathy",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I42"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I43"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for males only, drinking at least 250 kilograms of alcohol within a\r\ncontinuous five year period before the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "males",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for females only, drinking at least 150 kilograms of alcohol within a\r\ncontinuous five year period before the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "females",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having haematological or biochemical evidence of poisoning with\r\ncobalt at the time of the clinical onset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a hypersensitivity reaction of the myocardium to a drug at the\r\ntime of the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "hypersensitivity reaction of the myocardium to a drug",
+      "definition" : "means eosinophilic\r\nmyocarditis due to an allergic reaction, as indicated by:\r\n(a) skin rash, fever, peripheral eosinophilia, ECG changes, tachycardia and\r\nelevated cardiac enzymes; or\r\n(b) endomyocardial biopsy showing infiltration into the myocardium by\r\neosinophils, multinucleated giant cells and leukocytes, occurring\r\nduring drug therapy."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with an anthracycline within the 25 years before the\r\nclinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "anthracycline",
+      "definition" : "means a class of cell-cycle non-specific drugs used in cancer\r\nchemotherapy derived from Streptomyces peucetius var. caesius, and\r\nincludes daunorubicin (daunomycin), doxorubicin (adriamycin), epirubicin,\r\nidarubicin, valrubicin and mitoxantrone."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being treated for cancer with a chemotherapeutic agent from the\r\nspecified list of chemotherapeutic agents, within the three months\r\nbefore the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "specified list of chemotherapeutic agents",
+      "definition" : "means:\r\n(a) 5-fluorouracil (non-topical);\r\n(b) alemtuzumab;\r\n(c) bevacizumab;\r\n(d) cisplatin;\r\n(e) cladribine;\r\n(f) cyclophosphamide;\r\n(g) dasatinib;\r\n(h) denileukin difitox;\r\n(i) gemcitabine;\r\n(j) ifosfamide;\r\n(k) imantinib;\r\n(l) interferon alpha;\r\n(m) interleukin-2;\r\n(n) lapatinib;\r\n(o) lenalidomide;\r\n(p) mitomycin C;\r\n(q) paclitaxel;\r\n(r) pentostatin;\r\n(s) sorafenib;\r\n(t) sunitinib; or\r\n(u) trastuzumab.\r\nSpecified List of Drugs No. 1 means:\r\n(a) amphotericin B;\r\n(b) anagrelide;\r\n(c) clozapine;\r\n(d) denileukin difitox;\r\n(e) exogenous catecholamine;\r\n(f) itraconazole; or\r\n(g) olanzapine.\r\nSpecified List of Drugs No. 2 means:\r\n(a) androgenic-anabolic steroids; or\r\n(b) cocaine."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "receiving tacrolimus for organ transplantation within the three months\r\nbefore the clinical onset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being treated daily with chloroquine or hydroxychloroquine for at least\r\nthe two years before the clinical onset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List of Drugs No. 1, within the 30 days before the clinical\r\nonset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "using a drug from Specified List of Drugs No. 2 at the time of the\r\nclinical onset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having carbon monoxide poisoning within the 24 hours before the\r\nclinical onset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having infection-related myocarditis before the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having Whipple's disease at the time of the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "Whipple's disease",
+      "definition" : "means a systemic infectious disease caused by the\r\nbacterium Tropheryma whipplei, which primarily causes malabsorption, but\r\nmay also affect any part of the body.\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nThe endnotes provide information about this compilation and the compiled law.\r\nThe following endnotes are included in every compilation:\r\nEndnote 1—About the endnotes\r\nEndnote 2—Abbreviation key\r\nEndnote 3—Legislation history\r\nEndnote 4—Amendment history\r\nAbbreviation key—Endnote 2\r\nThe abbreviation key sets out abbreviations that may be used in the endnotes.\r\nLegislation history and amendment history—Endnotes 3 and 4\r\nAmending laws are annotated in the legislation history and amendment history.\r\nThe legislation history in endnote 3 provides information about each law that has amended (or"
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having a disorder from the specified list of endocrine disorders at the\r\ntime of the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "specified list of endocrine disorders",
+      "definition" : "means:\r\n(a) acromegaly;\r\n(b) adrenal insufficiency;\r\n(c) Cushing's syndrome;\r\n(d) diabetes mellitus;\r\n(e) Graves' disease;\r\n(f) hyperthyroidism or thyrotoxicosis; or\r\n(g) hypoparathyroidism."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having a catecholamine-secreting tumour at the time of the clinical\r\nonset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having giant cell myocarditis, or a disease from the specified list of\r\ninflammatory connective tissue diseases, involving the heart, at the\r\ntime of the clinical onset of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having a vasculitis from the specified list of systemic vasculitides,\r\ninvolving the heart, at the time of the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic vasculitides",
+      "definition" : "means:\r\n(a) Behcet's disease;\r\n(b) eosinophilic granulomatosis with polyangiitis (Churg Straus\r\nsyndrome);\r\n(c) giant cell (temporal) arteritis;\r\n(d) granulomatosis with polyangiitis (Wegener's granulomatosis);\r\n(e) mucocutaneous lymph node syndrome (Kawasaki disease);\r\n(f) microscopic polyangiitis;\r\n(g) polyarteritis nodosa; or\r\n(h) Takayasu's arteritis.\r\ntakotsubo cardiomyopathy, also known as stress cardiomyopathy, means a\r\ntype of acute non-ischaemic cardiomyopathy in which there is a sudden\r\ntemporary weakening of the myocardium, with ballooning of the left\r\nventricular apex and a hypercontractile left ventricular base."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having an infiltrative disease affecting the myocardium at the time of\r\nthe clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "infiltrative disease",
+      "definition" : "means:\r\n(a) a primary or metastatic neoplasm;\r\n(b) amyloidosis;\r\n(c) iron overload; or\r\n(d) sarcoidosis.\r\nNote: iron overload is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nheart was in the field of radiation, before the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having received a cumulative equivalent dose of at least 1.0 sievert of\r\nionising radiation to the heart before the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic\r\nor therapeutic medical procedures involving ionising radiation, and being a member of an\r\naircrew, leading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having clinically apparent nutritional deficiency from the specified list\r\nof nutritional deficiencies at the time of the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "being peripartum at the time of the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "being peripartum",
+      "definition" : "means being in the last trimester of pregnancy or being\r\nwithin the six months immediately postpartum.\r\ncardiomyopathy—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having chronic renal failure at the time of the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\r\n2\r\n60 mL/min/1.73 m for a period of at least three months, or the presence of\r\nirreversible kidney damage."
+    } ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "having cirrhosis of the liver before the clinical onset of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "being envenomated by a scorpion, a funnel web spider, a spider\r\nbelonging to the genus Latrodectus, or a specified jellyfish, within the\r\n24 hours before the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "specified jellyfish",
+      "definition" : "means a carybdeid ('box') jellyfish or Pelagia noctiluca."
+    } ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "for familial hypertrophic cardiomyopathy only, where the clinical\r\nonset is first manifest as heart failure, cardiac arrhythmia or sudden\r\ncardiac death, undertaking physical activity of greater than five METs\r\nat the time of the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of body\r\nweight per hour, or resting metabolic rate."
+    }, {
+      "term" : "familial hypertrophic cardiomyopathy",
+      "definition" : "means a genetic disease of cardiac\r\nmuscle caused by a variety of mutations in genes encoding sarcomeric\r\nproteins. It is characterised by left ventricular hypertrophy and diastolic\r\ndysfunction, and may cause obstruction to left ventricular outflow and\r\nsymptoms and signs of heart failure."
+    } ],
+    "conditionVariant" : {
+      "name" : "familial hypertrophic cardiomyopathy",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "for takotsubo cardiomyopathy only:\r\n(a) experiencing a category 1A stressor within the 14 days before\r\nthe clinical onset of cardiomyopathy;\r\n(b) experiencing a category 1B stressor within the 14 days before\r\nthe clinical onset of cardiomyopathy;\r\n(c) having:\r\ni) an injury or illness requiring admission to an intensive care\r\nunit or artificial ventilation;\r\nii) major trauma; or\r\niii) septicaemia;\r\nwithin the 14 days before the clinical onset of cardiomyopathy;\r\nor\r\n(d) having a cerebrovascular accident or subarachnoid haemorrhage\r\nwithin the 14 days before the clinical onset of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    }, {
+      "term" : "artificial ventilation",
+      "definition" : "means a method to assist or replace spontaneous\r\nbreathing, which may involve a mechanically-controlled ventilator,\r\nmanually-assisted bag ventilation of an intubated patient, or expired air\r\nresuscitation."
+    } ],
+    "conditionVariant" : {
+      "name" : "takotsubo cardiomyopathy",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "experiencing a category 1A stressor within the 14 days before\r\nthe clinical onset of cardiomyopathy"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "experiencing a category 1B stressor within the 14 days before\r\nthe clinical onset of cardiomyopathy"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having:\r\ni) an injury or illness requiring admission to an intensive care\r\nunit or artificial ventilation;\r\nii) major trauma; or\r\niii) septicaemia;\r\nwithin the 14 days before the clinical onset of cardiomyopathy;\r\nor"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having a cerebrovascular accident or subarachnoid haemorrhage\r\nwithin the 14 days before the clinical onset of cardiomyopathy"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(29)",
+    "text" : "for males only, drinking at least 125 kilograms of alcohol within a\r\ncontinuous five year period before the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "males",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "for females only, drinking at least 150 kilograms of alcohol within a\r\ncontinuous five year period before the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "females",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "having haematological or biochemical evidence of poisoning with\r\ncobalt at the time of the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "having a hypersensitivity reaction of the myocardium to a drug at the\r\ntime of the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "hypersensitivity reaction of the myocardium to a drug",
+      "definition" : "means eosinophilic\r\nmyocarditis due to an allergic reaction, as indicated by:\r\n(a) skin rash, fever, peripheral eosinophilia, ECG changes, tachycardia and\r\nelevated cardiac enzymes; or\r\n(b) endomyocardial biopsy showing infiltration into the myocardium by\r\neosinophils, multinucleated giant cells and leukocytes, occurring\r\nduring drug therapy."
+    } ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "being treated with an anthracycline within the 25 years before the\r\nclinical worsening of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "anthracycline",
+      "definition" : "means a class of cell-cycle non-specific drugs used in cancer\r\nchemotherapy derived from Streptomyces peucetius var. caesius, and\r\nincludes daunorubicin (daunomycin), doxorubicin (adriamycin), epirubicin,\r\nidarubicin, valrubicin and mitoxantrone."
+    } ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "being treated for cancer with a chemotherapeutic agent from the\r\nspecified list of chemotherapeutic agents, within the three months\r\nbefore the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "specified list of chemotherapeutic agents",
+      "definition" : "means:\r\n(a) 5-fluorouracil (non-topical);\r\n(b) alemtuzumab;\r\n(c) bevacizumab;\r\n(d) cisplatin;\r\n(e) cladribine;\r\n(f) cyclophosphamide;\r\n(g) dasatinib;\r\n(h) denileukin difitox;\r\n(i) gemcitabine;\r\n(j) ifosfamide;\r\n(k) imantinib;\r\n(l) interferon alpha;\r\n(m) interleukin-2;\r\n(n) lapatinib;\r\n(o) lenalidomide;\r\n(p) mitomycin C;\r\n(q) paclitaxel;\r\n(r) pentostatin;\r\n(s) sorafenib;\r\n(t) sunitinib; or\r\n(u) trastuzumab.\r\nSpecified List of Drugs No. 1 means:\r\n(a) amphotericin B;\r\n(b) anagrelide;\r\n(c) clozapine;\r\n(d) denileukin difitox;\r\n(e) exogenous catecholamine;\r\n(f) itraconazole; or\r\n(g) olanzapine.\r\nSpecified List of Drugs No. 2 means:\r\n(a) androgenic-anabolic steroids; or\r\n(b) cocaine."
+    } ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "receiving tacrolimus for organ transplantation within the three months\r\nbefore the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "being treated daily with chloroquine or hydroxychloroquine for at least\r\nthe two years before the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List of Drugs No. 1, within the 30 days before the clinical\r\nworsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(38)",
+    "text" : "using a drug from Specified List of Drugs No. 2 at the time of the\r\nclinical worsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(39)",
+    "text" : "having carbon monoxide poisoning within the 24 hours before the\r\nclinical worsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(40)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nworsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(41)",
+    "text" : "having infection-related myocarditis before the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(42)",
+    "text" : "having Whipple's disease at the time of the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "Whipple's disease",
+      "definition" : "means a systemic infectious disease caused by the\r\nbacterium Tropheryma whipplei, which primarily causes malabsorption, but\r\nmay also affect any part of the body.\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nThe endnotes provide information about this compilation and the compiled law.\r\nThe following endnotes are included in every compilation:\r\nEndnote 1—About the endnotes\r\nEndnote 2—Abbreviation key\r\nEndnote 3—Legislation history\r\nEndnote 4—Amendment history\r\nAbbreviation key—Endnote 2\r\nThe abbreviation key sets out abbreviations that may be used in the endnotes.\r\nLegislation history and amendment history—Endnotes 3 and 4\r\nAmending laws are annotated in the legislation history and amendment history.\r\nThe legislation history in endnote 3 provides information about each law that has amended (or"
+    } ]
+  }, {
+    "paragraph" : "9(43)",
+    "text" : "having a disorder from the specified list of endocrine disorders at the\r\ntime of the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "specified list of endocrine disorders",
+      "definition" : "means:\r\n(a) acromegaly;\r\n(b) adrenal insufficiency;\r\n(c) Cushing's syndrome;\r\n(d) diabetes mellitus;\r\n(e) Graves' disease;\r\n(f) hyperthyroidism or thyrotoxicosis; or\r\n(g) hypoparathyroidism."
+    } ]
+  }, {
+    "paragraph" : "9(44)",
+    "text" : "having a catecholamine-secreting tumour at the time of the clinical\r\nworsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(45)",
+    "text" : "having giant cell myocarditis, or a disease from the specified list of\r\ninflammatory connective tissue diseases, involving the heart, at the\r\ntime of the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(46)",
+    "text" : "having a vasculitis from the specified list of systematic vasculitides,\r\ninvolving the heart, at the time of the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(47)",
+    "text" : "having an infiltrative disease affecting the myocardium at the time of\r\nthe clinical worsening of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "infiltrative disease",
+      "definition" : "means:\r\n(a) a primary or metastatic neoplasm;\r\n(b) amyloidosis;\r\n(c) iron overload; or\r\n(d) sarcoidosis.\r\nNote: iron overload is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(48)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nheart was in the field of radiation, before the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(49)",
+    "text" : "having received a cumulative equivalent dose of at least 1.0 sievert of\r\nionising radiation to the heart before the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic\r\nor therapeutic medical procedures involving ionising radiation, and being a member of an\r\naircrew, leading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(50)",
+    "text" : "having clinically apparent nutritional deficiency from the specified list\r\nof nutritional deficiencies at the time of the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(51)",
+    "text" : "being peripartum at the time of the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "being peripartum",
+      "definition" : "means being in the last trimester of pregnancy or being\r\nwithin the six months immediately postpartum.\r\ncardiomyopathy—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(52)",
+    "text" : "having chronic renal failure at the time of the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\r\n2\r\n60 mL/min/1.73 m for a period of at least three months, or the presence of\r\nirreversible kidney damage."
+    } ]
+  }, {
+    "paragraph" : "9(53)",
+    "text" : "having cirrhosis of the liver before the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(54)",
+    "text" : "being envenomated by a scorpion, a funnel web spider, a spider\r\nbelonging to the genus Latrodectus, or a specified jellyfish, within the\r\n24 hours before the clinical worsening of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "specified jellyfish",
+      "definition" : "means a carybdeid ('box') jellyfish or Pelagia noctiluca."
+    } ]
+  }, {
+    "paragraph" : "9(55)",
+    "text" : "undertaking physical activity of greater than five METs at the time of\r\nthe clinical worsening of cardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of body\r\nweight per hour, or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(56)",
+    "text" : "for takotsubo cardiomyopathy only:\r\n(a) experiencing a category 1A stressor within the 14 days before\r\nthe clinical worsening of cardiomyopathy;\r\n(b) experiencing a category 1B stressor within the 14 days before\r\nthe clinical worsening of cardiomyopathy;\r\n(c) having:\r\ni) an injury or illness requiring admission to an intensive care\r\nunit or artificial ventilation;\r\nii) major trauma; or\r\niii) septicaemia;\r\nwithin the 14 days before the clinical worsening of\r\ncardiomyopathy; or\r\n(d) having a cerebrovascular accident or subarachnoid haemorrhage\r\nwithin the 14 days before the clinical worsening of\r\ncardiomyopathy",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    }, {
+      "term" : "artificial ventilation",
+      "definition" : "means a method to assist or replace spontaneous\r\nbreathing, which may involve a mechanically-controlled ventilator,\r\nmanually-assisted bag ventilation of an intubated patient, or expired air\r\nresuscitation."
+    } ],
+    "conditionVariant" : {
+      "name" : "takotsubo cardiomyopathy",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "experiencing a category 1A stressor within the 14 days before\r\nthe clinical worsening of cardiomyopathy"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "experiencing a category 1B stressor within the 14 days before\r\nthe clinical worsening of cardiomyopathy"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having:\r\ni) an injury or illness requiring admission to an intensive care\r\nunit or artificial ventilation;\r\nii) major trauma; or\r\niii) septicaemia;\r\nwithin the 14 days before the clinical worsening of\r\ncardiomyopathy"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having a cerebrovascular accident or subarachnoid haemorrhage\r\nwithin the 14 days before the clinical worsening of\r\ncardiomyopathy"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(57)",
+    "text" : "inability to obtain appropriate clinical management for\r\ncardiomyopathy",
+    "definedTerms" : [ ]
+  } ]
+}

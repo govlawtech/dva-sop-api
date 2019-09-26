@@ -1,0 +1,55 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00076",
+  "instrumentNumber" : "53/2014",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the prostate No. 53 of 2014",
+  "conditionName" : "malignant neoplasm of the prostate",
+  "effectiveFrom" : "2014-05-14",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C61"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD) for a\r\ncumulative period of at least 1 000 hours, at least five years before the\r\nclinical onset of malignant neoplasm of the prostate",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being:\r\n(i) on land in Vietnam; or\r\n(ii) at sea in Vietnamese waters; or\r\n(iii) on board a vessel and consuming potable water supplied on that\r\nvessel, when the water supply had been produced by\r\nevaporative distillation of estuarine Vietnamese waters;\r\nfor a cumulative period of at least 30 days, at least five years before the\r\nclinical onset of malignant neoplasm of the prostate",
+    "definedTerms" : [ {
+      "term" : "potable water",
+      "definition" : "means water used for drinking water, food preparation and\nbeverage production"
+    }, {
+      "term" : "estuarine Vietnamese waters",
+      "definition" : "means at least one of the waterways or\nharbours in the relevant areas described in Items 4 and 8 of Schedule 2 of the\nVeterans' Entitlements Act 1986"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "increasing animal fat consumption by at least 40 percent and to at least\r\n50 grams per day, and maintaining these levels for at least five years\r\nwithin the 25 years before the clinical onset of malignant neoplasm of\r\nthe prostate",
+    "definedTerms" : [ {
+      "term" : "animal fat",
+      "definition" : "means fat contained in or derived from:\n(a) dairy products;\n(b) eggs; or\n(c) meat, other flesh or offal from animals (including birds but excluding\nseafood)"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "drinking at least 200 kilograms of alcohol within any ten year period\r\nwithin the 20 years before the clinical onset of malignant neoplasm of\r\nthe prostate",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of malignant\r\nneoplasm of the prostate, and where smoking has ceased, the clinical\r\nworsening of malignant neoplasm of the prostate has occurred within\r\nten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being obese for a continuous period of at least five years before the\r\nclinical worsening of malignant neoplasm of the prostate",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the prostate",
+    "definedTerms" : [ ]
+  } ]
+}

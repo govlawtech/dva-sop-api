@@ -1,0 +1,35 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00021",
+  "instrumentNumber" : "12/2017",
+  "citation" : "Statement of Principles concerning hepatitis D (Balance of Probabilities) (No. 12 of 2017)",
+  "conditionName" : "hepatitis D",
+  "effectiveFrom" : "2017-01-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B16.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B16.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B17.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B18.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to the hepatitis D virus at least 14 days before the\r\nclinical onset of hepatitis D",
+    "definedTerms" : [ {
+      "term" : "being exposed to the hepatitis D virus",
+      "definition" : "means having percutaneous\r\n(intravenous, intramuscular, subcutaneous or intradermal) or permucosal\r\nexposure to a body substance as specified which is derived from a person\r\ninfected with the hepatitis D virus.\r\nNote: body substance as specified is also defined in the Schedule 1 - Dictionary."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for hepatitis D",
+    "definedTerms" : [ ]
+  } ]
+}

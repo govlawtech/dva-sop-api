@@ -1,0 +1,91 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01839",
+  "instrumentNumber" : "4/2019",
+  "citation" : "Statement of Principles concerning iliotibial band syndrome (Balance of Probabilities) (No. 4 of 2019)",
+  "conditionName" : "iliotibial band syndrome",
+  "effectiveFrom" : "2019-01-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M76.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "running or jogging an average of at least 60 kilometres per week for at\r\nleast the four weeks before the clinical onset of iliotibial band\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "undertaking weight bearing exercise involving repeated flexion and\r\nextension of the affected knee, at a minimum intensity of five METs\r\nfor at least six hours per week, for at least the four weeks before the\r\nclinical onset of iliotibial band syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the affected knee by at least 100 percent, to a\r\nminimum intensity of five METs for at least four hours per day, for at\r\nleast the seven days before the clinical onset of iliotibial band\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "cycling at a minimum intensity of five METs for at least ten hours per\r\nweek, for at least the four weeks before the clinical onset of iliotibial\r\nband syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "increasing the frequency, duration or intensity of cycling by at least\r\n100 percent, to a minimum intensity of five METs for at least four\r\nhours per day, for at least the seven days before the clinical onset of\r\niliotibial band syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "undergoing knee reconstruction surgery with placement of an implant\r\nin the distal lateral femur within the one year before the clinical onset\r\nof iliotibial band syndrome",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(7)",
+    "text" : "running or jogging an average of at least 60 kilometres per week for at\r\nleast the four weeks before the clinical worsening of iliotibial band\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "undertaking weight bearing exercise involving repeated flexion and\r\nextension of the affected knee, at a minimum intensity of five METs\r\nfor at least six hours per week, for at least the four weeks before the\r\nclinical worsening of iliotibial band syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the affected knee by at least 100 percent, to a\r\nminimum intensity of five METs for at least four hours per day, for at\r\nleast the seven days before the clinical worsening of iliotibial band\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "cycling at a minimum intensity of five METs for at least ten hours per\r\nweek, for at least the four weeks before the clinical worsening of\r\niliotibial band syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "increasing the frequency, duration or intensity of cycling by at least\r\n100 percent, to a minimum intensity of five METs for at least four\r\nhours per day, for at least the seven days before the clinical worsening\r\nof iliotibial band syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "undergoing knee reconstruction surgery with placement of an implant\r\nin the distal lateral femur within the one year before the clinical\r\nworsening of iliotibial band syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "inability to obtain appropriate clinical management for iliotibial band\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

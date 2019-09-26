@@ -1,0 +1,245 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00645",
+  "instrumentNumber" : "61/2015",
+  "citation" : "Statement of Principles concerning gastric ulcer and duodenal ulcer No. 61 of 2015",
+  "conditionName" : "gastric ulcer and duodenal ulcer",
+  "effectiveFrom" : "2015-06-01",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K25"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K26"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K27"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K28"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being a prisoner of war before the clinical onset of gastric ulcer or\r\nduodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having Helicobacter pylori infection of the stomach or duodenum at\r\nthe time of the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "smoking at least one half of a pack-year of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of gastric\r\nulcer or duodenal ulcer, and:\r\n(i) smoking commenced at least six months before the clinical\r\nonset of gastric ulcer or duodenal ulcer; and\r\n(ii) where smoking has ceased, the clinical onset of gastric ulcer or\r\nduodenal ulcer has occurred within one year of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a gastrin-secreting tumour at the time of the clinical onset of\r\ngastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a critical illness or injury within the 30 days before the clinical\r\nonset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a critical illness or injury",
+      "definition" : "means any physical injury or illness requiring\nmechanical ventilation support or admission to an intensive care unit, or which\ncauses septicaemia, adult respiratory distress syndrome, acute renal tubular\nnecrosis, disseminated intravascular coagulation or multiple organ failure"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a non-topical non-steroidal anti-inflammatory drug,\r\nincluding aspirin, at least every other day during a continuous period of\r\nat least eight days, within the three months before the clinical onset of\r\ngastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being treated with an immunosuppressive drug within the three months\r\nbefore the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "being treated with an immunosuppressive drug",
+      "definition" : "means being treated with\na drug or an agent which results in significant suppression of immune\nresponses. This definition includes corticosteroids other than inhaled or\ntopical corticosteroids, drugs used to prevent transplant rejection, tumour\nnecrosis factor-α inhibitors and chemotherapeutic agents used for the\ntreatment of cancer"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 1 within the seven days before the clinical onset of\r\ngastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 2 for at least two weeks, within the three months before\r\nthe clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a specified infection of the gastric or duodenal mucosa at the\r\ntime of the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) Anisakis simplex infection (anisakiasis);\n(b) cytomegalovirus infection;\n(c) herpes simplex virus infection;\n(d) fungal infection;\n(e) Helicobacter heilmannii infection;\n(f) Mycobacterial infection (Mycobacterium tuberculosis, Mycobacterium\navium intracellulare);\n(g) Strongyloides stercoralis infection (strongyloidiasis); or\n(h) Treponema pallidum infection (syphilis)"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nstomach or duodenum was in the field of radiation, within the one year\r\nbefore the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the stomach or duodenum within the one year\r\nbefore the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\nleading to increased levels of exposure to cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\nvarious dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having received ⁹⁰Yttrium microspheres as therapy for primary and\r\nmetastatic liver tumours, within the one year before the clinical onset\r\nof gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "for gastric ulcer only:\r\n(i) having partial gastrectomy within the five years before the\r\nclinical onset of gastric ulcer, where the ulcer occurs at the site\r\nof the surgical anastomosis; or\r\n(ii) having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical onset of gastric ulcer",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "gastric ulcer",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having partial gastrectomy within the five years before the\r\nclinical onset of gastric ulcer, where the ulcer occurs at the site\r\nof the surgical anastomosis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical onset of gastric ulcer"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having contact with a nasogastric tube or other foreign body at the site\r\nof the ulcer at the time of the clinical onset of gastric ulcer or duodenal\r\nulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "experiencing a category 1A stressor within the three months before the\r\nclinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "experiencing a category 1B stressor within the three months before the\r\nclinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having posttraumatic stress disorder within the three months before the\r\nclinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the clinical onset of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a clinically significant disorder of mental health as specified",
+      "definition" : "means one\nof the following conditions, which is of sufficient severity to warrant ongoing\nmanagement, which may involve regular visits (for example, at least monthly)\nto a psychiatrist, counsellor or general practitioner:\n(a) an obsessive compulsive disorder;\n(b) anxiety disorder; or\n(c) panic disorder"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having cirrhosis of the liver at the time of the clinical onset of gastric\r\nulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(u)",
+    "text" : "being a prisoner of war before the clinical worsening of gastric ulcer or\r\nduodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having Helicobacter pylori infection of the stomach or duodenum at\r\nthe time of the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "smoking at least one half of a pack-year of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening of\r\ngastric ulcer or duodenal ulcer; and:\r\n(i) smoking commenced at least six months before the clinical\r\nworsening of gastric ulcer or duodenal ulcer; and\r\n(ii) where smoking has ceased, the clinical worsening of gastric\r\nulcer or duodenal ulcer has occurred within one year of\r\ncessation; or\r\n(x) having a gastrin-secreting tumour at the time of the clinical worsening\r\nof gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having a critical illness or injury within the 30 days before the clinical\r\nworsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a critical illness or injury",
+      "definition" : "means any physical injury or illness requiring\nmechanical ventilation support or admission to an intensive care unit, or which\ncauses septicaemia, adult respiratory distress syndrome, acute renal tubular\nnecrosis, disseminated intravascular coagulation or multiple organ failure"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "being treated with a non-topical non-steroidal anti-inflammatory drug,\r\nincluding aspirin, at least every other day during a continuous period of\r\nat least eight days, within the three months before the clinical\r\nworsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "being treated with an immunosuppressive drug within the three months\r\nbefore the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "being treated with an immunosuppressive drug",
+      "definition" : "means being treated with\na drug or an agent which results in significant suppression of immune\nresponses. This definition includes corticosteroids other than inhaled or\ntopical corticosteroids, drugs used to prevent transplant rejection, tumour\nnecrosis factor-α inhibitors and chemotherapeutic agents used for the\ntreatment of cancer"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 1 within the seven days before the clinical worsening of\r\ngastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 3 for at least two weeks, within the three months before\r\nthe clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having a specified infection of the gastric or duodenal mucosa at the\r\ntime of the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) Anisakis simplex infection (anisakiasis);\n(b) cytomegalovirus infection;\n(c) herpes simplex virus infection;\n(d) fungal infection;\n(e) Helicobacter heilmannii infection;\n(f) Mycobacterial infection (Mycobacterium tuberculosis, Mycobacterium\navium intracellulare);\n(g) Strongyloides stercoralis infection (strongyloidiasis); or\n(h) Treponema pallidum infection (syphilis)"
+    } ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nstomach or duodenum was in the field of radiation, within the one year\r\nbefore the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the stomach or duodenum within the one year\r\nbefore the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\nleading to increased levels of exposure to cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\nvarious dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "having received ⁹⁰Yttrium microspheres as therapy for primary and\r\nmetastatic liver tumours, within the one year before the clinical\r\nworsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "for gastric ulcer only:\r\n(i) having partial gastrectomy within the five years before the\r\nclinical worsening of gastric ulcer, where the ulcer occurs at the\r\nsite of the surgical anastomosis; or\r\n(ii) having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical worsening of gastric ulcer; or\r\n(ii) having contact with a nasogastric tube or other foreign body at the site\r\nof the ulcer at the time of the clinical worsening of gastric ulcer or\r\nduodenal ulcer",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "gastric ulcer",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having partial gastrectomy within the five years before the\r\nclinical worsening of gastric ulcer, where the ulcer occurs at the\r\nsite of the surgical anastomosis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having endoscopic mucosal resection or endoscopic sub-\r\nmucosal dissection of the gastric mucosa at the time of the\r\nclinical worsening of gastric ulcer"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having contact with a nasogastric tube or other foreign body at the site\r\nof the ulcer at the time of the clinical worsening of gastric ulcer or\r\nduodenal ulcer"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "experiencing a category 1A stressor within the three months before the\r\nclinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "experiencing a category 1B stressor within the three months before the\r\nclinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "having posttraumatic stress disorder within the three months before the\r\nclinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the clinical worsening of gastric ulcer or duodenal ulcer",
+    "definedTerms" : [ {
+      "term" : "a clinically significant disorder of mental health as specified",
+      "definition" : "means one\nof the following conditions, which is of sufficient severity to warrant ongoing\nmanagement, which may involve regular visits (for example, at least monthly)\nto a psychiatrist, counsellor or general practitioner:\n(a) an obsessive compulsive disorder;\n(b) anxiety disorder; or\n(c) panic disorder"
+    } ]
+  }, {
+    "paragraph" : "6(nn)",
+    "text" : "having cirrhosis of the liver at the time of the clinical worsening of\r\ngastric ulcer or duodenal ulcer",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(oo)",
+    "text" : "inability to obtain appropriate clinical management for gastric ulcer or\r\nduodenal ulcer",
+    "definedTerms" : [ ]
+  } ]
+}

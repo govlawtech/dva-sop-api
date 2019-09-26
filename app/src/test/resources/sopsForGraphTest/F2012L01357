@@ -1,0 +1,155 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01357",
+  "instrumentNumber" : "43/2012",
+  "citation" : "Statement of Principles concerning porphyria cutanea tarda No. 43 of 2012",
+  "conditionName" : "porphyria cutanea tarda",
+  "effectiveFrom" : "2012-07-11",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E80.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having exposure to a halogenated aromatic hydrocarbon as specified\r\nwithin the two years before the clinical onset of porphyria cutanea\r\ntarda",
+    "definedTerms" : [ {
+      "term" : "having exposure to a halogenated aromatic hydrocarbon as specified",
+      "definition" : "means:\n(a) being sprayed with a halogenated aromatic hydrocarbon from the\nspecified list;\n(b) cleaning or maintaining equipment used to apply a halogenated\naromatic hydrocarbon from the specified list;\n(c) decanting or spraying a halogenated aromatic hydrocarbon from the\nspecified list; or\n(d) ingesting food contaminated with a halogenated aromatic hydrocarbon\nfrom the specified list"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having exposure as specified to a chemical agent contaminated with\r\n2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD) within the two years\r\nbefore the clinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for males, consuming a total of 75 kilograms of alcohol within the five\r\nyears before the clinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for females, consuming a total of 37 kilograms of alcohol within the\r\nfive years before the clinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a liver disease from the specified list at the time of the clinical\r\nonset of porphyria cutanea tarda",
+    "definedTerms" : [ {
+      "term" : "a liver disease from the specified list",
+      "definition" : "means:\n(a) cirrhosis of the liver;\n(b) steatohepatitis; or\n(c) viral hepatitis"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "taking a course of oral oestrogen therapy for the 30 days before the\r\nclinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having hepatic iron overload at the time of the clinical onset of\r\nporphyria cutanea tarda",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\nwhich has been confirmed by elevated ferritin or transferrin saturation levels.\nCauses include haemochromatosis or blood transfusions"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "undergoing haemodialysis or peritoneal dialysis for the six months\r\nbefore the clinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a porphyrin-generating hepatocellular tumour at the time of the\r\nclinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ {
+      "term" : "porphyrin-generating hepatocellular tumour",
+      "definition" : "means a tumour arising\nfrom hepatocellular tissue, with evidence of increased porphyrin production at\nthe tumour site"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "smoking at least ten cigarettes per day, or the equivalent thereof in\r\nother tobacco products, for the six months before the clinical onset of\r\nporphyria cutanea tarda, and where smoking has ceased, the clinical\r\nonset of porphyria cutanea tarda has occurred within one month of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having the affected area of skin exposed to sunlight or ultraviolet light\r\nwithin the five days before the clinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, at the time of the clinical onset of porphyria cutanea\r\ntarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the development of porphyria cutanea tarda during drug\r\ntherapy; and either\r\n(ii) the improvement of porphyria cutanea tarda within two months\r\nof discontinuing or tapering drug therapy; or\r\n(iii) the redevelopment of porphyria cutanea tarda on rechallenge\r\nwith the same drug;\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical onset of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(o)",
+    "text" : "having exposure to a halogenated aromatic hydrocarbon as specified\r\nwithin the two years before the clinical worsening of porphyria cutanea\r\ntarda",
+    "definedTerms" : [ {
+      "term" : "having exposure to a halogenated aromatic hydrocarbon as specified",
+      "definition" : "means:\n(a) being sprayed with a halogenated aromatic hydrocarbon from the\nspecified list;\n(b) cleaning or maintaining equipment used to apply a halogenated\naromatic hydrocarbon from the specified list;\n(c) decanting or spraying a halogenated aromatic hydrocarbon from the\nspecified list; or\n(d) ingesting food contaminated with a halogenated aromatic hydrocarbon\nfrom the specified list"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having exposure as specified to a chemical agent contaminated with\r\n2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD) within the two years\r\nbefore the clinical worsening of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "for males, consuming a total of 75 kilograms of alcohol within the five\r\nyears before the clinical worsening of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "for females, consuming a total of 37 kilograms of alcohol within the\r\nfive years before the clinical worsening of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a liver disease from the specified list at the time of the clinical\r\nworsening of porphyria cutanea tarda",
+    "definedTerms" : [ {
+      "term" : "a liver disease from the specified list",
+      "definition" : "means:\n(a) cirrhosis of the liver;\n(b) steatohepatitis; or\n(c) viral hepatitis"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nworsening of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "taking a course of oral oestrogen therapy for the 30 days before the\r\nclinical worsening of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having hepatic iron overload at the time of the clinical worsening of\r\nporphyria cutanea tarda",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\nwhich has been confirmed by elevated ferritin or transferrin saturation levels.\nCauses include haemochromatosis or blood transfusions"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "undergoing haemodialysis or peritoneal dialysis for the six months\r\nbefore the clinical worsening of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having a porphyrin-generating hepatocellular tumour at the time of the\r\nclinical worsening of porphyria cutanea tarda",
+    "definedTerms" : [ {
+      "term" : "porphyrin-generating hepatocellular tumour",
+      "definition" : "means a tumour arising\nfrom hepatocellular tissue, with evidence of increased porphyrin production at\nthe tumour site"
+    } ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "smoking at least ten cigarettes per day, or the equivalent thereof in\r\nother tobacco products, for the six months before the clinical\r\nworsening of porphyria cutanea tarda, and where smoking has ceased,\r\nthe clinical worsening of porphyria cutanea tarda has occurred within\r\none month of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having the affected area of skin exposed to sunlight or ultraviolet light\r\nwithin the five days before the clinical worsening of porphyria cutanea\r\ntarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, at the time of the clinical worsening of porphyria cutanea\r\ntarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the worsening of porphyria cutanea tarda during drug therapy;\r\nand either\r\n(ii) the improvement of porphyria cutanea tarda within two months\r\nof discontinuing or tapering drug therapy; or\r\n(iii) the worsening of porphyria cutanea tarda on rechallenge with\r\nthe same drug;\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical worsening of porphyria cutanea tarda",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "inability to obtain appropriate clinical management for porphyria\r\ncutanea tarda",
+    "definedTerms" : [ ]
+  } ]
+}

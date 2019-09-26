@@ -1,0 +1,331 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00865",
+  "instrumentNumber" : "1/2017",
+  "citation" : "Statement of Principles concerning cirrhosis of the liver (Reasonable Hypothesis) (No. 1 of 2017)",
+  "conditionName" : "cirrhosis of the liver",
+  "effectiveFrom" : "2017-01-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K70.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K71.7"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K74.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for males, consuming at least 110 kilograms of alcohol within any ten\r\nyear period before the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for females, consuming at least 55 kilograms of alcohol within any ten\r\nyear period before the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having received a cumulative equivalent dose of at least 0.4 sievert of\r\nionising radiation to the liver before the clinical onset of cirrhosis of\r\nthe liver",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic\r\nor therapeutic medical procedures involving ionising radiation, and being a member of an\r\naircrew, leading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having chronic infection with the hepatitis B virus before the clinical\r\nonset of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis B virus",
+      "definition" : "means infection with the\r\nhepatitis B virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis B\r\nserological or nucleic acid markers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having chronic infection with the hepatitis C virus before the clinical\r\nonset of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis C virus",
+      "definition" : "means infection with the\r\nhepatitis C virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis C\r\nserological or nucleic acid markers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having chronic infection with the hepatitis D virus before the clinical\r\nonset of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis D virus",
+      "definition" : "means infection with the\r\nhepatitis D virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis D\r\nserological or nucleic acid markers, or both.\r\ncirrhosis of the liver—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having infection with the hepatitis E virus before the clinical onset of\r\ncirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "infection with the hepatitis E virus",
+      "definition" : "means infection with the hepatitis E\r\nvirus resulting in an infection of at least six months duration and which must\r\nbe confirmed by laboratory testing for hepatitis E serological or nucleic acid\r\nmarkers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having chronic hepatitis before the clinical onset of cirrhosis of the\r\nliver",
+    "definedTerms" : [ {
+      "term" : "chronic hepatitis",
+      "definition" : "means symptomatic, biochemical or infectious agent\r\nbiomarker evidence of continuing or relapsing hepatocellular necrosis and\r\nhepatic inflammation for at least six months."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having autoimmune chronic active hepatitis before the clinical onset of\r\ncirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "autoimmune chronic active hepatitis",
+      "definition" : "means a chronic disorder of\r\nautoimmunity characterised by continuing hepatocellular necrosis and\r\ninflammation and seroimmunologic abnormalities."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having steatohepatitis before the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "being infected with human immunodeficiency virus, in the presence of\r\nchronic infection with the hepatitis B virus or chronic infection with\r\nthe hepatitis C virus, before the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis B virus",
+      "definition" : "means infection with the\r\nhepatitis B virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis B\r\nserological or nucleic acid markers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having evidence of chronic infection with schistosomiasis involving\r\nthe liver before the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having granulomatous liver disease before the clinical onset of\r\ncirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "granulomatous liver disease",
+      "definition" : "means an inflammatory liver disease\r\ncharacterised by granuloma formation in the liver and associated with many\r\ndisorders such as sarcoidosis, infections (tuberculosis, brucellosis, syphilis),\r\nand adverse drug reactions."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having severe right-sided cardiac failure for a continuous period of at\r\nleast six months, within the five years before the clinical onset of\r\ncirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "severe right-sided cardiac failure",
+      "definition" : "means a reduced ability of the right\r\nventricle to process venous return, evidenced by marked venous and liver\r\ncongestion and extensive peripheral oedema."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having veno-occlusive disease for a continuous period of at least six\r\nmonths, within the five years before the clinical onset of cirrhosis of\r\nthe liver",
+    "definedTerms" : [ {
+      "term" : "veno-occlusive disease",
+      "definition" : "means symptomatic occlusion of the sublobular\r\nbranches of the hepatic veins or the small hepatic venules.\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nThe endnotes provide information about this compilation and the compiled law.\r\nThe following endnotes are included in every compilation:\r\nEndnote 1—About the endnotes\r\nEndnote 2—Abbreviation key\r\nEndnote 3—Legislation history\r\nEndnote 4—Amendment history\r\nAbbreviation key—Endnote 2\r\nThe abbreviation key sets out abbreviations that may be used in the endnotes.\r\nLegislation history and amendment history—Endnotes 3 and 4\r\nAmending laws are annotated in the legislation history and amendment history.\r\nThe legislation history in endnote 3 provides information about each law that has amended (or"
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having a chronic partial or complete blockage to the passage of bile\r\nfrom the intrahepatic biliary system to the duodenum at the time of the\r\nclinical onset of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having iron overload involving the liver at the time of the clinical\r\nonset of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\r\nwhich has been confirmed by elevated ferritin or transferrin saturation\r\nlevels. Causes include haemochromatosis and blood transfusions."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having alpha-1 antitrypsin deficiency before the clinical onset of\r\ncirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having Gaucher's disease before the clinical onset of cirrhosis of the\r\nliver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having Wilson's disease before the clinical onset of cirrhosis of the\r\nliver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having Budd-Chiari syndrome for a continuous period of at least six\r\nmonths, within the five years before the clinical onset of cirrhosis of\r\nthe liver",
+    "definedTerms" : [ {
+      "term" : "Budd-Chiari syndrome",
+      "definition" : "means symptomatic obstruction or occlusion of the\r\nhepatic veins or hepatic portion of the inferior vena cava, characterised by\r\nhepatomegaly, abdominal pain and tenderness, ascites, mild jaundice, and\r\neventually, portal hypertension and liver failure."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "consuming a daily average of at least 7.5 milligrams of vitamin A for a\r\nperiod of at least 18 months, or a cumulative dose of at least four\r\ngrams, within the ten years before the clinical onset of cirrhosis of the\r\nliver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "being treated with methotrexate:\r\n(a) for at least the six months; or\r\n(b) to a cumulative dose of methotrexate of at least 500 milligrams\r\ntaken over at least a three month period,\r\nbefore the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "being treated with dideoxynucleoside-analogue drugs as specified for\r\nat least six months before the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "dideoxynucleoside-analogue drugs as specified",
+      "definition" : "means didanosine,\r\nstavudine or zalcitabine."
+    } ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "inhaling or having cutaneous contact with carbon tetrachloride for a\r\ncumulative period of at least 500 hours within the five years before the\r\nclinical onset of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "inhaling a cumulative dose of at least 500 ppm-years of gaseous vinyl\r\nchloride before the clinical onset of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure."
+    } ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "inhaling gaseous vinyl chloride for a cumulative period of at least\r\n1 000 hours while working in the production or processing of vinyl\r\nchloride monomer or polyvinyl chloride before the clinical onset of\r\ncirrhosis of the liver",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(28)",
+    "text" : "for males, consuming at least 110 kilograms of alcohol within any ten\r\nyear period before the clinical worsening of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "for females, consuming at least 55 kilograms of alcohol within any ten\r\nyear period before the clinical worsening of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "having received a cumulative equivalent dose of at least 0.4 sievert of\r\nionising radiation to the liver before the clinical worsening of cirrhosis\r\nof the liver",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic\r\nor therapeutic medical procedures involving ionising radiation, and being a member of an\r\naircrew, leading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "having chronic infection with the hepatitis B virus before the clinical\r\nworsening of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis B virus",
+      "definition" : "means infection with the\r\nhepatitis B virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis B\r\nserological or nucleic acid markers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "having chronic infection with the hepatitis C virus before the clinical\r\nworsening of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis C virus",
+      "definition" : "means infection with the\r\nhepatitis C virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis C\r\nserological or nucleic acid markers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "having chronic infection with the hepatitis D virus before the clinical\r\nworsening of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis D virus",
+      "definition" : "means infection with the\r\nhepatitis D virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis D\r\nserological or nucleic acid markers, or both.\r\ncirrhosis of the liver—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "having infection with the hepatitis E virus before the clinical\r\nworsening of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "infection with the hepatitis E virus",
+      "definition" : "means infection with the hepatitis E\r\nvirus resulting in an infection of at least six months duration and which must\r\nbe confirmed by laboratory testing for hepatitis E serological or nucleic acid\r\nmarkers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "having chronic hepatitis before the clinical worsening of cirrhosis of\r\nthe liver",
+    "definedTerms" : [ {
+      "term" : "chronic hepatitis",
+      "definition" : "means symptomatic, biochemical or infectious agent\r\nbiomarker evidence of continuing or relapsing hepatocellular necrosis and\r\nhepatic inflammation for at least six months."
+    } ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "having autoimmune chronic active hepatitis before the clinical\r\nworsening of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "autoimmune chronic active hepatitis",
+      "definition" : "means a chronic disorder of\r\nautoimmunity characterised by continuing hepatocellular necrosis and\r\ninflammation and seroimmunologic abnormalities."
+    } ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "having steatohepatitis before the clinical worsening of cirrhosis of the\r\nliver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(38)",
+    "text" : "being infected with human immunodeficiency virus, in the presence of\r\nchronic infection with the hepatitis B virus or chronic infection with\r\nthe hepatitis C virus, before the clinical worsening of cirrhosis of the\r\nliver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis B virus",
+      "definition" : "means infection with the\r\nhepatitis B virus resulting in a chronic infection of at least six months\r\nduration and which must be confirmed by laboratory testing for hepatitis B\r\nserological or nucleic acid markers, or both."
+    } ]
+  }, {
+    "paragraph" : "9(39)",
+    "text" : "having evidence of chronic infection with schistosomiasis involving\r\nthe liver before the clinical worsening of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(40)",
+    "text" : "having granulomatous liver disease before the clinical worsening of\r\ncirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "granulomatous liver disease",
+      "definition" : "means an inflammatory liver disease\r\ncharacterised by granuloma formation in the liver and associated with many\r\ndisorders such as sarcoidosis, infections (tuberculosis, brucellosis, syphilis),\r\nand adverse drug reactions."
+    } ]
+  }, {
+    "paragraph" : "9(41)",
+    "text" : "having severe right-sided cardiac failure for a continuous period of at\r\nleast six months, within the five years before the clinical worsening of\r\ncirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "severe right-sided cardiac failure",
+      "definition" : "means a reduced ability of the right\r\nventricle to process venous return, evidenced by marked venous and liver\r\ncongestion and extensive peripheral oedema."
+    } ]
+  }, {
+    "paragraph" : "9(42)",
+    "text" : "having veno-occlusive disease for a continuous period of at least six\r\nmonths, within the five years before the clinical worsening of cirrhosis\r\nof the liver",
+    "definedTerms" : [ {
+      "term" : "veno-occlusive disease",
+      "definition" : "means symptomatic occlusion of the sublobular\r\nbranches of the hepatic veins or the small hepatic venules.\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nThe endnotes provide information about this compilation and the compiled law.\r\nThe following endnotes are included in every compilation:\r\nEndnote 1—About the endnotes\r\nEndnote 2—Abbreviation key\r\nEndnote 3—Legislation history\r\nEndnote 4—Amendment history\r\nAbbreviation key—Endnote 2\r\nThe abbreviation key sets out abbreviations that may be used in the endnotes.\r\nLegislation history and amendment history—Endnotes 3 and 4\r\nAmending laws are annotated in the legislation history and amendment history.\r\nThe legislation history in endnote 3 provides information about each law that has amended (or"
+    } ]
+  }, {
+    "paragraph" : "9(43)",
+    "text" : "having a chronic partial or complete blockage to the passage of bile\r\nfrom the intrahepatic biliary system to the duodenum at the time of the\r\nclinical worsening of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(44)",
+    "text" : "having iron overload involving the liver at the time of the clinical\r\nworsening of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\r\nwhich has been confirmed by elevated ferritin or transferrin saturation\r\nlevels. Causes include haemochromatosis and blood transfusions."
+    } ]
+  }, {
+    "paragraph" : "9(45)",
+    "text" : "having alpha-1 antitrypsin deficiency before the clinical worsening of\r\ncirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(46)",
+    "text" : "having Gaucher's disease before the clinical worsening of cirrhosis of\r\nthe liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(47)",
+    "text" : "having Wilson's disease before the clinical worsening of cirrhosis of\r\nthe liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(48)",
+    "text" : "having Budd-Chiari syndrome for a continuous period of at least six\r\nmonths, within the five years before the clinical worsening of cirrhosis\r\nof the liver",
+    "definedTerms" : [ {
+      "term" : "Budd-Chiari syndrome",
+      "definition" : "means symptomatic obstruction or occlusion of the\r\nhepatic veins or hepatic portion of the inferior vena cava, characterised by\r\nhepatomegaly, abdominal pain and tenderness, ascites, mild jaundice, and\r\neventually, portal hypertension and liver failure."
+    } ]
+  }, {
+    "paragraph" : "9(49)",
+    "text" : "consuming a daily average of at least 7.5 milligrams of vitamin A for a\r\nperiod of at least 18 months, or a cumulative dose of at least four\r\ngrams, within the ten years before the clinical worsening of cirrhosis\r\nof the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(50)",
+    "text" : "being treated with methotrexate:\r\n(a) for at least the six months; or\r\n(b) to a cumulative dose of methotrexate of at least 500 milligrams\r\ntaken over at least a three month period,\r\nbefore the clinical worsening of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(51)",
+    "text" : "being treated with dideoxynucleoside-analogue drugs as specified for\r\nat least six months before the clinical worsening of cirrhosis of the\r\nliver",
+    "definedTerms" : [ {
+      "term" : "dideoxynucleoside-analogue drugs as specified",
+      "definition" : "means didanosine,\r\nstavudine or zalcitabine."
+    } ]
+  }, {
+    "paragraph" : "9(52)",
+    "text" : "inhaling or having cutaneous contact with carbon tetrachloride for a\r\ncumulative period of at least 500 hours within the five years before the\r\nclinical worsening of cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(53)",
+    "text" : "inhaling a cumulative dose of at least 500 ppm-years of gaseous vinyl\r\nchloride before the clinical worsening of cirrhosis of the liver",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure."
+    } ]
+  }, {
+    "paragraph" : "9(54)",
+    "text" : "inhaling gaseous vinyl chloride for a cumulative period of at least\r\n1 000 hours while working in the production or processing of vinyl\r\nchloride monomer or polyvinyl chloride before the clinical worsening\r\nof cirrhosis of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(55)",
+    "text" : "inability to obtain appropriate clinical management for cirrhosis of the\r\nliver",
+    "definedTerms" : [ ]
+  } ]
+}

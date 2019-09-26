@@ -1,0 +1,118 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00856",
+  "instrumentNumber" : "90/2014",
+  "citation" : "Statement of Principles concerning osteomyelitis No. 90 of 2014",
+  "conditionName" : "osteomyelitis",
+  "effectiveFrom" : "2014-11-17",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M86"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K10.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M46.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M90.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a wound, laceration, or other injury or disease disrupting the\r\nskin or mucosa at the site or adjacent to the site of osteomyelitis,\r\nwithin the two years before the clinical onset of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a dental, medical or surgical procedure which breaches the skin\r\nor mucosa within the two years before the clinical onset of\r\nosteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having septicaemia, bacteraemia or systemic fungal infection within\r\nthe two years before the clinical onset of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a foreign body at the site or adjacent to the site of osteomyelitis\r\nat the time of the clinical onset of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of\r\nosteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a disease from Specified List 1 at the time of the clinical onset\r\nof osteomyelitis",
+    "definedTerms" : [ {
+      "term" : "a disease from Specified List 1",
+      "definition" : "means:\n(a) chronic renal failure;\n(b) cirrhosis of the liver;\n(c) Crohn's disease;\n(d) osteopetrosis; or\n(e) sickle cell disorder"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having chronic ischaemia of the affected limb from:\r\n(i) chronic venous insufficiency of the lower limb; or\r\n(ii) atherosclerotic peripheral vascular disease of the lower limb;\r\nat the time of the clinical onset of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having chronic lymphoedema of the affected limb at the time of the\r\nclinical onset of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being in an immunosuppressed state at the time of the clinical onset of\r\nosteomyelitis",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressed state",
+      "definition" : "means a condition in which the immune\nresponse is substantially diminished. Examples of circumstances giving rise to\nthis include haematological or solid organ malignancy, administration of\nimmunosuppressive drugs, acute exposure to high doses of ionising radiation,\nsevere malnutrition and human immunodeficiency virus infection"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the affected site before the clinical onset of\r\nosteomyelitis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected site was in the field of radiation, before the clinical onset of\r\nosteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having internal deposition of radium-224, radium-226, or radium-228\r\nbefore the clinical onset of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having osteonecrosis at the site of osteomyelitis before the clinical\r\nonset of osteomyelitis",
+    "definedTerms" : [ {
+      "term" : "osteonecrosis",
+      "definition" : "means death of bone due to obstruction of its blood supply"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\nosteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a disease from Specified List 2 at the time of the clinical\r\nworsening of osteomyelitis",
+    "definedTerms" : [ {
+      "term" : "a disease from Specified List 2",
+      "definition" : "means:\n(a) chronic renal failure;\n(b) cirrhosis of the liver; or\n(c) Crohn's disease"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having chronic ischaemia of the affected limb from:\r\n(i) chronic venous insufficiency of the lower limb; or\r\n(ii) atherosclerotic peripheral vascular disease of the lower limb;\r\nat the time of the clinical worsening of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having chronic lymphoedema of the affected limb at the time of the\r\nclinical worsening of osteomyelitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being in an immunosuppressed state at the time of the clinical\r\nworsening of osteomyelitis",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressed state",
+      "definition" : "means a condition in which the immune\nresponse is substantially diminished. Examples of circumstances giving rise to\nthis include haematological or solid organ malignancy, administration of\nimmunosuppressive drugs, acute exposure to high doses of ionising radiation,\nsevere malnutrition and human immunodeficiency virus infection"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "inability to obtain appropriate clinical management for osteomyelitis",
+    "definedTerms" : [ ]
+  } ]
+}

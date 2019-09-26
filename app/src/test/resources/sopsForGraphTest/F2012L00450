@@ -1,0 +1,38 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00450",
+  "instrumentNumber" : "21/2012",
+  "citation" : "Statement of Principles concerning haemochromatosis No. 21 of 2012",
+  "conditionName" : "haemochromatosis",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E83.1"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for males, consuming a total of 75 kilograms of alcohol within any five\r\nyear period before the clinical worsening of haemochromatosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for females, consuming a total of 37 kilograms of alcohol within any\r\nfive year period before the clinical worsening of haemochromatosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being infected with hepatitis C virus at the time of the clinical\r\nworsening of haemochromatosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having chronic blood transfusional overload at the time of the clinical\r\nworsening of haemochromatosis, where the last blood transfusion\r\noccurred within the one month before the clinical worsening of\r\nhaemochromatosis",
+    "definedTerms" : [ {
+      "term" : "chronic blood transfusional overload",
+      "definition" : "means:\n(a) cumulative blood transfusions which have reached 120-ml packed red\nblood cell per kilogram of body weight and a serum ferritin level\nconsistently greater than 1000 nanograms per millilitre;\n(b) liver iron content by biopsy, superconducting quantum interference\ndevice or magnetic resonance imaging elevated above 7 milligrams per\ngram dry weight due to cumulative blood transfusions; or\n(c) at least ten blood transfusions within a two year period which has\nresulted in a serum ferritin level consistently greater than 1000\nnanograms per millilitre"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for\r\nhaemochromatosis",
+    "definedTerms" : [ ]
+  } ]
+}

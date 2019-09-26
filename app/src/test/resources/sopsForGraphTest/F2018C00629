@@ -1,0 +1,96 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00629",
+  "instrumentNumber" : "23/2016",
+  "citation" : "Statement of Principles concerning adjustment disorder (Reasonable Hypothesis) (No. 23 of 2016)",
+  "conditionName" : "adjustment disorder",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F43.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "experiencing a category 1A stressor within the three months before the\r\nclinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a category 1B stressor within the three months before the\r\nclinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured casualty;\r\nor\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "living or working in a hostile or life-threatening environment for a\r\ncumulative period of at least four weeks within the three months\r\nbefore the clinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "hostile or life-threatening environment",
+      "definition" : "means a situation or setting which is\r\ncharacterised by a pervasive threat to life or bodily integrity, such as would\r\nbe experienced in the following circumstances:\r\n(a) experiencing or being under threat of artillery, missile, rocket, mine or\r\nbomb attack; or\r\n(b) experiencing or being under threat of nuclear, biological or chemical\r\nagent attack; or\r\n(c) being involved in combat or going on combat patrols."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being exposed to repeated or extreme aversive details of severe\r\ntraumatic events within the three months before the clinical onset of\r\nadjustment disorder",
+    "definedTerms" : [ {
+      "term" : "events",
+      "definition" : "means witnessing a person suffering real, severe, traumatic  (for\r\nexample, first responders collecting human remains, police officers\r\nrepeatedly exposed to details of child abuse or drone operators viewing\r\nplanned strikes) or repeatedly listening to a person's account of their"
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a significant other who experiences a category 1A stressor\r\nwithin the three months before the clinical onset of adjustment\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "experiencing a category 2 stressor within the three months before the\r\nclinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel on-going\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation, or divorce;\r\n(c) having concerns in the work or school environment including on-going\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, on-going involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other with\r\na severe physical, mental or developmental disability."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "experiencing the death of a significant other within the three months\r\nbefore the clinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having, or being diagnosed with, a medical illness or injury which is\r\nlife-threatening or which results in serious physical or cognitive\r\ndisability, within the three months before the clinical onset of\r\nadjustment disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having persistent pain of at least three months duration at the time of\r\nthe clinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous pain; or\r\n(b) almost continuous pain; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich is severe enough to interfere with usual work or leisure activities or\r\nactivities of daily living."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a severe, chronic medical condition within the three months\r\nbefore the clinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "severe, chronic medical condition",
+      "definition" : "means an illness which substantially\r\nimpacts on social, occupational or other important areas of functioning; and\r\nrequires on-going daily or almost daily management of symptoms. This\r\nmanagement may include, but is not limited to, assistance with activities of\r\ndaily living; bed rest; dietary modification; drug therapy; nursing care;\r\noxygen therapy or physiotherapy. This management must be supervised by a\r\nregistered health practitioner.\r\nSevere, chronic medical conditions do not usually resolve spontaneously, are\r\nrarely cured completely and may progress to life threatening illnesses.\r\nExamples of these conditions include poorly controlled asthma, chronic\r\nobstructive pulmonary disease, poorly controlled diabetes mellitus,\r\ninflammatory bowel disease, pemphigus, psoriasis and rheumatoid arthritis."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a miscarriage, foetal death in-utero or stillbirth, within the three\r\nmonths before the clinical onset of adjustment disorder",
+    "definedTerms" : [ {
+      "term" : "miscarriage",
+      "definition" : "means the spontaneous or induced expulsion of the products of\r\nconception from the uterus before the foetus is viable."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(12)",
+    "text" : "inability to obtain appropriate clinical management for adjustment\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

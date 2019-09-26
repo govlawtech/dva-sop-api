@@ -1,0 +1,317 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00638",
+  "instrumentNumber" : "102/2014",
+  "citation" : "Statement of Principles concerning anxiety disorder No. 102 of 2014",
+  "conditionName" : "anxiety disorder",
+  "effectiveFrom" : "2014-11-17",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for generalised anxiety disorder, other specified anxiety disorder or\r\nunspecified anxiety disorder only:\r\n(i) being a prisoner of war before the clinical onset of anxiety\r\ndisorder; or\r\n(ii) experiencing a category 1A stressor within the five years before\r\nthe clinical onset of anxiety disorder; or\r\n(iii) experiencing a category 1B stressor within the five years before\r\nthe clinical onset of anxiety disorder; or\r\n(iv) living or working in a hostile or life-threatening environment\r\nfor a cumulative period of at least four weeks within the five\r\nyears before the clinical onset of anxiety disorder; or\r\n(v) having a significant other who experiences a category 1A\r\nstressor within the two years before the clinical onset of anxiety\r\ndisorder; or\r\n(vi) experiencing a category 2 stressor within the one year before\r\nthe clinical onset of anxiety disorder; or\r\n(vii) having a clinically significant disorder of mental health as\r\nspecified within the ten years before the clinical onset of\r\nanxiety disorder; or\r\n(viii) having a medical illness or injury which is life-threatening or\r\nwhich results in serious physical or cognitive disability, within\r\nthe five years before the clinical onset of anxiety disorder; or\r\n(ix) having an endocrinological disorder as specified, at the time of\r\nthe clinical onset of anxiety disorder; or\r\n(x) having epilepsy at the time of the clinical onset of anxiety\r\ndisorder; or\r\n(xi) having severe and permanent tinnitus at the time of the clinical\r\nonset of anxiety disorder; or\r\n(xii) having persistent pain of at least three months duration at the\r\ntime of the clinical onset of anxiety disorder; or\r\n(xiii) experiencing the death of a significant other within the two\r\nyears before the clinical onset of anxiety disorder; or\r\n(xiv) being the victim of severe childhood abuse before the clinical\r\nonset of anxiety disorder; or\r\n(xv) being obese at the time of the clinical onset of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    }, {
+      "term" : "an endocrinological disorder as specified",
+      "definition" : "means:\n(a) diabetes mellitus; or\n(b) polycystic ovary syndrome"
+    }, {
+      "term" : "a significant other",
+      "definition" : "means a person who has a close family bond or a close\npersonal relationship and is important or influential in one's life"
+    }, {
+      "term" : "a category 2 stressor",
+      "definition" : "means one of the following negative life events, the\neffects of which are chronic in nature and cause the person to feel on-going\ndistress, concern or worry:\n(a) being socially isolated and unable to maintain friendships or family\nrelationships, due to physical location, language barriers, disability, or\nmedical or psychiatric illness;\n(b) experiencing a problem with a long-term relationship including the\nbreak-up of a close personal relationship, the need for marital or\nrelationship counselling, marital separation, or divorce;\n(c) having concerns in the work or school environment including on-going\ndisharmony with fellow work or school colleagues, perceived lack of\nsocial support within the work or school environment, perceived lack\nof control over tasks performed and stressful work loads, or\nexperiencing bullying in the workplace or school environment;\n(d) experiencing serious legal issues including being detained or held in\ncustody, on-going involvement with the police concerning violations of\nthe law, or court appearances associated with personal legal problems;\n(e) having severe financial hardship including loss of employment, long\nperiods of unemployment, foreclosure on a property, or bankruptcy;\n(f) having a family member or significant other experience a major\ndeterioration in their health; or\n(g) being a full-time caregiver to a family member or significant other with\na severe physical, mental or developmental disability"
+    }, {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    }, {
+      "term" : "a hostile or life-threatening environment",
+      "definition" : "means a situation or setting\nwhich is characterised by a pervasive threat to life or bodily integrity, such as\nwould be experienced in the following circumstances:\n(a) experiencing or being under threat of artillery, missile, rocket, mine or\nbomb attack;\n(b) experiencing or being under threat of nuclear, biological or chemical\nagent attack; or\n(c) being involved in combat or going on combat patrols"
+    }, {
+      "term" : "persistent pain",
+      "definition" : "means:\n(a) continuous;\n(b) almost continuous; or\n(c) frequent, severe, intermittent pain,\nwhich may or may not be ameliorated by analgesic medication and is of a level\nto cause interference with usual work or leisure activities or activities of daily\nliving"
+    }, {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    }, {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\n(a) serious physical, emotional, psychological or sexual harm whilst a\nchild aged under 16 years; or\n(b) neglect involving a serious failure to provide the necessities for health,\nphysical and emotional development, or wellbeing whilst a child aged\nunder 16 years,\nwhere such serious harm or neglect has been perpetrated by a parent, a care\nprovider, an adult who works with or around that child, or any other adult in\ncontact with that child"
+    } ],
+    "conditionVariant" : {
+      "name" : "generalised anxiety disorder, other specified anxiety disorder or unspecified anxiety disorder",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being a prisoner of war before the clinical onset of anxiety\r\ndisorder"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "experiencing a category 1A stressor within the five years before\r\nthe clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "experiencing a category 1B stressor within the five years before\r\nthe clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "living or working in a hostile or life-threatening environment\r\nfor a cumulative period of at least four weeks within the five\r\nyears before the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "having a significant other who experiences a category 1A\r\nstressor within the two years before the clinical onset of anxiety\r\ndisorder"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "experiencing a category 2 stressor within the one year before\r\nthe clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "having a clinically significant disorder of mental health as\r\nspecified within the ten years before the clinical onset of\r\nanxiety disorder"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "having a medical illness or injury which is life-threatening or\r\nwhich results in serious physical or cognitive disability, within\r\nthe five years before the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "having an endocrinological disorder as specified, at the time of\r\nthe clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(x)",
+        "text" : "having epilepsy at the time of the clinical onset of anxiety\r\ndisorder"
+      }, {
+        "paragraph" : "(xi)",
+        "text" : "having severe and permanent tinnitus at the time of the clinical\r\nonset of anxiety disorder"
+      }, {
+        "paragraph" : "(xii)",
+        "text" : "having persistent pain of at least three months duration at the\r\ntime of the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(xiii)",
+        "text" : "experiencing the death of a significant other within the two\r\nyears before the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(xiv)",
+        "text" : "being the victim of severe childhood abuse before the clinical\r\nonset of anxiety disorder"
+      }, {
+        "paragraph" : "(xv)",
+        "text" : "being obese at the time of the clinical onset of anxiety disorder"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for anxiety disorder due to another medical condition only, having an\r\nendocrine, cardiovascular, respiratory, metabolic, infectious, or\r\nneurological disorder, where the medical condition is a direct\r\nphysiological cause of the anxiety at the time of the clinical onset of\r\nanxiety disorder",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "anxiety disorder due to another medical condition",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(ba)",
+    "text" : "for substance/medication-induced anxiety disorder only:\r\n(i) taking a drug or a drug from a class of drugs from the specified\r\nlist of drugs, within the two days before the clinical onset of\r\nanxiety disorder; or\r\n(ii) using or inhaling a substance from the specified list of\r\nsubstances, where that substance has resulted in intoxication,\r\nwithin the two days before the clinical onset of anxiety disorder\r\n(iii) taking a drug which results in the development of anxiety\r\nsymptoms or panic attacks within the two days before the clinical\r\nonset of anxiety disorder; or\r\n(iv) ingesting or inhaling a chemical or a substance, where that\r\nchemical or substance causes intoxication, and results in the\r\ndevelopment of anxiety symptoms or panic attacks within the two\r\ndays before the clinical onset of anxiety disorder; or\r\n(v) having ceased or reduced therapeutic or illicit drug use or other\r\nsubstance use within the seven days before the clinical onset of\r\nanxiety disorder; or\r\n(vi) having periodic, heavy alcohol consumption for the three months\r\nbefore the clinical onset of anxiety disorder; or\r\n(vii) having an alcohol use disorder or a substance use disorder at the\r\ntime of the clinical onset of anxiety disorder; or\r\n(viii) smoking an average of at least 20 cigarettes per day, or the\r\nequivalent thereof in other tobacco products, for at least the six\r\nmonths before the clinical onset of anxiety disorder, and where\r\nsmoking has ceased, the clinical onset of anxiety disorder has\r\noccurred within three months of smoking cessation; or\r\n(ix) having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the 30 days before the\r\nclinical onset of anxiety disorder; or\r\n(x) for persons without a regular caffeine habit, taking at least 200\r\nmilligrams of caffeine from beverages, drugs or foods within the\r\none hour before the clinical onset of anxiety disorder; or\r\n(xi) for persons with a regular caffeine habit, taking at least 800\r\nmilligrams of caffeine from beverages, drugs or foods within the\r\none hour before the clinical onset of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "acute cholinergic poisoning",
+      "definition" : "means symptoms and signs due to the\ninhibition of acetylcholinesterase enzyme activity which occur within 24 hours\nfollowing exposure. These symptoms and signs are acute paralysis,\noverwhelming bronchial secretions, bradycardia, gastrointestinal distress,\nmiosis, lacrimation and diarrhoea"
+    }, {
+      "term" : "intoxication",
+      "definition" : "means a transient state following the administration of alcohol\nor other psychoactive substance, resulting in disturbances in level of\nconsciousness, cognition, perception, affect or behaviour, or other\npsychophysiological functions and responses"
+    }, {
+      "term" : "regular caffeine habit",
+      "definition" : "means consuming the equivalent of more than 400\nmilligrams of caffeine from beverages, drugs or foods daily for at least two\nweeks"
+    }, {
+      "term" : "periodic, heavy alcohol consumption",
+      "definition" : "means sessions of heavy alcohol\ndrinking to the point of intoxication at least once a month"
+    }, {
+      "term" : "organophosphorus ester",
+      "definition" : "means an agent used to inhibit\nacetylcholinesterase, and includes the organophosphate pesticides\nchlorpyrifos, dichlorvos, EPN, leptophos, methamidophos, mipafox\n(diisopropyl phosphorofluoridate), omethoate, parathion, TOCP (tri-ortho-\ncresyl phosphate), trichlorfon and trichlornat"
+    } ],
+    "conditionVariant" : {
+      "name" : "substance/medication-induced anxiety disorder",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "taking a drug or a drug from a class of drugs from the specified\r\nlist of drugs, within the two days before the clinical onset of\r\nanxiety disorder"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "using or inhaling a substance from the specified list of\r\nsubstances, where that substance has resulted in intoxication,\r\nwithin the two days before the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "taking a drug which results in the development of anxiety\r\nsymptoms or panic attacks within the two days before the clinical\r\nonset of anxiety disorder"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "ingesting or inhaling a chemical or a substance, where that\r\nchemical or substance causes intoxication, and results in the\r\ndevelopment of anxiety symptoms or panic attacks within the two\r\ndays before the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "having ceased or reduced therapeutic or illicit drug use or other\r\nsubstance use within the seven days before the clinical onset of\r\nanxiety disorder"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "having periodic, heavy alcohol consumption for the three months\r\nbefore the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "having an alcohol use disorder or a substance use disorder at the\r\ntime of the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "smoking an average of at least 20 cigarettes per day, or the\r\nequivalent thereof in other tobacco products, for at least the six\r\nmonths before the clinical onset of anxiety disorder, and where\r\nsmoking has ceased, the clinical onset of anxiety disorder has\r\noccurred within three months of smoking cessation"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the 30 days before the\r\nclinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(x)",
+        "text" : "for persons without a regular caffeine habit, taking at least 200\r\nmilligrams of caffeine from beverages, drugs or foods within the\r\none hour before the clinical onset of anxiety disorder"
+      }, {
+        "paragraph" : "(xi)",
+        "text" : "for persons with a regular caffeine habit, taking at least 800\r\nmilligrams of caffeine from beverages, drugs or foods within the\r\none hour before the clinical onset of anxiety disorder"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "experiencing a category 1A stressor within the five years before the\r\nclinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "experiencing a category 1B stressor within the five years before the\r\nclinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "living or working in a hostile or life-threatening environment for a\r\ncumulative period of at least four weeks within the five years before\r\nthe clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a hostile or life-threatening environment",
+      "definition" : "means a situation or setting\nwhich is characterised by a pervasive threat to life or bodily integrity, such as\nwould be experienced in the following circumstances:\n(a) experiencing or being under threat of artillery, missile, rocket, mine or\nbomb attack;\n(b) experiencing or being under threat of nuclear, biological or chemical\nagent attack; or\n(c) being involved in combat or going on combat patrols"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a significant other who experiences a category 1A stressor\r\nwithin the two years before the clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a significant other",
+      "definition" : "means a person who has a close family bond or a close\npersonal relationship and is important or influential in one's life"
+    }, {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a category 2 stressor",
+      "definition" : "means one of the following negative life events, the\neffects of which are chronic in nature and cause the person to feel on-going\ndistress, concern or worry:\n(a) being socially isolated and unable to maintain friendships or family\nrelationships, due to physical location, language barriers, disability, or\nmedical or psychiatric illness;\n(b) experiencing a problem with a long-term relationship including the\nbreak-up of a close personal relationship, the need for marital or\nrelationship counselling, marital separation, or divorce;\n(c) having concerns in the work or school environment including on-going\ndisharmony with fellow work or school colleagues, perceived lack of\nsocial support within the work or school environment, perceived lack\nof control over tasks performed and stressful work loads, or\nexperiencing bullying in the workplace or school environment;\n(d) experiencing serious legal issues including being detained or held in\ncustody, on-going involvement with the police concerning violations of\nthe law, or court appearances associated with personal legal problems;\n(e) having severe financial hardship including loss of employment, long\nperiods of unemployment, foreclosure on a property, or bankruptcy;\n(f) having a family member or significant other experience a major\ndeterioration in their health; or\n(g) being a full-time caregiver to a family member or significant other with\na severe physical, mental or developmental disability"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the ten years before the clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a clinically significant disorder of mental health as specified",
+      "definition" : "means one\nof the following conditions, which is of sufficient severity to warrant ongoing\nmanagement, which may involve regular visits (for example, at least monthly)\nto a psychiatrist, counsellor or general practitioner:\n(a) a bipolar disorder or related disorder;\n(b) a depressive disorder;\n(c) a disruptive, impulse-control or conduct disorder;\n(d) a dissociative disorder;\n(e) a feeding disorder or eating disorder;\n(f) a neurocognitive disorder;\n(g) a neurodevelopmental disorder;\n(h) a paraphilic disorder;\n(i) a personality disorder;\n(j) a schizophrenia spectrum disorder or other psychotic disorder;\n(k) a sexual dysfunction;\n(l) a sleep-wake disorder;\n(m) a somatic symptom disorder or related disorder;\n(n) a trauma and stressor-related disorder;\n(o) an obsessive compulsive disorder or related disorder;\n(p) another anxiety disorder; or\n(q) gender dysphoria"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a medical illness or injury which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the five years\r\nbefore the clinical worsening of anxiety disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an endocrinological disorder as specified, at the time of the\r\nclinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "an endocrinological disorder as specified",
+      "definition" : "means:\n(a) diabetes mellitus; or\n(b) polycystic ovary syndrome"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having epilepsy at the time of the clinical worsening of anxiety\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having severe and permanent tinnitus at the time of the clinical\r\nworsening of anxiety disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having persistent pain of at least three months duration at the time of\r\nthe clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\n(a) continuous;\n(b) almost continuous; or\n(c) frequent, severe, intermittent pain,\nwhich may or may not be ameliorated by analgesic medication and is of a level\nto cause interference with usual work or leisure activities or activities of daily\nliving"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "experiencing the death of a significant other within the two years\r\nbefore the clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a significant other",
+      "definition" : "means a person who has a close family bond or a close\npersonal relationship and is important or influential in one's life"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "being the victim of severe childhood abuse before the clinical\r\nworsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\n(a) serious physical, emotional, psychological or sexual harm whilst a\nchild aged under 16 years; or\n(b) neglect involving a serious failure to provide the necessities for health,\nphysical and emotional development, or wellbeing whilst a child aged\nunder 16 years,\nwhere such serious harm or neglect has been perpetrated by a parent, a care\nprovider, an adult who works with or around that child, or any other adult in\ncontact with that child"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "being obese at the time of the clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a medical condition as specified at the time of the clinical\r\nworsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "a medical condition as specified",
+      "definition" : "means an endocrine, cardiovascular,\nrespiratory, metabolic, infectious, or neurological condition, that causes\nsymptoms consistent with anxiety and panic attacks as a direct physiological\nconsequence of the condition"
+    } ]
+  }, {
+    "paragraph" : "6(qa)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, within the two days before the clinical worsening of anxiety\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qb)",
+    "text" : "using or inhaling a substance from the specified list of substances,\r\nwhere that substance has resulted in intoxication, within the two days\r\nbefore the clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "specified list of substances",
+      "definition" : "means:\n(a) amphetamine and amphetamine-type substances, including\nmethamphetamine and 3,4-methylenedioxymethamphetamine\n(ecstasy);\n(b) cannabis;\n(c) cocaine;\n(d) inhalants; or\n(e) opioids"
+    }, {
+      "term" : "intoxication",
+      "definition" : "means a transient state following the administration of alcohol\nor other psychoactive substance, resulting in disturbances in level of\nconsciousness, cognition, perception, affect or behaviour, or other\npsychophysiological functions and responses"
+    } ]
+  }, {
+    "paragraph" : "6(qc)",
+    "text" : "taking a drug which results in the re-development or worsening of\r\nanxiety symptoms or panic attacks within the two days before the\r\nclinical worsening of anxiety disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qd)",
+    "text" : "ingesting or inhaling a chemical or a substance, where that chemical or\r\nsubstance causes intoxication, and results in the development of\r\nanxiety symptoms or panic attacks within the two days before the\r\nclinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "intoxication",
+      "definition" : "means a transient state following the administration of alcohol\nor other psychoactive substance, resulting in disturbances in level of\nconsciousness, cognition, perception, affect or behaviour, or other\npsychophysiological functions and responses"
+    } ]
+  }, {
+    "paragraph" : "6(qe)",
+    "text" : "having ceased or reduced therapeutic or illicit drug use or other\r\nsubstance use within the seven days before the clinical worsening of\r\nanxiety disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qf)",
+    "text" : "having periodic, heavy alcohol consumption for the three months\r\nbefore the clinical worsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "periodic, heavy alcohol consumption",
+      "definition" : "means sessions of heavy alcohol\ndrinking to the point of intoxication at least once a month"
+    } ]
+  }, {
+    "paragraph" : "6(qg)",
+    "text" : "having an alcohol use disorder or a substance use disorder at the time\r\nof the clinical worsening of anxiety disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qh)",
+    "text" : "smoking an average of at least 20 cigarettes per day, or the equivalent\r\nthereof in other tobacco products, for at least the six months before the\r\nclinical worsening of anxiety disorder, and where smoking has ceased,\r\nthe clinical worsening of anxiety disorder has occurred within three\r\nmonths of smoking cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qi)",
+    "text" : "having an episode of acute cholinergic poisoning from exposure to an\r\norganophosphorus ester within the 30 days before the clinical\r\nworsening of anxiety disorder",
+    "definedTerms" : [ {
+      "term" : "organophosphorus ester",
+      "definition" : "means an agent used to inhibit\nacetylcholinesterase, and includes the organophosphate pesticides\nchlorpyrifos, dichlorvos, EPN, leptophos, methamidophos, mipafox\n(diisopropyl phosphorofluoridate), omethoate, parathion, TOCP (tri-ortho-\ncresyl phosphate), trichlorfon and trichlornat"
+    }, {
+      "term" : "acute cholinergic poisoning",
+      "definition" : "means symptoms and signs due to the\ninhibition of acetylcholinesterase enzyme activity which occur within 24 hours\nfollowing exposure. These symptoms and signs are acute paralysis,\noverwhelming bronchial secretions, bradycardia, gastrointestinal distress,\nmiosis, lacrimation and diarrhoea"
+    } ]
+  }, {
+    "paragraph" : "6(qj)",
+    "text" : "taking at least 400 milligrams of caffeine from beverages, drugs or\r\nfoods within the one hour before the clinical worsening of anxiety\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "inability to obtain appropriate clinical management for anxiety\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

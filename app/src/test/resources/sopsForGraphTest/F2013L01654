@@ -1,0 +1,112 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01654",
+  "instrumentNumber" : "66/2013",
+  "citation" : "Statement of Principles concerning gastro- oesophageal reflux disease No. 66 of 2013",
+  "conditionName" : "gastro-oesophageal reflux disease",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K21"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a hiatus hernia at the time of the clinical onset of gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being overweight at the time of the clinical onset of gastro-oesophageal\r\nreflux disease",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "smoking at least three pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, immediately before the clinical onset of\r\ngastro-oesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "consuming an average of at least 500 grams of alcohol per week for at\r\nleast the 12 months before the clinical onset of gastro-oesophageal\r\nreflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing surgery to the region of the oesophageal hiatus, including\r\noesophageal dilatation, or surgery involving the fundus or body of the\r\nstomach, within the four weeks before the clinical onset of gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a smooth muscle relaxant drug at the time of the\r\nclinical onset of gastro-oesophageal reflux disease",
+    "definedTerms" : [ {
+      "term" : "a smooth muscle relaxant drug",
+      "definition" : "means:\n(a) a benzodiazepine;\n(b) a calcium channel blocker drug;\n(c) a beta-adrenergic receptor agonist;\n(d) a nitrate drug;\n(e) a tricyclic antidepressant;\n(f) an anti-cholinergic drug;\n(g) aminophylline; or\n(h) theophylline"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a disease from the specified list at the time of the clinical onset\r\nof gastro-oesophageal reflux disease",
+    "definedTerms" : [ {
+      "term" : "a disease from the specified list",
+      "definition" : "means:\n(a) dermatomyositis;\n(b) mixed connective tissue disease;\n(c) polymyositis;\n(d) Sjögren's syndrome;\n(e) systemic lupus erythematosus;\n(f) systemic sclerosis (scleroderma); or\n(g) Zollinger-Ellison syndrome"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being pregnant at the time of the clinical onset of gastro-oesophageal\r\nreflux disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "having a hiatus hernia at the time of the clinical worsening of gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being overweight at the time of the clinical worsening of gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "smoking at least three pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, immediately before the clinical worsening of\r\ngastro-oesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "consuming an average of at least 500 grams of alcohol per week for at\r\nleast the 12 months before the clinical worsening of gastro-oesophageal\r\nreflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "undergoing surgery to the region of the oesophageal hiatus, including\r\noesophageal dilatation, or surgery involving the fundus or body of the\r\nstomach, within the four weeks before the clinical worsening of gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "being treated with a smooth muscle relaxant drug at the time of the\r\nclinical worsening of gastro-oesophageal reflux disease",
+    "definedTerms" : [ {
+      "term" : "a smooth muscle relaxant drug",
+      "definition" : "means:\n(a) a benzodiazepine;\n(b) a calcium channel blocker drug;\n(c) a beta-adrenergic receptor agonist;\n(d) a nitrate drug;\n(e) a tricyclic antidepressant;\n(f) an anti-cholinergic drug;\n(g) aminophylline; or\n(h) theophylline"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a disease from the specified list at the time of the clinical\r\nworsening of gastro-oesophageal reflux disease",
+    "definedTerms" : [ {
+      "term" : "a disease from the specified list",
+      "definition" : "means:\n(a) dermatomyositis;\n(b) mixed connective tissue disease;\n(c) polymyositis;\n(d) Sjögren's syndrome;\n(e) systemic lupus erythematosus;\n(f) systemic sclerosis (scleroderma); or\n(g) Zollinger-Ellison syndrome"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "being pregnant at the time of the clinical worsening of gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a specified psychiatric condition at the time of the clinical\r\nworsening of gastro-oesophageal reflux disease",
+    "definedTerms" : [ {
+      "term" : "a specified psychiatric condition",
+      "definition" : "means:\n(a) anxiety disorder;\n(b) depressive disorder; or\n(c) posttraumatic stress disorder"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being treated orally with a drug or a drug from a class of drugs from the\r\nspecified list at the time of the clinical worsening of gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "inability to obtain appropriate clinical management for gastro-\r\noesophageal reflux disease",
+    "definedTerms" : [ ]
+  } ]
+}

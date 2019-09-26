@@ -1,0 +1,156 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01797",
+  "instrumentNumber" : "55/2012",
+  "citation" : "Statement of Principles concerning deep vein thrombosis No. 55 of 2012",
+  "conditionName" : "deep vein thrombosis",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having trauma to the affected vein within the three months before the\r\nclinical onset of deep vein thrombosis",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected vein",
+      "definition" : "means injury to the affected vein occurring\nafter:\n(a) a laceration, crush or tearing injury of the affected vein; or\n(b) injection, cannulation or incision of the affected vein"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing a course of therapeutic radiation, where the affected vein\r\nwas in the field of radiation, within the three months before the clinical\r\nonset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a central venous catheter, indwelling cardiac pacemaker or\r\ndefibrillator leads, or implantation of another device within the affected\r\nvein for a continuous period of at least 24 hours within the three\r\nmonths before the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "smoking at least two pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, within the three years before the clinical\r\nonset of deep vein thrombosis, and where smoking has ceased, the\r\nclinical onset of deep vein thrombosis has occurred within three\r\nmonths of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having restricted mobility for a continuous period of at least four hours\r\nwithin the four weeks before the clinical onset of deep vein\r\nthrombosis",
+    "definedTerms" : [ {
+      "term" : "having restricted mobility",
+      "definition" : "means gross diminution and near complete\nabsence of movement of a lower limb while sitting or reclining in a cramped\nor restricted space, such as may occur during travel by road, rail or air"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being an inpatient in a hospital or a resident in a nursing home for a\r\ncontinuous period of at least seven days, within the three months\r\nbefore the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having surgery requiring a general, spinal or epidural anaesthetic,\r\nwithin the three months before the clinical onset of deep vein\r\nthrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having an injury or illness as specified within the three months before\r\nthe clinical onset of deep vein thrombosis",
+    "definedTerms" : [ {
+      "term" : "an injury or illness as specified",
+      "definition" : "means:\n(a) a fracture or crush injury of the clavicle or humerus, or a bone in the\nspinal column, pelvis, hip, chest, or lower limb (femur, tibia, fibula);\n(b) a moderate to severe traumatic brain injury;\n(c) a physical injury or illness requiring mechanical ventilation support or\nadmission to an intensive care unit;\n(d) a spinal cord injury; or\n(e) a tear, rupture or avulsion of a muscle, tendon or ligament in the lower\nlimb"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "immobilisation of the affected upper or lower limb in a plaster cast or\r\nsimilar restraining or bracing device, including a below-knee cast, for a\r\ncontinuous period of at least seven days within the three months before\r\nthe clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a neurological disease causing motor impairment within the\r\nthree months before the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ {
+      "term" : "a neurological disease causing motor impairment",
+      "definition" : "means loss or\nimpairment of motor function of a limb, occurring in cerebrovascular accident,\nperipheral neuropathy, Guillain Barre syndrome, non-traumatic spinal cord\ndisease, neurological infection or neuro-muscular degenerative diseases,\nincluding demyelinating diseases, parkinsonian syndromes, dementia and\nmuscular dystrophies"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a cardiac disease from the specified list within the three months\r\nbefore the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ {
+      "term" : "a cardiac disease from the specified list",
+      "definition" : "means:\n(a) acute myocardial infarction; or\n(b) congestive cardiac failure"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a malignant neoplasm at the time of the clinical onset of deep\r\nvein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, within the two months before the clinical onset of deep\r\nvein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "using hormone replacement therapy or using combined oestrogen-\r\nprogestin contraception for a continuous period of at least one month,\r\nwithin the two months before the clinical onset of deep vein\r\nthrombosis",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of oestrogen\npreparations often in combination with progesterone to offset a hormone\ndeficiency following surgically induced or naturally occurring menopause"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having external compression of the affected vein or a vein draining the\r\naffected vein, at the time of the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having osteomyelitis, an abscess or other infection involving the\r\naffected vein, at the time of the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having an autoimmune disease or inflammatory vasculitis from the\r\nspecified list at the time of the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having a hypercoagulable state at the time of the clinical onset of deep\r\nvein thrombosis",
+    "definedTerms" : [ {
+      "term" : "a hypercoagulable state",
+      "definition" : "means:\n(a) acquired activated protein C resistance;\n(b) acquired antithrombin III deficiency;\n(c) acquired protein C deficiency;\n(d) acquired protein S deficiency;\n(e) antiphospholipid antibody syndrome;\n(f) cirrhosis of the liver;\n(g) disseminated intravascular coagulation;\n(h) heparin-induced thrombocytopaenia;\n(i) hyperhomocysteinaemia;\n(j) hyperthyroidism;\n(k) hypothyroidism;\n(l) inability to access anticoagulant treatment for an existing coagulation\ndisorder;\n(m) monoclonal gammopathy of undetermined significance;\n(n) myeloproliferative disease; or\n(o) thrombocytosis"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having an aneurysm of the affected vein at the time of the clinical onset\r\nof deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "being obese at the time of the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "being pregnant or being within the two months postpartum, at the time\r\nof the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having superficial vein thrombosis within the two months before the\r\nclinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "for deep vein thrombosis in an upper limb only, engagement in exercise\r\nof the affected upper limb for a cumulative period of at least two hours\r\nwithin the seven days before the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "deep vein thrombosis in an upper limb",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having cytomegalovirus infection of new onset within the six weeks\r\nbefore the clinical onset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having chronic bronchitis or emphysema at the time of the clinical\r\nonset of deep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having nephrotic syndrome, or any acute or chronic renal disease\r\nrequiring dialysis or renal transplant, at the time of the clinical onset of\r\ndeep vein thrombosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "experiencing animal envenomation from the bite of a viper, Crotalinae\r\nspp or Bitis gabonica within the seven days before the clinical onset of\r\ndeep vein thrombosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(cc)",
+    "text" : "inability to obtain appropriate clinical management for deep vein\r\nthrombosis",
+    "definedTerms" : [ ]
+  } ]
+}

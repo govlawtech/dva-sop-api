@@ -1,0 +1,60 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00751",
+  "instrumentNumber" : "10/2013",
+  "citation" : "Statement of Principles concerning adenocarcinoma of the kidney No. 10 of 2013",
+  "conditionName" : "adenocarcinoma of the kidney",
+  "effectiveFrom" : "2013-01-09",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C64"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of adenocarcinoma\r\nof the kidney, and\r\n(i) smoking commenced at least ten years before the clinical onset\r\nof adenocarcinoma of the kidney; and\r\n(ii) where smoking has ceased, the clinical onset of\r\nadenocarcinoma of the kidney has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being obese for a continuous period of at least five years before the\r\nclinical onset of adenocarcinoma of the kidney",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having end stage renal disease before the clinical onset of\r\nadenocarcinoma of the kidney",
+    "definedTerms" : [ {
+      "term" : "end stage renal disease",
+      "definition" : "means renal disease of sufficient severity to require\ndialysis or renal transplantation"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having hypertension for a period of at least five years before the\r\nclinical onset of adenocarcinoma of the kidney",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "an inability to consume an average of at least 200 grams per day of any\r\ncombination of fruits and vegetables, for a period of at least five\r\nconsecutive years within the 25 years before the clinical onset of\r\nadenocarcinoma of the kidney",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the kidney at least ten years before the clinical\r\nonset of adenocarcinoma of the kidney",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "for renal medullary carcinoma only, having sickle cell disorder before\r\nthe clinical onset of adenocarcinoma of the kidney",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "renal medullary carcinoma",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "inability to obtain appropriate clinical management for adenocarcinoma\r\nof the kidney",
+    "definedTerms" : [ ]
+  } ]
+}

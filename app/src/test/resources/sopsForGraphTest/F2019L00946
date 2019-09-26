@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00946",
+  "instrumentNumber" : "61/2019",
+  "citation" : "Statement of Principles concerning schistosomiasis (Reasonable Hypothesis) (No. 61 of 2019)",
+  "conditionName" : "schistosomiasis",
+  "effectiveFrom" : "2019-07-22",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B65"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having cutaneous or mucosal contact with water containing larvae of\r\nS. mansoni, S. haematobium, S. japonicum, S. intercalatum,\r\nS. mekongi, S. malayensis or S. guineensis within the 30 years before\r\nthe clinical onset of schistosomiasis;\r\nNote 1: Contact with water containing larvae includes, but is not limited to, swimming, wading\r\nor washing in, and drinking, contaminated water in tropical or subtropical regions.\r\nNote 2: Water containing larvae is most likely to occur where facilities for disposal of human\r\nwaste are minimal and there is a high likelihood of the water being contaminated with\r\nhuman faeces and urine",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a solid organ transplant, where the organ is infected with\r\nS. mansoni, S. haematobium, S. japonicum, S. intercalatum,\r\nS. mekongi, S. malayensis or S. guineensis, within the one year before\r\nthe clinical onset of schistosomiasis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for schistosomiasis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00229",
+  "instrumentNumber" : "35/2019",
+  "citation" : "Statement of Principles concerning neurocognitive disorder with Lewy bodies (Reasonable Hypothesis) (No. 35 of 2019)",
+  "conditionName" : "neurocognitive disorder with Lewy bodies",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G31.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having major depressive disorder at least ten years before the clinical\r\nonset of neurocognitive disorder with Lewy bodies",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having posttraumatic stress disorder at least ten years before the\r\nclinical onset of neurocognitive disorder with Lewy bodies",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "being treated with an antipsychotic drug at the time of the clinical\r\nworsening of neurocognitive disorder with Lewy bodies",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with an anticholinergic drug from the specified list of\r\nanticholinergic drugs, at the time of the clinical worsening of\r\nneurocognitive disorder with Lewy bodies",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for neurocognitive\r\ndisorder with Lewy bodies",
+    "definedTerms" : [ ]
+  } ]
+}

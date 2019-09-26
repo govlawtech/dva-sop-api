@@ -1,0 +1,64 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00806",
+  "instrumentNumber" : "105/2011",
+  "citation" : "Statement of Principles concerning chronic pancreatitis No. 105 of 2011",
+  "conditionName" : "chronic pancreatitis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K86.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K86.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "consuming at least 90 kilograms of alcohol:\r\n(i) within any five year period before the clinical onset of chronic\r\npancreatitis; and\r\n(ii) where alcohol consumption has ceased, the clinical onset\r\noccurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having complete or partial obstruction of the ductal system draining the\r\nsecretions of the exocrine pancreas at the time of the clinical onset of\r\nchronic pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the pancreas, at least two years before the clinical\r\nonset of chronic pancreatitis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing a course of therapeutic radiation, where the pancreas was in\r\nthe field of radiation, at least two years before the clinical onset of\r\nchronic pancreatitis",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having hyperparathyroidism at the time of the clinical onset of chronic\r\npancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having an episode of acute pancreatitis before the clinical onset of\r\nchronic pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "smoking at least 25 pack-years of cigarettes or the equivalent thereof in\r\nother tobacco products, before the clinical onset of chronic pancreatitis,\r\nand where smoking has ceased, the clinical onset has occurred within\r\nten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having cholelithiasis at the time of the clinical onset of chronic\r\npancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having hypertriglyceridaemia resulting in triglyceride levels above\r\n1000 milligrams per decilitre (or 11.3 millimoles per litre) at the time\r\nof the clinical onset of chronic pancreatitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for chronic\r\npancreatitis",
+    "definedTerms" : [ ]
+  } ]
+}

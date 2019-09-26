@@ -1,0 +1,112 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00939",
+  "instrumentNumber" : "32/2012",
+  "citation" : "Statement of Principles concerning psoriasis No. 32 of 2012",
+  "conditionName" : "psoriasis",
+  "effectiveFrom" : "2012-05-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L40.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.8"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for a first episode of psoriasis only,\r\n(i) having an acute injury to the skin of the affected site or\r\ndeveloping a lesion of the affected site within the one month\r\nbefore the clinical onset of psoriasis; or\r\n(ii) being treated with a drug or a drug from a class of drugs in the\r\nspecified list for at least the seven days before the clinical onset\r\nof psoriasis; or\r\n(iii) withdrawing from systemic glucocorticoids or high potency\r\ntopical glucocorticoids in the one month before the clinical\r\nonset of psoriasis; or\r\n(iv) being treated with a drug which is associated in the individual\r\nwith:\r\nA. the development of psoriasis during drug therapy; and\r\neither\r\nB. the improvement of psoriasis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\nC. the redevelopment of psoriasis on rechallenge with the\r\nsame drug;\r\nwhere treatment with the drug continued for at least the seven\r\ndays before the clinical onset of psoriasis; or\r\n(v) having a laboratory confirmed Streptococcus pyogenes\r\ninfection of the pharynx, tonsils or skin within the one month\r\nbefore the clinical onset of psoriasis; or\r\n(vi) being infected with human immunodeficiency virus before the\r\nclinical onset of psoriasis; or\r\n(vii) smoking at least ten pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\npsoriasis, and where smoking has ceased, the clinical onset of\r\npsoriasis has occurred within twenty years of cessation; or\r\n(viii) being overweight for at least five years before the clinical onset\r\nof psoriasis",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ],
+    "conditionVariant" : {
+      "name" : "a first episode of psoriasis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having an acute injury to the skin of the affected site or\r\ndeveloping a lesion of the affected site within the one month\r\nbefore the clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being treated with a drug or a drug from a class of drugs in the\r\nspecified list for at least the seven days before the clinical onset\r\nof psoriasis"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "withdrawing from systemic glucocorticoids or high potency\r\ntopical glucocorticoids in the one month before the clinical\r\nonset of psoriasis"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "being treated with a drug which is associated in the individual\r\nwith:\r\nA. the development of psoriasis during drug therapy; and\r\neither\r\nB. the improvement of psoriasis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\nC. the redevelopment of psoriasis on rechallenge with the\r\nsame drug;\r\nwhere treatment with the drug continued for at least the seven\r\ndays before the clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "having a laboratory confirmed Streptococcus pyogenes\r\ninfection of the pharynx, tonsils or skin within the one month\r\nbefore the clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "being infected with human immunodeficiency virus before the\r\nclinical onset of psoriasis"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "smoking at least ten pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\npsoriasis, and where smoking has ceased, the clinical onset of\r\npsoriasis has occurred within twenty years of cessation"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "being overweight for at least five years before the clinical onset\r\nof psoriasis"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for impetigo herpetiformis only, being pregnant within the six weeks\r\nbefore the clinical onset of psoriasis",
+    "definedTerms" : [ {
+      "term" : "impetigo herpetiformis",
+      "definition" : "means a pustular skin condition of pregnancy,\ncharacterised by the presence of widespread tiny superficial pustules in a\nherpetiform pattern on erythematosquamous plaques, and often associated with\nconstitutional symptoms"
+    } ],
+    "conditionVariant" : {
+      "name" : "impetigo herpetiformis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "having an acute injury to the skin of the affected site or developing a\r\nlesion of the affected site within the one month before the clinical\r\nworsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being treated with a drug or a drug from a class of drugs in the\r\nspecified list for at least the seven days before the clinical worsening of\r\npsoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "withdrawing from systemic glucocorticoids or high potency topical\r\nglucocorticoids in the one month before the clinical worsening of\r\npsoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the worsening of psoriasis during drug therapy; and either\r\n(ii) the improvement of psoriasis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\n(iii) the worsening of psoriasis on rechallenge with the same drug;\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical worsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a laboratory confirmed Streptococcus pyogenes infection of the\r\npharynx, tonsils or skin within the one month before the clinical\r\nworsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nworsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of psoriasis,\r\nand where smoking has ceased, the clinical worsening of psoriasis has\r\noccurred within twenty years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being overweight for at least five years before the clinical worsening of\r\npsoriasis",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for psoriasis",
+    "definedTerms" : [ ]
+  } ]
+}

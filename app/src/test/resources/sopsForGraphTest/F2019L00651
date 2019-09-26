@@ -1,0 +1,64 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00651",
+  "instrumentNumber" : "49/2019",
+  "citation" : "Statement of Principles concerning poisoning from plants or fungi (Reasonable Hypothesis) (No. 49 of 2019)",
+  "conditionName" : "poisoning from plants or fungi",
+  "effectiveFrom" : "2019-05-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "ingesting, inhaling, injecting or having cutaneous, intradermal, mucosal\r\nor ocular exposure to a toxin from a plant or fungus within the seven\r\ndays before the clinical onset of poisoning from plants or fungi",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "consuming milk, milk products, eggs or meat within the two weeks\r\nbefore the clinical onset of poisoning from plants or fungi, where those\r\nproducts were from an animal that ingested a plant from the Specified\r\nList 1 of plants",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "consuming honey within the two weeks before the clinical onset of\r\npoisoning from plants or fungi, where the honey was derived from\r\nplants containing a plant toxin from the specified list of plant toxins",
+    "definedTerms" : [ {
+      "term" : "specified list of plant toxins",
+      "definition" : "means:\r\n(a) grayanotoxin;\r\n(b) triptolide; or\r\n(c) tutin."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "for poisoning manifesting as delayed hepatotoxicity, delayed\r\nnephrotoxicity or delayed neurotoxicity only, ingesting, inhaling,\r\ninjecting or having cutaneous, intradermal, mucosal or ocular exposure\r\nto a plant from the Specified List 2 of plants within the two years\r\nbefore the clinical onset of poisoning from plants or fungi",
+    "definedTerms" : [ {
+      "term" : "Specified List 2 of plants",
+      "definition" : "means:\r\n(a) Aristolochiaceae species (plants containing aristolochic acid);\r\n(b) Artemisia species (plants containing thujone);\r\n(c) Camellia sinensis (green tea extract);\r\n(d) Chelidonium majus (greater celandine);\r\n(e) Cimicifuga racemose (black cohosh);\r\n(f) furanocoumarins (plants containing psoralens);\r\n(g) Larrea tridentate (chaparral);\r\n(h) Piper methysticum (kava extract); or\r\n(i) plants containing a pyrrolizidine alkaloid.\r\nNote 1: Examples of plants containing psoralens (furanocoumarins) include, but are not limited to,\r\nRuta graveolens (rue), Apium graveolens (celery fruits), Angelica archangelic (angelica) and\r\nPetroselenium crispum (parsley).\r\nNote 2: Examples of plants containing a pyrrolizidine alkaloid include, but are not limited to, Borago\r\nofficinalis (borage), Crotalaria sagittalis (rattlebox), Cynoglossum officinale (hound's tongue),\r\nEchium plantagineum (Patterson's curse), Heliotropium europaeum (heliotrope), Senecio\r\njacobaea (tansy ragwort) and Symphytum officinale (comfrey)."
+    } ],
+    "conditionVariant" : {
+      "name" : "poisoning manifesting as delayed hepatotoxicity, delayed nephrotoxicity or delayed neurotoxicity",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "for poisoning manifesting as delayed hepatotoxicity, delayed\r\nneurotoxicity or delayed thyrotoxicity only, consuming milk, milk\r\nproducts, eggs or meat within the two years before the clinical onset of\r\npoisoning from plants or fungi, where those products were from an\r\nanimal that ingested a plant from the Specified List 3 of plants",
+    "definedTerms" : [ {
+      "term" : "Specified List 3 of plants",
+      "definition" : "means:\r\n(a) Cruciferae species;\r\n(b) plants containing a pyrrolizidine alkaloid; or\r\n(c) plants containing a quinolizidine alkaloid.\r\nNote 1: Examples of plants containing a pyrrolizidine alkaloid include, but are not limited to, Borago\r\nofficinalis (borage), Crotalaria sagittalis (rattlebox), Cynoglossum officinale (hound's tongue),\r\nEchium plantagineum (Patterson's curse), Heliotropium europaeum (heliotrope), Senecio\r\njacobaea (tansy ragwort) and Symphytum officinale (comfrey).\r\nNote 2: Examples of plants containing a quinolizidine alkaloid include, but are not limited to, Lupinus\r\nspecies (lupines, blue bonnets), Cytisus scoparius (Scotch broom), Laburnum anagyroides\r\n(golden chain tree) and Thermopsis montana (mountain thermopsis)."
+    } ],
+    "conditionVariant" : {
+      "name" : "poisoning manifesting as delayed hepatotoxicity, delayed neurotoxicity or delayed thyrotoxicity",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for poisoning manifesting as delayed hepatotoxicity only, consuming\r\nhoney within the two years before the clinical onset of poisoning from\r\nplants or fungi, where the honey was derived from plants containing a\r\npyrrolizidine alkaloid;\r\n(hound's tongue), Echium plantagineum (Patterson's curse), Heliotropium europaeum\r\n(heliotrope), Senecio jacobaea (tansy ragwort) and Symphytum officinale (comfrey)",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "poisoning manifesting as delayed hepatotoxicity",
+      "variantFactors" : [ {
+        "paragraph" : "(heliotrope)",
+        "text" : ", Senecio jacobaea (tansy ragwort) and Symphytum officinale (comfrey)"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(7)",
+    "text" : "inability to obtain appropriate clinical management for poisoning from\r\nplants or fungi",
+    "definedTerms" : [ ]
+  } ]
+}

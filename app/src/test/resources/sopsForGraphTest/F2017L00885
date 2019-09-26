@@ -1,0 +1,32 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00885",
+  "instrumentNumber" : "36/2017",
+  "citation" : "Statement of Principles concerning labral tear (Reasonable Hypothesis) (No. 36 of 2017)",
+  "conditionName" : "labral tear",
+  "effectiveFrom" : "2017-07-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a significant physical force applied to or through the affected\r\nshoulder joint or the affected hip joint at the time of the clinical onset\r\nof labral tear",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "performing forceful and repetitive motions of the affected shoulder\r\njoint or the affected hip joint, involving extremes of the normal range\r\nof motion, for at least four hours per week for the one month before\r\nthe clinical onset of labral tear;\r\nNote 1: Examples of activities involving forceful and repetitive motions of the shoulder at\r\nextremes of the normal range of motion may include swimming, basketball, football,\r\nline or rope handling, rope ladder climbing, loading ammunition, physical employment\r\nstandards training and participating in obstacle courses, infantry minor tactics courses\r\nand high rope courses.\r\nNote 2: Examples of activities involving forceful and repetitive motions of the hip at extremes\r\nof the normal range of motion may include golf, hockey, rowing, running, physical\r\nemployment standards training and participating in obstacle courses and infantry minor\r\ntactics courses",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for labral tear of the hip joint only, being in the third trimester of\r\npregnancy within the one week before the clinical onset of labral tear",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "labral tear of the hip joint",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "inability to obtain appropriate clinical management for labral tear",
+    "definedTerms" : [ ]
+  } ]
+}

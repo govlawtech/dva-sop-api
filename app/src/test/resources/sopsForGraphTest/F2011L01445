@@ -1,0 +1,39 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01445",
+  "instrumentNumber" : "87/2011",
+  "citation" : "Statement of Principles concerning extrinsic allergic alveolitis No. 87 of 2011",
+  "conditionName" : "extrinsic allergic alveolitis",
+  "effectiveFrom" : "2011-07-13",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "J67"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling, from an antigenic source, the specific antigen responsible for\r\nthe extrinsic allergic alveolitis, before the clinical onset of extrinsic\r\nallergic alveolitis",
+    "definedTerms" : [ {
+      "term" : "an antigenic source",
+      "definition" : "means the source of the antigen responsible for\ncausing extrinsic allergic alveolitis. Examples of antigenic sources include:\n(a) animal dust, dander or hair particles;\n(b) bird droppings or feathers;\n(c) coffee bean dust;\n(d) compost dust contaminated with micro-organisms;\n(e) detergent powder;\n(f) dried grasses and leaves used in thatching contaminated with micro-\norganisms;\n(g) dust from tea plants;\n(h) fertilizer contaminated with micro-organisms;\n(i) fish meal dust;\n(j) metalworking fluid contaminated with micro-organisms;\n(k) mouldy barley;\n(l) mouldy cheese;\n(m) mouldy corkbark dust;\n(n) mouldy grapes;\n(o) mouldy hay, grain or silage;\n(p) mouldy timber dust;\n(q) mouldy straw dust;\n(r) mouldy sugar cane dust;\n(s) mouldy tobacco;\n(t) mushroom compost contaminated with micro-organisms;\n(u) paprika pods dust contaminated with micro-organisms;\n(v) Pauli's reagent containing sodium diazobenzenesulphate;\n(w) pituitary snuff;\n(x) polyurethane varnishes and lacquers containing toluene diisocyanate or\nmethylene diphenyl diisocyanate;\n(y) heated epoxy resin or dyes containing phthalic anhydride;\n(z) sauna water contaminated with micro-organisms;\n(aa) sewage sludge contaminated with micro-organisms;\n(bb) spores from Lycoperdon puffballs;\n(cc) urine from laboratory rats;\n(dd) wheat flour infested with the wheat weevil; or\n(ee) wood dust contaminated with micro-organisms"
+    }, {
+      "term" : "antigen",
+      "definition" : "means a substance which is capable of inducing an immune\nresponse and reacting with the specific antibody or specifically sensitised T-\nlymphocytes which are the products of that response. Antigens may be soluble\nsubstances, such as toxins and foreign proteins, or particulate such as bacteria\nand tissue cells. The major categories of antigens causing extrinsic allergic\nalveolitis are microbial agents, animal proteins and low molecular weight\nchemicals (haptens). Microbial contamination of various inhaled dusts is the\ncommonest source of antigens"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inhaling, from an antigenic source, the specific antigen responsible for\r\nthe extrinsic allergic alveolitis, within the 30 days before the clinical\r\nworsening of extrinsic allergic alveolitis",
+    "definedTerms" : [ {
+      "term" : "an antigenic source",
+      "definition" : "means the source of the antigen responsible for\ncausing extrinsic allergic alveolitis. Examples of antigenic sources include:\n(a) animal dust, dander or hair particles;\n(b) bird droppings or feathers;\n(c) coffee bean dust;\n(d) compost dust contaminated with micro-organisms;\n(e) detergent powder;\n(f) dried grasses and leaves used in thatching contaminated with micro-\norganisms;\n(g) dust from tea plants;\n(h) fertilizer contaminated with micro-organisms;\n(i) fish meal dust;\n(j) metalworking fluid contaminated with micro-organisms;\n(k) mouldy barley;\n(l) mouldy cheese;\n(m) mouldy corkbark dust;\n(n) mouldy grapes;\n(o) mouldy hay, grain or silage;\n(p) mouldy timber dust;\n(q) mouldy straw dust;\n(r) mouldy sugar cane dust;\n(s) mouldy tobacco;\n(t) mushroom compost contaminated with micro-organisms;\n(u) paprika pods dust contaminated with micro-organisms;\n(v) Pauli's reagent containing sodium diazobenzenesulphate;\n(w) pituitary snuff;\n(x) polyurethane varnishes and lacquers containing toluene diisocyanate or\nmethylene diphenyl diisocyanate;\n(y) heated epoxy resin or dyes containing phthalic anhydride;\n(z) sauna water contaminated with micro-organisms;\n(aa) sewage sludge contaminated with micro-organisms;\n(bb) spores from Lycoperdon puffballs;\n(cc) urine from laboratory rats;\n(dd) wheat flour infested with the wheat weevil; or\n(ee) wood dust contaminated with micro-organisms"
+    }, {
+      "term" : "antigen",
+      "definition" : "means a substance which is capable of inducing an immune\nresponse and reacting with the specific antibody or specifically sensitised T-\nlymphocytes which are the products of that response. Antigens may be soluble\nsubstances, such as toxins and foreign proteins, or particulate such as bacteria\nand tissue cells. The major categories of antigens causing extrinsic allergic\nalveolitis are microbial agents, animal proteins and low molecular weight\nchemicals (haptens). Microbial contamination of various inhaled dusts is the\ncommonest source of antigens"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for extrinsic\r\nallergic alveolitis",
+    "definedTerms" : [ ]
+  } ]
+}

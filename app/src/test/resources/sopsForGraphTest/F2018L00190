@@ -1,0 +1,49 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00190",
+  "instrumentNumber" : "32/2018",
+  "citation" : "Statement of Principles concerning popliteal cyst (Balance of Probabilities) (No. 32 of 2018)",
+  "conditionName" : "popliteal cyst",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M66.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M71.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having an injury or disease which causes synovitis of the affected knee\r\njoint at the time of the clinical onset of popliteal cyst;\r\n(a) an acute meniscal tear of the knee;\r\n(b) calcium pyrophosphate deposition disease (pseudogout);\r\n(c) dialysis-related amyloidosis;\r\n(d) gout;\r\n(e) internal derangement of the knee;\r\n(f) Lyme disease;\r\n(g) osteoarthritis;\r\n(h) pigmented villonodular synovitis;\r\n(i) psoriatic arthropathy;\r\n(j) reactive arthritis;\r\n(k) rheumatoid arthritis;\r\n(l) sarcoidosis; and\r\n(m) tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having a partial or total knee replacement before the clinical onset of\r\npopliteal cyst",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(3)",
+    "text" : "having an injury or disease which causes synovitis of the affected knee\r\njoint at the time of the clinical worsening of popliteal cyst;\r\n(a) an acute meniscal tear of the knee;\r\n(b) calcium pyrophosphate deposition disease (pseudogout);\r\n(c) dialysis-related amyloidosis;\r\n(d) gout;\r\n(e) internal derangement of the knee;\r\n(f) Lyme disease;\r\n(g) osteoarthritis;\r\n(h) pigmented villonodular synovitis;\r\n(i) psoriatic arthropathy;\r\n(j) reactive arthritis;\r\n(k) rheumatoid arthritis;\r\n(l) sarcoidosis; and\r\n(m) tuberculosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having a partial or total knee replacement before the clinical worsening\r\nof popliteal cyst",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "for clinical worsening of a popliteal cyst manifesting as rupture of a\r\npopliteal cyst only, undertaking physical activity at a minimum\r\nintensity of five METS at the time of the clinical worsening of popliteal\r\ncyst",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ],
+    "conditionVariant" : {
+      "name" : "clinical worsening of a popliteal cyst manifesting as rupture of a popliteal cyst",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "inability to obtain appropriate clinical management for popliteal cyst",
+    "definedTerms" : [ ]
+  } ]
+}

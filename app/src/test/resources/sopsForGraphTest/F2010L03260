@@ -1,0 +1,35 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03260",
+  "instrumentNumber" : "13/2011",
+  "citation" : "Statement of Principles concerning microscopic polyangiitis No. 13 of 2011",
+  "conditionName" : "microscopic polyangiitis",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M31.7"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being treated with propylthiouracil or hydralazine at the time of the\r\nclinical onset of microscopic polyangiitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(i) produced;\r\n(ii) excavated;\r\n(iii) drilled, cut or ground; or\r\n(iv) used in construction, manufacturing, cleaning or blasting,\r\nfor a cumulative period of at least 2500 hours before the clinical onset\r\nof microscopic polyangiitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "being treated with propylthiouracil or hydralazine at the time of the\r\nclinical worsening of microscopic polyangiitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(i) produced;\r\n(ii) excavated;\r\n(iii) drilled, cut or ground; or\r\n(iv) used in construction, manufacturing, cleaning or blasting,\r\nfor a cumulative period of at least 2500 hours before the clinical\r\nworsening of microscopic polyangiitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for microscopic\r\npolyangiitis",
+    "definedTerms" : [ ]
+  } ]
+}

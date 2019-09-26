@@ -1,0 +1,42 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01810",
+  "instrumentNumber" : "2/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the small intestine No. 2 of 2015",
+  "conditionName" : "malignant neoplasm of the small intestine",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C17"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having Crohn's disease of the small intestine before the clinical onset\r\nof malignant neoplasm of the small intestine",
+    "definedTerms" : [ {
+      "term" : "Crohn's disease",
+      "definition" : "means a type of inflammatory bowel disease characterised\nby chronic granulomatous inflammation which may extend through all layers\nof the gastrointestinal tract wall"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having coeliac disease before the clinical onset of malignant neoplasm\r\nof the small intestine",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having an adenoma of the small intestine before the clinical onset of\r\nmalignant neoplasm of the small intestine",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for adenocarcinoma involving an ileostomy or ileal pouch only, having\r\nan ileostomy or ileal pouch for at least two years before the clinical\r\nonset of malignant neoplasm of the small intestine",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "adenocarcinoma involving an ileostomy or ileal pouch",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the small intestine",
+    "definedTerms" : [ ]
+  } ]
+}

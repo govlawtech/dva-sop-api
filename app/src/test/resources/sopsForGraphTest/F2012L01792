@@ -1,0 +1,105 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01792",
+  "instrumentNumber" : "52/2012",
+  "citation" : "Statement of Principles concerning mesangial IgA glomerulonephritis No. 52 of 2012",
+  "conditionName" : "mesangial IgA glomerulonephritis",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having cirrhosis of the liver or chronic liver disease at the time of the\r\nclinical onset of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "chronic liver disease",
+      "definition" : "means progressive destruction of the liver\nparenchyma resulting in abnormal liver function which has been present for at\nleast six months"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a specified infection at the time of the clinical onset of\r\nmesangial IgA glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) hepatitis A virus infection;\n(b) hepatitis B virus infection;\n(c) hepatitis C virus infection;\n(d) hydatid liver disease; or\n(e) infection of the hepatic portal veins by Schistosoma species"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a bacterial infection in the one month before the clinical onset\r\nof mesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having received a stem cell or organ transplant before the clinical onset\r\nof mesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a specified autoimmune disorder at the time of the clinical onset\r\nof mesangial IgA glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune disorder",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) Behçet's disease;\n(c) coeliac disease;\n(d) inflammatory bowel disease;\n(e) psoriatic arthritis; or\n(f) reactive arthritis"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the development of mesangial IgA glomerulonephritis during\r\ndrug therapy; and either\r\n(ii) the improvement of mesangial IgA glomerulonephritis within\r\nthree months of discontinuing or tapering drug therapy; or\r\n(iii) the redevelopment of mesangial IgA glomerulonephritis on\r\nrechallenge with the same drug;\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical onset of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a malignant neoplasm at the time of the clinical onset of\r\nmesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "having cirrhosis of the liver or chronic liver disease at the time of the\r\nclinical worsening of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "chronic liver disease",
+      "definition" : "means progressive destruction of the liver\nparenchyma resulting in abnormal liver function which has been present for at\nleast six months"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a specified infection at the time of the clinical worsening of\r\nmesangial IgA glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) hepatitis A virus infection;\n(b) hepatitis B virus infection;\n(c) hepatitis C virus infection;\n(d) hydatid liver disease; or\n(e) infection of the hepatic portal veins by Schistosoma species"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a bacterial infection in the one month before the clinical\r\nworsening of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having received a stem cell or organ transplant before the clinical\r\nworsening of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a specified autoimmune disorder at the time of the clinical\r\nworsening of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune disorder",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) Behçet's disease;\n(c) coeliac disease;\n(d) inflammatory bowel disease;\n(e) psoriatic arthritis; or\n(f) reactive arthritis"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the worsening of mesangial IgA glomerulonephritis during drug\r\ntherapy; and either\r\n(ii) the improvement of mesangial IgA glomerulonephritis within\r\nthree months of discontinuing or tapering drug therapy; or\r\n(iii) the worsening of mesangial IgA glomerulonephritis on\r\nrechallenge with the same drug;\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical worsening of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having a malignant neoplasm at the time of the clinical worsening of\r\nmesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "inhaling, ingesting or having cutaneous exposure to:\r\n(i) oxygenated organic solvents;\r\n(ii) aliphatic hydrocarbon solvents; or\r\n(iii) aromatic hydrocarbon solvents;\r\nfor an average of at least two hours per week over a period of at least\r\none year within the five years before the clinical worsening of\r\nmesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "being overweight for at least the five years before the clinical\r\nworsening of mesangial IgA glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, in the ten years before the clinical worsening\r\nof mesangial IgA glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "inability to obtain appropriate clinical management for mesangial IgA\r\nglomerulonephritis",
+    "definedTerms" : [ ]
+  } ]
+}

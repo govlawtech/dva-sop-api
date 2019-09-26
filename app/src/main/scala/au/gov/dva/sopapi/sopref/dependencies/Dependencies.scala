@@ -107,5 +107,11 @@ object Dependencies {
     val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(1).toGraph
     subGraph
   }
+
+  private def getPathFromAcceptedToDiagnosed(diagnosed: SoPPair, accepted: SoPPair, graph:  Graph[SoPPair,LDiEdge]) = {
+    val startNode = graph get diagnosed
+    val targetNode = graph get accepted
+    startNode pathTo targetNode
+  }
 }
 

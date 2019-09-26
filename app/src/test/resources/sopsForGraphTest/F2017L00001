@@ -1,0 +1,158 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00001",
+  "instrumentNumber" : "13/2017",
+  "citation" : "Statement of Principles concerning hepatitis B (Reasonable Hypothesis) (No. 13 of 2017)",
+  "conditionName" : "hepatitis B",
+  "effectiveFrom" : "2017-01-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B16"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B18.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B18.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to the hepatitis B virus at least 30 days before the\r\nclinical onset of hepatitis B",
+    "definedTerms" : [ {
+      "term" : "being exposed to the hepatitis B virus",
+      "definition" : "means having percutaneous\r\n(intravenous, intramuscular, subcutaneous or intradermal) or permucosal\r\nexposure to a body substance as specified which is derived from a person\r\ninfected with the hepatitis B virus.\r\nNote: body substance as specified is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "living or working for a continuous period of at least 90 days in an area\r\nwhich, at that time, has a population prevalence of hepatitis B chronic\r\ninfection of at least 2% before the clinical onset of hepatitis B",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for chronic infection only,\r\n(a) having been a Prisoner of War of Japan before the clinical onset\r\nof hepatitis B;\r\n(b) having served in South-East Asia, the Mediterranean region or\r\nthe Pacific region during World War 2 before the clinical onset\r\nof hepatitis B;\r\n(c) being treated with an immunosuppressive drug in the five years\r\nbefore the clinical worsening of hepatitis B;\r\n(d) being infected with human immunodeficiency virus before the\r\nclinical worsening of hepatitis B;\r\n(e) undergoing solid organ, stem cell or bone marrow\r\ntransplantation before the clinical worsening of hepatitis B;\r\n(f) undergoing a course of therapeutic radiation for cancer, where\r\nthe liver was in the field of radiation, before the clinical\r\nworsening of hepatitis B;\r\n(g) for females only, consuming a total of at least 55 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B;\r\n(h) for males only, consuming a total of at least 110 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B;\r\n(i) having diabetes mellitus for at least the five years before the\r\nclinical worsening of hepatitis B;\r\n(j) being obese for at least the five years before the clinical\r\nworsening of hepatitis B;\r\n(k) undergoing surgical resection of hepatocellular carcinoma in the\r\ntwo years before the clinical worsening of hepatitis B;\r\n(l) being within the six month postpartum period at the time of the\r\nclinical worsening of hepatitis B;\r\n(m) having severe hepatic iron overload at the time of the clinical\r\nworsening of hepatitis B; or\r\n(n) having evidence of chronic infection with schistosomiasis\r\ninvolving the liver before the clinical worsening of hepatitis B",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\r\nwhich has been confirmed by elevated ferritin or transferrin saturation levels.\r\nCauses include haemochromatosis and blood transfusions."
+    }, {
+      "term" : "being treated with an immunosuppressive drug",
+      "definition" : "means being treated with a\r\ndrug or an agent which results in significant suppression of immune"
+    }, {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "chronic infection",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having been a Prisoner of War of Japan before the clinical onset\r\nof hepatitis B"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having served in South-East Asia, the Mediterranean region or\r\nthe Pacific region during World War 2 before the clinical onset\r\nof hepatitis B"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "being treated with an immunosuppressive drug in the five years\r\nbefore the clinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "being infected with human immunodeficiency virus before the\r\nclinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "undergoing solid organ, stem cell or bone marrow\r\ntransplantation before the clinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "undergoing a course of therapeutic radiation for cancer, where\r\nthe liver was in the field of radiation, before the clinical\r\nworsening of hepatitis B"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "for females only, consuming a total of at least 55 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "for males only, consuming a total of at least 110 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "having diabetes mellitus for at least the five years before the\r\nclinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "being obese for at least the five years before the clinical\r\nworsening of hepatitis B"
+      }, {
+        "paragraph" : "(k)",
+        "text" : "undergoing surgical resection of hepatocellular carcinoma in the\r\ntwo years before the clinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(l)",
+        "text" : "being within the six month postpartum period at the time of the\r\nclinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(m)",
+        "text" : "having severe hepatic iron overload at the time of the clinical\r\nworsening of hepatitis B"
+      }, {
+        "paragraph" : "(n)",
+        "text" : "having evidence of chronic infection with schistosomiasis\r\ninvolving the liver before the clinical worsening of hepatitis B"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "for chronic infection only,\r\n(a) having been a Prisoner of War of Japan before the clinical onset\r\nof hepatitis B;\r\n(b) having served in South-East Asia, the Mediterranean region or\r\nthe Pacific region during World War 2 before the clinical onset\r\nof hepatitis B;\r\n(c) being treated with an immunosuppressive drug in the five years\r\nbefore the clinical worsening of hepatitis B;\r\n(d) being infected with human immunodeficiency virus before the\r\nclinical worsening of hepatitis B;\r\n(e) undergoing solid organ, stem cell or bone marrow\r\ntransplantation before the clinical worsening of hepatitis B;\r\n(f) undergoing a course of therapeutic radiation for cancer, where\r\nthe liver was in the field of radiation, before the clinical\r\nworsening of hepatitis B;\r\n(g) for females only, consuming a total of at least 55 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B;\r\n(h) for males only, consuming a total of at least 110 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B;\r\n(i) having diabetes mellitus for at least the five years before the\r\nclinical worsening of hepatitis B;\r\n(j) being obese for at least the five years before the clinical\r\nworsening of hepatitis B;\r\n(k) undergoing surgical resection of hepatocellular carcinoma in the\r\ntwo years before the clinical worsening of hepatitis B;\r\n(l) being within the six month postpartum period at the time of the\r\nclinical worsening of hepatitis B;\r\n(m) having severe hepatic iron overload at the time of the clinical\r\nworsening of hepatitis B; or\r\n(n) having evidence of chronic infection with schistosomiasis\r\ninvolving the liver before the clinical worsening of hepatitis B",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\r\nwhich has been confirmed by elevated ferritin or transferrin saturation levels.\r\nCauses include haemochromatosis and blood transfusions."
+    }, {
+      "term" : "being treated with an immunosuppressive drug",
+      "definition" : "means being treated with a\r\ndrug or an agent which results in significant suppression of immune"
+    }, {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "chronic infection",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having been a Prisoner of War of Japan before the clinical onset\r\nof hepatitis B"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having served in South-East Asia, the Mediterranean region or\r\nthe Pacific region during World War 2 before the clinical onset\r\nof hepatitis B"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "being treated with an immunosuppressive drug in the five years\r\nbefore the clinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "being infected with human immunodeficiency virus before the\r\nclinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "undergoing solid organ, stem cell or bone marrow\r\ntransplantation before the clinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "undergoing a course of therapeutic radiation for cancer, where\r\nthe liver was in the field of radiation, before the clinical\r\nworsening of hepatitis B"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "for females only, consuming a total of at least 55 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "for males only, consuming a total of at least 110 kilograms of\r\nalcohol within the ten years before the clinical worsening of\r\nhepatitis B"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "having diabetes mellitus for at least the five years before the\r\nclinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "being obese for at least the five years before the clinical\r\nworsening of hepatitis B"
+      }, {
+        "paragraph" : "(k)",
+        "text" : "undergoing surgical resection of hepatocellular carcinoma in the\r\ntwo years before the clinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(l)",
+        "text" : "being within the six month postpartum period at the time of the\r\nclinical worsening of hepatitis B"
+      }, {
+        "paragraph" : "(m)",
+        "text" : "having severe hepatic iron overload at the time of the clinical\r\nworsening of hepatitis B"
+      }, {
+        "paragraph" : "(n)",
+        "text" : "having evidence of chronic infection with schistosomiasis\r\ninvolving the liver before the clinical worsening of hepatitis B"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being infected with the hepatitis A, hepatitis C, hepatitis D or hepatitis\r\nE virus before the clinical worsening of hepatitis B",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for hepatitis B",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,159 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00635",
+  "instrumentNumber" : "53/2017",
+  "citation" : "Statement of Principles concerning tooth wear (Balance of Probabilities) (No. 53 of 2017)",
+  "conditionName" : "tooth wear",
+  "effectiveFrom" : "2017-09-18",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K03.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K03.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K03.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "for dental attrition only, having bruxism at the time of the clinical\r\nonset of tooth wear",
+    "definedTerms" : [ {
+      "term" : "dental attrition",
+      "definition" : "means the loss of hard tooth substance from occlusal contact\r\nbetween an opposing tooth or teeth, or dental restoration or dental\r\nrestorations."
+    } ],
+    "conditionVariant" : {
+      "name" : "dental attrition",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "for dental erosion only:\r\n(a) consuming an average of at least 1.5 litres per day of any\r\ncombination of drinks from the specified list of erosive drinks:\r\n(i) for a continuous period of at least five years before the\r\nclinical onset of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical onset of tooth\r\nwear has occurred within one year of cessation;\r\n(b) having symptomatic gastro-oesophageal reflux disease within\r\nthe two years before the clinical onset of tooth wear;\r\n(c) having an eating disorder at the time of the clinical onset of tooth\r\nwear;\r\n(d) having alcohol use disorder at the time of the clinical onset of\r\ntooth wear;\r\n(e) having xerostomia for at least the one year before the clinical\r\nonset of tooth wear;\r\n(f) having hyperemesis gravidarum within the three months before\r\nthe clinical onset of tooth wear;\r\n(g) swimming in a swimming pool with a pH below 5.5 for a\r\ncumulative period of at least 50 hours within the 30 days before\r\nthe clinical onset of tooth wear;\r\n(h) taking a drug from the specified list of drugs, on average at least\r\ndaily, for a continuous period of at least the one year before the\r\nclinical onset of tooth wear, and where:\r\n(i) a dissolved solution of the drug is swilled around the teeth;\r\nor\r\n(ii) the drug is retained in the mouth adjacent to the affected\r\nsite; or\r\n(i) breathing fumes of a substance from the specified list of acidic\r\nsubstances at a concentration of greater than 0.5 milligrams per\r\ncubic metre:\r\n(i) for a cumulative period of at least 2 000 hours before the\r\nclinical onset of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical onset of tooth\r\nwear has occurred within six months of cessation;\r\n(j) vomiting or regurgitating gastric contents on at least 100\r\noccasions within the one year before the clinical onset of tooth\r\nwear",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) aspirin powder;\r\n(b) chewable aspirin tablets;\r\n(c) chewable hydrochloric acid tablets; or\r\n(d) chewable Vitamin C tablets."
+    }, {
+      "term" : "fumes",
+      "definition" : "means aerosols or vapours arising through industrial processes or\r\nfrom workplace practices that involve the refining, manufacture or use of the\r\nstated substance."
+    }, {
+      "term" : "hyperemesis gravidarum",
+      "definition" : "means a complication of pregnancy that is\r\ncharacterised by severe nausea and vomiting, with weight loss and\r\ndehydration."
+    }, {
+      "term" : "xerostomia",
+      "definition" : "means dry mouth resulting from severely reduced saliva flow and\r\nwhich results from various medical conditions, including Sjogren's\r\nsyndrome, or a wide variety of drugs, including anticholinergics, tricyclic\r\nantidepressants and amphetamines.\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nThe endnotes provide information about this compilation and the compiled law.\r\nThe following endnotes are included in every compilation:\r\nEndnote 1—About the endnotes\r\nEndnote 2—Abbreviation key\r\nEndnote 3—Legislation history\r\nEndnote 4—Amendment history\r\nAbbreviation key—Endnote 2\r\nThe abbreviation key sets out abbreviations that may be used in the endnotes.\r\nLegislation history and amendment history—Endnotes 3 and 4\r\nAmending laws are annotated in the legislation history and amendment history.\r\nThe legislation history in endnote 3 provides information about each law that has amended (or"
+    }, {
+      "term" : "specified list of erosive drinks",
+      "definition" : "means:\r\n(a) alcopops or alcoholic cooler drinks;\r\n(b) any beverage with a pH value below 4.0;\r\n(c) carbonated soft drinks;\r\n(d) flavoured mineral water;\r\n(e) herbal and fruit tea (without milk);\r\n(f) natural or processed citrus, apple or other acidic fruit juices;\r\n(g) non-calcium-enriched sports drinks; or\r\n(h) wine."
+    }, {
+      "term" : "dental erosion",
+      "definition" : "means corrosion of tooth structure by a nonbacterial\r\nchemical, biochemical or electrochemical process."
+    } ],
+    "conditionVariant" : {
+      "name" : "dental erosion",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "consuming an average of at least 1.5 litres per day of any\r\ncombination of drinks from the specified list of erosive drinks:\r\n(i) for a continuous period of at least five years before the\r\nclinical onset of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical onset of tooth\r\nwear has occurred within one year of cessation"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having symptomatic gastro-oesophageal reflux disease within\r\nthe two years before the clinical onset of tooth wear"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having an eating disorder at the time of the clinical onset of tooth\r\nwear"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having alcohol use disorder at the time of the clinical onset of\r\ntooth wear"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "having xerostomia for at least the one year before the clinical\r\nonset of tooth wear"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "having hyperemesis gravidarum within the three months before\r\nthe clinical onset of tooth wear"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "swimming in a swimming pool with a pH below 5.5 for a\r\ncumulative period of at least 50 hours within the 30 days before\r\nthe clinical onset of tooth wear"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "taking a drug from the specified list of drugs, on average at least\r\ndaily, for a continuous period of at least the one year before the\r\nclinical onset of tooth wear, and where:\r\n(i) a dissolved solution of the drug is swilled around the teeth;\r\nor\r\n(ii) the drug is retained in the mouth adjacent to the affected\r\nsite"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "breathing fumes of a substance from the specified list of acidic\r\nsubstances at a concentration of greater than 0.5 milligrams per\r\ncubic metre:\r\n(i) for a cumulative period of at least 2 000 hours before the\r\nclinical onset of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical onset of tooth\r\nwear has occurred within six months of cessation"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "vomiting or regurgitating gastric contents on at least 100\r\noccasions within the one year before the clinical onset of tooth\r\nwear"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(3)",
+    "text" : "for dental attrition only, having bruxism at the time of the clinical\r\nworsening of tooth wear",
+    "definedTerms" : [ {
+      "term" : "dental attrition",
+      "definition" : "means the loss of hard tooth substance from occlusal contact\r\nbetween an opposing tooth or teeth, or dental restoration or dental\r\nrestorations."
+    } ],
+    "conditionVariant" : {
+      "name" : "dental attrition",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "for dental erosion only:\r\n(a) consuming an average of at least 1.5 litres per day of any\r\ncombination of drinks from the specified list of erosive drinks:\r\n(i) for a continuous period of at least five years before the\r\nclinical worsening of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical worsening of\r\ntooth wear has occurred within one year of cessation;\r\n(b) having symptomatic gastro-oesophageal reflux disease within\r\nthe two years before the clinical worsening of tooth wear;\r\n(c) having an eating disorder at the time of the clinical worsening of\r\ntooth wear;\r\n(d) having alcohol use disorder at the time of the clinical worsening\r\nof tooth wear;\r\n(e) having xerostomia for at least the one year before the clinical\r\nworsening of tooth wear;\r\n(f) having hyperemesis gravidarum within the three months before\r\nthe clinical worsening of tooth wear;\r\n(g) swimming in a swimming pool with a pH below 5.5 for a\r\ncumulative period of at least 50 hours within the 30 days before\r\nthe clinical worsening of tooth wear;\r\n(h) taking a drug from the specified list of drugs, on average at least\r\ndaily, for a continuous period of at least the one year before the\r\nclinical worsening of tooth wear, and where:\r\n(i) a dissolved solution of the drug is swilled around the teeth;\r\nor\r\n(ii) the drug is retained in the mouth adjacent to the affected\r\nsite; or\r\n(i) breathing fumes of a substance from the specified list of acidic\r\nsubstances at a concentration of greater than 0.5 milligrams per\r\ncubic metre:\r\n(i) for a cumulative period of at least 2 000 hours before the\r\nclinical worsening of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical worsening of\r\ntooth wear has occurred within six months of cessation;\r\n(j) vomiting or regurgitating gastric contents on at least 100\r\noccasions within the one year before the clinical worsening of\r\ntooth wear",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) aspirin powder;\r\n(b) chewable aspirin tablets;\r\n(c) chewable hydrochloric acid tablets; or\r\n(d) chewable Vitamin C tablets."
+    }, {
+      "term" : "fumes",
+      "definition" : "means aerosols or vapours arising through industrial processes or\r\nfrom workplace practices that involve the refining, manufacture or use of the\r\nstated substance."
+    }, {
+      "term" : "hyperemesis gravidarum",
+      "definition" : "means a complication of pregnancy that is\r\ncharacterised by severe nausea and vomiting, with weight loss and\r\ndehydration."
+    }, {
+      "term" : "xerostomia",
+      "definition" : "means dry mouth resulting from severely reduced saliva flow and\r\nwhich results from various medical conditions, including Sjogren's\r\nsyndrome, or a wide variety of drugs, including anticholinergics, tricyclic\r\nantidepressants and amphetamines.\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nEndnotes\r\nEndnote 1—About the endnotes\r\nThe endnotes provide information about this compilation and the compiled law.\r\nThe following endnotes are included in every compilation:\r\nEndnote 1—About the endnotes\r\nEndnote 2—Abbreviation key\r\nEndnote 3—Legislation history\r\nEndnote 4—Amendment history\r\nAbbreviation key—Endnote 2\r\nThe abbreviation key sets out abbreviations that may be used in the endnotes.\r\nLegislation history and amendment history—Endnotes 3 and 4\r\nAmending laws are annotated in the legislation history and amendment history.\r\nThe legislation history in endnote 3 provides information about each law that has amended (or"
+    }, {
+      "term" : "specified list of erosive drinks",
+      "definition" : "means:\r\n(a) alcopops or alcoholic cooler drinks;\r\n(b) any beverage with a pH value below 4.0;\r\n(c) carbonated soft drinks;\r\n(d) flavoured mineral water;\r\n(e) herbal and fruit tea (without milk);\r\n(f) natural or processed citrus, apple or other acidic fruit juices;\r\n(g) non-calcium-enriched sports drinks; or\r\n(h) wine."
+    }, {
+      "term" : "dental erosion",
+      "definition" : "means corrosion of tooth structure by a nonbacterial\r\nchemical, biochemical or electrochemical process."
+    } ],
+    "conditionVariant" : {
+      "name" : "dental erosion",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "consuming an average of at least 1.5 litres per day of any\r\ncombination of drinks from the specified list of erosive drinks:\r\n(i) for a continuous period of at least five years before the\r\nclinical worsening of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical worsening of\r\ntooth wear has occurred within one year of cessation"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having symptomatic gastro-oesophageal reflux disease within\r\nthe two years before the clinical worsening of tooth wear"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having an eating disorder at the time of the clinical worsening of\r\ntooth wear"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having alcohol use disorder at the time of the clinical worsening\r\nof tooth wear"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "having xerostomia for at least the one year before the clinical\r\nworsening of tooth wear"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "having hyperemesis gravidarum within the three months before\r\nthe clinical worsening of tooth wear"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "swimming in a swimming pool with a pH below 5.5 for a\r\ncumulative period of at least 50 hours within the 30 days before\r\nthe clinical worsening of tooth wear"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "taking a drug from the specified list of drugs, on average at least\r\ndaily, for a continuous period of at least the one year before the\r\nclinical worsening of tooth wear, and where:\r\n(i) a dissolved solution of the drug is swilled around the teeth;\r\nor\r\n(ii) the drug is retained in the mouth adjacent to the affected\r\nsite"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "breathing fumes of a substance from the specified list of acidic\r\nsubstances at a concentration of greater than 0.5 milligrams per\r\ncubic metre:\r\n(i) for a cumulative period of at least 2 000 hours before the\r\nclinical worsening of tooth wear; and\r\n(ii) where that exposure has ceased, the clinical worsening of\r\ntooth wear has occurred within six months of cessation"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "vomiting or regurgitating gastric contents on at least 100\r\noccasions within the one year before the clinical worsening of\r\ntooth wear"
+      } ]
+    }
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "inability to obtain appropriate clinical management for tooth wear",
+    "definedTerms" : [ ]
+  } ]
+}

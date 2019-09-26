@@ -1,0 +1,19 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00172",
+  "instrumentNumber" : "22/2017",
+  "citation" : "Statement of Principles concerning presbyopia (Reasonable Hypothesis) (No. 22 of 2017)",
+  "conditionName" : "presbyopia",
+  "effectiveFrom" : "2017-03-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H52.4"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9",
+    "text" : "inability to obtain appropriate clinical management for presbyopia.",
+    "definedTerms" : [ ]
+  } ]
+}

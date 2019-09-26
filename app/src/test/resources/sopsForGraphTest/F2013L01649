@@ -1,0 +1,88 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01649",
+  "instrumentNumber" : "61/2013",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the larynx No. 61 of 2013",
+  "conditionName" : "malignant neoplasm of the larynx",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C32"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 2.5 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the larynx, and\r\n(i) smoking commenced at least five years before the clinical onset\r\nof malignant neoplasm of the larynx; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the larynx has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space:\r\n(i) for at least 5 000 hours before the clinical onset of malignant\r\nneoplasm of the larynx; and\r\n(ii) where the first exposure to that atmosphere commenced at least\r\nfive years before the clinical onset of malignant neoplasm of the\r\nlarynx; and\r\n(iii) where the last exposure to that atmosphere occurred within the\r\n20 years before the clinical onset of malignant neoplasm of the\r\nlarynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being exposed to mustard gas at least five years before the clinical\r\nonset of malignant neoplasm of the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(i) for a cumulative period of at least 1 000 hours before the\r\nclinical onset of malignant neoplasm of the larynx; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of respirable asbestos fibres commenced at\r\nleast five years before the clinical onset of malignant neoplasm\r\nof the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(i) for a cumulative period of at least 2 000 hours before the\r\nclinical onset of malignant neoplasm of the larynx; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of respirable asbestos fibres commenced at\r\nleast five years before the clinical onset of malignant neoplasm\r\nof the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "inhaling smoke from the combustion of biomass or fossil fuels whilst\r\nin an enclosed space for at least 5 000 hours before the clinical onset of\r\nmalignant neoplasm of the larynx, where inhaling such smoke\r\ncommenced at least five years before the clinical onset of malignant\r\nneoplasm of the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "drinking at least 100 kilograms of alcohol before the clinical onset of\r\nmalignant neoplasm of the larynx, where drinking alcohol commenced\r\nat least five years before the clinical onset of malignant neoplasm of\r\nthe larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being:\r\n(i) on land in Vietnam; or\r\n(ii) at sea in Vietnamese waters; or\r\n(iii) on board a vessel and consuming potable water supplied on that\r\nvessel, when the water supply had been produced by\r\nevaporative distillation of estuarine Vietnamese waters;\r\nfor a cumulative period of at least 30 days, at least five years before the\r\nclinical onset of malignant neoplasm of the larynx",
+    "definedTerms" : [ {
+      "term" : "potable water",
+      "definition" : "means water used for drinking water, food preparation and\nbeverage production"
+    }, {
+      "term" : "estuarine Vietnamese waters",
+      "definition" : "means at least one of the waterways or\nharbours in the relevant areas described in Items 4 and 8 of Schedule 2 of the\nVeterans' Entitlements Act 1986"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD), for a\r\ncumulative period of at least 1 000 hours, within a consecutive period\r\nof ten years before the clinical onset of malignant neoplasm of the\r\nlarynx, where the first exposure occurred at least five years before the\r\nclinical onset of malignant neoplasm of the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inhaling mist from a strong inorganic acid:\r\n(i) for a cumulative period of at least 5 000 hours before the\r\nclinical onset of malignant neoplasm of the larynx; and\r\n(ii) the first inhalation of mist from a strong inorganic acid\r\ncommenced at least five years before the clinical onset of\r\nmalignant neoplasm of the larynx",
+    "definedTerms" : [ {
+      "term" : "mist from a strong inorganic acid",
+      "definition" : "means a visible suspension of liquid\nsulphuric, nitric or hydrochloric acid in gas"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "undergoing stem cell or solid organ transplantation before the clinical\r\nonset of malignant neoplasm of the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being infected with the human immunodeficiency virus before the\r\nclinical onset of malignant neoplasm of the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "acquiring persistent infection of the laryngeal epithelium with human\r\npapilloma virus type 16 or 18 before the clinical onset of malignant\r\nneoplasm of the larynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "drinking maté on more days than not, for at least ten years before the\r\nclinical onset of malignant neoplasm of the larynx, and where drinking\r\nmaté has ceased, the clinical onset of malignant neoplasm of the larynx\r\nhas occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "an inability to consume an average of at least 200 grams per day of any\r\ncombination of fruits and vegetables, for a period of at least five\r\nconsecutive years within the 25 years before the clinical onset of\r\nmalignant neoplasm of the larynx",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(p)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the larynx",
+    "definedTerms" : [ ]
+  } ]
+}

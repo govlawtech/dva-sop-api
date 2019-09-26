@@ -1,0 +1,89 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L00769",
+  "instrumentNumber" : "32/2011",
+  "citation" : "Statement of Principles concerning obstructive and reflux nephropathy No. 32 of 2011",
+  "conditionName" : "obstructive and reflux nephropathy",
+  "effectiveFrom" : "2011-05-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "N13"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having obstruction of the ureter or renal calyx on the affected side\r\nbefore the clinical onset of obstructive and reflux nephropathy",
+    "definedTerms" : [ {
+      "term" : "obstruction of the ureter or renal calyx",
+      "definition" : "means a mechanical blockage of\nurinary drainage due to an endogenous or exogenous pathological structure or\nextraneous material that compresses, occludes, displaces or infiltrates the renal\npelvicalyceal system or ureter. This definition includes obstruction from:\n(a) aneurysm of the aorta, iliac artery, renal artery or uterine artery;\n(b) ascites;\n(c) benign or malignant neoplasm of the kidney, renal pelvis, ureter,\nbladder, uterus, ovary, prostate, colon or rectum;\n(d) blunt or penetrating traumatic injury of the affected region;\n(e) collagen vascular disease;\n(f) endometriosis;\n(g) faecal impaction;\n(h) fungus bezoar of the urinary tract (Candida albicans, Candida\ntropicalis, Aspergillus);\n(i) genitourinary tuberculosis;\n(j) Hodgkin's lymphoma;\n(k) indwelling ureteric stent;\n(l) inflammatory bowel disease;\n(m) migrated intrauterine contraceptive device;\n(n) non-Hodgkin's lymphoma;\n(o) ovarian hyperstimulation;\n(p) pancreatitis;\n(q) pelvic actinomycosis;\n(r) pelvic inflammatory disease;\n(s) pelvic or abdominal abscess;\n(t) pelvic or abdominal amyloidoma;\n(u) pelvic or abdominal haematoma;\n(v) renal arachnoid cyst;\n(w) renal hydatid cyst;\n(x) renal stone;\n(y) retroperitoneal fibrosis;\n(z) schistosomiasis;\n(aa) sloughed renal papilla;\n(bb) sub-ureteral collagen injection;\n(cc) surgical ligation of the ureter;\n(dd) ureteral herniation;\n(ee) ureteral polyp;\n(ff) ureteric stricture;\n(gg) ureteritis; or\n(hh) uterine prolapse"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having obstruction of the bladder outlet or urethra before the clinical\r\nonset of obstructive and reflux nephropathy",
+    "definedTerms" : [ {
+      "term" : "obstruction of the bladder outlet or urethra",
+      "definition" : "means a blockage to the flow\nof urine due to an endogenous or exogenous pathological structure or\nextraneous material that compresses, displaces or infiltrates the bladder outlet\nor urethra. This definition includes obstruction from:\n(a) benign or malignant neoplasm of the prostate, bladder or urethra;\n(b) benign prostatic hyperplasia;\n(c) bladder calculus;\n(d) blunt or penetrating traumatic injury of the affected region;\n(e) collagen vascular disease;\n(f) haematoma of the affected region;\n(g) haemorrhagic or desquamative cystitis;\n(h) malignant neoplasm of the cervix or colon;\n(i) pelvic abscess;\n(j) pelvic amyloidoma;\n(k) phimosis;\n(l) sloughed renal papilla; or\n(m) urethral stricture or stenosis"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a renal or ureteric transplant within the six months before the\r\nclinical onset of obstructive and reflux nephropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having functional obstruction of the ureter or renal calyx within the\r\nfour weeks before the clinical onset of obstructive and reflux\r\nnephropathy",
+    "definedTerms" : [ {
+      "term" : "obstruction of the ureter or renal calyx",
+      "definition" : "means a mechanical blockage of\nurinary drainage due to an endogenous or exogenous pathological structure or\nextraneous material that compresses, occludes, displaces or infiltrates the renal\npelvicalyceal system or ureter. This definition includes obstruction from:\n(a) aneurysm of the aorta, iliac artery, renal artery or uterine artery;\n(b) ascites;\n(c) benign or malignant neoplasm of the kidney, renal pelvis, ureter,\nbladder, uterus, ovary, prostate, colon or rectum;\n(d) blunt or penetrating traumatic injury of the affected region;\n(e) collagen vascular disease;\n(f) endometriosis;\n(g) faecal impaction;\n(h) fungus bezoar of the urinary tract (Candida albicans, Candida\ntropicalis, Aspergillus);\n(i) genitourinary tuberculosis;\n(j) Hodgkin's lymphoma;\n(k) indwelling ureteric stent;\n(l) inflammatory bowel disease;\n(m) migrated intrauterine contraceptive device;\n(n) non-Hodgkin's lymphoma;\n(o) ovarian hyperstimulation;\n(p) pancreatitis;\n(q) pelvic actinomycosis;\n(r) pelvic inflammatory disease;\n(s) pelvic or abdominal abscess;\n(t) pelvic or abdominal amyloidoma;\n(u) pelvic or abdominal haematoma;\n(v) renal arachnoid cyst;\n(w) renal hydatid cyst;\n(x) renal stone;\n(y) retroperitoneal fibrosis;\n(z) schistosomiasis;\n(aa) sloughed renal papilla;\n(bb) sub-ureteral collagen injection;\n(cc) surgical ligation of the ureter;\n(dd) ureteral herniation;\n(ee) ureteral polyp;\n(ff) ureteric stricture;\n(gg) ureteritis; or\n(hh) uterine prolapse"
+    }, {
+      "term" : "functional obstruction of the ureter or renal calyx",
+      "definition" : "means interruption to\nurine flow that is not associated with fixed occlusion of the urinary drainage\nsystem. This definition includes obstruction from:\n(a) diabetic autonomic neuropathy;\n(b) intravesical instillation of bacillus Calmette-Guérin;\n(c) nephrogenic diabetes insipidus;\n(d) neurogenic bladder dysfunction; or\n(e) spinal cord injury (paraplegia or quadriplegia)"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with a drug from a class of drugs in the specified list,\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical onset of obstructive and reflux nephropathy",
+    "definedTerms" : [ {
+      "term" : "a drug from a class of drugs in the specified list",
+      "definition" : "means:\n(a) alpha-adrenergic antagonists;\n(b) anticholinergic drugs;\n(c) antiemetic phenothiazines;\n(d) opiates; or\n(e) tricyclic antidepressants"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "having obstruction of the ureter or renal calyx on the affected side\r\nbefore the clinical worsening of obstructive and reflux nephropathy",
+    "definedTerms" : [ {
+      "term" : "obstruction of the ureter or renal calyx",
+      "definition" : "means a mechanical blockage of\nurinary drainage due to an endogenous or exogenous pathological structure or\nextraneous material that compresses, occludes, displaces or infiltrates the renal\npelvicalyceal system or ureter. This definition includes obstruction from:\n(a) aneurysm of the aorta, iliac artery, renal artery or uterine artery;\n(b) ascites;\n(c) benign or malignant neoplasm of the kidney, renal pelvis, ureter,\nbladder, uterus, ovary, prostate, colon or rectum;\n(d) blunt or penetrating traumatic injury of the affected region;\n(e) collagen vascular disease;\n(f) endometriosis;\n(g) faecal impaction;\n(h) fungus bezoar of the urinary tract (Candida albicans, Candida\ntropicalis, Aspergillus);\n(i) genitourinary tuberculosis;\n(j) Hodgkin's lymphoma;\n(k) indwelling ureteric stent;\n(l) inflammatory bowel disease;\n(m) migrated intrauterine contraceptive device;\n(n) non-Hodgkin's lymphoma;\n(o) ovarian hyperstimulation;\n(p) pancreatitis;\n(q) pelvic actinomycosis;\n(r) pelvic inflammatory disease;\n(s) pelvic or abdominal abscess;\n(t) pelvic or abdominal amyloidoma;\n(u) pelvic or abdominal haematoma;\n(v) renal arachnoid cyst;\n(w) renal hydatid cyst;\n(x) renal stone;\n(y) retroperitoneal fibrosis;\n(z) schistosomiasis;\n(aa) sloughed renal papilla;\n(bb) sub-ureteral collagen injection;\n(cc) surgical ligation of the ureter;\n(dd) ureteral herniation;\n(ee) ureteral polyp;\n(ff) ureteric stricture;\n(gg) ureteritis; or\n(hh) uterine prolapse"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having obstruction of the bladder outlet or urethra before the clinical\r\nworsening of obstructive and reflux nephropathy",
+    "definedTerms" : [ {
+      "term" : "obstruction of the bladder outlet or urethra",
+      "definition" : "means a blockage to the flow\nof urine due to an endogenous or exogenous pathological structure or\nextraneous material that compresses, displaces or infiltrates the bladder outlet\nor urethra. This definition includes obstruction from:\n(a) benign or malignant neoplasm of the prostate, bladder or urethra;\n(b) benign prostatic hyperplasia;\n(c) bladder calculus;\n(d) blunt or penetrating traumatic injury of the affected region;\n(e) collagen vascular disease;\n(f) haematoma of the affected region;\n(g) haemorrhagic or desquamative cystitis;\n(h) malignant neoplasm of the cervix or colon;\n(i) pelvic abscess;\n(j) pelvic amyloidoma;\n(k) phimosis;\n(l) sloughed renal papilla; or\n(m) urethral stricture or stenosis"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a renal or ureteric transplant within the six months before the\r\nclinical worsening of obstructive and reflux nephropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having functional obstruction of the ureter or renal calyx within the\r\nfour weeks before the clinical worsening of obstructive and reflux\r\nnephropathy",
+    "definedTerms" : [ {
+      "term" : "obstruction of the ureter or renal calyx",
+      "definition" : "means a mechanical blockage of\nurinary drainage due to an endogenous or exogenous pathological structure or\nextraneous material that compresses, occludes, displaces or infiltrates the renal\npelvicalyceal system or ureter. This definition includes obstruction from:\n(a) aneurysm of the aorta, iliac artery, renal artery or uterine artery;\n(b) ascites;\n(c) benign or malignant neoplasm of the kidney, renal pelvis, ureter,\nbladder, uterus, ovary, prostate, colon or rectum;\n(d) blunt or penetrating traumatic injury of the affected region;\n(e) collagen vascular disease;\n(f) endometriosis;\n(g) faecal impaction;\n(h) fungus bezoar of the urinary tract (Candida albicans, Candida\ntropicalis, Aspergillus);\n(i) genitourinary tuberculosis;\n(j) Hodgkin's lymphoma;\n(k) indwelling ureteric stent;\n(l) inflammatory bowel disease;\n(m) migrated intrauterine contraceptive device;\n(n) non-Hodgkin's lymphoma;\n(o) ovarian hyperstimulation;\n(p) pancreatitis;\n(q) pelvic actinomycosis;\n(r) pelvic inflammatory disease;\n(s) pelvic or abdominal abscess;\n(t) pelvic or abdominal amyloidoma;\n(u) pelvic or abdominal haematoma;\n(v) renal arachnoid cyst;\n(w) renal hydatid cyst;\n(x) renal stone;\n(y) retroperitoneal fibrosis;\n(z) schistosomiasis;\n(aa) sloughed renal papilla;\n(bb) sub-ureteral collagen injection;\n(cc) surgical ligation of the ureter;\n(dd) ureteral herniation;\n(ee) ureteral polyp;\n(ff) ureteric stricture;\n(gg) ureteritis; or\n(hh) uterine prolapse"
+    }, {
+      "term" : "functional obstruction of the ureter or renal calyx",
+      "definition" : "means interruption to\nurine flow that is not associated with fixed occlusion of the urinary drainage\nsystem. This definition includes obstruction from:\n(a) diabetic autonomic neuropathy;\n(b) intravesical instillation of bacillus Calmette-Guérin;\n(c) nephrogenic diabetes insipidus;\n(d) neurogenic bladder dysfunction; or\n(e) spinal cord injury (paraplegia or quadriplegia)"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being treated with a drug from a class of drugs in the specified list,\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical worsening of obstructive and reflux nephropathy",
+    "definedTerms" : [ {
+      "term" : "a drug from a class of drugs in the specified list",
+      "definition" : "means:\n(a) alpha-adrenergic antagonists;\n(b) anticholinergic drugs;\n(c) antiemetic phenothiazines;\n(d) opiates; or\n(e) tricyclic antidepressants"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for obstructive and\r\nreflux nephropathy",
+    "definedTerms" : [ ]
+  } ]
+}

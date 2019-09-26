@@ -1,0 +1,41 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01841",
+  "instrumentNumber" : "17/2015",
+  "citation" : "Statement of Principles concerning dysbaric osteonecrosis No. 17 of 2015",
+  "conditionName" : "dysbaric osteonecrosis",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M90.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "experiencing hyperbaric exposure as specified, within the five years\r\nbefore the clinical onset of dysbaric osteonecrosis",
+    "definedTerms" : [ {
+      "term" : "hyperbaric exposure as specified",
+      "definition" : "means an increase in the ambient\nbarometric pressure exerted by the envelope of air or water surrounding the\nperson, occurring with:\n(a) being in a pressurised tunnel or caisson for a continuous period of at\nleast thirty minutes;\n(b) being in a submerged craft or device, that is in a hyperbaric state, for a\ncontinuous period of at least thirty minutes;\n(c) breath-hold diving to a depth of at least five metres and for a duration\nof at least one minute, on at least ten occasions within a continuous six\nmonth period;\n(d) compression in a hyperbaric chamber; or\n(e) underwater diving with compressed air to a depth of at least 15 metres,\nfor a continuous period of at least thirty minutes"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having hyperbaric exposure from:\r\n(i) underwater diving;\r\n(ii) being in a submerged craft or device, a pressurised tunnel, or\r\ncaisson; or\r\n(iii) being compressed in a hyperbaric chamber; and\r\nwhich has resulted in decompression sickness, within the five years\r\nbefore the clinical onset of dysbaric osteonecrosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "experiencing hyperbaric exposure as specified, within the five years\r\nbefore the clinical worsening of dysbaric osteonecrosis",
+    "definedTerms" : [ {
+      "term" : "hyperbaric exposure as specified",
+      "definition" : "means an increase in the ambient\nbarometric pressure exerted by the envelope of air or water surrounding the\nperson, occurring with:\n(a) being in a pressurised tunnel or caisson for a continuous period of at\nleast thirty minutes;\n(b) being in a submerged craft or device, that is in a hyperbaric state, for a\ncontinuous period of at least thirty minutes;\n(c) breath-hold diving to a depth of at least five metres and for a duration\nof at least one minute, on at least ten occasions within a continuous six\nmonth period;\n(d) compression in a hyperbaric chamber; or\n(e) underwater diving with compressed air to a depth of at least 15 metres,\nfor a continuous period of at least thirty minutes"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having hyperbaric exposure from:\r\n(i) underwater diving;\r\n(ii) being in a submerged craft or device, a pressurised tunnel, or\r\ncaisson; or\r\n(iii) being compressed in a hyperbaric chamber; and\r\nwhich has resulted in decompression sickness, within the five years\r\nbefore the clinical worsening of dysbaric osteonecrosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for dysbaric\r\nosteonecrosis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L01049",
+  "instrumentNumber" : "46/2017",
+  "citation" : "Statement of Principles concerning malaria (Reasonable Hypothesis) (No. 46 of 2017)",
+  "conditionName" : "malaria",
+  "effectiveFrom" : "2017-09-18",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B50"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B51"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B52"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B53"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B54"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being bitten by a mosquito infected with Plasmodium vivax or\r\nPlasmodium ovale at least four days, but less than five years, before\r\nthe clinical onset of malaria",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being exposed to Plasmodium vivax or Plasmodium ovale as specified\r\nat least four days, but less than one year, before the clinical onset of\r\nmalaria",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being exposed to Plasmodium malariae, Plasmodium falciparum or\r\nsimian malaria species as specified at least four days, but less than one\r\nyear, before the clinical onset of malaria",
+    "definedTerms" : [ {
+      "term" : "malaria species as specified",
+      "definition" : "means:\r\n(a) being bitten by a mosquito infected with Plasmodium malariae,\r\nPlasmodium falciparum or simian malaria species; or\r\n(b) having percutaneous exposure to blood infected with Plasmodium\r\nmalariae, Plasmodium falciparum or simian malaria species; or\r\n(c) having an organ transplant, where the organ is infected with\r\nPlasmodium malariae, Plasmodium falciparum or simian malaria\r\nspecies; or\r\n(d) having a blood transfusion, where the blood is infected with\r\nPlasmodium malariae, Plasmodium falciparum or simian malaria\r\nspecies.\r\nbeing exposed to Plasmodium vivax or Plasmodium ovale as specified\r\nmeans:\r\n(a) having percutaneous exposure to blood infected with Plasmodium\r\nvivax or Plasmodium ovale; or\r\n(b) having an organ transplant, where the organ is infected with\r\nPlasmodium vivax or Plasmodium ovale; or\r\n(c) having a blood transfusion, where the blood is infected with\r\nPlasmodium vivax or Plasmodium ovale."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of malaria",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having asplenia or a splenectomy;\r\n(e) having chronic renal failure;\r\n(f) having severe malnutrition; or\r\n(g) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: immunosuppressive drug and chronic renal failure are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being pregnant within the six months before the clinical onset of\r\nmalaria",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(6)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of malaria",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having asplenia or a splenectomy;\r\n(e) having chronic renal failure;\r\n(f) having severe malnutrition; or\r\n(g) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: immunosuppressive drug and chronic renal failure are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being pregnant within the six months before the clinical worsening of\r\nmalaria",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for malaria due to Plasmodium vivax or Plasmodium ovale only,\r\nhaving a systemic infectious disease as specified within the 30 days\r\nbefore the clinical worsening of malaria",
+    "definedTerms" : [ {
+      "term" : "systemic infectious disease as specified",
+      "definition" : "means a parasitic or bacterial"
+    } ],
+    "conditionVariant" : {
+      "name" : "malaria due to Plasmodium vivax or Plasmodium ovale",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "inability to obtain appropriate clinical management for malaria",
+    "definedTerms" : [ ]
+  } ]
+}

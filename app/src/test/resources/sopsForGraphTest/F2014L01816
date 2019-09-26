@@ -1,0 +1,191 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01816",
+  "instrumentNumber" : "12/2015",
+  "citation" : "Statement of Principles concerning tinea No. 12 of 2015",
+  "conditionName" : "tinea",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B35"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for tinea corporis, tinea capitis, tinea barbae or tinea pedis only:\r\n(i) being exposed to the dermatophyte at the affected site between\r\ntwo days and four weeks before the clinical onset of tinea; or\r\n(ii) having skin maceration at the affected site between two days and\r\nfour weeks before the clinical onset of tinea",
+    "definedTerms" : [ {
+      "term" : "being exposed to the dermatophyte",
+      "definition" : "means:\n(a) having direct contact with a person or an animal infected with the\ndermatophyte;\n(b) having direct contact with soil contaminated with the dermatophyte;\n(c) sharing personal items which belong to a person infected with the\ndermatophyte, where the personal items (for example, brushes, hats,\nrazors or towels) have had contact with the site of the infection; or\n(d) using communal showering or bathing facilities, swimming pool\nfacilities or locker rooms"
+    }, {
+      "term" : "tinea pedis",
+      "definition" : "means dermatophytosis of the foot manifested by scaling,\nhyperkeratosis or vesicles"
+    }, {
+      "term" : "tinea capitis",
+      "definition" : "means dermatophytosis of the scalp or hair, manifested by\nitching, scaling, hair loss and inflammation of varying degrees"
+    }, {
+      "term" : "tinea corporis",
+      "definition" : "means dermatophytosis of the body, excluding the feet.\nTinea of the face, neck, trunk, limb or groin is characterised by clinical lesions\nwith scaling and raised erythematous borders. Tinea of the hand is generally\ncharacterised by scaling, hyperkeratosis or vesicles"
+    }, {
+      "term" : "skin maceration",
+      "definition" : "means the softening of the skin by moisture"
+    }, {
+      "term" : "tinea barbae",
+      "definition" : "means dermatophytosis of the beard manifested by itching,\nscaling and hair loss"
+    } ],
+    "conditionVariant" : {
+      "name" : "tinea corporis, tinea capitis, tinea barbae or tinea pedis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being exposed to the dermatophyte at the affected site between\r\ntwo days and four weeks before the clinical onset of tinea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having skin maceration at the affected site between two days and\r\nfour weeks before the clinical onset of tinea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for tinea unguium only:\r\n(i) being exposed to the dermatophyte at the affected site between\r\ntwo days and three months before the clinical onset of tinea; or\r\n(ii) having skin maceration at the affected site between two days and\r\nthree months before the clinical onset of tinea",
+    "definedTerms" : [ {
+      "term" : "tinea unguium",
+      "definition" : "means dermatophytosis of the nails, manifested by\nthickening and discolouration of the nail, nail dystrophy and often subungual\nhyperkeratosis"
+    }, {
+      "term" : "skin maceration",
+      "definition" : "means the softening of the skin by moisture"
+    }, {
+      "term" : "being exposed to the dermatophyte",
+      "definition" : "means:\n(a) having direct contact with a person or an animal infected with the\ndermatophyte;\n(b) having direct contact with soil contaminated with the dermatophyte;\n(c) sharing personal items which belong to a person infected with the\ndermatophyte, where the personal items (for example, brushes, hats,\nrazors or towels) have had contact with the site of the infection; or\n(d) using communal showering or bathing facilities, swimming pool\nfacilities or locker rooms"
+    } ],
+    "conditionVariant" : {
+      "name" : "tinea unguium",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being exposed to the dermatophyte at the affected site between\r\ntwo days and three months before the clinical onset of tinea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having skin maceration at the affected site between two days and\r\nthree months before the clinical onset of tinea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of tinea",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of tinea",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state as specified",
+      "definition" : "means a condition of\nsubstantially lowered immune function, such as would occur in the following\nconditions or circumstances:\n(a) being infected with human immunodeficiency virus;\n(b) being treated with an immunosuppressive drug;\n(c) having a haematological or solid organ malignancy;\n(d) having chronic renal failure;\n(e) having severe malnutrition; or\n(f) undergoing solid organ, stem cell or bone marrow transplantation"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "for tinea pedis or tinea unguium only, having chronic ischaemia of the\r\naffected foot from:\r\n(i) chronic venous insufficiency of the lower limb; or\r\n(ii) atherosclerotic peripheral vascular disease of the lower limb;\r\nat the time of the clinical onset of tinea",
+    "definedTerms" : [ {
+      "term" : "tinea unguium",
+      "definition" : "means dermatophytosis of the nails, manifested by\nthickening and discolouration of the nail, nail dystrophy and often subungual\nhyperkeratosis"
+    }, {
+      "term" : "tinea pedis",
+      "definition" : "means dermatophytosis of the foot manifested by scaling,\nhyperkeratosis or vesicles"
+    } ],
+    "conditionVariant" : {
+      "name" : "tinea pedis or tinea unguium",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "chronic venous insufficiency of the lower limb"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "atherosclerotic peripheral vascular disease of the lower limb;\r\nat the time of the clinical onset of tinea"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "for tinea corporis, tinea capitis, tinea barbae or tinea pedis only:\r\n(i) being exposed to the dermatophyte at the affected site between\r\ntwo days and four weeks before the clinical worsening of tinea\r\n(ii) having skin maceration at the affected site between two days\r\nand four weeks before the clinical worsening of tinea",
+    "definedTerms" : [ {
+      "term" : "being exposed to the dermatophyte",
+      "definition" : "means:\n(a) having direct contact with a person or an animal infected with the\ndermatophyte;\n(b) having direct contact with soil contaminated with the dermatophyte;\n(c) sharing personal items which belong to a person infected with the\ndermatophyte, where the personal items (for example, brushes, hats,\nrazors or towels) have had contact with the site of the infection; or\n(d) using communal showering or bathing facilities, swimming pool\nfacilities or locker rooms"
+    }, {
+      "term" : "tinea pedis",
+      "definition" : "means dermatophytosis of the foot manifested by scaling,\nhyperkeratosis or vesicles"
+    }, {
+      "term" : "tinea capitis",
+      "definition" : "means dermatophytosis of the scalp or hair, manifested by\nitching, scaling, hair loss and inflammation of varying degrees"
+    }, {
+      "term" : "tinea corporis",
+      "definition" : "means dermatophytosis of the body, excluding the feet.\nTinea of the face, neck, trunk, limb or groin is characterised by clinical lesions\nwith scaling and raised erythematous borders. Tinea of the hand is generally\ncharacterised by scaling, hyperkeratosis or vesicles"
+    }, {
+      "term" : "skin maceration",
+      "definition" : "means the softening of the skin by moisture"
+    }, {
+      "term" : "tinea barbae",
+      "definition" : "means dermatophytosis of the beard manifested by itching,\nscaling and hair loss"
+    } ],
+    "conditionVariant" : {
+      "name" : "tinea corporis, tinea capitis, tinea barbae or tinea pedis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being exposed to the dermatophyte at the affected site between\r\ntwo days and four weeks before the clinical worsening of tinea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having skin maceration at the affected site between two days\r\nand four weeks before the clinical worsening of tinea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "for tinea unguium only:\r\n(i) being exposed to the dermatophyte at the affected site between\r\ntwo days and three months before the clinical worsening of tinea\r\n(ii) having skin maceration at the affected site between two days and\r\nthree months before the clinical worsening of tinea",
+    "definedTerms" : [ {
+      "term" : "tinea unguium",
+      "definition" : "means dermatophytosis of the nails, manifested by\nthickening and discolouration of the nail, nail dystrophy and often subungual\nhyperkeratosis"
+    }, {
+      "term" : "skin maceration",
+      "definition" : "means the softening of the skin by moisture"
+    }, {
+      "term" : "being exposed to the dermatophyte",
+      "definition" : "means:\n(a) having direct contact with a person or an animal infected with the\ndermatophyte;\n(b) having direct contact with soil contaminated with the dermatophyte;\n(c) sharing personal items which belong to a person infected with the\ndermatophyte, where the personal items (for example, brushes, hats,\nrazors or towels) have had contact with the site of the infection; or\n(d) using communal showering or bathing facilities, swimming pool\nfacilities or locker rooms"
+    } ],
+    "conditionVariant" : {
+      "name" : "tinea unguium",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being exposed to the dermatophyte at the affected site between\r\ntwo days and three months before the clinical worsening of tinea"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having skin maceration at the affected site between two days and\r\nthree months before the clinical worsening of tinea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of tinea",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of tinea",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state as specified",
+      "definition" : "means a condition of\nsubstantially lowered immune function, such as would occur in the following\nconditions or circumstances:\n(a) being infected with human immunodeficiency virus;\n(b) being treated with an immunosuppressive drug;\n(c) having a haematological or solid organ malignancy;\n(d) having chronic renal failure;\n(e) having severe malnutrition; or\n(f) undergoing solid organ, stem cell or bone marrow transplantation"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "for tinea pedis or tinea unguium only, having chronic ischaemia of the\r\naffected foot from:\r\n(i) chronic venous insufficiency of the lower limb; or\r\n(ii) atherosclerotic peripheral vascular disease of the lower limb;\r\nat the time of the clinical worsening of tinea",
+    "definedTerms" : [ {
+      "term" : "tinea unguium",
+      "definition" : "means dermatophytosis of the nails, manifested by\nthickening and discolouration of the nail, nail dystrophy and often subungual\nhyperkeratosis"
+    }, {
+      "term" : "tinea pedis",
+      "definition" : "means dermatophytosis of the foot manifested by scaling,\nhyperkeratosis or vesicles"
+    } ],
+    "conditionVariant" : {
+      "name" : "tinea pedis or tinea unguium",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "chronic venous insufficiency of the lower limb"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "atherosclerotic peripheral vascular disease of the lower limb;\r\nat the time of the clinical worsening of tinea"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for tinea",
+    "definedTerms" : [ ]
+  } ]
+}

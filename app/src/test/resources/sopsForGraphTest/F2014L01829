@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01829",
+  "instrumentNumber" : "22/2015",
+  "citation" : "Statement of Principles concerning Charcot- Marie-Tooth disease No. 22 of 2015",
+  "conditionName" : "Charcot-Marie-Tooth disease",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G60.0"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, for a condition for which the drug cannot be ceased or\r\nsubstituted, at the time of the clinical worsening of Charcot-Marie-\r\nTooth disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for Charcot-Marie-\r\nTooth disease",
+    "definedTerms" : [ ]
+  } ]
+}

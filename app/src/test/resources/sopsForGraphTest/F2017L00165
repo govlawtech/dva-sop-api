@@ -1,0 +1,172 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00165",
+  "instrumentNumber" : "24/2017",
+  "citation" : "Statement of Principles concerning spondylolisthesis and spondylolysis (Reasonable Hypothesis) (No. 24 of 2017)",
+  "conditionName" : "spondylolisthesis and spondylolysis",
+  "effectiveFrom" : "2017-03-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M43.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "Q76.21"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "experiencing a high impact trauma to the spine resulting in an acute\r\nfracture of the vertebral arch at the time of the clinical onset of\r\nspondylolisthesis or spondylolysis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for spondylolisthesis only, experiencing a high impact trauma to the\r\nspine resulting in an acute fracture of the vertebral arch or dislocation\r\nof the involved vertebra within the one year before the clinical onset of\r\nspondylolisthesis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "spondylolisthesis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for spondylolysis or spondylolytic spondylolisthesis in persons less\r\nthan 25 years of age only, engaging in activities involving repetitive\r\nand forceful hyperextension, torsion or rotation against resistance of\r\nthe spine for an average period of at least ten hours per week for the\r\nsix months before the clinical onset of spondylolisthesis or\r\nspondylolysis;\r\nNote 1: spondylolytic spondylolisthesis is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of activities involving repetitive and forceful hyperextension, torsion or\r\nrotation against resistance include gymnastics, pole vaulting, dancing, weightlifting,\r\nweight training, wrestling, judo, horse riding, swimming and playing football, tennis,\r\nvolleyball, basketball, golf and cricket",
+    "definedTerms" : [ {
+      "term" : "spondylolytic spondylolisthesis",
+      "definition" : "means spondylolisthesis which develops\r\nwhere there is pre-existing spondylolysis of the affected vertebra."
+    } ],
+    "conditionVariant" : {
+      "name" : "spondylolysis or spondylolytic spondylolisthesis in persons less than 25 years of age",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having undergone a spinal fusion of a segment of adjacent vertebrae\r\nbefore the clinical onset of spondylolisthesis or spondylolysis",
+    "definedTerms" : [ {
+      "term" : "spinal fusion",
+      "definition" : "means surgery to permanently connect two or more vertebrae\r\nin the spine, eliminating motion between them."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having undergone spinal surgery as specified at the level of the\r\ninvolved vertebra before the clinical onset of spondylolisthesis or\r\nspondylolysis",
+    "definedTerms" : [ {
+      "term" : "spinal surgery as specified",
+      "definition" : "means surgery involving resection of the facet\r\njoints or parts of the vertebral arch (including laminectomy, laminotomy and\r\nfacetectomy), or surgery to the spine that damages the integrity and stability\r\nof the spine.\r\nspondylolisthesis and spondylolysis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for degenerative spondylolisthesis of the lumbar or cervical spine only,\r\nhaving spondylosis at the level of the involved vertebra, before the\r\nclinical onset of spondylolisthesis",
+    "definedTerms" : [ {
+      "term" : "degenerative spondylolisthesis",
+      "definition" : "means forward or backward displacement of\r\none vertebra over the vertebra below due to segmental instability arising\r\nfrom osteoarthritis of the facet joints."
+    } ],
+    "conditionVariant" : {
+      "name" : "degenerative spondylolisthesis of the lumbar or cervical spine",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having pathological damage to the affected vertebra at the time of the\r\nclinical onset of spondylolisthesis or spondylolysis",
+    "definedTerms" : [ {
+      "term" : "pathological damage to the affected vertebra",
+      "definition" : "means a local or systemic\r\ndisease process which significantly weakens or destroys the vertebral bone,\r\nincluding benign and malignant tumours, tuberculosis, osteomyelitis,\r\nosteoporosis and Paget's disease."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having rheumatoid arthritis involving the affected vertebra at the time\r\nof the clinical onset of spondylolisthesis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for degenerative anterolisthesis only, being obese for the five years\r\nbefore the clinical onset of spondylolisthesis",
+    "definedTerms" : [ {
+      "term" : "degenerative anterolisthesis",
+      "definition" : "means forward displacement of one vertebra\r\nover the vertebra below due to segmental instability arising from\r\nosteoarthritis of the facet joints."
+    }, {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ],
+    "conditionVariant" : {
+      "name" : "degenerative anterolisthesis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(10)",
+    "text" : "experiencing a high impact trauma to the spine resulting in an acute\r\nfracture of the vertebral arch at the time of the clinical worsening of\r\nspondylolisthesis or spondylolysis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for spondylolisthesis only, experiencing a high impact trauma to the\r\nspine resulting in an acute fracture of the vertebral arch or dislocation\r\nof the involved vertebra within the one year before the clinical\r\nworsening of spondylolisthesis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "spondylolisthesis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for spondylolytic spondylolisthesis only, having trauma to affected\r\nregion of the spine at the time of the clinical worsening of\r\nspondylolisthesis",
+    "definedTerms" : [ {
+      "term" : "spondylolytic spondylolisthesis",
+      "definition" : "means spondylolisthesis which develops\r\nwhere there is pre-existing spondylolysis of the affected vertebra."
+    } ],
+    "conditionVariant" : {
+      "name" : "spondylolytic spondylolisthesis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "for spondylolysis or spondylolytic spondylolisthesis in persons less\r\nthan 25 years of age only, engaging in activities involving repetitive\r\nand forceful hyperextension, torsion or rotation against resistance of\r\nthe spine for an average period of at least ten hours per week for the\r\nsix months before the clinical worsening of spondylolisthesis or\r\nspondylolysis;\r\nNote 1: spondylolytic spondylolisthesis is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of activities involving repetitive and forceful hyperextension, torsion or\r\nrotation against resistance include gymnastics, pole vaulting, dancing, weightlifting,\r\nweight training, wrestling, judo, horse riding, swimming and playing football, tennis,\r\nvolleyball, basketball, golf and cricket",
+    "definedTerms" : [ {
+      "term" : "spondylolytic spondylolisthesis",
+      "definition" : "means spondylolisthesis which develops\r\nwhere there is pre-existing spondylolysis of the affected vertebra."
+    } ],
+    "conditionVariant" : {
+      "name" : "spondylolysis or spondylolytic spondylolisthesis in persons less than 25 years of age",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having undergone spinal surgery as specified at the level of the\r\ninvolved vertebra before the clinical worsening of spondylolisthesis or\r\nspondylolysis",
+    "definedTerms" : [ {
+      "term" : "spinal surgery as specified",
+      "definition" : "means surgery involving resection of the facet\r\njoints or parts of the vertebral arch (including laminectomy, laminotomy and\r\nfacetectomy), or surgery to the spine that damages the integrity and stability\r\nof the spine.\r\nspondylolisthesis and spondylolysis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "for degenerative spondylolisthesis of the lumbar or cervical spine only,\r\nhaving spondylosis at the level of the involved vertebra, before the\r\nclinical worsening of spondylolisthesis",
+    "definedTerms" : [ {
+      "term" : "degenerative spondylolisthesis",
+      "definition" : "means forward or backward displacement of\r\none vertebra over the vertebra below due to segmental instability arising\r\nfrom osteoarthritis of the facet joints."
+    } ],
+    "conditionVariant" : {
+      "name" : "degenerative spondylolisthesis of the lumbar or cervical spine",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having pathological damage to the affected vertebra at the time of the\r\nclinical worsening of spondylolisthesis or spondylolysis",
+    "definedTerms" : [ {
+      "term" : "pathological damage to the affected vertebra",
+      "definition" : "means a local or systemic\r\ndisease process which significantly weakens or destroys the vertebral bone,\r\nincluding benign and malignant tumours, tuberculosis, osteomyelitis,\r\nosteoporosis and Paget's disease."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having rheumatoid arthritis involving the affected vertebra at the time\r\nof the clinical worsening of spondylolisthesis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "for degenerative anterolisthesis only, being obese for the five years\r\nbefore the clinical worsening of spondylolisthesis",
+    "definedTerms" : [ {
+      "term" : "degenerative anterolisthesis",
+      "definition" : "means forward displacement of one vertebra\r\nover the vertebra below due to segmental instability arising from\r\nosteoarthritis of the facet joints."
+    }, {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ],
+    "conditionVariant" : {
+      "name" : "degenerative anterolisthesis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "inability to obtain appropriate clinical management for\r\nspondylolisthesis or spondylolysis",
+    "definedTerms" : [ ]
+  } ]
+}

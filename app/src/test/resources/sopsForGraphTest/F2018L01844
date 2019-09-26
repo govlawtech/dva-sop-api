@@ -1,0 +1,44 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01844",
+  "instrumentNumber" : "8/2019",
+  "citation" : "Statement of Principles concerning internal derangement of the knee (Balance of Probabilities) (No. 8 of 2019)",
+  "conditionName" : "internal derangement of the knee",
+  "effectiveFrom" : "2019-01-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M23.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M23.5"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M23.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M23.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a sprain involving a ligament of the affected knee within the\r\none year before the clinical onset of internal derangement of the knee",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having an acute meniscal tear of the affected knee within the one year\r\nbefore the clinical onset of internal derangement of the knee",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "having a sprain involving a ligament of the affected knee within the\r\none year before the clinical worsening of internal derangement of the\r\nknee",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having an acute meniscal tear of the affected knee within the one year\r\nbefore the clinical worsening of internal derangement of the knee",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for internal\r\nderangement of the knee",
+    "definedTerms" : [ ]
+  } ]
+}

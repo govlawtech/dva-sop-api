@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01746",
+  "instrumentNumber" : "110/2011",
+  "citation" : "Statement of Principles concerning irritant contact dermatitis No. 110 of 2011",
+  "conditionName" : "irritant contact dermatitis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L24"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having direct cutaneous exposure of the affected area to an irritant\r\nwithin the three days before the clinical onset of irritant contact\r\ndermatitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "having direct cutaneous exposure of the affected area to an irritant\r\nwithin the three days before the clinical worsening of irritant contact\r\ndermatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for irritant contact\r\ndermatitis",
+    "definedTerms" : [ ]
+  } ]
+}

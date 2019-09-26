@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00474",
+  "instrumentNumber" : "45/2014",
+  "citation" : "Statement of Principles concerning pleural plaque No. 45 of 2014",
+  "conditionName" : "pleural plaque",
+  "effectiveFrom" : "2014-05-07",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "J92.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(i) at the time material containing asbestos fibres was being\r\napplied, removed, dislodged, cut or drilled; and\r\n(ii) the first such inhalation of asbestos fibres occurred at least five\r\nyears before the clinical onset of pleural plaque",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inhaling respirable asbestos fibres for a cumulative period of at least\r\n1 000 hours in an open environment:\r\n(i) at the time material containing asbestos fibres was being\r\napplied, removed, dislodged, cut or drilled; and\r\n(ii) the first such inhalation of asbestos fibres occurred at least five\r\nyears before the clinical onset of pleural plaque",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for pleural plaque",
+    "definedTerms" : [ ]
+  } ]
+}

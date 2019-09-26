@@ -1,0 +1,38 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014C00882",
+  "instrumentNumber" : "70/2012",
+  "citation" : "Statement of Principles concerning myeloma No. 70 of 2012",
+  "conditionName" : "myeloma",
+  "effectiveFrom" : "2012-10-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C90"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of myeloma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having received a solid organ transplant before the clinical onset of\r\nmyeloma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being obese for a continuous period of at least five years within the ten\r\nyears before the clinical onset of myeloma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(ca)",
+    "text" : "having exposure to 2,3,7,8 tetrachlorodibenzo-para-dioxin (TCDD)\r\nsufficient to produce an expected initial serum TCDD level of at least\r\n1 500 parts per trillion before the clinical onset of myeloma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for myeloma",
+    "definedTerms" : [ ]
+  } ]
+}

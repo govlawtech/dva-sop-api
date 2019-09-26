@@ -1,0 +1,33 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00008",
+  "instrumentNumber" : "4/2012",
+  "citation" : "Statement of Principles concerning acute infectious mononucleosis No. 4 of 2012",
+  "conditionName" : "acute infectious mononucleosis",
+  "effectiveFrom" : "2012-01-11",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B27.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to the Epstein-Barr virus between 12 and 50 days before\r\nthe clinical onset of acute infectious mononucleosis",
+    "definedTerms" : [ {
+      "term" : "being exposed to the Epstein-Barr virus",
+      "definition" : "means:\n(a) having exposure of the oral mucosa to saliva infected with Epstein-Barr\nvirus; or\n(b) receiving a blood transfusion, blood products, a bone marrow transplant\nor an organ transplant infected with Epstein-Barr virus"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being in an immunosuppressed state at the time of the clinical onset of\r\nacute infectious mononucleosis",
+    "definedTerms" : [ {
+      "term" : "being in an immunosuppressed state",
+      "definition" : "means being in a condition of\nlowered immune function due to one of the following circumstances or\nconditions:\n(a) being infected with the human immunodeficiency virus;\n(b) having a haematological or solid organ malignancy;\n(c) undergoing chemotherapy for the treatment of a malignant or\nproliferative disease;\n(d) undergoing solid organ, stem cell or bone marrow transplantation; or\n(e) undergoing treatment with a tumour necrosis factor-alpha antagonist"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for acute infectious\r\nmononucleosis",
+    "definedTerms" : [ ]
+  } ]
+}

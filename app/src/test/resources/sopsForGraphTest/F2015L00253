@@ -1,0 +1,60 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00253",
+  "instrumentNumber" : "47/2015",
+  "citation" : "Statement of Principles concerning herpes zoster No. 47 of 2015",
+  "conditionName" : "herpes zoster",
+  "effectiveFrom" : "2015-03-30",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B02"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having chickenpox before the clinical onset of herpes zoster",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for vaccine strain herpes zoster only, having live attenuated varicella\r\nvaccine before the clinical onset of herpes zoster",
+    "definedTerms" : [ {
+      "term" : "vaccine strain herpes zoster",
+      "definition" : "means herpes zoster attributed to the vaccine\nstrain varicella-zoster virus by means of isolating the vaccine strain virus from\nthe lesions"
+    } ],
+    "conditionVariant" : {
+      "name" : "vaccine strain herpes zoster",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of herpes zoster",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state as specified",
+      "definition" : "means a condition of\nsubstantially lowered immune function, such as would occur in the following\nconditions or circumstances:\n(a) being infected with human immunodeficiency virus;\n(b) being treated with an immunosuppressive drug;\n(c) having a haematological or solid organ malignancy;\n(d) having chronic renal failure;\n(e) having severe malnutrition; or\n(f) undergoing solid organ, stem cell or bone marrow transplantation"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having trauma, including surgery, involving:\r\n(i) the dermatome affected by herpes zoster or a contiguous\r\ndermatome; or\r\n(ii) the nerve supply to the dermatome affected by herpes zoster or a\r\ncontiguous dermatome;\r\nwithin the eight weeks before the clinical onset of herpes zoster",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of herpes\r\nzoster",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of herpes zoster",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state as specified",
+      "definition" : "means a condition of\nsubstantially lowered immune function, such as would occur in the following\nconditions or circumstances:\n(a) being infected with human immunodeficiency virus;\n(b) being treated with an immunosuppressive drug;\n(c) having a haematological or solid organ malignancy;\n(d) having chronic renal failure;\n(e) having severe malnutrition; or\n(f) undergoing solid organ, stem cell or bone marrow transplantation"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of herpes\r\nzoster",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "inability to obtain appropriate clinical management for herpes zoster",
+    "definedTerms" : [ ]
+  } ]
+}

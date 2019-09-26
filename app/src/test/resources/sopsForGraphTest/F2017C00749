@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00749",
+  "instrumentNumber" : "29/2011",
+  "citation" : "Statement of Principles concerning acoustic neuroma No. 29 of 2011",
+  "conditionName" : "acoustic neuroma",
+  "effectiveFrom" : "2011-05-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D33.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having received a cumulative equivalent dose of at least 0.10 sievert of\r\nionising radiation to the affected vestibulocochlear nerve at least five\r\nyears before the clinical onset of acoustic neuroma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for acoustic\r\nneuroma",
+    "definedTerms" : [ ]
+  } ]
+}

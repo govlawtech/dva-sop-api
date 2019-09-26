@@ -1,0 +1,363 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00560",
+  "instrumentNumber" : "55/2016",
+  "citation" : "Statement of Principles concerning Parkinson's disease and secondary parkinsonism (Reasonable Hypothesis) (No. 55 of 2016)",
+  "conditionName" : "Parkinson's disease and secondary parkinsonism",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for Parkinson's disease only:\r\n(a) inhaling, ingesting or having cutaneous contact with a pesticide\r\nfrom the specified list of pesticides, for a cumulative period of at\r\nleast 1 000 hours, before the clinical onset of Parkinson's disease;\r\n(b) having moderate to severe traumatic brain injury more than 15\r\nyears before the clinical onset of Parkinson's disease;\r\n(c) inhaling trichloroethylene vapour in an enclosed space, or having\r\ncutaneous contact with trichloroethylene, for a cumulative period\r\nof at least 2 000 hours, at least 20 years before the clinical onset\r\nof Parkinson's disease;\r\n(d) an inability to undertake any physical activity greater than three\r\nMETs for at least ten years within the 20 years before the clinical\r\nonset of Parkinson's disease;\r\n(e) consuming an average of at least one litre of milk per day for at\r\nleast the 15 years before the clinical onset of Parkinson's disease;\r\n(f) consuming an average of at least 150 grams of cheese per day for\r\nat least the 15 years before the clinical onset of Parkinson's\r\ndisease;\r\n(g) having clinically significant depressive disorder or generalised\r\nanxiety disorder at least 15 years before the clinical onset of\r\nParkinson's disease; or\r\n(h) in a person with a history of a regular smoking habit as specified,\r\nhaving not smoked for at least the five years before the clinical\r\nonset of Parkinson's disease",
+    "definedTerms" : [ {
+      "term" : "specified list of pesticides",
+      "definition" : "means:\r\n(a) a dithiocarbamate-based fungicide;\r\n(b) an organochlorine insecticide;\r\n(c) an organophosphorus ester;\r\n(d) paraquat;\r\n(e) rotenone; or\r\n(f) the phenoxy acid herbicides 2,4-dichlorophenoxyacetic acid (2,4-D) or\r\n2,4,5-trichlorophenoxyacetic acid (2,4,5-T)."
+    }, {
+      "term" : "regular smoking habit as specified",
+      "definition" : "means having smoked at least three pack-\r\nyears of cigarettes or the equivalent thereof in other tobacco products."
+    }, {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\r\nweight per hour or resting metabolic rate."
+    }, {
+      "term" : "clinically significant",
+      "definition" : "means sufficient to warrant ongoing management,\r\nwhich may involve regular visits (for example, at least monthly), to a\r\npsychiatrist, counsellor or general practitioner."
+    } ],
+    "conditionVariant" : {
+      "name" : "Parkinson's disease",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "inhaling, ingesting or having cutaneous contact with a pesticide\r\nfrom the specified list of pesticides, for a cumulative period of at\r\nleast 1 000 hours, before the clinical onset of Parkinson's disease"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having moderate to severe traumatic brain injury more than 15\r\nyears before the clinical onset of Parkinson's disease"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "inhaling trichloroethylene vapour in an enclosed space, or having\r\ncutaneous contact with trichloroethylene, for a cumulative period\r\nof at least 2 000 hours, at least 20 years before the clinical onset\r\nof Parkinson's disease"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "an inability to undertake any physical activity greater than three\r\nMETs for at least ten years within the 20 years before the clinical\r\nonset of Parkinson's disease"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "consuming an average of at least one litre of milk per day for at\r\nleast the 15 years before the clinical onset of Parkinson's disease"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "consuming an average of at least 150 grams of cheese per day for\r\nat least the 15 years before the clinical onset of Parkinson's\r\ndisease"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "having clinically significant depressive disorder or generalised\r\nanxiety disorder at least 15 years before the clinical onset of\r\nParkinson's disease"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "in a person with a history of a regular smoking habit as specified,\r\nhaving not smoked for at least the five years before the clinical\r\nonset of Parkinson's disease"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for secondary parkinsonism only:\r\n(a) having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the three months before the\r\nclinical onset of secondary parkinsonism;\r\n(b) having moderate to severe traumatic brain injury within the one\r\nyear before the clinical onset of secondary parkinsonism;\r\n(c) having an intracranial space occupying lesion within the three\r\nmonths before the clinical onset of secondary parkinsonism;\r\n(d) having hydrocephalus, or draining of hydrocephalus, within the\r\nthree months before the clinical onset of secondary parkinsonism;\r\n(e) having a cerebrovascular accident, excluding transient ischaemic\r\nattack, within the five years before the clinical onset of secondary\r\nparkinsonism;\r\n(f) having a disease from the specified list of diseases involving the\r\ncerebral vessels, in the presence of neuroimaging findings of\r\nbrain stem or cerebral white matter lesions, haemorrhage or\r\ninfarction, at the time of the clinical onset of secondary\r\nparkinsonism;\r\n(g) having a subarachnoid haemorrhage within the three months\r\nbefore the clinical onset of secondary parkinsonism;\r\n(h) having an acquired cerebrovascular malformation or dural\r\narteriovenous fistula at the time of the clinical onset of secondary\r\nparkinsonism;\r\n(i) having an hypoxic cerebral insult within the two years before the\r\nclinical onset of secondary parkinsonism;\r\n(j) having influenza within the three months before the clinical onset\r\nof secondary parkinsonism;\r\n(k) having encephalitis within the three months before the clinical\r\nonset of secondary parkinsonism;\r\n(l) being infected with the human immunodeficiency virus before\r\nthe clinical onset of secondary parkinsonism;\r\n(m) having neurosyphilis at the time of the clinical onset of secondary\r\nparkinsonism;\r\n(n) having neurocysticercosis at the time of the clinical onset of\r\nsecondary parkinsonism;\r\n(o) inhaling carbon disulphide vapour in an enclosed space, or\r\nhaving cutaneous contact with carbon disulphide, for a\r\ncumulative period of at least 500 hours, within the ten years\r\nbefore the clinical onset of secondary parkinsonism;\r\n(p) inhaling trichloroethylene vapour in an enclosed space, or having\r\ncutaneous contact with trichloroethylene, for a cumulative period\r\nof at least 2 000 hours, within the 20 years before the clinical\r\nonset of secondary parkinsonism;\r\n(q) inhaling or ingesting methanol or ethylene glycol, and having\r\nclinical, haematological or biochemical evidence of methanol or\r\nethylene glycol intoxication, within the three months before the\r\nclinical onset of secondary parkinsonism;\r\n(r) being exposed to manganese as specified for a cumulative period\r\nof at least 250 hours, within the ten years before the clinical onset\r\nof secondary parkinsonism;\r\n(s) having clinical or biochemical evidence of manganese\r\nintoxication while receiving total parenteral nutrition or\r\nmaintenance haemodialysis, at the time of the clinical onset of\r\nsecondary parkinsonism;\r\n(t) inhaling, ingesting or having cutaneous contact with cyanide, and\r\nhaving clinical, haematological or biochemical evidence of\r\ncyanide intoxication, within the three months before the clinical\r\nonset of secondary parkinsonism;\r\n(u) having an injection containing 1-methyl-4-phenyl-1,2,3,6-\r\ntetrahydropyridine (MPTP) within the three months before the\r\nclinical onset of secondary parkinsonism;\r\n(v) using khat (Catha edulis), Ecstasy (3,4-\r\nmethylenedioxymethamphetamine) or the drug methcathinone\r\n(ephedrone) within the three months before the clinical onset of\r\nsecondary parkinsonism;\r\n(w) taking a drug or a drug from a class of drugs from the specified\r\nlist of drugs, for a continuous period of at least seven days within\r\nthe three months before the clinical onset of secondary\r\nparkinsonism;\r\n(x) having a disorder of calcium metabolism from the specified list\r\nof disorders of calcium metabolism at the time of the clinical\r\nonset of secondary parkinsonism;\r\n(y) having cirrhosis of the liver at the time of the clinical onset of\r\nsecondary parkinsonism;\r\n(z) having chronic renal failure at the time of the clinical onset of\r\nsecondary parkinsonism;\r\n(aa) having a disease from the specified list of autoimmune diseases\r\nat the time of the clinical onset of secondary parkinsonism; or\r\n(bb) having a paraneoplastic encephalomyelitis at the time of the\r\nclinical onset of secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "neurosyphilis",
+      "definition" : "means infection of the central nervous system with\r\nTreponema pallidum."
+    }, {
+      "term" : "chronic renal failure",
+      "definition" : "means:\r\n(a) 2having a glomerular filtration rate of less than 15 mL/min/1.73 m for a\r\nperiod of at least three months; or\r\n(b) a need for renal replacement therapy (dialysis or transplantation) for\r\ntreatment of complications of decreased glomerular filtration rate\r\nwhich would otherwise increase the risk of morbidity and mortality; or\r\n(c) undergoing chronic dialysis."
+    }, {
+      "term" : "total parenteral nutrition",
+      "definition" : "means continuous intravenous drip feeding with no\r\nfeeding via mouth or gut."
+    }, {
+      "term" : "hydrocephalus",
+      "definition" : "means a condition characterised by dilation of the cerebral\r\nventricles and accompanied by accumulation of excess cerebrospinal fluid"
+    }, {
+      "term" : "organophosphorus ester",
+      "definition" : "means an agent used to inhibit"
+    }, {
+      "term" : "encephalitis",
+      "definition" : "means a viral, bacterial or protozoal infection of the brain\r\nparenchyma, manifested clinically by acute febrile illness, confusion,\r\nbehavioural abnormalities, altered level of consciousness, and focal or\r\ngeneralised epileptic seizures, or demonstrated by neuroimaging or\r\nlaboratory studies."
+    }, {
+      "term" : "acute cholinergic poisoning",
+      "definition" : "means symptoms and signs due to the\r\ninhibition of acetylcholinesterase enzyme activity which occur within the 24\r\nhours following exposure. These symptoms and signs are acute paralysis,\r\noverwhelming bronchial secretions, bradycardia, gastrointestinal distress,\r\nmiosis, lacrimation or diarrhoea."
+    }, {
+      "term" : "being exposed to manganese as specified",
+      "definition" : "means:\r\n(a) working in the mining or smelting of ores containing manganese; or\r\n(b) welding with rods containing manganese; or\r\n(c) inhaling dust containing manganese."
+    }, {
+      "term" : "specified list of autoimmune diseases",
+      "definition" : "means:\r\n(a) antiphospholipid syndrome;\r\n(b) Behçet's disease;\r\n(c) nonvasculitic autoimmune inflammatory meningoencephalitis;\r\n(d) Sjogren's syndrome; or\r\n(e) systemic lupus erythematosus."
+    }, {
+      "term" : "hypoxic cerebral insult",
+      "definition" : "means an event which results in either a decreased\r\nrate of cerebral blood flow or decreased oxygen content of cerebral arterial\r\nblood for a sustained period."
+    } ],
+    "conditionVariant" : {
+      "name" : "secondary parkinsonism",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the three months before the\r\nclinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having moderate to severe traumatic brain injury within the one\r\nyear before the clinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having an intracranial space occupying lesion within the three\r\nmonths before the clinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having hydrocephalus, or draining of hydrocephalus, within the\r\nthree months before the clinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "having a cerebrovascular accident, excluding transient ischaemic\r\nattack, within the five years before the clinical onset of secondary\r\nparkinsonism"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "having a disease from the specified list of diseases involving the\r\ncerebral vessels, in the presence of neuroimaging findings of\r\nbrain stem or cerebral white matter lesions, haemorrhage or\r\ninfarction, at the time of the clinical onset of secondary\r\nparkinsonism"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "having a subarachnoid haemorrhage within the three months\r\nbefore the clinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "having an acquired cerebrovascular malformation or dural\r\narteriovenous fistula at the time of the clinical onset of secondary\r\nparkinsonism"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "having an hypoxic cerebral insult within the two years before the\r\nclinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "having influenza within the three months before the clinical onset\r\nof secondary parkinsonism"
+      }, {
+        "paragraph" : "(k)",
+        "text" : "having encephalitis within the three months before the clinical\r\nonset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(l)",
+        "text" : "being infected with the human immunodeficiency virus before\r\nthe clinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(m)",
+        "text" : "having neurosyphilis at the time of the clinical onset of secondary\r\nparkinsonism"
+      }, {
+        "paragraph" : "(n)",
+        "text" : "having neurocysticercosis at the time of the clinical onset of\r\nsecondary parkinsonism"
+      }, {
+        "paragraph" : "(o)",
+        "text" : "inhaling carbon disulphide vapour in an enclosed space, or\r\nhaving cutaneous contact with carbon disulphide, for a\r\ncumulative period of at least 500 hours, within the ten years\r\nbefore the clinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(p)",
+        "text" : "inhaling trichloroethylene vapour in an enclosed space, or having\r\ncutaneous contact with trichloroethylene, for a cumulative period\r\nof at least 2 000 hours, within the 20 years before the clinical\r\nonset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(q)",
+        "text" : "inhaling or ingesting methanol or ethylene glycol, and having\r\nclinical, haematological or biochemical evidence of methanol or\r\nethylene glycol intoxication, within the three months before the\r\nclinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(r)",
+        "text" : "being exposed to manganese as specified for a cumulative period\r\nof at least 250 hours, within the ten years before the clinical onset\r\nof secondary parkinsonism"
+      }, {
+        "paragraph" : "(s)",
+        "text" : "having clinical or biochemical evidence of manganese\r\nintoxication while receiving total parenteral nutrition or\r\nmaintenance haemodialysis, at the time of the clinical onset of\r\nsecondary parkinsonism"
+      }, {
+        "paragraph" : "(t)",
+        "text" : "inhaling, ingesting or having cutaneous contact with cyanide, and\r\nhaving clinical, haematological or biochemical evidence of\r\ncyanide intoxication, within the three months before the clinical\r\nonset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(u)",
+        "text" : "having an injection containing 1-methyl-4-phenyl-1,2,3,6-\r\ntetrahydropyridine (MPTP) within the three months before the\r\nclinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "using khat (Catha edulis), Ecstasy (3,4-\r\nmethylenedioxymethamphetamine) or the drug methcathinone"
+      }, {
+        "paragraph" : "(ephedrone)",
+        "text" : "within the three months before the clinical onset of\r\nsecondary parkinsonism"
+      }, {
+        "paragraph" : "(w)",
+        "text" : "taking a drug or a drug from a class of drugs from the specified\r\nlist of drugs, for a continuous period of at least seven days within\r\nthe three months before the clinical onset of secondary\r\nparkinsonism"
+      }, {
+        "paragraph" : "(x)",
+        "text" : "having a disorder of calcium metabolism from the specified list\r\nof disorders of calcium metabolism at the time of the clinical\r\nonset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(y)",
+        "text" : "having cirrhosis of the liver at the time of the clinical onset of\r\nsecondary parkinsonism"
+      }, {
+        "paragraph" : "(z)",
+        "text" : "having chronic renal failure at the time of the clinical onset of\r\nsecondary parkinsonism"
+      }, {
+        "paragraph" : "(aa)",
+        "text" : "having a disease from the specified list of autoimmune diseases\r\nat the time of the clinical onset of secondary parkinsonism"
+      }, {
+        "paragraph" : "(bb)",
+        "text" : "having a paraneoplastic encephalomyelitis at the time of the\r\nclinical onset of secondary parkinsonism"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a pesticide from\r\nthe specified list of pesticides, for a cumulative period of at least 1 000\r\nhours, within the ten years before the clinical worsening of Parkinson's\r\ndisease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "specified list of pesticides",
+      "definition" : "means:\r\n(a) a dithiocarbamate-based fungicide;\r\n(b) an organochlorine insecticide;\r\n(c) an organophosphorus ester;\r\n(d) paraquat;\r\n(e) rotenone; or\r\n(f) the phenoxy acid herbicides 2,4-dichlorophenoxyacetic acid (2,4-D) or\r\n2,4,5-trichlorophenoxyacetic acid (2,4,5-T)."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having an episode of acute cholinergic poisoning from exposure to an\r\norganophosphorus ester within the three months before the clinical\r\nworsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "organophosphorus ester",
+      "definition" : "means an agent used to inhibit"
+    }, {
+      "term" : "acute cholinergic poisoning",
+      "definition" : "means symptoms and signs due to the\r\ninhibition of acetylcholinesterase enzyme activity which occur within the 24\r\nhours following exposure. These symptoms and signs are acute paralysis,\r\noverwhelming bronchial secretions, bradycardia, gastrointestinal distress,\r\nmiosis, lacrimation or diarrhoea."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having moderate to severe traumatic brain injury within the one year\r\nbefore the clinical worsening of Parkinson's disease or secondary\r\nparkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having an intracranial space occupying lesion within the three months\r\nbefore the clinical worsening of Parkinson's disease or secondary\r\nparkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having hydrocephalus, or draining of hydrocephalus, within the three\r\nmonths before the clinical worsening of Parkinson's disease or\r\nsecondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "hydrocephalus",
+      "definition" : "means a condition characterised by dilation of the cerebral\r\nventricles and accompanied by accumulation of excess cerebrospinal fluid"
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having a cerebrovascular accident, excluding transient ischaemic\r\nattack, within the three months before the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having a disease from the specified list of diseases involving the\r\ncerebral vessels, in the presence of neuroimaging findings of brain\r\nstem or cerebral white matter lesions, haemorrhage or infarction, at the\r\ntime of the clinical worsening of Parkinson's disease or secondary\r\nparkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a subarachnoid haemorrhage within the three months before the\r\nclinical worsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having an acquired cerebrovascular malformation or dural\r\narteriovenous fistula at the time of the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having an hypoxic cerebral insult within the two years before the\r\nclinical worsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "hypoxic cerebral insult",
+      "definition" : "means an event which results in either a decreased\r\nrate of cerebral blood flow or decreased oxygen content of cerebral arterial\r\nblood for a sustained period."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having influenza within the three months before the clinical worsening\r\nof Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having encephalitis within the three months before the clinical\r\nworsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "encephalitis",
+      "definition" : "means a viral, bacterial or protozoal infection of the brain\r\nparenchyma, manifested clinically by acute febrile illness, confusion,\r\nbehavioural abnormalities, altered level of consciousness, and focal or\r\ngeneralised epileptic seizures, or demonstrated by neuroimaging or\r\nlaboratory studies."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "being infected with the human immunodeficiency virus before the\r\nclinical worsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having neurosyphilis at the time of the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "neurosyphilis",
+      "definition" : "means infection of the central nervous system with\r\nTreponema pallidum."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having neurocysticercosis at the time of the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "inhaling carbon disulphide vapour in an enclosed space, or having\r\ncutaneous contact with carbon disulphide, for a cumulative period of at\r\nleast 500 hours, within the ten years before the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "inhaling trichloroethylene vapour in an enclosed space, or having\r\ncutaneous contact with trichloroethylene, for a cumulative period of at\r\nleast 2 000 hours, within the 20 years before the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "inhaling or ingesting methanol or ethylene glycol, and having clinical,\r\nhaematological or biochemical evidence of methanol or ethylene\r\nglycol intoxication, within the three months before the clinical\r\nworsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "being exposed to manganese as specified for a cumulative period of at\r\nleast 250 hours, within the ten years before the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "being exposed to manganese as specified",
+      "definition" : "means:\r\n(a) working in the mining or smelting of ores containing manganese; or\r\n(b) welding with rods containing manganese; or\r\n(c) inhaling dust containing manganese."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having clinical or biochemical evidence of manganese intoxication\r\nwhile receiving total parenteral nutrition or maintenance\r\nhaemodialysis, at the time of the clinical worsening of Parkinson's\r\ndisease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "total parenteral nutrition",
+      "definition" : "means continuous intravenous drip feeding with no\r\nfeeding via mouth or gut."
+    } ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "inhaling, ingesting or having cutaneous contact with cyanide, and\r\nhaving clinical, haematological or biochemical evidence of cyanide\r\nintoxication, within the three months before the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having an injection containing 1-methyl-4-phenyl-1,2,3,6-\r\ntetrahydropyridine (MPTP) within the three months before the clinical\r\nworsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "using khat (Catha edulis), Ecstasy (3,4-\r\nmethylenedioxymethamphetamine) or the drug methcathinone\r\n(ephedrone) within the three months before the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, for a continuous period of at least seven days within the three\r\nmonths before the clinical worsening of Parkinson's disease or\r\nsecondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "having a disorder of calcium metabolism from the specified list of\r\ndisorders of calcium metabolism at the time of the clinical worsening\r\nof Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "having cirrhosis of the liver at the time of the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "having chronic renal failure at the time of the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means:\r\n(a) 2having a glomerular filtration rate of less than 15 mL/min/1.73 m for a\r\nperiod of at least three months; or\r\n(b) a need for renal replacement therapy (dialysis or transplantation) for\r\ntreatment of complications of decreased glomerular filtration rate\r\nwhich would otherwise increase the risk of morbidity and mortality; or\r\n(c) undergoing chronic dialysis."
+    } ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of Parkinson's\r\ndisease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\r\nweight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "having a disease from the specified list of autoimmune diseases at the\r\ntime of the clinical worsening of Parkinson's disease or secondary\r\nparkinsonism",
+    "definedTerms" : [ {
+      "term" : "specified list of autoimmune diseases",
+      "definition" : "means:\r\n(a) antiphospholipid syndrome;\r\n(b) Behçet's disease;\r\n(c) nonvasculitic autoimmune inflammatory meningoencephalitis;\r\n(d) Sjogren's syndrome; or\r\n(e) systemic lupus erythematosus."
+    } ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "consuming an average of at least one litre of milk per day for at least\r\nthe five years before the clinical worsening of Parkinson's disease or\r\nsecondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "consuming an average of at least 150 grams of cheese per day for at\r\nleast the five years before the clinical worsening of Parkinson's disease\r\nor secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "having a paraneoplastic encephalomyelitis at the time of the clinical\r\nworsening of Parkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "having clinically significant depressive disorder or generalised anxiety\r\ndisorder for at least the five years before the clinical worsening of\r\nParkinson's disease or secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "clinically significant",
+      "definition" : "means sufficient to warrant ongoing management,\r\nwhich may involve regular visits (for example, at least monthly), to a\r\npsychiatrist, counsellor or general practitioner."
+    } ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "in a person with a history of a regular smoking habit as specified,\r\nhaving not smoked within the ten years before the clinical worsening\r\nof Parkinson's disease and secondary parkinsonism",
+    "definedTerms" : [ {
+      "term" : "regular smoking habit as specified",
+      "definition" : "means having smoked at least three pack-\r\nyears of cigarettes or the equivalent thereof in other tobacco products."
+    } ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "inability to obtain appropriate clinical management for Parkinson's\r\ndisease or secondary parkinsonism",
+    "definedTerms" : [ ]
+  } ]
+}

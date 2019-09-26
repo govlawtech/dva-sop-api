@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00791",
+  "instrumentNumber" : "67/2013",
+  "citation" : "Statement of Principles concerning motor neurone disease No. 67 of 2013",
+  "conditionName" : "motor neurone disease",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G12.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of motor neurone\r\ndisease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for motor neurone\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

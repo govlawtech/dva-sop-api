@@ -1,0 +1,48 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01784",
+  "instrumentNumber" : "7/2015",
+  "citation" : "Statement of Principles concerning epicondylitis No. 7 of 2015",
+  "conditionName" : "epicondylitis",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M77.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M77.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "performing forceful activities with the hand or forearm on the affected\r\nside, in combination with:\r\n(i) repetitive activities with the hand or forearm on the affected side\r\n(ii) sustained activities with the forearm on the affected side;\r\nfor at least one hour per day, on more days than not, over a period of at\r\nleast the one month before the clinical onset of epicondylitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a sudden alteration of loading pattern as specified for a\r\ncontinuous period of at least one hour, within the three days before the\r\nclinical onset of epicondylitis",
+    "definedTerms" : [ {
+      "term" : "having a sudden alteration of loading pattern as specified",
+      "definition" : "means\nsuddenly increasing the frequency, duration or intensity of forceful and\nrepetitive or sustained activities with the hand or forearm on the affected side\nby at least 100 percent and to a minimum intensity of at least five METs.\nExamples of such activities include using a rowing machine, carrying objects\nof at least ten kilograms, vigorous gardening, using heavy power tools or\ncarpentry"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing treatment with fluoroquinolone antibiotics within the 14\r\ndays before the clinical onset of epicondylitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "performing forceful activities with the hand or forearm on the affected\r\nside, in combination with:\r\n(i) repetitive activities with the hand or forearm on the affected side\r\n(ii) sustained activities with the forearm on the affected side;\r\nfor at least one hour per day, on more days than not, over a period of at\r\nleast the one month before the clinical worsening of epicondylitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a sudden alteration of loading pattern as specified for a\r\ncontinuous period of at least one hour, within the three days before the\r\nclinical worsening of epicondylitis",
+    "definedTerms" : [ {
+      "term" : "having a sudden alteration of loading pattern as specified",
+      "definition" : "means\nsuddenly increasing the frequency, duration or intensity of forceful and\nrepetitive or sustained activities with the hand or forearm on the affected side\nby at least 100 percent and to a minimum intensity of at least five METs.\nExamples of such activities include using a rowing machine, carrying objects\nof at least ten kilograms, vigorous gardening, using heavy power tools or\ncarpentry"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "inability to obtain appropriate clinical management for epicondylitis",
+    "definedTerms" : [ ]
+  } ]
+}

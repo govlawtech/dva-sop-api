@@ -1,0 +1,165 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00658",
+  "instrumentNumber" : "31/2012",
+  "citation" : "Statement of Principles concerning psoriasis No. 31 of 2012",
+  "conditionName" : "psoriasis",
+  "effectiveFrom" : "2012-05-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L40.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L40.8"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for a first episode of psoriasis only,\r\n(i) having an acute injury to the skin of the affected site or\r\ndeveloping a lesion of the affected site within the one month\r\nbefore the clinical onset of psoriasis; or\r\n(ii) being treated with a drug or a drug from a class of drugs in the\r\nspecified list for at least the seven days before the clinical onset\r\nof psoriasis; or\r\n(iii) withdrawing from systemic glucocorticoids or high potency\r\ntopical glucocorticoids in the one month before the clinical\r\nonset of psoriasis; or\r\n(iv) being treated with a drug which is associated in the individual\r\nwith:\r\nA. the development of psoriasis during drug therapy; and\r\neither\r\nB. the improvement of psoriasis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\nC. the redevelopment of psoriasis on rechallenge with the\r\nsame drug;\r\nwhere treatment with the drug continued for at least the seven\r\ndays before the clinical onset of psoriasis; or\r\n(v) consuming an average of at least 420 grams of alcohol per\r\nweek for a continuous period of at least the one year before the\r\nclinical onset of psoriasis; or\r\n(vi) experiencing a category 1A stressor within the three months\r\nbefore the clinical onset of psoriasis; or\r\n(vii) experiencing a category 1B stressor within the three months\r\nbefore the clinical onset psoriasis; or\r\n(viii) experiencing a category 2 stressor within the one month before\r\nthe clinical onset of psoriasis; or\r\n(ix) having a laboratory confirmed Streptococcus pyogenes\r\ninfection of the pharynx, tonsils or skin within the one month\r\nbefore the clinical onset of psoriasis; or\r\n(x) being infected with human immunodeficiency virus before the\r\nclinical onset of psoriasis; or\r\n(xi) smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\npsoriasis, and where smoking has ceased, the clinical onset of\r\npsoriasis has occurred within twenty years of cessation; or\r\n(xii) immersion in an atmosphere with a visible tobacco smoke haze\r\nin an enclosed space for at least 10 000 hours before the clinical\r\nonset of psoriasis; or\r\n(xiii) being overweight for at least five years before the clinical onset\r\nof psoriasis",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    }, {
+      "term" : "a category 2 stressor",
+      "definition" : "means one or more of the following negative life\nevents, the effects of which are chronic in nature and cause the person to feel\non-going distress, concern or worry:\n(a) being socially isolated and unable to maintain friendships or family\nrelationships, due to physical location, language barriers, disability, or\nmedical or psychiatric illness;\n(b) experiencing a problem with a long-term relationship including the\nbreak-up of a close personal relationship, the need for marital or\nrelationship counselling, marital separation or divorce;\n(c) having concerns in the work or school environment including on-going\ndisharmony with fellow work or school colleagues, perceived lack of\nsocial support within the work or school environment, perceived lack\nof control over tasks performed and stressful work loads, or\nexperiencing bullying in the workplace or school environment;\n(d) experiencing serious legal issues including being detained or held in\ncustody, on-going involvement with the police concerning violations of\nthe law or court appearances associated with personal legal problems;\n(e) having severe financial hardship including loss of employment, long\nperiods of unemployment, foreclosure on a property or bankruptcy;\n(f) having a family member or significant other experience a major\ndeterioration in their health; or\n(g) being a full-time caregiver to a family member or significant other with\na severe physical, mental or developmental disability"
+    }, {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    }, {
+      "term" : "a category 1A stressor",
+      "definition" : "means one or more of the following severe\ntraumatic events:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ],
+    "conditionVariant" : {
+      "name" : "a first episode of psoriasis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having an acute injury to the skin of the affected site or\r\ndeveloping a lesion of the affected site within the one month\r\nbefore the clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being treated with a drug or a drug from a class of drugs in the\r\nspecified list for at least the seven days before the clinical onset\r\nof psoriasis"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "withdrawing from systemic glucocorticoids or high potency\r\ntopical glucocorticoids in the one month before the clinical\r\nonset of psoriasis"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "being treated with a drug which is associated in the individual\r\nwith:\r\nA. the development of psoriasis during drug therapy; and\r\neither\r\nB. the improvement of psoriasis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\nC. the redevelopment of psoriasis on rechallenge with the\r\nsame drug;\r\nwhere treatment with the drug continued for at least the seven\r\ndays before the clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "consuming an average of at least 420 grams of alcohol per\r\nweek for a continuous period of at least the one year before the\r\nclinical onset of psoriasis"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "experiencing a category 1A stressor within the three months\r\nbefore the clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "experiencing a category 1B stressor within the three months\r\nbefore the clinical onset psoriasis"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "experiencing a category 2 stressor within the one month before\r\nthe clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "having a laboratory confirmed Streptococcus pyogenes\r\ninfection of the pharynx, tonsils or skin within the one month\r\nbefore the clinical onset of psoriasis"
+      }, {
+        "paragraph" : "(x)",
+        "text" : "being infected with human immunodeficiency virus before the\r\nclinical onset of psoriasis"
+      }, {
+        "paragraph" : "(xi)",
+        "text" : "smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\npsoriasis, and where smoking has ceased, the clinical onset of\r\npsoriasis has occurred within twenty years of cessation"
+      }, {
+        "paragraph" : "(xii)",
+        "text" : "immersion in an atmosphere with a visible tobacco smoke haze\r\nin an enclosed space for at least 10 000 hours before the clinical\r\nonset of psoriasis"
+      }, {
+        "paragraph" : "(xiii)",
+        "text" : "being overweight for at least five years before the clinical onset\r\nof psoriasis"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for impetigo herpetiformis only, being pregnant within the six weeks\r\nbefore the clinical onset of psoriasis",
+    "definedTerms" : [ {
+      "term" : "impetigo herpetiformis",
+      "definition" : "means a pustular skin condition of pregnancy,\ncharacterised by the presence of widespread tiny superficial pustules in a\nherpetiform pattern on erythematosquamous plaques, and often associated\nwith constitutional symptoms"
+    } ],
+    "conditionVariant" : {
+      "name" : "impetigo herpetiformis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "having an acute injury to the skin of the affected site or developing a\r\nlesion of the affected site within the one month before the clinical\r\nworsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being treated with a drug or a drug from a class of drugs in the\r\nspecified list for at least the seven days before the clinical worsening of\r\npsoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "withdrawing from systemic glucocorticoids or high potency topical\r\nglucocorticoids in the one month before the clinical worsening of\r\npsoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the worsening of psoriasis during drug therapy; and either\r\n(ii) the improvement of psoriasis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\n(iii) the worsening of psoriasis on rechallenge with the same drug;\r\nwhere treatment with the drug continued for at least the seven days\r\nbefore the clinical worsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "consuming an average of at least 420 grams of alcohol per week for a\r\ncontinuous period of at least the one year before the clinical worsening\r\nof psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "experiencing a category 1A stressor within the three months before the\r\nclinical worsening of psoriasis",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one or more of the following severe\ntraumatic events:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "experiencing a category 1B stressor within the three months before the\r\nclinical worsening psoriasis",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "experiencing a category 2 stressor within the one month before the\r\nclinical worsening of psoriasis",
+    "definedTerms" : [ {
+      "term" : "a category 2 stressor",
+      "definition" : "means one or more of the following negative life\nevents, the effects of which are chronic in nature and cause the person to feel\non-going distress, concern or worry:\n(a) being socially isolated and unable to maintain friendships or family\nrelationships, due to physical location, language barriers, disability, or\nmedical or psychiatric illness;\n(b) experiencing a problem with a long-term relationship including the\nbreak-up of a close personal relationship, the need for marital or\nrelationship counselling, marital separation or divorce;\n(c) having concerns in the work or school environment including on-going\ndisharmony with fellow work or school colleagues, perceived lack of\nsocial support within the work or school environment, perceived lack\nof control over tasks performed and stressful work loads, or\nexperiencing bullying in the workplace or school environment;\n(d) experiencing serious legal issues including being detained or held in\ncustody, on-going involvement with the police concerning violations of\nthe law or court appearances associated with personal legal problems;\n(e) having severe financial hardship including loss of employment, long\nperiods of unemployment, foreclosure on a property or bankruptcy;\n(f) having a family member or significant other experience a major\ndeterioration in their health; or\n(g) being a full-time caregiver to a family member or significant other with\na severe physical, mental or developmental disability"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a laboratory confirmed Streptococcus pyogenes infection of the\r\npharynx, tonsils or skin within the one month before the clinical\r\nworsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nworsening of psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of psoriasis,\r\nand where smoking has ceased, the clinical worsening of psoriasis has\r\noccurred within twenty years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "immersion in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours before the clinical worsening\r\nof psoriasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "being overweight for at least five years before the clinical worsening of\r\npsoriasis",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "inability to obtain appropriate clinical management for psoriasis",
+    "definedTerms" : [ ]
+  } ]
+}

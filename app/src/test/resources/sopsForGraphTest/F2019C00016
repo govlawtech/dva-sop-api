@@ -1,0 +1,44 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019C00016",
+  "instrumentNumber" : "62/2018",
+  "citation" : "Statement of Principles concerning localised sclerosis (Balance of Probabilities) (No. 62 of 2018)",
+  "conditionName" : "localised sclerosis",
+  "effectiveFrom" : "2018-07-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L94.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L94.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs at the time of the clinical onset of localised\r\nsclerosis",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) balicatib;\r\n(b) bleomycin;\r\n(c) enfuvirtide;\r\n(d) pemetrexed;\r\n(e) taxanes; or\r\n(f) tumour necrosis factor-α inhibitors."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected site was in the field of radiation, before the clinical onset of\r\nlocalised sclerosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs at the time of the clinical worsening of localised\r\nsclerosis",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) balicatib;\r\n(b) bleomycin;\r\n(c) enfuvirtide;\r\n(d) pemetrexed;\r\n(e) taxanes; or\r\n(f) tumour necrosis factor-α inhibitors."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected site was in the field of radiation, before the clinical worsening\r\nof localised sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for localised\r\nsclerosis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,199 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01895",
+  "instrumentNumber" : "76/2013",
+  "citation" : "Statement of Principles concerning epilepsy No. 76 of 2013",
+  "conditionName" : "epilepsy",
+  "effectiveFrom" : "2013-11-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a moderate to severe traumatic brain injury before the clinical\r\nonset of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having concussion within the 20 years before the clinical onset of\r\nepilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a surgical procedure which involves a craniotomy before the\r\nclinical onset of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a cerebrovascular accident or subarachnoid haemorrhage within\r\nthe ten years before the clinical onset of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having an hypoxic cerebral insult within the one month before the\r\nclinical onset of epilepsy",
+    "definedTerms" : [ {
+      "term" : "an hypoxic cerebral insult",
+      "definition" : "means an event which results in either a\ndecreased rate of cerebral blood flow or decreased oxygen content of cerebral\narterial blood for a sustained period"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having central nervous system systemic lupus erythematosus at the\r\ntime of the clinical onset of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having an autoimmune disorder affecting the brain at the time of the\r\nclinical onset of epilepsy",
+    "definedTerms" : [ {
+      "term" : "an autoimmune disorder affecting the brain",
+      "definition" : "means an autoimmune\ndisorder with central nervous system involvement and includes paraneoplastic\nencephalitis, Hashimoto's encephalopathy and Behcet's disease"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having an intracranial space-occupying lesion before the clinical onset\r\nof epilepsy",
+    "definedTerms" : [ {
+      "term" : "an intracranial space-occupying lesion",
+      "definition" : "means a pathological entity\noccupying a delineated area within the cranial cavity, including intracranial\naneurysm, cerebral cyst, intracranial neoplasm or cerebral, subdural or\nextradural abscess"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having an infection of the brain or meninges within the five years\r\nbefore the clinical onset of epilepsy",
+    "definedTerms" : [ {
+      "term" : "an infection of the brain or meninges",
+      "definition" : "means:\n(a) amoebic meningoencephalitis;\n(b) bacterial meningitis, encephalitis or meningoencephalitis (including\ncerebral tuberculosis and neurosyphilis);\n(c) cerebral helminthic infection (cysticercosis, schistosomiasis,\nechinococcosis, onchocerciasis, paragonomiasis, toxacariasis or\nsparganosis);\n(d) cerebral protozoal infection (malaria, trypanosomiasis or\ntoxoplasmosis);\n(e) intracranial fungal infection; or\n(f) viral encephalitis or meningoencephalitis"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having dementia at the time of the clinical onset of epilepsy",
+    "definedTerms" : [ {
+      "term" : "dementia",
+      "definition" : "means:\n(a) Alzheimer-type dementia;\n(b) Creutzfeldt-Jakob disease;\n(c) dementia pugilistica;\n(d) dementia with Lewy bodies;\n(e) frontotemporal dementia;\n(f) Huntington's chorea;\n(g) Parkinson's disease with dementia;\n(h) vascular dementia; or\n(i) any other type of dementia"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "drinking at least 150 kilograms of alcohol within the ten years before\r\nthe clinical onset of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a medical condition from the specified list affecting the brain at\r\nthe time of the clinical onset of epilepsy",
+    "definedTerms" : [ {
+      "term" : "a medical condition from the specified list",
+      "definition" : "means:\n(a) Erdheim-Chester disease;\n(b) iron overload;\n(c) multiple sclerosis;\n(d) posterior reversible encephalopathy syndrome;\n(e) sarcoidosis;\n(f) sickle cell disease;\n(g) type 3 Gaucher disease;\n(h) Wegener's granulomatosis; or\n(i) Wilson's disease"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "for reflex epilepsy only,\r\n(i) being exposed to a sensory stimulus immediately before the\r\nclinical onset of epilepsy; or\r\n(ii) being exposed to a repetitive task involving intense\r\nconcentration immediately before the clinical onset of epilepsy",
+    "definedTerms" : [ {
+      "term" : "reflex epilepsy",
+      "definition" : "means an idiopathic seizure disorder in which a seizure can\nbe triggered by internal or external factors"
+    }, {
+      "term" : "a sensory stimulus",
+      "definition" : "means a visual, auditory, autonomic, somatosensory,\nolfactory, gustatory or vestibular stimulus, such as intermittent photic\nstimulation, reading or musical notes"
+    } ],
+    "conditionVariant" : {
+      "name" : "reflex epilepsy",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being exposed to a sensory stimulus immediately before the\r\nclinical onset of epilepsy"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being exposed to a repetitive task involving intense\r\nconcentration immediately before the clinical onset of epilepsy"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(o)",
+    "text" : "having a moderate to severe traumatic brain injury before the clinical\r\nworsening of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having concussion within the 20 years before the clinical worsening of\r\nepilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a surgical procedure which involves a craniotomy before the\r\nclinical worsening of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having a cerebrovascular accident or subarachnoid haemorrhage within\r\nthe ten years before the clinical worsening of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having an hypoxic cerebral insult within the one month before the\r\nclinical worsening of epilepsy",
+    "definedTerms" : [ {
+      "term" : "an hypoxic cerebral insult",
+      "definition" : "means an event which results in either a\ndecreased rate of cerebral blood flow or decreased oxygen content of cerebral\narterial blood for a sustained period"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having central nervous system systemic lupus erythematosus at the\r\ntime of the clinical worsening of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having an autoimmune disorder affecting the brain at the time of the\r\nclinical worsening of epilepsy",
+    "definedTerms" : [ {
+      "term" : "an autoimmune disorder affecting the brain",
+      "definition" : "means an autoimmune\ndisorder with central nervous system involvement and includes paraneoplastic\nencephalitis, Hashimoto's encephalopathy and Behcet's disease"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having an intracranial space-occupying lesion before the clinical\r\nworsening of epilepsy",
+    "definedTerms" : [ {
+      "term" : "an intracranial space-occupying lesion",
+      "definition" : "means a pathological entity\noccupying a delineated area within the cranial cavity, including intracranial\naneurysm, cerebral cyst, intracranial neoplasm or cerebral, subdural or\nextradural abscess"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having an infection of the brain or meninges within the five years\r\nbefore the clinical worsening of epilepsy",
+    "definedTerms" : [ {
+      "term" : "an infection of the brain or meninges",
+      "definition" : "means:\n(a) amoebic meningoencephalitis;\n(b) bacterial meningitis, encephalitis or meningoencephalitis (including\ncerebral tuberculosis and neurosyphilis);\n(c) cerebral helminthic infection (cysticercosis, schistosomiasis,\nechinococcosis, onchocerciasis, paragonomiasis, toxacariasis or\nsparganosis);\n(d) cerebral protozoal infection (malaria, trypanosomiasis or\ntoxoplasmosis);\n(e) intracranial fungal infection; or\n(f) viral encephalitis or meningoencephalitis"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of epilepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having dementia at the time of the clinical worsening of epilepsy",
+    "definedTerms" : [ {
+      "term" : "dementia",
+      "definition" : "means:\n(a) Alzheimer-type dementia;\n(b) Creutzfeldt-Jakob disease;\n(c) dementia pugilistica;\n(d) dementia with Lewy bodies;\n(e) frontotemporal dementia;\n(f) Huntington's chorea;\n(g) Parkinson's disease with dementia;\n(h) vascular dementia; or\n(i) any other type of dementia"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having a moderate to severe alcohol use disorder, including alcohol\r\ndependence, at the time of the clinical worsening of epilepsy",
+    "definedTerms" : [ {
+      "term" : "a moderate to severe alcohol use disorder",
+      "definition" : "means a psychiatric disorder\ncharacterised by a problematic pattern of alcohol use leading to clinically\nsignificant impairment or distress, as manifested by at least four of the\nfollowing criteria, occurring within a 12-month period:\n(a) alcohol is often taken in larger amounts or over a longer period than\nwas intended;\n(b) there is a persistent desire or unsuccessful efforts to cut down or\ncontrol alcohol use;\n(c) a great deal of time is spent in activities necessary to obtain alcohol,\nuse alcohol, or recover from its effects;\n(d) craving, or a strong desire or urge to use alcohol;\n(e) recurrent alcohol use resulting in a failure to fulfil major role\nobligations at work, school, or home;\n(f) continued alcohol use despite having persistent or recurrent social or\ninterpersonal problems caused or exacerbated by the effects of alcohol;\n(g) important social, occupational, or recreational activities are given up or\nreduced because of alcohol use;\n(h) recurrent alcohol use in situations in which it is physically hazardous;\n(i) alcohol use is continued despite knowledge of having a persistent or\nrecurrent physical or psychological problem that is likely to have been\ncaused or exacerbated by alcohol; or\n(j) tolerance, defined by either:\n(i) a need for markedly increased amounts of alcohol to achieve\nintoxication or desired effect; or\n(ii) a markedly diminished effect with continued use of the same\namount of alcohol"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having a medical condition from the specified list affecting the brain at\r\nthe time of the clinical worsening of epilepsy",
+    "definedTerms" : [ {
+      "term" : "a medical condition from the specified list",
+      "definition" : "means:\n(a) Erdheim-Chester disease;\n(b) iron overload;\n(c) multiple sclerosis;\n(d) posterior reversible encephalopathy syndrome;\n(e) sarcoidosis;\n(f) sickle cell disease;\n(g) type 3 Gaucher disease;\n(h) Wegener's granulomatosis; or\n(i) Wilson's disease"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "for reflex epilepsy only,\r\n(i) being exposed to a sensory stimulus immediately before the\r\nclinical worsening of epilepsy; or\r\n(ii) being exposed to a repetitive task involving intense\r\nconcentration immediately before the clinical worsening of\r\nepilepsy",
+    "definedTerms" : [ {
+      "term" : "reflex epilepsy",
+      "definition" : "means an idiopathic seizure disorder in which a seizure can\nbe triggered by internal or external factors"
+    }, {
+      "term" : "a sensory stimulus",
+      "definition" : "means a visual, auditory, autonomic, somatosensory,\nolfactory, gustatory or vestibular stimulus, such as intermittent photic\nstimulation, reading or musical notes"
+    } ],
+    "conditionVariant" : {
+      "name" : "reflex epilepsy",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being exposed to a sensory stimulus immediately before the\r\nclinical worsening of epilepsy"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being exposed to a repetitive task involving intense\r\nconcentration immediately before the clinical worsening of\r\nepilepsy"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "inability to obtain appropriate clinical management for epilepsy",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00571",
+  "instrumentNumber" : "54/2016",
+  "citation" : "Statement of Principles concerning cut, stab, abrasion and laceration (Balance of Probabilities) (No. 54 of 2016)",
+  "conditionName" : "cut, stab, abrasion and laceration",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having direct physical trauma to the affected site at the time of the cut,\r\nstab, abrasion or laceration",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for cut, stab,\r\nabrasion or laceration",
+    "definedTerms" : [ ]
+  } ]
+}

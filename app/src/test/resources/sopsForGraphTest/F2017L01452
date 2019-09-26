@@ -1,0 +1,168 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L01452",
+  "instrumentNumber" : "66/2017",
+  "citation" : "Statement of Principles concerning ulnar neuropathy at the elbow (Balance of Probabilities) (No. 66 of 2017)",
+  "conditionName" : "ulnar neuropathy at the elbow",
+  "effectiveFrom" : "2017-12-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having a fracture of the bones of the affected elbow, including fracture\r\nof the medial epicondyle of the humerus, before the clinical onset of\r\nulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having trauma to the affected elbow within the one year before the\r\nclinical onset of ulnar neuropathy at the elbow",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected elbow",
+      "definition" : "means a discrete event involving the\r\napplication of significant physical force to or through the affected elbow\r\njoint, that causes damage to the joint and the development, within 24 hours of\r\nthe event occurring, of symptoms and signs of pain and tenderness, and\r\neither altered mobility or range of movement of the elbow joint. These\r\nsymptoms and signs must last for a period of at least seven days following\r\ntheir onset, save for where medical intervention for the trauma to that joint\r\nhas occurred and that medical intervention involves one of the following:\r\n(a) immobilisation of the elbow joint, by splinting or similar external\r\nagent;\r\n(b) injection of corticosteroids or local anaesthetics into that joint; or\r\n(c) surgery to that joint.\r\nNote: Examples of acute trauma include dislocation of the elbow joint, tearing or stretching of the\r\nulnar collateral ligament, and medial epicondyle apophysitis.\r\nulnar neuropathy at the elbow—see subsection 6(2)."
+    } ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "performing repetitive and forceful activities involving flexion and\r\nextension of the affected elbow:\r\n(a) for a cumulative period of at least 90 hours, within a continuous\r\nperiod of three months before the clinical onset of ulnar\r\nneuropathy at the elbow; and\r\n(b) where the repetitive and forceful activities have not ceased more\r\nthan 30 days before the clinical onset of ulnar neuropathy at the\r\nelbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having a surgical procedure under general anaesthesia, within the one\r\nmonth before the clinical onset of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having a surgical procedure to the affected elbow, including elbow\r\narthroscopy, within the six months before the clinical onset of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "being hospitalised, or confined to bed in a supine position, for at least\r\ntwo days within the two weeks before the clinical onset of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "daily self-propulsion of a manual wheelchair:\r\n(a) for a cumulative period of at least 60 hours within a continuous\r\nperiod of three months before the clinical onset of ulnar\r\nneuropathy at the elbow; and\r\n(b) where this activity has not ceased more than 30 days before the\r\nclinical onset of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having paraplegia at the time of the clinical onset of ulnar neuropathy\r\nat the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "using elbow or forearm crutches:\r\n(a) for a cumulative period of at least 60 hours within a continuous\r\nperiod of three months before the clinical onset of ulnar\r\nneuropathy at the elbow; and\r\n(b) where this activity has not ceased more than 30 days before the\r\nclinical onset of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having an inflammatory or degenerative joint disease from the\r\nspecified list of specified list of inflammatory and degenerative joint\r\ndiseases, involving the affected elbow, at the time of the clinical onset\r\nof ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "having amyloidosis at the time of the clinical onset of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ {
+      "term" : "amyloidosis",
+      "definition" : "means the accumulation of insoluble fibrillar proteins in organs\r\nor tissues of the body such that vital function is compromised."
+    } ]
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "having a cerebrovascular accident with hemiplegia, excluding transient\r\nischaemic attack or transient symptoms with infarction, before the\r\nclinical onset of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "having an external burn to the affected arm requiring hospitalisation,\r\nwithin the two years before the clinical onset of ulnar neuropathy at\r\nthe elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "having an infection involving the affected ulnar nerve in the region of\r\nthe elbow at the time of the clinical onset of ulnar neuropathy at the\r\nelbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "having a lesion as specified at the elbow that compresses or displaces\r\nthe affected ulnar nerve at the time of the clinical onset of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ {
+      "term" : "lesion as specified",
+      "definition" : "means:\r\n(a) benign or malignant neoplasm;\r\n(b) bony fragment or foreign body;\r\n(c) calcification;\r\n(d) cyst;\r\n(e) ganglion;\r\n(f) gouty tophus;\r\n(g) haemorrhage or haematoma;\r\n(h) lymphoedema;\r\n(i) scar;\r\n(j) tuberculoma; or\r\n(k) another pathological lesion that compresses or displaces the ulnar\r\nnerve."
+    } ]
+  }, {
+    "paragraph" : "8(16)",
+    "text" : "having acromegaly before the clinical onset of ulnar neuropathy at the\r\nelbow",
+    "definedTerms" : [ {
+      "term" : "acromegaly",
+      "definition" : "means a chronic disease of adults resulting from hypersecretion\r\nof growth hormone after closure of the epiphyses."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(17)",
+    "text" : "having a fracture of the bones of the affected elbow, including fracture\r\nof the medial epicondyle of the humerus, before the clinical worsening\r\nof ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(18)",
+    "text" : "having trauma to the affected elbow within the one year before the\r\nclinical worsening of ulnar neuropathy at the elbow",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected elbow",
+      "definition" : "means a discrete event involving the\r\napplication of significant physical force to or through the affected elbow\r\njoint, that causes damage to the joint and the development, within 24 hours of\r\nthe event occurring, of symptoms and signs of pain and tenderness, and\r\neither altered mobility or range of movement of the elbow joint. These\r\nsymptoms and signs must last for a period of at least seven days following\r\ntheir onset, save for where medical intervention for the trauma to that joint\r\nhas occurred and that medical intervention involves one of the following:\r\n(a) immobilisation of the elbow joint, by splinting or similar external\r\nagent;\r\n(b) injection of corticosteroids or local anaesthetics into that joint; or\r\n(c) surgery to that joint.\r\nNote: Examples of acute trauma include dislocation of the elbow joint, tearing or stretching of the\r\nulnar collateral ligament, and medial epicondyle apophysitis.\r\nulnar neuropathy at the elbow—see subsection 6(2)."
+    } ]
+  }, {
+    "paragraph" : "8(19)",
+    "text" : "performing repetitive and forceful activities involving flexion and\r\nextension of the affected elbow:\r\n(a) for a cumulative period of at least 90 hours, within a continuous\r\nperiod of three months before the clinical worsening of ulnar\r\nneuropathy at the elbow; and\r\n(b) where the repetitive and forceful activities have not ceased more\r\nthan 30 days before the clinical worsening of ulnar neuropathy at\r\nthe elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(20)",
+    "text" : "having a surgical procedure under general anaesthesia, within the one\r\nmonth before the clinical worsening of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(21)",
+    "text" : "having a surgical procedure to the affected elbow, including elbow\r\narthroscopy, within the six months before the clinical worsening of\r\nulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(22)",
+    "text" : "being hospitalised, or confined to bed in a supine position, for at least\r\ntwo days within the two weeks before the clinical worsening of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(23)",
+    "text" : "daily self-propulsion of a manual wheelchair:\r\n(a) for a cumulative period of at least 60 hours within a continuous\r\nperiod of three months before the clinical worsening of ulnar\r\nneuropathy at the elbow; and\r\n(b) where this activity has not ceased more than 30 days before the\r\nclinical worsening of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(24)",
+    "text" : "having paraplegia at the time of the clinical worsening of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(25)",
+    "text" : "using elbow or forearm crutches:\r\n(a) for a cumulative period of at least 60 hours within a continuous\r\nperiod of three months before the clinical worsening of ulnar\r\nneuropathy at the elbow; and\r\n(b) where this activity has not ceased more than 30 days before the\r\nclinical worsening of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(26)",
+    "text" : "having an inflammatory or degenerative joint disease from the\r\nspecified list of specified list of inflammatory and degenerative joint\r\ndiseases, involving the affected elbow, at the time of the clinical\r\nworsening of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(27)",
+    "text" : "having amyloidosis at the time of the clinical worsening of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ {
+      "term" : "amyloidosis",
+      "definition" : "means the accumulation of insoluble fibrillar proteins in organs\r\nor tissues of the body such that vital function is compromised."
+    } ]
+  }, {
+    "paragraph" : "8(28)",
+    "text" : "having a cerebrovascular accident with hemiplegia, excluding transient\r\nischaemic attack or transient symptoms with infarction, before the\r\nclinical worsening of ulnar neuropathy at the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(29)",
+    "text" : "having an external burn to the affected arm requiring hospitalisation,\r\nwithin the two years before the clinical worsening of ulnar neuropathy\r\nat the elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(30)",
+    "text" : "having an infection involving the affected ulnar nerve in the region of\r\nthe elbow at the time of the clinical worsening of ulnar neuropathy at\r\nthe elbow",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(31)",
+    "text" : "having a lesion as specified at the elbow that compresses or displaces\r\nthe affected ulnar nerve at the time of the clinical worsening of ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ {
+      "term" : "lesion as specified",
+      "definition" : "means:\r\n(a) benign or malignant neoplasm;\r\n(b) bony fragment or foreign body;\r\n(c) calcification;\r\n(d) cyst;\r\n(e) ganglion;\r\n(f) gouty tophus;\r\n(g) haemorrhage or haematoma;\r\n(h) lymphoedema;\r\n(i) scar;\r\n(j) tuberculoma; or\r\n(k) another pathological lesion that compresses or displaces the ulnar\r\nnerve."
+    } ]
+  }, {
+    "paragraph" : "8(32)",
+    "text" : "having acromegaly before the clinical worsening of ulnar neuropathy\r\nat the elbow",
+    "definedTerms" : [ {
+      "term" : "acromegaly",
+      "definition" : "means a chronic disease of adults resulting from hypersecretion\r\nof growth hormone after closure of the epiphyses."
+    } ]
+  }, {
+    "paragraph" : "8(33)",
+    "text" : "inability to obtain appropriate clinical management for ulnar\r\nneuropathy at the elbow",
+    "definedTerms" : [ ]
+  } ]
+}

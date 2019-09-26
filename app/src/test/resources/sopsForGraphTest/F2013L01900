@@ -1,0 +1,68 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01900",
+  "instrumentNumber" : "80/2013",
+  "citation" : "Statement of Principles concerning steatohepatitis No. 80 of 2013",
+  "conditionName" : "steatohepatitis",
+  "effectiveFrom" : "2013-11-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being obese at the time of the clinical onset of steatohepatitis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having an increase in waist circumference due to fat accumulation,\r\nresulting in a waist circumference of greater than 80 centimetres in\r\nwomen or greater than 94 centimetres in men, at the time of the clinical\r\nonset of steatohepatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of\r\nsteatohepatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having dyslipidaemia at the time of the clinical onset of steatohepatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "receiving total parenteral nutrition for at least three months within the\r\nsix months before the clinical onset of steatohepatitis",
+    "definedTerms" : [ {
+      "term" : "total parenteral nutrition",
+      "definition" : "means delivery of nutriments solely by the\nintravenous route"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for men, consuming at least 75 kilograms of alcohol within any five\r\nyear period before the clinical onset of steatohepatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "for women, consuming at least 40 kilograms of alcohol within any five\r\nyear period before the clinical onset of steatohepatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing jejunoileal bypass surgery before the clinical onset of\r\nsteatohepatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having rapid weight loss within the one year before the clinical onset of\r\nsteatohepatitis",
+    "definedTerms" : [ {
+      "term" : "rapid weight loss",
+      "definition" : "means reduction of body mass by at least 20 percent,\nwithin a continuous period of no more than six months"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having lipodystrophy before the clinical onset of steatohepatitis",
+    "definedTerms" : [ {
+      "term" : "lipodystrophy",
+      "definition" : "means a condition due to defective metabolism of fat,\nresulting in the absence of subcutaneous fat and may be partial or total"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for steatohepatitis",
+    "definedTerms" : [ ]
+  } ]
+}

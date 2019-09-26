@@ -1,0 +1,128 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00925",
+  "instrumentNumber" : "92/2015",
+  "citation" : "Statement of Principles concerning arachnoid cyst (No. 92 of 2015)",
+  "conditionName" : "arachnoid cyst",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having an intraspinal myelogram with an oil-based intrathecal\r\nradiological contrast agent within the 20 years before the clinical onset\r\nof arachnoid cyst",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having an infection from the specified list of infections within the\r\n20 years before the clinical onset of arachnoid cyst",
+    "definedTerms" : [ {
+      "term" : "specified list of infections",
+      "definition" : "means:\r\n(a) bacterial infection of the brain or spinal cord;\r\n(b) bacterial meningitis;\r\n(c) cranial or spinal tuberculosis;\r\n(d) cranial or vertebral osteomyelitis at the affected site; or\r\n(e) neurosyphilis."
+    } ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having a subarachnoid haemorrhage within the cranium or spinal canal\r\nwithin the 20 years before the clinical onset of arachnoid cyst",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having autosomal dominant polycystic kidney disease before the\r\nclinical onset of arachnoid cyst",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "for cranial arachnoid cyst only:\r\n(a) having a moderate to severe traumatic brain injury within the 20\r\nyears before the clinical onset of arachnoid cyst",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means significant injury to the vertebral column, or injury to the\r\nspinal cord or spinal meninges as a result of external force. In this"
+    } ],
+    "conditionVariant" : {
+      "name" : "cranial arachnoid cyst",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having a moderate to severe traumatic brain injury within the 20\r\nyears before the clinical onset of arachnoid cyst"
+      } ]
+    }
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "for spinal arachnoid cyst only:\r\n(a) having trauma in the region of the affected site, excluding\r\nsurgical or therapeutic procedures, within the 20 years before the\r\nclinical onset of arachnoid cyst;\r\n(b) undergoing an invasive surgical procedure in the region of the\r\naffected site within the 20 years before the clinical onset of\r\narachnoid cyst;\r\n(c) having a dural puncture in the region of the affected site, within\r\nthe five years before the clinical onset of arachnoid cyst; or\r\n(d) having spinal adhesive arachnoiditis before the clinical onset of\r\narachnoid cyst",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means significant injury to the vertebral column, or injury to the\r\nspinal cord or spinal meninges as a result of external force. In this"
+    } ],
+    "conditionVariant" : {
+      "name" : "spinal arachnoid cyst",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having trauma in the region of the affected site, excluding\r\nsurgical or therapeutic procedures, within the 20 years before the\r\nclinical onset of arachnoid cyst"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "undergoing an invasive surgical procedure in the region of the\r\naffected site within the 20 years before the clinical onset of\r\narachnoid cyst"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having a dural puncture in the region of the affected site, within\r\nthe five years before the clinical onset of arachnoid cyst"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having spinal adhesive arachnoiditis before the clinical onset of\r\narachnoid cyst"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(7)",
+    "text" : "having an intraspinal myelogram with an oil-based intrathecal\r\nradiological contrast agent within the 30 days before the clinical\r\nworsening of arachnoid cyst",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having an infection from the specified list of infections within the 30\r\ndays before the clinical worsening of arachnoid cyst",
+    "definedTerms" : [ {
+      "term" : "specified list of infections",
+      "definition" : "means:\r\n(a) bacterial infection of the brain or spinal cord;\r\n(b) bacterial meningitis;\r\n(c) cranial or spinal tuberculosis;\r\n(d) cranial or vertebral osteomyelitis at the affected site; or\r\n(e) neurosyphilis."
+    } ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "having a subarachnoid haemorrhage within the cranium or spinal canal\r\nwithin the 30 days before the clinical worsening of arachnoid cyst",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having autosomal dominant polycystic kidney disease before the\r\nclinical worsening of arachnoid cyst",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "for cranial arachnoid cyst only:\r\n(a) having concussion or a moderate to severe traumatic brain injury\r\nwithin the 30 days before the clinical worsening of arachnoid\r\ncyst",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means significant injury to the vertebral column, or injury to the\r\nspinal cord or spinal meninges as a result of external force. In this"
+    } ],
+    "conditionVariant" : {
+      "name" : "cranial arachnoid cyst",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having concussion or a moderate to severe traumatic brain injury\r\nwithin the 30 days before the clinical worsening of arachnoid\r\ncyst"
+      } ]
+    }
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "for spinal arachnoid cyst only:\r\n(a) having trauma in the region of the affected site, excluding\r\nsurgical or therapeutic procedures, within the 30 days before the\r\nclinical worsening of arachnoid cyst;\r\n(b) undergoing an invasive surgical procedure in the region of the\r\naffected site within the 30 days before the clinical worsening of\r\narachnoid cyst;\r\n(c) having a dural puncture in the region of the affected site, within\r\nthe 30 days before the clinical worsening of arachnoid cyst; or\r\n(d) having spinal adhesive arachnoiditis before the clinical\r\nworsening of arachnoid cyst",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means significant injury to the vertebral column, or injury to the\r\nspinal cord or spinal meninges as a result of external force. In this"
+    } ],
+    "conditionVariant" : {
+      "name" : "spinal arachnoid cyst",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having trauma in the region of the affected site, excluding\r\nsurgical or therapeutic procedures, within the 30 days before the\r\nclinical worsening of arachnoid cyst"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "undergoing an invasive surgical procedure in the region of the\r\naffected site within the 30 days before the clinical worsening of\r\narachnoid cyst"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having a dural puncture in the region of the affected site, within\r\nthe 30 days before the clinical worsening of arachnoid cyst"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having spinal adhesive arachnoiditis before the clinical\r\nworsening of arachnoid cyst"
+      } ]
+    }
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "inability to obtain appropriate clinical management for arachnoid cyst",
+    "definedTerms" : [ ]
+  } ]
+}

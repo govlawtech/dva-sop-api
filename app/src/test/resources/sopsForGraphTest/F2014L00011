@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00011",
+  "instrumentNumber" : "10/2014",
+  "citation" : "Statement of Principles concerning dermatomyositis No. 10 of 2014",
+  "conditionName" : "dermatomyositis",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being treated with a drug of the statin class for a continuous period of\r\nat least the two months before the clinical onset of dermatomyositis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for amyopathic dermatomyositis only, being treated with hydroxyurea\r\nfor a continuous period of at least the one year before the clinical onset\r\nof dermatomyositis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "amyopathic dermatomyositis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the development of dermatomyositis during drug therapy; and\r\neither\r\n(ii) the improvement of dermatomyositis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\n(iii) the redevelopment of dermatomyositis on rechallenge with the\r\nsame drug;\r\nwhere treatment with the drug continued for at least the one month\r\nbefore the clinical onset of dermatomyositis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a malignant neoplasm, other than non-melanotic malignant\r\nneoplasm of the skin, within five years of the clinical onset of\r\ndermatomyositis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "being treated with a drug of the statin class for a continuous period of\r\nat least the two months before the clinical worsening of\r\ndermatomyositis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for amyopathic dermatomyositis only, being treated with hydroxyurea\r\nfor a continuous period of at least the one year before the clinical\r\nworsening of dermatomyositis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "amyopathic dermatomyositis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the worsening of dermatomyositis during drug therapy; and\r\neither\r\n(ii) the improvement of dermatomyositis within two months of\r\ndiscontinuing or tapering drug therapy; or\r\n(iii) the worsening of dermatomyositis on rechallenge with the same\r\ndrug;\r\nwhere treatment with the drug continued for at least the one month\r\nbefore the clinical worsening of dermatomyositis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "inability to obtain appropriate clinical management for\r\ndermatomyositis",
+    "definedTerms" : [ ]
+  } ]
+}

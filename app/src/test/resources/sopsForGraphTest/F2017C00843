@@ -1,0 +1,110 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00843",
+  "instrumentNumber" : "11/2016",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the endometrium (Reasonable Hypothesis) (No. 11 of 2016)",
+  "conditionName" : "malignant neoplasm of the endometrium",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C54.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for females aged over 35 years only, being nulliparous at the time of\r\nthe clinical onset of malignant neoplasm of the endometrium",
+    "definedTerms" : [ {
+      "term" : "nulliparous",
+      "definition" : "means having never given birth to a viable infant."
+    } ],
+    "conditionVariant" : {
+      "name" : "females aged over 35 years",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "using oestrogen-only hormone replacement therapy for at least three\r\nmonths before the clinical onset of malignant neoplasm of the\r\nendometrium, and where the use of oestrogen-only hormone\r\nreplacement therapy has ceased, the clinical onset of malignant\r\nneoplasm of the endometrium has occurred within 30 years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "oestrogen-only hormone replacement therapy",
+      "definition" : "means the continuous,\r\ncyclical or intermittent administration of unopposed oestrogen, including\r\ndiethylstilbestrol, to combat surgically induced or naturally occurring\r\nmenopause."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having cyclical combined hormone replacement therapy for a\r\ncontinuous period of at least two years before the clinical onset of\r\nmalignant neoplasm of the endometrium, and where the use of cyclical\r\ncombined hormone replacement therapy has ceased, the clinical onset\r\nof malignant neoplasm of the endometrium has occurred within ten\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "cyclical combined hormone replacement therapy",
+      "definition" : "means the administration\r\nof oestrogen combined with the cyclical administration of progestogen for\r\nless than 15 days during each treatment cycle, to combat surgically induced\r\nor naturally occurring menopause.\r\nmalignant neoplasm of the endometrium—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having polycystic ovary syndrome at the time of the clinical onset of\r\nmalignant neoplasm of the endometrium",
+    "definedTerms" : [ {
+      "term" : "polycystic ovary syndrome",
+      "definition" : "means a clinical symptom complex, also known\r\nas Stein-Leventhal syndrome, associated with polycystic ovaries and\r\ncharacterised by oligomenorrhea or amenorrhea, anovulation and hirsutism."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "for post-menopausal females only, undergoing treatment with\r\ntamoxifen for a period of at least three months before the clinical onset\r\nof malignant neoplasm of the endometrium, and where treatment has\r\nceased, the clinical onset of malignant neoplasm of the endometrium\r\nhas occurred within 20 years of that period",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "post-menopausal females",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "using the sequential oral contraceptive pill Oracon within the 20 years\r\nbefore the clinical onset of malignant neoplasm of the endometrium",
+    "definedTerms" : [ {
+      "term" : "sequential oral contraceptive pill Oracon",
+      "definition" : "means a contraceptive pill\r\ncontaining a potent oestrogen (0.1 g ethinyloestradiol) and a weak\r\nprogestogen (25 mg dimethisterone), in which oestrogen was given alone for\r\nthe first 16 days of the cycle, followed by five to seven days of combined\r\noestrogen plus progestogen."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being overweight or obese for a period of at least five years within the\r\n20 years before the clinical onset of malignant neoplasm of the\r\nendometrium",
+    "definedTerms" : [ {
+      "term" : "being overweight or obese",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or\r\ngreater."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least ten years within the 30 years before the clinical onset of\r\nmalignant neoplasm of the endometrium",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having an oestrogen-secreting ovarian tumour before the clinical onset\r\nof malignant neoplasm of the endometrium",
+    "definedTerms" : [ {
+      "term" : "oestrogen-secreting ovarian tumour",
+      "definition" : "means a tumour of the ovary which\r\nsecretes oestrogen, including a granulosa cell tumour (a type of malignant\r\nneoplasm of the ovary).\r\npack-years of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having diabetes mellitus for at least five years before the clinical onset\r\nof malignant neoplasm of the endometrium",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for post-menopausal females with a history of a regular smoking habit\r\nas specified only, having not smoked for the ten years before the\r\nclinical onset of malignant neoplasm of the endometrium",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "post-menopausal females with a history of a regular smoking habit as specified",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for carcinosarcoma only, having received a cumulative equivalent dose\r\nof at least 0.1 sievert of ionising radiation to the uterus at least two\r\nyears before the clinical onset of malignant neoplasm of the\r\nendometrium; or",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ],
+    "conditionVariant" : {
+      "name" : "carcinosarcoma",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(13)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the endometrium",
+    "definedTerms" : [ ]
+  } ]
+}

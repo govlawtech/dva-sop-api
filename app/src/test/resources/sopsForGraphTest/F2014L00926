@@ -1,0 +1,64 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00926",
+  "instrumentNumber" : "70/2014",
+  "citation" : "Statement of Principles concerning warts No. 70 of 2014",
+  "conditionName" : "warts",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A63.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B07"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having direct physical contact with a person with exposed cutaneous\r\nwarts, where the contact occurs at the site of those warts, within the\r\none year before the clinical onset of warts",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for warts affecting the cervix uteri and anogenital region only, having\r\nsexual intercourse with a person with cervical or anogenital warts\r\nwithin the one year before the clinical onset of warts",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "warts affecting the cervix uteri and anogenital region",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for plantar warts only, using communal showering or bathing facilities\r\nwithin the one year before the clinical onset of warts",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "plantar warts",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for warts on the hands and forearms only, using shared gloves or shared\r\nutensils on more days than not for three months in the preparation of\r\nmeat, poultry or fish for consumption, within the one year before the\r\nclinical onset of warts",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "warts on the hands and forearms",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being in an immunosuppressed state at the time of the clinical onset of\r\nwarts",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressed state",
+      "definition" : "means a condition in which the immune\nresponse is substantially diminished. Examples of circumstances giving rise to\nthis include haematological or solid organ malignancy, administration of\nimmunosuppressive drugs, acute exposure to high doses of ionising radiation,\nsevere malnutrition and human immunodeficiency virus infection"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "being in an immunosuppressed state at the time of the clinical\r\nworsening of warts",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressed state",
+      "definition" : "means a condition in which the immune\nresponse is substantially diminished. Examples of circumstances giving rise to\nthis include haematological or solid organ malignancy, administration of\nimmunosuppressive drugs, acute exposure to high doses of ionising radiation,\nsevere malnutrition and human immunodeficiency virus infection"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for warts",
+    "definedTerms" : [ ]
+  } ]
+}

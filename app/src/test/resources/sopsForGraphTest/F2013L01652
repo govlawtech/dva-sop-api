@@ -1,0 +1,192 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01652",
+  "instrumentNumber" : "63/2013",
+  "citation" : "Statement of Principles concerning hypertension No. 63 of 2013",
+  "conditionName" : "hypertension",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I10"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I15"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being overweight or obese at the time of the clinical onset of\r\nhypertension",
+    "definedTerms" : [ {
+      "term" : "being overweight or obese",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in at least one of the following:\n(a) a Body Mass Index (BMI) of 25 or greater; or\n(b) a waist circumference of greater than 80 centimetres in women or\ngreater than 94 centimetres in men.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "consuming an average of at least 300 grams of alcohol per week for at\r\nleast the six months before the clinical onset of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "consuming at least 12 grams (200 millimoles) of salt per day on\r\naverage for at least the six months before the clinical onset of\r\nhypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having renal artery stenosis, including renal artery stenosis due to renal\r\nartery atherosclerotic disease or fibromuscular dysplasia, at the time of\r\nthe clinical onset of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing renal or other solid organ transplantation before the clinical\r\nonset of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a chronic renal disease or injury, or chronic renal failure, at the\r\ntime of the clinical onset of hypertension",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    }, {
+      "term" : "a chronic renal disease or injury",
+      "definition" : "means chronic irreversible renal damage\nfrom a condition such as:\n(a) analgesic nephropathy;\n(b) chronic glomerulonephritis;\n(c) chronic pyelonephritis;\n(d) diabetic nephrosclerosis;\n(e) interstitial nephritis;\n(f) obstructive nephropathy;\n(g) polycystic kidney disease;\n(h) renal ischaemia, infarction or vasculitis;\n(i) renal scarring; or\n(j) renal tuberculosis"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a specified endocrine-related disorder at the time of the clinical\r\nonset of hypertension",
+    "definedTerms" : [ {
+      "term" : "a specified endocrine-related disorder",
+      "definition" : "means:\n(a) a renin-secreting neoplasm;\n(b) acromegaly;\n(c) Cushing's syndrome;\n(d) goitre which has resulted in hypothyroidism or hyperthyroidism;\n(e) Graves' disease which has resulted in hyperthyroidism;\n(f) Hashimoto's thyroiditis which has resulted in hypothyroidism;\n(g) hyperthyroidism;\n(h) hypothyroidism;\n(i) phaeochromocytoma;\n(j) primary hyperaldosteronism; or\n(k) primary or tertiary hyperparathyroidism"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being treated with a drug or a drug from a class of drugs from Specified\r\nList 1, where that drug cannot be ceased or substituted, for a\r\ncontinuous period of at least the one month before the clinical onset of\r\nhypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being treated with a specified antineoplastic drug, where that drug\r\ncannot be ceased or substituted, at the time of the clinical onset of\r\nhypertension",
+    "definedTerms" : [ {
+      "term" : "a specified antineoplastic drug",
+      "definition" : "means:\n(a) an alkylating agent;\n(b) cis-diamminedichloroplatinum;\n(c) cyclosporine A;\n(d) paclitaxel;\n(e) rapamycin; or\n(f) tacrolimus"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having glucocorticoid therapy as specified before the clinical onset of\r\nhypertension, and where the glucocorticoid therapy as specified has\r\nceased or decreased, the last dose of the therapy was received within\r\nthe one month before the clinical onset of hypertension",
+    "definedTerms" : [ {
+      "term" : "having glucocorticoid therapy as specified",
+      "definition" : "means:\n(a) taking:\n(i) hydrocortisone, orally or by injection,\n(A) to a cumulative dose of at least 1 500 milligrams, and\n(B) at a minimum dose rate averaging 50 milligrams per day, or\n(ii) equivalent glucocorticoid therapy, orally or by injection; or\n(b) inhaling at least 2 000 micrograms of beclomethasone, or equivalent\ninhaled glucocorticoid, daily, for at least six months; or\n(c) using an ocular or intranasal glucocorticoid at above the recommended\nmaximum therapeutic dosage level, daily, for at least six months; or\n(d) applying a high or very high potency topical glucocorticoid to at least\n20 percent of total skin surface area, daily, for at least six months; or\n(e) using a glucocorticoid concurrently with a drug from Specified List 2,\ndaily, for at least 30 days; or\n(f) using glucocorticoid containing enemas, daily, for at least six months"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having sleep apnoea at the time of the clinical onset of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "an inability to undertake more than a mildly strenuous level of physical\r\nactivity for at least the one year before the clinical onset of\r\nhypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having extrinsic compression of the renal parenchyma from a\r\nhaematoma or mass at the time of the clinical onset of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having an arteriovenous fistula involving the blood supply of the\r\nkidney or an arteriovenous malformation involving the blood supply of\r\nthe kidney before the clinical onset of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a clinically significant psychiatric disorder from the specified\r\nlist before the clinical onset of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\nhypertension",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average inorganic arsenic\nconcentration of at least 50 micrograms per litre for a cumulative\nperiod of at least ten years;\n(b) consuming drinking water resulting in a cumulative total inorganic\narsenic exposure equivalent to having consumed drinking water\ncontaining at least 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(q)",
+    "text" : "being overweight or obese at the time of the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ {
+      "term" : "being overweight or obese",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in at least one of the following:\n(a) a Body Mass Index (BMI) of 25 or greater; or\n(b) a waist circumference of greater than 80 centimetres in women or\ngreater than 94 centimetres in men.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "consuming an average of at least 300 grams of alcohol per week for at\r\nleast the six months before the clinical worsening of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "consuming at least 12 grams (200 millimoles) of salt per day on\r\naverage for at least the six months before the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having renal artery stenosis, including renal artery stenosis due to renal\r\nartery atherosclerotic disease or fibromuscular dysplasia, at the time of\r\nthe clinical worsening of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "undergoing renal or other solid organ transplantation before the clinical\r\nworsening of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having a chronic renal disease or injury, or chronic renal failure, at the\r\ntime of the clinical worsening of hypertension",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    }, {
+      "term" : "a chronic renal disease or injury",
+      "definition" : "means chronic irreversible renal damage\nfrom a condition such as:\n(a) analgesic nephropathy;\n(b) chronic glomerulonephritis;\n(c) chronic pyelonephritis;\n(d) diabetic nephrosclerosis;\n(e) interstitial nephritis;\n(f) obstructive nephropathy;\n(g) polycystic kidney disease;\n(h) renal ischaemia, infarction or vasculitis;\n(i) renal scarring; or\n(j) renal tuberculosis"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having a specified endocrine-related disorder at the time of the clinical\r\nworsening of hypertension",
+    "definedTerms" : [ {
+      "term" : "a specified endocrine-related disorder",
+      "definition" : "means:\n(a) a renin-secreting neoplasm;\n(b) acromegaly;\n(c) Cushing's syndrome;\n(d) goitre which has resulted in hypothyroidism or hyperthyroidism;\n(e) Graves' disease which has resulted in hyperthyroidism;\n(f) Hashimoto's thyroiditis which has resulted in hypothyroidism;\n(g) hyperthyroidism;\n(h) hypothyroidism;\n(i) phaeochromocytoma;\n(j) primary hyperaldosteronism; or\n(k) primary or tertiary hyperparathyroidism"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "being treated with a drug or a drug from a class of drugs from Specified\r\nList 1, where that drug cannot be ceased or substituted, for a\r\ncontinuous period of at least the one month before the clinical\r\nworsening of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "being treated with a specified antineoplastic drug, where that drug\r\ncannot be ceased or substituted, at the time of the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ {
+      "term" : "a specified antineoplastic drug",
+      "definition" : "means:\n(a) an alkylating agent;\n(b) cis-diamminedichloroplatinum;\n(c) cyclosporine A;\n(d) paclitaxel;\n(e) rapamycin; or\n(f) tacrolimus"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having glucocorticoid therapy as specified before the clinical\r\nworsening of hypertension, and where the glucocorticoid therapy as\r\nspecified has ceased or decreased, the last dose of the therapy was\r\nreceived within the one month before the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ {
+      "term" : "having glucocorticoid therapy as specified",
+      "definition" : "means:\n(a) taking:\n(i) hydrocortisone, orally or by injection,\n(A) to a cumulative dose of at least 1 500 milligrams, and\n(B) at a minimum dose rate averaging 50 milligrams per day, or\n(ii) equivalent glucocorticoid therapy, orally or by injection; or\n(b) inhaling at least 2 000 micrograms of beclomethasone, or equivalent\ninhaled glucocorticoid, daily, for at least six months; or\n(c) using an ocular or intranasal glucocorticoid at above the recommended\nmaximum therapeutic dosage level, daily, for at least six months; or\n(d) applying a high or very high potency topical glucocorticoid to at least\n20 percent of total skin surface area, daily, for at least six months; or\n(e) using a glucocorticoid concurrently with a drug from Specified List 2,\ndaily, for at least 30 days; or\n(f) using glucocorticoid containing enemas, daily, for at least six months"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having sleep apnoea at the time of the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "an inability to undertake more than a mildly strenuous level of physical\r\nactivity for at least the one year before the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having extrinsic compression of the renal parenchyma from a\r\nhaematoma or mass at the time of the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having an arteriovenous fistula involving the blood supply of the\r\nkidney or an arteriovenous malformation involving the blood supply of\r\nthe kidney before the clinical worsening of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having a clinically significant psychiatric disorder from the specified\r\nlist before the clinical worsening of hypertension",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "being exposed to arsenic as specified before the clinical worsening of\r\nhypertension",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average inorganic arsenic\nconcentration of at least 50 micrograms per litre for a cumulative\nperiod of at least ten years;\n(b) consuming drinking water resulting in a cumulative total inorganic\narsenic exposure equivalent to having consumed drinking water\ncontaining at least 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "inability to obtain appropriate clinical management for hypertension",
+    "definedTerms" : [ ]
+  } ]
+}

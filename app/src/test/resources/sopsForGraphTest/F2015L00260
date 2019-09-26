@@ -1,0 +1,36 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00260",
+  "instrumentNumber" : "54/2015",
+  "citation" : "Statement of Principles concerning neoplasm of the pituitary gland No. 54 of 2015",
+  "conditionName" : "neoplasm of the pituitary gland",
+  "effectiveFrom" : "2015-03-30",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C75.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D35.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D44.3"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for ACTH secreting pituitary adenomas only, undergoing bilateral\r\nadrenalectomy before the clinical worsening of neoplasm of the\r\npituitary gland",
+    "definedTerms" : [ {
+      "term" : "ACTH",
+      "definition" : "means adrenocorticotrophic hormone (or corticotropin), a hormone\nsecreted by the anterior pituitary gland that stimulates the secretion of\ncorticosteroids from the adrenal cortex"
+    } ],
+    "conditionVariant" : {
+      "name" : "ACTH secreting pituitary adenomas",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for neoplasm of the\r\npituitary gland",
+    "definedTerms" : [ ]
+  } ]
+}

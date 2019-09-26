@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01329",
+  "instrumentNumber" : "109/2015",
+  "citation" : "Statement of Principles concerning Meniere's disease (Balance of Probabilities) (No. 109 of 2015)",
+  "conditionName" : "Meniere's disease",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H81.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a moderate to severe traumatic brain injury within the six\r\nmonths before the clinical onset of Meniere's disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having otosyphilis of the affected ear before the clinical onset of\r\nMeniere's disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for Meniere's\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

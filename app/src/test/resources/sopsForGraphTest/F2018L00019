@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00019",
+  "instrumentNumber" : "16/2018",
+  "citation" : "Statement of Principles concerning Zika virus infection (Balance of Probabilities) (No. 16 of 2018)",
+  "conditionName" : "Zika virus infection",
+  "effectiveFrom" : "2018-01-29",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "being exposed to the Zika virus between one and 21 days before the\r\nclinical onset of Zika virus infection",
+    "definedTerms" : [ {
+      "term" : "being exposed to the Zika virus",
+      "definition" : "means one of the following:\r\n(a) being bitten by a mosquito that is infected with the Zika virus;\r\n(b) being in a country or an area of a country that has been designated by a\r\nrecognised health authority to be experiencing current Zika virus\r\ntransmission;\r\n(c) having percutaneous or mucocutaneous exposure to blood infected with\r\nthe Zika virus;\r\n(d) having sexual contact with a person infected with the Zika virus; or\r\n(e) receiving a blood transfusion, blood products, a stem cell transplant or\r\nan organ transplant infected with the Zika virus.\r\nNote: Examples of recognised health authorities include the World Health Organization, the Centers\r\nfor Disease Control and Prevention, and national government health departments."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(2)",
+    "text" : "inability to obtain appropriate clinical management for Zika virus\r\ninfection",
+    "definedTerms" : [ ]
+  } ]
+}

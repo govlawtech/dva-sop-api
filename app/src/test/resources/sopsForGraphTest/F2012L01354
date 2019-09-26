@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01354",
+  "instrumentNumber" : "40/2012",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the cervix No. 40 of 2012",
+  "conditionName" : "malignant neoplasm of the cervix",
+  "effectiveFrom" : "2012-07-11",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C53"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D06"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "N87.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "using a combined oral contraceptive pill for a continuous period of at\r\nleast five years where:\r\n(i) use of the combined oral contraceptive pill commenced at least\r\nfive years before the clinical onset of malignant neoplasm of the\r\ncervix; and\r\n(ii) where use of the combined oral contraceptive pill has ceased,\r\nthe clinical onset of malignant neoplasm of the cervix has\r\noccurred within ten years of cessation",
+    "definedTerms" : [ {
+      "term" : "combined oral contraceptive pill",
+      "definition" : "means an oral contraceptive compound\ncontaining both oestrogen and progestogen"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the cervix,\r\n(i) where smoking commenced at least five years before the\r\nclinical onset of malignant neoplasm of the cervix; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the cervix has occurred within ten years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "acquiring persistent infection of the cervical epithelium with an\r\noncogenic human papilloma virus before the clinical onset of malignant\r\nneoplasm of the cervix",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of malignant neoplasm of the cervix",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with systemic immunosuppressive therapy for organ\r\ntransplantation or stem cell transplantation before the clinical onset of\r\nmalignant neoplasm of the cervix",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being prevented from accessing clinical screening for cervical\r\nintraepithelial neoplasia in accordance with contemporary medical\r\nstandards at the time, within the ten years before the clinical onset of\r\nmalignant neoplasm of the cervix, and where:\r\n(i) if clinical screening has been resumed in the interim, there has\r\nbeen no normal test result; and\r\n(ii) the opportunity for subsequent appropriate clinical screening\r\nhas not been declined",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the cervix",
+    "definedTerms" : [ ]
+  } ]
+}

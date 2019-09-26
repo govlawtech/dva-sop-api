@@ -1,0 +1,37 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00633",
+  "instrumentNumber" : "55/2014",
+  "citation" : "Statement of Principles concerning chronic multisymptom illness No. 55 of 2014",
+  "conditionName" : "chronic multisymptom illness",
+  "effectiveFrom" : "2014-05-14",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "living or working in a hostile or life-threatening environment for a\r\nperiod of at least one month in the six months before the clinical onset\r\nof chronic multisymptom illness",
+    "definedTerms" : [ {
+      "term" : "a hostile or life-threatening environment",
+      "definition" : "means a situation or setting\nwhich is characterised by a pervasive threat to life or bodily integrity, such as\nwould be experienced in the following circumstances:\n(a) experiencing or being under threat of artillery, missile, rocket, mine or\nbomb attack; or\n(b) experiencing or being under threat of nuclear, biological or chemical\nagent attack; or\n(c) being involved in combat or going on combat patrols"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "experiencing a category 1A stressor in the six months before the\r\nclinical onset of chronic multisymptom illness",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "experiencing a category 1B stressor in the six months before the\r\nclinical onset of chronic multisymptom illness",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for chronic\r\nmultisymptom illness",
+    "definedTerms" : [ ]
+  } ]
+}

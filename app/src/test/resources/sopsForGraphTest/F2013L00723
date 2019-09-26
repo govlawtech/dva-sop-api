@@ -1,0 +1,140 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00723",
+  "instrumentNumber" : "27/2013",
+  "citation" : "Statement of Principles concerning hyperthyroidism and thyrotoxicosis No. 27 of 2013",
+  "conditionName" : "hyperthyroidism and thyrotoxicosis",
+  "effectiveFrom" : "2013-05-08",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the six months before\r\nthe clinical onset of hyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being administered an iodine-containing radiographic contrast agent\r\nwithin the six months before the clinical onset of hyperthyroidism or\r\nthyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being treated with amiodarone for a continuous period of at least four\r\nweeks, within the six months before the clinical onset of\r\nhyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list for a continuous period of at least six weeks, within the\r\nsix months before the clinical onset of hyperthyroidism or\r\nthyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having struma ovarii at the time of the clinical onset of\r\nhyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "struma ovarii",
+      "definition" : "means an ovarian neoplasm defined by the presence of\nthyroid tissue comprising more than half of the overall mass, that usually\noccurs as part of a teratoma, but may also occur with a serous or mucinous\ncystadenoma"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a thyroid-stimulating hormone-secreting pituitary adenoma at\r\nthe time of the clinical onset of hyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a chorionic gonadotropin-secreting neoplasm at the time of the\r\nclinical onset of hyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "a chorionic gonadotropin-secreting neoplasm",
+      "definition" : "means a malignant\nneoplasm that secretes the beta subunit of human chorionic gonadotropin, and\nincludes seminoma, choriocarcinoma, non-seminomatous germ cell tumour,\nhydatidiform mole, teratoma and islet cell tumour"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "for thyrotoxicosis only,\r\n(i) having a specified form of thyroiditis at the time of the clinical\r\nonset of thyrotoxicosis; or\r\n(ii) having trauma involving the thyroid gland within the three\r\nmonths before the clinical onset of thyrotoxicosis; or\r\n(iii) ingesting excess thyroid hormone in medication or food\r\ncontaining thyroid extracts within the three months before the\r\nclinical onset of thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "trauma involving the thyroid gland",
+      "definition" : "means:\n(a) a blunt injury resulting in soft tissue damage adjacent to the thyroid\ngland; or\n(b) a penetrating injury, including surgery, to the region of the thyroid\ngland"
+    }, {
+      "term" : "a specified form of thyroiditis",
+      "definition" : "means:\n(a) acute infectious thyroiditis (suppurative thyroiditis or thyroid abscess);\n(b) acute radiation thyroiditis;\n(c) silent thyroiditis; or\n(d) subacute thyroiditis (de Quervain's thyroiditis, granulomatous\nthyroiditis or viral thyroiditis)"
+    } ],
+    "conditionVariant" : {
+      "name" : "thyrotoxicosis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having a specified form of thyroiditis at the time of the clinical\r\nonset of thyrotoxicosis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having trauma involving the thyroid gland within the three\r\nmonths before the clinical onset of thyrotoxicosis"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "ingesting excess thyroid hormone in medication or food\r\ncontaining thyroid extracts within the three months before the\r\nclinical onset of thyrotoxicosis"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the six months before\r\nthe clinical worsening of hyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being administered an iodine-containing radiographic contrast agent\r\nwithin the six months before the clinical worsening of hyperthyroidism\r\nor thyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being treated with amiodarone for a continuous period of at least four\r\nweeks, within the six months before the clinical worsening of\r\nhyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list for a continuous period of at least six weeks, within the\r\nsix months before the clinical worsening of hyperthyroidism or\r\nthyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having struma ovarii at the time of the clinical worsening of\r\nhyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "struma ovarii",
+      "definition" : "means an ovarian neoplasm defined by the presence of\nthyroid tissue comprising more than half of the overall mass, that usually\noccurs as part of a teratoma, but may also occur with a serous or mucinous\ncystadenoma"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having a thyroid-stimulating hormone-secreting pituitary adenoma at\r\nthe time of the clinical worsening of hyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a chorionic gonadotropin-secreting neoplasm at the time of the\r\nclinical worsening of hyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "a chorionic gonadotropin-secreting neoplasm",
+      "definition" : "means a malignant\nneoplasm that secretes the beta subunit of human chorionic gonadotropin, and\nincludes seminoma, choriocarcinoma, non-seminomatous germ cell tumour,\nhydatidiform mole, teratoma and islet cell tumour"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having an acute illness or undergoing surgery immediately before the\r\nclinical worsening of hyperthyroidism or thyrotoxicosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "for thyrotoxicosis only,\r\n(i) having a specified form of thyroiditis at the time of the clinical\r\nworsening of thyrotoxicosis; or\r\n(ii) having trauma involving the thyroid gland within the three\r\nmonths before the clinical worsening of thyrotoxicosis; or\r\n(iii) ingesting excess thyroid hormone in medication or food\r\ncontaining thyroid extracts within the three months before the\r\nclinical worsening of thyrotoxicosis",
+    "definedTerms" : [ {
+      "term" : "trauma involving the thyroid gland",
+      "definition" : "means:\n(a) a blunt injury resulting in soft tissue damage adjacent to the thyroid\ngland; or\n(b) a penetrating injury, including surgery, to the region of the thyroid\ngland"
+    }, {
+      "term" : "a specified form of thyroiditis",
+      "definition" : "means:\n(a) acute infectious thyroiditis (suppurative thyroiditis or thyroid abscess);\n(b) acute radiation thyroiditis;\n(c) silent thyroiditis; or\n(d) subacute thyroiditis (de Quervain's thyroiditis, granulomatous\nthyroiditis or viral thyroiditis)"
+    } ],
+    "conditionVariant" : {
+      "name" : "thyrotoxicosis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having a specified form of thyroiditis at the time of the clinical\r\nworsening of thyrotoxicosis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having trauma involving the thyroid gland within the three\r\nmonths before the clinical worsening of thyrotoxicosis"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "ingesting excess thyroid hormone in medication or food\r\ncontaining thyroid extracts within the three months before the\r\nclinical worsening of thyrotoxicosis"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "inability to obtain appropriate clinical management for hyperthyroidism\r\nor thyrotoxicosis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,275 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016C00252",
+  "instrumentNumber" : "89/2011",
+  "citation" : "Statement of Principles concerning diabetes mellitus No. 89 of 2011",
+  "conditionName" : "diabetes mellitus",
+  "effectiveFrom" : "2011-07-13",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E10"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E11"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E12"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E13"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E14"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for type 1 diabetes mellitus only,\r\n(i) being infected with a Coxsackie B virus within the three years\r\nbefore the clinical onset of diabetes mellitus; or\r\n(ii) being treated with interferon alpha within the six months before\r\nthe clinical onset of diabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "type 1 diabetes mellitus",
+      "definition" : "means a form of diabetes mellitus caused by\ncomplete or near-total insulin deficiency and requiring daily administration of\ninsulin"
+    }, {
+      "term" : "being infected with a Coxsackie B virus",
+      "definition" : "means having laboratory\nevidence of a Coxsackie B virus infection"
+    } ],
+    "conditionVariant" : {
+      "name" : "type 1 diabetes mellitus",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being infected with a Coxsackie B virus within the three years\r\nbefore the clinical onset of diabetes mellitus"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being treated with interferon alpha within the six months before\r\nthe clinical onset of diabetes mellitus"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for type 2 diabetes mellitus only,\r\n(i) being overweight for a period of at least five years before the\r\nclinical onset of diabetes mellitus; or\r\n(ii) an inability to undertake any physical activity greater than three\r\nMETs for at least the five years before the clinical onset of\r\ndiabetes mellitus; or\r\n(iii) smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\ndiabetes mellitus, and where smoking has ceased, the clinical\r\nonset has occurred within 15 years of cessation; or\r\n(iv) being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical onset of diabetes mellitus, where the last\r\nexposure to second-hand smoke occurred within the 15 years\r\nbefore the clinical onset of diabetes mellitus; or\r\n(v) having cirrhosis of the liver at the time of clinical onset of\r\ndiabetes mellitus; or\r\n(vi) having glucocorticoid therapy as specified, before the clinical\r\nonset of diabetes mellitus, and where the glucocorticoid therapy\r\nas specified has ceased or decreased, the last dose of the therapy\r\nwas received within the one month before the clinical onset of\r\ndiabetes mellitus; or\r\n(vii) inhaling, ingesting or having cutaneous contact with a chemical\r\nagent contaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin\r\n(TCDD), for a cumulative period of at least 500 hours, within a\r\nconsecutive period of ten years before the clinical onset of\r\ndiabetes mellitus, where the first exposure occurred at least five\r\nyears before the clinical onset of diabetes mellitus, and where\r\nthat exposure has ceased, the clinical onset of diabetes mellitus\r\noccurred within 25 years of cessation; or\r\n(viii) having hepatitis C virus infection before the clinical onset of\r\ndiabetes mellitus; or\r\n(ix) having bilateral orchiectomy before the clinical onset of\r\ndiabetes mellitus; or\r\n(x) being exposed to arsenic as specified before the clinical onset of\r\ndiabetes mellitus; or\r\n(xi) being infected with human immunodeficiency virus before the\r\nclinical onset of diabetes mellitus; or\r\n(xii) having posttraumatic stress disorder, depressive disorder,\r\nbipolar disorder or schizophrenia at the time of the clinical\r\nonset of diabetes mellitus; or\r\n(xiii) being pregnant at the time of the clinical onset of diabetes\r\nmellitus; or\r\n(xiv) having antiandrogen therapy as specified for at least the one\r\nyear before the clinical onset of diabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "type 2 diabetes mellitus",
+      "definition" : "means a form of diabetes mellitus caused by\nvariable degrees of insulin resistance and impaired insulin secretion"
+    }, {
+      "term" : "antiandrogen therapy as specified",
+      "definition" : "means one of the following drugs:\n(a) androgen receptor blockers (including cyproterone acetate, flutamide\nand bicalutamide); or\n(b) gonadotrophin releasing hormone agonists (including goserelin and\nleuprorelin)"
+    }, {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of body\nweight per hour, or resting metabolic rate"
+    }, {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten years;\n(b) consuming drinking water resulting in a cumulative total arsenic\nexposure equivalent to having consumed drinking water containing at\nleast 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    }, {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in at least one of the following:\n(i) a Body Mass Index (BMI) of 25 or greater; or\n(ii) a waist circumference of greater than 80 centimetres in women or greater\nthan 94 centimetres in men;\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    }, {
+      "term" : "having glucocorticoid therapy as specified",
+      "definition" : "means:\n(a) taking:\n(i) hydrocortisone, orally, by injection, or per rectum,\n(A) to a cumulative dose of at least 1500 milligrams, and\n(B) at a minimum dose rate averaging 50 milligrams per day, or\n(ii) equivalent glucocorticoid therapy, orally, by injection, or per\nrectum; or\n(b) inhaling at least 1600 micrograms of beclomethasone, or equivalent\ninhaled glucocorticoid, daily, for at least six months; or\n(c) using an ocular or intranasal glucocorticoid at above the recommended\nmaximum therapeutic dosage level, daily, for at least six months; or\n(d) applying a high or very high potency topical glucocorticoid to at least\n20% of total skin surface area, daily, for at least six months; or\n(e) using a glucocorticoid concurrently with a drug from specified list 2,\ndaily, for at least 30 days"
+    }, {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space\nand inhaling smoke from burning tobacco products or smoke that has been\nexhaled by a person who is smoking"
+    } ],
+    "conditionVariant" : {
+      "name" : "type 2 diabetes mellitus",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being overweight for a period of at least five years before the\r\nclinical onset of diabetes mellitus"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "an inability to undertake any physical activity greater than three\r\nMETs for at least the five years before the clinical onset of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\ndiabetes mellitus, and where smoking has ceased, the clinical\r\nonset has occurred within 15 years of cessation"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical onset of diabetes mellitus, where the last\r\nexposure to second-hand smoke occurred within the 15 years\r\nbefore the clinical onset of diabetes mellitus"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "having cirrhosis of the liver at the time of clinical onset of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "having glucocorticoid therapy as specified, before the clinical\r\nonset of diabetes mellitus, and where the glucocorticoid therapy\r\nas specified has ceased or decreased, the last dose of the therapy\r\nwas received within the one month before the clinical onset of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "inhaling, ingesting or having cutaneous contact with a chemical\r\nagent contaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin\r\n(TCDD), for a cumulative period of at least 500 hours, within a\r\nconsecutive period of ten years before the clinical onset of\r\ndiabetes mellitus, where the first exposure occurred at least five\r\nyears before the clinical onset of diabetes mellitus, and where\r\nthat exposure has ceased, the clinical onset of diabetes mellitus\r\noccurred within 25 years of cessation"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "having hepatitis C virus infection before the clinical onset of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "having bilateral orchiectomy before the clinical onset of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(x)",
+        "text" : "being exposed to arsenic as specified before the clinical onset of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(xi)",
+        "text" : "being infected with human immunodeficiency virus before the\r\nclinical onset of diabetes mellitus"
+      }, {
+        "paragraph" : "(xii)",
+        "text" : "having posttraumatic stress disorder, depressive disorder,\r\nbipolar disorder or schizophrenia at the time of the clinical\r\nonset of diabetes mellitus"
+      }, {
+        "paragraph" : "(xiii)",
+        "text" : "being pregnant at the time of the clinical onset of diabetes\r\nmellitus"
+      }, {
+        "paragraph" : "(xiv)",
+        "text" : "having antiandrogen therapy as specified for at least the one\r\nyear before the clinical onset of diabetes mellitus"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a specified pathological condition involving the pancreas before\r\nthe clinical onset of diabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "a specified pathological condition involving the pancreas",
+      "definition" : "means:\n(a) acute pancreatitis;\n(b) chronic pancreatitis;\n(c) cystic fibrosis;\n(d) haemochromatosis; or\n(e) malignant neoplasm of the pancreas"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing surgery to the pancreas before the clinical onset of diabetes\r\nmellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a specified endocrine disorder before the clinical onset of\r\ndiabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "a specified endocrine disorder",
+      "definition" : "means:\n(a) acromegaly;\n(b) Cushing's syndrome;\n(c) glucagonoma;\n(d) hyperthyroidism;\n(e) phaeochromocytoma;\n(f) primary hyperaldosteronism; or\n(g) somatostatinoma"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a drug or a drug from a class of drugs from specified\r\nlist 1 at the time of the clinical onset of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(fa)",
+    "text" : "being treated with a drug or a drug from a class of drugs from specified\r\nlist 3, which cannot be ceased or substituted, for at least the six weeks\r\nbefore the clinical onset of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "ingesting N-3-pyridyl methyl-N'-p-nitrophenyl urea (Vacor) within the\r\none month before the clinical onset of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical onset of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having haemolytic uraemic syndrome before the clinical onset of\r\ndiabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "haemolytic uraemic syndrome",
+      "definition" : "means a clinical syndrome characterised by\nrenal failure, microangiopathic haemolytic anaemia and thrombocytopaenia"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "for type 2 diabetes mellitus only,\r\n(i) being overweight for a period of at least five years before the\r\nclinical worsening of diabetes mellitus; or\r\n(ii) an inability to undertake any physical activity greater than three\r\nMETs for at least the five years before the clinical worsening of\r\ndiabetes mellitus; or\r\n(iii) smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening\r\nof diabetes mellitus, and where smoking has ceased, the clinical\r\nworsening has occurred within 15 years of cessation; or\r\n(iv) being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical worsening of diabetes mellitus, where the last\r\nexposure to second-hand smoke occurred within the 15 years\r\nbefore the clinical worsening of diabetes mellitus; or\r\n(v) having cirrhosis of the liver at the time of clinical worsening of\r\ndiabetes mellitus; or\r\n(vi) having glucocorticoid therapy as specified, before the clinical\r\nworsening of diabetes mellitus, and where the glucocorticoid\r\ntherapy as specified has ceased or decreased, the last dose of the\r\ntherapy was received within the one month before the clinical\r\nworsening of diabetes mellitus; or\r\n(vii) inhaling, ingesting or having cutaneous contact with a chemical\r\nagent contaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin\r\n(TCDD), for a cumulative period of at least 500 hours, within a\r\nconsecutive period of ten years, before the clinical worsening of\r\ndiabetes mellitus, where the first exposure occurred at least five\r\nyears before the clinical worsening of diabetes mellitus, and\r\nwhere that exposure has ceased, the clinical worsening of\r\ndiabetes mellitus occurred within 25 years of cessation; or\r\n(viii) having hepatitis C virus infection before the clinical worsening\r\nof diabetes mellitus; or\r\n(ix) having bilateral orchiectomy before the clinical worsening of\r\ndiabetes mellitus; or\r\n(x) being exposed to arsenic as specified before the clinical\r\nworsening of diabetes mellitus; or\r\n(xi) being infected with human immunodeficiency virus before the\r\nclinical worsening of diabetes mellitus; or\r\n(xii) having posttraumatic stress disorder, depressive disorder,\r\nbipolar disorder or schizophrenia at the time of the clinical\r\nworsening of diabetes mellitus; or\r\n(xiii) being pregnant at the time of the clinical worsening of diabetes\r\nmellitus; or\r\n(xiv) having antiandrogen therapy as specified for at least the one year\r\nbefore the clinical worsening of diabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "type 2 diabetes mellitus",
+      "definition" : "means a form of diabetes mellitus caused by\nvariable degrees of insulin resistance and impaired insulin secretion"
+    }, {
+      "term" : "antiandrogen therapy as specified",
+      "definition" : "means one of the following drugs:\n(a) androgen receptor blockers (including cyproterone acetate, flutamide\nand bicalutamide); or\n(b) gonadotrophin releasing hormone agonists (including goserelin and\nleuprorelin)"
+    }, {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of body\nweight per hour, or resting metabolic rate"
+    }, {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten years;\n(b) consuming drinking water resulting in a cumulative total arsenic\nexposure equivalent to having consumed drinking water containing at\nleast 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    }, {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in at least one of the following:\n(i) a Body Mass Index (BMI) of 25 or greater; or\n(ii) a waist circumference of greater than 80 centimetres in women or greater\nthan 94 centimetres in men;\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    }, {
+      "term" : "having glucocorticoid therapy as specified",
+      "definition" : "means:\n(a) taking:\n(i) hydrocortisone, orally, by injection, or per rectum,\n(A) to a cumulative dose of at least 1500 milligrams, and\n(B) at a minimum dose rate averaging 50 milligrams per day, or\n(ii) equivalent glucocorticoid therapy, orally, by injection, or per\nrectum; or\n(b) inhaling at least 1600 micrograms of beclomethasone, or equivalent\ninhaled glucocorticoid, daily, for at least six months; or\n(c) using an ocular or intranasal glucocorticoid at above the recommended\nmaximum therapeutic dosage level, daily, for at least six months; or\n(d) applying a high or very high potency topical glucocorticoid to at least\n20% of total skin surface area, daily, for at least six months; or\n(e) using a glucocorticoid concurrently with a drug from specified list 2,\ndaily, for at least 30 days"
+    }, {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space\nand inhaling smoke from burning tobacco products or smoke that has been\nexhaled by a person who is smoking"
+    } ],
+    "conditionVariant" : {
+      "name" : "type 2 diabetes mellitus",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being overweight for a period of at least five years before the\r\nclinical worsening of diabetes mellitus"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "an inability to undertake any physical activity greater than three\r\nMETs for at least the five years before the clinical worsening of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "smoking at least five pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening\r\nof diabetes mellitus, and where smoking has ceased, the clinical\r\nworsening has occurred within 15 years of cessation"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical worsening of diabetes mellitus, where the last\r\nexposure to second-hand smoke occurred within the 15 years\r\nbefore the clinical worsening of diabetes mellitus"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "having cirrhosis of the liver at the time of clinical worsening of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "having glucocorticoid therapy as specified, before the clinical\r\nworsening of diabetes mellitus, and where the glucocorticoid\r\ntherapy as specified has ceased or decreased, the last dose of the\r\ntherapy was received within the one month before the clinical\r\nworsening of diabetes mellitus"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "inhaling, ingesting or having cutaneous contact with a chemical\r\nagent contaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin\r\n(TCDD), for a cumulative period of at least 500 hours, within a\r\nconsecutive period of ten years, before the clinical worsening of\r\ndiabetes mellitus, where the first exposure occurred at least five\r\nyears before the clinical worsening of diabetes mellitus, and\r\nwhere that exposure has ceased, the clinical worsening of\r\ndiabetes mellitus occurred within 25 years of cessation"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "having hepatitis C virus infection before the clinical worsening\r\nof diabetes mellitus"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "having bilateral orchiectomy before the clinical worsening of\r\ndiabetes mellitus"
+      }, {
+        "paragraph" : "(x)",
+        "text" : "being exposed to arsenic as specified before the clinical\r\nworsening of diabetes mellitus"
+      }, {
+        "paragraph" : "(xi)",
+        "text" : "being infected with human immunodeficiency virus before the\r\nclinical worsening of diabetes mellitus"
+      }, {
+        "paragraph" : "(xii)",
+        "text" : "having posttraumatic stress disorder, depressive disorder,\r\nbipolar disorder or schizophrenia at the time of the clinical\r\nworsening of diabetes mellitus"
+      }, {
+        "paragraph" : "(xiii)",
+        "text" : "being pregnant at the time of the clinical worsening of diabetes\r\nmellitus"
+      }, {
+        "paragraph" : "(xiv)",
+        "text" : "having antiandrogen therapy as specified for at least the one year\r\nbefore the clinical worsening of diabetes mellitus"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a specified pathological condition involving the pancreas before\r\nthe clinical worsening of diabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "a specified pathological condition involving the pancreas",
+      "definition" : "means:\n(a) acute pancreatitis;\n(b) chronic pancreatitis;\n(c) cystic fibrosis;\n(d) haemochromatosis; or\n(e) malignant neoplasm of the pancreas"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "undergoing surgery to the pancreas before the clinical worsening of\r\ndiabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a specified endocrine disorder before the clinical worsening of\r\ndiabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "a specified endocrine disorder",
+      "definition" : "means:\n(a) acromegaly;\n(b) Cushing's syndrome;\n(c) glucagonoma;\n(d) hyperthyroidism;\n(e) phaeochromocytoma;\n(f) primary hyperaldosteronism; or\n(g) somatostatinoma"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "being treated with a drug or a drug from a class of drugs from specified\r\nlist 1 at the time of the clinical worsening of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(na)",
+    "text" : "being treated with a drug or a drug from a class of drugs from specified\r\nlist 3, which cannot be ceased or substituted, for at least the six weeks\r\nbefore the clinical worsening of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "ingesting N-3-pyridyl methyl-N'-p-nitrophenyl urea (Vacor) within the\r\none month before the clinical worsening of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical worsening of diabetes mellitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having haemolytic uraemic syndrome before the clinical worsening of\r\ndiabetes mellitus",
+    "definedTerms" : [ {
+      "term" : "haemolytic uraemic syndrome",
+      "definition" : "means a clinical syndrome characterised by\nrenal failure, microangiopathic haemolytic anaemia and thrombocytopaenia"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "inability to obtain appropriate clinical management for diabetes\r\nmellitus",
+    "definedTerms" : [ ]
+  } ]
+}

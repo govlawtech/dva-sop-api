@@ -1,0 +1,19 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01139",
+  "instrumentNumber" : "64/2016",
+  "citation" : "Statement of Principles concerning spasmodic torticollis (Balance of Probabilities) (No. 64 of 2016)",
+  "conditionName" : "spasmodic torticollis",
+  "effectiveFrom" : "2016-07-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G24.3"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9",
+    "text" : "inability to obtain appropriate clinical management for spasmodic torticollis.",
+    "definedTerms" : [ ]
+  } ]
+}

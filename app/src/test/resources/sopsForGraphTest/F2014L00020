@@ -1,0 +1,184 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00020",
+  "instrumentNumber" : "15/2014",
+  "citation" : "Statement of Principles concerning sick sinus syndrome No. 15 of 2014",
+  "conditionName" : "sick sinus syndrome",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I49.5"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having atrial fibrillation or atrial flutter at the time of the clinical onset\r\nof sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having hypertension at the time of the clinical onset of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having ischaemic heart disease at the time of the clinical onset of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having cardiac failure at the time of the clinical onset of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having rheumatic fever at the time of the clinical onset of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having myocarditis within the 30 days before the clinical onset of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having pericarditis within the 30 days before the clinical onset of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having cardiomyopathy at the time of the clinical onset of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a benign or malignant neoplasm involving the cardiac atrium at\r\nthe time of the clinical onset of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a non-neoplastic mass lesion involving the cardiac atrium at the\r\ntime of the clinical onset of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having cardiac or thoracic surgery within the three months before the\r\nclinical onset of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a surgical procedure involving general or regional anaesthesia,\r\nother than cardiac or thoracic surgery, and which requires\r\nhospitalisation, within the 30 days before the clinical onset of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "experiencing penetrating trauma to the heart, excluding surgical\r\ntrauma, within the three months before the clinical onset of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, where that drug cannot be ceased or substituted, for at\r\nleast the 30 days before the clinical onset of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "undertaking strenuous, high level, endurance physical activity greater\r\nthan six METs, for an average of at least twenty hours per week for a\r\ncontinuous period of at least five years before the clinical onset of sick\r\nsinus syndrome, and where strenuous physical activity has ceased, the\r\nclinical onset of sick sinus syndrome has occurred within five years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having hypothyroidism or Hashimoto's thyroiditis at the time of the\r\nclinical onset of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "experiencing a powerful, non-penetrating blow to the chest, resulting in\r\ninjury warranting medical attention, within the seven days before the\r\nclinical onset of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having electrical injury at the time of the clinical onset of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having obstructive sleep apnoea within the five years before the clinical\r\nonset of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a specified autoimmune, infiltrative or inflammatory disease\r\ninvolving the heart at the time of the clinical onset of sick sinus\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune, infiltrative or inflammatory disease",
+      "definition" : "means:\n(a) amyloidosis;\n(b) haemochromatosis;\n(c) rheumatoid arthritis;\n(d) sarcoidosis;\n(e) systemic lupus erythematosus; or\n(f) systemic sclerosis"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(u)",
+    "text" : "having atrial fibrillation or atrial flutter at the time of the clinical\r\nworsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having hypertension at the time of the clinical worsening of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having ischaemic heart disease at the time of the clinical worsening of\r\nsick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having cardiac failure at the time of the clinical worsening of sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having rheumatic fever at the time of the clinical worsening of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having myocarditis within the 30 days before the clinical worsening of\r\nsick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having pericarditis within the 30 days before the clinical worsening of\r\nsick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having cardiomyopathy at the time of the clinical worsening of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having a benign or malignant neoplasm involving the cardiac atrium at\r\nthe time of the clinical worsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having a non-neoplastic mass lesion involving the cardiac atrium at the\r\ntime of the clinical worsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having cardiac or thoracic surgery within the three months before the\r\nclinical worsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having a surgical procedure involving general or regional anaesthesia,\r\nother than cardiac or thoracic surgery, and which requires\r\nhospitalisation, within the 30 days before the clinical worsening of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "experiencing penetrating trauma to the heart, excluding surgical\r\ntrauma, within the three months before the clinical worsening of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, where that drug cannot be ceased or substituted, for at\r\nleast the 30 days before the clinical worsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "having hypothyroidism or Hashimoto's thyroiditis at the time of the\r\nclinical worsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "experiencing a powerful, non-penetrating blow to the chest, resulting in\r\ninjury warranting medical attention, within the seven days before the\r\nclinical worsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "having electrical injury at the time of the clinical worsening of sick\r\nsinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "having obstructive sleep apnoea within the five years before the clinical\r\nworsening of sick sinus syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "having a specified autoimmune, infiltrative or inflammatory disease\r\ninvolving the heart at the time of the clinical worsening of sick sinus\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune, infiltrative or inflammatory disease",
+      "definition" : "means:\n(a) amyloidosis;\n(b) haemochromatosis;\n(c) rheumatoid arthritis;\n(d) sarcoidosis;\n(e) systemic lupus erythematosus; or\n(f) systemic sclerosis"
+    } ]
+  }, {
+    "paragraph" : "6(nn)",
+    "text" : "inability to obtain appropriate clinical management for sick sinus\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

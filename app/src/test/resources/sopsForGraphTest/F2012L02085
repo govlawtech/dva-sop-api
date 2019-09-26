@@ -1,0 +1,43 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L02085",
+  "instrumentNumber" : "74/2012",
+  "citation" : "Statement of Principles concerning solar keratosis No. 74 of 2012",
+  "conditionName" : "solar keratosis",
+  "effectiveFrom" : "2012-10-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L57.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having sunlight exposure to unprotected skin at the affected site for at\r\nleast 4500 hours while in a tropical area, or having equivalent sunlight\r\nexposure in other latitude zones, before the clinical onset of solar\r\nkeratosis",
+    "definedTerms" : [ {
+      "term" : "unprotected skin",
+      "definition" : "means skin that is directly exposed to the sun and is not\nprotected by sunscreen, clothing or any other physical barrier"
+    }, {
+      "term" : "a tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\nSouth) and the Tropic of Cancer (23º 27' North)"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being treated with an immunosuppressive drug for a continuous period\r\nof 24 weeks before the clinical onset of solar keratosis",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressive drug",
+      "definition" : "means a drug or an agent administered orally,\nintravenously or intramuscularly for the purpose of suppressing the immune\nresponses, but does not include an inhaled or topical steroid"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing PUVA therapy involving the affected site where:\r\n(i) the first PUVA treatment commenced at least five years before;\r\nand\r\n(ii) at least 50 PUVA treatments were administered;\r\nbefore the clinical onset of solar keratosis",
+    "definedTerms" : [ {
+      "term" : "PUVA",
+      "definition" : "means photochemotherapy with oral methoxsalen (psoralen) and\nultraviolet A radiation"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for solar keratosis",
+    "definedTerms" : [ ]
+  } ]
+}

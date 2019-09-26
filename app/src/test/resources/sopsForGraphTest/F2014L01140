@@ -1,0 +1,175 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01140",
+  "instrumentNumber" : "78/2014",
+  "citation" : "Statement of Principles concerning vascular dementia No. 78 of 2014",
+  "conditionName" : "vascular dementia",
+  "effectiveFrom" : "2014-09-22",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F01"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a cerebrovascular accident before the clinical onset of vascular\r\ndementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a specified disease of the cerebral vessels, in the presence of\r\nneuroimaging (magnetic resonance imaging or computed tomography)\r\nfindings of cerebral white matter lesions, haemorrhage or infarction,\r\nbefore the clinical onset of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "a specified disease of the cerebral vessels",
+      "definition" : "means:\n(a) antiphospholipid syndrome;\n(b) cerebral amyloid angiopathy;\n(c) cerebral amyloidosis;\n(d) cerebral arteriolosclerosis;\n(e) cerebral venous thrombosis;\n(f) hippocampal sclerosis;\n(g) inflammatory or immunologically mediated vasculitis;\n(h) intravascular lymphomatosis;\n(i) laminar cortical necrosis; or\n(j) Moyamoya disease"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having hypertension before the clinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having dyslipidaemia before the age of 65 years, and at least ten years\r\nbefore the clinical onset of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "dyslipidaemia",
+      "definition" : "means evidence of a persistently abnormal lipid profile after\nthe accurate evaluation of serum lipids following a 12 hour overnight fast, and\nestimated on a minimum of two occasions as:\n(a) a total cholesterol level greater than or equal to 5.5 millimoles per litre\n(mmol/L);\n(b) a triglyceride level greater than or equal to 2.0 mmol/L; or\n(c) a high density lipoprotein cholesterol level less than 1.0 mmol/L"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having sick sinus syndrome, atrial fibrillation or atrial flutter, at the\r\ntime of the clinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having hyperhomocysteinaemia before the age of 50 years, and at least\r\nten years before the clinical onset of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by a persistent\nlevel of total plasma homocysteine greater than 15 micromoles per litre"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having carotid arterial disease or ischaemic heart disease before the\r\nclinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having cardiac surgery within the 12 months before the clinical onset\r\nof vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having diabetes mellitus at least ten years before the clinical onset of\r\nvascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of vascular\r\ndementia, and\r\n(i) smoking commenced at least 20 years before the clinical onset\r\nof vascular dementia; and\r\n(ii) the smoking dose was attained before the age of 65 years; and\r\n(iii) where smoking has ceased, the clinical onset of vascular\r\ndementia has occurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical onset of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being obese for a continuous period of at least five years before the age\r\nof 65 years, at least 15 years before the clinical onset of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having depressive disorder before the age of 65 years, and where\r\ndepressive disorder was diagnosed at least five years before the clinical\r\nonset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having posttraumatic stress disorder for at least ten years before the\r\nclinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having chronic renal failure before the clinical onset of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(p)",
+    "text" : "having a cerebrovascular accident before the clinical worsening of\r\nvascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a specified disease of the cerebral vessels, in the presence of\r\nneuroimaging (magnetic resonance imaging or computed tomography)\r\nfindings of cerebral white matter lesions, haemorrhage or infarction,\r\nbefore the clinical worsening of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "a specified disease of the cerebral vessels",
+      "definition" : "means:\n(a) antiphospholipid syndrome;\n(b) cerebral amyloid angiopathy;\n(c) cerebral amyloidosis;\n(d) cerebral arteriolosclerosis;\n(e) cerebral venous thrombosis;\n(f) hippocampal sclerosis;\n(g) inflammatory or immunologically mediated vasculitis;\n(h) intravascular lymphomatosis;\n(i) laminar cortical necrosis; or\n(j) Moyamoya disease"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having hypertension before the clinical worsening of vascular\r\ndementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having dyslipidaemia before the age of 65 years, and at least ten years\r\nbefore the clinical worsening of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "dyslipidaemia",
+      "definition" : "means evidence of a persistently abnormal lipid profile after\nthe accurate evaluation of serum lipids following a 12 hour overnight fast, and\nestimated on a minimum of two occasions as:\n(a) a total cholesterol level greater than or equal to 5.5 millimoles per litre\n(mmol/L);\n(b) a triglyceride level greater than or equal to 2.0 mmol/L; or\n(c) a high density lipoprotein cholesterol level less than 1.0 mmol/L"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having sick sinus syndrome, atrial fibrillation or atrial flutter, at the\r\ntime of the clinical worsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having hyperhomocysteinaemia before the age of 50 years, and at least\r\nten years before the clinical worsening of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by a persistent\nlevel of total plasma homocysteine greater than 15 micromoles per litre"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having carotid arterial disease or ischaemic heart disease before the\r\nclinical worsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having cardiac surgery within the 12 months before the clinical\r\nworsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having diabetes mellitus at least ten years before the clinical worsening\r\nof vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of vascular\r\ndementia, and\r\n(i) smoking commenced at least 20 years before the clinical\r\nworsening of vascular dementia; and\r\n(ii) the smoking dose was attained before the age of 65 years; and\r\n(iii) where smoking has ceased, the clinical worsening of vascular\r\ndementia has occurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "being obese for a continuous period of at least five years before the age\r\nof 65 years, at least 15 years before the clinical worsening of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having depressive disorder before the age of 65 years, and where\r\ndepressive disorder was diagnosed at least five years before the clinical\r\nworsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having posttraumatic stress disorder for at least ten years before the\r\nclinical worsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having chronic renal failure before the clinical worsening of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "inability to obtain appropriate clinical management for vascular\r\ndementia",
+    "definedTerms" : [ ]
+  } ]
+}

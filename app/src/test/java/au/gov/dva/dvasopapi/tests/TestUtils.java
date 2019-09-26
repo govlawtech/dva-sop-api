@@ -5,6 +5,7 @@ import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Operation;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.StoredServiceDetermination;
+import au.gov.dva.sopapi.sopref.data.sops.StoredSop;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +14,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Resources;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -170,4 +174,10 @@ public class TestUtils {
     }
 
 
+    //http://stackoverflow.com/questions/3923129/get-a-list-of-resources-from-classpath-directory
+
+
+
 }
+
+

@@ -1,0 +1,30 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L02083",
+  "instrumentNumber" : "72/2012",
+  "citation" : "Statement of Principles concerning giant cell arteritis No. 72 of 2012",
+  "conditionName" : "giant cell arteritis",
+  "effectiveFrom" : "2012-10-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M31.5"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M31.6"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of giant cell\r\narteritis, and where smoking has ceased, the clinical onset of giant cell\r\narteritis has occurred within 30 years of cessation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of giant cell\r\narteritis, and where smoking has ceased, the clinical worsening of giant\r\ncell arteritis has occurred within 30 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for giant cell\r\narteritis",
+    "definedTerms" : [ ]
+  } ]
+}

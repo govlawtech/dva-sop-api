@@ -1,0 +1,54 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00860",
+  "instrumentNumber" : "66/2019",
+  "citation" : "Statement of Principles concerning irritable bowel syndrome (Balance of Probabilities) (No. 66 of 2019)",
+  "conditionName" : "irritable bowel syndrome",
+  "effectiveFrom" : "2019-07-22",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K58"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the six months before the clinical onset of irritable bowel\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) agoraphobia;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) bipolar disorder;\r\n(e) depressive disorder;\r\n(f) eating disorder;\r\n(g) obsessive compulsive disorder;\r\n(h) panic disorder; or\r\n(i) posttraumatic stress disorder.\r\nNote 1: Management of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To warrant ongoing management does not require that any actual management was received or\r\ngiven for the condition."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having an episode of severe diarrhoea within the three months before\r\nthe clinical onset of irritable bowel syndrome",
+    "definedTerms" : [ {
+      "term" : "episode of severe diarrhoea",
+      "definition" : "means an acute illness characterised by the\r\npassage of frequent, loose, watery motions assessed as being caused by an\r\ninfective organism, and of sufficient severity to warrant medical attention, or\r\nin the absence of medical intervention, lasting at least four days.\r\nirritable bowel syndrome—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "experiencing severe childhood abuse before the clinical onset of\r\nirritable bowel syndrome",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the six months before the clinical worsening of irritable bowel\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) agoraphobia;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) bipolar disorder;\r\n(e) depressive disorder;\r\n(f) eating disorder;\r\n(g) obsessive compulsive disorder;\r\n(h) panic disorder; or\r\n(i) posttraumatic stress disorder.\r\nNote 1: Management of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To warrant ongoing management does not require that any actual management was received or\r\ngiven for the condition."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having an episode of severe diarrhoea within the three months before\r\nthe clinical worsening of irritable bowel syndrome",
+    "definedTerms" : [ {
+      "term" : "episode of severe diarrhoea",
+      "definition" : "means an acute illness characterised by the\r\npassage of frequent, loose, watery motions assessed as being caused by an\r\ninfective organism, and of sufficient severity to warrant medical attention, or\r\nin the absence of medical intervention, lasting at least four days.\r\nirritable bowel syndrome—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "inability to obtain appropriate clinical management for irritable bowel\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

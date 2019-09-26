@@ -1,0 +1,229 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00757",
+  "instrumentNumber" : "1/2014",
+  "citation" : "Statement of Principles concerning heart block No. 1 of 2014",
+  "conditionName" : "heart block",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I44"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I45.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I45.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I45.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I45.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I45.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I45.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a specified autoimmune disease before the clinical onset of\r\nheart block",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune disease",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) dermatomyositis;\n(c) inflammatory bowel disease;\n(d) polymyositis;\n(e) psoriatic arthritis;\n(f) reactive arthritis;\n(g) rheumatoid arthritis;\n(h) scleroderma;\n(i) Sjogren's syndrome;\n(j) systemic lupus erythematosis; or\n(k) Wegener's granulomatosis"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having infiltration of the myocardium due to sarcoidosis, Hodgkin's\r\nlymphoma, non-Hodgkin's lymphoma, amyloidosis or\r\nhaemochromatosis at the time of the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a primary or metastatic neoplasm involving the heart before the\r\nclinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having ischaemic heart disease at the time of the clinical onset of heart\r\nblock",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having myocarditis before the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having an infection of the myocardium with an organism from the\r\nspecified list before the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having infective endocarditis before the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a specified mineral or electrolyte abnormality at the time of the\r\nclinical onset of heart block",
+    "definedTerms" : [ {
+      "term" : "a specified mineral or electrolyte abnormality",
+      "definition" : "means:\n(a) hypercalcaemia;\n(b) hyperkalaemia;\n(c) hypermagnesaemia;\n(d) hypokalaemia;\n(e) hypomagnesaemia; or\n(f) hyponatraemia"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, where that drug cannot be ceased or substituted, at the\r\ntime of the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being treated daily with chloroquine sulphate, chloroquine phosphate\r\nor hydroxychloroquine for at least one year before the clinical onset of\r\nheart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "experiencing penetrating trauma to the heart, including surgical\r\ntrauma, within the two years before the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a heart transplant before the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a bone marrow transplant within the 24 hours before the clinical\r\nonset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "experiencing a powerful, non-penetrating blow to the chest, resulting in\r\ninjury warranting medical attention, within the 60 days before the\r\nclinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the heart within the 25 years before the clinical\r\nonset of heart block",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the heart\r\nwas in the field of radiation, within the 25 years before the clinical\r\nonset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "undertaking strenuous, high level, endurance physical activity greater\r\nthan six METs, for an average of at least ten hours per week for a\r\ncontinuous period of at least the five years before the clinical onset of\r\nheart block",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being envenomated by a scorpion or snake within the 24 hours before\r\nthe clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having hypertension with left ventricular hypertrophy before the\r\nclinical onset of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having obstructive sleep apnoea within the five years before the\r\nclinical onset of heart block",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(v)",
+    "text" : "having a specified autoimmune disease before the clinical worsening of\r\nheart block",
+    "definedTerms" : [ {
+      "term" : "a specified autoimmune disease",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) dermatomyositis;\n(c) inflammatory bowel disease;\n(d) polymyositis;\n(e) psoriatic arthritis;\n(f) reactive arthritis;\n(g) rheumatoid arthritis;\n(h) scleroderma;\n(i) Sjogren's syndrome;\n(j) systemic lupus erythematosis; or\n(k) Wegener's granulomatosis"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having infiltration of the myocardium due to sarcoidosis, Hodgkin's\r\nlymphoma, non-Hodgkin's lymphoma, amyloidosis or\r\nhaemochromatosis at the time of the clinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having a primary or metastatic neoplasm involving the heart before the\r\nclinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having ischaemic heart disease at the time of the clinical worsening of\r\nheart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having myocarditis before the clinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having an infection of the myocardium with an organism from the\r\nspecified list before the clinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having infective endocarditis before the clinical worsening of heart\r\nblock",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having a specified mineral or electrolyte abnormality at the time of the\r\nclinical worsening of heart block",
+    "definedTerms" : [ {
+      "term" : "a specified mineral or electrolyte abnormality",
+      "definition" : "means:\n(a) hypercalcaemia;\n(b) hyperkalaemia;\n(c) hypermagnesaemia;\n(d) hypokalaemia;\n(e) hypomagnesaemia; or\n(f) hyponatraemia"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, where that drug cannot be ceased or substituted, at the\r\ntime of the clinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "being treated daily with chloroquine sulphate, chloroquine phosphate\r\nor hydroxychloroquine for at least one year before the clinical\r\nworsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "experiencing penetrating trauma to the heart, including surgical\r\ntrauma, within the two years before the clinical worsening of heart\r\nblock",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "having a heart transplant before the clinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having a bone marrow transplant within the 24 hours before the clinical\r\nworsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "experiencing a powerful, non-penetrating blow to the chest, resulting in\r\ninjury warranting medical attention, within the 60 days before the\r\nclinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the heart within the 25 years before the clinical\r\nworsening of heart block",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the heart\r\nwas in the field of radiation, within the 25 years before the clinical\r\nworsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "undertaking strenuous, high level, endurance physical activity greater\r\nthan six METs, for an average of at least ten hours per week for a\r\ncontinuous period of at least the five years before the clinical\r\nworsening of heart block",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "being envenomated by a scorpion or snake within the 24 hours before\r\nthe clinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(nn)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of heart\r\nblock",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(oo)",
+    "text" : "having hypertension with left ventricular hypertrophy before the\r\nclinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(pp)",
+    "text" : "having obstructive sleep apnoea within the five years before the\r\nclinical worsening of heart block",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qq)",
+    "text" : "inability to obtain appropriate clinical management for heart block",
+    "definedTerms" : [ ]
+  } ]
+}

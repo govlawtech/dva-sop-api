@@ -1,0 +1,165 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01490",
+  "instrumentNumber" : "91/2018",
+  "citation" : "Statement of Principles concerning non-Hodgkin lymphoma (Balance of Probabilities) (No. 91 of 2018)",
+  "conditionName" : "non-Hodgkin lymphoma",
+  "effectiveFrom" : "2018-11-26",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having infection with human immunodeficiency virus at the time of\r\nthe clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "undergoing solid organ, stem cell or bone marrow transplantation\r\nbefore the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having an autoimmune disease from the specified list of autoimmune\r\ndiseases before the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "for cutaneous T-cell lymphoma only, having psoriasis at the time of\r\nthe clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "cutaneous T-cell lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with a drug from the specified list of systemic\r\nimmunosuppressive drugs for a continuous period of at least three\r\nmonths before the clinical onset of non-Hodgkin lymphoma, and\r\nwhere that exposure has ceased, the clinical onset of non-Hodgkin\r\nlymphoma has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for Richter syndrome only, having chronic lymphoid leukaemia/small\r\nlymphocytic lymphoma at the time of the clinical onset of\r\nnon-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "Richter syndrome",
+      "definition" : "means a form of high-grade large cell lymphoma,\r\ncharacterised by systemic symptoms, rapid tumour growth and extra-nodal\r\ninvolvement, which develops in patients with chronic lymphocytic\r\nleukaemia.\r\nspecified bacteria belonging to the Borrelia burgdorferi sensu lato complex\r\nmeans Borrelia burgdorferi sensu stricto, Borrelia afzelii, Borrelia garinii,\r\nBorrelia spielmanii, Borrelia bavariensis, Borrelia bissettii, Borrelia\r\nlusitaniae, Borrelia valaisiana or Borrelia mayonii."
+    } ],
+    "conditionVariant" : {
+      "name" : "Richter syndrome",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for adult T-cell leukaemia-lymphoma only, having infection with\r\nhuman T-cell lymphotropic virus type-1 at the time of the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "adult T-cell leukaemia-lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for gastric lymphoma only, having infection with Helicobacter pylori\r\nat the time of the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "gastric lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for Burkitt lymphoma, primary central nervous system lymphomas,\r\nextranodal nasal natural killer-T cell lymphoma, Epstein-Barr virus-\r\npositive diffuse large B-cell lymphoma not otherwise specified and\r\nsystemic Epstein-Barr virus-positive T-cell lymphoma of childhood\r\nonly, having infection with Epstein-Barr virus at the time of the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Burkitt lymphoma, primary central nervous system lymphomas, extranodal nasal natural killer-T cell lymphoma, Epstein-Barr virus- positive diffuse large B-cell lymphoma not otherwise specified and systemic Epstein-Barr virus-positive T-cell lymphoma of childhood",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for primary effusion lymphoma and Kaposi's sarcoma herpesvirus-\r\npositive diffuse large B-cell lymphoma not otherwise specified only,\r\nhaving infection with Kaposi's sarcoma herpesvirus at the time of the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "primary effusion lymphoma and Kaposi's sarcoma herpesvirus- positive diffuse large B-cell lymphoma not otherwise specified",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for small intestinal mucosa-associated lymphoid tissue lymphoma\r\nonly, having infection with Campylobacter jejuni at the time of the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "small intestinal mucosa-associated lymphoid tissue lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for ocular adnexal mucosa-associated lymphoid tissue lymphoma only,\r\nhaving infection with Chlamydia psittaci at the time of the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "ocular adnexal mucosa-associated lymphoid tissue lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "for cutaneous mucosa-associated lymphoid tissue lymphoma only,\r\nhaving infection with specified bacteria belonging to the Borrelia\r\nburgdorferi sensu lato complex at the time of the clinical onset of\r\nnon-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "cutaneous mucosa-associated lymphoid tissue lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having infection with hepatitis C virus at the time of the clinical onset\r\nof non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "for B-cell lymphoma only, having infection with hepatitis B virus at\r\nthe time of the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "B-cell lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "for Burkitt lymphoma only, having infection with Plasmodium\r\nfalciparum at the time of the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Burkitt lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having Hodgkin's lymphoma before the clinical onset of non-Hodgkin\r\nlymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "being obese for at least ten years within the 20 years before the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "for diffuse large B-cell lymphoma only, having chronic inflammation\r\nas specified at the affected site for at least ten years before the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "diffuse large B-cell lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "for anaplastic large cell lymphoma of the breast only, having a breast\r\nimplant at the time of the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "anaplastic large cell lymphoma of the breast",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "inhaling, ingesting or having cutaneous contact with lindane on more\r\ndays than not for a cumulative period of at least one year, at least five\r\nyears before the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "lindane",
+      "definition" : "means a complex synthetic mixture in which the gamma-isomer of\r\nhexachlorocyclohexane is present."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "inhaling, ingesting or having cutaneous contact with\r\npentachlorophenol:\r\n(a) for a cumulative period of at least 2 000 hours, within a\r\nconsecutive period of ten years, before the clinical onset of\r\nnon-Hodgkin lymphoma; and\r\n(b) where the first exposure occurred at least five years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(23)",
+    "text" : "inability to obtain appropriate clinical management for non-Hodgkin\r\nlymphoma",
+    "definedTerms" : [ ]
+  } ]
+}

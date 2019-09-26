@@ -1,0 +1,164 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00252",
+  "instrumentNumber" : "30/2019",
+  "citation" : "Statement of Principles concerning blepharitis (Balance of Probabilities) (No. 30 of 2019)",
+  "conditionName" : "blepharitis",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an infection of the affected eyelid at the time of the clinical\r\nonset of blepharitis",
+    "definedTerms" : [ {
+      "term" : "infection of the affected eyelid",
+      "definition" : "means a bacterial, viral or fungal infection\r\ninvolving the skin, hair follicles or glands of the affected eyelid."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having an infestation of the affected eyelid region, due to a parasite\r\nfrom the specified list of parasites, at the time of the clinical onset of\r\nblepharitis",
+    "definedTerms" : [ {
+      "term" : "specified list of parasites",
+      "definition" : "means:\r\n(a) Demodex folliculorum or Demodex brevis mites; or\r\n(b) Phthirus pubis lice."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a smallpox immunisation within the two weeks before the\r\nclinical onset of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having seborrhoeic dermatitis of the periocular region at the time of the\r\nclinical onset of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having rosacea of the periocular region at the time of the clinical onset\r\nof blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having psoriasis of the periocular region at the time of the clinical onset\r\nof blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having discoid lupus erythematosus of the periocular region at the time\r\nof the clinical onset of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having ocular or periocular exposure to an allergen within the 48 hours\r\nbefore the clinical onset of blepharitis",
+    "definedTerms" : [ {
+      "term" : "allergen",
+      "definition" : "means an antigenic substance capable of producing an immune\r\nresponse leading to allergic contact dermatitis.\r\nblepharitis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having an irritant substance exposure to the region of the affected eye\r\nat the time of the clinical onset of blepharitis",
+    "definedTerms" : [ {
+      "term" : "irritant substance",
+      "definition" : "means a chemical which causes an inflammatory effect on\r\nliving tissue by chemical action at the site of contact, leading to irritant\r\ncontact dermatitis."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having mustard gas exposure to the region of the affected eye at the\r\ntime of the clinical onset of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nregion of the affected eye was in the field of radiation, at the time of\r\nthe clinical onset of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a benign or malignant neoplasm affecting the affected eyelid at\r\nthe time of the clinical onset of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having dry eye disease at the time of the clinical onset of blepharitis",
+    "definedTerms" : [ {
+      "term" : "dry eye disease",
+      "definition" : "means a disease caused by a chronic lack of sufficient\r\nlubrication and moisture on the surface of the affected eye.\r\nNote: Examples of conditions associated with a chronic lack of sufficient lubrication and moisture on\r\nthe surface of the eye include, but are not limited to:\r\n(a) dysfunctional tear syndrome;\r\n(b) keratitis sicca;\r\n(c) keratoconjunctivitis sicca;\r\n(d) Meibomian gland dysfunction;\r\n(e) Sjögren syndrome;\r\n(f) vitamin A deficiency; or\r\n(g) xerophthalmia."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of blepharitis",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially lowered\r\nimmune function, such as would occur in the following conditions or circumstances:\r\n(a) being treated with an immunosuppressive drug;\r\n(b) having a haematological or solid organ malignancy;\r\n(c) having chronic renal failure;\r\n(d) having infection with human immunodeficiency virus;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: chronic renal failure and immunosuppressive drug are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "taking oral isotretinoin or oral acitretin for a continuous period of at\r\nleast one year before the clinical onset of blepharitis, and where\r\ntreatment has ceased, the clinical onset of blepharitis has occurred\r\nwithin 30 days of cessation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(16)",
+    "text" : "having an infection of the affected eyelid at the time of the clinical\r\nworsening of blepharitis",
+    "definedTerms" : [ {
+      "term" : "infection of the affected eyelid",
+      "definition" : "means a bacterial, viral or fungal infection\r\ninvolving the skin, hair follicles or glands of the affected eyelid."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having an infestation of the affected eyelid region, due to a parasite\r\nfrom the specified list of parasites, at the time of the clinical worsening\r\nof blepharitis",
+    "definedTerms" : [ {
+      "term" : "specified list of parasites",
+      "definition" : "means:\r\n(a) Demodex folliculorum or Demodex brevis mites; or\r\n(b) Phthirus pubis lice."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having seborrhoeic dermatitis of the periocular region at the time of the\r\nclinical worsening of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having rosacea of the periocular region at the time of the clinical\r\nworsening of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having psoriasis of the periocular region at the time of the clinical\r\nworsening of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having discoid lupus erythematosus of the periocular region at the time\r\nof the clinical worsening of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having ocular or periocular exposure to an allergen within the 48 hours\r\nbefore the clinical worsening of blepharitis",
+    "definedTerms" : [ {
+      "term" : "allergen",
+      "definition" : "means an antigenic substance capable of producing an immune\r\nresponse leading to allergic contact dermatitis.\r\nblepharitis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having an irritant substance exposure to the region of the affected eye\r\nat the time of the clinical worsening of blepharitis",
+    "definedTerms" : [ {
+      "term" : "irritant substance",
+      "definition" : "means a chemical which causes an inflammatory effect on\r\nliving tissue by chemical action at the site of contact, leading to irritant\r\ncontact dermatitis."
+    } ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having mustard gas exposure to the region of the affected eye at the\r\ntime of the clinical worsening of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nregion of the affected eye was in the field of radiation, at the time of\r\nthe clinical worsening of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "having a benign or malignant neoplasm affecting the affected eyelid at\r\nthe time of the clinical worsening of blepharitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "having dry eye disease at the time of the clinical worsening of\r\nblepharitis",
+    "definedTerms" : [ {
+      "term" : "dry eye disease",
+      "definition" : "means a disease caused by a chronic lack of sufficient\r\nlubrication and moisture on the surface of the affected eye.\r\nNote: Examples of conditions associated with a chronic lack of sufficient lubrication and moisture on\r\nthe surface of the eye include, but are not limited to:\r\n(a) dysfunctional tear syndrome;\r\n(b) keratitis sicca;\r\n(c) keratoconjunctivitis sicca;\r\n(d) Meibomian gland dysfunction;\r\n(e) Sjögren syndrome;\r\n(f) vitamin A deficiency; or\r\n(g) xerophthalmia."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of blepharitis",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially lowered\r\nimmune function, such as would occur in the following conditions or circumstances:\r\n(a) being treated with an immunosuppressive drug;\r\n(b) having a haematological or solid organ malignancy;\r\n(c) having chronic renal failure;\r\n(d) having infection with human immunodeficiency virus;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: chronic renal failure and immunosuppressive drug are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "inability to obtain appropriate clinical management for blepharitis",
+    "definedTerms" : [ ]
+  } ]
+}

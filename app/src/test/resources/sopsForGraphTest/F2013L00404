@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00404",
+  "instrumentNumber" : "11/2013",
+  "citation" : "Statement of Principles concerning polycythaemia vera No. 11 of 2013",
+  "conditionName" : "polycythaemia vera",
+  "effectiveFrom" : "2013-03-13",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D45"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for polycythaemia vera",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for polycythaemia vera",
+    "definedTerms" : [ ]
+  } ]
+}

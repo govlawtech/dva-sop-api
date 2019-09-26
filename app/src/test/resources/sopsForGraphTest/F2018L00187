@@ -1,0 +1,59 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00187",
+  "instrumentNumber" : "23/2018",
+  "citation" : "Statement of Principles concerning Guillain-Barre syndrome (Reasonable Hypothesis) (No. 23 of 2018)",
+  "conditionName" : "Guillain-Barre syndrome",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G61.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an infection with an organism from the specified list of\r\ninfections, where that infection has been acquired within the two\r\nmonths before the clinical onset of Guillain-Barre syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of Guillain-Barre syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a clinically apparent herpes zoster or herpes simplex infection\r\nin the two months before the clinical onset of Guillain-Barre syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a symptomatic gastrointestinal or respiratory tract infection in\r\nthe two months before the clinical onset of Guillain-Barre syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "receiving an influenza vaccine or a nerve tissue derived rabies vaccine\r\nwithin the two months before the clinical onset of Guillain-Barre\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a malignant neoplasm, other than non-melanotic malignant\r\nneoplasm of the skin, at the time of the clinical onset of Guillain-Barre\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a solid organ or stem cell transplant before the clinical onset of\r\nGuillain-Barre syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having surgery requiring a general, spinal or epidural anaesthetic,\r\nwithin the two months before the clinical onset of Guillain-Barre\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being treated with a tumour necrosis factor-α inhibitor in the two\r\nmonths before the clinical onset of Guillain-Barre syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having systemic lupus erythematosus at the time of clinical onset of\r\nGuillain-Barre syndrome",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(11)",
+    "text" : "inability to obtain appropriate clinical management for Guillain-Barre\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

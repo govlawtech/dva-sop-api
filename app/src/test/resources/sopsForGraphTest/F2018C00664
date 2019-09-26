@@ -1,0 +1,78 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00664",
+  "instrumentNumber" : "101/2011",
+  "citation" : "Statement of Principles concerning multiple sclerosis No. 101 of 2011",
+  "conditionName" : "multiple sclerosis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G35"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having acute infectious mononucleosis before the clinical onset of\r\nmultiple sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of multiple\r\nsclerosis, and where smoking has ceased, the clinical onset of multiple\r\nsclerosis has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having vitamin D deficiency for at least one year before the clinical\r\nonset of multiple sclerosis, where this vitamin D deficiency occurred\r\nmore than ten years before the clinical onset of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "vitamin D deficiency",
+      "definition" : "means a serum 25-hydroxyvitamin D level of less\nthan 50 nanomoles per litre"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "having onset of a viral or bacterial infection within the five weeks\r\nbefore or the two weeks after the clinical worsening of multiple\r\nsclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of multiple\r\nsclerosis, and where smoking has ceased, the clinical worsening of\r\nmultiple sclerosis has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undergoing a course of treatment with a drug or a drug from a class of\r\ndrugs from the specified list within the six months before the clinical\r\nworsening of multiple sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "experiencing a category 1A stressor within the three months before the\r\nclinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one or more of the following severe\ntraumatic events:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "experiencing a category 1B stressor within the three months before the\r\nclinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "experiencing the death of a significant other within the three months\r\nbefore the clinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a significant other",
+      "definition" : "means a person who has a close family bond or a close\npersonal relationship and is important or influential in one's life"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "experiencing a category 2 stressor within the three months before the\r\nclinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a category 2 stressor",
+      "definition" : "means one or more of the following negative life\nevents, the effects of which are chronic in nature and cause the person to feel\non-going distress, concern or worry:\n(a) being socially isolated and unable to maintain friendships or family\nrelationships, due to physical location, language barriers, disability, or\nmedical or psychiatric illness;\n(b) experiencing a problem with a long-term relationship including: the\nbreak-up of a close personal relationship, the need for marital or\nrelationship counselling, marital separation, or divorce;\n(c) having concerns in the work or school environment including: on-\ngoing disharmony with fellow work or school colleagues, perceived\nlack of social support within the work or school environment,\nperceived lack of control over tasks performed and stressful work\nloads, or experiencing bullying in the workplace or school\nenvironment;\n(d) experiencing serious legal issues including: being detained or held in\ncustody, on-going involvement with the police concerning violations of\nthe law, or court appearances associated with personal legal problems;\n(e) having severe financial hardship including: loss of employment, long\nperiods of unemployment, foreclosure on a property, or bankruptcy;\n(f) having a family member or significant other experience a major\ndeterioration in their health; or\n(g) being a full-time caregiver to a family member or significant other with\na severe physical, mental or developmental disability"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a medical illness or injury, other than multiple sclerosis, which\r\nis life-threatening or which results in serious physical or cognitive\r\ndisability, within the three months before the clinical worsening of\r\nmultiple sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inability to obtain appropriate clinical management for multiple\r\nsclerosis",
+    "definedTerms" : [ ]
+  } ]
+}

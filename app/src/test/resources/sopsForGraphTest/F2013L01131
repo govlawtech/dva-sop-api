@@ -1,0 +1,60 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01131",
+  "instrumentNumber" : "50/2013",
+  "citation" : "Statement of Principles concerning periodontal abscess No. 50 of 2013",
+  "conditionName" : "periodontal abscess",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having periodontitis at the affected site within the six months before\r\nthe clinical onset of periodontal abscess",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having dental pulp disease of a tooth in the affected region of the\r\nperiodontium within the four weeks before the clinical onset of\r\nperiodontal abscess",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a foreign body embedded in the affected region of the\r\nperiodontium at the time of the clinical onset of periodontal abscess",
+    "definedTerms" : [ {
+      "term" : "a foreign body",
+      "definition" : "means:\n(a) a fixed orthodontic appliance;\n(b) an osseointegrated implant or dental prosthesis, including single\ncrowns, fixed partial dentures, all-ceramic crowns, resin-bonded\nprostheses, or posts and cores;\n(c) microscopic materials derived from dental procedures; or\n(d) shrapnel or other exogenous macroscopic material"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having trauma to the affected region of the periodontium within the\r\nfour weeks before the clinical onset of periodontal abscess",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected region of the periodontium",
+      "definition" : "means a blunt or\npenetrating injury, including surgery, resulting in:\n(a) fracture, luxation, loss or extraction of a tooth; or\n(b) disruption or fracture of the periodontium"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "having periodontitis at the affected site within the six months before\r\nthe clinical worsening of periodontal abscess",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having dental pulp disease of a tooth in the affected region of the\r\nperiodontium within the four weeks before the clinical worsening of\r\nperiodontal abscess",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a foreign body embedded in the affected region of the\r\nperiodontium at the time of the clinical worsening of periodontal\r\nabscess",
+    "definedTerms" : [ {
+      "term" : "a foreign body",
+      "definition" : "means:\n(a) a fixed orthodontic appliance;\n(b) an osseointegrated implant or dental prosthesis, including single\ncrowns, fixed partial dentures, all-ceramic crowns, resin-bonded\nprostheses, or posts and cores;\n(c) microscopic materials derived from dental procedures; or\n(d) shrapnel or other exogenous macroscopic material"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having trauma to the affected region of the periodontium within the\r\nfour weeks before the clinical worsening of periodontal abscess",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected region of the periodontium",
+      "definition" : "means a blunt or\npenetrating injury, including surgery, resulting in:\n(a) fracture, luxation, loss or extraction of a tooth; or\n(b) disruption or fracture of the periodontium"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "inability to obtain appropriate clinical management for periodontal\r\nabscess",
+    "definedTerms" : [ ]
+  } ]
+}

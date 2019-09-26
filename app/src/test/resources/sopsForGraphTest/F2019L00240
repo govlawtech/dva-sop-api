@@ -1,0 +1,92 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00240",
+  "instrumentNumber" : "33/2019",
+  "citation" : "Statement of Principles concerning Alzheimer disease (Reasonable Hypothesis) (No. 33 of 2019)",
+  "conditionName" : "Alzheimer disease",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G30.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G30.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G30.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G30.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having moderate to severe traumatic brain injury at least ten years\r\nbefore the clinical onset of Alzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of Alzheimer\r\ndisease, and where smoking has ceased, the clinical onset of Alzheimer\r\ndisease has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the brain\r\nwas in the field of radiation, at least ten years before the clinical onset\r\nof Alzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having received a cumulative dose of at least ten microTesla-years of\r\nextremely low frequency electromagnetic field (ELF-EMF), at least ten\r\nyears before the clinical onset of Alzheimer disease",
+    "definedTerms" : [ {
+      "term" : "cumulative dose",
+      "definition" : "means the total dose of extremely low frequency\r\nelectromagnetic field (ELF-EMF) received by the body. The unit of\r\n is the microTesla-year. The  is calculated\r\nfrom the sum of exposures to electromagnetic field flux density in\r\nmicroTesla multiplied by the duration of the exposure in years, excluding\r\nbackground exposure.\r\nNote: extremely low frequency electromagnetic field (ELF-EMF) is also defined in the Schedule 1 -\r\nDictionary.\r\nDSM-5 means the American Psychiatric Association: Diagnostic and\r\nStatistical Manual of Mental Disorders, Fifth Edition. Arlington, VA,\r\nAmerican Psychiatric Association, 2013."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being obese for at least ten years before the clinical onset of Alzheimer\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having dyslipidaemia before the age of 65 years and at least ten years\r\nbefore the clinical onset of Alzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having diabetes mellitus for at least the ten years before the clinical\r\nonset of Alzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having hypertension at least ten years before the clinical onset of\r\nAlzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having hyperhomocysteinaemia at least ten years before the clinical\r\nonset of Alzheimer disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\r\nhomocysteine in the blood."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having major depressive disorder at least ten years before the clinical\r\nonset of Alzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having posttraumatic stress disorder at least ten years before the\r\nclinical onset of Alzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least five years, at least ten years before the clinical onset of\r\nAlzheimer disease",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(13)",
+    "text" : "being treated with an anticholinergic drug from the specified list of\r\nanticholinergic drugs, at the time of the clinical worsening of\r\nAlzheimer disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "inability to obtain appropriate clinical management for Alzheimer\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01850",
+  "instrumentNumber" : "36/2015",
+  "citation" : "Statement of Principles concerning osteogenesis imperfecta No. 36 of 2015",
+  "conditionName" : "osteogenesis imperfecta",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "Q78.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for osteogenesis imperfecta",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for osteogenesis imperfecta",
+    "definedTerms" : [ ]
+  } ]
+}

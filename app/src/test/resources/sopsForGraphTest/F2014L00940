@@ -1,0 +1,79 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00940",
+  "instrumentNumber" : "60/2014",
+  "citation" : "Statement of Principles concerning melioidosis No. 60 of 2014",
+  "conditionName" : "melioidosis",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A24.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "A24.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "A24.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "A24.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to Burkholderia pseudomallei before the clinical onset\r\nof melioidosis",
+    "definedTerms" : [ {
+      "term" : "being exposed to Burkholderia pseudomallei",
+      "definition" : "means:\n(a) being in close contact with animals or humans infected with\nBurkholderia pseudomallei;\n(b) being in contact with soil contaminated with Burkholderia\npseudomallei;\n(c) consuming water or food contaminated with Burkholderia\npseudomallei;\n(d) having percutaneous exposure to blood or body fluids infected with\nBurkholderia pseudomallei; or\n(e) inhaling dust, water droplets or aerosols contaminated with\nBurkholderia pseudomallei"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being in an immunosuppressed state as specified at the time of the\r\nclinical onset of melioidosis",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressed state as specified",
+      "definition" : "means a condition of lowered\nimmune function due to one of the following circumstances or conditions:\n(a) being treated with an immunosuppressive drug;\n(b) having a haematological or solid organ malignancy; or\n(c) malnutrition"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a specified condition at the time of the clinical onset of\r\nmelioidosis",
+    "definedTerms" : [ {
+      "term" : "a specified condition",
+      "definition" : "means one of the following:\n(a) chronic obstructive pulmonary disease;\n(b) chronic renal failure;\n(c) congestive cardiac failure;\n(d) diabetes mellitus; or\n(e) rheumatic heart disease"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for males, consuming at least 44 kilograms of alcohol within the three\r\nyears before the clinical onset of melioidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "for females, consuming at least 30 kilograms of alcohol within the\r\nthree years before the clinical onset of melioidosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "being in an immunosuppressed state as specified at the time of the\r\nclinical worsening of melioidosis",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressed state as specified",
+      "definition" : "means a condition of lowered\nimmune function due to one of the following circumstances or conditions:\n(a) being treated with an immunosuppressive drug;\n(b) having a haematological or solid organ malignancy; or\n(c) malnutrition"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a specified condition at the time of the clinical worsening of\r\nmelioidosis",
+    "definedTerms" : [ {
+      "term" : "a specified condition",
+      "definition" : "means one of the following:\n(a) chronic obstructive pulmonary disease;\n(b) chronic renal failure;\n(c) congestive cardiac failure;\n(d) diabetes mellitus; or\n(e) rheumatic heart disease"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "for males, consuming at least 44 kilograms of alcohol within the three\r\nyears before the clinical worsening of melioidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "for females, consuming at least 30 kilograms of alcohol within the\r\nthree years before the clinical worsening of melioidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for melioidosis",
+    "definedTerms" : [ ]
+  } ]
+}

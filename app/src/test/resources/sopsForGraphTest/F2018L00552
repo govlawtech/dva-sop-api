@@ -1,0 +1,99 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00552",
+  "instrumentNumber" : "45/2018",
+  "citation" : "Statement of Principles concerning central serous chorioretinopathy (Reasonable Hypothesis) (No. 45 of 2018)",
+  "conditionName" : "central serous chorioretinopathy",
+  "effectiveFrom" : "2018-05-28",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H35.7"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "being treated with a corticosteroid within the 30 days before the\r\nclinical onset of central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs at the time of the clinical onset of central serous\r\nchorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having Cushing syndrome in the one year before the clinical onset of\r\ncentral serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having primary hyperaldosteronism in the one year before the clinical\r\nonset of central serous chorioretinopathy",
+    "definedTerms" : [ {
+      "term" : "primary hyperaldosteronism",
+      "definition" : "means a condition in which there is excess\r\nendogenous production of the hormone aldosterone, which may be due to\r\nadrenal hyperplasia, an adrenal adenoma, adrenal carcinoma or an ectopic\r\naldosterone-producing adenoma or carcinoma."
+    } ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "being in the second or third trimester of pregnancy at the time of the\r\nclinical onset of central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "having chronic renal failure at the time of the clinical onset of central\r\nserous chorioretinopathy",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means:\r\n2\r\n(a) having a glomerular filtration rate of less than 15 mL/min/1.73 m for a\r\nperiod of at least three months; or\r\n(b) a need for renal replacement therapy (dialysis or transplantation) for\r\ntreatment of complications of decreased glomerular filtration rate\r\nwhich would otherwise increase the risk of morbidity and mortality; or\r\n(c) undergoing chronic dialysis."
+    } ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having hypertension at the time of the clinical onset of central serous\r\nchorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "being infected with Helicobacter pylori in the one year before the\r\nclinical onset of central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "having blunt trauma to the affected eye or the unaffected eye in the two\r\nweeks before the clinical onset of central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(10)",
+    "text" : "being treated with a corticosteroid within the 30 days before the\r\nclinical worsening of central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs at the time of the clinical worsening of central serous\r\nchorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "having Cushing syndrome in the one year before the clinical worsening\r\nof central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "having primary hyperaldosteronism in the one year before the clinical\r\nworsening of central serous chorioretinopathy",
+    "definedTerms" : [ {
+      "term" : "primary hyperaldosteronism",
+      "definition" : "means a condition in which there is excess\r\nendogenous production of the hormone aldosterone, which may be due to\r\nadrenal hyperplasia, an adrenal adenoma, adrenal carcinoma or an ectopic\r\naldosterone-producing adenoma or carcinoma."
+    } ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "being in the second or third trimester of pregnancy at the time of the\r\nclinical worsening of central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "having chronic renal failure at the time of the clinical worsening of\r\ncentral serous chorioretinopathy",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means:\r\n2\r\n(a) having a glomerular filtration rate of less than 15 mL/min/1.73 m for a\r\nperiod of at least three months; or\r\n(b) a need for renal replacement therapy (dialysis or transplantation) for\r\ntreatment of complications of decreased glomerular filtration rate\r\nwhich would otherwise increase the risk of morbidity and mortality; or\r\n(c) undergoing chronic dialysis."
+    } ]
+  }, {
+    "paragraph" : "8(16)",
+    "text" : "having hypertension at the time of the clinical worsening of central\r\nserous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(17)",
+    "text" : "being infected with Helicobacter pylori in the one year before the\r\nclinical worsening of central serous chorioretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(18)",
+    "text" : "inability to obtain appropriate clinical management for central serous\r\nchorioretinopathy",
+    "definedTerms" : [ ]
+  } ]
+}

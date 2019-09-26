@@ -1,0 +1,136 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015C00915",
+  "instrumentNumber" : "37/2014",
+  "citation" : "Statement of Principles concerning chronic obstructive pulmonary disease No. 37 of 2014",
+  "conditionName" : "chronic obstructive pulmonary disease",
+  "effectiveFrom" : "2014-05-07",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of chronic\r\nobstructive pulmonary disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inhaling a respiratory tract irritant from the specified list:\r\n(i) resulting in signs and symptoms of severe acute lower\r\nrespiratory damage requiring medical attention within 48 hours\r\nafter exposure; and\r\n(ii) the persistence of respiratory symptoms and signs for at least\r\none week after exposure, within the ten years before the clinical\r\nonset of chronic obstructive pulmonary disease",
+    "definedTerms" : [ {
+      "term" : "a respiratory tract irritant from the specified list",
+      "definition" : "means:\n(a) ammonia;\n(b) chlorine;\n(c) dust;\n(d) Lewisite;\n(e) oxides of nitrogen;\n(f) oxides of sulphur;\n(g) phosgene;\n(h) phthalic anhydride;\n(i) smoke from fires;\n(j) sulphur mustard (mustard gas); or\n(k) another respirable agent which causes comparable tissue damage"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling smoke from the combustion of wood, charcoal, coal or other\r\nbiomass or fossil fuel, in an enclosed space:\r\n(i) for a cumulative period of at least 5 000 hours, before the\r\nclinical onset of chronic obstructive pulmonary disease; and\r\n(ii) where that exposure has ceased, the clinical onset of chronic\r\nobstructive pulmonary disease has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space:\r\n(i) for at least 10 000 hours before the clinical onset of chronic\r\nobstructive pulmonary disease; and\r\n(ii) where the person was a non-smoker during the entire period of\r\nthe exposure; and\r\n(iii) where the last exposure to that atmosphere occurred within the\r\n20 years before the clinical onset of chronic obstructive\r\npulmonary disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "smoking at least ten joint-years of cannabis, or the equivalent dose of\r\nother cannabis products, before the clinical onset of chronic obstructive\r\npulmonary disease, and where smoking has ceased, the clinical onset of\r\nchronic obstructive pulmonary disease has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "joint-years of cannabis",
+      "definition" : "means a calculation of consumption where one\njoint-year of cannabis equals one joint per day for a period of one year"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "inhaling vapour, gas, dust or fumes of a substance from the specified\r\nlist in an enclosed space:\r\n(i) for a cumulative period of at least 10 000 hours, before the\r\nclinical onset of chronic obstructive pulmonary disease; and\r\n(ii) where that exposure has ceased, the clinical onset of chronic\r\nobstructive pulmonary disease has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "dust",
+      "definition" : "means airborne particulate matter consisting of poorly soluble solid\nparticles of organic or inorganic matter, of diameter between 0.5 μm and 75\nμm, which settle slowly under the influence of gravity, and which are formed\nby natural forces or mechanical processes such as crushing, grinding, milling,\ndrilling, demolition, shovelling or sweeping of mineral or biological matter\nsuch as coal, grain, metal, rock or wood"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inhaling vapour, gas, dust or fumes of a substance from the specified\r\nlist, or smoke from fire, in an open environment:\r\n(i) for a cumulative period of at least 20 000 hours, before the\r\nclinical onset of chronic obstructive pulmonary disease; and\r\n(ii) where that exposure has ceased, the clinical onset of chronic\r\nobstructive pulmonary disease has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "dust",
+      "definition" : "means airborne particulate matter consisting of poorly soluble solid\nparticles of organic or inorganic matter, of diameter between 0.5 μm and 75\nμm, which settle slowly under the influence of gravity, and which are formed\nby natural forces or mechanical processes such as crushing, grinding, milling,\ndrilling, demolition, shovelling or sweeping of mineral or biological matter\nsuch as coal, grain, metal, rock or wood"
+    } ]
+  }, {
+    "paragraph" : "6(ga)",
+    "text" : "inhaling dust at a concentration of greater than five milligrams per\r\ncubic metre:\r\n(i) for a cumulative period of at least 10 000 hours, before the\r\nclinical onset of chronic obstructive pulmonary disease; and\r\n(ii) where that exposure has ceased, the clinical onset of chronic\r\nobstructive pulmonary disease has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "dust",
+      "definition" : "means airborne particulate matter consisting of poorly soluble solid\nparticles of organic or inorganic matter, of diameter between 0.5 μm and 75\nμm, which settle slowly under the influence of gravity, and which are formed\nby natural forces or mechanical processes such as crushing, grinding, milling,\ndrilling, demolition, shovelling or sweeping of mineral or biological matter\nsuch as coal, grain, metal, rock or wood"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "inhaling ambient polluted air as specified:\r\n(i) for a cumulative period of at least 70 000 hours before the\r\nclinical onset of chronic obstructive pulmonary disease; and\r\n(ii) where that exposure has ceased, the clinical onset of chronic\r\nobstructive pulmonary disease has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "ambient polluted air as specified",
+      "definition" : "means air with annual average levels of:\n(a) particulates with an aerodynamic diameter <2.5 μm (PM2.5) exceeding\n3\n30 μg/m ;\n(b) particulates with an aerodynamic diameter <10 μm (PM10) exceeding\n3\n150 μg/m ;\n3\n(c) nitrogen dioxide exceeding 18.0 μg/m ; or\n(d) 3nitrous oxides exceeding 31.5 μg/m "
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of chronic obstructive pulmonary disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products before the clinical worsening of chronic\r\nobstructive pulmonary disease, and where smoking has ceased, the\r\nclinical worsening of chronic obstructive pulmonary disease has\r\noccurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inhaling a respiratory tract irritant from the specified list:\r\n(i) resulting in signs and symptoms of severe acute lower\r\nrespiratory damage requiring medical attention within 48 hours\r\nafter exposure; and\r\n(ii) the persistence of respiratory symptoms and signs for at least\r\none week after exposure, within the ten years before the clinical\r\nworsening of chronic obstructive pulmonary disease",
+    "definedTerms" : [ {
+      "term" : "a respiratory tract irritant from the specified list",
+      "definition" : "means:\n(a) ammonia;\n(b) chlorine;\n(c) dust;\n(d) Lewisite;\n(e) oxides of nitrogen;\n(f) oxides of sulphur;\n(g) phosgene;\n(h) phthalic anhydride;\n(i) smoke from fires;\n(j) sulphur mustard (mustard gas); or\n(k) another respirable agent which causes comparable tissue damage"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inhaling smoke from the combustion of wood, charcoal, coal or other\r\nbiomass or fossil fuel, in an enclosed space:\r\n(i) for a cumulative period of at least 5 000 hours, before the\r\nclinical worsening of chronic obstructive pulmonary disease;\r\nand\r\n(ii) where that exposure has ceased, the clinical worsening of\r\nchronic obstructive pulmonary disease has occurred within 20\r\nyears of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space:\r\n(i) for at least 10 000 hours before the clinical worsening of\r\nchronic obstructive pulmonary disease; and\r\n(ii) where the person was a non-smoker during the entire period of\r\nthe exposure; and\r\n(iii) where the last exposure to that atmosphere occurred within the\r\n20 years before the clinical worsening of chronic obstructive\r\npulmonary disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "smoking at least ten joint-years of cannabis, or the equivalent dose of\r\nother cannabis products, before the clinical worsening of chronic\r\nobstructive pulmonary disease, and where smoking has ceased, the\r\nclinical worsening of chronic obstructive pulmonary disease has\r\noccurred within 20 years of cessation",
+    "definedTerms" : [ {
+      "term" : "joint-years of cannabis",
+      "definition" : "means a calculation of consumption where one\njoint-year of cannabis equals one joint per day for a period of one year"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "inhaling vapour, gas, dust or fumes of a substance from the specified\r\nlist in an enclosed space:\r\n(i) for a cumulative period of at least 10 000 hours, before the\r\nclinical worsening of chronic obstructive pulmonary disease;\r\nand\r\n(ii) where that exposure has ceased, the clinical worsening of\r\nchronic obstructive pulmonary disease has occurred within 20\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "dust",
+      "definition" : "means airborne particulate matter consisting of poorly soluble solid\nparticles of organic or inorganic matter, of diameter between 0.5 μm and 75\nμm, which settle slowly under the influence of gravity, and which are formed\nby natural forces or mechanical processes such as crushing, grinding, milling,\ndrilling, demolition, shovelling or sweeping of mineral or biological matter\nsuch as coal, grain, metal, rock or wood"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "inhaling vapour, gas, dust or fumes of a substance from the specified\r\nlist, or smoke from fire, in an open environment:\r\n(i) for a cumulative period of at least 20 000 hours, before the\r\nclinical worsening of chronic obstructive pulmonary disease;\r\nand\r\n(ii) where that exposure has ceased, the clinical worsening of\r\nchronic obstructive pulmonary disease has occurred within 20\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "dust",
+      "definition" : "means airborne particulate matter consisting of poorly soluble solid\nparticles of organic or inorganic matter, of diameter between 0.5 μm and 75\nμm, which settle slowly under the influence of gravity, and which are formed\nby natural forces or mechanical processes such as crushing, grinding, milling,\ndrilling, demolition, shovelling or sweeping of mineral or biological matter\nsuch as coal, grain, metal, rock or wood"
+    } ]
+  }, {
+    "paragraph" : "6(pa)",
+    "text" : "inhaling dust at a concentration of greater than five milligrams per\r\ncubic metre:\r\n(i) for a cumulative period of at least 10 000 hours, before the\r\nclinical worsening of chronic obstructive pulmonary disease;\r\nand\r\n(ii) where that exposure has ceased, the clinical worsening of\r\nchronic obstructive pulmonary disease has occurred within 20\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "dust",
+      "definition" : "means airborne particulate matter consisting of poorly soluble solid\nparticles of organic or inorganic matter, of diameter between 0.5 μm and 75\nμm, which settle slowly under the influence of gravity, and which are formed\nby natural forces or mechanical processes such as crushing, grinding, milling,\ndrilling, demolition, shovelling or sweeping of mineral or biological matter\nsuch as coal, grain, metal, rock or wood"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "inhaling ambient polluted air as specified:\r\n(i) for a cumulative period of at least 70 000 hours before the\r\nclinical worsening of chronic obstructive pulmonary disease;\r\nand\r\n(ii) where that exposure has ceased, the clinical worsening of\r\nchronic obstructive pulmonary disease has occurred within 20\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "ambient polluted air as specified",
+      "definition" : "means air with annual average levels of:\n(a) particulates with an aerodynamic diameter <2.5 μm (PM2.5) exceeding\n3\n30 μg/m ;\n(b) particulates with an aerodynamic diameter <10 μm (PM10) exceeding\n3\n150 μg/m ;\n3\n(c) nitrogen dioxide exceeding 18.0 μg/m ; or\n(d) 3nitrous oxides exceeding 31.5 μg/m "
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of chronic obstructive pulmonary disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ra)",
+    "text" : "having at least two episodes of acute viral or bacterial lower respiratory\r\ntract infection requiring medical treatment within the one year before\r\nthe clinical worsening of chronic obstructive pulmonary disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "inability to obtain appropriate clinical management for chronic\r\nobstructive pulmonary disease",
+    "definedTerms" : [ ]
+  } ]
+}

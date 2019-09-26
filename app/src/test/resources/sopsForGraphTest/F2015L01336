@@ -1,0 +1,155 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01336",
+  "instrumentNumber" : "96/2015",
+  "citation" : "Statement of Principles concerning Achilles tendinopathy and bursitis (Reasonable Hypothesis) (No. 96 of 2015)",
+  "conditionName" : "Achilles tendinopathy and bursitis",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M76.6"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for\r\nthe four weeks before the clinical onset of Achilles tendinopathy or\r\nbursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nankle joint of the affected leg, at a minimum intensity of five METs,\r\nfor at least four hours per week for the four weeks before the clinical\r\nonset of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of body\r\nweight per hour, or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the ankle joint of the affected leg by at least 100\r\npercent, to a minimum intensity of five METs for at least two hours\r\nper day, within the seven days before the clinical onset of Achilles\r\ntendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of body\r\nweight per hour, or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a disease from the specified list of systemic arthritic diseases at\r\nthe time of the clinical onset of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic arthritic diseases",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) Behcet syndrome;\r\n(c) gout, or another crystal-induced arthropathy;\r\n(d) enteropathic spondyloarthropathy;\r\n(e) psoriatic arthropathy;\r\n(f) reactive arthritis;\r\n(g) rheumatoid arthritis; or\r\n(h) undifferentiated spondyloarthropathy.\r\nNote: crystal-induced arthropathy is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a significant biomechanical abnormality involving the affected\r\nfoot or affected ankle at the time of the clinical onset of Achilles\r\ntendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "significant biomechanical abnormality",
+      "definition" : "means an abnormality that causes\r\nsignificant alteration of biomechanical forces through the ankle, such as\r\nwould occur with pes planus or underpronation, decreased ankle or forefoot\r\nflexibility, forefoot varus, pes cavus or lateral ankle joint instability."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "undergoing a renal transplant within the ten years before the clinical\r\nonset of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for Achilles tendinopathy only, undergoing treatment with\r\nfluoroquinolone antibiotics within the 14 days before the clinical onset\r\nof Achilles tendinopathy",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Achilles tendinopathy",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being treated with a glucocorticoid drug as specified before the clinical\r\nonset of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "glucocorticoid drug as specified",
+      "definition" : "means any of the corticosteroid drugs listed\r\nin the following table, in the specified combinations of administration, dose\r\nlevel and duration of treatment:\r\nDrug or Class of Mode* Dose Minimum Duration\r\nDrugs Duration of\r\nTreatment\r\nprednisolone or  0.5 within the\r\npharmacologically grams 6 months 3 years\r\nequivalent over 6\r\nglucocorticoid IV, IM, months\r\nO within the\r\n 3\r\nNS 5 years\r\ngrams\r\n 10 NS NS\r\ngrams\r\nAbbreviations: IV = intravenous; IM = intramuscular; O = oral; NS = not specified."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being obese at the time of the clinical onset of Achilles tendinopathy\r\nor bursitis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\n2BMI = W/H and where:\r\nW is the person's weight in kilograms; and\r\nH is the person's height in metres."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of Achilles\r\ntendinopathy or bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "being treated for at least four weeks with an aromatase inhibitor within\r\nthe one year before the clinical onset of Achilles tendinopathy or\r\nbursitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(12)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for\r\nthe four weeks before the clinical worsening of Achilles tendinopathy\r\nor bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nankle joint of the affected leg, at a minimum intensity of five METs,\r\nfor at least four hours per week for the four weeks before the clinical\r\nworsening of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of body\r\nweight per hour, or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the ankle joint of the affected leg by at least 100\r\npercent, to a minimum intensity of five METs for at least two hours\r\nper day, within the seven days before the clinical worsening of\r\nAchilles tendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of body\r\nweight per hour, or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having a disease from the specified list of systemic arthritic diseases at\r\nthe time of the clinical worsening of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic arthritic diseases",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) Behcet syndrome;\r\n(c) gout, or another crystal-induced arthropathy;\r\n(d) enteropathic spondyloarthropathy;\r\n(e) psoriatic arthropathy;\r\n(f) reactive arthritis;\r\n(g) rheumatoid arthritis; or\r\n(h) undifferentiated spondyloarthropathy.\r\nNote: crystal-induced arthropathy is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having a significant biomechanical abnormality involving the affected\r\nfoot or affected ankle at the time of the clinical worsening of Achilles\r\ntendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "significant biomechanical abnormality",
+      "definition" : "means an abnormality that causes\r\nsignificant alteration of biomechanical forces through the ankle, such as\r\nwould occur with pes planus or underpronation, decreased ankle or forefoot\r\nflexibility, forefoot varus, pes cavus or lateral ankle joint instability."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "undergoing a renal transplant within the ten years before the clinical\r\nworsening of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "for Achilles tendinopathy only, undergoing treatment with\r\nfluoroquinolone antibiotics within the 14 days before the clinical\r\nworsening of Achilles tendinopathy",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Achilles tendinopathy",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "being treated with a glucocorticoid drug as specified before the clinical\r\nworsening of Achilles tendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "glucocorticoid drug as specified",
+      "definition" : "means any of the corticosteroid drugs listed\r\nin the following table, in the specified combinations of administration, dose\r\nlevel and duration of treatment:\r\nDrug or Class of Mode* Dose Minimum Duration\r\nDrugs Duration of\r\nTreatment\r\nprednisolone or  0.5 within the\r\npharmacologically grams 6 months 3 years\r\nequivalent over 6\r\nglucocorticoid IV, IM, months\r\nO within the\r\n 3\r\nNS 5 years\r\ngrams\r\n 10 NS NS\r\ngrams\r\nAbbreviations: IV = intravenous; IM = intramuscular; O = oral; NS = not specified."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having a glucocorticoid injection into the Achilles tendon or in the\r\nregion of the Achilles tendon, before the clinical worsening of Achilles\r\ntendinopathy or bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "being obese at the time of the clinical worsening of Achilles\r\ntendinopathy or bursitis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\n2BMI = W/H and where:\r\nW is the person's weight in kilograms; and\r\nH is the person's height in metres."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\nAchilles tendinopathy or bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "being treated for at least four weeks with an aromatase inhibitor within\r\nthe one year before the clinical worsening of Achilles tendinopathy or\r\nbursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "inability to obtain appropriate clinical management for Achilles\r\ntendinopathy or bursitis",
+    "definedTerms" : [ ]
+  } ]
+}

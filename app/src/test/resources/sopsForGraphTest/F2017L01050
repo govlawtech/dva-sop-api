@@ -1,0 +1,121 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L01050",
+  "instrumentNumber" : "56/2017",
+  "citation" : "Statement of Principles concerning benign paroxysmal positional vertigo (Reasonable Hypothesis) (No. 56 of 2017)",
+  "conditionName" : "benign paroxysmal positional vertigo",
+  "effectiveFrom" : "2017-09-18",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H81.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having trauma involving the head or the head and neck within the\r\n30 days before the clinical onset of benign paroxysmal positional\r\nvertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having surgery to the head or neck, including dental surgery, where\r\nthat surgery involves transmission of vibration or percussive forces to\r\nthe inner ear, in the three months before the clinical onset of benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having cochlear implantation surgery in the three years before the\r\nclinical onset of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having Meniere's disease on the affected side before the clinical onset\r\nof benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having vestibular neuritis or labyrinthitis on the affected side within\r\nthe three months before the clinical onset of benign paroxysmal\r\npositional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "being infected with herpes simplex virus or varicella zoster virus,\r\nwhere there is evidence of the infection causing a clinical illness\r\ninvolving the vestibular nerve of the affected side, before the clinical\r\nonset of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "undertaking physical activity at a rate of at least six METs, where the\r\nactivity involves sudden head turning, jolting or vibration of the body,\r\nwithin the seven days before the clinical onset of benign paroxysmal\r\npositional vertigo",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\r\nweight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having active migraine at the time of the clinical onset of benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ {
+      "term" : "active migraine",
+      "definition" : "means having at least one migraine headache per year.\r\nbenign paroxysmal positional vertigo—see subsection 6(2)."
+    } ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "being in the Trendelenburg position for a surgical procedure within the\r\nseven days before the clinical onset of benign paroxysmal positional\r\nvertigo",
+    "definedTerms" : [ {
+      "term" : "Trendelenburg position",
+      "definition" : "means a position in which the patient is lying on the\r\nback with the feet higher than the head by 15 to 30 degrees."
+    } ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "being confined to bed for medical or surgical treatment for periods of\r\nat least three days within the 14 days before the clinical onset of\r\nbenign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "having decompression sickness at the time of the clinical onset of\r\nbenign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(12)",
+    "text" : "having trauma involving the head or the head and neck within the\r\n30 days before the clinical worsening of benign paroxysmal positional\r\nvertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "having surgery to the head or neck, including dental surgery, where\r\nthat surgery involves transmission of vibration or percussive forces to\r\nthe inner ear, in the three months before the clinical worsening of\r\nbenign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "having cochlear implantation surgery in the three years before the\r\nclinical worsening of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "having Meniere's disease on the affected side before the clinical\r\nworsening of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(16)",
+    "text" : "having vestibular neuritis or labyrinthitis on the affected side within\r\nthe three months before the clinical worsening of benign paroxysmal\r\npositional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(17)",
+    "text" : "being infected with herpes simplex virus or varicella zoster virus,\r\nwhere there is evidence of the infection causing a clinical illness\r\ninvolving the vestibular nerve of the affected side, before the clinical\r\nworsening of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(18)",
+    "text" : "undertaking physical activity at a rate of at least six METs, where the\r\nactivity involves sudden head turning, jolting or vibration of the body,\r\nwithin the seven days before the clinical worsening of benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\r\nweight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(19)",
+    "text" : "having active migraine at the time of the clinical worsening of benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ {
+      "term" : "active migraine",
+      "definition" : "means having at least one migraine headache per year.\r\nbenign paroxysmal positional vertigo—see subsection 6(2)."
+    } ]
+  }, {
+    "paragraph" : "8(20)",
+    "text" : "being in the Trendelenburg position for a surgical procedure within the\r\nseven days before the clinical worsening of benign paroxysmal\r\npositional vertigo",
+    "definedTerms" : [ {
+      "term" : "Trendelenburg position",
+      "definition" : "means a position in which the patient is lying on the\r\nback with the feet higher than the head by 15 to 30 degrees."
+    } ]
+  }, {
+    "paragraph" : "8(21)",
+    "text" : "being confined to bed for medical or surgical treatment for periods of\r\nat least three days within the 14 days before the clinical worsening of\r\nbenign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(22)",
+    "text" : "inability to obtain appropriate clinical management for benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ ]
+  } ]
+}

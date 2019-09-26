@@ -1,0 +1,81 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L01051",
+  "instrumentNumber" : "57/2017",
+  "citation" : "Statement of Principles concerning benign paroxysmal positional vertigo (Balance of Probabilities) (No. 57 of 2017)",
+  "conditionName" : "benign paroxysmal positional vertigo",
+  "effectiveFrom" : "2017-09-18",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H81.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having trauma involving the head or the head and neck within the 30\r\ndays before the clinical onset of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having surgery to the head or neck, including dental surgery, where\r\nthat surgery involves transmission of vibration or percussive forces to\r\nthe inner ear, in the three months before the clinical onset of benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having cochlear implantation surgery in the three years before the\r\nclinical onset of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having Meniere's disease on the affected side before the clinical onset\r\nof benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having vestibular neuritis or labyrinthitis on the affected side within\r\nthe three months before the clinical onset of benign paroxysmal\r\npositional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "being infected with herpes simplex virus or varicella zoster virus,\r\nwhere there is evidence of the infection causing a clinical illness\r\ninvolving the vestibular nerve of the affected side, before the clinical\r\nonset of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "undertaking physical activity at a rate of at least six METs, where the\r\nactivity involves sudden head turning, jolting or vibration of the body,\r\nwithin the seven days before the clinical onset of benign paroxysmal\r\npositional vertigo",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(8)",
+    "text" : "having trauma involving the head or the head and neck within the 30\r\ndays before the clinical worsening of benign paroxysmal positional\r\nvertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "having surgery to the head or neck, including dental surgery, where\r\nthat surgery involves transmission of vibration or percussive forces to\r\nthe inner ear, in the three months before the clinical worsening of\r\nbenign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having cochlear implantation surgery in the three years before the\r\nclinical worsening of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "having Meniere's disease on the affected side before the clinical\r\nworsening of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "having vestibular neuritis or labyrinthitis on the affected side within\r\nthe three months before the clinical worsening of benign paroxysmal\r\npositional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "being infected with herpes simplex virus or varicella zoster virus,\r\nwhere there is evidence of the infection causing a clinical illness\r\ninvolving the vestibular nerve of the affected side, before the clinical\r\nworsening of benign paroxysmal positional vertigo",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "undertaking physical activity at a rate of at least six METs, where the\r\nactivity involves sudden head turning, jolting or vibration of the body,\r\nwithin the seven days before the clinical worsening of benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "inability to obtain appropriate clinical management for benign\r\nparoxysmal positional vertigo",
+    "definedTerms" : [ ]
+  } ]
+}

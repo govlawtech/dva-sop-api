@@ -1,0 +1,97 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00563",
+  "instrumentNumber" : "37/2018",
+  "citation" : "Statement of Principles concerning tension-type headache (Reasonable Hypothesis) (No. 37 of 2018)",
+  "conditionName" : "tension-type headache",
+  "effectiveFrom" : "2018-05-28",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G44.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for chronic tension-type headache in migraine and cluster headache\r\nsufferers only, taking a drug as specified, for at least the three months\r\nbefore the clinical onset of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "taking a drug as specified",
+      "definition" : "means:\r\n(a) taking a simple analgesic on at least three days per week; or\r\n(b) taking a triptan, ergotamine, an opioid, or a combination analgesic\r\nmedication on at least two days per week.\r\nNote: combination analgesic medication and triptan are also defined in the Schedule 1 – Dictionary.\r\ntension-type headache—see subsection 7(2)."
+    }, {
+      "term" : "chronic tension-type headache",
+      "definition" : "means tension-type headache that lasts for\r\nhours or may be continuous, occurring on at least 15 days per month on\r\naverage, for more than three months."
+    } ],
+    "conditionVariant" : {
+      "name" : "chronic tension-type headache in migraine and cluster headache sufferers",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a clinically significant disorder of mental health as specified,\r\nwithin the one year before the clinical onset of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) agoraphobia;\r\n(b) anxiety disorder;\r\n(c) obsessive-compulsive disorder;\r\n(d) panic disorder;\r\n(e) posttraumatic stress disorder;\r\n(f) separation anxiety disorder;\r\n(g) social anxiety disorder; or\r\n(h) specific phobia.\r\nNote 1: \"Management\" of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To \"warrant ongoing management\" does not require that any actual management was received\r\nor given for the condition."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical onset of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation or divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other with\r\na severe physical, mental or developmental disability.\r\nNote: significant other is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having insomnia as specified at the time of the clinical onset of tension-\r\ntype headache",
+    "definedTerms" : [ {
+      "term" : "insomnia as specified",
+      "definition" : "means sleep disturbance:\r\n(a) involving difficulty initiating sleep, maintaining sleep or early morning\r\nwakening with inability to return to sleep, for at least three nights per\r\nweek for at least three months; and\r\n(b) causing clinically significant distress or substantial impairment in\r\nsocial, occupational, educational, or other important areas of\r\nfunctioning."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having concussion or moderate to severe traumatic brain injury within\r\nthe seven days before the clinical onset of tension-type headache,\r\nwhere tension-type headache has developed within the seven days of:\r\n(a) injury to the head; or\r\n(b) regaining consciousness following the injury to the head; or\r\n(c) discontinuing medication that impairs the ability to sense or\r\nreport headache following the injury to the head",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(6)",
+    "text" : "taking a drug as specified, for at least the three months before the\r\nclinical worsening of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "taking a drug as specified",
+      "definition" : "means:\r\n(a) taking a simple analgesic on at least three days per week; or\r\n(b) taking a triptan, ergotamine, an opioid, or a combination analgesic\r\nmedication on at least two days per week.\r\nNote: combination analgesic medication and triptan are also defined in the Schedule 1 – Dictionary.\r\ntension-type headache—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a clinically significant disorder of mental health as specified,\r\nwithin the one year before the clinical worsening of tension-type\r\nheadache",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) agoraphobia;\r\n(b) anxiety disorder;\r\n(c) obsessive-compulsive disorder;\r\n(d) panic disorder;\r\n(e) posttraumatic stress disorder;\r\n(f) separation anxiety disorder;\r\n(g) social anxiety disorder; or\r\n(h) specific phobia.\r\nNote 1: \"Management\" of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To \"warrant ongoing management\" does not require that any actual management was received\r\nor given for the condition."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical worsening of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation or divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other with\r\na severe physical, mental or developmental disability.\r\nNote: significant other is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having insomnia as specified at the time of the clinical worsening of\r\ntension-type headache",
+    "definedTerms" : [ {
+      "term" : "insomnia as specified",
+      "definition" : "means sleep disturbance:\r\n(a) involving difficulty initiating sleep, maintaining sleep or early morning\r\nwakening with inability to return to sleep, for at least three nights per\r\nweek for at least three months; and\r\n(b) causing clinically significant distress or substantial impairment in\r\nsocial, occupational, educational, or other important areas of\r\nfunctioning."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "undergoing treatment with a nitric oxide donor, at the time of the\r\nclinical worsening of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "nitric oxide donor",
+      "definition" : "means a pharmacologically active substance that releases"
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having concussion or moderate to severe traumatic brain injury within\r\nthe seven days before the clinical worsening of tension-type headache,\r\nwhere tension-type headache has worsened within the seven days of:\r\n(a) injury to the head; or\r\n(b) regaining consciousness following the injury to the head; or\r\n(c) discontinuing medication that impairs the ability to sense or\r\nreport headache following the injury to the head",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "inability to obtain appropriate clinical management for tension-type\r\nheadache",
+    "definedTerms" : [ ]
+  } ]
+}

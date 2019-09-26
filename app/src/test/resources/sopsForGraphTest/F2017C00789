@@ -1,0 +1,34 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00789",
+  "instrumentNumber" : "48/2014",
+  "citation" : "Statement of Principles concerning chronic myeloid leukaemia No. 48 of 2014",
+  "conditionName" : "chronic myeloid leukaemia",
+  "effectiveFrom" : "2014-05-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C92.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 30 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of chronic myeloid\r\nleukaemia, and where smoking has ceased, the clinical onset of chronic\r\nmyeloid leukaemia has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having received a cumulative equivalent dose of at least 0.05 sievert of\r\nionising radiation to the bone marrow at least two years before the\r\nclinical onset of chronic myeloid leukaemia",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing treatment with radioactive iodine for cancer before the\r\nclinical onset of chronic myeloid leukaemia, where the first exposure\r\noccurred at least two years before the clinical onset of chronic myeloid\r\nleukaemia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for chronic myeloid\r\nleukaemia",
+    "definedTerms" : [ ]
+  } ]
+}

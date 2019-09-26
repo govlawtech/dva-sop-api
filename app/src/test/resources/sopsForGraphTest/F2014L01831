@@ -1,0 +1,29 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01831",
+  "instrumentNumber" : "23/2015",
+  "citation" : "Statement of Principles concerning haemophilia No. 23 of 2015",
+  "conditionName" : "haemophilia",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D66"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D67"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D68.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for haemophilia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for haemophilia",
+    "definedTerms" : [ ]
+  } ]
+}

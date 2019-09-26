@@ -1,0 +1,53 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01842",
+  "instrumentNumber" : "6/2019",
+  "citation" : "Statement of Principles concerning human immunodeficiency virus infection (Balance of Probabilities) (No. 6 of 2019)",
+  "conditionName" : "human immunodeficiency virus infection",
+  "effectiveFrom" : "2019-01-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B20"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B21"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B22"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B23"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "B24"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "Z21"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to HIV-1 or HIV-2 before the clinical onset of human\r\nimmunodeficiency virus infection",
+    "definedTerms" : [ {
+      "term" : "being exposed to HIV-1 or HIV-2",
+      "definition" : "means:\r\n(a) having percutaneous exposure (intravenous, intramuscular,\r\nsubcutaneous or intradermal) or permucosal exposure to a specified\r\nbody substance which is derived from a person infected with HIV-1 or\r\nHIV-2; or\r\n(b) having a tissue or organ transplant, where the tissue or organ is derived\r\nfrom a person infected with HIV-1 or HIV-2.\r\nNote: specified body substance is also defined in the Schedule 1 – Dictionary.\r\nhuman immunodeficiency virus infection—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having:\r\n(a) a genital ulcerative disease; or\r\n(b) a non-ulcerative anogenital sexually transmitted infection with\r\nclinical symptoms or signs, excluding genital warts; or\r\n(c) herpes simplex virus type 2 anogenital infection;\r\nwithin the 30 days before the clinical onset of human\r\nimmunodeficiency virus infection",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "using depot medroxyprogesterone acetate contraception at the time of\r\nthe clinical onset of human immunodeficiency virus infection",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "having tuberculosis at the time of the clinical worsening of human\r\nimmunodeficiency virus infection",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for human\r\nimmunodeficiency virus infection",
+    "definedTerms" : [ ]
+  } ]
+}
