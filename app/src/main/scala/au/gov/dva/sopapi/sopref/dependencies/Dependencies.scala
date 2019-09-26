@@ -1,8 +1,9 @@
 package au.gov.dva.sopapi.sopref.dependencies
 
-import java.time.OffsetDateTime
+import java.time.{LocalDate, OffsetDateTime}
 import java.time.format.DateTimeFormatter
 
+import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
 import com.google.common.collect.{ImmutableList, ImmutableSet}
 import org.w3c.dom.traversal.NodeFilter
@@ -30,6 +31,14 @@ case class FactorRef(linkingFactor: Factor) {
 case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair, rhRefs: List[FactorRef], bopRefs: List[FactorRef]) {
   override def toString = if (rhRefs != bopRefs) s"RH: ${rhRefs.mkString(", ")}; BoP: ${bopRefs.mkString(", ")}" else s"${rhRefs.mkString(", ")}"
 }
+
+abstract class InstantCondition(soPPair: SoPPair){
+  def getSoPair = soPPair
+}
+case class AcceptedCondition(soPPair: SoPPair, acceptedStandardOfProof : StandardOfProof, acceptedFactor : Factor) extends InstantCondition(soPPair)
+case class DiagnosedCondition(soPPair: SoPPair, date : LocalDate) extends InstantCondition(soPPair)
+
+case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
 
 
 object Dependencies {
@@ -62,6 +71,8 @@ object Dependencies {
     val g = buildGraph(sopPairs.asScala.toList)
     g
   }
+
+  
 
   private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
     val edges = buildEdges(SoPPairs)
@@ -109,14 +120,25 @@ object Dependencies {
 
   private def liftSubGraphForCondition(graph : Graph[SoPPair, LDiEdge], condition : SoPPair): Graph[SoPPair,LDiEdge] = {
     val root = graph get condition
-    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(1).toGraph
+    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(2).toGraph
     subGraph
   }
 
-  private def getPathFromAcceptedToDiagnosed(diagnosed: SoPPair, accepted: SoPPair, graph:  Graph[SoPPair,LDiEdge]) = {
+  def getShortestPathFromAcceptedToDiagnosed(diagnosed: SoPPair, accepted: SoPPair, graph:  Graph[SoPPair,LDiEdge]) = {
     val startNode = graph get diagnosed
     val targetNode = graph get accepted
-    startNode pathTo targetNode
+    startNode shortestPathTo targetNode
   }
+
+  // take diagnosed conditions and date
+  // return paths with hop of one step
+
+  // build graph containing only diagnosed and accepted conditions
+  // tag nodes with diagnosed and accepted
+  // topo sort to find order
+
+
+
+
 }
 
