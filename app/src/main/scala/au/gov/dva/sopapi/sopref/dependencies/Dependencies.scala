@@ -133,7 +133,6 @@ object Dependencies {
 
   // build graph containing only diagnosed and accepted conditions
   // topo sort to find order
-  //
 
   def topoSort(graph: Graph[SoPPair,LDiEdge]) = {
     graph.topologicalSort
@@ -145,9 +144,14 @@ object Dependencies {
     val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)
     // find edges that cannot be traversed
     // create subgraph without those edges
-    val nodes = graph.nodes.map(_.toOuter)
-    val edges = graph.edges.map(_.toOuter)
-    Graph.from(nodes,edges)
+
+    val edges = graph.edges.map(_.toOuter).filter(e => {
+      val label = e.label.asInstanceOf[FactorRefForSoPPair]
+      // todo: filter out nodes that can't be traversed because of onset dates or accepted factors
+      true
+    })
+    val nodesInEdges = edges.map(e => e.nodes)
+    Graph.from(nodesInEdges.tail,edges)
   }
 
 }
