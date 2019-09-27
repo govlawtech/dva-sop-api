@@ -9,9 +9,10 @@ import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.AcceptedSequalaeRequestConditionDto;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.AcceptedSequalaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
-import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.Repository;
@@ -24,10 +25,8 @@ import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
-import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
-import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -42,6 +41,7 @@ import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.*;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -142,6 +142,8 @@ public class Routes {
             setResponseHeaders(res, 200, MIME_TEXT);
             return dotString;
         });
+
+
     }
 
 
@@ -309,6 +311,18 @@ public class Routes {
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
+        }));
+
+        sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUALAE, MIME_JSON, ((req, res) -> {
+            AcceptedSequalaeRequestDto acceptedSequalaeRequestDto;
+            try {
+                acceptedSequalaeRequestDto = AcceptedSequalaeRequestDto.fromJsonString(clenseJson(req.body()));
+            } catch (DvaSopApiDtoRuntimeException e) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return String.format("Request body invalid: %s", e.getMessage());
+            }
+            throw new NotImplementedException();
+
         }));
 
 

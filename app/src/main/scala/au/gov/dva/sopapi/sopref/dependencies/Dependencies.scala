@@ -248,8 +248,6 @@ object Dependencies {
 
   }
 
-
-
   def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition],testEdgeTraverse : Boolean) = {
 
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
@@ -266,6 +264,8 @@ object Dependencies {
 
     Graph.from(nodesInEdges,edges)
   }
+
+
 
 }
 
