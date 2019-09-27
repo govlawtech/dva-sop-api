@@ -6,10 +6,25 @@ import com.google.common.collect.ImmutableSet;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 public class SoPPair {
     private final String conditionName;
     private final SoP bopSop;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SoPPair soPPair = (SoPPair) o;
+        return Objects.equals(conditionName, soPPair.conditionName);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(conditionName);
+    }
 
     @Override
     public String toString() {

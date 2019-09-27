@@ -32,11 +32,12 @@ case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair
   override def toString = if (rhRefs != bopRefs) s"RH: ${rhRefs.mkString(", ")}; BoP: ${bopRefs.mkString(", ")}" else s"${rhRefs.mkString(", ")}"
 }
 
-abstract class InstantCondition(soPPair: SoPPair){
+abstract class InstantCondition(soPPair: SoPPair, onsetDate: LocalDate){
   def getSoPair = soPPair
+  def getOnsetDate = onsetDate
 }
-case class AcceptedCondition(soPPair: SoPPair, acceptedStandardOfProof : StandardOfProof, acceptedFactor : Factor, onsetDate: LocalDate) extends InstantCondition(soPPair)
-case class DiagnosedCondition(soPPair: SoPPair, date : LocalDate) extends InstantCondition(soPPair)
+case class AcceptedCondition(soPPair: SoPPair, acceptedStandardOfProof : StandardOfProof, acceptedFactor : Factor, onsetDate: LocalDate) extends InstantCondition(soPPair,onsetDate)
+case class DiagnosedCondition(soPPair: SoPPair, date : LocalDate) extends InstantCondition(soPPair,date)
 
 case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
 
@@ -139,6 +140,27 @@ object Dependencies {
   }
 
   def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]) = {
+
+       
+
+    def canTraverse(edgeLabel : FactorRefForSoPPair) = {
+      // target must be accepted
+      // if edge has condition variant, accepted factor must be for that variant
+      // source must be diagnosed or accepted
+      // accepted condition must be before diagnosed condition
+      // if there is variant, check the factor of the diagnosed condition
+      // todo: years
+
+      val sopToCondition = (acceptedConditions ++ diagnosedConditions).map(ic => (ic.getSoPair -> ic)).toMap
+      val sourceInstantCondition = sopToCondition(edgeLabel.dependentSoPPair)
+      val targetInstantCondition: InstantCondition = sopToCondition(edgeLabel.targetSoPPair)
+      val targetIsAccepted = targetInstantCondition.isInstanceOf[AcceptedCondition]
+      val targetOccuredBeforeSource = targetInstantCondition.getOnsetDate.isBefore(sourceInstantCondition.getOnsetDate)
+
+
+      targetIsAccepted && targetOccuredBeforeSource
+
+    }
     // check if edge can be traversed
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
     val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)
@@ -148,10 +170,11 @@ object Dependencies {
     val edges = graph.edges.map(_.toOuter).filter(e => {
       val label = e.label.asInstanceOf[FactorRefForSoPPair]
       // todo: filter out nodes that can't be traversed because of onset dates or accepted factors
-      true
+      canTraverse(label)
     })
-    val nodesInEdges = edges.map(e => e.nodes)
-    Graph.from(nodesInEdges.tail,edges)
+    val nodesInEdges = edges.flatMap(e => e.sources ++ e.targets)
+
+    Graph.from(nodesInEdges,edges)
   }
 
 }
