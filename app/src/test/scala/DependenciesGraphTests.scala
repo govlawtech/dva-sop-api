@@ -61,7 +61,6 @@ class DependenciesGraphTests extends  FunSuite {
     val accepted2 = AcceptedCondition(acceptedSoP2,StandardOfProof.ReasonableHypothesis,acceptedSoP2.getRhSop.getOnsetFactors.get(0),LocalDate.of(2018,2,1))
     val result = Dependencies.getInstantGraph(List(accepted, accepted2),List(diagnosed),false)
     println(result)
-
   }
 
   test("Should fail to traverse because of time requirement") {
@@ -72,7 +71,6 @@ class DependenciesGraphTests extends  FunSuite {
     val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis, acceptedSoP.getRhSop.getOnsetFactors.get(0),LocalDate.of(2011,12,31))
     val result = Dependencies.getInstantGraph(List(accepted),List(diagnosed),true)
     println(result)
-
   }
 
 
