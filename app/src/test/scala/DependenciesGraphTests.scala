@@ -56,7 +56,7 @@ class DependenciesGraphTests extends  FunSuite {
     val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "tooth wear").get
     val acceptedSoP = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
     val acceptedSoP2 = sopPairs.asScala.find(sp => sp.getConditionName == "bruxism").get
-    val diagnosed = DiagnosedCondition(diagnosedSop,LocalDate.of(2020,1,1))
+    val diagnosed = DiagnosedCondition(diagnosedSop, StandardOfProof.ReasonableHypothesis, true, LocalDate.of(2020,1,1))
     val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis, acceptedSoP.getRhSop.getOnsetFactors.get(0),LocalDate.of(2018,1,1))
     val accepted2 = AcceptedCondition(acceptedSoP2,StandardOfProof.ReasonableHypothesis,acceptedSoP2.getRhSop.getOnsetFactors.get(0),LocalDate.of(2018,2,1))
     val result = Dependencies.getInstantGraph(List(accepted, accepted2),List(diagnosed))
