@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
 import com.google.common.collect.{ImmutableList, ImmutableSet}
+import org.joda.time.format.{PeriodFormat, PeriodFormatterBuilder}
 import org.w3c.dom.traversal.NodeFilter
 import scalax.collection.GraphEdge.DiEdge
 
@@ -18,12 +19,20 @@ import scalax.collection.edge.LDiEdge
 
 import scala.collection.immutable
 
-case class FactorRef(linkingFactor: Factor) {
+case class FactorRef(linkingFactor: Factor, period: Option[Period]) {
 
     override def toString: String =  {
+      def prettyPrintPeriod(p : Period) = {
+        if (p.getYears > 0) s"${p.getYears} years"
+        else if (p.getMonths > 0)  s"${p.getMonths} months"
+        else if (p.getDays > 0) s"${p.getDays} days"
+        else p.toString
+      }
+
+      val periodOrEmpty = if (period.isDefined) s" (${prettyPrintPeriod(period.get)})" else ""
       if (linkingFactor.getConditionVariant.isPresent)
-        s"${linkingFactor.getParagraph} (${linkingFactor.getConditionVariant.get().getName})"
-          else s"${linkingFactor.getParagraph}"
+        s"${linkingFactor.getParagraph} (${linkingFactor.getConditionVariant.get().getName})$periodOrEmpty"
+          else s"${linkingFactor.getParagraph}$periodOrEmpty"
       }
 
 }
@@ -43,8 +52,6 @@ case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
 
 object Dependencies {
 
-  // ideas:
-  // find factors in common - levenshtein distance, BK tree
   def buildDotString(sopPairs : ImmutableSet[SoPPair], conditionWhitelist: ImmutableSet[String]) : String = {
     val dotRoot = DotRootGraph(
       directed = true,
@@ -94,7 +101,7 @@ object Dependencies {
 
     def gatherFactorRefs(dependentSop: SoP, targetSopPair: SoPPair) : List[FactorRef] = {
       def getFactorsReferencesingCondition(factors: List[Factor] ) = factors.filter(f => f.getText.contains(targetSopPair.getConditionName) || definedTermsContainsPhrase(targetSopPair.getConditionName,f))
-      def toFactorRef(f : Factor) = FactorRef(f)
+      def toFactorRef(f : Factor) = FactorRef(f,parsePeriodFromFactor(f.getText,dependentSop.getConditionName))
       val onsetFactorsReferencingCondition = getFactorsReferencesingCondition(dependentSop.getOnsetFactors.asScala.toList)
       val aggFactorsReferencingCondition = getFactorsReferencesingCondition(dependentSop.getAggravationFactors.asScala.toList)
       (onsetFactorsReferencingCondition ++ aggFactorsReferencingCondition).map(toFactorRef(_))
@@ -138,122 +145,122 @@ object Dependencies {
     graph.topologicalSort
   }
 
-  def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]) = {
+  def parsePeriodFromFactor(factorText: String, sourceConditionName: String) : Option[Period]  = {
 
-
-    def parsePeriodFromFactor(factorText: String, sourceConditionName: String) : Option[Period]  = {
-
-      def toInt(s: String): Option[Int] = {
-        try {
-          Some(s.toInt)
-        } catch {
-          case e: Exception => None
-        }
+    def toInt(s: String): Option[Int] = {
+      try {
+        Some(s.toInt)
+      } catch {
+        case e: Exception => None
       }
-
-      def tryParseNumber(numberString : String) = {
-        numberString match {
-          case "one" => Some(1)
-          case "two" => Some(2)
-          case "three" => Some(3)
-          case "four" => Some(4)
-          case "five" => Some(5)
-          case "six" => Some(6)
-          case "seven" => Some(7)
-          case "eight" => Some(8)
-          case "nine" => Some(9)
-          case _ => toInt(numberString)
-        }
-      }
-
-      val regex = s"""within the ([a-z0-9]+) (days|months|years) before the clinical onset of(\\sthe\\s)?$sourceConditionName""".r
-      regex.findFirstMatchIn(factorText) match {
-        case Some(v) => {
-          tryParseNumber(v.group(1)) match {
-            case Some(n) => {
-              v.group(2) match {
-                case "days" => Some(Period.of(0, 0, n))
-                case "months" => Some(Period.of(0, n, 0))
-                case "years" => Some(Period.of(n, 0, 0))
-                case _ => throw new IllegalArgumentException
-              }}
-             case _ => None
-            }
-        }
-        case _ => None
-
-    }
     }
 
-
-    def canTraverse(edgeLabel : FactorRefForSoPPair): Boolean = {
-      // target must be accepted
-      // if edge has condition variant, accepted factor must be for that variant
-      // source must be diagnosed or accepted
-      // accepted condition must be before diagnosed condition
-      // if there is variant, check the factor of the diagnosed condition
-
-      val sopToCondition = (acceptedConditions ++ diagnosedConditions).map(ic => (ic.getSoPair -> ic)).toMap
-
-      def isOnsetFactor(factorPara: String, sop: SoP) = sop.getOnsetFactors.asScala.map(f => f.getParagraph).contains(factorPara)
-
-
-      val sourceInstantCondition = sopToCondition(edgeLabel.dependentSoPPair)
-      def findLinkingFactor(source: DiagnosedCondition) = {
-        val diagnosed = source
-        val referringStandardOfProof = diagnosed.applicableStandardOfProof
-        val isOnset = diagnosed.isOnset
-        val linkingFactor = referringStandardOfProof match {
-          case StandardOfProof.ReasonableHypothesis => isOnset match {
-            case true => edgeLabel.rhRefs.find(fr => isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getRhSop))
-            case false => edgeLabel.rhRefs.find(fr => !isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getRhSop))
-          }
-          case StandardOfProof.BalanceOfProbabilities => isOnset match {
-            case true => edgeLabel.rhRefs.find(fr => isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getBopSop))
-            case false => edgeLabel.rhRefs.find(fr => !isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getBopSop))
-          }
-        }
-        linkingFactor
+    def tryParseNumber(numberString : String) = {
+      numberString match {
+        case "one" => Some(1)
+        case "two" => Some(2)
+        case "three" => Some(3)
+        case "four" => Some(4)
+        case "five" => Some(5)
+        case "six" => Some(6)
+        case "seven" => Some(7)
+        case "eight" => Some(8)
+        case "nine" => Some(9)
+        case _ => toInt(numberString)
       }
+    }
 
-
-      val targetInstantCondition: InstantCondition = sopToCondition(edgeLabel.targetSoPPair)
-      val targetIsAccepted = targetInstantCondition.isInstanceOf[AcceptedCondition]
-      val targetOccuredBeforeSource = targetInstantCondition.getOnsetDate.isBefore(sourceInstantCondition.getOnsetDate)
-
-
-      def targetConditionWithinPeriodFromSource(sourceDiagnosed : DiagnosedCondition, target: AcceptedCondition, period: Period) = {
-        val diagnosedMinusPeriod: LocalDate = sourceDiagnosed.getOnsetDate.minus(period)
-        !target.onsetDate.isBefore(diagnosedMinusPeriod)
-      }
-      // if source is diagnosed, check time limit
-
-      def checkTimeLimitOnDiagnosed(sourceDiagnosed : DiagnosedCondition) : Boolean = {
-        val linkingFactor = findLinkingFactor(sourceDiagnosed).get
-        val timeLimitRequirement = parsePeriodFromFactor(linkingFactor.linkingFactor.getText,edgeLabel.dependentSoPPair.getConditionName)
-        timeLimitRequirement match
-        {
-          case Some(v) => targetConditionWithinPeriodFromSource(sourceInstantCondition.asInstanceOf[DiagnosedCondition],targetInstantCondition.asInstanceOf[AcceptedCondition],v)
-          case None => true
+    val regex = s"""within the ([a-z0-9]+) (days|months|years) before the clinical onset of (the )?$sourceConditionName""".r
+    regex.findFirstMatchIn(factorText) match {
+      case Some(v) => {
+        tryParseNumber(v.group(1)) match {
+          case Some(n) => {
+            v.group(2) match {
+              case "days" => Some(Period.of(0, 0, n))
+              case "months" => Some(Period.of(0, n, 0))
+              case "years" => Some(Period.of(n, 0, 0))
+              case _ => throw new IllegalArgumentException
+            }}
+          case _ => None
         }
       }
-
-      sourceInstantCondition.isInstanceOf[DiagnosedCondition] match {
-        case true => targetIsAccepted && targetOccuredBeforeSource && checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition])
-        case false => targetIsAccepted && targetOccuredBeforeSource
-      }
+      case _ => None
 
     }
-    // check if edge can be traversed
+  }
+
+  def canTraverse(edgeLabel : FactorRefForSoPPair, acceptedConditions : List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]): Boolean = {
+    // target must be accepted
+    // if edge has condition variant, accepted factor must be for that variant
+    // source must be diagnosed or accepted
+    // accepted condition must be before diagnosed condition
+    // if there is variant, check the factor of the diagnosed condition
+
+    val sopToCondition = (acceptedConditions ++ diagnosedConditions).map(ic => (ic.getSoPair -> ic)).toMap
+
+    def isOnsetFactor(factorPara: String, sop: SoP) = sop.getOnsetFactors.asScala.map(f => f.getParagraph).contains(factorPara)
+
+
+    val sourceInstantCondition = sopToCondition(edgeLabel.dependentSoPPair)
+    def findLinkingFactor(source: DiagnosedCondition) = {
+      val diagnosed = source
+      val referringStandardOfProof = diagnosed.applicableStandardOfProof
+      val isOnset = diagnosed.isOnset
+      val linkingFactor = referringStandardOfProof match {
+        case StandardOfProof.ReasonableHypothesis => isOnset match {
+          case true => edgeLabel.rhRefs.find(fr => isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getRhSop))
+          case false => edgeLabel.rhRefs.find(fr => !isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getRhSop))
+        }
+        case StandardOfProof.BalanceOfProbabilities => isOnset match {
+          case true => edgeLabel.rhRefs.find(fr => isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getBopSop))
+          case false => edgeLabel.rhRefs.find(fr => !isOnsetFactor(fr.linkingFactor.getParagraph,edgeLabel.dependentSoPPair.getBopSop))
+        }
+      }
+      linkingFactor
+    }
+
+
+    val targetInstantCondition: InstantCondition = sopToCondition(edgeLabel.targetSoPPair)
+    val targetIsAccepted = targetInstantCondition.isInstanceOf[AcceptedCondition]
+    val targetOccuredBeforeSource = targetInstantCondition.getOnsetDate.isBefore(sourceInstantCondition.getOnsetDate)
+
+
+    def targetConditionWithinPeriodFromSource(sourceDiagnosed : DiagnosedCondition, target: AcceptedCondition, period: Period) = {
+      val diagnosedMinusPeriod: LocalDate = sourceDiagnosed.getOnsetDate.minus(period)
+      !target.onsetDate.isBefore(diagnosedMinusPeriod)
+    }
+    // if source is diagnosed, check time limit
+
+    def checkTimeLimitOnDiagnosed(sourceDiagnosed : DiagnosedCondition) : Boolean = {
+      val linkingFactor = findLinkingFactor(sourceDiagnosed).get
+      val timeLimitRequirement = parsePeriodFromFactor(linkingFactor.linkingFactor.getText,edgeLabel.dependentSoPPair.getConditionName)
+      timeLimitRequirement match
+      {
+        case Some(v) => targetConditionWithinPeriodFromSource(sourceInstantCondition.asInstanceOf[DiagnosedCondition],targetInstantCondition.asInstanceOf[AcceptedCondition],v)
+        case None => true
+      }
+    }
+
+    sourceInstantCondition.isInstanceOf[DiagnosedCondition] match {
+      case true => targetIsAccepted && targetOccuredBeforeSource && checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition])
+      case false => targetIsAccepted && targetOccuredBeforeSource
+    }
+
+  }
+
+
+
+  def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition],testEdgeTraverse : Boolean) = {
+
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
     val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)
-    // find edges that cannot be traversed
-    // create subgraph without those edges
 
     val edges = graph.edges.map(_.toOuter).filter(e => {
       val label = e.label.asInstanceOf[FactorRefForSoPPair]
-      // todo: filter out nodes that can't be traversed because of onset dates or accepted factors
-      canTraverse(label)
+      if (testEdgeTraverse)
+        canTraverse(label,acceptedConditions,diagnosedConditions)
+      else
+        true
     })
     val nodesInEdges = edges.flatMap(e => e.sources ++ e.targets)
 
