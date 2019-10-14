@@ -7,20 +7,21 @@ import java.util.List;
 
 public class AcceptedSequalaeResponseConditionDto {
 
-    @JsonProperty(value = "conditions", required = true)
-    private final String _conditionName;
+//    @JsonProperty(value = "condition", required = true)
+//    private final String _conditionName;
+//
+//    @JsonProperty(value = "instrumentIdForReasonableHypothesis")
+//    private final String rhFrlId;
+//
+//    @JsonProperty(value = "instrumentIdForBalanceOfProbabilities")
+//    private final String bopFrlId;
+//
+//    @JsonProperty(value = "factorsForReasonableHypothesis")
+//    private final List<FactorDto> rhFactors;
+//
+//    @JsonProperty(value = "factorsForBalanceOfProbabilities")
+//    private final List<FactorDto> bopFactors;
 
-    @JsonProperty(value = "instrumentIdForReasonableHypothesis")
-    private final String rhFrlId;
-
-    @JsonProperty(value = "instrumentIdForBalanceOfProbabilities")
-    private final String bopFrlId;
-
-    @JsonProperty(value = "")
-    private final List<FactorDto> rhFactors;
-
-    private final List<FactorDto> bopFactors;
-
-    public AcceptedSequalaeResponseConditionDto(@JsonProperty(""))
+    //public AcceptedSequalaeResponseConditionDto(@JsonProperty("conditions") )
 
 }

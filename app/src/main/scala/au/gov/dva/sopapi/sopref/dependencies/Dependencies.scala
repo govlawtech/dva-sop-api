@@ -99,8 +99,30 @@ object Dependencies {
       definitions.exists(d => d.getDefinition.contains(conditionName))
     }
 
+
+
+    def textContainsPhraseWithoutNegation(phrase: String, text: String): Boolean = {
+
+      def testPhrasePart(phrasePart : String) : Boolean = {
+        val phraseMatches = text.contains(phrasePart)
+        if (!phraseMatches)
+          return false
+        val phrasePreceededByNegation = s"""(other than|excepting|excluding|except for|does not involve( a )?)$phrasePart""".r
+        if (phrasePreceededByNegation.findFirstMatchIn(text).isDefined)
+          return false
+        else return true
+      }
+
+      def divideCompoundConditions(conditionName : String) = {
+        conditionName.split("(, | and )").map(i => i.trim).toList
+      }
+
+      divideCompoundConditions(phrase).exists(testPhrasePart)
+
+    }
+
     def gatherFactorRefs(dependentSop: SoP, targetSopPair: SoPPair) : List[FactorRef] = {
-      def getFactorsReferencesingCondition(factors: List[Factor] ) = factors.filter(f => f.getText.contains(targetSopPair.getConditionName) || definedTermsContainsPhrase(targetSopPair.getConditionName,f))
+      def getFactorsReferencesingCondition(factors: List[Factor] ) = factors.filter(f => textContainsPhraseWithoutNegation(targetSopPair.getConditionName,f.getText) || definedTermsContainsPhrase(targetSopPair.getConditionName,f))
       def toFactorRef(f : Factor) = FactorRef(f,parsePeriodFromFactor(f.getText,dependentSop.getConditionName))
       val onsetFactorsReferencingCondition = getFactorsReferencesingCondition(dependentSop.getOnsetFactors.asScala.toList)
       val aggFactorsReferencingCondition = getFactorsReferencesingCondition(dependentSop.getAggravationFactors.asScala.toList)
@@ -125,7 +147,7 @@ object Dependencies {
 
   private def liftSubGraphForCondition(graph : Graph[SoPPair, LDiEdge], condition : SoPPair): Graph[SoPPair,LDiEdge] = {
     val root = graph get condition
-    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(2).toGraph
+    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(1).toGraph
     subGraph
   }
 
@@ -188,6 +210,7 @@ object Dependencies {
 
     }
   }
+
 
   def canTraverse(edgeLabel : FactorRefForSoPPair, acceptedConditions : List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]): Boolean = {
     // target must be accepted

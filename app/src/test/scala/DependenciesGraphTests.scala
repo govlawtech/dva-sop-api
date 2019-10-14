@@ -29,7 +29,7 @@ class DependenciesGraphTests extends  FunSuite {
 
   test("Build graph")
   {
-    val result = Dependencies.buildDotString(sopPairs, ImmutableSet.of("depressive disorder"))
+    val result = Dependencies.buildDotString(sopPairs, ImmutableSet.of("sinus barotrauma"))
     println(result)
 
   }
@@ -73,9 +73,14 @@ class DependenciesGraphTests extends  FunSuite {
     println(result)
   }
 
-
-
-
-
+  test("Sprain detected") {
+    val acceptedSoP = sopPairs.asScala.find(sp => sp.getConditionName == "sprain and strain").get
+    val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "internal derangement of the knee").get
+    // five years time limit
+    val diagnosed = DiagnosedCondition(diagnosedSop, StandardOfProof.ReasonableHypothesis, true, LocalDate.of(2017,1,1))
+    val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis, acceptedSoP.getRhSop.getOnsetFactors.get(0),LocalDate.of(2016,12,31))
+    val result = Dependencies.getInstantGraph(List(accepted),List(diagnosed),false)
+    println(result)
+  }
 
 }
