@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
+import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 import com.google.common.collect.{ImmutableList, ImmutableSet}
 import org.joda.time.format.{PeriodFormat, PeriodFormatterBuilder}
 import org.w3c.dom.traversal.NodeFilter
@@ -50,7 +51,29 @@ case class DiagnosedCondition(soPPair: SoPPair, applicableStandardOfProof: Stand
 
 case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
 
-object Dependencies {
+object Dependencies extends MiscRegexes {
+
+
+  def buildDotStringForAll(sopPairs : ImmutableSet[SoPPair]) : String = {
+    val dotRoot = DotRootGraph(
+      directed = true,
+      id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}"))
+    )
+
+    def edgeTransformer(innerEdge: Graph[SoPPair,LDiEdge]#EdgeT): Option[(DotGraph,DotEdgeStmt)] = {
+      innerEdge.edge match {
+        case LDiEdge(source,target,label) => Some(
+          (dotRoot,DotEdgeStmt(
+            NodeId(source.toString()),
+            NodeId(target.toString()),
+            Seq(DotAttr(Id("label"),Id(label.toString)))
+          )))
+      }
+    }
+    val g = buildGraph(sopPairs.asScala.toList)
+    g.toDot(dotRoot, edgeTransformer)
+
+  }
 
   def buildDotString(sopPairs : ImmutableSet[SoPPair], conditionWhitelist: ImmutableSet[String]) : String = {
     val dotRoot = DotRootGraph(
@@ -72,6 +95,8 @@ object Dependencies {
     val testCondition = sopPairs.asScala.filter(sp => conditionWhitelist.asScala.contains(sp.getConditionName)).head
     val subGraph = liftSubGraphForCondition(g,testCondition)
     subGraph.toDot(dotRoot, edgeTransformer)
+
+
   }
 
   def buildGraphP(sopPairs : ImmutableSet[SoPPair]) = {
@@ -103,8 +128,10 @@ object Dependencies {
 
     def textContainsPhraseWithoutNegation(phrase: String, text: String): Boolean = {
 
+      val textDividedToWords = text.split("""(\n|\r\n|\s)""")
+
       def testPhrasePart(phrasePart : String) : Boolean = {
-        val phraseMatches = text.contains(phrasePart)
+        val phraseMatches = textDividedToWords.map(i => i.trim).contains(phrasePart)
         if (!phraseMatches)
           return false
         val phrasePreceededByNegation = s"""(other than|excepting|excluding|except for|does not involve( a )?)$phrasePart""".r
@@ -114,7 +141,13 @@ object Dependencies {
       }
 
       def divideCompoundConditions(conditionName : String) = {
-        conditionName.split("(, | and )").map(i => i.trim).toList
+
+        // todo: figure out way to make this reliable - possible whitelist of compound conditions
+       // if (shouldNotSplit(conditionName))
+         // List(conditionName)
+       // else
+        //conditionName.split("(, | and )").map(i => i.trim).toList
+        List(conditionName)
       }
 
       divideCompoundConditions(phrase).exists(testPhrasePart)

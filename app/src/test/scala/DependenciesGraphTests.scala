@@ -27,9 +27,11 @@ class DependenciesGraphTests extends  FunSuite {
     sops.foreach(ss => println(ss.getConditionName))
   }
 
+
+
   test("Build graph")
   {
-    val result = Dependencies.buildDotString(sopPairs, ImmutableSet.of("sinus barotrauma"))
+    val result = Dependencies.buildDotStringForAll(sopPairs)
     println(result)
 
   }
