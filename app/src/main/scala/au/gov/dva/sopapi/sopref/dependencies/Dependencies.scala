@@ -4,9 +4,12 @@ import java.time.{Duration, LocalDate, OffsetDateTime, Period}
 import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
+import au.gov.dva.sopapi.dtos.sopref.FactorDto
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance._
 import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
+import au.gov.dva.sopapi.sopref.DtoTransformations
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
-import com.google.common.collect.{ImmutableList, ImmutableSet}
+import com.google.common.collect.{ImmutableList, ImmutableSet, Sets}
 import org.joda.time.format.{PeriodFormat, PeriodFormatterBuilder}
 import org.w3c.dom.traversal.NodeFilter
 import scalax.collection.GraphEdge.DiEdge
@@ -22,6 +25,8 @@ import scala.collection.immutable
 
 case class FactorRef(linkingFactor: Factor, period: Option[Period]) {
 
+
+
     override def toString: String =  {
       def prettyPrintPeriod(p : Period) = {
         if (p.getYears > 0) s"${p.getYears} years"
@@ -36,6 +41,8 @@ case class FactorRef(linkingFactor: Factor, period: Option[Period]) {
           else s"${linkingFactor.getParagraph}$periodOrEmpty"
       }
 
+
+
 }
 
 case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair, rhRefs: List[FactorRef], bopRefs: List[FactorRef]) {
@@ -46,12 +53,32 @@ abstract class InstantCondition(soPPair: SoPPair, onsetDate: LocalDate){
   def getSoPair = soPPair
   def getOnsetDate = onsetDate
 }
-case class AcceptedCondition(soPPair: SoPPair, acceptedStandardOfProof : StandardOfProof, acceptedFactor : Factor, onsetDate: LocalDate) extends InstantCondition(soPPair,onsetDate)
+case class AcceptedCondition(soPPair: SoPPair, onsetDate: LocalDate) extends InstantCondition(soPPair,onsetDate)
 case class DiagnosedCondition(soPPair: SoPPair, applicableStandardOfProof: StandardOfProof, isOnset: Boolean,  date : LocalDate) extends InstantCondition(soPPair,date)
+
+object InstantConditions {
+
+  def decomposeRequestDto(request : SequelaeRequestDto, sopPairs : ImmutableSet[SoPPair]) = {
+
+    val scalaSoPSet = sopPairs.asScala.map(s => s.getConditionName -> s).toMap
+    val accepted = request.get_acceptedConditions().asScala.map(ac => acceptedConditionFromDto(ac,scalaSoPSet(ac.get_name())))
+    val diagnosed = request.get_diagnosedConditions().asScala.map(ac => diagnosedConditionFromDto(ac,scalaSoPSet(ac.get_name())))
+    (accepted,diagnosed)
+  }
+
+  def acceptedConditionFromDto(dto : AcceptedConditionDto, sp : SoPPair): AcceptedCondition = {
+    AcceptedCondition(sp, dto.get_onsetDate())
+  }
+  def diagnosedConditionFromDto(dto : DiagnosedConditionDto, sp : SoPPair) : DiagnosedCondition = {
+    DiagnosedCondition(sp,dto.get_standardOfProof(),dto.get_isOnset(),dto.get_onsetDate())
+  }
+}
+
 
 case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
 
 object Dependencies extends MiscRegexes {
+
 
 
   def buildDotStringForAll(sopPairs : ImmutableSet[SoPPair]) : String = {
@@ -72,7 +99,6 @@ object Dependencies extends MiscRegexes {
     }
     val g = buildGraph(sopPairs.asScala.toList)
     g.toDot(dotRoot, edgeTransformer)
-
   }
 
   def buildDotString(sopPairs : ImmutableSet[SoPPair], conditionWhitelist: ImmutableSet[String]) : String = {
@@ -180,7 +206,7 @@ object Dependencies extends MiscRegexes {
 
   private def liftSubGraphForCondition(graph : Graph[SoPPair, LDiEdge], condition : SoPPair): Graph[SoPPair,LDiEdge] = {
     val root = graph get condition
-    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(1).toGraph
+    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(3).toGraph
     subGraph
   }
 
@@ -196,9 +222,7 @@ object Dependencies extends MiscRegexes {
   // build graph containing only diagnosed and accepted conditions
   // topo sort to find order
 
-  def topoSort(graph: Graph[SoPPair,LDiEdge]) = {
-    graph.topologicalSort
-  }
+
 
   def parsePeriodFromFactor(factorText: String, sourceConditionName: String) : Option[Period]  = {
 
@@ -245,7 +269,7 @@ object Dependencies extends MiscRegexes {
   }
 
 
-  def canTraverse(edgeLabel : FactorRefForSoPPair, acceptedConditions : List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]): Boolean = {
+  def canTraverseToAccepted(edgeLabel: FactorRefForSoPPair, acceptedConditions : List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]): Boolean = {
     // target must be accepted
     // if edge has condition variant, accepted factor must be for that variant
     // source must be diagnosed or accepted
@@ -255,7 +279,6 @@ object Dependencies extends MiscRegexes {
     val sopToCondition = (acceptedConditions ++ diagnosedConditions).map(ic => (ic.getSoPair -> ic)).toMap
 
     def isOnsetFactor(factorPara: String, sop: SoP) = sop.getOnsetFactors.asScala.map(f => f.getParagraph).contains(factorPara)
-
 
     val sourceInstantCondition = sopToCondition(edgeLabel.dependentSoPPair)
     def findLinkingFactor(source: DiagnosedCondition) = {
@@ -274,8 +297,6 @@ object Dependencies extends MiscRegexes {
       }
       linkingFactor
     }
-
-
     val targetInstantCondition: InstantCondition = sopToCondition(edgeLabel.targetSoPPair)
     val targetIsAccepted = targetInstantCondition.isInstanceOf[AcceptedCondition]
     val targetOccuredBeforeSource = targetInstantCondition.getOnsetDate.isBefore(sourceInstantCondition.getOnsetDate)
@@ -309,19 +330,53 @@ object Dependencies extends MiscRegexes {
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
     val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)
 
-    val edges = graph.edges.map(_.toOuter).filter(e => {
-      val label = e.label.asInstanceOf[FactorRefForSoPPair]
+
+    val edges = graph.edges.filter(e => {
       if (testEdgeTraverse)
-        canTraverse(label,acceptedConditions,diagnosedConditions)
+        canTraverseToAccepted(e.toOuter.label.asInstanceOf[FactorRefForSoPPair],acceptedConditions,diagnosedConditions) || e.target.hasSuccessors
       else
         true
-    })
+    }).map(_.toOuter)
     val nodesInEdges = edges.flatMap(e => e.sources ++ e.targets)
 
     Graph.from(nodesInEdges,edges)
   }
 
 
+  def getInferredSequelae(dto: SequelaeRequestDto, soPPairs : ImmutableSet[SoPPair]) : AcceptedSequalaeResponse = {
+    val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto,soPPairs)
+    val graph =  getInstantGraph(accepted.toList, diagnosed.toList,true)
+    val diagnosedConditionNames = diagnosed.map(c => c.soPPair.getConditionName).toSet
+
+    val edgesGoingFromDiagnosedConditions = graph.edges.filter(e => diagnosedConditionNames.contains(e.sources.head.toOuter.asInstanceOf[SoPPair].getConditionName))
+
+    def factorRefToDto(ref : FactorRefForSoPPair) : AcceptedSequalaeResponseConditionDto   =
+    {
+      new AcceptedSequalaeResponseConditionDto(
+        ref.dependentSoPPair.getConditionName,
+        ref.dependentSoPPair.getRhSop.getRegisterId,
+        ref.dependentSoPPair.getBopSop.getRegisterId,
+        ref.rhRefs.map(r => DtoTransformations.fromFactor(r.linkingFactor)).asJava,
+        ref.bopRefs.map(r => DtoTransformations.fromFactor(r.linkingFactor)).asJava
+        )
+    }
+
+    val inferredSequelaeDtos = edgesGoingFromDiagnosedConditions.map(e => {
+      val label = e.label.asInstanceOf[FactorRefForSoPPair]
+      val dto = factorRefToDto(label)
+      dto
+    })
+
+
+    val topoSortedConditions: Option[graph.TopologicalOrder[graph.NodeT]] = graph.topologicalSort.fold(cycleNode => None, order => Some(order))
+    val orderOfApplication = topoSortedConditions match {
+      case None => List()
+      case Some(o) => o.toList.map(n => n.toOuter.asInstanceOf[SoPPair].getConditionName).filter(n => diagnosedConditionNames.contains(n)).reverse
+    }
+
+    new AcceptedSequalaeResponse(inferredSequelaeDtos.toList.asJava, orderOfApplication.asJava)
+
+  }
 
 }
 

@@ -1,7 +1,12 @@
 package au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance;
 
+import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
 import au.gov.dva.sopapi.dtos.sopref.FactorDto;
+import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 
 import java.util.List;
 
@@ -30,4 +35,15 @@ public class AcceptedSequalaeResponseConditionDto {
         _bopFactors = bopFactors;
     }
 
+
+    @Override
+    public String toString() {
+        return "AcceptedSequalaeResponseConditionDto{" +
+                "_conditionName='" + _conditionName + '\'' +
+                ", rhFrlId='" + rhFrlId + '\'' +
+                ", bopFrlId='" + bopFrlId + '\'' +
+                ", _rhFactors=" + _rhFactors +
+                ", _bopFactors=" + _bopFactors +
+                '}';
+    }
 }

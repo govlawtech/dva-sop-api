@@ -34,4 +34,13 @@ public class FactorDto {
     public List<DefinedTerm> get_definedTerms() {
         return _definedTerms;
     }
+
+    @Override
+    public String toString() {
+        return "FactorDto{" +
+                "_paragraph='" + _paragraph + '\'' +
+                ", _text='" + _text + '\'' +
+                ", _definedTerms=" + _definedTerms +
+                '}';
+    }
 }

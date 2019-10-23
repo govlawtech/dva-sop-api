@@ -9,8 +9,7 @@ import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
-import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.AcceptedSequalaeRequestConditionDto;
-import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.AcceptedSequalaeRequestDto;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -53,6 +52,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -313,10 +313,21 @@ public class Routes {
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
         }));
 
+
         sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUALAE, MIME_JSON, ((req, res) -> {
-            AcceptedSequalaeRequestDto acceptedSequalaeRequestDto;
+            SequelaeRequestDto sequleeRequestDto;
             try {
-                acceptedSequalaeRequestDto = AcceptedSequalaeRequestDto.fromJsonString(clenseJson(req.body()));
+                sequleeRequestDto = SequelaeRequestDto.fromJsonString(clenseJson(req.body()));
+                // validate conditions exist
+                ImmutableSet<String> allValidConditionNames = cache.get_allSopPairs().stream().map(c -> c.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
+                ImmutableList<String> validationErrors = sequleeRequestDto.getValidationErrors(allValidConditionNames);
+                if (!validationErrors.isEmpty())
+                {
+                    setResponseHeaders(res,400,MIME_TEXT);
+                    return String.join(scala.util.Properties.lineSeparator(),validationErrors);
+                }
+
+
             } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return String.format("Request body invalid: %s", e.getMessage());
