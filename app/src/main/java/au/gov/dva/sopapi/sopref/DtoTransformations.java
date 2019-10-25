@@ -7,6 +7,7 @@ import au.gov.dva.sopapi.dtos.sopref.FactorDto;
 import au.gov.dva.sopapi.dtos.sopref.Operation;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.FactorLinkDto;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -29,6 +30,17 @@ public class DtoTransformations {
                 factor.getDefinedTerms().stream().map(t -> DtoTransformations.fromDefinedTerm(t)).collect(Collectors.toList()));
 
     }
+
+    public static FactorLinkDto fromFactorToLink(au.gov.dva.sopapi.interfaces.model.Factor factor) {
+
+        String conditionVariantName = factor.getConditionVariant().isPresent() ? factor.getConditionVariant().get().getName() : null;
+        return new FactorLinkDto(factor.getParagraph(), factor.getText(),
+                factor.getDefinedTerms().stream().map(t -> DtoTransformations.fromDefinedTerm(t)).collect(Collectors.toList()),conditionVariantName);
+
+
+    }
+
+
 
     public static DefinedTerm fromDefinedTerm(au.gov.dva.sopapi.interfaces.model.DefinedTerm definedTerm) {
         return new DefinedTerm(definedTerm.getTerm(), definedTerm.getDefinition());

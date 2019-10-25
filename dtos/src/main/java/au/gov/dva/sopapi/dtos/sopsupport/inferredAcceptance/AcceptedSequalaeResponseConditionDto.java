@@ -22,12 +22,12 @@ public class AcceptedSequalaeResponseConditionDto {
     private final String bopFrlId;
 
     @JsonProperty(value = "factorsForReasonableHypothesis")
-    private final List<FactorDto> _rhFactors;
+    private final List<FactorLinkDto> _rhFactors;
 
     @JsonProperty(value = "factorsForBalanceOfProbabilities")
-    private final List<FactorDto> _bopFactors;
+    private final List<FactorLinkDto> _bopFactors;
 
-    public AcceptedSequalaeResponseConditionDto(@JsonProperty("condition") String conditionName, @JsonProperty("instrumentIdForReasonableHypothesis") String rhInstrumentId, @JsonProperty("instrumentIdForReasonableHypothesis") String instrumentIdForBoP, @JsonProperty("factorsForReasonableHypothesis") List<FactorDto> rhFactors, @JsonProperty("factorsForBalanceOfProbabilities") List<FactorDto> bopFactors) {
+    public AcceptedSequalaeResponseConditionDto(@JsonProperty("condition") String conditionName, @JsonProperty("instrumentIdForReasonableHypothesis") String rhInstrumentId, @JsonProperty("instrumentIdForReasonableHypothesis") String instrumentIdForBoP, @JsonProperty("factorsForReasonableHypothesis") List<FactorLinkDto> rhFactors, @JsonProperty("factorsForBalanceOfProbabilities") List<FactorLinkDto> bopFactors) {
         _conditionName = conditionName;
         rhFrlId = rhInstrumentId;
         bopFrlId = instrumentIdForBoP;

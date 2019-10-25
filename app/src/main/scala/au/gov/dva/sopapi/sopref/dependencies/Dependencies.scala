@@ -58,6 +58,7 @@ case class DiagnosedCondition(soPPair: SoPPair, applicableStandardOfProof: Stand
 
 object InstantConditions {
 
+
   def decomposeRequestDto(request : SequelaeRequestDto, sopPairs : ImmutableSet[SoPPair]) = {
 
     val scalaSoPSet = sopPairs.asScala.map(s => s.getConditionName -> s).toMap
@@ -79,7 +80,25 @@ case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
 
 object Dependencies extends MiscRegexes {
 
+  def toDotString(graph: Graph[SoPPair,LDiEdge]) = {
+    val dotRoot = DotRootGraph(
+      directed = true,
+      id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}"))
+    )
 
+    def edgeTransformer(innerEdge: Graph[SoPPair,LDiEdge]#EdgeT): Option[(DotGraph,DotEdgeStmt)] = {
+      innerEdge.edge match {
+        case LDiEdge(source,target,label) => Some(
+          (dotRoot,DotEdgeStmt(
+            NodeId(source.toString()),
+            NodeId(target.toString()),
+            Seq(DotAttr(Id("label"),Id(label.toString)))
+          )))
+      }
+    }
+    graph.toDot(dotRoot, edgeTransformer)
+
+  }
 
   def buildDotStringForAll(sopPairs : ImmutableSet[SoPPair]) : String = {
     val dotRoot = DotRootGraph(
@@ -325,7 +344,7 @@ object Dependencies extends MiscRegexes {
 
   }
 
-  def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition],testEdgeTraverse : Boolean) = {
+  def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition],testEdgeTraverse : Boolean) : Graph[SoPPair,LDiEdge] = {
 
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
     val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)
@@ -343,9 +362,15 @@ object Dependencies extends MiscRegexes {
   }
 
 
+  def findNodesInCycles(graph : Graph[SoPPair,LDiEdge])  = {
+    graph.nodes
+      .filter(n => graph.findCycleContaining(n).isDefined)
+      .map(n => n.toOuter)
+  }
+
   def getInferredSequelae(dto: SequelaeRequestDto, soPPairs : ImmutableSet[SoPPair]) : AcceptedSequalaeResponse = {
     val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto,soPPairs)
-    val graph =  getInstantGraph(accepted.toList, diagnosed.toList,true)
+    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,true)
     val diagnosedConditionNames = diagnosed.map(c => c.soPPair.getConditionName).toSet
 
     val edgesGoingFromDiagnosedConditions = graph.edges.filter(e => diagnosedConditionNames.contains(e.sources.head.toOuter.asInstanceOf[SoPPair].getConditionName))
@@ -356,8 +381,8 @@ object Dependencies extends MiscRegexes {
         ref.dependentSoPPair.getConditionName,
         ref.dependentSoPPair.getRhSop.getRegisterId,
         ref.dependentSoPPair.getBopSop.getRegisterId,
-        ref.rhRefs.map(r => DtoTransformations.fromFactor(r.linkingFactor)).asJava,
-        ref.bopRefs.map(r => DtoTransformations.fromFactor(r.linkingFactor)).asJava
+        ref.rhRefs.map(r => DtoTransformations.fromFactorToLink(r.linkingFactor)).asJava,
+        ref.bopRefs.map(r => DtoTransformations.fromFactorToLink(r.linkingFactor)).asJava
         )
     }
 
@@ -367,8 +392,11 @@ object Dependencies extends MiscRegexes {
       dto
     })
 
+    // remove nodes in cycles for the purpose of topo sorting
+    val nodesInCycles = findNodesInCycles(graph)
+    val graphWithCycleNodesRemoved = nodesInCycles.foldLeft(graph)((acc,n) => acc - n)
 
-    val topoSortedConditions: Option[graph.TopologicalOrder[graph.NodeT]] = graph.topologicalSort.fold(cycleNode => None, order => Some(order))
+    val topoSortedConditions = graphWithCycleNodesRemoved.topologicalSort.fold(cycleNode => None, order => Some(order))
     val orderOfApplication = topoSortedConditions match {
       case None => List()
       case Some(o) => o.toList.map(n => n.toOuter.asInstanceOf[SoPPair].getConditionName).filter(n => diagnosedConditionNames.contains(n)).reverse

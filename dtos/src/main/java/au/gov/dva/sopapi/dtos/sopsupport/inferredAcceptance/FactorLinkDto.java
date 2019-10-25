@@ -1,11 +1,17 @@
-package au.gov.dva.sopapi.dtos.sopref;
+package au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance;
 
+import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
+import au.gov.dva.sopapi.dtos.sopref.FactorDto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class FactorDto {
+public class FactorLinkDto {
+
+
+    @JsonProperty("conditionVariant")
+    private final String _conditionVariant;
 
     @JsonProperty("paragraph")
     private final String _paragraph;
@@ -17,11 +23,13 @@ public class FactorDto {
     private final List<DefinedTerm> _definedTerms;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
-    public FactorDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms) {
+    public FactorLinkDto(@JsonProperty("paragraph") String paragraph, @JsonProperty("text") String text, @JsonProperty("definedTerms") List<DefinedTerm> definedTerms, @JsonProperty("conditionVariant") String conditionVariant) {
         _paragraph = paragraph;
         _text = text;
         _definedTerms = definedTerms;
+        _conditionVariant = conditionVariant;
     }
+
 
     public String get_paragraph() {
         return _paragraph;
@@ -35,14 +43,4 @@ public class FactorDto {
         return _definedTerms;
     }
 
-    @Override
-    public String toString() {
-        return "FactorDto{" +
-                "_paragraph='" + _paragraph + '\'' +
-                ", _text='" + _text + '\'' +
-                ", _definedTerms=" + _definedTerms +
-                '}';
-    }
 }
-
-
