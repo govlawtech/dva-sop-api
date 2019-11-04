@@ -4,9 +4,10 @@ import java.time.{Duration, LocalDate, OffsetDateTime, Period}
 import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
-import au.gov.dva.sopapi.dtos.sopref.FactorDto
+import au.gov.dva.sopapi.dtos.sopref.{FactorDto, ICDCodeDto}
+import au.gov.dva.sopapi.dtos.sopsupport.components.OnsetDateRangeDto
 import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance._
-import au.gov.dva.sopapi.interfaces.model.{Factor, SoP, SoPPair}
+import au.gov.dva.sopapi.interfaces.model.{Factor, ICDCode, SoP, SoPPair}
 import au.gov.dva.sopapi.sopref.DtoTransformations
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 import com.google.common.collect.{ImmutableList, ImmutableSet, Sets}
@@ -49,15 +50,20 @@ case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair
   override def toString = if (rhRefs != bopRefs) s"RH: ${rhRefs.mkString(", ")}; BoP: ${bopRefs.mkString(", ")}" else s"${rhRefs.mkString(", ")}"
 }
 
-abstract class InstantCondition(soPPair: SoPPair, onsetDate: LocalDate){
+abstract class InstantCondition(soPPair: SoPPair, onsetDate: LocalDate, iCDCodeOpt: Option[ICDCodeDto], SideOpt: Option[Side]){
   def getSoPair = soPPair
   def getOnsetDate = onsetDate
+  def getIcdCode  = iCDCodeOpt
+  def getSide = SideOpt
 }
-case class AcceptedCondition(soPPair: SoPPair, onsetDate: LocalDate) extends InstantCondition(soPPair,onsetDate)
-case class DiagnosedCondition(soPPair: SoPPair, applicableStandardOfProof: StandardOfProof, isOnset: Boolean,  date : LocalDate) extends InstantCondition(soPPair,date)
+case class AcceptedCondition(soPPair: SoPPair, onsetDate: LocalDate, iCDCodeOpt: Option[ICDCodeDto] = None, SideOpt: Option[Side] = None) extends InstantCondition(soPPair,onsetDate,iCDCodeOpt,SideOpt)
+
+case class DiagnosedCondition(soPPair: SoPPair, applicableStandardOfProof: StandardOfProof, isOnset: Boolean,  date : LocalDate, iCDCodeOpt: Option[ICDCodeDto] = None, SideOpt: Option[Side] = None)
+
+
+extends InstantCondition(soPPair,date, iCDCodeOpt, SideOpt)
 
 object InstantConditions {
-
 
   def decomposeRequestDto(request : SequelaeRequestDto, sopPairs : ImmutableSet[SoPPair]) = {
 
@@ -68,10 +74,10 @@ object InstantConditions {
   }
 
   def acceptedConditionFromDto(dto : AcceptedConditionDto, sp : SoPPair): AcceptedCondition = {
-    AcceptedCondition(sp, dto.get_onsetDate())
+    AcceptedCondition(sp, dto.get_onsetDate(),Option(dto.get_icdCode()),Option(dto.get_side()))
   }
   def diagnosedConditionFromDto(dto : DiagnosedConditionDto, sp : SoPPair) : DiagnosedCondition = {
-    DiagnosedCondition(sp,dto.get_standardOfProof(),dto.get_isOnset(),dto.get_onsetDate())
+    DiagnosedCondition(sp,dto.get_standardOfProof(),dto.get_isOnset(),dto.get_date(),Option(dto.get_icdCode()),Option(dto.get_side()))
   }
 }
 
@@ -379,10 +385,8 @@ object Dependencies extends MiscRegexes {
     {
       new AcceptedSequalaeResponseConditionDto(
         ref.dependentSoPPair.getConditionName,
-        ref.dependentSoPPair.getRhSop.getRegisterId,
-        ref.dependentSoPPair.getBopSop.getRegisterId,
-        ref.rhRefs.map(r => DtoTransformations.fromFactorToLink(r.linkingFactor)).asJava,
-        ref.bopRefs.map(r => DtoTransformations.fromFactorToLink(r.linkingFactor)).asJava
+        new FactorListDto(ref.dependentSoPPair.getRhSop.getRegisterId,ref.rhRefs.map(r => DtoTransformations.fromFactorToLink(r.linkingFactor)).asJava),
+        new FactorListDto(ref.dependentSoPPair.getBopSop.getRegisterId,ref.bopRefs.map(r => DtoTransformations.fromFactorToLink(r.linkingFactor)).asJava)
         )
     }
 

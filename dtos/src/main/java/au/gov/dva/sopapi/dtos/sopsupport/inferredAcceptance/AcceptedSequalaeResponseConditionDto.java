@@ -10,40 +10,25 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 
 import java.util.List;
 
+
 public class AcceptedSequalaeResponseConditionDto {
 
-    @JsonProperty(value = "condition", required = true)
+    @JsonProperty(value = "conditionName", required = true)
     private final String _conditionName;
 
-    @JsonProperty(value = "instrumentIdForReasonableHypothesis")
-    private final String rhFrlId;
+    @JsonProperty(value = "reasonableHypothesis", required = true)
+    private final FactorListDto _rhFactors;
 
-    @JsonProperty(value = "instrumentIdForBalanceOfProbabilities")
-    private final String bopFrlId;
+    @JsonProperty(value = "balanceOfProbabilities", required = true)
+    private final FactorListDto _bopFactors;
 
-    @JsonProperty(value = "factorsForReasonableHypothesis")
-    private final List<FactorLinkDto> _rhFactors;
-
-    @JsonProperty(value = "factorsForBalanceOfProbabilities")
-    private final List<FactorLinkDto> _bopFactors;
-
-    public AcceptedSequalaeResponseConditionDto(@JsonProperty("condition") String conditionName, @JsonProperty("instrumentIdForReasonableHypothesis") String rhInstrumentId, @JsonProperty("instrumentIdForReasonableHypothesis") String instrumentIdForBoP, @JsonProperty("factorsForReasonableHypothesis") List<FactorLinkDto> rhFactors, @JsonProperty("factorsForBalanceOfProbabilities") List<FactorLinkDto> bopFactors) {
+    public AcceptedSequalaeResponseConditionDto(@JsonProperty("conditionName") String conditionName, @JsonProperty("reasonableHypothesis") FactorListDto rhFactors, @JsonProperty("balanceOfProbabilities") FactorListDto bopFactors)
+    {
         _conditionName = conditionName;
-        rhFrlId = rhInstrumentId;
-        bopFrlId = instrumentIdForBoP;
         _rhFactors = rhFactors;
         _bopFactors = bopFactors;
     }
 
 
-    @Override
-    public String toString() {
-        return "AcceptedSequalaeResponseConditionDto{" +
-                "_conditionName='" + _conditionName + '\'' +
-                ", rhFrlId='" + rhFrlId + '\'' +
-                ", bopFrlId='" + bopFrlId + '\'' +
-                ", _rhFactors=" + _rhFactors +
-                ", _bopFactors=" + _bopFactors +
-                '}';
-    }
+
 }

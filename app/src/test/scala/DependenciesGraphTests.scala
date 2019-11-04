@@ -107,14 +107,14 @@ class DependenciesGraphTests extends  FunSuite {
   test("Integration test of response generation") {
     val testRequest = new SequelaeRequestDto(
       List(
-        new AcceptedConditionDto("depressive disorder","M000",LocalDate.of(2019,10,23))
+        new AcceptedConditionDto("depressive disorder",null,null,LocalDate.of(2019,10,23))
 
       ).asJava,
       List(
-        new DiagnosedConditionDto("bruxism","M0000",LocalDate.of(2019,10,24),StandardOfProof.ReasonableHypothesis,true),
-        new DiagnosedConditionDto("tooth wear","M0000",LocalDate.of(2019,10,25),StandardOfProof.ReasonableHypothesis,true),
-        new DiagnosedConditionDto("panic disorder","M0000", LocalDate.of(2019,10,26),StandardOfProof.ReasonableHypothesis,true),
-        new DiagnosedConditionDto("irritable bowel syndrome","M0000", LocalDate.of(2019,10,27),StandardOfProof.ReasonableHypothesis,true)
+        new DiagnosedConditionDto("bruxism",null,null,LocalDate.of(2019,10,24),StandardOfProof.ReasonableHypothesis,true),
+        new DiagnosedConditionDto("tooth wear",null,null,LocalDate.of(2019,10,25),StandardOfProof.ReasonableHypothesis,true),
+        new DiagnosedConditionDto("panic disorder",null,null, LocalDate.of(2019,10,26),StandardOfProof.ReasonableHypothesis,true),
+        new DiagnosedConditionDto("irritable bowel syndrome",null,null, LocalDate.of(2019,10,27),StandardOfProof.ReasonableHypothesis,true)
       ).asJava
     )
 

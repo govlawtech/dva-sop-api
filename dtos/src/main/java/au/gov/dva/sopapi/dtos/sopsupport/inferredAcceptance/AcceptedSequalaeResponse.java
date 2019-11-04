@@ -25,6 +25,7 @@ public class AcceptedSequalaeResponse {
         return _orderOfApplication;
     }
 
+
     public AcceptedSequalaeResponse(@JsonProperty("seqeulae") List<AcceptedSequalaeResponseConditionDto> acceptedSequalaeResponseConditionDtos, @JsonProperty("orderOfApplication") List<String> orderedConditions)
     {
         _sequelae = acceptedSequalaeResponseConditionDtos;
@@ -44,12 +45,4 @@ public class AcceptedSequalaeResponse {
         return jsonString;
     }
 
-
-    @Override
-    public String toString() {
-        return "AcceptedSequalaeResponse{" +
-                "_sequelae=" + _sequelae +
-                ", _orderOfApplication=" + _orderOfApplication +
-                '}';
-    }
 }
