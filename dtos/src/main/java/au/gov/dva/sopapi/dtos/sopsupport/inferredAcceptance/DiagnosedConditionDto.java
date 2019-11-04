@@ -13,7 +13,6 @@ public class DiagnosedConditionDto {
     @JsonProperty(value = "conditionName", required = true)
     private final String _name;
 
-
     @JsonProperty(value = "date", required = true)
     private final LocalDate _date;
 
@@ -33,9 +32,6 @@ public class DiagnosedConditionDto {
         return _standardOfProof;
     }
 
-    public LocalDate getDate() {
-        return _date;
-    }
 
     @JsonProperty(value = "icdCode", required = false)
     private final ICDCodeDto _icdCode;
@@ -55,10 +51,10 @@ public class DiagnosedConditionDto {
         return _isOnset;
     }
 
-    public DiagnosedConditionDto(@JsonProperty("conditionName") String name, @JsonProperty("icdCode") ICDCodeDto icdCode, @JsonProperty("side") Side side, @JsonProperty("date") @JsonDeserialize(using = LocalDateDeserializer.class) LocalDate onsetDate, @JsonProperty("standardOfProof") StandardOfProof acceptedStandardOfProof, @JsonProperty("isOnset") boolean isOnset)
+    public DiagnosedConditionDto(@JsonProperty("conditionName") String name, @JsonProperty("icdCode") ICDCodeDto icdCode, @JsonProperty("side") Side side, @JsonProperty("date") @JsonDeserialize(using = LocalDateDeserializer.class) LocalDate date, @JsonProperty("standardOfProof") StandardOfProof acceptedStandardOfProof, @JsonProperty("isOnset") boolean isOnset)
     {
         _name = name;
-        _date = onsetDate;
+        _date = date;
         _icdCode = icdCode;
         _standardOfProof = acceptedStandardOfProof;
         _isOnset = isOnset;

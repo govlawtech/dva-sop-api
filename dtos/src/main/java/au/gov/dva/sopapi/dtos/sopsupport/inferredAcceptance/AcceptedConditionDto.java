@@ -17,9 +17,10 @@ public class AcceptedConditionDto {
     @JsonProperty(value = "date", required = true)
     private final LocalDate _date;
 
-    public LocalDate getDate() {
+    public LocalDate get_date() {
         return _date;
     }
+
 
     @JsonProperty(value = "icdCode", required = false)
     private final ICDCodeDto _icdCode;
@@ -38,7 +39,7 @@ public class AcceptedConditionDto {
 
     public Side get_side() {return _side;}
 
-    public AcceptedConditionDto(@JsonProperty("conditionName") String name, @JsonProperty("icdCode") ICDCodeDto icdCode, @JsonProperty("side") Side side, @JsonProperty("onsetDate") @JsonDeserialize(using = LocalDateDeserializer.class) LocalDate date)
+    public AcceptedConditionDto(@JsonProperty("conditionName") String name, @JsonProperty("icdCode") ICDCodeDto icdCode, @JsonProperty("side") Side side, @JsonProperty("date") @JsonDeserialize(using = LocalDateDeserializer.class) LocalDate date)
     {
         _name = name;
         _date = date;

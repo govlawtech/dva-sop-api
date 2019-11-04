@@ -9,6 +9,7 @@ import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.AcceptedSequalaeResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
@@ -326,13 +327,17 @@ public class Routes {
                     setResponseHeaders(res,400,MIME_TEXT);
                     return String.join(scala.util.Properties.lineSeparator(),validationErrors);
                 }
+                AcceptedSequalaeResponse response = Dependencies.getInferredSequelae(sequleeRequestDto,cache.get_allSopPairs());
+                setResponseHeaders(res,200,MIME_JSON);
+                return response.toJsonString();
 
 
             } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return String.format("Request body invalid: %s", e.getMessage());
             }
-            throw new NotImplementedException();
+
+
 
         }));
 

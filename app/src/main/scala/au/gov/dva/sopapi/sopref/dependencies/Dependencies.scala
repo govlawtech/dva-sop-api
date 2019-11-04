@@ -74,7 +74,7 @@ object InstantConditions {
   }
 
   def acceptedConditionFromDto(dto : AcceptedConditionDto, sp : SoPPair): AcceptedCondition = {
-    AcceptedCondition(sp, dto.get_onsetDate(),Option(dto.get_icdCode()),Option(dto.get_side()))
+    AcceptedCondition(sp, dto.get_date(),Option(dto.get_icdCode()),Option(dto.get_side()))
   }
   def diagnosedConditionFromDto(dto : DiagnosedConditionDto, sp : SoPPair) : DiagnosedCondition = {
     DiagnosedCondition(sp,dto.get_standardOfProof(),dto.get_isOnset(),dto.get_date(),Option(dto.get_icdCode()),Option(dto.get_side()))
