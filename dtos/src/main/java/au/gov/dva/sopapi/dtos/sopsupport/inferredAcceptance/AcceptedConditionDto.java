@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance;
 
+import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.ICDCodeDto;
 import au.gov.dva.sopapi.dtos.sopsupport.LocalDateDeserializer;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,7 +29,16 @@ public class AcceptedConditionDto {
     @JsonProperty(value = "side",required = false)
     private final Side _side;
 
+
+    @JsonProperty(value = "standardOfProof", required = true)
+    private final StandardOfProof _standardOfProof;
+
+    public StandardOfProof get_standardOfProof() {
+        return _standardOfProof;
+    }
+
     public String get_name() {
+
         return _name;
     }
 
@@ -39,12 +49,13 @@ public class AcceptedConditionDto {
 
     public Side get_side() {return _side;}
 
-    public AcceptedConditionDto(@JsonProperty("conditionName") String name, @JsonProperty("icdCode") ICDCodeDto icdCode, @JsonProperty("side") Side side, @JsonProperty("date") @JsonDeserialize(using = LocalDateDeserializer.class) LocalDate date)
+    public AcceptedConditionDto(@JsonProperty("conditionName") String name, @JsonProperty("standardOfProof") StandardOfProof standardOfProof, @JsonProperty("icdCode") ICDCodeDto icdCode, @JsonProperty("side") Side side, @JsonProperty("date") @JsonDeserialize(using = LocalDateDeserializer.class) LocalDate date)
     {
         _name = name;
         _date = date;
         _icdCode = icdCode;
-        _side = side;
+       _side = side;
+       _standardOfProof = standardOfProof;
     }
 
 

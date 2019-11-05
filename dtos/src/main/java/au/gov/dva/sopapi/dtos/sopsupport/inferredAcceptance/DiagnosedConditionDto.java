@@ -28,9 +28,7 @@ public class DiagnosedConditionDto {
         return _icdCode;
     }
 
-    public StandardOfProof get_standardOfProof() {
-        return _standardOfProof;
-    }
+
 
 
     @JsonProperty(value = "icdCode", required = false)

@@ -63,9 +63,9 @@ class DependenciesGraphTests extends  FunSuite {
     val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "tooth wear").get
     val acceptedSoP = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
     val acceptedSoP2 = sopPairs.asScala.find(sp => sp.getConditionName == "bruxism").get
-    val diagnosed = DiagnosedCondition(diagnosedSop, StandardOfProof.ReasonableHypothesis, true, LocalDate.of(2020, 1, 1))
-    val accepted = AcceptedCondition(acceptedSoP, LocalDate.of(2018, 1, 1))
-    val accepted2 = AcceptedCondition(acceptedSoP2, LocalDate.of(2018, 2, 1))
+    val diagnosed = DiagnosedCondition(diagnosedSop,  true, LocalDate.of(2020, 1, 1))
+    val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis,  LocalDate.of(2018, 1, 1))
+    val accepted2 = AcceptedCondition(acceptedSoP2, StandardOfProof.ReasonableHypothesis,  LocalDate.of(2018, 2, 1))
     val result = Dependencies.getInstantGraph(List(accepted, accepted2), List(diagnosed), false)
     println(result)
   }
@@ -73,8 +73,8 @@ class DependenciesGraphTests extends  FunSuite {
   test("Build instant graph with cycles") {
     val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
     val acceptedSoP = sopPairs.asScala.find(sp => sp.getConditionName == "panic disorder").get
-    val diagnosed = DiagnosedCondition(diagnosedSop, StandardOfProof.ReasonableHypothesis, true, LocalDate.of(2020, 1, 1))
-    val accepted = AcceptedCondition(acceptedSoP, LocalDate.of(2018, 1, 1))
+    val diagnosed = DiagnosedCondition(diagnosedSop,  true, LocalDate.of(2020, 1, 1))
+    val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis, LocalDate.of(2018, 1, 1))
     val result = Dependencies.getInstantGraph(List(accepted), List(diagnosed), false)
     println(Dependencies.toDotString(result))
   }
@@ -84,8 +84,8 @@ class DependenciesGraphTests extends  FunSuite {
     val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "personality disorder").get
     val acceptedSoP = sopPairs.asScala.find(sp => sp.getConditionName == "substance use disorder").get
     // five years time limit
-    val diagnosed = DiagnosedCondition(diagnosedSop, StandardOfProof.ReasonableHypothesis, true, LocalDate.of(2017, 1, 1))
-    val accepted = AcceptedCondition(acceptedSoP, LocalDate.of(2011, 12, 31))
+    val diagnosed = DiagnosedCondition(diagnosedSop,  true, LocalDate.of(2017, 1, 1))
+    val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis, LocalDate.of(2011, 12, 31))
     val result = Dependencies.getInstantGraph(List(accepted), List(diagnosed), true)
     println(result)
   }
@@ -94,8 +94,8 @@ class DependenciesGraphTests extends  FunSuite {
     val acceptedSoP = sopPairs.asScala.find(sp => sp.getConditionName == "sprain and strain").get
     val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "internal derangement of the knee").get
     // five years time limit
-    val diagnosed = DiagnosedCondition(diagnosedSop, StandardOfProof.ReasonableHypothesis, true, LocalDate.of(2017, 1, 1))
-    val accepted = AcceptedCondition(acceptedSoP, LocalDate.of(2016, 12, 31))
+    val diagnosed = DiagnosedCondition(diagnosedSop, true, LocalDate.of(2017, 1, 1))
+    val accepted = AcceptedCondition(acceptedSoP, StandardOfProof.ReasonableHypothesis, LocalDate.of(2016, 12, 31))
     val result = Dependencies.getInstantGraph(List(accepted), List(diagnosed), false)
     println(result)
   }
@@ -103,7 +103,7 @@ class DependenciesGraphTests extends  FunSuite {
   test("Integration test of response generation") {
     val testRequest = new SequelaeRequestDto(
       List(
-        new AcceptedConditionDto("depressive disorder", null, null, LocalDate.of(2019, 10, 23))
+        new AcceptedConditionDto("depressive disorder", StandardOfProof.ReasonableHypothesis, null, null, LocalDate.of(2019, 10, 23))
 
       ).asJava,
       List(
@@ -133,4 +133,6 @@ class DependenciesGraphTests extends  FunSuite {
 
      println(result)
    }
+
+
 }

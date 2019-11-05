@@ -27,7 +27,6 @@ import scala.collection.immutable
 case class FactorRef(linkingFactor: Factor, period: Option[Period]) {
 
 
-
     override def toString: String =  {
       def prettyPrintPeriod(p : Period) = {
         if (p.getYears > 0) s"${p.getYears} years"
@@ -56,9 +55,9 @@ abstract class InstantCondition(soPPair: SoPPair, onsetDate: LocalDate, iCDCodeO
   def getIcdCode  = iCDCodeOpt
   def getSide = SideOpt
 }
-case class AcceptedCondition(soPPair: SoPPair, onsetDate: LocalDate, iCDCodeOpt: Option[ICDCodeDto] = None, SideOpt: Option[Side] = None) extends InstantCondition(soPPair,onsetDate,iCDCodeOpt,SideOpt)
+case class AcceptedCondition(soPPair: SoPPair, acceptedStandardOfProof: StandardOfProof,  onsetDate: LocalDate, iCDCodeOpt: Option[ICDCodeDto] = None, SideOpt: Option[Side] = None) extends InstantCondition(soPPair,onsetDate,iCDCodeOpt,SideOpt)
 
-case class DiagnosedCondition(soPPair: SoPPair, applicableStandardOfProof: StandardOfProof, isOnset: Boolean,  date : LocalDate, iCDCodeOpt: Option[ICDCodeDto] = None, SideOpt: Option[Side] = None)
+case class DiagnosedCondition(soPPair: SoPPair, isOnset: Boolean,  date : LocalDate, iCDCodeOpt: Option[ICDCodeDto] = None, SideOpt: Option[Side] = None)
 
 
 extends InstantCondition(soPPair,date, iCDCodeOpt, SideOpt)
@@ -74,10 +73,10 @@ object InstantConditions {
   }
 
   def acceptedConditionFromDto(dto : AcceptedConditionDto, sp : SoPPair): AcceptedCondition = {
-    AcceptedCondition(sp, dto.get_date(),Option(dto.get_icdCode()),Option(dto.get_side()))
+    AcceptedCondition(sp, dto.get_standardOfProof(),  dto.get_date(),Option(dto.get_icdCode()),Option(dto.get_side()))
   }
   def diagnosedConditionFromDto(dto : DiagnosedConditionDto, sp : SoPPair) : DiagnosedCondition = {
-    DiagnosedCondition(sp,dto.get_standardOfProof(),dto.get_isOnset(),dto.get_date(),Option(dto.get_icdCode()),Option(dto.get_side()))
+    DiagnosedCondition(sp,dto.get_isOnset(),dto.get_date(),Option(dto.get_icdCode()),Option(dto.get_side()))
   }
 }
 
@@ -179,29 +178,21 @@ object Dependencies extends MiscRegexes {
 
     def textContainsPhraseWithoutNegation(phrase: String, text: String): Boolean = {
 
-      val textDividedToWords = text.split("""(\n|\r\n|\s)""")
 
-      def testPhrasePart(phrasePart : String) : Boolean = {
-        val phraseMatches = textDividedToWords.map(i => i.trim).contains(phrasePart)
+      val textWithLineBreaksReplaced = text.replaceAll(platformNeutralLineEndingRegex.regex, " ")
+
+      def testPhrase(phrase : String) : Boolean = {
+        val phraseMatches = textWithLineBreaksReplaced.contains(phrase)
         if (!phraseMatches)
           return false
-        val phrasePreceededByNegation = s"""(other than|excepting|excluding|except for|does not involve( a )?)$phrasePart""".r
+        val phrasePreceededByNegation = s"""(other than|excepting|excluding|except for|does not involve( a )?)$phrase""".r
         if (phrasePreceededByNegation.findFirstMatchIn(text).isDefined)
           return false
         else return true
       }
 
-      def divideCompoundConditions(conditionName : String) = {
+      testPhrase(phrase)
 
-        // todo: figure out way to make this reliable - possible whitelist of compound conditions
-       // if (shouldNotSplit(conditionName))
-         // List(conditionName)
-       // else
-        //conditionName.split("(, | and )").map(i => i.trim).toList
-        List(conditionName)
-      }
-
-      divideCompoundConditions(phrase).exists(testPhrasePart)
 
     }
 
@@ -215,7 +206,7 @@ object Dependencies extends MiscRegexes {
 
     def getFactorRefForSopPair(dependentSoPPair : SoPPair, targetSoPPair : SoPPair) : FactorRefForSoPPair = {
       val rhRefs = gatherFactorRefs(dependentSoPPair.getRhSop,targetSoPPair)
-      val bopRefs = gatherFactorRefs(dependentSoPPair.getRhSop,targetSoPPair)
+      val bopRefs = gatherFactorRefs(dependentSoPPair.getBopSop,targetSoPPair)
       FactorRefForSoPPair(dependentSoPPair, targetSoPPair, rhRefs,bopRefs)
     }
 
@@ -305,10 +296,16 @@ object Dependencies extends MiscRegexes {
 
     def isOnsetFactor(factorPara: String, sop: SoP) = sop.getOnsetFactors.asScala.map(f => f.getParagraph).contains(factorPara)
 
+
     val sourceInstantCondition = sopToCondition(edgeLabel.dependentSoPPair)
-    def findLinkingFactor(source: DiagnosedCondition) = {
+
+
+    def findLinkingFactor(source: DiagnosedCondition, standardOfProof: StandardOfProof) = {
       val diagnosed = source
-      val referringStandardOfProof = diagnosed.applicableStandardOfProof
+
+      // assume the standard of proof is the same as the target accepted condition
+
+      val referringStandardOfProof = standardOfProof
       val isOnset = diagnosed.isOnset
       val linkingFactor = referringStandardOfProof match {
         case StandardOfProof.ReasonableHypothesis => isOnset match {
@@ -322,6 +319,7 @@ object Dependencies extends MiscRegexes {
       }
       linkingFactor
     }
+
     val targetInstantCondition: InstantCondition = sopToCondition(edgeLabel.targetSoPPair)
     val targetIsAccepted = targetInstantCondition.isInstanceOf[AcceptedCondition]
     val targetOccuredBeforeSource = targetInstantCondition.getOnsetDate.isBefore(sourceInstantCondition.getOnsetDate)
@@ -333,8 +331,9 @@ object Dependencies extends MiscRegexes {
     }
     // if source is diagnosed, check time limit
 
-    def checkTimeLimitOnDiagnosed(sourceDiagnosed : DiagnosedCondition) : Boolean = {
-      val linkingFactor = findLinkingFactor(sourceDiagnosed).get
+    def checkTimeLimitOnDiagnosed(sourceDiagnosed : DiagnosedCondition, standardOfProof: StandardOfProof) : Boolean = {
+
+      val linkingFactor = findLinkingFactor(sourceDiagnosed,standardOfProof).get
       val timeLimitRequirement = parsePeriodFromFactor(linkingFactor.linkingFactor.getText,edgeLabel.dependentSoPPair.getConditionName)
       timeLimitRequirement match
       {
@@ -344,13 +343,14 @@ object Dependencies extends MiscRegexes {
     }
 
     sourceInstantCondition.isInstanceOf[DiagnosedCondition] match {
-      case true => targetIsAccepted && targetOccuredBeforeSource && checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition])
+      case true => targetIsAccepted && targetOccuredBeforeSource && checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition],targetInstantCondition.asInstanceOf[AcceptedCondition].acceptedStandardOfProof)
       case false => targetIsAccepted && targetOccuredBeforeSource
     }
 
   }
 
   def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition],testEdgeTraverse : Boolean) : Graph[SoPPair,LDiEdge] = {
+
 
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
     val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)

@@ -1,10 +1,13 @@
 package au.gov.dva.sopapi.dtos;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum StandardOfProof {
 
+    @JsonProperty("RH")
     ReasonableHypothesis("Reasonable Hypothesis"),
+    @JsonProperty("BoP")
     BalanceOfProbabilities("Balance of Probabilities");
 
 
