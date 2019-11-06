@@ -1,10 +1,11 @@
+import java.io.ByteArrayOutputStream
 import java.time.{LocalDate, OffsetDateTime}
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.{AcceptedConditionDto, AcceptedSequalaeResponseConditionDto, DiagnosedConditionDto, SequelaeRequestDto}
 import au.gov.dva.sopapi.interfaces.model.SoPPair
 import au.gov.dva.sopapi.sopref.SoPs
-import au.gov.dva.sopapi.sopref.dependencies.{AcceptedCondition, Dependencies, DiagnosedCondition}
+import au.gov.dva.sopapi.sopref.dependencies.{AcceptedCondition, Dependencies, DiagnosedCondition, DotToImage}
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import com.google.common.collect.ImmutableSet
 import com.sun.xml.bind.api.impl.NameConverter.Standard
@@ -31,6 +32,7 @@ class DependenciesGraphTests extends  FunSuite {
 
   test("Build graph") {
     val result = Dependencies.buildDotStringForAll(sopPairs)
+
     println(result)
 
   }
@@ -134,5 +136,11 @@ class DependenciesGraphTests extends  FunSuite {
      println(result)
    }
 
+  test("Render graphviz image in process")
+  {
+    val os = new ByteArrayOutputStream()
+    val result: Unit = DotToImage.render("digraph \"SoP Dependencies Graph Generated 2019-11-06T07:40:13.127+11:00\" {\n\t\"panic disorder\" -> \"depressive disorder\" [label = \"RH: 9(11), 9(23); BoP: 9(11), 9(22)\"]\n\t\"depressive disorder\" -> \"panic disorder\" [label = \"RH: 9(1) (major depressive disorder, major depressive episode, persistent depressive disorder,\npremenstrual dysphoric disorder, other specified depressive disorder and unspecified depressive\ndisorder); BoP: 9(1) (major depressive disorder, major depressive episode, persistent depressive\ndisorder, premenstrual dysphoric disorder, other specified depressive disorder and unspecified\ndepressive disorder)\"]\n}",os)
+    println(os.toByteArray)
+  }
 
 }

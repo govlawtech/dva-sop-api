@@ -67,6 +67,8 @@ public class Routes {
     private final static String MIME_TEXT = "text/plain";
     private final static String MIME_HTML = "text/html";
     private final static String MIME_CSV = "text/csv";
+    private final static String MIME_SVG = "image/svg+xml";
+
 
     private static CacheSingleton cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
@@ -315,7 +317,8 @@ public class Routes {
         }));
 
 
-        sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUALAE, MIME_JSON, ((req, res) -> {
+
+        sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE, MIME_JSON, ((req, res) -> {
             SequelaeRequestDto sequleeRequestDto;
             try {
                 sequleeRequestDto = SequelaeRequestDto.fromJsonString(clenseJson(req.body()));
@@ -327,6 +330,8 @@ public class Routes {
                     setResponseHeaders(res,400,MIME_TEXT);
                     return String.join(scala.util.Properties.lineSeparator(),validationErrors);
                 }
+
+
                 AcceptedSequalaeResponse response = Dependencies.getInferredSequelae(sequleeRequestDto,cache.get_allSopPairs());
                 setResponseHeaders(res,200,MIME_JSON);
                 return response.toJsonString();
@@ -337,9 +342,34 @@ public class Routes {
                 return String.format("Request body invalid: %s", e.getMessage());
             }
 
+        }));
 
+        sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE_DIAGRAM, MIME_SVG, ((req, res) -> {
+            SequelaeRequestDto sequleeRequestDto;
+            try {
+                sequleeRequestDto = SequelaeRequestDto.fromJsonString(clenseJson(req.body()));
+                // validate conditions exist
+                ImmutableSet<String> allValidConditionNames = cache.get_allSopPairs().stream().map(c -> c.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
+                ImmutableList<String> validationErrors = sequleeRequestDto.getValidationErrors(allValidConditionNames);
+                if (!validationErrors.isEmpty())
+                {
+                    setResponseHeaders(res,400,MIME_TEXT);
+                    return String.join(scala.util.Properties.lineSeparator(),validationErrors);
+                }
+
+                byte[] svg = Dependencies.getSvg(sequleeRequestDto, cache.get_allSopPairs());
+                setResponseHeaders(res,200,MIME_SVG);
+                res.header("Content-Disposition","attachment");
+                return svg;
+
+
+            } catch (DvaSopApiDtoRuntimeException e) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return String.format("Request body invalid: %s", e.getMessage());
+            }
 
         }));
+
 
 
     }

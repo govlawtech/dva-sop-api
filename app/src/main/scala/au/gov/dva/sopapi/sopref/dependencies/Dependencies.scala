@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopref.dependencies
 
+import java.io.{ByteArrayOutputStream, OutputStream}
 import java.time.{Duration, LocalDate, OffsetDateTime, Period}
 import java.time.format.DateTimeFormatter
 
@@ -11,6 +12,7 @@ import au.gov.dva.sopapi.interfaces.model.{Factor, ICDCode, SoP, SoPPair}
 import au.gov.dva.sopapi.sopref.DtoTransformations
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 import com.google.common.collect.{ImmutableList, ImmutableSet, Sets}
+import org.apache.commons.lang.WordUtils
 import org.joda.time.format.{PeriodFormat, PeriodFormatterBuilder}
 import org.w3c.dom.traversal.NodeFilter
 import scalax.collection.GraphEdge.DiEdge
@@ -97,7 +99,7 @@ object Dependencies extends MiscRegexes {
           (dotRoot,DotEdgeStmt(
             NodeId(source.toString()),
             NodeId(target.toString()),
-            Seq(DotAttr(Id("label"),Id(label.toString)))
+            Seq(DotAttr(Id("label"),Id(WordUtils.wrap(label.toString,100))))
           )))
       }
     }
@@ -350,11 +352,8 @@ object Dependencies extends MiscRegexes {
   }
 
   def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition],testEdgeTraverse : Boolean) : Graph[SoPPair,LDiEdge] = {
-
-
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
     val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopPairs)
-
 
     val edges = graph.edges.filter(e => {
       if (testEdgeTraverse)
@@ -374,12 +373,42 @@ object Dependencies extends MiscRegexes {
       .map(n => n.toOuter)
   }
 
+
+  def canTraverseFromDiagnosedToAccepted(graph: Graph[SoPPair, LDiEdge], sourceCondition: SoPPair, acceptedConditions: Set[SoPPair]) = {
+    // todo: get standard of proof from root condition and then check label to see if there is a link for that standard
+
+    // get accepted nodes
+    val acceptedNodes = graph.nodes.filter(n => acceptedConditions.contains(n.toOuter))
+    val sourceNode = graph get sourceCondition
+    val pathsToTarget: collection.Set[graph.Path] = acceptedNodes.map(n => sourceNode.pathTo(n)).filter(p => p.isDefined).map(p => p.get)
+
+    pathsToTarget.nonEmpty
+
+  }
+
+  def getSvg(dto: SequelaeRequestDto, soPPairs : ImmutableSet[SoPPair])  = {
+    val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto,soPPairs)
+    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,false)
+    val dotString = Dependencies.toDotString(graph)
+    val os  = new ByteArrayOutputStream()
+    val svgString = DotToImage.render(dotString,os)
+    os.toByteArray
+  }
+
   def getInferredSequelae(dto: SequelaeRequestDto, soPPairs : ImmutableSet[SoPPair]) : AcceptedSequalaeResponse = {
     val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto,soPPairs)
-    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,true)
+    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,false)
+    val acceptedSoPPairs = accepted.map(c => c.soPPair).toSet
+    val diagnosedSopPaairs = diagnosed.map(c => c.soPPair).toSet
+    val sequelae = diagnosedSopPaairs.filter(n => canTraverseFromDiagnosedToAccepted(graph,n,acceptedSoPPairs))
+
+
     val diagnosedConditionNames = diagnosed.map(c => c.soPPair.getConditionName).toSet
 
-    val edgesGoingFromDiagnosedConditions = graph.edges.filter(e => diagnosedConditionNames.contains(e.sources.head.toOuter.asInstanceOf[SoPPair].getConditionName))
+
+    val edgesGoingFromDiagnosedConditions = graph.edges.filter(e => sequelae.map(s => s.getConditionName).contains(e.sources.head.toOuter.asInstanceOf[SoPPair].getConditionName))
+
+
 
     def factorRefToDto(ref : FactorRefForSoPPair) : AcceptedSequalaeResponseConditionDto   =
     {
@@ -389,6 +418,8 @@ object Dependencies extends MiscRegexes {
         new FactorListDto(ref.dependentSoPPair.getBopSop.getRegisterId,ref.bopRefs.map(r => DtoTransformations.fromFactorToLink(r.linkingFactor)).asJava)
         )
     }
+
+
 
     val inferredSequelaeDtos = edgesGoingFromDiagnosedConditions.map(e => {
       val label = e.label.asInstanceOf[FactorRefForSoPPair]
