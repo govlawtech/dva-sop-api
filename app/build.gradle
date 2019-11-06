@@ -112,9 +112,7 @@ dependencies {
     compile group: 'org.scala-graph', name: 'graph-core_2.12', version: '1.13.0'
     compile group: 'org.scala-graph', name: 'graph-dot_sjs0.6_2.12', version: '1.13.0'
 
-
     compile group: 'guru.nidi', name: 'graphviz-java', version: '0.11.0'
-
 
 
     testCompile group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.0'

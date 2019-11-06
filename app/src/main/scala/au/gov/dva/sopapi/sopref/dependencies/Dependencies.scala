@@ -23,6 +23,8 @@ import scalax.collection.io.dot._
 import scalax.collection.{Graph, GraphEdge}
 import scalax.collection.GraphTraversal.{Predecessors, Successors}
 import scalax.collection.edge.LDiEdge
+import scalax.collection.io.dot
+import scalax.collection.io.dot.Record
 
 import scala.collection.immutable
 
@@ -90,8 +92,15 @@ object Dependencies extends MiscRegexes {
   def toDotString(graph: Graph[SoPPair,LDiEdge]) = {
     val dotRoot = DotRootGraph(
       directed = true,
-      id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}"))
+      id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}")),
+      attrStmts = List(
+        DotAttrStmt(Elem.node, List(DotAttr(Id("shape"), Id("record")))),
+        DotAttrStmt(Elem.node, List(DotAttr(Id("rankdir"), Id("LR"))))
+
+      )
     )
+
+
 
     def edgeTransformer(innerEdge: Graph[SoPPair,LDiEdge]#EdgeT): Option[(DotGraph,DotEdgeStmt)] = {
       innerEdge.edge match {
@@ -99,7 +108,9 @@ object Dependencies extends MiscRegexes {
           (dotRoot,DotEdgeStmt(
             NodeId(source.toString()),
             NodeId(target.toString()),
-            Seq(DotAttr(Id("label"),Id(WordUtils.wrap(label.toString,100))))
+            Seq(
+              DotAttr(Id("label"),Id(WordUtils.wrap(label.toString,100)))
+            )
           )))
       }
     }
@@ -287,20 +298,11 @@ object Dependencies extends MiscRegexes {
   }
 
 
-  def canTraverseToAccepted(edgeLabel: FactorRefForSoPPair, acceptedConditions : List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]): Boolean = {
-    // target must be accepted
-    // if edge has condition variant, accepted factor must be for that variant
-    // source must be diagnosed or accepted
-    // accepted condition must be before diagnosed condition
-    // if there is variant, check the factor of the diagnosed condition
 
+  def canTraverse(edgeLabel: FactorRefForSoPPair, acceptedConditions : List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]): Boolean = {
     val sopToCondition = (acceptedConditions ++ diagnosedConditions).map(ic => (ic.getSoPair -> ic)).toMap
-
     def isOnsetFactor(factorPara: String, sop: SoP) = sop.getOnsetFactors.asScala.map(f => f.getParagraph).contains(factorPara)
-
-
     val sourceInstantCondition = sopToCondition(edgeLabel.dependentSoPPair)
-
 
     def findLinkingFactor(source: DiagnosedCondition, standardOfProof: StandardOfProof) = {
       val diagnosed = source
@@ -326,12 +328,10 @@ object Dependencies extends MiscRegexes {
     val targetIsAccepted = targetInstantCondition.isInstanceOf[AcceptedCondition]
     val targetOccuredBeforeSource = targetInstantCondition.getOnsetDate.isBefore(sourceInstantCondition.getOnsetDate)
 
-
     def targetConditionWithinPeriodFromSource(sourceDiagnosed : DiagnosedCondition, target: AcceptedCondition, period: Period) = {
       val diagnosedMinusPeriod: LocalDate = sourceDiagnosed.getOnsetDate.minus(period)
       !target.onsetDate.isBefore(diagnosedMinusPeriod)
     }
-    // if source is diagnosed, check time limit
 
     def checkTimeLimitOnDiagnosed(sourceDiagnosed : DiagnosedCondition, standardOfProof: StandardOfProof) : Boolean = {
 
@@ -344,10 +344,8 @@ object Dependencies extends MiscRegexes {
       }
     }
 
-    sourceInstantCondition.isInstanceOf[DiagnosedCondition] match {
-      case true => targetIsAccepted && targetOccuredBeforeSource && checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition],targetInstantCondition.asInstanceOf[AcceptedCondition].acceptedStandardOfProof)
-      case false => targetIsAccepted && targetOccuredBeforeSource
-    }
+    // todo: for now, just test this only, not time limit
+    targetOccuredBeforeSource
 
   }
 
@@ -357,7 +355,9 @@ object Dependencies extends MiscRegexes {
 
     val edges = graph.edges.filter(e => {
       if (testEdgeTraverse)
-        canTraverseToAccepted(e.toOuter.label.asInstanceOf[FactorRefForSoPPair],acceptedConditions,diagnosedConditions) || e.target.hasSuccessors
+        {
+          canTraverse(e.toOuter.label.asInstanceOf[FactorRefForSoPPair],acceptedConditions,diagnosedConditions)
+        }
       else
         true
     }).map(_.toOuter)
@@ -388,7 +388,7 @@ object Dependencies extends MiscRegexes {
 
   def getSvg(dto: SequelaeRequestDto, soPPairs : ImmutableSet[SoPPair])  = {
     val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto,soPPairs)
-    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,false)
+    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,true)
     val dotString = Dependencies.toDotString(graph)
     val os  = new ByteArrayOutputStream()
     val svgString = DotToImage.render(dotString,os)
@@ -397,14 +397,12 @@ object Dependencies extends MiscRegexes {
 
   def getInferredSequelae(dto: SequelaeRequestDto, soPPairs : ImmutableSet[SoPPair]) : AcceptedSequalaeResponse = {
     val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto,soPPairs)
-    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,false)
+    val graph : Graph[SoPPair, LDiEdge] =  getInstantGraph(accepted.toList, diagnosed.toList,true)
     val acceptedSoPPairs = accepted.map(c => c.soPPair).toSet
     val diagnosedSopPaairs = diagnosed.map(c => c.soPPair).toSet
     val sequelae = diagnosedSopPaairs.filter(n => canTraverseFromDiagnosedToAccepted(graph,n,acceptedSoPPairs))
 
-
     val diagnosedConditionNames = diagnosed.map(c => c.soPPair.getConditionName).toSet
-
 
     val edgesGoingFromDiagnosedConditions = graph.edges.filter(e => sequelae.map(s => s.getConditionName).contains(e.sources.head.toOuter.asInstanceOf[SoPPair].getConditionName))
 

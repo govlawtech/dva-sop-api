@@ -132,7 +132,6 @@ class DependenciesGraphTests extends  FunSuite {
    {
      val exampleRequest = ParserTestUtils.resourceToString("sequelae/exampleRequest.json")
      val result = SequelaeRequestDto.fromJsonString(exampleRequest)
-
      println(result)
    }
 
