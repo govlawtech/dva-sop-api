@@ -24,6 +24,8 @@ object ServiceLocator {
     "F2016C00975",
     "F2016C00976",
     "F2017C00059",
+    "F2017C00768",
+    "F2017C00770",
     "F2017C00072",
     "F2017C00073",
     "F2017C00872",
@@ -206,6 +208,8 @@ object ServiceLocator {
       case "F2019L00009" => HypopituitarismClenser
       case "F2019L00012" => HypopituitarismClenser
       case "F2019L00224" => BaldDefinitionsSectionClenser
+      case "F2019L01098" => MortonMetatarsalgiaClenser
+      case "F2019L01100" => MortonMetatarsalgiaClenser
 
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
