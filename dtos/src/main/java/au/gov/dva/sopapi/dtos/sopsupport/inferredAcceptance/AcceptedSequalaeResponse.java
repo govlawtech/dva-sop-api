@@ -11,6 +11,9 @@ import java.util.List;
 
 public class AcceptedSequalaeResponse {
 
+    @JsonProperty(value = "recommendations", required = true)
+    private final List<String> _recommendations;
+
     @JsonProperty(value = "sequelae", required = true)
     private final List<AcceptedSequalaeResponseConditionDto> _sequelae;
 
@@ -26,10 +29,11 @@ public class AcceptedSequalaeResponse {
     }
 
 
-    public AcceptedSequalaeResponse(@JsonProperty("seqeulae") List<AcceptedSequalaeResponseConditionDto> acceptedSequalaeResponseConditionDtos, @JsonProperty("orderOfApplication") List<String> orderedConditions)
+    public AcceptedSequalaeResponse(@JsonProperty("recommendations") List<String> recommendations, @JsonProperty("seqeulae") List<AcceptedSequalaeResponseConditionDto> acceptedSequalaeResponseConditionDtos, @JsonProperty("orderOfApplication") List<String> orderedConditions)
     {
         _sequelae = acceptedSequalaeResponseConditionDtos;
         _orderOfApplication = orderedConditions;
+        _recommendations = recommendations;
     }
 
     public String toJsonString() {

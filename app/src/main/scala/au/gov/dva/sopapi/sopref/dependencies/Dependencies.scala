@@ -371,7 +371,11 @@ object Dependencies extends MiscRegexes {
         }
       }
 
-      checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition], standardOfProof)
+      val dependentIsOnOrAfterTarget = !sourceInstantCondition.getOnsetDate.isBefore(targetInstantCondition.getOnsetDate)
+
+      val anyTimeLimitMet = checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition], standardOfProof)
+
+      dependentIsOnOrAfterTarget && anyTimeLimitMet
 
     }
 
@@ -400,7 +404,7 @@ object Dependencies extends MiscRegexes {
       .map(n => n.toOuter)
   }
 
-  def getPrettyPrintedReasonsForSequela(path: Graph[SoPPair,LDiEdge]#Path, accepted: Set[AcceptedCondition], diagnosed: Set[DiagnosedCondition], shouldAutoAccept : (String => Boolean)) = {
+  def getPrettyPrintedReasonsForSequela(path: Graph[SoPPair,LDiEdge]#Path, accepted: Set[AcceptedCondition], diagnosed: Set[DiagnosedCondition], shouldAutoAccept : ((String,String) => Boolean)) = {
 
     val icsMap = (accepted ++ diagnosed).map(i => i.getSoPair.getConditionName -> i).toMap
 
@@ -431,7 +435,12 @@ object Dependencies extends MiscRegexes {
 
     val mainRecommendationSentenceForAccept = s"Accept initial liability for $diagnosedCondition.  It is direct or indirect sequela of an accepted condition: $acceptedCondition.  The standard of proof is the same as the accepted condition: $standardOfProof.  The relevant SoP factors are: $prettyPrintAllRelevantSoPFactors."
 
-    mainRecommendationSentenceForAccept
+    val mainRecommendationForReview = s"Review whether to accept initial liability for $diagnosedCondition on the grounds that it is a direct or indirect sequela of an accepted condition: $acceptedCondition.  This depends on whether qualifications in the relevant SoP factors are met.  The standard of proof is the same as the accepted condition: $standardOfProof.  The relevant SoP factors are: $prettyPrintAllRelevantSoPFactors."
+
+    shouldAutoAccept(path.startNode.toOuter.getConditionName, path.endNode.toOuter.getConditionName) match {
+      case true => mainRecommendationSentenceForAccept
+      case false => mainRecommendationForReview
+    }
 
   }
 
@@ -445,11 +454,14 @@ object Dependencies extends MiscRegexes {
     os.toByteArray
   }
 
+
+
   def getInferredSequelae(dto: SequelaeRequestDto, soPPairs: ImmutableSet[SoPPair]): AcceptedSequalaeResponse = {
     val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto, soPPairs)
     val graph: Graph[SoPPair, LDiEdge] = getInstantGraph(accepted.toList, diagnosed.toList, true)
     val paths = getPaths(graph, accepted.toSet, diagnosed.toSet)
 
+    val recommendations = paths.map(getPrettyPrintedReasonsForSequela(_,accepted.toSet,diagnosed.toSet,Configuration.shouldAccept))
     val diagnosedConditionNames = diagnosed.map(c => c.soPPair.getConditionName).toSet
 
     val edgesFromSequelae: Set[Graph[SoPPair, LDiEdge]#EdgeT] = paths.map(p => p.edges.head)
@@ -478,7 +490,7 @@ object Dependencies extends MiscRegexes {
       case Some(o) => o.toList.map(n => n.toOuter.asInstanceOf[SoPPair].getConditionName).filter(n => diagnosedConditionNames.contains(n)).reverse
     }
 
-    new AcceptedSequalaeResponse(inferredSequelaeDtos.toList.asJava, orderOfApplication.asJava)
+    new AcceptedSequalaeResponse(recommendations.toList.asJava, inferredSequelaeDtos.toList.asJava, orderOfApplication.asJava)
 
   }
 

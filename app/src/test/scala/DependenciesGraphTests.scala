@@ -5,7 +5,7 @@ import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.{AcceptedConditionDto, AcceptedSequalaeResponseConditionDto, DiagnosedConditionDto, SequelaeRequestDto}
 import au.gov.dva.sopapi.interfaces.model.SoPPair
 import au.gov.dva.sopapi.sopref.SoPs
-import au.gov.dva.sopapi.sopref.dependencies.{AcceptedCondition, Dependencies, DiagnosedCondition, DotToImage}
+import au.gov.dva.sopapi.sopref.dependencies._
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import com.google.common.collect.ImmutableSet
 import com.sun.xml.bind.api.impl.NameConverter.Standard
@@ -157,7 +157,7 @@ class DependenciesGraphTests extends  FunSuite {
 
     println(paths)
 
-    val prettyPrinted = Dependencies.getPrettyPrintedReasonsForSequela(paths.last,Set(accepted),Set(diagnosedBruxism,diagnosedToothWear),s => true)
+    val prettyPrinted = Dependencies.getPrettyPrintedReasonsForSequela(paths.head,Set(accepted),Set(diagnosedBruxism,diagnosedToothWear),Configuration.shouldAccept)
     println(prettyPrinted)
 
   }
