@@ -142,4 +142,20 @@ class DependenciesGraphTests extends  FunSuite {
     println(os.toByteArray)
   }
 
+  test("Test traversal with standard of proof ") {
+    val dd: SoPPair = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
+    val bruxism = sopPairs.asScala.find(sp => sp.getConditionName == "bruxism").get
+    val toothWear = sopPairs.asScala.find(sp => sp.getConditionName == "tooth wear").get
+    val accepted = AcceptedCondition(dd, StandardOfProof.ReasonableHypothesis,  LocalDate.of(2018, 1, 1))
+    val diagnosedBruxism = DiagnosedCondition(bruxism,true,LocalDate.of(2018,2,1))
+    val diagnosedToothWear = DiagnosedCondition(toothWear,true,LocalDate.of(2018,3,1))
+
+
+    val graph = Dependencies.getInstantGraph(List(accepted), List(diagnosedBruxism,diagnosedToothWear), false)
+
+    val traverseResult = Dependencies.traverseWithStandardOfProof(graph,dd,toothWear,StandardOfProof.ReasonableHypothesis)
+
+    println(traverseResult)
+  }
+
 }

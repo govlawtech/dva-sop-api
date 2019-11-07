@@ -297,6 +297,22 @@ object Dependencies extends MiscRegexes {
     }
   }
 
+  def traverseWithStandardOfProof(graph: Graph[SoPPair,LDiEdge], targetSoPPair: SoPPair, sourceSoPPair: SoPPair, standardOfProof: StandardOfProof) = {
+    // return path
+    val sourceNode = graph get sourceSoPPair
+    val targetNode = graph get targetSoPPair
+
+    def edgeFilter(e : graph.EdgeT) : Boolean = {
+      val label = e.label.asInstanceOf[FactorRefForSoPPair]
+      standardOfProof match {
+        case StandardOfProof.ReasonableHypothesis => label.rhRefs.nonEmpty
+        case StandardOfProof.BalanceOfProbabilities => label.bopRefs.nonEmpty
+      }
+    }
+
+    sourceNode.withSubgraph(edges = edgeFilter).pathTo(targetNode)
+
+  }
 
 
   def canTraverse(edgeLabel: FactorRefForSoPPair, acceptedConditions : List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition]): Boolean = {
@@ -348,6 +364,8 @@ object Dependencies extends MiscRegexes {
     targetOccuredBeforeSource
 
   }
+
+
 
   def getInstantGraph(acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition],testEdgeTraverse : Boolean) : Graph[SoPPair,LDiEdge] = {
     val sopPairs = acceptedConditions.map(ac => ac.soPPair) ++ diagnosedConditions.map(dc => dc.soPPair)
