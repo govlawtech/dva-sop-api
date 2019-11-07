@@ -153,9 +153,10 @@ class DependenciesGraphTests extends  FunSuite {
 
     val graph = Dependencies.getInstantGraph(List(accepted), List(diagnosedBruxism,diagnosedToothWear), false)
 
-    val traverseResult = Dependencies.traverseWithStandardOfProof(graph,dd,toothWear,StandardOfProof.ReasonableHypothesis)
+    val paths = Dependencies.getPaths(graph,Set(accepted),Set(diagnosedBruxism,diagnosedToothWear))
 
-    println(traverseResult)
+    println(paths)
+
   }
 
 }
