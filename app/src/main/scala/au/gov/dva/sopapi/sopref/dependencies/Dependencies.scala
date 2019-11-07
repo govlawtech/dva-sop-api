@@ -400,6 +400,41 @@ object Dependencies extends MiscRegexes {
       .map(n => n.toOuter)
   }
 
+  def getPrettyPrintedReasonsForSequela(path: Graph[SoPPair,LDiEdge]#Path, accepted: Set[AcceptedCondition], diagnosed: Set[DiagnosedCondition], shouldAutoAccept : (String => Boolean)) = {
+
+    val icsMap = (accepted ++ diagnosed).map(i => i.getSoPair.getConditionName -> i).toMap
+
+    def prettyPrintConditionInstance(ic : InstantCondition) = {
+      val date = DateTimeFormatter.ISO_LOCAL_DATE.format(ic.getOnsetDate)
+      s"the ${ic.getSoPair.getConditionName} with date of $date"
+    }
+
+    val diagnosedCondition = prettyPrintConditionInstance(icsMap(path.startNode.toOuter.getConditionName))
+    val acceptedCondition = prettyPrintConditionInstance(icsMap(path.endNode.toOuter.getConditionName))
+    val standardOfProof = icsMap(path.endNode.toOuter.getConditionName).asInstanceOf[AcceptedCondition].acceptedStandardOfProof
+
+    def prettyPrintSoPFactors(edgeLabel: FactorRefForSoPPair, standardOfProof: StandardOfProof) = {
+      val registerId = standardOfProof match {
+        case StandardOfProof.ReasonableHypothesis => edgeLabel.dependentSoPPair.getRhSop.getRegisterId
+        case StandardOfProof.BalanceOfProbabilities => edgeLabel.dependentSoPPair.getBopSop.getRegisterId
+      }
+      val factors = standardOfProof match {
+        case StandardOfProof.ReasonableHypothesis => edgeLabel.rhRefs.map(f => f.linkingFactor.getParagraph).mkString(", ")
+        case StandardOfProof.BalanceOfProbabilities => edgeLabel.bopRefs.map(f => f.linkingFactor.getParagraph).mkString(", ")
+      }
+      s"${factors} in instrument ${registerId}"
+    }
+
+    def prettyPrintAllRelevantSoPFactors() = {
+      path.edges.map(e => prettyPrintSoPFactors(e.label.asInstanceOf[FactorRefForSoPPair],standardOfProof)).mkString("; ")
+    }
+
+    val mainRecommendationSentenceForAccept = s"Accept initial liability for $diagnosedCondition.  It is direct or indirect sequela of an accepted condition: $acceptedCondition.  The standard of proof is the same as the accepted condition: $standardOfProof.  The relevant SoP factors are: $prettyPrintAllRelevantSoPFactors."
+
+    mainRecommendationSentenceForAccept
+
+  }
+
 
   def getSvg(dto: SequelaeRequestDto, soPPairs: ImmutableSet[SoPPair]) = {
     val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto, soPPairs)

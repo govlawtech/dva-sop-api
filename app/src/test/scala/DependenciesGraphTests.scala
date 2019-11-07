@@ -157,6 +157,9 @@ class DependenciesGraphTests extends  FunSuite {
 
     println(paths)
 
+    val prettyPrinted = Dependencies.getPrettyPrintedReasonsForSequela(paths.last,Set(accepted),Set(diagnosedBruxism,diagnosedToothWear),s => true)
+    println(prettyPrinted)
+
   }
 
 }
