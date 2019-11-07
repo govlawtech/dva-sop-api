@@ -413,10 +413,7 @@ object Dependencies extends MiscRegexes {
   def getInferredSequelae(dto: SequelaeRequestDto, soPPairs: ImmutableSet[SoPPair]): AcceptedSequalaeResponse = {
     val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto, soPPairs)
     val graph: Graph[SoPPair, LDiEdge] = getInstantGraph(accepted.toList, diagnosed.toList, true)
-    val acceptedSoPPairs = accepted.map(c => c.soPPair).toSet
-    val diagnosedSopPaairs = diagnosed.map(c => c.soPPair).toSet
     val paths = getPaths(graph, accepted.toSet, diagnosed.toSet)
-    val sequelae = paths.map(p => p.startNode.toOuter)
 
     val diagnosedConditionNames = diagnosed.map(c => c.soPPair.getConditionName).toSet
 
