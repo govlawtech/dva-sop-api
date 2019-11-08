@@ -125,7 +125,13 @@ object Dependencies extends MiscRegexes {
       )
     )
 
-
+    def nodeTransformer(innerNode: Graph[SoPPair,LDiEdge]#NodeT): Option[(DotGraph,DotNodeStmt)] = {
+      val sp = innerNode.toOuter
+      val labelString = s"${sp.getConditionName}|RH: ${sp.getRhSop.getRegisterId}|BoP: ${sp.getBopSop.getRegisterId}"
+      Some(dotRoot, DotNodeStmt(NodeId(innerNode.toOuter.getConditionName),
+        Seq(DotAttr(Id("label"),Id(labelString)))
+      ))
+    }
     def edgeTransformer(innerEdge: Graph[SoPPair, LDiEdge]#EdgeT): Option[(DotGraph, DotEdgeStmt)] = {
       innerEdge.edge match {
         case LDiEdge(source, target, label) => Some(
@@ -139,8 +145,7 @@ object Dependencies extends MiscRegexes {
       }
     }
 
-    graph.toDot(dotRoot, edgeTransformer)
-
+    graph.toDot(dotRoot, edgeTransformer,None,Some(nodeTransformer),Some(nodeTransformer))
   }
 
   private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
