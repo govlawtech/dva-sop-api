@@ -10,6 +10,7 @@ import au.gov.dva.sopapi.dtos.sopsupport.components.OnsetDateRangeDto
 import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance._
 import au.gov.dva.sopapi.interfaces.model.{Factor, ICDCode, SoP, SoPPair}
 import au.gov.dva.sopapi.sopref.DtoTransformations
+import au.gov.dva.sopapi.sopref.dependencies.Dependencies.liftSubGraphForCondition
 import au.gov.dva.sopapi.sopref.parsing.traits.MiscRegexes
 import com.google.common.collect.{ImmutableList, ImmutableSet, Sets}
 import org.apache.commons.lang.WordUtils
@@ -27,6 +28,7 @@ import scalax.collection.io.dot
 import scalax.collection.io.dot.Record
 
 import scala.collection.immutable
+
 
 case class FactorRef(linkingFactor: Factor, period: Option[Period]) {
 
@@ -91,7 +93,27 @@ object InstantConditions {
 
 case class SopNode(soPPair: SoPPair, instantCondition: Option[InstantCondition])
 
+class Dependencies(val  sopPairs : ImmutableSet[SoPPair])
+{
+  val cachedGraph = Dependencies.buildWholeGraph(sopPairs)
+
+  def getDotSubgraph(rootConditionName: String, steps: Int = 3): String = {
+    val testCondition = sopPairs.asScala.find(sp => sp.getConditionName == rootConditionName).head
+    val subGraph = liftSubGraphForCondition(cachedGraph, testCondition, steps)
+    Dependencies.toDotString(subGraph)
+  }
+
+}
+
+
 object Dependencies extends MiscRegexes {
+
+
+  def buildWholeGraph(sopPairs: ImmutableSet[SoPPair]): Graph[SoPPair,LDiEdge] = {
+
+    val g = buildGraph(sopPairs.asScala.toList)
+    g
+  }
 
   def toDotString(graph: Graph[SoPPair, LDiEdge]) = {
     val dotRoot = DotRootGraph(
@@ -99,8 +121,7 @@ object Dependencies extends MiscRegexes {
       id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}")),
       attrStmts = List(
         DotAttrStmt(Elem.node, List(DotAttr(Id("shape"), Id("record")))),
-        DotAttrStmt(Elem.node, List(DotAttr(Id("rankdir"), Id("LR"))))
-
+        DotAttrStmt(Elem.graph, List(DotAttr(Id("rankdir"), Id("LR"))))
       )
     )
 
@@ -120,57 +141,6 @@ object Dependencies extends MiscRegexes {
 
     graph.toDot(dotRoot, edgeTransformer)
 
-  }
-
-  def buildDotStringForAll(sopPairs: ImmutableSet[SoPPair]): String = {
-    val dotRoot = DotRootGraph(
-      directed = true,
-      id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}"))
-    )
-
-    def edgeTransformer(innerEdge: Graph[SoPPair, LDiEdge]#EdgeT): Option[(DotGraph, DotEdgeStmt)] = {
-      innerEdge.edge match {
-        case LDiEdge(source, target, label) => Some(
-          (dotRoot, DotEdgeStmt(
-            NodeId(source.toString()),
-            NodeId(target.toString()),
-            Seq(DotAttr(Id("label"), Id(label.toString)))
-          )))
-      }
-    }
-
-    val g = buildGraph(sopPairs.asScala.toList)
-    g.toDot(dotRoot, edgeTransformer)
-  }
-
-  def buildDotString(sopPairs: ImmutableSet[SoPPair], conditionWhitelist: ImmutableSet[String]): String = {
-    val dotRoot = DotRootGraph(
-      directed = true,
-      id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}"))
-    )
-
-    def edgeTransformer(innerEdge: Graph[SoPPair, LDiEdge]#EdgeT): Option[(DotGraph, DotEdgeStmt)] = {
-      innerEdge.edge match {
-        case LDiEdge(source, target, label) => Some(
-          (dotRoot, DotEdgeStmt(
-            NodeId(source.toString()),
-            NodeId(target.toString()),
-            Seq(DotAttr(Id("label"), Id(label.toString)))
-          )))
-      }
-    }
-
-    val g = buildGraph(sopPairs.asScala.toList)
-    val testCondition = sopPairs.asScala.filter(sp => conditionWhitelist.asScala.contains(sp.getConditionName)).head
-    val subGraph = liftSubGraphForCondition(g, testCondition)
-    subGraph.toDot(dotRoot, edgeTransformer)
-
-
-  }
-
-  def buildGraphP(sopPairs: ImmutableSet[SoPPair]) = {
-    val g = buildGraph(sopPairs.asScala.toList)
-    g
   }
 
   private def buildGraph(SoPPairs: List[SoPPair]): Graph[SoPPair, LDiEdge] = {
@@ -241,9 +211,11 @@ object Dependencies extends MiscRegexes {
     factorReferencesFromDependentSop.map(fr => LDiEdge(fr.dependentSoPPair, fr.targetSoPPair)(fr))
   }
 
-  private def liftSubGraphForCondition(graph: Graph[SoPPair, LDiEdge], condition: SoPPair): Graph[SoPPair, LDiEdge] = {
+  private def liftSubGraphForCondition(graph: Graph[SoPPair, LDiEdge], condition: SoPPair, steps: Int): Graph[SoPPair, LDiEdge] = {
     val root = graph get condition
-    val subGraph = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(3).toGraph
+    val subGraph1 = root.innerNodeTraverser.withDirection(Predecessors).withMaxDepth(steps).toGraph
+    val subGraph2 = root.innerNodeTraverser.withDirection(Successors).withMaxDepth(steps).toGraph
+    val subGraph = subGraph1 union subGraph2
     subGraph
   }
 
@@ -444,16 +416,18 @@ object Dependencies extends MiscRegexes {
 
   }
 
-
-  def getSvg(dto: SequelaeRequestDto, soPPairs: ImmutableSet[SoPPair]) = {
-    val (accepted, diagnosed) = InstantConditions.decomposeRequestDto(dto, soPPairs)
-    val graph: Graph[SoPPair, LDiEdge] = getInstantGraph(accepted.toList, diagnosed.toList, true)
+  def getSvg(dto: SequelaeDiagramRequestDto, allSoPPairs: ImmutableSet[SoPPair]) = {
+    val (accepted, diagnosed) = (dto.get_acceptedConditions(),dto.get_diagnosedConditions())
+    val allConditionNames = accepted.asScala ++ diagnosed.asScala
+    val nameToSoPPairs = allSoPPairs.asScala.map(sp => sp.getConditionName -> sp).toMap
+    val sopsToGraph = allConditionNames.map(c => nameToSoPPairs(c))
+    val graph: Graph[SoPPair, LDiEdge] = buildGraph(sopsToGraph.toList)
     val dotString = Dependencies.toDotString(graph)
     val os = new ByteArrayOutputStream()
-    val svgString = DotToImage.render(dotString, os)
+    DotToImage.render(dotString, os)
+    os.close()
     os.toByteArray
   }
-
 
 
   def getInferredSequelae(dto: SequelaeRequestDto, soPPairs: ImmutableSet[SoPPair]): AcceptedSequalaeResponse = {

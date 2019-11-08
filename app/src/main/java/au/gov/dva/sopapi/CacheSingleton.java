@@ -8,12 +8,15 @@ import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.SoPs;
+import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
 import au.gov.dva.sopapi.veaops.VeaDetermination;
 import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scalax.collection.Graph;
+import scalax.collection.edge.LDiEdge;
 
 import java.time.OffsetDateTime;
 import java.util.Comparator;
@@ -33,6 +36,7 @@ public class CacheSingleton implements Cache {
     private ImmutableList<ConditionInfo> _conditionList;
     private Optional<CuratedTextRepository> _curatedTextReporitory;
     private VeaOperationalServiceRepository _veaOperationalServiceRepository;
+    private Dependencies _dependencies;
 
     private static final CacheSingleton INSTANCE = new CacheSingleton();
 
@@ -44,6 +48,7 @@ public class CacheSingleton implements Cache {
         _conditionList = ImmutableList.of();
         _curatedTextReporitory = Optional.empty();
         _veaOperationalServiceRepository = null;
+        _dependencies = null;
     }
 
     public static CacheSingleton getInstance() {
@@ -65,6 +70,7 @@ public class CacheSingleton implements Cache {
             _ruleConfigurationRepository = ruleConfigurationRepository.get();
             _failedUpdates = repository.getRetryQueue();
             _allSopPairs = SoPs.groupSopsToPairs(_allSops, OffsetDateTime.now());
+            _dependencies = new Dependencies(_allSopPairs);
             _conditionList = ImmutableList.copyOf(buildConditionsList(_allSopPairs));
             Optional<CuratedTextRepository> curatedTextRepository = repository.getCuratedTextRepository();
             _curatedTextReporitory = curatedTextRepository;
@@ -136,6 +142,11 @@ public class CacheSingleton implements Cache {
     @Override
     public VeaOperationalServiceRepository get_veaOperationalServiceRepository() {
         return _veaOperationalServiceRepository;
+    }
+
+    @Override
+    public Dependencies get_dependencies() {
+        return _dependencies;
     }
 }
 

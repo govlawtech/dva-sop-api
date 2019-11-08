@@ -7,8 +7,8 @@ public class SharedConstants {
         public static final String GET_VEA_ACTIVITIES = "/getVeaActivities";
         public static final String GET_SOPFACTORS = "/getSopFactors";
         public static final String GET_SERVICE_CONNECTION = "/getConnectionToService";
-        public static final String GET_ACCEPTED_SEQUELAE = "/getAcceptedSequelae";
-        public static final String GET_ACCEPTED_SEQUELAE_DIAGRAM = "/getAcceptedSequelaeDiagram";
+        public static final String GET_ACCEPTED_SEQUELAE = "/sequelae";
+        public static final String GET_ACCEPTED_SEQUELAE_DIAGRAM = "/sequelaeDiagram";
 
 
     }

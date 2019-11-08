@@ -10,6 +10,7 @@ import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.AcceptedSequalaeResponse;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeDiagramRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
@@ -22,8 +23,8 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.PostProcessingFunctions;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
-import au.gov.dva.sopapi.sopref.dependencies.Configuration;
 import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
+import au.gov.dva.sopapi.sopref.dependencies.DotToImage;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
@@ -41,9 +42,10 @@ import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import spark.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import spark.*;
+
+import java.io.ByteArrayOutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
@@ -139,15 +141,6 @@ public class Routes {
             return csvBytes;
         });
 
-        post("/status/dependencies",(req,res) -> {
-
-            ImmutableSet<String> conditions = ImmutableSet.copyOf(req.body().split(scala.util.Properties.lineSeparator()));
-            String dotString = Dependencies.buildDotString(cache.get_allSopPairs(),conditions);
-            setResponseHeaders(res, 200, MIME_TEXT);
-            return dotString;
-        });
-
-
     }
 
 
@@ -229,8 +222,6 @@ public class Routes {
             return jsonString;
 
         });
-
-
 
 
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
@@ -317,21 +308,80 @@ public class Routes {
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
         }));
 
+        get(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE, (req,res) -> {
+            QueryParamsMap queryParamsMap = req.queryMap();
+            String conditionName = queryParamsMap.get("conditionName").value();
+            String steps = queryParamsMap.get("steps").value();
+            List<String> conditionNames = cache.get_conditionsList().stream().map(c -> c.get_conditionName()).sorted().collect(Collectors.toList());
+            String conditionNamesStringList = String.join(scala.util.Properties.lineSeparator(),conditionNames);
+            if (conditionName == null)
+            {
+                setResponseHeaders(res,400,MIME_TEXT);
+                StringBuilder sb = new StringBuilder();
+                sb.append("Missing: query parameter 'conditionName' with one of the following values:");
+                sb.append(scala.util.Properties.lineSeparator());
+                sb.append(conditionNamesStringList);
+                return sb.toString();
+            }
+            if (!conditionNames.contains(conditionName))
+            {
+                setResponseHeaders(res,400,MIME_TEXT);
+                StringBuilder sb = new StringBuilder();
+                sb.append(String.format("Condition name '%s' not recognised.",conditionName));
+                sb.append(scala.util.Properties.lineSeparator());
+                sb.append("Recognised names are:");
+                sb.append(scala.util.Properties.lineSeparator());
+                sb.append(conditionNamesStringList);
+                return sb.toString();
+            }
 
+            else {
+                int stepsInt;
+
+                try {
+                    stepsInt = Integer.parseInt(steps);
+                    if (stepsInt < 0 || stepsInt > 3){
+                        setResponseHeaders(res,400,MIME_TEXT);
+                        return "Query parameter 'steps' must be between 0 and 3 inclusive.";
+                    }
+                }
+                catch (NumberFormatException e)
+                {
+                    setResponseHeaders(res,400,MIME_TEXT);
+                    return "Query parameter 'steps' must be an integer.";
+                }
+
+                String dotString = cache.get_dependencies().getDotSubgraph(conditionName,stepsInt);
+
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                DotToImage.render(dotString,bos);
+                byte[] svg = bos.toByteArray();
+                bos.close();
+                setResponseHeaders(res,200,MIME_SVG);
+                res.header("Content-Disposition","attachment");
+                return svg;
+            }
+
+        });
 
         sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE, MIME_JSON, ((req, res) -> {
             SequelaeRequestDto sequleeRequestDto;
             try {
+
                 sequleeRequestDto = SequelaeRequestDto.fromJsonString(clenseJson(req.body()));
                 // validate conditions exist
                 ImmutableSet<String> allValidConditionNames = cache.get_allSopPairs().stream().map(c -> c.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
-                ImmutableList<String> validationErrors = sequleeRequestDto.getValidationErrors(allValidConditionNames);
+
+                List<String> acceptedConditionNames = sequleeRequestDto.get_acceptedConditions().stream().map(c -> c.get_name()).collect(Collectors.toList());
+                List<String> diagnosedConditionNames = sequleeRequestDto.get_diagnosedConditions().stream().map(c -> c.get_name()).collect(Collectors.toList());
+                ImmutableSet<String> allConditionNames = ImmutableSet.<String>builder().addAll(acceptedConditionNames).addAll(diagnosedConditionNames).build();
+
+                ImmutableList<String> validationErrors = sequleeRequestDto.getValidationErrors(allValidConditionNames, allConditionNames);
                 if (!validationErrors.isEmpty())
                 {
                     setResponseHeaders(res,400,MIME_TEXT);
                     return String.join(scala.util.Properties.lineSeparator(),validationErrors);
                 }
-
 
                 AcceptedSequalaeResponse response = Dependencies.getInferredSequelae(sequleeRequestDto,cache.get_allSopPairs());
                 setResponseHeaders(res,200,MIME_JSON);
@@ -346,19 +396,26 @@ public class Routes {
         }));
 
         sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE_DIAGRAM, MIME_SVG, ((req, res) -> {
-            SequelaeRequestDto sequleeRequestDto;
+            SequelaeDiagramRequestDto sequelaeDiagramRequestDto;
             try {
-                sequleeRequestDto = SequelaeRequestDto.fromJsonString(clenseJson(req.body()));
+
+                sequelaeDiagramRequestDto = SequelaeDiagramRequestDto.fromJsonString(clenseJson(req.body()));
                 // validate conditions exist
                 ImmutableSet<String> allValidConditionNames = cache.get_allSopPairs().stream().map(c -> c.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableSet::copyOf));
-                ImmutableList<String> validationErrors = sequleeRequestDto.getValidationErrors(allValidConditionNames);
+
+                List<String> acceptedConditionNames = sequelaeDiagramRequestDto.get_acceptedConditions().stream().collect(Collectors.toList());
+                List<String> diagnosedConditionNames = sequelaeDiagramRequestDto.get_diagnosedConditions().stream().collect(Collectors.toList());
+                ImmutableSet<String> allConditionNames = ImmutableSet.<String>builder().addAll(acceptedConditionNames).addAll(diagnosedConditionNames).build();
+
+
+                ImmutableList<String> validationErrors = SequelaeRequestDto.getValidationErrors(allValidConditionNames, allConditionNames);
                 if (!validationErrors.isEmpty())
                 {
                     setResponseHeaders(res,400,MIME_TEXT);
                     return String.join(scala.util.Properties.lineSeparator(),validationErrors);
                 }
 
-                byte[] svg = Dependencies.getSvg(sequleeRequestDto, cache.get_allSopPairs());
+                byte[] svg = Dependencies.getSvg(sequelaeDiagramRequestDto, cache.get_allSopPairs());
                 setResponseHeaders(res,200,MIME_SVG);
                 res.header("Content-Disposition","attachment");
                 return svg;

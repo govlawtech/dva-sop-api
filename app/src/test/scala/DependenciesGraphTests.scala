@@ -30,36 +30,6 @@ class DependenciesGraphTests extends  FunSuite {
   }
 
 
-  test("Build graph") {
-    val result = Dependencies.buildDotStringForAll(sopPairs)
-
-    println(result)
-
-  }
-
-  test("Find cycles") {
-    val g = Dependencies.buildGraphP(sopPairs)
-    val cycles: collection.Set[SoPPair] = Dependencies.findNodesInCycles(g)
-    println(cycles)
-
-  }
-
-  test("Test path finding") {
-    val graph = Dependencies.buildGraphP(sopPairs)
-    val diagnosed = sopPairs.asScala.find(sp => sp.getConditionName == "tooth wear").get
-    val accepted = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
-    val result = Dependencies.getShortestPathFromAcceptedToDiagnosed(diagnosed, accepted, graph).map(_.edges)
-    println(result)
-  }
-
-  test("Build graph with only accepted and diagnosed") {
-    val diagnosed = sopPairs.asScala.find(sp => sp.getConditionName == "bruxism").get
-    val accepted = sopPairs.asScala.find(sp => sp.getConditionName == "depressive disorder").get
-    val other = sopPairs.asScala.find(sp => sp.getConditionName == "tooth wear").get
-    val g: Graph[SoPPair, LDiEdge] = Dependencies.buildGraphP(ImmutableSet.of(diagnosed, accepted, other))
-    val sorted = g.topologicalSort
-    println(sorted)
-  }
 
   test("Build instant graph") {
     val diagnosedSop = sopPairs.asScala.find(sp => sp.getConditionName == "tooth wear").get

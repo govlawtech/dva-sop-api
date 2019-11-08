@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+
+
 public class SequelaeRequestDto {
 
     @JsonProperty(value = "acceptedConditions", required = true)
@@ -55,11 +58,11 @@ public class SequelaeRequestDto {
     }
 
 
-    public ImmutableList<String> getValidationErrors(ImmutableSet<String> currentConditionNames) {
-        List<String> acceptedConditionNames = _acceptedConditions.stream().map(c -> c.get_name()).collect(Collectors.toList());
-        List<String> diagnosedConditionNames = _diagnosedConditions.stream().map(c -> c.get_name()).collect(Collectors.toList());
-        ImmutableSet<String> allConditionNames = ImmutableSet.<String>builder().addAll(acceptedConditionNames).addAll(diagnosedConditionNames).build();
-        List<String> invalidConditionNames = allConditionNames.stream().filter(n -> !currentConditionNames.contains(n)).collect(Collectors.toList());
+    public static ImmutableList<String> getValidationErrors(ImmutableSet<String> currentConditionNames, ImmutableSet<String> conditionNamesToValidate) {
+//        List<String> acceptedConditionNames = _acceptedConditions.stream().map(c -> c.get_name()).collect(Collectors.toList());
+  //      List<String> diagnosedConditionNames = _diagnosedConditions.stream().map(c -> c.get_name()).collect(Collectors.toList());
+    //    ImmutableSet<String> allConditionNames = ImmutableSet.<String>builder().addAll(acceptedConditionNames).addAll(diagnosedConditionNames).build();
+        List<String> invalidConditionNames = conditionNamesToValidate.stream().filter(n -> !currentConditionNames.contains(n)).collect(Collectors.toList());
         if (invalidConditionNames.isEmpty())
         {
             return ImmutableList.of();
