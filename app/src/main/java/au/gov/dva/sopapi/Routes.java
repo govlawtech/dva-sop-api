@@ -301,9 +301,9 @@ public class Routes {
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
         }));
 
-        get(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE, (req, res) -> {
+        get(SharedConstants.Routes.SEQUELAE_DIAGRAM + "/:conditionName", (req, res) -> {
             QueryParamsMap queryParamsMap = req.queryMap();
-            String conditionName = queryParamsMap.get("conditionName").value();
+            String conditionName = req.params(":conditionName");
             String steps = queryParamsMap.get("steps").value();
             List<String> conditionNames = cache.get_conditionsList().stream().map(c -> c.get_conditionName()).sorted().collect(Collectors.toList());
             String conditionNamesStringList = String.join(scala.util.Properties.lineSeparator(), conditionNames);
@@ -347,12 +347,12 @@ public class Routes {
             byte[] svg = bos.toByteArray();
             bos.close();
             setResponseHeaders(res, 200, MIME_SVG);
-            res.header("Content-Disposition", "attachment");
+            res.header("Content-Disposition", String.format("attachment; filename=\"%s\"",conditionName + ".svg"));
             return svg;
 
         });
 
-        sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE, MIME_JSON, ((req, res) -> {
+        sopPost(SharedConstants.Routes.SEQUELAE_RECOMMENDATIONS, MIME_JSON, ((req, res) -> {
             SequelaeRequestDto sequleeRequestDto;
             try {
 
@@ -382,7 +382,7 @@ public class Routes {
 
         }));
 
-        sopPost(SharedConstants.Routes.GET_ACCEPTED_SEQUELAE_DIAGRAM, MIME_SVG, ((req, res) -> {
+        sopPost(SharedConstants.Routes.SEQUELAE_DIAGRAM, MIME_SVG, ((req, res) -> {
             SequelaeDiagramRequestDto sequelaeDiagramRequestDto;
             try {
 

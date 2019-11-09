@@ -4,8 +4,7 @@ import java.nio.charset.{Charset, StandardCharsets}
 
 import guru.nidi.graphviz.attribute.Color
 import guru.nidi.graphviz.model.Factory._
-import guru.nidi.graphviz.engine.Format
-import guru.nidi.graphviz.engine.Graphviz
+import guru.nidi.graphviz.engine.{Format, Graphviz, GraphvizV8Engine}
 import guru.nidi.graphviz.parse.Parser
 
 
@@ -18,6 +17,7 @@ object DotToImage {
             .replaceAll("""BoP:\s+([A-Z0-9]{11,11})""","""<a href="https://legislation.gov.au/Details/$1">BoP: $1</a>""")
         }
        val graph = Parser.read(dotString)
+       Graphviz.useEngine(new GraphvizV8Engine())
        val svgString = Graphviz.fromGraph(graph).render(Format.SVG).toString
        val svgStringWithLinksHackedIn = hackInLinks(svgString)
        val bytes = svgStringWithLinksHackedIn.getBytes(StandardCharsets.UTF_8)
