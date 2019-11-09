@@ -33,6 +33,7 @@ import scala.collection.immutable
 case class FactorRef(linkingFactor: Factor, period: Option[Period]) {
 
 
+
   override def toString: String = {
     def prettyPrintPeriod(p: Period) = {
       if (p.getYears > 0) s"${p.getYears} years"
@@ -51,7 +52,18 @@ case class FactorRef(linkingFactor: Factor, period: Option[Period]) {
 }
 
 case class FactorRefForSoPPair(dependentSoPPair: SoPPair, targetSoPPair: SoPPair, rhRefs: List[FactorRef], bopRefs: List[FactorRef]) {
-  override def toString = if (rhRefs != bopRefs) s"RH: ${rhRefs.mkString(", ")}; BoP: ${bopRefs.mkString(", ")}" else s"${rhRefs.mkString(", ")}"
+  override def toString =
+    {
+
+      def refsToString(rs : List[FactorRef], standardOfProof: StandardOfProof) = {
+        rs match  {
+          case List() => None
+          case _ => Some(s"${standardOfProof.toAbbreviatedString}: ${rs.mkString(", ")}")
+        }
+      }
+
+    List(refsToString(rhRefs,StandardOfProof.ReasonableHypothesis), refsToString(bopRefs, StandardOfProof.BalanceOfProbabilities)).filter(_.isDefined).map(_.get).mkString("; ")
+      }
 }
 
 abstract class InstantCondition(soPPair: SoPPair, onsetDate: LocalDate, iCDCodeOpt: Option[ICDCodeDto], SideOpt: Option[Side]) {
@@ -120,6 +132,7 @@ object Dependencies extends MiscRegexes {
       directed = true,
       id = Some(Id(s"SoP Dependencies Graph Generated ${DateTimeFormatter.ISO_DATE_TIME.format(OffsetDateTime.now())}")),
       attrStmts = List(
+        DotAttrStmt(Elem.node, List(DotAttr(Id("shape"), Id("record")))),
         DotAttrStmt(Elem.node, List(DotAttr(Id("shape"), Id("record")))),
         DotAttrStmt(Elem.graph, List(DotAttr(Id("rankdir"), Id("LR"))))
       )
