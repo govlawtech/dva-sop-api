@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.ICDCodeDto;
 import au.gov.dva.sopapi.dtos.sopsupport.LocalDateDeserializer;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -49,6 +50,7 @@ public class DiagnosedConditionDto {
         return _isOnset;
     }
 
+    @JsonCreator
     public DiagnosedConditionDto(@JsonProperty("conditionName") String name, @JsonProperty("icdCode") ICDCodeDto icdCode, @JsonProperty("side") Side side, @JsonProperty("date") @JsonDeserialize(using = LocalDateDeserializer.class) LocalDate date, @JsonProperty("standardOfProof") StandardOfProof acceptedStandardOfProof, @JsonProperty("isOnset") boolean isOnset)
     {
         _name = name;

@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance;
 
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -33,6 +34,7 @@ public class SequelaeRequestDto {
         return _diagnosedConditions;
     }
 
+    @JsonCreator
     public SequelaeRequestDto(@JsonProperty("acceptedConditions") List<AcceptedConditionDto> acceptedConditions, @JsonProperty("diagnosedConditions") List<DiagnosedConditionDto> diagnosedConditions)
     {
         _acceptedConditions = acceptedConditions;

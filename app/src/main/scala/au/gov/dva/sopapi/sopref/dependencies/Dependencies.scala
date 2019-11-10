@@ -322,7 +322,8 @@ object Dependencies extends MiscRegexes {
     def canTraverse(edgeLabel: FactorRefForSoPPair, acceptedConditions: List[AcceptedCondition], diagnosedConditions: List[DiagnosedCondition], standardOfProof: StandardOfProof): Boolean = {
       val sopToCondition = (acceptedConditions ++ diagnosedConditions).map(ic => (ic.getSoPair -> ic)).toMap
       val sourceInstantCondition = sopToCondition(edgeLabel.dependentSoPPair)
-
+      if (sourceInstantCondition.isInstanceOf[AcceptedCondition])
+        return true
       def isOnsetFactor(factorPara: String, sop: SoP) = sop.getOnsetFactors.asScala.map(f => f.getParagraph).contains(factorPara)
 
 
@@ -363,7 +364,8 @@ object Dependencies extends MiscRegexes {
 
       val dependentIsOnOrAfterTarget = !sourceInstantCondition.getOnsetDate.isBefore(targetInstantCondition.getOnsetDate)
 
-      val anyTimeLimitMet = checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition], standardOfProof)
+      val anyTimeLimitMet =
+        checkTimeLimitOnDiagnosed(sourceInstantCondition.asInstanceOf[DiagnosedCondition], standardOfProof)
 
       dependentIsOnOrAfterTarget && anyTimeLimitMet
 
@@ -394,7 +396,7 @@ object Dependencies extends MiscRegexes {
       .map(n => n.toOuter)
   }
 
-  def getPrettyPrintedReasonsForSequela(path: Graph[SoPPair,LDiEdge]#Path, accepted: Set[AcceptedCondition], diagnosed: Set[DiagnosedCondition], shouldAutoAccept : ((String,String) => Boolean)) = {
+  def getPrettyPrintedReasonsForSequela(path: Graph[SoPPair,LDiEdge]#Path, accepted: Set[AcceptedCondition], diagnosed: Set[DiagnosedCondition], shouldAutoAccept : ((String,String) => Boolean)) : (Boolean,String) = {
 
     val icsMap = (accepted ++ diagnosed).map(i => i.getSoPair.getConditionName -> i).toMap
 
@@ -428,8 +430,8 @@ object Dependencies extends MiscRegexes {
     val mainRecommendationForReview = s"Review whether to accept initial liability for $diagnosedCondition on the grounds that it is a direct or indirect sequela of an accepted condition: $acceptedCondition.  This depends on whether qualifications in the relevant SoP factors are met.  The standard of proof is the same as the accepted condition: $standardOfProof.  The relevant SoP factors are: $prettyPrintAllRelevantSoPFactors."
 
     shouldAutoAccept(path.startNode.toOuter.getConditionName, path.endNode.toOuter.getConditionName) match {
-      case true => mainRecommendationSentenceForAccept
-      case false => mainRecommendationForReview
+      case true => (true,mainRecommendationSentenceForAccept)
+      case false => (false,mainRecommendationForReview)
     }
 
   }
@@ -453,7 +455,12 @@ object Dependencies extends MiscRegexes {
     val graph: Graph[SoPPair, LDiEdge] = getInstantGraph(accepted.toList, diagnosed.toList, true)
     val paths = getPaths(graph, accepted.toSet, diagnosed.toSet)
 
-    val recommendations = paths.map(getPrettyPrintedReasonsForSequela(_,accepted.toSet,diagnosed.toSet,Configuration.shouldAccept))
+    val recommendations: List[String] = paths
+      .map(getPrettyPrintedReasonsForSequela(_,accepted.toSet,diagnosed.toSet,Configuration.shouldAccept))
+      .toList
+      .sortBy{case (a,_) => !a}
+      .map(_._2)
+
     val diagnosedConditionNames = diagnosed.map(c => c.soPPair.getConditionName).toSet
 
     val edgesFromSequelae: Set[Graph[SoPPair, LDiEdge]#EdgeT] = paths.map(p => p.edges.head)
