@@ -9,7 +9,6 @@ import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser.{M
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, NewStyleSubFactorParser}
 
 import scala.util.Properties
-import scala.util.parsing.combinator.RegexParsers
 
 
 trait PreAug2015FactorsParser extends MiscRegexes {
