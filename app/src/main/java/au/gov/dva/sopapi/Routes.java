@@ -403,7 +403,7 @@ public class Routes {
 
                 byte[] svg = Dependencies.getSvg(sequelaeDiagramRequestDto, cache.get_allSopPairs());
                 setResponseHeaders(res, 200, MIME_SVG);
-                res.header("Content-Disposition", "attachment");
+                res.header("Content-Disposition", "attachment; filename=\"sequelae.svg\"");
                 return svg;
 
 

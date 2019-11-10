@@ -1,9 +1,11 @@
 package au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance;
 
 import au.gov.dva.sopapi.dtos.DvaSopApiDtoRuntimeException;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,6 +18,7 @@ public class SequelaeDiagramRequestDto {
     @JsonProperty(value = "diagnosedConditions", required = true)
     private final List<String> _diagnosedConditions;
 
+    @JsonCreator
     public SequelaeDiagramRequestDto(@JsonProperty("acceptedConditions") List<String> acceptedConditions, @JsonProperty("diagnosedConditions") List<String> diagnosedConditions)
     {
         _acceptedConditions = acceptedConditions;

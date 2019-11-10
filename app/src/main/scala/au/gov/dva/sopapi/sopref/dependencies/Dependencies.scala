@@ -445,8 +445,9 @@ object Dependencies extends MiscRegexes {
     val dotString = Dependencies.toDotString(graph)
     val os = new ByteArrayOutputStream()
     DotToImage.render(dotString, os)
+    val bytes = os.toByteArray
     os.close()
-    os.toByteArray
+    bytes
   }
 
 
