@@ -256,7 +256,9 @@ object Dependencies extends MiscRegexes {
       try {
         Some(s.toInt)
       } catch {
+
         case e: Exception => None
+
       }
     }
 
@@ -271,19 +273,20 @@ object Dependencies extends MiscRegexes {
         case "seven" => Some(7)
         case "eight" => Some(8)
         case "nine" => Some(9)
+        case "ten" => Some(10)
         case _ => toInt(numberString)
       }
     }
 
-    val regex = s"""within the ([a-z0-9]+) (days|months|years) before the clinical onset of (the )?$sourceConditionName""".r
-    regex.findFirstMatchIn(factorText) match {
+    val regexMatch = s"""within( the)? ([a-z0-9]+) (days?|months?|years?) before the clinical onset of (the )?$sourceConditionName""".r
+    regexMatch.findFirstMatchIn(factorText) match {
       case Some(v) => {
-        tryParseNumber(v.group(1)) match {
+        tryParseNumber(v.group(2)) match {
           case Some(n) => {
-            v.group(2) match {
-              case "days" => Some(Period.of(0, 0, n))
-              case "months" => Some(Period.of(0, n, 0))
-              case "years" => Some(Period.of(n, 0, 0))
+            v.group(3) match {
+              case "days" | "day" => Some(Period.of(0, 0, n))
+              case "months" | "month" => Some(Period.of(0, n, 0))
+              case "years" | "year" => Some(Period.of(n, 0, 0))
               case _ => throw new IllegalArgumentException
             }
           }
@@ -291,8 +294,10 @@ object Dependencies extends MiscRegexes {
         }
       }
       case _ => None
-
     }
+
+
+
   }
 
 
