@@ -64,7 +64,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
   }
 
   override def parseStartAndEndAggravationParas(aggravationSection: String): (String, String) = {
-    val paraIntervalRegex = """subsections [0-9]+(\([0-9]+\)) (to|and) [0-9]+(\([0-9]+\))""".r
+    val paraIntervalRegex = """subsections? [0-9]+(\([0-9]+\)) (to|and) [0-9]+(\([0-9]+\))""".r
     val intervalMatch = paraIntervalRegex.findFirstMatchIn(aggravationSection)
     if (intervalMatch.isDefined) return (intervalMatch.get.group(1), intervalMatch.get.group(3))
 
