@@ -15,8 +15,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.OffsetDateTime;
-import java.util.Comparator;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -168,16 +166,18 @@ public class ConditionFactory {
     }
 
 
+
+
     private static ProcessingRule BuildRuleFromConfig(ConditionConfiguration conditionConfiguration) {
         switch (conditionConfiguration.getConditionName()) {
             case "lumbar spondylosis":
-                return new LumbarSpondylosisRule(conditionConfiguration);
+                return new GenericWearAndTearRule(conditionConfiguration);
             case "osteoarthritis":
-                return new OsteoarthritisRule(conditionConfiguration);
+                return new GenericWearAndTearRule(conditionConfiguration);
             case "intervertebral disc prolapse":
                 return new InvertebralDiscProlapseRule(conditionConfiguration);
             case "thoracic spondylosis":
-                return new ThoracicSpondylosisRule(conditionConfiguration);
+                    return new ThoracicSpondylosisRule(conditionConfiguration);
             case "rotator cuff syndrome":
                 return new RotatorCuffSyndromeRule(conditionConfiguration);
             case "acquired cataract":

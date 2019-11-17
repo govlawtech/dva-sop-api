@@ -1,0 +1,148 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01175",
+  "instrumentNumber" : "73/2018",
+  "citation" : "Statement of Principles concerning sinusitis (Reasonable Hypothesis) (No. 73 of 2018)",
+  "conditionName" : "sinusitis",
+  "effectiveFrom" : "2018-09-24",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "J01"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "J32"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having impaired drainage of the sinus at the time of the clinical onset\r\nof sinusitis",
+    "definedTerms" : [ {
+      "term" : "impaired drainage of the sinus",
+      "definition" : "means one of the following which leads to a\r\nnarrowing or obstruction of the affected sinus or sinus opening:\r\n(a) an anatomical deformity including deviated septum, enlarged\r\nturbinates, adenoidal hypertrophy, fracture of the facial bones and any\r\nother bony structural abnormalities;\r\n(b) a soft tissue abnormality or mucosal swelling affecting the sinus\r\nincluding polyps, tumours, inflammation, sarcoidosis, granulomas and\r\nscarring; or\r\n(c) a foreign body including fungal balls, nasal packing, nasogastric or\r\nnasotracheal tubes, and dental detritus."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a viral, bacterial or fungal respiratory tract infection at the time\r\nof the clinical onset of sinusitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of sinusitis",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being treated with an immunosuppressive drug;\r\n(b) having a haematological or solid organ malignancy;\r\n(c) having chronic renal failure;\r\n(d) having infection with human immunodeficiency virus;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: chronic renal failure and immunosuppressive drug are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a specified medical condition at the time of the clinical onset of\r\nsinusitis",
+    "definedTerms" : [ {
+      "term" : "specified medical condition",
+      "definition" : "means one of the following:\r\n(a) allergic rhinitis;\r\n(b) asthma;\r\n(c) diabetes mellitus;\r\n(d) gastro-oesophageal reflux disease; or\r\n(e) sinus barotrauma."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the nasal\r\ncavity and paranasal sinuses were in the field of radiation, before the\r\nclinical onset of sinusitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of sinusitis, and:\r\n(a) smoking commenced at least one year before the clinical onset of\r\nsinusitis; and\r\n(b) where smoking has ceased, the clinical onset of sinusitis has\r\noccurred within three months of smoking cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being exposed to second-hand smoke:\r\n(a) for at least 1 000 hours before the clinical onset of sinusitis; and\r\n(b) where the first exposure to second-hand smoke commenced at\r\nleast one year before the clinical onset of sinusitis; and\r\n(c) where the last exposure to second-hand smoke occurred within\r\nthe three months before the clinical onset of sinusitis",
+    "definedTerms" : [ {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space and\r\ninhaling smoke from burning tobacco products or smoke that has been\r\nexhaled by a person who is smoking."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "inhaling a drug or irritant substance which results in:\r\n(a) acute nasal symptoms or signs within 48 hours of the inhalation;\r\nand\r\n(b) scarring or erosion of the nasal or sinus mucosa;\r\nbefore the clinical onset of sinusitis;\r\nNote 1: Examples of drugs include cocaine, lidocaine, methylphenidate and narcotics.\r\nNote 2: Examples of irritant substances include gases (ammonia, chlorine, mustard, nitrogen\r\ndioxide, sulphur dioxide), powdered solids (aspirin, baking soda, levamisole, capsules,\r\ntablets, pills) and lewisite.\r\nNote 3: Examples of acute nasal symptoms or signs include rhinorrhoea, and the inflammation,\r\noedema, ulceration or haemorrhage of the nasal mucosa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "inhaling airborne dusts, smoke from fires, or fumes or vapours from\r\nfuel or a chemical agent within the 48 hours before the clinical onset of\r\nsinusitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for sinusitis affecting the maxillary sinus only, having a specified\r\ndental condition affecting the tissues adjacent to the affected maxillary\r\nsinus at the time of the clinical onset of sinusitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "sinusitis affecting the maxillary sinus",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(11)",
+    "text" : "having impaired drainage of the sinus at the time of the clinical\r\nworsening of sinusitis",
+    "definedTerms" : [ {
+      "term" : "impaired drainage of the sinus",
+      "definition" : "means one of the following which leads to a\r\nnarrowing or obstruction of the affected sinus or sinus opening:\r\n(a) an anatomical deformity including deviated septum, enlarged\r\nturbinates, adenoidal hypertrophy, fracture of the facial bones and any\r\nother bony structural abnormalities;\r\n(b) a soft tissue abnormality or mucosal swelling affecting the sinus\r\nincluding polyps, tumours, inflammation, sarcoidosis, granulomas and\r\nscarring; or\r\n(c) a foreign body including fungal balls, nasal packing, nasogastric or\r\nnasotracheal tubes, and dental detritus."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a viral, bacterial or fungal respiratory tract infection at the time\r\nof the clinical worsening of sinusitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of sinusitis",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being treated with an immunosuppressive drug;\r\n(b) having a haematological or solid organ malignancy;\r\n(c) having chronic renal failure;\r\n(d) having infection with human immunodeficiency virus;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: chronic renal failure and immunosuppressive drug are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having a specified medical condition at the time of the clinical\r\nworsening of sinusitis",
+    "definedTerms" : [ {
+      "term" : "specified medical condition",
+      "definition" : "means one of the following:\r\n(a) allergic rhinitis;\r\n(b) asthma;\r\n(c) diabetes mellitus;\r\n(d) gastro-oesophageal reflux disease; or\r\n(e) sinus barotrauma."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the nasal\r\ncavity and paranasal sinuses were in the field of radiation, before the\r\nclinical worsening of sinusitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of sinusitis,\r\nand:\r\n(a) smoking commenced at least one year before the clinical\r\nworsening of sinusitis; and\r\n(b) where smoking has ceased, the clinical worsening of sinusitis has\r\noccurred within three months of smoking cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "being exposed to second-hand smoke:\r\n(a) for at least 1 000 hours before the clinical worsening of sinusitis;\r\nand\r\n(b) where the first exposure to second-hand smoke commenced at\r\nleast one year before the clinical worsening of sinusitis; and\r\n(c) where the last exposure to second-hand smoke occurred within\r\nthe three months before the clinical worsening of sinusitis",
+    "definedTerms" : [ {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space and\r\ninhaling smoke from burning tobacco products or smoke that has been\r\nexhaled by a person who is smoking."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "inhaling a drug or irritant substance which results in:\r\n(a) acute nasal symptoms or signs within 48 hours of the inhalation;\r\nand\r\n(b) scarring or erosion of the nasal or sinus mucosa;\r\nbefore the clinical worsening of sinusitis;\r\nNote 1: Examples of drugs include cocaine, lidocaine, methylphenidate and narcotics.\r\nNote 2: Examples of irritant substances include gases (ammonia, chlorine, mustard, nitrogen\r\ndioxide, sulphur dioxide), powdered solids (aspirin, baking soda, levamisole, capsules,\r\ntablets, pills) and lewisite.\r\nNote 3: Examples of acute nasal symptoms or signs include rhinorrhoea, and the inflammation,\r\noedema, ulceration or haemorrhage of the nasal mucosa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "inhaling airborne dusts, smoke from fires, or fumes or vapours from\r\nfuel or a chemical agent within the 48 hours before the clinical\r\nworsening of sinusitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "for sinusitis affecting the maxillary sinus only, having a specified\r\ndental condition affecting the tissues adjacent to the affected maxillary\r\nsinus at the time of the clinical worsening of sinusitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "sinusitis affecting the maxillary sinus",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "for sinusitis with nasal polyps only, using a drug belonging to the\r\nnonselective (COX-1 and COX-2 inhibitors) nonsteroidal anti-\r\ninflammatory class of drugs, at the time of the clinical worsening of\r\nsinusitis;\r\n(a) includes drugs such as aspirin, diclofenac, ibuprofen, indomethacin, ketoprofen,\r\nketorolac, mefanamic acid, paracetamol, piroxicam and sulindac; and\r\n(b) excludes drugs such as celecoxib, etoricoxib, meloxicam and parecoxib",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "sinusitis with nasal polyps",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "includes drugs such as aspirin, diclofenac, ibuprofen, indomethacin, ketoprofen,\r\nketorolac, mefanamic acid, paracetamol, piroxicam and sulindac; and"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "excludes drugs such as celecoxib, etoricoxib, meloxicam and parecoxib"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "inability to obtain appropriate clinical management for sinusitis",
+    "definedTerms" : [ ]
+  } ]
+}

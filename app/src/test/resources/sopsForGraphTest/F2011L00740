@@ -1,0 +1,76 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L00740",
+  "instrumentNumber" : "25/2011",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the nasopharynx No. 25 of 2011",
+  "conditionName" : "malignant neoplasm of the nasopharynx",
+  "effectiveFrom" : "2011-05-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C11"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling wood dust for at least four hours per day on more days than\r\nnot for at least ten years or for a cumulative period of at least 7500\r\nhours before the clinical onset of malignant neoplasm of the\r\nnasopharynx",
+    "definedTerms" : [ {
+      "term" : "inhaling wood dust",
+      "definition" : "means being exposed to fine particulate material of\nwood origin from work entailing the sanding, planing, machining, sawing,\nrepairing or manufacturing of timber products or performing other tasks in an\narea where such work is being performed"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being infected with the Epstein-Barr virus at the time of the clinical\r\nonset of malignant neoplasm of the nasopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of malignant neoplasm of the nasopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "smoking at least 15 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the nasopharynx, and where smoking has ceased, the\r\nclinical onset has occurred within 15 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being exposed to mustard gas at least five years before the clinical\r\nonset of malignant neoplasm of the nasopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "drinking at least 500 kilograms of alcohol before the clinical onset of\r\nmalignant neoplasm of the nasopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inhaling formaldehyde:\r\n(i) at a level of at least one part per million for at least four hours per\r\nday on more days than not for at least one year; or\r\n(ii) for a cumulative total of at least 750 hours;\r\nat least 15 years before the clinical onset of malignant neoplasm of the\r\nnasopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "working in an environment where:\r\n(i) inhalational exposure to formaldehyde occurs for at least four\r\nhours per day on more days than not; and\r\n(ii) results in sensory irritation of the eyes or nose on at least one day\r\nper week for at least one year;\r\nat least 15 years before the clinical onset of malignant neoplasm of the\r\nnasopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "inhaling smoke from the combustion of wood, charcoal or coal while in\r\nan enclosed space, on more days than not for at least ten years or for a\r\ncumulative period of at least 7500 hours, before the clinical onset of\r\nmalignant neoplasm of the nasopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having at least weekly consumption of Chinese-style salted fish for at\r\nleast five years before the clinical onset of malignant neoplasm of the\r\nnasopharynx",
+    "definedTerms" : [ {
+      "term" : "Chinese-style salted fish",
+      "definition" : "means fish preserved by salting and is\ncharacterised by using less salt and a higher degree of fermentation during the\ndrying process because of the relatively high outdoor temperature and moisture\nlevels. Chinese-style salted fish is a traditional part of the diet in southern\nChina, Hong Kong, Taiwan, Malaysia, Singapore, other areas of south-east\nAsia, or in Chinese who have migrated to other countries"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having at least weekly consumption of preserved vegetables for at least\r\nfive years before the clinical onset of malignant neoplasm of the\r\nnasopharynx",
+    "definedTerms" : [ {
+      "term" : "preserved vegetables",
+      "definition" : "means vegetables preserved by salting, fermenting or\npickling"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "an inability to consume any combination of fresh fruit and vegetables\r\non more days than not for a period of at least five consecutive years\r\nbefore the clinical onset of malignant neoplasm of the nasopharynx",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(m)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the nasopharynx",
+    "definedTerms" : [ ]
+  } ]
+}

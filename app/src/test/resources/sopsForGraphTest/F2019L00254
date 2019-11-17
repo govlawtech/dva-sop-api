@@ -1,0 +1,154 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00254",
+  "instrumentNumber" : "31/2019",
+  "citation" : "Statement of Principles concerning chronic pruritus ani (Reasonable Hypothesis) (No. 31 of 2019)",
+  "conditionName" : "chronic pruritus ani",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "an inability to maintain adequate anal hygiene for at least the four\r\nweeks before the clinical onset of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "adequate anal hygiene",
+      "definition" : "means the personal maintenance of cleanliness of the\r\nperianal area by wiping with paper or washing with water.\r\nchronic pruritus ani—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "undertaking excessive cleansing of the perianal area for at least the four\r\nweeks before the clinical onset of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "excessive cleansing of the perianal area",
+      "definition" : "means vigorous scrubbing of the\r\nperianal skin resulting in mechanical trauma to the skin, or the excessive use\r\nof soap or wipes containing alcohol or other astringents, irritants or allergens."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having daily episodes of diarrhoea for at least the seven days before the\r\nclinical onset of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "diarrhoea",
+      "definition" : "means predominantly liquid faecal discharge."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having faecal incontinence for at least the four weeks before the\r\nclinical onset of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "faecal incontinence",
+      "definition" : "means the involuntary discharge of liquid or solid\r\nfaeces.\r\nNote: Causes of  include, but are not limited to, constipation with overflow, laxative\r\neffects of drugs, and abnormalities of the anal sphincter muscles, rectum, puborectalis muscle,\r\npudendal nerve, central nervous system, spinal cord and autonomic nervous system."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a condition from the specified list of rectal, anal and perianal\r\nconditions at the time of the clinical onset of chronic pruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a perianal or anal infection from the specified list of infections,\r\nat the time of the clinical onset of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "specified list of infections",
+      "definition" : "means:\r\n(a) Candida albicans;\r\n(b) Corynebacterium spp.;\r\n(c) Epidermophyton spp., Microsporum spp. or Trichophyton spp. (tinea);\r\n(d) herpes simplex virus;\r\n(e) human papilloma virus;\r\n(f) molluscum contagiosum virus;\r\n(g) Neisseria gonorrhoeae (gonorrhoea);\r\n(h) Staphylococcus spp.;\r\n(i) Streptococcus spp.; or\r\n(j) Treponeum pallidum (syphilis)."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a perianal or anal infestation with an agent from the specified\r\nlist of infestations, at the time of the clinical onset of chronic pruritus\r\nani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having a pathological vaginal discharge at the time of the clinical onset\r\nof chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "pathological vaginal discharge",
+      "definition" : "means a discharge of fluid from the vagina\r\ndue to one of the following diseases: vulvovaginal candidiasis, trichomonal\r\nvaginitis, bacterial vaginosis, Chlamydia trachomatis cervicitis or\r\ngonorrhoea of the lower genitourinary tract."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having a dermatological disease from the specified list of\r\ndermatological diseases affecting the perianal or anal region at the time\r\nof the clinical onset of chronic pruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a systemic disease from the specified list of systemic diseases at\r\nthe time of the clinical onset of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic diseases",
+      "definition" : "means:\r\n(a) aplastic anaemia;\r\n(b) cholestatic liver disease;\r\n(c) chronic renal failure;\r\n(d) diabetes mellitus;\r\n(e) hyperbilirubinaemia;\r\n(f) hyperthyroidism;\r\n(g) hypothyroidism;\r\n(h) human immunodeficiency virus;\r\n(i) iron deficiency;\r\n(j) leukaemia;\r\n(k) lymphoma; or\r\n(l) polycythaemia vera.\r\nNote: chronic renal failure and iron deficiency are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nperianal region was in the field of radiation, within the 30 days before\r\nthe clinical onset of chronic pruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having corticosteroid-related atrophy of the perianal skin at the time of\r\nthe clinical onset of chronic pruritus ani",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(13)",
+    "text" : "an inability to maintain adequate anal hygiene for at least the four\r\nweeks before the clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "adequate anal hygiene",
+      "definition" : "means the personal maintenance of cleanliness of the\r\nperianal area by wiping with paper or washing with water.\r\nchronic pruritus ani—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "undertaking excessive cleansing of the perianal area for at least the four\r\nweeks before the clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "excessive cleansing of the perianal area",
+      "definition" : "means vigorous scrubbing of the\r\nperianal skin resulting in mechanical trauma to the skin, or the excessive use\r\nof soap or wipes containing alcohol or other astringents, irritants or allergens."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having daily episodes of diarrhoea for at least the seven days before the\r\nclinical worsening of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "diarrhoea",
+      "definition" : "means predominantly liquid faecal discharge."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having faecal incontinence for at least the four weeks before the\r\nclinical worsening of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "faecal incontinence",
+      "definition" : "means the involuntary discharge of liquid or solid\r\nfaeces.\r\nNote: Causes of  include, but are not limited to, constipation with overflow, laxative\r\neffects of drugs, and abnormalities of the anal sphincter muscles, rectum, puborectalis muscle,\r\npudendal nerve, central nervous system, spinal cord and autonomic nervous system."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having a condition from the specified list of rectal, anal and perianal\r\nconditions at the time of the clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having a perianal or anal infection from the specified list of infections,\r\nat the time of the clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "specified list of infections",
+      "definition" : "means:\r\n(a) Candida albicans;\r\n(b) Corynebacterium spp.;\r\n(c) Epidermophyton spp., Microsporum spp. or Trichophyton spp. (tinea);\r\n(d) herpes simplex virus;\r\n(e) human papilloma virus;\r\n(f) molluscum contagiosum virus;\r\n(g) Neisseria gonorrhoeae (gonorrhoea);\r\n(h) Staphylococcus spp.;\r\n(i) Streptococcus spp.; or\r\n(j) Treponeum pallidum (syphilis)."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having a perianal or anal infestation with an agent from the specified\r\nlist of infestations, at the time of the clinical worsening of chronic\r\npruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having a pathological vaginal discharge at the time of the clinical\r\nworsening of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "pathological vaginal discharge",
+      "definition" : "means a discharge of fluid from the vagina\r\ndue to one of the following diseases: vulvovaginal candidiasis, trichomonal\r\nvaginitis, bacterial vaginosis, Chlamydia trachomatis cervicitis or\r\ngonorrhoea of the lower genitourinary tract."
+    } ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having a dermatological disease from the specified list of\r\ndermatological diseases affecting the perianal or anal region at the time\r\nof the clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having a systemic disease from the specified list of systemic diseases at\r\nthe time of the clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic diseases",
+      "definition" : "means:\r\n(a) aplastic anaemia;\r\n(b) cholestatic liver disease;\r\n(c) chronic renal failure;\r\n(d) diabetes mellitus;\r\n(e) hyperbilirubinaemia;\r\n(f) hyperthyroidism;\r\n(g) hypothyroidism;\r\n(h) human immunodeficiency virus;\r\n(i) iron deficiency;\r\n(j) leukaemia;\r\n(k) lymphoma; or\r\n(l) polycythaemia vera.\r\nNote: chronic renal failure and iron deficiency are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nperianal region was in the field of radiation, within the 30 days before\r\nthe clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having corticosteroid-related atrophy of the perianal skin at the time of\r\nthe clinical worsening of chronic pruritus ani",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "inability to obtain appropriate clinical management for chronic pruritus\r\nani",
+    "definedTerms" : [ ]
+  } ]
+}

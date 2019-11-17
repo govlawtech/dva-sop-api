@@ -1,0 +1,34 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01786",
+  "instrumentNumber" : "8/2015",
+  "citation" : "Statement of Principles concerning epicondylitis No. 8 of 2015",
+  "conditionName" : "epicondylitis",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M77.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M77.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "performing forceful and repetitive activities with the hand or forearm\r\non the affected side for at least one hour per day, on more days than\r\nnot, over a period of at least the three months before the clinical onset\r\nof epicondylitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing treatment with fluoroquinolone antibiotics within the seven\r\ndays before the clinical onset of epicondylitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "performing forceful and repetitive activities with the hand or forearm\r\non the affected side for at least one hour per day, on more days than\r\nnot, over a period of at least the three months before the clinical\r\nworsening of epicondylitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for epicondylitis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00247",
+  "instrumentNumber" : "26/2019",
+  "citation" : "Statement of Principles concerning acute meniscal tear of the knee (Balance of Probabilities) (No. 26 of 2019)",
+  "conditionName" : "acute meniscal tear of the knee",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "S83.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a significant physical force applied to or through the affected\r\nknee joint at the time of the clinical onset of acute meniscal tear of the\r\nknee",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for acute meniscal\r\ntear of the knee",
+    "definedTerms" : [ ]
+  } ]
+}

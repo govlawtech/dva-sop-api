@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01672",
+  "instrumentNumber" : "119/2015",
+  "citation" : "Statement of Principles concerning pinguecula (Balance of Probabilities) (No. 119 of 2015)",
+  "conditionName" : "pinguecula",
+  "effectiveFrom" : "2015-11-16",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having sunlight exposure to the unprotected eye for at least 4 500\r\nhours while in a tropical area, or having equivalent sunlight exposure\r\nin other latitude zones, before the clinical onset of pinguecula",
+    "definedTerms" : [ {
+      "term" : "unprotected eye",
+      "definition" : "means an eye exposed to sunlight and not protected by\r\nultraviolet radiation screening devices."
+    }, {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for pinguecula",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00860",
+  "instrumentNumber" : "105/2015",
+  "citation" : "Statement of Principles concerning mesothelioma (Balance of Probabilities) (No. 105 of 2015)",
+  "conditionName" : "mesothelioma",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C45"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "inhaling asbestos fibres in an enclosed space:\r\n(a) at the time material containing asbestos fibres was being applied,\r\nremoved, dislodged, cut or drilled; and\r\n(b) the first inhalation of asbestos fibres occurred at least 15 years,\r\nbefore the clinical onset of mesothelioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "inhaling asbestos fibres in an open environment for a cumulative\r\nperiod of at least 1 000 hours before the clinical onset of\r\nmesothelioma:\r\n(a) at the time material containing asbestos fibres was being applied,\r\nremoved, dislodged, cut or drilled; and\r\n(b) the first inhalation of asbestos fibres occurred at least 15 years,\r\nbefore the clinical onset of mesothelioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having asbestosis at the time of the clinical onset of mesothelioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected region at least ten years before the\r\nclinical onset of mesothelioma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inhaling erionite fibres on more days than not for at least ten years\r\nbefore the clinical onset of mesothelioma, where the first inhalation of\r\nerionite fibres occurred at least 15 years before the clinical onset of\r\nmesothelioma",
+    "definedTerms" : [ {
+      "term" : "erionite",
+      "definition" : "means a naturally occurring fibrous mineral that belongs to a group\r\nof minerals called zeolites."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "firefighting for a cumulative period of at least 1 000 hours before the\r\nclinical onset of mesothelioma, where the first exposure occurred at\r\nleast 15 years before the clinical onset of mesothelioma",
+    "definedTerms" : [ {
+      "term" : "firefighting",
+      "definition" : "means being involved in the direct combat of fires, including\r\nactivities to control, extinguish, mop-up or prevent fires, or participating in\r\ntraining activities involving fires.\r\nmesothelioma—see subsection 7(2)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(7)",
+    "text" : "inability to obtain appropriate clinical management for mesothelioma",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -34,7 +34,6 @@ import java.util.regex.Pattern;
 public class Conversions {
 
 
-    // 2015 or later compilations of old style sops
     private static ImmutableList<String> compilationsWithKnownShortFootnote = ImmutableList.of(
           "F2015C00914",
            "F2015C00915",
@@ -46,6 +45,13 @@ public class Conversions {
             "F2016C00276",
             "F2016C00279",
             "F2016C00280"
+    );
+
+    private static ImmutableList<String> compilationsWithKnownMedFoodNote = ImmutableList.of(
+            "F2017C00764",
+            "F2017C00832",
+            "F2017C00783",
+            "F2017C00827"
     );
 
 
@@ -148,6 +154,10 @@ public class Conversions {
             if (compilationsWithKnownShortFootnote.contains(registerdId))
             {
                 return heightInPointsOfShortFootnoteForCompilations;
+            }
+            if (compilationsWithKnownMedFoodNote.contains(registerdId))
+            {
+                return heightInPointsOfMediumFootnoteForCompilations;
             }
             if (registerIdInfo.getYear() <= 2014) {
                 return heightInPointsOfShortFootnoteForCompilations;

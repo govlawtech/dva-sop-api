@@ -1,0 +1,138 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00257",
+  "instrumentNumber" : "51/2015",
+  "citation" : "Statement of Principles concerning plantar fasciitis No. 51 of 2015",
+  "conditionName" : "plantar fasciitis",
+  "effectiveFrom" : "2015-03-30",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having trauma to the plantar aspect of the affected foot between two\r\nand seven days before the clinical onset of plantar fasciitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having an infection involving the plantar fascia at the time of the\r\nclinical onset of plantar fasciitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for\r\nthe three months before the clinical onset of plantar fasciitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undertaking exercise, at a rate of at least five METS, that involves\r\nrepetitive weight bearing on the affected foot, for at least four hours per\r\nweek for the three months before the clinical onset of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "increasing the frequency, duration, or intensity of weight bearing\r\nactivity involving the affected foot by at least 100 percent, to a\r\nminimum intensity of five METs for at least two hours per day, within\r\nthe seven days before the clinical onset of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undergoing prolonged weight bearing on the affected foot while on a\r\nhard surface for at least five hours per day, on more days than not, for\r\nthe six months before the clinical onset of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "hard surface",
+      "definition" : "means a paved road surface or the equivalent"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being obese at the time of the clinical onset of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a systemic arthritic disease at the time of the clinical onset of\r\nplantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "a systemic arthritic disease",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) crystal-induced arthropathy;\n(c) enteropathic spondyloarthropathy;\n(d) psoriatic arthropathy;\n(e) reactive arthritis; or\n(f) undifferentiated spondyloarthropathy"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having an acquired biomechanical abnormality involving the affected\r\nfoot before the clinical onset of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "biomechanical abnormality",
+      "definition" : "means injury or disease that has resulted in\noverpronation or underpronation, or decreased ankle or forefoot flexibility"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "wearing inappropriate footwear during weight bearing exercise which\r\ninvolves the affected foot within the seven days before the clinical\r\nonset of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "inappropriate footwear",
+      "definition" : "means footwear that has inadequate cushioning"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(k)",
+    "text" : "having trauma to the plantar aspect of the affected foot between two\r\nand seven days before the clinical worsening of plantar fasciitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having an infection involving the plantar fascia at the time of the\r\nclinical worsening of plantar fasciitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for\r\nthe three months before the clinical worsening of plantar fasciitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "undertaking exercise, at a rate of at least five METS, that involves\r\nrepetitive weight bearing on the affected foot, for at least four hours per\r\nweek for the three months before the clinical worsening of plantar\r\nfasciitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "increasing the frequency, duration, or intensity of weight bearing\r\nactivity involving the affected foot by at least 100 percent, to a\r\nminimum intensity of five METs for at least two hours per day, within\r\nthe seven days before the clinical worsening of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "undergoing prolonged weight bearing on the affected foot while on a\r\nhard surface for at least five hours per day, on more days than not, for\r\nthe six months before the clinical worsening of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "hard surface",
+      "definition" : "means a paved road surface or the equivalent"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "being obese at the time of the clinical worsening of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having a systemic arthritic disease at the time of the clinical worsening\r\nof plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "a systemic arthritic disease",
+      "definition" : "means:\n(a) ankylosing spondylitis;\n(b) crystal-induced arthropathy;\n(c) enteropathic spondyloarthropathy;\n(d) psoriatic arthropathy;\n(e) reactive arthritis; or\n(f) undifferentiated spondyloarthropathy"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having an acquired biomechanical abnormality involving the affected\r\nfoot before the clinical worsening of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "biomechanical abnormality",
+      "definition" : "means injury or disease that has resulted in\noverpronation or underpronation, or decreased ankle or forefoot flexibility"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "wearing inappropriate footwear during weight bearing exercise which\r\ninvolves the affected foot within the seven days before the clinical\r\nworsening of plantar fasciitis",
+    "definedTerms" : [ {
+      "term" : "inappropriate footwear",
+      "definition" : "means footwear that has inadequate cushioning"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "inability to obtain appropriate clinical management for plantar fasciitis",
+    "definedTerms" : [ ]
+  } ]
+}

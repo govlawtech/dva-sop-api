@@ -3,8 +3,10 @@ package au.gov.dva.sopapi.sopref.parsing
 import au.gov.dva.sopapi.sopref.parsing.implementations.cleansers._
 import au.gov.dva.sopapi.sopref.parsing.implementations.sopfactories._
 import au.gov.dva.sopapi.sopref.parsing.traits.{SoPClenser, SoPFactory}
+import com.google.common.collect.ImmutableList
 
 object ServiceLocator {
+
 
   private val postAugust2015CompilationsOfPreAugust2015Sops = Set(
     "F2015C00914",
@@ -26,6 +28,85 @@ object ServiceLocator {
     "F2017C00770",
     "F2017C00072",
     "F2017C00073",
+    "F2017C00872",
+    "F2017C00871",
+    "F2017C00748",
+    "F2017C00746",
+    "F2017C00751",
+    "F2017C00799",
+    "F2017C00791",
+    "F2017C00817",
+    "F2017C00802",
+    "F2017C00775",
+    "F2017C00796",
+    "F2017C00789",
+    "F2017C00806",
+    "F2017C00785",
+    "F2017C00759",
+    "F2017C00758",
+    "F2017C00823",
+    "F2017C00756",
+    "F2017C00750",
+    "F2017C00815",
+    "F2017C00753",
+    "F2017C00770",
+    "F2017C00772",
+    "F2017C00830",
+    "F2017C00828",
+    "F2017C00767",
+    "F2017C00761",
+    "F2017C00764",
+    "F2017C00809",
+    "F2017C00779",
+    "F2017C00836",
+    "F2017C00774",
+    "F2017C00771",
+    "F2017C00855",
+    "F2017C00792",
+    "F2017C00786",
+    "F2017C00832",
+    "F2017C00822",
+    "F2017C00783",
+    "F2017C00873",
+    "F2017C00800",
+    "F2017C00749",
+    "F2017C00747",
+    "F2017C00752",
+    "F2017C00798",
+    "F2017C00788",
+    "F2017C00818",
+    "F2017C00801",
+    "F2017C00797",
+    "F2017C00793",
+    "F2017C00804",
+    "F2017C00787",
+    "F2017C00760",
+    "F2017C00824",
+    "F2017C00757",
+    "F2017C00754",
+    "F2017C00813",
+    "F2017C00755",
+    "F2017C00768",
+    "F2017C00777",
+    "F2017C00839",
+    "F2017C00829",
+    "F2018C00329",
+    "F2017C00784",
+    "F2017C00763",
+    "F2017C00769",
+    "F2017C00811",
+    "F2017C00782",
+    "F2017C00803",
+    "F2017C00835",
+    "F2017C00795",
+    "F2017C00776",
+    "F2017C00773",
+    "F2017C00856",
+    "F2017C00794",
+    "F2017C00790",
+    "F2017C00827",
+    "F2017C00819",
+    "F2017C00778",
     "F2017C00074",
     "F2017C00075",
     "F2017C00076",
@@ -68,6 +149,7 @@ object ServiceLocator {
     else return (registerIdInfo.year == 2015 && registerIdInfo.number > 660) || (registerIdInfo.year > 2015)
   }
 
+  def getPreAug2015Factory() = PreAug2015SoPFactory
 
   def findSoPFactory(registerId: String): SoPFactory = {
     registerId match {
@@ -104,6 +186,20 @@ object ServiceLocator {
       case "F2015L00657" => ClenserToFixSuperscripts
       case "F2015L00658" => ClenserToFixSuperscripts
       case "F2018C00645" => ClenserToFixSuperscripts
+      case "F2017C00872" => ClenserToFixSuperscripts
+      case "F2017C00871" => ClenserToFixSuperscripts
+      case "F2017C00796" => ClenserToFixSuperscripts
+      case "F2017C00759" => ClenserToFixSuperscripts
+      case "F2017C00758" => ClenserToFixSuperscripts
+      case "F2017C00750" => ClenserToFixSuperscripts
+      case "F2017C00764" => ClenserToFixSuperscripts
+      case "F2017C00832" => ClenserToFixSuperscripts
+      case "F2017C00783" => ClenserToFixSuperscripts
+      case "F2017C00800" => ClenserToFixSuperscripts
+      case "F2017C00797" => ClenserToFixSuperscripts
+      case "F2017C00760" => ClenserToFixSuperscripts
+      case "F2017C00754" => ClenserToFixSuperscripts
+      case "F2017C00827" => ClenserToFixSuperscripts
       case "F2014L00525" => ChronicMultisymptomIllnessBoPClenser
       case "F2017C00075" => SinusBarotraumaBoPClenser
       case "F2018C00189" => BaldDefinitionsSectionClenser

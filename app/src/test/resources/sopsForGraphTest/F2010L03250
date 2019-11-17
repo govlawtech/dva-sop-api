@@ -1,0 +1,116 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03250",
+  "instrumentNumber" : "3/2011",
+  "citation" : "Statement of Principles concerning varicocele No. 3 of 2011",
+  "conditionName" : "varicocele",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I86.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having occlusion or narrowing of the ipsilateral testicular vein before\r\nthe clinical onset of varicocele",
+    "definedTerms" : [ {
+      "term" : "testicular vein",
+      "definition" : "means the vein that drains the pampiniform plexus and\nopens into the left renal vein on the left side, usually opening into the inferior\nvena cava on the right side, and which occasionally enters the right renal vein"
+    }, {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for right-sided varicocele, having occlusion or narrowing of the\r\ninferior vena cava before the clinical onset of varicocele",
+    "definedTerms" : [ {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for right-sided varicocele, where the right testicular vein drains into the\r\nright renal vein, having occlusion or narrowing of the right renal vein\r\nbefore the clinical onset of varicocele",
+    "definedTerms" : [ {
+      "term" : "testicular vein",
+      "definition" : "means the vein that drains the pampiniform plexus and\nopens into the left renal vein on the left side, usually opening into the inferior\nvena cava on the right side, and which occasionally enters the right renal vein"
+    }, {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for left-sided varicocele, having occlusion or narrowing of the left\r\nrenal vein before the clinical onset of varicocele",
+    "definedTerms" : [ {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a nephrectomy within the 12 months before the clinical onset of\r\nthe ipsilateral varicocele",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having an arterio-venous fistula between any of the arteries of the testis\r\nand a vein of the pampiniform plexus at the time of the clinical onset of\r\nvaricocele",
+    "definedTerms" : [ {
+      "term" : "arteries of the testis",
+      "definition" : "means the arteries or their branches that supply the\ntestis and includes the deferential artery, epigastric artery, external pudendal\nartery and testicular artery"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "having occlusion or narrowing of the ipsilateral testicular vein before\r\nthe clinical worsening of varicocele",
+    "definedTerms" : [ {
+      "term" : "testicular vein",
+      "definition" : "means the vein that drains the pampiniform plexus and\nopens into the left renal vein on the left side, usually opening into the inferior\nvena cava on the right side, and which occasionally enters the right renal vein"
+    }, {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "for right-sided varicocele, having occlusion or narrowing of the\r\ninferior vena cava before the clinical worsening of varicocele",
+    "definedTerms" : [ {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "for right-sided varicocele, where the right testicular vein drains into the\r\nright renal vein, having occlusion or narrowing of the right renal vein\r\nbefore the clinical worsening of varicocele",
+    "definedTerms" : [ {
+      "term" : "testicular vein",
+      "definition" : "means the vein that drains the pampiniform plexus and\nopens into the left renal vein on the left side, usually opening into the inferior\nvena cava on the right side, and which occasionally enters the right renal vein"
+    }, {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "for left-sided varicocele, having occlusion or narrowing of the left\r\nrenal vein before the clinical worsening of varicocele",
+    "definedTerms" : [ {
+      "term" : "occlusion or narrowing",
+      "definition" : "means obstruction to blood flow from conditions\nsuch as thrombosis, tumour invasion or external compression of a vein, from\ndiseases such as abdominal or pelvic tumour, retroperitoneal masses or\nretroperitoneal fibrosis"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a nephrectomy within the 12 months before the clinical\r\nworsening of the ipsilateral varicocele",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having an arterio-venous fistula between any of the arteries of the testis\r\nand a vein of the pampiniform plexus at the time of the clinical\r\nworsening of varicocele",
+    "definedTerms" : [ {
+      "term" : "arteries of the testis",
+      "definition" : "means the arteries or their branches that supply the\ntestis and includes the deferential artery, epigastric artery, external pudendal\nartery and testicular artery"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "undertaking physical activity at a rate greater than six METs, for at\r\nleast six hours per week for the one month before the clinical\r\nworsening of varicocele",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of body\nweight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "inability to obtain appropriate clinical management for varicocele",
+    "definedTerms" : [ ]
+  } ]
+}

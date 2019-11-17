@@ -1,0 +1,42 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00300",
+  "instrumentNumber" : "23/2014",
+  "citation" : "Statement of Principles concerning allergic rhinitis No. 23 of 2014",
+  "conditionName" : "allergic rhinitis",
+  "effectiveFrom" : "2014-03-26",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "J30.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "J30.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "J30.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "J30.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to an allergenic stimulus within the 24 hours before the\r\nclinical onset of allergic rhinitis",
+    "definedTerms" : [ {
+      "term" : "an allergenic stimulus",
+      "definition" : "means an exogenous substance which is an antigen\ncapable of stimulating a type-I hypersensitivity reaction in atopic individuals\nthrough IgE responses, and is associated with:\n(a) onset of allergic rhinitis symptoms; and\n(b) a positive skin prick test with a wheal diameter of at least three\nmillimetres within 20 minutes of exposure to the allergen; or\n(c) a positive radioallergosorbent test (RAST) of ≥0.35 kU/l to the\nallergen; or\n(d) a controlled allergen provocation/challenge test identifying the\nallergen"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "being exposed to an allergenic stimulus within the 24 hours before the\r\nclinical worsening of allergic rhinitis",
+    "definedTerms" : [ {
+      "term" : "an allergenic stimulus",
+      "definition" : "means an exogenous substance which is an antigen\ncapable of stimulating a type-I hypersensitivity reaction in atopic individuals\nthrough IgE responses, and is associated with:\n(a) onset of allergic rhinitis symptoms; and\n(b) a positive skin prick test with a wheal diameter of at least three\nmillimetres within 20 minutes of exposure to the allergen; or\n(c) a positive radioallergosorbent test (RAST) of ≥0.35 kU/l to the\nallergen; or\n(d) a controlled allergen provocation/challenge test identifying the\nallergen"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for allergic rhinitis",
+    "definedTerms" : [ ]
+  } ]
+}

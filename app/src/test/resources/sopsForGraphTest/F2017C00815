@@ -1,0 +1,39 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00815",
+  "instrumentNumber" : "107/2011",
+  "citation" : "Statement of Principles concerning malignant neoplasm of bone and articular cartilage No. 107 of 2011",
+  "conditionName" : "malignant neoplasm of bone and articular cartilage",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected region at least five years before the\r\nclinical onset of malignant neoplasm of bone or articular cartilage",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for osteosarcoma and fibrosarcoma only, having Paget's disease of\r\nbone at the affected site before the clinical onset of malignant\r\nneoplasm of bone or articular cartilage",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "osteosarcoma and fibrosarcoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for fibrosarcoma and angiosarcoma only, having chronic osteomyelitis\r\nat the affected site before the clinical onset of malignant neoplasm of\r\nbone or articular cartilage",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "fibrosarcoma and angiosarcoma",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of bone or articular cartilage",
+    "definedTerms" : [ ]
+  } ]
+}

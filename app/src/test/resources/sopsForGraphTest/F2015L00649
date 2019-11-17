@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00649",
+  "instrumentNumber" : "67/2015",
+  "citation" : "Statement of Principles concerning hereditary spherocytosis No. 67 of 2015",
+  "conditionName" : "hereditary spherocytosis",
+  "effectiveFrom" : "2015-06-01",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D58.0"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having an acute viral infection within the six weeks before the clinical\r\nworsening of hereditary spherocytosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being pregnant within the six weeks before the clinical worsening of\r\nhereditary spherocytosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for hereditary\r\nspherocytosis",
+    "definedTerms" : [ ]
+  } ]
+}

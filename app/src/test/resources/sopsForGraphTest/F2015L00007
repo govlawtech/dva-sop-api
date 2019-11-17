@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00007",
+  "instrumentNumber" : "42/2015",
+  "citation" : "Statement of Principles concerning von Willebrand's disease No. 42 of 2015",
+  "conditionName" : "von Willebrand's disease",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D68.0"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being pregnant within the six weeks before the clinical worsening of\r\nvon Willebrand's disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for von\r\nWillebrand's disease",
+    "definedTerms" : [ ]
+  } ]
+}

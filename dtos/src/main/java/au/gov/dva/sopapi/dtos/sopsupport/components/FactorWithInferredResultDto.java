@@ -31,8 +31,8 @@ public class FactorWithInferredResultDto {
         _paragraph = paragraph;
         _text = text;
         _definedTerms = definedTerms;
-    _satisfied = satisfied;
-}
+        _satisfied = satisfied;
+    }
 
     @JsonIgnore
     public String getParagraph() {
@@ -53,4 +53,5 @@ public class FactorWithInferredResultDto {
     public ImmutableList<DefinedTerm> getDefinedTerms() {
         return ImmutableList.copyOf(_definedTerms);
     }
+
 }

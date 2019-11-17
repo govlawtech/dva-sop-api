@@ -1,0 +1,63 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01743",
+  "instrumentNumber" : "114/2011",
+  "citation" : "Statement of Principles concerning patellar tendinopathy No. 114 of 2011",
+  "conditionName" : "patellar tendinopathy",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M76.5"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "running or jogging an average of at least ten kilometres per week for\r\nthe one month before the clinical onset of patellar tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undertaking weight bearing exercise involving jumping or repeated\r\nflexion and extension of the affected knee, at a rate greater than six\r\nMETs, for at least four hours per week for the one month before the\r\nclinical onset of patellar tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of body\nweight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the affected knee by at least 100 percent, to a\r\nminimum intensity of five METs for at least two hours per day, within\r\nthe seven days before the clinical onset of patellar tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of body\nweight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having direct trauma to the patellar tendon of the affected knee at the\r\ntime of the clinical onset of patellar tendinopathy",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "running or jogging an average of at least ten kilometres per week for\r\nthe one month before the clinical worsening of patellar tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undertaking weight bearing exercise involving jumping or repeated\r\nflexion and extension of the affected knee, at a rate greater than six\r\nMETs, for at least four hours per week for the one month before the\r\nclinical worsening of patellar tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of body\nweight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the affected knee by at least 100 percent, to a\r\nminimum intensity of five METs for at least two hours per day, within\r\nthe seven days before the clinical worsening of patellar tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of body\nweight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having direct trauma to the patellar tendon of the affected knee at the\r\ntime of the clinical worsening of patellar tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "inability to obtain appropriate clinical management for patellar\r\ntendinopathy",
+    "definedTerms" : [ ]
+  } ]
+}

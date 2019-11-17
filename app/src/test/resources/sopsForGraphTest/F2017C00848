@@ -1,0 +1,206 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00848",
+  "instrumentNumber" : "8/2016",
+  "citation" : "Statement of Principles concerning non-melanotic malignant neoplasm of the skin (Balance of Probabilities) (No. 8 of 2016)",
+  "conditionName" : "non-melanotic malignant neoplasm of the skin",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having sunlight exposure to unprotected skin at the affected site for a\r\ncumulative period of at least 4 500 hours while in a tropical area, or\r\nhaving equivalent sunlight exposure in other latitude zones, before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ {
+      "term" : "unprotected skin",
+      "definition" : "means skin that is directly exposed to the sun and is not\r\nprotected by sunscreen, clothing or other physical barrier."
+    }, {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    }, {
+      "term" : "equivalent sunlight exposure in other latitude zones",
+      "definition" : "means the cumulative\r\nhours of sunlight exposure equivalent to that specified for a tropical area,\r\ncalculated by multiplying the hours of exposure in each latitude zone by the\r\nlatitude weighting factor for the zone as per the latitude weighting factor\r\nschedule and adding together the result for each zone:\r\nLatitude weighting factor schedule\r\nLatitude zone Latitude weighting factor\r\na latitude between 23° 27' South and 23° 27' North 1.0\r\na latitude from > 23° 27' to 35° 0.75\r\na latitude from > 35° to 45° 0.5\r\na latitude from > 45° to 65° 0.25."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having ultraviolet radiation exposure to the affected site from an\r\nultraviolet-emitting tanning device on more than 20 occasions before\r\nthe clinical onset of non-melanotic malignant neoplasm of the skin,\r\nand where the first exposure occurred more than five years before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for basal cell carcinoma of the skin only:\r\n(a) having at least five episodes of sunburn as specified, at least five\r\nyears before the clinical onset of non-melanotic malignant\r\nneoplasm of the skin;\r\n(b) having received a cumulative equivalent dose of at least 0.5\r\nsievert of ionising radiation to the affected site at least ten years\r\nbefore the clinical onset of non-melanotic malignant neoplasm of\r\nthe skin; or\r\n(c) undergoing a course of therapeutic radiation for cancer, where\r\nthe affected site was in the field of radiation, at least ten years\r\nbefore the clinical onset of non-melanotic malignant neoplasm of\r\nthe skin",
+    "definedTerms" : [ {
+      "term" : "sunburn as specified",
+      "definition" : "means painful erythema of the skin of at least 48 hours\r\nduration, or blistering of the skin, resulting from exposure to solar ultraviolet\r\nradiation."
+    }, {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ],
+    "conditionVariant" : {
+      "name" : "basal cell carcinoma of the skin",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having at least five episodes of sunburn as specified, at least five\r\nyears before the clinical onset of non-melanotic malignant\r\nneoplasm of the skin"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having received a cumulative equivalent dose of at least 0.5\r\nsievert of ionising radiation to the affected site at least ten years\r\nbefore the clinical onset of non-melanotic malignant neoplasm of\r\nthe skin"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "undergoing a course of therapeutic radiation for cancer, where\r\nthe affected site was in the field of radiation, at least ten years\r\nbefore the clinical onset of non-melanotic malignant neoplasm of\r\nthe skin"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "for squamous cell carcinoma of the skin only:\r\n(a) smoking at least ten pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\nnon-melanotic malignant neoplasm of the skin, and:\r\n(i) smoking commenced at least ten years before the clinical\r\nonset of non-melanotic malignant neoplasm of the skin;\r\nand\r\n(ii) where smoking has ceased, the clinical onset of non-\r\nmelanotic malignant neoplasm of the skin has occurred\r\nwithin ten years of cessation;\r\n(b) having hidradenitis suppurativa involving the affected site, at\r\nleast one year before the clinical onset of non-melanotic\r\nmalignant neoplasm of the skin;\r\n(c) being treated with a BRAF inhibitor at the time of the clinical\r\nonset of non-melanotic malignant neoplasm of the skin; or\r\n(d) being treated with voriconazole for a continuous period of at\r\nleast the two months before the clinical onset of non-melanotic\r\nmalignant neoplasm of the skin",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals twenty tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    }, {
+      "term" : "hidradenitis suppurativa",
+      "definition" : "means a chronic skin disease of the terminal\r\nfollicular epithelium in the apocrine gland-bearing skin, characterised by\r\ncomedo-like follicular occlusion, chronic relapsing inflammation,\r\nmucopurulent discharge, and progressive scarring."
+    } ],
+    "conditionVariant" : {
+      "name" : "squamous cell carcinoma of the skin",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "smoking at least ten pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\nnon-melanotic malignant neoplasm of the skin, and:\r\n(i) smoking commenced at least ten years before the clinical\r\nonset of non-melanotic malignant neoplasm of the skin;\r\nand\r\n(ii) where smoking has ceased, the clinical onset of non-\r\nmelanotic malignant neoplasm of the skin has occurred\r\nwithin ten years of cessation"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having hidradenitis suppurativa involving the affected site, at\r\nleast one year before the clinical onset of non-melanotic\r\nmalignant neoplasm of the skin"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "being treated with a BRAF inhibitor at the time of the clinical\r\nonset of non-melanotic malignant neoplasm of the skin"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "being treated with voriconazole for a continuous period of at\r\nleast the two months before the clinical onset of non-melanotic\r\nmalignant neoplasm of the skin"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "for squamous cell carcinoma of the lip only, smoking at least five\r\npack-years of cigarettes, or the equivalent thereof in other tobacco\r\nproducts, before the clinical onset of non-melanotic malignant\r\nneoplasm of the skin, and:\r\n(a) smoking commenced at least ten years before the clinical onset\r\nof non-melanotic malignant neoplasm of the skin; and\r\n(b) where smoking has ceased, the clinical onset of non-melanotic\r\nmalignant neoplasm of the skin has occurred within ten years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals twenty tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    }, {
+      "term" : "lip",
+      "definition" : "means the stick region of the  and includes the vermilion borders\r\nand commissures of the s."
+    } ],
+    "conditionVariant" : {
+      "name" : "squamous cell carcinoma of the lip",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "smoking commenced at least ten years before the clinical onset\r\nof non-melanotic malignant neoplasm of the skin; and"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "where smoking has ceased, the clinical onset of non-melanotic\r\nmalignant neoplasm of the skin has occurred within ten years of\r\ncessation"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for non-melanotic malignant neoplasm of the scrotum only, having\r\ncutaneous contact of the affected site with shale oil, untreated or\r\nmildly treated mineral oils, or soot during the cleaning of chimneys or\r\nflues:\r\n(a) for a cumulative period of at least 1 500 hours, before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin;\r\nand\r\n(b) the first cutaneous contact occurred at least five years before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ {
+      "term" : "soot",
+      "definition" : "means a carbonaceous by-product material produced from the\r\nincomplete combustion of fossil fuel or other carbon-containing material,\r\nincluding airborne residual pyrolysed fuel particles such as coal,\r\ncenospheres, charred wood and petroleum coke."
+    } ],
+    "conditionVariant" : {
+      "name" : "non-melanotic malignant neoplasm of the scrotum",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "for a cumulative period of at least 1 500 hours, before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin;\r\nand"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "the first cutaneous contact occurred at least five years before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for non-melanotic malignant neoplasm of the skin of the anogenital\r\nregion only, having lichen sclerosis involving the affected site at the\r\ntime of the clinical onset of non-melanotic malignant neoplasm of the\r\nskin",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "non-melanotic malignant neoplasm of the skin of the anogenital region",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for squamous cell carcinoma of the anogenital skin only, acquiring\r\npersistent infection with an oncogenic human papilloma virus before\r\nthe clinical onset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ {
+      "term" : "oncogenic human papilloma virus",
+      "definition" : "means human papilloma virus type 16,\r\n18 or 33.\r\npack-years of cigarettes, or the equivalent thereof in other tobacco"
+    } ],
+    "conditionVariant" : {
+      "name" : "squamous cell carcinoma of the anogenital skin",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for non-melanotic malignant neoplasm of the glans penis or prepuce of\r\nthe penis only, having phimosis for a continuous period of at least two\r\nyears before the clinical onset of non-melanotic malignant neoplasm of\r\nthe skin",
+    "definedTerms" : [ {
+      "term" : "phimosis",
+      "definition" : "means a circumferential fibrosis of preputial tissue that leads to\r\nnarrowing and an inability to retract the penile foreskin over the glans penis."
+    } ],
+    "conditionVariant" : {
+      "name" : "non-melanotic malignant neoplasm of the glans penis or prepuce of the penis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for Merkel cell carcinoma only, being infected with Merkel cell\r\npolyomavirus before the clinical onset of non-melanotic malignant\r\nneoplasm of the skin",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Merkel cell carcinoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of non-\r\nmelanotic malignant neoplasm of the skin, where the first exposure to\r\narsenic occurred at least ten years before the clinical onset of non-\r\nmelanotic malignant neoplasm of the skin",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\r\n(a) consuming arsenic containing compounds (for example, Fowler's\r\nsolution) for a cumulative period of at least three months; or\r\n(b) consuming drinking water with an average arsenic concentration of at\r\nleast 50 micrograms per litre for a cumulative period of at least five\r\nyears; or\r\n(c) inhaling, ingesting or having cutaneous contact with a pesticide\r\ncontaining arsenic, or arsenic in copper smelting operations, for a\r\ncumulative period of at least 1 000 hours; or\r\n(d) having clinical evidence of chronic arsenic toxicity."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "being treated with an immunosuppressive drug within the five years\r\nbefore the clinical onset of non-melanotic malignant neoplasm of the\r\nskin",
+    "definedTerms" : [ {
+      "term" : "immunosuppressive drug",
+      "definition" : "means a drug or an agent which results in"
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having non-Hodgkin's lymphoma or chronic lymphocytic\r\nleukaemia/small lymphocytic lymphoma before the clinical onset of\r\nnon-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "undergoing PUVA therapy involving the affected site where:\r\n(a) the first PUVA treatment commenced at least five years before\r\nthe clinical onset of non-melanotic malignant neoplasm of the\r\nskin; and\r\n(b) at least 50 PUVA treatments were administered before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ {
+      "term" : "PUVA",
+      "definition" : "means photochemotherapy with oral methoxsalen (psoralen) and\r\nultraviolet A radiation."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having cutaneous contact of the affected site with concentrated coal\r\ntar distillates:\r\n(a) for a cumulative period of at least 3 000 hours, before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin;\r\nand\r\n(b) the first cutaneous contact occurred at least ten years before the\r\nclinical onset of non-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having a scar involving the affected site at the time of the clinical\r\nonset of non-melanotic malignant neoplasm of the skin, where the scar\r\nis the result of an injury that occurred, or a disease process that\r\ncommenced, at least ten years before the clinical onset of non-\r\nmelanotic malignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having ulceration involving the affected site, for a continuous period\r\nof at least one year, within the two years before the clinical onset of\r\nnon-melanotic malignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having chronic osteomyelitis involving the affected site, with a\r\ncutaneous sinus tract draining to the affected site, within the two years\r\nbefore the clinical onset of non-melanotic malignant neoplasm of the\r\nskin",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(21)",
+    "text" : "inability to obtain appropriate clinical management for non-melanotic\r\nmalignant neoplasm of the skin",
+    "definedTerms" : [ ]
+  } ]
+}

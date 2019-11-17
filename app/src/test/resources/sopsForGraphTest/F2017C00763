@@ -1,0 +1,48 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00763",
+  "instrumentNumber" : "57/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the salivary gland No. 57 of 2015",
+  "conditionName" : "malignant neoplasm of the salivary gland",
+  "effectiveFrom" : "2015-03-30",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the salivary gland at least five years before the\r\nclinical onset of malignant neoplasm of the salivary gland",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing treatment with radioactive iodine for cancer before the\r\nclinical onset of malignant neoplasm of the salivary gland, where the\r\nfirst exposure occurred at least five years before the clinical onset of\r\nmalignant neoplasm of the salivary gland",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being exposed to mustard gas at least five years before the clinical\r\nonset of malignant neoplasm of the salivary gland",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for lymphoepithelial carcinoma of the salivary gland only:\r\n(i) being infected with Epstein-Barr virus before the clinical onset\r\nof malignant neoplasm of the salivary gland; or\r\n(ii) being infected with human immunodeficiency virus before the\r\nclinical onset of malignant neoplasm of the salivary gland",
+    "definedTerms" : [ {
+      "term" : "being infected with Epstein-Barr virus",
+      "definition" : "means having serological\nevidence of infection with Epstein-Barr virus"
+    } ],
+    "conditionVariant" : {
+      "name" : "lymphoepithelial carcinoma of the salivary gland",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being infected with Epstein-Barr virus before the clinical onset\r\nof malignant neoplasm of the salivary gland"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being infected with human immunodeficiency virus before the\r\nclinical onset of malignant neoplasm of the salivary gland"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the salivary gland",
+    "definedTerms" : [ ]
+  } ]
+}

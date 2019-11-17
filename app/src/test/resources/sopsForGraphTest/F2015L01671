@@ -1,0 +1,44 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01671",
+  "instrumentNumber" : "116/2015",
+  "citation" : "Statement of Principles concerning pterygium (Reasonable Hypothesis) (No. 116 of 2015)",
+  "conditionName" : "pterygium",
+  "effectiveFrom" : "2015-11-16",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H11.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having sunlight exposure to the unprotected eye for at least 2 250\r\nhours while in a tropical area, or having equivalent sunlight exposure\r\nin other latitude zones, before the clinical onset of pterygium",
+    "definedTerms" : [ {
+      "term" : "unprotected eye",
+      "definition" : "means an eye exposed to sunlight and not protected by\r\nultraviolet radiation screening devices."
+    }, {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having heavy exposure of the affected eye to dust, for an average of at\r\nleast 20 hours per week, for at least the two years before the clinical\r\nonset of pterygium",
+    "definedTerms" : [ {
+      "term" : "heavy exposure of the affected eye to dust",
+      "definition" : "means exposure of the affected\r\neye to dust in an environment where the person is covered in dust and is\r\nwithout eye protection."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having exposure of the affected eye to arc welding light, while welding\r\nwithout eye protection, for an average of at least 20 hours per week,\r\nfor at least the two years before the clinical onset of pterygium",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having human papilloma virus type 16 or 18 infection of the\r\nconjunctiva at the time of the clinical onset of pterygium",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for pterygium",
+    "definedTerms" : [ ]
+  } ]
+}

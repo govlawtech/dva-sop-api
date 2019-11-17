@@ -1,0 +1,30 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00013",
+  "instrumentNumber" : "11/2014",
+  "citation" : "Statement of Principles concerning chronic fatigue syndrome No. 11 of 2014",
+  "conditionName" : "chronic fatigue syndrome",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having an infection as specified at the time of the clinical onset of\r\nchronic fatigue syndrome",
+    "definedTerms" : [ {
+      "term" : "an infection as specified",
+      "definition" : "means having clinical and laboratory evidence of\nan acute infection with one of the following organisms:\n(a) Coxiella burnetii (Q fever);\n(b) Epstein-Barr virus (infectious mononucleosis);\n(c) parvovirus B19; or\n(d) Ross River virus"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "living or working in a hostile or life-threatening environment for a\r\nperiod of at least one month in the six months before the clinical onset\r\nof chronic fatigue syndrome",
+    "definedTerms" : [ {
+      "term" : "a hostile or life-threatening environment",
+      "definition" : "means a situation or setting\nwhich is characterised by a pervasive threat to life or bodily integrity, such as\nwould be experienced in the following circumstances:\n(a) experiencing or being under threat of artillery, missile, rocket or bomb\nattack;\n(b) experiencing or being under threat of nuclear, biological or chemical\nagent attack; or\n(c) being involved in combat or going on combat patrols"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for chronic fatigue\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

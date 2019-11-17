@@ -1,0 +1,148 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00196",
+  "instrumentNumber" : "27/2018",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the eye (Reasonable Hypothesis) (No. 27 of 2018)",
+  "conditionName" : "malignant neoplasm of the eye",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C69.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C69.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C69.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C69.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C69.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C69.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C69.9"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D09.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having sunlight or ultraviolet light exposure to the eye for a cumulative\r\nperiod of at least 2 250 hours while in a tropical area, or having\r\nequivalent sunlight exposure in other latitude zones, before the clinical\r\nonset of malignant neoplasm of the eye",
+    "definedTerms" : [ {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    }, {
+      "term" : "equivalent sunlight exposure in other latitude zones",
+      "definition" : "means the cumulative\r\nhours of sunlight exposure equivalent to that specified for a tropical area,\r\ncalculated by multiplying the hours of exposure in each latitude zone by the\r\nlatitude weighting factor for the zone as per the latitude weighting factor\r\nschedule and adding together the result for each zone:\r\nLatitude weighting factor schedule\r\nLatitude zone Latitude weighting factor\r\na latitude between 23° 27' South and 23° 27' North 1.0\r\na latitude from > 23° 27' to 35° 0.75\r\na latitude from > 35° to 45° 0.5\r\na latitude from > 45° to 65° 0.25.\r\nNote: tropical area is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having ultraviolet radiation exposure from an ultraviolet-emitting\r\ntanning device to the unprotected eye on at least ten occasions, at least\r\nfive years before the clinical onset of malignant neoplasm of the eye",
+    "definedTerms" : [ {
+      "term" : "unprotected eye",
+      "definition" : "means an eye not protected by ultraviolet radiation\r\nscreening devices such as goggles."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of malignant neoplasm of the eye",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with an immunosuppressive drug at least five years\r\nbefore the clinical onset of malignant neoplasm of the eye",
+    "definedTerms" : [ {
+      "term" : "immunosuppressive drug",
+      "definition" : "means a drug or an agent which results in\r\nsubstantial suppression of immune responses."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a solid organ or stem cell transplantation before the clinical\r\nonset of malignant neoplasm of the eye",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for uveal melanoma of the eye only:\r\n(a) using manual welding equipment for welding metal, for a\r\ncumulative period of at least ten years before the clinical onset of\r\nmalignant neoplasm of the eye; or\r\n(b) having exposure to transformer or capacitor oils containing\r\npolychlorinated biphenyls, on an average of at least two times per\r\nmonth, for a cumulative period of at least ten years before the\r\nclinical onset of malignant neoplasm of the eye",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "uveal melanoma of the eye",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "using manual welding equipment for welding metal, for a\r\ncumulative period of at least ten years before the clinical onset of\r\nmalignant neoplasm of the eye"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having exposure to transformer or capacitor oils containing\r\npolychlorinated biphenyls, on an average of at least two times per\r\nmonth, for a cumulative period of at least ten years before the\r\nclinical onset of malignant neoplasm of the eye"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for melanoma of the eye only:\r\n(a) having ultraviolet radiation exposure from whole body PUVA\r\ntherapy to the unprotected eye, where:\r\n(i) the first PUVA treatment commenced at least ten years\r\nbefore the clinical onset of malignant neoplasm of the eye;\r\nand\r\n(ii) at least 200 PUVA treatments were administered before the\r\nclinical onset of malignant neoplasm of the eye; or\r\n(b) having at least two episodes of photokeratitis of the affected eye,\r\nwhere the first exposure occurred at least five years before the\r\nclinical onset of malignant neoplasm of the eye",
+    "definedTerms" : [ {
+      "term" : "whole body PUVA",
+      "definition" : "means photochemotherapy with oral methoxsalen\r\n(psoralen) and ultraviolet A radiation. It does not include localised PUVA\r\ntherapy."
+    }, {
+      "term" : "unprotected eye",
+      "definition" : "means an eye not protected by ultraviolet radiation\r\nscreening devices such as goggles."
+    }, {
+      "term" : "photokeratitis",
+      "definition" : "means a clinical illness manifesting from radiation damage to\r\nthe cornea and conjunctiva by exposure of the eye to ultraviolet light rays\r\nfrom natural sources including snowblindness or artificial sources including\r\nelectrical arc welding."
+    } ],
+    "conditionVariant" : {
+      "name" : "melanoma of the eye",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having ultraviolet radiation exposure from whole body PUVA\r\ntherapy to the unprotected eye, where:\r\n(i) the first PUVA treatment commenced at least ten years\r\nbefore the clinical onset of malignant neoplasm of the eye;\r\nand\r\n(ii) at least 200 PUVA treatments were administered before the\r\nclinical onset of malignant neoplasm of the eye"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having at least two episodes of photokeratitis of the affected eye,\r\nwhere the first exposure occurred at least five years before the\r\nclinical onset of malignant neoplasm of the eye"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for conjunctival melanoma of the eye only, receiving a conjunctival\r\ntransplant to the affected eye before the clinical onset of malignant\r\nneoplasm of the eye",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "conjunctival melanoma of the eye",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for squamous cell carcinoma of the cornea or the conjunctiva only:\r\n(a) acquiring persistent infection of the epithelium of the conjunctiva\r\nof the affected eye with a specified human papilloma virus\r\n(HPV) before the clinical onset of malignant neoplasm of the\r\neye;\r\n(b) having ultraviolet radiation exposure from whole body PUVA\r\ntherapy to the unprotected eye, where:\r\n(i) the first PUVA treatment commenced at least five years\r\nbefore the clinical onset of malignant neoplasm of the eye;\r\nand\r\n(ii) at least 25 PUVA treatments were administered before the\r\nclinical onset of malignant neoplasm of the eye; or\r\n(c) being treated with voriconazole for a continuous period of at least\r\nthe four weeks before the clinical onset of malignant neoplasm of\r\nthe eye",
+    "definedTerms" : [ {
+      "term" : "whole body PUVA",
+      "definition" : "means photochemotherapy with oral methoxsalen\r\n(psoralen) and ultraviolet A radiation. It does not include localised PUVA\r\ntherapy."
+    }, {
+      "term" : "unprotected eye",
+      "definition" : "means an eye not protected by ultraviolet radiation\r\nscreening devices such as goggles."
+    } ],
+    "conditionVariant" : {
+      "name" : "squamous cell carcinoma of the cornea or the conjunctiva",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "acquiring persistent infection of the epithelium of the conjunctiva\r\nof the affected eye with a specified human papilloma virus\r\n(HPV) before the clinical onset of malignant neoplasm of the\r\neye"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having ultraviolet radiation exposure from whole body PUVA\r\ntherapy to the unprotected eye, where:\r\n(i) the first PUVA treatment commenced at least five years\r\nbefore the clinical onset of malignant neoplasm of the eye;\r\nand\r\n(ii) at least 25 PUVA treatments were administered before the\r\nclinical onset of malignant neoplasm of the eye"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "being treated with voriconazole for a continuous period of at least\r\nthe four weeks before the clinical onset of malignant neoplasm of\r\nthe eye"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for squamous cell carcinoma of the conjunctiva only, having an ocular\r\nprosthesis in an anophthalmic socket of the affected eye for more than\r\nten years before the clinical onset of malignant neoplasm of the eye",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "squamous cell carcinoma of the conjunctiva",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(11)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the eye",
+    "definedTerms" : [ ]
+  } ]
+}

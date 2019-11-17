@@ -1,0 +1,85 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00830",
+  "instrumentNumber" : "22/2011",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the liver No. 22 of 2011",
+  "conditionName" : "malignant neoplasm of the liver",
+  "effectiveFrom" : "2011-03-30",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C22.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having chronic infection with the hepatitis B virus before the clinical\r\nonset of malignant neoplasm of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis B virus",
+      "definition" : "means:\n(a) the presence of HBsAg or hepatitis B virus (HBV) deoxyribonucleic\nacid (DNA), in the absence of IgM Anti-HBc on serological testing; or\n(b) positive serology for hepatitis B plus evidence of chronic hepatitis or\nother chronic changes on liver biopsy"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having chronic infection with the hepatitis C virus before the clinical\r\nonset of malignant neoplasm of the liver",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis C virus ",
+      "definition" : "means:\n(a) positive polymerase chain reaction testing for hepatitis C virus (HCV)\nribonucleic acid (RNA);\n(b) the presence of anti-HCV and elevated serum aminotransferase levels,\nmore than six months after evidence of an acute hepatitis C infection;\nor\n(c) positive serology for hepatitis C plus evidence of chronic hepatitis or\nother chronic changes on liver biopsy"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having cirrhosis of the liver before the clinical onset of malignant\r\nneoplasm of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "drinking at least 150 kilograms of alcohol within any ten year period\r\nbefore the clinical onset of malignant neoplasm of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the liver, and where smoking has ceased, the clinical onset\r\nhas occurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "consuming food containing high concentrations of aflatoxins on more\r\ndays than not, for a period of at least 20 years within the 30 years\r\nbefore the clinical onset of malignant neoplasm of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the liver at least ten years before the clinical onset\r\nof malignant neoplasm of the liver",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having type 2 diabetes mellitus for at least the ten years before the\r\nclinical onset of malignant neoplasm of the liver",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being obese for at least the ten years before the clinical onset of\r\nmalignant neoplasm of the liver",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "using the combined oral contraceptive pill for a continuous period of at\r\nleast five years before the clinical onset of malignant neoplasm of the\r\nliver, and where the use of the combined oral contraceptive pill has\r\nceased, the clinical onset of malignant neoplasm of the liver has\r\noccurred within 20 years of cessation",
+    "definedTerms" : [ {
+      "term" : "combined oral contraceptive pill",
+      "definition" : "means contraceptive pills containing\noestrogen and progestogen"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inhaling a cumulative dose of at least 2500 ppm-years of gaseous vinyl\r\nchloride at least five years before the clinical onset of malignant\r\nneoplasm of the liver",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inhaling gaseous vinyl chloride for a cumulative period of at least\r\n10 000 hours while working in the production or processing of vinyl\r\nchloride monomer or polyvinyl chloride, at least five years before the\r\nclinical onset of malignant neoplasm of the liver",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(m)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the liver",
+    "definedTerms" : [ ]
+  } ]
+}

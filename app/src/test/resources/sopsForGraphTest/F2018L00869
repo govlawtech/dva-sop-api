@@ -1,0 +1,182 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00869",
+  "instrumentNumber" : "54/2018",
+  "citation" : "Statement of Principles concerning bipolar disorder (Balance of Probabilities) (No. 54 of 2018)",
+  "conditionName" : "bipolar disorder",
+  "effectiveFrom" : "2018-07-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for bipolar I disorder, bipolar II disorder, cyclothymic disorder, major\r\ndepressive episode with mixed features, other specified bipolar and\r\nrelated disorder and unspecified bipolar and related disorder only:\r\n(a) experiencing a category 1A stressor within the six months before\r\nthe clinical onset of bipolar disorder;\r\n(b) experiencing a category 1B stressor within the six months before\r\nthe clinical onset of bipolar disorder;\r\n(c) experiencing a category 2 stressor within the six months before\r\nthe clinical onset of bipolar disorder;\r\n(d) experiencing the death of a significant other within the six\r\nmonths before the clinical onset of bipolar disorder;\r\n(e) being within 90 days postpartum at the time of the clinical onset\r\nof bipolar disorder;\r\n(f) having alcohol use disorder or substance use disorder at the time\r\nof the clinical onset of bipolar disorder; or\r\n(g) having a disorder of mental health from Specified List 1 of\r\nclinically significant disorders of mental health within the five\r\nyears before the clinical onset of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured casualty;\r\nor\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "bipolar II disorder",
+      "definition" : "means a disorder of mental health that meets the\r\nfollowing diagnostic criteria (derived from DSM-5):\r\nA. Criteria have been met for at least one hypomanic episode (criteria A-F\r\nunder hypomanic episode) and at least one major depressive episode\r\n(criteria A-C under major depressive episode).\r\nB. There has never been a manic episode.\r\nC. The occurrence of the hypomanic episode(s) and major depressive\r\nschizophrenia, schizophreniform disorder, delusional disorder, or other\r\nspecified or unspecified schizophrenia spectrum and other psychotic\r\ndisorder.\r\nD. The symptoms of depression or the unpredictability caused by frequent\r\nalternation between periods of depression and hypomania causes\r\nclinically significant distress or impairment in social, occupational or\r\nother important areas of functioning.\r\nNote 1: For a diagnosis of , it is necessary to meet the criteria for a current or past\r\nhypomanic episode and the criteria for a current or past major depressive episode.\r\nNote 2: DSM-5, hypomanic episode and major depressive episode are also defined in the Schedule 1 -\r\nDictionary."
+    }, {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    }, {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation or divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other with\r\na severe physical, mental or developmental disability.\r\nNote: significant other is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "bipolar I disorder",
+      "definition" : "means a disorder of mental health that meets the following\r\ndiagnostic criteria (derived from DSM-5):\r\nA. Criteria have been met for at least one manic episode (criteria A-D\r\nunder manic episode).\r\nB. The occurrence of the manic and major depressive episode(s) is not\r\nbetter explained by schizoaffective disorder, schizophrenia,\r\nschizophreniform disorder, delusional disorder, or other specified or\r\nunspecified schizophrenia spectrum and other psychotic disorder.\r\nNote 1: For a diagnosis of , it is necessary to meet the criteria for a manic episode.\r\nThe manic episode may have been preceded by and may be followed by hypomanic or major\r\ndepressive episodes.\r\nNote 2: DSM-5, hypomanic episode, manic episode and major depressive episode are also defined in\r\nthe Schedule 1 - Dictionary."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    }, {
+      "term" : "cyclothymic disorder",
+      "definition" : "means a disorder of mental health that meets the\r\nfollowing diagnostic criteria (derived from DSM-5):\r\nA. For at least two years (at least one year in children and adolescents)\r\nthere have been numerous periods with hypomanic symptoms that do\r\nnot meet criteria for a hypomanic episode and numerous periods with\r\ndepressive symptoms that do not meet criteria for a major depressive\r\nepisode.\r\nB. During the above two-year period (one year in children and\r\nadolescents), the hypomanic and depressive periods have been present\r\nfor at least half the time and the individual has not been without the\r\nsymptoms for more than two months at a time.\r\nC. Criteria for a major depressive, manic or hypomanic episode have\r\nnever been met.\r\nD. The symptoms in Criterion A are not better explained by\r\nschizoaffective disorder, schizophrenia, schizophreniform disorder,\r\ndelusional disorder, or other specified or unspecified schizophrenia\r\nspectrum and other psychotic disorder.\r\nE. The symptoms are not attributable to the physiological effects of a\r\nsubstance (for example, a drug of abuse, a medication) or another\r\nmedical condition (for example, hyperthyroidism).\r\nF. The symptoms cause clinically significant distress or impairment in\r\nsocial, occupational or other important areas of functioning.\r\nNote: DSM-5 is also defined in the Schedule 1 - Dictionary.\r\nDSM-5 means the American Psychiatric Association: Diagnostic and\r\nStatistical Manual of Mental Disorders, Fifth Edition. Arlington, VA,\r\nAmerican Psychiatric Association, 2013."
+    } ],
+    "conditionVariant" : {
+      "name" : "bipolar I disorder, bipolar II disorder, cyclothymic disorder, major depressive episode with mixed features, other specified bipolar and related disorder and unspecified bipolar and related disorder",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "experiencing a category 1A stressor within the six months before\r\nthe clinical onset of bipolar disorder"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "experiencing a category 1B stressor within the six months before\r\nthe clinical onset of bipolar disorder"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "experiencing a category 2 stressor within the six months before\r\nthe clinical onset of bipolar disorder"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "experiencing the death of a significant other within the six\r\nmonths before the clinical onset of bipolar disorder"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "being within 90 days postpartum at the time of the clinical onset\r\nof bipolar disorder"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "having alcohol use disorder or substance use disorder at the time\r\nof the clinical onset of bipolar disorder"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "having a disorder of mental health from Specified List 1 of\r\nclinically significant disorders of mental health within the five\r\nyears before the clinical onset of bipolar disorder"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for substance/medication-induced bipolar and related disorder only:\r\n(a) taking a drug, or a drug from a class of drugs, from the specified\r\nlist of drugs, within the 14 days before the clinical onset of\r\nbipolar disorder;\r\n(b) taking a drug which is associated in the individual with the\r\ndevelopment of symptoms of bipolar disorder while taking the\r\ndrug, and the cessation or significant reduction of the symptoms\r\nof bipolar disorder within days or weeks of discontinuing the\r\ndrug, where taking the drug continued for at least the two days\r\nbefore the clinical onset of bipolar disorder;\r\n(c) having ceased or reduced antidepressant drug therapy or\r\nantiepileptic drug therapy within the 30 days before the clinical\r\nonset of bipolar disorder; or\r\n(d) having alcohol use disorder or substance use disorder at the time\r\nof the clinical onset of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "substance/medication-induced bipolar and related disorder",
+      "definition" : "means a\r\ndisorder of mental health that meets the following diagnostic criteria (derived\r\nfrom DSM-5):\r\nA. A prominent and persistent disturbance in mood that predominates in\r\nthe clinical picture and is characterised by elevated, expansive, or\r\nirritable mood, with or without depressed mood or markedly\r\ndiminished interest or pleasure in all, or almost all, activities.\r\nB. There is evidence from the history, physical examination, or laboratory\r\nfindings of both (i) and (ii):\r\n(i) the symptoms in Criterion A developed during or soon after\r\nsubstance intoxication or withdrawal or after exposure to a\r\nmedication; and\r\n(ii) the involved substance/medication is capable of producing the\r\nsymptoms in Criterion A.\r\nC. The disturbance is not better explained by a bipolar or related disorder\r\nthat is not substance/medication-induced. Such evidence of an\r\nindependent bipolar or related disorder could include the following:\r\n(i) the symptoms precede the onset of the substance/medication use,\r\nthe symptoms persist for a substantial period of time (for\r\nexample, about one month) after the cessation of acute\r\nwithdrawal or severe intoxication, or there is other evidence\r\nsuggesting the existence of an independent non-\r\n (for\r\nexample, a history of recurrent non-substance/medication-related\r\nepisodes).\r\nD. The disturbance does not occur exclusively during the course of a\r\ndelirium.\r\nE. The disturbance causes clinically significant distress or impairment in\r\nsocial, occupational or other important areas of functioning.\r\nNote: DSM-5 is also defined in the Schedule 1 - Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "substance/medication-induced bipolar and related disorder",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "taking a drug, or a drug from a class of drugs, from the specified\r\nlist of drugs, within the 14 days before the clinical onset of\r\nbipolar disorder"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "taking a drug which is associated in the individual with the\r\ndevelopment of symptoms of bipolar disorder while taking the\r\ndrug, and the cessation or significant reduction of the symptoms\r\nof bipolar disorder within days or weeks of discontinuing the\r\ndrug, where taking the drug continued for at least the two days\r\nbefore the clinical onset of bipolar disorder"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having ceased or reduced antidepressant drug therapy or\r\nantiepileptic drug therapy within the 30 days before the clinical\r\nonset of bipolar disorder"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having alcohol use disorder or substance use disorder at the time\r\nof the clinical onset of bipolar disorder"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for bipolar and related disorder due to another medical condition only,\r\nhaving an endocrine, cardiovascular, respiratory, metabolic, infectious\r\nor neurological disorder, where the medical condition is a direct\r\nphysiological cause of the mood symptoms at the time of the clinical\r\nonset of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "bipolar and related disorder due to another medical condition",
+      "definition" : "means a\r\ndisorder of mental health that meets the following diagnostic criteria (derived\r\nfrom DSM-5):\r\nA. A prominent and persistent period of abnormally elevated, expansive,\r\nor irritable mood and abnormally increased activity or energy that\r\npredominates in the clinical picture.\r\nB. There is evidence from the history, physical examination or laboratory\r\nfindings that the disturbance is the direct pathophysiological\r\nconsequence of another medical condition.\r\nC. The disturbance is not better explained by another mental disorder.\r\nD. The disturbance does not occur exclusively during the course of a\r\ndelirium.\r\nE. The disturbance causes clinically significant distress or impairment in\r\nsocial, occupational, or other important areas of functioning, or\r\nnecessitates hospitalisation to prevent harm to self or others or there are\r\npsychotic features.\r\nNote: DSM-5 is also defined in the Schedule 1 - Dictionary.\r\nbipolar disorder—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "bipolar and related disorder due to another medical condition",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "experiencing a category 1A stressor within the six months before the\r\nclinical worsening of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "experiencing a category 1B stressor within the six months before the\r\nclinical worsening of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured casualty;\r\nor\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "experiencing a category 2 stressor within the six months before the\r\nclinical worsening of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation or divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, or court appearances associated with personal legal problems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other with\r\na severe physical, mental or developmental disability.\r\nNote: significant other is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "experiencing the death of a significant other within the six months\r\nbefore the clinical worsening of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being within 90 days postpartum at the time of the clinical worsening\r\nof bipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having a disorder of mental health from Specified List 2 of clinically\r\nsignificant disorders of mental health at the time of the clinical\r\nworsening of bipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "taking a drug, or a drug from a class of drugs, from the specified list of\r\ndrugs, within the 14 days before the clinical worsening of bipolar\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "taking a drug which is associated in the individual with the worsening\r\nof symptoms of bipolar disorder while taking the drug, and the\r\ncessation or significant reduction of the symptoms of bipolar disorder\r\nwithin days or weeks of discontinuing the drug, where taking the drug\r\ncontinued for at least the two days before the clinical worsening of\r\nbipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having ceased or reduced antidepressant drug therapy or antiepileptic\r\ndrug therapy within the 30 days before the clinical worsening of\r\nbipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having a medical condition as specified at the time of the clinical\r\nworsening of bipolar disorder",
+    "definedTerms" : [ {
+      "term" : "medical condition as specified",
+      "definition" : "means an endocrine, cardiovascular,\r\nrespiratory, metabolic, infectious or neurological condition, that causes\r\nsymptoms consistent with bipolar disorder, as a direct physiological\r\nconsequence of the condition.\r\nNote: Examples of these medical conditions include:\r\n(a) adrenal insufficiency;\r\n(b) Alzheimer-type dementia;\r\n(c) cerebral trauma;\r\n(d) cerebrovascular accident;\r\n(e) Cushing syndrome;\r\n(f) epilepsy;\r\n(g) Graves' disease;\r\n(h) human immunodeficiency virus;\r\n(i) hypothyroidism;\r\n(j) multiple sclerosis;\r\n(k) Parkinson's disease; or\r\n(l) toxoplasmosis.\r\nmedical condition is a direct physiological cause of the mood symptoms\r\nmeans signs or symptoms of depressed, elevated, expansive or irritable mood\r\nare directly related to the pathological process of the medical condition, and:\r\n(a) the bipolar disorder has a close temporal relationship with the onset or\r\nexacerbation of the general medical condition, and the bipolar disorder\r\ndeveloped at the same time or after the onset of the general medical\r\ncondition; or\r\n(b) treatment which causes remission of the general medical condition also\r\nresults in remission of the bipolar disorder symptoms; or\r\n(c) features of the bipolar disorder, such as an unusual age of onset, a\r\nqualitative difference in symptoms, or disproportionately severe or\r\nunusual symptoms, are inconsistent with a primary diagnosis of any of\r\nthe bipolar disorders.\r\nNote: Examples of these medical conditions include:\r\n(a) adrenal insufficiency;\r\n(b) Alzheimer-type dementia;\r\n(c) cerebral trauma;\r\n(d) cerebrovascular accident;\r\n(e) Cushing syndrome;\r\n(f) epilepsy;\r\n(g) Graves' disease;\r\n(h) human immunodeficiency virus;\r\n(i) hypothyroidism;\r\n(j) multiple sclerosis;\r\n(k) Parkinson's disease; or\r\n(l) toxoplasmosis."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "experiencing severe childhood abuse before the clinical worsening of\r\nbipolar disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "being deprived of at least one whole night's sleep within the two days\r\nbefore the clinical worsening of bipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having electroconvulsive therapy within the 14 days before the clinical\r\nworsening of bipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having a course of bright light therapy within the 14 days before the\r\nclinical worsening of bipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having deep brain stimulation for Parkinson's disease within the\r\n48 hours before the clinical worsening of bipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having vagus nerve stimulation within the 48 hours before the clinical\r\nworsening of bipolar disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "inability to obtain appropriate clinical management for bipolar\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

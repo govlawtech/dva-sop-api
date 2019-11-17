@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00009",
+  "instrumentNumber" : "6/2018",
+  "citation" : "Statement of Principles concerning non-freezing cold injury (Balance of Probabilities) (No. 6 of 2018)",
+  "conditionName" : "non-freezing cold injury",
+  "effectiveFrom" : "2018-01-29",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T69.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "exposing the affected limb to moisture and non-freezing temperatures\r\nbelow 21 degrees Celsius, for a period of at least ten hours within the\r\n24 hours before the clinical onset of non-freezing cold injury;\r\nNote 1: Non-freezing cold injury is most commonly associated with temperatures just above\r\nfreezing.\r\nNote 2: Exposure to moisture and non-freezing temperatures may occur during military\r\ntraining or exercises in the outdoors, but are also likely to occur in other circumstances,\r\nexamples of which include the homeless, those who are intoxicated with alcohol, and\r\nthose who have poorly controlled psychiatric illness",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for non-freezing\r\ncold injury",
+    "definedTerms" : [ ]
+  } ]
+}

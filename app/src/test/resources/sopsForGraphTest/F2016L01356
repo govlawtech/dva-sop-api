@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01356",
+  "instrumentNumber" : "71/2016",
+  "citation" : "Statement of Principles concerning ganglion (Reasonable Hypothesis) (No. 71 of 2016)",
+  "conditionName" : "ganglion",
+  "effectiveFrom" : "2016-09-26",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M67.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having acute trauma to the affected joint or tendon within the one year\r\nbefore the clinical onset of ganglion",
+    "definedTerms" : [ {
+      "term" : "acute trauma to the affected joint or tendon",
+      "definition" : "means a discrete event\r\ninvolving the application of significant physical force to or through the\r\naffected joint or tendon, that causes damage to the joint or tendon and the\r\ndevelopment, within 24 hours of the event occurring, of symptoms and signs\r\nof pain, and tenderness, and either altered mobility or range of movement of\r\nthe joint or tendon. These symptoms and signs must last for a period of at\r\nleast seven days following their onset; save for where medical intervention\r\nfor the trauma to that joint or tendon has occurred and that medical\r\nintervention involves either:\r\n(a) immobilisation of the joint, tendon or limb by splinting, or similar\r\nexternal agent; or\r\n(b) injection of corticosteroids or local anaesthetics into that joint or\r\naround the tendon; or\r\n(c) surgery to that joint or tendon.\r\nganglion—see subsection 6(2)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(2)",
+    "text" : "inability to obtain appropriate clinical management for ganglion",
+    "definedTerms" : [ ]
+  } ]
+}

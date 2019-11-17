@@ -1,0 +1,152 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00840",
+  "instrumentNumber" : "120/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the oesophagus (Reasonable Hypothesis) (No. 120 of 2015)",
+  "conditionName" : "malignant neoplasm of the oesophagus",
+  "effectiveFrom" : "2015-11-16",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C15"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "smoking at least 2.5 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the oesophagus, and:\r\n(a) smoking commenced at least five years before the clinical onset\r\nof malignant neoplasm of the oesophagus; and\r\n(b) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the oesophagus has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals 20 tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "the oral use of smokeless tobacco on more days than not, for at least\r\nfive years before the clinical onset of malignant neoplasm of the\r\noesophagus, and where the oral use of smokeless tobacco has ceased,\r\nthe clinical onset of malignant neoplasm of the oesophagus has\r\noccurred within 15 years of cessation",
+    "definedTerms" : [ {
+      "term" : "smokeless tobacco",
+      "definition" : "means tobacco products without combustion or pyrolysis\r\nat the time of use, including chewing tobacco and tobacco snuff."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the oesophagus at least five years before the\r\nclinical onset of malignant neoplasm of the oesophagus",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(a) for a cumulative period of at least 1 000 hours before the clinical\r\nonset of malignant neoplasm of the oesophagus; and\r\n(b) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(c) the first inhalation of respirable asbestos fibres commenced at\r\nleast five years before the clinical onset of malignant neoplasm\r\nof the oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(a) for a cumulative period of at least 3 000 hours before the clinical\r\nonset of malignant neoplasm of the oesophagus; and\r\n(b) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(c) the first inhalation of respirable asbestos fibres commenced at\r\nleast five years before the clinical onset of malignant neoplasm\r\nof the oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for squamous cell or undifferentiated carcinoma of the oesophagus\r\nonly:\r\n(a) drinking at least 180 kilograms of alcohol before the clinical\r\nonset of malignant neoplasm of the oesophagus;\r\n(b) having a caustic burn of the oesophagus, at least ten years before\r\nthe clinical onset of malignant neoplasm of the oesophagus;\r\n(c) having Plummer-Vinson syndrome at the time of the clinical\r\nonset of malignant neoplasm of the oesophagus;\r\n(d) drinking maté on more days than not for at least five years\r\nbefore the clinical onset of malignant neoplasm of the\r\noesophagus, and where drinking maté has ceased, the clinical\r\nonset of malignant neoplasm of the oesophagus has occurred\r\nwithin 15 years of cessation; or\r\n(e) acquiring persistent infection of the epithelium of the\r\noesophagus with a strain from the specified list of human\r\npapilloma virus (HPV) strains before the clinical onset of\r\nmalignant neoplasm of the oesophagus;\r\n(HPV) strains are defined in the Schedule 1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "Plummer-Vinson syndrome",
+      "definition" : "means the triad of dysphagia, iron deficient\r\nanaemia, and oesophageal webs. It is also known as Paterson-Kelly\r\nsyndrome and sideropenic dysphagia."
+    } ],
+    "conditionVariant" : {
+      "name" : "squamous cell or undifferentiated carcinoma of the oesophagus",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "drinking at least 180 kilograms of alcohol before the clinical\r\nonset of malignant neoplasm of the oesophagus"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having a caustic burn of the oesophagus, at least ten years before\r\nthe clinical onset of malignant neoplasm of the oesophagus"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having Plummer-Vinson syndrome at the time of the clinical\r\nonset of malignant neoplasm of the oesophagus"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "drinking maté on more days than not for at least five years\r\nbefore the clinical onset of malignant neoplasm of the\r\noesophagus, and where drinking maté has ceased, the clinical\r\nonset of malignant neoplasm of the oesophagus has occurred\r\nwithin 15 years of cessation"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "acquiring persistent infection of the epithelium of the\r\noesophagus with a strain from the specified list of human\r\npapilloma virus (HPV) strains before the clinical onset of\r\nmalignant neoplasm of the oesophagus;\r\n(HPV) strains are defined in the Schedule 1 - Dictionary"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for adenocarcinoma or undifferentiated carcinoma of the oesophagus\r\nonly:\r\n(a) being obese for at least five years within the 20 years before the\r\nclinical onset of malignant neoplasm of the oesophagus;\r\n(b) having Barrett's oesophagus before the clinical onset of\r\nmalignant neoplasm of the oesophagus; or\r\n(c) having gastro-oesophageal reflux disease for at least the five\r\nyears before the clinical onset of malignant neoplasm of the\r\noesophagus",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\n2BMI = W/H and where:\r\nW is the person's weight in kilograms; and\r\nH is the person's height in metres."
+    }, {
+      "term" : "Barrett's oesophagus",
+      "definition" : "means metaplasia of the epithelium of the lower\r\noesophagus from the normal stratified squamous epithelium to abnormal\r\ncolumnar epithelium."
+    } ],
+    "conditionVariant" : {
+      "name" : "adenocarcinoma or undifferentiated carcinoma of the oesophagus",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "being obese for at least five years within the 20 years before the\r\nclinical onset of malignant neoplasm of the oesophagus"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having Barrett's oesophagus before the clinical onset of\r\nmalignant neoplasm of the oesophagus"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having gastro-oesophageal reflux disease for at least the five\r\nyears before the clinical onset of malignant neoplasm of the\r\noesophagus"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having achalasia at the time of the clinical onset of malignant\r\nneoplasm of the oesophagus",
+    "definedTerms" : [ {
+      "term" : "achalasia",
+      "definition" : "means failure of the lower oesophageal sphincter to relax with\r\nswallowing, due to degeneration of ganglion cells in the oesophageal wall.\r\nThe thoracic oesophagus also loses its normal peristaltic activity and\r\nbecomes dilated.\r\nalcohol is measured by the alcohol consumption calculations utilising the\r\nAustralian Standard of ten grams of alcohol per standard alcoholic drink."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having pernicious anaemia for at least the five years before the clinical\r\nonset of malignant neoplasm of the oesophagus",
+    "definedTerms" : [ {
+      "term" : "pernicious anaemia",
+      "definition" : "means a type of megaloblastic anaemia usually seen in\r\nolder adults, involving impaired intestinal absorption of vitamin B12 due to\r\nlack of availability of intrinsic factor. It is characterised by pallor,\r\nachlorhydria, glossitis, gastric mucosal atrophy, weakness, antibodies\r\nagainst gastric parietal cells or intrinsic factor, and neurologic\r\nmanifestations."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "chewing betel quid or areca nut on more days than not for at least five\r\nyears before the clinical onset of malignant neoplasm of the\r\noesophagus, and where chewing betel quid or areca nut has ceased, the\r\nclinical onset of malignant neoplasm of the oesophagus has occurred\r\nwithin 15 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "consuming an average daily intake of at least 100 grams per day of red\r\nmeat, for at least ten years within the 25 years before the clinical onset\r\nof malignant neoplasm of the oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "consuming an average daily intake of at least 25 grams per day of\r\nprocessed meat product, for at least ten years within the 25 years\r\nbefore the clinical onset of malignant neoplasm of the oesophagus",
+    "definedTerms" : [ {
+      "term" : "processed meat product",
+      "definition" : "means preserved or cured meats, including ham,\r\nfrankfurters, salami and bacon."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "consuming hot beverages on more days than not for at least ten years\r\nbefore the clinical onset of malignant neoplasm of the oesophagus, and\r\nwhere consuming hot beverages has ceased, the clinical onset of\r\nmalignant neoplasm of the oesophagus has occurred within ten years\r\nof cessation",
+    "definedTerms" : [ {
+      "term" : "hot beverages",
+      "definition" : "means beverages that are consumed at temperatures of at least\r\n60 degrees Celsius.\r\nmalignant neoplasm of the oesophagus—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "an inability to consume an average of at least 200 grams per day of any\r\ncombination of fruits and vegetables, for at least five consecutive years\r\nwithin the 25 years before the clinical onset of malignant neoplasm of\r\nthe oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having at least daily consumption of preserved vegetables for at least\r\nfive years within the 25 years before the clinical onset of malignant\r\nneoplasm of the oesophagus",
+    "definedTerms" : [ {
+      "term" : "preserved vegetables",
+      "definition" : "means vegetables preserved by salting, fermenting or\r\npickling."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "inability to perform effective personal dental hygiene for a continuous\r\nperiod of at least three months, within the five years before the clinical\r\nonset of malignant neoplasm of the oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "inhaling, ingesting or having cutaneous contact with\r\ntetrachloroethylene for a cumulative period of at least 1 000 hours\r\nbefore the clinical onset of malignant neoplasm of the oesophagus,\r\nwhere the first exposure occurred at least ten years before the clinical\r\nonset of malignant neoplasm of the oesophagus",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(18)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the oesophagus",
+    "definedTerms" : [ ]
+  } ]
+}

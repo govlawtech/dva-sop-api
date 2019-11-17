@@ -1,0 +1,313 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01391",
+  "instrumentNumber" : "99/2014",
+  "citation" : "Statement of Principles concerning osteoporosis No. 99 of 2014",
+  "conditionName" : "osteoporosis",
+  "effectiveFrom" : "2014-11-17",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M80"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M81"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M82"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of osteoporosis, and\r\nwhere smoking has ceased, the clinical onset of osteoporosis has\r\noccurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for males only, drinking at least 220 kilograms of alcohol within any\r\nten year period within the 20 years before the clinical onset of\r\nosteoporosis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "males",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for females only, drinking at least 110 kilograms of alcohol within any\r\nten year period within the 20 years before the clinical onset of\r\nosteoporosis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "females",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having chronic renal failure at the time of the clinical onset of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with a drug from the specified list before the clinical\r\nonset of osteoporosis, where:\r\n(i) the drug cannot be ceased or substituted; or\r\n(ii) osteoporosis persists beyond 12 months after cessation of the\r\ndrug",
+    "definedTerms" : [ {
+      "term" : "a drug from the specified list",
+      "definition" : "means any of the drugs (including where\nthose drugs are contained in preparations) listed in the following Table of\nDrugs, in the specified combinations of administration, dose level and duration\nof treatment;\nDrug or Class of Drugs Mode * Dose Minimum Duration\nof Treatment\nprednisolone or  0.5 grams 6 months\npharmacologically IV, IM, O over 6 months\nequivalent\nglucocorticoid  3 grams NS\ncorticotrophins NS at least weekly 6 months\nGnRH analogues NS NS 6 months\nwithout adequate add\nback therapy\nchemotherapy for not topical NS 3 months\ncancer\ntamoxifen† O NS 60 months\naromatase inhibitors O NS 12 months\nantiandrogen NS NS 12 months\ntherapy ‡\nmedroxyprogesterone O, IM NS 12 months\nacetate, without any\noestrogen\nsupplementation †\nunfractionated heparin IV, SC  15,000 3 months\nunits/day\nanticonvulsants O NS 24 months\nlithium O NS 24 months\naluminium O, daily or most 12 months\nparenteral days a week\nthiazolidinediones O 12 months\n* Abbreviations: IV = intravenous; IM = intramuscular; SC = subcutaneous; O = oral; NS = not specified; GnRH =\nGonadotrophin Releasing Hormone; mg = milligrams; g = micrograms.\n† In premenopausal women only. ‡ In males only. # In postmenopausal women only"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a specified endocrine abnormality for a continuous period of at\r\nleast two years within the five years before the clinical onset of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "a specified endocrine abnormality",
+      "definition" : "means:\n(a) Cushing's syndrome;\n(b) goitre, where it has resulted in hyperthyroidism;\n(c) Graves' disease;\n(d) hyperprolactinaemia;\n(e) hyperthyroidism;\n(f) hypogonadism (including menopause);\n(g) primary hyperparathyroidism;\n(h) thyrotoxicosis; or\n(i) type 1 diabetes mellitus"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having rheumatoid arthritis or ankylosing spondylitis for at least the\r\ntwo years before the clinical onset of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a specified medical condition for at least the two years before\r\nthe clinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "a specified medical condition",
+      "definition" : "means:\n(a) chronic obstructive pulmonary disease;\n(b) human immunodeficiency virus infection;\n(c) multiple sclerosis; or\n(d) Parkinson's disease"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having myeloma, non-Hodgkin's lymphoma, Hodgkin's lymphoma or\r\nsystemic mastocytosis at the time of the clinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "systemic mastocytosis",
+      "definition" : "means a mast cell hyperplasia that is generally\ndetected in the bone marrow, skin, gastrointestinal mucosa, liver or spleen"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "undergoing solid organ, stem cell or bone marrow transplantation\r\nbefore the clinical onset of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a specified gastrointestinal disease for a continuous period of at\r\nleast two years within the five years before the clinical onset of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "a specified gastrointestinal disease",
+      "definition" : "means:\n(a) bacterial overgrowth syndrome;\n(b) cirrhosis of the liver;\n(c) coeliac disease;\n(d) inflammatory bowel disease;\n(e) pancreatic insufficiency; or\n(f) total or partial gastrectomy"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having anorexia nervosa before the clinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "anorexia nervosa",
+      "definition" : "means a mental disorder that meets the following\ndiagnostic criteria (derived from DSM-5):\nA. Restriction of energy intake relative to requirements, leading to a\nsignificantly low body weight in the context of age, sex, developmental\ntrajectory, and physical health. Significantly low weight is defined as a\nweight that is less than minimally normal or, for children and\nadolescents, less than that minimally expected; and\nB. Intense fear of gaining weight or of becoming fat, or persistent behaviour\nthat interferes with weight gain, even though at a significantly low\nweight; and\nC. Disturbance in the way in which one's body weight or shape is\nexperienced, undue influence of body weight or shape on self-evaluation,\nor persistent lack of recognition of the seriousness of the current low\nbody weight"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being immobile for at least six months within the one year before the\r\nclinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "being immobile",
+      "definition" : "means having gross diminution or near complete absence\nof movement of the body, such as would occur as a result of paralysis or strict\nbed rest"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having a BMI of less than 20 for a continuous period of at least two\r\nyears within the five years before the clinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "BMI",
+      "definition" : "means body mass index and is calculated as follows:\n2\nBMI = W/H where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "losing ten percent or more of body weight in any consecutive two year\r\nperiod when aged 50 years or older, within the five years before the\r\nclinical onset of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the ten years before the clinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\nweight per hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having an altered dietary pattern resulting in a decrease in average daily\r\ncalcium intake to 400 milligrams per day or less, for a period of at least\r\ntwo years before age 20 years, or for a period of at least seven years\r\nafter age 20 years, or the equivalent combination thereof, before the\r\nclinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "equivalent combination",
+      "definition" : "means a calculation where one year of exposure\nbefore age 20 years is equivalent to 3.5 years of exposure after age 20 years"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having vitamin D deficiency, with a serum 25(OH)D level of less than\r\n50 nanomoles per litre, for a continuous period of at least two years\r\nwithin the five years before the clinical onset of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "consuming at least 7.5 milligrams per day of vitamin A over a period of\r\nat least two years within the five years before the clinical onset of\r\nosteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having severe vitamin C deficiency within the five years before the\r\nclinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "severe vitamin C deficiency",
+      "definition" : "means symptoms of scurvy or a serum\nascorbic acid level of less than 2.5 milligrams per litre"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "being exposed to cadmium at levels which have resulted in:\r\n(i) renal damage; or\r\n(ii) a urinary cadmium level of at least 0.5 micrograms per gram\r\ncreatinine for a period of at least five years,\r\nbefore the clinical onset of osteoporosis; or\r\n(v) having iron overload at the time of clinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\nwhich has been confirmed by elevated ferritin or transferrin saturation levels.\nCauses include haemochromatosis and blood transfusions"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "for a minimal trauma fracture only, being pregnant within the six weeks\r\nbefore the clinical onset of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "a minimal trauma fracture",
+      "definition" : "means a fracture that results from mechanical\nforces that would not ordinarily result in a fracture"
+    } ],
+    "conditionVariant" : {
+      "name" : "a minimal trauma fracture",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(x)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of osteoporosis\r\nand where smoking has ceased, the clinical worsening of osteoporosis\r\nhas occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "for males only, drinking at least 220 kilograms of alcohol within any\r\nten year period within the 20 years before the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "males",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "for females only, drinking at least 110 kilograms of alcohol within any\r\nten year period within the 20 years before the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "females",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having chronic renal failure at the time of the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "being treated with a drug from the specified list before the clinical\r\nworsening of osteoporosis, where:\r\n(i) the drug cannot be ceased or substituted; or\r\n(ii) osteoporosis persists beyond 12 months after cessation of the\r\ndrug",
+    "definedTerms" : [ {
+      "term" : "a drug from the specified list",
+      "definition" : "means any of the drugs (including where\nthose drugs are contained in preparations) listed in the following Table of\nDrugs, in the specified combinations of administration, dose level and duration\nof treatment;\nDrug or Class of Drugs Mode * Dose Minimum Duration\nof Treatment\nprednisolone or  0.5 grams 6 months\npharmacologically IV, IM, O over 6 months\nequivalent\nglucocorticoid  3 grams NS\ncorticotrophins NS at least weekly 6 months\nGnRH analogues NS NS 6 months\nwithout adequate add\nback therapy\nchemotherapy for not topical NS 3 months\ncancer\ntamoxifen† O NS 60 months\naromatase inhibitors O NS 12 months\nantiandrogen NS NS 12 months\ntherapy ‡\nmedroxyprogesterone O, IM NS 12 months\nacetate, without any\noestrogen\nsupplementation †\nunfractionated heparin IV, SC  15,000 3 months\nunits/day\nanticonvulsants O NS 24 months\nlithium O NS 24 months\naluminium O, daily or most 12 months\nparenteral days a week\nthiazolidinediones O 12 months\n* Abbreviations: IV = intravenous; IM = intramuscular; SC = subcutaneous; O = oral; NS = not specified; GnRH =\nGonadotrophin Releasing Hormone; mg = milligrams; g = micrograms.\n† In premenopausal women only. ‡ In males only. # In postmenopausal women only"
+    } ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having a specified endocrine abnormality for a continuous period of at\r\nleast two years within the five years before the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "a specified endocrine abnormality",
+      "definition" : "means:\n(a) Cushing's syndrome;\n(b) goitre, where it has resulted in hyperthyroidism;\n(c) Graves' disease;\n(d) hyperprolactinaemia;\n(e) hyperthyroidism;\n(f) hypogonadism (including menopause);\n(g) primary hyperparathyroidism;\n(h) thyrotoxicosis; or\n(i) type 1 diabetes mellitus"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having rheumatoid arthritis or ankylosing spondylitis for at least the\r\ntwo years before the clinical worsening of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having a specified medical condition for at least the two years before\r\nthe clinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "a specified medical condition",
+      "definition" : "means:\n(a) chronic obstructive pulmonary disease;\n(b) human immunodeficiency virus infection;\n(c) multiple sclerosis; or\n(d) Parkinson's disease"
+    } ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having myeloma, non-Hodgkin's lymphoma, Hodgkin's lymphoma or\r\nsystemic mastocytosis at the time of the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "systemic mastocytosis",
+      "definition" : "means a mast cell hyperplasia that is generally\ndetected in the bone marrow, skin, gastrointestinal mucosa, liver or spleen"
+    } ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "undergoing solid organ, stem cell or bone marrow transplantation\r\nbefore the clinical worsening of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having a specified gastrointestinal disease for a continuous period of at\r\nleast two years within the five years before the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "a specified gastrointestinal disease",
+      "definition" : "means:\n(a) bacterial overgrowth syndrome;\n(b) cirrhosis of the liver;\n(c) coeliac disease;\n(d) inflammatory bowel disease;\n(e) pancreatic insufficiency; or\n(f) total or partial gastrectomy"
+    } ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "having anorexia nervosa before the clinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "anorexia nervosa",
+      "definition" : "means a mental disorder that meets the following\ndiagnostic criteria (derived from DSM-5):\nA. Restriction of energy intake relative to requirements, leading to a\nsignificantly low body weight in the context of age, sex, developmental\ntrajectory, and physical health. Significantly low weight is defined as a\nweight that is less than minimally normal or, for children and\nadolescents, less than that minimally expected; and\nB. Intense fear of gaining weight or of becoming fat, or persistent behaviour\nthat interferes with weight gain, even though at a significantly low\nweight; and\nC. Disturbance in the way in which one's body weight or shape is\nexperienced, undue influence of body weight or shape on self-evaluation,\nor persistent lack of recognition of the seriousness of the current low\nbody weight"
+    } ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "being immobile for at least six months within the one year before the\r\nclinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "being immobile",
+      "definition" : "means having gross diminution or near complete absence\nof movement of the body, such as would occur as a result of paralysis or strict\nbed rest"
+    } ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "having a BMI of less than 20 for a continuous period of at least two\r\nyears within the five years before the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ {
+      "term" : "BMI",
+      "definition" : "means body mass index and is calculated as follows:\n2\nBMI = W/H where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "losing ten percent or more of body weight in any consecutive two year\r\nperiod when aged 50 years or older, within the five years before the\r\nclinical worsening of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the ten years before the clinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\nweight per hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(nn)",
+    "text" : "having an altered dietary pattern resulting in a decrease in average daily\r\ncalcium intake to 400 milligrams per day or less, for a period of at least\r\ntwo years before age 20 years, or for a period of at least seven years\r\nafter age 20 years, or the equivalent combination thereof, before the\r\nclinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "equivalent combination",
+      "definition" : "means a calculation where one year of exposure\nbefore age 20 years is equivalent to 3.5 years of exposure after age 20 years"
+    } ]
+  }, {
+    "paragraph" : "6(oo)",
+    "text" : "having vitamin D deficiency, with a serum 25(OH)D level of less than\r\n50 nanomoles per litre, for a continuous period of at least two years\r\nwithin the five years before the clinical worsening of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(pp)",
+    "text" : "consuming at least 7.5 milligrams per day of vitamin A over a period of\r\nat least two years within the five years before the clinical worsening of\r\nosteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(qq)",
+    "text" : "having severe vitamin C deficiency within the five years before the\r\nclinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "severe vitamin C deficiency",
+      "definition" : "means symptoms of scurvy or a serum\nascorbic acid level of less than 2.5 milligrams per litre"
+    } ]
+  }, {
+    "paragraph" : "6(rr)",
+    "text" : "being exposed to cadmium at levels which have resulted in:\r\n(i) renal damage; or\r\n(ii) a urinary cadmium level of at least 0.5 micrograms per gram\r\ncreatinine for a period of at least five years,\r\nbefore the clinical worsening of osteoporosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ss)",
+    "text" : "having iron overload at the time of clinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "iron overload",
+      "definition" : "means an accumulation of excess iron in tissues and organs\nwhich has been confirmed by elevated ferritin or transferrin saturation levels.\nCauses include haemochromatosis and blood transfusions"
+    } ]
+  }, {
+    "paragraph" : "6(tt)",
+    "text" : "for a minimal trauma fracture only, being pregnant within the six weeks\r\nbefore the clinical worsening of osteoporosis",
+    "definedTerms" : [ {
+      "term" : "a minimal trauma fracture",
+      "definition" : "means a fracture that results from mechanical\nforces that would not ordinarily result in a fracture"
+    } ],
+    "conditionVariant" : {
+      "name" : "a minimal trauma fracture",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(uu)",
+    "text" : "inability to obtain appropriate clinical management for osteoporosis",
+    "definedTerms" : [ ]
+  } ]
+}

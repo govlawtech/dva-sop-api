@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01832",
+  "instrumentNumber" : "14/2015",
+  "citation" : "Statement of Principles concerning decompression sickness No. 14 of 2015",
+  "conditionName" : "decompression sickness",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T70.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "experiencing an episode of decompression within the seven days before\r\nthe clinical onset of decompression sickness",
+    "definedTerms" : [ {
+      "term" : "an episode of decompression",
+      "definition" : "means a reduction in the ambient barometric\npressure exerted by the envelope of air or water surrounding the person,\noccurring with:\n(a) ascending from a submerged craft or device, or a pressurised tunnel or\ncaisson;\n(b) decompression after being compressed in a hyperbaric chamber;\n(c) decompression in a hypobaric chamber;\n(d) flying; or\n(e) underwater diving"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for decompression\r\nsickness",
+    "definedTerms" : [ ]
+  } ]
+}

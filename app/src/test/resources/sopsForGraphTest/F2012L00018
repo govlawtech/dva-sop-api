@@ -1,0 +1,36 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00018",
+  "instrumentNumber" : "11/2012",
+  "citation" : "Statement of Principles concerning dementia pugilistica No. 11 of 2012",
+  "conditionName" : "dementia pugilistica",
+  "effectiveFrom" : "2012-01-11",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having received at least 250 blows to the head within a continuous\r\nperiod of 20 years, while participating in a high impact contact activity,\r\nwhere the first blow to the head occurred at least ten years before the\r\nclinical onset of dementia pugilistica",
+    "definedTerms" : [ {
+      "term" : "high impact contact activity",
+      "definition" : "means a sport or pastime in which there is\nforceful impact of the head with another object or person, such as boxing"
+    }, {
+      "term" : "blows to the head",
+      "definition" : "means episodes in which blunt, non-penetrating rotatory\nor linear acceleration or deceleration forces, of at least of the intensity that\nwould be received from a forceful punch to the head from a gloved fist, are\napplied (directly or indirectly) to the head, with or without concussion or loss\nof consciousness, but excluding blast injury and the heading of a soccer ball"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having experienced at least 50 occasions within a continuous period of\r\n20 years, during each of which numerous blows to the head were\r\nsustained, while participating in a high impact contact activity, and\r\nwhere the first occasion occurred at least ten years before the clinical\r\nonset of dementia pugilistica",
+    "definedTerms" : [ {
+      "term" : "high impact contact activity",
+      "definition" : "means a sport or pastime in which there is\nforceful impact of the head with another object or person, such as boxing"
+    }, {
+      "term" : "blows to the head",
+      "definition" : "means episodes in which blunt, non-penetrating rotatory\nor linear acceleration or deceleration forces, of at least of the intensity that\nwould be received from a forceful punch to the head from a gloved fist, are\napplied (directly or indirectly) to the head, with or without concussion or loss\nof consciousness, but excluding blast injury and the heading of a soccer ball"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for dementia\r\npugilistica",
+    "definedTerms" : [ ]
+  } ]
+}

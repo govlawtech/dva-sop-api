@@ -1,0 +1,76 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00452",
+  "instrumentNumber" : "20/2012",
+  "citation" : "Statement of Principles concerning inflammatory bowel disease No. 20 of 2012",
+  "conditionName" : "inflammatory bowel disease",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K50"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K51"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for ulcerative colitis only, in a person with a history of a regular\r\nsmoking habit,\r\n(i) ceasing to smoke within the five years before the clinical onset\r\nof inflammatory bowel disease; and\r\n(ii) continuing not to smoke for the three months before the clinical\r\nonset of inflammatory bowel disease",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "ulcerative colitis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "ceasing to smoke within the five years before the clinical onset\r\nof inflammatory bowel disease; and"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "continuing not to smoke for the three months before the clinical\r\nonset of inflammatory bowel disease"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for Crohn's disease only, smoking at least two pack-years of cigarettes,\r\nor the equivalent thereof in other tobacco products, before the clinical\r\nonset of inflammatory bowel disease, and where smoking has ceased,\r\nthe clinical onset of inflammatory bowel disease has occurred within\r\nfour years of cessation",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Crohn's disease",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "using the combined oral contraceptive pill for a period of at least one\r\nyear before the clinical onset of inflammatory bowel disease, and\r\nwhere use of the oral contraceptive pill has ceased, the clinical onset of\r\ninflammatory bowel disease has occurred within one year of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being treated with a drug or a drug from a class of drugs in the\r\nspecified list, for at least the seven days before the clinical onset of\r\ninflammatory bowel disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing solid organ, bone marrow or stem cell transplantation\r\nbefore the clinical onset of inflammatory bowel disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "for Crohn's disease only, smoking at least two pack-years of cigarettes,\r\nor the equivalent thereof in other tobacco products, before the clinical\r\nworsening of inflammatory bowel disease, and where smoking has\r\nceased, the clinical worsening of inflammatory bowel disease has\r\noccurred within four years of cessation",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Crohn's disease",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being treated with a drug or a drug from a class of drugs in the\r\nspecified list, for at least the seven days before the clinical worsening\r\nof inflammatory bowel disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing solid organ, bone marrow or stem cell transplantation\r\nbefore the clinical worsening of inflammatory bowel disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having clinical or laboratory evidence of a bowel infection in the one\r\nmonth before the clinical worsening of inflammatory bowel disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for inflammatory\r\nbowel disease",
+    "definedTerms" : [ ]
+  } ]
+}

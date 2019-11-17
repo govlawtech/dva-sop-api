@@ -1,0 +1,57 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00881",
+  "instrumentNumber" : "41/2017",
+  "citation" : "Statement of Principles concerning sickle-cell disorder (Balance of Probabilities) (No. 41 of 2017)",
+  "conditionName" : "sickle-cell disorder",
+  "effectiveFrom" : "2017-07-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D57"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "experiencing a stimulus from Specified List 1 of stimuli within the 24\r\nhours before the clinical worsening of sickle-cell disorder",
+    "definedTerms" : [ {
+      "term" : "Specified List 1 of stimuli",
+      "definition" : "means:\r\n(a) altitudes above 1 500 metres, including flying;\r\n(b) dehydration;\r\n(c) sleep apnoea or other causes of hypoxia; or\r\n(d) strenuous exercise."
+    }, {
+      "term" : "clinical worsening of sickle-cell disorder",
+      "definition" : "means permanent worsening of\r\nsickle-cell disorder as evidenced by:\r\n(a) a sickle-cell crisis or series of crises resulting in end-organ damage or\r\ndeath; or\r\n(b) an increase in the requirement for management of the manifestations\r\nor complications of sickle-cell disorder.\r\nNote: sickle-cell crisis is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a stimulus from Specified List 2 of stimuli within the\r\nseven days before the clinical worsening of sickle-cell disorder",
+    "definedTerms" : [ {
+      "term" : "Specified List 2 of stimuli",
+      "definition" : "means:\r\n(a) a change in ambient temperature which results in skin cooling;\r\n(b) fever;\r\n(c) granulocyte colony-stimulating factors;\r\n(d) immersion in cold water;\r\n(e) infection;\r\n(f) iodinated radiological contrast agents;\r\n(g) pregnancy or puerperal period;\r\n(h) scuba diving; or\r\n(i) surgery.\r\nNote: a change in ambient temperature and puerperal period are also defined in the\r\nSchedule 1 - Dictionary."
+    }, {
+      "term" : "clinical worsening of sickle-cell disorder",
+      "definition" : "means permanent worsening of\r\nsickle-cell disorder as evidenced by:\r\n(a) a sickle-cell crisis or series of crises resulting in end-organ damage or\r\ndeath; or\r\n(b) an increase in the requirement for management of the manifestations\r\nor complications of sickle-cell disorder.\r\nNote: sickle-cell crisis is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of sickle-cell\r\ndisorder, and where smoking has ceased, the clinical worsening of\r\nsickle-cell disorder has occurred within six months of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being exposed to second-hand smoke for at least 1 000 hours before\r\nthe clinical worsening of sickle-cell disorder, and where the last\r\nexposure to second-hand smoke occurred within the six months before\r\nthe clinical worsening of sickle-cell disorder",
+    "definedTerms" : [ {
+      "term" : "clinical worsening of sickle-cell disorder",
+      "definition" : "means permanent worsening of\r\nsickle-cell disorder as evidenced by:\r\n(a) a sickle-cell crisis or series of crises resulting in end-organ damage or\r\ndeath; or\r\n(b) an increase in the requirement for management of the manifestations\r\nor complications of sickle-cell disorder.\r\nNote: sickle-cell crisis is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space and\r\ninhaling smoke from burning tobacco products or smoke that has been\r\nexhaled by a person who is smoking."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with corticosteroids, other than inhaled or topical\r\ncorticosteroids, within the 30 days before the clinical worsening of\r\nsickle-cell disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "inability to obtain appropriate clinical management for sickle-cell\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

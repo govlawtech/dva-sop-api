@@ -1,0 +1,683 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00631",
+  "instrumentNumber" : "1/2016",
+  "citation" : "Statement of Principles concerning ischaemic heart disease (Reasonable Hypothesis) (No. 1 of 2016)",
+  "conditionName" : "ischaemic heart disease",
+  "effectiveFrom" : "2016-01-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I20"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having hypertension before the clinical onset of ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having diabetes mellitus before the clinical onset of ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being obese for at least five years before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means:\r\n(a) having a Body Mass Index (BMI) of 30 or greater; or\r\n(b) for males, having a waist circumference exceeding 102 centimetres; or\r\n(c) for females, having a waist circumference exceeding 88 centimetres.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having dyslipidaemia before the clinical onset of ischaemic heart\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "dyslipidaemia",
+      "definition" : "means persistently abnormal blood lipid levels, diagnosed by a\r\nmedical practitioner and evidenced by:\r\n(a) a total serum cholesterol level greater than 5.5 mmol/L; or\r\n(b) a serum low density lipoprotein level greater than 4.0 mmol/L; or\r\n(c) a serum high density lipoprotein cholesterol level less than 1.0\r\nmmol/L; or\r\n(d) the regular administration of drug therapy to normalise blood lipid\r\nlevels."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "where smoking has not ceased prior to the clinical onset of ischaemic\r\nheart disease:\r\n(a) smoking an average of at least three cigarettes per day, or the\r\nequivalent thereof in other tobacco products, for at least the one\r\nyear before the clinical onset of ischaemic heart disease; or\r\n(b) smoking at least one half pack-year of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the clinical\r\nonset of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "where smoking has ceased prior to the clinical onset of ischaemic heart\r\ndisease:\r\n(a) smoking at least one half pack-year but less than five pack-years\r\nof cigarettes, or the equivalent thereof in other tobacco products,\r\nbefore the clinical onset of ischaemic heart disease, and the\r\nclinical onset of ischaemic heart disease has occurred within five\r\nyears of smoking cessation;\r\n(b) smoking at least five pack-years but less than 20 pack-years of\r\ncigarettes, or the equivalent thereof in other tobacco products,\r\nbefore the clinical onset of ischaemic heart disease, and the\r\nclinical onset of ischaemic heart disease has occurred within 20\r\nyears of smoking cessation; or\r\n(c) smoking at least 20 pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "where exposure to second-hand smoke has not ceased, being exposed\r\nto second-hand smoke for at least 1 000 hours before the clinical onset\r\nof ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "where exposure to second-hand smoke has ceased:\r\n(a) being exposed to second-hand smoke for at least 1 000 hours but\r\nless than 5 000 hours before the clinical onset of ischaemic heart\r\ndisease, and the clinical onset of ischaemic heart disease has\r\noccurred within five years of the last exposure to second-hand\r\nsmoke; or\r\n(b) being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    }, {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space and\r\ninhaling smoke from burning tobacco products or smoke that has been\r\nexhaled by a person who is smoking."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "where the use of chewing tobacco has not ceased, using chewing\r\ntobacco on more days than not for at least one year before the clinical\r\nonset of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "where the use of chewing tobacco has ceased:\r\n(a) using chewing tobacco on more days than not for at least one\r\nyear but less than five years before the clinical onset of\r\nischaemic heart disease, and the clinical onset of ischaemic heart\r\ndisease has occurred within five years of ceasing to use chewing\r\ntobacco; or\r\n(b) using chewing tobacco on more days than not for at least five\r\nyears before the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical onset of ischaemic heart\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "being sedentary for a cumulative total of at least ten hours per day on\r\nmore days than not for at least the five years before the clinical onset\r\nof ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "being sedentary",
+      "definition" : "means waking behaviour characterised by an average energy\r\nexpenditure of 1.5 METs or less while in a sitting or reclining posture."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having hyperhomocysteinaemia before the clinical onset of ischaemic\r\nheart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having chronic kidney disease before the clinical onset of ischaemic\r\nheart disease",
+    "definedTerms" : [ {
+      "term" : "chronic kidney disease",
+      "definition" : "means having a glomerular filtration rate of less than\r\n2\r\n60 mL/min/1.73 m for a period of at least three months, or the presence of\r\nirreversible kidney damage.\r\ncigarettes per day, or the equivalent thereof in other tobacco products\r\nmeans either cigarettes, pipe tobacco or cigars, alone or in any combination,\r\nwhere one tailor-made cigarette approximates one gram of tobacco; or one\r\ngram of cigar, pipe or other smoking tobacco."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having hypothyroidism or Hashimoto's thyroiditis with\r\nhypothyroidism for at least two years within the ten years before the\r\nclinical onset of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "inhaling or having cutaneous contact with Otto fuel or explosive\r\nproducts containing nitroglycerine, nitroglycol, trinitrotoluene or\r\ndinitrotoluene, where the last inhalation or cutaneous contact occurred\r\nnot more than 14 days before the clinical onset of ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the heart at least one year before the clinical onset\r\nof ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1:Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\r\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\r\nleading to increased levels of exposure to cosmic radiation.\r\nNote 2:For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nheart was in the field of radiation, before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having a clinically significant disorder of mental health as specified for\r\nat least the five years before the clinical onset of ischaemic heart\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) agoraphobia;\r\n(b) anxiety disorder;\r\n(c) depressive disorder;\r\n(d) panic disorder;\r\n(e) posttraumatic stress disorder;\r\n(f) schizophrenia; or\r\n(g) social anxiety disorder."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "using a combined oral contraceptive pill for at least the 21 days before\r\nthe clinical onset of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "being treated with a drug, or a drug from a class of drugs, from\r\nSpecified List 1 of drugs, where that drug cannot be ceased or\r\nsubstituted, at the time of the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "Specified List 1 of drugs",
+      "definition" : "means:\r\n(a) antipsychotics;\r\n(b) aromatase inhibitors;\r\n(c) bevacizumab;\r\n(d) capecitabine;\r\n(e) dextroamphetamine;\r\n(f) docetaxel;\r\n(g) ephedrine;\r\n(h) ergotamine;\r\n(i) erlotinib;\r\n(j) fluorouracil;\r\n(k) macrolide antibiotics;\r\n(l) methylphenidate;\r\n(m) paclitaxel;\r\n(n) phentermine;\r\n(o) pseudoephedrine;\r\n(p) sorafenib; or\r\n(q) triptans, including sumatriptan."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "using a drug belonging to the non-steroidal anti-inflammatory class of\r\ndrugs, excluding aspirin, paracetamol and topical non-steroidal anti-\r\n`inflammatory drugs, for a continuous period of at least three days\r\nbefore the clinical onset of ischaemic heart disease, where the last dose\r\nof the drug within that period was taken within the seven days before\r\nthe clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having bilateral orchiectomy before the clinical onset of ischaemic\r\nheart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having antiandrogen therapy as specified for at least the seven days\r\nbefore the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    }, {
+      "term" : "antiandrogen therapy as specified",
+      "definition" : "means one of the following drugs:\r\n(a) androgen receptor blockers (including cyproterone acetate, flutamide\r\nand bicalutamide); or\r\n(b) gonadotrophin releasing hormone agonists (including goserelin and\r\nleuprorelin)."
+    } ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "inhaling, ingesting or having cutaneous contact with the phenoxy acid\r\nherbicides 2,4-dichlorophenoxyacetic acid (2,4-D) or 2,4,5-\r\ntrichlorophenoxyacetic acid (2,4,5-T), for a cumulative period of at\r\nleast 1 000 hours within a consecutive period of ten years, before the\r\nclinical onset of ischaemic heart disease, where the first exposure\r\noccurred at least five years before the clinical onset of ischaemic heart\r\ndisease, and where that exposure has ceased, the clinical onset of\r\nischaemic heart disease occurred within 25 years after cessation",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD), for a\r\ncumulative period of at least 1 000 hours within a consecutive period\r\nof ten years, before the clinical onset of ischaemic heart disease, where\r\nthe first exposure occurred at least five years before the clinical onset\r\nof ischaemic heart disease, and where that exposure has ceased, the\r\nclinical onset of ischaemic heart disease occurred within 25 years after\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "having thrombosis of a coronary artery as a result of being in a\r\nhypercoagulable state as specified at the time of the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "hypercoagulable state as specified",
+      "definition" : "means any one of the following:\r\n(a) acquired activated protein C resistance;\r\n(b) acquired antithrombin III deficiency;\r\n(c) acquired dysfibrinogenaemia;\r\n(d) acquired protein C deficiency;\r\n(e) acquired protein S deficiency;\r\n(f) antiphospholipid syndrome;\r\n(g) aplastic anaemia;\r\n(h) disseminated intravascular coagulation;\r\n(i) essential thrombocythaemia;\r\n(j) haemolytic uraemic syndrome;\r\n(k) heparin-induced thrombocytopaenia;\r\n(l) hyperfibrinogenaemia;\r\n(m) hyperproteinaemia;\r\n(n) hyperviscosity syndrome;\r\n(o) immune thrombocytopaenic purpura;\r\n(p) myeloma;\r\n(q) myeloproliferative disease;\r\n(r) nephrotic syndrome;\r\n(s) paroxysmal nocturnal haemoglobinuria;\r\n(t) polycythaemia vera;\r\n(u) secondary thrombocytosis; or\r\n(v) sickle cell disorder."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "inhaling ambient chronically polluted air as specified for at least 1 000\r\nhours within the five years before the clinical onset of ischaemic heart\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "ambient chronically polluted air as specified",
+      "definition" : "means air with average annual\r\nconcentrations of particulate matter with an aerodynamic diameter of < 2.5\r\n3\r\nµm (PM2.5) exceeding 8 µg/m ."
+    } ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "an inability to consume an average of at least 100 grams per day of\r\nvegetables or fruits, for at least the five years before the clinical onset\r\nof ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "an inability to consume an average of at least 100 grams of fish per\r\nfortnight for at least the five years before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "consuming an average daily intake of at least 12 grams (200\r\nmillimoles) of salt for at least the five years before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "having periodic, heavy alcohol consumption for the one year before\r\nthe clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "periodic, heavy alcohol consumption",
+      "definition" : "means sessions of heavy alcohol\r\ndrinking to the point of alcohol intoxication at least once a month.\r\nNote: alcohol intoxication is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "having obstructive sleep apnoea for at least the one year before the\r\nclinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "obstructive sleep apnoea",
+      "definition" : "means a type of sleep apnoea characterised on sleep\r\nstudy by repetitive apnoea or hypopnoea in the presence of respiratory effort\r\nduring sleep, where there are at least five apnoea or hypopnoea episodes per\r\nhour of sleep."
+    } ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "an inability to sleep for an average of at least five hours daily for at\r\nleast the one year before the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "undertaking night shift work on at least 250 occasions over a\r\ncontinuous period, for at least the five years before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "night shift work",
+      "definition" : "means working for at least three hours between 12 AM and\r\n5 AM."
+    } ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "working long hours over a continuous period for at least the five years\r\nbefore the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "long hours",
+      "definition" : "means an average of at least 50 hours per week, or an average of\r\nat least ten hours per day."
+    } ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "being infected with human immunodeficiency virus for at least five\r\nyears before the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(38)",
+    "text" : "having periodontitis for at least the five years before the clinical onset\r\nof ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(39)",
+    "text" : "having infective endocarditis or syphilis involving the coronary\r\narteries at the time of the clinical onset of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(40)",
+    "text" : "undergoing a procedure involving catheterisation of the affected\r\ncoronary artery within the five years before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(41)",
+    "text" : "having a specified autoimmune collagen vascular disease at the time of\r\nthe clinical onset of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "specified autoimmune collagen vascular disease",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) Behcet's syndrome;\r\n(c) dermatomyositis;\r\n(d) eosinophilic granulomatosis with polyangiitis (Churg-Strauss\r\nsyndrome);\r\n(e) giant cell (temporal) arteritis;\r\n(f) Henoch-Schönlein purpura;\r\n(g) microscopic polyangiitis;\r\n(h) mucocutaneous lymph node syndrome (Kawasaki's disease);\r\n(i) non-specific autoimmune vasculitis;\r\n(j) polyarteritis nodosa;\r\n(k) polymyositis;\r\n(l) rheumatoid arthritis;\r\n(m) Sjögren's syndrome;\r\n(n) systemic lupus erythematosus;\r\n(o) systemic sclerosis;\r\n(p) Takayasu's arteritis;\r\n(q) thromboangiitis obliterans (Buerger's disease); or\r\n(r) Wegener's granulomatosis."
+    } ]
+  }, {
+    "paragraph" : "9(42)",
+    "text" : "having gout or hyperuricaemia at the time of the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "hyperuricaemia",
+      "definition" : "means having a serum urate level persistently greater than\r\n0.40 mmol/L.\r\ninhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD) means:\r\n(a) decanting or spraying;\r\n(b) cleaning or maintaining equipment used to apply;\r\n(c) being sprayed with;\r\n(d) handling or sawing timber treated with;\r\n(e) being in an environment shrouded in dust from timber treated with; or\r\n(f) using cutting oils contaminated with:\r\none of the following chemicals:\r\n(i) 2,4,5-trichlorophenoxyacetic acid;\r\n(ii) 2,4,5-trichlorophenoxypropionic acid;\r\n(iii) 2,4,5-trichlorophenol;\r\n(iv) 2-(2,4,5-trichlorophenoxy)-ethyl 2,2-dichloropropionate;\r\n(v) o,o-dimethyl-o-(2,4,5-trichlorophenyl)-phosphorothioate;\r\n(vi) pentachlorophenol;\r\n(vii) 2,3,4,6-tetrachlorophenol;\r\n(viii) 2,4,6-trichlorophenol;\r\n(ix) 1,3,4-trichloro-2-(4-nitrophenoxy)benzene;\r\n(x) 2,4-dichloro-1-(4-nitrophenoxy)benzene; or\r\n(xi) 2,4-dichloro-1-(3-methoxy-4-nitrophenoxy)-benzene.\r\nischaemic heart disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(43)",
+    "text" : "for angina, acute myocardial infarction or sudden death from\r\nischaemic heart disease only:\r\n(a) undertaking physical activity of five METs or more within the\r\n24 hours before the clinical onset of ischaemic heart disease;\r\n(b) experiencing a category 1A stressor within the 48 hours before\r\nthe clinical onset of ischaemic heart disease;\r\n(c) experiencing a category 1B stressor within the 48 hours before\r\nthe clinical onset of ischaemic heart disease;\r\n(d) experiencing an acute, severe, emotional stressor within the 24\r\nhours before the clinical onset of ischaemic heart disease;\r\n(e) experiencing the death of a significant other within the 12\r\nmonths before the clinical onset of ischaemic heart disease;\r\n(f) using a drug from Specified List 2 of drugs within the 24 hours\r\nbefore the clinical onset of ischaemic heart disease;\r\n(g) having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the seven days before the\r\nclinical onset of ischaemic heart disease;\r\n(h) being exposed to:\r\n(i) an environment of extreme heat during a heatwave; or\r\n(ii) an environment of extreme cold during a cold snap; or\r\n(iii) an abrupt alteration of temperature by ten degrees Celsius\r\nor more, to extreme heat or to extreme cold;\r\nfor a period of at least six hours within the seven days before\r\nthe clinical onset of ischaemic heart disease;\r\n(i) inhaling ambient highly polluted air as specified for at least two\r\nhours within the seven days before the clinical onset of\r\nischaemic heart disease;\r\n(j) being envenomated by a snake, scorpion, wasp, bee, hornet,\r\nspider, fish or jellyfish within the 24 hours before the clinical\r\nonset of ischaemic heart disease;\r\n(k) having an acute hypersensitivity reaction involving the coronary\r\narteries as a result of being exposed to a drug, food or\r\nenvironmental agent from the specified list within the 24 hours\r\nbefore the clinical onset of ischaemic heart disease;\r\n(l) having influenza or a lower respiratory tract infection within the\r\n30 days before the clinical onset of ischaemic heart disease; or\r\n(m) being pregnant within the six weeks before the clinical onset of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "extreme heat",
+      "definition" : "means 40 degrees Celsius or above."
+    }, {
+      "term" : "acute cholinergic poisoning",
+      "definition" : "means symptoms and signs due to the inhibition\r\nof acetylcholinesterase enzyme activity which occur within the 24 hours\r\nfollowing exposure. These symptoms and signs are: acute paralysis,\r\noverwhelming bronchial secretions, bradycardia, gastrointestinal distress,\r\nmiosis, lacrimation or diarrhoea."
+    }, {
+      "term" : "acute, severe, emotional stressor",
+      "definition" : "means an event which causes a sudden,\r\nintense emotional or psychological response, such as an emergency incident\r\nor an emotionally charged situation.\r\nalcohol is measured by the alcohol consumption calculations utilising the\r\nAustralian Standard of ten grams of alcohol per standard alcoholic drink."
+    }, {
+      "term" : "heatwave",
+      "definition" : "means three or more days of unusually high maximum and\r\nminimum temperatures."
+    }, {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    }, {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    }, {
+      "term" : "cold snap",
+      "definition" : "means three or more days of unusually low maximum and\r\nminimum temperatures."
+    }, {
+      "term" : "Specified List 2 of drugs",
+      "definition" : "means:\r\n(a) amphetamines as specified;\r\n(b) cocaine;\r\n(c) D-lysergic acid diethylamide (LSD); or\r\n(d) marijuana.\r\nNote: amphetamines as specified is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "extreme cold",
+      "definition" : "means zero degrees Celsius or below."
+    }, {
+      "term" : "ambient highly polluted air as specified",
+      "definition" : "means air with 24 hour average\r\nconcentrations of:\r\n(a) particulate matter with an aerodynamic diameter of < 2.5 µm (PM2.5)\r\n3\r\nexceeding 25 µg/m ; or\r\n(b) particulate matter with an aerodynamic diameter of < 10 µm (PM10)\r\n3\r\nexceeding 50 µg/m ."
+    }, {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    }, {
+      "term" : "organophosphorus ester",
+      "definition" : "means an agent used to inhibit acetylcholinesterase,"
+    } ],
+    "conditionVariant" : {
+      "name" : "angina, acute myocardial infarction or sudden death from ischaemic heart disease",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "undertaking physical activity of five METs or more within the\r\n24 hours before the clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "experiencing a category 1A stressor within the 48 hours before\r\nthe clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "experiencing a category 1B stressor within the 48 hours before\r\nthe clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "experiencing an acute, severe, emotional stressor within the 24\r\nhours before the clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "experiencing the death of a significant other within the 12\r\nmonths before the clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "using a drug from Specified List 2 of drugs within the 24 hours\r\nbefore the clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the seven days before the\r\nclinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "being exposed to:\r\n(i) an environment of extreme heat during a heatwave; or\r\n(ii) an environment of extreme cold during a cold snap; or\r\n(iii) an abrupt alteration of temperature by ten degrees Celsius\r\nor more, to extreme heat or to extreme cold;\r\nfor a period of at least six hours within the seven days before\r\nthe clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "inhaling ambient highly polluted air as specified for at least two\r\nhours within the seven days before the clinical onset of\r\nischaemic heart disease"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "being envenomated by a snake, scorpion, wasp, bee, hornet,\r\nspider, fish or jellyfish within the 24 hours before the clinical\r\nonset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(k)",
+        "text" : "having an acute hypersensitivity reaction involving the coronary\r\narteries as a result of being exposed to a drug, food or\r\nenvironmental agent from the specified list within the 24 hours\r\nbefore the clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(l)",
+        "text" : "having influenza or a lower respiratory tract infection within the\r\n30 days before the clinical onset of ischaemic heart disease"
+      }, {
+        "paragraph" : "(m)",
+        "text" : "being pregnant within the six weeks before the clinical onset of\r\nischaemic heart disease"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(44)",
+    "text" : "having hypertension before the clinical worsening of ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(45)",
+    "text" : "having diabetes mellitus before the clinical worsening of ischaemic\r\nheart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(46)",
+    "text" : "being obese for at least five years before the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means:\r\n(a) having a Body Mass Index (BMI) of 30 or greater; or\r\n(b) for males, having a waist circumference exceeding 102 centimetres; or\r\n(c) for females, having a waist circumference exceeding 88 centimetres.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(47)",
+    "text" : "having dyslipidaemia before the clinical worsening of ischaemic heart\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "dyslipidaemia",
+      "definition" : "means persistently abnormal blood lipid levels, diagnosed by a\r\nmedical practitioner and evidenced by:\r\n(a) a total serum cholesterol level greater than 5.5 mmol/L; or\r\n(b) a serum low density lipoprotein level greater than 4.0 mmol/L; or\r\n(c) a serum high density lipoprotein cholesterol level less than 1.0\r\nmmol/L; or\r\n(d) the regular administration of drug therapy to normalise blood lipid\r\nlevels."
+    } ]
+  }, {
+    "paragraph" : "9(48)",
+    "text" : "where smoking has not ceased prior to the clinical worsening of\r\nischaemic heart disease:\r\n(a) smoking an average of at least three cigarettes per day, or the\r\nequivalent thereof in other tobacco products, for at least the one\r\nyear before the clinical worsening of ischaemic heart disease; or\r\n(b) smoking at least one half pack-year of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(49)",
+    "text" : "where smoking has ceased prior to the clinical worsening of ischaemic\r\nheart disease:\r\n(a) smoking at least one half pack-year but less than five pack-years\r\nof cigarettes, or the equivalent thereof in other tobacco products,\r\nbefore the clinical worsening of ischaemic heart disease, and the\r\nclinical worsening of ischaemic heart disease has occurred\r\nwithin five years of smoking cessation;\r\n(b) smoking at least five pack-years but less than 20 pack-years of\r\ncigarettes, or the equivalent thereof in other tobacco products,\r\nbefore the clinical worsening of ischaemic heart disease, and the\r\nclinical worsening of ischaemic heart disease has occurred\r\nwithin 20 years of smoking cessation; or\r\n(c) smoking at least 20 pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening\r\nof ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(50)",
+    "text" : "where exposure to second-hand smoke has not ceased, being exposed\r\nto second-hand smoke for at least 1 000 hours before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(51)",
+    "text" : "where exposure to second-hand smoke has ceased:\r\n(a) being exposed to second-hand smoke for at least 1 000 hours but\r\nless than 5 000 hours before the clinical worsening of ischaemic\r\nheart disease, and the clinical worsening of ischaemic heart\r\ndisease has occurred within five years of the last exposure to\r\nsecond-hand smoke; or\r\n(b) being exposed to second-hand smoke for at least 5 000 hours\r\nbefore the clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    }, {
+      "term" : "being exposed to second-hand smoke",
+      "definition" : "means being in an enclosed space and\r\ninhaling smoke from burning tobacco products or smoke that has been\r\nexhaled by a person who is smoking."
+    } ]
+  }, {
+    "paragraph" : "9(52)",
+    "text" : "where the use of chewing tobacco has not ceased, using chewing\r\ntobacco on more days than not for at least one year before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(53)",
+    "text" : "where the use of chewing tobacco has ceased:\r\n(a) using chewing tobacco on more days than not for at least one\r\nyear but less than five years before the clinical worsening of\r\nischaemic heart disease, and the clinical worsening of ischaemic\r\nheart disease has occurred within five years of ceasing to use\r\nchewing tobacco; or\r\n(b) using chewing tobacco on more days than not for at least five\r\nyears, before the clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(54)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of ischaemic\r\nheart disease",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(55)",
+    "text" : "being sedentary for a cumulative total of at least ten hours per day on\r\nmore days than not for at least the five years before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "being sedentary",
+      "definition" : "means waking behaviour characterised by an average energy\r\nexpenditure of 1.5 METs or less while in a sitting or reclining posture."
+    } ]
+  }, {
+    "paragraph" : "9(56)",
+    "text" : "having hyperhomocysteinaemia before the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(57)",
+    "text" : "having chronic kidney disease before the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "chronic kidney disease",
+      "definition" : "means having a glomerular filtration rate of less than\r\n2\r\n60 mL/min/1.73 m for a period of at least three months, or the presence of\r\nirreversible kidney damage.\r\ncigarettes per day, or the equivalent thereof in other tobacco products\r\nmeans either cigarettes, pipe tobacco or cigars, alone or in any combination,\r\nwhere one tailor-made cigarette approximates one gram of tobacco; or one\r\ngram of cigar, pipe or other smoking tobacco."
+    } ]
+  }, {
+    "paragraph" : "9(58)",
+    "text" : "having hypothyroidism or Hashimoto's thyroiditis with\r\nhypothyroidism for at least two years within the ten years before the\r\nclinical worsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(59)",
+    "text" : "inhaling or having cutaneous contact with Otto fuel or explosive\r\nproducts containing nitroglycerine, nitroglycol, trinitrotoluene or\r\ndinitrotoluene, where the last inhalation or cutaneous contact occurred\r\nnot more than 14 days before the clinical worsening of ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(60)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the heart at least one year before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1:Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\r\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\r\nleading to increased levels of exposure to cosmic radiation.\r\nNote 2:For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(61)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nheart was in the field of radiation, before the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(62)",
+    "text" : "having a clinically significant disorder of mental health as specified for\r\nat least the five years before the clinical worsening of ischaemic heart\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) agoraphobia;\r\n(b) anxiety disorder;\r\n(c) depressive disorder;\r\n(d) panic disorder;\r\n(e) posttraumatic stress disorder;\r\n(f) schizophrenia; or\r\n(g) social anxiety disorder."
+    } ]
+  }, {
+    "paragraph" : "9(63)",
+    "text" : "using a combined oral contraceptive pill for at least the 21 days before\r\nthe clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(64)",
+    "text" : "being treated with a drug, or a drug from a class of drugs, from\r\nSpecified List 1 of drugs, where that drug cannot be ceased or\r\nsubstituted, at the time of the clinical worsening of ischaemic heart\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "Specified List 1 of drugs",
+      "definition" : "means:\r\n(a) antipsychotics;\r\n(b) aromatase inhibitors;\r\n(c) bevacizumab;\r\n(d) capecitabine;\r\n(e) dextroamphetamine;\r\n(f) docetaxel;\r\n(g) ephedrine;\r\n(h) ergotamine;\r\n(i) erlotinib;\r\n(j) fluorouracil;\r\n(k) macrolide antibiotics;\r\n(l) methylphenidate;\r\n(m) paclitaxel;\r\n(n) phentermine;\r\n(o) pseudoephedrine;\r\n(p) sorafenib; or\r\n(q) triptans, including sumatriptan."
+    } ]
+  }, {
+    "paragraph" : "9(65)",
+    "text" : "using a drug belonging to the non-steroidal anti-inflammatory class of\r\ndrugs, excluding aspirin, paracetamol and topical non-steroidal anti-\r\ninflammatory drugs, for a continuous period of at least three days\r\nbefore the clinical worsening of ischaemic heart disease, where the last\r\ndose of the drug within that period was taken within the seven days\r\nbefore the clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(66)",
+    "text" : "having bilateral orchiectomy before the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(67)",
+    "text" : "having antiandrogen therapy as specified for at least the seven days\r\nbefore the clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    }, {
+      "term" : "antiandrogen therapy as specified",
+      "definition" : "means one of the following drugs:\r\n(a) androgen receptor blockers (including cyproterone acetate, flutamide\r\nand bicalutamide); or\r\n(b) gonadotrophin releasing hormone agonists (including goserelin and\r\nleuprorelin)."
+    } ]
+  }, {
+    "paragraph" : "9(68)",
+    "text" : "inhaling, ingesting or having cutaneous contact with the phenoxy acid\r\nherbicides 2,4-dichlorophenoxyacetic acid (2,4-D) or 2,4,5-\r\ntrichlorophenoxyacetic acid (2,4,5-T), for a cumulative period of at\r\nleast 1 000 hours within a consecutive period of ten years, before the\r\nclinical worsening of ischaemic heart disease, where the first exposure\r\noccurred at least five years before the clinical worsening of ischaemic\r\nheart disease, and where that exposure has ceased, the clinical\r\nworsening of ischaemic heart disease occurred within 25 years after\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(69)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD), for a\r\ncumulative period of at least 1 000 hours within a consecutive period\r\nof ten years, before the clinical worsening of ischaemic heart disease,\r\nwhere the first exposure occurred at least five years before the clinical\r\nworsening of ischaemic heart disease, and where that exposure has\r\nceased, the clinical worsening of ischaemic heart disease occurred\r\nwithin 25 years after cessation",
+    "definedTerms" : [ {
+      "term" : "and",
+      "definition" : "includes the organophosphate pesticides chlorpyrifos, dichlorvos, EPN\r\n(ethyl p-nitrophenyl theonobenzenephosphonate), leptophos,\r\nmethamidophos, mipafox (diisopropyl phosphorofluoridate), omethoate,\r\nparathion, TOCP (tri-ortho-cresyl phosphate), trichlorfon  trichlornat.\r\npack-year of cigarettes, or the equivalent thereof in other tobacco products\r\nmeans a calculation of consumption where one pack-year of cigarettes equals\r\n20 tailor-made cigarettes per day for a period of one calendar year, or 7 300\r\ncigarettes. One tailor-made cigarette approximates one gram of tobacco or\r\none gram of cigar or pipe tobacco by weight. One pack-year of tailor-made\r\ncigarettes equates to 7.3 kilograms of smoking tobacco by weight. Tobacco\r\nproducts mean cigarettes, pipe tobacco or cigars, smoked alone or in any\r\ncombination."
+    } ]
+  }, {
+    "paragraph" : "9(70)",
+    "text" : "having thrombosis of a coronary artery as a result of being in a\r\nhypercoagulable state as specified at the time of the clinical worsening\r\nof ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "hypercoagulable state as specified",
+      "definition" : "means any one of the following:\r\n(a) acquired activated protein C resistance;\r\n(b) acquired antithrombin III deficiency;\r\n(c) acquired dysfibrinogenaemia;\r\n(d) acquired protein C deficiency;\r\n(e) acquired protein S deficiency;\r\n(f) antiphospholipid syndrome;\r\n(g) aplastic anaemia;\r\n(h) disseminated intravascular coagulation;\r\n(i) essential thrombocythaemia;\r\n(j) haemolytic uraemic syndrome;\r\n(k) heparin-induced thrombocytopaenia;\r\n(l) hyperfibrinogenaemia;\r\n(m) hyperproteinaemia;\r\n(n) hyperviscosity syndrome;\r\n(o) immune thrombocytopaenic purpura;\r\n(p) myeloma;\r\n(q) myeloproliferative disease;\r\n(r) nephrotic syndrome;\r\n(s) paroxysmal nocturnal haemoglobinuria;\r\n(t) polycythaemia vera;\r\n(u) secondary thrombocytosis; or\r\n(v) sickle cell disorder."
+    } ]
+  }, {
+    "paragraph" : "9(71)",
+    "text" : "inhaling ambient chronically polluted air as specified for at least 1 000\r\nhours within the five years before the clinical worsening of ischaemic\r\nheart disease",
+    "definedTerms" : [ {
+      "term" : "ambient chronically polluted air as specified",
+      "definition" : "means air with average annual\r\nconcentrations of particulate matter with an aerodynamic diameter of < 2.5\r\n3\r\nµm (PM2.5) exceeding 8 µg/m ."
+    } ]
+  }, {
+    "paragraph" : "9(72)",
+    "text" : "an inability to consume an average of at least 100 grams per day of\r\nvegetables or fruits, for at least the five years before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(73)",
+    "text" : "an inability to consume an average of at least 100 grams of fish per\r\nfortnight for at least the five years before the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(74)",
+    "text" : "consuming an average daily intake of at least 12 grams (200\r\nmillimoles) of salt for at least the five years before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(75)",
+    "text" : "having periodic, heavy alcohol consumption for the one year before\r\nthe clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "periodic, heavy alcohol consumption",
+      "definition" : "means sessions of heavy alcohol\r\ndrinking to the point of alcohol intoxication at least once a month.\r\nNote: alcohol intoxication is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(76)",
+    "text" : "having obstructive sleep apnoea for at least the one year before the\r\nclinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "obstructive sleep apnoea",
+      "definition" : "means a type of sleep apnoea characterised on sleep\r\nstudy by repetitive apnoea or hypopnoea in the presence of respiratory effort\r\nduring sleep, where there are at least five apnoea or hypopnoea episodes per\r\nhour of sleep."
+    } ]
+  }, {
+    "paragraph" : "9(77)",
+    "text" : "an inability to sleep for an average of at least five hours daily for at\r\nleast the one year before the clinical worsening of ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(78)",
+    "text" : "undertaking night shift work on at least 250 occasions over a\r\ncontinuous period, for at least the five years before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "night shift work",
+      "definition" : "means working for at least three hours between 12 AM and\r\n5 AM."
+    } ]
+  }, {
+    "paragraph" : "9(79)",
+    "text" : "working long hours over a continuous period for at least the five years\r\nbefore the clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "long hours",
+      "definition" : "means an average of at least 50 hours per week, or an average of\r\nat least ten hours per day."
+    } ]
+  }, {
+    "paragraph" : "9(80)",
+    "text" : "being infected with human immunodeficiency virus for at least five\r\nyears before the clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(81)",
+    "text" : "having periodontitis for at least the five years before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(82)",
+    "text" : "having infective endocarditis or syphilis involving the coronary\r\narteries at the time of the clinical worsening of ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(83)",
+    "text" : "undergoing a procedure involving catheterisation of the affected\r\ncoronary artery within the five years before the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(84)",
+    "text" : "having a specified autoimmune collagen vascular disease at the time of\r\nthe clinical worsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "specified autoimmune collagen vascular disease",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) Behcet's syndrome;\r\n(c) dermatomyositis;\r\n(d) eosinophilic granulomatosis with polyangiitis (Churg-Strauss\r\nsyndrome);\r\n(e) giant cell (temporal) arteritis;\r\n(f) Henoch-Schönlein purpura;\r\n(g) microscopic polyangiitis;\r\n(h) mucocutaneous lymph node syndrome (Kawasaki's disease);\r\n(i) non-specific autoimmune vasculitis;\r\n(j) polyarteritis nodosa;\r\n(k) polymyositis;\r\n(l) rheumatoid arthritis;\r\n(m) Sjögren's syndrome;\r\n(n) systemic lupus erythematosus;\r\n(o) systemic sclerosis;\r\n(p) Takayasu's arteritis;\r\n(q) thromboangiitis obliterans (Buerger's disease); or\r\n(r) Wegener's granulomatosis."
+    } ]
+  }, {
+    "paragraph" : "9(85)",
+    "text" : "having gout or hyperuricaemia at the time of the clinical worsening of\r\nischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "hyperuricaemia",
+      "definition" : "means having a serum urate level persistently greater than\r\n0.40 mmol/L.\r\ninhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD) means:\r\n(a) decanting or spraying;\r\n(b) cleaning or maintaining equipment used to apply;\r\n(c) being sprayed with;\r\n(d) handling or sawing timber treated with;\r\n(e) being in an environment shrouded in dust from timber treated with; or\r\n(f) using cutting oils contaminated with:\r\none of the following chemicals:\r\n(i) 2,4,5-trichlorophenoxyacetic acid;\r\n(ii) 2,4,5-trichlorophenoxypropionic acid;\r\n(iii) 2,4,5-trichlorophenol;\r\n(iv) 2-(2,4,5-trichlorophenoxy)-ethyl 2,2-dichloropropionate;\r\n(v) o,o-dimethyl-o-(2,4,5-trichlorophenyl)-phosphorothioate;\r\n(vi) pentachlorophenol;\r\n(vii) 2,3,4,6-tetrachlorophenol;\r\n(viii) 2,4,6-trichlorophenol;\r\n(ix) 1,3,4-trichloro-2-(4-nitrophenoxy)benzene;\r\n(x) 2,4-dichloro-1-(4-nitrophenoxy)benzene; or\r\n(xi) 2,4-dichloro-1-(3-methoxy-4-nitrophenoxy)-benzene.\r\nischaemic heart disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(86)",
+    "text" : "for acute myocardial infarction or sudden death from ischaemic heart\r\ndisease only:\r\n(a) undertaking physical activity of five METs or more within the\r\n24 hours before the clinical worsening of ischaemic heart\r\ndisease;\r\n(b) experiencing a category 1A stressor within the 48 hours before\r\nthe clinical worsening of ischaemic heart disease;\r\n(c) experiencing a category 1B stressor within the 48 hours before\r\nthe clinical worsening of ischaemic heart disease;\r\n(d) experiencing an acute, severe, emotional stressor within the 24\r\nhours before the clinical worsening of ischaemic heart disease;\r\n(e) experiencing the death of a significant other within the 12\r\nmonths before the clinical worsening of ischaemic heart disease;\r\n(f) using a drug from Specified List 2 of drugs within the 24 hours\r\nbefore the clinical worsening of ischaemic heart disease;\r\n(g) having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the seven days before the\r\nclinical worsening of ischaemic heart disease;\r\n(h) being exposed to:\r\n(i) an environment of extreme heat during a heatwave; or\r\n(ii) an environment of extreme cold during a cold snap; or\r\n(iii) an abrupt alteration of temperature by ten degrees Celsius\r\nor more, to extreme heat or to extreme cold;\r\nfor a period of at least six hours within the seven days before\r\nthe clinical worsening of ischaemic heart disease;\r\n(i) inhaling ambient highly polluted air as specified for at least two\r\nhours within the seven days before the clinical worsening of\r\nischaemic heart disease;\r\n(j) being envenomated by a snake, scorpion, wasp, bee, hornet,\r\nspider, fish or jellyfish within the 24 hours before the clinical\r\nworsening of ischaemic heart disease;\r\n(k) having an acute hypersensitivity reaction involving the coronary\r\narteries as a result of being exposed to a drug, food or\r\nenvironmental agent from the specified list within the 24 hours\r\nbefore the clinical worsening of ischaemic heart disease;\r\n(l) having influenza or a lower respiratory tract infection within the\r\n30 days before the clinical worsening of ischaemic heart disease;\r\nor\r\n(m) being pregnant within the six weeks before the clinical\r\nworsening of ischaemic heart disease",
+    "definedTerms" : [ {
+      "term" : "extreme heat",
+      "definition" : "means 40 degrees Celsius or above."
+    }, {
+      "term" : "acute cholinergic poisoning",
+      "definition" : "means symptoms and signs due to the inhibition\r\nof acetylcholinesterase enzyme activity which occur within the 24 hours\r\nfollowing exposure. These symptoms and signs are: acute paralysis,\r\noverwhelming bronchial secretions, bradycardia, gastrointestinal distress,\r\nmiosis, lacrimation or diarrhoea."
+    }, {
+      "term" : "acute, severe, emotional stressor",
+      "definition" : "means an event which causes a sudden,\r\nintense emotional or psychological response, such as an emergency incident\r\nor an emotionally charged situation.\r\nalcohol is measured by the alcohol consumption calculations utilising the\r\nAustralian Standard of ten grams of alcohol per standard alcoholic drink."
+    }, {
+      "term" : "heatwave",
+      "definition" : "means three or more days of unusually high maximum and\r\nminimum temperatures."
+    }, {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    }, {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    }, {
+      "term" : "cold snap",
+      "definition" : "means three or more days of unusually low maximum and\r\nminimum temperatures."
+    }, {
+      "term" : "Specified List 2 of drugs",
+      "definition" : "means:\r\n(a) amphetamines as specified;\r\n(b) cocaine;\r\n(c) D-lysergic acid diethylamide (LSD); or\r\n(d) marijuana.\r\nNote: amphetamines as specified is also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "extreme cold",
+      "definition" : "means zero degrees Celsius or below."
+    }, {
+      "term" : "ambient highly polluted air as specified",
+      "definition" : "means air with 24 hour average\r\nconcentrations of:\r\n(a) particulate matter with an aerodynamic diameter of < 2.5 µm (PM2.5)\r\n3\r\nexceeding 25 µg/m ; or\r\n(b) particulate matter with an aerodynamic diameter of < 10 µm (PM10)\r\n3\r\nexceeding 50 µg/m ."
+    }, {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    }, {
+      "term" : "organophosphorus ester",
+      "definition" : "means an agent used to inhibit acetylcholinesterase,"
+    } ],
+    "conditionVariant" : {
+      "name" : "acute myocardial infarction or sudden death from ischaemic heart disease",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "undertaking physical activity of five METs or more within the\r\n24 hours before the clinical worsening of ischaemic heart\r\ndisease"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "experiencing a category 1A stressor within the 48 hours before\r\nthe clinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "experiencing a category 1B stressor within the 48 hours before\r\nthe clinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "experiencing an acute, severe, emotional stressor within the 24\r\nhours before the clinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "experiencing the death of a significant other within the 12\r\nmonths before the clinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "using a drug from Specified List 2 of drugs within the 24 hours\r\nbefore the clinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "having an episode of acute cholinergic poisoning from exposure\r\nto an organophosphorus ester within the seven days before the\r\nclinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "being exposed to:\r\n(i) an environment of extreme heat during a heatwave; or\r\n(ii) an environment of extreme cold during a cold snap; or\r\n(iii) an abrupt alteration of temperature by ten degrees Celsius\r\nor more, to extreme heat or to extreme cold;\r\nfor a period of at least six hours within the seven days before\r\nthe clinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "inhaling ambient highly polluted air as specified for at least two\r\nhours within the seven days before the clinical worsening of\r\nischaemic heart disease"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "being envenomated by a snake, scorpion, wasp, bee, hornet,\r\nspider, fish or jellyfish within the 24 hours before the clinical\r\nworsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(k)",
+        "text" : "having an acute hypersensitivity reaction involving the coronary\r\narteries as a result of being exposed to a drug, food or\r\nenvironmental agent from the specified list within the 24 hours\r\nbefore the clinical worsening of ischaemic heart disease"
+      }, {
+        "paragraph" : "(l)",
+        "text" : "having influenza or a lower respiratory tract infection within the\r\n30 days before the clinical worsening of ischaemic heart disease;\r\nor"
+      }, {
+        "paragraph" : "(m)",
+        "text" : "being pregnant within the six weeks before the clinical\r\nworsening of ischaemic heart disease"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(87)",
+    "text" : "inability to obtain appropriate clinical management for ischaemic heart\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

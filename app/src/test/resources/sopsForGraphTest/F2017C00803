@@ -1,0 +1,84 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00803",
+  "instrumentNumber" : "69/2012",
+  "citation" : "Statement of Principles concerning myeloma No. 69 of 2012",
+  "conditionName" : "myeloma",
+  "effectiveFrom" : "2012-10-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C90"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the bone marrow at least five years before the\r\nclinical onset of myeloma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "working as a painter for a cumulative period of at least 5000 hours\r\nbefore the clinical onset of myeloma, where the first exposure occurred\r\nat least ten years before the clinical onset of myeloma, and where\r\nexposure has ceased, the clinical onset of myeloma occurred within 30\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "working as a painter",
+      "definition" : "means applying paints, including solvent- or water-\nbased conventional paints, spray paints, varnishes, enamels, lacquers, water-\nemulsion and solution finishes, nonaqueous dispersions or organosols,\nplastisols, and powder coatings, during the course of activities such as\nbuilding, maintenance and construction, interior and exterior decoration,\nartistic painting, and wood and metal painting. This definition includes mixed\nactivities in which application of paints occurs with other tasks such as\nwallpapering and plastering. This definition includes activities that are\npreparatory to painting, such as mixing paints, maintaining painting\nequipment, and background preparation of surfaces for application of paint"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a phenoxy acid\r\nherbicide from the specified list, for a cumulative period of at least\r\n1000 hours, within a consecutive period of ten years before the clinical\r\nonset of myeloma, where the first exposure occurred at least five years\r\nbefore the clinical onset of myeloma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD), for a\r\ncumulative period of at least 1000 hours, within a consecutive period\r\nof ten years before the clinical onset of myeloma, where the first\r\nexposure occurred at least five years before the clinical onset of\r\nmyeloma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(da)",
+    "text" : "having exposure to 2,3,7,8 tetrachlorodibenzo-para-dioxin (TCDD)\r\nsufficient to produce an expected initial serum TCDD level of at least\r\n1 500 parts per trillion before the clinical onset of myeloma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being:\r\n(i) on land in Vietnam; or\r\n(ii) at sea in Vietnamese waters; or\r\n(iii) on board a vessel and consuming potable water supplied on that\r\nvessel, when the water supply had been produced by\r\nevaporative distillation of estuarine Vietnamese waters;\r\nfor a cumulative period of at least 30 days, at least five years before the\r\nclinical onset of myeloma",
+    "definedTerms" : [ {
+      "term" : "potable water",
+      "definition" : "means water used for drinking water, food preparation and\nbeverage production"
+    }, {
+      "term" : "estuarine Vietnamese waters",
+      "definition" : "means at least one of the waterways or\nharbours in the relevant areas described in Items 4 and 8 of Schedule 2 of the\nVeterans' Entitlements Act 1986"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of myeloma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having received a solid organ transplant before the clinical onset of\r\nmyeloma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being exposed to benzene as specified:\r\n(i) for a cumulative total of at least 2 500 hours within a\r\ncontinuous period of five years before the clinical onset of\r\nmyeloma; and\r\n(ii) where the first exposure in that period occurred at least five\r\nyears before the clinical onset of myeloma",
+    "definedTerms" : [ {
+      "term" : "being exposed to benzene as specified",
+      "definition" : "means:\n(a) having cutaneous contact with liquids containing benzene greater than\n1% by volume; or\n(b) ingesting liquids containing benzene greater than 1% by volume; or\n(c) inhaling benzene vapour where such exposure occurs at an ambient\n8-hour time-weighted average benzene concentration exceeding five\nparts per million"
+    } ]
+  }, {
+    "paragraph" : "6(ha)",
+    "text" : "receiving greater than ten ppm-years of cumulative exposure to\r\nbenzene before the clinical onset of myeloma, and where the first\r\nexposure occurred at least five years before the clinical onset of\r\nmyeloma",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being obese for a continuous period of at least five years within the ten\r\nyears before the clinical onset of myeloma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for myeloma",
+    "definedTerms" : [ ]
+  } ]
+}

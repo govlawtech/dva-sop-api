@@ -1,0 +1,98 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01676",
+  "instrumentNumber" : "123/2015",
+  "citation" : "Statement of Principles concerning dental caries (Balance of Probabilities) (No. 123 of 2015)",
+  "conditionName" : "dental caries",
+  "effectiveFrom" : "2015-11-16",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K02.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K02.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K02.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K02.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K02.5"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K02.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K02.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to fermentable dietary carbohydrates as specified for a\r\ncontinuous period of at least three months, within the two years before\r\nthe clinical onset of dental caries",
+    "definedTerms" : [ {
+      "term" : "fermentable dietary carbohydrates",
+      "definition" : "means sugars or heat-processed starch\r\nwhich can be converted by oral bacteria to acids."
+    }, {
+      "term" : "being exposed to fermentable dietary carbohydrates as specified",
+      "definition" : "means\r\nexposure of the teeth to fermentable dietary carbohydrates, either\r\ncontinuously over a period of at least six hours per day, or on at least ten\r\nseparate occasions per day with more than 30 minutes between exposures.\r\nNote: fermentable dietary carbohydrates is also defined in the Schedule 1 - Dictionary.\r\ndental caries—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "smoking at least six pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of dental caries,\r\nand where smoking has ceased, the clinical onset of dental caries has\r\noccurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain exposure to fluoride on more days than not for a\r\ncontinuous period of at least one year, within the five years before the\r\nclinical onset of dental caries",
+    "definedTerms" : [ {
+      "term" : "exposure to fluoride",
+      "definition" : "means application of fluoride to the teeth in one of the\r\nfollowing forms:\r\n(a) fluoridated drinking water in locations with low naturally-occurring\r\nfluoride concentration in the water supply;\r\n(b) fluoridated toothpaste with a fluoride concentration of at least 1 000\r\nparts per million; or\r\n(c) liquid, tablet or lozenge formulation."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "inability to perform effective personal dental hygiene for a continuous\r\nperiod of at least three months, within the two years before the clinical\r\nonset of dental caries",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to access preventive professional dental care, including\r\nregular cleaning and application of fluoride, at least every 15 months,\r\nwithin the five years before the clinical onset of dental caries",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having hyposalivation as a result of a course of therapeutic radiation to\r\nthe head or neck, for at least the four weeks before the clinical onset of\r\ndental caries",
+    "definedTerms" : [ {
+      "term" : "hyposalivation",
+      "definition" : "means an abnormally reduced salivary flow, to a resting\r\nwhole saliva flow rate of 0.1 ml/minute or less, or to a stimulated whole\r\nsaliva flow rate of 0.5 ml/minute or less."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having xerostomia for a continuous period of at least three months,\r\nwithin the two years before the clinical onset of dental caries",
+    "definedTerms" : [ {
+      "term" : "xerostomia",
+      "definition" : "means dry mouth resulting from severely reduced saliva flow and\r\nwhich results from various medical conditions, including Sjogren's\r\nsyndrome, or a wide variety of drugs, including anticholinergics, tricyclic\r\nantidepressants and amphetamines."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having an acquired enamel defect of the affected tooth for at least the\r\nthree months before the clinical onset of dental caries",
+    "definedTerms" : [ {
+      "term" : "acquired enamel defect",
+      "definition" : "means abnormal loss of tooth substance due to\r\ntrauma, abrasion or erosion."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for root surface caries only, having gingival recession of the affected\r\ntooth for at least the three months before the clinical onset of dental\r\ncaries",
+    "definedTerms" : [ {
+      "term" : "gingival recession",
+      "definition" : "means the loss of gum tissue from the base of a tooth with\r\nexposure of the root surface."
+    } ],
+    "conditionVariant" : {
+      "name" : "root surface caries",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(10)",
+    "text" : "inability to obtain appropriate clinical management for dental caries",
+    "definedTerms" : [ ]
+  } ]
+}

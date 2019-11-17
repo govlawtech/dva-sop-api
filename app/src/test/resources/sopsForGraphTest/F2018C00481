@@ -1,0 +1,191 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00481",
+  "instrumentNumber" : "64/2014",
+  "citation" : "Statement of Principles concerning thoracic spondylosis No. 64 of 2014",
+  "conditionName" : "thoracic spondylosis",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M47.14"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.15"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.24"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.25"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.84"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.85"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.94"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.95"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M51.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being a prisoner of war before the clinical onset of thoracic\r\nspondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having inflammatory joint disease in the thoracic spine before the\r\nclinical onset of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "inflammatory joint disease",
+      "definition" : "means rheumatoid arthritis, reactive arthritis,\npsoriatic arthropathy, ankylosing spondylitis, or arthritis associated with\nCrohn's disease or ulcerative colitis"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having an infection of the affected joint as specified at least one year\r\nbefore the clinical onset of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "an infection of the affected joint as specified",
+      "definition" : "means bacterial or fungal\ninfection of the affected joint in the thoracic spine resulting in inflammation\nwithin that joint"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an intra-articular fracture of the thoracic spine at least one year\r\nbefore the clinical onset of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "an intra-articular fracture",
+      "definition" : "means a fracture involving any articular\nsurface of the affected joint"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a specified spinal condition affecting the thoracic spine for at\r\nleast the one year before the clinical onset of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "a specified spinal condition",
+      "definition" : "means:\n(a) a deformity of a joint of a vertebra;\n(b) a deformity of a vertebra;\n(c) necrosis of bone;\n(d) retrospondylolisthesis;\n(e) scoliosis; or\n(f) spondylolisthesis"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a depositional joint disease in the thoracic spine before the\r\nclinical onset of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "a depositional joint disease",
+      "definition" : "means gout, calcium pyrophosphate dihydrate\ndeposition disease (also known as pseudogout), haemochromatosis, Wilson's\ndisease or alkaptonuria (also known as ochronosis)"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having trauma to the thoracic spine at least one year before the clinical\r\nonset of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "trauma to the thoracic spine",
+      "definition" : "means a discrete event involving the\napplication of significant physical force, including G force, to the thoracic\nspine that causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the thoracic spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the thoracic spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the thoracic spine;\nor\n(c) surgery to the thoracic spine"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a thoracic intervertebral disc prolapse before the clinical onset\r\nof thoracic spondylosis at the level of the intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "lifting loads of at least 20 kilograms while bearing weight through the\r\nthoracic spine to a cumulative total of at least 100 000 kilograms\r\nwithin any ten year period before the clinical onset of thoracic\r\nspondylosis",
+    "definedTerms" : [ {
+      "term" : "lifting loads",
+      "definition" : "means manually raising an object"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "carrying loads of at least 20 kilograms while bearing weight through\r\nthe thoracic spine to a cumulative total of at least 3 800 hours within\r\nany ten year period before the clinical onset of thoracic spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being obese for at least ten years before the clinical onset of thoracic\r\nspondylosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having acromegaly involving the thoracic spine before the clinical\r\nonset of thoracic spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having Paget's disease of bone involving the thoracic spine before the\r\nclinical onset of thoracic spondylosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "having inflammatory joint disease in the thoracic spine before the\r\nclinical worsening of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "inflammatory joint disease",
+      "definition" : "means rheumatoid arthritis, reactive arthritis,\npsoriatic arthropathy, ankylosing spondylitis, or arthritis associated with\nCrohn's disease or ulcerative colitis"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having an infection of the affected joint as specified at least one year\r\nbefore the clinical worsening of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "an infection of the affected joint as specified",
+      "definition" : "means bacterial or fungal\ninfection of the affected joint in the thoracic spine resulting in inflammation\nwithin that joint"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having an intra-articular fracture of the thoracic spine at least one year\r\nbefore the clinical worsening of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "an intra-articular fracture",
+      "definition" : "means a fracture involving any articular\nsurface of the affected joint"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a specified spinal condition affecting the thoracic spine for at\r\nleast the one year before the clinical worsening of thoracic\r\nspondylosis",
+    "definedTerms" : [ {
+      "term" : "a specified spinal condition",
+      "definition" : "means:\n(a) a deformity of a joint of a vertebra;\n(b) a deformity of a vertebra;\n(c) necrosis of bone;\n(d) retrospondylolisthesis;\n(e) scoliosis; or\n(f) spondylolisthesis"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having a depositional joint disease in the thoracic spine before the\r\nclinical worsening of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "a depositional joint disease",
+      "definition" : "means gout, calcium pyrophosphate dihydrate\ndeposition disease (also known as pseudogout), haemochromatosis, Wilson's\ndisease or alkaptonuria (also known as ochronosis)"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having trauma to the thoracic spine at least one year before the clinical\r\nworsening of thoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "trauma to the thoracic spine",
+      "definition" : "means a discrete event involving the\napplication of significant physical force, including G force, to the thoracic\nspine that causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the thoracic spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the thoracic spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the thoracic spine;\nor\n(c) surgery to the thoracic spine"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a thoracic intervertebral disc prolapse before the clinical\r\nworsening of thoracic spondylosis at the level of the intervertebral disc\r\nprolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "lifting loads of at least 20 kilograms while bearing weight through the\r\nthoracic spine to a cumulative total of at least 100 000 kilograms\r\nwithin any ten year period before the clinical worsening of thoracic\r\nspondylosis",
+    "definedTerms" : [ {
+      "term" : "lifting loads",
+      "definition" : "means manually raising an object"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "carrying loads of at least 20 kilograms while bearing weight through\r\nthe thoracic spine to a cumulative total of at least 3 800 hours within\r\nany ten year period before the clinical worsening of thoracic\r\nspondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being obese for at least ten years before the clinical worsening of\r\nthoracic spondylosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having acromegaly involving the thoracic spine before the clinical\r\nworsening of thoracic spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having Paget's disease of bone involving the thoracic spine before the\r\nclinical worsening of thoracic spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "inability to obtain appropriate clinical management for thoracic\r\nspondylosis",
+    "definedTerms" : [ ]
+  } ]
+}

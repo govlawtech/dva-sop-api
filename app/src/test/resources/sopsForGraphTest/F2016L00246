@@ -1,0 +1,213 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00246",
+  "instrumentNumber" : "10/2016",
+  "citation" : "Statement of Principles concerning myopia, hypermetropia and astigmatism (Balance of Probabilities) (No. 10 of 2016)",
+  "conditionName" : "myopia, hypermetropia and astigmatism",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having decentration or tilting of the lens of the affected eye at the time\r\nof the clinical onset of myopia, hypermetropia or astigmatism",
+    "definedTerms" : [ {
+      "term" : "decentration",
+      "definition" : "means the optical axis not passing through the geometric centre."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having corneal surgery of the affected eye, within the six months\r\nbefore the clinical onset of myopia, hypermetropia or astigmatism",
+    "definedTerms" : [ {
+      "term" : "corneal surgery",
+      "definition" : "means radial keratotomy, laser in-situ keratomileusis\r\n(LASIK), photorefractive keratectomy, phototherapeutic keratectomy, Epi-\r\nLASIK, laser epithelial keratomileusis (LASEK) or penetrating keratoplasty\r\n(corneal transplantation)."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having surgery for cataract of the affected eye, within the six months\r\nbefore the clinical onset of myopia, hypermetropia or astigmatism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having albinism at the time of the clinical onset of myopia,\r\nhypermetropia or astigmatism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "for myopia only:\r\n(a) having a nuclear cataract of the affected eye at the time of the\r\nclinical onset of myopia;\r\n(b) having lenticonus of the affected eye at the time of the clinical\r\nonset of myopia; or\r\n(c) having Marfan syndrome at the time of the clinical onset of\r\nmyopia",
+    "definedTerms" : [ {
+      "term" : "lenticonus",
+      "definition" : "means a conical protrusion of the substance of the crystalline lens,\r\ncovered by capsule or connective tissue, usually occurring more frequently\r\non the posterior surface and usually affecting only one eye."
+    } ],
+    "conditionVariant" : {
+      "name" : "myopia",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having a nuclear cataract of the affected eye at the time of the\r\nclinical onset of myopia"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having lenticonus of the affected eye at the time of the clinical\r\nonset of myopia"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having Marfan syndrome at the time of the clinical onset of\r\nmyopia"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for hypermetropia only:\r\n(a) having anterior displacement of the retina of the affected eye, at\r\nthe time of the clinical onset of hypermetropia; or\r\n(b) having aphakia or posterior displacement of the lens into the\r\nvitreous of the affected eye at the time of the clinical onset of\r\nhypermetropia",
+    "definedTerms" : [ {
+      "term" : "aphakia",
+      "definition" : "means the absence of the lens from the eye."
+    }, {
+      "term" : "anterior displacement of the retina",
+      "definition" : "means displacement of the retina in the\r\ndirection of the cornea bringing the retina closer to the lens;"
+    } ],
+    "conditionVariant" : {
+      "name" : "hypermetropia",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having anterior displacement of the retina of the affected eye, at\r\nthe time of the clinical onset of hypermetropia"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having aphakia or posterior displacement of the lens into the\r\nvitreous of the affected eye at the time of the clinical onset of\r\nhypermetropia"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for astigmatism only:\r\n(a) having surgery involving the sclera of the affected eye, within\r\nthe six months before the clinical onset of astigmatism;\r\n(b) having corneal scarring of the affected eye, at the time of the\r\nclinical onset of astigmatism;\r\n(c) having a pterygium of the affected eye at the time of the clinical\r\nonset of astigmatism; or\r\n(d) having a lid or limbal mass of the affected eye at the time of the\r\nclinical onset of astigmatism",
+    "definedTerms" : [ {
+      "term" : "corneal scarring",
+      "definition" : "means irreversible damage to the corneal epithelium due to\r\nchronic inflammatory diseases of the cornea, interstitial keratitis, corneal\r\ninfection, trauma or surgery."
+    } ],
+    "conditionVariant" : {
+      "name" : "astigmatism",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having surgery involving the sclera of the affected eye, within\r\nthe six months before the clinical onset of astigmatism"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having corneal scarring of the affected eye, at the time of the\r\nclinical onset of astigmatism"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having a pterygium of the affected eye at the time of the clinical\r\nonset of astigmatism"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having a lid or limbal mass of the affected eye at the time of the\r\nclinical onset of astigmatism"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for myopia and astigmatism only:\r\n(a) having keratoconus of the affected eye at the time of the clinical\r\nonset of myopia or astigmatism; or\r\n(b) having surgery for retinal detachment of the affected eye, within\r\nthe six months before the clinical onset of myopia or\r\nastigmatism",
+    "definedTerms" : [ {
+      "term" : "keratoconus",
+      "definition" : "means a condition characterised by noninflammatory, usually\r\nbilateral, protrusion of the cornea."
+    } ],
+    "conditionVariant" : {
+      "name" : "myopia and astigmatism",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having keratoconus of the affected eye at the time of the clinical\r\nonset of myopia or astigmatism"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having surgery for retinal detachment of the affected eye, within\r\nthe six months before the clinical onset of myopia or\r\nastigmatism"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(9)",
+    "text" : "having decentration or tilting of the lens of the affected eye at the time\r\nof the clinical worsening of myopia, hypermetropia or astigmatism",
+    "definedTerms" : [ {
+      "term" : "decentration",
+      "definition" : "means the optical axis not passing through the geometric centre."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having corneal surgery of the affected eye, within the six months\r\nbefore the clinical worsening of myopia, hypermetropia or\r\nastigmatism",
+    "definedTerms" : [ {
+      "term" : "corneal surgery",
+      "definition" : "means radial keratotomy, laser in-situ keratomileusis\r\n(LASIK), photorefractive keratectomy, phototherapeutic keratectomy, Epi-\r\nLASIK, laser epithelial keratomileusis (LASEK) or penetrating keratoplasty\r\n(corneal transplantation)."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having surgery for cataract of the affected eye, within the six months\r\nbefore the clinical worsening of myopia, hypermetropia or\r\nastigmatism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for myopia only:\r\n(a) having a nuclear cataract of the affected eye at the time of the\r\nclinical worsening of myopia; or\r\n(b) having lenticonus of the affected eye at the time of the clinical\r\nworsening of myopia",
+    "definedTerms" : [ {
+      "term" : "lenticonus",
+      "definition" : "means a conical protrusion of the substance of the crystalline lens,\r\ncovered by capsule or connective tissue, usually occurring more frequently\r\non the posterior surface and usually affecting only one eye."
+    } ],
+    "conditionVariant" : {
+      "name" : "myopia",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having a nuclear cataract of the affected eye at the time of the\r\nclinical worsening of myopia"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having lenticonus of the affected eye at the time of the clinical\r\nworsening of myopia"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "for hypermetropia only:\r\n(a) having anterior displacement of the retina of the affected eye, at\r\nthe time of the clinical worsening of hypermetropia; or\r\n(b) having aphakia or posterior displacement of the lens into the\r\nvitreous of the affected eye at the time of the clinical worsening\r\nof hypermetropia",
+    "definedTerms" : [ {
+      "term" : "aphakia",
+      "definition" : "means the absence of the lens from the eye."
+    }, {
+      "term" : "anterior displacement of the retina",
+      "definition" : "means displacement of the retina in the\r\ndirection of the cornea bringing the retina closer to the lens;"
+    } ],
+    "conditionVariant" : {
+      "name" : "hypermetropia",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having anterior displacement of the retina of the affected eye, at\r\nthe time of the clinical worsening of hypermetropia"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having aphakia or posterior displacement of the lens into the\r\nvitreous of the affected eye at the time of the clinical worsening\r\nof hypermetropia"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "for astigmatism only:\r\n(a) having surgery involving the sclera of the affected eye, within\r\nthe six months before the clinical worsening of astigmatism;\r\n(b) having corneal scarring of the affected eye, at the time of the\r\nclinical worsening of astigmatism;\r\n(c) having a pterygium of the affected eye at the time of the clinical\r\nworsening of astigmatism; or\r\n(d) having a lid or limbal mass of the affected eye at the time of the\r\nclinical worsening of astigmatism",
+    "definedTerms" : [ {
+      "term" : "corneal scarring",
+      "definition" : "means irreversible damage to the corneal epithelium due to\r\nchronic inflammatory diseases of the cornea, interstitial keratitis, corneal\r\ninfection, trauma or surgery."
+    } ],
+    "conditionVariant" : {
+      "name" : "astigmatism",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having surgery involving the sclera of the affected eye, within\r\nthe six months before the clinical worsening of astigmatism"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having corneal scarring of the affected eye, at the time of the\r\nclinical worsening of astigmatism"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having a pterygium of the affected eye at the time of the clinical\r\nworsening of astigmatism"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "having a lid or limbal mass of the affected eye at the time of the\r\nclinical worsening of astigmatism"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "for myopia and astigmatism only:\r\n(a) having keratoconus of the affected eye at the time of the clinical\r\nworsening of myopia or astigmatism; or\r\n(b) having surgery for retinal detachment of the affected eye, within\r\nthe six months before the clinical worsening of myopia or\r\nastigmatism",
+    "definedTerms" : [ {
+      "term" : "keratoconus",
+      "definition" : "means a condition characterised by noninflammatory, usually\r\nbilateral, protrusion of the cornea."
+    } ],
+    "conditionVariant" : {
+      "name" : "myopia and astigmatism",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having keratoconus of the affected eye at the time of the clinical\r\nworsening of myopia or astigmatism"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having surgery for retinal detachment of the affected eye, within\r\nthe six months before the clinical worsening of myopia or\r\nastigmatism"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "inability to obtain appropriate clinical management for myopia,\r\nhypermetropia or astigmatism",
+    "definedTerms" : [ ]
+  } ]
+}

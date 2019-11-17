@@ -1,0 +1,83 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00873",
+  "instrumentNumber" : "33/2013",
+  "citation" : "Statement of Principles concerning Graves' disease No. 33 of 2013",
+  "conditionName" : "Graves' disease",
+  "effectiveFrom" : "2013-05-08",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E05.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the six months before\r\nthe clinical onset of Graves' disease",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list for a continuous period of at least six weeks, within the\r\ntwo years before the clinical onset of Graves' disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, within the ten years before\r\nthe clinical onset of Graves' disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the thyroid gland, within the ten years before the\r\nclinical onset of Graves' disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "131receiving radioactive iodine ( I) for the treatment of multinodular\r\ngoitre within the ten years before the clinical onset of Graves' disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "smoking at least three pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical onset of Graves'\r\ndisease, and where smoking has ceased, the clinical onset of Graves'\r\ndisease has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the six months before\r\nthe clinical worsening of Graves' disease",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list for a continuous period of at least six weeks, within the\r\ntwo years before the clinical worsening of Graves' disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being treated with amiodarone for a continuous period of at least six\r\nweeks, within the two years before the clinical worsening of Graves'\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, within the ten years before\r\nthe clinical worsening of Graves' disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the thyroid gland, within the ten years before the\r\nclinical worsening of Graves' disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "131receiving radioactive iodine ( I) for the treatment of multinodular\r\ngoitre within the ten years before the clinical worsening of Graves'\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "smoking at least three pack-years of cigarettes, or the equivalent\r\nthereof in other tobacco products, before the clinical worsening of\r\nGraves' disease, and where smoking has ceased, the clinical worsening\r\nof Graves' disease has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "inability to obtain appropriate clinical management for Graves' disease",
+    "definedTerms" : [ ]
+  } ]
+}

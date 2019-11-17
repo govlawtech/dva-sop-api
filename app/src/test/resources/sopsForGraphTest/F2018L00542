@@ -1,0 +1,256 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00542",
+  "instrumentNumber" : "40/2018",
+  "citation" : "Statement of Principles concerning herpes simplex (Balance of Probabilities) (No. 40 of 2018)",
+  "conditionName" : "herpes simplex",
+  "effectiveFrom" : "2018-05-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B00"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "A60"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to HSV-1 or HSV-2 within the 30 days before the\r\nclinical onset of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "being exposed to HSV-1 or HSV-2",
+      "definition" : "means:\r\n(a) having direct exposure to saliva or respiratory droplets infected with\r\nHSV-1 or HSV-2; or\r\n(b) having percutaneous exposure to vesicular fluid infected with HSV-1\r\nor HSV-2; or\r\n(c) having sexual contact with a person infected with HSV-1 or HSV-2; or\r\n(d) having skin contact with a person infected with HSV-1 or HSV-2."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a severe thermal burn within the 30 days before the clinical\r\nonset of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "severe thermal burn",
+      "definition" : "means a burn injury caused by the application of heat to\r\nbody tissue, including inhalational burn, which is of sufficient severity to\r\nwarrant hospital admission as an inpatient."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a thermal or chemical burn within the seven days before the\r\nclinical onset of herpes simplex at or close to the site of the burn",
+    "definedTerms" : [ {
+      "term" : "close to the site",
+      "definition" : "means at or within one centimetre."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having asplenia or a splenectomy;\r\n(e) having chronic renal failure;\r\n(f) having severe malnutrition;\r\n(g) having a cardiopulmonary bypass procedure; or\r\n(h) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: chronic renal failure and immunosuppressive drug are also defined in the Schedule 1-\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having surgery to nerve root ganglia within the 30 days before the\r\nclinical onset of herpes simplex, where the cutaneous distribution of\r\nherpes simplex corresponds with the nerve roots which were\r\nmanipulated during surgery",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being exposed to sunlight or ultraviolet light at a level sufficient to\r\ninduce at least mild erythema, within the seven days before the clinical\r\nonset of herpes simplex",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being at least 20 weeks pregnant at the time of the clinical onset of\r\nherpes simplex",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for acute herpes simplex encephalitis or acute herpes simplex retinal\r\nnecrosis only, having surgery to the brain within the 30 days before the\r\nclinical onset of herpes simplex",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "acute herpes simplex encephalitis or acute herpes simplex retinal necrosis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for orofacial herpes simplex only:\r\n(a) having surgery to the face within the 30 days before the clinical\r\nonset of herpes simplex;\r\n(b) having an upper respiratory tract infection within the seven days\r\nbefore the clinical onset of herpes simplex; or\r\n(c) having a fever of at least 39 degrees Celsius in the 72 hours\r\nbefore the clinical onset of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "surgery to the face",
+      "definition" : "means surgery involving the face or the skin of the face,\r\nincluding chemical peels, dermabrasion and laser resurfacing."
+    } ],
+    "conditionVariant" : {
+      "name" : "orofacial herpes simplex",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having surgery to the face within the 30 days before the clinical\r\nonset of herpes simplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having an upper respiratory tract infection within the seven days\r\nbefore the clinical onset of herpes simplex"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having a fever of at least 39 degrees Celsius in the 72 hours\r\nbefore the clinical onset of herpes simplex"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for herpes simplex of the cornea (herpes simplex keratitis) only:\r\n(a) having cataract surgery within the six weeks before the clinical\r\nonset of herpes simplex;\r\n(b) having a corneal transplant, where the donor cornea is infected\r\nwith HSV-1 or HSV-2, within the 30 days before the clinical\r\nonset of herpes simplex; or\r\n(c) wearing contact lenses in the 24 hours before the clinical onset of\r\nherpes simplex",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "herpes simplex of the cornea (herpes simplex keratitis)",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having cataract surgery within the six weeks before the clinical\r\nonset of herpes simplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having a corneal transplant, where the donor cornea is infected\r\nwith HSV-1 or HSV-2, within the 30 days before the clinical\r\nonset of herpes simplex"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "wearing contact lenses in the 24 hours before the clinical onset of\r\nherpes simplex"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for eczema herpeticum only:\r\n(a) having atopic dermatitis before the clinical onset of herpes\r\nsimplex; or\r\n(b) having a psoriatic lesion close to the site of the HSV-1 or HSV-2\r\ninfection, at the time of the clinical onset of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "eczema herpeticum",
+      "definition" : "means a clinical illness characterised by a dissemination\r\nof HSV infection across the skin, normally superimposed on a pre-existing,\r\ninactive or active skin disorder.\r\nherpes simplex—see subsection 7(2)."
+    }, {
+      "term" : "close to the site",
+      "definition" : "means at or within one centimetre."
+    } ],
+    "conditionVariant" : {
+      "name" : "eczema herpeticum",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having atopic dermatitis before the clinical onset of herpes\r\nsimplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having a psoriatic lesion close to the site of the HSV-1 or HSV-2\r\ninfection, at the time of the clinical onset of herpes simplex"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for herpes simplex of the lip only:\r\n(a) having chapped lips in the 48 hours before the clinical onset of\r\nherpes simplex; or\r\n(b) playing a woodwind or brass musical instrument in the 48 hours\r\nbefore the clinical onset of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "chapped lips",
+      "definition" : "means excessive dryness of the vermillion border of the lips\r\nmanifested by scaling, cracking and erythema."
+    } ],
+    "conditionVariant" : {
+      "name" : "herpes simplex of the lip",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having chapped lips in the 48 hours before the clinical onset of\r\nherpes simplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "playing a woodwind or brass musical instrument in the 48 hours\r\nbefore the clinical onset of herpes simplex"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(13)",
+    "text" : "having a severe thermal burn within the 30 days before the clinical\r\nworsening of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "severe thermal burn",
+      "definition" : "means a burn injury caused by the application of heat to\r\nbody tissue, including inhalational burn, which is of sufficient severity to\r\nwarrant hospital admission as an inpatient."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having a thermal or chemical burn within the seven days before the\r\nclinical worsening of herpes simplex at or close to the site of the burn",
+    "definedTerms" : [ {
+      "term" : "close to the site",
+      "definition" : "means at or within one centimetre."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having asplenia or a splenectomy;\r\n(e) having chronic renal failure;\r\n(f) having severe malnutrition;\r\n(g) having a cardiopulmonary bypass procedure; or\r\n(h) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: chronic renal failure and immunosuppressive drug are also defined in the Schedule 1-\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having surgery to nerve root ganglia within the 30 days before the\r\nclinical worsening of herpes simplex, where the cutaneous distribution\r\nof herpes simplex corresponds with the nerve roots which were\r\nmanipulated during surgery",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "being exposed to sunlight or ultraviolet light at a level sufficient to\r\ninduce at least mild erythema, within the seven days before the clinical\r\nworsening of herpes simplex",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "being at least 20 weeks pregnant at the time of the clinical worsening\r\nof herpes simplex",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "for acute herpes simplex encephalitis or acute herpes simplex retinal\r\nnecrosis only, having surgery to the brain within the 30 days before the\r\nclinical worsening of herpes simplex",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "acute herpes simplex encephalitis or acute herpes simplex retinal necrosis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "for orofacial herpes simplex only:\r\n(a) having surgery to the face within the 30 days before the clinical\r\nworsening of herpes simplex;\r\n(b) having an upper respiratory tract infection within the seven days\r\nbefore the clinical worsening of herpes simplex; or\r\n(c) having a fever of at least 39 degrees Celsius in the 72 hours\r\nbefore the clinical worsening of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "surgery to the face",
+      "definition" : "means surgery involving the face or the skin of the face,\r\nincluding chemical peels, dermabrasion and laser resurfacing."
+    } ],
+    "conditionVariant" : {
+      "name" : "orofacial herpes simplex",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having surgery to the face within the 30 days before the clinical\r\nworsening of herpes simplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having an upper respiratory tract infection within the seven days\r\nbefore the clinical worsening of herpes simplex"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having a fever of at least 39 degrees Celsius in the 72 hours\r\nbefore the clinical worsening of herpes simplex"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "for herpes simplex of the cornea (herpes simplex keratitis) only:\r\n(a) having cataract surgery within the six weeks before the clinical\r\nworsening of herpes simplex; or\r\n(b) wearing contact lenses in the 24 hours before the clinical\r\nworsening of herpes simplex",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "herpes simplex of the cornea (herpes simplex keratitis)",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having cataract surgery within the six weeks before the clinical\r\nworsening of herpes simplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "wearing contact lenses in the 24 hours before the clinical\r\nworsening of herpes simplex"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "for eczema herpeticum only:\r\n(a) having atopic dermatitis before the clinical worsening of herpes\r\nsimplex; or\r\n(b) having a psoriatic lesion close to the site of the HSV-1 or HSV-2\r\ninfection, at the time of the clinical worsening of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "eczema herpeticum",
+      "definition" : "means a clinical illness characterised by a dissemination\r\nof HSV infection across the skin, normally superimposed on a pre-existing,\r\ninactive or active skin disorder.\r\nherpes simplex—see subsection 7(2)."
+    }, {
+      "term" : "close to the site",
+      "definition" : "means at or within one centimetre."
+    } ],
+    "conditionVariant" : {
+      "name" : "eczema herpeticum",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having atopic dermatitis before the clinical worsening of herpes\r\nsimplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having a psoriatic lesion close to the site of the HSV-1 or HSV-2\r\ninfection, at the time of the clinical worsening of herpes simplex"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "for herpes simplex of the lip only:\r\n(a) having chapped lips in the 48 hours before the clinical worsening\r\nof herpes simplex; or\r\n(b) playing a woodwind or brass musical instrument in the 48 hours\r\nbefore the clinical worsening of herpes simplex",
+    "definedTerms" : [ {
+      "term" : "chapped lips",
+      "definition" : "means excessive dryness of the vermillion border of the lips\r\nmanifested by scaling, cracking and erythema."
+    } ],
+    "conditionVariant" : {
+      "name" : "herpes simplex of the lip",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having chapped lips in the 48 hours before the clinical worsening\r\nof herpes simplex"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "playing a woodwind or brass musical instrument in the 48 hours\r\nbefore the clinical worsening of herpes simplex"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "inability to obtain appropriate clinical management for herpes simplex",
+    "definedTerms" : [ ]
+  } ]
+}

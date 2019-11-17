@@ -1,0 +1,60 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00633",
+  "instrumentNumber" : "45/2019",
+  "citation" : "Statement of Principles concerning rapidly progressive crescentic glomerulonephritis (Reasonable Hypothesis) (No. 45 of 2019)",
+  "conditionName" : "rapidly progressive crescentic glomerulonephritis",
+  "effectiveFrom" : "2019-05-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an infection from the specified list of infections within the two\r\nmonths before the clinical onset of rapidly progressive crescentic\r\nglomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "specified list of infections",
+      "definition" : "means:\r\n(a) bacterial infection;\r\n(b) hepatitis B;\r\n(c) hepatitis C;\r\n(d) human immunodeficiency virus infection; or\r\n(e) infective endocarditis."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having an autoimmune disorder from the specified list of autoimmune\r\ndisorders at the time of the clinical onset of rapidly progressive\r\ncrescentic glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having infiltration of the kidneys due to a disorder from the specified\r\nlist of infiltrative disorders at the time of the clinical onset of rapidly\r\nprogressive crescentic glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a renal disorder from the specified list of renal disorders at the\r\ntime of the clinical onset of rapidly progressive crescentic\r\nglomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "specified list of renal disorders",
+      "definition" : "means:\r\n(a) fibrillary glomerulonephritis;\r\n(b) immunoglobulin A nephropathy (including mesangial IgA\r\nglomerulonephritis);\r\n(c) immunoglobulin G4-related kidney disease (including tubulointerstitial\r\nnephritis and membranous glomerulonephritis secondary to\r\nimmunoglobulin G4-related disease);\r\n(d) membranoproliferative glomerulonephritis; or\r\n(e) membranous glomerulonephritis."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a malignant neoplasm at the time of the clinical onset of rapidly\r\nprogressive crescentic glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs within the seven days before the clinical onset of rapidly\r\nprogressive crescentic glomerulonephritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having at least three episodes of acute volatile substance intoxication\r\nwithin the 30 days before the clinical onset of rapidly progressive\r\ncrescentic glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "acute volatile substance intoxication",
+      "definition" : "means an onset of clinically significant\r\nbehavioural or psychological changes where:\r\n(a) such changes are coincident upon short-term, high-dose exposure to an\r\norganic solvent; and\r\n(b) the changes are accompanied by two or more of the following signs or\r\nsymptoms:\r\n(i) blurred vision or diplopia;\r\n(ii) depressed reflexes;\r\n(iii) dizziness;\r\n(iv) euphoria;\r\n(v) generalised muscle weakness;\r\n(vi) incoordination;\r\n(vii) lethargy;\r\n(viii) nystagmus;\r\n(ix) psychomotor retardation;\r\n(x) slurred speech;\r\n(xi) stupor or coma;\r\n(xii) tremor; or\r\n(xiii) unsteady gait; and\r\n(c) the changes or signs or symptoms are not attributable to another\r\nmedical condition and are not better explained by another disorder of\r\nmental health.\r\nNote 1: Examples of clinically significant behavioural or psychological changes include, but are not\r\nlimited to, belligerence, aggressiveness, apathy and impaired judgement.\r\nNote 2: organic solvent is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "inhaling or absorbing an organic solvent for at least one hour per week\r\nfor at least the three months before the clinical onset of rapidly\r\nprogressive crescentic glomerulonephritis",
+    "definedTerms" : [ {
+      "term" : "organic solvent",
+      "definition" : "means:\r\n(a) aliphatic hydrocarbon solvent; or\r\n(b) aromatic hydrocarbon solvent; or\r\n(c) chlorinated ; or\r\n(d) oxygenated .\r\nrapidly progressive crescentic glomerulonephritis—see subsection 7(2)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(9)",
+    "text" : "inability to obtain appropriate clinical management for rapidly\r\nprogressive crescentic glomerulonephritis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00747",
+  "instrumentNumber" : "75/2012",
+  "citation" : "Statement of Principles concerning acute lymphoblastic leukaemia No. 75 of 2012",
+  "conditionName" : "acute lymphoblastic leukaemia",
+  "effectiveFrom" : "2012-10-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C91.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having received a cumulative equivalent dose of at least 0.01 sievert of\r\nionising radiation to the bone marrow at least one year before the\r\nclinical onset of acute lymphoblastic leukaemia",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation received\nby the particular organ or tissue from external exposure, internal exposure or both,\napart from normal background radiation exposure in Australia, calculated in\naccordance with the methodology set out in Guide to calculation of 'cumulative\nequivalent dose' for the purpose of applying ionising radiation factors contained in\nStatements of Principles determined under Part XIA of the Veterans' Entitlements\nAct 1986 (Cth), Australian Radiation Protection and Nuclear Safety Agency, as in\nforce on 2 August 2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\npresent during or subsequent to the testing or use of nuclear weapons, undergoing\ndiagnostic or therapeutic medical procedures involving ionising radiation, and being a\nmember of an aircrew, leading to increased levels of exposure to cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\nvarious dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being exposed to benzene as specified:\r\n(i) for a cumulative total of at least 2 500 hours within a\r\ncontinuous period of five years before the clinical onset of acute\r\nlymphoblastic leukaemia; and\r\n(ii) where the first exposure in that period occurred at least five\r\nyears before the clinical onset of acute lymphoblastic\r\nleukaemia",
+    "definedTerms" : [ {
+      "term" : "being exposed to benzene as specified",
+      "definition" : "means:\n(a) having cutaneous contact with liquids containing benzene greater than 1% by\nvolume; or\n(b) ingesting liquids containing benzene greater than 1% by volume; or\n(c) inhaling benzene vapour where such exposure occurs at an ambient 8-hour\ntime-weighted average benzene concentration exceeding five parts per\nmillion"
+    } ]
+  }, {
+    "paragraph" : "6(ba)",
+    "text" : "receiving greater than ten ppm-years of cumulative exposure to\r\nbenzene before the clinical onset of acute lymphoblastic leukaemia,\r\nand where the first exposure occurred at least five years before the\r\nclinical onset of acute lymphoblastic leukaemia",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing treatment for a malignant neoplasm with an alkylating\r\nagent or a DNA topoisomerase II inhibitor before the clinical onset of\r\nacute lymphoblastic leukaemia, where the first exposure occurred at\r\nleast one year before the clinical onset of acute lymphoblastic\r\nleukaemia, and where that exposure has ceased, the clinical onset of\r\nacute lymphoblastic leukaemia occurred within 20 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "receiving a solid organ transplant from a donor with lymphoma or\r\nlymphatic leukaemia before the clinical onset of acute lymphoblastic\r\nleukaemia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for acute\r\nlymphoblastic leukaemia",
+    "definedTerms" : [ ]
+  } ]
+}

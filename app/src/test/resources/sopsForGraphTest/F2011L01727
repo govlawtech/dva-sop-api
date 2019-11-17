@@ -1,0 +1,32 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01727",
+  "instrumentNumber" : "95/2011",
+  "citation" : "Statement of Principles concerning sprain and strain No. 95 of 2011",
+  "conditionName" : "sprain and strain",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "experiencing a significant physical force applied to or through the\r\naffected joint, at the time of the clinical onset of a sprain to that joint\r\nligament",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "forceful stretching or high intensity use of a muscle or tendon at the\r\ntime of the clinical onset of a strain to that muscle or tendon",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "experiencing a significant physical force applied to or through the\r\naffected joint, at the time of the clinical worsening of a sprain to that\r\njoint ligament",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "forceful stretching or high intensity use of a muscle or tendon at the\r\ntime of the clinical worsening of a strain to that muscle or tendon",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management of sprain or strain",
+    "definedTerms" : [ ]
+  } ]
+}

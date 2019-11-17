@@ -1,0 +1,38 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00630",
+  "instrumentNumber" : "48/2019",
+  "citation" : "Statement of Principles concerning posterior adventitial heel bursitis (Balance of Probabilities) (No. 48 of 2019)",
+  "conditionName" : "posterior adventitial heel bursitis",
+  "effectiveFrom" : "2019-05-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "wearing footwear that causes friction or pressure on the posterior\r\naspect of the heel of the affected foot, at the time of the clinical onset\r\nof posterior adventitial heel bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a Haglund deformity at the time of the clinical onset of\r\nposterior adventitial heel bursitis",
+    "definedTerms" : [ {
+      "term" : "Haglund deformity",
+      "definition" : "means an abnormality of the posterosuperior part of the\r\ncalcaneus, where there is a bony enlargement at the attachment of the\r\nAchilles tendon."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "wearing footwear that causes friction or pressure on the posterior\r\naspect of the heel of the affected foot, at the time of the clinical\r\nworsening of posterior adventitial heel bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a Haglund deformity at the time of the clinical worsening of\r\nposterior adventitial heel bursitis",
+    "definedTerms" : [ {
+      "term" : "Haglund deformity",
+      "definition" : "means an abnormality of the posterosuperior part of the\r\ncalcaneus, where there is a bony enlargement at the attachment of the\r\nAchilles tendon."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for posterior\r\nadventitial heel bursitis",
+    "definedTerms" : [ ]
+  } ]
+}

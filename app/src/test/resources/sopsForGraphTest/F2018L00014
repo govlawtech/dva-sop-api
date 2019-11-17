@@ -1,0 +1,29 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00014",
+  "instrumentNumber" : "12/2018",
+  "citation" : "Statement of Principles concerning frostbite (Balance of Probabilities) (No. 12 of 2018)",
+  "conditionName" : "frostbite",
+  "effectiveFrom" : "2018-01-29",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T33"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "T34"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "T35"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "exposing the affected part of the body to freezing temperatures within\r\nthe 24 hours before the clinical onset of frostbite",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for frostbite",
+    "definedTerms" : [ ]
+  } ]
+}

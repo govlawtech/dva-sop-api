@@ -1,0 +1,55 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00407",
+  "instrumentNumber" : "14/2013",
+  "citation" : "Statement of Principles concerning seborrhoeic dermatitis No. 14 of 2013",
+  "conditionName" : "seborrhoeic dermatitis",
+  "effectiveFrom" : "2013-03-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L21.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L21.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "L21.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of seborrhoeic dermatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having Parkinson's disease or parkinsonism at the time of the clinical\r\nonset of seborrhoeic dermatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having:\r\n(i) a permanent physical disability, or\r\n(ii) a psychiatric disease from the specified list,\r\nwhich limits the person's ability to maintain personal hygiene of the\r\naffected area immediately before the clinical onset of seborrhoeic\r\ndermatitis",
+    "definedTerms" : [ {
+      "term" : "a psychiatric disease from the specified list",
+      "definition" : "means:\n(a) bipolar depressive disorder;\n(b) major depressive disorder;\n(c) panic disorder with agoraphobia; or\n(d) schizophrenia"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of seborrhoeic dermatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having Parkinson's disease or parkinsonism at the time of the clinical\r\nworsening of seborrhoeic dermatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having:\r\n(i) a permanent physical disability, or\r\n(ii) a psychiatric disease from the specified list,\r\nwhich limits the person's ability to maintain personal hygiene of the\r\naffected area immediately before the clinical worsening of seborrhoeic\r\ndermatitis",
+    "definedTerms" : [ {
+      "term" : "a psychiatric disease from the specified list",
+      "definition" : "means:\n(a) bipolar depressive disorder;\n(b) major depressive disorder;\n(c) panic disorder with agoraphobia; or\n(d) schizophrenia"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for seborrhoeic\r\ndermatitis",
+    "definedTerms" : [ ]
+  } ]
+}

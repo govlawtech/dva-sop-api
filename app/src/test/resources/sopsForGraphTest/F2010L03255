@@ -1,0 +1,104 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03255",
+  "instrumentNumber" : "7/2011",
+  "citation" : "Statement of Principles concerning conductive hearing loss No. 7 of 2011",
+  "conditionName" : "conductive hearing loss",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having otosclerosis on the affected side at the time of the clinical onset\r\nof conductive hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having Paget's disease of bone, affecting the petrous temporal bone or\r\nmiddle ear ossicles, at the time of the clinical onset of conductive\r\nhearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "experiencing otitic barotrauma or acoustic trauma within the seven\r\ndays before the clinical onset of conductive hearing loss",
+    "definedTerms" : [ {
+      "term" : "acoustic trauma",
+      "definition" : "means a condition of sudden aural damage resulting from\nshort term intense exposure or a single exposure to loud noise such as that\nmade at close quarters by:\n(a) artillery fire;\n(b) exploding grenades, mines or bombs;\n(c) fireworks;\n(d) gunfire; or\n(e) small arms fire"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having structural injury or physiological disruption to the conductive\r\nhearing apparatus or surrounding bone, as a result of blunt trauma,\r\npenetrating trauma or surgery, within the 30 days before the clinical\r\nonset of conductive hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having permanent obstruction of the external auditory canal on the\r\naffected side at the time of the clinical onset of conductive hearing\r\nloss",
+    "definedTerms" : [ {
+      "term" : "obstruction of the external auditory canal",
+      "definition" : "means blockage of at least 90%\nof the external auditory canal, for example, by a primary or secondary\nneoplasm, granuloma, exostosis or chronic otitis externa"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having chronic otitis media on the affected side at the time of the\r\nclinical onset of conductive hearing loss",
+    "definedTerms" : [ {
+      "term" : "chronic otitis media",
+      "definition" : "means an inflammatory process within the middle ear\nassociated with irreversible tissue pathology"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having rheumatoid arthritis at the time of the clinical onset of\r\nconductive hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing a course of therapeutic radiation to the head or neck region\r\nwithin the 60 days before the clinical onset of conductive hearing loss",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "having otosclerosis on the affected side at the time of the clinical\r\nworsening of conductive hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having Paget's disease of bone, affecting the petrous temporal bone or\r\nmiddle ear ossicles, at the time of the clinical worsening of conductive\r\nhearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "experiencing otitic barotrauma or acoustic trauma within the seven\r\ndays before the clinical worsening of conductive hearing loss",
+    "definedTerms" : [ {
+      "term" : "acoustic trauma",
+      "definition" : "means a condition of sudden aural damage resulting from\nshort term intense exposure or a single exposure to loud noise such as that\nmade at close quarters by:\n(a) artillery fire;\n(b) exploding grenades, mines or bombs;\n(c) fireworks;\n(d) gunfire; or\n(e) small arms fire"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having structural injury or physiological disruption to the conductive\r\nhearing apparatus or surrounding bone, as a result of blunt trauma,\r\npenetrating trauma or surgery, within the 30 days before the clinical\r\nworsening of conductive hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having permanent obstruction of the external auditory canal on the\r\naffected side at the time of the clinical worsening of conductive\r\nhearing loss",
+    "definedTerms" : [ {
+      "term" : "obstruction of the external auditory canal",
+      "definition" : "means blockage of at least 90%\nof the external auditory canal, for example, by a primary or secondary\nneoplasm, granuloma, exostosis or chronic otitis externa"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having chronic otitis media on the affected side at the time of the\r\nclinical worsening of conductive hearing loss",
+    "definedTerms" : [ {
+      "term" : "chronic otitis media",
+      "definition" : "means an inflammatory process within the middle ear\nassociated with irreversible tissue pathology"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having rheumatoid arthritis at the time of the clinical worsening of\r\nconductive hearing loss",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "undergoing a course of therapeutic radiation to the head or neck region\r\nwithin the 60 days before the clinical worsening of conductive hearing\r\nloss",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "inability to obtain appropriate clinical management for conductive\r\nhearing loss",
+    "definedTerms" : [ ]
+  } ]
+}

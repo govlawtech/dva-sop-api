@@ -1,0 +1,132 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00660",
+  "instrumentNumber" : "100/2011",
+  "citation" : "Statement of Principles concerning multiple sclerosis No. 100 of 2011",
+  "conditionName" : "multiple sclerosis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G35"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling an organic solvent or having cutaneous contact with an\r\norganic solvent on more days than not for a continuous 12 month\r\nperiod before the clinical onset of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "an organic solvent",
+      "definition" : "means:\n(a) an aliphatic hydrocarbon solvent;\n(b) an aromatic hydrocarbon solvent;\n(c) a chlorinated organic solvent; or\n(d) an oxygenated organic solvent"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being infected with Epstein-Barr virus before the clinical onset of\r\nmultiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "being infected with Epstein-Barr virus",
+      "definition" : "means serological evidence of\ninfection with Epstein-Barr virus"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of multiple\r\nsclerosis, and where smoking has ceased, the clinical onset of multiple\r\nsclerosis has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing a course of treatment with a tumour necrosis factor alpha\r\nantagonist within the two years before the clinical onset of multiple\r\nsclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having evidence of vitamin D insufficiency:\r\n(i) for a period of one year; and\r\n(ii) before the age of twenty years;\r\nbefore the clinical onset of multiple sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having vitamin D deficiency for at least one year before the clinical\r\nonset of multiple sclerosis, where this vitamin D deficiency occurred\r\nmore than ten years before the clinical onset of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "vitamin D deficiency",
+      "definition" : "means a serum 25-hydroxyvitamin D level of less\nthan 50 nanomoles per litre"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "experiencing the death of a related child at least seven years before the\r\nclinical onset of multiple sclerosis, where the death of a related child\r\ndid not occur more than 20 years before the clinical onset of multiple\r\nsclerosis",
+    "definedTerms" : [ {
+      "term" : "a related child",
+      "definition" : "means biological offspring, an adopted child, a step-child or\na foster child"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "having onset of a viral or bacterial infection within the five weeks\r\nbefore or the two weeks after the clinical worsening of multiple\r\nsclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of multiple\r\nsclerosis, and where smoking has ceased, the clinical worsening of\r\nmultiple sclerosis has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "undergoing a course of treatment with a drug or a drug from a class of\r\ndrugs from the specified list within the one year before the clinical\r\nworsening of multiple sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "experiencing a category 1A stressor within the six months before the\r\nclinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one or more of the following severe\ntraumatic events:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "experiencing a category 1B stressor within the six months before the\r\nclinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured\ncasualty; or\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "experiencing the death of a significant other within the six months\r\nbefore the clinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a significant other",
+      "definition" : "means a person who has a close family bond or a close\npersonal relationship and is important or influential in one's life"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "experiencing a category 2 stressor within the six months before the\r\nclinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "a category 2 stressor",
+      "definition" : "means one or more of the following negative life\nevents, the effects of which are chronic in nature and cause the person to feel\non-going distress, concern or worry:\n(a) being socially isolated and unable to maintain friendships or family\nrelationships, due to physical location, language barriers, disability, or\nmedical or psychiatric illness;\n(b) experiencing a problem with a long-term relationship including: the\nbreak-up of a close personal relationship, the need for marital or\nrelationship counselling, marital separation, or divorce;\n(c) having concerns in the work or school environment including: on-\ngoing disharmony with fellow work or school colleagues, perceived\nlack of social support within the work or school environment,\nperceived lack of control over tasks performed and stressful work\nloads, or experiencing bullying in the workplace or school\nenvironment;\n(d) experiencing serious legal issues including: being detained or held in\ncustody, on-going involvement with the police concerning violations of\nthe law, or court appearances associated with personal legal problems;\n(e) having severe financial hardship including: loss of employment, long\nperiods of unemployment, foreclosure on a property, or bankruptcy;\n(f) having a family member or significant other experience a major\ndeterioration in their health; or\n(g) being a full-time caregiver to a family member or significant other with\na severe physical, mental or developmental disability"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a medical illness or injury, other than multiple sclerosis, which\r\nis life-threatening or which results in serious physical or cognitive\r\ndisability, within the six months before the clinical worsening of\r\nmultiple sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "for women only, using assisted reproductive technology within the\r\nthree months before the clinical worsening of multiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "assisted reproductive technology",
+      "definition" : "means artificial or partially artificial\nmeans to achieve pregnancy. These methods involve administration of\ngonadotrophin-releasing hormone analogues, agonists or antagonists, to down-\nregulate the endogenous gonadotrophin release and to achieve a\nsuperovulation, and/or progesterone supplementation during the luteal phase,\nfollowing replacement in utero of in vitro-produced embryos"
+    } ],
+    "conditionVariant" : {
+      "name" : "women",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "being within six months postpartum at the time of the clinical\r\nworsening of multiple sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "undergoing a course of therapeutic radiation, where the affected site\r\nwas in the field of radiation, before the clinical worsening of multiple\r\nsclerosis",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having received a cumulative equivalent dose of at least 10 sieverts of\r\nionising radiation to the affected site before the clinical worsening of\r\nmultiple sclerosis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\nleading to increased levels of exposure to cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\nvarious dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "inability to obtain appropriate clinical management for multiple\r\nsclerosis",
+    "definedTerms" : [ ]
+  } ]
+}

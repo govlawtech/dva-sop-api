@@ -1,0 +1,131 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00797",
+  "instrumentNumber" : "25/2013",
+  "citation" : "Statement of Principles concerning chronic gastritis and chronic gastropathy No. 25 of 2013",
+  "conditionName" : "chronic gastritis and chronic gastropathy",
+  "effectiveFrom" : "2013-05-08",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for chronic gastritis only,\r\n(i) having a Helicobacter pylori infection of the gastric mucosa at\r\nthe time of the clinical onset of chronic gastritis; or\r\n(ii) having Helicobacter heilmannii infection of the gastric mucosa\r\nat the time of the clinical onset of chronic gastritis; or\r\n(iii) having a specified infection of the gastric mucosa at the time of\r\nthe clinical onset of chronic gastritis; or\r\n(iv) being in an immunocompromised state at the time of the\r\nclinical onset of chronic gastritis",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state",
+      "definition" : "means a state where the immune response\nhas been substantially diminished by administration of immunosuppressive\ndrugs, ionising radiation, malnutrition, a malignant disease process or certain\ntypes of infection"
+    }, {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) anisakiasis;\n(b) Capillaria infection;\n(c) cryptosporidiosis;\n(d) cytomegalovirus infection;\n(e) Epstein-Barr virus infection;\n(f) herpes simplex virus infection;\n(g) hepatitis C virus infection;\n(h) human herpesvirus-6 infection;\n(i) mycobacteriosis;\n(j) strongyloidiasis; or\n(k) syphilis"
+    } ],
+    "conditionVariant" : {
+      "name" : "chronic gastritis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having a Helicobacter pylori infection of the gastric mucosa at\r\nthe time of the clinical onset of chronic gastritis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having Helicobacter heilmannii infection of the gastric mucosa\r\nat the time of the clinical onset of chronic gastritis"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having a specified infection of the gastric mucosa at the time of\r\nthe clinical onset of chronic gastritis"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "being in an immunocompromised state at the time of the\r\nclinical onset of chronic gastritis"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for chronic gastropathy only,\r\n(i) having reflux of bile acids into the stomach at the time of the\r\nclinical onset of chronic gastropathy; or\r\n(ii) being treated with a non-topical nonsteroidal anti-inflammatory\r\ndrug, including aspirin, at least every other day during a\r\ncontinuous period of at least two weeks, within the one month\r\nbefore the clinical onset of chronic gastropathy; or\r\n(iii) being treated with a drug or a drug from a class of drugs from\r\nSpecified List 1 for the one month before the clinical onset of\r\nchronic gastropathy; or\r\n(iv) consuming an average of at least 350 grams of alcohol per\r\nweek for at least the two years before the clinical onset of\r\nchronic gastropathy; or\r\n(v) undergoing a course of therapeutic radiation for cancer, where\r\nthe stomach was in the field of radiation, within the one year\r\nbefore the clinical onset of chronic gastropathy; or\r\n(vi) having received a cumulative equivalent dose of at least ten\r\nsieverts of ionising radiation to the stomach within the one year\r\nbefore the clinical onset of chronic gastropathy; or\r\n(vii) 90having received ⁹⁰Yttrium microspheres as therapy for primary\r\nand metastatic liver tumours, within the one year before the\r\nclinical onset of chronic gastropathy",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ],
+    "conditionVariant" : {
+      "name" : "chronic gastropathy",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having reflux of bile acids into the stomach at the time of the\r\nclinical onset of chronic gastropathy"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being treated with a non-topical nonsteroidal anti-inflammatory\r\ndrug, including aspirin, at least every other day during a\r\ncontinuous period of at least two weeks, within the one month\r\nbefore the clinical onset of chronic gastropathy"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 1 for the one month before the clinical onset of\r\nchronic gastropathy"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "consuming an average of at least 350 grams of alcohol per\r\nweek for at least the two years before the clinical onset of\r\nchronic gastropathy"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "undergoing a course of therapeutic radiation for cancer, where\r\nthe stomach was in the field of radiation, within the one year\r\nbefore the clinical onset of chronic gastropathy"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "having received a cumulative equivalent dose of at least ten\r\nsieverts of ionising radiation to the stomach within the one year\r\nbefore the clinical onset of chronic gastropathy"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "90having received ⁹⁰Yttrium microspheres as therapy for primary\r\nand metastatic liver tumours, within the one year before the\r\nclinical onset of chronic gastropathy"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "for chronic gastritis only,\r\n(i) having a Helicobacter pylori infection of the gastric mucosa at\r\nthe time of the clinical worsening of chronic gastritis; or\r\n(ii) having Helicobacter heilmannii infection of the gastric mucosa\r\nat the time of the clinical worsening of chronic gastritis; or\r\n(iii) having a specified infection of the gastric mucosa at the time of\r\nthe clinical worsening of chronic gastritis; or\r\n(iv) being in an immunocompromised state at the time of the\r\nclinical worsening of chronic gastritis",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state",
+      "definition" : "means a state where the immune response\nhas been substantially diminished by administration of immunosuppressive\ndrugs, ionising radiation, malnutrition, a malignant disease process or certain\ntypes of infection"
+    }, {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) anisakiasis;\n(b) Capillaria infection;\n(c) cryptosporidiosis;\n(d) cytomegalovirus infection;\n(e) Epstein-Barr virus infection;\n(f) herpes simplex virus infection;\n(g) hepatitis C virus infection;\n(h) human herpesvirus-6 infection;\n(i) mycobacteriosis;\n(j) strongyloidiasis; or\n(k) syphilis"
+    } ],
+    "conditionVariant" : {
+      "name" : "chronic gastritis",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having a Helicobacter pylori infection of the gastric mucosa at\r\nthe time of the clinical worsening of chronic gastritis"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having Helicobacter heilmannii infection of the gastric mucosa\r\nat the time of the clinical worsening of chronic gastritis"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having a specified infection of the gastric mucosa at the time of\r\nthe clinical worsening of chronic gastritis"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "being in an immunocompromised state at the time of the\r\nclinical worsening of chronic gastritis"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having reflux of bile acids into the stomach at the time of the clinical\r\nworsening of chronic gastritis or chronic gastropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with a non-topical nonsteroidal anti-inflammatory drug,\r\nincluding aspirin, at least every other day during a continuous period of\r\nat least eight days, within the one month before the clinical worsening\r\nof chronic gastritis or chronic gastropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a drug or a drug from a class of drugs from\r\nSpecified List 2 at the time of the clinical worsening of chronic\r\ngastritis or chronic gastropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "consuming an average of at least 350 grams of alcohol per week for at\r\nleast the six months before the clinical worsening of chronic gastritis or\r\nchronic gastropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nstomach was in the field of radiation, within the one year before the\r\nclinical worsening of chronic gastritis or chronic gastropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the stomach within the one year before the clinical\r\nworsening of chronic gastritis or chronic gastropathy",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having received ⁹⁰Yttrium microspheres as therapy for primary and\r\nmetastatic liver tumours, within the one year before the clinical\r\nworsening of chronic gastritis or chronic gastropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for chronic gastritis\r\nor chronic gastropathy",
+    "definedTerms" : [ ]
+  } ]
+}

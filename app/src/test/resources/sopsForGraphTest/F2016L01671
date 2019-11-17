@@ -1,0 +1,62 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01671",
+  "instrumentNumber" : "92/2016",
+  "citation" : "Statement of Principles concerning bruxism (Balance of Probabilities) (No. 92 of 2016)",
+  "conditionName" : "bruxism",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "experiencing a moderate to severe traumatic brain injury within the 30\r\ndays before the clinical onset of bruxism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having a clinically significant neurological condition as specified at\r\nthe time of the clinical onset of bruxism",
+    "definedTerms" : [ {
+      "term" : "clinically significant neurological condition as specified",
+      "definition" : "means one of the\r\nfollowing conditions:\r\n(a) craniocervical dystonia;\r\n(b) Huntington's chorea; or\r\n(c) Parkinson's disease or secondary parkinsonism.\r\nNote: craniocervical dystonia is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, at the time of the clinical onset of bruxism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of bruxism, and\r\nwhere smoking has ceased, the clinical onset of bruxism has occurred\r\nwithin one year of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having gastro-oesophageal reflux disease at the time of the clinical\r\nonset of bruxism",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(6)",
+    "text" : "experiencing a moderate to severe traumatic brain injury within the 30\r\ndays before the clinical worsening of bruxism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having a clinically significant neurological condition as specified at\r\nthe time of the clinical worsening of bruxism",
+    "definedTerms" : [ {
+      "term" : "clinically significant neurological condition as specified",
+      "definition" : "means one of the\r\nfollowing conditions:\r\n(a) craniocervical dystonia;\r\n(b) Huntington's chorea; or\r\n(c) Parkinson's disease or secondary parkinsonism.\r\nNote: craniocervical dystonia is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, at the time of the clinical worsening of bruxism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of bruxism,\r\nand where smoking has ceased, the clinical worsening of bruxism has\r\noccurred within one year of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having gastro-oesophageal reflux disease at the time of the clinical\r\nworsening of bruxism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "inability to obtain appropriate clinical management for bruxism",
+    "definedTerms" : [ ]
+  } ]
+}

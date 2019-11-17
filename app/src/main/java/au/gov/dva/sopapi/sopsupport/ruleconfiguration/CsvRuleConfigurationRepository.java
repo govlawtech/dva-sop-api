@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 public class CsvRuleConfigurationRepository implements RuleConfigurationRepository {
 
-    public static final String regexForFactorRef = "[0-9a-z]+\\([0-9a-z]+\\)";
+    public static final String regexForFactorRef = "[0-9a-z]+\\([0-9a-z]+\\)(\\([0-9a-z]+\\))?";
 
     private final byte[] _rhCsv;
     private final byte[] _boPCsv;

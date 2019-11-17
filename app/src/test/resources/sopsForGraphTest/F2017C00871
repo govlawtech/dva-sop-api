@@ -1,0 +1,71 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00871",
+  "instrumentNumber" : "32/2013",
+  "citation" : "Statement of Principles concerning Hashimoto's thyroiditis No. 32 of 2013",
+  "conditionName" : "Hashimoto's thyroiditis",
+  "effectiveFrom" : "2013-05-08",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E06.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the three months\r\nbefore the clinical onset of Hashimoto's thyroiditis",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being treated with interferon alpha for a continuous period of at least\r\nsix weeks, within the three months before the clinical onset of\r\nHashimoto's thyroiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, within the ten years before\r\nthe clinical onset of Hashimoto's thyroiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the thyroid gland, within the ten years before the\r\nclinical onset of Hashimoto's thyroiditis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "receiving iodine¹³¹I for the treatment of multinodular\r\ngoitre within the ten years before the clinical onset of Hashimoto's\r\nthyroiditis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the three months\r\nbefore the clinical worsening of Hashimoto's thyroiditis",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being treated with interferon alpha for a continuous period of at least\r\nsix weeks, within the three months before the clinical worsening of\r\nHashimoto's thyroiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, within the ten years before\r\nthe clinical worsening of Hashimoto's thyroiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the thyroid gland, within the ten years before the\r\nclinical worsening of Hashimoto's thyroiditis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "receiving iodine¹³¹I for the treatment of multinodular\r\ngoitre within the ten years before the clinical worsening of Hashimoto's\r\nthyroiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for Hashimoto's\r\nthyroiditis",
+    "definedTerms" : [ ]
+  } ]
+}

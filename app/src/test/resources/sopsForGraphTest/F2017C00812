@@ -1,0 +1,264 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00812",
+  "instrumentNumber" : "80/2015",
+  "citation" : "Statement of Principles concerning trigeminal neuropathy (No. 80 of 2015)",
+  "conditionName" : "trigeminal neuropathy",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having multiple sclerosis, Charcot–Marie–Tooth disease or another\r\ndemyelinating disease at the time of the clinical onset of trigeminal\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a mass lesion which compresses, encases, entraps, stretches,\r\ninfiltrates or displaces the affected trigeminal nerve, at the time of the\r\nclinical onset of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "mass lesion",
+      "definition" : "means an endogenous pathological structure or pathological\r\nentity or extraneous material occupying a delineated area, including a benign\r\nor malignant neoplasm, haematoma, abscess, fungal granuloma,\r\namyloidoma, neurocysticercoma, epidermoid cyst or arachnoid cyst."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having cervical disc prolapse or cervical syringomyelia, involving the\r\ncervical spine at C3 or above, at the time of the clinical onset of\r\ntrigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a haematological malignancy or lymphoproliferative disease\r\nthat infiltrates, encases, stretches or displaces the affected trigeminal\r\nnerve, at the time of the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a cerebrovascular accident involving the brainstem within the\r\n30 days before the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a dental, orthodontic or surgical procedure involving the\r\naffected trigeminal nerve, including local anaesthetic injection, and\r\nsurgical or laser treatment to the cornea, within the three months\r\nbefore the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a traumatic injury to the affected trigeminal nerve within the\r\nthree months before the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "traumatic injury",
+      "definition" : "means a mechanical injury caused by compression, crush,\r\ntransection, stretching, or a chemical or thermal burn.\r\ntrigeminal neuropathy—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having a moderate to severe traumatic brain injury within the three\r\nmonths before the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having maxillary, sphenoid or frontal sinus barotrauma involving the\r\naffected trigeminal nerve, within the three months before the clinical\r\nonset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a disease from the specified list of inflammatory connective\r\ntissue diseases at the time of the clinical onset of trigeminal\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a vasculitis from the specified list of systemic vasculitides at\r\nthe time of the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic vasculitides",
+      "definition" : "means:\r\n(a) giant cell (temporal) arteritis;\r\n(b) Takayasu arteritis; or\r\n(c) Wegener's granulomatosis (granulomatosis with polyangiitis)."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a benign fibro-osseous lesion which compresses, entraps or\r\ndisplaces the affected trigeminal nerve, at the time of the clinical onset\r\nof trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "benign fibro-osseous lesion",
+      "definition" : "means a non-malignant disease of the bone or\r\nconnective tissue, such as Paget's disease of bone, osteogenesis imperfecta,\r\nfibrous dysplasia or cranial osteodysplasia."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having an infection from the specified list of infections, involving the\r\naffected trigeminal nerve, at the time of the clinical onset of trigeminal\r\nneuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of infections",
+      "definition" : "means:\r\n(a) abscess;\r\n(b) Borrelia burgdorferi (Lyme disease);\r\n(c) brainstem meningitis or encephalitis;\r\n(d) herpes simplex virus;\r\n(e) invasive bacterial or fungal sinusitis;\r\n(f) mastoiditis;\r\n(g) Mycobacterium leprae (leprosy);\r\n(h) Mycobacterium tuberculosis;\r\n(i) odontogenic infection;\r\n(j) osteomyelitis;\r\n(k) rhinocerebral zygomycosis;\r\n(l) suppurative otitis media;\r\n(m) Taenia solium (neurocysticercosis); or\r\n(n) Treponema pallidum (tertiary syphilis)."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having acute herpes zoster involving the affected trigeminal nerve,\r\nwithin the six months before the clinical onset of trigeminal\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having amyloidosis or diabetes mellitus at the time of the clinical onset\r\nof trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "being treated with a drug from the specified list of drugs, for a\r\ncontinuous period of at least seven days, within the three months\r\nbefore the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) hydroxystilbamidine isethionate (stilbamidine);\r\n(b) interferon alpha; or\r\n(c) vincristine."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having bisphosphonate-related osteonecrosis of the jaw at the time of\r\nthe clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "inhaling, ingesting or having cutaneous contact with trichloroethylene\r\non at least 30 occasions within the six months before the clinical onset\r\nof trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having an episode of acute intoxication, from inhaling, ingesting or\r\nhaving cutaneous contact with ethylene glycol or trichloroethylene,\r\nwithin the 30 days before the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "undergoing a course of therapeutic radiation, where the affected\r\ntrigeminal nerve was in the field of radiation, within the six months\r\nbefore the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the affected trigeminal nerve root, trigeminal\r\nganglion or trigeminal nerve, within the six months before the clinical\r\nonset of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having osteoradionecrosis of the mandible at the time of the clinical\r\nonset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "undergoing a procedure from the specified list of procedures, for the\r\ntreatment of trigeminal neuralgia, involving the affected trigeminal\r\nnerve, within the six months before the clinical onset of trigeminal\r\nneuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of procedures",
+      "definition" : "means:\r\n(a) fractionated stereotactic radiotherapy;\r\n(b) gamma knife radiosurgery;\r\n(c) microvascular decompression;\r\n(d) peripheral glycerol, alcohol or phenol injection;\r\n(e) percutaneous trigeminal neurolysis; or\r\n(f) radiofrequency thermocoagulation."
+    } ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "receiving lumbar puncture or epidural anaesthesia within the seven\r\ndays before the clinical onset of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(26)",
+    "text" : "having multiple sclerosis, Charcot–Marie–Tooth disease or another\r\ndemyelinating disease at the time of the clinical worsening of",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "having a mass lesion which compresses, encases, entraps, stretches,\r\ninfiltrates or displaces the affected trigeminal nerve, at the time of the\r\nclinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "mass lesion",
+      "definition" : "means an endogenous pathological structure or pathological\r\nentity or extraneous material occupying a delineated area, including a benign\r\nor malignant neoplasm, haematoma, abscess, fungal granuloma,\r\namyloidoma, neurocysticercoma, epidermoid cyst or arachnoid cyst."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "having cervical disc prolapse or cervical syringomyelia, involving the\r\ncervical spine at C3 or above, at the time of the clinical worsening of\r\ntrigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "having a haematological malignancy or lymphoproliferative disease\r\nthat infiltrates, encases, stretches or displaces the affected trigeminal\r\nnerve, at the time of the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "having a cerebrovascular accident involving the brainstem within the\r\n30 days before the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "having a dental, orthodontic or surgical procedure involving the\r\naffected trigeminal nerve, including local anaesthetic injection, and\r\nsurgical or laser treatment to the cornea, within the three months\r\nbefore the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "having a traumatic injury to the affected trigeminal nerve within the\r\nthree months before the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "traumatic injury",
+      "definition" : "means a mechanical injury caused by compression, crush,\r\ntransection, stretching, or a chemical or thermal burn.\r\ntrigeminal neuropathy—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "having a moderate to severe traumatic brain injury within the three\r\nmonths before the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "having maxillary, sphenoid or frontal sinus barotrauma involving the\r\naffected trigeminal nerve, within the three months before the clinical\r\nworsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "having a disease from the specified list of inflammatory connective\r\ntissue diseases at the time of the clinical worsening of trigeminal\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "having a vasculitis from the specified list of systemic vasculitides at\r\nthe time of the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic vasculitides",
+      "definition" : "means:\r\n(a) giant cell (temporal) arteritis;\r\n(b) Takayasu arteritis; or\r\n(c) Wegener's granulomatosis (granulomatosis with polyangiitis)."
+    } ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "having a benign fibro-osseous lesion which compresses, entraps or\r\ndisplaces the affected trigeminal nerve, at the time of the clinical\r\nworsening of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "benign fibro-osseous lesion",
+      "definition" : "means a non-malignant disease of the bone or\r\nconnective tissue, such as Paget's disease of bone, osteogenesis imperfecta,\r\nfibrous dysplasia or cranial osteodysplasia."
+    } ]
+  }, {
+    "paragraph" : "9(38)",
+    "text" : "having an infection from the specified list of infections, involving the\r\naffected trigeminal nerve, at the time of the clinical worsening of\r\ntrigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of infections",
+      "definition" : "means:\r\n(a) abscess;\r\n(b) Borrelia burgdorferi (Lyme disease);\r\n(c) brainstem meningitis or encephalitis;\r\n(d) herpes simplex virus;\r\n(e) invasive bacterial or fungal sinusitis;\r\n(f) mastoiditis;\r\n(g) Mycobacterium leprae (leprosy);\r\n(h) Mycobacterium tuberculosis;\r\n(i) odontogenic infection;\r\n(j) osteomyelitis;\r\n(k) rhinocerebral zygomycosis;\r\n(l) suppurative otitis media;\r\n(m) Taenia solium (neurocysticercosis); or\r\n(n) Treponema pallidum (tertiary syphilis)."
+    } ]
+  }, {
+    "paragraph" : "9(39)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(40)",
+    "text" : "having acute herpes zoster involving the affected trigeminal nerve,\r\nwithin the six months before the clinical worsening of trigeminal\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(41)",
+    "text" : "having amyloidosis or diabetes mellitus at the time of the clinical\r\nworsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(42)",
+    "text" : "being treated with a drug from the specified list of drugs, for a\r\ncontinuous period of at least seven days, within the three months\r\nbefore the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) hydroxystilbamidine isethionate (stilbamidine);\r\n(b) interferon alpha; or\r\n(c) vincristine."
+    } ]
+  }, {
+    "paragraph" : "9(43)",
+    "text" : "having bisphosphonate-related osteonecrosis of the jaw at the time of\r\nthe clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(44)",
+    "text" : "inhaling, ingesting or having cutaneous contact with trichloroethylene\r\non at least 30 occasions within the six months before the clinical\r\nworsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(45)",
+    "text" : "having an episode of acute intoxication, from inhaling, ingesting or\r\nhaving cutaneous contact with ethylene glycol or trichloroethylene,\r\nwithin the 30 days before the clinical worsening of trigeminal\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(46)",
+    "text" : "undergoing a course of therapeutic radiation, where the affected\r\ntrigeminal nerve was in the field of radiation, within the six months\r\nbefore the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(47)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the affected trigeminal nerve root, trigeminal\r\nganglion or trigeminal nerve, within the six months before the clinical\r\nworsening of trigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(48)",
+    "text" : "having osteoradionecrosis of the mandible at the time of the clinical\r\nworsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(49)",
+    "text" : "undergoing a procedure from the specified list of procedures, for the\r\ntreatment of trigeminal neuralgia, involving the affected trigeminal\r\nnerve, within the six months before the clinical worsening of\r\ntrigeminal neuropathy",
+    "definedTerms" : [ {
+      "term" : "specified list of procedures",
+      "definition" : "means:\r\n(a) fractionated stereotactic radiotherapy;\r\n(b) gamma knife radiosurgery;\r\n(c) microvascular decompression;\r\n(d) peripheral glycerol, alcohol or phenol injection;\r\n(e) percutaneous trigeminal neurolysis; or\r\n(f) radiofrequency thermocoagulation."
+    } ]
+  }, {
+    "paragraph" : "9(50)",
+    "text" : "receiving lumbar puncture or epidural anaesthesia within the seven\r\ndays before the clinical worsening of trigeminal neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(51)",
+    "text" : "inability to obtain appropriate clinical management for trigeminal\r\nneuropathy",
+    "definedTerms" : [ ]
+  } ]
+}

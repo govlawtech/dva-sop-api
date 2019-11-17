@@ -5,8 +5,9 @@ import java.time.format.DateTimeFormatter
 
 import au.gov.dva.sopapi.dtos.StandardOfProof
 import au.gov.dva.sopapi.exceptions.SopParserRuntimeException
-import au.gov.dva.sopapi.interfaces.model.DefinedTerm
+import au.gov.dva.sopapi.interfaces.model.{ConditionVariant, DefinedTerm, Factor}
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, ParsedDefinedTerm}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, NewStyleSubFactorParser}
 import au.gov.dva.sopapi.sopref.parsing.traits.{PreAugust2015SoPParser, SoPParser}
 
 import scala.util.Properties
@@ -24,7 +25,10 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
 
       val parsedFactors: List[FactorInfo] = factorSections.map(f => PostAug2015FactorsParser.parseFactor(f))
 
-      (standardOfProof, parsedFactors)
+      val parsedFactorsWithConditionVariants = parsedFactors.
+        map(fi => ConditionVariants.addornFactor(fi,false))
+
+      (standardOfProof, parsedFactorsWithConditionVariants)
     }
     else {
       val factor = FactorsParser.parseFactorsSectionWithSingleFactor(factorsSectionHead)
@@ -32,6 +36,7 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
     }
 
   }
+
 
   override def parseDefinitions(definitionsSection: String): List[DefinedTerm] = {
     PostAug2015DefinitionsParsers.splitToDefinitions(definitionsSection)
@@ -79,7 +84,5 @@ object PostAugust2015Parser extends SoPParser with PreAugust2015SoPParser {
 
     throw new SopParserRuntimeException("Cannot determine aggravation paras from: " + aggravationSection)
   }
-
-
 
 }

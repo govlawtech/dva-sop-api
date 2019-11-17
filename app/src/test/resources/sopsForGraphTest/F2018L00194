@@ -1,0 +1,78 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00194",
+  "instrumentNumber" : "25/2018",
+  "citation" : "Statement of Principles concerning systemic sclerosis (Reasonable Hypothesis) (No. 25 of 2018)",
+  "conditionName" : "systemic sclerosis",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M34"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(a) produced;\r\n(b) excavated;\r\n(c) drilled, cut or ground; or\r\n(d) used in construction, manufacturing, cleaning or blasting,\r\nfor a cumulative period of at least 2 500 hours before the clinical onset\r\nof systemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being treated with bleomycin at the time of the clinical onset of\r\nsystemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "inhaling, ingesting or having cutaneous contact with an organic solvent\r\nfrom the specified list of organic solvents for a cumulative period of at\r\nleast 2 000 hours within a period of ten consecutive years, before the\r\nclinical onset of systemic sclerosis",
+    "definedTerms" : [ {
+      "term" : "specified list of organic solvents",
+      "definition" : "means:\r\n(a) aliphatic hydrocarbon solvents;\r\n(b) aromatic hydrocarbon solvents;\r\n(c) chlorinated organic solvents;\r\n(d) oxygenated organic solvents; or\r\n(e) white spirits.\r\nsystemic sclerosis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with an ergot alkaloid for migraine, for at least the ten\r\nyears before the clinical onset of systemic sclerosis",
+    "definedTerms" : [ {
+      "term" : "ergot alkaloid",
+      "definition" : "means methysergide, ergotamine or dihydroergotamine."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(5)",
+    "text" : "inhaling respirable crystalline silica dust, at the time material\r\ncontaining crystalline silica was being:\r\n(a) produced;\r\n(b) excavated;\r\n(c) drilled, cut or ground; or\r\n(d) used in construction, manufacturing, cleaning or blasting,\r\nfor a cumulative period of at least 2 500 hours before the clinical\r\nworsening of systemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being treated with bleomycin at the time of the clinical worsening of\r\nsystemic sclerosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "inhaling, ingesting or having cutaneous contact with an organic solvent\r\nfrom the specified list of organic solvents for a cumulative period of at\r\nleast 2 000 hours within a period of ten consecutive years, before the\r\nclinical worsening of systemic sclerosis",
+    "definedTerms" : [ {
+      "term" : "specified list of organic solvents",
+      "definition" : "means:\r\n(a) aliphatic hydrocarbon solvents;\r\n(b) aromatic hydrocarbon solvents;\r\n(c) chlorinated organic solvents;\r\n(d) oxygenated organic solvents; or\r\n(e) white spirits.\r\nsystemic sclerosis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being treated with an ergot alkaloid for migraine, for at least the ten\r\nyears before the clinical worsening of systemic sclerosis",
+    "definedTerms" : [ {
+      "term" : "ergot alkaloid",
+      "definition" : "means methysergide, ergotamine or dihydroergotamine."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for clinical worsening of systemic sclerosis manifesting as scleroderma\r\nrenal crisis only, being treated with 15 milligrams or more per day of\r\nprednisone, or equivalent oral glucocorticoid therapy, for a period of at\r\nleast four weeks within the six months before the clinical worsening of\r\nsystemic sclerosis",
+    "definedTerms" : [ {
+      "term" : "equivalent oral glucocorticoid therapy",
+      "definition" : "means a glucocorticoid in the\r\nfollowing table, at the doses specified in the table, or a therapeutically\r\nequivalent dose of another glucocorticoid:\r\nGlucocorticoid Minimum average\r\nrate (milligrams/day)\r\ncortisone 75\r\nhydrocortisone 60\r\nprednisone 15\r\nprednisolone 15"
+    } ],
+    "conditionVariant" : {
+      "name" : "clinical worsening of systemic sclerosis manifesting as scleroderma renal crisis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of systemic\r\nsclerosis, and where smoking has ceased, the clinical worsening of\r\nsystemic sclerosis has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "inability to obtain appropriate clinical management for systemic\r\nsclerosis",
+    "definedTerms" : [ ]
+  } ]
+}

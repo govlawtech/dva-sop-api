@@ -1,0 +1,104 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00864",
+  "instrumentNumber" : "57/2016",
+  "citation" : "Statement of Principles concerning optochiasmatic arachnoiditis (Reasonable Hypothesis) (No. 57 of 2016)",
+  "conditionName" : "optochiasmatic arachnoiditis",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having a bacterial, fungal or parasitic infection involving the\r\nleptomeninges surrounding the optic chiasm or intracranial optic\r\nnerves before the clinical onset of optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "leptomeninges",
+      "definition" : "means the arachnoid mater and the pia mater, the two\r\ninnermost layers of the cerebral meninges between which there is circulation\r\nof cerebrospinal fluid."
+    } ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having a subarachnoid haemorrhage or bleeding into the subarachnoid\r\nspace before the clinical onset of optochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having surgery to an area in close proximity to the optic chiasm before\r\nthe clinical onset of optochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having a moderate to severe traumatic brain injury before the clinical\r\nonset of optochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\noptic chiasm was in the field of radiation, before the clinical onset of\r\noptochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the region of the optic chiasm before the clinical\r\nonset of optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having sarcoidosis or multiple sclerosis, involving inflammation of the\r\nleptomeninges surrounding the optic chiasm, before the clinical onset\r\nof optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "leptomeninges",
+      "definition" : "means the arachnoid mater and the pia mater, the two\r\ninnermost layers of the cerebral meninges between which there is circulation\r\nof cerebrospinal fluid."
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having an intrathecal myelogram or intrathecal treatment with a\r\nsubstance from the specified list of substances before the clinical onset\r\nof optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "specified list of substances",
+      "definition" : "means:\r\n(a) iophendylate (Pantopaque or Myodil);\r\n(b) radioactive gold; or\r\n(c) thorium dioxide (Thorotrast)."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(9)",
+    "text" : "having a bacterial, fungal or parasitic infection involving the\r\nleptomeninges surrounding the optic chiasm or intracranial optic\r\nnerves before the clinical worsening of optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "leptomeninges",
+      "definition" : "means the arachnoid mater and the pia mater, the two\r\ninnermost layers of the cerebral meninges between which there is circulation\r\nof cerebrospinal fluid."
+    } ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having a subarachnoid haemorrhage or bleeding into the subarachnoid\r\nspace before the clinical worsening of optochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "having surgery to an area in close proximity to the optic chiasm before\r\nthe clinical worsening of optochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "having a moderate to severe traumatic brain injury before the clinical\r\nworsening of optochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\noptic chiasm was in the field of radiation, before the clinical worsening\r\nof optochiasmatic arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the region of the optic chiasm before the clinical\r\nworsening of optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "having sarcoidosis or multiple sclerosis, involving inflammation of the\r\nleptomeninges surrounding the optic chiasm, before the clinical\r\nworsening of optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "leptomeninges",
+      "definition" : "means the arachnoid mater and the pia mater, the two\r\ninnermost layers of the cerebral meninges between which there is circulation\r\nof cerebrospinal fluid."
+    } ]
+  }, {
+    "paragraph" : "8(16)",
+    "text" : "having an intrathecal myelogram or intrathecal treatment with a\r\nsubstance from the specified list of substances before the clinical\r\nworsening of optochiasmatic arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "specified list of substances",
+      "definition" : "means:\r\n(a) iophendylate (Pantopaque or Myodil);\r\n(b) radioactive gold; or\r\n(c) thorium dioxide (Thorotrast)."
+    } ]
+  }, {
+    "paragraph" : "8(17)",
+    "text" : "inability to obtain appropriate clinical management for optochiasmatic\r\narachnoiditis",
+    "definedTerms" : [ ]
+  } ]
+}

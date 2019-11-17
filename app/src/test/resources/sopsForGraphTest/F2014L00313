@@ -1,0 +1,110 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00313",
+  "instrumentNumber" : "26/2014",
+  "citation" : "Statement of Principles concerning periodic limb movement disorder No. 26 of 2014",
+  "conditionName" : "periodic limb movement disorder",
+  "effectiveFrom" : "2014-03-26",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having iron deficiency at the time of the clinical onset of periodic limb\r\nmovement disorder",
+    "definedTerms" : [ {
+      "term" : "iron deficiency",
+      "definition" : "means having a serum ferritin level of less than\n20 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having chronic renal failure at the time of the clinical onset of periodic\r\nlimb movement disorder",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having radiculopathy or peripheral neuropathy, involving the lower\r\nlimbs, at the time of the clinical onset of periodic limb movement\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "radiculopathy",
+      "definition" : "means a disease of the nerve roots resulting in symptoms of\nweakness, pain or loss of sensation"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a spinal cord lesion at the time of the clinical onset of periodic\r\nlimb movement disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, which cannot be ceased or substituted, at the time of the\r\nclinical onset of periodic limb movement disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a specified neurological disorder at the time of the clinical onset\r\nof periodic limb movement disorder",
+    "definedTerms" : [ {
+      "term" : "a specified neurological disorder",
+      "definition" : "means:\n(a) cerebrovascular accident; or\n(b) moderate to severe traumatic brain injury"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a clinically significant psychiatric condition as specified at the\r\ntime of the clinical onset of periodic limb movement disorder",
+    "definedTerms" : [ {
+      "term" : "a clinically significant psychiatric condition as specified",
+      "definition" : "means one of\nthe following disorders of mental health, which is of sufficient severity to\nwarrant ongoing management, which may involve regular visits (for example,\nat least monthly) to a psychiatrist, counsellor or general practitioner:\n(a) generalised anxiety disorder;\n(b) major depressive disorder;\n(c) panic disorder;\n(d) persistent depressive disorder; or\n(e) posttraumatic stress disorder"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "drinking at least three cups of caffeinated coffee daily at the time of the\r\nclinical onset of periodic limb movement disorder",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "having iron deficiency at the time of the clinical worsening of periodic\r\nlimb movement disorder",
+    "definedTerms" : [ {
+      "term" : "iron deficiency",
+      "definition" : "means having a serum ferritin level of less than\n20 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having chronic renal failure at the time of the clinical worsening of\r\nperiodic limb movement disorder",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having radiculopathy or peripheral neuropathy, involving the lower\r\nlimbs, at the time of the clinical worsening of periodic limb movement\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "radiculopathy",
+      "definition" : "means a disease of the nerve roots resulting in symptoms of\nweakness, pain or loss of sensation"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a spinal cord lesion at the time of the clinical worsening of\r\nperiodic limb movement disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, which cannot be ceased or substituted, at the time of the\r\nclinical worsening of periodic limb movement disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having a specified neurological disorder at the time of the clinical\r\nworsening of periodic limb movement disorder",
+    "definedTerms" : [ {
+      "term" : "a specified neurological disorder",
+      "definition" : "means:\n(a) cerebrovascular accident; or\n(b) moderate to severe traumatic brain injury"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a clinically significant psychiatric condition as specified at the\r\ntime of the clinical worsening of periodic limb movement disorder",
+    "definedTerms" : [ {
+      "term" : "a clinically significant psychiatric condition as specified",
+      "definition" : "means one of\nthe following disorders of mental health, which is of sufficient severity to\nwarrant ongoing management, which may involve regular visits (for example,\nat least monthly) to a psychiatrist, counsellor or general practitioner:\n(a) generalised anxiety disorder;\n(b) major depressive disorder;\n(c) panic disorder;\n(d) persistent depressive disorder; or\n(e) posttraumatic stress disorder"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "drinking at least three cups of caffeinated coffee daily at the time of the\r\nclinical worsening of periodic limb movement disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "inability to obtain appropriate clinical management for periodic limb\r\nmovement disorder",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019C00538",
+  "instrumentNumber" : "6/2014",
+  "citation" : "Statement of Principles concerning morbid obesity No. 6 of 2014",
+  "conditionName" : "morbid obesity",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a caloric intake that is excessive for energy needs for at least the\r\nfive years before the clinical onset of morbid obesity",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, where that drug cannot be ceased or substituted, for at\r\nleast the one month before the clinical onset of morbid obesity",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having the eating disorder, binge eating disorder, for at least the three\r\nmonths before the clinical onset of morbid obesity",
+    "definedTerms" : [ {
+      "term" : "binge eating disorder",
+      "definition" : "means a psychiatric condition meeting the following\ncriteria:\n(a) recurrent episodes of binge eating. An episode of binge eating is\ncharacterised by both of the following:\n(i) eating, in a discrete period of time (e.g., within any two hour\nperiod), an amount of food that is definitely larger than what\nmost people would eat in a similar period of time under similar\ncircumstances; and\n(ii) a sense of lack of control over eating during the episode (e.g., a\nfeeling that one cannot stop eating or control what or how much\none is eating);\n(b) the binge eating episodes are associated with three (or more) of the\nfollowing:\n(i) eating much more rapidly than normal;\n(ii) eating until feeling uncomfortably full;\n(iii) eating large amounts of food when not feeling physically hungry;\n(iv) eating alone because of feeling embarrassed by how much one is\neating; or\n(v) feeling disgusted with oneself, depressed, or very guilty\nafterward;\n(c) marked distress regarding binge eating is present;\n(d) the binge eating occurs, on average, at least once a week for three\nmonths; and\n(e) the binge eating is not associated with the recurrent use of\ninappropriate compensatory behaviour as in bulimia nervosa and does\nnot occur exclusively during the course of bulimia nervosa or anorexia\nnervosa;\n2"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having Cushing's syndrome for at least the three months before the\r\nclinical onset of morbid obesity",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having hypothyroidism for at least the three months before the clinical\r\nonset of morbid obesity",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a hypothalamic disorder causing excessive eating for at least the\r\nthree months before the clinical onset of morbid obesity",
+    "definedTerms" : [ {
+      "term" : "hypothalamic disorder",
+      "definition" : "means a disease that causes structural damage to\nthe hypothalamus. This can result from tumour, trauma, granulomatous\ninfections, central nervous system infections, therapeutic radiation or surgery"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inability to sleep an average of more than five hours nightly for at least\r\nthe five years before the clinical onset of morbid obesity",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a clinically significant psychiatric disorder as specified for at\r\nleast the five years before the clinical onset of morbid obesity",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "inability to obtain appropriate clinical management for morbid obesity",
+    "definedTerms" : [ ]
+  } ]
+}

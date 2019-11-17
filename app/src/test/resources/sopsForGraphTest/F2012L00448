@@ -1,0 +1,72 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00448",
+  "instrumentNumber" : "18/2012",
+  "citation" : "Statement of Principles concerning chloracne No. 18 of 2012",
+  "conditionName" : "chloracne",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a polyhalogenated\r\naromatic hydrocarbon from the specified list, or a chemical mixture\r\ncontaining a polyhalogenated aromatic hydrocarbon from the specified\r\nlist, within the six weeks before the clinical onset of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a\r\npolychlorodibenzofuran (PCDF) from the specified list, within the six\r\nweeks before the clinical onset of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a\r\npolychlorodibenzo-para-dioxin (PCDD) from the specified list, within\r\nthe six weeks before the clinical onset of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a specified\r\nchemical agent, during the manufacture of which 2,3,7,8-\r\ntetrachlorodibenzo-para-dioxin (TCDD), another polychlorodibenzo-\r\npara-dioxin (PCDD) or a polychlorodibenzofuran (PCDF) is generated,\r\nwithin the six weeks before the clinical onset of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a polyhalogenated\r\naromatic hydrocarbon from the specified list, or a chemical mixture\r\ncontaining a polyhalogenated aromatic hydrocarbon from the specified\r\nlist, within the six weeks before the clinical worsening of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a\r\npolychlorodibenzofuran (PCDF) from the specified list, within the six\r\nweeks before the clinical worsening of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a\r\npolychlorodibenzo-para-dioxin (PCDD) from the specified list, within\r\nthe six weeks before the clinical worsening of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a specified\r\nchemical agent, during the manufacture of which 2,3,7,8-\r\ntetrachlorodibenzo-para-dioxin (TCDD), another polychlorodibenzo-\r\npara-dioxin (PCDD) or a polychlorodibenzofuran (PCDF) is generated,\r\nwithin the six weeks before the clinical worsening of chloracne",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being in an environment shrouded in dust from timber treated with;\n(b) being sprayed with;\n(c) cleaning or maintaining equipment used to apply;\n(d) decanting or spraying;\n(e) handling or sawing timber treated with; or\n(f) using cutting oils contaminated with"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "inability to obtain appropriate clinical management for chloracne",
+    "definedTerms" : [ ]
+  } ]
+}

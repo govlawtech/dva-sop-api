@@ -1,0 +1,71 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01355",
+  "instrumentNumber" : "41/2012",
+  "citation" : "Statement of Principles concerning endometriosis No. 41 of 2012",
+  "conditionName" : "endometriosis",
+  "effectiveFrom" : "2012-07-11",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "N80"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for postmenopausal women only, having hormone replacement therapy\r\nfor the three months before the clinical onset of endometriosis",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of oestrogen\npreparations often in combination with progesterone to offset a hormone\ndeficiency following surgically induced or naturally occurring menopause"
+    } ],
+    "conditionVariant" : {
+      "name" : "postmenopausal women",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having continuous tamoxifen therapy for the three months before the\r\nclinical onset of endometriosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for endometriosis of the abdominal wall, cervix, vagina, vulva or\r\nperineum only, having surgery or trauma involving the site of\r\nendometriosis within the six months before the clinical onset of\r\nendometriosis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "endometriosis of the abdominal wall, cervix, vagina, vulva or perineum",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a body mass index (BMI) of less than 20 for the five years\r\nbefore the clinical onset of endometriosis",
+    "definedTerms" : [ {
+      "term" : "BMI",
+      "definition" : "means body mass index and is calculated as follows:\n2\nThe BMI = W/H where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "for postmenopausal women only, having hormone replacement therapy\r\nfor the three months before the clinical worsening of endometriosis",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of oestrogen\npreparations often in combination with progesterone to offset a hormone\ndeficiency following surgically induced or naturally occurring menopause"
+    } ],
+    "conditionVariant" : {
+      "name" : "postmenopausal women",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having continuous tamoxifen therapy for the three months before the\r\nclinical worsening of endometriosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a BMI of less than 20 for the five years before the clinical\r\nworsening of endometriosis",
+    "definedTerms" : [ {
+      "term" : "BMI",
+      "definition" : "means body mass index and is calculated as follows:\n2\nThe BMI = W/H where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "inability to obtain appropriate clinical management for endometriosis",
+    "definedTerms" : [ ]
+  } ]
+}

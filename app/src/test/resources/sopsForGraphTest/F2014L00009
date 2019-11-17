@@ -1,0 +1,103 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00009",
+  "instrumentNumber" : "4/2014",
+  "citation" : "Statement of Principles concerning dental pulp and apical disease No. 4 of 2014",
+  "conditionName" : "dental pulp and apical disease",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K04.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.5"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.6"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.7"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K04.8"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having dental caries in the affected tooth immediately before the\r\nclinical onset of dental pulp and apical disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having periodontitis in the periodontium supporting the affected tooth\r\nimmediately before the clinical onset of dental pulp and apical disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having trauma to the region of the affected tooth within the three years\r\nbefore the clinical onset of dental pulp and apical disease",
+    "definedTerms" : [ {
+      "term" : "trauma to the region of the affected tooth",
+      "definition" : "means a blunt or penetrating\ninjury resulting in:\n(a) fracture or luxation of the affected tooth;\n(b) avulsion and subsequent replantation of the affected tooth; or\n(c) disruption or fracture of the periodontium in the region of the affected\ntooth"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a blunt injury to the supporting structures of the affected tooth\r\nwithout abnormal loosening or displacement of the tooth, but with\r\nmarked tenderness to percussion of the affected tooth, within the one\r\nyear before the clinical onset of dental pulp and apical disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing dental or orthodontic surgery to the region of the affected\r\ntooth within the six months before the clinical onset of dental pulp and\r\napical disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undergoing a noninvasive dental or orthodontic procedure involving\r\nthe affected tooth or the periodontium supporting the affected tooth,\r\nwithin the six months before the clinical onset of dental pulp and apical\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "a noninvasive dental or orthodontic procedure",
+      "definition" : "means the therapeutic\napplication of a chemical substance, heat or cold, or a physical force to the\nsurface of the teeth, occurring during the course of dental or orthodontic\ntreatment"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "having dental caries in the affected tooth immediately before the\r\nclinical worsening of dental pulp and apical disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having periodontitis in the periodontium supporting the affected tooth\r\nimmediately before the clinical worsening of dental pulp and apical\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having trauma to the region of the affected tooth within the three years\r\nbefore the clinical worsening of dental pulp and apical disease",
+    "definedTerms" : [ {
+      "term" : "trauma to the region of the affected tooth",
+      "definition" : "means a blunt or penetrating\ninjury resulting in:\n(a) fracture or luxation of the affected tooth;\n(b) avulsion and subsequent replantation of the affected tooth; or\n(c) disruption or fracture of the periodontium in the region of the affected\ntooth"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a blunt injury to the supporting structures of the affected tooth\r\nwithout abnormal loosening or displacement of the tooth, but with\r\nmarked tenderness to percussion of the affected tooth, within the one\r\nyear before the clinical worsening of dental pulp and apical disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "undergoing dental or orthodontic surgery to the region of the affected\r\ntooth within the six months before the clinical worsening of dental pulp\r\nand apical disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "undergoing a noninvasive dental or orthodontic procedure involving\r\nthe affected tooth or the periodontium supporting the affected tooth,\r\nwithin the six months before the clinical worsening of dental pulp and\r\napical disease",
+    "definedTerms" : [ {
+      "term" : "a noninvasive dental or orthodontic procedure",
+      "definition" : "means the therapeutic\napplication of a chemical substance, heat or cold, or a physical force to the\nsurface of the teeth, occurring during the course of dental or orthodontic\ntreatment"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "inability to obtain appropriate clinical management for dental pulp and\r\napical disease",
+    "definedTerms" : [ ]
+  } ]
+}

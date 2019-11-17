@@ -1,0 +1,66 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01646",
+  "instrumentNumber" : "58/2013",
+  "citation" : "Statement of Principles concerning sudden unexplained death No. 58 of 2013",
+  "conditionName" : "sudden unexplained death",
+  "effectiveFrom" : "2013-09-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "R96"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "experiencing a direct threat to the person's life within the 24 hours\r\nbefore the sudden unexplained death, and that direct threat to the\r\nperson's life would evoke feelings of substantial distress, anger or fear\r\nin that person",
+    "definedTerms" : [ {
+      "term" : "a direct threat to the person's life",
+      "definition" : "means a major, stressful event which is\nlife-threatening to the person and which includes, but is not limited to:\n(a) being subject to a life-threatening attack;\n(b) being assaulted, including sexual assault; or\n(c) direct exposure to a life-threatening disaster or incident"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undertaking physical activity greater than five METs within the one\r\nhour before the sudden unexplained death",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "receiving a blow to the chest immediately before the sudden\r\nunexplained death",
+    "definedTerms" : [ {
+      "term" : "a blow to the chest",
+      "definition" : "means a blunt, forceful, non-penetrating blow to the\nanterior chest without structural injury to the ribs, sternum or heart"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a BMI of 35 or greater at the time of the sudden unexplained\r\ndeath",
+    "definedTerms" : [ {
+      "term" : "BMI",
+      "definition" : "means body mass index and is calculated as follows:\n2\nThe BMI = W/H where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a blood alcohol content of at least 0.15 percent at the time of the\r\nsudden unexplained death",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having diabetes mellitus at the time of the sudden unexplained death",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having epilepsy at the time of the sudden unexplained death",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being treated with:\r\n(i) a drug which prolongs the corrected QT interval; or\r\n(ii) a non-potassium-sparing diuretic,\r\nwithin the seven days before the sudden unexplained death",
+    "definedTerms" : [ {
+      "term" : "a non-potassium-sparing diuretic",
+      "definition" : "means a drug known as a loop diuretic\nor one of the thiazide group"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "using cocaine within the 24 hours before the sudden unexplained death",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ ]
+}

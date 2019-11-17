@@ -1,0 +1,50 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01141",
+  "instrumentNumber" : "36/2013",
+  "citation" : "Statement of Principles concerning colorectal adenoma No. 36 of 2013",
+  "conditionName" : "colorectal adenoma",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D12.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of colorectal\r\nadenoma, and\r\n(i) smoking commenced at least ten years before the clinical onset\r\nof colorectal adenoma; and\r\n(ii) where smoking has ceased, the clinical onset of colorectal\r\nadenoma has occurred within 30 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "drinking at least 500 kilograms of alcohol within any 25 year period\r\nbefore the clinical onset of colorectal adenoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for adenoma of the colon only,\r\n(i) an inability to undertake any physical activity greater than three\r\nMETs for at least 20 consecutive years within the 30 years\r\nbefore the clinical onset of colorectal adenoma; or\r\n(ii) being obese for at least ten years within the 30 years before the\r\nclinical onset of colorectal adenoma",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    }, {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    }, {
+      "term" : "adenoma of the colon",
+      "definition" : "means a benign epithelial neoplasm of the colon.\nAnatomically the colon is defined as extending from the caecum, including the\nileocaecal junction, to the sigmoid colon, not including the rectosigmoid\njunction"
+    } ],
+    "conditionVariant" : {
+      "name" : "adenoma of the colon",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "an inability to undertake any physical activity greater than three\r\nMETs for at least 20 consecutive years within the 30 years\r\nbefore the clinical onset of colorectal adenoma"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "being obese for at least ten years within the 30 years before the\r\nclinical onset of colorectal adenoma"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for colorectal\r\nadenoma",
+    "definedTerms" : [ ]
+  } ]
+}

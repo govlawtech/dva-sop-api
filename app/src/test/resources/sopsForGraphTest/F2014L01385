@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01385",
+  "instrumentNumber" : "94/2014",
+  "citation" : "Statement of Principles concerning leptospirosis No. 94 of 2014",
+  "conditionName" : "leptospirosis",
+  "effectiveFrom" : "2014-11-17",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A27"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to a pathogenic bacterium from the genus Leptospira\r\nbetween two and 30 days before the clinical onset of leptospirosis",
+    "definedTerms" : [ {
+      "term" : "being exposed to a pathogenic bacterium",
+      "definition" : "means:\n(a) having direct contact with an animal infected with a pathogenic\nbacterium;\n(b) having direct contact with soil, water or vegetation contaminated with a\npathogenic bacterium;\n(c) having direct contact with urine, blood or tissue contaminated with a\npathogenic bacterium;\n(d) ingesting food or water contaminated with a pathogenic bacterium; or\n(e) inhaling aerosols contaminated with a pathogenic bacterium"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for leptospirosis",
+    "definedTerms" : [ ]
+  } ]
+}

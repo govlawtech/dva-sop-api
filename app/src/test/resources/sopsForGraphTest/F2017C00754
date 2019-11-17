@@ -1,0 +1,166 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00754",
+  "instrumentNumber" : "29/2013",
+  "citation" : "Statement of Principles concerning hypothyroidism No. 29 of 2013",
+  "conditionName" : "hypothyroidism",
+  "effectiveFrom" : "2013-05-08",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being iodine deficient within the six months before the clinical onset of\r\nhypothyroidism",
+    "definedTerms" : [ {
+      "term" : "being iodine deficient",
+      "definition" : "means having an average intake of iodine of less\nthan the recommended iodine intake for a continuous period of 30 days, or\nhaving a urinary iodine concentration of less than 100 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the six months before\r\nthe clinical onset of hypothyroidism",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being administered an iodine-containing radiographic contrast agent\r\nwithin the six months before the clinical onset of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being treated with an iodine-containing drug for a continuous period of\r\nat least four weeks, within the six months before the clinical onset of\r\nhypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being pregnant or in the twelve months postpartum at the time of the\r\nclinical onset of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a specified form of thyroiditis within the six months before the\r\nclinical onset of hypothyroidism",
+    "definedTerms" : [ {
+      "term" : "a specified form of thyroiditis",
+      "definition" : "means:\n(a) Riedel's thyroiditis;\n(b) silent thyroiditis; or\n(c) subacute thyroiditis (de Quervain's thyroiditis, granulomatous thyroiditis\nor viral thyroiditis)"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, before the clinical onset of\r\nhypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the thyroid gland, before the clinical onset of\r\nhypothyroidism",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "131receiving iodine¹³¹I treatment before the clinical onset of\r\nhypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having subtotal or total thyroidectomy, or neck surgery involving the\r\nthyroid gland, before the clinical onset of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, for a continuous period of at least six weeks, within the\r\nsix months before the clinical onset of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a chronic infiltrative or infectious disease of the thyroid gland\r\nat the time of the clinical onset of hypothyroidism",
+    "definedTerms" : [ {
+      "term" : "a chronic infiltrative or infectious disease",
+      "definition" : "means:\n(a) amyloidosis;\n(b) haemochromatosis;\n(c) Pneumocystis carinii infection;\n(d) sarcoidosis;\n(e) scleroderma;\n(f) systemic lupus erythematosus; or\n(g) tuberculosis"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a primary or secondary malignant neoplasm of the thyroid\r\ngland at the time of the clinical onset of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having hypopituitarism at the time of the clinical onset of\r\nhypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical onset of hypothyroidism",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(p)",
+    "text" : "being iodine deficient within the six months before the clinical\r\nworsening of hypothyroidism",
+    "definedTerms" : [ {
+      "term" : "being iodine deficient",
+      "definition" : "means having an average intake of iodine of less\nthan the recommended iodine intake for a continuous period of 30 days, or\nhaving a urinary iodine concentration of less than 100 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the six months before\r\nthe clinical worsening of hypothyroidism",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being administered an iodine-containing radiographic contrast agent\r\nwithin the six months before the clinical worsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "being treated with an iodine-containing drug for a continuous period of\r\nat least four weeks, within the six months before the clinical worsening\r\nof hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "being pregnant or in the twelve months postpartum at the time of the\r\nclinical worsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having a specified form of thyroiditis within the six months before the\r\nclinical worsening of hypothyroidism",
+    "definedTerms" : [ {
+      "term" : "a specified form of thyroiditis",
+      "definition" : "means:\n(a) Riedel's thyroiditis;\n(b) silent thyroiditis; or\n(c) subacute thyroiditis (de Quervain's thyroiditis, granulomatous thyroiditis\nor viral thyroiditis)"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, before the clinical\r\nworsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the thyroid gland, before the clinical worsening of\r\nhypothyroidism",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "receiving iodine¹³¹I treatment before the clinical\r\nworsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having subtotal or total thyroidectomy, or neck surgery involving the\r\nthyroid gland, before the clinical worsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, for a continuous period of at least six weeks, within the\r\nsix months before the clinical worsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having a chronic infiltrative or infectious disease of the thyroid gland\r\nat the time of the clinical worsening of hypothyroidism",
+    "definedTerms" : [ {
+      "term" : "a chronic infiltrative or infectious disease",
+      "definition" : "means:\n(a) amyloidosis;\n(b) haemochromatosis;\n(c) Pneumocystis carinii infection;\n(d) sarcoidosis;\n(e) scleroderma;\n(f) systemic lupus erythematosus; or\n(g) tuberculosis"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having a primary or secondary malignant neoplasm of the thyroid\r\ngland at the time of the clinical worsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having hypopituitarism at the time of the clinical worsening of\r\nhypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical worsening of hypothyroidism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "inability to obtain appropriate clinical management for\r\nhypothyroidism",
+    "definedTerms" : [ ]
+  } ]
+}

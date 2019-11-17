@@ -1,0 +1,117 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01748",
+  "instrumentNumber" : "116/2011",
+  "citation" : "Statement of Principles concerning spinal adhesive arachnoiditis No. 116 of 2011",
+  "conditionName" : "spinal adhesive arachnoiditis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G03.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having severe spinal trauma involving the affected site, excluding\r\nsurgical or therapeutic procedures, within the ten years before the\r\nclinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "severe spinal trauma",
+      "definition" : "means fracture or crush injury of the vertebral\ncolumn, or other direct injury to the spinal cord or spinal meninges, as a result\nof external forces at the affected site, including blunt trauma, blast force or a\nforeign body penetrating the spinal region, which results in neurological\ndysfunction"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing an invasive spinal surgical procedure involving the affected\r\nsite within the ten years before the clinical onset of spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having an injury from a dural puncture involving the affected site\r\nwithin the five years before the clinical onset of spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an injury from a dural puncture",
+      "definition" : "means trauma to nerve roots or the\nspinal cord, nerve root paraesthesia, laceration of the myelin sheath or blood in\nthe cerebrospinal fluid"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an epidural catheter left in situ for a continuous period of at\r\nleast 24 hours at the affected site, within the five years before the\r\nclinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having an infection from the specified list within the five years before\r\nthe clinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an infection from the specified list",
+      "definition" : "means:\n(a) fungal, bacterial or viral infection of the spinal cord;\n(b) fungal, bacterial or viral meningitis;\n(c) neurosyphilis;\n(d) spinal toxoplasmosis;\n(e) spinal tuberculosis; or\n(f) vertebral osteomyelitis at the affected site"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having an intraspinal myelogram within the ten years before the\r\nclinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having an epidural blood patch within the two years before the clinical\r\nonset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being treated with intrathecal methylprednisolone acetate (Depo-\r\nMedrol) within the two years before the clinical onset of spinal\r\nadhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a subarachnoid haemorrhage within the ten years before the\r\nclinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a spinal subdural haematoma at the affected site within the ten\r\nyears before the clinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(k)",
+    "text" : "having severe spinal trauma involving the affected site, excluding\r\nsurgical or therapeutic procedures, within the five years before the\r\nclinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "severe spinal trauma",
+      "definition" : "means fracture or crush injury of the vertebral\ncolumn, or other direct injury to the spinal cord or spinal meninges, as a result\nof external forces at the affected site, including blunt trauma, blast force or a\nforeign body penetrating the spinal region, which results in neurological\ndysfunction"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "undergoing an invasive spinal surgical procedure involving the\r\naffected site within the two years before the clinical worsening of\r\nspinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having an injury from a dural puncture involving the affected site\r\nwithin the two years before the clinical worsening of spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an injury from a dural puncture",
+      "definition" : "means trauma to nerve roots or the\nspinal cord, nerve root paraesthesia, laceration of the myelin sheath or blood in\nthe cerebrospinal fluid"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having an epidural catheter left in situ for a continuous period of at\r\nleast 24 hours at the affected site, within the two years before the\r\nclinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having an infection from the specified list within the two years before\r\nthe clinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an infection from the specified list",
+      "definition" : "means:\n(a) fungal, bacterial or viral infection of the spinal cord;\n(b) fungal, bacterial or viral meningitis;\n(c) neurosyphilis;\n(d) spinal toxoplasmosis;\n(e) spinal tuberculosis; or\n(f) vertebral osteomyelitis at the affected site"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having an intraspinal myelogram within the five years before the\r\nclinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having an epidural blood patch within the two years before the clinical\r\nworsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being treated with intrathecal methylprednisolone acetate (Depo-\r\nMedrol) within the one year before the clinical worsening of spinal\r\nadhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a subarachnoid haemorrhage within the two years before the\r\nclinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a spinal subdural haematoma at the affected site within the two\r\nyears before the clinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "inability to obtain appropriate clinical management for spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ ]
+  } ]
+}

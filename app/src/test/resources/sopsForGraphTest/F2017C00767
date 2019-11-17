@@ -1,0 +1,70 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00767",
+  "instrumentNumber" : "99/2011",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the renal pelvis and ureter No. 99 of 2011",
+  "conditionName" : "malignant neoplasm of the renal pelvis and ureter",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C65"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C66"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the renal pelvis or ureter, where smoking commenced at\r\nleast ten years before the clinical onset of malignant neoplasm of the\r\nrenal pelvis or ureter",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected site at least ten years before the\r\nclinical onset of malignant neoplasm of the renal pelvis or ureter",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising\nradiation, and being a member of an aircrew, leading to increased levels of exposure\nto cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\nionising radiation, the various dose estimates for each type of radiation must be\ncombined"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\nmalignant neoplasm of the renal pelvis or ureter, where the first\r\nexposure to arsenic occurred at least ten years before the clinical onset\r\nof malignant neoplasm of the renal pelvis or ureter",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten\nyears;\n(b) consuming drinking water resulting in a cumulative total arsenic\nexposure equivalent to having consumed drinking water containing at\nleast 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "ingesting aristolochic acid as specified at least five years before the\r\nclinical onset of malignant neoplasm of the renal pelvis or ureter",
+    "definedTerms" : [ {
+      "term" : "ingesting aristolochic acid as specified",
+      "definition" : "means:\n(a) consuming a total of at least 100 grams of plant material of the genus\nAristolochia as a constituent of herbal medication; or\n(b) consuming plant material of the genus Aristolochia or foods containing\nplant material of the genus Aristolochia, as part of the regular diet for a\nperiod of at least 15 months"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having renal stone disease of the affected urinary tract at least five\r\nyears before the clinical onset of malignant neoplasm of the renal\r\npelvis or ureter",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having hydronephrosis of the affected urinary tract at least five years\r\nbefore the clinical onset of malignant neoplasm of the renal pelvis or\r\nureter",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a chronic renal condition, of sufficient severity to require\r\ndialysis or renal transplanation, at least one year before the clinical\r\nonset of malignant neoplasm of the renal pelvis or ureter",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "consuming a total of at least 100 grams of phenacetin at least five years\r\nbefore the clinical onset of malignant neoplasm of the renal pelvis or\r\nureter",
+    "definedTerms" : [ {
+      "term" : "phenacetin",
+      "definition" : "means an aniline derivative that has analgesic and antipyretic\nproperties, and was formerly used as a constituent of several over-the-counter\ncompound analgesic medications, including Bex or Vincent's powder, Empirin\nCompound and Bromo seltzer. Phenacetin is also known as acetophenetidin,\naceto-p-phenetidide, acetylphenetidin, phenacetinum, N-(4-ethoxyphenyl)\nacetamide, p-ethoxyacetanilide, or CAS 62-44-2"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being treated with systemic cyclophosphamide or systemic ifosfamide,\r\nat least five years before the clinical onset of malignant neoplasm of\r\nthe renal pelvis or ureter",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the renal pelvis or ureter",
+    "definedTerms" : [ ]
+  } ]
+}

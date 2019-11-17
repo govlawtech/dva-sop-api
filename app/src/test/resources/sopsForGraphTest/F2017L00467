@@ -1,0 +1,240 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00467",
+  "instrumentNumber" : "30/2017",
+  "citation" : "Statement of Principles concerning bronchiectasis (Reasonable Hypothesis) (No. 30 of 2017)",
+  "conditionName" : "bronchiectasis",
+  "effectiveFrom" : "2017-05-22",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having viral or bacterial pneumonia within the ten years before the\r\nclinical onset of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having pertussis within the ten years before the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having pulmonary tuberculosis or non-tuberculous mycobacterial\r\ninfection of the lung, before the clinical onset of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having sarcoidosis of the lung before the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having bronchial obstruction before the clinical onset of\r\nbronchiectasis, where the bronchiectasis is distal to that obstruction",
+    "definedTerms" : [ {
+      "term" : "bronchial obstruction",
+      "definition" : "means partial or complete blockage of the lumen of a\r\nbronchus.\r\nNote: Examples of a cause of  include an inhaled foreign body,\r\nbroncholith or neoplasm, extrinsic narrowing due to enlarged lymph nodes, twisting or\r\ndisplacement of the airways after a lobar resection, or middle lobe syndrome.\r\nbronchiectasis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "inhaling vapours, gases or fumes of a chemical agent from the\r\nspecified list of chemical agents:\r\n(a) resulting in signs and symptoms of severe acute lower\r\nrespiratory damage requiring medical attention within 48 hours\r\nafter exposure; and\r\n(b) the persistence of respiratory symptoms and signs for at least one\r\nweek after exposure,\r\nwithin the five years before the clinical onset of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "specified list of chemical agents",
+      "definition" : "means:\r\n(a) ammonia;\r\n(b) chlorine;\r\n(c) oxides of nitrogen;\r\n(d) oxides of sulphur;\r\n(e) paraquat;\r\n(f) phosgene; or\r\n(g) smoke from fires."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having an occupational lung disease from the specified list of\r\noccupational lung diseases at the time of the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "inhaling sulphur mustard (mustard gas) before the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having aspiration pneumonitis within the five years before the clinical\r\nonset of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "aspiration pneumonitis",
+      "definition" : "means inflammation of the lungs with clinical or\r\nradiological evidence of consolidation due to the deposition into the\r\nrespiratory tract of a substance or material from the upper aerodigestive tract.\r\nNote: Examples of a substance or material that may be deposited from the upper aerodigestive\r\ntract include food particles, oral secretions or gastric contents."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having gastro-oesophageal reflux disease, with erosive oesophagitis or\r\noesophageal stricture, within the two years before the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having allergic bronchopulmonary aspergillosis at the time of the\r\nclinical onset of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "allergic bronchopulmonary aspergillosis",
+      "definition" : "means infection of the bronchi and\r\nlungs by species of Aspergillus accompanied by wheeze, often with\r\nexpectoration of yellow or brown bronchial plugs composed of eosinophils\r\nand fungal hyphae."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical onset of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having fibrosis or fibrosing interstitial lung disease, involving the\r\nsegment of the lung affected by bronchiectasis, before the clinical\r\nonset of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\r\n(a) consuming drinking water with an average arsenic concentration of at\r\nleast 50 micrograms per litre for a cumulative period of at least ten\r\nyears; or\r\n(b) having clinical evidence of excessive chronic arsenic exposure."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having a disease from the specified list of connective tissue diseases at\r\nthe time of the clinical onset of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "specified list of connective tissue diseases",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) dermatomyositis;\r\n(c) eosinophilic granulomatosis with polyangiitis (Churg-Strauss\r\nsyndrome);\r\n(d) granulomatosis with polyangiitis (Wegener's granulomatosis);\r\n(e) microscopic polyangiitis;\r\n(f) mixed connective tissue disease;\r\n(g) polymyositis;\r\n(h) relapsing polychondritis;\r\n(i) rheumatoid arthritis;\r\n(j) Sjogren's syndrome;\r\n(k) systemic lupus erythematosus;\r\n(l) systemic sclerosis; or\r\n(m) Takayasu arteritis."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having a haematological malignancy at the time of the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "being treated with an immunosuppressive drug within the five years\r\nbefore the clinical onset of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "immunosuppressive drug",
+      "definition" : "means a drug or an agent which results in\r\nsubstantial suppression of immune responses.\r\nNote: Examples of an  include corticosteroids other than inhaled or\r\ntopical corticosteroids, drugs used to prevent transplant rejection, tumour necrosis\r\nfactor-α inhibitors and chemotherapeutic agents used for the treatment of cancer."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "being infected with human T-cell lymphotropic virus type 1 before the\r\nclinical onset of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having inflammatory bowel disease at the time of the clinical onset of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having severe and persistent asthma within the five years before the\r\nclinical onset of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "severe and persistent asthma",
+      "definition" : "means asthma having any of the following\r\nspecified characteristics, alone or in combination, for a cumulative period of\r\nat least six months within a continuous one year period:\r\n(a) FEV1 (forced expiratory volume in one second) of 60% or less of\r\nexpected value;\r\n(b) wheeze, tightness, cough, dyspnoea or other symptoms occurring\r\nthroughout each day;\r\n(c) frequent flare-ups;\r\n(d) the presence of night-time symptoms on more than one night per week;\r\nor\r\n(e) symptoms frequently restrict activity or sleep."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having chronic obstructive pulmonary disease at the time of the\r\nclinical onset of bronchiectasis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(23)",
+    "text" : "having an episode of acute viral or bacterial lower respiratory tract\r\ninfection requiring medical treatment, within the one year before the\r\nclinical worsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having pertussis within the ten years before the clinical worsening of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "having pulmonary tuberculosis or non-tuberculous mycobacterial\r\ninfection of the lung before the clinical worsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "having sarcoidosis of the lung before the clinical worsening of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "having bronchial obstruction before the clinical worsening of\r\nbronchiectasis, where the bronchiectasis is distal to that obstruction",
+    "definedTerms" : [ {
+      "term" : "bronchial obstruction",
+      "definition" : "means partial or complete blockage of the lumen of a\r\nbronchus.\r\nNote: Examples of a cause of  include an inhaled foreign body,\r\nbroncholith or neoplasm, extrinsic narrowing due to enlarged lymph nodes, twisting or\r\ndisplacement of the airways after a lobar resection, or middle lobe syndrome.\r\nbronchiectasis—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "inhaling vapours, gases or fumes of a chemical agent from the\r\nspecified list of chemical agents:\r\n(a) resulting in signs and symptoms of severe acute lower\r\nrespiratory damage requiring medical attention within 48 hours\r\nafter exposure; and\r\n(b) the persistence of respiratory symptoms and signs for at least one\r\nweek after exposure,\r\nwithin the five years before the clinical worsening of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "specified list of chemical agents",
+      "definition" : "means:\r\n(a) ammonia;\r\n(b) chlorine;\r\n(c) oxides of nitrogen;\r\n(d) oxides of sulphur;\r\n(e) paraquat;\r\n(f) phosgene; or\r\n(g) smoke from fires."
+    } ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "having an occupational lung disease from the specified list of\r\noccupational lung diseases at the time of the clinical worsening of\r\nbronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "inhaling sulphur mustard (mustard gas) before the clinical worsening\r\nof bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "having aspiration pneumonitis within the five years before the clinical\r\nworsening of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "aspiration pneumonitis",
+      "definition" : "means inflammation of the lungs with clinical or\r\nradiological evidence of consolidation due to the deposition into the\r\nrespiratory tract of a substance or material from the upper aerodigestive tract.\r\nNote: Examples of a substance or material that may be deposited from the upper aerodigestive\r\ntract include food particles, oral secretions or gastric contents."
+    } ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "having gastro-oesophageal reflux disease, with erosive oesophagitis or\r\noesophageal stricture, within the two years before the clinical\r\nworsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "having allergic bronchopulmonary aspergillosis at the time of the\r\nclinical worsening of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "allergic bronchopulmonary aspergillosis",
+      "definition" : "means infection of the bronchi and\r\nlungs by species of Aspergillus accompanied by wheeze, often with\r\nexpectoration of yellow or brown bronchial plugs composed of eosinophils\r\nand fungal hyphae."
+    } ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical worsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "having fibrosis or fibrosing interstitial lung disease, involving the\r\nsegment of the lung affected by bronchiectasis, before the clinical\r\nworsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "being exposed to arsenic as specified before the clinical worsening of\r\nbronchiectasis",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\r\n(a) consuming drinking water with an average arsenic concentration of at\r\nleast 50 micrograms per litre for a cumulative period of at least ten\r\nyears; or\r\n(b) having clinical evidence of excessive chronic arsenic exposure."
+    } ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "having a disease from the specified list of connective tissue diseases at\r\nthe time of the clinical worsening of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "specified list of connective tissue diseases",
+      "definition" : "means:\r\n(a) ankylosing spondylitis;\r\n(b) dermatomyositis;\r\n(c) eosinophilic granulomatosis with polyangiitis (Churg-Strauss\r\nsyndrome);\r\n(d) granulomatosis with polyangiitis (Wegener's granulomatosis);\r\n(e) microscopic polyangiitis;\r\n(f) mixed connective tissue disease;\r\n(g) polymyositis;\r\n(h) relapsing polychondritis;\r\n(i) rheumatoid arthritis;\r\n(j) Sjogren's syndrome;\r\n(k) systemic lupus erythematosus;\r\n(l) systemic sclerosis; or\r\n(m) Takayasu arteritis."
+    } ]
+  }, {
+    "paragraph" : "9(38)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nworsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(39)",
+    "text" : "having a haematological malignancy at the time of the clinical\r\nworsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(40)",
+    "text" : "being treated with an immunosuppressive drug within the five years\r\nbefore the clinical worsening of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "immunosuppressive drug",
+      "definition" : "means a drug or an agent which results in\r\nsubstantial suppression of immune responses.\r\nNote: Examples of an  include corticosteroids other than inhaled or\r\ntopical corticosteroids, drugs used to prevent transplant rejection, tumour necrosis\r\nfactor-α inhibitors and chemotherapeutic agents used for the treatment of cancer."
+    } ]
+  }, {
+    "paragraph" : "9(41)",
+    "text" : "being infected with human T-cell lymphotropic virus type 1 before the\r\nclinical worsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(42)",
+    "text" : "having inflammatory bowel disease at the time of the clinical\r\nworsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(43)",
+    "text" : "having severe and persistent asthma within the five years before the\r\nclinical worsening of bronchiectasis",
+    "definedTerms" : [ {
+      "term" : "severe and persistent asthma",
+      "definition" : "means asthma having any of the following\r\nspecified characteristics, alone or in combination, for a cumulative period of\r\nat least six months within a continuous one year period:\r\n(a) FEV1 (forced expiratory volume in one second) of 60% or less of\r\nexpected value;\r\n(b) wheeze, tightness, cough, dyspnoea or other symptoms occurring\r\nthroughout each day;\r\n(c) frequent flare-ups;\r\n(d) the presence of night-time symptoms on more than one night per week;\r\nor\r\n(e) symptoms frequently restrict activity or sleep."
+    } ]
+  }, {
+    "paragraph" : "9(44)",
+    "text" : "having chronic obstructive pulmonary disease at the time of the\r\nclinical worsening of bronchiectasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(45)",
+    "text" : "inability to obtain appropriate clinical management for bronchiectasis",
+    "definedTerms" : [ ]
+  } ]
+}

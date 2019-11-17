@@ -1,0 +1,97 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00827",
+  "instrumentNumber" : "102/2011",
+  "citation" : "Statement of Principles concerning renal artery atherosclerotic disease No. 102 of 2011",
+  "conditionName" : "renal artery atherosclerotic disease",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I70.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least ten pack-years of cigarettes or the equivalent thereof\r\nin other tobacco products, before the clinical onset of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having hypertension for a period of at least five years before the\r\nclinical onset of renal artery atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus before the clinical onset of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having dyslipidaemia before the clinical onset of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having hyperhomocysteinaemia before the clinical onset of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the renal artery before the clinical onset of renal\r\nartery atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "undergoing a course of therapeutic radiation, where the renal artery\r\nwas in the field of radiation, before the clinical onset of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "smoking at least ten pack-years of cigarettes or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having hypertension for a period of at least five years before the\r\nclinical worsening of renal artery atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having diabetes mellitus before the clinical worsening of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having dyslipidaemia before the clinical worsening of renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having hyperhomocysteinaemia before the clinical worsening of renal\r\nartery atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the renal artery before the clinical worsening of\r\nrenal artery atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "undergoing a course of therapeutic radiation, where the renal artery\r\nwas in the field of radiation, before the clinical worsening of renal\r\nartery atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "a course of therapeutic radiation",
+      "definition" : "means one or more fractions (treatment\nportions) of ionising radiation administered with the aim of achieving\npalliation or cure with gamma rays, x-rays, alpha particles or beta particles"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "being treated with an angiotensin converting enzyme inhibitor or an\r\nangiotensin receptor blocker, within the 28 days before the clinical\r\nworsening of renal artery atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "inability to obtain appropriate clinical management for renal artery\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  } ]
+}

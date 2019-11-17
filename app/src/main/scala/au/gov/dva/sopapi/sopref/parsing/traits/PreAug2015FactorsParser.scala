@@ -6,9 +6,9 @@ import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
 import au.gov.dva.sopapi.sopref.parsing.implementations.model.{FactorInfo, FactorInfoWithoutSubParas}
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser
 import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.FactorsParser.{MainPara, ParaLines}
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.subfactors.{ConditionVariants, NewStyleSubFactorParser}
 
 import scala.util.Properties
-import scala.util.parsing.combinator.RegexParsers
 
 
 trait PreAug2015FactorsParser extends MiscRegexes {
@@ -18,8 +18,6 @@ trait PreAug2015FactorsParser extends MiscRegexes {
   private def toLineList(stringWithLinebreaks: String) = {
     stringWithLinebreaks.split(platformNeutralLineEndingRegex.regex).toList
   }
-
-
 
 
   def parseFactorsSection(factorsSectionText: String, paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean = (_,_) => false): (StandardOfProof, List[FactorInfo]) = {
@@ -32,7 +30,11 @@ trait PreAug2015FactorsParser extends MiscRegexes {
       return (standard, List(singleFactor))
     }
     val parsedFactors = FactorsParser.oldStyleSmallLetterLinesToFactors(rest,paraLinesShouldBeChildrenAccordingToCustomRule)
-    (standard, parsedFactors)
+
+    val parsedFactorsWithConditionVariants = parsedFactors.
+      map(fi => ConditionVariants.addornFactor(fi,true))
+
+    (standard, parsedFactorsWithConditionVariants)
   }
 
   private def splitToHeaderAndRest(factorsSectionText: String) = {

@@ -1,0 +1,72 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00650",
+  "instrumentNumber" : "18/2018",
+  "citation" : "Statement of Principles concerning personality disorder (Balance of Probabilities) (No. 18 of 2018)",
+  "conditionName" : "personality disorder",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "experiencing a category 1A stressor within the one year before the\r\nclinical onset of personality disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a category 1B stressor within the six months before the\r\nclinical onset of personality disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "experiencing severe childhood abuse before the clinical onset of\r\npersonality disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a clinically significant disorder of mental health as specified,\r\nwithin the five years before the clinical onset of personality disorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) acute stress disorder;\r\n(b) agoraphobia;\r\n(c) alcohol use disorder;\r\n(d) anxiety disorder;\r\n(e) attention-deficit/hyperactivity disorder (including other specified\r\nattention-deficit/hyperactivity disorder and unspecified attention-\r\ndeficit/hyperactivity disorder);\r\n(f) bipolar disorder;\r\n(g) conduct disorder (including other specified disruptive, impulse-\r\ncontrol, and conduct disorder and unspecified disruptive, impulse-\r\ncontrol, and conduct disorder);\r\n(h) depressive disorder;\r\n(i) eating disorder;\r\n(j) gambling disorder;\r\n(k) gender dysphoria;\r\n(l) obsessive-compulsive disorder;\r\n(m) oppositional defiant disorder;\r\n(n) panic disorder;\r\n(o) posttraumatic stress disorder;\r\n(p) schizophrenia;\r\n(q) social anxiety disorder;\r\n(r) somatic symptom disorder;\r\n(s) specific phobia; or\r\n(t) substance use disorder.\r\nNote 1: Management\" of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To \"warrant ongoing management\" does not require that any actual management was received\r\nor given for the condition."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(5)",
+    "text" : "experiencing a category 1A stressor within the one year before the\r\nclinical worsening of personality disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "experiencing a category 1B stressor within the six months before the\r\nclinical worsening of personality disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "experiencing severe childhood abuse before the clinical worsening of\r\npersonality disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having a clinically significant disorder of mental health as specified,\r\nwithin the five years before the clinical worsening of personality\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) acute stress disorder;\r\n(b) agoraphobia;\r\n(c) alcohol use disorder;\r\n(d) anxiety disorder;\r\n(e) attention-deficit/hyperactivity disorder (including other specified\r\nattention-deficit/hyperactivity disorder and unspecified attention-\r\ndeficit/hyperactivity disorder);\r\n(f) bipolar disorder;\r\n(g) conduct disorder (including other specified disruptive, impulse-\r\ncontrol, and conduct disorder and unspecified disruptive, impulse-\r\ncontrol, and conduct disorder);\r\n(h) depressive disorder;\r\n(i) eating disorder;\r\n(j) gambling disorder;\r\n(k) gender dysphoria;\r\n(l) obsessive-compulsive disorder;\r\n(m) oppositional defiant disorder;\r\n(n) panic disorder;\r\n(o) posttraumatic stress disorder;\r\n(p) schizophrenia;\r\n(q) social anxiety disorder;\r\n(r) somatic symptom disorder;\r\n(s) specific phobia; or\r\n(t) substance use disorder.\r\nNote 1: Management\" of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To \"warrant ongoing management\" does not require that any actual management was received\r\nor given for the condition."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "inability to obtain appropriate clinical management for personality\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

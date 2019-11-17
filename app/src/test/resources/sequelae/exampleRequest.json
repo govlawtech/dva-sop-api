@@ -1,0 +1,34 @@
+{
+  "diagnosedConditions": [
+    {
+      "conditionName": "bruxism",
+      "date": "2019-01-01",
+      "isOnset": true
+    },
+    {
+      "conditionName": "tooth wear",
+      "date": "2019-02-01",
+      "isOnset": true
+    },
+    {
+      "conditionName": "panic disorder",
+      "date": "2019-03-01",
+      "isOnset": true
+    },
+    {
+      "conditionName": "irritable bowel syndrome",
+      "date": "2019-04-01",
+      "isOnset": true
+    }
+  ],
+  "acceptedConditions": [
+    {
+      "conditionName": "depressive disorder",
+      "date": "2018-07-01"
+    },
+    {
+      "conditionName": "posttraumatic stress disorder",
+      "date": "2018-01-01"
+    }
+  ]
+}

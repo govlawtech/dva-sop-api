@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01163",
+  "instrumentNumber" : "78/2018",
+  "citation" : "Statement of Principles concerning scrub typhus (Balance of Probabilities) (No. 78 of 2018)",
+  "conditionName" : "scrub typhus",
+  "effectiveFrom" : "2018-09-24",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A75.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to Orientia tsutsugamushi within the 28 days before the\r\nclinical onset of scrub typhus",
+    "definedTerms" : [ {
+      "term" : "being exposed to Orientia tsutsugamushi",
+      "definition" : "means:\r\n(a) being bitten by a trombiculid mite (chigger) infected with Orientia\r\ntsutsugamushi; or\r\n(b) being in an area that is endemic for scrub typhus; or\r\n(c) having percutaneous exposure to blood contaminated with Orientia\r\ntsutsugamushi; or\r\n(d) receiving a blood transfusion, blood products or a stem cell transplant\r\ncontaminated with Orientia tsutsugamushi.\r\nNote: area endemic for scrub typhus is also defined in the Schedule 1 - Dictionary."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for scrub typhus",
+    "definedTerms" : [ ]
+  } ]
+}

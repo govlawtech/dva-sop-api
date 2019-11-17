@@ -1,0 +1,82 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00821",
+  "instrumentNumber" : "73/2015",
+  "citation" : "Statement of Principles concerning myelodysplastic syndrome (No. 73 of 2015)",
+  "conditionName" : "myelodysplastic syndrome",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of myelodysplastic\r\nsyndrome, and:\r\n(a) smoking commenced at least five years before the clinical onset\r\nof myelodysplastic syndrome; and\r\n(b) where smoking has ceased, the clinical onset of myelodysplastic\r\nsyndrome has occurred within 15 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs before the clinical onset of myelodysplastic\r\nsyndrome, where the first exposure occurred at least six months before\r\nthe clinical onset of myelodysplastic syndrome, and where that therapy\r\nhas ceased, the clinical onset of myelodysplastic syndrome occurred\r\nwithin 20 years of cessation",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) a topoisomerase II inhibitor;\r\n(b) an alkylating agent; or\r\n(c) azathioprine."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having received a cumulative equivalent dose of at least 0.01 sievert of\r\nionising radiation to the bone marrow at least one year before the\r\nclinical onset of myelodysplastic syndrome",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "undergoing treatment with radioactive iodine for cancer before the\r\nclinical onset of myelodysplastic syndrome, where the first exposure\r\noccurred at least one year before the clinical onset of myelodysplastic\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "undergoing treatment with radioactive phosphorus for a\r\nmyeloproliferative neoplasm before the clinical onset of\r\nmyelodysplastic syndrome, where the first exposure occurred at least\r\none year before the clinical onset of myelodysplastic syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being exposed to benzene as specified:\r\n(a) for a cumulative total of at least 1 250 hours within a continuous\r\nperiod of five years before the clinical onset of myelodysplastic\r\nsyndrome; and\r\n(b) where the first exposure in that period occurred at least five\r\nyears before the clinical onset of myelodysplastic syndrome",
+    "definedTerms" : [ {
+      "term" : "being exposed to benzene as specified",
+      "definition" : "means:\r\n(a) having cutaneous contact with liquids containing benzene greater than\r\n1% by volume;\r\n(b) ingesting liquids containing benzene greater than 1% by volume; or\r\n(c) inhaling benzene vapour where such exposure occurs at an ambient 8-\r\nhour time-weighted average benzene concentration exceeding five\r\nparts per million.\r\nNote: 8-hour time-weighted average is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "receiving greater than five ppm-years of cumulative exposure to\r\nbenzene before the clinical onset of myelodysplastic syndrome, and\r\nwhere the first exposure occurred at least five years before the clinical\r\nonset of myelodysplastic syndrome",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having received a solid organ transplant before the clinical onset of\r\nmyelodysplastic syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of myelodysplastic syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being obese for at least five years within the 20 years before the\r\nclinical onset of myelodysplastic syndrome",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\n2The BMI = W/H and where:\r\nW is the person's weight in kilograms; and\r\nH is the person's height in metres."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a disease from the specified list of autoimmune diseases before\r\nthe clinical onset of myelodysplastic syndrome",
+    "definedTerms" : [ {
+      "term" : "specified list of autoimmune diseases",
+      "definition" : "means:\r\n(a) pernicious anaemia;\r\n(b) polymyalgia rheumatica; or\r\n(c) rheumatoid arthritis."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having aplastic anaemia at the time of the clinical onset of\r\nmyelodysplastic syndrome",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(13)",
+    "text" : "inability to obtain appropriate clinical management for\r\nmyelodysplastic syndrome",
+    "definedTerms" : [ ]
+  } ]
+}

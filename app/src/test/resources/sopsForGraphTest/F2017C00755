@@ -1,0 +1,93 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00755",
+  "instrumentNumber" : "69/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the bile duct No. 69 of 2015",
+  "conditionName" : "malignant neoplasm of the bile duct",
+  "effectiveFrom" : "2015-06-01",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C22.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C24"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having chronic infestation of the hepatobiliary tract with the liver\r\nflukes Clonorchis sinensis or Opisthorchis viverrini before the clinical\r\nonset of malignant neoplasm of the bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having primary sclerosing cholangitis before the clinical onset of\r\nmalignant neoplasm of the bile duct",
+    "definedTerms" : [ {
+      "term" : "primary sclerosing cholangitis",
+      "definition" : "means an autoimmune disorder\ncharacterised by a progressive, inflammatory, sclerosing process in the bile\nducts"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having inflammatory bowel disease before the clinical onset of\r\nmalignant neoplasm of the bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having cholelithiasis before the clinical onset of malignant neoplasm of\r\nthe bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the bile ducts at least five years before the clinical\r\nonset of malignant neoplasm of the bile duct",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having cirrhosis of the liver before the clinical onset of malignant\r\nneoplasm of the bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having chronic infection with the hepatitis B virus at the time of the\r\nclinical onset of malignant neoplasm of the bile duct",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis B virus",
+      "definition" : "means:\n(a) the presence of HBsAg or hepatitis B virus (HBV) deoxyribonucleic\nacid (DNA), in the absence of IgM Anti-HBc on serological testing; or\n(b) positive serology for hepatitis B plus evidence of chronic hepatitis or\nother chronic changes on liver biopsy"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having chronic infection with the hepatitis C virus at the time of the\r\nclinical onset of malignant neoplasm of the bile duct",
+    "definedTerms" : [ {
+      "term" : "chronic infection with the hepatitis C virus",
+      "definition" : "means:\n(a) positive polymerase chain reaction testing for hepatitis C virus (HCV)\nribonucleic acid (RNA);\n(b) the presence of anti-HCV and elevated serum aminotransferase levels,\nmore than six months after evidence of an acute hepatitis C infection;\nor\n(c) positive serology for hepatitis C plus evidence of chronic hepatitis or\nother chronic changes on liver biopsy"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being obese for at least five years within the 20 years before the\r\nclinical onset of malignant neoplasm of the bile duct",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having diabetes mellitus for at least five years before the clinical onset\r\nof malignant neoplasm of the bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(i) for a cumulative period of at least 1 000 hours before the clinical\r\nonset of malignant neoplasm of the bile duct; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) where the first inhalation of respirable asbestos fibres\r\ncommenced at least five years before the clinical onset of\r\nmalignant neoplasm of the bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(i) for a cumulative period of at least 3 000 hours before the clinical\r\nonset of malignant neoplasm of the bile duct; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) where the first inhalation of respirable asbestos fibres\r\ncommenced at least five years before the clinical onset of\r\nmalignant neoplasm of the bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "undergoing stem cell, bone marrow or solid organ transplantation\r\nbefore the clinical onset of malignant neoplasm of the bile duct",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "smoking at least 15 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the bile duct, and:\r\n(i) smoking commenced at least five years before the clinical onset of\r\nmalignant neoplasm of the bile duct; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the bile duct has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(o)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the bile duct",
+    "definedTerms" : [ ]
+  } ]
+}

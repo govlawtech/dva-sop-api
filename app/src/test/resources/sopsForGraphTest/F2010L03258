@@ -1,0 +1,43 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03258",
+  "instrumentNumber" : "11/2011",
+  "citation" : "Statement of Principles concerning polyarteritis nodosa No. 11 of 2011",
+  "conditionName" : "polyarteritis nodosa",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M30.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being infected with hepatitis B virus at the time of the clinical onset of\r\npolyarteritis nodosa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having had a hepatitis B vaccination within the three months before the\r\nclinical onset of polyarteritis nodosa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of polyarteritis nodosa",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "being infected with hepatitis B virus at the time of the clinical\r\nworsening of polyarteritis nodosa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having had a hepatitis B vaccination within the three months before the\r\nclinical worsening of polyarteritis nodosa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of polyarteritis nodosa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for polyarteritis\r\nnodosa",
+    "definedTerms" : [ ]
+  } ]
+}

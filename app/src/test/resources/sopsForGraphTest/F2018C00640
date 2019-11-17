@@ -1,0 +1,127 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00640",
+  "instrumentNumber" : "13/2016",
+  "citation" : "Statement of Principles concerning eating disorder (Reasonable Hypothesis) (No. 13 of 2016)",
+  "conditionName" : "eating disorder",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F50.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "F50.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "experiencing a category 1A stressor within the two years before the\r\nclinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a category 1B stressor within the one year before the\r\nclinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel on-going\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation, or divorce;\r\n(c) having concerns in the work or school environment including on-going\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, on-going involvement with the police concerning violations\r\nof the law, or court appearances associated with personal legal\r\nproblems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "experiencing the death of a significant other within the one year before\r\nthe clinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the two years before the clinical onset of eating disorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) agoraphobia;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) attention-deficit/hyperactivity disorder;\r\n(e) bipolar disorder;\r\n(f) depressive disorder;\r\n(g) obsessive compulsive disorder;\r\n(h) panic disorder;\r\n(i) personality disorder;\r\n(j) posttraumatic stress disorder;\r\n(k) schizophrenia;\r\n(l) social anxiety disorder; or\r\n(m) substance use disorder."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a medical illness or injury which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the two years\r\nbefore the clinical onset of eating disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having experienced severe childhood abuse before the clinical onset of\r\neating disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being treated with the drug topiramate at the time of the clinical onset\r\nof eating disorder",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(9)",
+    "text" : "experiencing a category 1A stressor within the two years before the\r\nclinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "experiencing a category 1B stressor within the one year before the\r\nclinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel on-going\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation, or divorce;\r\n(c) having concerns in the work or school environment including on-going\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, on-going involvement with the police concerning violations\r\nof the law, or court appearances associated with personal legal\r\nproblems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "experiencing the death of a significant other within the one year before\r\nthe clinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the two years before the clinical worsening of eating disorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) agoraphobia;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) attention-deficit/hyperactivity disorder;\r\n(e) bipolar disorder;\r\n(f) depressive disorder;\r\n(g) obsessive compulsive disorder;\r\n(h) panic disorder;\r\n(i) personality disorder;\r\n(j) posttraumatic stress disorder;\r\n(k) schizophrenia;\r\n(l) social anxiety disorder; or\r\n(m) substance use disorder."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having a medical illness or injury which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the two years\r\nbefore the clinical worsening of eating disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "being treated with the drug topiramate at the time of the clinical\r\nworsening of eating disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "inability to obtain appropriate clinical management for eating disorder",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00925",
+  "instrumentNumber" : "69/2014",
+  "citation" : "Statement of Principles concerning hiatus hernia No. 69 of 2014",
+  "conditionName" : "hiatus hernia",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K44"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "undergoing bariatric surgery, pulmonary resection or lobectomy, or a\r\nsurgical procedure involving the region of the oesophageal hiatus of the\r\ndiaphragm, excluding Nissen fundoplication or surgical hiatus hernia\r\nrepair procedure, within the one year before the clinical onset of hiatus\r\nhernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing a partial or total gastrectomy within the three months\r\nbefore the clinical onset of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being obese for a continuous period of at least the two years before the\r\nclinical onset of hiatus hernia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a penetrating or blunt wound, excluding a surgical procedure, to\r\nthe region of the oesophageal hiatus of the diaphragm, within the two\r\nyears before the clinical onset of hiatus hernia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "undergoing bariatric surgery, pulmonary resection or lobectomy, or a\r\nsurgical procedure involving the region of the oesophageal hiatus of the\r\ndiaphragm, excluding Nissen fundoplication or surgical hiatus hernia\r\nrepair procedure, within the one year before the clinical worsening of\r\nhiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undergoing a partial or total gastrectomy within the three months\r\nbefore the clinical worsening of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being obese for a continuous period of at least the two years before the\r\nclinical worsening of hiatus hernia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a penetrating or blunt wound, excluding a surgical procedure, to\r\nthe region of the oesophageal hiatus of the diaphragm, within the two\r\nyears before the clinical worsening of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being pregnant at the time of the clinical worsening of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for hiatus hernia",
+    "definedTerms" : [ ]
+  } ]
+}

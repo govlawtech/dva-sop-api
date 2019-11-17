@@ -1,0 +1,51 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00223",
+  "instrumentNumber" : "18/2019",
+  "citation" : "Statement of Principles concerning methaemoglobinaemia (Balance of Probabilities) (No. 18 of 2019)",
+  "conditionName" : "methaemoglobinaemia",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D74"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "taking or being treated with a drug that causes oxidation of\r\nhaemoglobin, within the two days before the clinical onset of\r\nmethaemoglobinaemia;\r\n8-aminoquinolines such as primaquine or tafenoquine; chloroquine; nitrates such as\r\nnitroglycerine; nitrites such as amyl nitrite; local anaesthetics such as benzocaine; and\r\nsulphonamide antibiotics",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\nthat causes oxidation of haemoglobin, within the two days before the\r\nclinical onset of methaemoglobinaemia;\r\n(for example, found in smoke from fires); paraquat (for example, found in herbicides);\r\nand chlorates, nitrates and nitrotoluenes (for example, found in explosives)",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "ingesting food or fluid contaminated by excess levels of nitrates or\r\nnitrites, within the two days before the clinical onset of\r\nmethaemoglobinaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being exposed to dialysis fluid contaminated with chloramine or\r\nhydrogen peroxide, within the two days before the clinical onset of\r\nmethaemoglobinaemia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(5)",
+    "text" : "taking or being treated with a drug that causes oxidation of\r\nhaemoglobin, within the two days before the clinical worsening of\r\nmethaemoglobinaemia;\r\n8-aminoquinolines such as primaquine or tafenoquine; chloroquine; nitrates such as\r\nnitroglycerine; nitrites such as amyl nitrite; local anaesthetics such as benzocaine; and\r\nsulphonamide antibiotics",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\nthat causes oxidation of haemoglobin, within the two days before the\r\nclinical worsening of methaemoglobinaemia;\r\n(for example, found in smoke from fires); paraquat (for example, found in herbicides);\r\nand chlorates, nitrates and nitrotoluenes (for example, found in explosives)",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "ingesting food or fluid contaminated by excess levels of nitrates or\r\nnitrites, within the two days before the clinical worsening of\r\nmethaemoglobinaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being exposed to dialysis fluid contaminated with chloramine or\r\nhydrogen peroxide, within the two days before the clinical worsening\r\nof methaemoglobinaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "inability to obtain appropriate clinical management for\r\nmethaemoglobinaemia",
+    "definedTerms" : [ ]
+  } ]
+}

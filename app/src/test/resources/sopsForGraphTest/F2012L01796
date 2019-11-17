@@ -1,0 +1,150 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01796",
+  "instrumentNumber" : "56/2012",
+  "citation" : "Statement of Principles concerning pulmonary thromboembolism No. 56 of 2012",
+  "conditionName" : "pulmonary thromboembolism",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I26"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a deep vein thrombosis within the six months before the clinical\r\nonset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having venous thrombosis within the six months before the clinical\r\nonset of pulmonary thromboembolism",
+    "definedTerms" : [ {
+      "term" : "venous thrombosis",
+      "definition" : "means an aggregation of blood factors, primarily\nplatelets and fibrin with entrapment of cellular elements, in a retinal, cerebral,\nhepatic, renal, portal, mesenteric or pulmonary vein, the greater or lesser\nsaphenous veins or their tributaries, or another location in the superficial\nvenous system"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a cardiac disease from the specified list within the six months\r\nbefore the clinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ {
+      "term" : "a cardiac disease from the specified list",
+      "definition" : "means:\n(a) acute myocardial infarction;\n(b) congestive cardiac failure; or\n(c) thrombus within the right atrium or right ventricle"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, within the three years before the clinical\r\nonset of pulmonary thromboembolism, and where smoking has ceased,\r\nthe clinical onset of pulmonary thromboembolism has occurred within\r\nthree months of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a neurological disease causing motor impairment within the six\r\nmonths before the clinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ {
+      "term" : "a neurological disease causing motor impairment",
+      "definition" : "means loss or\nimpairment of motor function of a limb, occurring in cerebrovascular accident,\nperipheral neuropathy, Guillain Barre syndrome, non-traumatic spinal cord\ndisease, neurological infection or neuro-muscular degenerative diseases,\nincluding demyelinating diseases, parkinsonian syndromes, dementia and\nmuscular dystrophies"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having restricted mobility for a continuous period of at least four hours\r\nwithin the eight weeks before the clinical onset of pulmonary\r\nthromboembolism",
+    "definedTerms" : [ {
+      "term" : "having restricted mobility",
+      "definition" : "means gross diminution and near complete\nabsence of movement of a lower limb while sitting or reclining in a cramped or\nrestricted space, such as may occur during travel by road, rail or air"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being an inpatient in a hospital or a resident in a nursing home for a\r\ncontinuous period of at least seven days, within the six months before\r\nthe clinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having surgery requiring a general, spinal or epidural anaesthetic\r\nwithin the six months before the clinical onset of pulmonary\r\nthromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a central venous catheter, indwelling cardiac pacemaker or\r\ndefibrillator leads, or implantation of another intravenous device for a\r\ncontinuous period of at least 24 hours within the six months before the\r\nclinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an injury or illness as specified within the six months before the\r\nclinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ {
+      "term" : "an injury or illness as specified",
+      "definition" : "means:\n(a) a fracture or crush injury of the clavicle or humerus, or a bone in the\nspinal column, pelvis, hip, chest, or lower limb (femur, tibia, fibula);\n(b) a moderate to severe traumatic brain injury;\n(c) a physical injury or illness requiring mechanical ventilation support or\nadmission to an intensive care unit;\n(d) a spinal cord injury; or\n(e) a tear, rupture or avulsion of a muscle, tendon or ligament in the lower\nlimb"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "immobilisation of the upper or lower limb in a plaster cast or similar\r\nrestraining device for a continuous period of at least three days within\r\nthe six months before the clinical onset of pulmonary\r\nthromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a malignant neoplasm at the time of the clinical onset of\r\npulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, within the three months before the clinical onset of\r\npulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "using hormone replacement therapy or using combined oestrogen-\r\nprogestin contraception for a continuous period of at least four weeks,\r\nwithin the three months before the clinical onset of pulmonary\r\nthromboembolism",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of oestrogen\npreparations often in combination with progesterone to offset a hormone\ndeficiency following surgically induced or naturally occurring menopause"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having an autoimmune disease or inflammatory vasculitis from the\r\nspecified list at the time of the clinical onset of pulmonary\r\nthromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having a hypercoagulable state at the time of the clinical onset of\r\npulmonary thromboembolism",
+    "definedTerms" : [ {
+      "term" : "a hypercoagulable state",
+      "definition" : "means:\n(a) acquired activated protein C resistance;\n(b) acquired antithrombin III deficiency;\n(c) acquired protein C deficiency;\n(d) acquired protein S deficiency;\n(e) antiphospholipid antibody syndrome;\n(f) cirrhosis of the liver;\n(g) Cushing's syndrome;\n(h) disseminated intravascular coagulation;\n(i) heparin-induced thrombocytopaenia;\n(j) hyperhomocysteinaemia;\n(k) hyperthyroidism;\n(l) hypothyroidism;\n(m) inability to access anticoagulant treatment for an existing coagulation\ndisorder;\n(n) monoclonal gammopathy of undetermined significance;\n(o) myeloproliferative disease;\n(p) paroxysmal nocturnal haemoglobinuria; or\n(q) thrombocytosis"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "being obese at the time of the clinical onset of pulmonary\r\nthromboembolism",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being pregnant or being within the three months postpartum, at the\r\ntime of the clinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having cytomegalovirus infection of new onset within the six weeks\r\nbefore the clinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having chronic bronchitis or emphysema at the time of the clinical\r\nonset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having nephrotic syndrome, or any acute or chronic renal disease\r\nrequiring dialysis or renal transplantation, at the time of the clinical\r\nonset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being at an altitude of at least 3000 metres for a continuous period of at\r\nleast the three months before the clinical onset of pulmonary\r\nthromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having an aneurysm of a vein in the deep venous system at the time of\r\nthe clinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having depressive disorder with severe psychomotor retardation at the\r\ntime of the clinical onset of pulmonary thromboembolism",
+    "definedTerms" : [ {
+      "term" : "psychomotor retardation",
+      "definition" : "means visible generalised slowing of movements\nand speech"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "experiencing animal envenomation from the bite of a viper, Crotalinae\r\nspp or Bitis gabonica within the seven days before the clinical onset of\r\npulmonary thromboembolism",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(aa)",
+    "text" : "inability to obtain appropriate clinical management for pulmonary\r\nthromboembolism",
+    "definedTerms" : [ ]
+  } ]
+}

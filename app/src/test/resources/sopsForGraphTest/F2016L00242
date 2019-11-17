@@ -1,0 +1,19 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00242",
+  "instrumentNumber" : "18/2016",
+  "citation" : "Statement of Principles concerning benign prostatic hyperplasia (Balance of Probabilities) (No. 18 of 2016)",
+  "conditionName" : "benign prostatic hyperplasia",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "N40"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9",
+    "text" : "inability to obtain appropriate clinical management for benign prostatic hyperplasia.",
+    "definedTerms" : [ ]
+  } ]
+}

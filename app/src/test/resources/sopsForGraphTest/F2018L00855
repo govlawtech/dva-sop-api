@@ -1,0 +1,89 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00855",
+  "instrumentNumber" : "64/2018",
+  "citation" : "Statement of Principles concerning olecranon bursitis (Balance of Probabilities) (No. 64 of 2018)",
+  "conditionName" : "olecranon bursitis",
+  "effectiveFrom" : "2018-07-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M70.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having a bacterial, fungal or algal infection involving the affected bursa\r\nat the time of the clinical onset of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having trauma to the external elbow of the affected side in the 30 days\r\nbefore the clinical onset of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having surgery to the external elbow of the affected side in the 30 days\r\nbefore the clinical onset of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "for septic olecranon bursitis only, being in an immunocompromised\r\nstate as specified at the time of the clinical onset of olecranon bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "septic olecranon bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having a disorder from the specified list of disorders at the time of the\r\nclinical onset of olecranon bursitis",
+    "definedTerms" : [ {
+      "term" : "specified list of disorders",
+      "definition" : "means:\r\n(a) diabetes mellitus;\r\n(b) gout, pseudogout or other crystal-induced arthropathy; or\r\n(c) rheumatoid arthritis.\r\nNote: crystal-induced arthropathy is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "having psoriasis, localised sclerosis, atopic dermatitis or another\r\ninflammatory skin disorder, where the skin disorder involves the skin\r\nof the extensor surface of the affected elbow, at the time of the clinical\r\nonset of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "being treated with a tyrosine kinase inhibitor within the 30 days before\r\nthe clinical onset of olecranon bursitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(8)",
+    "text" : "having a bacterial, fungal or algal infection involving the affected bursa\r\nat the time of the clinical worsening of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "having trauma to the external elbow of the affected side in the 30 days\r\nbefore the clinical worsening of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having surgery to the external elbow of the affected side in the 30 days\r\nbefore the clinical worsening of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "for septic olecranon bursitis only, being in an immunocompromised\r\nstate as specified at the time of the clinical worsening of olecranon\r\nbursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "septic olecranon bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "having a disorder from the specified list of disorders at the time of the\r\nclinical worsening of olecranon bursitis",
+    "definedTerms" : [ {
+      "term" : "specified list of disorders",
+      "definition" : "means:\r\n(a) diabetes mellitus;\r\n(b) gout, pseudogout or other crystal-induced arthropathy; or\r\n(c) rheumatoid arthritis.\r\nNote: crystal-induced arthropathy is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "having psoriasis, localised sclerosis, atopic dermatitis or another\r\ninflammatory skin disorder, where the skin disorder involves the skin\r\nof the extensor surface of the affected elbow, at the time of the clinical\r\nworsening of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "being treated with a tyrosine kinase inhibitor within the 30 days before\r\nthe clinical worsening of olecranon bursitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "inability to obtain appropriate clinical management for olecranon\r\nbursitis",
+    "definedTerms" : [ ]
+  } ]
+}

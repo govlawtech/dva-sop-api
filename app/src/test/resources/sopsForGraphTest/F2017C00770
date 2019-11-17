@@ -1,0 +1,103 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00770",
+  "instrumentNumber" : "97/2011",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the bladder No. 97 of 2011",
+  "conditionName" : "malignant neoplasm of the bladder",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C67"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D09.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the bladder, where smoking commenced at least ten years\r\nbefore the clinical onset of malignant neoplasm of the bladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the bladder at least ten years before the clinical\r\nonset of malignant neoplasm of the bladder",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling fumes containing high concentrations of polycyclic aromatic\r\nhydrocarbons, or ingesting polycyclic aromatic hydrocarbons, in the\r\nspecified circumstances for a cumulative period of at least 10 000\r\nhours before the clinical onset of malignant neoplasm of the bladder,\r\nwhere the first exposure occurred at least ten years before the clinical\r\nonset of malignant neoplasm of the bladder",
+    "definedTerms" : [ {
+      "term" : "polycyclic aromatic hydrocarbons",
+      "definition" : "means hydrocarbons with three or\nmore condensed aromatic rings in which certain carbon atoms are common to\ntwo or three rings. Polycyclic aromatic hydrocarbons occur in crude oil, shale\noil and coal tars, and can be formed during the combustion of organic material\nor during high temperature processing of crude oil, coal, coke or other\nindustrial carbon compounds"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling fumes containing a high concentration of an aromatic amine\r\nfrom the specified list, or ingesting or having cutaneous contact with an\r\naromatic amine from the specified list, excluding exposure to cigarette\r\nsmoking and hair dyes, for a cumulative period of at least 250 days\r\nwithin a continuous period of five years before the clinical onset of\r\nmalignant neoplasm of the bladder, where the first exposure occurred\r\nat least ten years before the clinical onset of malignant neoplasm of the\r\nbladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inhaling fumes containing a high concentration of an aromatic amine\r\nwhile working in the rubber manufacturing industry, magenta\r\nproduction, or auramine production industries for a cumulative period\r\nof at least 10 000 hours before the clinical onset of malignant neoplasm\r\nof the bladder, where the first exposure occurred at least ten years\r\nbefore the clinical onset of malignant neoplasm of the bladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "working as a painter for a cumulative period of at least 10 000 hours\r\nbefore the clinical onset of malignant neoplasm of the bladder, where\r\nthe first exposure occurred at least ten years before the clinical onset of\r\nmalignant neoplasm of the bladder, and where exposure has ceased, the\r\nclinical onset occurred within 30 years of cessation",
+    "definedTerms" : [ {
+      "term" : "working as a painter",
+      "definition" : "means applying paints, including solvent- or water-\nbased conventional paints, spray paints, varnishes, enamels, lacquers, water-\nemulsion and solution finishes, nonaqueous dispersions or organosols,\nplastisols, and powder coatings, during the course of activities such as\nbuilding, maintenance and construction, interior and exterior decoration,\nartistic painting, and wood and metal painting. This definition includes mixed\nactivities in which application of paints occurs with other tasks such as\nwallpapering and plastering. This definition includes activities that are\npreparatory to painting, such as mixing paints, maintaining painting\nequipment, and background preparation of surfaces for application of paint"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\nmalignant neoplasm of the bladder, where the first exposure to arsenic\r\noccurred at least ten years before the clinical onset of malignant\r\nneoplasm of the bladder",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten\nyears;\n(b) consuming drinking water resulting in a cumulative total arsenic\nexposure equivalent to having consumed drinking water containing at\nleast 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "ingesting aristolochic acid as specified at least five years before the\r\nclinical onset of malignant neoplasm of the bladder",
+    "definedTerms" : [ {
+      "term" : "ingesting aristolochic acid as specified",
+      "definition" : "means:\n(a) consuming a total of at least 100 grams of plant material of the genus\nAristolochia as a constituent of herbal medication; or\n(b) consuming plant material of the genus Aristolochia or foods containing\nplant material of the genus Aristolochia, as part of the regular diet for a\nperiod of at least 15 months"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a chronic renal condition, of sufficient severity to require\r\ndialysis or renal transplanation, at least one year before the clinical\r\nonset of malignant neoplasm of the bladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "consuming a total of at least 250 grams of phenacetin at least five years\r\nbefore the clinical onset of malignant neoplasm of the bladder",
+    "definedTerms" : [ {
+      "term" : "phenacetin",
+      "definition" : "means an aniline derivative that has analgesic and antipyretic\nproperties, that was formerly used as a constituent of several over-the-counter\ncompound analgesic medications, including Bex or Vincent's powder, Empirin\nCompound and Bromo seltzer. Phenacetin is also known as acetophenetidin,\naceto-p-phenetidide, acetylphenetidin, phenacetinum, N-(4-ethoxyphenyl)\nacetamide, p-ethoxyacetanilide, or CAS 62-44-2"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being treated with systemic cyclophosphamide or systemic ifosfamide,\r\nat least five years before the clinical onset of malignant neoplasm of\r\nthe bladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being treated with chlornaphazine at least five years before the clinical\r\nonset of malignant neoplasm of the bladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having an infection of the bladder with Schistosoma haematobium\r\nbefore the clinical onset of malignant neoplasm of the bladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having an indwelling bladder catheter or other foreign body in the\r\nbladder for a continuous period of at least ten years, excepting routine\r\ncatheter changes, before the clinical onset of malignant neoplasm of the\r\nbladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having neurogenic bladder dysfunction, or spinal cord injury\r\n(paraplegia or quadriplegia) within the one year before the clinical\r\nonset of malignant neoplasm of the bladder",
+    "definedTerms" : [ {
+      "term" : "neurogenic bladder dysfunction",
+      "definition" : "means impairment of normal bladder\nfunctioning due to disease or injury of the central nervous system or peripheral\nnerves involved in the control of micturition, leading to an inability to pass\nurine"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(p)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the bladder",
+    "definedTerms" : [ ]
+  } ]
+}

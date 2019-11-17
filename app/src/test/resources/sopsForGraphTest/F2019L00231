@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00231",
+  "instrumentNumber" : "36/2019",
+  "citation" : "Statement of Principles concerning neurocognitive disorder with Lewy bodies (Balance of Probabilities) (No. 36 of 2019)",
+  "conditionName" : "neurocognitive disorder with Lewy bodies",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G31.3"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being treated with an antipsychotic drug at the time of the clinical\r\nworsening of neurocognitive disorder with Lewy bodies",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for neurocognitive\r\ndisorder with Lewy bodies",
+    "definedTerms" : [ ]
+  } ]
+}

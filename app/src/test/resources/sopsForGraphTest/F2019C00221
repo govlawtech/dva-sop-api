@@ -1,0 +1,113 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019C00221",
+  "instrumentNumber" : "34/2011",
+  "citation" : "Statement of Principles concerning subdural haematoma No. 34 of 2011",
+  "conditionName" : "subdural haematoma",
+  "effectiveFrom" : "2011-05-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for intracranial subdural haematoma only:\r\n(i) experiencing a head injury within the one month before the\r\nclinical onset of subdural haematoma; or\r\n(ii) having a specified form of dementia at the time of the clinical\r\nonset of subdural haematoma; or\r\n(iii) having alcohol dependence or alcohol abuse at the time of the\r\nclinical onset of subdural haematoma; or\r\n(iv) having Paget's disease of bone, affecting the skull, at the time\r\nof the clinical onset of subdural haematoma; or\r\n(v) having epilepsy and having an epileptic seizure within the one\r\nmonth before the clinical onset of subdural haematoma",
+    "definedTerms" : [ {
+      "term" : "head injury",
+      "definition" : "means trauma to the head resulting from external forces,\nincluding blunt trauma, acceleration or deceleration forces, or blast force"
+    }, {
+      "term" : "a specified form of dementia",
+      "definition" : "means:\n(a) Alzheimer-type dementia;\n(b) dementia pugilistica;\n(c) Lewy body dementia;\n(d) Pick's disease (frontotemporal dementia); or\n(e) vascular dementia"
+    } ],
+    "conditionVariant" : {
+      "name" : "intracranial subdural haematoma",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "experiencing a head injury within the one month before the\r\nclinical onset of subdural haematoma"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having a specified form of dementia at the time of the clinical\r\nonset of subdural haematoma"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having alcohol dependence or alcohol abuse at the time of the\r\nclinical onset of subdural haematoma"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "having Paget's disease of bone, affecting the skull, at the time\r\nof the clinical onset of subdural haematoma"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "having epilepsy and having an epileptic seizure within the one\r\nmonth before the clinical onset of subdural haematoma"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for spinal subdural haematoma only:\r\n(i) experiencing trauma to the spinal region within the one month\r\nbefore the clinical onset of subdural haematoma; or\r\n(ii) having ankylosing spondylitis at the time of the clinical onset\r\nof subdural haematoma",
+    "definedTerms" : [ {
+      "term" : "trauma to the spinal region",
+      "definition" : "means injury to the vertebral column, spinal\ncord or spinal meninges as a result of external force. In this definition, external\nforce includes blunt trauma, acceleration or deceleration forces, blast force or a\nforeign body penetrating the spinal region"
+    } ],
+    "conditionVariant" : {
+      "name" : "spinal subdural haematoma",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "experiencing trauma to the spinal region within the one month\r\nbefore the clinical onset of subdural haematoma"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having ankylosing spondylitis at the time of the clinical onset\r\nof subdural haematoma"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing a spinal procedure within the one month before the clinical\r\nonset of subdural haematoma",
+    "definedTerms" : [ {
+      "term" : "spinal procedure",
+      "definition" : "means lumbar puncture, spinal anaesthesia or surgery\ninvolving the spinal column"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing antithrombotic therapy within the two weeks before the\r\nclinical onset of subdural haematoma",
+    "definedTerms" : [ {
+      "term" : "antithrombotic therapy",
+      "definition" : "means taking a drug for the treatment or\nprophylaxis of a thrombotic event, and includes antiplatelet drugs,\nanticoagulants and thrombolytic agents;\nNote: Examples of drugs used in antithrombotic therapy include, but are not limited to,\naspirin, clopidogrel, tirofiban, warfarin, heparin, dabigatran, apixaban, rivaroxaban and\nalteplase"
+    } ]
+  }, {
+    "paragraph" : "6(da)",
+    "text" : "taking at least 700 milligrams of aspirin within a seven day period\r\nbefore the clinical onset of subdural haematoma, where the last dose\r\nwas received within the seven days before the clinical onset of subdural\r\nhaematoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having an acquired haematological disorder from the specified list at\r\nthe time of the clinical onset of subdural haematoma",
+    "definedTerms" : [ {
+      "term" : "an acquired haematological disorder from the specified list",
+      "definition" : "means:\n(a) aplastic anaemia;\n(b) bleeding disorder secondary to snake bite;\n(c) bleeding disorder secondary to Vitamin K deficiency;\n(d) disseminated intravascular coagulation;\n(e) essential thrombocythaemia;\n(f) leukaemia;\n(g) plasma cell dyscrasias;\n(h) post-transfusion purpura;\n(i) qualitative platelet defects associated with coagulation defect;\n(j) severe liver disease;\n(k) thrombocytopaenia; or\n(l) thrombotic thrombocytopaenic purpura"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undergoing haemodialysis within the one month before the clinical\r\nonset of subdural haematoma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "undergoing antithrombotic therapy within the two weeks before the\r\nclinical worsening of subdural haematoma",
+    "definedTerms" : [ {
+      "term" : "antithrombotic therapy",
+      "definition" : "means taking a drug for the treatment or\nprophylaxis of a thrombotic event, and includes antiplatelet drugs,\nanticoagulants and thrombolytic agents;\nNote: Examples of drugs used in antithrombotic therapy include, but are not limited to,\naspirin, clopidogrel, tirofiban, warfarin, heparin, dabigatran, apixaban, rivaroxaban and\nalteplase"
+    } ]
+  }, {
+    "paragraph" : "6(ga)",
+    "text" : "taking at least 700 milligrams of aspirin within a seven day period\r\nbefore the clinical worsening of subdural haematoma, where the last\r\ndose was received within the seven days before the clinical worsening\r\nof subdural haematoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having an acquired haematological disorder from the specified list at\r\nthe time of the clinical worsening of subdural haematoma",
+    "definedTerms" : [ {
+      "term" : "an acquired haematological disorder from the specified list",
+      "definition" : "means:\n(a) aplastic anaemia;\n(b) bleeding disorder secondary to snake bite;\n(c) bleeding disorder secondary to Vitamin K deficiency;\n(d) disseminated intravascular coagulation;\n(e) essential thrombocythaemia;\n(f) leukaemia;\n(g) plasma cell dyscrasias;\n(h) post-transfusion purpura;\n(i) qualitative platelet defects associated with coagulation defect;\n(j) severe liver disease;\n(k) thrombocytopaenia; or\n(l) thrombotic thrombocytopaenic purpura"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "undergoing haemodialysis within the one month before the clinical\r\nworsening of subdural haematoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inability to obtain appropriate clinical management for subdural\r\nhaematoma",
+    "definedTerms" : [ ]
+  } ]
+}

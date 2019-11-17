@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00015",
+  "instrumentNumber" : "12/2014",
+  "citation" : "Statement of Principles concerning chronic fatigue syndrome No. 12 of 2014",
+  "conditionName" : "chronic fatigue syndrome",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having an infection as specified at the time of the clinical onset of\r\nchronic fatigue syndrome",
+    "definedTerms" : [ {
+      "term" : "an infection as specified",
+      "definition" : "means having clinical and laboratory evidence of\nan acute infection with one of the following organisms:\n(a) Coxiella burnetii (Q fever);\n(b) Epstein-Barr virus (infectious mononucleosis); or\n(c) Ross River virus"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for chronic fatigue\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

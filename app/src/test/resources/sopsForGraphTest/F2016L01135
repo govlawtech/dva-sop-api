@@ -1,0 +1,57 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01135",
+  "instrumentNumber" : "67/2016",
+  "citation" : "Statement of Principles concerning Barrett's oesophagus (Reasonable Hypothesis) (No. 67 of 2016)",
+  "conditionName" : "Barrett's oesophagus",
+  "effectiveFrom" : "2016-07-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K22.7"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having gastro-oesophageal reflux disease for at least the one year\r\nbefore the clinical onset of Barrett's oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having a hiatus hernia before the clinical onset of Barrett's\r\noesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "being obese for at least the five years before the clinical onset of\r\nBarrett's oesophagus",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means:\r\n(a) having a Body Mass Index (BMI) of 30 or greater; or\r\n(b) for males, having a waist circumference exceeding 102 centimetres; or\r\n(c) for females, having a waist circumference exceeding 88 centimetres."
+    } ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "an inability to consume an average of at least 200 grams per day of any\r\ncombination of fruit and vegetables, for at least the five years before\r\nthe clinical onset of Barrett's oesophagus",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(5)",
+    "text" : "having gastro-oesophageal reflux disease for at least the one year\r\nbefore the clinical worsening of Barrett's oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "having a hiatus hernia before the clinical worsening of Barrett's\r\noesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "being obese for at least the five years before the clinical worsening of\r\nBarrett's oesophagus",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means:\r\n(a) having a Body Mass Index (BMI) of 30 or greater; or\r\n(b) for males, having a waist circumference exceeding 102 centimetres; or\r\n(c) for females, having a waist circumference exceeding 88 centimetres."
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "an inability to consume an average of at least 200 grams per day of any\r\ncombination of fruit and vegetables, for at least the five years before\r\nthe clinical worsening of Barrett's oesophagus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "inability to obtain appropriate clinical management for Barrett's\r\noesophagus",
+    "definedTerms" : [ ]
+  } ]
+}

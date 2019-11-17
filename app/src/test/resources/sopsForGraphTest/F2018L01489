@@ -1,0 +1,222 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01489",
+  "instrumentNumber" : "90/2018",
+  "citation" : "Statement of Principles concerning non-Hodgkin lymphoma (Reasonable Hypothesis) (No. 90 of 2018)",
+  "conditionName" : "non-Hodgkin lymphoma",
+  "effectiveFrom" : "2018-11-26",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having infection with human immunodeficiency virus at the time of\r\nthe clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "undergoing solid organ, stem cell or bone marrow transplantation\r\nbefore the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having an autoimmune disease from the specified list of autoimmune\r\ndiseases before the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of systemic immunosuppressive drugs for a continuous\r\nperiod of at least three months before the clinical onset of\r\nnon-Hodgkin lymphoma, and where that exposure has ceased, the\r\nclinical onset of non-Hodgkin lymphoma has occurred within ten years\r\nof cessation",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic immunosuppressive drugs",
+      "definition" : "means:\r\n(a) azathioprine;\r\n(b) cyclosporine;\r\n(c) methotrexate;\r\n(d) pimecrolimus;\r\n(e) 6-mercaptopurine;\r\n(f) tacrolimus; or\r\n(g) tumour necrosis factor-α inhibitors."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "for Richter syndrome only, having chronic lymphoid leukaemia/small\r\nlymphocytic lymphoma at the time of the clinical onset of\r\nnon-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "Richter syndrome",
+      "definition" : "means a form of high-grade large cell lymphoma,\r\ncharacterised by systemic symptoms, rapid tumour growth and extra-nodal\r\ninvolvement, which develops in patients with chronic lymphocytic\r\nleukaemia.\r\nspecified bacteria belonging to the Borrelia burgdorferi sensu lato complex\r\nmeans Borrelia burgdorferi sensu stricto, Borrelia afzelii, Borrelia garinii,\r\nBorrelia spielmanii, Borrelia bavariensis, Borrelia bissettii, Borrelia\r\nlusitaniae, Borrelia valaisiana or Borrelia mayonii."
+    } ],
+    "conditionVariant" : {
+      "name" : "Richter syndrome",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "for adult T-cell leukaemia-lymphoma only, having infection with\r\nhuman T-cell lymphotropic virus type-1 at the time of the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "adult T-cell leukaemia-lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for gastric lymphoma and splenic marginal zone lymphoma only,\r\nhaving infection with Helicobacter pylori at the time of the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "gastric lymphoma and splenic marginal zone lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having infection with Epstein-Barr virus at the time of the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for primary effusion lymphoma and Kaposi's sarcoma herpesvirus-\r\npositive diffuse large B-cell lymphoma not otherwise specified only,\r\nhaving infection with Kaposi's sarcoma herpesvirus at the time of the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "primary effusion lymphoma and Kaposi's sarcoma herpesvirus- positive diffuse large B-cell lymphoma not otherwise specified",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for small intestinal mucosa-associated lymphoid tissue lymphoma\r\nonly, having infection with Campylobacter jejuni at the time of the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "small intestinal mucosa-associated lymphoid tissue lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for ocular adnexal mucosa-associated lymphoid tissue lymphoma only,\r\nhaving infection with Chlamydia psittaci at the time of the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "ocular adnexal mucosa-associated lymphoid tissue lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for cutaneous mucosa-associated lymphoid tissue lymphoma only,\r\nhaving infection with specified bacteria belonging to the Borrelia\r\nburgdorferi sensu lato complex at the time of the clinical onset of\r\nnon-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "cutaneous mucosa-associated lymphoid tissue lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having infection with hepatitis C virus at the time of the clinical onset\r\nof non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having infection with hepatitis B virus at the time of the clinical onset\r\nof non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "for Burkitt lymphoma only, having infection with Plasmodium\r\nfalciparum at the time of the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "Burkitt lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having Hodgkin's lymphoma before the clinical onset of non-Hodgkin\r\nlymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a phenoxy acid\r\nherbicide from the specified list:\r\n(a) for a cumulative period of at least 1 000 hours, within a\r\nconsecutive period of ten years, before the clinical onset of\r\nnon-Hodgkin lymphoma; and\r\n(b) where the first exposure occurred at least five years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "being:\r\n(a) on land in Vietnam; or\r\n(b) at sea in Vietnamese waters; or\r\n(c) on board a vessel and consuming potable water supplied on that\r\nvessel, when the water supply had been produced by evaporative\r\ndistillation of estuarine Vietnamese waters,\r\nfor a cumulative period of at least 30 days, at least five years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "potable water",
+      "definition" : "means water used for drinking water, food preparation and\r\nbeverage production."
+    }, {
+      "term" : "estuarine Vietnamese waters",
+      "definition" : "means at least one of the waterways or\r\nharbours in the relevant areas described in Items 4 and 8 of Schedule 2 of the\r\nVEA.\r\nNote: VEA is also defined in the Schedule 1 - Dictionary.\r\ninhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD) means:\r\n(a) decanting or spraying;\r\n(b) cleaning or maintaining equipment used to apply;\r\n(c) being sprayed with;\r\n(d) handling or sawing timber treated with;\r\n(e) being in an environment shrouded in dust from timber treated with; or\r\n(f) using cutting oils contaminated with;\r\none of the following chemicals:\r\n(i) 2,4,5-trichlorophenoxyacetic acid;\r\n(ii) 2,4,5-trichlorophenoxypropionic acid;\r\n(iii) 2,4,5-trichlorophenol;\r\n(iv) 2-(2,4,5-trichlorophenoxy)-ethyl 2,2-dichloropropionate;\r\n(v) o,o-dimethyl-o-(2,4,5-trichlorophenyl)-phosphorothioate;\r\n(vi) pentachlorophenol;\r\n(vii) 2,3,4,6-tetrachlorophenol;\r\n(viii) 2,4,6-trichlorophenol;\r\n(ix) 1,3,4-trichloro-2-(4-nitrophenoxy)benzene;\r\n(x) 2,4-dichloro-1-(4-nitrophenoxy)benzene; or\r\n(xi) 2,4-dichloro-1-(3-methoxy-4-nitrophenoxy)-benzene."
+    }, {
+      "term" : "(b) at sea in Vietnamese waters",
+      "definition" : "means service in at least one of the areas\r\nand at the times described in Items 4 and 8 of Schedule 2 of the VEA.\r\nNote: VEA is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD):\r\n(a) for a cumulative period of at least 1 000 hours, within a\r\nconsecutive period of ten years, before the clinical onset of\r\nnon-Hodgkin lymphoma; and\r\n(b) where the first exposure occurred at least five years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "being exposed to benzene as specified:\r\n(a) for a cumulative total of at least 2 500 hours within a continuous\r\nperiod of five years before the clinical onset of non-Hodgkin\r\nlymphoma; and\r\n(b) where the first exposure in that period occurred at least five years\r\nbefore the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "being exposed to benzene as specified",
+      "definition" : "means:\r\n(a) having cutaneous contact with liquids containing benzene greater than\r\n1% by volume; or\r\n(b) ingesting liquids containing benzene greater than 1% by volume; or\r\n(c) inhaling benzene vapour where such exposure occurs at an ambient\r\n8-hour time-weighted average benzene concentration exceeding five\r\nparts per million.\r\nNote: 8-hour time-weighted average is defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "receiving greater than ten ppm-years of cumulative exposure to\r\nbenzene before the clinical onset of non-Hodgkin lymphoma, and\r\nwhere the first exposure occurred at least five years before the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "inhaling ethylene oxide vapour:\r\n(a) for a cumulative total of at least 2 500 hours within a consecutive\r\nperiod of ten years before the clinical onset of non-Hodgkin\r\nlymphoma; and\r\n(b) where the first exposure in that period occurred at least five years\r\nbefore the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "being obese for at least five years within the 20 years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the bone marrow at least five years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic\r\nor therapeutic medical procedures involving ionising radiation, and being a member of an\r\naircrew, leading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "for diffuse large B-cell lymphoma only, having chronic inflammation\r\nas specified at the affected site for at least five years before the clinical\r\nonset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "diffuse large B-cell lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "for anaplastic large cell lymphoma of the breast only, having a breast\r\nimplant at the time of the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "anaplastic large cell lymphoma of the breast",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "inhaling, ingesting or having cutaneous contact with lindane on more\r\ndays than not for a cumulative period of at least six months, at least\r\nfive years before the clinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ {
+      "term" : "lindane",
+      "definition" : "means a complex synthetic mixture in which the gamma-isomer of\r\nhexachlorocyclohexane is present."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "inhaling, ingesting or having cutaneous contact with\r\npentachlorophenol:\r\n(a) for a cumulative period of at least 1 000 hours, within a\r\nconsecutive period of ten years, before the clinical onset of\r\nnon-Hodgkin lymphoma; and\r\n(b) where the first exposure occurred at least five years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical from\r\nthe specified list:\r\n(a) for a cumulative period of at least 1 000 hours, within a\r\nconsecutive period of ten years, before the clinical onset of\r\nnon-Hodgkin lymphoma; and\r\n(b) where the first exposure occurred at least five years before the\r\nclinical onset of non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "for T-cell lymphoma only, smoking at least ten pack-years of\r\ncigarettes, or the equivalent thereof in other tobacco products, before\r\nthe clinical onset of non-Hodgkin lymphoma, and where smoking has\r\nceased, the clinical onset of non-Hodgkin lymphoma has occurred\r\nwithin 20 years of cessation",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "T-cell lymphoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "having atopic dermatitis for at least two years before the clinical onset\r\nof non-Hodgkin lymphoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "for mycosis fungoides or Sezary syndrome only, being treated with\r\nhydrochlorothiazide for a continuous period of at least three months\r\nbefore the clinical onset of non-Hodgkin lymphoma, and where that\r\nexposure has ceased, the clinical onset of non-Hodgkin lymphoma has\r\noccurred within ten years of cessation",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "mycosis fungoides or Sezary syndrome",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(33)",
+    "text" : "inability to obtain appropriate clinical management for non-Hodgkin\r\nlymphoma",
+    "definedTerms" : [ ]
+  } ]
+}

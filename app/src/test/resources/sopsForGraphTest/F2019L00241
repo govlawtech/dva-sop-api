@@ -1,0 +1,71 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00241",
+  "instrumentNumber" : "42/2019",
+  "citation" : "Statement of Principles concerning de Quervain tendinopathy (Balance of Probabilities) (No. 42 of 2019)",
+  "conditionName" : "de Quervain tendinopathy",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M65.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "performing repetitive activities or forceful activities using the affected\r\nhand or wrist, for a cumulative period of at least 500 hours within the\r\nsix months before the clinical onset of de Quervain tendinopathy",
+    "definedTerms" : [ {
+      "term" : "repetitive activities",
+      "definition" : "means:\r\n(a) bending or twisting of the hand or wrist at least 50 times an hour; or\r\n(b) carrying out the same or similar movements in the hand or wrist at least\r\n50 times an hour."
+    }, {
+      "term" : "forceful activities",
+      "definition" : "means tasks requiring the generation of force by the hand\r\nwhich:\r\n(a) are equivalent to lifting or carrying loads of more than three kilograms;\r\nor\r\n(b) involve lifting or carrying an object in the hand greater than one\r\nkilogram in excess of ten times per hour."
+    } ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having acute trauma involving the affected wrist or tendon, within the\r\none year before the clinical onset of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "being treated with or using growth hormone within the one year before\r\nthe clinical onset of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "being treated with a fluoroquinolone antibiotic within the six months\r\nbefore the clinical onset of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "being treated with an aromatase inhibitor within the one year before the\r\nclinical onset of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(6)",
+    "text" : "performing repetitive activities or forceful activities using the affected\r\nhand or wrist, for a cumulative period of at least 500 hours within the\r\nsix months before the clinical worsening of de Quervain tendinopathy",
+    "definedTerms" : [ {
+      "term" : "repetitive activities",
+      "definition" : "means:\r\n(a) bending or twisting of the hand or wrist at least 50 times an hour; or\r\n(b) carrying out the same or similar movements in the hand or wrist at least\r\n50 times an hour."
+    }, {
+      "term" : "forceful activities",
+      "definition" : "means tasks requiring the generation of force by the hand\r\nwhich:\r\n(a) are equivalent to lifting or carrying loads of more than three kilograms;\r\nor\r\n(b) involve lifting or carrying an object in the hand greater than one\r\nkilogram in excess of ten times per hour."
+    } ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having acute trauma involving the affected wrist or tendon, within the\r\none year before the clinical worsening of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "being treated with or using growth hormone within the one year before\r\nthe clinical worsening of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "being treated with a fluoroquinolone antibiotic within the six months\r\nbefore the clinical worsening of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "being treated with an aromatase inhibitor within the one year before the\r\nclinical worsening of de Quervain tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "inability to obtain appropriate clinical management for de Quervain\r\ntendinopathy",
+    "definedTerms" : [ ]
+  } ]
+}

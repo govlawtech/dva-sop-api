@@ -13,11 +13,13 @@ import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import au.gov.dva.sopapi.sopsupport.processingrules.RuleConfigRepositoryUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import io.netty.util.internal.chmv8.ConcurrentHashMapV8;
 
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -130,9 +132,10 @@ public class ProcessingRuleBase {
         return getApplicableSop(condition, serviceHistory,  isOperational, rhInterval, false,  caseTrace);
     }
 
+    //protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, BiFunction<>, CaseTrace caseTrace)
+
 
     protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, CaseTrace caseTrace) {
-
 
         assert applicableSop.getConditionName().equalsIgnoreCase(condition.getSopPair().getConditionName());
 
@@ -172,9 +175,11 @@ public class ProcessingRuleBase {
 
         if (actualDaysOfCfts >= cftsDaysRequired) {
             caseTrace.addLoggingTrace(String.format("Actual number of days of continuous full time service is at least the required days.  According to configuration, the applicable factors are '%s'.",
-                    String.join(", ", applicableRuleConfiguration.getFactorReferences())));
+                    String.join(", ", applicableRuleConfiguration.getMainFactorReferences())));
+
+
             ImmutableList<FactorWithSatisfaction> inferredFactors =
-                    ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, applicableRuleConfiguration.getFactorReferences());
+                    ProcessingRuleFunctions.withSatisfiedFactors(applicableFactors, applicableRuleConfiguration.getMainFactorReferences());
 
             return inferredFactors;
         } else {
@@ -203,7 +208,7 @@ public class ProcessingRuleBase {
                 caseTrace.setRequiredCftsDaysForBop(cftsDaysRequiredForBop);
 
                 // Factors
-                ImmutableSet<String> bopFactorParagraphs = BoPRuleConfigItemOpt.get().getFactorReferences();
+                ImmutableSet<String> bopFactorParagraphs = BoPRuleConfigItemOpt.get().getMainFactorReferences();
                 List<Factor> applicableBopFactors = bopFactors.stream().filter(f -> bopFactorParagraphs.contains(f.getParagraph())).collect(Collectors.toList());
                 caseTrace.setBopFactors(ImmutableList.copyOf(applicableBopFactors));
             }
@@ -224,7 +229,7 @@ public class ProcessingRuleBase {
                 caseTrace.setRequiredCftsDaysForRh(cftsDaysRequiredForRh);
 
                 // Factors
-                ImmutableSet<String> rhFactorParagraphs = RHRuleConfigItemOpt.get().getFactorReferences();
+                ImmutableSet<String> rhFactorParagraphs = RHRuleConfigItemOpt.get().getMainFactorReferences();
                 List<Factor> applicableRhFactors = rhFactors.stream().filter(f -> rhFactorParagraphs.contains(f.getParagraph())).collect(Collectors.toList());
                 caseTrace.setRhFactors(ImmutableList.copyOf(applicableRhFactors));
             }

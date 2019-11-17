@@ -1,0 +1,68 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01812",
+  "instrumentNumber" : "10/2015",
+  "citation" : "Statement of Principles concerning shin splints No. 10 of 2015",
+  "conditionName" : "shin splints",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "running or jogging an average of at least 60 kilometres per week for the\r\none month before the clinical onset of shin splints",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nlower leg on the affected side, at a minimum intensity of five METs,\r\nfor at least six hours per week for the one month before the clinical\r\nonset of shin splints",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the lower leg on the affected side by at least 100\r\npercent, to a minimum intensity of five METs for at least four hours\r\nper day, within the seven days before the clinical onset of shin splints",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for medial tibial stress syndrome only, having excess pronation of the\r\nfoot of the affected limb before the clinical onset of shin splints",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "medial tibial stress syndrome",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "running or jogging an average of at least 60 kilometres per week for the\r\none month before the clinical worsening of shin splints",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nlower leg on the affected side, at a minimum intensity of five METs,\r\nfor at least six hours per week for the one month before the clinical\r\nworsening of shin splints",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the lower leg on the affected side by at least 100\r\npercent, to a minimum intensity of five METs for at least four hours\r\nper day, within the seven days before the clinical worsening of shin\r\nsplints",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "for medial tibial stress syndrome only, having excess pronation of the\r\nfoot of the affected limb before the clinical worsening of shin splints",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "medial tibial stress syndrome",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "inability to obtain appropriate clinical management for shin splints",
+    "definedTerms" : [ ]
+  } ]
+}

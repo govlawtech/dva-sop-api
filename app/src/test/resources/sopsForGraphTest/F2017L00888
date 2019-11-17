@@ -1,0 +1,77 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00888",
+  "instrumentNumber" : "38/2017",
+  "citation" : "Statement of Principles concerning accommodation disorder (Reasonable Hypothesis) (No. 38 of 2017)",
+  "conditionName" : "accommodation disorder",
+  "effectiveFrom" : "2017-07-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H52.5"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an injury or disorder affecting the function of the oculomotor\r\nnerve or ciliary muscle of the affected eye, at the time of the clinical\r\nonset of accommodation disorder",
+    "definedTerms" : [ {
+      "term" : "ciliary muscle",
+      "definition" : "means any pathological process affecting:\r\n(a) the brain stem or the oculomotor nerve anywhere along its course\r\n(including the oculomotor nucleus, fascicles, subarachnoid space,\r\ncavernous sinus or orbit) that leads to a disturbance in the oculomotor\r\nnerve function; or\r\n(b)  function;\r\nand causing impairment of accommodation."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having concussion at the time of the clinical onset of accommodation\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having moderate to severe traumatic brain injury at the time of the\r\nclinical onset of accommodation disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with atropine or an atropine-like drug, where the drug\r\ncannot be ceased or substituted, at the time of the clinical onset of\r\naccommodation disorder",
+    "definedTerms" : [ {
+      "term" : "atropine-like drug",
+      "definition" : "means a drug having properties similar to atropine (that\r\nis, antagonising the effects of acetylcholine at parasympathetic nerve\r\nendings).\r\nNote 1: Examples of s include antispasmodic agents (for example,\r\nscopolamine), drugs used to treat overactive bladder (for example, oxybutynin), eye\r\ndrops used to facilitate examination of the fundus of the eye (for example,\r\ncyclopentolate), antipsychotic agents (for example, chlorpromazine, haloperidol,\r\nclozapine), tricyclic antidepressants (for example, amitriptyline, doxepin), sedative\r\nantihistamines (for example, clemastine, diphenhydramine), the anti-depressant\r\nmaprotiline, and the anti-Parkinson medications benzatropine, biperiden, procyclidine\r\nand trihexyphenidyl.\r\nNote 2: Typical symptoms and signs of s are dry mouth, blurred vision,\r\nsensitivity to light, dilated pupils, lack of sweating, and rapid heartbeat."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with a drug, or a drug from a class of drugs, from the\r\nspecified list of drugs, where the drug cannot be ceased or substituted,\r\nat the time of the clinical onset of accommodation disorder",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) amfepramone;\r\n(b) benzodiazepines, including alprazolam, chlordiazepoxide, clonazepam,\r\nclorazepate, diazepam, flurazepam, lorazepam, midazolam, oxazepam,\r\ntemazepam, triazolam;\r\n(c) benzylpenicillin;\r\n(d) bethanechol;\r\n(e) carbachol;\r\n(f) carbamazepine;\r\n(g) carisoprodol;\r\n(h) chloroquine;\r\n(i) corticosteroids;\r\n(j) diethylstilbestrol;\r\n(k) emetine (ipecac);\r\n(l) glibenclamide;\r\n(m) hydroxychloroquine;\r\n(n) isoniazid;\r\n(o) lithium;\r\n(p) meprobamate;\r\n(q) methacholine, systemic administration only;\r\n(r) nalidixic acid;\r\n(s) pentazocine;\r\n(t) phendimetrazine;\r\n(u) phenoxymethylpenicillin;\r\n(v) phentermine;\r\n(w) phenytoin;\r\n(x) pilocarpine;\r\n(y) piperazine;\r\n(z) telithromycin; or\r\n(aa) thiazide and related diuretics, including bendroflumethiazide,\r\nchlorothiazide, chlortalidone, hydrochlorothiazide, hydroflumethiazide,\r\nindapamide, methyclothiazide, metolazone, polythiazide,\r\ntrichlormethizide."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(6)",
+    "text" : "having an injury or disorder affecting the function of the oculomotor\r\nnerve or ciliary muscle of the affected eye, at the time of the clinical\r\nworsening of accommodation disorder",
+    "definedTerms" : [ {
+      "term" : "ciliary muscle",
+      "definition" : "means any pathological process affecting:\r\n(a) the brain stem or the oculomotor nerve anywhere along its course\r\n(including the oculomotor nucleus, fascicles, subarachnoid space,\r\ncavernous sinus or orbit) that leads to a disturbance in the oculomotor\r\nnerve function; or\r\n(b)  function;\r\nand causing impairment of accommodation."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having concussion at the time of the clinical worsening of\r\naccommodation disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having moderate to severe traumatic brain injury at the time of the\r\nclinical worsening of accommodation disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being treated with atropine or an atropine-like drug, where the drug\r\ncannot be ceased or substituted, at the time of the clinical worsening of\r\naccommodation disorder",
+    "definedTerms" : [ {
+      "term" : "atropine-like drug",
+      "definition" : "means a drug having properties similar to atropine (that\r\nis, antagonising the effects of acetylcholine at parasympathetic nerve\r\nendings).\r\nNote 1: Examples of s include antispasmodic agents (for example,\r\nscopolamine), drugs used to treat overactive bladder (for example, oxybutynin), eye\r\ndrops used to facilitate examination of the fundus of the eye (for example,\r\ncyclopentolate), antipsychotic agents (for example, chlorpromazine, haloperidol,\r\nclozapine), tricyclic antidepressants (for example, amitriptyline, doxepin), sedative\r\nantihistamines (for example, clemastine, diphenhydramine), the anti-depressant\r\nmaprotiline, and the anti-Parkinson medications benzatropine, biperiden, procyclidine\r\nand trihexyphenidyl.\r\nNote 2: Typical symptoms and signs of s are dry mouth, blurred vision,\r\nsensitivity to light, dilated pupils, lack of sweating, and rapid heartbeat."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being treated with a drug, or a drug from a class of drugs, from the\r\nspecified list of drugs, where the drug cannot be ceased or substituted,\r\nat the time of the clinical worsening of accommodation disorder",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) amfepramone;\r\n(b) benzodiazepines, including alprazolam, chlordiazepoxide, clonazepam,\r\nclorazepate, diazepam, flurazepam, lorazepam, midazolam, oxazepam,\r\ntemazepam, triazolam;\r\n(c) benzylpenicillin;\r\n(d) bethanechol;\r\n(e) carbachol;\r\n(f) carbamazepine;\r\n(g) carisoprodol;\r\n(h) chloroquine;\r\n(i) corticosteroids;\r\n(j) diethylstilbestrol;\r\n(k) emetine (ipecac);\r\n(l) glibenclamide;\r\n(m) hydroxychloroquine;\r\n(n) isoniazid;\r\n(o) lithium;\r\n(p) meprobamate;\r\n(q) methacholine, systemic administration only;\r\n(r) nalidixic acid;\r\n(s) pentazocine;\r\n(t) phendimetrazine;\r\n(u) phenoxymethylpenicillin;\r\n(v) phentermine;\r\n(w) phenytoin;\r\n(x) pilocarpine;\r\n(y) piperazine;\r\n(z) telithromycin; or\r\n(aa) thiazide and related diuretics, including bendroflumethiazide,\r\nchlorothiazide, chlortalidone, hydrochlorothiazide, hydroflumethiazide,\r\nindapamide, methyclothiazide, metolazone, polythiazide,\r\ntrichlormethizide."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "inability to obtain appropriate clinical management for\r\naccommodation disorder",
+    "definedTerms" : [ ]
+  } ]
+}

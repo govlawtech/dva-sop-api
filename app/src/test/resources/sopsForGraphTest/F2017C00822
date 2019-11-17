@@ -1,0 +1,109 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00822",
+  "instrumentNumber" : "6/2015",
+  "citation" : "Statement of Principles concerning soft tissue sarcoma No. 6 of 2015",
+  "conditionName" : "soft tissue sarcoma",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C22.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C22.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C30.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C32.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C47"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C48"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C49"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD) for a\r\ncumulative period of at least 500 hours, at least five years before the\r\nclinical onset of soft tissue sarcoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected region at least five years before the\r\nclinical onset of soft tissue sarcoma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for angiosarcoma only:\r\n(i) having received a cumulative equivalent dose of at least 0.5\r\nsievert of ionising radiation to the affected region at least two\r\nyears before the clinical onset of soft tissue sarcoma; or\r\n(ii) having lymphoedema of the affected region at the time of the\r\nclinical onset of soft tissue sarcoma",
+    "definedTerms" : [ {
+      "term" : "lymphoedema",
+      "definition" : "means chronic oedema due to accumulation of interstitial\nfluid as a result of stasis of lymph, which is secondary to obstruction of lymph\nvessels or disorders of the lymph nodes"
+    }, {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    }, {
+      "term" : "angiosarcoma",
+      "definition" : "means lymphangiosarcoma or haemangiosarcoma"
+    } ],
+    "conditionVariant" : {
+      "name" : "angiosarcoma",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having received a cumulative equivalent dose of at least 0.5\r\nsievert of ionising radiation to the affected region at least two\r\nyears before the clinical onset of soft tissue sarcoma"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having lymphoedema of the affected region at the time of the\r\nclinical onset of soft tissue sarcoma"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for hepatic angiosarcoma only, inhaling a cumulative dose of at least\r\n200 ppm-years of gaseous vinyl chloride at least five years before the\r\nclinical onset of soft tissue sarcoma",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure"
+    }, {
+      "term" : "angiosarcoma",
+      "definition" : "means lymphangiosarcoma or haemangiosarcoma"
+    } ],
+    "conditionVariant" : {
+      "name" : "hepatic angiosarcoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with an immunosuppressive drug for at least three\r\nmonths before the clinical onset of soft tissue sarcoma",
+    "definedTerms" : [ {
+      "term" : "an immunosuppressive drug",
+      "definition" : "means a drug or an agent which results in\nsubstantial suppression of immune responses. This definition includes\ncorticosteroids other than inhaled or topical corticosteroids, drugs used to\nprevent transplant rejection, tumour necrosis factor-α inhibitors and\nchemotherapeutic agents used for the treatment of cancer"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for uterine sarcoma only:\r\n(i) being obese for a period of at least ten years within the 20 years\r\nbefore the clinical onset of soft tissue sarcoma;\r\n(ii) undergoing treatment with tamoxifen for a period of at least four\r\nmonths before the clinical onset of soft tissue sarcoma",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ],
+    "conditionVariant" : {
+      "name" : "uterine sarcoma",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being obese for a period of at least ten years within the 20 years\r\nbefore the clinical onset of soft tissue sarcoma"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "undergoing treatment with tamoxifen for a period of at least four\r\nmonths before the clinical onset of soft tissue sarcoma"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for soft tissue\r\nsarcoma",
+    "definedTerms" : [ ]
+  } ]
+}

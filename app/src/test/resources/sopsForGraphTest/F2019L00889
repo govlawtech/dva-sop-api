@@ -1,0 +1,38 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00889",
+  "instrumentNumber" : "64/2019",
+  "citation" : "Statement of Principles concerning strongyloidiasis (Balance of Probabilities) (No. 64 of 2019)",
+  "conditionName" : "strongyloidiasis",
+  "effectiveFrom" : "2019-07-22",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B78"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having cutaneous or mucosal contact with Strongyloides stercoralis\r\nroundworm larvae before the clinical onset of strongyloidiasis;\r\nNote 1: Contact with Strongyloides stercoralis is most likely to occur from ingestion of, or\r\nskin contact with, moist soil, sediment or mud contaminated with human or animal\r\nfaeces, most frequently in warm and damp conditions, where facilities for the hygienic\r\ndisposal of human waste are minimal.\r\nNote 2: Examples of activities involving contact with contaminated moist soil, sediment or\r\nmud contaminated with human or animal faeces include, but are not limited to,\r\nwalking barefoot, farming, mining and tunnelling",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a solid organ transplant, where the organ is infected with\r\nStrongyloides stercoralis, within the one year before the clinical onset\r\nof strongyloidiasis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical worsening of strongyloidiasis",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being treated with an immunosuppressive drug;\r\n(b) having a haematological or solid organ malignancy;\r\n(c) having chronic renal failure;\r\n(d) having infection with human immunodeficiency virus;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: chronic renal failure and immunosuppressive drug are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having alcohol use disorder at the time of the clinical worsening of\r\nstrongyloidiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "inability to obtain appropriate clinical management for strongyloidiasis",
+    "definedTerms" : [ ]
+  } ]
+}

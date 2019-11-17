@@ -1,0 +1,31 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019C00096",
+  "instrumentNumber" : "60/2016",
+  "citation" : "Statement of Principles concerning sarcoidosis (Balance of Probabilities) (No. 60 of 2016)",
+  "conditionName" : "sarcoidosis",
+  "effectiveFrom" : "2016-07-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D86"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being treated with a drug from a class of drugs from the specified list of\r\ndrugs within the five years before the clinical onset of sarcoidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having received an organ or tissue transplant from a donor with\r\nsarcoidosis within the two years before the clinical onset of sarcoidosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "being treated with a drug from a class of drugs from the specified list of\r\ndrugs within the five years before the clinical worsening of sarcoidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "inability to obtain appropriate clinical management for sarcoidosis",
+    "definedTerms" : [ ]
+  } ]
+}

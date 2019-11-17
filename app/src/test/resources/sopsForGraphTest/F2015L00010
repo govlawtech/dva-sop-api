@@ -1,0 +1,115 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00010",
+  "instrumentNumber" : "45/2015",
+  "citation" : "Statement of Principles concerning trochanteric bursitis and gluteal tendinopathy No. 45 of 2015",
+  "conditionName" : "trochanteric bursitis and gluteal tendinopathy",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M70.6"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for the\r\none month before the clinical onset of trochanteric bursitis or gluteal\r\ntendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nhip on the affected side, at a minimum intensity of five METs, for at\r\nleast four hours per week for the one month before the clinical onset of\r\ntrochanteric bursitis or gluteal tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the hip on the affected side by at least 100 percent, to\r\na minimum intensity of five METs for at least two hours per day,\r\nwithin the seven days before the clinical onset of trochanteric bursitis\r\nor gluteal tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having direct trauma to the affected tendon or bursa within the one\r\nmonth before the clinical onset of trochanteric bursitis or gluteal\r\ntendinopathy",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected tendon or bursa",
+      "definition" : "means an injury to the affected\ntendon or bursa that causes the development, within the 24 hours of the injury\nbeing sustained, of pain and tenderness in the lateral hip or buttock, and altered\nmobility or range of movement of the hip. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a\ncontinuous period of at least seven days following their onset, save for where\nmedical intervention for the injury to that hip has occurred and that medical\nintervention involves either:\n(a) immobilisation of the hip by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that hip; or\n(c) surgery to that hip"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having surgery to the hip of the affected side within the one month\r\nbefore the clinical onset of trochanteric bursitis or gluteal tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for trochanteric bursitis only, having an infection of the affected bursa\r\nat the time of the clinical onset of trochanteric bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "trochanteric bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having rheumatoid arthritis before the clinical onset of trochanteric\r\nbursitis or gluteal tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a significant disturbance of normal gait for at least the one\r\nmonth before the clinical onset of trochanteric bursitis or gluteal\r\ntendinopathy",
+    "definedTerms" : [ {
+      "term" : "a significant disturbance of normal gait",
+      "definition" : "means a major deviation from\nnormal walking gait such as would occur with a deformity of a joint or bone of\na lower limb, lower limb amputation or a chronic neurological disorder"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(i)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for the\r\none month before the clinical worsening of trochanteric bursitis or\r\ngluteal tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nhip on the affected side, at a minimum intensity of five METs, for at\r\nleast four hours per week for the one month before the clinical\r\nworsening of trochanteric bursitis or gluteal tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the hip on the affected side by at least 100 percent, to\r\na minimum intensity of five METs for at least two hours per day,\r\nwithin the seven days before the clinical worsening of trochanteric\r\nbursitis or gluteal tendinopathy",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 MET\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\nper hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having direct trauma to the affected tendon or bursa within the one\r\nmonth before the clinical worsening of trochanteric bursitis or gluteal\r\ntendinopathy",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected tendon or bursa",
+      "definition" : "means an injury to the affected\ntendon or bursa that causes the development, within the 24 hours of the injury\nbeing sustained, of pain and tenderness in the lateral hip or buttock, and altered\nmobility or range of movement of the hip. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a\ncontinuous period of at least seven days following their onset, save for where\nmedical intervention for the injury to that hip has occurred and that medical\nintervention involves either:\n(a) immobilisation of the hip by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that hip; or\n(c) surgery to that hip"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having surgery to the hip of the affected side within the one month\r\nbefore the clinical worsening of trochanteric bursitis or gluteal\r\ntendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "for trochanteric bursitis only, having an infection of the affected bursa\r\nat the time of the clinical worsening of trochanteric bursitis",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "trochanteric bursitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having rheumatoid arthritis before the clinical worsening of\r\ntrochanteric bursitis or gluteal tendinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having a significant disturbance of normal gait for at least the one\r\nmonth before the clinical worsening of trochanteric bursitis or gluteal\r\ntendinopathy",
+    "definedTerms" : [ {
+      "term" : "a significant disturbance of normal gait",
+      "definition" : "means a major deviation from\nnormal walking gait such as would occur with a deformity of a joint or bone of\na lower limb, lower limb amputation or a chronic neurological disorder"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "inability to obtain appropriate clinical management for trochanteric\r\nbursitis or gluteal tendinopathy",
+    "definedTerms" : [ ]
+  } ]
+}

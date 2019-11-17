@@ -1,0 +1,263 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00558",
+  "instrumentNumber" : "52/2016",
+  "citation" : "Statement of Principles concerning cholelithiasis (Balance of Probabilities) (No. 52 of 2016)",
+  "conditionName" : "cholelithiasis",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K80"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being obese for at least the five years before the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means:\r\n(a) having a Body Mass Index (BMI) of 30 or greater; or\r\n(b) for males, having a waist circumference exceeding 102 centimetres; or\r\n(c) for females, having a waist circumference exceeding 88 centimetres."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having rapid and extreme weight loss within the one year before the\r\nclinical onset of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "rapid and extreme weight loss",
+      "definition" : "means total weight loss of at least 15% of\r\ninitial body weight:\r\n(b) at an average rate of at least 1.5 kilograms per week."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a very low calorie diet for the one year before the clinical onset\r\nof cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "very low calorie diet",
+      "definition" : "means having an energy intake of less than 800\r\nkilocalories per day."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "undergoing bariatric surgery within the two years before the clinical\r\nonset of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "bariatric surgery",
+      "definition" : "means weight reduction surgical procedures including\r\ngastrojejunostomy, gastric stapling, vertical banded gastroplasty and\r\ngastrectomy with Roux-en-Y anastomosis."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, for a continuous period of at least six months before the clinical\r\nonset of cholelithiasis, and where treatment has ceased, the clinical\r\nonset of cholelithiasis has occurred within three months of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having cirrhosis of the liver at the time of the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a haemolytic disease at the time of the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "haemolytic disease",
+      "definition" : "means an acquired or inherited disorder characterised by\r\nred cell defects and breakdown with bilirubin overproduction, including\r\nthalassaemia, hereditary spherocytosis, sickle cell anaemia or haemolytic\r\nuraemic syndrome."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having Crohn's disease at the time of the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "Crohn's disease",
+      "definition" : "means a type of inflammatory bowel disease that can affect\r\nany part of the gastrointestinal tract from the mouth to the anus, particularly\r\nthe small bowel, with patchy areas of transmural inflammation, and usually\r\nwith prominent extrainestinal manifestations."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having an ileal resection or ileal bypass before the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having type 2 diabetes mellitus at the time of the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "type 2 diabetes mellitus",
+      "definition" : "means a form of diabetes mellitus caused by variable\r\ndegrees of insulin resistance and impaired insulin secretion."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having total parenteral nutrition for a continuous period of at least\r\nthree weeks before the clinical onset of cholelithiasis, and where total\r\nparenteral nutrition has ceased, the clinical onset of cholelithiasis has\r\noccurred within 30 days of cessation",
+    "definedTerms" : [ {
+      "term" : "total parenteral nutrition",
+      "definition" : "means continuous intravenous drip feeding with no\r\nfeeding via mouth or gut."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "being pregnant within the three months before the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having estrogen therapy for a continuous period of at least six months\r\nbefore the clinical onset of cholelithiasis, and where estrogen therapy\r\nhas ceased, the clinical onset of cholelithiasis has occurred within\r\nthree months of cessation",
+    "definedTerms" : [ {
+      "term" : "estrogen therapy",
+      "definition" : "means the continuous, cyclical or intermittent\r\nadministration of estrogen contained in medications, including the oral\r\ncontraceptive pill and post-menopausal hormone replacement therapy."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having a spinal cord injury at the time of the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "spinal cord injury",
+      "definition" : "means an injury to the long tracts of the spinal cord\r\nresulting in permanent motor or sensory deficits below the level of the lesion."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having a gastric or oesophageal resection, or another operation that\r\nincluded a vagotomy, before the clinical onset of cholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having a foreign body in the biliary tract, or a mechanical obstruction\r\nof the biliary tract, before the clinical onset of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "foreign body",
+      "definition" : "means the presence of exogenous material, including a surgical\r\nclip or stent or nonabsorbable suture, a missile fragment or shrapnel, or a fish\r\nbone."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having a parasitic disease from the specified list of parasitic diseases\r\nof the biliary tract, at the time of the clinical onset of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "specified list of parasitic diseases",
+      "definition" : "means:\r\n(a) ascariasis;\r\n(b) clonorchiasis;\r\n(c) dicrocoeliasis;\r\n(d) fascioliasis; or\r\n(e) opisthorchiasis."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having cholangiohepatitis or recurrent pyogenic cholangitis at the time\r\nof the clinical onset of cholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having a somatostatinoma at the time of the clinical onset of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "somatostatinoma",
+      "definition" : "means a neuroendocrine neoplasm characterised by\r\nexcessive secretion of somatostatin hormone by tumour cells of D-cell origin."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical onset of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(21)",
+    "text" : "being obese for at least the five years before the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means:\r\n(a) having a Body Mass Index (BMI) of 30 or greater; or\r\n(b) for males, having a waist circumference exceeding 102 centimetres; or\r\n(c) for females, having a waist circumference exceeding 88 centimetres."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having rapid and extreme weight loss within the one year before the\r\nclinical worsening of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "rapid and extreme weight loss",
+      "definition" : "means total weight loss of at least 15% of\r\ninitial body weight:\r\n(b) at an average rate of at least 1.5 kilograms per week."
+    } ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having a very low calorie diet for a continuous period of the one year\r\nbefore the clinical worsening of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "very low calorie diet",
+      "definition" : "means having an energy intake of less than 800\r\nkilocalories per day."
+    } ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "undergoing bariatric surgery within the two years before the clinical\r\nworsening of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "bariatric surgery",
+      "definition" : "means weight reduction surgical procedures including\r\ngastrojejunostomy, gastric stapling, vertical banded gastroplasty and\r\ngastrectomy with Roux-en-Y anastomosis."
+    } ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, for a continuous period of at least six months before the clinical\r\nworsening of cholelithiasis, and where treatment has ceased, the\r\nclinical worsening of cholelithiasis has occurred within three months\r\nof cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "having cirrhosis of the liver at the time of the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "having a haemolytic disease at the time of the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "haemolytic disease",
+      "definition" : "means an acquired or inherited disorder characterised by\r\nred cell defects and breakdown with bilirubin overproduction, including\r\nthalassaemia, hereditary spherocytosis, sickle cell anaemia or haemolytic\r\nuraemic syndrome."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "having Crohn's disease at the time of the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "Crohn's disease",
+      "definition" : "means a type of inflammatory bowel disease that can affect\r\nany part of the gastrointestinal tract from the mouth to the anus, particularly\r\nthe small bowel, with patchy areas of transmural inflammation, and usually\r\nwith prominent extrainestinal manifestations."
+    } ]
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "having an ileal resection or ileal bypass before the clinical worsening\r\nof cholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(30)",
+    "text" : "having type 2 diabetes mellitus at the time of the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "type 2 diabetes mellitus",
+      "definition" : "means a form of diabetes mellitus caused by variable\r\ndegrees of insulin resistance and impaired insulin secretion."
+    } ]
+  }, {
+    "paragraph" : "9(31)",
+    "text" : "having total parenteral nutrition for a continuous period of at least\r\nthree weeks before the clinical worsening of cholelithiasis, and where\r\ntotal parenteral nutrition has ceased, the clinical worsening of\r\ncholelithiasis has occurred within 30 days of cessation",
+    "definedTerms" : [ {
+      "term" : "total parenteral nutrition",
+      "definition" : "means continuous intravenous drip feeding with no\r\nfeeding via mouth or gut."
+    } ]
+  }, {
+    "paragraph" : "9(32)",
+    "text" : "being pregnant within the three months before the clinical worsening\r\nof cholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(33)",
+    "text" : "having estrogen therapy for a continuous period of at least six months\r\nbefore the clinical worsening of cholelithiasis, and where estrogen\r\ntherapy has ceased, the clinical worsening of cholelithiasis has\r\noccurred within three months of cessation",
+    "definedTerms" : [ {
+      "term" : "estrogen therapy",
+      "definition" : "means the continuous, cyclical or intermittent\r\nadministration of estrogen contained in medications, including the oral\r\ncontraceptive pill and post-menopausal hormone replacement therapy."
+    } ]
+  }, {
+    "paragraph" : "9(34)",
+    "text" : "having a spinal cord injury at the time of the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "spinal cord injury",
+      "definition" : "means an injury to the long tracts of the spinal cord\r\nresulting in permanent motor or sensory deficits below the level of the lesion."
+    } ]
+  }, {
+    "paragraph" : "9(35)",
+    "text" : "having a gastric or oesophageal resection, or another operation that\r\nincluded a vagotomy, before the clinical worsening of cholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(36)",
+    "text" : "having a foreign body in the biliary tract, or a mechanical obstruction\r\nof the biliary tract, before the clinical worsening of cholelithiasis",
+    "definedTerms" : [ {
+      "term" : "foreign body",
+      "definition" : "means the presence of exogenous material, including a surgical\r\nclip or stent or nonabsorbable suture, a missile fragment or shrapnel, or a fish\r\nbone."
+    } ]
+  }, {
+    "paragraph" : "9(37)",
+    "text" : "having a parasitic disease from the specified list of parasitic diseases\r\nof the biliary tract, at the time of the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "specified list of parasitic diseases",
+      "definition" : "means:\r\n(a) ascariasis;\r\n(b) clonorchiasis;\r\n(c) dicrocoeliasis;\r\n(d) fascioliasis; or\r\n(e) opisthorchiasis."
+    } ]
+  }, {
+    "paragraph" : "9(38)",
+    "text" : "having cholangiohepatitis or recurrent pyogenic cholangitis at the time\r\nof the clinical worsening of cholelithiasis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(39)",
+    "text" : "having a somatostatinoma at the time of the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "somatostatinoma",
+      "definition" : "means a neuroendocrine neoplasm characterised by\r\nexcessive secretion of somatostatin hormone by tumour cells of D-cell origin."
+    } ]
+  }, {
+    "paragraph" : "9(40)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of\r\ncholelithiasis",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(41)",
+    "text" : "inability to obtain appropriate clinical management for cholelithiasis",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,192 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00794",
+  "instrumentNumber" : "58/2012",
+  "citation" : "Statement of Principles concerning otitis externa No. 58 of 2012",
+  "conditionName" : "otitis externa",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H60"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H62.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H62.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H62.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H62.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H62.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "swimming, diving or participating in other aquatic activities within the\r\nten days before the clinical onset of otitis externa",
+    "definedTerms" : [ {
+      "term" : "other aquatic activities",
+      "definition" : "means any activity where the external ear opening\nis submerged in water or prolonged pooling of water in the ear canal occurs.\nSuch activities may include water sports, trekking through watercourses,\nprolonged exposure to heavy rains or being doused in water for lengthy\nperiods"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing a course of therapeutic radiation to the head or neck region\r\nfor cancer, within the five years before the clinical onset of otitis\r\nexterna",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the head or neck region within the five years\r\nbefore the clinical onset of otitis externa",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having trauma to the external ear canal of the affected ear within the\r\nten days before the clinical onset of otitis externa",
+    "definedTerms" : [ {
+      "term" : "trauma to the external ear canal",
+      "definition" : "means any injury affecting the integrity\nof the epithelium of the external ear canal by mechanisms, including thermal,\nelectrical and chemical burns and blunt or penetrating trauma. This definition\nincludes:\n(a) surgical or medical procedures; or\n(b) bites or stings from insects, mites, ticks or other arachnids"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a foreign object or implement inserted into, or removed from,\r\nthe external ear canal of the affected ear within the ten days before the\r\nclinical onset of otitis externa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a specified condition involving the external auditory canal of\r\nthe affected ear at the time of the clinical onset of otitis externa",
+    "definedTerms" : [ {
+      "term" : "a specified condition",
+      "definition" : "means one of the following conditions:\n(a) acne;\n(b) allergic contact dermatitis;\n(c) dermatomycosis;\n(d) herpes simplex;\n(e) herpes zoster;\n(f) irritant contact dermatitis;\n(g) neurodermatitis;\n(h) psoriasis;\n(i) relapsing polychondritis;\n(j) sarcoidosis;\n(k) seborrhoeic dermatitis;\n(l) Sézary syndrome;\n(m) Sjögren's syndrome; or\n(n) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having chronic suppurative otitis media of the affected ear within the\r\none month before the clinical onset of otitis externa",
+    "definedTerms" : [ {
+      "term" : "chronic suppurative otitis media",
+      "definition" : "means a recurrent or continuous\ninfective disorder of the middle ear characterised by perforation of the\ntympanic membrane, long standing painless aural discharge and varying\ndegrees of hearing loss"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of otitis\r\nexterna",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being in an immunocompromised state at the time of the clinical onset\r\nof otitis externa",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state",
+      "definition" : "means a state where the immune response\nhas been attenuated by administration of immunosuppressive drugs, ionising\nradiation, malnutrition, a malignant disease process or certain types of\ninfection"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a narrowing or obstruction of the external auditory canal of the\r\naffected ear at the time of the clinical onset of otitis externa",
+    "definedTerms" : [ {
+      "term" : "a narrowing or obstruction of the external auditory canal",
+      "definition" : "means an\nocclusion or narrowing of the ear canal due to anatomical anomalies (for\nexample, exostosis, stenosis, osteoma), cerumen build-up or foreign objects"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "blocking the external auditory canal of the affected ear for an average\r\nof two hours per day, on more days than not, for the one week before\r\nthe clinical onset of otitis externa",
+    "definedTerms" : [ {
+      "term" : "blocking the external auditory canal",
+      "definition" : "means wearing or using ear\nprotection or devices which occlude the canal or create a seal over the ear,\nincluding:\n(a) ear plugs;\n(b) hearing aids;\n(c) hearing protection ear muffs; or\n(d) stethoscopes"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "for otomycosis only, using a course of oral antibiotic therapy or\r\nototopical therapy for the treatment of otitis externa of the affected ear\r\nwithin the one month before the clinical onset of otomycosis",
+    "definedTerms" : [ {
+      "term" : "otomycosis",
+      "definition" : "means a fungal infection of the external auditory canal"
+    } ],
+    "conditionVariant" : {
+      "name" : "otomycosis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(m)",
+    "text" : "swimming, diving or participating in other aquatic activities within the\r\nten days before the clinical worsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "other aquatic activities",
+      "definition" : "means any activity where the external ear opening\nis submerged in water or prolonged pooling of water in the ear canal occurs.\nSuch activities may include water sports, trekking through watercourses,\nprolonged exposure to heavy rains or being doused in water for lengthy\nperiods"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "undergoing a course of therapeutic radiation to the head or neck region\r\nfor cancer, within the five years before the clinical worsening of otitis\r\nexterna",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the head or neck region within the five years\r\nbefore the clinical worsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having trauma to the external ear canal of the affected ear within the\r\nten days before the clinical worsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "trauma to the external ear canal",
+      "definition" : "means any injury affecting the integrity\nof the epithelium of the external ear canal by mechanisms, including thermal,\nelectrical and chemical burns and blunt or penetrating trauma. This definition\nincludes:\n(a) surgical or medical procedures; or\n(b) bites or stings from insects, mites, ticks or other arachnids"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a foreign object or implement inserted into, or removed from,\r\nthe external ear canal of the affected ear within the ten days before the\r\nclinical worsening of otitis externa",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having a specified condition involving the external auditory canal of\r\nthe affected ear at the time of the clinical worsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "a specified condition",
+      "definition" : "means one of the following conditions:\n(a) acne;\n(b) allergic contact dermatitis;\n(c) dermatomycosis;\n(d) herpes simplex;\n(e) herpes zoster;\n(f) irritant contact dermatitis;\n(g) neurodermatitis;\n(h) psoriasis;\n(i) relapsing polychondritis;\n(j) sarcoidosis;\n(k) seborrhoeic dermatitis;\n(l) Sézary syndrome;\n(m) Sjögren's syndrome; or\n(n) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having chronic suppurative otitis media of the affected ear within the\r\none month before the clinical worsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "chronic suppurative otitis media",
+      "definition" : "means a recurrent or continuous\ninfective disorder of the middle ear characterised by perforation of the\ntympanic membrane, long standing painless aural discharge and varying\ndegrees of hearing loss"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of otitis\r\nexterna",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "being in an immunocompromised state at the time of the clinical\r\nworsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "an immunocompromised state",
+      "definition" : "means a state where the immune response\nhas been attenuated by administration of immunosuppressive drugs, ionising\nradiation, malnutrition, a malignant disease process or certain types of\ninfection"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having a narrowing or obstruction of the external auditory canal of the\r\naffected ear at the time of the clinical worsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "a narrowing or obstruction of the external auditory canal",
+      "definition" : "means an\nocclusion or narrowing of the ear canal due to anatomical anomalies (for\nexample, exostosis, stenosis, osteoma), cerumen build-up or foreign objects"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "blocking the external auditory canal of the affected ear for an average\r\nof two hours per day, on more days than not, for the one week before\r\nthe clinical worsening of otitis externa",
+    "definedTerms" : [ {
+      "term" : "blocking the external auditory canal",
+      "definition" : "means wearing or using ear\nprotection or devices which occlude the canal or create a seal over the ear,\nincluding:\n(a) ear plugs;\n(b) hearing aids;\n(c) hearing protection ear muffs; or\n(d) stethoscopes"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "for otomycosis only, using a course of oral antibiotic therapy or\r\nototopical therapy for the treatment of otitis externa of the affected ear\r\nwithin the one month before the clinical worsening of otomycosis",
+    "definedTerms" : [ {
+      "term" : "otomycosis",
+      "definition" : "means a fungal infection of the external auditory canal"
+    } ],
+    "conditionVariant" : {
+      "name" : "otomycosis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "inability to obtain appropriate clinical management for otitis externa",
+    "definedTerms" : [ ]
+  } ]
+}

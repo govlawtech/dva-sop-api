@@ -1,0 +1,34 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016C00270",
+  "instrumentNumber" : "84/2014",
+  "citation" : "Statement of Principles concerning chronic lymphocytic leukaemia/small lymphocytic lymphoma No. 84 of 2014",
+  "conditionName" : "chronic lymphocytic leukaemia/small lymphocytic lymphoma",
+  "effectiveFrom" : "2014-09-22",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to benzene as specified:\r\n(i) for a cumulative total of at least 2 500 hours within a\r\ncontinuous period of five years before the clinical onset of\r\nchronic lymphocytic leukaemia/small lymphocytic lymphoma;\r\nand\r\n(ii) where the first exposure in that period occurred at least five\r\nyears before the clinical onset of chronic lymphocytic\r\nleukaemia/small lymphocytic lymphoma",
+    "definedTerms" : [ {
+      "term" : "being exposed to benzene as specified",
+      "definition" : "means:\n(a) having cutaneous contact with liquids containing benzene greater than\n1% by volume; or\n(b) ingesting liquids containing benzene greater than 1% by volume; or\n(c) inhaling benzene vapour where such exposure occurs at an ambient\n8-hour time-weighted average benzene concentration exceeding five\nparts per million"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "receiving greater than ten ppm-years of cumulative exposure to\r\nbenzene before the clinical onset of chronic lymphocytic\r\nleukaemia/small lymphocytic lymphoma, and where the first exposure\r\noccurred at least five years before the clinical onset of chronic\r\nlymphocytic leukaemia/small lymphocytic lymphoma",
+    "definedTerms" : [ {
+      "term" : "ppm-years",
+      "definition" : "means parts per million multiplied by years of exposure"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having chronic hepatitis C virus infection at the time of the clinical\r\nonset of chronic lymphocytic leukaemia/small lymphocytic lymphoma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for chronic\r\nlymphocytic leukaemia/small lymphocytic lymphoma",
+    "definedTerms" : [ ]
+  } ]
+}

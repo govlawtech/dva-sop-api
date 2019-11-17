@@ -17,9 +17,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+
+
 public class StoredSop implements SoP, HasSchemaVersion {
 
-    private static final Integer SCHEMA_VERSION = 1;
+    private static final Integer SCHEMA_VERSION = 2;
 
     @Override
     public Integer getSchemaVersion() {
@@ -45,6 +47,9 @@ public class StoredSop implements SoP, HasSchemaVersion {
         public static final String ICD_CODES = "icdCodes";
         public static final String ICD_CODE_VERSION = "version";
         public static final String ICD_CODE = "code";
+        public static final String CONDITION_VARIANT_OBJECT_LABEL = "conditionVariant";
+
+
     }
 
     private final String registerId;
@@ -92,6 +97,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
                 icdCodeListFromJsonArray(jsonNode.findPath(Labels.ICD_CODES)),
                 jsonNode.findValue(Labels.CONDITION_NAME).asText(),
                 jsonNode.hasNonNull(Labels.END_DATE) ? Optional.of(LocalDate.parse(jsonNode.findValue(Labels.END_DATE).asText(),DateTimeFormatter.ISO_LOCAL_DATE)) : Optional.empty()
+
                 );
 
     }
@@ -155,7 +161,6 @@ public class StoredSop implements SoP, HasSchemaVersion {
         return conditionName;
     }
 
-
     @Override
     public String getRegisterId() {
 
@@ -175,11 +180,24 @@ public class StoredSop implements SoP, HasSchemaVersion {
         ImmutableList<JsonNode> definedTermNodes = getChildrenOfArrayNode(jsonNode.findPath(Labels.DEFINED_TERMS));
 
         ImmutableSet<DefinedTerm> definedTerms = ImmutableSet.copyOf(definedTermNodes.stream().map(n -> definedTermFromJson(n)).collect(Collectors.toList()));
-        
-        return new StoredFactor(
-                jsonNode.findValue(Labels.PARAGRAPH).asText(),
-                jsonNode.findValue(Labels.TEXT).asText(), 
-                definedTerms);
+
+
+         Factor basicFactor = new StoredFactor(
+                    jsonNode.findValue(Labels.PARAGRAPH).asText(),
+                    jsonNode.findValue(Labels.TEXT).asText(),
+                    definedTerms);
+
+        boolean hasConditionVariant = jsonNode.has(Labels.CONDITION_VARIANT_OBJECT_LABEL);
+
+        if (hasConditionVariant)
+        {
+            ConditionVariant conditionVariant = StoredConditionVariant.fromJson(jsonNode);
+            return new StoredFactorWithConditionVariant(basicFactor,conditionVariant);
+        }
+
+        else {
+            return basicFactor;
+        }
     }
 
     private static DefinedTerm definedTermFromJson(JsonNode jsonNode)
@@ -234,13 +252,22 @@ public class StoredSop implements SoP, HasSchemaVersion {
     private static JsonNode toJson(Factor factor)
     {
         ObjectMapper objectMapper = new ObjectMapper();
-        ObjectNode objectNode = objectMapper.createObjectNode();
-        objectNode.put(Labels.PARAGRAPH,factor.getParagraph());
-        objectNode.put(Labels.TEXT,factor.getText());
-        ArrayNode definedTermsArray =  objectNode.putArray(Labels.DEFINED_TERMS);
+        ObjectNode root = objectMapper.createObjectNode();
+        root.put(Labels.PARAGRAPH,factor.getParagraph());
+        root.put(Labels.TEXT,factor.getText());
+        ArrayNode definedTermsArray =  root.putArray(Labels.DEFINED_TERMS);
         for (DefinedTerm definedTerm : factor.getDefinedTerms())
             definedTermsArray.add(toJson(definedTerm));
-        return objectNode;
+
+        Optional<ConditionVariant> conditionVariant = factor.getConditionVariant();
+        if (conditionVariant.isPresent())
+        {
+            ObjectNode jsonNode = (ObjectNode) StoredConditionVariant.toJson(conditionVariant.get());
+            ObjectNode on =  root.putObject(Labels.CONDITION_VARIANT_OBJECT_LABEL);
+            on.setAll(jsonNode);
+        }
+
+        return root;
     }
 
     private static JsonNode toJson(DefinedTerm definedTerm)

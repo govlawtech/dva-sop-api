@@ -1,0 +1,49 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00555",
+  "instrumentNumber" : "43/2018",
+  "citation" : "Statement of Principles concerning Cushing syndrome (Reasonable Hypothesis) (No. 43 of 2018)",
+  "conditionName" : "Cushing syndrome",
+  "effectiveFrom" : "2018-05-28",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E24.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E24.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E24.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E24.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E24.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a specified condition at the time of the clinical onset of Cushing\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "specified condition",
+      "definition" : "means one of the following:\r\n(a) adrenal neoplasm;\r\n(b) adrenocorticotrophic hormone (ACTH) secreting neoplasm of the\r\npituitary gland;\r\n(c) macronodular adrenal hyperplasia;\r\n(d) micronodular adrenal hyperplasia; or\r\n(e) neuroendocrine neoplasm.\r\nNote: adrenal neoplasm and neuroendocrine neoplasm are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having glucocorticoid therapy as specified before the clinical onset of\r\nCushing syndrome, and where the glucocorticoid therapy as specified\r\nhas ceased or decreased, the last dose of the therapy was received\r\nwithin the 30 days before the clinical onset of Cushing syndrome",
+    "definedTerms" : [ {
+      "term" : "glucocorticoid therapy as specified",
+      "definition" : "means:\r\n(a) applying a high or very high potency topical glucocorticoid to at least\r\n30% of total skin surface area, daily, for at least six months; or\r\n(b) inhaling at least 4 000 micrograms of budesonide, or equivalent inhaled\r\nglucocorticoid, daily, for at least six months; or\r\n(c) taking:\r\n(i) hydrocortisone, orally or by injection:\r\n(A) to a cumulative dose of at least 1 500 milligrams; and\r\n(B) at a minimum dose rate averaging 50 milligrams per day, or\r\n(ii) equivalent glucocorticoid therapy, orally or by injection; or\r\n(d) using a glucocorticoid concurrently with a drug, daily, for at least 4\r\nweeks, where that drug can inhibit the activity of the metabolising\r\nenzyme cytochrome P450 3A4 by at least 30% (moderate to strong\r\ninhibition); or\r\n(e) using a glucocorticoid concurrently with a drug from the specified list\r\nof drugs, daily, for at least four weeks; or\r\n(f) using a clobetasol containing oral preparation, daily, for at least four\r\nweeks; or\r\n(g) using glucocorticoid containing enemas, daily, for at least six months.\r\nNote: equivalent glucocorticoid therapy, equivalent inhaled glucocorticoid, high or very high\r\npotency topical glucocorticoid and specified list of drugs are also defined in the Schedule 1 –\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being treated with medroxyprogesterone acetate or megestrol acetate\r\nfor a malignant disease or human immunodeficiency virus infection:\r\n(a) for at least four weeks before the clinical onset of Cushing\r\nsyndrome; and\r\n(b) where treatment has ceased, the clinical onset of Cushing\r\nsyndrome has occurred within 30 days of cessation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "inability to obtain appropriate clinical management for Cushing\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

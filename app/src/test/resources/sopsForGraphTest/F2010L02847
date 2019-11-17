@@ -1,0 +1,30 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L02847",
+  "instrumentNumber" : "91/2010",
+  "citation" : "Statement of Principles concerning Ross River virus infection No. 91 of 2010",
+  "conditionName" : "Ross River virus infection",
+  "effectiveFrom" : "2010-11-10",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B33.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being bitten by a mosquito infected with Ross River virus at least\r\nthree days, but not more than 21 days, before the clinical onset of\r\nRoss River virus infection",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being in an area that is endemic for Ross River virus at least three\r\ndays, but not more than 21 days, before the clinical onset of Ross\r\nRiver virus infection",
+    "definedTerms" : [ {
+      "term" : "an area that is endemic for Ross River virus",
+      "definition" : "means:\n(a) Australia;\n(b) East Timor;\n(c) Indonesia;\n(d) Papua New Guinea; or\n(e) Solomon Islands"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for Ross\r\nRiver virus infection",
+    "definedTerms" : [ ]
+  } ]
+}

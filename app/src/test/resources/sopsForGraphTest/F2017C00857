@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00857",
+  "instrumentNumber" : "90/2015",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the gallbladder (No. 90 of 2015)",
+  "conditionName" : "malignant neoplasm of the gallbladder",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C23"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having cholelithiasis before the clinical onset of malignant neoplasm\r\nof the gallbladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being a chronic typhoid carrier before the clinical onset of malignant\r\nneoplasm of the gallbladder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having primary sclerosing cholangitis before the clinical onset of\r\nmalignant neoplasm of the gallbladder",
+    "definedTerms" : [ {
+      "term" : "primary sclerosing cholangitis",
+      "definition" : "means an autoimmune disorder characterised\r\nby a progressive, inflammatory, sclerosing process in the bile ducts."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the gallbladder at least ten years before the\r\nclinical onset of malignant neoplasm of the gallbladder",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined.\r\nmalignant neoplasm of the gallbladder—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being obese for at least ten years within the 20 years before the clinical\r\nonset of malignant neoplasm of the gallbladder",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\r\n2The BMI = W/H and where:\r\nW is the person's weight in kilograms; and\r\nH is the person's height in metres."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having diabetes mellitus for at least ten years before the clinical onset\r\nof malignant neoplasm of the gallbladder",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(7)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the gallbladder",
+    "definedTerms" : [ ]
+  } ]
+}

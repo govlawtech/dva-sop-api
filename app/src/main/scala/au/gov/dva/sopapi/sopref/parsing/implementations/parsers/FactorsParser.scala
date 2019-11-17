@@ -51,18 +51,19 @@ object FactorsParser extends MiscRegexes {
   }
 
 
-  private def splitToParas(factorSectionLines: List[String]): List[List[String]] = {
+  def splitToParas(factorSectionLines: List[String], paraRegex : Regex): List[List[String]] = {
     if (factorSectionLines.isEmpty) return List()
-    val (paraExclFirst, rest) = factorSectionLines.tail.span(line => regexForAnySection.findFirstIn(line).isEmpty)
-    factorSectionLines.head +: paraExclFirst :: splitToParas(rest)
+    val (paraExclFirst, rest) = factorSectionLines.tail.span(line => paraRegex.findFirstIn(line).isEmpty)
+    factorSectionLines.head +: paraExclFirst :: splitToParas(rest, paraRegex)
   }
 
-  private def lineSetsToClass(linesets: List[List[String]]): List[ParaLines] = {
+   def lineSetsToClass(linesets: List[List[String]], regexForSectionStart: Regex): List[ParaLines] = {
     linesets.map(l => {
-      val legalRef = regexForAnySection.findFirstIn(l.head).get
+      val legalRef = regexForSectionStart.findFirstIn(l.head).get
       ParaLines(legalRef, l)
     })
   }
+
 
   private def isChild(prev: MainPara, current: ParaLines) = {
 
@@ -70,6 +71,7 @@ object FactorsParser extends MiscRegexes {
     // if prev main factor is '(h)' and ends 'or', this means the (i) para following is a main para, not a small roman
     if (prev.paraLinesParent.legalRef == "(h)" && current.legalRef == "(i)" && prev.getLast.endsWithOr) false
     // if last child was a small roman and the current is small roman, then it is a following sibling child
+    if (prev.paraLinesParent.legalRef == "(h)" && current.legalRef == "(i)" && prev.children.exists(c => c.legalRef == "(i)")) false // for subsections with tail
     else if (smallRomanRegex.findFirstIn(prev.getLast.legalRef).isDefined && smallRomanRegex.findFirstIn(current.legalRef).isDefined) true
     // first child after main para
     else if (smallRomanRegex.findFirstIn(current.legalRef).isDefined && prev.getLast.isSubsHead) true
@@ -77,7 +79,21 @@ object FactorsParser extends MiscRegexes {
     else false
   }
 
-  private def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
+  def groupToMainParasWithCustomRule(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
+    if (paraLines.isEmpty) acc.reverse
+    else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List())),paraLinesShouldBeChildrenAccordingToCustomRule) // first para will always be main para
+    else if (paraLinesShouldBeChildrenAccordingToCustomRule(acc.head,paraLines.head)) {
+      // add as child to prev head
+      groupToMainParas(paraLines.tail, acc.head.withExtraChild(paraLines.head) :: acc.tail,paraLinesShouldBeChildrenAccordingToCustomRule)
+    }
+    else {
+      // new main
+      groupToMainParas(paraLines.tail, MainPara(paraLines.head, List()) :: acc,paraLinesShouldBeChildrenAccordingToCustomRule)
+    }
+  }
+
+
+  def groupToMainParas(paraLines: List[ParaLines], acc: List[MainPara], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
     if (paraLines.isEmpty) acc.reverse
     else if (acc.isEmpty) groupToMainParas(paraLines.tail, List(MainPara(paraLines.head, List())),paraLinesShouldBeChildrenAccordingToCustomRule) // first para will always be main para
     else if (isChild(acc.head, paraLines.head) || paraLinesShouldBeChildrenAccordingToCustomRule(acc.head,paraLines.head)) {
@@ -91,8 +107,8 @@ object FactorsParser extends MiscRegexes {
   }
 
   private def oldStyleSmallLetterLinesToParas(lines: List[String], paraLinesShouldBeChildrenAccordingToCustomRule : (MainPara, ParaLines) => Boolean): List[MainPara] = {
-    val paras: List[List[String]] = FactorsParser.splitToParas(lines)
-    val lineSets = FactorsParser.lineSetsToClass(paras)
+    val paras: List[List[String]] = FactorsParser.splitToParas(lines,regexForAnySection)
+    val lineSets = FactorsParser.lineSetsToClass(paras,regexForAnySection)
     val mainParas = FactorsParser.groupToMainParas(lineSets, List(), paraLinesShouldBeChildrenAccordingToCustomRule)
     mainParas
   }
@@ -102,7 +118,8 @@ object FactorsParser extends MiscRegexes {
     val groupedToSetsOfParagraphLines = oldStyleSmallLetterLinesToParas(lines, paraLinesShouldBeChildrenAccordingToCustomRule)
 
 
-     return groupedToSetsOfParagraphLines.map(mp => new FactorInfoWithoutSubParas(mp.paraLinesParent.legalRef,
+
+    return groupedToSetsOfParagraphLines.map(mp => new FactorInfoWithoutSubParas(mp.paraLinesParent.legalRef,
       reflowFactorLines(mp.flattenLines)))
   }
 
@@ -133,6 +150,9 @@ object FactorsParser extends MiscRegexes {
       .head
   }
 
+
+
+
   case class ParaLines(legalRef: String, lines: List[String]) {
     def endsWithOr = lines.last.endsWith("or")
     def isSubsHead = lines.last.endsWith(":") || lines.last.endsWith(",") || lines.last.endsWith(", and")
@@ -150,5 +170,6 @@ object FactorsParser extends MiscRegexes {
 
     def flattenLines: String = (paraLinesParent.lines ++ children.flatMap(c => c.lines)).mkString(Properties.lineSeparator)
   }
+
 
 }

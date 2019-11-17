@@ -1,0 +1,73 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019C00013",
+  "instrumentNumber" : "59/2016",
+  "citation" : "Statement of Principles concerning sarcoidosis (Reasonable Hypothesis) (No. 59 of 2016)",
+  "conditionName" : "sarcoidosis",
+  "effectiveFrom" : "2016-07-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D86"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being treated with a drug from a class of drugs from the specified list\r\nof drugs within the five years before the clinical onset of sarcoidosis;\r\n(1a) having immunotherapy for cancer or targeted therapy for cancer within\r\nthe five years before the clinical onset of sarcoidosis;\r\n1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "targeted therapy for cancer",
+      "definition" : "means the use of drugs that block the growth and\r\nspread of cancer by interfering with specific molecules that are involved in\r\nthe growth, progression or spread of cancer."
+    }, {
+      "term" : "immunotherapy for cancer",
+      "definition" : "means the use of drugs to stimulate a person's\r\nown immune system to recognise and destroy cancer cells more effectively."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being treated for human immunodeficiency virus infection with\r\nantiretroviral drugs at the time of the clinical onset of sarcoidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being treated with a tumour necrosis factor-α inhibitor at the time of\r\nthe clinical onset of sarcoidosis;\r\n(3a) having a malignant neoplasm in the ten years before the clinical onset\r\nof sarcoidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being obese for at least five years within the 20 years before the\r\nclinical onset of sarcoidosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having received an organ or tissue transplant from a donor with\r\nsarcoidosis within the two years before the clinical onset of\r\nsarcoidosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(6)",
+    "text" : "being treated with a drug from a class of drugs from the specified list\r\nof drugs within the five years before the clinical worsening of\r\nsarcoidosis;\r\n(6a) having immunotherapy for cancer or targeted therapy for cancer within\r\nthe five years before the clinical worsening of sarcoidosis;\r\n1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "targeted therapy for cancer",
+      "definition" : "means the use of drugs that block the growth and\r\nspread of cancer by interfering with specific molecules that are involved in\r\nthe growth, progression or spread of cancer."
+    }, {
+      "term" : "immunotherapy for cancer",
+      "definition" : "means the use of drugs to stimulate a person's\r\nown immune system to recognise and destroy cancer cells more effectively."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being treated for human immunodeficiency virus infection with\r\nantiretroviral drugs at the time of the clinical worsening of sarcoidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being treated with a tumour necrosis factor-α inhibitor at the time of\r\nthe clinical worsening of sarcoidosis;\r\n(8a) having a malignant neoplasm in the ten years before the clinical\r\nworsening of sarcoidosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being obese for at least five years within the 20 years before the\r\nclinical worsening of sarcoidosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "inability to obtain appropriate clinical management for sarcoidosis",
+    "definedTerms" : [ ]
+  } ]
+}

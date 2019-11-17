@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00200",
+  "instrumentNumber" : "21/2018",
+  "citation" : "Statement of Principles concerning accidental hypothermia (Reasonable Hypothesis) (No. 21 of 2018)",
+  "conditionName" : "accidental hypothermia",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T68"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to low environmental temperature at the time of the\r\nclinical onset of accidental hypothermia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for accidental\r\nhypothermia",
+    "definedTerms" : [ ]
+  } ]
+}

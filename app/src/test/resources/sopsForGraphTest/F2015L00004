@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00004",
+  "instrumentNumber" : "39/2015",
+  "citation" : "Statement of Principles concerning autosomal dominant polycystic kidney disease No. 39 of 2015",
+  "conditionName" : "autosomal dominant polycystic kidney disease",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "Q61.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for autosomal dominant polycystic kidney disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for autosomal dominant polycystic kidney disease",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01344",
+  "instrumentNumber" : "75/2016",
+  "citation" : "Statement of Principles concerning Scheuermann's disease (Reasonable Hypothesis) (No. 75 of 2016)",
+  "conditionName" : "Scheuermann's disease",
+  "effectiveFrom" : "2016-09-26",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M42.0"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "engaging in strenuous physical activity for the five years before the\r\nclinical worsening of Scheuermann's disease",
+    "definedTerms" : [ {
+      "term" : "strenuous physical activity",
+      "definition" : "means physical activity equivalent to that\r\nundertaken by elite level athletes training and competing in sports such as\r\nweightlifting, wrestling, rugby, skiing, gymnastics, rowing or swimming,\r\nwhere torsion, force or load is applied against the resistance of the spine."
+    } ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "inability to obtain appropriate clinical management for Scheuermann's\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

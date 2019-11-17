@@ -1,0 +1,39 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L02313",
+  "instrumentNumber" : "74/2010",
+  "citation" : "Statement of Principles concerning anal fissure No. 74 of 2010",
+  "conditionName" : "anal fissure",
+  "effectiveFrom" : "2010-09-01",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having trauma to the perianal area at the time of the clinical onset\r\nof anal fissure",
+    "definedTerms" : [ {
+      "term" : "trauma to the perianal area",
+      "definition" : "means injury to the perianal area\nincluding by childbirth, laceration by a foreign body, sexual assault or\nsurgical procedure"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being infected with human immunodeficiency virus before the\r\nclinical onset of anal fissure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having inflammatory bowel disease before the clinical onset of\r\nanal fissure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having constipation at the time of the clinical onset of anal\r\nfissure",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being treated with nicorandil at the time of the clinical onset of\r\nanal fissure",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "inability to obtain appropriate clinical management for anal\r\nfissure",
+    "definedTerms" : [ ]
+  } ]
+}

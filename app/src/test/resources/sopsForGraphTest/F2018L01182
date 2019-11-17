@@ -1,0 +1,177 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01182",
+  "instrumentNumber" : "71/2018",
+  "citation" : "Statement of Principles concerning adrenal insufficiency (Reasonable Hypothesis) (No. 71 of 2018)",
+  "conditionName" : "adrenal insufficiency",
+  "effectiveFrom" : "2018-09-24",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E27.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E27.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E27.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E27.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "E89.6"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "A18.7"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "A39.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an autoimmune disorder involving the adrenal glands at the\r\ntime of the clinical onset of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having infiltration of the adrenal glands due to a disorder from the\r\nspecified list of infiltrative disorders at the time of the clinical onset of\r\nadrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "specified list of infiltrative disorders",
+      "definition" : "means:\r\n(a) a primary or metastatic neoplasm;\r\n(b) amyloidosis;\r\n(c) iron overload; or\r\n(d) sarcoidosis.\r\nNote: iron overload is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having infection with human immunodeficiency virus before the\r\nclinical onset of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having an injury or surgery to:\r\n(a) both adrenal glands, or\r\n(b) a single adrenal gland:\r\n(i) where there is only one functional adrenal gland; or\r\n(ii) as surgical treatment for Cushing syndrome;\r\nwithin the one year before the clinical onset of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having haemorrhage or infarction of:\r\n(a) both adrenal glands, or\r\n(b) a single functional adrenal gland, where there is only one\r\nfunctional adrenal gland;\r\nwithin the one year before the clinical onset of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having an infection of the adrenal glands with an organism from the\r\nspecified list of infectious organisms at the time of the clinical onset of\r\nadrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "specified list of infectious organisms",
+      "definition" : "means:\r\n(a) Blastomyces dermatitidis;\r\n(b) Coccidioides immitis;\r\n(c) Coccidioides posadasii;\r\n(d) Cryptococcosis neoformans;\r\n(e) cytomegalovirus;\r\n(f) Echinococcus granulosus;\r\n(g) herpes simplex virus;\r\n(h) Histoplasma capsulatum;\r\n(i) Mycobacterium avium-intracellulare;\r\n(j) Mycobacterium kansasii;\r\n(k) Mycobacterium tuberculosis;\r\n(l) Nocardia spp;\r\n(m) Paracoccidioides brasiliensis;\r\n(n) Pneumocystis carinii; or\r\n(o) Toxoplasmosis gondii."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being treated with a drug or a drug from a class of drugs from Specified\r\nList 1 of drugs within the three months before the clinical onset of\r\nadrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having glucocorticoid therapy as specified, before the clinical onset of\r\nadrenal insufficiency, and where the glucocorticoid therapy as\r\nspecified has ceased or decreased, the last dose of the therapy was\r\nreceived within the one year before the clinical onset of adrenal\r\ninsufficiency",
+    "definedTerms" : [ {
+      "term" : "glucocorticoid therapy as specified",
+      "definition" : "means:\r\n(a) applying a high or very high potency topical glucocorticoid to at least\r\n10% of total skin surface area, daily, for a continuous period of at least\r\nthree months; or\r\n(b) inhaling at least 1 600 micrograms of budesonide, or equivalent inhaled\r\nglucocorticoid, daily, for a continuous period of at least three months;\r\nor\r\n(c) taking:\r\n(i) hydrocortisone, orally or by injection:\r\n(A) to a cumulative dose of at least 600 milligrams; and\r\n(B) at a minimum dose rate averaging 20 milligrams per day, or\r\n(ii) equivalent glucocorticoid therapy, orally or by injection; or\r\n(d) using a glucocorticoid concurrently with a drug, daily, for at least four\r\nweeks, where that drug can inhibit the activity of the metabolising\r\nenzyme cytochrome P450 3A4 by at least 30% (moderate to strong\r\ninhibition); or\r\n(e) using a glucocorticoid concurrently with a drug from Specified List 2\r\nof drugs, daily, for a continuous period of at least four weeks; or\r\n(f) using an ocular glucocorticoid, daily, for a continuous period of at least\r\nsix months; or\r\n(g) using an intranasal glucocorticoid, at an average daily dose exceeding\r\n400 micrograms of betamethasone 0.1%, or equivalent intranasal\r\nglucocorticoid, for a continuous period of at least six months; or\r\n(h) using glucocorticoid containing enemas, daily, for a continuous period\r\nof at least six months; or\r\n(i) taking any glucocorticoid therapy that causes Cushing syndrome.\r\nNote: equivalent glucocorticoid therapy, equivalent inhaled glucocorticoid, high or very high\r\npotency topical glucocorticoid and Specified List 2 of drugs are also defined in the Schedule 1 –\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being treated with medroxyprogesterone acetate or megestrol acetate\r\nfor a malignant disease or human immunodeficiency virus infection:\r\n(a) for a continuous period of at least four weeks before the clinical\r\nonset of adrenal insufficiency; and\r\n(b) where such treatment has ceased, the last dose was received\r\nwithin the three months before the clinical onset of adrenal\r\ninsufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having hypopituitarism with adrenocorticotrophic hormone deficiency,\r\nat the time of the clinical onset of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a critical illness or injury within the one year before the clinical\r\nonset of adrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "critical illness or injury",
+      "definition" : "means any physical injury or illness requiring\r\nmechanical ventilation support or admission to an intensive care unit, or\r\nwhich causes septicaemia, adult respiratory distress syndrome, acute renal\r\ntubular necrosis, disseminated intravascular coagulation or multiple organ\r\nfailure."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "for adrenal crisis only, having an acute, severe stressor within the seven\r\ndays before the clinical onset of adrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "adrenal crisis",
+      "definition" : "means a constellation of symptoms that indicate severe adrenal\r\ninsufficiency of rapid onset causing acute haemodynamic decompensation.\r\nCharacteristic symptoms and signs are hypotension, tachycardia,\r\nhypovolaemia (shock), lethargy, hypoglycaemia, disorientation, impaired\r\nconsciousness, seizures and coma.\r\nNote 1: Adrenal crisis is a medical emergency that requires treatment with injectable hydrocortisone\r\nand fluid support. Adrenal crisis is also known as an Addisonian crisis.\r\nNote 2: Adrenal crisis may be the first presentation of undiagnosed adrenal insufficiency, or may\r\ncomplicate existing chronic adrenal insufficiency.\r\nadrenal insufficiency—see subsection 7(2)."
+    }, {
+      "term" : "acute, severe stressor",
+      "definition" : "means a physical or psychological stimulus or event\r\nthat causes a sudden, intense psychological or physical response.\r\nNote: Examples of s include:\r\n(a) abrupt cessation or lowering of glucocorticoid therapy;\r\n(b) acute hepatic failure;\r\n(c) alcohol intoxication;\r\n(d) atrial fibrillation;\r\n(e) being exposed to an environment of extreme heat during a heatwave;\r\n(f) critical illness or injury;\r\n(g) dehydration;\r\n(h) experiencing a category 1A stressor;\r\n(i) experiencing an acute, severe, emotional stressor;\r\n(j) febrile illness;\r\n(k) gastrointestinal infection;\r\n(l) long distance flight;\r\n(m) migraine;\r\n(n) oesophageal variceal bleeding;\r\n(o) physical trauma or injury;\r\n(p) serious acute illness;\r\n(q) surgery;\r\n(r) thyrotoxicosis;\r\n(s) undertaking physical activity of five METs or more; and\r\n(t) wasp or bee sting.\r\nNote: category 1A stressor, critical illness or injury, extreme heat and MET are also defined in\r\nthe Schedule 1 – Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "adrenal crisis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(13)",
+    "text" : "having an autoimmune disorder involving the adrenal glands at the\r\ntime of the clinical worsening of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having infiltration of the adrenal glands due to a disorder from the\r\nspecified list of infiltrative disorders at the time of the clinical\r\nworsening of adrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "specified list of infiltrative disorders",
+      "definition" : "means:\r\n(a) a primary or metastatic neoplasm;\r\n(b) amyloidosis;\r\n(c) iron overload; or\r\n(d) sarcoidosis.\r\nNote: iron overload is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having infection with human immunodeficiency virus before the\r\nclinical worsening of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having an injury or surgery to:\r\n(a) both adrenal glands, or\r\n(b) a single adrenal gland:\r\n(i) where there is only one functional adrenal gland; or\r\n(ii) as surgical treatment for Cushing syndrome;\r\nwithin the one year before the clinical worsening of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having haemorrhage or infarction of:\r\n(a) both adrenal glands, or\r\n(b) a single functional adrenal gland, where there is only one\r\nfunctional adrenal gland;\r\nwithin the one year before the clinical worsening of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having an infection of the adrenal glands with an organism from the\r\nspecified list of infectious organisms at the time of the clinical\r\nworsening of adrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "specified list of infectious organisms",
+      "definition" : "means:\r\n(a) Blastomyces dermatitidis;\r\n(b) Coccidioides immitis;\r\n(c) Coccidioides posadasii;\r\n(d) Cryptococcosis neoformans;\r\n(e) cytomegalovirus;\r\n(f) Echinococcus granulosus;\r\n(g) herpes simplex virus;\r\n(h) Histoplasma capsulatum;\r\n(i) Mycobacterium avium-intracellulare;\r\n(j) Mycobacterium kansasii;\r\n(k) Mycobacterium tuberculosis;\r\n(l) Nocardia spp;\r\n(m) Paracoccidioides brasiliensis;\r\n(n) Pneumocystis carinii; or\r\n(o) Toxoplasmosis gondii."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "being treated with a drug or a drug from a class of drugs from Specified\r\nList 1 of drugs within the three months before the clinical worsening of\r\nadrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having glucocorticoid therapy as specified, before the clinical\r\nworsening of adrenal insufficiency:\r\n(a) where the glucocorticoid therapy as specified is not being taken\r\nfor the treatment of adrenal insufficiency; and\r\n(b) where the glucocorticoid therapy as specified has ceased or\r\ndecreased, the last dose of the therapy was received within the\r\none year before the clinical worsening of adrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "glucocorticoid therapy as specified",
+      "definition" : "means:\r\n(a) applying a high or very high potency topical glucocorticoid to at least\r\n10% of total skin surface area, daily, for a continuous period of at least\r\nthree months; or\r\n(b) inhaling at least 1 600 micrograms of budesonide, or equivalent inhaled\r\nglucocorticoid, daily, for a continuous period of at least three months;\r\nor\r\n(c) taking:\r\n(i) hydrocortisone, orally or by injection:\r\n(A) to a cumulative dose of at least 600 milligrams; and\r\n(B) at a minimum dose rate averaging 20 milligrams per day, or\r\n(ii) equivalent glucocorticoid therapy, orally or by injection; or\r\n(d) using a glucocorticoid concurrently with a drug, daily, for at least four\r\nweeks, where that drug can inhibit the activity of the metabolising\r\nenzyme cytochrome P450 3A4 by at least 30% (moderate to strong\r\ninhibition); or\r\n(e) using a glucocorticoid concurrently with a drug from Specified List 2\r\nof drugs, daily, for a continuous period of at least four weeks; or\r\n(f) using an ocular glucocorticoid, daily, for a continuous period of at least\r\nsix months; or\r\n(g) using an intranasal glucocorticoid, at an average daily dose exceeding\r\n400 micrograms of betamethasone 0.1%, or equivalent intranasal\r\nglucocorticoid, for a continuous period of at least six months; or\r\n(h) using glucocorticoid containing enemas, daily, for a continuous period\r\nof at least six months; or\r\n(i) taking any glucocorticoid therapy that causes Cushing syndrome.\r\nNote: equivalent glucocorticoid therapy, equivalent inhaled glucocorticoid, high or very high\r\npotency topical glucocorticoid and Specified List 2 of drugs are also defined in the Schedule 1 –\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "being treated with medroxyprogesterone acetate or megestrol acetate\r\nfor a malignant disease or human immunodeficiency virus infection:\r\n(a) for a continuous period of at least four weeks before the clinical\r\nworsening of adrenal insufficiency; and\r\n(b) where such treatment has ceased, the last dose was received\r\nwithin the three months before the clinical worsening of adrenal\r\ninsufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having hypopituitarism with adrenocorticotrophic hormone deficiency,\r\nat the time of the clinical worsening of adrenal insufficiency",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having a critical illness or injury within the one year before the clinical\r\nworsening of adrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "critical illness or injury",
+      "definition" : "means any physical injury or illness requiring\r\nmechanical ventilation support or admission to an intensive care unit, or\r\nwhich causes septicaemia, adult respiratory distress syndrome, acute renal\r\ntubular necrosis, disseminated intravascular coagulation or multiple organ\r\nfailure."
+    } ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "for adrenal crisis only, having an acute, severe stressor within the seven\r\ndays before the clinical worsening of adrenal insufficiency",
+    "definedTerms" : [ {
+      "term" : "adrenal crisis",
+      "definition" : "means a constellation of symptoms that indicate severe adrenal\r\ninsufficiency of rapid onset causing acute haemodynamic decompensation.\r\nCharacteristic symptoms and signs are hypotension, tachycardia,\r\nhypovolaemia (shock), lethargy, hypoglycaemia, disorientation, impaired\r\nconsciousness, seizures and coma.\r\nNote 1: Adrenal crisis is a medical emergency that requires treatment with injectable hydrocortisone\r\nand fluid support. Adrenal crisis is also known as an Addisonian crisis.\r\nNote 2: Adrenal crisis may be the first presentation of undiagnosed adrenal insufficiency, or may\r\ncomplicate existing chronic adrenal insufficiency.\r\nadrenal insufficiency—see subsection 7(2)."
+    }, {
+      "term" : "acute, severe stressor",
+      "definition" : "means a physical or psychological stimulus or event\r\nthat causes a sudden, intense psychological or physical response.\r\nNote: Examples of s include:\r\n(a) abrupt cessation or lowering of glucocorticoid therapy;\r\n(b) acute hepatic failure;\r\n(c) alcohol intoxication;\r\n(d) atrial fibrillation;\r\n(e) being exposed to an environment of extreme heat during a heatwave;\r\n(f) critical illness or injury;\r\n(g) dehydration;\r\n(h) experiencing a category 1A stressor;\r\n(i) experiencing an acute, severe, emotional stressor;\r\n(j) febrile illness;\r\n(k) gastrointestinal infection;\r\n(l) long distance flight;\r\n(m) migraine;\r\n(n) oesophageal variceal bleeding;\r\n(o) physical trauma or injury;\r\n(p) serious acute illness;\r\n(q) surgery;\r\n(r) thyrotoxicosis;\r\n(s) undertaking physical activity of five METs or more; and\r\n(t) wasp or bee sting.\r\nNote: category 1A stressor, critical illness or injury, extreme heat and MET are also defined in\r\nthe Schedule 1 – Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "adrenal crisis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "inability to obtain appropriate clinical management for adrenal\r\ninsufficiency",
+    "definedTerms" : [ ]
+  } ]
+}

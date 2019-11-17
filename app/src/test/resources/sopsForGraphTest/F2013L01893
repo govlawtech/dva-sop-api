@@ -1,0 +1,60 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01893",
+  "instrumentNumber" : "74/2013",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the pancreas No. 74 of 2013",
+  "conditionName" : "malignant neoplasm of the pancreas",
+  "effectiveFrom" : "2013-11-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C25.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.7"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C25.8"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the pancreas, and\r\n(i) smoking commenced at least ten years before the clinical onset\r\nof malignant neoplasm of the pancreas; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the pancreas has occurred within 15 years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "the oral use of smokeless tobacco on more days than not, for at least 40\r\nyears before the clinical onset of malignant neoplasm of the pancreas,\r\nand where the oral use of smokeless tobacco has ceased, the clinical\r\nonset of malignant neoplasm of the pancreas has occurred within 15\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "smokeless tobacco",
+      "definition" : "means tobacco products without combustion or\npyrolysis at the time of use, including chewing tobacco and tobacco snuff"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus for at least ten years before the clinical onset\r\nof malignant neoplasm of the pancreas",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having chronic pancreatitis for at least five years before the clinical\r\nonset of malignant neoplasm of the pancreas",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being obese for at least ten years within the 30 years before the clinical\r\nonset of malignant neoplasm of the pancreas",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the pancreas",
+    "definedTerms" : [ ]
+  } ]
+}

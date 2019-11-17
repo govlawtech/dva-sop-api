@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01852",
+  "instrumentNumber" : "38/2015",
+  "citation" : "Statement of Principles concerning Huntington's chorea No. 38 of 2015",
+  "conditionName" : "Huntington's chorea",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G10"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for Huntington's chorea",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for Huntington's chorea",
+    "definedTerms" : [ ]
+  } ]
+}

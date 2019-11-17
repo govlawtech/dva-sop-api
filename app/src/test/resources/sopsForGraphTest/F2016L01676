@@ -1,0 +1,50 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01676",
+  "instrumentNumber" : "94/2016",
+  "citation" : "Statement of Principles concerning umbilical hernia (Balance of Probabilities) (No. 94 of 2016)",
+  "conditionName" : "umbilical hernia",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K42.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K42.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K42.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "being obese at the time of the clinical onset of umbilical hernia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having ascites, chronic ambulatory or automated peritoneal dialysis,\r\nextensive intra-abdominal neoplastic disease or mass, or being\r\npregnant at the time of the clinical onset of umbilical hernia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(3)",
+    "text" : "being obese at the time of the clinical worsening of umbilical hernia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having increased intra-abdominal pressure as specified at the time of\r\nthe clinical worsening of umbilical hernia",
+    "definedTerms" : [ {
+      "term" : "increased intra-abdominal pressure as specified",
+      "definition" : "means acute or chronic\r\n(intermittent or continuous) elevation of pressure within the abdominal\r\ncavity due to any one of the following:\r\n(a) anti-G straining manoeuvre;\r\n(b) ascites;\r\n(c) chronic ambulatory or automated peritoneal dialysis;\r\n(d) extensive intra-abdominal neoplastic disease or mass;\r\n(e) gastrointestinal endoscopy;\r\n(f) lifting heavy weights;\r\n(g) physical trauma to the abdomen involving a direct blow to the\r\nabdomen;\r\n(h) pneumoperitoneum;\r\n(i) pregnancy;\r\n(j) significant coughing;\r\n(k) significant sneezing;\r\n(l) significant vomiting;\r\n(m) straining at micturition due to bladder outlet or urethral obstruction; or\r\n(n) straining at stool due to constipation or diarrhoea."
+    } ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "inability to obtain appropriate clinical management for umbilical\r\nhernia",
+    "definedTerms" : [ ]
+  } ]
+}

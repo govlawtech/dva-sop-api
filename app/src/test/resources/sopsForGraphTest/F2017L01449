@@ -1,0 +1,134 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L01449",
+  "instrumentNumber" : "64/2017",
+  "citation" : "Statement of Principles concerning immune thrombocytopaenia (Balance of Probabilities) (No. 64 of 2017)",
+  "conditionName" : "immune thrombocytopaenia",
+  "effectiveFrom" : "2017-12-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having a viral infection from the specified list of viral infections within\r\nthe six weeks before the clinical onset of immune thrombocytopaenia",
+    "definedTerms" : [ {
+      "term" : "specified list of viral infections",
+      "definition" : "means:\r\n(a) cytomegalovirus;\r\n(b) Epstein-Barr virus;\r\n(c) hepatitis A virus;\r\n(d) hepatitis B virus;\r\n(e) hepatitis C virus;\r\n(f) hepatitis E virus;\r\n(g) human immunodeficiency virus;\r\n(h) influenza virus;\r\n(i) measles virus;\r\n(j) mumps virus;\r\n(k) parvovirus B19;\r\n(l) rotavirus;\r\n(m) rubella virus;\r\n(n) varicella-zoster virus (chickenpox); or\r\n(o) Zika virus."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a bacterial or fungal infection from the specified list of\r\nbacterial and fungal infections, within the six weeks before the clinical\r\nonset of immune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs, within the six weeks before the clinical onset of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) abciximab;\r\n(b) aminosalicylic acid;\r\n(c) amiodarone;\r\n(d) amlodipine;\r\n(e) carbamazepine;\r\n(f) cephalosporins;\r\n(g) ciprofloxacin;\r\n(h) citalopram;\r\n(i) clopidogrel;\r\n(j) dactinomycin (actinomycin D);\r\n(k) diazoxide;\r\n(l) efalizumab;\r\n(m) eptifibatide;\r\n(n) ethambutol;\r\n(o) fludarabine;\r\n(p) furosemide (frusemide);\r\n(q) gentamicin;\r\n(r) glucagon;\r\n(s) haloperidol;\r\n(t) heparins;\r\n(u) hydrochlorothiazide;\r\n(v) imipramine;\r\n(w) infliximab;\r\n(x) interferon-α;\r\n(y) interferon-β;\r\n(z) irinotecan;\r\n(aa) isotretinoin;\r\n(bb) lamivudine;\r\n(cc) lamotrigine;\r\n(dd) levetiracetam;\r\n(ee) levofloxacin;\r\n(ff) lorazepam;\r\n(gg) melperone;\r\n(hh) methylphenidate;\r\n(ii) mirtazapine;\r\n(jj) nifedipine;\r\n(kk) nitrofurantoin;\r\n(ll) nivolumab;\r\n(mm) non-steroidal anti-inflammatory drugs, excluding aspirin;\r\n(nn) oxaliplatin;\r\n(oo) paracetamol;\r\n(pp) pembrolzumab;\r\n(qq) penicillin or penicillin derivatives;\r\n(rr) phenobarbital (phenobarbitone);\r\n(ss) phenytoin;\r\n(tt) quetiapine;\r\n(uu) quinidine;\r\n(vv) quinine;\r\n(ww) ranitidine;\r\n(xx) rifampicin;\r\n(yy) risperidone;\r\n(zz) sodium stibogluconate;\r\n(aaa) spironolactone;\r\n(bbb) sulfamethoxazole/trimethoprim;\r\n(ccc) sulfamethoxazole;\r\n(ddd) sulfasalazine;\r\n(eee) sulfonamides;\r\n(fff) suramin;\r\n(ggg) tamoxifen;\r\n(hhh) terazosin;\r\n(iii) tirofiban;\r\n(jjj) tolmetin;\r\n(kkk) tranilast;\r\n(lll) triamterene/hydrochlorothiazide;\r\n(mmm)triamterene;\r\n(nnn) trimethoprim; or\r\n(ooo) vancomycin."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "receiving a vaccine from the specified list of vaccines within the six\r\nweeks before the clinical onset of immune thrombocytopaenia",
+    "definedTerms" : [ {
+      "term" : "specified list of vaccines",
+      "definition" : "means:\r\n(a) hepatitis A vaccine;\r\n(b) hepatitis B vaccine;\r\n(c) influenza vaccine; or\r\n(d) measles-mumps-rubella vaccine."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with a drug or receiving a dose of vaccine which is\r\nassociated in the individual with the following:\r\n(a) the development of immune thrombocytopaenia within six\r\nweeks of commencing drug therapy or receiving the dose of\r\nvaccine; and\r\n(b) an absence of immune thrombocytopaenia prior to commencing\r\ndrug therapy or vaccination; and\r\n(c) sustained recovery from immune thrombocytopaenia on ceasing\r\ndrug therapy or vaccination; and\r\n(d) exclusion of other aetiologies for thrombocytopaenia (including\r\nother drugs or vaccines)",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being pregnant within the six weeks before the clinical onset of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a lymphoproliferative disorder from the specified list of\r\nlymphoproliferative disorders, at the time of the clinical onset of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having an autoimmune or inflammatory disorder from the specified list\r\nof autoimmune and inflammatory disorders, at the time of the clinical\r\nonset of immune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "consuming a food or beverage from the specified list of food and\r\nbeverages, within the six weeks before the clinical onset of immune\r\nthrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "consuming a food or beverage which is associated in the individual\r\nwith the following:\r\n(a) the development of immune thrombocytopaenia within six\r\nweeks of consuming the food or beverage; and\r\n(b) an absence of immune thrombocytopaenia prior to consuming\r\nthe food or beverage; and\r\n(c) sustained recovery from immune thrombocytopaenia on ceasing\r\nconsumption of the food or beverage; and\r\n(d) exclusion of other aetiologies for thrombocytopaenia; and\r\n(e) recurrence of immune thrombocytopaenia on re-exposure to the\r\nfood or beverage; or\r\n(f) identification of platelet reactive antibodies specific to the food\r\nor beverage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a solid organ or stem cell transplant before the clinical onset of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a solid organ cancer at the time of the clinical onset of immune\r\nthrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "being treated with alemtuzumab in the two years before the clinical\r\nonset of immune thrombocytopaenia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(14)",
+    "text" : "having a viral infection from the specified list of viral infections within\r\nthe six weeks before the clinical worsening of immune\r\nthrombocytopaenia",
+    "definedTerms" : [ {
+      "term" : "specified list of viral infections",
+      "definition" : "means:\r\n(a) cytomegalovirus;\r\n(b) Epstein-Barr virus;\r\n(c) hepatitis A virus;\r\n(d) hepatitis B virus;\r\n(e) hepatitis C virus;\r\n(f) hepatitis E virus;\r\n(g) human immunodeficiency virus;\r\n(h) influenza virus;\r\n(i) measles virus;\r\n(j) mumps virus;\r\n(k) parvovirus B19;\r\n(l) rotavirus;\r\n(m) rubella virus;\r\n(n) varicella-zoster virus (chickenpox); or\r\n(o) Zika virus."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having a bacterial or fungal infection from the specified list of\r\nbacterial and fungal infections, within the six weeks before the clinical\r\nworsening of immune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs, within the six weeks before the clinical\r\nworsening of immune thrombocytopaenia",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) abciximab;\r\n(b) aminosalicylic acid;\r\n(c) amiodarone;\r\n(d) amlodipine;\r\n(e) carbamazepine;\r\n(f) cephalosporins;\r\n(g) ciprofloxacin;\r\n(h) citalopram;\r\n(i) clopidogrel;\r\n(j) dactinomycin (actinomycin D);\r\n(k) diazoxide;\r\n(l) efalizumab;\r\n(m) eptifibatide;\r\n(n) ethambutol;\r\n(o) fludarabine;\r\n(p) furosemide (frusemide);\r\n(q) gentamicin;\r\n(r) glucagon;\r\n(s) haloperidol;\r\n(t) heparins;\r\n(u) hydrochlorothiazide;\r\n(v) imipramine;\r\n(w) infliximab;\r\n(x) interferon-α;\r\n(y) interferon-β;\r\n(z) irinotecan;\r\n(aa) isotretinoin;\r\n(bb) lamivudine;\r\n(cc) lamotrigine;\r\n(dd) levetiracetam;\r\n(ee) levofloxacin;\r\n(ff) lorazepam;\r\n(gg) melperone;\r\n(hh) methylphenidate;\r\n(ii) mirtazapine;\r\n(jj) nifedipine;\r\n(kk) nitrofurantoin;\r\n(ll) nivolumab;\r\n(mm) non-steroidal anti-inflammatory drugs, excluding aspirin;\r\n(nn) oxaliplatin;\r\n(oo) paracetamol;\r\n(pp) pembrolzumab;\r\n(qq) penicillin or penicillin derivatives;\r\n(rr) phenobarbital (phenobarbitone);\r\n(ss) phenytoin;\r\n(tt) quetiapine;\r\n(uu) quinidine;\r\n(vv) quinine;\r\n(ww) ranitidine;\r\n(xx) rifampicin;\r\n(yy) risperidone;\r\n(zz) sodium stibogluconate;\r\n(aaa) spironolactone;\r\n(bbb) sulfamethoxazole/trimethoprim;\r\n(ccc) sulfamethoxazole;\r\n(ddd) sulfasalazine;\r\n(eee) sulfonamides;\r\n(fff) suramin;\r\n(ggg) tamoxifen;\r\n(hhh) terazosin;\r\n(iii) tirofiban;\r\n(jjj) tolmetin;\r\n(kkk) tranilast;\r\n(lll) triamterene/hydrochlorothiazide;\r\n(mmm)triamterene;\r\n(nnn) trimethoprim; or\r\n(ooo) vancomycin."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "receiving a vaccine from the specified list of vaccines within the six\r\nweeks before the clinical worsening of immune thrombocytopaenia",
+    "definedTerms" : [ {
+      "term" : "specified list of vaccines",
+      "definition" : "means:\r\n(a) hepatitis A vaccine;\r\n(b) hepatitis B vaccine;\r\n(c) influenza vaccine; or\r\n(d) measles-mumps-rubella vaccine."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "being treated with a drug or receiving a dose of vaccine which is\r\nassociated in the individual with the following:\r\n(a) the worsening of immune thrombocytopaenia within six weeks\r\nof drug therapy or receiving the dose of vaccine; and\r\n(b) recovery to the individual's baseline platelet level on ceasing\r\ndrug therapy or vaccination; and\r\n(c) exclusion of other aetiologies for thrombocytopaenia (including\r\nother drugs or vaccines)",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "being pregnant within the six weeks before the clinical worsening of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having a lymphoproliferative disorder from the specified list of\r\nlymphoproliferative disorders, at the time of the clinical worsening of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having an autoimmune or inflammatory disorder from the specified list\r\nof autoimmune and inflammatory disorders, at the time of the clinical\r\nworsening of immune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "consuming a food or beverage from the specified list of food and\r\nbeverages, within the six weeks before the clinical worsening of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "consuming a food or beverage which is associated in the individual\r\nwith the following:\r\n(a) the worsening of immune thrombocytopaenia within six weeks\r\nof consuming the food or beverage; and\r\n(b) recovery to the individual's baseline platelet level on ceasing\r\nconsumption of the food or beverage; and\r\n(c) exclusion of other aetiologies for thrombocytopaenia; and\r\n(d) recurrence of the worsening of immune thrombocytopaenia on\r\nre-exposure to the food or beverage; or\r\n(e) identification of platelet reactive antibodies specific to the food\r\nor beverage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having a solid organ or stem cell transplant before the clinical\r\nworsening of immune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "having a solid organ cancer at the time of the clinical worsening of\r\nimmune thrombocytopaenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "inability to obtain appropriate clinical management for immune\r\nthrombocytopaenia",
+    "definedTerms" : [ ]
+  } ]
+}

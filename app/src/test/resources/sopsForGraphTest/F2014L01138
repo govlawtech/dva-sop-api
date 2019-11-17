@@ -1,0 +1,49 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01138",
+  "instrumentNumber" : "76/2014",
+  "citation" : "Statement of Principles concerning Creutzfeldt-Jakob disease No. 76 of 2014",
+  "conditionName" : "Creutzfeldt-Jakob disease",
+  "effectiveFrom" : "2014-09-22",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A81.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "receiving treatment involving a specified human tissue or product at\r\nleast six months before the clinical onset of Creutzfeldt-Jakob disease",
+    "definedTerms" : [ {
+      "term" : "a specified human tissue or product",
+      "definition" : "means:\n(a) a corneal transplant;\n(b) a liver transplant;\n(c) an albumin infusion;\n(d) cadaveric human pituitary hormones; or\n(e) human dura mater as a graft or in radiographic embolisation\nprocedures"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing neurosurgery at least six months before the clinical onset of\r\nCreutzfeldt-Jakob disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for variant Creutzfeldt-Jakob disease only,\r\n(i) receiving blood or blood products from a person infected with\r\nvariant Creutzfeldt-Jakob disease at least three years before the\r\nclinical onset of Creutzfeldt-Jakob disease; or\r\n(ii) consuming beef or a beef product from an area or country with\r\nevidence of bovine spongiform encephalopathy infection in\r\ncattle at the time of consumption, where the beef or beef\r\nproduct was consumed at least three years before the clinical\r\nonset of Creutzfeldt-Jakob disease",
+    "definedTerms" : [ {
+      "term" : "variant Creutzfeldt-Jakob disease",
+      "definition" : "means a form of Creutzfeldt-Jakob\ndisease which is characterised by a younger age at onset, a more protracted\nclinical course, more sensory disturbances and more psychiatric symptoms\nthan classical Creutzfeldt-Jakob disease, as well as a marked accumulation of\nabnormal prion protein and florid amyloid plaques in the brain tissue"
+    }, {
+      "term" : "blood products",
+      "definition" : "means biopharmaceutical products made from human\nblood"
+    }, {
+      "term" : "a beef product",
+      "definition" : "means food prepared from or containing beef"
+    } ],
+    "conditionVariant" : {
+      "name" : "variant Creutzfeldt-Jakob disease",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "receiving blood or blood products from a person infected with\r\nvariant Creutzfeldt-Jakob disease at least three years before the\r\nclinical onset of Creutzfeldt-Jakob disease"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "consuming beef or a beef product from an area or country with\r\nevidence of bovine spongiform encephalopathy infection in\r\ncattle at the time of consumption, where the beef or beef\r\nproduct was consumed at least three years before the clinical\r\nonset of Creutzfeldt-Jakob disease"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ ]
+}

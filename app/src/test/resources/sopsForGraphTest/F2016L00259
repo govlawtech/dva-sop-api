@@ -1,0 +1,19 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00259",
+  "instrumentNumber" : "20/2016",
+  "citation" : "Statement of Principles concerning polymyalgia rheumatica (Balance of Probabilities) (No. 20 of 2016)",
+  "conditionName" : "polymyalgia rheumatica",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M35.3"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9",
+    "text" : "inability to obtain appropriate clinical management for polymyalgia rheumatica.",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00005",
+  "instrumentNumber" : "4/2017",
+  "citation" : "Statement of Principles concerning haemorrhoids (Balance of Probabilities) (No. 4 of 2017)",
+  "conditionName" : "haemorrhoids",
+  "effectiveFrom" : "2017-01-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K64"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "O22.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "O87.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being pregnant within the six weeks before the clinical onset of\r\nhaemorrhoids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "straining at stool due to constipation or diarrhoea, within the two\r\nweeks before the clinical onset of haemorrhoids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a spinal cord injury at the time of the clinical onset of\r\nhaemorrhoids",
+    "definedTerms" : [ {
+      "term" : "spinal cord injury",
+      "definition" : "means an injury to the long tracts of the spinal cord\r\nresulting in permanent motor or sensory deficits below the level of the lesion."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "chewing khat at least weekly, for at least the three months before the\r\nclinical onset of haemorrhoids",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(5)",
+    "text" : "being pregnant within the six weeks before the clinical worsening of\r\nhaemorrhoids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "straining at stool due to constipation or diarrhoea, within the two\r\nweeks before the clinical worsening of haemorrhoids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a spinal cord injury at the time of the clinical worsening of\r\nhaemorrhoids",
+    "definedTerms" : [ {
+      "term" : "spinal cord injury",
+      "definition" : "means an injury to the long tracts of the spinal cord\r\nresulting in permanent motor or sensory deficits below the level of the lesion."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "chewing khat at least weekly, for at least the three months before the\r\nclinical worsening of haemorrhoids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "an inability to consume an average daily intake of 20 grams of fibre in\r\nfood for at least the four weeks before the clinical worsening of\r\nhaemorrhoids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for haemorrhoidal bleeding only, taking a drug from a class of drugs\r\nfrom the specified list of drugs, within the 30 days before the clinical\r\nworsening of haemorrhoids",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) anticoagulants;\r\n(b) antiplatelet agents; or\r\n(c) non-steroidal anti-inflammatory drugs, including aspirin but not\r\nincluding paracetamol.\r\nNote: anticoagulants and antiplatelet agents are also defined in the Schedule 1 - Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "haemorrhoidal bleeding",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "inability to obtain appropriate clinical management for haemorrhoids",
+    "definedTerms" : [ ]
+  } ]
+}

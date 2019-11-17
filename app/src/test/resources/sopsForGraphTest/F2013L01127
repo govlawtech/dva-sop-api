@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01127",
+  "instrumentNumber" : "40/2013",
+  "citation" : "Statement of Principles concerning familial adenomatous polyposis No. 40 of 2013",
+  "conditionName" : "familial adenomatous polyposis",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for familial adenomatous polyposis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for familial adenomatous polyposis",
+    "definedTerms" : [ ]
+  } ]
+}

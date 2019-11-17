@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01164",
+  "instrumentNumber" : "75/2018",
+  "citation" : "Statement of Principles concerning reactive arthritis (Reasonable Hypothesis) (No. 75 of 2018)",
+  "conditionName" : "reactive arthritis",
+  "effectiveFrom" : "2018-09-24",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M02"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an infection as specified within the three months before the\r\nclinical onset of reactive arthritis",
+    "definedTerms" : [ {
+      "term" : "infection as specified",
+      "definition" : "means:\r\n(a) clinical or laboratory evidence of a bowel infection; or\r\n(b) clinical or laboratory evidence of a sexually acquired urogenital\r\ninfection (including proctitis and excluding genital warts and herpes\r\nsimplex); or\r\n(c) clinical or laboratory evidence of an infection with Staphylococcus\r\naureus, Chlamydia pneumoniae, Chlamydia psittaci or Chlamydia\r\ntrachomatis."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having infection with human immunodeficiency virus at the time of the\r\nclinical onset of reactive arthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being vaccinated with hepatitis B vaccine within the 30 days before the\r\nclinical onset of reactive arthritis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having intravesical BCG therapy for malignant neoplasm of the bladder\r\nor intradermal BCG therapy for a malignant neoplasm within the\r\n30 days before the clinical onset of reactive arthritis",
+    "definedTerms" : [ {
+      "term" : "BCG therapy",
+      "definition" : "means treatment with the Bacille Calmette-Guerin vaccine."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having active mycobacterial disease within the 30 days before the\r\nclinical onset of reactive arthritis",
+    "definedTerms" : [ {
+      "term" : "active mycobacterial disease",
+      "definition" : "means an illness in which tuberculosis bacteria\r\nor atypical mycobacteria are multiplying and inducing an inflammatory\r\nresponse."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having intestinal bypass surgery within the one year before the clinical\r\nonset of reactive arthritis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(7)",
+    "text" : "inability to obtain appropriate clinical management for reactive\r\narthritis",
+    "definedTerms" : [ ]
+  } ]
+}

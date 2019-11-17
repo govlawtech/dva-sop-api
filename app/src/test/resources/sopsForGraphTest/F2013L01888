@@ -1,0 +1,34 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01888",
+  "instrumentNumber" : "72/2013",
+  "citation" : "Statement of Principles concerning chronic solvent encephalopathy No. 72 of 2013",
+  "conditionName" : "chronic solvent encephalopathy",
+  "effectiveFrom" : "2013-11-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having drug dependence or drug abuse involving an inhalant, or a\r\nsevere substance use disorder involving an inhalant, within the five\r\nyears before the clinical onset of chronic solvent encephalopathy",
+    "definedTerms" : [ {
+      "term" : "an inhalant",
+      "definition" : "means:\n(a) a volatile substance from the specified list;\n(b) butane; or\n(c) petrol"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having at least fifty episodes of acute volatile substance intoxication\r\nwithin a consecutive period of one year before the clinical onset of\r\nchronic solvent encephalopathy, and where that exposure has ceased,\r\nthe clinical onset of chronic solvent encephalopathy occurred within\r\ntwo years of cessation",
+    "definedTerms" : [ {
+      "term" : "acute volatile substance intoxication",
+      "definition" : "means short-term, high-dose\nexposure to a volatile substance from the specified list, with clinically\nsignificant problematic behavioural or psychological changes (e.g.,\nbelligerence, assaultiveness, apathy, impaired judgement) that developed\nduring or shortly after, exposure, and accompanied by two or more of the\nfollowing signs or symptoms developing during, or shortly after exposure:\n(a) blurred vision or diplopia;\n(b) depressed reflexes;\n(c) dizziness;\n(d) euphoria;\n(e) generalised muscle weakness;\n(f) incoordination;\n(g) lethargy;\n(h) nystagmus;\n(i) psychomotor retardation;\n(j) slurred speech;\n(k) stupor or coma;\n(l) tremor; or\n(m) unsteady gait;\nwhere the signs or symptoms are not attributable to another medical condition\nand are not better explained by another mental disorder, including intoxication\nwith another substance"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a volatile\r\nsubstance from the specified list, in an unventilated and confined space,\r\non more working days than not for a consecutive period of at least ten\r\nyears before the clinical onset of chronic solvent encephalopathy, and\r\nwhere that exposure has ceased, the clinical onset of chronic solvent\r\nencephalopathy occurred within five years of cessation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for chronic solvent\r\nencephalopathy",
+    "definedTerms" : [ ]
+  } ]
+}

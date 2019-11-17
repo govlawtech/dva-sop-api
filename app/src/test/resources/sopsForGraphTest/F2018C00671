@@ -1,0 +1,120 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00671",
+  "instrumentNumber" : "97/2014",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the breast No. 97 of 2014",
+  "conditionName" : "malignant neoplasm of the breast",
+  "effectiveFrom" : "2014-11-17",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C50"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D05"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the breast at least ten years before the clinical\r\nonset of malignant neoplasm of the breast",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\nleading to increased levels of exposure to cosmic radiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\nvarious dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "using hormone replacement therapy for at least two years before the\r\nclinical onset of malignant neoplasm of the breast, and where the use\r\nof hormone replacement therapy has ceased, the clinical onset of\r\nmalignant neoplasm of the breast has occurred within five years of\r\ncessation",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of oestrogen\npreparations often in combination with progesterone to offset a hormone\ndeficiency following surgically induced or naturally occurring menopause"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "using a combined oral contraceptive pill for a continuous period of at\r\nleast three years where:\r\n(i) use of the combined oral contraceptive pill commenced at least\r\nfive years before the clinical onset of malignant neoplasm of the\r\nbreast; and\r\n(ii) where use of the combined oral contraceptive pill has ceased, the\r\nclinical onset of malignant neoplasm of the breast has occurred\r\nwithin ten years of cessation",
+    "definedTerms" : [ {
+      "term" : "combined oral contraceptive pill",
+      "definition" : "means an oral contraceptive compound\ncontaining both oestrogen and progestogen"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "for parous women only, inability to breast feed for a cumulative period\r\nof at least six months before the clinical onset of malignant neoplasm\r\nof the breast; or\r\nNote: The period of breastfeeding could be cumulative over a number of pregnancies",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "parous women",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "for females aged over 35 years only, being nulliparous at the time of\r\nthe clinical onset of malignant neoplasm of the breast",
+    "definedTerms" : [ {
+      "term" : "nulliparous",
+      "definition" : "means having never given birth to a viable infant"
+    } ],
+    "conditionVariant" : {
+      "name" : "females aged over 35 years",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being pregnant within the ten years before the clinical onset of\r\nmalignant neoplasm of the breast",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a first live birth after the age of 30 years or having a first full-\r\nterm pregnancy after the age of 30 years, within the 30 years before the\r\nclinical onset of malignant neoplasm of the breast",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "drinking at least 80 kilograms of alcohol within the 20 years before the\r\nclinical onset of malignant neoplasm of the breast",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least 20 years within the 30 years before the clinical onset of\r\nmalignant neoplasm of the breast",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\nweight per hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "for death from malignant neoplasm of the breast only, being prevented\r\nfrom accessing mammographic screening for malignant neoplasm of\r\nthe breast in accordance with contemporary medical standards at the\r\ntime, within the ten years before the clinical onset of malignant\r\nneoplasm of the breast, and where:\r\n(i) if mammographic screening has been resumed in the interim,\r\nthere has been no normal test result; and\r\n(ii) the opportunity for subsequent appropriate mammographic\r\nscreening has not been declined",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "death from malignant neoplasm of the breast",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "if mammographic screening has been resumed in the interim,\r\nthere has been no normal test result; and"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "the opportunity for subsequent appropriate mammographic\r\nscreening has not been declined"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "for males and postmenopausal females only:\r\n(i) being obese for at least ten years within the 20 years before the\r\nclinical onset of malignant neoplasm of the breast; or\r\n(ii) having diabetes mellitus before the clinical onset of malignant\r\nneoplasm of the breast",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ],
+    "conditionVariant" : {
+      "name" : "males and postmenopausal females",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "being obese for at least ten years within the 20 years before the\r\nclinical onset of malignant neoplasm of the breast"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having diabetes mellitus before the clinical onset of malignant\r\nneoplasm of the breast"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "using digoxin for a continuous period of at least one year before the\r\nclinical onset of malignant neoplasm of the breast, and where use of\r\ndigoxin has ceased, the clinical onset of malignant neoplasm of the\r\nbreast has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being administered diethylstilbestrol while pregnant within the thirty\r\nyears before the clinical onset of malignant neoplasm of the breast",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the breast",
+    "definedTerms" : [ ]
+  } ]
+}

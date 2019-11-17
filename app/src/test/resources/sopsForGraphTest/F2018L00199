@@ -1,0 +1,34 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00199",
+  "instrumentNumber" : "30/2018",
+  "citation" : "Statement of Principles concerning chilblains (Balance of Probabilities) (No. 30 of 2018)",
+  "conditionName" : "chilblains",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T69.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "exposing the affected part of the body to non-freezing temperatures\r\nbelow ten degrees Celsius within the 24 hours before the clinical onset\r\nof chilblains",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a disease from the specified list of diseases at the time of the\r\nclinical onset of chilblains",
+    "definedTerms" : [ {
+      "term" : "specified list of diseases",
+      "definition" : "means:\r\n(a) anorexia nervosa;\r\n(b) antiphospholipid syndrome;\r\n(c) Behçet disease;\r\n(d) chronic myelomonocytic leukaemia;\r\n(e) cold agglutinin disorder;\r\n(f) cryofibrinogenaemia;\r\n(g) cryoglobulinaemia;\r\n(h) discoid lupus erythematosus;\r\n(i) dysproteinaemia;\r\n(j) macroglobulinaemia;\r\n(k) monoclonal gammopathy;\r\n(l) myelodysplastic syndrome;\r\n(m) Raynaud disease;\r\n(n) rheumatoid arthritis;\r\n(o) Sjögren syndrome; or\r\n(p) systemic lupus erythematosus."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a body mass index (BMI) of less than 21 at the time of the\r\nclinical onset of chilblains",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "inability to obtain appropriate clinical management for chilblains",
+    "definedTerms" : [ ]
+  } ]
+}

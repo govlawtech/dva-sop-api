@@ -1,0 +1,63 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00017",
+  "instrumentNumber" : "2/2013",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the oral cavity, oropharynx and hypopharynx No. 2 of 2013",
+  "conditionName" : "malignant neoplasm of the oral cavity, oropharynx and hypopharynx",
+  "effectiveFrom" : "2013-01-09",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the oral cavity, oropharynx or hypopharynx, and\r\n(i) smoking commenced at least ten years before the clinical onset\r\nof malignant neoplasm of the oral cavity, oropharynx or\r\nhypopharynx; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the oral cavity, oropharynx or hypopharynx has\r\noccurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "the oral use of smokeless tobacco on more days than not, for at least\r\nten years before the clinical onset of malignant neoplasm of the oral\r\ncavity, oropharynx or hypopharynx, and where the oral use of\r\nsmokeless tobacco has ceased, the clinical onset of malignant neoplasm\r\nof the oral cavity, oropharynx or hypopharynx has occurred within ten\r\nyears of cessation",
+    "definedTerms" : [ {
+      "term" : "smokeless tobacco",
+      "definition" : "means tobacco products without combustion or\npyrolysis at the time of use, including chewing tobacco and tobacco snuff"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "chewing betel quid or areca nut on more days than not, for at least ten\r\nyears before the clinical onset of malignant neoplasm of the oral cavity,\r\noropharynx or hypopharynx, and where chewing of betel quid or areca\r\nnut has ceased, the clinical onset of malignant neoplasm of the oral\r\ncavity, oropharynx or hypopharynx has occurred within ten years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "drinking maté on more days than not, for at least ten years before the\r\nclinical onset of malignant neoplasm of the oral cavity, oropharynx or\r\nhypopharynx, and where drinking maté has ceased, the clinical onset of\r\nmalignant neoplasm of the oral cavity, oropharynx or hypopharynx has\r\noccurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "drinking at least 150 kilograms of alcohol before the clinical onset of\r\nmalignant neoplasm of the oral cavity, oropharynx or hypopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "undergoing stem cell or solid organ transplantation before the clinical\r\nonset of malignant neoplasm of the oral cavity, oropharynx or\r\nhypopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "acquiring persistent infection of the oropharyngeal epithelium with\r\nhuman papilloma virus type 16 or 18 before the clinical onset of\r\nmalignant neoplasm of the oral cavity, oropharynx or hypopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being exposed to mustard gas at least ten years before the clinical onset\r\nof malignant neoplasm of the oral cavity, oropharynx or hypopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being infected with the human immunodeficiency virus before the\r\nclinical onset of malignant neoplasm of the oral cavity, oropharynx or\r\nhypopharynx",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "for malignant neoplasm of the oral cavity only, having leukoplakia or\r\nerythroplakia at the affected site for at least the one year before the\r\nclinical onset of malignant neoplasm of the oral cavity",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "malignant neoplasm of the oral cavity",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the oral cavity, oropharynx or hypopharynx",
+    "definedTerms" : [ ]
+  } ]
+}

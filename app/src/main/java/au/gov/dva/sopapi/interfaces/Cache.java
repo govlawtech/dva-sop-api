@@ -5,6 +5,7 @@ import au.gov.dva.sopapi.dtos.sopref.ConditionsList;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
 import au.gov.dva.sopapi.interfaces.model.SoP;
 import au.gov.dva.sopapi.interfaces.model.SoPPair;
+import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
 import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
@@ -32,4 +33,6 @@ public interface Cache {
     Optional<CuratedTextRepository> get_curatedTextReporitory();
 
     VeaOperationalServiceRepository get_veaOperationalServiceRepository();
+
+    Dependencies get_dependencies();
 }

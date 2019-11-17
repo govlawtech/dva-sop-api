@@ -1,0 +1,86 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01178",
+  "instrumentNumber" : "79/2018",
+  "citation" : "Statement of Principles concerning bronchiolitis obliterans organising pneumonia (Reasonable Hypothesis) (No. 79 of 2018)",
+  "conditionName" : "bronchiolitis obliterans organising pneumonia",
+  "effectiveFrom" : "2018-09-24",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, at the time of the clinical onset of bronchiolitis obliterans\r\norganising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being treated with a drug which is associated in the individual with the\r\nfollowing:\r\n(a) the development of bronchiolitis obliterans organising\r\npneumonia within six months of commencing drug therapy; and\r\n(b) the absence of bronchiolitis obliterans organising pneumonia\r\nprior to commencing drug therapy; and\r\n(c) clinical improvement within weeks of ceasing drug therapy; and\r\n(d) exclusion of other aetiologies for bronchiolitis obliterans\r\norganising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a solid organ transplant, stem cell transplant or bone marrow\r\ntransplant before the clinical onset of bronchiolitis obliterans\r\norganising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "undergoing a course of therapeutic radiation for the treatment of\r\nmalignant neoplasm of the breast or malignant neoplasm of the lung\r\nwithin the two years before the clinical onset of bronchiolitis obliterans\r\norganising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having bronchial obstruction immediately adjacent to a focus of\r\npulmonary organisation, at the time of the clinical onset of\r\nbronchiolitis obliterans organising pneumonia",
+    "definedTerms" : [ {
+      "term" : "bronchial obstruction",
+      "definition" : "means occlusion of the lumen of a bronchus or\r\nbronchiole due to an endogenous pathological process or structure, or from\r\nexogenous material, such as a foreign body.\r\nbronchiolitis obliterans organising pneumonia—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "inhaling high concentrations of a substance with irritant properties,\r\nwhere:\r\n(a) the inhalation has resulted in signs and symptoms of acute\r\ndamage to the lower respiratory tract within the 48 hours after the\r\ninhalation; and\r\n(b) the clinical onset of bronchiolitis obliterans organising\r\npneumonia occurs within the 30 days following the inhalation of\r\nthe substance",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "inhaling sulphur mustard (mustard gas) resulting in signs and\r\nsymptoms of acute damage to the lower respiratory tract within the\r\n30 days before the clinical onset of bronchiolitis obliterans organising\r\npneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having gastro-oesophageal reflux disease at the time of the clinical\r\nonset of bronchiolitis obliterans organising pneumonia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(9)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, at the time of the clinical worsening of bronchiolitis obliterans\r\norganising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being treated with a drug which is associated in the individual with the\r\nfollowing:\r\n(a) the worsening of bronchiolitis obliterans organising pneumonia\r\nwithin six months of commencing drug therapy; and\r\n(b) clinical improvement within weeks of ceasing drug therapy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a solid organ transplant, stem cell transplant or bone marrow\r\ntransplant before the clinical worsening of bronchiolitis obliterans\r\norganising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "undergoing a course of therapeutic radiation for the treatment of\r\nmalignant neoplasm of the breast or malignant neoplasm of the lung\r\nwithin the two years before the clinical worsening of bronchiolitis\r\nobliterans organising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having bronchial obstruction immediately adjacent to a focus of\r\npulmonary organisation, at the time of the clinical worsening of\r\nbronchiolitis obliterans organising pneumonia",
+    "definedTerms" : [ {
+      "term" : "bronchial obstruction",
+      "definition" : "means occlusion of the lumen of a bronchus or\r\nbronchiole due to an endogenous pathological process or structure, or from\r\nexogenous material, such as a foreign body.\r\nbronchiolitis obliterans organising pneumonia—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "inhaling high concentrations of a substance with irritant properties,\r\nwhere:\r\n(a) the inhalation has resulted in signs and symptoms of acute\r\ndamage to the lower respiratory tract within the 48 hours after the\r\ninhalation; and\r\n(b) the clinical worsening of bronchiolitis obliterans organising\r\npneumonia occurs within the 30 days following the inhalation of\r\nthe substance",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "inhaling sulphur mustard (mustard gas) resulting in signs and\r\nsymptoms of acute damage to the lower respiratory tract within the\r\n30 days before the clinical worsening of bronchiolitis obliterans\r\norganising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having gastro-oesophageal reflux disease at the time of the clinical\r\nworsening of bronchiolitis obliterans organising pneumonia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "inability to obtain appropriate clinical management for bronchiolitis\r\nobliterans organising pneumonia",
+    "definedTerms" : [ ]
+  } ]
+}

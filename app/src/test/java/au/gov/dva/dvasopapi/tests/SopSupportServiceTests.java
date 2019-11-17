@@ -1,20 +1,9 @@
 package au.gov.dva.dvasopapi.tests;
 
-import au.gov.dva.dvasopapi.tests.mocks.ConditionMock;
-import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMock;
-import au.gov.dva.dvasopapi.tests.mocks.ExtensiveServiceHistoryMock;
-import au.gov.dva.dvasopapi.tests.mocks.processingRules.SimpleServiceHistory;
 import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
-import au.gov.dva.sopapi.interfaces.*;
-import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
-import au.gov.dva.sopapi.interfaces.model.ServiceHistory;
-import au.gov.dva.sopapi.interfaces.model.SoP;
-import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
-import au.gov.dva.sopapi.sopsupport.processingrules.rules.LumbarSpondylosisRule;
-import au.gov.dva.sopapi.sopsupport.ruleconfiguration.CsvRuleConfigurationRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -24,22 +13,17 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.Resources;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static au.gov.dva.dvasopapi.tests.TestUtils.actOdtOf;
 import static au.gov.dva.dvasopapi.tests.TestUtils.odtOf;
 
 public class SopSupportServiceTests {

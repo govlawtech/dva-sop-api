@@ -1,0 +1,43 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00444",
+  "instrumentNumber" : "14/2012",
+  "citation" : "Statement of Principles concerning dengue fever No. 14 of 2012",
+  "conditionName" : "dengue fever",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "A90"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "A91"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to dengue virus within the 14 days before the clinical\r\nonset of dengue fever",
+    "definedTerms" : [ {
+      "term" : "dengue virus",
+      "definition" : "means dengue virus type 1, 2, 3 or 4"
+    }, {
+      "term" : "being exposed to dengue virus",
+      "definition" : "means:\n(a) being bitten by a mosquito infected with dengue virus;\n(b) having percutaneous or mucocutaneous exposure to blood infected with\ndengue virus; or\n(c) receiving a blood transfusion, blood products, a bone marrow\ntransplant or an organ transplant infected with dengue virus"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for dengue haemorrhagic fever only, having a previous episode of\r\ndengue infection, involving a virus type different to the type\r\nresponsible for the current episode, before the clinical onset of dengue\r\nfever",
+    "definedTerms" : [ {
+      "term" : "dengue haemorrhagic fever",
+      "definition" : "means a serious sequela to dengue fever,\ncharacterised by vascular permeability, thrombocytopaenia and haemorrhagic\nmanifestations. Dengue haemorrhagic fever includes dengue shock syndrome,\na more severe form of dengue haemorrhagic fever which presents with\nevidence of circulatory failure, rapid, weak pulse, hypotension and shock"
+    } ],
+    "conditionVariant" : {
+      "name" : "dengue haemorrhagic fever",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "inability to obtain appropriate clinical management for dengue fever",
+    "definedTerms" : [ ]
+  } ]
+}

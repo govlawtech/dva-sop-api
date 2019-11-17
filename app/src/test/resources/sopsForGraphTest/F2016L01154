@@ -1,0 +1,19 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01154",
+  "instrumentNumber" : "62/2016",
+  "citation" : "Statement of Principles concerning otosclerosis (Balance of Probabilities) (No. 62 of 2016)",
+  "conditionName" : "otosclerosis",
+  "effectiveFrom" : "2016-07-25",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H80"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9",
+    "text" : "inability to obtain appropriate clinical management for otosclerosis.",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00862",
+  "instrumentNumber" : "110/2015",
+  "citation" : "Statement of Principles concerning external burn (Reasonable Hypothesis) (No. 110 of 2015)",
+  "conditionName" : "external burn",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having exposure to a heat source sufficient to cause erythema at the\r\naffected area of the body at the time of the clinical onset of external\r\nburn",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having exposure to extreme cold sufficient to cause erythema at the\r\naffected area of the body at the time of the clinical onset of external\r\nburn",
+    "definedTerms" : [ {
+      "term" : "extreme cold",
+      "definition" : "means zero degrees Celsius or below."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having contact with vesicant or corrosive chemicals sufficient to cause\r\nerythema at the affected area of the body within the 48 hours before\r\nthe clinical onset of external burn",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having received a cumulative equivalent dose of at least 1.0 sievert of\r\nionising radiation to the affected area of the body within the 30 days\r\nbefore the clinical onset of external burn",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined.\r\nexternal burn—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having exposure to radiofrequency or microwave radiation sufficient\r\nto cause erythema at the affected area of the body at the time of the\r\nclinical onset of external burn",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having exposure to infrared radiation sufficient to cause erythema at\r\nthe affected area of the body at the time of the clinical onset of\r\nexternal burn",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having laser applied, sufficient to cause erythema, at the affected area\r\nof the body at the time of the clinical onset of external burn",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having exposure to ultraviolet radiation sufficient to cause erythema at\r\nthe affected area of the body at the time of the clinical onset of\r\nexternal burn",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having exposure to high intensity, focussed ultrasound sufficient to\r\ncause erythema at the affected area of the body at the time of the\r\nclinical onset of external burn",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(10)",
+    "text" : "inability to obtain appropriate clinical management for external burn",
+    "definedTerms" : [ ]
+  } ]
+}

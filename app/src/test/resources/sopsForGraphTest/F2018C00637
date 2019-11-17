@@ -1,0 +1,61 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00637",
+  "instrumentNumber" : "42/2014",
+  "citation" : "Statement of Principles concerning acute stress disorder No. 42 of 2014",
+  "conditionName" : "acute stress disorder",
+  "effectiveFrom" : "2014-05-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "experiencing a category 1A stressor within the one month before the\r\nclinical onset of acute stress disorder",
+    "definedTerms" : [ {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "experiencing a category 1B stressor within the one month before the\r\nclinical onset of acute stress disorder",
+    "definedTerms" : [ {
+      "term" : "a category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\n(a) killing or maiming a person;\n(b) being an eyewitness to a person being killed or critically injured;\n(c) being an eyewitness to atrocities inflicted on another person;\n(d) participating in the clearance of a corpse or a critically injured casualty;\nor\n(e) viewing a corpse or a critically injured casualty as an eyewitness"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "experiencing the traumatic death of a significant other within the one\r\nmonth before the clinical onset of acute stress disorder",
+    "definedTerms" : [ {
+      "term" : "traumatic death",
+      "definition" : "means death which occurs in sudden, violent or traumatic\ncircumstances such as homicide, suicide or an accidental death"
+    }, {
+      "term" : "a significant other",
+      "definition" : "means a person who has a close family bond or a close\npersonal relationship and is important or influential in one's life"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a significant other who experiences a category 1A stressor\r\nwithin the one month before the clinical onset of acute stress disorder",
+    "definedTerms" : [ {
+      "term" : "a significant other",
+      "definition" : "means a person who has a close family bond or a close\npersonal relationship and is important or influential in one's life"
+    }, {
+      "term" : "a category 1A stressor",
+      "definition" : "means one of the following severe traumatic\nevents:\n(a) experiencing a life-threatening event;\n(b) being subject to a serious physical attack or assault including rape and\nsexual molestation; or\n(c) being threatened with a weapon, being held captive, being kidnapped,\nor being tortured"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being exposed to repeated or extreme aversive details of severe\r\ntraumatic events within the one month before the clinical onset of acute\r\nstress disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being the victim of severe childhood abuse within the one month\r\nbefore the clinical onset of acute stress disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\n(a) serious physical, emotional, psychological or sexual harm whilst a\nchild aged under 16 years; or\n(b) neglect involving a serious failure to provide the necessities for health,\nphysical and emotional development, or wellbeing whilst a child aged\nunder 16 years;\nwhere such serious harm or neglect has been perpetrated by a parent, a care\nprovider, an adult who works with or around that child, or any other adult in\ncontact with that child"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for acute stress\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

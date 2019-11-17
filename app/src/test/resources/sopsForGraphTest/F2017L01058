@@ -1,0 +1,60 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L01058",
+  "instrumentNumber" : "55/2017",
+  "citation" : "Statement of Principles concerning popliteal entrapment syndrome (Balance of Probabilities) (No. 55 of 2017)",
+  "conditionName" : "popliteal entrapment syndrome",
+  "effectiveFrom" : "2017-09-18",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for\r\nthe 12 months before the clinical onset of popliteal entrapment\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "undertaking vigorous physical activity involving repeated active\r\nplantar flexion of the foot of the affected leg, or repetitive sudden and\r\nforceful contraction of the calf of the affected leg, at a minimum\r\nintensity of six METs, for an average of at least 20 hours per week for\r\na continuous period of at least the 12 months before the clinical onset\r\nof popliteal entrapment syndrome;\r\nNote 1: Vigorous physical activity may include driving heavy vehicles, martial arts, physical\r\ntraining, and sports such as rugby, soccer, basketball, rowing or cycling. Patients\r\ntypically have hypertrophy of the plantar flexor muscles, including the gastrocnemius,\r\nsoleus and plantaris muscles.\r\nNote 2: MET is defined in the Schedule 1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\r\nweight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having trauma to the affected limb, involving the popliteal fossa and\r\ndisplacing the popliteal artery, within the five years before the clinical\r\nonset of popliteal entrapment syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having a disease involving the popliteal fossa and displacing the\r\npopliteal artery, at the time of the clinical onset of popliteal entrapment\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "disease involving the popliteal fossa",
+      "definition" : "means any pathological condition\r\ncausing anatomical distortion of the popliteal fossa.\r\nNote: Examples of a  include a primary or secondary\r\nneoplasm within the knee joint or the long bones of the leg, or a popliteal (Baker's) cyst."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(5)",
+    "text" : "running or jogging an average of at least 15 kilometres per week for\r\nthe six months before the clinical worsening of popliteal entrapment\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "undertaking vigorous physical activity involving repeated active\r\nplantar flexion of the foot of the affected leg, or repetitive sudden and\r\nforceful contraction of the calf of the affected leg, at a minimum\r\nintensity of six METs, for an average of at least 20 hours per week for\r\na continuous period of at least the six months before the clinical\r\nworsening of popliteal entrapment syndrome;\r\nNote 1: Vigorous physical activity may include driving heavy vehicles, martial arts, physical\r\ntraining, and sports such as rugby, soccer, basketball, rowing or cycling. Patients\r\ntypically have hypertrophy of the plantar flexor muscles, including the gastrocnemius,\r\nsoleus and plantaris muscles.\r\nNote 2: MET is defined in the Schedule 1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\r\nweight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having trauma to the affected limb, involving the popliteal fossa and\r\ndisplacing the popliteal artery, within the five years before the clinical\r\nworsening of popliteal entrapment syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having a disease involving the popliteal fossa and displacing the\r\npopliteal artery, at the time of the clinical worsening of popliteal\r\nentrapment syndrome",
+    "definedTerms" : [ {
+      "term" : "disease involving the popliteal fossa",
+      "definition" : "means any pathological condition\r\ncausing anatomical distortion of the popliteal fossa.\r\nNote: Examples of a  include a primary or secondary\r\nneoplasm within the knee joint or the long bones of the leg, or a popliteal (Baker's) cyst."
+    } ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "inability to obtain appropriate clinical management for popliteal\r\nentrapment syndrome",
+    "definedTerms" : [ ]
+  } ]
+}

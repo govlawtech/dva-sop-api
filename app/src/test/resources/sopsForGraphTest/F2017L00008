@@ -1,0 +1,19 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00008",
+  "instrumentNumber" : "6/2017",
+  "citation" : "Statement of Principles concerning relapsing polychondritis (Balance of Probabilities) (No. 6 of 2017)",
+  "conditionName" : "relapsing polychondritis",
+  "effectiveFrom" : "2017-01-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M94.1"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9",
+    "text" : "inability to obtain appropriate clinical management for relapsing polychondritis.",
+    "definedTerms" : [ ]
+  } ]
+}

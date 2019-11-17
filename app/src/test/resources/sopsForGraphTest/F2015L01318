@@ -1,0 +1,67 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01318",
+  "instrumentNumber" : "103/2015",
+  "citation" : "Statement of Principles concerning malignant melanoma of the skin (Balance of Probabilities) (No. 103 of 2015)",
+  "conditionName" : "malignant melanoma of the skin",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having sunburn as specified, at least five years before the clinical onset\r\nof malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "sunburn as specified",
+      "definition" : "means painful erythema of the skin of at least 48 hours\r\nduration, or blistering of the skin, resulting from exposure to solar ultraviolet\r\nradiation."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having sunlight or ultraviolet light exposure to unprotected skin at the\r\naffected site for a cumulative period of at least 4 500 hours while in a\r\ntropical area, or having equivalent sunlight exposure in other latitude\r\nzones, before the clinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "unprotected skin",
+      "definition" : "means skin that is directly exposed to the sun and is not\r\nprotected by sunscreen, clothing or other physical barrier."
+    }, {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having ultraviolet radiation exposure from an ultraviolet-emitting\r\ntanning device on at least 20 occasions before the clinical onset of\r\nmalignant melanoma of the skin, where the first exposure occurred\r\nmore than five years before the clinical onset of malignant melanoma\r\nof the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with an immunosuppressive drug within the two years\r\nbefore the clinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "immunosuppressive drug",
+      "definition" : "means a drug or an agent which results in"
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having PUVA therapy, where:\r\n(a) the first PUVA treatment commenced at least 15 years before the\r\nclinical onset of malignant melanoma of the skin; and\r\n(b) at least 250 PUVA treatments were administered, before the\r\nclinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "PUVA",
+      "definition" : "means photochemotherapy with oral methoxsalen (psoralen) and\r\nultraviolet A radiation."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of malignant melanoma of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having non-Hodgkin's lymphoma or chronic lymphocytic\r\nleukaemia/small cell lymphoma before the clinical onset of malignant\r\nmelanoma of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having Parkinson's disease before the clinical onset of malignant\r\nmelanoma of the skin",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(10)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nmelanoma of the skin",
+    "definedTerms" : [ ]
+  } ]
+}

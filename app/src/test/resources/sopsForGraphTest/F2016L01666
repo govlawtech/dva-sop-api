@@ -1,0 +1,40 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01666",
+  "instrumentNumber" : "82/2016",
+  "citation" : "Statement of Principles concerning animal envenomation (Balance of Probabilities) (No. 82 of 2016)",
+  "conditionName" : "animal envenomation",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "T63"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "X20"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having external contact with venom from a venomous animal at the\r\ntime of the clinical onset of animal envenomation",
+    "definedTerms" : [ {
+      "term" : "venomous animal",
+      "definition" : "means a member of the subkingdom Metazoa with\r\nspecific glands for the production of venom. Such organisms include:\r\n(a) venomous centipedes and millipedes;\r\n(b) venomous frogs and toads;\r\n(c) venomous insects (including hornets, wasps, bees, ants and\r\ncaterpillars);\r\n(d) venomous mammals (including platypus and shrews);\r\n(e) venomous marine animals (including shellfish, jellyfish, stingrays and\r\nvenomous fish);\r\n(f) venomous snakes and lizards; and\r\n(g) venomous spiders, scorpions and ticks.\r\nThis definition excludes animals with toxins distributed within their bodily\r\ntissues that cause toxic effects or death after ingestion."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having internal absorption of venom from a venomous animal, by\r\nmeans of a bite, sting or injection, within the three days before the\r\nclinical onset of animal envenomation",
+    "definedTerms" : [ {
+      "term" : "venomous animal",
+      "definition" : "means a member of the subkingdom Metazoa with\r\nspecific glands for the production of venom. Such organisms include:\r\n(a) venomous centipedes and millipedes;\r\n(b) venomous frogs and toads;\r\n(c) venomous insects (including hornets, wasps, bees, ants and\r\ncaterpillars);\r\n(d) venomous mammals (including platypus and shrews);\r\n(e) venomous marine animals (including shellfish, jellyfish, stingrays and\r\nvenomous fish);\r\n(f) venomous snakes and lizards; and\r\n(g) venomous spiders, scorpions and ticks.\r\nThis definition excludes animals with toxins distributed within their bodily\r\ntissues that cause toxic effects or death after ingestion."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having internal absorption of venom from a tick of the family Ixodidae\r\nwithin the 12 days before the clinical onset of animal envenomation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "inability to obtain appropriate clinical management for animal\r\nenvenomation",
+    "definedTerms" : [ ]
+  } ]
+}

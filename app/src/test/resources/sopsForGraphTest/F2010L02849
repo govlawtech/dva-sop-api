@@ -1,0 +1,71 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L02849",
+  "instrumentNumber" : "93/2010",
+  "citation" : "Statement of Principles concerning Morton's metatarsalgia No. 93 of 2010",
+  "conditionName" : "Morton's metatarsalgia",
+  "effectiveFrom" : "2010-11-10",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G57.6"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "wearing footwear which tightly restricts the forefoot of the\r\naffected foot, for at least four hours per day on more days than\r\nnot, for the two years before the clinical onset of Morton's\r\nmetatarsalgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having an injury to the foot which damages or compresses the\r\ninterdigital nerve within the affected intermetatarsal space, within\r\nthe six months before the clinical onset of Morton's metatarsalgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "undergoing surgery to the foot which damages or compresses the\r\ninterdigital nerve within the affected intermetatarsal space, within\r\nthe six months before the clinical onset of Morton's metatarsalgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a biomechanical abnormality of the foot which damages\r\nor compresses the interdigital nerve within the affected\r\nintermetatarsal space, at the time of the clinical onset of Morton's\r\nmetatarsalgia",
+    "definedTerms" : [ {
+      "term" : "a biomechanical abnormality",
+      "definition" : "means abnormal foot function or an\nacquired foot pathology, such as:\n(a) claw toes;\n(b) hallux valgus;\n(c) hammer toes;\n(d) insufficiency of the first ray of the foot;\n(e) overloading of the metatarsal heads;\n(f) overpronation of the foot on propulsion;\n(g) pes cavus; or\n(h) pes planus"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a condition as specified, which damages or compresses\r\nthe interdigital plantar nerve within the affected intermetatarsal\r\nspace, at the time of the clinical onset of Morton's metatarsalgia",
+    "definedTerms" : [ {
+      "term" : "a condition as specified",
+      "definition" : "means one of the following disorders\naffecting the metatarsal region of the foot:\n(a) an infection;\n(b) an inflammatory arthritis; or\n(c) a space occupying lesion"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(f)",
+    "text" : "wearing footwear which tightly restricts the forefoot of the\r\naffected foot, for at least four hours per day on more days than\r\nnot, for the two years before the clinical worsening of Morton's\r\nmetatarsalgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having an injury to the foot which damages or compresses the\r\ninterdigital nerve within the affected intermetatarsal space, within\r\nthe six months before the clinical worsening of Morton's\r\nmetatarsalgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing surgery to the foot which damages or compresses the\r\ninterdigital nerve within the affected intermetatarsal space, within\r\nthe six months before the clinical worsening of Morton's\r\nmetatarsalgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a biomechanical abnormality of the foot which damages\r\nor compresses the interdigital nerve within the affected\r\nintermetatarsal space, at the time of the clinical worsening of\r\nMorton's metatarsalgia",
+    "definedTerms" : [ {
+      "term" : "a biomechanical abnormality",
+      "definition" : "means abnormal foot function or an\nacquired foot pathology, such as:\n(a) claw toes;\n(b) hallux valgus;\n(c) hammer toes;\n(d) insufficiency of the first ray of the foot;\n(e) overloading of the metatarsal heads;\n(f) overpronation of the foot on propulsion;\n(g) pes cavus; or\n(h) pes planus"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a condition as specified, which damages or compresses\r\nthe interdigital plantar nerve within the affected intermetatarsal\r\nspace, at the time of the clinical worsening of Morton's\r\nmetatarsalgia",
+    "definedTerms" : [ {
+      "term" : "a condition as specified",
+      "definition" : "means one of the following disorders\naffecting the metatarsal region of the foot:\n(a) an infection;\n(b) an inflammatory arthritis; or\n(c) a space occupying lesion"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inability to obtain appropriate clinical management for Morton's\r\nmetatarsalgia",
+    "definedTerms" : [ ]
+  } ]
+}

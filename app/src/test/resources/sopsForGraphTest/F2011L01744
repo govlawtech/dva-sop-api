@@ -1,0 +1,58 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01744",
+  "instrumentNumber" : "109/2011",
+  "citation" : "Statement of Principles concerning photocontact dermatitis No. 109 of 2011",
+  "conditionName" : "photocontact dermatitis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L56.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having exposure of the affected area of skin to a phototoxic agent and\r\nlight simultaneously within the six hours before the clinical onset of\r\nphotocontact dermatitis",
+    "definedTerms" : [ {
+      "term" : "phototoxic agent",
+      "definition" : "means a topical agent or substance, for example a\nchemical, which, when applied to an area of skin which is simultaneously\nexposed to light, causes dermatitis which is referred to as phototoxic contact\ndermatitis. It does not include physical agents such as heat, cold, solar\nradiation or other forms of radiation"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having exposure of the affected area of skin to a photoallergen and light\r\nsimultaneously within the five days before the clinical onset of\r\nphotocontact dermatitis",
+    "definedTerms" : [ {
+      "term" : "photoallergen",
+      "definition" : "means a topical substance which, when applied to an area of\nskin which is simultaneously exposed to light, is capable of producing an\nimmune response resulting in photoallergic contact dermatitis"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "for allergic photocontact dermatitis only, having cutaneous exposure to\r\nthe photoallergen responsible for the photocontact dermatitis and to\r\nlight before the clinical onset of photocontact dermatitis",
+    "definedTerms" : [ {
+      "term" : "photoallergen",
+      "definition" : "means a topical substance which, when applied to an area of\nskin which is simultaneously exposed to light, is capable of producing an\nimmune response resulting in photoallergic contact dermatitis"
+    } ],
+    "conditionVariant" : {
+      "name" : "allergic photocontact dermatitis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(d)",
+    "text" : "having exposure of the affected area of skin to a phototoxic agent and\r\nlight simultaneously within the six hours before the clinical worsening\r\nof photocontact dermatitis",
+    "definedTerms" : [ {
+      "term" : "phototoxic agent",
+      "definition" : "means a topical agent or substance, for example a\nchemical, which, when applied to an area of skin which is simultaneously\nexposed to light, causes dermatitis which is referred to as phototoxic contact\ndermatitis. It does not include physical agents such as heat, cold, solar\nradiation or other forms of radiation"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having exposure of the affected area of skin to a photoallergen and light\r\nsimultaneously within the five days before the clinical worsening of\r\nphotocontact dermatitis",
+    "definedTerms" : [ {
+      "term" : "photoallergen",
+      "definition" : "means a topical substance which, when applied to an area of\nskin which is simultaneously exposed to light, is capable of producing an\nimmune response resulting in photoallergic contact dermatitis"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "inability to obtain appropriate clinical management for photocontact\r\ndermatitis",
+    "definedTerms" : [ ]
+  } ]
+}

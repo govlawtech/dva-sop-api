@@ -1,0 +1,65 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00006",
+  "instrumentNumber" : "1/2018",
+  "citation" : "Statement of Principles concerning cerebral meningioma (Reasonable Hypothesis) (No. 1 of 2018)",
+  "conditionName" : "cerebral meningioma",
+  "effectiveFrom" : "2018-01-29",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D32.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D32.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the brain at least five years before the clinical\r\nonset of cerebral meningioma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include being\r\npresent during or subsequent to the testing or use of nuclear weapons, undergoing diagnostic or\r\ntherapeutic medical procedures involving ionising radiation, and being a member of an aircrew,\r\nleading to increased levels of exposure to cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass of a\r\nspecific tissue or organ. If a tissue is exposed to multiple sources of ionising radiation, the\r\nvarious dose estimates for each type of radiation must be combined."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being overweight or obese for at least five years within the 20 years\r\nbefore the clinical onset of cerebral meningioma",
+    "definedTerms" : [ {
+      "term" : "being overweight or obese",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or\r\ngreater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being in the second or third trimester of pregnancy, or within the\r\n30 days postpartum, at the time of the clinical onset of cerebral\r\nmeningioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with a drug as specified within the ten years before the\r\nclinical onset of cerebral meningioma",
+    "definedTerms" : [ {
+      "term" : "being treated with a drug as specified",
+      "definition" : "means:\r\n(a) receiving medroxyprogesterone acetate at a dose rate of at least\r\n15 milligrams per day for a continuous period of at least one year; or\r\n(b) taking daily cyproterone acetate at a dose rate of at least 15 milligrams\r\nper day for a continuous period of at least one year; or\r\n(c) taking daily chlormadinone acetate at a dose rate of at least\r\n50 milligrams per day for a continuous period of at least one year; or\r\n(d) taking daily megestrol acetate at a dose rate of at least 50 milligrams\r\nper day for a continuous period of at least one year."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "using hormone replacement therapy for a continuous period of at least\r\nsix months before the clinical onset of cerebral meningioma, and where\r\nthe use of hormone replacement therapy has ceased, the clinical onset\r\nof cerebral meningioma has occurred within ten years of cessation",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of estrogen\r\npreparations often in combination with progesterone to offset a hormone\r\ndeficiency following surgically induced or naturally occurring menopause."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(6)",
+    "text" : "being in the second or third trimester of pregnancy, or within the\r\n30 days postpartum, at the time of the clinical worsening of cerebral\r\nmeningioma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being treated with a drug as specified within the ten years before the\r\nclinical worsening of cerebral meningioma",
+    "definedTerms" : [ {
+      "term" : "being treated with a drug as specified",
+      "definition" : "means:\r\n(a) receiving medroxyprogesterone acetate at a dose rate of at least\r\n15 milligrams per day for a continuous period of at least one year; or\r\n(b) taking daily cyproterone acetate at a dose rate of at least 15 milligrams\r\nper day for a continuous period of at least one year; or\r\n(c) taking daily chlormadinone acetate at a dose rate of at least\r\n50 milligrams per day for a continuous period of at least one year; or\r\n(d) taking daily megestrol acetate at a dose rate of at least 50 milligrams\r\nper day for a continuous period of at least one year."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "inability to obtain appropriate clinical management for cerebral\r\nmeningioma",
+    "definedTerms" : [ ]
+  } ]
+}

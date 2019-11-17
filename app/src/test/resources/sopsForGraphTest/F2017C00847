@@ -1,0 +1,77 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00847",
+  "instrumentNumber" : "3/2016",
+  "citation" : "Statement of Principles concerning peritoneal adhesions (Reasonable Hypothesis) (No. 3 of 2016)",
+  "conditionName" : "peritoneal adhesions",
+  "effectiveFrom" : "2016-01-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K66.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K56.5"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "N73.6"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "N99.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having intra-abdominal or pelvic surgery at least two days before the\r\nclinical onset of peritoneal adhesions",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having peritonitis at least two days before the clinical onset of\r\nperitoneal adhesions",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a disease from the specified list of inflammatory diseases\r\ninvolving the peritoneum or peritoneal cavity at least two days before\r\nthe clinical onset of peritoneal adhesions",
+    "definedTerms" : [ {
+      "term" : "specified list of inflammatory diseases",
+      "definition" : "means:\r\n(a) appendicitis;\r\n(b) cholecystitis;\r\n(d) endometriosis;\r\n(e) inflammatory bowel disease;\r\n(f) pancreatitis;\r\n(g) pelvic inflammatory disease; or\r\n(h) another condition that causes serosal inflammation."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a perforation of the peritoneum at least two days before the\r\nclinical onset of peritoneal adhesions",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having penetrating trauma to the peritoneum or major blunt trauma to\r\nthe abdominopelvic region at least two days before the clinical onset\r\nof peritoneal adhesions",
+    "definedTerms" : [ {
+      "term" : "major blunt trauma",
+      "definition" : "means severe, non-penetrating trauma that causes the\r\nimmediate development of pain and tenderness lasting for a period of at least\r\nthree days."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a bacterial or fungal infection involving the peritoneal cavity at\r\nleast two days before the clinical onset of peritoneal adhesions",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nabdominopelvic region was in the field of radiation, at least four weeks\r\nbefore the clinical onset of peritoneal adhesions",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having received a cumulative equivalent dose of at least ten sieverts of\r\nionising radiation to the abdominopelvic region at least four weeks\r\nbefore the clinical onset of peritoneal adhesions",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "undergoing intraperitoneal chemotherapy or intraperitoneal dialysis at\r\nleast two days before the clinical onset of peritoneal adhesions",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a primary or secondary malignant neoplasm involving the\r\nperitoneum at least two days before the clinical onset of peritoneal\r\nadhesions",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(11)",
+    "text" : "inability to obtain appropriate clinical management for peritoneal\r\nadhesions",
+    "definedTerms" : [ ]
+  } ]
+}

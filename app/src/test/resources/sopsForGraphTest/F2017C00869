@@ -1,0 +1,182 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00869",
+  "instrumentNumber" : "88/2016",
+  "citation" : "Statement of Principles concerning acquired cataract (Balance of Probabilities) (No. 88 of 2016)",
+  "conditionName" : "acquired cataract",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H25"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H26.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having sunlight exposure to the eye for at least 4 500 hours while in a\r\ntropical area, or having equivalent sunlight exposure in other latitude\r\nzones, before the clinical onset of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of acquired\r\ncataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having diabetes mellitus before the clinical onset of acquired cataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected eye before the clinical onset of\r\nacquired cataract",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having physical trauma to the affected eye within the ten years before\r\nthe clinical onset of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "physical trauma",
+      "definition" : "means:\r\n(a) penetrating injury; or\r\n(b) intraocular surgery; or\r\n(c) blunt trauma resulting in symptoms and signs lasting at least three\r\ndays."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a severe thermal or chemical burn to the affected eye before the\r\nclinical onset of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "severe thermal or chemical burn",
+      "definition" : "means a burn involving at least one of the\r\nfollowing clinical features:\r\n(a) corneal anaesthesia;\r\n(b) corneal opacification;\r\n(c) symptoms and signs lasting at least three days and requiring medical\r\nattention; or\r\n(d) for chemical burns only, penetration of the chemical into the anterior\r\nchamber."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having an electrical injury within the five years before the clinical\r\nonset of acquired cataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being treated with a drug as specified before the clinical onset of\r\nacquired cataract",
+    "definedTerms" : [ {
+      "term" : "specified",
+      "definition" : "means:\r\n(a) applying a topical corticosteroid to the cornea of the affected eye\r\nequivalent to a cumulative dose of at least 200 drops of 0.1%\r\ndexamethasone; or\r\n(b) applying a topical corticosteroid to the skin for a total of at least 730\r\ndays; or\r\n(c) taking an oral corticosteroid equivalent to a cumulative dose of at least\r\n900 milligrams of prednisone; or\r\n(d) using an inhalational corticosteroid equivalent to a cumulative dose of\r\nat least 2 000 milligrams of budesonide."
+    }, {
+      "term" : "being treated with a drug as specified",
+      "definition" : "means:\r\n(a) for anterior subcapsular cataract only, receiving a cumulative dose of\r\nat least 1 500 grams of a phenothiazine; or\r\n(b) receiving a cumulative dose of at least 400 grams of amiodarone; or\r\n(c) receiving a cumulative dose of at least 30 grams of tamoxifen.\r\nbeing treated with an oral, topical or inhalational corticosteroid as"
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being treated with a selective serotonin reuptake inhibitor or a\r\nserotonin and noradrenaline (norepinephrine) reuptake inhibitor for the\r\nsix months before the clinical onset of acquired cataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being treated with an oral, topical or inhalational corticosteroid as\r\nspecified within the ten years before the clinical onset of acquired\r\ncataract",
+    "definedTerms" : [ {
+      "term" : "specified",
+      "definition" : "means:\r\n(a) applying a topical corticosteroid to the cornea of the affected eye\r\nequivalent to a cumulative dose of at least 200 drops of 0.1%\r\ndexamethasone; or\r\n(b) applying a topical corticosteroid to the skin for a total of at least 730\r\ndays; or\r\n(c) taking an oral corticosteroid equivalent to a cumulative dose of at least\r\n900 milligrams of prednisone; or\r\n(d) using an inhalational corticosteroid equivalent to a cumulative dose of\r\nat least 2 000 milligrams of budesonide."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having uveitis or iridocyclitis of the affected eye before the clinical\r\nonset of acquired cataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "being overweight or obese for at least five years within the ten years\r\nbefore the clinical onset of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "being overweight or obese",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or\r\ngreater.\r\nNote: BMI is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "for cortical and subcapsular cataract only, having hypoparathyroidism\r\nat the time of the clinical onset of acquired cataract",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "cortical and subcapsular cataract",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(14)",
+    "text" : "having sunlight exposure to the eye for at least 4 500 hours while in a\r\ntropical area, or having equivalent sunlight exposure in other latitude\r\nzones, before the clinical worsening of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of acquired\r\ncataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having diabetes mellitus before the clinical worsening of acquired\r\ncataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected eye before the clinical worsening of\r\nacquired cataract",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having physical trauma to the affected eye within the ten years before\r\nthe clinical worsening of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "physical trauma",
+      "definition" : "means:\r\n(a) penetrating injury; or\r\n(b) intraocular surgery; or\r\n(c) blunt trauma resulting in symptoms and signs lasting at least three\r\ndays."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having a severe thermal or chemical burn to the affected eye before the\r\nclinical worsening of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "severe thermal or chemical burn",
+      "definition" : "means a burn involving at least one of the\r\nfollowing clinical features:\r\n(a) corneal anaesthesia;\r\n(b) corneal opacification;\r\n(c) symptoms and signs lasting at least three days and requiring medical\r\nattention; or\r\n(d) for chemical burns only, penetration of the chemical into the anterior\r\nchamber."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having an electrical injury within the five years before the clinical\r\nworsening of acquired cataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "being treated with a drug as specified before the clinical worsening of\r\nacquired cataract",
+    "definedTerms" : [ {
+      "term" : "specified",
+      "definition" : "means:\r\n(a) applying a topical corticosteroid to the cornea of the affected eye\r\nequivalent to a cumulative dose of at least 200 drops of 0.1%\r\ndexamethasone; or\r\n(b) applying a topical corticosteroid to the skin for a total of at least 730\r\ndays; or\r\n(c) taking an oral corticosteroid equivalent to a cumulative dose of at least\r\n900 milligrams of prednisone; or\r\n(d) using an inhalational corticosteroid equivalent to a cumulative dose of\r\nat least 2 000 milligrams of budesonide."
+    }, {
+      "term" : "being treated with a drug as specified",
+      "definition" : "means:\r\n(a) for anterior subcapsular cataract only, receiving a cumulative dose of\r\nat least 1 500 grams of a phenothiazine; or\r\n(b) receiving a cumulative dose of at least 400 grams of amiodarone; or\r\n(c) receiving a cumulative dose of at least 30 grams of tamoxifen.\r\nbeing treated with an oral, topical or inhalational corticosteroid as"
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "being treated with a selective serotonin reuptake inhibitor or a\r\nserotonin and noradrenaline (norepinephrine) reuptake inhibitor for the\r\nsix months before the clinical worsening of acquired cataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "being treated with an oral, topical or inhalational corticosteroid as\r\nspecified within the ten years before the clinical worsening of acquired\r\ncataract",
+    "definedTerms" : [ {
+      "term" : "specified",
+      "definition" : "means:\r\n(a) applying a topical corticosteroid to the cornea of the affected eye\r\nequivalent to a cumulative dose of at least 200 drops of 0.1%\r\ndexamethasone; or\r\n(b) applying a topical corticosteroid to the skin for a total of at least 730\r\ndays; or\r\n(c) taking an oral corticosteroid equivalent to a cumulative dose of at least\r\n900 milligrams of prednisone; or\r\n(d) using an inhalational corticosteroid equivalent to a cumulative dose of\r\nat least 2 000 milligrams of budesonide."
+    } ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having uveitis or iridocyclitis of the affected eye before the clinical\r\nworsening of acquired cataract",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "being overweight or obese for at least five years within the ten years\r\nbefore the clinical worsening of acquired cataract",
+    "definedTerms" : [ {
+      "term" : "being overweight or obese",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or\r\ngreater.\r\nNote: BMI is also defined in the Schedule 1 – Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "for cortical and subcapsular cataract only, having hypoparathyroidism\r\nat the time of the clinical worsening of acquired cataract",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "cortical and subcapsular cataract",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "inability to obtain appropriate clinical management for acquired\r\ncataract",
+    "definedTerms" : [ ]
+  } ]
+}

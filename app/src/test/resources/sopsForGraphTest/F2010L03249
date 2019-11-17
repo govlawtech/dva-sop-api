@@ -1,0 +1,31 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03249",
+  "instrumentNumber" : "2/2011",
+  "citation" : "Statement of Principles concerning coeliac disease No. 2 of 2011",
+  "conditionName" : "coeliac disease",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K90.0"
+  } ],
+  "onsetFactors" : [ ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being treated with interferon alpha within the six months before the\r\nclinical worsening of coeliac disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being pregnant within the three months before the clinical worsening\r\nof coeliac disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inability to maintain a gluten-free diet at the time of the clinical\r\nworsening of coeliac disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inability to obtain appropriate clinical management for coeliac disease",
+    "definedTerms" : [ ]
+  } ]
+}

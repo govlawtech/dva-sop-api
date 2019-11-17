@@ -1,0 +1,256 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00663",
+  "instrumentNumber" : "84/2015",
+  "citation" : "Statement of Principles concerning depressive disorder (No. 84 of 2015)",
+  "conditionName" : "depressive disorder",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for major depressive disorder, major depressive episode, persistent\r\ndepressive disorder, premenstrual dysphoric disorder, other specified\r\ndepressive disorder and unspecified depressive disorder only:\r\n(a) experiencing a category 1A stressor within the two years before\r\nthe clinical onset of depressive disorder;\r\n(b) experiencing a category 1B stressor within the two years before\r\nthe clinical onset of depressive disorder;\r\n(c) having a significant other who experiences a category 1A\r\nstressor within the one year before the clinical onset of\r\ndepressive disorder;\r\n(d) experiencing the death of a significant other within the one year\r\nbefore the clinical onset of depressive disorder;\r\n(e) experiencing a category 2 stressor within the six months before\r\nthe clinical onset of depressive disorder;\r\n(f) experiencing severe childhood abuse before the clinical onset of\r\ndepressive disorder;\r\n(g) having a clinically significant disorder of mental health as\r\nspecified within the two years before the clinical onset of\r\ndepressive disorder;\r\n(h) having a medical illness or injury which is life-threatening or\r\nwhich results in serious physical or cognitive disability, within\r\nthe two years before the clinical onset of depressive disorder;\r\n(i) having epilepsy at the time of the clinical onset of depressive\r\ndisorder;\r\n(j) having a severe, chronic medical condition for the five years\r\nbefore the clinical onset of depressive disorder;\r\n(k) having persistent pain of at least six months duration at the time\r\nof the clinical onset of depressive disorder;\r\n(l) having a sleep-wake disorder from the specified list for the one\r\nyear before the clinical onset of depressive disorder; or\r\n(m) having a miscarriage, foetal death in-utero or stillbirth, within\r\nthe six months before the clinical onset of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel on-going\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation, or divorce;\r\n(c) having concerns in the work or school environment including on-going\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful work loads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, on-going involvement with the police concerning violations\r\nof the law, or court appearances associated with personal legal\r\nproblems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property, or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability."
+    }, {
+      "term" : "premenstrual dysphoric disorder",
+      "definition" : "means a disorder of mental health meeting\r\nthe following diagnostic criteria (derived from DSM-5):\r\n(a) In the majority of menstrual cycles, at least five symptoms must be\r\npresent in the final week before the onset of menses, start to improve\r\nwithin a few days after the onset of menses, and become minimal or\r\nabsent in the week postmenses.\r\n(b) One (or more) of the following symptoms must be present:\r\n(i) Marked affective lability (for example, mood swings, feeling\r\nsuddenly sad or tearful, or increased sensitivity to rejection).\r\n(ii) Marked irritability or anger or increased interpersonal conflicts.\r\n(iii) Marked depressed mood, feelings of hopelessness or self-\r\ndeprecating thoughts.\r\n(iv) Marked anxiety, tension and/or feelings of being keyed up or on\r\nedge.\r\n(c) One (or more) of the following symptoms must additionally be\r\npresent, to reach a total of five symptoms when combined with\r\nsymptoms from Criterion (b) above.\r\n(i) Decreased interest in usual activities (for example, work, school,\r\nfriends, hobbies).\r\n(ii) Subjective difficulty in concentration.\r\n(iii) Lethargy, easy fatigability, or marked lack of energy.\r\n(iv) Marked change in appetite, overeating or specific food cravings.\r\n(v) Hypersomnia or insomnia.\r\n(vi) A sense of being overwhelmed or out of control.\r\n(vii) Physical symptoms such as breast tenderness or swelling, joint\r\nor muscle pain, a sensation of \"bloating\" or weight gain.\r\n(d) The symptoms are associated with clinically significant distress or\r\ninterference with work, school, usual social activities or relationships\r\nwith others (for example, avoidance of social activities, decreased\r\nproductivity and efficiency at work, school or home).\r\n(e) The disturbance is not merely an exacerbation of the symptoms of\r\nanother disorder, such as major depressive disorder, panic disorder,\r\npersistent depressive disorder (dysthymia) or a personality disorder\r\n(although it may co-occur with any of these disorders).\r\n(f) Criterion (a) should be confirmed by prospective daily ratings during\r\nat least two symptomatic cycles.\r\n(g) The symptoms are not attributable to the physiological effects of a\r\nsubstance (for example, a drug of abuse, a medication, other treatment)\r\nor another medical condition (for example, hyperthyroidism).\r\nNote: DSM-5 is also defined in the Schedule 1 – Dictionary."
+    }, {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    }, {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous;\r\n(b) almost continuous; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich may or may not be ameliorated by analgesic medication and is of a\r\nlevel to cause interference with usual work or leisure activities or activities of\r\ndaily living."
+    }, {
+      "term" : "miscarriage",
+      "definition" : "means the spontaneous or induced expulsion of the products of\r\nconception from the uterus before the foetus is viable."
+    }, {
+      "term" : "sleep-wake disorder from the specified list",
+      "definition" : "means:\r\n(a) hypersomnolence disorder;\r\n(b) insomnia disorder;\r\n(c) narcolepsy;\r\n(d) restless legs syndrome;\r\n(e) substance/medication-induced sleep disorder insomnia type; or\r\n(f) untreated obstructive sleep apnoea."
+    }, {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    }, {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    }, {
+      "term" : "severe, chronic medical condition",
+      "definition" : "means an illness which substantially\r\nimpacts on social, occupational or other important areas of functioning; and\r\nrequires on-going daily or almost daily management of symptoms. This\r\nmanagement may include, but is not limited to, assistance with activities of\r\ndaily living; bed rest; dietary modification; drug therapy; nursing care;\r\noxygen therapy or physiotherapy. This management must be supervised by a\r\nregistered health practitioner.\r\nSevere, chronic medical conditions do not usually resolve spontaneously, are\r\nrarely cured completely and may progress to life threatening illnesses.\r\nExamples of these conditions include poorly controlled asthma, chronic\r\nobstructive pulmonary disease, poorly controlled diabetes mellitus,\r\ninflammatory bowel disease, pemphigus, psoriasis and rheumatoid arthritis."
+    } ],
+    "conditionVariant" : {
+      "name" : "major depressive disorder, major depressive episode, persistent depressive disorder, premenstrual dysphoric disorder, other specified depressive disorder and unspecified depressive disorder",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "experiencing a category 1A stressor within the two years before\r\nthe clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "experiencing a category 1B stressor within the two years before\r\nthe clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having a significant other who experiences a category 1A\r\nstressor within the one year before the clinical onset of\r\ndepressive disorder"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "experiencing the death of a significant other within the one year\r\nbefore the clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(e)",
+        "text" : "experiencing a category 2 stressor within the six months before\r\nthe clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(f)",
+        "text" : "experiencing severe childhood abuse before the clinical onset of\r\ndepressive disorder"
+      }, {
+        "paragraph" : "(g)",
+        "text" : "having a clinically significant disorder of mental health as\r\nspecified within the two years before the clinical onset of\r\ndepressive disorder"
+      }, {
+        "paragraph" : "(h)",
+        "text" : "having a medical illness or injury which is life-threatening or\r\nwhich results in serious physical or cognitive disability, within\r\nthe two years before the clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(i)",
+        "text" : "having epilepsy at the time of the clinical onset of depressive\r\ndisorder"
+      }, {
+        "paragraph" : "(j)",
+        "text" : "having a severe, chronic medical condition for the five years\r\nbefore the clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(k)",
+        "text" : "having persistent pain of at least six months duration at the time\r\nof the clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(l)",
+        "text" : "having a sleep-wake disorder from the specified list for the one\r\nyear before the clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(m)",
+        "text" : "having a miscarriage, foetal death in-utero or stillbirth, within\r\nthe six months before the clinical onset of depressive disorder"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for major depressive disorder, major depressive episode, persistent\r\ndepressive disorder, other specified depressive disorder and\r\nunspecified depressive disorder only:\r\n(a) being pregnant within the one year before the clinical onset of\r\ndepressive disorder",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "major depressive disorder, major depressive episode, persistent depressive disorder, other specified depressive disorder and unspecified depressive disorder",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "being pregnant within the one year before the clinical onset of\r\ndepressive disorder"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "for substance/medication-induced depressive disorder only:\r\n(a) being treated with a drug which is associated in the individual\r\nwith the development of depressive symptoms during drug\r\ntherapy, and the cessation or significant reduction of the\r\ndepressive symptoms within days or weeks of discontinuing\r\ndrug therapy, where treatment with the drug continued for at\r\nleast the two days before the clinical onset of depressive\r\ndisorder;\r\n(b) having ceased or reduced therapeutic or illicit drugs within the\r\n30 days before the clinical onset of depressive disorder;\r\n(c) having alcohol use disorder at the time of the clinical onset of\r\ndepressive disorder; or\r\n(d) taking a drug or a drug from a class of drugs from the specified\r\nlist of drugs, within the 30 days before the clinical onset of\r\ndepressive disorder",
+    "definedTerms" : [ {
+      "term" : "substance/medication-induced depressive disorder",
+      "definition" : "means a disorder of\r\nmental health meeting the following diagnostic criteria (derived from DSM-\r\n5):\r\n(a) A prominent and persistent disturbance in mood that predominates in\r\nthe clinical picture and is characterised by depressed mood or\r\nmarkedly diminished interest or pleasure in all, or almost all, activities.\r\n(b) There is evidence from the history, physical examination or laboratory\r\nfindings of both (i) and (ii):\r\n(i) The symptoms in Criterion (a) developed during or soon after\r\nsubstance intoxication or withdrawal or after exposure to a\r\nmedication.\r\n(ii) The involved substance/medication is capable of producing the\r\nsymptoms in Criterion (a).\r\n(c) The disturbance is not better explained by a depressive disorder that is\r\nnot substance/medication-induced. Such evidence of an independent\r\ndepressive disorder could include the following:\r\n(i) The symptoms preceded the onset of the substance/medication\r\nuse; the symptoms persist for a substantial period of time (for\r\nexample, about 1 month) after the cessation of acute withdrawal\r\nor severe intoxication; or there is other evidence suggesting the\r\nexistence of an independent non-substance/medication-induced\r\ndepressive disorder (for example, a history of recurrent non-\r\nsubstance/medication-related episodes).\r\n(d) The disturbance does not occur exclusively during the course of a\r\ndelirium.\r\n(e) The disturbance causes clinically significant distress or impairment in\r\nsocial, occupational or other important areas of functioning.\r\nNote: DSM-5 is also defined in the Schedule 1 – Dictionary."
+    } ],
+    "conditionVariant" : {
+      "name" : "substance/medication-induced depressive disorder",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "being treated with a drug which is associated in the individual\r\nwith the development of depressive symptoms during drug\r\ntherapy, and the cessation or significant reduction of the\r\ndepressive symptoms within days or weeks of discontinuing\r\ndrug therapy, where treatment with the drug continued for at\r\nleast the two days before the clinical onset of depressive\r\ndisorder"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having ceased or reduced therapeutic or illicit drugs within the\r\n30 days before the clinical onset of depressive disorder"
+      }, {
+        "paragraph" : "(c)",
+        "text" : "having alcohol use disorder at the time of the clinical onset of\r\ndepressive disorder"
+      }, {
+        "paragraph" : "(d)",
+        "text" : "taking a drug or a drug from a class of drugs from the specified\r\nlist of drugs, within the 30 days before the clinical onset of\r\ndepressive disorder"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "for depressive disorder due to another medical condition only:\r\n(a) having an endocrine, cardiovascular, respiratory, metabolic,\r\ninfectious or neurological disorder, where the medical condition\r\nis a direct physiological cause of the depression at the time of the\r\nclinical onset of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "depressive disorder due to another medical condition",
+      "definition" : "means a disorder of\r\nmental health meeting the following diagnostic criteria (derived from DSM-\r\n5):\r\n(a) A prominent and persistent period of depressed mood or markedly\r\ndiminished interest or pleasure in all, or almost all, activities that\r\npredominates in the clinical picture.\r\n(b) There is evidence from the history, physical examination or laboratory\r\nfindings that the disturbance is the direct pathophysiological\r\nconsequence of another medical condition.\r\n(c) The disturbance is not better explained by another mental disorder (for\r\nexample, adjustment disorder, with depressed mood, in which the\r\nstressor is a serious medical condition).\r\n(d) The disturbance does not occur exclusively during the course of a\r\ndelirium.\r\n(e) The disturbance causes clinically significant distress or impairment in\r\nsocial, occupational or other important areas of functioning.\r\nNote: DSM-5 is also defined in the Schedule 1 – Dictionary.\r\nDSM-5 means the American Psychiatric Association: Diagnostic and\r\nStatistical Manual of Mental Disorders, Fifth Edition. Arlington, VA,\r\nAmerican Psychiatric Association, 2013."
+    } ],
+    "conditionVariant" : {
+      "name" : "depressive disorder due to another medical condition",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having an endocrine, cardiovascular, respiratory, metabolic,\r\ninfectious or neurological disorder, where the medical condition\r\nis a direct physiological cause of the depression at the time of the\r\nclinical onset of depressive disorder"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(5)",
+    "text" : "experiencing a category 1A stressor within the two years before the\r\nclinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "experiencing a category 1B stressor within the two years before the\r\nclinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a significant other who experiences a category 1A stressor\r\nwithin the one year before the clinical worsening of depressive\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    }, {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "experiencing the death of a significant other within the one year before\r\nthe clinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "significant other",
+      "definition" : "means a person who has a close family bond or a close\r\npersonal relationship and is important or influential in one's life."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "experiencing a category 2 stressor within the six months before the\r\nclinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel on-going\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation, or divorce;\r\n(c) having concerns in the work or school environment including on-going\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful work loads, or\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, on-going involvement with the police concerning violations\r\nof the law, or court appearances associated with personal legal\r\nproblems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property, or bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "experiencing severe childhood abuse before the clinical worsening of\r\ndepressive disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the two years before the clinical worsening of depressive\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) a disruptive, impulse-control or conduct disorder;\r\n(b) a dissociative disorder;\r\n(c) a feeding disorder or eating disorder;\r\n(d) a neurocognitive disorder;\r\n(e) a neurodevelopmental disorder;\r\n(f) a paraphilic disorder;\r\n(g) a personality disorder;\r\n(h) a schizophrenia spectrum disorder or other psychotic disorder;\r\n(i) a sexual dysfunction;\r\n(j) a somatic symptom disorder or related disorder;\r\n(k) a substance use disorder;\r\n(l) a trauma and stressor-related disorder;\r\n(m) an alcohol use disorder;\r\n(n) an anxiety disorder;\r\n(o) an obsessive compulsive disorder or related disorder;\r\n(p) another depressive disorder; or\r\n(q) gender dysphoria."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a medical illness or injury which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the two years\r\nbefore the clinical worsening of depressive disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having epilepsy at the time of the clinical worsening of depressive\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having a severe, chronic medical condition for the five years before the\r\nclinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "severe, chronic medical condition",
+      "definition" : "means an illness which substantially\r\nimpacts on social, occupational or other important areas of functioning; and\r\nrequires on-going daily or almost daily management of symptoms. This\r\nmanagement may include, but is not limited to, assistance with activities of\r\ndaily living; bed rest; dietary modification; drug therapy; nursing care;\r\noxygen therapy or physiotherapy. This management must be supervised by a\r\nregistered health practitioner.\r\nSevere, chronic medical conditions do not usually resolve spontaneously, are\r\nrarely cured completely and may progress to life threatening illnesses.\r\nExamples of these conditions include poorly controlled asthma, chronic\r\nobstructive pulmonary disease, poorly controlled diabetes mellitus,\r\ninflammatory bowel disease, pemphigus, psoriasis and rheumatoid arthritis."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "having persistent pain of at least six months duration at the time of the\r\nclinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous;\r\n(b) almost continuous; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich may or may not be ameliorated by analgesic medication and is of a\r\nlevel to cause interference with usual work or leisure activities or activities of\r\ndaily living."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having a sleep-wake disorder from the specified list for the one year\r\nbefore the clinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "sleep-wake disorder from the specified list",
+      "definition" : "means:\r\n(a) hypersomnolence disorder;\r\n(b) insomnia disorder;\r\n(c) narcolepsy;\r\n(d) restless legs syndrome;\r\n(e) substance/medication-induced sleep disorder insomnia type; or\r\n(f) untreated obstructive sleep apnoea."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having a miscarriage, foetal death in-utero or stillbirth, within the six\r\nmonths before the clinical worsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "miscarriage",
+      "definition" : "means the spontaneous or induced expulsion of the products of\r\nconception from the uterus before the foetus is viable."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "being pregnant within the one year before the clinical worsening of\r\ndepressive disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "being treated with a drug which is associated in the individual with the\r\ndevelopment of depressive symptoms during drug therapy, and the\r\ncessation or significant reduction of the depressive symptoms within\r\ndays or weeks of discontinuing drug therapy, where treatment with the\r\ndrug continued for at least the two days before the clinical worsening\r\nof depressive disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having ceased or reduced therapeutic or illicit drugs within the 30 days\r\nbefore the clinical worsening of depressive disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having alcohol use disorder at the time of the clinical worsening of\r\ndepressive disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, within the 30 days before the clinical worsening of depressive\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having a medical condition as specified at the time of the clinical\r\nworsening of depressive disorder",
+    "definedTerms" : [ {
+      "term" : "medical condition as specified",
+      "definition" : "means an endocrine, cardiovascular,\r\nrespiratory, metabolic, infectious, or neurological condition, that causes\r\nsymptoms consistent with depression, as a direct physiological consequence\r\nof the condition."
+    } ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "inability to obtain appropriate clinical management for depressive\r\ndisorder",
+    "definedTerms" : [ ]
+  } ]
+}

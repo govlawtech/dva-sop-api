@@ -1,0 +1,85 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01335",
+  "instrumentNumber" : "99/2015",
+  "citation" : "Statement of Principles concerning hallux valgus (Balance of Probabilities) (No. 99 of 2015)",
+  "conditionName" : "hallux valgus",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M20.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "wearing footwear that causes lateral deviation of the great toe of the\r\naffected foot, on more days than not for a period of at least three years\r\nbefore the clinical onset of hallux valgus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having an inflammatory, depositional or infective arthrosis of the first\r\nmetatarsophalangeal joint of the affected foot, before the clinical onset\r\nof hallux valgus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having amputation of the second toe or the second metatarsal head of\r\nthe affected foot, before the clinical onset of hallux valgus;\r\n1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "amputation of the second toe or the second metatarsal head",
+      "definition" : "means loss of\r\none or more of the phalanges of the second digit of the foot or the head of\r\nthe second metatarsal.\r\nhallux valgus—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a tumour that involves the second metatarsal bone before the\r\nclinical onset of hallux valgus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having surgery as specified to the affected region within the three\r\nyears before the clinical onset of hallux valgus",
+    "definedTerms" : [ {
+      "term" : "surgery as specified",
+      "definition" : "means surgery resulting in:\r\n(a) excision of sesamoid bone under the first metatarsal head;\r\n(b) instability of the first metatarsophalangeal joint;\r\n(c) lengthening of the first metatarsal in relation to the second metatarsal;\r\nor\r\n(d) shortening of the second metatarsal in relation to the first metatarsal."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having trauma to the affected forefoot within the three years before the\r\nclinical onset of hallux valgus",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected forefoot",
+      "definition" : "means a discrete injury to the affected\r\nforefoot that results in:\r\n(a) disruption of the first metatarsophalangeal joint capsule;\r\n(b) disruption of the sesamoid complex of the hallux;\r\n(c) fracture resulting in shortening of the second metatarsal;\r\n(d) tarso-metatarsal joint complex injury; or\r\n(e) tear of the medial collateral ligament of the first metatarsophalangeal\r\njoint."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(7)",
+    "text" : "wearing footwear that causes lateral deviation of the great toe of the\r\naffected foot, on more days than not for a period of at least three years\r\nbefore the clinical worsening of hallux valgus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having an inflammatory, depositional or infective arthrosis of the first\r\nmetatarsophalangeal joint of the affected foot, before the clinical\r\nworsening of hallux valgus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having amputation of the second toe or the second metatarsal head of\r\nthe affected foot, before the clinical worsening of hallux valgus;\r\n1 - Dictionary",
+    "definedTerms" : [ {
+      "term" : "amputation of the second toe or the second metatarsal head",
+      "definition" : "means loss of\r\none or more of the phalanges of the second digit of the foot or the head of\r\nthe second metatarsal.\r\nhallux valgus—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a tumour that involves the second metatarsal bone before the\r\nclinical worsening of hallux valgus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having surgery as specified to the affected region within the three\r\nyears before the clinical worsening of hallux valgus",
+    "definedTerms" : [ {
+      "term" : "surgery as specified",
+      "definition" : "means surgery resulting in:\r\n(a) excision of sesamoid bone under the first metatarsal head;\r\n(b) instability of the first metatarsophalangeal joint;\r\n(c) lengthening of the first metatarsal in relation to the second metatarsal;\r\nor\r\n(d) shortening of the second metatarsal in relation to the first metatarsal."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having trauma to the affected forefoot within the three years before the\r\nclinical worsening of hallux valgus",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected forefoot",
+      "definition" : "means a discrete injury to the affected\r\nforefoot that results in:\r\n(a) disruption of the first metatarsophalangeal joint capsule;\r\n(b) disruption of the sesamoid complex of the hallux;\r\n(c) fracture resulting in shortening of the second metatarsal;\r\n(d) tarso-metatarsal joint complex injury; or\r\n(e) tear of the medial collateral ligament of the first metatarsophalangeal\r\njoint."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "inability to obtain appropriate clinical management for hallux valgus",
+    "definedTerms" : [ ]
+  } ]
+}

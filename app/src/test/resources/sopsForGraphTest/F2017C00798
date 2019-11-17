@@ -1,0 +1,121 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00798",
+  "instrumentNumber" : "25/2012",
+  "citation" : "Statement of Principles concerning angle- closure glaucoma No. 25 of 2012",
+  "conditionName" : "angle-closure glaucoma",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "for acute angle-closure glaucoma only, taking or using a drug or a drug\r\nfrom a class of drugs in the specified list, within the two weeks before\r\nthe clinical onset of angle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "acute angle-closure glaucoma",
+      "definition" : "means angle-closure glaucoma associated\nwith severe eye pain, high intraocular pressure, corneal oedema and poor\nvisual acuity"
+    } ],
+    "conditionVariant" : {
+      "name" : "acute angle-closure glaucoma",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having occlusion of the iridocorneal angle due to a specified disorder\r\nof the affected eye or orbit at the time of the clinical onset of angle-\r\nclosure glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified disorder",
+      "definition" : "means one of the following:\n(a) a benign or malignant tumour;\n(b) a cataract;\n(c) a cyst;\n(d) a vascular malformation or vascular thrombosis;\n(e) amyloidosis;\n(f) anterior lens displacement, subluxation or dislocation;\n(g) choroidal effusion;\n(h) elevated ipsilateral episcleral venous pressure;\n(i) intraocular haemorrhage;\n(j) retinal detachment;\n(k) scleritis or episcleritis; or\n(l) uveitis"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having neovascularisation of the iridocorneal angle of the affected eye\r\ndue to a specified condition or procedure before the clinical onset of\r\nangle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified condition or procedure",
+      "definition" : "means one of the following:\n(a) carotid endarterectomy on the affected side;\n(b) diabetic retinopathy of the affected eye;\n(c) intraocular surgery to the affected eye;\n(d) intraocular tumour involving the affected eye;\n(e) ipsilateral carotid artery occlusive disease;\n(f) radiotherapy involving the affected eye;\n(g) retinal detachment in the affected eye;\n(h) retinal vascular occlusive disease of the affected eye;\n(i) retinal vasculitis of the affected eye; or\n(j) any acquired condition causing posterior segment ischaemia of the\naffected eye"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having trauma as specified to the affected eye before the clinical onset\r\nof angle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "trauma as specified",
+      "definition" : "means penetrating, blunt, chemical, thermal or\nionising radiation injury involving the affected eye that results in intraocular\ninflammation, intraocular bleeding or other intraocular tissue disruption"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having sympathetic ophthalmia at the time of the clinical onset of\r\nangle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "sympathetic ophthalmia",
+      "definition" : "means the presence of uveitis in both eyes\nfollowing:\n(a) intraocular surgery to one eye; or\n(b) trauma as specified to one eye"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having intraocular surgery to the affected eye before the clinical onset\r\nof angle-closure glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having non-intraocular surgery to the affected eye or surgery to an\r\neyelid of the affected eye in the one month before the clinical onset of\r\nangle-closure glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having received a cumulative equivalent dose of at least 10 sieverts of\r\nionising radiation to the affected eye before the clinical onset of angle-\r\nclosure glaucoma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected eye was in the field of radiation, before the clinical onset of\r\nangle-closure glaucoma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "having occlusion of the iridocorneal angle due to a specified disorder\r\nof the affected eye or orbit at the time of the clinical worsening of\r\nangle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified disorder",
+      "definition" : "means one of the following:\n(a) a benign or malignant tumour;\n(b) a cataract;\n(c) a cyst;\n(d) a vascular malformation or vascular thrombosis;\n(e) amyloidosis;\n(f) anterior lens displacement, subluxation or dislocation;\n(g) choroidal effusion;\n(h) elevated ipsilateral episcleral venous pressure;\n(i) intraocular haemorrhage;\n(j) retinal detachment;\n(k) scleritis or episcleritis; or\n(l) uveitis"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having neovascularisation of the iridocorneal angle of the affected eye\r\ndue to a specified condition or procedure before the clinical worsening\r\nof angle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified condition or procedure",
+      "definition" : "means one of the following:\n(a) carotid endarterectomy on the affected side;\n(b) diabetic retinopathy of the affected eye;\n(c) intraocular surgery to the affected eye;\n(d) intraocular tumour involving the affected eye;\n(e) ipsilateral carotid artery occlusive disease;\n(f) radiotherapy involving the affected eye;\n(g) retinal detachment in the affected eye;\n(h) retinal vascular occlusive disease of the affected eye;\n(i) retinal vasculitis of the affected eye; or\n(j) any acquired condition causing posterior segment ischaemia of the\naffected eye"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having trauma as specified to the affected eye before the clinical\r\nworsening of angle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "trauma as specified",
+      "definition" : "means penetrating, blunt, chemical, thermal or\nionising radiation injury involving the affected eye that results in intraocular\ninflammation, intraocular bleeding or other intraocular tissue disruption"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having sympathetic ophthalmia at the time of the clinical worsening of\r\nangle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "sympathetic ophthalmia",
+      "definition" : "means the presence of uveitis in both eyes\nfollowing:\n(a) intraocular surgery to one eye; or\n(b) trauma as specified to one eye"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having intraocular surgery to the affected eye before the clinical\r\nworsening of angle-closure glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having non-intraocular surgery to the affected eye or surgery to an\r\neyelid of the affected eye in the one month before the clinical\r\nworsening of angle-closure glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having received a cumulative equivalent dose of at least 10 sieverts of\r\nionising radiation to the affected eye before the clinical worsening of\r\nangle-closure glaucoma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected eye was in the field of radiation, before the clinical worsening\r\nof angle-closure glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "inability to obtain appropriate clinical management for angle-closure\r\nglaucoma",
+    "definedTerms" : [ ]
+  } ]
+}

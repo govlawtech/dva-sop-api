@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00466",
+  "instrumentNumber" : "34/2017",
+  "citation" : "Statement of Principles concerning immersion pulmonary oedema (Reasonable Hypothesis) (No. 34 of 2017)",
+  "conditionName" : "immersion pulmonary oedema",
+  "effectiveFrom" : "2017-05-22",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "undertaking swimming or underwater diving at the time of the clinical\r\nonset of immersion pulmonary oedema",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(2)",
+    "text" : "inability to obtain appropriate clinical management for immersion\r\npulmonary oedema",
+    "definedTerms" : [ ]
+  } ]
+}

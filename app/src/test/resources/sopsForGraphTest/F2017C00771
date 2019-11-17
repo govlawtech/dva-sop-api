@@ -1,0 +1,154 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00771",
+  "instrumentNumber" : "28/2012",
+  "citation" : "Statement of Principles concerning open- angle glaucoma No. 28 of 2012",
+  "conditionName" : "open-angle glaucoma",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having glucocorticoid therapy as specified before the clinical onset of\r\nopen-angle glaucoma, and where the glucocorticoid therapy as\r\nspecified has ceased or decreased, the last dose of the therapy was\r\nreceived within the three months before the clinical onset of open-\r\nangle glaucoma",
+    "definedTerms" : [ {
+      "term" : "having glucocorticoid therapy as specified",
+      "definition" : "means:\n(a) taking:\n(i) hydrocortisone, orally or by injection, to a cumulative dose of at\nleast 5000 milligrams, or\n(ii) equivalent glucocorticoid therapy, orally or by injection;\n(b) inhaling at least 2000 micrograms of beclomethasone, or equivalent\ninhaled glucocorticoid, daily, for at least one month;\n(c) using a topical ocular glucocorticoid to the affected eye, daily, for at\nleast two weeks;\n(d) using an intranasal glucocorticoid, daily, for at least one month;\n(e) applying a high or very high potency topical glucocorticoid to at least\n20 percent of total skin surface area, daily, for at least one month;\n(f) applying a topical glucocorticoid to the face, daily, for at least one\nmonth;\n(g) using glucocorticoid containing enemas, daily, for at least one month;\nor\n(h) having an intraocular or periocular glucocorticoid injection to the\naffected eye"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a specified disorder of the affected eye or orbit at the time of\r\nthe clinical onset of open-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified disorder",
+      "definition" : "means one of the following:\n(b) a cyst;\n(c) a vascular malformation or vascular thrombosis;\n(d) amyloidosis;\n(e) choroidal effusion;\n(f) elevated ipsilateral episcleral venous pressure;\n(g) intraocular haemorrhage (including ghost cells);\n(h) leakage of lens protein or lens particles (phacolytic glaucoma);\n(i) scleritis or episcleritis; or\n(j) uveitis"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having neovascularisation of the iridocorneal angle of the affected eye\r\ndue to a specified condition or procedure before the clinical onset of\r\nopen-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified condition or procedure",
+      "definition" : "means one of the following:\n(a) carotid endarterectomy on the affected side;\n(b) diabetic retinopathy of the affected eye;\n(c) intraocular surgery to the affected eye;\n(d) intraocular tumour involving the affected eye;\n(e) ipsilateral carotid artery occlusive disease;\n(f) radiotherapy involving the affected eye;\n(g) retinal detachment in the affected eye;\n(h) retinal vascular occlusive disease of the affected eye;\n(i) retinal vasculitis of the affected eye; or\n(j) any acquired condition causing posterior segment ischaemia of the\naffected eye"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having trauma as specified to the affected eye before the clinical onset\r\nof open-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "trauma as specified",
+      "definition" : "means penetrating, blunt, chemical, thermal or\nionising radiation injury involving the affected eye that results in intraocular\ninflammation, intraocular bleeding or other intraocular tissue disruption"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having sympathetic ophthalmia at the time of the clinical onset of\r\nopen-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "sympathetic ophthalmia",
+      "definition" : "means the presence of uveitis in both eyes\nfollowing:\n(a) intraocular surgery to one eye; or\n(b) trauma as specified to one eye"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having intraocular surgery to the affected eye before the clinical onset\r\nof open-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having non-intraocular surgery to the affected eye in the one month\r\nbefore the clinical onset of open-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the affected eye before the clinical onset of open-\r\nangle glaucoma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected eye was in the field of radiation, before the clinical onset of\r\nopen-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having Cushing's syndrome within the 12 months before the clinical\r\nonset of open-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having Graves' disease at the time of the clinical onset of open-angle\r\nglaucoma",
+    "definedTerms" : [ {
+      "term" : "Graves' disease",
+      "definition" : "means an autoimmune disorder of the thyroid usually\nassociated with hyperthyroidism, goitre and exophthalmus"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having hypothyroidism at the time of the clinical onset of open-angle\r\nglaucoma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(m)",
+    "text" : "having glucocorticoid therapy as specified before the clinical\r\nworsening of open-angle glaucoma, and where the glucocorticoid\r\ntherapy as specified has ceased or decreased, the last dose of the\r\ntherapy was received within the three months before the clinical\r\nworsening of open-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "having glucocorticoid therapy as specified",
+      "definition" : "means:\n(a) taking:\n(i) hydrocortisone, orally or by injection, to a cumulative dose of at\nleast 5000 milligrams, or\n(ii) equivalent glucocorticoid therapy, orally or by injection;\n(b) inhaling at least 2000 micrograms of beclomethasone, or equivalent\ninhaled glucocorticoid, daily, for at least one month;\n(c) using a topical ocular glucocorticoid to the affected eye, daily, for at\nleast two weeks;\n(d) using an intranasal glucocorticoid, daily, for at least one month;\n(e) applying a high or very high potency topical glucocorticoid to at least\n20 percent of total skin surface area, daily, for at least one month;\n(f) applying a topical glucocorticoid to the face, daily, for at least one\nmonth;\n(g) using glucocorticoid containing enemas, daily, for at least one month;\nor\n(h) having an intraocular or periocular glucocorticoid injection to the\naffected eye"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having a specified disorder of the affected eye or orbit at the time of\r\nthe clinical worsening of open-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified disorder",
+      "definition" : "means one of the following:\n(b) a cyst;\n(c) a vascular malformation or vascular thrombosis;\n(d) amyloidosis;\n(e) choroidal effusion;\n(f) elevated ipsilateral episcleral venous pressure;\n(g) intraocular haemorrhage (including ghost cells);\n(h) leakage of lens protein or lens particles (phacolytic glaucoma);\n(i) scleritis or episcleritis; or\n(j) uveitis"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having neovascularisation of the iridocorneal angle of the affected eye\r\ndue to a specified condition or procedure before the clinical worsening\r\nof open-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "a specified condition or procedure",
+      "definition" : "means one of the following:\n(a) carotid endarterectomy on the affected side;\n(b) diabetic retinopathy of the affected eye;\n(c) intraocular surgery to the affected eye;\n(d) intraocular tumour involving the affected eye;\n(e) ipsilateral carotid artery occlusive disease;\n(f) radiotherapy involving the affected eye;\n(g) retinal detachment in the affected eye;\n(h) retinal vascular occlusive disease of the affected eye;\n(i) retinal vasculitis of the affected eye; or\n(j) any acquired condition causing posterior segment ischaemia of the\naffected eye"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having trauma as specified to the affected eye before the clinical\r\nworsening of open-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "trauma as specified",
+      "definition" : "means penetrating, blunt, chemical, thermal or\nionising radiation injury involving the affected eye that results in intraocular\ninflammation, intraocular bleeding or other intraocular tissue disruption"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having sympathetic ophthalmia at the time of the clinical worsening of\r\nopen-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "sympathetic ophthalmia",
+      "definition" : "means the presence of uveitis in both eyes\nfollowing:\n(a) intraocular surgery to one eye; or\n(b) trauma as specified to one eye"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having intraocular surgery to the affected eye before the clinical\r\nworsening of open-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having non-intraocular surgery to the affected eye in the one month\r\nbefore the clinical worsening of open-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the affected eye before the clinical worsening of\r\nopen-angle glaucoma",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected eye was in the field of radiation, before the clinical worsening\r\nof open-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having Cushing's syndrome within the 12 months before the clinical\r\nworsening of open-angle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having Graves' disease at the time of the clinical worsening of open-\r\nangle glaucoma",
+    "definedTerms" : [ {
+      "term" : "Graves' disease",
+      "definition" : "means an autoimmune disorder of the thyroid usually\nassociated with hyperthyroidism, goitre and exophthalmus"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having hypothyroidism at the time of the clinical worsening of open-\r\nangle glaucoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "inability to obtain appropriate clinical management for open-angle\r\nglaucoma",
+    "definedTerms" : [ ]
+  } ]
+}

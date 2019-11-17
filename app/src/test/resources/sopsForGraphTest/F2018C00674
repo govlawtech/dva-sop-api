@@ -1,0 +1,212 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00674",
+  "instrumentNumber" : "96/2016",
+  "citation" : "Statement of Principles concerning female sexual dysfunction (Balance of Probabilities) (No. 96 of 2016)",
+  "conditionName" : "female sexual dysfunction",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having a genitourinary condition from the specified list of\r\ngenitourinary conditions at the time of the clinical onset of female\r\nsexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "having chronic renal failure at the time of the clinical onset of female\r\nsexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means:\r\n2\r\n(a) having a glomerular filtration rate of less than 15 mL/min/1.73 m for\r\na period of at least three months; or\r\n(b) a need for renal replacement therapy (dialysis or transplantation) for\r\ntreatment of complications of decreased glomerular filtration rate\r\nwhich would otherwise increase the risk of morbidity and mortality; or\r\n(c) undergoing chronic dialysis."
+    } ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having a haematological or solid organ cancer before the clinical onset\r\nof female sexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nlower abdomen, pelvis or perineal region was in the field of radiation,\r\nbefore the clinical onset of female sexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having an endocrine disorder from the specified list of endocrine\r\ndisorders at the time of the clinical onset of female sexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "having a neurological disorder from the specified list of neurological\r\ndisorders at the time of the clinical onset of female sexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having a severe, chronic medical condition at the time of the clinical\r\nonset of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "severe, chronic medical condition",
+      "definition" : "means an illness which substantially\r\nimpacts on social, occupational or other important areas of functioning; and\r\nrequires on-going daily or almost daily management of symptoms. This\r\nmanagement may include, but is not limited to, assistance with activities of\r\ndaily living; bed rest; dietary modification; drug therapy; nursing care;\r\noxygen therapy or physiotherapy. This management must be supervised by\r\na registered health practitioner.\r\nSevere, chronic medical conditions do not usually resolve spontaneously, are\r\nrarely cured completely and may progress to life threatening illnesses.\r\nExamples of these conditions include poorly controlled asthma, chronic\r\nobstructive pulmonary disease, poorly controlled diabetes mellitus,\r\ninflammatory bowel disease, pemphigus, psoriasis and rheumatoid arthritis."
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having persistent pain of at least three months duration at the time of\r\nthe clinical onset of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous; or\r\n(b) almost continuous; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich may or may not be ameliorated by analgesic medication and is of a\r\nlevel to cause interference with usual work or leisure activities or activities\r\nof daily living."
+    } ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "being obese at the time of the clinical onset of female sexual\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "experiencing blunt or penetrating trauma to the vulva, vagina,\r\nperineum or pelvis, including surgical trauma and traumatic childbirth,\r\nwithin the three months before the clinical onset of female sexual\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "having undergone menopause before the clinical onset of female\r\nsexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "menopause",
+      "definition" : "means the end of menstruation, defined as more than 12 months\r\nsince the final menstrual period."
+    } ]
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the clinical onset of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) eating disorder;\r\n(b) depressive disorder;\r\n(c) posttraumatic stress disorder; or\r\n(d) schizophrenia."
+    } ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "experiencing a category 1A stressor within the five years before the\r\nclinical onset of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "experiencing a category 1B stressor within the five years before the\r\nclinical onset of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "being the victim of severe childhood abuse before the clinical onset of\r\nfemale sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "8(16)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the one year before the clinical onset of female sexual\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(17)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, within the 30 days before the clinical onset of female sexual\r\ndysfunction",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(18)",
+    "text" : "having a genitourinary condition from the specified list of\r\ngenitourinary conditions at the time of the clinical worsening of female\r\nsexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(19)",
+    "text" : "having chronic renal failure at the time of the clinical worsening of\r\nfemale sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means:\r\n2\r\n(a) having a glomerular filtration rate of less than 15 mL/min/1.73 m for\r\na period of at least three months; or\r\n(b) a need for renal replacement therapy (dialysis or transplantation) for\r\ntreatment of complications of decreased glomerular filtration rate\r\nwhich would otherwise increase the risk of morbidity and mortality; or\r\n(c) undergoing chronic dialysis."
+    } ]
+  }, {
+    "paragraph" : "8(20)",
+    "text" : "having a haematological or solid organ cancer before the clinical\r\nworsening of female sexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(21)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nlower abdomen, pelvis or perineal region was in the field of radiation,\r\nbefore the clinical worsening of female sexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(22)",
+    "text" : "having an endocrine disorder from the specified list of endocrine\r\ndisorders at the time of the clinical worsening of female sexual\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(23)",
+    "text" : "having a neurological disorder from the specified list of neurological\r\ndisorders at the time of the clinical worsening of female sexual\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(24)",
+    "text" : "having a severe, chronic medical condition at the time of the clinical\r\nworsening of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "severe, chronic medical condition",
+      "definition" : "means an illness which substantially\r\nimpacts on social, occupational or other important areas of functioning; and\r\nrequires on-going daily or almost daily management of symptoms. This\r\nmanagement may include, but is not limited to, assistance with activities of\r\ndaily living; bed rest; dietary modification; drug therapy; nursing care;\r\noxygen therapy or physiotherapy. This management must be supervised by\r\na registered health practitioner.\r\nSevere, chronic medical conditions do not usually resolve spontaneously, are\r\nrarely cured completely and may progress to life threatening illnesses.\r\nExamples of these conditions include poorly controlled asthma, chronic\r\nobstructive pulmonary disease, poorly controlled diabetes mellitus,\r\ninflammatory bowel disease, pemphigus, psoriasis and rheumatoid arthritis."
+    } ]
+  }, {
+    "paragraph" : "8(25)",
+    "text" : "having persistent pain of at least three months duration at the time of\r\nthe clinical worsening of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous; or\r\n(b) almost continuous; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich may or may not be ameliorated by analgesic medication and is of a\r\nlevel to cause interference with usual work or leisure activities or activities\r\nof daily living."
+    } ]
+  }, {
+    "paragraph" : "8(26)",
+    "text" : "being obese at the time of the clinical worsening of female sexual\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater."
+    } ]
+  }, {
+    "paragraph" : "8(27)",
+    "text" : "experiencing blunt or penetrating trauma to the vulva, vagina,\r\nperineum or pelvis, including surgical trauma and traumatic childbirth,\r\nwithin the three months before the clinical worsening of female sexual\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(28)",
+    "text" : "having undergone menopause before the clinical worsening of female\r\nsexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "menopause",
+      "definition" : "means the end of menstruation, defined as more than 12 months\r\nsince the final menstrual period."
+    } ]
+  }, {
+    "paragraph" : "8(29)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the clinical worsening of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) eating disorder;\r\n(b) depressive disorder;\r\n(c) posttraumatic stress disorder; or\r\n(d) schizophrenia."
+    } ]
+  }, {
+    "paragraph" : "8(30)",
+    "text" : "experiencing a category 1A stressor within the five years before the\r\nclinical worsening of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "8(31)",
+    "text" : "experiencing a category 1B stressor within the five years before the\r\nclinical worsening of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(32)",
+    "text" : "being the victim of severe childhood abuse before the clinical\r\nworsening of female sexual dysfunction",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "8(33)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the one year before the clinical worsening of female sexual\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(34)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list of\r\ndrugs, within the 30 days before the clinical worsening of female\r\nsexual dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(35)",
+    "text" : "inability to obtain appropriate clinical management for female sexual\r\ndysfunction",
+    "definedTerms" : [ ]
+  } ]
+}

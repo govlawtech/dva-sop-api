@@ -1,0 +1,41 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00854",
+  "instrumentNumber" : "42/2016",
+  "citation" : "Statement of Principles concerning benign neoplasm of the eye and adnexa (Balance of Probabilities) (No. 42 of 2016)",
+  "conditionName" : "benign neoplasm of the eye and adnexa",
+  "effectiveFrom" : "2016-05-23",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D31"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for papilloma of the conjunctiva only, acquiring persistent infection of\r\nthe epithelium of the conjunctiva with a strain from the specified list of\r\nhuman papilloma virus (HPV) strains before the clinical onset of\r\nbenign neoplasm of the eye and adnexa",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "papilloma of the conjunctiva",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for schwannoma of the eye and adnexa only, having received a\r\ncumulative equivalent dose of at least 0.5 sievert of ionising radiation\r\nto the eye or orbit at least ten years before the clinical onset of benign\r\nneoplasm of the eye and adnexa",
+    "definedTerms" : [ {
+      "term" : "schwannoma",
+      "definition" : "means a benign neoplasm originating from Schwann cells of\r\nthe myelin sheath of neurons of peripheral, cranial or autonomic nerves,\r\ncomprising two types, neurilemomas and neurofibromas."
+    }, {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\r\nreceived by the particular organ or tissue from external exposure, internal\r\nexposure or both, apart from normal background radiation exposure in\r\nAustralia, calculated in accordance with the methodology set out in Guide to\r\ncalculation of '' for the purpose of applying\r\nionising radiation factors contained in Statements of Principles determined\r\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\r\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\r\n2017.\r\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\r\nbeing present during or subsequent to the testing or use of nuclear weapons,\r\nundergoing diagnostic or therapeutic medical procedures involving ionising\r\nradiation, and being a member of an aircrew, leading to increased levels of exposure\r\nto cosmic radiation.\r\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the\r\nmass of a specific tissue or organ. If a tissue is exposed to multiple sources of\r\nionising radiation, the various dose estimates for each type of radiation must be\r\ncombined."
+    } ],
+    "conditionVariant" : {
+      "name" : "schwannoma of the eye and adnexa",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(3)",
+    "text" : "inability to obtain appropriate clinical management for benign\r\nneoplasm of the eye and adnexa",
+    "definedTerms" : [ ]
+  } ]
+}

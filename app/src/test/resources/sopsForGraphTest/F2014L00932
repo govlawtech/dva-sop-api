@@ -1,0 +1,216 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00932",
+  "instrumentNumber" : "67/2014",
+  "citation" : "Statement of Principles concerning cervical spondylosis No. 67 of 2014",
+  "conditionName" : "cervical spondylosis",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M47.01"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.02"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.03"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.11"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.12"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.13"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.21"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.22"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.23"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.81"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.82"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.83"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.91"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.92"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M47.93"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M50.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having inflammatory joint disease in the cervical spine before the\r\nclinical onset of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "inflammatory joint disease",
+      "definition" : "means rheumatoid arthritis, reactive arthritis,\npsoriatic arthropathy, ankylosing spondylitis, or arthritis associated with\nCrohn's disease or ulcerative colitis"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having an infection of the affected joint as specified at least one year\r\nbefore the clinical onset of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "an infection of the affected joint as specified",
+      "definition" : "means bacterial or fungal\ninfection of the affected joint in the cervical spine resulting in inflammation\nwithin that joint"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having an intra-articular fracture of the cervical spine at least one year\r\nbefore the clinical onset of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "an intra-articular fracture",
+      "definition" : "means a fracture involving any articular surface\nof the affected joint"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a specified spinal condition affecting the cervical spine for at\r\nleast the one year before the clinical onset of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "a specified spinal condition",
+      "definition" : "means:\n(a) a deformity of a joint of a vertebra;\n(b) a deformity of a vertebra;\n(c) necrosis of bone;\n(d) retrospondylolisthesis;\n(e) scoliosis; or\n(f) spondylolisthesis"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a depositional joint disease in the cervical spine before the\r\nclinical onset of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "a depositional joint disease",
+      "definition" : "means gout, calcium pyrophosphate dihydrate\ndeposition disease (also known as pseudogout), haemochromatosis, Wilson's\ndisease or alkaptonuria (also known as ochronosis)"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having trauma to the cervical spine at least one year before the clinical\r\nonset of cervical spondylosis, and where the trauma to the cervical\r\nspine occurred within the 25 years before the clinical onset of cervical\r\nspondylosis",
+    "definedTerms" : [ {
+      "term" : "trauma to the cervical spine",
+      "definition" : "means a discrete event involving the\napplication of significant physical force, including G force, to the cervical\nspine that causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the cervical spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the cervical spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the cervical spine;\nor\n(c) surgery to the cervical spine"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a cervical intervertebral disc prolapse before the clinical onset\r\nof cervical spondylosis at the level of the intervertebral disc prolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "carrying loads of at least 25 kilograms on the head while upright to a\r\ncumulative total of at least 120 000 kilograms within any ten year\r\nperiod before the clinical onset of cervical spondylosis, and where the\r\nclinical onset of cervical spondylosis occurs within the 25 years\r\nfollowing that period",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being obese for at least ten years within the 25 years before the clinical\r\nonset of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "flying in high performance aircraft for a cumulative total of at least\r\n1 000 hours within the 25 years before the clinical onset of cervical\r\nspondylosis",
+    "definedTerms" : [ {
+      "term" : "high performance aircraft",
+      "definition" : "means an aircraft capable of routinely\nsustaining a positive G force of four or more"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "piloting a helicopter for a cumulative total of at least 1 000 hours\r\nwithin the 25 years before the clinical onset of cervical spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having acromegaly involving the cervical spine before the clinical onset\r\nof cervical spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having Paget's disease of bone involving the cervical spine before the\r\nclinical onset of cervical spondylosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "having inflammatory joint disease in the cervical spine before the\r\nclinical worsening of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "inflammatory joint disease",
+      "definition" : "means rheumatoid arthritis, reactive arthritis,\npsoriatic arthropathy, ankylosing spondylitis, or arthritis associated with\nCrohn's disease or ulcerative colitis"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having an infection of the affected joint as specified at least one year\r\nbefore the clinical worsening of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "an infection of the affected joint as specified",
+      "definition" : "means bacterial or fungal\ninfection of the affected joint in the cervical spine resulting in inflammation\nwithin that joint"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having an intra-articular fracture of the cervical spine at least one year\r\nbefore the clinical worsening of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "an intra-articular fracture",
+      "definition" : "means a fracture involving any articular surface\nof the affected joint"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a specified spinal condition affecting the cervical spine for at\r\nleast the one year before the clinical worsening of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "a specified spinal condition",
+      "definition" : "means:\n(a) a deformity of a joint of a vertebra;\n(b) a deformity of a vertebra;\n(c) necrosis of bone;\n(d) retrospondylolisthesis;\n(e) scoliosis; or\n(f) spondylolisthesis"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having a depositional joint disease in the cervical spine before the\r\nclinical worsening of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "a depositional joint disease",
+      "definition" : "means gout, calcium pyrophosphate dihydrate\ndeposition disease (also known as pseudogout), haemochromatosis, Wilson's\ndisease or alkaptonuria (also known as ochronosis)"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having trauma to the cervical spine at least one year before the clinical\r\nworsening of cervical spondylosis, and where the trauma to the cervical\r\nspine occurred within the 25 years before the clinical worsening of\r\ncervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "trauma to the cervical spine",
+      "definition" : "means a discrete event involving the\napplication of significant physical force, including G force, to the cervical\nspine that causes the development within twenty-four hours of the injury being\nsustained, of symptoms and signs of pain and tenderness and either altered\nmobility or range of movement of the cervical spine. In the case of sustained\nunconsciousness or the masking of pain by analgesic medication, these\nsymptoms and signs must appear on return to consciousness or the withdrawal\nof the analgesic medication. These symptoms and signs must last for a period\nof at least seven days following their onset; save for where medical\nintervention has occurred and that medical intervention involves either:\n(a) immobilisation of the cervical spine by splinting, or similar external\nagent;\n(b) injection of corticosteroids or local anaesthetics into the cervical spine;\nor\n(c) surgery to the cervical spine"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a cervical intervertebral disc prolapse before the clinical\r\nworsening of cervical spondylosis at the level of the intervertebral disc\r\nprolapse",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "carrying loads of at least 25 kilograms on the head while upright to a\r\ncumulative total of at least 120 000 kilograms within any ten year\r\nperiod before the clinical worsening of cervical spondylosis, and where\r\nthe clinical worsening of cervical spondylosis occurs within the 25\r\nyears following that period",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "being obese for at least ten years within the 25 years before the clinical\r\nworsening of cervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "flying in high performance aircraft for a cumulative total of at least\r\n1 000 hours within the 25 years before the clinical worsening of\r\ncervical spondylosis",
+    "definedTerms" : [ {
+      "term" : "high performance aircraft",
+      "definition" : "means an aircraft capable of routinely\nsustaining a positive G force of four or more"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "piloting a helicopter for a cumulative total of at least 1 000 hours\r\nwithin the 25 years before the clinical worsening of cervical\r\nspondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having acromegaly involving the cervical spine before the clinical\r\nworsening of cervical spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having Paget's disease of bone involving the cervical spine before the\r\nclinical worsening of cervical spondylosis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "inability to obtain appropriate clinical management for cervical\r\nspondylosis",
+    "definedTerms" : [ ]
+  } ]
+}

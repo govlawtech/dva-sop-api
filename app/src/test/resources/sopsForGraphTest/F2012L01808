@@ -1,0 +1,103 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L01808",
+  "instrumentNumber" : "61/2012",
+  "citation" : "Statement of Principles concerning asthma No. 61 of 2012",
+  "conditionName" : "asthma",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to an immunologic or non-immunologic stimulus within\r\nthe 24 hours before the clinical onset of asthma",
+    "definedTerms" : [ {
+      "term" : "an immunologic or non-immunologic stimulus",
+      "definition" : "means a substance,\nactivity or irritant which can cause inflammation of the airways and bronchial\nhyperresponsiveness. Examples include metals, drugs, cereal dusts, wood\ndusts, chemical fumes, moulds, irritant gases (including mustard gas), exercise,\ncold air, air pollutants, respiratory infections and proteins derived from\nanimals, insects and fish"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "for reactive airways dysfunction syndrome only, inhaling very high\r\nconcentrations of a substance with irritant properties, where such\r\ninhalation has resulted in acute toxic lower respiratory tract effects,\r\nwithin the 24 hours before the clinical onset of asthma",
+    "definedTerms" : [ {
+      "term" : "reactive airways dysfunction syndrome",
+      "definition" : "means an asthma-like condition\nsatisfying the following criteria:\n(a) a documented absence of preceding asthma or other ongoing bronchial\ndisorders;\n(b) onset of symptoms after a single exposure incident or accident;\n(c) inhalation of very high concentrations of a substance with irritant\nproperties;\n(d) onset of symptoms within 24 hours after the acute exposure, with\npersistence of symptoms for at least three months;\n(e) symptoms simulate asthma;\n(f) presence of reversible airflow obstruction on pulmonary function tests,\nor the presence of nonspecific bronchial hyperresponsiveness; and\n(g) other pulmonary diseases have been ruled out"
+    } ],
+    "conditionVariant" : {
+      "name" : "reactive airways dysfunction syndrome",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being overweight for at least the five years before the clinical onset of\r\nasthma",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "taking a drug or a drug from a class of drugs in the specified list within\r\nthe 24 hours before the clinical onset of asthma",
+    "definedTerms" : [ {
+      "term" : "a drug or a drug from a class of drugs in the specified list",
+      "definition" : "means:\n(a) beta-blockers;\n(b) non-steroidal anti-inflammatory drugs; or\n(c) paracetamol"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "being exposed to an immunologic or non-immunologic stimulus within\r\nthe 24 hours before the clinical worsening of asthma",
+    "definedTerms" : [ {
+      "term" : "clinical worsening of asthma",
+      "definition" : "means permanent worsening of asthma\nevidenced by:\n(a) an episode of severe asthma resulting in status asthmaticus, cerebral\nhypoxia or death;\n(b) a persistent change from well controlled to poorly controlled asthma; or\n(c) a substantial increase in the requirement for hospitalisation for\nmanagement of the manifestations or complications of asthma"
+    }, {
+      "term" : "an immunologic or non-immunologic stimulus",
+      "definition" : "means a substance,\nactivity or irritant which can cause inflammation of the airways and bronchial\nhyperresponsiveness. Examples include metals, drugs, cereal dusts, wood\ndusts, chemical fumes, moulds, irritant gases (including mustard gas), exercise,\ncold air, air pollutants, respiratory infections and proteins derived from\nanimals, insects and fish"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being overweight for at least the five years before the clinical\r\nworsening of asthma",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means an increase in body weight by way of fat\naccumulation which results in a Body Mass Index (BMI) of 25 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "taking a drug or a drug from a class of drugs in the specified list within\r\nthe 24 hours before the clinical worsening of asthma",
+    "definedTerms" : [ {
+      "term" : "clinical worsening of asthma",
+      "definition" : "means permanent worsening of asthma\nevidenced by:\n(a) an episode of severe asthma resulting in status asthmaticus, cerebral\nhypoxia or death;\n(b) a persistent change from well controlled to poorly controlled asthma; or\n(c) a substantial increase in the requirement for hospitalisation for\nmanagement of the manifestations or complications of asthma"
+    }, {
+      "term" : "a drug or a drug from a class of drugs in the specified list",
+      "definition" : "means:\n(a) beta-blockers;\n(b) non-steroidal anti-inflammatory drugs; or\n(c) paracetamol"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of asthma, and\r\nwhere smoking has ceased, the clinical worsening of asthma has\r\noccurred within six months of cessation",
+    "definedTerms" : [ {
+      "term" : "clinical worsening of asthma",
+      "definition" : "means permanent worsening of asthma\nevidenced by:\n(a) an episode of severe asthma resulting in status asthmaticus, cerebral\nhypoxia or death;\n(b) a persistent change from well controlled to poorly controlled asthma; or\n(c) a substantial increase in the requirement for hospitalisation for\nmanagement of the manifestations or complications of asthma"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "immersion in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 1000 hours within the one year before the\r\nclinical worsening of asthma, and where the person was a non-smoker\r\nduring the entire period of the exposure",
+    "definedTerms" : [ {
+      "term" : "clinical worsening of asthma",
+      "definition" : "means permanent worsening of asthma\nevidenced by:\n(a) an episode of severe asthma resulting in status asthmaticus, cerebral\nhypoxia or death;\n(b) a persistent change from well controlled to poorly controlled asthma; or\n(c) a substantial increase in the requirement for hospitalisation for\nmanagement of the manifestations or complications of asthma"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a clinically significant depressive disorder in the six months\r\nbefore the clinical worsening of asthma",
+    "definedTerms" : [ {
+      "term" : "clinically significant",
+      "definition" : "means sufficient to warrant ongoing management,\nwhich may involve regular visits (for example, at least monthly) to a\npsychiatrist, counsellor or general practitioner"
+    }, {
+      "term" : "clinical worsening of asthma",
+      "definition" : "means permanent worsening of asthma\nevidenced by:\n(a) an episode of severe asthma resulting in status asthmaticus, cerebral\nhypoxia or death;\n(b) a persistent change from well controlled to poorly controlled asthma; or\n(c) a substantial increase in the requirement for hospitalisation for\nmanagement of the manifestations or complications of asthma"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having gastro-oesophageal reflux disease at the time of the clinical\r\nworsening of asthma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inability to obtain appropriate clinical management for asthma",
+    "definedTerms" : [ ]
+  } ]
+}

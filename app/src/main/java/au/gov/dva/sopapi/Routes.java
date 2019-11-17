@@ -9,9 +9,11 @@ import au.gov.dva.sopapi.dtos.sopref.OperationsResponse;
 import au.gov.dva.sopapi.dtos.sopref.SoPReferenceResponse;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.AcceptedSequalaeResponse;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeDiagramRequestDto;
+import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
-import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.Repository;
@@ -21,12 +23,12 @@ import au.gov.dva.sopapi.sopref.SoPs;
 import au.gov.dva.sopapi.sopref.data.PostProcessingFunctions;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
+import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
+import au.gov.dva.sopapi.sopref.dependencies.DotToImage;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
-import au.gov.dva.sopapi.sopsupport.processingrules.RhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
-import au.gov.dva.sopapi.sopsupport.vea.ActDeterminationServiceClientImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -40,8 +42,10 @@ import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlobClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import spark.*;
 
+import java.io.ByteArrayOutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
@@ -52,6 +56,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
@@ -65,9 +70,12 @@ public class Routes {
     private final static String MIME_TEXT = "text/plain";
     private final static String MIME_HTML = "text/html";
     private final static String MIME_CSV = "text/csv";
+    private final static String MIME_SVG = "image/svg+xml";
+
 
     private static CacheSingleton cache;
     static Logger logger = LoggerFactory.getLogger("dvasopapi.webapi");
+
 
     public static void initStatus(Repository repository, CacheSingleton cache) {
 
@@ -132,20 +140,21 @@ public class Routes {
             setResponseHeaders(res, 200, MIME_CSV);
             return csvBytes;
         });
+
     }
 
 
     public static void init(CacheSingleton cache) {
         Routes.cache = cache;
 
-        get(SharedConstants.Routes.GET_CONDITIONS, (req,res) -> {
+        get(SharedConstants.Routes.GET_CONDITIONS, (req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
                 setResponseHeaders(res, 406, MIME_TEXT);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
             ConditionsList response = new ConditionsList(cache.get_conditionsList());
-            setResponseHeaders(res,200,MIME_JSON);
+            setResponseHeaders(res, 200, MIME_JSON);
             String json = ConditionsList.toJsonString(response);
             return json;
         });
@@ -174,47 +183,38 @@ public class Routes {
 
             QueryParamsMap queryParamsMap = req.queryMap();
             String startDateString = queryParamsMap.get("startDate").value();
-            if (startDateString == null)
-            {
-                setResponseHeaders(res,406,MIME_TEXT);
+            if (startDateString == null) {
+                setResponseHeaders(res, 406, MIME_TEXT);
                 return "Need 'startDate' query parameter in ISO local date format.  Eg: 2000-01-01";
             }
             LocalDate startDate;
             try {
-               startDate = LocalDate.parse(startDateString, DateTimeFormatter.ISO_LOCAL_DATE);
-            }
-            catch (DateTimeParseException e)
-            {
-                setResponseHeaders(res,406,MIME_TEXT);
+                startDate = LocalDate.parse(startDateString, DateTimeFormatter.ISO_LOCAL_DATE);
+            } catch (DateTimeParseException e) {
+                setResponseHeaders(res, 406, MIME_TEXT);
                 return "Need 'startDate' query parameter in ISO local date format.  Eg: 2000-01-01";
             }
 
             String endDateString = queryParamsMap.get("endDate").value();
             LocalDate endDate = null;
-            if (endDateString == null)
-            {
+            if (endDateString == null) {
                 endDate = LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE));
-            }
-            else {
+            } else {
                 try {
                     endDate = LocalDate.parse(endDateString, DateTimeFormatter.ISO_LOCAL_DATE);
-                }
-                catch (DateTimeParseException e)
-                {
-                    setResponseHeaders(res,406,MIME_TEXT);
+                } catch (DateTimeParseException e) {
+                    setResponseHeaders(res, 406, MIME_TEXT);
                     return "Need 'endDate' query parameter in ISO local date format.  Eg: 2000-01-01";
                 }
             }
 
-            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate,endDate,cache.get_veaOperationalServiceRepository());
+            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate, endDate, cache.get_veaOperationalServiceRepository());
             ObjectMapper om = new ObjectMapper();
             String jsonString = om.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse);
-            setResponseHeaders(res,200,MIME_JSON);
+            setResponseHeaders(res, 200, MIME_JSON);
             return jsonString;
 
         });
-
-
 
 
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
@@ -255,7 +255,7 @@ public class Routes {
                 IncidentType it = IncidentType.fromString(incidentType);
                 StandardOfProof sp = StandardOfProof.fromAbbreviation(standardOfProof);
 
-                List<Function<SoPReferenceResponse,SoPReferenceResponse>> postProcessors = new ArrayList<>();
+                List<Function<SoPReferenceResponse, SoPReferenceResponse>> postProcessors = new ArrayList<>();
                 if (cache.get_curatedTextReporitory().isPresent()) {
                     postProcessors.add(PostProcessingFunctions.SubInCuratedFactorText(cache.get_curatedTextReporitory().get()));
                     postProcessors.add(PostProcessingFunctions.SubInCuratedDefinitions(cache.get_curatedTextReporitory().get()));
@@ -292,13 +292,126 @@ public class Routes {
             }
 
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
-            IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair,cache.get_veaOperationalServiceRepository());
+            IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
             RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
+        }));
+
+        get(SharedConstants.Routes.SEQUELAE_DIAGRAM + "/:conditionName", (req, res) -> {
+            QueryParamsMap queryParamsMap = req.queryMap();
+            String conditionName = req.params(":conditionName");
+            String steps = queryParamsMap.get("steps").value();
+            List<String> conditionNames = cache.get_conditionsList().stream().map(c -> c.get_conditionName()).sorted().collect(Collectors.toList());
+            String conditionNamesStringList = String.join(scala.util.Properties.lineSeparator(), conditionNames);
+            if (conditionName == null) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                StringBuilder sb = new StringBuilder();
+                sb.append("Missing: query parameter 'conditionName' with one of the following values:");
+                sb.append(scala.util.Properties.lineSeparator());
+                sb.append(conditionNamesStringList);
+                return sb.toString();
+            }
+            if (!conditionNames.contains(conditionName)) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                StringBuilder sb = new StringBuilder();
+                sb.append(String.format("Condition name '%s' not recognised.", conditionName));
+                sb.append(scala.util.Properties.lineSeparator());
+                sb.append("Recognised names are:");
+                sb.append(scala.util.Properties.lineSeparator());
+                sb.append(conditionNamesStringList);
+                return sb.toString();
+            }
+            int stepsInt;
+            if (steps == null) {
+                stepsInt = 1;
+            } else {
+                try {
+                    stepsInt = Integer.parseInt(steps);
+                    if (stepsInt < 1 || stepsInt > 3) {
+                        setResponseHeaders(res, 400, MIME_TEXT);
+                        return "Query parameter 'steps' must be between 0 and 3 inclusive.";
+                    }
+                } catch (NumberFormatException e) {
+                    setResponseHeaders(res, 400, MIME_TEXT);
+                    return "Query parameter 'steps' must be an integer.";
+                }
+            }
+            String dotString = cache.get_dependencies().getDotSubgraph(conditionName, stepsInt);
+
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            DotToImage.render(dotString, bos);
+            byte[] svg = bos.toByteArray();
+            bos.close();
+            setResponseHeaders(res, 200, MIME_SVG);
+            res.header("Content-Disposition", String.format("attachment; filename=\"%s\"",conditionName + ".svg"));
+            return svg;
+
+        });
+
+        sopPost(SharedConstants.Routes.SEQUELAE_RECOMMENDATIONS, MIME_JSON, ((req, res) -> {
+            SequelaeRequestDto sequleeRequestDto;
+            try {
+
+                sequleeRequestDto = SequelaeRequestDto.fromJsonString(clenseJson(req.body()));
+                // validate conditions exist
+                ImmutableSet<String> allValidConditionNames = cache.get_allSopPairs().stream().map(c -> c.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf));
+
+                List<String> acceptedConditionNames = sequleeRequestDto.get_acceptedConditions().stream().map(c -> c.get_name()).collect(Collectors.toList());
+                List<String> diagnosedConditionNames = sequleeRequestDto.get_diagnosedConditions().stream().map(c -> c.get_name()).collect(Collectors.toList());
+                ImmutableSet<String> allConditionNames = ImmutableSet.<String>builder().addAll(acceptedConditionNames).addAll(diagnosedConditionNames).build();
+
+                ImmutableList<String> validationErrors = sequleeRequestDto.getValidationErrors(allValidConditionNames, allConditionNames);
+                if (!validationErrors.isEmpty()) {
+                    setResponseHeaders(res, 400, MIME_TEXT);
+                    return String.join(scala.util.Properties.lineSeparator(), validationErrors);
+                }
+
+                AcceptedSequalaeResponse response = Dependencies.getInferredSequelae(sequleeRequestDto, cache.get_allSopPairs());
+                setResponseHeaders(res, 200, MIME_JSON);
+                return response.toJsonString();
+
+
+            } catch (DvaSopApiDtoRuntimeException e) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return String.format("Request body invalid: %s", e.getMessage());
+            }
+
+        }));
+
+        sopPost(SharedConstants.Routes.SEQUELAE_DIAGRAM, MIME_SVG, ((req, res) -> {
+            SequelaeDiagramRequestDto sequelaeDiagramRequestDto;
+            try {
+
+                sequelaeDiagramRequestDto = SequelaeDiagramRequestDto.fromJsonString(clenseJson(req.body()));
+                // validate conditions exist
+                ImmutableSet<String> allValidConditionNames = cache.get_allSopPairs().stream().map(c -> c.getConditionName()).collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf));
+
+                List<String> acceptedConditionNames = sequelaeDiagramRequestDto.get_acceptedConditions().stream().collect(Collectors.toList());
+                List<String> diagnosedConditionNames = sequelaeDiagramRequestDto.get_diagnosedConditions().stream().collect(Collectors.toList());
+                ImmutableSet<String> allConditionNames = ImmutableSet.<String>builder().addAll(acceptedConditionNames).addAll(diagnosedConditionNames).build();
+
+
+                ImmutableList<String> validationErrors = SequelaeRequestDto.getValidationErrors(allValidConditionNames, allConditionNames);
+                if (!validationErrors.isEmpty()) {
+                    setResponseHeaders(res, 400, MIME_TEXT);
+                    return String.join(scala.util.Properties.lineSeparator(), validationErrors);
+                }
+
+                byte[] svg = Dependencies.getSvg(sequelaeDiagramRequestDto, cache.get_allSopPairs());
+                setResponseHeaders(res, 200, MIME_SVG);
+                res.header("Content-Disposition", "attachment; filename=\"sequelae.svg\"");
+                return svg;
+
+
+            } catch (DvaSopApiDtoRuntimeException e) {
+                setResponseHeaders(res, 400, MIME_TEXT);
+                return String.format("Request body invalid: %s", e.getMessage());
+            }
+
         }));
 
 
@@ -319,14 +432,11 @@ public class Routes {
             } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
                 return buildIncorrectRequestFormatError(e.getMessage());
-            }
-            catch (ServiceHistoryCorruptException e)
-            {
-                logger.error("Service history corrupt.",e);
-                setResponseHeaders(res,400,MIME_TEXT);
+            } catch (ServiceHistoryCorruptException e) {
+                logger.error("Service history corrupt.", e);
+                setResponseHeaders(res, 400, MIME_TEXT);
                 return e.getMessage();
-            }
-            catch (ProcessingRuleRuntimeException e) {
+            } catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
                 return e.getMessage();

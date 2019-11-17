@@ -1,0 +1,91 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00924",
+  "instrumentNumber" : "68/2014",
+  "citation" : "Statement of Principles concerning hiatus hernia No. 68 of 2014",
+  "conditionName" : "hiatus hernia",
+  "effectiveFrom" : "2014-07-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K44"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "undergoing bariatric surgery, pulmonary resection or lobectomy, or a\r\nsurgical procedure involving the region of the oesophageal hiatus of the\r\ndiaphragm, excluding Nissen fundoplication or surgical hiatus hernia\r\nrepair procedure, within the two years before the clinical onset of\r\nhiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing a partial or total gastrectomy within the three months\r\nbefore the clinical onset of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being obese for a continuous period of at least the two years before the\r\nclinical onset of hiatus hernia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a penetrating or blunt wound, excluding a surgical procedure, to\r\nthe region of the oesophageal hiatus of the diaphragm, within the five\r\nyears before the clinical onset of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having episodes of abruptly increased intra-abdominal pressure due to\r\nlifting of heavy weights above the head at maximal effort, occurring\r\nwhile engaging in recreational or competitive weight-lifting,\r\npowerlifting or body-building, within the seven days before the clinical\r\nonset of hiatus hernia",
+    "definedTerms" : [ {
+      "term" : "episodes of abruptly increased intra-abdominal pressure",
+      "definition" : "means\nintermittent supraphysiological elevation of the pressure within the abdominal\ncavity"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having scleroderma at the time of the clinical onset of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having osteoporosis with kyphosis at the time of the clinical onset of\r\nhiatus hernia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "undergoing bariatric surgery, pulmonary resection or lobectomy, or a\r\nsurgical procedure involving the region of the oesophageal hiatus of the\r\ndiaphragm, excluding Nissen fundoplication or surgical hiatus hernia\r\nrepair procedure, within the two years before the clinical worsening of\r\nhiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "undergoing a partial or total gastrectomy within the three months\r\nbefore the clinical worsening of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being obese for a continuous period of at least the two years before the\r\nclinical worsening of hiatus hernia",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a penetrating or blunt wound, excluding a surgical procedure, to\r\nthe region of the oesophageal hiatus of the diaphragm, within the five\r\nyears before the clinical worsening of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having episodes of abruptly increased intra-abdominal pressure due to\r\nlifting of heavy weights above the head at maximal effort, occurring\r\nwhile engaging in recreational or competitive weight-lifting,\r\npowerlifting or body-building, within the seven days before the clinical\r\nworsening of hiatus hernia",
+    "definedTerms" : [ {
+      "term" : "episodes of abruptly increased intra-abdominal pressure",
+      "definition" : "means\nintermittent supraphysiological elevation of the pressure within the abdominal\ncavity"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having scleroderma at the time of the clinical worsening of hiatus\r\nhernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having osteoporosis with kyphosis at the time of the clinical worsening\r\nof hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "being pregnant at the time of the clinical worsening of hiatus hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "inability to obtain appropriate clinical management for hiatus hernia",
+    "definedTerms" : [ ]
+  } ]
+}

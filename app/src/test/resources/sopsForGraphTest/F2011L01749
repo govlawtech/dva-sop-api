@@ -1,0 +1,93 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01749",
+  "instrumentNumber" : "117/2011",
+  "citation" : "Statement of Principles concerning spinal adhesive arachnoiditis No. 117 of 2011",
+  "conditionName" : "spinal adhesive arachnoiditis",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G03.9"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having severe spinal trauma involving the affected site, excluding\r\nsurgical or therapeutic procedures, within the five years before the\r\nclinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "severe spinal trauma",
+      "definition" : "means fracture or crush injury of the vertebral\ncolumn, or other direct injury to the spinal cord or spinal meninges, as a result\nof external forces at the affected site, including blunt trauma, blast force or a\nforeign body penetrating the spinal region, which results in neurological\ndysfunction"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing an invasive spinal surgical procedure involving the affected\r\nsite within the five years before the clinical onset of spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having an injury from a dural puncture involving the affected site\r\nwithin the two years before the clinical onset of spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an injury from a dural puncture",
+      "definition" : "means trauma to nerve roots or the spinal\ncord, nerve root paraesthesia, laceration of the myelin sheath or blood in the\ncerebrospinal fluid"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an infection from the specified list within the two years before\r\nthe clinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an infection from the specified list",
+      "definition" : "means:\n(a) fungal, bacterial or viral infection of the spinal cord;\n(b) fungal, bacterial or viral meningitis;\n(c) neurosyphilis;\n(d) spinal toxoplasmosis;\n(e) spinal tuberculosis; or\n(f) vertebral osteomyelitis at the affected site"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having an intraspinal myelogram with an oil-based intrathecal\r\nradiological contrast agent within the five years before the clinical\r\nonset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a subarachnoid haemorrhage within the five years before the\r\nclinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a spinal subdural haematoma at the affected site within the five\r\nyears before the clinical onset of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(h)",
+    "text" : "having severe spinal trauma involving the affected site, excluding\r\nsurgical or therapeutic procedures, within the two years before the\r\nclinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "severe spinal trauma",
+      "definition" : "means fracture or crush injury of the vertebral\ncolumn, or other direct injury to the spinal cord or spinal meninges, as a result\nof external forces at the affected site, including blunt trauma, blast force or a\nforeign body penetrating the spinal region, which results in neurological\ndysfunction"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "undergoing an invasive spinal surgical procedure involving the affected\r\nsite within the one year before the clinical worsening of spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an injury from a dural puncture involving the affected site\r\nwithin the one year before the clinical worsening of spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an injury from a dural puncture",
+      "definition" : "means trauma to nerve roots or the spinal\ncord, nerve root paraesthesia, laceration of the myelin sheath or blood in the\ncerebrospinal fluid"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having an infection from the specified list within the one year before\r\nthe clinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ {
+      "term" : "an infection from the specified list",
+      "definition" : "means:\n(a) fungal, bacterial or viral infection of the spinal cord;\n(b) fungal, bacterial or viral meningitis;\n(c) neurosyphilis;\n(d) spinal toxoplasmosis;\n(e) spinal tuberculosis; or\n(f) vertebral osteomyelitis at the affected site"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having an intraspinal myelogram with an oil-based intrathecal\r\nradiological contrast agent within the two years before the clinical\r\nworsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a subarachnoid haemorrhage within the one year before the\r\nclinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having a spinal subdural haematoma at the affected site within the one\r\nyear before the clinical worsening of spinal adhesive arachnoiditis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "inability to obtain appropriate clinical management for spinal adhesive\r\narachnoiditis",
+    "definedTerms" : [ ]
+  } ]
+}

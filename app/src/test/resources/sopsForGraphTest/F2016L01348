@@ -1,0 +1,71 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L01348",
+  "instrumentNumber" : "69/2016",
+  "citation" : "Statement of Principles concerning antiphospholipid syndrome (Reasonable Hypothesis) (No. 69 of 2016)",
+  "conditionName" : "antiphospholipid syndrome",
+  "effectiveFrom" : "2016-09-26",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having a systemic viral or bacterial infection within the 30 days before\r\nthe clinical onset of antiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "for catastrophic antiphospholipid syndrome only, having surgery\r\nrequiring a general, spinal or epidural anaesthetic within the 30 days\r\nbefore the clinical onset of antiphospholipid syndrome",
+    "definedTerms" : [ {
+      "term" : "catastrophic antiphospholipid syndrome",
+      "definition" : "means a severe form of\r\nantiphospholipid syndrome involving generalised thrombosis and rapid\r\norgan failure, which has the following features:\r\n(a) evidence of vascular thrombosis in more than one organ, system or\r\ntissue; and\r\n(b) development of at least two thrombotic manifestations in less than a\r\nweek, or development of at least three thrombotic manifestations in\r\nless than 30 days; and\r\n(c) laboratory confirmation of the presence of antiphospholipid antibodies\r\nat least six weeks apart, except when repeat testing is not possible due\r\nto the death of the patient."
+    } ],
+    "conditionVariant" : {
+      "name" : "catastrophic antiphospholipid syndrome",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "being pregnant within the six weeks before the clinical onset of\r\nantiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having a haematological or solid organ cancer at the time of the\r\nclinical onset of antiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "having ceased or reduced anticoagulant therapy within the 30 days\r\nbefore the clinical onset of antiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "being treated with a tumour necrosis factor-α inhibitor for at least the\r\nfour weeks before the clinical onset of antiphospholipid syndrome",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(7)",
+    "text" : "having a systemic viral or bacterial infection within the 30 days before\r\nthe clinical worsening of antiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having surgery requiring a general, spinal or epidural anaesthetic\r\nwithin the 30 days before the clinical worsening of antiphospholipid\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "being pregnant within the six weeks before the clinical worsening of\r\nantiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having a haematological or solid organ cancer at the time of the\r\nclinical worsening of antiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "having ceased or reduced anticoagulant therapy within the 30 days\r\nbefore the clinical worsening of antiphospholipid syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "being treated with a tumour necrosis factor-α inhibitor for at least the\r\nfour weeks before the clinical worsening of antiphospholipid\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "inability to obtain appropriate clinical management for\r\nantiphospholipid syndrome",
+    "definedTerms" : [ ]
+  } ]
+}

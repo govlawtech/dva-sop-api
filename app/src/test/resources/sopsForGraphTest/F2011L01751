@@ -1,0 +1,102 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01751",
+  "instrumentNumber" : "118/2011",
+  "citation" : "Statement of Principles concerning anosmia No. 118 of 2011",
+  "conditionName" : "anosmia",
+  "effectiveFrom" : "2011-08-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having chronic nasal polyposis for at least the five years before the\r\nclinical onset of anosmia",
+    "definedTerms" : [ {
+      "term" : "nasal polyposis",
+      "definition" : "means the presence of mucosal growths in the nasal cavity"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having chronic sinusitis for at least the five years before the clinical\r\nonset of anosmia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a specified condition which damages the olfactory\r\nneuroepithelium, the olfactory bulb or the olfactory neural pathways at\r\nthe time of the clinical onset of anosmia",
+    "definedTerms" : [ {
+      "term" : "a specified condition",
+      "definition" : "means:\n(a) a head injury;\n(b) a primary or secondary neoplasm;\n(c) a surgical procedure; or\n(d) an infection"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a specified systemic disease before the clinical onset of\r\nanosmia",
+    "definedTerms" : [ {
+      "term" : "a specified systemic disease",
+      "definition" : "means:\n(a) Churg-Strauss syndrome;\n(b) sarcoidosis; or\n(c) Wegener's granulomatosis"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having Paget's disease of bone affecting the skull at the time of the\r\nclinical onset of anosmia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a specified neurological disorder at the time of the clinical onset\r\nof anosmia",
+    "definedTerms" : [ {
+      "term" : "a specified neurological disorder",
+      "definition" : "means:\n(a) Alzheimer-type dementia;\n(b) cerebrovascular accident;\n(c) frontotemporal dementia;\n(d) Lewy Body disease;\n(e) multiple sclerosis;\n(f) Parkinson's disease; or\n(g) subarachnoid haemorrhage"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being treated with a drug which is associated in the individual with the\r\ndevelopment of symptoms or signs of anosmia within three weeks of\r\ncommencing drug therapy, in the absence of clinical or laboratory\r\nevidence of anosmia prior to commencing drug therapy, and the\r\npersistence of anosmia at least six months after discontinuing drug\r\ntherapy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "receiving an intranasal application of a preparation containing zinc\r\ngluconate or zinc sulphate within the 48 hours before the clinical onset\r\nof anosmia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "regularly using intranasal cocaine such that there is destruction of the\r\nnasal septum, palate or paranasal sinuses before the clinical onset of\r\nanosmia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inhaling fumes from a specified metal or compounds containing a\r\nspecified metal for a cumulative period of at least 5000 hours before\r\nthe clinical onset of anosmia, and where that exposure has ceased, the\r\nclinical onset of anosmia occurred within one year of cessation",
+    "definedTerms" : [ {
+      "term" : "fumes",
+      "definition" : "means combustion products, aerosols, vapours or dust arising\nthrough industrial processes or from workplace practices that involve the\nrefining, manufacture or use of the stated material"
+    }, {
+      "term" : "a specified metal",
+      "definition" : "means:\n(a) aluminium;\n(b) cadmium;\n(c) chromium;\n(d) cobalt;\n(e) iron;\n(f) lead;\n(g) mercury;\n(h) nickel;\n(i) silver;\n(j) steel; or\n(k) zinc"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inhaling fumes from a specified volatile substance for a cumulative\r\nperiod of at least 5000 hours, before the clinical onset of anosmia, and\r\nwhere that exposure has ceased, the clinical onset of anosmia occurred\r\nwithin one year of cessation",
+    "definedTerms" : [ {
+      "term" : "fumes",
+      "definition" : "means combustion products, aerosols, vapours or dust arising\nthrough industrial processes or from workplace practices that involve the\nrefining, manufacture or use of the stated material"
+    }, {
+      "term" : "a specified volatile substance",
+      "definition" : "means:\n(a) acetone;\n(b) acetophenone;\n(c) acrylate;\n(d) ammonia;\n(e) benzene;\n(f) butyl acetate;\n(g) carbon disulphide;\n(h) carbon monoxide;\n(i) chlorine;\n(j) chlormethanes;\n(k) ethyl acetate;\n(l) fluorides;\n(m) formaldehyde;\n(n) hydrazine;\n(o) hydrogen selenide;\n(p) hydrogen sulphide;\n(q) methyl ethyl ketone;\n(r) methylacrylate;\n(s) organic solvents;\n(t) organophosphates;\n(u) pentachlorophenol;\n(v) petroleum;\n(w) phosphorous oxychloride;\n(x) sulphur dioxide;\n(y) toluene;\n(z) trichloroethylene; or\n(aa) xylene"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "experiencing acute, symptomatic poisoning from a neurotoxic\r\nsubstance from the specified list within the 30 days before the clinical\r\nonset of anosmia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of anosmia, and\r\nwhere smoking has not ceased prior to the clinical onset of anosmia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having pellagra or significant vitamin B12 deficiency at the time of the\r\nclinical onset of anosmia",
+    "definedTerms" : [ {
+      "term" : "significant vitamin B12 deficiency",
+      "definition" : "means a level of vitamin B12\ndeficiency which has resulted in neurological complications"
+    }, {
+      "term" : "pellagra",
+      "definition" : "means chronic nicotinic acid deficiency, characterised by skin\nchanges, nervous dysfunction and diarrhoea"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(o)",
+    "text" : "inability to obtain appropriate clinical management for anosmia",
+    "definedTerms" : [ ]
+  } ]
+}

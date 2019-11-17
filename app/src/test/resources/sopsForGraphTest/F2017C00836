@@ -1,0 +1,49 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00836",
+  "instrumentNumber" : "8/2014",
+  "citation" : "Statement of Principles concerning narcolepsy No. 8 of 2014",
+  "conditionName" : "narcolepsy",
+  "effectiveFrom" : "2014-01-15",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G47.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a moderate to severe traumatic brain injury within the two years\r\nbefore the clinical onset of narcolepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having concussion within the two years before the clinical onset of\r\nnarcolepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a surgical procedure which involves a craniotomy within the\r\ntwo years before the clinical onset of narcolepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having received a cumulative equivalent dose of at least 20 sieverts of\r\nionising radiation to the brain within the one year before the clinical\r\nonset of narcolepsy",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the brain\r\nwas in the field of radiation, within the one year before the clinical\r\nonset of narcolepsy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a specified neurological disorder with involvement in the region\r\nof the diencephalon or brainstem within the one year before the clinical\r\nonset of narcolepsy",
+    "definedTerms" : [ {
+      "term" : "a specified neurological disorder",
+      "definition" : "means:\n(a) a cerebrovascular accident;\n(b) a focal inflammatory lesion;\n(c) a neurodegenerative disorder, including dementia with Lewy bodies,\nmultiple-system atrophy and progressive supranuclear palsy;\n(d) acute disseminated encephalomyelitis;\n(e) encephalitis;\n(f) hypothalamic-pituitary failure;\n(g) hypoxic cerebral insult;\n(h) intracranial space occupying lesion;\n(i) multiple sclerosis;\n(j) neuromyelitis optica;\n(k) parkinsonism;\n(l) Parkinson's disease;\n(m) Rasmussen's encephalitis; or\n(n) sarcoidosis"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(g)",
+    "text" : "inability to obtain appropriate clinical management for narcolepsy",
+    "definedTerms" : [ ]
+  } ]
+}

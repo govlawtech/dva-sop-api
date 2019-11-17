@@ -4,7 +4,11 @@ import au.gov.dva.sopapi.ConfigurationRuntimeException;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationItem;
+import au.gov.dva.sopapi.interfaces.model.FactorReference;
+import au.gov.dva.sopapi.sopref.parsing.implementations.parsers.paragraphReferenceSplitters.NewSoPStyleParaReferenceSplitter;
+import au.gov.dva.sopapi.sopref.parsing.traits.ParaReferenceSplitter;
 import com.google.common.collect.ImmutableSet;
+import scala.Tuple2;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
@@ -16,6 +20,7 @@ import java.util.stream.Collectors;
 
 
 public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
+
     @Override
     public String toString() {
         return "ParsedRuleConfigurationItem{" +
@@ -34,6 +39,7 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     private final ServiceBranch serviceBranch;
     private final Rank rank;
     private final int cftsDays;
+    private ImmutableSet<FactorReference> factorRefObjects;
 
     public ParsedRuleConfigurationItem(@Nonnull String conditionName, @Nonnull String instrumentId, @Nonnull String factorRefs,@Nonnull String serviceBranch,@Nonnull String rank, @Nonnull String cftsDays)
     {
@@ -43,8 +49,47 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
         this.rank = toRank(rank);
         this.serviceBranch = toServiceBranch(serviceBranch);
         this.cftsDays = toIntOrError(cftsDays,"Cannot determine number of CFTS days from");
+
+        this.factorRefObjects = this.factorRefs.stream().map(this::parseFactorRef).collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
+
+
+
     }
 
+
+
+    private FactorReference parseFactorRef(String factorReference)
+    {
+        ParaReferenceSplitter s = new NewSoPStyleParaReferenceSplitter();
+        if (!s.hasSubParas(factorReference))
+        {
+            return new FactorReference() {
+                @Override
+                public String getMainFactorReference() {
+                    return factorReference;
+                }
+
+                @Override
+                public Optional<String> getFactorPartReference() {
+                    return Optional.empty();
+                }
+            };
+        }
+
+        Tuple2<String, String> subParaRef = s.trySplitParagraphReferenceToMainParagraphAndFirstLevelSubParagraph(factorReference);
+        return new FactorReference() {
+            @Override
+            public String getMainFactorReference() {
+                return factorReference;
+            }
+
+            @Override
+            public Optional<String> getFactorPartReference() {
+                return Optional.of(subParaRef._2);
+            }
+        };
+
+    }
 
 
     private ImmutableSet<String> splitFactorRefs(String factorRefsCellValue){
@@ -111,8 +156,10 @@ public class ParsedRuleConfigurationItem implements RuleConfigurationItem {
     }
 
     @Override
-    public ImmutableSet<String> getFactorReferences() {
-        return factorRefs;
+    public ImmutableSet<FactorReference> getFactorRefObjects() {
+
+        return this.factorRefObjects;
+
     }
 
     @Override

@@ -1,0 +1,84 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016C00274",
+  "instrumentNumber" : "50/2012",
+  "citation" : "Statement of Principles concerning aplastic anaemia No. 50 of 2012",
+  "conditionName" : "aplastic anaemia",
+  "effectiveFrom" : "2012-09-05",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D60"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "D61.8"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, within the six months before the clinical onset of aplastic\r\nanaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being treated with a nonsteroidal anti-inflammatory drug from the\r\nspecified list, for at least four days in each week for a continuous\r\nperiod of at least four weeks, within the six months before the clinical\r\nonset of aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "using 3,4-methylenedioxymethamphetamine (Ecstasy) within the three\r\nmonths before the clinical onset of aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having acute hepatitis within the six months before the clinical onset of\r\naplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing a course of therapeutic radiation for ankylosing spondylitis\r\nwithin the six months before the clinical onset of aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a liver transplant within the six months before the clinical onset\r\nof aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being exposed to benzene as specified on at least 30 days within the six\r\nmonths before the clinical onset of aplastic anaemia",
+    "definedTerms" : [ {
+      "term" : "being exposed to benzene as specified",
+      "definition" : "means:\n(a) having cutaneous contact with liquids containing benzene greater than\n5% by volume; or\n(b) ingesting liquids containing benzene greater than 5% by volume; or\n(c) inhaling benzene vapour where such exposure occurs at an ambient\n8-hour time-weighted average benzene concentration exceeding five\nparts per million"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a pesticide, or a\r\npesticide from a class of pesticides from the specified list, on at least\r\n30 days within the six months before the clinical onset of aplastic\r\nanaemia",
+    "definedTerms" : [ {
+      "term" : "inhaling, ingesting or having cutaneous contact with",
+      "definition" : "means:\n(a) being sprayed with;\n(b) cleaning or maintaining equipment used to apply; or\n(c) decanting or spraying"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having an autoimmune disease from the specified list, within the two\r\nyears before the clinical onset of aplastic anaemia",
+    "definedTerms" : [ {
+      "term" : "an autoimmune disease from the specified list",
+      "definition" : "means:\n(a) coeliac disease;\n(b) eosinophilic fasciitis;\n(c) graft versus host disease;\n(d) hyperimmunoglobulinaemia; or\n(e) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being pregnant at the time of the clinical onset of aplastic anaemia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a thymoma or thymic carcinoma at the time of the clinical onset\r\nof aplastic anaemia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(l)",
+    "text" : "inability to obtain appropriate clinical management for aplastic\r\nanaemia",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00645",
+  "instrumentNumber" : "63/2015",
+  "citation" : "Statement of Principles concerning hepatitis A No. 63 of 2015",
+  "conditionName" : "hepatitis A",
+  "effectiveFrom" : "2015-06-01",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B15"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to the hepatitis A virus between 15 and 50 days before\r\nthe clinical onset of hepatitis A",
+    "definedTerms" : [ {
+      "term" : "being exposed to the hepatitis A virus",
+      "definition" : "means:\n(a) being in the same household or immediate work environment as a\nperson infected with the hepatitis A virus;\n(b) consuming water or food contaminated with the hepatitis A virus;\n(c) having direct contact with human or primate faecal material\ncontaminated with the hepatitis A virus;\n(d) having direct physical contact with a human or a primate infected with\nthe hepatitis A virus;\n(e) having percutaneous exposure to blood or body fluids contaminated\nwith the hepatitis A virus; or\n(f) receiving a transfusion of blood or blood products contaminated with\nthe hepatitis A virus"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for hepatitis A",
+    "definedTerms" : [ ]
+  } ]
+}

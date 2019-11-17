@@ -1,0 +1,102 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00647",
+  "instrumentNumber" : "84/2016",
+  "citation" : "Statement of Principles concerning schizophrenia (Balance of Probabilities) (No. 84 of 2016)",
+  "conditionName" : "schizophrenia",
+  "effectiveFrom" : "2016-11-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F20.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having experienced severe childhood abuse before the clinical onset of\r\nschizophrenia",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "experiencing a category 1A stressor within the three months before the\r\nclinical onset of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "experiencing a category 1B stressor within the three months before the\r\nclinical onset of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "experiencing the death of a related child within the two years before\r\nthe clinical onset of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "related child",
+      "definition" : "means your biological, adopted, step- or foster child."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having substance use disorder, involving cannabis, within the 20 years\r\nbefore the clinical onset of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "using cannabis at least twice a week for a continuous period of at least\r\ntwo years before the age of 18 years, within the 20 years before the\r\nclinical onset of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having alcohol use disorder or substance use disorder involving a drug\r\nor a drug from a class of drugs from Specified List 1 of drugs, within\r\nthe five years before the clinical onset of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "Specified List 1 of drugs",
+      "definition" : "means:\r\n(a) amphetamines and amphetamine-type substances, including\r\nmethamphetamine and 3,4-methylenedioxymethamphetamine\r\n(ecstasy);\r\n(b) cocaine; or\r\n(c) opioids."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(8)",
+    "text" : "experiencing a category 1A stressor within the three months before the\r\nclinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped,\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "experiencing a category 1B stressor within the three months before the\r\nclinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "experiencing the death of a related child within the two years before\r\nthe clinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "related child",
+      "definition" : "means your biological, adopted, step- or foster child."
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "being treated with a drug which results in the re-development or\r\nworsening of signs or symptoms of psychosis, where the treatment\r\nwith the drug was undertaken for at least the two days before the\r\nclinical worsening of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "taking a drug or a drug from a class of drugs from Specified List 2 of\r\ndrugs within the 30 days before the clinical worsening of\r\nschizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having ceased, reduced or changed antipsychotic drug therapy, within\r\nthe seven days before the clinical worsening of schizophrenia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having a clinically significant disorder of mental health as specified at\r\nthe time of the clinical worsening of schizophrenia",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement, which may involve regular visits (for example, at least\r\nmonthly) to a psychiatrist, counsellor or general practitioner:\r\n(a) acute stress disorder;\r\n(b) agoraphobia;\r\n(c) alcohol use disorder;\r\n(d) anxiety disorder;\r\n(e) bipolar disorder;\r\n(f) depressive disorder;\r\n(g) eating disorder;\r\n(h) obsessive-compulsive disorder;\r\n(i) panic disorder;\r\n(j) posttraumatic stress disorder;\r\n(k) psychotic disorder due to another medical condition;\r\n(l) sleep-wake disorder;\r\n(m) social anxiety disorder;\r\n(n) specific phobia;\r\n(o) substance use disorder; or\r\n(p) substance/medication-induced psychotic disorder."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "inability to obtain appropriate clinical management for schizophrenia",
+    "definedTerms" : [ ]
+  } ]
+}

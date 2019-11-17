@@ -1,0 +1,200 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00307",
+  "instrumentNumber" : "20/2014",
+  "citation" : "Statement of Principles concerning restless legs syndrome No. 20 of 2014",
+  "conditionName" : "restless legs syndrome",
+  "effectiveFrom" : "2014-03-26",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of restless legs\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having iron deficiency at the time of the clinical onset of restless legs\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "iron deficiency",
+      "definition" : "means having a serum ferritin level of less than\n20 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having chronic renal failure at the time of the clinical onset of restless\r\nlegs syndrome",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having radiculopathy or peripheral neuropathy, involving the lower\r\nlimbs, at the time of the clinical onset of restless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "radiculopathy",
+      "definition" : "means a disease of the nerve roots resulting in symptoms of\nweakness, pain or loss of sensation"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a spinal cord lesion at the time of the clinical onset of restless\r\nlegs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, which cannot be ceased or substituted, at the time of the\r\nclinical onset of restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of restless legs\r\nsyndrome, and where smoking has ceased, the clinical onset of restless\r\nlegs syndrome has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being obese within the five years before the clinical onset of restless\r\nlegs syndrome",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having multiple sclerosis for at least the one year before the clinical\r\nonset of restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a clinically significant psychiatric condition as specified for at\r\nleast the one year before the clinical onset of restless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "a clinically significant psychiatric condition as specified",
+      "definition" : "means one of\nthe following disorders of mental health, which is of sufficient severity to\nwarrant ongoing management, which may involve regular visits (for example,\nat least monthly) to a psychiatrist, counsellor or general practitioner:\n(a) generalised anxiety disorder;\n(b) major depressive disorder;\n(c) panic disorder;\n(d) persistent depressive disorder; or\n(e) posttraumatic stress disorder"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a specified sleep disorder at the time of the clinical onset of\r\nrestless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "a specified sleep disorder",
+      "definition" : "means:\n(a) narcolepsy; or\n(b) sleep apnoea"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being pregnant at the time of the clinical onset of restless legs\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the one year before the clinical onset of restless legs\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having dyslipidaemia for at least the one year before the clinical onset\r\nof restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having migraine for at least the one year before the clinical onset of\r\nrestless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having asthma, chronic bronchitis or emphysema, for at least the one\r\nyear before the clinical onset of restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having hormone replacement therapy for at least the one month before\r\nthe clinical onset of restless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of oestrogen\npreparations, often in combination with progesterone, to offset a hormone\ndeficiency following surgically induced or naturally occurring menopause"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(r)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of restless\r\nlegs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having iron deficiency at the time of the clinical worsening of restless\r\nlegs syndrome",
+    "definedTerms" : [ {
+      "term" : "iron deficiency",
+      "definition" : "means having a serum ferritin level of less than\n20 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having chronic renal failure at the time of the clinical worsening of\r\nrestless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having radiculopathy or peripheral neuropathy, involving the lower\r\nlimbs, at the time of the clinical worsening of restless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "radiculopathy",
+      "definition" : "means a disease of the nerve roots resulting in symptoms of\nweakness, pain or loss of sensation"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having a spinal cord lesion at the time of the clinical worsening of\r\nrestless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, which cannot be ceased or substituted, at the time of the\r\nclinical worsening of restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of restless legs\r\nsyndrome, and where smoking has ceased, the clinical worsening of\r\nrestless legs syndrome has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "being obese within the five years before the clinical worsening of\r\nrestless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having multiple sclerosis for at least the one year before the clinical\r\nworsening of restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having a clinically significant psychiatric condition as specified for at\r\nleast the one year before the clinical worsening of restless legs\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "a clinically significant psychiatric condition as specified",
+      "definition" : "means one of\nthe following disorders of mental health, which is of sufficient severity to\nwarrant ongoing management, which may involve regular visits (for example,\nat least monthly) to a psychiatrist, counsellor or general practitioner:\n(a) generalised anxiety disorder;\n(b) major depressive disorder;\n(c) panic disorder;\n(d) persistent depressive disorder; or\n(e) posttraumatic stress disorder"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having a specified sleep disorder at the time of the clinical worsening\r\nof restless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "a specified sleep disorder",
+      "definition" : "means:\n(a) narcolepsy; or\n(b) sleep apnoea"
+    } ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "being pregnant at the time of the clinical worsening of restless legs\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the one year before the clinical worsening of restless legs\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having dyslipidaemia for at least the one year before the clinical\r\nworsening of restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having migraine for at least the one year before the clinical worsening\r\nof restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "having asthma, chronic bronchitis or emphysema, for at least the one\r\nyear before the clinical worsening of restless legs syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having hormone replacement therapy for at least the one month before\r\nthe clinical worsening of restless legs syndrome",
+    "definedTerms" : [ {
+      "term" : "hormone replacement therapy",
+      "definition" : "means administration of oestrogen\npreparations, often in combination with progesterone, to offset a hormone\ndeficiency following surgically induced or naturally occurring menopause"
+    } ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "inability to obtain appropriate clinical management for restless legs\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

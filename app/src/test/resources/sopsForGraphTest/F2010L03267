@@ -1,0 +1,35 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2010L03267",
+  "instrumentNumber" : "10/2011",
+  "citation" : "Statement of Principles concerning Kaposi's sarcoma No. 10 of 2011",
+  "conditionName" : "Kaposi's sarcoma",
+  "effectiveFrom" : "2011-01-05",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C46"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being infected with human herpesvirus type 8 before the clinical onset\r\nof Kaposi's sarcoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of Kaposi's sarcoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "receiving systemic immunosuppressive drug therapy after undergoing\r\nsolid organ or bone marrow transplantation, at the time of the clinical\r\nonset of Kaposi's sarcoma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing treatment with azathioprine, cyclophosphamide,\r\nmethotrexate or mycophenolate for a continuous period of at least three\r\nmonths, within the six months before the clinical onset of Kaposi's\r\nsarcoma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for Kaposi's\r\nsarcoma",
+    "definedTerms" : [ ]
+  } ]
+}

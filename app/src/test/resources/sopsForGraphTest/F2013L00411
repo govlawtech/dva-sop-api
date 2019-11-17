@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00411",
+  "instrumentNumber" : "16/2013",
+  "citation" : "Statement of Principles concerning essential thrombocythaemia No. 16 of 2013",
+  "conditionName" : "essential thrombocythaemia",
+  "effectiveFrom" : "2013-03-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "D47.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for essential thrombocythaemia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for essential thrombocythaemia",
+    "definedTerms" : [ ]
+  } ]
+}

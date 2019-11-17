@@ -1,0 +1,229 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00778",
+  "instrumentNumber" : "33/2012",
+  "citation" : "Statement of Principles concerning tinnitus No. 33 of 2012",
+  "conditionName" : "tinnitus",
+  "effectiveFrom" : "2012-05-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H93.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being exposed to a peak sound pressure level at the tympanic\r\nmembrane of at least 140 dB(C), before the clinical onset of tinnitus",
+    "definedTerms" : [ {
+      "term" : "dB(C)",
+      "definition" : "means C-weighted sound pressure level in decibels, where C-\nweighting is a standardised frequency response used in sound measuring"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being exposed to a sound pressure level at the tympanic membrane of\r\nat least 85 dB(A) as an 8-hour time-weighted average (TWA) with a\r\n3 dB exchange rate for a cumulative period of at least six months,\r\nbefore the clinical onset of tinnitus",
+    "definedTerms" : [ {
+      "term" : "dB(A)",
+      "definition" : "means A-weighted sound pressure level in decibels, where A-\nweighting is a standardised frequency response used in sound measuring\ninstruments"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having trauma, including surgery, to auditory structures or central\r\nauditory neural pathways, within the five years before the clinical onset\r\nof tinnitus",
+    "definedTerms" : [ {
+      "term" : "auditory structures",
+      "definition" : "means the tympanic membrane, ear ossicles, cochlea,\ncochlear nerve or vestibulocochlear nerve"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having sensorineural hearing loss or conductive hearing loss at the time\r\nof the clinical onset of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list\r\nwithin the one month before the clinical onset of tinnitus",
+    "definedTerms" : [ {
+      "term" : "a drug or a drug from a class of drugs from the specified list",
+      "definition" : "means:\n(a) aminoglycosides;\n(b) carbimazole;\n(c) cisplatin and other antineoplastic platinum compounds;\n(d) propylthiouracil;\n(e) quinidine; or\n(f) quinine and quinine derivatives"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "receiving a specified ototopical medication directly into the inner ear,\r\nin the presence of tympanic membrane perforation, before the clinical\r\nonset of tinnitus",
+    "definedTerms" : [ {
+      "term" : "a specified ototopical medication",
+      "definition" : "means ear drops containing an agent\nfrom the following list:\n(a) acetic acid;\n(b) chloramphenicol;\n(c) chlorhexidine;\n(d) chloromycetin;\n(e) cresylate;\n(f) ethanol;\n(g) gentian violet;\n(h) povidone iodine; or\n(i) salicylates"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a vascular, muscular or other anatomical source of sound that\r\ncan be transmitted to the affected ear at the time of the clinical onset of\r\ntinnitus",
+    "definedTerms" : [ {
+      "term" : "a vascular, muscular or other anatomical source of sound",
+      "definition" : "means:\n(a) an acquired arteriovenous fistula;\n(b) benign intracranial hypertension;\n(c) brachiocephalic artery stenosis;\n(d) carotid artery stenosis or dissection;\n(e) dural venous sinus stenosis;\n(f) jugular bulb abnormalities;\n(g) neoplastic and non-neoplastic space-occupying lesions involving or\narising near the middle or inner ear;\n(h) other vascular abnormalities or other conditions causing turbulent\nblood flow in structures close to the middle or inner ear;\n(i) palatal myoclonus;\n(j) patulous eustachian tube;\n(k) spasm of the stapedius or tensor tympani muscles; or\n(l) valvular heart disease"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a specified disease or injury involving the auditory structures or\r\ncentral auditory neural pathways of the affected ear at the time of the\r\nclinical onset of tinnitus",
+    "definedTerms" : [ {
+      "term" : "auditory structures",
+      "definition" : "means the tympanic membrane, ear ossicles, cochlea,\ncochlear nerve or vestibulocochlear nerve"
+    }, {
+      "term" : "a specified disease or injury",
+      "definition" : "means:\n(a) a benign or malignant neoplasm;\n(b) a cerebrovascular accident;\n(c) a specified autoimmune disorder;\n(d) delayed endolymphatic hydrops;\n(e) ischaemia;\n(f) Meniere's disease;\n(g) multiple sclerosis;\n(h) otosclerosis; or\n(i) Paget's disease of the skull"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having cerebral arterial gas embolism or decompression sickness\r\ninvolving the auditory apparatus or central auditory neural pathways of\r\nthe affected ear within the one month before the clinical onset of\r\ntinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an episode of otitic barotrauma involving the affected ear\r\nwithin the one month before the clinical onset of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having acoustic shock at the time of the clinical onset of tinnitus",
+    "definedTerms" : [ {
+      "term" : "acoustic shock",
+      "definition" : "means the development of a set of specific symptoms\nimmediately after being exposed to a brief, sudden, unexpected, high\nfrequency, high intensity sound. Symptoms in addition to tinnitus include\notalgia, facial or jaw pain, aural fullness, hyperacusis, vertigo and dislike or\nfear of loud noises"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a specified infection within the one month before the clinical\r\nonset of tinnitus",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) chronic otitis media of the affected side;\n(b) cytomegalovirus infection of the vestibulocochlear nerve of the\naffected side;\n(c) diphtheria;\n(d) encephalitis;\n(e) herpes zoster of the geniculate ganglion of the affected side;\n(f) human immunodeficiency virus infection;\n(g) leprosy;\n(h) Lyme disease;\n(i) measles;\n(j) meningitis;\n(k) mumps;\n(l) neurosyphilis;\n(m) suppurative labyrinthitis of the affected side;\n(n) suppurative otitis media of the affected side;\n(o) tuberculosis involving the temporal bone of the affected side; or\n(p) typhoid fever"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having received a cumulative equivalent dose of at least 10 sieverts of\r\nionising radiation to the auditory apparatus before the clinical onset of\r\ntinnitus",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nauditory apparatus was in the field of radiation, before the clinical\r\nonset of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a serum cobalt concentration of at least 5 micrograms per litre\r\nfor at least the one month before the clinical onset of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having vitamin B1 (thiamine) or vitamin B12 (cobalamin) deficiency at\r\nthe time of the clinical onset of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having carbon monoxide poisoning within the 48 hours before the\r\nclinical onset of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having hypothyroidism for at least the three months before the clinical\r\nonset of tinnitus",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(s)",
+    "text" : "being exposed to a peak sound pressure level at the tympanic\r\nmembrane of at least 140 dB(C), before the clinical worsening of\r\ntinnitus",
+    "definedTerms" : [ {
+      "term" : "dB(C)",
+      "definition" : "means C-weighted sound pressure level in decibels, where C-\nweighting is a standardised frequency response used in sound measuring"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "being exposed to a sound pressure level at the tympanic membrane of\r\nat least 85 dB(A) as an 8-hour time-weighted average (TWA) with a\r\n3 dB exchange rate for a cumulative period of at least six months,\r\nbefore the clinical worsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "dB(A)",
+      "definition" : "means A-weighted sound pressure level in decibels, where A-\nweighting is a standardised frequency response used in sound measuring\ninstruments"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having trauma, including surgery, to auditory structures or central\r\nauditory neural pathways, within the five years before the clinical\r\nworsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "auditory structures",
+      "definition" : "means the tympanic membrane, ear ossicles, cochlea,\ncochlear nerve or vestibulocochlear nerve"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having sensorineural hearing loss or conductive hearing loss at the time\r\nof the clinical worsening of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "taking a drug or a drug from a class of drugs from the specified list\r\nwithin the one month before the clinical worsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "a drug or a drug from a class of drugs from the specified list",
+      "definition" : "means:\n(a) aminoglycosides;\n(b) carbimazole;\n(c) cisplatin and other antineoplastic platinum compounds;\n(d) propylthiouracil;\n(e) quinidine; or\n(f) quinine and quinine derivatives"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "receiving a specified ototopical medication directly into the inner ear,\r\nin the presence of tympanic membrane perforation, before the clinical\r\nworsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "a specified ototopical medication",
+      "definition" : "means ear drops containing an agent\nfrom the following list:\n(a) acetic acid;\n(b) chloramphenicol;\n(c) chlorhexidine;\n(d) chloromycetin;\n(e) cresylate;\n(f) ethanol;\n(g) gentian violet;\n(h) povidone iodine; or\n(i) salicylates"
+    } ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having a vascular, muscular or other anatomical source of sound that\r\ncan be transmitted to the affected ear at the time of the clinical\r\nworsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "a vascular, muscular or other anatomical source of sound",
+      "definition" : "means:\n(a) an acquired arteriovenous fistula;\n(b) benign intracranial hypertension;\n(c) brachiocephalic artery stenosis;\n(d) carotid artery stenosis or dissection;\n(e) dural venous sinus stenosis;\n(f) jugular bulb abnormalities;\n(g) neoplastic and non-neoplastic space-occupying lesions involving or\narising near the middle or inner ear;\n(h) other vascular abnormalities or other conditions causing turbulent\nblood flow in structures close to the middle or inner ear;\n(i) palatal myoclonus;\n(j) patulous eustachian tube;\n(k) spasm of the stapedius or tensor tympani muscles; or\n(l) valvular heart disease"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having a specified disease or injury involving the auditory structures or\r\ncentral auditory neural pathways of the affected ear at the time of the\r\nclinical worsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "auditory structures",
+      "definition" : "means the tympanic membrane, ear ossicles, cochlea,\ncochlear nerve or vestibulocochlear nerve"
+    }, {
+      "term" : "a specified disease or injury",
+      "definition" : "means:\n(a) a benign or malignant neoplasm;\n(b) a cerebrovascular accident;\n(c) a specified autoimmune disorder;\n(d) delayed endolymphatic hydrops;\n(e) ischaemia;\n(f) Meniere's disease;\n(g) multiple sclerosis;\n(h) otosclerosis; or\n(i) Paget's disease of the skull"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having cerebral arterial gas embolism or decompression sickness\r\ninvolving the auditory apparatus or central auditory neural pathways of\r\nthe affected ear within the one month before the clinical worsening of\r\ntinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having an episode of otitic barotrauma involving the affected ear\r\nwithin the one month before the clinical worsening of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having acoustic shock at the time of the clinical worsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "acoustic shock",
+      "definition" : "means the development of a set of specific symptoms\nimmediately after being exposed to a brief, sudden, unexpected, high\nfrequency, high intensity sound. Symptoms in addition to tinnitus include\notalgia, facial or jaw pain, aural fullness, hyperacusis, vertigo and dislike or\nfear of loud noises"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having a specified infection within the one month before the clinical\r\nworsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "a specified infection",
+      "definition" : "means:\n(a) chronic otitis media of the affected side;\n(b) cytomegalovirus infection of the vestibulocochlear nerve of the\naffected side;\n(c) diphtheria;\n(d) encephalitis;\n(e) herpes zoster of the geniculate ganglion of the affected side;\n(f) human immunodeficiency virus infection;\n(g) leprosy;\n(h) Lyme disease;\n(i) measles;\n(j) meningitis;\n(k) mumps;\n(l) neurosyphilis;\n(m) suppurative labyrinthitis of the affected side;\n(n) suppurative otitis media of the affected side;\n(o) tuberculosis involving the temporal bone of the affected side; or\n(p) typhoid fever"
+    } ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having received a cumulative equivalent dose of at least 10 sieverts of\r\nionising radiation to the auditory apparatus before the clinical\r\nworsening of tinnitus",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nauditory apparatus was in the field of radiation, before the clinical\r\nworsening of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "having a serum cobalt concentration of at least 5 micrograms per litre\r\nfor at least the one month before the clinical worsening of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having vitamin B1 (thiamine) or vitamin B12 (cobalamin) deficiency at\r\nthe time of the clinical worsening of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "having carbon monoxide poisoning within the 48 hours before the\r\nclinical worsening of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "having hypothyroidism for at least the three months before the clinical\r\nworsening of tinnitus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "inability to obtain appropriate clinical management for tinnitus",
+    "definedTerms" : [ ]
+  } ]
+}

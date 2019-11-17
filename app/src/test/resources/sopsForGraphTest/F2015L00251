@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00251",
+  "instrumentNumber" : "56/2015",
+  "citation" : "Statement of Principles concerning seborrhoeic keratosis No. 56 of 2015",
+  "conditionName" : "seborrhoeic keratosis",
+  "effectiveFrom" : "2015-03-30",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L82"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for seborrhoeic keratosis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for seborrhoeic keratosis",
+    "definedTerms" : [ ]
+  } ]
+}

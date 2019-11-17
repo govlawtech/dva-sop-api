@@ -1,0 +1,38 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01839",
+  "instrumentNumber" : "16/2015",
+  "citation" : "Statement of Principles concerning pulmonary barotrauma No. 16 of 2015",
+  "conditionName" : "pulmonary barotrauma",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "experiencing an abrupt change in ambient barometric pressure, within\r\nthe 24 hours before the clinical onset of pulmonary barotrauma",
+    "definedTerms" : [ {
+      "term" : "an abrupt change in ambient barometric pressure",
+      "definition" : "means a sudden\nreduction or increase in the pressure exerted by the envelope of air or water\nsurrounding the person, occurring with:\n(a) ascending from a submerged craft or device, or a pressurised tunnel or\ncaisson;\n(b) decompression after being compressed in a hyperbaric chamber;\n(c) flying; or\n(d) underwater diving"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "receiving artificial ventilation at the time of the clinical onset of\r\npulmonary barotrauma",
+    "definedTerms" : [ {
+      "term" : "artificial ventilation",
+      "definition" : "means a method to assist or replace spontaneous\nbreathing, which may involve a mechanically-controlled ventilator, manually-\nassisted bag ventilation of an intubated patient, or expired air resuscitation"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "sustaining a blast injury involving the chest at the time of the clinical\r\nonset of pulmonary barotrauma",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "smoking alkaloidal ('crack') cocaine or inhaling powdered cocaine\r\nwithin the 24 hours before the clinical onset of pulmonary barotrauma",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for pulmonary\r\nbarotrauma",
+    "definedTerms" : [ ]
+  } ]
+}

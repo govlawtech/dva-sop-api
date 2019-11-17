@@ -1,0 +1,136 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2016L00265",
+  "instrumentNumber" : "15/2016",
+  "citation" : "Statement of Principles concerning diverticular disease of the colon (Reasonable Hypothesis) (No. 15 of 2016)",
+  "conditionName" : "diverticular disease of the colon",
+  "effectiveFrom" : "2016-04-04",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K57.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K57.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having systemic sclerosis before the clinical onset of diverticular\r\ndisease of the colon",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of diverticular\r\ndisease of the colon, and where smoking has ceased, the clinical onset\r\nof diverticular disease of the colon has occurred within ten years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being overweight for at least the five years before the clinical onset of\r\ndiverticular disease of the colon",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical onset of diverticular\r\ndisease of the colon",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "an inability to consume an average daily intake of at least 30 grams of\r\nfibre in food for a period of at least five consecutive years within the\r\nten years before the clinical onset of diverticular disease of the colon",
+    "definedTerms" : [ {
+      "term" : "fibre in food",
+      "definition" : "means complex carbohydrates of plant origin consumed as\r\nvegetables, fruits or cereals which resist digestion by gastrointestinal\r\nenzymes in the gastrointestinal tract, and include plant cell walls and non-\r\nstarch polysaccharides from sources other than cell walls, including cellulose\r\nand pectins."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "consuming an average daily intake of at least 200 grams of red meat,\r\nfor at least the five years before the clinical onset of diverticular\r\ndisease of the colon",
+    "definedTerms" : [ {
+      "term" : "red meat",
+      "definition" : "means all types of mammalian muscle meat, such as beef, veal,\r\npork, lamb, mutton, horse and goat."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "drinking at least 180 kilograms of alcohol within the ten year period\r\nbefore the clinical onset of diverticular disease of the colon",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "for diverticular bleeding, perforation, abscess and fistula only, using a\r\ndrug belonging to the nonsteroidal anti-inflammatory class of drugs,\r\nexcluding aspirin and paracetamol, for a continuous period of at least\r\nfour weeks before the clinical onset of diverticular disease of the\r\ncolon, where the last dose of the drug within that period was taken\r\nwithin the seven days before the clinical onset of diverticular disease\r\nof the colon",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "diverticular bleeding, perforation, abscess and fistula",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "for diverticular bleeding only, being treated with an antiplatelet agent\r\nbefore the clinical onset of diverticular disease of the colon, where the\r\nlast dose of the antiplatelet agent was taken within the seven days\r\nbefore the clinical onset of diverticular disease of the colon",
+    "definedTerms" : [ {
+      "term" : "antiplatelet agent",
+      "definition" : "means a pharmacological agent that blocks platelet\r\nadhesion or aggregation, including aspirin, clopidogrel, dipyridamole,\r\nmonoclonal antibodies and peptides."
+    } ],
+    "conditionVariant" : {
+      "name" : "diverticular bleeding",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(10)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of diverticular\r\ndisease of the colon, and where smoking has ceased, the clinical\r\nworsening of diverticular disease of the colon has occurred within ten\r\nyears of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "being overweight for at least the five years before the clinical\r\nworsening of diverticular disease of the colon",
+    "definedTerms" : [ {
+      "term" : "being overweight",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or greater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of diverticular\r\ndisease of the colon",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "using a drug belonging to the nonsteroidal anti-inflammatory class of\r\ndrugs, excluding aspirin and paracetamol, for a continuous period of at\r\nleast four weeks before the clinical worsening of diverticular disease\r\nof the colon, where the last dose of the drug within that period was\r\ntaken within the seven days before the clinical worsening of\r\ndiverticular disease of the colon",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "being treated with an antiplatelet agent before the clinical worsening of\r\ndiverticular disease of the colon, where the last dose of the antiplatelet\r\nagent was taken within the seven days before the clinical worsening of\r\ndiverticular disease of the colon",
+    "definedTerms" : [ {
+      "term" : "antiplatelet agent",
+      "definition" : "means a pharmacological agent that blocks platelet\r\nadhesion or aggregation, including aspirin, clopidogrel, dipyridamole,\r\nmonoclonal antibodies and peptides."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "using a drug belonging to the opioid class of drugs for a continuous\r\nperiod of at least four weeks before the clinical worsening of\r\ndiverticular disease of the colon, where the last dose of the opioid\r\nwithin that period was taken within the seven days before the clinical\r\nworsening of diverticular disease of the colon",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "being treated with an immunosuppressive drug for at least the four\r\nweeks before the clinical worsening of diverticular disease of the\r\ncolon",
+    "definedTerms" : [ {
+      "term" : "being treated with an immunosuppressive drug",
+      "definition" : "means being treated with a\r\ndrug or agent which results in substantial suppression of immune responses."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "inhaling at least 1 600 micrograms of budesonide, or equivalent\r\ninhaled glucocorticoid, daily, for at least the six months before the\r\nclinical worsening of diverticular disease of the colon",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical worsening of diverticular disease of the colon",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having chronic kidney disease at the time of the clinical worsening of\r\ndiverticular disease of the colon",
+    "definedTerms" : [ {
+      "term" : "chronic kidney disease",
+      "definition" : "means an abnormality of kidney structure or function\r\nthat has been present for at least three months.\r\nNote: abnormality of kidney structure or function is also defined in the Schedule 1 -\r\nDictionary.\r\ndiverticular disease of the colon—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "inability to obtain appropriate clinical management for diverticular\r\ndisease of the colon",
+    "definedTerms" : [ ]
+  } ]
+}

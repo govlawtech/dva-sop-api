@@ -1,0 +1,73 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018C00665",
+  "instrumentNumber" : "124/2015",
+  "citation" : "Statement of Principles concerning loss of teeth (Reasonable Hypothesis) (No. 124 of 2015)",
+  "conditionName" : "loss of teeth",
+  "effectiveFrom" : "2015-11-16",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K08.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "K08.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having dental caries in the affected tooth at the time of the clinical\r\nonset of loss of teeth",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having periodontitis in the periodontium supporting the affected tooth,\r\nat the time of the clinical onset of loss of teeth",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having periodontal abscess of the affected tooth at the time of the\r\nclinical onset of loss of teeth",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having dental pulp and apical disease of the affected tooth at the time\r\nof the clinical onset of loss of teeth",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a fracture of the affected tooth or luxation of the affected tooth\r\nbefore the clinical onset of loss of teeth",
+    "definedTerms" : [ {
+      "term" : "fracture of the affected tooth",
+      "definition" : "means fracture of the crown, involving the\r\ndentine, or the root of the affected tooth.\r\nloss of teeth—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a fracture of the alveolar bone supporting the affected tooth or\r\ndisruption of the alveolar bone supporting the affected tooth, before\r\nthe clinical onset of loss of teeth",
+    "definedTerms" : [ {
+      "term" : "disruption of the alveolar bone",
+      "definition" : "means any interruption or distortion of the\r\nalveolar bone caused by an injury or disease process affecting the alveolar\r\nbone, including infiltration by primary or secondary malignancy, Paget's\r\ndisease of bone, osteonecrosis or tuberculosis."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "receiving direct physical trauma to the affected tooth resulting in\r\navulsion of the tooth at the time of the clinical onset of loss of teeth",
+    "definedTerms" : [ {
+      "term" : "avulsion",
+      "definition" : "means the total displacement of the tooth out of its alveolar socket."
+    } ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having avulsion and subsequent replantation of the affected tooth\r\nbefore the clinical onset of loss of teeth",
+    "definedTerms" : [ {
+      "term" : "avulsion",
+      "definition" : "means the total displacement of the tooth out of its alveolar socket."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having pericoronitis of the affected tooth at the time of the clinical\r\nonset of loss of teeth;\r\n(9a) having tooth wear involving the affected tooth at the time of the\r\nclinical onset of loss of teeth",
+    "definedTerms" : [ {
+      "term" : "pericoronitis",
+      "definition" : "means inflammation of the gingiva surrounding a partially\r\nerupted tooth, especially the third molar or wisdom tooth, and is related to\r\nthe accumulation of food particles and micro-organisms under the gum flap."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(10)",
+    "text" : "inability to obtain appropriate clinical management for loss of teeth",
+    "definedTerms" : [ ]
+  } ]
+}

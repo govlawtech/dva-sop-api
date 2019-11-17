@@ -1,0 +1,74 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01317",
+  "instrumentNumber" : "102/2015",
+  "citation" : "Statement of Principles concerning malignant melanoma of the skin (Reasonable Hypothesis) (No. 102 of 2015)",
+  "conditionName" : "malignant melanoma of the skin",
+  "effectiveFrom" : "2015-09-21",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having sunburn as specified, at least two years before the clinical onset\r\nof malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "sunburn as specified",
+      "definition" : "means painful erythema of the skin of at least 48 hours\r\nduration, or blistering of the skin, resulting from exposure to solar ultraviolet\r\nradiation."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having sunlight or ultraviolet light exposure to unprotected skin for a\r\ncumulative period of at least 2 250 hours while in a tropical area, or\r\nhaving equivalent sunlight exposure in other latitude zones, before the\r\nclinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "unprotected skin",
+      "definition" : "means skin that is directly exposed to the sun and is not\r\nprotected by sunscreen, clothing or other physical barrier."
+    }, {
+      "term" : "tropical area",
+      "definition" : "means any area between the Tropic of Capricorn (23º 27'\r\nSouth) and the Tropic of Cancer (23º 27' North)."
+    }, {
+      "term" : "equivalent sunlight exposure in other latitude zones",
+      "definition" : "means the cumulative\r\nhours of sunlight exposure equivalent to that specified for a tropical area,\r\ncalculated by multiplying the hours of exposure in each latitude zone by the\r\nlatitude weighting factor for the zone as per the latitude weighting factor\r\nschedule and adding together the result for each zone:\r\nLatitude weighting factor schedule\r\nLatitude zone Latitude weighting factor\r\na latitude between 23° 27' South and 23° 27' North 1.0\r\na latitude from > 23° 27' to 35° 0.75\r\na latitude from > 35° to 45° 0.5\r\na latitude from > 45° to 65° 0.25."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having ultraviolet radiation exposure from an ultraviolet-emitting\r\ntanning device on at least ten occasions before the clinical onset of\r\nmalignant melanoma of the skin, where the first exposure occurred\r\nmore than two years before the clinical onset of malignant melanoma\r\nof the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "undergoing solid organ or bone marrow transplantation before the\r\nclinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with an immunosuppressive drug within the five years\r\nbefore the clinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "immunosuppressive drug",
+      "definition" : "means a drug or an agent which results in"
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having PUVA therapy, where:\r\n(a) the first PUVA treatment commenced at least ten years before\r\nthe clinical onset of malignant melanoma of the skin; and\r\n(b) at least 200 PUVA treatments were administered, before the\r\nclinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ {
+      "term" : "PUVA",
+      "definition" : "means photochemotherapy with oral methoxsalen (psoralen) and\r\nultraviolet A radiation."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of malignant melanoma of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having non-Hodgkin's lymphoma or chronic lymphocytic\r\nleukaemia/small cell lymphoma before the clinical onset of malignant\r\nmelanoma of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having Parkinson's disease before the clinical onset of malignant\r\nmelanoma of the skin",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a scar involving the affected site at the time of the clinical\r\nonset of malignant melanoma of the skin, where the scar is the result\r\nof a thermal or chemical burn that occurred at least five years before\r\nthe clinical onset of malignant melanoma of the skin",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(11)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nmelanoma of the skin",
+    "definedTerms" : [ ]
+  } ]
+}

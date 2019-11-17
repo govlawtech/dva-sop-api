@@ -1,0 +1,185 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00007",
+  "instrumentNumber" : "9/2019",
+  "citation" : "Statement of Principles concerning Dupuytren disease (Reasonable Hypothesis) (No. 9 of 2019)",
+  "conditionName" : "Dupuytren disease",
+  "effectiveFrom" : "2019-01-28",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M72.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of Dupuytren\r\ndisease, and:\r\n(a) smoking commenced at least five years before the clinical onset\r\nof Dupuytren disease; and\r\n(b) where smoking has ceased, the clinical onset of Dupuytren\r\ndisease has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "consuming an average of at least 200 grams per week of alcohol, for at\r\nleast five consecutive years within the ten years before the clinical\r\nonset of Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having alcohol use disorder at the time of the clinical onset of\r\nDupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having cirrhosis of the liver or steatohepatitis before the clinical onset\r\nof Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having trauma to the hand, wrist or forearm of the affected side, within\r\nthe one year before the clinical onset of Dupuytren disease;\r\nNote 1: trauma is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of trauma include, but are not limited to, laceration, sprain or crush injury,\r\nfracture or surgery, and a thermal, electrical or chemical burn",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means a significant injury, resulting in symptoms and signs lasting\r\nfor at least seven days, or which is of sufficient severity to warrant medical\r\nattention."
+    }, {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a clinically significant infection involving the palmar surface of\r\nthe affected hand, within the three months before the clinical onset of\r\nDupuytren disease",
+    "definedTerms" : [ {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "for bilateral Dupuytren disease only:\r\n(a) having trauma to the hand, wrist or forearm before the clinical\r\nonset of Dupuytren disease, and where:\r\n(i) Dupuytren disease first developed on the side affected by\r\ntrauma; and\r\n(ii) Dupuytren disease developed in both hands within the one\r\nyear following the trauma; or\r\nNote 1: trauma is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of trauma include, but are not limited to, laceration, sprain or crush\r\ninjury, fracture or surgery, and a thermal, electrical or chemical burn.\r\n(b) having a clinically significant infection involving the palmar\r\nsurface of the affected hand before the clinical onset of\r\nDupuytren disease, and where:\r\n(i) Dupuytren disease first developed on the side affected by\r\nthe infection; and\r\n(ii) Dupuytren disease developed in both hands within the three\r\nmonths following the infection",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means a significant injury, resulting in symptoms and signs lasting\r\nfor at least seven days, or which is of sufficient severity to warrant medical\r\nattention."
+    }, {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "bilateral Dupuytren disease",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having trauma to the hand, wrist or forearm before the clinical\r\nonset of Dupuytren disease, and where:\r\n(i) Dupuytren disease first developed on the side affected by\r\ntrauma; and\r\n(ii) Dupuytren disease developed in both hands within the one\r\nyear following the trauma; or\r\nNote 1: trauma is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of trauma include, but are not limited to, laceration, sprain or crush\r\ninjury, fracture or surgery, and a thermal, electrical or chemical burn."
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having a clinically significant infection involving the palmar\r\nsurface of the affected hand before the clinical onset of\r\nDupuytren disease, and where:\r\n(i) Dupuytren disease first developed on the side affected by\r\nthe infection; and\r\n(ii) Dupuytren disease developed in both hands within the three\r\nmonths following the infection"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "performing any combination of:\r\n(a) repetitive, strenuous or forceful activities using the affected hand;\r\nor\r\n(b) activities using a hand-held, vibrating or percussive tool in the\r\naffected hand;\r\nfor a cumulative period of at least 10 000 hours before the clinical\r\nonset of Dupuytren disease, and where these activities have ceased, the\r\nclinical onset of Dupuytren disease has occurred within five years of\r\ncessation;\r\nNote 1: Examples of repetitive, strenuous or forceful activities include, but are not limited to,\r\nhandling, lifting, moving or carrying a load greater than ten kilograms; using large,\r\nhand-held power machinery; lifting, digging or shovelling; and participating in sports\r\ninvolving repetitive, strenuous or forceful activities such as tennis, rock climbing,\r\nhockey or baseball.\r\nNote 2: Examples of a hand-held, vibrating or percussive tool include, but are not limited to,\r\nscrewdrivers, drills, chainsaws, jackhammers, boring machines and punching\r\nmachines",
+    "definedTerms" : [ {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having diabetes mellitus before the clinical onset of Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having epilepsy at the time of the clinical onset of Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having psoriasis involving the palm of the affected hand at the time of\r\nthe clinical onset of Dupuytren disease",
+    "definedTerms" : [ {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "being treated with vemurafenib within the two years before the clinical\r\nonset of Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "receiving an average of at least 100 milligrams of phenobarbital\r\n(phenobarbitone) per day for the treatment of epilepsy:\r\n(a) for a continuous period of at least two years before the clinical\r\nonset of Dupuytren disease; and\r\n(b) where this treatment has ceased, the clinical onset of Dupuytren\r\ndisease has occurred within one year of cessation",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(14)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of Dupuytren\r\ndisease, and:\r\n(a) smoking commenced at least five years before the clinical\r\nworsening of Dupuytren disease; and\r\n(b) where smoking has ceased, the clinical worsening of Dupuytren\r\ndisease has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "consuming an average of at least 200 grams per week of alcohol, for at\r\nleast five consecutive years within the ten years before the clinical\r\nworsening of Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having alcohol use disorder at the time of the clinical worsening of\r\nDupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having cirrhosis of the liver or steatohepatitis before the clinical\r\nworsening of Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having trauma to the hand, wrist or forearm of the affected side, within\r\nthe one year before the clinical worsening of Dupuytren disease;\r\nNote 1: trauma is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of trauma include, but are not limited to, laceration, sprain or crush injury,\r\nfracture or surgery, and a thermal, electrical or chemical burn",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means a significant injury, resulting in symptoms and signs lasting\r\nfor at least seven days, or which is of sufficient severity to warrant medical\r\nattention."
+    }, {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having a clinically significant infection involving the palmar surface of\r\nthe affected hand, within the three months before the clinical\r\nworsening of Dupuytren disease",
+    "definedTerms" : [ {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "for bilateral Dupuytren disease only:\r\n(a) having trauma to the hand, wrist or forearm before the clinical\r\nworsening of Dupuytren disease, and where:\r\n(i) Dupuytren disease first worsened on the side affected by\r\ntrauma; and\r\n(ii) Dupuytren disease worsened in both hands within the one\r\nyear following the trauma; or\r\nNote 1: trauma is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of trauma include, but are not limited to, laceration, sprain or crush\r\ninjury, fracture or surgery, and a thermal, electrical or chemical burn.\r\n(b) having a clinically significant infection involving the palmar\r\nsurface of the affected hand before the clinical worsening of\r\nDupuytren disease, and where:\r\n(i) Dupuytren disease first worsened on the side affected by\r\nthe infection; and\r\n(ii) Dupuytren disease worsened in both hands within the three\r\nmonths following the infection",
+    "definedTerms" : [ {
+      "term" : "trauma",
+      "definition" : "means a significant injury, resulting in symptoms and signs lasting\r\nfor at least seven days, or which is of sufficient severity to warrant medical\r\nattention."
+    }, {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ],
+    "conditionVariant" : {
+      "name" : "bilateral Dupuytren disease",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "having trauma to the hand, wrist or forearm before the clinical\r\nworsening of Dupuytren disease, and where:\r\n(i) Dupuytren disease first worsened on the side affected by\r\ntrauma; and\r\n(ii) Dupuytren disease worsened in both hands within the one\r\nyear following the trauma; or\r\nNote 1: trauma is defined in the Schedule 1 - Dictionary.\r\nNote 2: Examples of trauma include, but are not limited to, laceration, sprain or crush\r\ninjury, fracture or surgery, and a thermal, electrical or chemical burn."
+      }, {
+        "paragraph" : "(b)",
+        "text" : "having a clinically significant infection involving the palmar\r\nsurface of the affected hand before the clinical worsening of\r\nDupuytren disease, and where:\r\n(i) Dupuytren disease first worsened on the side affected by\r\nthe infection; and\r\n(ii) Dupuytren disease worsened in both hands within the three\r\nmonths following the infection"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "performing any combination of:\r\n(a) repetitive, strenuous or forceful activities using the affected hand;\r\nor\r\n(b) activities using a hand-held, vibrating or percussive tool in the\r\naffected hand;\r\nfor a cumulative period of at least 10 000 hours before the clinical\r\nworsening of Dupuytren disease, and where these activities have\r\nceased, the clinical worsening of Dupuytren disease has occurred\r\nwithin five years of cessation;\r\nNote 1: Examples of repetitive, strenuous or forceful activities include, but are not limited to,\r\nhandling, lifting, moving or carrying a load greater than ten kilograms; using large,\r\nhand-held power machinery; lifting, digging or shovelling; and participating in sports\r\ninvolving repetitive, strenuous or forceful activities such as tennis, rock climbing,\r\nhockey or baseball.\r\nNote 2: Examples of a hand-held, vibrating or percussive tool include, but are not limited to,\r\nscrewdrivers, drills, chainsaws, jackhammers, boring machines and punching\r\nmachines",
+    "definedTerms" : [ {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having diabetes mellitus before the clinical worsening of Dupuytren\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having epilepsy at the time of the clinical worsening of Dupuytren\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having psoriasis involving the palm of the affected hand at the time of\r\nthe clinical worsening of Dupuytren disease",
+    "definedTerms" : [ {
+      "term" : "hand",
+      "definition" : "means an infection such as flexor tenosynovitis or a palmar abscess.\r\nDupuytren disease—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "being treated with vemurafenib within the two years before the clinical\r\nworsening of Dupuytren disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "receiving an average of at least 100 milligrams of phenobarbital\r\n(phenobarbitone) per day for the treatment of epilepsy:\r\n(a) for a continuous period of at least two years before the clinical\r\nworsening of Dupuytren disease; and\r\n(b) where this treatment has ceased, the clinical worsening of\r\nDupuytren disease has occurred within one year of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "inability to obtain appropriate clinical management for Dupuytren\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

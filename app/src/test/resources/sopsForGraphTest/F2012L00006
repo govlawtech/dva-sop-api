@@ -1,0 +1,180 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2012L00006",
+  "instrumentNumber" : "2/2012",
+  "citation" : "Statement of Principles concerning conjunctivitis No. 2 of 2012",
+  "conditionName" : "conjunctivitis",
+  "effectiveFrom" : "2012-01-11",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "H10"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H13.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H13.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "H16.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having blepharitis of the affected eye at the time of the clinical onset of\r\nconjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having an infection of the conjunctiva of the affected eye at the time of\r\nthe clinical onset of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an infection of the conjunctiva",
+      "definition" : "means a bacterial, viral, rickettsial,\nparasitic or fungal infection involving the conjunctiva"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having a condition of the affected eye from the specified list at the time\r\nof the clinical onset of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "a condition of the affected eye from the specified list",
+      "definition" : "means:\n(a) disorder of nasolacrimal duct or gland;\n(b) ectropion;\n(c) exophthalmos; or\n(d) lid retraction"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having ocular or periocular exposure to an allergen within the 12 hours\r\nbefore the clinical onset of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an allergen",
+      "definition" : "means an antigenic substance capable of producing an immune\nresponse"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a condition from the specified list at the time of the clinical\r\nonset of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "a condition from the specified list",
+      "definition" : "means:\n(a) cicatricial pemphigoid;\n(b) dermatitis herpetiformis;\n(c) dermatomyositis;\n(d) diabetes mellitus;\n(e) graft-versus-host disease;\n(f) primary biliary cirrhosis;\n(g) psoriasis;\n(h) rheumatoid arthritis;\n(i) sarcoidosis;\n(j) Sjogren's syndrome;\n(k) symptomatic Vitamin A deficiency;\n(l) symptomatic Vitamin B deficiency;\n(m) systemic lupus erythematosus;\n(n) systemic sclerosis (scleroderma); or\n(o) Wegener's granulomatosis"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for iatrogenic conjunctivitis only, having received therapy to the\r\naffected eye with topically applied medication within the 48 hours\r\nbefore the clinical onset of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "iatrogenic conjunctivitis",
+      "definition" : "means a toxic follicular or infiltrative,\nnonspecific conjunctivitis produced by application of topical ocular\nmedication"
+    } ],
+    "conditionVariant" : {
+      "name" : "iatrogenic conjunctivitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having ocular or periocular exposure to an irritant substance within the\r\n24 hours before the clinical onset of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an irritant substance",
+      "definition" : "means a chemical agent (including those contained in\nsmokes, smog, aerosolised sprays and fumes) which causes an inflammatory\neffect on living tissue at the site of contact"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having mustard gas exposure to the affected eye within the 24 hours\r\nbefore the clinical onset of conjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a foreign body in contact with the affected conjunctiva within\r\nthe 24 hours before the clinical onset of conjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an injury to the conjunctiva of the affected eye within the 24\r\nhours before the clinical onset of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an injury to the conjunctiva",
+      "definition" : "means trauma to the ocular surface involving\nthe conjunctiva by mechanisms including thermal, electrical and chemical\nburns and blunt or penetrating trauma"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a benign or malignant neoplasm affecting the conjunctiva or\r\neyelid margin at the time of the clinical onset of conjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being in an immunosuppressed state at the time of the clinical onset of\r\nconjunctivitis",
+    "definedTerms" : [ {
+      "term" : "being in an immunosuppressed state",
+      "definition" : "means being in a condition of\nlowered immune function due to one of the following circumstances or\nconditions:\n(a) being infected with the human immunodeficiency virus;\n(b) having a haematological or solid organ malignancy;\n(c) undergoing chemotherapy for the treatment of a malignant or\nproliferative disease;\n(d) undergoing solid organ, stem cell or bone marrow transplantation; or\n(e) undergoing treatment with a tumour necrosis factor-alpha antagonist"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(m)",
+    "text" : "having blepharitis of the affected eye at the time of the clinical\r\nworsening of conjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having an infection of the conjunctiva of the affected eye at the time of\r\nthe clinical worsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an infection of the conjunctiva",
+      "definition" : "means a bacterial, viral, rickettsial,\nparasitic or fungal infection involving the conjunctiva"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a condition of the affected eye from the specified list at the time\r\nof the clinical worsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "a condition of the affected eye from the specified list",
+      "definition" : "means:\n(a) disorder of nasolacrimal duct or gland;\n(b) ectropion;\n(c) exophthalmos; or\n(d) lid retraction"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having ocular or periocular exposure to an allergen within the 12 hours\r\nbefore the clinical worsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an allergen",
+      "definition" : "means an antigenic substance capable of producing an immune\nresponse"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a condition from the specified list at the time of the clinical\r\nworsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "a condition from the specified list",
+      "definition" : "means:\n(a) cicatricial pemphigoid;\n(b) dermatitis herpetiformis;\n(c) dermatomyositis;\n(d) diabetes mellitus;\n(e) graft-versus-host disease;\n(f) primary biliary cirrhosis;\n(g) psoriasis;\n(h) rheumatoid arthritis;\n(i) sarcoidosis;\n(j) Sjogren's syndrome;\n(k) symptomatic Vitamin A deficiency;\n(l) symptomatic Vitamin B deficiency;\n(m) systemic lupus erythematosus;\n(n) systemic sclerosis (scleroderma); or\n(o) Wegener's granulomatosis"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "for iatrogenic conjunctivitis only, having received therapy to the\r\naffected eye with topically applied medication within the 48 hours\r\nbefore the clinical worsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "iatrogenic conjunctivitis",
+      "definition" : "means a toxic follicular or infiltrative,\nnonspecific conjunctivitis produced by application of topical ocular\nmedication"
+    } ],
+    "conditionVariant" : {
+      "name" : "iatrogenic conjunctivitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having ocular or periocular exposure to an irritant substance within the\r\n24 hours before the clinical worsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an irritant substance",
+      "definition" : "means a chemical agent (including those contained in\nsmokes, smog, aerosolised sprays and fumes) which causes an inflammatory\neffect on living tissue at the site of contact"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having mustard gas exposure to the affected eye within the 24 hours\r\nbefore the clinical worsening of conjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having a foreign body in contact with the affected conjunctiva within\r\nthe 24 hours before the clinical worsening of conjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having an injury to the conjunctiva of the affected eye within the 24\r\nhours before the clinical worsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "an injury to the conjunctiva",
+      "definition" : "means trauma to the ocular surface involving\nthe conjunctiva by mechanisms including thermal, electrical and chemical\nburns and blunt or penetrating trauma"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having a benign or malignant neoplasm affecting the conjunctiva or\r\neyelid margin at the time of the clinical worsening of conjunctivitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "being in an immunosuppressed state at the time of the clinical\r\nworsening of conjunctivitis",
+    "definedTerms" : [ {
+      "term" : "being in an immunosuppressed state",
+      "definition" : "means being in a condition of\nlowered immune function due to one of the following circumstances or\nconditions:\n(a) being infected with the human immunodeficiency virus;\n(b) having a haematological or solid organ malignancy;\n(c) undergoing chemotherapy for the treatment of a malignant or\nproliferative disease;\n(d) undergoing solid organ, stem cell or bone marrow transplantation; or\n(e) undergoing treatment with a tumour necrosis factor-alpha antagonist"
+    } ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "inability to obtain appropriate clinical management for conjunctivitis",
+    "definedTerms" : [ ]
+  } ]
+}

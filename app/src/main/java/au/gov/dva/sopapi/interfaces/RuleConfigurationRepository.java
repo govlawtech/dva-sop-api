@@ -56,5 +56,4 @@ public interface RuleConfigurationRepository {
 
         return ImmutableSet.copyOf(conditionConfigurations);
     }
-
 }

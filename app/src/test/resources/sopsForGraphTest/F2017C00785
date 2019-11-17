@@ -1,0 +1,222 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00785",
+  "instrumentNumber" : "44/2013",
+  "citation" : "Statement of Principles concerning erectile dysfunction No. 44 of 2013",
+  "conditionName" : "erectile dysfunction",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a clinically significant psychiatric disorder from the specified\r\nlist at the time of the clinical onset of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "the presence of hypertension at the time of the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being obese at the time of the clinical onset of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a specified medical condition at the time of the clinical onset of\r\nerectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "a specified medical condition",
+      "definition" : "means:\n(a) atherosclerotic peripheral vascular disease;\n(b) cirrhosis of the liver;\n(c) diabetes mellitus;\n(d) iron overload;\n(e) ischaemic heart disease;\n(f) malignant neoplasm of the reproductive organs;\n(g) non-aneurysmal aortic atherosclerotic disease;\n(h) sleep apnoea; or\n(i) systemic sclerosis"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having received a cumulative equivalent dose of at least 1.0 sievert of\r\nionising radiation to the lower abdomen, pelvis, penis or perineal\r\nregion within the ten years before the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nlower abdomen, pelvis, penis or perineal region was in the field of\r\nradiation, within the ten years before the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a specified endocrinological disorder at the time of the clinical\r\nonset of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "a specified endocrinological disorder",
+      "definition" : "means a disorder of the endocrine\nsystem which can result in sexual dysfunction, and includes:\n(a) acromegaly;\n(b) Cushing's syndrome;\n(c) hyperprolactinaemia;\n(d) hyperthyroidism;\n(e) hypogonadism;\n(f) hypothyroidism;\n(g) panhypopituitarism;\n(h) pituitary gland adenoma;\n(i) pituitary or hypothalamic dysfunction; or\n(j) testicular hypofunction"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "experiencing blunt or penetrating trauma to the external genitals,\r\nperineum or pelvis, including surgical trauma, within the three months\r\nbefore the clinical onset of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "blunt or penetrating trauma",
+      "definition" : "means an injury that results in pain and\nswelling or tenderness for at least forty-eight hours and which is of sufficient\nseverity to warrant medical attention"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having surgery to the prostate, excluding biopsy, within the three\r\nmonths before the clinical onset of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "experiencing a traumatic injury, including surgery, that results in acute\r\nand permanent neurological sequelae involving the brain, spinal cord,\r\nthoracolumbar nerve roots, cauda equina or the somatic or autonomic\r\nnerve supply to the penis, within the three months before the clinical\r\nonset of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having a specified neurological disorder at the time of the clinical onset\r\nof erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "a specified neurological disorder",
+      "definition" : "means:\n(a) a lesion of the temporal lobe;\n(b) cerebrovascular accident;\n(c) epilepsy;\n(d) Guillain-Barre syndrome;\n(e) multiple sclerosis;\n(f) multiple system atrophy;\n(g) Parkinson's disease or secondary parkinsonism;\n(h) peripheral autonomic neuropathy; or\n(i) compression, neoplasm, infection or inflammation of the brain, spinal\ncord, thoracolumbar nerve roots, cauda equina or the somatic or\nautonomic nerve supply to the penis"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical onset of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having a renal transplantation before the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list at the time of the clinical onset of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having ischaemic priapism for a continuous period of at least the four\r\nhours before the clinical onset of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "ischaemic priapism",
+      "definition" : "means a persistent erection marked by rigidity of the\ncorpora cavernosa, and little or no cavernous arterial inflow"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having Peyronie's disease before the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "Peyronie's disease",
+      "definition" : "means induration of the corpora cavernosa of the penis,\ncharacterised by a circumscribed, firm, painless plaque or band, usually\nsituated on the dorsum of the penis"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a condition from the specified list which causes lower urinary\r\ntract symptoms, for the six months before the clinical onset of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(t)",
+    "text" : "having a clinically significant psychiatric disorder from the specified\r\nlist at the time of the clinical worsening of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "smoking at least 20 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "the presence of hypertension at the time of the clinical worsening of\r\nerectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being obese at the time of the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having a specified medical condition at the time of the clinical\r\nworsening of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "a specified medical condition",
+      "definition" : "means:\n(a) atherosclerotic peripheral vascular disease;\n(b) cirrhosis of the liver;\n(c) diabetes mellitus;\n(d) iron overload;\n(e) ischaemic heart disease;\n(f) malignant neoplasm of the reproductive organs;\n(g) non-aneurysmal aortic atherosclerotic disease;\n(h) sleep apnoea; or\n(i) systemic sclerosis"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having received a cumulative equivalent dose of at least 1.0 sievert of\r\nionising radiation to the lower abdomen, pelvis, penis or perineal\r\nregion within the ten years before the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nlower abdomen, pelvis, penis or perineal region was in the field of\r\nradiation, within the ten years before the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having a specified endocrinological disorder at the time of the clinical\r\nworsening of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "a specified endocrinological disorder",
+      "definition" : "means a disorder of the endocrine\nsystem which can result in sexual dysfunction, and includes:\n(a) acromegaly;\n(b) Cushing's syndrome;\n(c) hyperprolactinaemia;\n(d) hyperthyroidism;\n(e) hypogonadism;\n(f) hypothyroidism;\n(g) panhypopituitarism;\n(h) pituitary gland adenoma;\n(i) pituitary or hypothalamic dysfunction; or\n(j) testicular hypofunction"
+    } ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "experiencing blunt or penetrating trauma to the external genitals,\r\nperineum or pelvis, including surgical trauma, within the three months\r\nbefore the clinical worsening of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "blunt or penetrating trauma",
+      "definition" : "means an injury that results in pain and\nswelling or tenderness for at least forty-eight hours and which is of sufficient\nseverity to warrant medical attention"
+    } ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having surgery to the prostate, excluding biopsy, within the three\r\nmonths before the clinical worsening of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "experiencing a traumatic injury, including surgery, that results in acute\r\nand permanent neurological sequelae involving the brain, spinal cord,\r\nthoracolumbar nerve roots, cauda equina or the somatic or autonomic\r\nnerve supply to the penis, within the three months before the clinical\r\nworsening of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having a specified neurological disorder at the time of the clinical\r\nworsening of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "a specified neurological disorder",
+      "definition" : "means:\n(a) a lesion of the temporal lobe;\n(b) cerebrovascular accident;\n(c) epilepsy;\n(d) Guillain-Barre syndrome;\n(e) multiple sclerosis;\n(f) multiple system atrophy;\n(g) Parkinson's disease or secondary parkinsonism;\n(h) peripheral autonomic neuropathy; or\n(i) compression, neoplasm, infection or inflammation of the brain, spinal\ncord, thoracolumbar nerve roots, cauda equina or the somatic or\nautonomic nerve supply to the penis"
+    } ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical worsening of erectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having a renal transplantation before the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list at the time of the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "having ischaemic priapism for a continuous period of at least the four\r\nhours before the clinical worsening of erectile dysfunction",
+    "definedTerms" : [ {
+      "term" : "ischaemic priapism",
+      "definition" : "means a persistent erection marked by rigidity of the\ncorpora cavernosa, and little or no cavernous arterial inflow"
+    } ]
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "having Peyronie's disease before the clinical worsening of erectile\r\ndysfunction",
+    "definedTerms" : [ {
+      "term" : "Peyronie's disease",
+      "definition" : "means induration of the corpora cavernosa of the penis,\ncharacterised by a circumscribed, firm, painless plaque or band, usually\nsituated on the dorsum of the penis"
+    } ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "having a condition from the specified list which causes lower urinary\r\ntract symptoms, for the six months before the clinical worsening of\r\nerectile dysfunction",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(mm)",
+    "text" : "inability to obtain appropriate clinical management for erectile\r\ndysfunction",
+    "definedTerms" : [ ]
+  } ]
+}

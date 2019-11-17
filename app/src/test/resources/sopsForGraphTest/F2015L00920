@@ -1,0 +1,47 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00920",
+  "instrumentNumber" : "88/2015",
+  "citation" : "Statement of Principles concerning chickenpox (No. 88 of 2015)",
+  "conditionName" : "chickenpox",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "B01"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being exposed to the varicella-zoster virus:\r\n(a) between 10 and 21 days before the clinical onset of chickenpox;\r\nor\r\n(b) between 10 and 28 days before the clinical onset of chickenpox\r\nin someone who:\r\n(i) is in an immunocompromised state as specified; or\r\n(ii) has received varicella-zoster immunoglobulin or normal\r\nhuman immunoglobulin as prophylaxis following varicella-\r\nzoster virus exposure",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having chronic renal failure;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: being treated with an immunosuppressive drug and chronic renal failure are also\r\ndefined in the Schedule 1 - Dictionary."
+    }, {
+      "term" : "being exposed to the varicella-zoster virus",
+      "definition" : "means:\r\n(a) being in close contact with a person who has infectious chickenpox;\r\n(b) being in close contact with articles contaminated with varicella-zoster\r\nvirus within the previous two days; or\r\n(c) inhaling droplet nuclei contaminated with varicella-zoster virus.\r\nNote: being in close contact and droplet nuclei are also defined in the Schedule 1 -\r\nDictionary."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "for vaccine strain chickenpox only, having live attenuated varicella\r\nvaccine between 5 and 45 days before the clinical onset of chickenpox",
+    "definedTerms" : [ {
+      "term" : "vaccine strain chickenpox",
+      "definition" : "means chickenpox attributed to the vaccine strain"
+    } ],
+    "conditionVariant" : {
+      "name" : "vaccine strain chickenpox",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being in an immunocompromised state as specified at the time of the\r\nclinical onset of chickenpox",
+    "definedTerms" : [ {
+      "term" : "immunocompromised state as specified",
+      "definition" : "means a condition of substantially\r\nlowered immune function, such as would occur in the following conditions\r\nor circumstances:\r\n(a) being infected with human immunodeficiency virus;\r\n(b) being treated with an immunosuppressive drug;\r\n(c) having a haematological or solid organ malignancy;\r\n(d) having chronic renal failure;\r\n(e) having severe malnutrition; or\r\n(f) undergoing solid organ, stem cell or bone marrow transplantation.\r\nNote: being treated with an immunosuppressive drug and chronic renal failure are also\r\ndefined in the Schedule 1 - Dictionary."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(4)",
+    "text" : "inability to obtain appropriate clinical management for chickenpox",
+    "definedTerms" : [ ]
+  } ]
+}

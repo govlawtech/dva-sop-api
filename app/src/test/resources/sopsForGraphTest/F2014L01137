@@ -1,0 +1,155 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01137",
+  "instrumentNumber" : "75/2014",
+  "citation" : "Statement of Principles concerning peripheral neuropathy No. 75 of 2014",
+  "conditionName" : "peripheral neuropathy",
+  "effectiveFrom" : "2014-09-22",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a systemic disease from the specified list at the time of the\r\nclinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "a systemic disease from the specified list",
+      "definition" : "means:\n(a) acromegaly;\n(b) amyloidosis;\n(c) chronic liver disease;\n(d) chronic renal disease;\n(e) coeliac disease;\n(f) diabetes mellitus;\n(g) Graves' disease;\n(h) hypereosinophilic syndrome;\n(i) hyperthyroidism;\n(j) hypothyroidism;\n(k) inflammatory bowel disease;\n(l) sarcoidosis;\n(m) thyrotoxic goitre; or\n(n) thyrotoxicosis"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having severe alcohol use disorder at the time of the clinical onset of\r\nperipheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "severe alcohol use disorder",
+      "definition" : "means a mental disorder that meets the\nfollowing diagnostic criteria (derived from DSM-5):\nA problematic pattern of alcohol use leading to clinically significant\nimpairment or distress, as manifested by at least six of the following, occurring\nwithin a 12-month period:\nA. Alcohol is often taken in larger amounts or over a longer period than\nwas intended.\nB. There is a persistent desire or unsuccessful efforts to cut down or\ncontrol alcohol use.\nC. A great deal of time is spent in activities necessary to obtain alcohol,\nuse alcohol, or recover from its effects.\nD. Craving, or a strong desire or urge to use alcohol.\nE. Recurrent alcohol use resulting in a failure to fulfill major role\nobligations at work, school, or home.\nF. Continued alcohol use despite having persistent or recurrent social or\ninterpersonal problems caused or exacerbated by the effects of alcohol.\nG. Important social, occupational, or recreational activities are given up or\nreduced because of alcohol use.\nH. Recurrent alcohol use in situations in which it is physically hazardous.\nI. Alcohol use is continued despite knowledge of having a persistent or\nrecurrent physical or psychological problem that is likely to have been\ncaused or exacerbated by alcohol.\nJ. Tolerance, as defined by either of the following:\n(i) a need for markedly increased amounts of alcohol to achieve\nintoxication or desired effect; or\n(ii) a markedly diminished effect with continued use of the same\namount of alcohol.\nK. Withdrawal, as manifested by either of the following:\n(i) the characteristic withdrawal syndrome for alcohol; or\n(ii) alcohol (or a closely related substance, such as a benzodiazepine)\nis taken to relieve or avoid withdrawal symptoms.\nThe definition of alcohol use disorder excludes acute alcohol intoxication in\nthe absence of alcohol use disorder"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "consuming at least 700 kilograms of alcohol within the ten years before\r\nthe clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a malignant neoplasm, other than non-melanotic malignant\r\nneoplasm of the skin, at the time of the clinical onset of peripheral\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having a neurological paraneoplastic syndrome at the time of the\r\nclinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "a neurological paraneoplastic syndrome",
+      "definition" : "means a disease or symptom of\nthe nervous system that results from an immune response to a cancer in the\nbody and not from the local presence of cancer cells, and which may be\nrecognised up to five years before the diagnosis of the cancer"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having a haematological or lymphoproliferative disorder from the\r\nspecified list at the time of the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a systemic vasculitis from the specified list at the time of the\r\nclinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "a systemic vasculitis from the specified list",
+      "definition" : "means:\n(a) Behçet's syndrome;\n(b) Churg-Strauss syndrome (eosinophilic granulomatosis with\npolyangiitis);\n(c) cryoglobulinaemia;\n(d) giant cell (temporal) arteritis;\n(e) Henoch-Schonlein purpura (IgA vasculitis);\n(f) microscopic polyangiitis;\n(g) polyarteritis nodosa; or\n(h) Wegener's granulomatosis (granulomatosis with polyangiitis)"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having an inflammatory connective tissue disease from the specified\r\nlist at the time of the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having a viral, bacterial or protozoal infection as specified at the time\r\nof the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "a viral, bacterial or protozoal infection as specified",
+      "definition" : "means current or\nrecent infection with:\n(a) Borrelia burgdorferi (Lyme disease);\n(b) Clostridium botulinum (botulism);\n(c) Corynebacterium diphtheriae (diphtheria);\n(d) hepatitis B virus;\n(e) hepatitis C virus;\n(f) human immunodeficiency virus;\n(g) Mycobacterium leprae (leprosy); or\n(h) Treponema pallidum (tertiary syphilis)"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a thermal burn or electrical injury within the 30 days before the\r\nclinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "a thermal burn",
+      "definition" : "means:\n(a) a full thickness thermal burn to at least ten percent of the total body\nsurface area; or\n(b) a partial thickness thermal burn to at least 20 percent of the total body\nsurface area"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a critical illness as specified requiring mechanical ventilation\r\nsupport within the 30 days before the clinical onset of peripheral\r\nneuropathy",
+    "definedTerms" : [ {
+      "term" : "a critical illness as specified",
+      "definition" : "means a clinical condition complicated by\nsepticaemia, adult respiratory distress syndrome, acute renal tubular necrosis,\ndiffuse intravascular coagulation or multiple organ failure"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical from\r\nthe specified list on at least 30 occasions within the six months before\r\nthe clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a volatile\r\nsubstance from the specified list, in an unventilated and confined\r\nspace:\r\n(i) on at least 30 occasions within a continuous period of six\r\nmonths before the clinical onset of peripheral neuropathy; and\r\n(ii) where contact with a volatile substance from the specified list\r\nhas ceased, the clinical onset of peripheral neuropathy has\r\noccurred within three months of cessation",
+    "definedTerms" : [ {
+      "term" : "a volatile substance from the specified list",
+      "definition" : "means:\n(a) allyl chloride;\n(b) carbon disulphide;\n(c) methyl n-butyl ketone (MNBK); or\n(d) n-hexane"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having substance use disorder involving a substance from the specified\r\nlist at the time of the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a chemical agent\r\ncontaminated by 2,3,7,8-tetrachlorodibenzo-para-dioxin (TCDD)\r\nwithin the 30 days before the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "inhaling, ingesting or having cutaneous contact with a specified\r\nchemical within the 30 days before the clinical onset of peripheral\r\nneuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having acute cholinergic poisoning from exposure to an\r\norganophosphorus ester or a carbamate pesticide within the six weeks\r\nbefore the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "acute cholinergic poisoning",
+      "definition" : "means symptoms and signs due to the\ninhibition of acetylcholinesterase enzyme activity which start to occur within\n24 hours following exposure. These symptoms and signs include acute\nparalysis, overwhelming bronchial secretions, bradycardia, gastrointestinal\ndistress, miosis, lacrimation or diarrhoea"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being poisoned with an agent as specified within the 30 days before the\r\nclinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "being poisoned with an agent as specified",
+      "definition" : "means having clinical,\nhaematological or biochemical evidence of poisoning with one of the\nfollowing agents:\n(a) a polychlorinated biphenyl;\n(b) aniline-denatured rapeseed oil;\n(c) brevetoxin;\n(d) ciguatera toxin;\n(e) cobalt;\n(f) fruit of the Buckthorn shrub (Karwinskia humboldtiana);\n(g) inorganic arsenic;\n(h) inorganic lead;\n(i) mercury;\n(j) N-3-pyridyl methyl-N'-p-nitrophenyl urea (Vacor);\n(k) saxitoxin;\n(l) tetrodotoxin;\n(m) thallium salts;\n(n) tri-cresyl phosphate; or\n(o) tri-ortho-cresyl phosphate"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a nutritional deficiency as specified at the time of the clinical\r\nonset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "a nutritional deficiency as specified",
+      "definition" : "means having clinical or biochemical\nevidence of a deficiency of one of the following:\n(a) copper;\n(b) vitamin B1 (thiamine);\n(c) vitamin B6 (pyridoxine);\n(d) vitamin B12 (cobalamin); or\n(e) vitamin E"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having hypophosphataemia while undergoing total parenteral nutrition\r\nat the time of the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "being treated with a drug or a drug from a class of drugs from Specified\r\nList 1, for a condition for which the drug cannot be ceased or\r\nsubstituted, at the time of the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "being treated with a drug or a drug from a class of drugs from Specified\r\nList 2 at the time of the clinical onset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being treated with cisplatin within the six months before the clinical\r\nonset of peripheral neuropathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having bariatric surgery before the clinical onset of peripheral\r\nneuropathy",
+    "definedTerms" : [ {
+      "term" : "bariatric surgery",
+      "definition" : "means weight reduction surgical procedures including\ngastrojejunostomy, gastric stapling, vertical banded gastroplasty and\ngastrectomy with Roux-en-Y anastomosis"
+    } ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having vitamin B6 (pyridoxine) hypervitaminosis at the time of the\r\nclinical onset of peripheral neuropathy",
+    "definedTerms" : [ {
+      "term" : "having vitamin B6 (pyridoxine) hypervitaminosis",
+      "definition" : "means:\n(a) having taken vitamin B6 at a rate of at least 100 milligrams per day for\na continuous period of at least 12 months; or\n(b) having clinical or biochemical evidence of vitamin B6\nhypervitaminosis"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(z)",
+    "text" : "inability to obtain appropriate clinical management for peripheral\r\nneuropathy",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L01122",
+  "instrumentNumber" : "48/2013",
+  "citation" : "Statement of Principles concerning periodontitis No. 48 of 2013",
+  "conditionName" : "periodontitis",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K05.3"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having gingivitis at the affected site within the two years before the\r\nclinical onset of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of periodontitis, and\r\nwhere smoking has ceased, the clinical onset of periodontitis has\r\noccurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of\r\nperiodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having a nutritional deficiency at the time of the clinical onset of\r\nperiodontitis",
+    "definedTerms" : [ {
+      "term" : "a nutritional deficiency",
+      "definition" : "means:\n(a) scurvy; or\n(b) clinical or biochemical evidence of a severe protein energy malnutrition\ndue to:\n(i) inadequate intake of protein or energy; or\n(ii) systemic disease that impairs intake or utilisation of nutrients or\nthat increases nutrient requirements or metabolic losses"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having an osseointegrated implant or dental prosthesis, including single\r\ncrowns, fixed partial dentures, all-ceramic crowns, resin-bonded\r\nprostheses or posts and cores, embedded in the affected region of the\r\nperiodontium for a continuous period of at least the one year before the\r\nclinical onset of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having trauma to the affected region of the periodontium within the\r\nthree months before the clinical onset of periodontitis",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected region of the periodontium",
+      "definition" : "means a blunt or\npenetrating injury, including surgery, resulting in:\n(a) fracture, luxation, loss or extraction of a tooth; or\n(b) disruption or fracture of the periodontium"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having an oral piercing adjacent to the affected region of the\r\nperiodontium for a continuous period of at least the six months before\r\nthe clinical onset of periodontitis",
+    "definedTerms" : [ {
+      "term" : "an oral piercing",
+      "definition" : "means permanent insertion of an ornament into an opening\nmade in the skin or mucosa of the tongue, lips or cheek"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical onset of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having neutropaenia, agranulocytosis or leukaemia at the time of the\r\nclinical onset of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being obese for a continuous period of at least the five years before the\r\nclinical onset of periodontitis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "consuming an average of at least 300 grams of alcohol per week for a\r\ncontinuous period of at least the two years before the clinical onset of\r\nperiodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having rheumatoid arthritis at the time of the clinical onset of\r\nperiodontitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "having gingivitis at the affected site within the two years before the\r\nclinical worsening of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of\r\nperiodontitis, and where smoking has ceased, the clinical worsening of\r\nperiodontitis has occurred within five years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having diabetes mellitus at the time of the clinical worsening of\r\nperiodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a nutritional deficiency at the time of the clinical worsening of\r\nperiodontitis",
+    "definedTerms" : [ {
+      "term" : "a nutritional deficiency",
+      "definition" : "means:\n(a) scurvy; or\n(b) clinical or biochemical evidence of a severe protein energy malnutrition\ndue to:\n(i) inadequate intake of protein or energy; or\n(ii) systemic disease that impairs intake or utilisation of nutrients or\nthat increases nutrient requirements or metabolic losses"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical worsening of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a foreign body embedded in the affected region of the\r\nperiodontium for a continuous period of at least the one year before the\r\nclinical worsening of periodontitis",
+    "definedTerms" : [ {
+      "term" : "a foreign body",
+      "definition" : "means:\n(a) a fixed orthodontic appliance; or\n(b) an osseointegrated implant or dental prosthesis, including single\ncrowns, fixed partial dentures, all-ceramic crowns, resin-bonded\nprostheses or posts and cores"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having trauma to the affected region of the periodontium within the\r\nthree months before the clinical worsening of periodontitis",
+    "definedTerms" : [ {
+      "term" : "trauma to the affected region of the periodontium",
+      "definition" : "means a blunt or\npenetrating injury, including surgery, resulting in:\n(a) fracture, luxation, loss or extraction of a tooth; or\n(b) disruption or fracture of the periodontium"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having an oral piercing adjacent to the affected region of the\r\nperiodontium for a continuous period of at least the six months before\r\nthe clinical worsening of periodontitis",
+    "definedTerms" : [ {
+      "term" : "an oral piercing",
+      "definition" : "means permanent insertion of an ornament into an opening\nmade in the skin or mucosa of the tongue, lips or cheek"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nat the time of the clinical worsening of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having neutropaenia, agranulocytosis or leukaemia at the time of the\r\nclinical worsening of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "being obese for a continuous period of at least the five years before the\r\nclinical worsening of periodontitis",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "consuming an average of at least 300 grams of alcohol per week for a\r\ncontinuous period of at least the two years before the clinical\r\nworsening of periodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having rheumatoid arthritis at the time of the clinical worsening of\r\nperiodontitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "inability to obtain appropriate clinical management for periodontitis",
+    "definedTerms" : [ ]
+  } ]
+}

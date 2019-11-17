@@ -1,0 +1,52 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017L00883",
+  "instrumentNumber" : "42/2017",
+  "citation" : "Statement of Principles concerning femoroacetabular impingement syndrome (Reasonable Hypothesis) (No. 42 of 2017)",
+  "conditionName" : "femoroacetabular impingement syndrome",
+  "effectiveFrom" : "2017-07-31",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for\r\nthe one month before the clinical onset of femoroacetabular\r\nimpingement syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nhip on the affected side, at a minimum intensity of five METs, for at\r\nleast four hours per week for the one month before the clinical onset of\r\nfemoroacetabular impingement syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\r\n1  = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of\r\nbody weight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the hip on the affected side by at least 100 percent,\r\nto a minimum intensity of five METs for at least two hours per day,\r\nwithin the seven days before the clinical onset of femoroacetabular\r\nimpingement syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\r\n1  = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of\r\nbody weight per hour or resting metabolic rate."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(4)",
+    "text" : "running or jogging an average of at least 30 kilometres per week for\r\nthe one month before the clinical worsening of femoroacetabular\r\nimpingement syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "undertaking weight bearing exercise involving repeated activity of the\r\nhip on the affected side, at a minimum intensity of five METs, for at\r\nleast four hours per week for the one month before the clinical\r\nworsening of femoroacetabular impingement syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\r\n1  = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of\r\nbody weight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the hip on the affected side by at least 100 percent,\r\nto a minimum intensity of five METs for at least two hours per day,\r\nwithin the seven days before the clinical worsening of\r\nfemoroacetabular impingement syndrome",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\r\n1  = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of\r\nbody weight per hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "inability to obtain appropriate clinical management for\r\nfemoroacetabular impingement syndrome",
+    "definedTerms" : [ ]
+  } ]
+}

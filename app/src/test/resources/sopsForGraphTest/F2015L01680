@@ -1,0 +1,60 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L01680",
+  "instrumentNumber" : "126/2015",
+  "citation" : "Statement of Principles concerning discoid lupus erythematosus (Reasonable Hypothesis) (No. 126 of 2015)",
+  "conditionName" : "discoid lupus erythematosus",
+  "effectiveFrom" : "2015-11-16",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "L93.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "being exposed to sunlight or ultraviolet light at a level sufficient to\r\ninduce erythema at least 24 hours, but not more than 30 days, before\r\nthe clinical onset of discoid lupus erythematosus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "being treated with a class of drug from the specified list of classes of\r\ndrugs at the time of the clinical onset of discoid lupus erythematosus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "having an injury to the skin at the affected site within the 30 days\r\nbefore the clinical onset of discoid lupus erythematosus",
+    "definedTerms" : [ {
+      "term" : "injury to the skin",
+      "definition" : "means any injury which is capable of causing"
+    } ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "having hormone replacement therapy with an oestrogen for at least the\r\ntwo years before the clinical onset of discoid lupus erythematosus",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(5)",
+    "text" : "being exposed to sunlight or ultraviolet light at a level sufficient to\r\ninduce erythema at least 24 hours, but not more than 30 days, before\r\nthe clinical worsening of discoid lupus erythematosus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "being treated with a class of drug from the specified list of classes of\r\ndrugs at the time of the clinical worsening of discoid lupus\r\nerythematosus",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having an injury to the skin at the affected site within the 30 days\r\nbefore the clinical worsening of discoid lupus erythematosus",
+    "definedTerms" : [ {
+      "term" : "injury to the skin",
+      "definition" : "means any injury which is capable of causing"
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "where smoking has not ceased before the clinical worsening of discoid\r\nlupus erythematosus, smoking at least ten pack-years of cigarettes, or\r\nthe equivalent thereof in other tobacco products, before the clinical\r\nworsening of discoid lupus erythematosus",
+    "definedTerms" : [ {
+      "term" : "products",
+      "definition" : "means a calculation of consumption where one pack-year of\r\ncigarettes equals 20 tailor-made cigarettes per day for a period of one\r\ncalendar year, or 7 300 cigarettes. One tailor-made cigarette approximates\r\none gram of tobacco or one gram of cigar or pipe tobacco by weight. One\r\npack-year of tailor-made cigarettes equates to 7.3 kilograms of smoking\r\ntobacco by weight. Tobacco  mean cigarettes, pipe tobacco or\r\ncigars, smoked alone or in any combination."
+    } ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "inability to obtain appropriate clinical management for discoid lupus\r\nerythematosus",
+    "definedTerms" : [ ]
+  } ]
+}

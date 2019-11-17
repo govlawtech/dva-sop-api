@@ -1,0 +1,111 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00193",
+  "instrumentNumber" : "20/2018",
+  "citation" : "Statement of Principles concerning toxic retinopathy (Balance of Probabilities) (No. 20 of 2018)",
+  "conditionName" : "toxic retinopathy",
+  "effectiveFrom" : "2018-04-02",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "being treated with a quinoline-based drug as specified, before the\r\nclinical onset of toxic retinopathy",
+    "definedTerms" : [ {
+      "term" : "being treated with a quinoline-based drug as specified",
+      "definition" : "means:\r\n(a) taking daily chloroquine for a continuous period of at least six months;\r\nor\r\n(b) taking a cumulative dose of chloroquine of at least 200 grams; or\r\n(c) taking daily hydroxychloroquine for a continuous period of at least five\r\nyears; or\r\n(d) taking a cumulative dose of hydroxychloroquine of at least 400 grams."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "being treated with tamoxifen as specified within the one year before the\r\nclinical onset of toxic retinopathy",
+    "definedTerms" : [ {
+      "term" : "being treated with tamoxifen as specified",
+      "definition" : "means:\r\n(a) taking daily tamoxifen for a continuous period of at least six months; or\r\n(b) taking a cumulative dose of tamoxifen of at least 100 grams."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "being treated with an intravitreal or subconjunctival aminoglycoside\r\nfrom the specified list of aminoglycosides, within the seven days\r\nbefore the clinical onset of toxic retinopathy",
+    "definedTerms" : [ {
+      "term" : "specified list of aminoglycosides",
+      "definition" : "means:\r\n(a) amikacin; or\r\n(b) gentamicin."
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "being treated with intravitreal fomivirsen within the 30 days before the\r\nclinical onset of toxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "being treated with intravenous deferoxamine within the seven days\r\nbefore the clinical onset of toxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "being treated with the phenothiazine drugs chlorpromazine or\r\nthioridazine for a continuous period of at least the two weeks before the\r\nclinical onset of toxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "being treated with daily clofazimine, at an average dose of at least\r\n100 milligrams per day, for a continuous period of at least the three\r\nmonths before the clinical onset of toxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "being treated with ritonavir for a continuous period of at least the three\r\nmonths before the clinical onset of toxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "being treated with interferon for a continuous period of at least four\r\nweeks, within the three months before the clinical onset of toxic\r\nretinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "being treated with subcutaneous or intramuscular deferoxamine for a\r\ncontinuous period of at least the four weeks before the clinical onset of\r\ntoxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "taking oral canthaxanthin supplements or tablets as specified within the\r\nfive years before the clinical onset of toxic retinopathy",
+    "definedTerms" : [ {
+      "term" : "taking oral canthaxanthin supplements or tablets as specified",
+      "definition" : "means:\r\n(a) daily oral canthaxanthin supplements or tablets for a continuous period\r\nof at least one year; or\r\n(b) having a cumulative dose of at least 15 grams of canthaxanthin.\r\nNote: Canthaxanthin used as a colour additive in foods or drugs is excluded."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "inhaling isopropyl nitrite within the two weeks before the clinical onset\r\nof toxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "using an intravenous drug containing talc within the two years before\r\nthe clinical onset of toxic retinopathy",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "for cystoid macular oedema only:\r\n(a) being treated with daily niacin for a continuous period of at least\r\ntwo weeks, at an average dose of at least 1.5 grams per day,\r\nwithin the three months before the clinical onset of toxic\r\nretinopathy; or\r\n(b) being treated with intravenous paclitaxel or docetaxel within the\r\nthree months before the clinical onset of toxic retinopathy",
+    "definedTerms" : [ {
+      "term" : "cystoid macular oedema",
+      "definition" : "means a painless disorder of the macula, in which\r\ndisruption of the normal blood-retinal barrier causes the accumulation of\r\nfluid within the intracellular spaces of the retina, primarily in the outer\r\nplexiform layer."
+    } ],
+    "conditionVariant" : {
+      "name" : "cystoid macular oedema",
+      "variantFactors" : [ {
+        "paragraph" : "(a)",
+        "text" : "being treated with daily niacin for a continuous period of at least\r\ntwo weeks, at an average dose of at least 1.5 grams per day,\r\nwithin the three months before the clinical onset of toxic\r\nretinopathy"
+      }, {
+        "paragraph" : "(b)",
+        "text" : "being treated with intravenous paclitaxel or docetaxel within the\r\nthree months before the clinical onset of toxic retinopathy"
+      } ]
+    }
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "for cystoid macular oedema only, in an aphakic or pseudophakic eye\r\nonly, being treated with topical adrenaline eye drops, within the three\r\nmonths before the clinical onset of toxic retinopathy",
+    "definedTerms" : [ {
+      "term" : "cystoid macular oedema",
+      "definition" : "means a painless disorder of the macula, in which\r\ndisruption of the normal blood-retinal barrier causes the accumulation of\r\nfluid within the intracellular spaces of the retina, primarily in the outer\r\nplexiform layer."
+    }, {
+      "term" : "aphakic or pseudophakic eye",
+      "definition" : "means an eye without a natural lens, or an eye\r\ncontaining an intraocular lens implant."
+    } ],
+    "conditionVariant" : {
+      "name" : "cystoid macular oedema",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(16)",
+    "text" : "inability to obtain appropriate clinical management for toxic\r\nretinopathy",
+    "definedTerms" : [ ]
+  } ]
+}

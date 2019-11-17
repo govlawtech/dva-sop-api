@@ -1,0 +1,138 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00823",
+  "instrumentNumber" : "24/2013",
+  "citation" : "Statement of Principles concerning goitre No. 24 of 2013",
+  "conditionName" : "goitre",
+  "effectiveFrom" : "2013-05-08",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being iodine deficient within the three months before the clinical onset\r\nof goitre",
+    "definedTerms" : [ {
+      "term" : "being iodine deficient",
+      "definition" : "means having an average intake of iodine of less\nthan the recommended iodine intake for a continuous period of 30 days, or\nhaving a urinary iodine concentration of less than 100 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the three months\r\nbefore the clinical onset of goitre",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, for a continuous period of at least six weeks, within the\r\nthree months before the clinical onset of goitre",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "being treated with amiodarone for a continuous period of at least four\r\nweeks, within the three months before the clinical onset of goitre",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being administered an iodine-containing radiographic contrast agent\r\nwithin the three months before the clinical onset of goitre",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of goitre, and where\r\nsmoking has ceased, the clinical onset of goitre has occurred within\r\nthree years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having a specified form of thyroiditis at the time of the clinical onset of\r\ngoitre",
+    "definedTerms" : [ {
+      "term" : "a specified form of thyroiditis",
+      "definition" : "means:\n(a) Riedel's thyroiditis;\n(b) silent thyroiditis; or\n(c) subacute thyroiditis (de Quervain's thyroiditis, granulomatous\nthyroiditis or viral thyroiditis)"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having a chronic infiltrative or infectious disease of the thyroid gland\r\nat the time of the clinical onset of goitre",
+    "definedTerms" : [ {
+      "term" : "a chronic infiltrative or infectious disease",
+      "definition" : "means:\n(a) amyloidosis;\n(b) Pneumocystis carinii infection;\n(c) sarcoidosis;\n(d) scleroderma;\n(e) systemic lupus erythematosus; or\n(f) tuberculosis"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "for non-toxic thyroid adenoma and non-toxic multinodular goitre only,\r\n(i) having received a cumulative equivalent dose of at least 0.5\r\nsieverts of ionising radiation to the thyroid gland (excluding\r\nradioiodine therapy) at least one year before the clinical onset of\r\ngoitre; or\r\n(ii) undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, at least one year before\r\nthe clinical onset of goitre",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ],
+    "conditionVariant" : {
+      "name" : "non-toxic thyroid adenoma and non-toxic multinodular goitre",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having received a cumulative equivalent dose of at least 0.5\r\nsieverts of ionising radiation to the thyroid gland (excluding\r\nradioiodine therapy) at least one year before the clinical onset of\r\ngoitre"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, at least one year before\r\nthe clinical onset of goitre"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(j)",
+    "text" : "being iodine deficient within the three months before the clinical\r\nworsening of goitre",
+    "definedTerms" : [ {
+      "term" : "being iodine deficient",
+      "definition" : "means having an average intake of iodine of less\nthan the recommended iodine intake for a continuous period of 30 days, or\nhaving a urinary iodine concentration of less than 100 micrograms per litre"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having iodine excess from consuming foods, dietary supplements or\r\nmedications with a high content of iodine, within the three months\r\nbefore the clinical worsening of goitre",
+    "definedTerms" : [ {
+      "term" : "having iodine excess",
+      "definition" : "means having an average dietary intake of more than\n1500 micrograms of iodine per day for a continuous period of three months, or\nhaving a urinary iodine excretion rate of greater than 800 micrograms per 24\nhours"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list, for a continuous period of at least six weeks, within the\r\nthree months before the clinical worsening of goitre",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "being treated with amiodarone for a continuous period of at least four\r\nweeks, within the three months before the clinical worsening of goitre",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "being administered an iodine-containing radiographic contrast agent\r\nwithin the three months before the clinical worsening of goitre",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "smoking at least five pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of goitre, and\r\nwhere smoking has ceased, the clinical worsening of goitre has\r\noccurred within three years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having a specified form of thyroiditis at the time of the clinical\r\nworsening of goitre",
+    "definedTerms" : [ {
+      "term" : "a specified form of thyroiditis",
+      "definition" : "means:\n(a) Riedel's thyroiditis;\n(b) silent thyroiditis; or\n(c) subacute thyroiditis (de Quervain's thyroiditis, granulomatous\nthyroiditis or viral thyroiditis)"
+    } ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a chronic infiltrative or infectious disease of the thyroid gland\r\nat the time of the clinical worsening of goitre",
+    "definedTerms" : [ {
+      "term" : "a chronic infiltrative or infectious disease",
+      "definition" : "means:\n(a) amyloidosis;\n(b) Pneumocystis carinii infection;\n(c) sarcoidosis;\n(d) scleroderma;\n(e) systemic lupus erythematosus; or\n(f) tuberculosis"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "for non-toxic thyroid adenoma and non-toxic multinodular goitre only,\r\n(i) having received a cumulative equivalent dose of at least 0.5\r\nsieverts of ionising radiation to the thyroid gland (excluding\r\nradioiodine therapy) at least one year before the clinical worsening\r\nof goitre; or\r\n(ii) undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, at least one year before\r\nthe clinical worsening of goitre",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ],
+    "conditionVariant" : {
+      "name" : "non-toxic thyroid adenoma and non-toxic multinodular goitre",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having received a cumulative equivalent dose of at least 0.5\r\nsieverts of ionising radiation to the thyroid gland (excluding\r\nradioiodine therapy) at least one year before the clinical worsening\r\nof goitre"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\nthyroid gland was in the field of radiation, at least one year before\r\nthe clinical worsening of goitre"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "inability to obtain appropriate clinical management for goitre",
+    "definedTerms" : [ ]
+  } ]
+}

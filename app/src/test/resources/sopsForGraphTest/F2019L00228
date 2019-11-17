@@ -1,0 +1,197 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00228",
+  "instrumentNumber" : "37/2019",
+  "citation" : "Statement of Principles concerning chronic insomnia disorder (Reasonable Hypothesis) (No. 37 of 2019)",
+  "conditionName" : "chronic insomnia disorder",
+  "effectiveFrom" : "2019-03-25",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "8(1)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the one year before the clinical onset of chronic insomnia\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) acute stress disorder;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) attention-deficit/hyperactivity disorder (including other specified\r\nattention-deficit/hyperactivity disorder and unspecified attention-\r\ndeficit/hyperactivity disorder);\r\n(e) bipolar disorder;\r\n(f) depressive disorder;\r\n(g) eating disorder;\r\n(h) obsessive-compulsive disorder;\r\n(i) panic disorder;\r\n(j) posttraumatic stress disorder;\r\n(k) schizophrenia;\r\n(l) somatic symptom disorder;\r\n(m) specific phobia; or\r\n(n) substance use disorder.\r\nNote 1: Management of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To warrant ongoing management does not require that any actual management was received or\r\ngiven for the condition."
+    } ]
+  }, {
+    "paragraph" : "8(2)",
+    "text" : "experiencing a category 1A stressor within the one year before the\r\nclinical onset of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "8(3)",
+    "text" : "experiencing a category 1B stressor within the one year before the\r\nclinical onset of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(4)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical onset of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation and divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, and\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, and court appearances associated with personal legal\r\nproblems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property and bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability.\r\nchronic insomnia disorder—see subsection 6(2)."
+    } ]
+  }, {
+    "paragraph" : "8(5)",
+    "text" : "experiencing severe childhood abuse before the clinical onset of\r\nchronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\r\n(a) serious physical, emotional, psychological or sexual harm whilst a\r\nchild aged under 16 years; or\r\n(b) neglect involving a serious failure to provide the necessities for health,\r\nphysical and emotional development, or wellbeing whilst a child aged\r\nunder 16 years;\r\nwhere such serious harm or neglect has been perpetrated by a parent, a care\r\nprovider, an adult who works with or around that child, or any other adult in\r\ncontact with that child."
+    } ]
+  }, {
+    "paragraph" : "8(6)",
+    "text" : "having a medical illness or injury, which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the one year\r\nbefore the clinical onset of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(7)",
+    "text" : "having a severe, chronic medical condition within the one year before\r\nthe clinical onset of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "severe, chronic medical condition",
+      "definition" : "means an illness that:\r\n(a) substantially impacts on social, occupational or other important areas\r\nof functioning; and\r\n(b) requires on-going daily or almost daily management of symptoms\r\nunder the supervision of a registered health practitioner, including\r\nassistance with activities of daily living, bed rest, dietary modification,\r\ndrug therapy, nursing care, oxygen therapy and physiotherapy; and\r\n(c) is of a type that:\r\n(i) does not usually resolve spontaneously; or\r\n(ii) is rarely cured completely; or\r\n(iii) may progress to a life-threatening illness.\r\nNote: Examples of s include, but are not limited to, poorly controlled\r\nasthma, diabetes, epilepsy or chronic obstructive pulmonary disease; severe psoriasis; and\r\nchronic kidney disease requiring dialysis."
+    } ]
+  }, {
+    "paragraph" : "8(8)",
+    "text" : "having persistent pain for at least the three months before the clinical\r\nonset of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous pain; or\r\n(b) almost continuous pain; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich is severe enough to interfere with usual work or leisure activities or\r\nactivities of daily living."
+    } ]
+  }, {
+    "paragraph" : "8(9)",
+    "text" : "having tinnitus for at least the three months before the clinical onset of\r\nchronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(10)",
+    "text" : "having concussion or moderate to severe traumatic brain injury within\r\nthe one year before the clinical onset of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(11)",
+    "text" : "being in the menopausal transition within the five years before the\r\nclinical onset of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "menopausal transition",
+      "definition" : "means the time from when the first menopausal\r\nsymptoms appear until there has been no menstrual period for 12 consecutive\r\nmonths."
+    } ]
+  }, {
+    "paragraph" : "8(12)",
+    "text" : "being pregnant at the time of the clinical onset of chronic insomnia\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(13)",
+    "text" : "inability to undertake any physical activity greater than three METs for\r\nat least the one year before the clinical onset of chronic insomnia\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(14)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs, for a continuous period of at least seven days\r\nbefore the clinical onset of chronic insomnia disorder, where the last\r\ndose of the drug was received within the 30 days before the clinical\r\nonset of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) amphetamines;\r\n(b) antihistamines;\r\n(c) barbiturates;\r\n(d) benzodiazepines;\r\n(e) beta-blockers;\r\n(f) corticosteroids, excluding topical or inhaled corticosteroids;\r\n(g) methylphenidate;\r\n(h) modafinil;\r\n(i) monoamine oxidase inhibitors;\r\n(j) naltrexone;\r\n(k) non-benzodiazepine hypnotics (Z-drugs);\r\n(l) norepinephrine and dopamine reuptake inhibitors;\r\n(m) opiate or opioid analgesics;\r\n(n) phentermine;\r\n(o) selective serotonin uptake inhibitors;\r\n(p) serotonin and norepinephrine reuptake inhibitors; or\r\n(q) theophylline."
+    } ]
+  }, {
+    "paragraph" : "8(15)",
+    "text" : "being treated with a drug for a continuous period of at least seven days\r\nbefore the clinical onset of chronic insomnia disorder, where:\r\n(a) the involved drug is capable of producing a prominent and\r\n(b) the drug is associated in the individual with the development of\r\ninsomnia symptoms during drug therapy; and\r\n(c) the last dose was received within the 30 days before the clinical\r\nonset of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(16)",
+    "text" : "being treated with mefloquine within the two months before the clinical\r\nonset of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "8(17)",
+    "text" : "having a clinically significant disorder of mental health as specified\r\nwithin the one year before the clinical worsening of chronic insomnia\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "clinically significant disorder of mental health as specified",
+      "definition" : "means one of\r\nthe following conditions, which is of sufficient severity to warrant ongoing\r\nmanagement:\r\n(a) acute stress disorder;\r\n(b) alcohol use disorder;\r\n(c) anxiety disorder;\r\n(d) attention-deficit/hyperactivity disorder (including other specified\r\nattention-deficit/hyperactivity disorder and unspecified attention-\r\ndeficit/hyperactivity disorder);\r\n(e) bipolar disorder;\r\n(f) depressive disorder;\r\n(g) eating disorder;\r\n(h) obsessive-compulsive disorder;\r\n(i) panic disorder;\r\n(j) posttraumatic stress disorder;\r\n(k) schizophrenia;\r\n(l) somatic symptom disorder;\r\n(m) specific phobia; or\r\n(n) substance use disorder.\r\nNote 1: Management of the condition may involve regular visits (for example, at least monthly) to a\r\npsychiatrist, counsellor or general practitioner.\r\nNote 2: To warrant ongoing management does not require that any actual management was received or\r\ngiven for the condition."
+    } ]
+  }, {
+    "paragraph" : "8(18)",
+    "text" : "experiencing a category 1A stressor within the one year before the\r\nclinical worsening of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "category 1A stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) experiencing a life-threatening event;\r\n(b) being subject to a serious physical attack or assault including rape and\r\nsexual molestation; or\r\n(c) being threatened with a weapon, being held captive, being kidnapped\r\nor being tortured."
+    } ]
+  }, {
+    "paragraph" : "8(19)",
+    "text" : "experiencing a category 1B stressor within the one year before the\r\nclinical worsening of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "category 1B stressor",
+      "definition" : "means one of the following severe traumatic events:\r\n(a) killing or maiming a person;\r\n(b) being an eyewitness to a person being killed or critically injured;\r\n(c) being an eyewitness to atrocities inflicted on another person;\r\n(d) participating in the clearance of a corpse or a critically injured\r\ncasualty; or\r\n(e) viewing a corpse or a critically injured casualty as an eyewitness.\r\nNote: corpse and eyewitness are also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "8(20)",
+    "text" : "experiencing a category 2 stressor within the one year before the\r\nclinical worsening of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "category 2 stressor",
+      "definition" : "means one of the following negative life events, the\r\neffects of which are chronic in nature and cause the person to feel ongoing\r\ndistress, concern or worry:\r\n(a) being socially isolated and unable to maintain friendships or family\r\nrelationships, due to physical location, language barriers, disability, or\r\nmedical or psychiatric illness;\r\n(b) experiencing a problem with a long-term relationship including the\r\nbreak-up of a close personal relationship, the need for marital or\r\nrelationship counselling, marital separation and divorce;\r\n(c) having concerns in the work or school environment including ongoing\r\ndisharmony with fellow work or school colleagues, perceived lack of\r\nsocial support within the work or school environment, perceived lack\r\nof control over tasks performed and stressful workloads, and\r\nexperiencing bullying in the workplace or school environment;\r\n(d) experiencing serious legal issues including being detained or held in\r\ncustody, ongoing involvement with the police concerning violations of\r\nthe law, and court appearances associated with personal legal\r\nproblems;\r\n(e) having severe financial hardship including loss of employment, long\r\nperiods of unemployment, foreclosure on a property and bankruptcy;\r\n(f) having a family member or significant other experience a major\r\ndeterioration in their health; or\r\n(g) being a full-time caregiver to a family member or significant other\r\nwith a severe physical, mental or developmental disability.\r\nchronic insomnia disorder—see subsection 6(2)."
+    } ]
+  }, {
+    "paragraph" : "8(21)",
+    "text" : "having a medical illness or injury, which is life-threatening or which\r\nresults in serious physical or cognitive disability, within the one year\r\nbefore the clinical worsening of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(22)",
+    "text" : "having a severe, chronic medical condition within the one year before\r\nthe clinical worsening of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "severe, chronic medical condition",
+      "definition" : "means an illness that:\r\n(a) substantially impacts on social, occupational or other important areas\r\nof functioning; and\r\n(b) requires on-going daily or almost daily management of symptoms\r\nunder the supervision of a registered health practitioner, including\r\nassistance with activities of daily living, bed rest, dietary modification,\r\ndrug therapy, nursing care, oxygen therapy and physiotherapy; and\r\n(c) is of a type that:\r\n(i) does not usually resolve spontaneously; or\r\n(ii) is rarely cured completely; or\r\n(iii) may progress to a life-threatening illness.\r\nNote: Examples of s include, but are not limited to, poorly controlled\r\nasthma, diabetes, epilepsy or chronic obstructive pulmonary disease; severe psoriasis; and\r\nchronic kidney disease requiring dialysis."
+    } ]
+  }, {
+    "paragraph" : "8(23)",
+    "text" : "having persistent pain for at least the three months before the clinical\r\nworsening of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "persistent pain",
+      "definition" : "means:\r\n(a) continuous pain; or\r\n(b) almost continuous pain; or\r\n(c) frequent, severe, intermittent pain;\r\nwhich is severe enough to interfere with usual work or leisure activities or\r\nactivities of daily living."
+    } ]
+  }, {
+    "paragraph" : "8(24)",
+    "text" : "having tinnitus for at least the three months before the clinical\r\nworsening of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(25)",
+    "text" : "having concussion or moderate to severe traumatic brain injury within\r\nthe one year before the clinical worsening of chronic insomnia\r\ndisorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(26)",
+    "text" : "being in the menopausal transition within the five years before the\r\nclinical worsening of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "menopausal transition",
+      "definition" : "means the time from when the first menopausal\r\nsymptoms appear until there has been no menstrual period for 12 consecutive\r\nmonths."
+    } ]
+  }, {
+    "paragraph" : "8(27)",
+    "text" : "being pregnant at the time of the clinical worsening of chronic\r\ninsomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(28)",
+    "text" : "inability to undertake any physical activity greater than three METs for\r\nat least the one year before the clinical worsening of chronic insomnia\r\ndisorder",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "8(29)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs, for a continuous period of at least seven days\r\nbefore the clinical worsening of chronic insomnia disorder, where the\r\nlast dose of the drug was received within the 30 days before the clinical\r\nworsening of chronic insomnia disorder",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) amphetamines;\r\n(b) antihistamines;\r\n(c) barbiturates;\r\n(d) benzodiazepines;\r\n(e) beta-blockers;\r\n(f) corticosteroids, excluding topical or inhaled corticosteroids;\r\n(g) methylphenidate;\r\n(h) modafinil;\r\n(i) monoamine oxidase inhibitors;\r\n(j) naltrexone;\r\n(k) non-benzodiazepine hypnotics (Z-drugs);\r\n(l) norepinephrine and dopamine reuptake inhibitors;\r\n(m) opiate or opioid analgesics;\r\n(n) phentermine;\r\n(o) selective serotonin uptake inhibitors;\r\n(p) serotonin and norepinephrine reuptake inhibitors; or\r\n(q) theophylline."
+    } ]
+  }, {
+    "paragraph" : "8(30)",
+    "text" : "being treated with a drug for a continuous period of at least seven days\r\nbefore the clinical worsening of chronic insomnia disorder, where:\r\n(a) the involved drug is capable of producing a prominent and\r\nsevere disturbance in sleep; and\r\n(b) the drug is associated in the individual with the worsening of\r\ninsomnia symptoms during drug therapy; and\r\n(c) the last dose was received within the 30 days before the clinical\r\nworsening of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(31)",
+    "text" : "being treated with mefloquine within the two months before the clinical\r\nworsening of chronic insomnia disorder",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "8(32)",
+    "text" : "inability to obtain appropriate clinical management for chronic\r\ninsomnia disorder",
+    "definedTerms" : [ ]
+  } ]
+}

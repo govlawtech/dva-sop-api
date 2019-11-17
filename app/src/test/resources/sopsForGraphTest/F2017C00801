@@ -1,0 +1,274 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00801",
+  "instrumentNumber" : "37/2012",
+  "citation" : "Statement of Principles concerning carotid arterial disease No. 37 of 2012",
+  "conditionName" : "carotid arterial disease",
+  "effectiveFrom" : "2012-05-02",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I65.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I70.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I72.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having hypertension before the clinical onset of carotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having dyslipidaemia before the clinical onset of carotid arterial\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having diabetes mellitus before the clinical onset of carotid arterial\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "smoking at least 15 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of carotid arterial\r\ndisease, and where smoking has ceased, the clinical onset of carotid\r\narterial disease has occurred within 30 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 5000 hours before the clinical onset of\r\ncarotid arterial disease, where the last exposure to that atmosphere\r\noccurred within the five years before the clinical onset of carotid\r\narterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "for dissection of the common, internal or external carotid artery only,\r\nhaving trauma to the neck or the base of the skull within the six months\r\nbefore the clinical onset of carotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "trauma to the neck or the base of the skull",
+      "definition" : "means:\n(a) a non-penetrating injury, involving extension, rotation, hyperflexion or\ncompression of the neck;\n(b) a penetrating injury, including surgery, to the affected segment of the\nartery; or\n(c) an injury resulting in fracture or dislocation of the cervical spine"
+    } ],
+    "conditionVariant" : {
+      "name" : "dissection of the common, internal or external carotid artery",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "for aneurysm of the common, internal or external carotid artery only:\r\n(i) having trauma to the affected segment of the artery before the\r\nclinical onset of carotid arterial disease; or\r\n(ii) undergoing therapy with BCG vaccine, where this therapy has\r\nbeen administered within the five years before the clinical onset\r\nof carotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "undergoing therapy with BCG vaccine",
+      "definition" : "means treatment with the Bacille\nCalmette-Guerin vaccine for cancer. The Bacille Calmette-Guerin vaccine is\nmade from a strain of Mycobacterium bovis"
+    }, {
+      "term" : "trauma to the affected segment of the artery",
+      "definition" : "means:\n(a) a blunt injury resulting in soft tissue injury adjacent to the affected\nsegment of the artery; or\n(b) a penetrating injury, including surgery, to the affected segment of the\nartery"
+    } ],
+    "conditionVariant" : {
+      "name" : "aneurysm of the common, internal or external carotid artery",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having trauma to the affected segment of the artery before the\r\nclinical onset of carotid arterial disease"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "undergoing therapy with BCG vaccine, where this therapy has\r\nbeen administered within the five years before the clinical onset\r\nof carotid arterial disease"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected artery was in the field of radiation, before the clinical onset of\r\ncarotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected artery before the clinical onset of\r\ncarotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having hyperhomocysteinaemia before the clinical onset of carotid\r\narterial disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having infective or noninfective vasculitis of the affected segment of\r\nthe artery at the time of the clinical onset of carotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a disorder from the specified list, involving the affected\r\nsegment of the artery at the time of the clinical onset of carotid arterial\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "a disorder from the specified list",
+      "definition" : "means:\n(a) autosomal dominant polycystic kidney disease;\n(b) cystic medial necrosis;\n(c) Ehlers-Danlos type IV syndrome;\n(d) fibromuscular dysplasia;\n(e) Marfan's syndrome;\n(f) Moyamoya disease/syndrome;\n(g) osteogenesis imperfecta; or\n(h) sickle-cell disorder"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having chronic renal disease before the clinical onset of carotid arterial\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "chronic renal disease",
+      "definition" : "means irreversible kidney damage which leads to\nimpaired renal function"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having periodontitis for at least the two years before the clinical onset\r\nof carotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\ncarotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten\nyears; or\n(b) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having a neoplasm infiltrating the affected segment of the artery at the\r\ntime of the clinical onset of carotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "for aneurysm or dissection of the common or internal carotid artery\r\nonly, using a drug from the specified list within the four days before\r\nthe clinical onset of carotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "a drug from the specified list",
+      "definition" : "means:\n(a) amphetamine;\n(b) cocaine;\n(c) D-lysergic acid diethylamide (LSD);\n(d) ergot compounds including ergometrine and ergotamine; or\n(e) methamphetamine"
+    } ],
+    "conditionVariant" : {
+      "name" : "aneurysm or dissection of the common or internal carotid artery",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "for dissection of the internal carotid artery only, being within the one\r\nmonth postpartum at the time of the clinical onset of carotid arterial\r\ndisease",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "dissection of the internal carotid artery",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(s)",
+    "text" : "having hypertension before the clinical worsening of carotid arterial\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having dyslipidaemia before the clinical worsening of carotid arterial\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having diabetes mellitus before the clinical worsening of carotid\r\narterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "smoking at least 15 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of carotid\r\narterial disease, and where smoking has ceased, the clinical worsening\r\nof carotid arterial disease has occurred within 30 years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 5000 hours before the clinical worsening of\r\ncarotid arterial disease, where the last exposure to that atmosphere\r\noccurred within the five years before the clinical worsening of carotid\r\narterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "for dissection of the common, internal or external carotid artery only,\r\nhaving trauma to the neck or the base of the skull within the six months\r\nbefore the clinical worsening of carotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "trauma to the neck or the base of the skull",
+      "definition" : "means:\n(a) a non-penetrating injury, involving extension, rotation, hyperflexion or\ncompression of the neck;\n(b) a penetrating injury, including surgery, to the affected segment of the\nartery; or\n(c) an injury resulting in fracture or dislocation of the cervical spine"
+    } ],
+    "conditionVariant" : {
+      "name" : "dissection of the common, internal or external carotid artery",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "for aneurysm of the common, internal or external carotid artery only:\r\n(i) having trauma to the affected segment of the artery before the\r\nclinical worsening of carotid arterial disease; or\r\n(ii) undergoing therapy with BCG vaccine, where this therapy has\r\nbeen administered within the five years before the clinical\r\nworsening of carotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "undergoing therapy with BCG vaccine",
+      "definition" : "means treatment with the Bacille\nCalmette-Guerin vaccine for cancer. The Bacille Calmette-Guerin vaccine is\nmade from a strain of Mycobacterium bovis"
+    }, {
+      "term" : "trauma to the affected segment of the artery",
+      "definition" : "means:\n(a) a blunt injury resulting in soft tissue injury adjacent to the affected\nsegment of the artery; or\n(b) a penetrating injury, including surgery, to the affected segment of the\nartery"
+    } ],
+    "conditionVariant" : {
+      "name" : "aneurysm of the common, internal or external carotid artery",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "having trauma to the affected segment of the artery before the\r\nclinical worsening of carotid arterial disease"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "undergoing therapy with BCG vaccine, where this therapy has\r\nbeen administered within the five years before the clinical\r\nworsening of carotid arterial disease"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\naffected artery was in the field of radiation, before the clinical\r\nworsening of carotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the affected artery before the clinical worsening of\r\ncarotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "having hyperhomocysteinaemia before the clinical worsening of\r\ncarotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "having infective or noninfective vasculitis of the affected segment of\r\nthe artery at the time of the clinical worsening of carotid arterial\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "having a disorder from the specified list, involving the affected\r\nsegment of the artery at the time of the clinical worsening of carotid\r\narterial disease",
+    "definedTerms" : [ {
+      "term" : "a disorder from the specified list",
+      "definition" : "means:\n(a) autosomal dominant polycystic kidney disease;\n(b) cystic medial necrosis;\n(c) Ehlers-Danlos type IV syndrome;\n(d) fibromuscular dysplasia;\n(e) Marfan's syndrome;\n(f) Moyamoya disease/syndrome;\n(g) osteogenesis imperfecta; or\n(h) sickle-cell disorder"
+    } ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having chronic renal disease before the clinical worsening of carotid\r\narterial disease",
+    "definedTerms" : [ {
+      "term" : "chronic renal disease",
+      "definition" : "means irreversible kidney damage which leads to\nimpaired renal function"
+    } ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "having periodontitis for at least the two years before the clinical\r\nworsening of carotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "being exposed to arsenic as specified before the clinical worsening of\r\ncarotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten\nyears; or\n(b) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  }, {
+    "paragraph" : "6(hh)",
+    "text" : "having a neoplasm infiltrating the affected segment of the artery at the\r\ntime of the clinical worsening of carotid arterial disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ii)",
+    "text" : "for aneurysm or dissection of the common or internal carotid artery\r\nonly, using a drug from the specified list within the four days before\r\nthe clinical worsening of carotid arterial disease",
+    "definedTerms" : [ {
+      "term" : "a drug from the specified list",
+      "definition" : "means:\n(a) amphetamine;\n(b) cocaine;\n(c) D-lysergic acid diethylamide (LSD);\n(d) ergot compounds including ergometrine and ergotamine; or\n(e) methamphetamine"
+    } ],
+    "conditionVariant" : {
+      "name" : "aneurysm or dissection of the common or internal carotid artery",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(jj)",
+    "text" : "for dissection of the internal carotid artery only, being within the one\r\nmonth postpartum at the time of the clinical worsening of carotid\r\narterial disease",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "dissection of the internal carotid artery",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "6(kk)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of carotid\r\narterial disease",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1\nMET = 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body\nweight per hour or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(ll)",
+    "text" : "inability to obtain appropriate clinical management for carotid arterial\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

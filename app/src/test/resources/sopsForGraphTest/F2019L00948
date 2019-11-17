@@ -1,0 +1,87 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00948",
+  "instrumentNumber" : "68/2019",
+  "citation" : "Statement of Principles concerning subarachnoid haemorrhage (Balance of Probabilities) (No. 68 of 2019)",
+  "conditionName" : "subarachnoid haemorrhage",
+  "effectiveFrom" : "2019-07-22",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I60"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "S06.6"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "undertaking physical activity of at least six METs within the two hours\r\nbefore the clinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having concussion or moderate to severe traumatic brain injury within\r\nthe 30 days before the clinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having hypertension at the time of the clinical onset of subarachnoid\r\nhaemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having pregnancy-induced hypertension at the time of the clinical onset\r\nof subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of subarachnoid\r\nhaemorrhage, and where smoking has ceased, the clinical onset of\r\nsubarachnoid haemorrhage has occurred within ten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "undergoing antithrombotic therapy within the two weeks before the\r\nclinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ {
+      "term" : "antithrombotic therapy",
+      "definition" : "means taking a drug for the treatment or prophylaxis"
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "taking at least 700 milligrams of aspirin within a seven day period\r\nbefore the clinical onset of subarachnoid haemorrhage, and where the\r\nlast dose of aspirin was taken no more than seven days before the\r\nclinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having infective intracranial vasculitis at the time of the clinical onset\r\nof subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having an inflammatory vascular disease from the specified list of\r\ninflammatory vascular diseases affecting the cerebral vessels at the\r\ntime of the clinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "for males, consuming an average of at least 200 grams of alcohol per\r\nweek for a continuous period of at least the six months before the\r\nclinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "for females, consuming an average of at least 150 grams of alcohol per\r\nweek for a continuous period of at least the six months before the\r\nclinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "using a drug from the specified list of drugs within the 72 hours before\r\nthe clinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) amphetamine;\r\n(b) cocaine;\r\n(c) dextroamphetamine;\r\n(d) methamphetamine;\r\n(e) phenylpropanolamine; or\r\n(f) 3,4-methylenedioxymethamphetamine (ecstasy)."
+    } ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "taking an oral contraceptive pill for a period of at least the three weeks\r\nbefore the clinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having an acquired disorder resulting in impaired haemostasis at the\r\ntime of the clinical onset of subarachnoid haemorrhage",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(15)",
+    "text" : "inability to obtain appropriate clinical management for subarachnoid\r\nhaemorrhage",
+    "definedTerms" : [ ]
+  } ]
+}

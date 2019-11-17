@@ -1,0 +1,100 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00752",
+  "instrumentNumber" : "9/2013",
+  "citation" : "Statement of Principles concerning adenocarcinoma of the kidney No. 9 of 2013",
+  "conditionName" : "adenocarcinoma of the kidney",
+  "effectiveFrom" : "2013-01-09",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C64"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least ten pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of adenocarcinoma\r\nof the kidney, and\r\n(i) smoking commenced at least five years before the clinical onset\r\nof adenocarcinoma of the kidney; and\r\n(ii) where smoking has ceased, the clinical onset of\r\nadenocarcinoma of the kidney has occurred within 20 years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space:\r\n(i) for at least 10 000 hours before the clinical onset of\r\nadenocarcinoma of the kidney, and\r\n(ii) where the first exposure to that atmosphere commenced at least\r\nfive years before the clinical onset of adenocarcinoma of the\r\nkidney; and\r\n(iii) where the last exposure to that atmosphere occurred within the\r\n20 years before the clinical onset of adenocarcinoma of the\r\nkidney",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space at the time\r\nmaterial containing respirable asbestos fibres was being applied,\r\nremoved, dislodged, cut or drilled:\r\n(i) for a cumulative period of at least 1 000 hours before the\r\nclinical onset of adenocarcinoma of the kidney; and\r\n(ii) the first inhalation of respirable asbestos fibres commenced at\r\nleast five years before the clinical onset of adenocarcinoma of\r\nthe kidney",
+    "definedTerms" : [ {
+      "term" : "respirable asbestos fibres",
+      "definition" : "means asbestos fibres less than five micrometres\nin diameter"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "inhaling respirable asbestos fibres in an open environment at the time\r\nmaterial containing respirable asbestos fibres was being applied,\r\nremoved, dislodged, cut or drilled:\r\n(i) for a cumulative period of at least 3 000 hours before the\r\nclinical onset of adenocarcinoma of the kidney; and\r\n(ii) the first inhalation of respirable asbestos fibres commenced at\r\nleast five years before the clinical onset of adenocarcinoma of\r\nthe kidney",
+    "definedTerms" : [ {
+      "term" : "respirable asbestos fibres",
+      "definition" : "means asbestos fibres less than five micrometres\nin diameter"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "being obese for a continuous period of at least three years before the\r\nclinical onset of adenocarcinoma of the kidney",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having end stage renal disease before the clinical onset of\r\nadenocarcinoma of the kidney",
+    "definedTerms" : [ {
+      "term" : "end stage renal disease",
+      "definition" : "means renal disease of sufficient severity to require\ndialysis or renal transplantation"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having hypertension for a period of at least two years before the\r\nclinical onset of adenocarcinoma of the kidney",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "an inability to consume an average of at least 200 grams per day of any\r\ncombination of fruits and vegetables, for a period of at least five\r\nconsecutive years within the 25 years before the clinical onset of\r\nadenocarcinoma of the kidney",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being exposed to arsenic as specified before the clinical onset of\r\nadenocarcinoma of the kidney, where the first exposure to arsenic\r\noccurred at least ten years before the clinical onset of adenocarcinoma\r\nof the kidney",
+    "definedTerms" : [ {
+      "term" : "being exposed to arsenic as specified",
+      "definition" : "means:\n(a) consuming drinking water with an average arsenic concentration of at\nleast 50 micrograms per litre for a cumulative period of at least ten\nyears;\n(b) consuming drinking water resulting in a cumulative total arsenic\nexposure equivalent to having consumed drinking water containing at\nleast 50 micrograms per litre for at least ten years; or\n(c) having clinical evidence of chronic arsenic toxicity"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "inhaling cadmium fumes:\r\n(i) for at least four hours per day on more days than not, for at least\r\nfour years or for a cumulative period of at least 3 000 hours,\r\nbefore the clinical onset of adenocarcinoma of the kidney; and\r\n(ii) the first inhalation of fumes occurred at least five years before the\r\nclinical onset of adenocarcinoma of the kidney",
+    "definedTerms" : [ {
+      "term" : "cadmium fumes",
+      "definition" : "means combustion products, aerosols, vapours or dust\narising through industrial processes or from workplace practices that involve\nthe refining, manufacture or use of cadmium"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inhaling, ingesting or having cutaneous contact with trichloroethylene\r\nfor a cumulative period of at least 1 000 hours before the clinical onset\r\nof adenocarcinoma of the kidney, where the first exposure occurred at\r\nleast ten years before the clinical onset of adenocarcinoma of the\r\nkidney",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the kidney at least five years before the clinical\r\nonset of adenocarcinoma of the kidney",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "consuming a non-steroidal anti-inflammatory drug, except for aspirin,\r\non at least 15 days per month for at least ten years before the clinical\r\nonset of adenocarcinoma of the kidney",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "for renal medullary carcinoma only, having sickle cell disorder before\r\nthe clinical onset of adenocarcinoma of the kidney",
+    "definedTerms" : [ ],
+    "conditionVariant" : {
+      "name" : "renal medullary carcinoma",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(o)",
+    "text" : "inability to obtain appropriate clinical management for\r\nadenocarcinoma of the kidney",
+    "definedTerms" : [ ]
+  } ]
+}

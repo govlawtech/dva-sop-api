@@ -1,0 +1,20 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01849",
+  "instrumentNumber" : "34/2015",
+  "citation" : "Statement of Principles concerning Wilson's disease No. 34 of 2015",
+  "conditionName" : "Wilson's disease",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for Wilson's disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for Wilson's disease",
+    "definedTerms" : [ ]
+  } ]
+}

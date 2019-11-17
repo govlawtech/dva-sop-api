@@ -1,0 +1,26 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L00304",
+  "instrumentNumber" : "24/2014",
+  "citation" : "Statement of Principles concerning somatic symptom disorder No. 24 of 2014",
+  "conditionName" : "somatic symptom disorder",
+  "effectiveFrom" : "2014-03-26",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F45.1"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "being the victim of severe childhood abuse before the clinical onset of\r\nsomatic symptom disorder",
+    "definedTerms" : [ {
+      "term" : "severe childhood abuse",
+      "definition" : "means:\n(a) serious physical, emotional, psychological or sexual harm whilst a child\naged under 16 years; or\n(b) neglect involving a serious failure to provide the necessities for health,\nphysical and emotional development, or wellbeing whilst a child aged\nunder 16 years;\nwhere such serious harm or neglect has been perpetrated by a parent, a care\nprovider, an adult who works with or around that child, or any other adult in\ncontact with that child"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(b)",
+    "text" : "inability to obtain appropriate clinical management for somatic\r\nsymptom disorder",
+    "definedTerms" : [ ]
+  } ]
+}

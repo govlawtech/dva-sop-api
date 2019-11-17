@@ -1,0 +1,333 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00775",
+  "instrumentNumber" : "66/2015",
+  "citation" : "Statement of Principles concerning cerebrovascular accident No. 66 of 2015",
+  "conditionName" : "cerebrovascular accident",
+  "effectiveFrom" : "2015-06-01",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I61"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I63"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I64"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G45.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G45.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G45.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G45.8"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G45.9"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "G46"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having hypertension within the five years before the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a hypertensive emergency or crisis at the time of the clinical\r\nonset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the seven years before the clinical onset of cerebrovascular\r\naccident",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute or, 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "drinking an average of at least 300 grams of alcohol per week, for at\r\nleast the one year before the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "binge drinking within the seven days before the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "binge drinking",
+      "definition" : "means drinking an excessive amount of alcohol in a short\namount of time, resulting in a blood alcohol concentration exceeding 0.08 (8\ngrams/100 millilitres). This typically involves the consumption of four or\nmore standard alcoholic drinks for a woman or five or more standard alcoholic\ndrinks for a man within a two hour time period"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having an infection from the specified list, involving the brain, within\r\nthe four weeks before the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "an infection from the specified list",
+      "definition" : "means:\n(a) cerebral abscess;\n(b) cerebral helminthic infection (cysticercosis, schistosomiasis,\nsparganosis);\n(c) cerebral malaria;\n(d) encephalitis;\n(e) infectious vasculitis;\n(f) intracerebral fungal infection (aspergillosis, coccidioidomycosis,\nCryptococcus, histoplasmosis or mucormycosis);\n(g) meningitis (syphilis, tuberculosis, fungal, bacterial, herpes zoster);\n(h) neurosyphilis;\n(i) tuberculosis; or\n(j) Varicella-zoster virus infection"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "being infected with human immunodeficiency virus before the clinical\r\nonset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having an inflammatory connective tissue disease from the specified\r\nlist, causing cerebral vasculitis, at the time of the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having primary angiitis of the central nervous system or a systemic\r\nvasculitis from the specified list, involving the cerebral vessels, at the\r\ntime of the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a specified non-inflammatory disease of the cerebral vessels at\r\nthe time of the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "a specified non-inflammatory disease of the cerebral vessels",
+      "definition" : "means:\n(a) cerebral amyloid angiopathy;\n(b) cerebral arteriolosclerosis (fibrinoid necrosis, lipohyalinosis,\nmicroatheroma microaneurysms, segmental arterial disorganisation);\n(c) cerebral venous thrombosis;\n(d) Moyamoya disease;\n(e) Susac's syndrome (retinocochleocerebral vasculopathy); or\n(f) Sneddon's syndrome"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having a haematological disease from the specified list at the time of\r\nthe clinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "a haematological disease from the specified list",
+      "definition" : "means:\na) thrombotic thrombocytopaenic purpura; or\nb) sickle cell disease or sickle cell trait"
+    } ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "being pregnant within the six weeks before the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "using a drug or a drug from a class of drugs from the specified list\r\nwithin the 72 hours before the clinical onset of cerebrovascular\r\naccident",
+    "definedTerms" : [ {
+      "term" : "a drug or a drug from a class of drugs from the specified list",
+      "definition" : "means:\n(a) amphetamines and amphetamine-type substances, excluding\nmethylphenidate;\n(b) cocaine; or\n(c) heroin"
+    } ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "being treated with a selective serotonin reuptake inhibitor or another\r\nserotonergic drug for at least two weeks, or taking an overdose of an\r\nindividual serotonergic drug, within the four weeks before the clinical\r\nonset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having heat stroke at the time of the clinical onset of cerebrovascular\r\naccident",
+    "definedTerms" : [ {
+      "term" : "heat stroke",
+      "definition" : "means central nervous system and multiple organ dysfunction\nfrom complications of hyperthermia"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "being envenomated by a snake, scorpion, box jellyfish, bee, hornet or\r\nwasp within the three days before the clinical onset of cerebrovascular\r\naccident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 10 000 hours before the clinical onset of\r\ncerebrovascular accident, where the last exposure to that atmosphere\r\noccurred within the five years before the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having diabetes mellitus at the time of the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having a cardiac condition with potential to give rise to a cerebral\r\nembolus within the four weeks before the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having a non-cardiac cause of cerebral arterial embolism at the time of\r\nthe clinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "a non-cardiac cause of cerebral arterial embolism",
+      "definition" : "means:\n(a) aortic arch atherosclerosis;\n(b) decompression sickness;\n(c) pulmonary barotrauma;\n(d) severe bone trauma; or\n(e) thrombus formation within the pulmonary vein, or arteries supplying\nthe affected area of the brain"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having deep vein thrombosis in the presence of a potential route of\r\nparadoxical embolism from the specified list at the time of the clinical\r\nonset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "undergoing a procedure from the specified list within the four weeks\r\nbefore the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "a procedure from the specified list",
+      "definition" : "means:\n(a) cardiac surgery or cardiac catheterisation;\n(b) catheterisation of or injection into the arteries supplying the brain;\n(c) major surgical procedure involving general or regional anaesthesia,\nincluding orthopaedic surgery or neurosurgery; or\n(d) surgery involving the arteries supplying the brain, including carotid\nendarterectomy"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having septicaemia, or an injury or illness requiring admission to an\r\nintensive care unit or artificial ventilation, within the 14 days before\r\nthe clinical onset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having a malignant neoplasm, excluding non-melanotic malignant\r\nneoplasm of the skin, at the time of the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having cirrhosis of the liver or chronic liver disease at the time of the\r\nclinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "chronic liver disease",
+      "definition" : "means progressive destruction of the liver\nparenchyma resulting in abnormal liver function which has been present for at\nleast six months"
+    } ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having chronic renal disease requiring renal transplantation or dialysis\r\nbefore the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "experiencing a moderate to severe traumatic brain injury within the\r\nfour weeks before the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(bb)",
+    "text" : "being obese for at least five years before the age of 70 years, within the\r\nten years before the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means having a Body Mass Index (BMI) of 30 or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(cc)",
+    "text" : "for males, having a waist to hip circumference ratio exceeding 1.0 for\r\nat least five years before the age of 70 years, within the ten years\r\nbefore the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(dd)",
+    "text" : "for females, having a waist to hip circumference ratio exceeding 0.9 for\r\nat least five years before the age of 70 years, within the ten years\r\nbefore the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(ee)",
+    "text" : "having clinically significant depressive disorder within the one year\r\nbefore the clinical onset of cerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "clinically significant",
+      "definition" : "means sufficient to warrant ongoing management,\nwhich may involve regular visits (for example, at least monthly), to a\npsychiatrist, counsellor or general practitioner"
+    } ]
+  }, {
+    "paragraph" : "6(ff)",
+    "text" : "for cerebral ischaemia only:\r\n(i) where smoking has not ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking an average of at least five cigarettes per day, or\r\nthe equivalent thereof in other tobacco products, for at\r\nleast the one year before the clinical onset of\r\ncerebrovascular accident; or\r\nB. smoking at least one pack-year of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident; or\r\n(ii) where smoking has ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking at least one pack-year but less than five pack-\r\nyears of cigarettes, or the equivalent thereof in other\r\ntobacco products, before the clinical onset of\r\ncerebrovascular accident, and the clinical onset of\r\ncerebrovascular accident has occurred within ten years\r\nof smoking cessation; or\r\nB. smoking at least five pack-years but less than 20 pack-\r\nyears of cigarettes, or the equivalent thereof in other\r\ntobacco products, before the clinical onset of\r\ncerebrovascular accident, and the clinical onset of\r\ncerebrovascular accident has occurred within 15 years of\r\nsmoking cessation; or\r\nC. smoking at least 20 pack-years of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident; or\r\n(iii) having dyslipidaemia before the age of 70 years, within the\r\ntwenty years before the clinical onset of cerebrovascular\r\naccident; or\r\n(iv) being treated with intravenous immunoglobulin within the 72\r\nhours before the clinical onset of cerebrovascular accident; or\r\n(v) ingesting a combined oral contraceptive pill for a continuous\r\nperiod of at least the 21 days before the clinical onset of\r\ncerebrovascular accident; or\r\n(vi) for postmenopausal females only, receiving hormone\r\nreplacement therapy for a continuous period of at least 21 days\r\nwithin the two years before the clinical onset of\r\ncerebrovascular accident; or\r\n(vii) being treated with tamoxifen for a continuous period of at\r\nleast the 21 days before the clinical onset of cerebrovascular\r\naccident; or\r\n(viii) using a drug belonging to the non-steroidal anti-inflammatory\r\nclass of drugs, excluding aspirin, paracetamol and topical non-\r\nsteroidal anti-inflammatory drugs, for a continuous period of\r\nat least 30 days before the clinical onset of cerebrovascular\r\naccident, where the last dose of the drug was taken within the\r\nseven days before the clinical onset of cerebrovascular\r\naccident; or\r\n(ix) having carotid arterial disease, or occlusion or stenosis of the\r\nvertebral artery, basilar artery, aortic arch or ascending aorta\r\ndue to atherosclerosis, dissection or other pathological process\r\ninvolving that artery, at the time of the clinical onset of\r\ncerebrovascular accident; or\r\n(x) having a subarachnoid haemorrhage within the two weeks\r\nbefore the clinical onset of cerebrovascular accident; or\r\n(xi) having a hypercoagulable state as specified at the time of the\r\nclinical onset of cerebrovascular accident; or\r\n(xii) experiencing an acute hypotensive episode within the 24 hours\r\nbefore the clinical onset of cerebrovascular accident; or\r\n(xiii) having sleep apnoea at the time of the clinical onset of\r\ncerebrovascular accident; or\r\n(xiv) undergoing a course of therapeutic radiation for cancer, where\r\nthe head, neck or mediastinum was in the field of radiation,\r\nbefore the clinical onset of cerebrovascular accident; or\r\n(xv) having received a cumulative equivalent dose of at least 1.0\r\nsievert of ionising radiation to the head, neck or mediastinum\r\nbefore the clinical onset of cerebrovascular accident; or\r\n(xvi) having hyperhomocysteinaemia at the time of the clinical\r\nonset of cerebrovascular accident; or\r\n(xvii) having trauma to the neck or the base of the skull within the\r\nfour weeks before the clinical onset of cerebrovascular\r\naccident; or\r\n(xviii) having active migraine at the time of the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "having active migraine",
+      "definition" : "means having at least one migraine headache per\nyear"
+    }, {
+      "term" : "an acute hypotensive episode",
+      "definition" : "means a sudden drop in blood pressure of a\nsufficient degree to cause cerebral hypoperfusion"
+    }, {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    }, {
+      "term" : "cerebral ischaemia",
+      "definition" : "means a reduction or interruption of blood supply to an\narea of the cerebrum, diencephalon, brain stem or cerebellum, leading to\ndysfunction of the brain tissue in that area; and which presents as an ischaemic\nstroke, transient symptoms with infarction, or transient ischaemic attack"
+    }, {
+      "term" : "trauma to the neck or the base of the skull",
+      "definition" : "means:\n(a) a non-penetrating injury, involving extension, rotation, hyperflexion or\ncompression of the neck;\n(b) a penetrating injury to the neck or the base of the skull;\n(c) an injury resulting in fracture or dislocation of the cervical spine; or\n(d) foreign body penetration or blunt injury of an artery within the head,\nneck or chest"
+    }, {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    }, {
+      "term" : "a hypercoagulable state as specified",
+      "definition" : "means:\n(a) acquired activated protein C resistance;\n(b) acquired antithrombin III deficiency;\n(c) acquired dysfibrinogenaemia;\n(d) acquired protein C deficiency;\n(e) acquired protein S deficiency;\n(f) antiphospholipid antibody syndrome;\n(g) disseminated intravascular coagulation;\n(h) haemolytic uraemic syndrome;\n(i) heparin-induced thrombocytopaenia;\n(j) hyperfibrinogenaemia;\n(k) hyperproteinaemia;\n(l) hyperviscosity syndrome;\n(m) myeloproliferative disease;\n(n) nephrotic syndrome; or\n(o) paroxysmal nocturnal haemoglobinuria"
+    } ],
+    "conditionVariant" : {
+      "name" : "cerebral ischaemia",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "where smoking has not ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking an average of at least five cigarettes per day, or\r\nthe equivalent thereof in other tobacco products, for at\r\nleast the one year before the clinical onset of\r\ncerebrovascular accident; or\r\nB. smoking at least one pack-year of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "where smoking has ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking at least one pack-year but less than five pack-\r\nyears of cigarettes, or the equivalent thereof in other\r\ntobacco products, before the clinical onset of\r\ncerebrovascular accident, and the clinical onset of\r\ncerebrovascular accident has occurred within ten years\r\nof smoking cessation; or\r\nB. smoking at least five pack-years but less than 20 pack-\r\nyears of cigarettes, or the equivalent thereof in other\r\ntobacco products, before the clinical onset of\r\ncerebrovascular accident, and the clinical onset of\r\ncerebrovascular accident has occurred within 15 years of\r\nsmoking cessation; or\r\nC. smoking at least 20 pack-years of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having dyslipidaemia before the age of 70 years, within the\r\ntwenty years before the clinical onset of cerebrovascular\r\naccident"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "being treated with intravenous immunoglobulin within the 72\r\nhours before the clinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "ingesting a combined oral contraceptive pill for a continuous\r\nperiod of at least the 21 days before the clinical onset of\r\ncerebrovascular accident"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "for postmenopausal females only, receiving hormone\r\nreplacement therapy for a continuous period of at least 21 days\r\nwithin the two years before the clinical onset of\r\ncerebrovascular accident"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "being treated with tamoxifen for a continuous period of at\r\nleast the 21 days before the clinical onset of cerebrovascular\r\naccident"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "using a drug belonging to the non-steroidal anti-inflammatory\r\nclass of drugs, excluding aspirin, paracetamol and topical non-\r\nsteroidal anti-inflammatory drugs, for a continuous period of\r\nat least 30 days before the clinical onset of cerebrovascular\r\naccident, where the last dose of the drug was taken within the\r\nseven days before the clinical onset of cerebrovascular\r\naccident"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "having carotid arterial disease, or occlusion or stenosis of the\r\nvertebral artery, basilar artery, aortic arch or ascending aorta\r\ndue to atherosclerosis, dissection or other pathological process\r\ninvolving that artery, at the time of the clinical onset of\r\ncerebrovascular accident"
+      }, {
+        "paragraph" : "(x)",
+        "text" : "having a subarachnoid haemorrhage within the two weeks\r\nbefore the clinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(xi)",
+        "text" : "having a hypercoagulable state as specified at the time of the\r\nclinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(xii)",
+        "text" : "experiencing an acute hypotensive episode within the 24 hours\r\nbefore the clinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(xiii)",
+        "text" : "having sleep apnoea at the time of the clinical onset of\r\ncerebrovascular accident"
+      }, {
+        "paragraph" : "(xiv)",
+        "text" : "undergoing a course of therapeutic radiation for cancer, where\r\nthe head, neck or mediastinum was in the field of radiation,\r\nbefore the clinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(xv)",
+        "text" : "having received a cumulative equivalent dose of at least 1.0\r\nsievert of ionising radiation to the head, neck or mediastinum\r\nbefore the clinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(xvi)",
+        "text" : "having hyperhomocysteinaemia at the time of the clinical\r\nonset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(xvii)",
+        "text" : "having trauma to the neck or the base of the skull within the\r\nfour weeks before the clinical onset of cerebrovascular\r\naccident"
+      }, {
+        "paragraph" : "(xviii)",
+        "text" : "having active migraine at the time of the clinical onset of\r\ncerebrovascular accident"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(gg)",
+    "text" : "for intracerebral haemorrhage only:\r\n(i) where smoking has not ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking an average of at least 15 cigarettes per day, or\r\nthe equivalent thereof in other tobacco products, for at\r\nleast the one year before the clinical onset of\r\ncerebrovascular accident; or\r\nB. smoking at least two pack-years of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident; or\r\n(ii) where smoking has ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking at least two pack-years but less than ten pack-\r\nyears of cigarettes, or the equivalent thereof in other\r\ntobacco products, before the clinical onset of\r\ncerebrovascular accident, and the clinical onset of\r\ncerebrovascular accident has occurred within five years\r\nof smoking cessation; or\r\nB. smoking at least ten pack-years of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident, and the\r\nclinical onset of cerebrovascular accident has occurred\r\nwithin ten years of smoking cessation; or\r\n(iii) having a lipid profile as specified before the age of 70 years,\r\nwithin the ten years before the clinical onset of\r\ncerebrovascular accident; or\r\n(iv) undergoing anticoagulant therapy at the time of the clinical\r\nonset of cerebrovascular accident; or\r\n(v) taking aspirin on at least three days per week for a continuous\r\nperiod of at least four weeks before the clinical onset of\r\ncerebrovascular accident, where the last dose of aspirin was\r\ntaken within the seven days before the clinical onset of\r\ncerebrovascular accident; or\r\n(vi) undergoing thrombolytic therapy at the time of the clinical\r\nonset of cerebrovascular accident; or\r\n(vii) having a haematological disorder from the specified list of\r\nhaematological disorders that are associated with an excessive\r\nbleeding tendency, at the time of the clinical onset of\r\ncerebrovascular accident; or\r\n(viii) bleeding of an intracerebral space occupying lesion at the time\r\nof the clinical onset of cerebrovascular accident; or\r\n(ix) bleeding from a cerebral aneurysm or a cerebral vascular\r\nmalformation at the time of the clinical onset of\r\ncerebrovascular accident",
+    "definedTerms" : [ {
+      "term" : "thrombolytic therapy",
+      "definition" : "means therapeutic administration of a\npharmacological agent in order to dissolve a thrombus, retard fibrin deposition\non established thrombi or prevent the formation of new thrombi, and includes\nagents such as streptokinase, urokinase, tissue plasminogen activator, pro-\nurokinase, acyl-SK-plasminogen, anistreplase, alteplase, defibrotide,\nduteplase, lanoteplase, monteplase, nasaruplase, saruplase, staphylokinase or\nreteplase"
+    }, {
+      "term" : "anticoagulant therapy",
+      "definition" : "means therapeutic administration of a\npharmacological agent which suppresses, delays or attenuates blood\ncoagulation (such as heparin, warfarin or dicumarol), but excludes antiplatelet\ntherapy (such as aspirin, clopidogrel, ticlopidine or monoclonal antibodies and\nrecombinant and chemically synthesised peptides that block platelet adhesion\nor aggregation)"
+    }, {
+      "term" : "an intracerebral space occupying lesion",
+      "definition" : "means one of the following\nentities occupying a delimited area within the brain:\n(a) abscess;\n(b) cyst;\n(c) neoplasm; or\n(d) tuberculoma"
+    }, {
+      "term" : "a lipid profile as specified",
+      "definition" : "means evidence of a persistently abnormal lipid\nprofile after the accurate evaluation of serum lipids following a 12 hour\novernight fast, and estimated on a minimum of two occasions as:\n(a) a total cholesterol level less than or equal to 4.5 millimoles per litre\n(mmol/L); or\n(b) a low density lipoprotein cholesterol level less than 1.5 mmol/L"
+    } ],
+    "conditionVariant" : {
+      "name" : "intracerebral haemorrhage",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "where smoking has not ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking an average of at least 15 cigarettes per day, or\r\nthe equivalent thereof in other tobacco products, for at\r\nleast the one year before the clinical onset of\r\ncerebrovascular accident; or\r\nB. smoking at least two pack-years of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "where smoking has ceased before the clinical onset of\r\ncerebrovascular accident:\r\nA. smoking at least two pack-years but less than ten pack-\r\nyears of cigarettes, or the equivalent thereof in other\r\ntobacco products, before the clinical onset of\r\ncerebrovascular accident, and the clinical onset of\r\ncerebrovascular accident has occurred within five years\r\nof smoking cessation; or\r\nB. smoking at least ten pack-years of cigarettes, or the\r\nequivalent thereof in other tobacco products, before the\r\nclinical onset of cerebrovascular accident, and the\r\nclinical onset of cerebrovascular accident has occurred\r\nwithin ten years of smoking cessation"
+      }, {
+        "paragraph" : "(iii)",
+        "text" : "having a lipid profile as specified before the age of 70 years,\r\nwithin the ten years before the clinical onset of\r\ncerebrovascular accident"
+      }, {
+        "paragraph" : "(iv)",
+        "text" : "undergoing anticoagulant therapy at the time of the clinical\r\nonset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(v)",
+        "text" : "taking aspirin on at least three days per week for a continuous\r\nperiod of at least four weeks before the clinical onset of\r\ncerebrovascular accident, where the last dose of aspirin was\r\ntaken within the seven days before the clinical onset of\r\ncerebrovascular accident"
+      }, {
+        "paragraph" : "(vi)",
+        "text" : "undergoing thrombolytic therapy at the time of the clinical\r\nonset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(vii)",
+        "text" : "having a haematological disorder from the specified list of\r\nhaematological disorders that are associated with an excessive\r\nbleeding tendency, at the time of the clinical onset of\r\ncerebrovascular accident"
+      }, {
+        "paragraph" : "(viii)",
+        "text" : "bleeding of an intracerebral space occupying lesion at the time\r\nof the clinical onset of cerebrovascular accident"
+      }, {
+        "paragraph" : "(ix)",
+        "text" : "bleeding from a cerebral aneurysm or a cerebral vascular\r\nmalformation at the time of the clinical onset of\r\ncerebrovascular accident"
+      } ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(hh)",
+    "text" : "inability to obtain appropriate clinical management for cerebrovascular\r\naccident",
+    "definedTerms" : [ ]
+  } ]
+}

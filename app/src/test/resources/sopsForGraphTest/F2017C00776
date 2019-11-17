@@ -1,0 +1,134 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00776",
+  "instrumentNumber" : "15/2012",
+  "citation" : "Statement of Principles concerning non- aneurysmal aortic atherosclerotic disease No. 15 of 2012",
+  "conditionName" : "non-aneurysmal aortic atherosclerotic disease",
+  "effectiveFrom" : "2012-03-07",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "I70.0"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "I74.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of non-aneurysmal\r\naortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having hypertension before the clinical onset of non-aneurysmal aortic\r\natherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having dyslipidaemia before the clinical onset of non-aneurysmal\r\naortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having diabetes mellitus before the clinical onset of non-aneurysmal\r\naortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the aorta\r\nwas in the field of radiation, before the clinical onset of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the aorta before the clinical onset of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having hyperhomocysteinaemia before the clinical onset of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having chronic renal disease before the clinical onset of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "chronic renal disease",
+      "definition" : "means irreversible kidney damage which leads to\nimpaired renal function"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having periodontitis for at least the two years before the clinical onset\r\nof non-aneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having a clinically significant depressive disorder for at least five\r\nyears, before the clinical onset of non-aneurysmal aortic atherosclerotic\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "clinically significant",
+      "definition" : "means sufficient to warrant ongoing management,\nwhich may involve regular visits (for example, at least monthly), to a\npsychiatrist, counsellor or general practitioner"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 5000 hours before the clinical onset of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(l)",
+    "text" : "smoking at least one pack-year of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical worsening of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having hypertension before the clinical worsening of non-aneurysmal\r\naortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having dyslipidaemia before the clinical worsening of non-aneurysmal\r\naortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having diabetes mellitus before the clinical worsening of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the aorta\r\nwas in the field of radiation, before the clinical worsening of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having received a cumulative equivalent dose of at least 0.5 sievert of\r\nionising radiation to the aorta before the clinical worsening of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "having hyperhomocysteinaemia before the clinical worsening of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "hyperhomocysteinaemia",
+      "definition" : "means a condition characterised by an excess of\nhomocysteine in the blood"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having chronic renal disease before the clinical worsening of non-\r\naneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "chronic renal disease",
+      "definition" : "means irreversible kidney damage which leads to\nimpaired renal function"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having periodontitis for at least the two years before the clinical\r\nworsening of non-aneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having a clinically significant depressive disorder for at least five\r\nyears, before the clinical worsening of non-aneurysmal aortic\r\natherosclerotic disease",
+    "definedTerms" : [ {
+      "term" : "clinically significant",
+      "definition" : "means sufficient to warrant ongoing management,\nwhich may involve regular visits (for example, at least monthly), to a\npsychiatrist, counsellor or general practitioner"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "being in an atmosphere with a visible tobacco smoke haze in an\r\nenclosed space for at least 5000 hours before the clinical worsening of\r\nnon-aneurysmal aortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "inability to obtain appropriate clinical management for non-aneurysmal\r\naortic atherosclerotic disease",
+    "definedTerms" : [ ]
+  } ]
+}

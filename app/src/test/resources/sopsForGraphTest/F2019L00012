@@ -1,0 +1,157 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00012",
+  "instrumentNumber" : "12/2019",
+  "citation" : "Statement of Principles concerning hypopituitarism (Balance of Probabilities) (No. 12 of 2019)",
+  "conditionName" : "hypopituitarism",
+  "effectiveFrom" : "2019-01-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "E23.0"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having an autoimmune disorder involving the pituitary gland at the\r\ntime of the clinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a disorder from the specified list of infiltrative, inflammatory or\r\ngranulomatous disorders, involving the pituitary gland or\r\nhypothalamus, at the time of the clinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having infection with human immunodeficiency virus before the\r\nclinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a viral, bacterial, fungal or protozoal infection of the pituitary\r\ngland, hypothalamus, brain or cerebral meninges, within the five years\r\nbefore the clinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having Hantavirus haemorrhagic fever with renal syndrome within the\r\nfive years before the clinical onset of hypopituitarism",
+    "definedTerms" : [ {
+      "term" : "Hantavirus haemorrhagic fever with renal syndrome",
+      "definition" : "means a clinical\r\nsyndrome of acute shock, vascular leakage, thrombocytopaenia, hypotension\r\nand acute renal failure caused by hantaviruses from the family Bunyaviridae,"
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having moderate to severe traumatic brain injury within the ten years\r\nbefore the clinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having a subarachnoid haemorrhage within the ten years before the\r\nclinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having haemorrhage or ischaemia involving the pituitary gland or\r\nhypothalamus within the ten years before the clinical onset of\r\nhypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having severe peripartum or postpartum haemorrhage before the\r\nclinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having surgery involving the pituitary gland, or intracranial surgery,\r\nwithin the ten years before the clinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\npituitary or hypothalamus was in the field of radiation, before the\r\nclinical onset of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a space occupying lesion that involves, or impinges on, the\r\npituitary gland or hypothalamus at the time of the clinical onset of\r\nhypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "being treated with an immune checkpoint inhibitor, or an interferon,\r\nwithin the one year before the clinical onset of hypopituitarism",
+    "definedTerms" : [ {
+      "term" : "immune checkpoint inhibitor",
+      "definition" : "means a form of cancer immunotherapy that\r\nuses monoclonal antibodies targeting the immune checkpoint proteins.\r\nExamples include, but are not limited to, ipilumab, tremelimumab,\r\nnivolumab and pembrolizumab."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "for lymphocytic hypophysitis only, being pregnant within the six\r\nmonths before the clinical onset of hypopituitarism",
+    "definedTerms" : [ {
+      "term" : "lymphocytic hypophysitis",
+      "definition" : "means an autoimmune condition in which the\r\npituitary gland becomes infiltrated by lymphocytes, resulting in pituitary\r\nenlargement and impaired function."
+    } ],
+    "conditionVariant" : {
+      "name" : "lymphocytic hypophysitis",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(15)",
+    "text" : "having an autoimmune disorder involving the pituitary gland at the\r\ntime of the clinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having a disorder from the specified list of infiltrative, inflammatory or\r\ngranulomatous disorders, involving the pituitary gland or\r\nhypothalamus, at the time of the clinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having infection with human immunodeficiency virus before the\r\nclinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having a viral, bacterial, fungal or protozoal infection of the pituitary\r\ngland, hypothalamus, brain or cerebral meninges, within the five years\r\nbefore the clinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "having Hantavirus haemorrhagic fever with renal syndrome within the\r\nfive years before the clinical worsening of hypopituitarism",
+    "definedTerms" : [ {
+      "term" : "Hantavirus haemorrhagic fever with renal syndrome",
+      "definition" : "means a clinical\r\nsyndrome of acute shock, vascular leakage, thrombocytopaenia, hypotension\r\nand acute renal failure caused by hantaviruses from the family Bunyaviridae,"
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having moderate to severe traumatic brain injury within the ten years\r\nbefore the clinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "having a subarachnoid haemorrhage within the ten years before the\r\nclinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having haemorrhage or ischaemia involving the pituitary gland or\r\nhypothalamus within the ten years before the clinical worsening of\r\nhypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having severe peripartum or postpartum haemorrhage before the\r\nclinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "having surgery involving the pituitary gland, or intracranial surgery,\r\nwithin the ten years before the clinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(25)",
+    "text" : "undergoing a course of therapeutic radiation for cancer, where the\r\npituitary or hypothalamus was in the field of radiation, before the\r\nclinical worsening of hypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(26)",
+    "text" : "having a space occupying lesion that involves, or impinges on, the\r\npituitary gland or hypothalamus at the time of the clinical worsening of\r\nhypopituitarism",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(27)",
+    "text" : "being treated with an immune checkpoint inhibitor, or an interferon,\r\nwithin the one year before the clinical worsening of hypopituitarism",
+    "definedTerms" : [ {
+      "term" : "immune checkpoint inhibitor",
+      "definition" : "means a form of cancer immunotherapy that\r\nuses monoclonal antibodies targeting the immune checkpoint proteins.\r\nExamples include, but are not limited to, ipilumab, tremelimumab,\r\nnivolumab and pembrolizumab."
+    } ]
+  }, {
+    "paragraph" : "9(28)",
+    "text" : "for lymphocytic hypophysitis only, being pregnant within the six\r\nmonths before the clinical worsening of hypopituitarism",
+    "definedTerms" : [ {
+      "term" : "lymphocytic hypophysitis",
+      "definition" : "means an autoimmune condition in which the\r\npituitary gland becomes infiltrated by lymphocytes, resulting in pituitary\r\nenlargement and impaired function."
+    } ],
+    "conditionVariant" : {
+      "name" : "lymphocytic hypophysitis",
+      "variantFactors" : [ ]
+    }
+  }, {
+    "paragraph" : "9(29)",
+    "text" : "inability to obtain appropriate clinical management for hypopituitarism",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2015L00910",
+  "instrumentNumber" : "78/2015",
+  "citation" : "Statement of Principles concerning trigeminal neuralgia (No. 78 of 2015)",
+  "conditionName" : "trigeminal neuralgia",
+  "effectiveFrom" : "2015-07-20",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having multiple sclerosis, Charcot–Marie–Tooth disease or a central\r\nnervous system demyelinating disease at the time of the clinical onset\r\nof trigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having a mass lesion which compresses, encases, entraps, stretches,\r\ninfiltrates or displaces the affected trigeminal nerve close to its point\r\nof entry into the brainstem, at the time of the clinical onset of\r\ntrigeminal neuralgia",
+    "definedTerms" : [ {
+      "term" : "mass lesion",
+      "definition" : "means an endogenous pathological structure or pathological\r\nentity or extraneous material occupying a delineated area, including a benign\r\nor malignant neoplasm, haematoma, abscess, fungal granuloma,\r\namyloidoma, neurocysticercoma, epidermoid cyst or arachnoid cyst."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having vascular compression of the trigeminal nerve close to its point\r\nof entry into the brainstem, by a tortuous or aberrant loop of arteries or\r\nveins, haemangioma, aneurysm, venous sinus thrombosis, or\r\narteriovenous malformation, at the time of the clinical onset of\r\ntrigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a benign fibro-osseous lesion which compresses, entraps or\r\ndisplaces the affected trigeminal nerve close to its point of entry into\r\nthe brainstem, at the time of the clinical onset of trigeminal neuralgia",
+    "definedTerms" : [ {
+      "term" : "benign fibro-osseous lesion",
+      "definition" : "means a non-malignant disease of the bone or\r\nconnective tissue, such as Paget's disease of bone, osteogenesis imperfecta,\r\nfibrous dysplasia or cranial osteodysplasia."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having a cerebrovascular accident involving the brainstem within the\r\n30 days before the clinical onset of trigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having a disease from the specified list of inflammatory connective\r\ntissue diseases at the time of the clinical onset of trigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having invasive bacterial or fungal paranasal sinusitis or viral\r\nmeningoencephalitis, at the time of the clinical onset of trigeminal\r\nneuralgia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(8)",
+    "text" : "having multiple sclerosis, Charcot–Marie–Tooth disease or a central\r\nnervous system demyelinating disease at the time of the clinical\r\nworsening of trigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having a mass lesion which compresses, encases, entraps, stretches,\r\ninfiltrates or displaces the affected trigeminal nerve close to its point\r\nof entry into the brainstem, at the time of the clinical worsening of\r\ntrigeminal neuralgia",
+    "definedTerms" : [ {
+      "term" : "mass lesion",
+      "definition" : "means an endogenous pathological structure or pathological\r\nentity or extraneous material occupying a delineated area, including a benign\r\nor malignant neoplasm, haematoma, abscess, fungal granuloma,\r\namyloidoma, neurocysticercoma, epidermoid cyst or arachnoid cyst."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having vascular compression of the trigeminal nerve close to its point\r\nof entry into the brainstem, by a tortuous or aberrant loop of arteries or\r\nveins, haemangioma, aneurysm, venous sinus thrombosis, or\r\narteriovenous malformation, at the time of the clinical worsening of\r\ntrigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having a benign fibro-osseous lesion which compresses, entraps or\r\ndisplaces the affected trigeminal nerve close to its point of entry into\r\nthe brainstem, at the time of the clinical worsening of trigeminal\r\nneuralgia",
+    "definedTerms" : [ {
+      "term" : "benign fibro-osseous lesion",
+      "definition" : "means a non-malignant disease of the bone or\r\nconnective tissue, such as Paget's disease of bone, osteogenesis imperfecta,\r\nfibrous dysplasia or cranial osteodysplasia."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a cerebrovascular accident involving the brainstem within the\r\n30 days before the clinical worsening of trigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having a disease from the specified list of inflammatory connective\r\ntissue diseases at the time of the clinical worsening of trigeminal\r\nneuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having invasive bacterial or fungal paranasal sinusitis or viral\r\nmeningoencephalitis, at the time of the clinical worsening of\r\ntrigeminal neuralgia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "inability to obtain appropriate clinical management for trigeminal\r\nneuralgia",
+    "definedTerms" : [ ]
+  } ]
+}

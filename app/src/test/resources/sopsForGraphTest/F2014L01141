@@ -1,0 +1,117 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01141",
+  "instrumentNumber" : "79/2014",
+  "citation" : "Statement of Principles concerning vascular dementia No. 79 of 2014",
+  "conditionName" : "vascular dementia",
+  "effectiveFrom" : "2014-09-22",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "F01"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a cerebrovascular accident before the clinical onset of vascular\r\ndementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having a specified disease of the cerebral vessels, in the presence of\r\nneuroimaging (magnetic resonance imaging or computed tomography)\r\nfindings of cerebral white matter lesions, haemorrhage or infarction,\r\nbefore the clinical onset of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "a specified disease of the cerebral vessels",
+      "definition" : "means:\n(a) antiphospholipid syndrome;\n(b) cerebral amyloid angiopathy;\n(c) cerebral amyloidosis;\n(d) cerebral arteriolosclerosis;\n(e) cerebral venous thrombosis;\n(f) hippocampal sclerosis;\n(g) inflammatory or immunologically mediated vasculitis;\n(h) intravascular lymphomatosis;\n(i) laminar cortical necrosis; or\n(j) Moyamoya disease"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "having hypertension before the age of 65 years, and at least ten years\r\nbefore the clinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having sick sinus syndrome, atrial fibrillation or atrial flutter, at the\r\ntime of the clinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having carotid arterial disease or ischaemic heart disease before the\r\nclinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having cardiac surgery within the 12 months before the clinical onset of\r\nvascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having diabetes mellitus at least ten years before the clinical onset of\r\nvascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical onset of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having depressive disorder before the age of 65 years, and where\r\ndepressive disorder was diagnosed more than ten years before the\r\nclinical onset of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having chronic renal failure before the clinical onset of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(k)",
+    "text" : "having a cerebrovascular accident before the clinical worsening of\r\nvascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having a specified disease of the cerebral vessels, in the presence of\r\nneuroimaging (magnetic resonance imaging or computed tomography)\r\nfindings of cerebral white matter lesions, haemorrhage or infarction,\r\nbefore the clinical worsening of vascular dementia",
+    "definedTerms" : [ {
+      "term" : "a specified disease of the cerebral vessels",
+      "definition" : "means:\n(a) antiphospholipid syndrome;\n(b) cerebral amyloid angiopathy;\n(c) cerebral amyloidosis;\n(d) cerebral arteriolosclerosis;\n(e) cerebral venous thrombosis;\n(f) hippocampal sclerosis;\n(g) inflammatory or immunologically mediated vasculitis;\n(h) intravascular lymphomatosis;\n(i) laminar cortical necrosis; or\n(j) Moyamoya disease"
+    } ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having hypertension before the age of 65 years, and at least ten years\r\nbefore the clinical worsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "having sick sinus syndrome, atrial fibrillation or atrial flutter, at the\r\ntime of the clinical worsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having carotid arterial disease or ischaemic heart disease before the\r\nclinical worsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having cardiac surgery within the 12 months before the clinical\r\nworsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having diabetes mellitus at least ten years before the clinical worsening\r\nof vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "an inability to undertake any physical activity greater than three METs\r\nfor at least the five years before the clinical worsening of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having depressive disorder before the age of 65 years, and where\r\ndepressive disorder was diagnosed more than ten years before the\r\nclinical worsening of vascular dementia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "having chronic renal failure before the clinical worsening of vascular\r\ndementia",
+    "definedTerms" : [ {
+      "term" : "chronic renal failure",
+      "definition" : "means having a glomerular filtration rate of less than\n2\n60 mL/min/1.73 m for a period of at least three months, or the presence of\nirreversible kidney damage"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "inability to obtain appropriate clinical management for vascular\r\ndementia",
+    "definedTerms" : [ ]
+  } ]
+}

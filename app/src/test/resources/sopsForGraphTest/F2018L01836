@@ -1,0 +1,99 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01836",
+  "instrumentNumber" : "2/2019",
+  "citation" : "Statement of Principles concerning chondromalacia patella (Balance of Probabilities) (No. 2 of 2019)",
+  "conditionName" : "chondromalacia patella",
+  "effectiveFrom" : "2019-01-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M22.4"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having direct trauma to the patella of the affected knee within the three\r\nmonths before the clinical onset of chondromalacia patella",
+    "definedTerms" : [ {
+      "term" : "direct trauma to the patella",
+      "definition" : "means a blow to the kneecap causing immediate\r\npatellar pain that persists for at least 24 hours."
+    } ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having patellar dislocation of the affected knee within the three months\r\nbefore the clinical onset of chondromalacia patella",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having an injury to the affected knee resulting in acute meniscal or\r\nligamentous tear of the knee or permanent ligamentous instability,\r\nwithin the six months before the clinical onset of chondromalacia\r\npatella",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having acquired abnormal tracking of the patella of the affected knee\r\nfor at least the three months before the clinical onset of chondromalacia\r\npatella",
+    "definedTerms" : [ {
+      "term" : "abnormal tracking of the patella",
+      "definition" : "means aberrant movement or positioning of\r\nthe patella relative to the femoral condyles in the course of knee flexion or\r\nextension.\r\nchondromalacia patella—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "running or jogging an average of at least 60 kilometres per week for at\r\nleast the four weeks before the clinical onset of chondromalacia patella",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "undertaking weight bearing exercise involving forceful loading of the\r\naffected patellofemoral joint, at a minimum intensity of five METs for\r\nat least six hours per week, for at least the four weeks before the\r\nclinical onset of chondromalacia patella",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the affected knee by at least 100 percent, to a\r\nminimum intensity of five METs for at least four hours per day, for at\r\nleast the seven days before the clinical onset of chondromalacia patella",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(8)",
+    "text" : "having direct trauma to the patella of the affected knee within the three\r\nmonths before the clinical worsening of chondromalacia patella",
+    "definedTerms" : [ {
+      "term" : "direct trauma to the patella",
+      "definition" : "means a blow to the kneecap causing immediate\r\npatellar pain that persists for at least 24 hours."
+    } ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having patellar dislocation of the affected knee within the three months\r\nbefore the clinical worsening of chondromalacia patella",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having an injury to the affected knee resulting in acute meniscal or\r\nligamentous tear of the knee or permanent ligamentous instability,\r\nwithin the six months before the clinical worsening of chondromalacia\r\npatella",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having acquired abnormal tracking of the patella of the affected knee\r\nfor at least the three months before the clinical worsening of\r\nchondromalacia patella",
+    "definedTerms" : [ {
+      "term" : "abnormal tracking of the patella",
+      "definition" : "means aberrant movement or positioning of\r\nthe patella relative to the femoral condyles in the course of knee flexion or\r\nextension.\r\nchondromalacia patella—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "running or jogging an average of at least 60 kilometres per week for at\r\nleast the four weeks before the clinical worsening of chondromalacia\r\npatella",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "undertaking weight bearing exercise involving forceful loading of the\r\naffected patellofemoral joint, at a minimum intensity of five METs for\r\nat least six hours per week, for at least the four weeks before the\r\nclinical worsening of chondromalacia patella",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "increasing the frequency, duration or intensity of weight bearing\r\nactivity involving the affected knee by at least 100 percent, to a\r\nminimum intensity of five METs for at least four hours per day, for at\r\nleast the seven days before the clinical worsening of chondromalacia\r\npatella",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion. 1 \r\n= 3.5 ml of oxygen/kg of body weight per minute, 1.0 kcal/kg of body weight\r\nper hour or resting metabolic rate."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "inability to obtain appropriate clinical management for chondromalacia\r\npatella",
+    "definedTerms" : [ ]
+  } ]
+}

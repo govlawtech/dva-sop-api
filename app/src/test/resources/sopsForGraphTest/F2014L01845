@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2014L01845",
+  "instrumentNumber" : "32/2015",
+  "citation" : "Statement of Principles concerning horseshoe kidney No. 32 of 2015",
+  "conditionName" : "horseshoe kidney",
+  "effectiveFrom" : "2015-01-27",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "Q63.11"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for horseshoe kidney",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "5",
+    "text" : "inability to obtain appropriate clinical management for horseshoe kidney",
+    "definedTerms" : [ ]
+  } ]
+}

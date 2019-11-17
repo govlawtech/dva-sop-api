@@ -1,0 +1,128 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2011L01444",
+  "instrumentNumber" : "86/2011",
+  "citation" : "Statement of Principles concerning acute pancreatitis No. 86 of 2011",
+  "conditionName" : "acute pancreatitis",
+  "effectiveFrom" : "2011-07-13",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K85"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having cholelithiasis at the time of the clinical onset of acute\r\npancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "having biliary microlithiasis or biliary sludge at the time of the clinical\r\nonset of acute pancreatitis",
+    "definedTerms" : [ {
+      "term" : "biliary microlithiasis or biliary sludge",
+      "definition" : "means the presence of small stones\n(1-2 mm) due to aggregation of bile constituents into a stone or calculus or a\ncollection of crystals, glycoproteins, protein, cellular debris and mucin in the\nbiliary tract"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "drinking at least 36 kilograms of alcohol within any two year period,\r\nand continuing to consume alcohol at the time of the clinical onset of\r\nacute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "having an acute infection with an organism from the specified list at the\r\ntime of the clinical onset of acute pancreatitis",
+    "definedTerms" : [ {
+      "term" : "acute infection with an organism from the specified list",
+      "definition" : "means\nserological and/or clinical evidence of acute infection with one or more of the\nfollowing:\n(a) coxsackievirus;\n(b) Cryptosporidium;\n(c) cytomegalovirus;\n(d) Epstein-Barr virus;\n(e) hepatitis A virus;\n(f) hepatitis B virus;\n(g) hepatitis C virus;\n(h) hepatitis E virus;\n(i) herpes simplex virus;\n(j) Legionella spp;\n(k) Leptospira spp;\n(l) measles virus;\n(m) mumps virus;\n(n) Mycobacterium avium;\n(o) Mycobacterium tuberculosis;\n(p) Mycoplasma pneumoniae;\n(q) Salmonella enterica;\n(r) Salmonella bongori; or\n(s) varicella-zoster virus"
+    } ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "having ascariasis or clonorchiasis at the time of the clinical onset of\r\nacute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "being infected with human immunodeficiency virus at the time of the\r\nclinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having pancreatic outflow obstruction due to a disorder from the\r\nspecified list at the time of the clinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "being treated with a drug from the specified table at the time of the\r\nclinical onset of acute pancreatitis",
+    "definedTerms" : [ {
+      "term" : "being treated with a drug from the specified table",
+      "definition" : "means being treated\nwith any drug listed in column 2 of the following table:\nClass Drug\nCardiovascular\nACE inhibitors Captopril, enalapril, lisinopril, ramipril\nAngiotensin receptor Losartan\nblockers\nCentrally acting agents Methyldopa\nLoop diuretics Furosemide\nThiazide diuretics Chlorothiazide, hydrochlorothiazide\nAnti-arrhythmics Amiodarone\nHMG-CoA reductase Simvastatin, pravastatin, fluvastatin\ninhibitors\nOther cholesterol Bezafibrate\nlowering drugs\nAntimicrobial\nAntibacterials Tetracycline, metronidazole, dapsone, cotrimoxazole,\nnitrofurantoin, clarithromycin, erythromycin\nAntituberculars Isoniazid\nAntivirals Nelfinavir, lamivudine, didanosine, interferon/ribavirin\nOthers Pentamidine, sodium stibogluconate, meglumine\nantimonite\nGastrointestinal\nAcid suppressants Cimetidine, ranitidine, omeprazole\nIBD drugs Azathioprine, mercaptopurine, mesalamine, olsalazine,\nsulphasalazine\nNeuropsychiatric\nAnticonvulsants Valproic acid\nAntipsychotics Clozapine\nHormone-related\nOestrogens Conjugated oestrogen, clomifene, premarin, tamoxifen\nAnti-thyroid agents Thimazole, carbimazole\nOncological\nAlkylating agents Ifosfamide\nAntimetabolites Cytarabine\nOther Asparaginase\nAnalgesic\nOpioids Codeine\nNSAIDs Sulindac, naproxen, ketoprofen\nOther Marijuana, isotretinoin, pyritinol, IV or oral\ncorticosteroid, propofol"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "being treated with a drug which is associated in the individual with:\r\n(i) the development of the symptoms or signs of acute pancreatitis\r\nwithin one month of commencing drug therapy; and\r\n(ii) the cessation of the symptoms or signs of acute pancreatitis\r\nwithin weeks of discontinuing drug therapy; and\r\n(iii) an absence of clinical or laboratory evidence of acute\r\npancreatitis prior to beginning drug therapy; and\r\nwhere treatment with the drug continued for at least the three days\r\nbefore the clinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "smoking at least 20 pack-years of cigarettes or the equivalent thereof in\r\nother tobacco products, before the clinical onset of acute pancreatitis,\r\nand where smoking has ceased, the clinical onset has occurred within\r\nten years of cessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "undergoing intra-abdominal or intrathoracic surgery within the 30 days\r\nbefore the clinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "undergoing solid organ transplantation before the clinical onset of acute\r\npancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having penetrating or major blunt trauma to the upper abdomen within\r\nthe seven days before the clinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "undergoing endoscopic retrograde cholangio-pancreatography,\r\nendoscopic sphincterotomy of the sphincter of Oddi or manometry of\r\nthe sphincter of Oddi within the seven days before the clinical onset of\r\nacute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "having hypertriglyceridaemia resulting in triglyceride levels above\r\n1000 milligrams per decilitre (or 11.3 millimoles per litre) at the time\r\nof the clinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "having hypercalcaemia at the time of the clinical onset of acute\r\npancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having a disease from the specified list at the time of the clinical onset\r\nof acute pancreatitis",
+    "definedTerms" : [ {
+      "term" : "a disease from the specified list",
+      "definition" : "means:\n(a) Henoch-Schönlein purpura;\n(b) inflammatory bowel disease;\n(c) microangiopathic haemolytic anaemia;\n(d) microscopic polyangiitis;\n(e) polyarteritis nodosa; or\n(f) systemic lupus erythematosus"
+    } ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "envenomation by a snake or scorpion from the specified list within the\r\nseven days before the clinical onset of acute pancreatitis",
+    "definedTerms" : [ {
+      "term" : "a snake or scorpion from the specified list",
+      "definition" : "means:\n(a) Cerastes cerastes;\n(b) Tityus asthenes;\n(c) Tityus trinitatis; or\n(d) Viperidae family"
+    } ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having acute toxicity after oral ingestion of mushrooms containing\r\nalpha-amanitin within the seven days before the clinical onset of acute\r\npancreatitis",
+    "definedTerms" : [ {
+      "term" : "alpha-amanitin",
+      "definition" : "means the cyclopeptide toxin present in some mushrooms\nsuch as Amanita phalloides which produces amanita poisoning"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "ingesting an agent from the specified list and experiencing acute\r\ntoxicity within the seven days before the clinical onset of acute\r\npancreatitis",
+    "definedTerms" : [ {
+      "term" : "an agent from the specified list",
+      "definition" : "means:\n(a) carbamate insecticide;\n(b) methyl alcohol;\n(c) organophosphorous insecticide; or\n(d) paracetamol in overdose"
+    } ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having a disorder resulting in disseminated intravascular coagulation\r\nand/or profound systemic hypotension with pancreatic acinar damage\r\nwithin the seven days before the clinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having a course of peritoneal dialysis for renal disease at the time of the\r\nclinical onset of acute pancreatitis",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(w)",
+    "text" : "inability to obtain appropriate clinical management for acute\r\npancreatitis",
+    "definedTerms" : [ ]
+  } ]
+}

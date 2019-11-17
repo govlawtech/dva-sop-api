@@ -1,0 +1,41 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2013L00021",
+  "instrumentNumber" : "6/2013",
+  "citation" : "Statement of Principles concerning inguinal hernia No. 6 of 2013",
+  "conditionName" : "inguinal hernia",
+  "effectiveFrom" : "2013-01-09",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "K40"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "the presence of increased intra-abdominal pressure within the three\r\ndays before the clinical onset of inguinal hernia",
+    "definedTerms" : [ {
+      "term" : "increased intra-abdominal pressure",
+      "definition" : "means acute or chronic (intermittent\nor continuous) elevation of pressure within the abdominal cavity due to:\n(a) anti-G straining manoeuvre;\n(b) ascites;\n(c) chronic ambulatory peritoneal dialysis;\n(d) extensive intra-abdominal neoplastic disease;\n(e) lifting heavy weights;\n(f) physical trauma to the abdomen involving a direct blow to the\nabdomen;\n(g) pneumoperitoneum;\n(h) pregnancy;\n(i) significant coughing;\n(j) significant sneezing;\n(k) straining at micturition due to bladder outlet or urethral obstruction; or\n(l) straining at stool due to constipation or diarrhoea"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "undergoing radical retropubic prostatectomy within the two years\r\nbefore the clinical onset of inguinal hernia",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(c)",
+    "text" : "the presence of increased intra-abdominal pressure within the three\r\ndays before the clinical worsening of inguinal hernia",
+    "definedTerms" : [ {
+      "term" : "increased intra-abdominal pressure",
+      "definition" : "means acute or chronic (intermittent\nor continuous) elevation of pressure within the abdominal cavity due to:\n(a) anti-G straining manoeuvre;\n(b) ascites;\n(c) chronic ambulatory peritoneal dialysis;\n(d) extensive intra-abdominal neoplastic disease;\n(e) lifting heavy weights;\n(f) physical trauma to the abdomen involving a direct blow to the\nabdomen;\n(g) pneumoperitoneum;\n(h) pregnancy;\n(i) significant coughing;\n(j) significant sneezing;\n(k) straining at micturition due to bladder outlet or urethral obstruction; or\n(l) straining at stool due to constipation or diarrhoea"
+    } ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "undergoing radical retropubic prostatectomy within the two years\r\nbefore the clinical worsening of inguinal hernia",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "inability to obtain appropriate clinical management for inguinal hernia",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L00564",
+  "instrumentNumber" : "38/2018",
+  "citation" : "Statement of Principles concerning tension-type headache (Balance of Probabilities) (No. 38 of 2018)",
+  "conditionName" : "tension-type headache",
+  "effectiveFrom" : "2018-05-28",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "G44.2"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "for chronic tension-type headache in migraine and cluster headache\r\nsufferers only, taking a drug as specified, for at least the three months\r\nbefore the clinical onset of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "taking a drug as specified",
+      "definition" : "means:\r\n(a) taking a simple analgesic on at least three days per week; or\r\n(b) taking a triptan, ergotamine, an opioid, or a combination analgesic\r\nmedication on at least two days per week.\r\nNote: combination analgesic medication and triptan are also defined in the Schedule 1 – Dictionary.\r\ntension-type headache—see subsection 7(2)."
+    }, {
+      "term" : "chronic tension-type headache",
+      "definition" : "means tension-type headache that lasts for\r\nhours or may be continuous, occurring on at least 15 days per month on\r\naverage, for more than three months."
+    } ],
+    "conditionVariant" : {
+      "name" : "chronic tension-type headache in migraine and cluster headache sufferers",
+      "variantFactors" : [ ]
+    }
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "taking a drug as specified, for at least the three months before the\r\nclinical worsening of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "taking a drug as specified",
+      "definition" : "means:\r\n(a) taking a simple analgesic on at least three days per week; or\r\n(b) taking a triptan, ergotamine, an opioid, or a combination analgesic\r\nmedication on at least two days per week.\r\nNote: combination analgesic medication and triptan are also defined in the Schedule 1 – Dictionary.\r\ntension-type headache—see subsection 7(2)."
+    } ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "undergoing treatment with a nitric oxide donor, at the time of the\r\nclinical worsening of tension-type headache",
+    "definedTerms" : [ {
+      "term" : "nitric oxide donor",
+      "definition" : "means a pharmacologically active substance that releases"
+    } ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "inability to obtain appropriate clinical management for tension-type\r\nheadache",
+    "definedTerms" : [ ]
+  } ]
+}

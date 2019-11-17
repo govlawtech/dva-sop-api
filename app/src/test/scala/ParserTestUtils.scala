@@ -1,7 +1,7 @@
 
 package au.gov.dva.sopapi.tests.parsers;
 
-import java.io.InputStream
+import java.io.{ByteArrayInputStream, InputStream}
 import java.nio.charset.Charset
 
 import au.gov.dva.sopapi.sopref.data.Conversions
@@ -11,6 +11,16 @@ import com.google.common.base.Charsets
 import com.google.common.io.Resources
 
 import scala.io.Source
+import java.nio.file.{Files, Path}
+import java.util.zip.{ZipFile, ZipInputStream}
+
+import au.gov.dva.dvasopapi.tests.{ResourceDirectoryLoader, TestUtils}
+import au.gov.dva.sopapi.sopref.data.sops.StoredSop
+import com.fasterxml.jackson.databind.ObjectMapper
+
+import scala.collection.JavaConverters._
+import scala.collection.mutable.ListBuffer
+import scala.util.Try
 
 object ParserTestUtils {
   def resourceToBytes(resourcePath : String) = {
@@ -39,4 +49,13 @@ object ParserTestUtils {
     val cleansedText = ServiceLocator.findTextCleanser(registerId).clense(rawText)
     cleansedText
   }
+
+
+  def getAllSopsInDir(resourcesDir : String) = {
+    val files = new ResourceDirectoryLoader().getResourceFiles(resourcesDir).asScala
+    val objectMapper = new ObjectMapper
+    files.map(f => StoredSop.fromJson(objectMapper.readTree( resourceToString(s"$resourcesDir/$f"))))
+  }
+
+
 }

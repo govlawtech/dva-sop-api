@@ -1,0 +1,121 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2017C00777",
+  "instrumentNumber" : "37/2013",
+  "citation" : "Statement of Principles concerning malignant neoplasm of the colorectum No. 37 of 2013",
+  "conditionName" : "malignant neoplasm of the colorectum",
+  "effectiveFrom" : "2013-07-03",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "C18"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C19"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "C20"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having a colorectal adenoma before the clinical onset of malignant\r\nneoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "smoking at least 15 pack-years of cigarettes, or the equivalent thereof\r\nin other tobacco products, before the clinical onset of malignant\r\nneoplasm of the colorectum, and\r\n(i) smoking commenced at least 15 years before the clinical onset\r\nof malignant neoplasm of the colorectum; and\r\n(ii) where smoking has ceased, the clinical onset of malignant\r\nneoplasm of the colorectum has occurred within 30 years of\r\ncessation",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "drinking at least 250 kilograms of alcohol before the clinical onset of\r\nmalignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "consuming an average daily intake of at least 100 grams per day of red\r\nmeat, for at least ten years within the 25 years before the clinical onset\r\nof malignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "consuming an average daily intake of at least 25 grams per day of\r\nprocessed meat product, for at least ten years within the 25 years\r\nbefore the clinical onset of malignant neoplasm of the colorectum",
+    "definedTerms" : [ {
+      "term" : "processed meat product",
+      "definition" : "means preserved or cured meats, including ham,\nfrankfurters, salami and bacon"
+    } ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having ulcerative colitis for at least five years before the clinical onset\r\nof malignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "having Crohn's disease of the colorectum for at least five years before\r\nthe clinical onset of malignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having familial adenomatous polyposis before the clinical onset of\r\nmalignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having received a cumulative equivalent dose of at least 0.1 sievert of\r\nionising radiation to the colorectum at least five years before the\r\nclinical onset of malignant neoplasm of the colorectum",
+    "definedTerms" : [ {
+      "term" : "cumulative equivalent dose",
+      "definition" : "means the total dose of ionising radiation\nreceived by the particular organ or tissue from external exposure, internal\nexposure or both, apart from normal background radiation exposure in\nAustralia, calculated in accordance with the methodology set out in Guide to\ncalculation of 'cumulative equivalent dose' for the purpose of applying\nionising radiation factors contained in Statements of Principles determined\nunder Part XIA of the Veterans' Entitlements Act 1986 (Cth), Australian\nRadiation Protection and Nuclear Safety Agency, as in force on 2 August\n2017;\nNote 1: Examples of circumstances that might lead to exposure to ionising radiation include\nbeing present during or subsequent to the testing or use of nuclear weapons,\nundergoing diagnostic or therapeutic medical procedures involving ionising radiation,\nand being a member of an aircrew, leading to increased levels of exposure to cosmic\nradiation.\nNote 2: For the purpose of dose reconstruction, dose is calculated as an average over the mass\nof a specific tissue or organ. If a tissue is exposed to multiple sources of ionising\nradiation, the various dose estimates for each type of radiation must be combined"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "being obese for at least five years within the 30 years before the\r\nclinical onset of malignant neoplasm of the colorectum",
+    "definedTerms" : [ {
+      "term" : "being obese",
+      "definition" : "means an increase in body weight by way of fat accumulation\nwhich results in a Body Mass Index (BMI) of thirty or greater.\n2\nThe BMI = W/H and where:\nW is the person's weight in kilograms; and\nH is the person's height in metres"
+    } ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "inhaling respirable asbestos fibres in an enclosed space:\r\n(i) for a cumulative period of at least 1 000 hours before the\r\nclinical onset of malignant neoplasm of the colorectum; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of asbestos fibres commenced at least five\r\nyears before the clinical onset of malignant neoplasm of the\r\ncolorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "inhaling respirable asbestos fibres in an open environment:\r\n(i) for a cumulative period of at least 3 000 hours before the\r\nclinical onset of malignant neoplasm of the colorectum; and\r\n(ii) at the time material containing respirable asbestos fibres was\r\nbeing applied, removed, dislodged, cut or drilled; and\r\n(iii) the first inhalation of asbestos fibres commenced at least five\r\nyears before the clinical onset of malignant neoplasm of the\r\ncolorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "for malignant neoplasm of the colon only,\r\n(i) an inability to undertake any physical activity greater than three\r\nMETs for at least ten consecutive years within the 30 years\r\nbefore the clinical onset of malignant neoplasm of the\r\ncolorectum; or\r\n(ii) having acromegaly before the clinical onset of malignant\r\nneoplasm of the colorectum",
+    "definedTerms" : [ {
+      "term" : "MET",
+      "definition" : "means a unit of measurement of the level of physical exertion.\n1 MET = 3.5 ml of oxygen/kg of body weight per minute, or 1.0 kcal/kg of\nbody weight per hour, or resting metabolic rate"
+    }, {
+      "term" : "malignant neoplasm of the colon",
+      "definition" : "means a primary malignant neoplasm\narising from the epithelial cells of the colon. Anatomically the colon is\ndefined as extending from the caecum, including the ileocaecal junction, to the\nsigmoid colon, not including the rectosigmoid junction. This definition of\nmalignant neoplasm of the colon excludes soft tissue sarcoma, carcinoid\ntumour, non-Hodgkin's lymphoma and Hodgkin's lymphoma"
+    } ],
+    "conditionVariant" : {
+      "name" : "malignant neoplasm of the colon",
+      "variantFactors" : [ {
+        "paragraph" : "(i)",
+        "text" : "an inability to undertake any physical activity greater than three\r\nMETs for at least ten consecutive years within the 30 years\r\nbefore the clinical onset of malignant neoplasm of the\r\ncolorectum"
+      }, {
+        "paragraph" : "(ii)",
+        "text" : "having acromegaly before the clinical onset of malignant\r\nneoplasm of the colorectum"
+      } ]
+    }
+  }, {
+    "paragraph" : "6(n)",
+    "text" : "an inability to consume an average daily intake of 20 grams of fibre in\r\nfood for a period of at least five consecutive years within the 25 years\r\nbefore the clinical onset of malignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "an inability to consume an average daily intake of 150 micrograms of\r\nfolate in food for a period of at least five consecutive years, where this\r\nperiod commenced at least ten years before the clinical onset of\r\nmalignant neoplasm of the colorectum",
+    "definedTerms" : [ {
+      "term" : "folate in food",
+      "definition" : "means a B group vitamin found in natural foods, which\nconsists of a family of monoglutamates or polyglutamates of pteroic acid that\nis used in DNA methylation, synthesis and repair"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "an inability to consume an average daily intake of 100 millilitres of\r\ndairy milk for at least five consecutive years within the 25 years before\r\nthe clinical onset of malignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "having diabetes mellitus for at least five years before the clinical onset\r\nof malignant neoplasm of the colorectum",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(r)",
+    "text" : "inability to obtain appropriate clinical management for malignant\r\nneoplasm of the colorectum",
+    "definedTerms" : [ ]
+  } ]
+}

@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.tests.parsertests
 import au.gov.dva.dvasopapi.tests.TestUtils
 import au.gov.dva.sopapi.interfaces.model.Factor
 import au.gov.dva.sopapi.sopref.data.sops.StoredSop
-import au.gov.dva.sopapi.sopref.parsing.SoPExtractorUtilities
+import au.gov.dva.sopapi.sopref.parsing.{PostAug2015ExtractorUtilities, SoPExtractorUtilities}
 import au.gov.dva.sopapi.sopref.parsing.traits.PreAug2015FactorsParser
 import au.gov.dva.sopapi.tests.parsers.ParserTestUtils
 import org.junit.runner.RunWith
@@ -45,7 +45,6 @@ class EdgeCaseTests extends FunSuite {
 
     val bopparsed = ParserTestUtils.executeWholeParsingPipeline("F2017L00173", "allSops/F2017L00173.pdf")
     println(TestUtils.prettyPrint(StoredSop.toJson(bopparsed)))
-
 
   }
 
@@ -181,6 +180,14 @@ class EdgeCaseTests extends FunSuite {
     assert(icdCodes.size() == 2)
   }
 
+  test("Eating disorder")
+  {
+
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2016L00261","allSops/F2016L00261.pdf")
+    println(TestUtils.prettyPrint(StoredSop.toJson(r)))
+  }
+
+
   test("attempted suicide 2018 compilation correctly parsed")
   {
     // missing the 1 in front of definitions section
@@ -196,7 +203,6 @@ class EdgeCaseTests extends FunSuite {
   test("cat 1B updates fail 2 - breast neoplasm ")
   {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2018C00671","allSops/F2018C00671.pdf")
-
   }
 
   test("cat 1B updates fail 3 - breast neoplasm 2 ")
@@ -218,5 +224,13 @@ class EdgeCaseTests extends FunSuite {
   {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2019L00224","allSops/F2019L00224.pdf")
   }
+
+  test("fail with subfactors parser")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2017C00764","allSops/F2017C00764.pdf")
+  }
+
+
+
 
 }

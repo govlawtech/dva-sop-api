@@ -9,11 +9,13 @@ import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
+import au.gov.dva.sopapi.sopsupport.processingrules.rules.SatisfiedFactorWithApplicablePart;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Tuple2;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -21,6 +23,8 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -36,30 +40,7 @@ public class ProcessingRuleFunctions {
         return earliestService.map(Service::getStartDate);
     }
 
-    /**
-     * Returns a date a certain period before the given onset date, depending on the period specifier
-     *
-     * @param periodSpecifier - indicate the period to back in time. e.g. 2d = 2 days, 3y = 3 years
-     * @param onsetDate       - The date to start counting back from
-     * @return The date which is the specified amount back in time e.g. ("7d", 2011-04-14) -> 2011-04-07
-     */
-    public static LocalDate getStartOfOnsetWindow(String periodSpecifier, LocalDate onsetDate) {
-        if (periodSpecifier == null || !periodSpecifier.trim().matches("^\\d+(d|y)$"))
-            throw new RuntimeException("period specifier is not valid, expecting 2d, 3y etc. : " + periodSpecifier);
-        if (onsetDate == null)
-            throw new RuntimeException("onsetDate cannot be null");
 
-        String trimmed = periodSpecifier.trim();
-        int index = trimmed.indexOf('d');
-        if (index == -1) {
-            index = trimmed.indexOf('y');
-            int numYears = Integer.parseInt(trimmed.substring(0, index));
-            return onsetDate.minusYears(numYears);
-        } else {
-            int numDays = Integer.parseInt(trimmed.substring(0, index));
-            return onsetDate.minusDays(numDays);
-        }
-    }
 
 
     public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
@@ -192,10 +173,43 @@ public class ProcessingRuleFunctions {
             Rank rank = relevantService.get().getRank();
             return Optional.ofNullable(rank);
         }
-
     }
 
-    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs) {
+    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs, Function<String, Tuple2<String,String>> splitFactorReferenceToMainAndSubPart, BiFunction<String,Factor,Optional<String>> tryExtractSubPartText)
+    {
+        ImmutableSet<String> mainFactorReferences = factorParagraphs.stream().map(s -> splitFactorReferenceToMainAndSubPart.apply(s)._1())
+                .collect(Collectors.collectingAndThen(Collectors.toSet(),ImmutableSet::copyOf));
+
+        ImmutableList<FactorWithSatisfaction> factorsWithSatisfaction = withSatisfiedFactors(factors,mainFactorReferences);
+
+        ImmutableList<FactorWithSatisfaction> withSubParts = factorsWithSatisfaction.stream()
+                .map(factorWithSatisfaction -> {
+                    if (!mainFactorReferences.contains(factorWithSatisfaction.getFactor().getParagraph())) // key search
+                    {
+                        return factorWithSatisfaction;
+                    }
+                    else {
+                        Tuple2<String,String> factorReferenceParts = splitFactorReferenceToMainAndSubPart.apply(factorWithSatisfaction.getFactor().getParagraph());
+                        String subPartRef = factorReferenceParts._2();
+                        Optional<String> applicablePart = tryExtractSubPartText.apply(subPartRef,factorWithSatisfaction.getFactor());
+                        if (applicablePart.isPresent())
+                        {
+                            return new SatisfiedFactorWithApplicablePart(factorWithSatisfaction,applicablePart.get());
+                        }
+                        return factorWithSatisfaction;
+                    }
+                })
+                .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
+
+        return withSubParts;
+    }
+
+
+    public static ImmutableList<FactorWithSatisfaction> withSatisfiedFactors(ImmutableList<Factor> factors, ImmutableSet<String> factorParagraphs)
+    {
+
+        // factor is satsified if there is a match in the start of any of the factor paragraphs
+        //
 
         ImmutableList<FactorWithSatisfaction> factorsWithSatisfaction = factors.stream()
                 .map(factor -> factorParagraphs.contains(factor.getParagraph()) ? new FactorWithSatisfactionImpl(factor, true) : new FactorWithSatisfactionImpl(factor, false))
@@ -203,7 +217,6 @@ public class ProcessingRuleFunctions {
 
         return factorsWithSatisfaction;
     }
-
 
 
     public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {

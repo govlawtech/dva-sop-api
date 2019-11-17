@@ -1,0 +1,151 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2019L00944",
+  "instrumentNumber" : "70/2019",
+  "citation" : "Statement of Principles concerning renal stone disease (Balance of Probabilities) (No. 70 of 2019)",
+  "conditionName" : "renal stone disease",
+  "effectiveFrom" : "2019-07-22",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "N20"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "having primary hyperparathyroidism within the ten years before the\r\nclinical onset of renal stone disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(2)",
+    "text" : "having post-surgical hypoparathyroidism at the time of the clinical\r\nonset of renal stone disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(3)",
+    "text" : "having a malignant neoplasm, other than non-metastatic non-melanotic\r\nmalignant neoplasm of the skin, at the time of the clinical onset of renal\r\nstone disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(4)",
+    "text" : "having a haematological disease from the specified list of\r\nhaematological diseases at the time of the clinical onset of renal stone\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(5)",
+    "text" : "having gout or hyperuricaemia at the time of the clinical onset of renal\r\nstone disease",
+    "definedTerms" : [ {
+      "term" : "hyperuricaemia",
+      "definition" : "means a serum uric acid level of at least 6.8 mg/dL\r\n(404 micromoles/litre)."
+    } ]
+  }, {
+    "paragraph" : "9(6)",
+    "text" : "having tumour lysis syndrome at the time of the clinical onset of renal\r\nstone disease",
+    "definedTerms" : [ {
+      "term" : "tumour lysis syndrome",
+      "definition" : "means a group of metabolic and electrolyte\r\nabnormalities that occurs in patients with a malignant neoplasm, usually after\r\nthe initiation of cytotoxic treatment, but also spontaneously. It is\r\ncharacterised by excessive cell lysis resulting in hyperuricaemia,\r\nhyperphosphataemia, hyperkalaemia and hypocalcaemia."
+    } ]
+  }, {
+    "paragraph" : "9(7)",
+    "text" : "having diarrhoea on more days than not, for a continuous period of at\r\nleast four weeks, within the three months before the clinical onset of\r\nrenal stone disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(8)",
+    "text" : "having hypokalaemia for a continuous period of at least the four weeks\r\nbefore the clinical onset of renal stone disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(9)",
+    "text" : "having distal renal tubular acidosis at the time of the clinical onset of\r\nrenal stone disease",
+    "definedTerms" : [ {
+      "term" : "distal renal tubular acidosis",
+      "definition" : "means an acquired syndrome of\r\nhyperchloraemic metabolic acidosis due to distal tubular dysfunction,\r\ncharacterised by hypokalaemia, alkaline urine, low urine citrate excretion,\r\nhypercalciuria, and often bone disease."
+    } ]
+  }, {
+    "paragraph" : "9(10)",
+    "text" : "having a urinary tract infection with urease-producing bacteria within\r\nthe five years before the clinical onset of renal stone disease",
+    "definedTerms" : [ {
+      "term" : "urease-producing bacteria",
+      "definition" : "means any bacteria which possess the enzyme"
+    } ]
+  }, {
+    "paragraph" : "9(11)",
+    "text" : "having an acquired narrowing or obstruction of the ureter, ureteropelvic\r\njunction or renal calyx, on the affected side, at the time of the clinical\r\nonset of renal stone disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(12)",
+    "text" : "having a gastrointestinal disease from the specified list of\r\ngastrointestinal diseases at the time of the clinical onset of renal stone\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(13)",
+    "text" : "having undergone:\r\n(a) a malabsorptive bariatric procedure; or\r\n(b) ileal resection or ileal bypass surgery; or\r\n(c) Roux-en-Y gastric bypass surgery;\r\nwithin the five years before the clinical onset of renal stone disease",
+    "definedTerms" : [ {
+      "term" : "malabsorptive bariatric procedure",
+      "definition" : "means a surgical weight-loss technique\r\nwhich alters the structure of the digestive tract, allowing food to bypass\r\nportions of the small intestine. Examples of such procedures include, but are\r\nnot limited to, distal or total gastrectomy, biliopancreatic diversion and\r\nduodenal switch. Purely restrictive bariatric procedures, such as laparoscopic\r\nadjustable gastric banding or laparoscopic sleeve gastrectomy, are not\r\nconsidered s."
+    } ]
+  }, {
+    "paragraph" : "9(14)",
+    "text" : "having a systemic disease from the specified list of systemic diseases at\r\nthe time of the clinical onset of renal stone disease",
+    "definedTerms" : [ {
+      "term" : "specified list of systemic diseases",
+      "definition" : "means:\r\n(a) Cushing syndrome;\r\n(b) diabetes mellitus;\r\n(c) sarcoidosis; or\r\n(d) Sjogren syndrome."
+    } ]
+  }, {
+    "paragraph" : "9(15)",
+    "text" : "being treated with a drug or a drug from a class of drugs from the\r\nspecified list of drugs, within the six weeks before the clinical onset of\r\nrenal stone disease",
+    "definedTerms" : [ {
+      "term" : "specified list of drugs",
+      "definition" : "means:\r\n(a) aluminium derivatives;\r\n(b) aminopenicillins;\r\n(c) ammonium chloride;\r\n(d) carbonic anhydrase inhibitors;\r\n(e) ceftriaxone;\r\n(f) efavirenz;\r\n(g) ephedrine;\r\n(h) guaifenesin;\r\n(i) nitrofurantoin;\r\n(j) orlistat;\r\n(k) phenazopyridine;\r\n(l) phosphoric acid;\r\n(m) protease inhibitors;\r\n(n) quinolones;\r\n(o) silicate-containing antacids;\r\n(p) sulphasalazine;\r\n(q) sulphonamides;\r\n(r) systemic glucocorticoids;\r\n(s) topiramate;\r\n(t) triamterene;\r\n(u) uricosuric drugs; or\r\n(v) urinary alkalinisation agents.\r\nNote 1: Aluminium derivatives include, but are not limited to, aluminium hydroxide antacids and\r\naluminium magnesium potassium urate.\r\nNote 2: Urinary alkalinisation agents are carbonate- or bicarbonate-containing drugs. Examples\r\ninclude, but are not limited to, sodium bicarbonate and potassium citrate."
+    } ]
+  }, {
+    "paragraph" : "9(16)",
+    "text" : "having a urinary diversion procedure before the clinical onset of renal\r\nstone disease",
+    "definedTerms" : [ {
+      "term" : "urinary diversion procedure",
+      "definition" : "means a surgical procedure in which the ureter\r\nis transposed from its usual position. Examples include, but are not limited\r\nto, ureterosigmoidostomy and ileal conduit diversion."
+    } ]
+  }, {
+    "paragraph" : "9(17)",
+    "text" : "having neurogenic bladder at the time of the clinical onset of renal\r\nstone disease",
+    "definedTerms" : [ {
+      "term" : "neurogenic bladder",
+      "definition" : "means flaccid, spastic or mixed bladder dysfunction\r\ncaused by neurological damage affecting the bladder.\r\nNote: Examples of causes of  include, but are not limited to, spinal cord injury,\r\ncerebrovascular accident, Parkinson's disease and diabetic autonomic neuropathy."
+    } ]
+  }, {
+    "paragraph" : "9(18)",
+    "text" : "having paraplegia or quadriplegia at the time of the clinical onset of\r\nrenal stone disease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(19)",
+    "text" : "being immobile for a continuous period of at least four weeks within\r\nthe three months before the clinical onset of renal stone disease",
+    "definedTerms" : [ {
+      "term" : "being immobile",
+      "definition" : "means having gross diminution or near complete absence of\r\nmovement of the body, such as could occur as a result of paralysis, lower\r\nlimb fracture or being bed-bound."
+    } ]
+  }, {
+    "paragraph" : "9(20)",
+    "text" : "having inadequate fluid intake, for a continuous period of at least four\r\nweeks, within the three months before the clinical onset of renal stone\r\ndisease",
+    "definedTerms" : [ {
+      "term" : "inadequate fluid intake",
+      "definition" : "means fluid intake:\r\n(a) that is insufficient to maintain an average daily urine volume of at least\r\n750 millilitres; or\r\n(b) that results in urine which is consistently darker than a pale yellow\r\ncolour, and there is no biochemical or medical reason for such\r\ncolouration other than inadequate hydration.\r\nNote: Urine that is darker than a pale yellow colour corresponds to grades 4 to 8 on a standard\r\ndehydration urine colour chart."
+    } ]
+  }, {
+    "paragraph" : "9(21)",
+    "text" : "being overweight or obese for at least the five years before the clinical\r\nonset of renal stone disease",
+    "definedTerms" : [ {
+      "term" : "being overweight or obese",
+      "definition" : "means having a Body Mass Index (BMI) of 25 or\r\ngreater.\r\nNote: BMI is also defined in the Schedule 1 - Dictionary."
+    } ]
+  }, {
+    "paragraph" : "9(22)",
+    "text" : "having anorexia nervosa at the time of the clinical onset of renal stone\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(23)",
+    "text" : "having a renal transplant before the clinical onset of renal stone\r\ndisease",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "9(24)",
+    "text" : "experiencing spaceflight for a continuous period of at least seven days\r\nwithin the 30 days before the clinical onset of renal stone disease",
+    "definedTerms" : [ ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(25)",
+    "text" : "inability to obtain appropriate clinical management for renal stone\r\ndisease",
+    "definedTerms" : [ ]
+  } ]
+}

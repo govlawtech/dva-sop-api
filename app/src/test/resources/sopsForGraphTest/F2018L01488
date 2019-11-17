@@ -1,0 +1,23 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2018L01488",
+  "instrumentNumber" : "95/2018",
+  "citation" : "Statement of Principles concerning moderate to severe traumatic brain injury (Balance of Probabilities) (No. 95 of 2018)",
+  "conditionName" : "moderate to severe traumatic brain injury",
+  "effectiveFrom" : "2018-11-26",
+  "standardOfProof" : "Balance of Probabilities",
+  "icdCodes" : [ ],
+  "onsetFactors" : [ {
+    "paragraph" : "9(1)",
+    "text" : "experiencing a specified event at the time of the clinical onset of\r\nmoderate to severe traumatic brain injury",
+    "definedTerms" : [ {
+      "term" : "specified event",
+      "definition" : "means:\r\n(a) the head being struck by an object;\r\n(b) the head striking an object;\r\n(c) the brain undergoing an acceleration or deceleration movement without\r\ndirect external trauma to the head;\r\n(d) a foreign body penetrating the brain; or\r\n(e) an explosion or explosive blast."
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "9(2)",
+    "text" : "inability to obtain appropriate clinical management for moderate to\r\nsevere traumatic brain injury",
+    "definedTerms" : [ ]
+  } ]
+}
