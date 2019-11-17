@@ -78,7 +78,7 @@ public class StoredSop implements SoP, HasSchemaVersion {
         Integer schema = jsonNode.findValue(Labels.SCHEMA_VERSION_LABEL).asInt();
         if (!schema.equals(SCHEMA_VERSION))
         {
-            throw new RepositoryRuntimeException(String.format("Json schema %d does not match expected value of %d", schema, SCHEMA_VERSION));
+           // throw new RepositoryRuntimeException(String.format("Json schema %d does not match expected value of %d", schema, SCHEMA_VERSION));
         }
 
         return new StoredSop(
