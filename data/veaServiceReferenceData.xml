@@ -10,7 +10,6 @@
 
         <warlikeDeterminations>
 
-
             <determination>
                 <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
                 <commencementDate>2019-09-14</commencementDate>
@@ -597,7 +596,39 @@
 
           <non-warlikeDeterminations>
 
-           
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
+                <commencementDate>2019-07-01</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Quadrant</name>
+                        <startDate>1997-05-13</startDate>
+                        <endDate>2006-06-30</endDate>
+                        <specifiedAreas>
+                                <![CDATA[
+                                <kml xmlns="http://www.opengis.net/kml/2.2>
+                                <Polygon>
+			<tessellate>1</tessellate>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+45.0,45.0,0
+180.0,45.0,0
+180.0,-45.0,0
+45.0,-45,0
+45.0,45.0,0
+</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+		</kml>
+
+                                ]]>
+                      </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
+
             <determination>
                 <federalRegisterOfLegislationReference>F2019L00397</federalRegisterOfLegislationReference>
                 <commencementDate>2019-03-26</commencementDate>
