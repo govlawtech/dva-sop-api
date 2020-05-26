@@ -32,8 +32,8 @@ public class ConditionFactory {
 
         ImmutableMap<String, ProcessingRule> map = ImmutableMap.<String, ProcessingRule>builder()
                 .put("sprain and strain", new AcuteConditionRule(
-                        "F2011L01726", ImmutableSet.of("6(a)", "6(c)"),
-                        "F2011L01727", ImmutableSet.of("6(a)", "6(c)"),
+                        "F2020L00482", ImmutableSet.of("9(1)", "9(3)"),
+                        "F2020L00483", ImmutableSet.of("9(1)", "9(3)"),
                         condition -> new Interval(condition.getStartDate().minusDays(7), condition.getStartDate())))
                 .put("acute articular cartilage tear", buildAcuteConditionRule(
                         "F2019L00233",
@@ -100,11 +100,18 @@ public class ConditionFactory {
                         ImmutableSet.of("9(1)"),
                         7
                 ))
-                .put("physical injury due to munitions discharge", buildAcuteConditionRule(
-                        "F2012L01789",
-                        ImmutableSet.of("6(a)"),
-                        "F2012L01790",
-                        ImmutableSet.of("6(a)"),
+                .put("gunshot injury", buildAcuteConditionRule(
+                        "F2020L00495",
+                        ImmutableSet.of("9(1)"),
+                        "F2020L00491",
+                        ImmutableSet.of("9(1)"),
+                        7
+                ))
+                .put("explosive blast injury", buildAcuteConditionRule(
+                        "F2020L00485",
+                        ImmutableSet.of("9(1)"),
+                        "F2020L00487",
+                        ImmutableSet.of("9(1)"),
                         7
                 ))
                 .put("cut, stab, abrasion and laceration", buildAcuteConditionRule(
