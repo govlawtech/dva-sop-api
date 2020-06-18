@@ -590,6 +590,24 @@
                 </operations>
             </determination>
 
+            <determination>
+                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <commencementDate>2019-09-14</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Orenda</name>
+                        <specifiedAreas>
+                            <specifiedArea>The land area and superjacent airspace of the Republic of Mali</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the United Nations Multidimensional Integrated Stabilization Mission in Mali</qualification>
+                        </qualifications>
+                        <startDate>2020-04-01</startDate>
+                    </operation>
+                </operations>
+            </determination>
+
+
 
 
         </warlikeDeterminations>
@@ -1214,7 +1232,7 @@
                             <startDate>2011-03-31</startDate>
                             <endDate>2011-10-31</endDate>
                             <mappings>
-                                <mapping regex="(?i)Unified Protector(?-i)"></mapping>
+                                    <mapping regex="(?i)Unified Protector(?-i)"></mapping>
                             </mappings>
                         </activity>
                     </activities>
@@ -1518,6 +1536,23 @@
                               <specifiedArea>Libyan Territorial Waters</specifiedArea>
                           </specifiedAreas>
                           <startDate>2016-11-04</startDate>
+                      </operation>
+                  </operations>
+              </determination>
+
+              <determination>
+                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                  <commencementDate>2019-03-26</commencementDate>
+                  <operations>
+                      <operation>
+                          <name>Fortitude</name>
+                          <specifiedAreas>
+                              <specifiedArea>The land, territorial waters and superjacent airspace of Israel, Syria, Jordan, Arab Republic of Egypt and Lebanon</specifiedArea>
+                          </specifiedAreas>
+                          <startDate>2019-04-30</startDate>
+                          <qualifications>
+                              <qualification>Defence Force contribution to the United Nations Disengagement Observer Force</qualification>
+                          </qualifications>
                       </operation>
                   </operations>
               </determination>
