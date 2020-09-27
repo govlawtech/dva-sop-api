@@ -21,7 +21,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 
-public class AcuteConditionRule implements ProcessingRule {
+public class AcuteConditionRule implements AcuteProcessingRule {
 
     private final ImmutableSet<String> _satisfiedRHFactorParas;
     private final ImmutableSet<String> _satisfiedBoPFactorPara;
@@ -49,7 +49,10 @@ public class AcuteConditionRule implements ProcessingRule {
         long numberOfDaysOfFullTimeOperationalServiceDaysInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(), intervalToCheckForOperationalService.getEnd(), isOperational);
         if (numberOfDaysOfFullTimeOperationalServiceDaysInInterval >= Integer.MAX_VALUE)
             throw new ProcessingRuleRuntimeException("Number of operational days above max value.");
+
+
         caseTrace.setActualOperationalDays((int) numberOfDaysOfFullTimeOperationalServiceDaysInInterval);
+
 
         boolean hasOperationalServiceInWindow = numberOfDaysOfFullTimeOperationalServiceDaysInInterval > 0;
 
@@ -76,21 +79,29 @@ public class AcuteConditionRule implements ProcessingRule {
         if (applicableSop.isPresent() && !_registerIds.contains(applicableSop.get().getRegisterId())) {
 
             String configuredRegisterIds = String.join(", ", _registerIds);
-            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("The Register ID on the Federal Register of Legislative Instruments for the applicable SoP is %s but the rule is configured for Register IDs %s.  Most likely the SoPs have been updated but the processing rule has not.", applicableSop.get().getRegisterId(), configuredRegisterIds));
+            caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, String.format("The Register ID on the Federal Register of Legislative Instruments for the applicable SoP is %s but the rule is configured for Register IDs %s.  Most likely the SoPs have ben updated but the processing rule has not.", applicableSop.get().getRegisterId(), configuredRegisterIds));
             return Optional.empty();
         } else {
 
+            caseTrace.setConditionName(condition.getSopPair().getConditionName());
             caseTrace.setRequiredOperationalDaysForRh(1);
             caseTrace.setApplicableStandardOfProof(applicableSop.get().getStandardOfProof());
             caseTrace.setRequiredCftsDays(1);
             caseTrace.setRequiredCftsDaysForBop(1);
             caseTrace.setRequiredCftsDaysForRh(1);
+
+            // applicable factors
+            ImmutableList<Factor> applicableRhFactors =  ProcessingRuleBase.getApplicableFactors(condition.getSopPair().getRhSop(), _satisfiedRHFactorParas);
+            ImmutableList<Factor> applicableBoPFactors = ProcessingRuleBase.getApplicableFactors(condition.getSopPair().getBopSop(),_satisfiedBoPFactorPara);
+            caseTrace.setRhFactors(applicableRhFactors);
+            caseTrace.setBopFactors(applicableBoPFactors);
+
             return applicableSop;
         }
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
         ImmutableList<Factor> applicableFactors = condition.getApplicableFactors(applicableSop);
 
@@ -108,21 +119,6 @@ public class AcuteConditionRule implements ProcessingRule {
         }
     }
 
-    @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-
-        List<Factor> rhFactors = condition.getApplicableFactors(condition.getSopPair().getRhSop());
-        List<Factor> bopFactors = condition.getApplicableFactors(condition.getSopPair().getBopSop());
-
-        List<Factor> applicableRhFactors = rhFactors.stream()
-                .filter(f -> _satisfiedRHFactorParas.contains(f.getParagraph()))
-                .collect(Collectors.toList());
-        caseTrace.setRhFactors(ImmutableList.copyOf(applicableRhFactors));
-
-        List<Factor> applicableBopFactors = bopFactors.stream()
-                .filter(f -> _satisfiedBoPFactorPara.contains(f.getParagraph())).collect(Collectors.toList());
-        caseTrace.setBopFactors(ImmutableList.copyOf(applicableBopFactors));
-    }
 
     @Override
     public Recommendation inferRecommendation(ImmutableList<FactorWithSatisfaction> factors, ServiceHistory serviceHistory, SoP applicableSop, Condition condition, Predicate<Deployment> isOperational, CaseTrace caseTrace) {

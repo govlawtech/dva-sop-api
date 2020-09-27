@@ -14,12 +14,12 @@ import com.google.common.collect.ImmutableList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class GenericWearAndTearRule extends ProcessingRuleBase implements ProcessingRule {
+    public class LumbarSpondylosisRule extends ProcessingRuleBase implements WearAndTearProcessingRule {
 
     Interval rhIntervalUsed;
 
-    public GenericWearAndTearRule(ConditionConfiguration conditionConfiguration) {
-        super(conditionConfiguration);
+    public LumbarSpondylosisRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+        super(applicableWearAndTearRuleConfiguration);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class GenericWearAndTearRule extends ProcessingRuleBase implements Proces
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
         if (rhIntervalUsed == null)
         {
@@ -46,19 +46,13 @@ public class GenericWearAndTearRule extends ProcessingRuleBase implements Proces
         Interval testInterval = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
                 rhIntervalUsed : (new SlidingCFTSSelectorWithYearLimit( 10,25).getInterval(serviceHistory,condition.getStartDate()));
 
-        ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
-        Optional<? extends  RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
-
-
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval,applicableRuleConfigurationItem,caseTrace);
-
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
     @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
     }
-
 
 
 }

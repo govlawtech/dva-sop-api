@@ -9,44 +9,37 @@ import com.google.common.collect.ImmutableList;
 
 import java.time.LocalDate;
 
-public class ConditionMock implements Condition
+public class LumbarSpondylosisConditionMockWithOnsetDate implements Condition
 {
+    private final LocalDate onsetDate;
 
-    private final SoPPair soPPair;
-    private final LocalDate start;
-    private final LocalDate end;
-    private final ProcessingRule processingRule;
-
-    public ConditionMock(SoPPair soPPair, LocalDate start, LocalDate end, ProcessingRule processingRule) {
-        this.soPPair = soPPair;
-        this.start = start;
-        this.end = end;
-        this.processingRule = processingRule;
+    public LumbarSpondylosisConditionMockWithOnsetDate(LocalDate onsetDate)
+    {
+        this.onsetDate = onsetDate;
     }
 
     @Override
     public SoPPair getSopPair() {
-        return soPPair;
+         return new SoPPair("lumbar spondylosis", new MockLumbarSpondylosisSopBoP(),new MockLumbarSpondylosisSopRH());
     }
 
     @Override
     public LocalDate getStartDate() {
-        return start;
+        return onsetDate;
     }
 
     @Override
     public LocalDate getEndDate() {
-        return end;
+        return onsetDate;
     }
 
     @Override
     public ProcessingRule getProcessingRule() {
-        return processingRule;
+        return null;
     }
 
     @Override
     public ImmutableList<Factor> getApplicableFactors(SoP sop) {
-        return sop.getOnsetFactors();
+        return null;
     }
-
 }

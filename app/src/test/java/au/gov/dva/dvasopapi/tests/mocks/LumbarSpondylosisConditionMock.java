@@ -13,6 +13,7 @@ import java.time.ZoneOffset;
 
 public class LumbarSpondylosisConditionMock implements Condition {
 
+
     @Override
     public SoPPair getSopPair() {
         return new SoPPair("lumbar spondylosis", new MockLumbarSpondylosisSopBoP(),new MockLumbarSpondylosisSopRH());

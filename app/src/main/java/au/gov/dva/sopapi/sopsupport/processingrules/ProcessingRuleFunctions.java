@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -40,8 +41,15 @@ public class ProcessingRuleFunctions {
         return earliestService.map(Service::getStartDate);
     }
 
+    public static ImmutableSet<Service> identifyAllServicesStartingBeforeConditionOnset(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace)
+    {
+        List<Service> beforeOrAtSameTimeAsOnset = services.stream()
+                .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
+                .filter(s -> s.getStartDate().isBefore(conditionStartDate))
+                .collect(Collectors.toList());
 
-
+        return ImmutableSet.copyOf(beforeOrAtSameTimeAsOnset);
+    }
 
     public static Optional<Service> identifyCFTSServiceDuringOrAfterWhichConditionOccurs(ImmutableSet<Service> services, LocalDate conditionStartDate, CaseTrace caseTrace) {
 
@@ -53,9 +61,9 @@ public class ProcessingRuleFunctions {
 
         if (serviceDuringWhichConditionStarted.isPresent()) {
             //    caseTrace.addLoggingTrace("Service during which condition started: " + serviceDuringWhichConditionStarted.get());
+//            caseTrace.addLoggingTrace("No services which started before and were ongoing at the condition start date, therefore finding immediately preceding service, if any.");
             return serviceDuringWhichConditionStarted;
         } else {
-//            caseTrace.addLoggingTrace("No services which started before and were ongoing at the condition start date, therefore finding immediately preceding service, if any.");
             Optional<Service> lastService = services.stream()
                     .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
                     .filter(s -> !s.getStartDate().isAfter(conditionStartDate))
@@ -166,7 +174,7 @@ public class ProcessingRuleFunctions {
 
 
         if (!relevantService.isPresent()) {
-            caseTrace.addLoggingTrace(String.format("No service starting before date: %s.", testDate));
+            caseTrace.addLoggingTrace(String.format("No continuous full-time service starting before date: %s.", testDate));
             return Optional.empty();
         } else {
 //            caseTrace.addLoggingTrace("Relevant rank: " + relevantService.get().getRank());
@@ -209,8 +217,6 @@ public class ProcessingRuleFunctions {
     {
 
         // factor is satsified if there is a match in the start of any of the factor paragraphs
-        //
-
         ImmutableList<FactorWithSatisfaction> factorsWithSatisfaction = factors.stream()
                 .map(factor -> factorParagraphs.contains(factor.getParagraph()) ? new FactorWithSatisfactionImpl(factor, true) : new FactorWithSatisfactionImpl(factor, false))
                 .collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableList::copyOf));
@@ -219,14 +225,14 @@ public class ProcessingRuleFunctions {
     }
 
 
-    public static Boolean conditionIsBeforeHireDate(Condition condition, ServiceHistory serviceHistory) {
-        return condition.getStartDate().isBefore(serviceHistory.getHireDate());
 
+    public static Boolean conditionIsBeforeHireDate(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory) {
+        return sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate().isBefore(serviceHistory.getHireDate());
     }
 
-    public static boolean conditionIsBeforeFirstDateOfService(Condition condition, ServiceHistory serviceHistory) {
+    public static boolean conditionIsBeforeFirstDateOfService(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory) {
         if (!serviceHistory.getStartofService().isPresent()) return true;
-        return condition.getStartDate().isBefore(serviceHistory.getStartofService().get());
+        return sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate().isBefore(serviceHistory.getStartofService().get());
     }
 }
 

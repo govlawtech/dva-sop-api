@@ -6,4 +6,10 @@ import java.util.Optional;
 public interface HasDateRange {
     LocalDate getStartDate();
     Optional<LocalDate> getEndDate();
+
+    default boolean isValid()
+    {
+        return !getEndDate().isPresent() || !getEndDate().get().isBefore(getStartDate());
+    }
+
 }

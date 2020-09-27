@@ -11,7 +11,7 @@ import java.util.*;
 
 public class SopSupportCaseTrace implements CaseTrace {
 
-    private StringBuilder sb;
+    private StringBuilder sb = new StringBuilder();
 
     private Optional<Integer> requiredCftsDays = Optional.empty();
     private Optional<Integer> requiredCftsDaysForRh = Optional.empty();
@@ -20,14 +20,19 @@ public class SopSupportCaseTrace implements CaseTrace {
     private Optional<Integer> requiredRhOperationalDays = Optional.empty();
     private Optional<Integer> actualOperationalDays = Optional.empty();
     private Optional<StandardOfProof> applicableStandardOfProof = Optional.empty();
-    private ImmutableList<Factor> rhFactors = ImmutableList.of();
-    private ImmutableList<Factor> bopFactors = ImmutableList.of();
     private Map<ReasoningFor, List<String>> reasonings = new HashMap<>();
     private Optional<String> conditionName = Optional.empty();
+    private ImmutableList<Factor> _rhFactors = ImmutableList.of();
+    private ImmutableList<Factor> _bopFactors = ImmutableList.of();
 
 
-    public SopSupportCaseTrace(String caseId) {
-        sb = new StringBuilder(String.format("Case ID: %s%n", caseId));
+    public SopSupportCaseTrace() {
+
+    }
+
+    public SopSupportCaseTrace(String conditionName)
+    {
+        setConditionName(conditionName);
     }
 
     @Override
@@ -152,17 +157,39 @@ public class SopSupportCaseTrace implements CaseTrace {
 
     @Override
     public void setRhFactors(ImmutableList<Factor> rhFactors) {
-        this.rhFactors = rhFactors;
+        _rhFactors = rhFactors;
     }
 
     @Override
-    public ImmutableList<Factor> getRhFactors() { return this.rhFactors; }
+    public ImmutableList<Factor> getRhFactors() {
+        return _rhFactors;
+    }
 
     @Override
     public void setBopFactors(ImmutableList<Factor> bopFactors) {
-        this.bopFactors = bopFactors;
+        _bopFactors = bopFactors;
     }
 
     @Override
-    public ImmutableList<Factor> getBopFactors() { return this.bopFactors; }
+    public ImmutableList<Factor> getBopFactors() {
+        return _bopFactors;
+    }
+
+    @Override
+    public String toString() {
+        return "SopSupportCaseTrace{" +
+                "sb=" + sb +
+                ", requiredCftsDays=" + requiredCftsDays +
+                ", requiredCftsDaysForRh=" + requiredCftsDaysForRh +
+                ", requiredCftsDaysForBop=" + requiredCftsDaysForBop +
+                ", actualCftsDays=" + actualCftsDays +
+                ", requiredRhOperationalDays=" + requiredRhOperationalDays +
+                ", actualOperationalDays=" + actualOperationalDays +
+                ", applicableStandardOfProof=" + applicableStandardOfProof +
+                ", reasonings=" + reasonings +
+                ", conditionName=" + conditionName +
+                ", _rhFactors=" + _rhFactors +
+                ", _bopFactors=" + _bopFactors +
+                '}';
+    }
 }

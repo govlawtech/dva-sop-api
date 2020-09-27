@@ -40,7 +40,7 @@ public class SoPReferenceServiceTests {
                 .sorted((o1, o2) -> o2.compareTo(o1))
                 .collect(Collectors.toList());
 
-        assert(sorted.get(0).isEqual(d2));
+        Assert.assertTrue(sorted.get(0).isEqual(d2));
     }
 
 }

@@ -463,14 +463,15 @@ public class Routes {
         return sb.toString();
     }
 
-    private static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory) {
-        CaseTrace caseTrace = new SopSupportCaseTrace(UUID.randomUUID().toString());
+    public static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory) {
+        CaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
-        // todo: inject condition factory
         RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
                 rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
+        assert caseTrace.isComplete() : "Case trace not complete";
         return rulesResult;
+
     }
 
     private static List<String> getSopParamsValidationErrors(String icdCodeValue, String icdCodeVersion, String

@@ -4,12 +4,15 @@ import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
+import au.gov.dva.sopapi.sopsupport.processingrules.ServiceHistoryImpl;
+import au.gov.dva.sopapi.sopsupport.processingrules.ServiceImpl;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +24,6 @@ import java.util.stream.Stream;
 public interface ServiceHistory {
     LocalDate getHireDate();
     ImmutableSet<Service> getServices();
-    ServiceHistory filterServiceHistoryByEvents(List<String> eventList);
     default Optional<LocalDate> getStartofService() {
         Optional<Service> earliestService = this.getServices().stream()
                 .sorted(Comparator.comparing(Service::getStartDate))
@@ -29,6 +31,27 @@ public interface ServiceHistory {
         return earliestService.map(Service::getStartDate);
     }
 
+    default ServiceHistory filterServiceHistoryByEvents(List<String> eventList) {
+
+
+        ArrayList<Service> newServices = new ArrayList<>();
+        for (Service service : getServices()) {
+            ImmutableSet<Deployment> deployments = ImmutableSet.copyOf(
+                    service.getDeployments().stream()
+                            .filter(d -> d.getEvent() != null && eventList.contains(d.getEvent().trim().toLowerCase()))
+                            .collect(Collectors.toList())
+            );
+            newServices.add(new ServiceImpl(
+                    service.getBranch()
+                    , service.getEmploymentType()
+                    , service.getRank()
+                    , service.getStartDate()
+                    , service.getEndDate()
+                    , deployments
+            ));
+        }
+        return new ServiceHistoryImpl(getHireDate(), ImmutableSet.copyOf(newServices));
+    }
 
 
     default long getNumberOfDaysOfFullTimeOperationalService(LocalDate startDate, LocalDate endDateInclusive, Predicate<Deployment> isOperational)
@@ -45,6 +68,7 @@ public interface ServiceHistory {
     default ImmutableList<Deployment> getCftsDeployments()
     {
         return ProcessingRuleFunctions.getCFTSDeployments(this);
+
     }
 
     default long getNumberOfDaysCftsInIntervalInclusive(LocalDate startDateInclusive, LocalDate endDateInclusive) {

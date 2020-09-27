@@ -4,17 +4,16 @@ import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
-import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedDaysPeriodSelector;
 import au.gov.dva.sopapi.sopsupport.processingrules.intervalSelectors.FixedYearsPeriodSelector;
 import com.google.common.collect.ImmutableList;
 
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements ProcessingRule {
+public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements WearAndTearProcessingRule {
 
-    public InvertebralDiscProlapseRule(ConditionConfiguration conditionConfiguration) {
-        super(conditionConfiguration);
+    public InvertebralDiscProlapseRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration) {
+        super(applicableWearAndTearRuleConfiguration);
     }
 
     @Override
@@ -30,18 +29,16 @@ public class InvertebralDiscProlapseRule extends ProcessingRuleBase implements P
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
         IntervalSelector intervalSelector =  applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ? new FixedYearsPeriodSelector(10) : new FixedYearsPeriodSelector(5);
         Interval testInterval = intervalSelector.getInterval(serviceHistory,condition.getStartDate());
-        Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItem  = this.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace)
-                .get().getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
-
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval,applicableRuleConfigurationItem,caseTrace);
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
 
     @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
     }
+
 }

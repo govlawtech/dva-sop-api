@@ -4,19 +4,16 @@ import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import com.google.common.collect.ImmutableList;
-import scala.App;
 
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class MentalHealthProcessingRule extends ProcessingRuleBase implements WearAndTearProcessingRule  {
+public class GenericWearAndTearProcessingRule extends ProcessingRuleBase implements WearAndTearProcessingRule  {
+    private final IntervalSelector _intervalSelector;
 
-    private final IntervalSelector rhIntervalSelector;
-    Interval rhInterval;
-
-    public MentalHealthProcessingRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, IntervalSelector rhIntervalSelector) {
+    public GenericWearAndTearProcessingRule(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, IntervalSelector intervalSelectorForBothRHandBop) {
         super(applicableWearAndTearRuleConfiguration);
-        this.rhIntervalSelector = rhIntervalSelector;
+        _intervalSelector = intervalSelectorForBothRHandBop;
     }
 
     @Override
@@ -27,18 +24,23 @@ public class MentalHealthProcessingRule extends ProcessingRuleBase implements We
             return Optional.empty();
         }
 
-        rhInterval = rhIntervalSelector.getInterval(serviceHistory,condition.getStartDate());
-        return super.getApplicableSop(condition,serviceHistory,isOperational,rhInterval,true,caseTrace);
+        Interval rhIntervalUsed = _intervalSelector.getInterval(serviceHistory,condition.getStartDate());
+        return super.getApplicableSop(condition,serviceHistory,isOperational,rhIntervalUsed,caseTrace);
     }
 
     @Override
     public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,rhInterval, applicableWearAndTearRuleConfiguration,caseTrace);
+        Interval testInterval = _intervalSelector.getInterval(serviceHistory,condition.getStartDate());
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testInterval, applicableWearAndTearRuleConfiguration,caseTrace);
     }
+
 
     @Override
     public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
         return applicableWearAndTearRuleConfiguration;
     }
 }
+
+
+

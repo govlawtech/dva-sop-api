@@ -91,7 +91,7 @@ public class ExtensiveCaseSummaryModelMock implements CaseSummaryModel{
     }
 
     public CaseTrace getCaseTrace() {
-        SopSupportCaseTrace caseTrace = new SopSupportCaseTrace("mock case");
+        SopSupportCaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setActualCftsDays(500);
         caseTrace.setRequiredCftsDays(400);
         caseTrace.setActualOperationalDays(100);

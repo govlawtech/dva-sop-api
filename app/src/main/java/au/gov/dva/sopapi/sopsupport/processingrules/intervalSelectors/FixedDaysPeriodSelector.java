@@ -21,3 +21,5 @@ public class FixedDaysPeriodSelector implements IntervalSelector {
         return new Interval(upperLessDays,upperBoundaryInclusive);
     }
 }
+
+

@@ -5,21 +5,22 @@ import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import com.google.common.collect.ImmutableList;
+import scala.App;
 
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP extends ProcessingRuleBase implements ProcessingRule {
+public class GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP extends ProcessingRuleBase implements WearAndTearProcessingRule {
 
     private final IntervalSelector intervalInWhichToCountOperationalServiceDays;
     private final IntervalSelector rhSelector;
     private final IntervalSelector bopSelector;
 
-    public GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(ConditionConfiguration conditionConfiguration,
+    public GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP(ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration,
                                                                  IntervalSelector intervalInWhichToCountOperationalServiceDays,
                                                                  IntervalSelector rhSelector,
                                                                  IntervalSelector bopSelector) {
-        super(conditionConfiguration);
+        super(applicableWearAndTearRuleConfiguration);
         this.intervalInWhichToCountOperationalServiceDays = intervalInWhichToCountOperationalServiceDays;
         this.rhSelector = rhSelector;
         this.bopSelector = bopSelector;
@@ -37,19 +38,19 @@ public class GenericProcessingRuleWithUniqueTestPeriodsForRHandBoP extends Proce
     }
 
     @Override
-    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        ApplicableRuleConfiguration applicableRuleConfiguration = super.getApplicableRuleConfiguration(serviceHistory,condition,caseTrace).get();
-        Optional<? extends RuleConfigurationItem> applicableRuleConfigurationItem = applicableRuleConfiguration.getRuleConfigurationForStandardOfProof(applicableSop.getStandardOfProof());
+    public ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory,  CaseTrace caseTrace) {
 
     Interval testIntervalForCFTSdays = applicableSop.getStandardOfProof() == StandardOfProof.ReasonableHypothesis ?
             rhSelector.getInterval(serviceHistory,condition.getStartDate()) :
             bopSelector.getInterval(serviceHistory,condition.getStartDate());
 
-        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testIntervalForCFTSdays,applicableRuleConfigurationItem,caseTrace);
-}
+        return super.getSatisfiedFactors(condition,applicableSop,serviceHistory,testIntervalForCFTSdays, applicableWearAndTearRuleConfiguration,caseTrace);
+    }
 
     @Override
-    public void attachConfiguredFactorsToCaseTrace(Condition condition, ServiceHistory serviceHistory, CaseTrace caseTrace) {
-        super.attachConfiguredFactorsToCaseTrace(condition,serviceHistory,caseTrace);
+    public ApplicableWearAndTearRuleConfiguration getApplicableWearAndTearRuleConfiguration() {
+        return applicableWearAndTearRuleConfiguration;
     }
+
+
 }

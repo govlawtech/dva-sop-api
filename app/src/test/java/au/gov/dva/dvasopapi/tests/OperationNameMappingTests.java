@@ -7,6 +7,7 @@ import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.google.common.collect.ImmutableList;
+import org.junit.Assert;
 import org.junit.Test;
 import scala.math.Ordering;
 
@@ -59,7 +60,7 @@ public class OperationNameMappingTests {
 
         Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
         boolean result = underTest.test(mockDeployment);
-        assert (result == false);
+        Assert.assertTrue(result);
 
     }
 
@@ -93,7 +94,7 @@ public class OperationNameMappingTests {
 
         Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
         boolean result = underTest.test(mockDeployment);
-        assert (result == false);
+        Assert.assertTrue(result);
 
     }
 
@@ -126,7 +127,7 @@ public class OperationNameMappingTests {
 
         Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
         boolean result = underTest.test(mockDeployment);
-        assert (result == true);
+        Assert.assertTrue(result);
 
     }
 
@@ -159,7 +160,7 @@ public class OperationNameMappingTests {
         Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mock);
 
         boolean result = underTest.test(testData);
-        assert result;
+        Assert.assertTrue(result);
     }
 
 
@@ -299,7 +300,7 @@ public class OperationNameMappingTests {
 
         Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
         boolean result = underTest.test(mockDeployment);
-        assert (result == true);
+        Assert.assertTrue(result == true);
 
     }
 
@@ -338,7 +339,7 @@ public class OperationNameMappingTests {
 
         Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
         boolean result = underTest.test(mockDeployment);
-        assert (result == true);
+        Assert.assertTrue(result == true);
     }
 }
 
