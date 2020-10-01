@@ -34,7 +34,11 @@ object SoPExtractorUtilities extends MiscRegexes
     else {
       val sectionLinesWithTitleForNextHeading: List[String] = remaining.head :: remaining.tail.takeWhile(l => sectionHeaderLineRegex.findFirstMatchIn(l).isEmpty)
       val headerForNextSection = sectionLinesWithTitleForNextHeading.takeRight(1).map(i => i.trim)
-      val sectionLinesWithoutTitleForNextSection = sectionLinesWithTitleForNextHeading.dropRight(1)
+      val sectionLinesWithoutTitleForNextSection = sectionLinesWithTitleForNextHeading match  {
+        case lines if (lines.length == remaining.length) => lines // lines
+        case lines => lines.dropRight(1)
+
+      }
       val sectionLines = (nextSectionTitle ++ sectionLinesWithoutTitleForNextSection).map(l => l.trim)
       divideRecursive(headerForNextSection, sectionHeaderLineRegex, sectionLines :: acc, remaining.drop(sectionLinesWithTitleForNextHeading.size))
     }

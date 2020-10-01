@@ -10,3 +10,5 @@ object BlephartisSoPFactory extends SoPFactory {
     create(registerId,clensedText,new BlephartisExtractor(clensedText), PreAugust2015Parser)
   }
 }
+
+

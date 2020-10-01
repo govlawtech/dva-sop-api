@@ -53,7 +53,11 @@ trait GenericTextClenser extends SoPClenser {
     fixed
   }
 
-
+  private def stripEndNotesSection(raw : String): String = {
+    val lines = raw.split(Properties.lineSeparator)
+    var whileNotStartingWithEndNote = lines.takeWhile(l => !l.startsWith("Endnotes"))
+    return whileNotStartingWithEndNote.mkString(Properties.lineSeparator)
+  }
 
   override def clense(rawText: String) = {
     List(rawText)
@@ -62,6 +66,7 @@ trait GenericTextClenser extends SoPClenser {
       .map(compressSpaces)
       .map(replaceCurlyApostrophe)
       .map(reinsertExponents)
+      .map(stripEndNotesSection)
       .head
   }
 }

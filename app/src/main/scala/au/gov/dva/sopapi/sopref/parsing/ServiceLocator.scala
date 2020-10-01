@@ -139,8 +139,9 @@ object ServiceLocator {
     "F2019C00538",
     "F2019C00669",
     "F2019C00787",
-    "F2020C00213"
-
+    "F2020C00213",
+    "F2020C00856",
+    "F2020C00857"
   )
 
   def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
@@ -163,6 +164,8 @@ object ServiceLocator {
       case "F2010L02304" => RenalStoneRHSoPFactory
       case "F2018L00010" => MalignantNeoplasmOfTheOverySoPFactory
       case "F2018L00011" => MalignantNeoplasmOfTheOverySoPFactory
+      case "F2020C00856" => TrochanticBursitisSoPFactory
+      case "F2020C00857" => TrochanticBursitisSoPFactory
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
@@ -213,6 +216,7 @@ object ServiceLocator {
       case "F2019L00224" => BaldDefinitionsSectionClenser
       case "F2019L01098" => MortonMetatarsalgiaClenser
       case "F2019L01100" => MortonMetatarsalgiaClenser
+
 
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
