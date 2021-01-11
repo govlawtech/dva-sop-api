@@ -171,7 +171,7 @@ public class ConditionFactory {
                 return new RotatorCuffSyndromeRule(applicableWearAndTearRuleConfiguration);
             case "acquired cataract":
                 return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new AllDaysOfServiceSelector());
-            case "achilles tendinopathy and bursitis":
+            case "Achilles tendinopathy and bursitis":
                 return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
             case "chondromalacia patella":
                 return new GenericWearAndTearProcessingRule(applicableWearAndTearRuleConfiguration, new FixedDaysPeriodSelector(28));
