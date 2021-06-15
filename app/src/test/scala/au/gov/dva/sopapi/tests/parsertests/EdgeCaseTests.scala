@@ -241,4 +241,21 @@ class EdgeCaseTests extends FunSuite {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2020C01031","allSops/F2020C01031.pdf")
   }
 
+   test("cerobrovascular accident")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2021C00459","allSops/F2021C00459.pdf")
+  }
+   test("gb syndrome")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2021C00457","allSops/F2021C00457.pdf")
+  }
+
+  test("ischaemic heart disease")
+  {
+    val r = ParserTestUtils.executeWholeParsingPipeline("F2021C00464", "allSops/F2021C00464.pdf")
+  }
+
+
+
+
 }

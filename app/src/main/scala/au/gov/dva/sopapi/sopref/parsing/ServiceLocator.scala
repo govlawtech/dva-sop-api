@@ -143,7 +143,10 @@ object ServiceLocator {
     "F2020C00856",
     "F2020C00857",
     "F2021C00081",
-    "F2021C00080"
+    "F2021C00080",
+    "F2021C00459",
+    "F2021C00460"
+
   )
 
   def isNewSopFormat(registerIdInfo: RegisterIdInfo): Boolean = {
@@ -151,7 +154,7 @@ object ServiceLocator {
     if (postAugust2015CompilationsOfPreAugust2015Sops.contains(registerIdInfo.registerId)) return false
     else if (registerIdInfo.isCompilation) {
       return registerIdInfo.year >= 2015
-    }
+      }
     else return (registerIdInfo.year == 2015 && registerIdInfo.number > 660) || (registerIdInfo.year > 2015)
   }
 
@@ -169,6 +172,10 @@ object ServiceLocator {
       case "F2020C00856" => TrochanticBursitisSoPFactory
       case "F2020C00857" => TrochanticBursitisSoPFactory
       case "F2020C01031" => IDP_BopFactory
+      case "F2021C00457" => GbSopFactory
+      case "F2021C00456" => GbSopFactory
+      case "F2021C00464" => IschaemicHdSopFactory
+      case "F2021C00463" => IschaemicHdSopFactory
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
