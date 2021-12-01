@@ -255,7 +255,14 @@ class EdgeCaseTests extends FunSuite {
     val r = ParserTestUtils.executeWholeParsingPipeline("F2021C00464", "allSops/F2021C00464.pdf")
   }
 
+  test("NHL test")
+  {
+    var r =  ParserTestUtils.executeWholeParsingPipeline("F2021C00530", "allSops/F2021C00530.pdf")
+  }
 
-
+  test("Hypopitutiarism")
+  {
+    var r =  ParserTestUtils.executeWholeParsingPipeline("F2021C00707", "allSops/F2021C00707.pdf")
+  }
 
 }

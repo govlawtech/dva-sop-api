@@ -57,7 +57,6 @@ trait SoPFactory extends MiscRegexes {
     }
 
     this.create(registerId, cleansedText, extractor, parser, defaultFactorAllocator)
-
   }
 
   def stripParaNumber(paraWithNumber: String): String = {

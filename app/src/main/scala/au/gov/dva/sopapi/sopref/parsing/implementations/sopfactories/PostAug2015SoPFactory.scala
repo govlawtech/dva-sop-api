@@ -12,6 +12,4 @@ object PostAug2015SoPFactory extends SoPFactory {
     create(registerId, cleanesdText, new PostAug2015Extractor(cleanesdText), PostAugust2015Parser)
 
   }
-
-
 }

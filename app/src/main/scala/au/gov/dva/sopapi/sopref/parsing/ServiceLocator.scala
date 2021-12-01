@@ -176,6 +176,12 @@ object ServiceLocator {
       case "F2021C00456" => GbSopFactory
       case "F2021C00464" => IschaemicHdSopFactory
       case "F2021C00463" => IschaemicHdSopFactory
+      case "F2021C00530" => NhlFactory
+      case "F2021C00529" => NhlFactory
+      case "F2021C00712" => new SubstituteCommencementDateFactory("27 July 2020")
+      case "F2021C00711" => new SubstituteCommencementDateFactory("27 July 2020")
+      case "F2021C00707" => new SubstituteCommencementDateFactory("28 January 2019")
+      case "F2021C00710" => new SubstituteCommencementDateFactory("28 January 2019")
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
@@ -227,7 +233,8 @@ object ServiceLocator {
       case "F2019L01098" => MortonMetatarsalgiaClenser
       case "F2019L01100" => MortonMetatarsalgiaClenser
       case "F2020C01031" => ClenserToRemoveEndNotesToc
-
+      case "F2021C00710" => HypopituitarismClenser
+      case "F2021C00707" => HypopituitarismClenser
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }
