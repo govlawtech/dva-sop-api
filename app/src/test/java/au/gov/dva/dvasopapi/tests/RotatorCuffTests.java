@@ -20,10 +20,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.io.Resources;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -134,7 +137,8 @@ public class RotatorCuffTests {
 
     SoP deserialiseSopFromResources(String resourcePath) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        String sopString = au.gov.dva.sopapi.tests.parsers.ParserTestUtils.resourceToString(resourcePath);
+        URL sopUrl = Resources.getResource(resourcePath);
+        String sopString = Resources.toString(sopUrl, StandardCharsets.UTF_8);
         JsonNode jsonNode = objectMapper.readTree(sopString);
         SoP result = StoredSop.fromJson(jsonNode);
         return result;

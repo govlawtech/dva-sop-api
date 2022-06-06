@@ -1,5 +1,5 @@
+package au.gov.dva.sopapi.tests.parsers
 
-package au.gov.dva.sopapi.tests.parsers;
 
 import java.io.{ByteArrayInputStream, InputStream}
 import java.nio.charset.Charset
