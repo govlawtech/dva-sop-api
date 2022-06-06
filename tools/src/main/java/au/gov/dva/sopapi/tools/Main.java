@@ -31,6 +31,9 @@ public class Main {
         Option getCurrentSops = new Option("getCurrentSops","getCurrentSops",false,"Get a list of the register IDs of all SoPs in storage.");
         Option storeSopPdfs = new Option("saveSopPdfs", "saveSopPdfs",false,"Update storage with SoP PDFs, retrieving from FRL if necessary.");
         Option updateServiceDeterminationsOnly = new Option("usd","updateServiceDeterminations",false,"Update MRCA service determinations from FRL");
+        Option registerId = new Option("determinationId",true,"Register ID of MRCA Serice Determitation");
+
+        Option updateSpecificServiceDetermination = new Option("usds","updateServiceDeterminations",true,"Update specific MRCA service determinations from FRL");
 
         Options options = new Options()
                 .addOption(sopsFilePath)
@@ -45,7 +48,9 @@ public class Main {
                 .addOption(scrapeOption)
                 .addOption(getCurrentSops)
                 .addOption(storeSopPdfs)
-                .addOption(updateServiceDeterminationsOnly);
+                .addOption(updateServiceDeterminationsOnly)
+                .addOption(updateSpecificServiceDetermination)
+                .addOption(registerId);
 
 
         CommandLineParser parser = new DefaultParser();
@@ -165,6 +170,12 @@ public class Main {
         if (commandLine.hasOption("usd"))
         {
             storageTool.UpdateServiceDeterminations();
+        }
+
+        if (commandLine.hasOption("usds"))
+        {
+            String rId = commandLine.getOptionValue("usds");
+            storageTool.UpdateServiceDeterminationsSpecific(rId);
         }
 
 

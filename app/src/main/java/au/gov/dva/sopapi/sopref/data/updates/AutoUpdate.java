@@ -73,6 +73,16 @@ public class AutoUpdate {
 
     }
 
+    public static void updateServiceDeterminationsSpecific(Repository repository, RegisterClient registerClient, String registerId) {
+        logger.trace("Starting to update Service Determinations...");
+
+        ServiceDetermination serviceDetermination = ServiceDeterminations.create(registerId, registerClient);
+                //      repository.archiveServiceDetermination(r.getSourceInstrumentId());
+        repository.addServiceDetermination(serviceDetermination);
+        logger.trace("..done updating Service Determinations.");
+    }
+
+
     public static void updateServiceDeterminations(Repository repository, RegisterClient registerClient) {
         logger.trace("Starting to update Service Determinations...");
         LegRegChangeDetector legRegChangeDetector = new LegRegChangeDetector(registerClient);
@@ -94,6 +104,9 @@ public class AutoUpdate {
 
 
     }
+
+
+
 
 
     public static void updateSopsChangeList(Repository _repository) {

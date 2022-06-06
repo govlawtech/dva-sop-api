@@ -129,6 +129,8 @@ public class FederalRegisterOfLegislationClient implements RegisterClient {
         return URI.create(linkUrl).toURL();
     }
 
+
+
     public static URL getDocxDocumentLinkFromHtml(String html, String registerId) throws MalformedURLException {
         Document htmlDocument = Jsoup.parse(html);
         String cssSelector = String.format("a[title=\"%s\"]", registerId);

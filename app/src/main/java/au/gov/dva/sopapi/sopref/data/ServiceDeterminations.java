@@ -42,7 +42,7 @@ public class ServiceDeterminations {
             String plainText = Conversions.pdfToPlainText(pdf);
             ServiceDetermination serviceDetermination =
                     au.gov.dva.sopapi.sopref.parsing.ServiceDeterminationsParser.createServiceDetermination(docx,plainText);
-            return serviceDetermination;
+                return serviceDetermination;
 
         } catch (InterruptedException e) {
             throw new DvaSopApiRuntimeException(e);
@@ -67,7 +67,9 @@ public class ServiceDeterminations {
             List<XWPFTable> tables = getTablesWithHeading(commencementTableHeading,doc);
             if (tables.isEmpty())
             {
-                throw new ServiceDeterminationParserRuntimeException("Could not identify Commencement table with heading: 'Commencement'.");
+                return Optional.of(OffsetDateTime.now());
+                //throw new ServiceDeterminationParserRuntimeException("Could not identify Commencement table with heading: 'Commencement'.");
+
             }
             else {
                 XWPFTable commencementTable = tables.get(0);

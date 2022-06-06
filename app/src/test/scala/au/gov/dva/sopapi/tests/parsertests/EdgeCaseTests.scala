@@ -265,4 +265,32 @@ class EdgeCaseTests extends FunSuite {
     var r =  ParserTestUtils.executeWholeParsingPipeline("F2021C00707", "allSops/F2021C00707.pdf")
   }
 
+  test("ihdbop")
+  {
+
+    var r =  ParserTestUtils.executeWholeParsingPipeline("F2021C00952", "allSops/F2021C00952.pdf")
+  }
+
+  test("ihdrh")
+  {
+    var r =  ParserTestUtils.executeWholeParsingPipeline("F2021C00904", "allSops/F2021C00904.pdf")
+  }
+
+  test("suicide")
+  {
+    var r =  ParserTestUtils.executeWholeParsingPipeline("F2022C00352", "allSops/F2022C00352.pdf")
+  }
+
+  test("diabetes")
+  {
+
+    var r =  ParserTestUtils.executeWholeParsingPipeline("F2022C00576", "allSops/F2022C00576.pdf")
+  }
+
+  test("hypo")
+  {
+
+    var r =  ParserTestUtils.executeWholeParsingPipeline("F2022C00580", "allSops/F2022C00580.pdf")
+  }
+
 }

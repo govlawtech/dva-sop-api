@@ -146,8 +146,7 @@ object ServiceLocator {
     "F2021C00080",
     "F2021C00459",
     "F2021C00460",
-    "F2021C00904",
-    "F2021C00952"
+    "F2021C00904"
 
   )
 
@@ -184,6 +183,21 @@ object ServiceLocator {
       case "F2021C00711" => new SubstituteCommencementDateFactory("27 July 2020")
       case "F2021C00707" => new SubstituteCommencementDateFactory("28 January 2019")
       case "F2021C00710" => new SubstituteCommencementDateFactory("28 January 2019")
+      case "F2021C00952" => new SubstituteCommencementDateFactory("20 September 2021")
+      case "F2021C00904" => new SubstituteCommencementDateFactory("20 September 2021")
+      case "F2022C00352" => new SubstituteCommencementDateFactory("25 July 2016")
+      case "F2022C00351" => new SubstituteCommencementDateFactory("25 July 2016")
+      case "F2022C00576" => new SubstituteCommencementDateFactory("27 July 2020")
+      case "F2022C00578" => new SubstituteCommencementDateFactory("27 July 2020")
+      case "F2022C00577" => new SubstituteCommencementDateFactory("21 June 2021")
+      case "F2022C00577" => new SubstituteCommencementDateFactory("21 June 2021")
+      case "F2022C00580" => new SubstituteCommencementDateFactory("21 January 2019")
+      case "F2022C00581" => new SubstituteCommencementDateFactory("21 January 2019")
+      case "F2022C00588" => new SubstituteCommencementDateFactory("18 November 2018")
+      case "F2022C00588" => new SubstituteCommencementDateFactory("18 November 2018")
+      case "F2022C00585" => new SubstituteCommencementDateFactory("4 December 2018")
+      case "F2022C00582" => new SubstituteCommencementDateFactory("4 December 2018")
+      case "F2022C00575" => new SubstituteCommencementDateFactory("5 April 2021")
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
@@ -237,6 +251,20 @@ object ServiceLocator {
       case "F2020C01031" => ClenserToRemoveEndNotesToc
       case "F2021C00710" => HypopituitarismClenser
       case "F2021C00707" => HypopituitarismClenser
+      case "F2021C00952" => IHDClenser
+      case "F2022C00352" => ContentsClenser
+      case "F2022C00351" => ContentsClenser
+      case "F2022C00576" => ContentsClenser
+      case "F2022C00578" => ContentsClenser
+      case "F2022C00579" => ContentsClenser
+      case "F2022C00579" => ContentsClenser
+      case "F2022C00580" => ContentsClenser
+      case "F2022C00581" => ContentsClenser
+      case "F2022C00588" => ContentsClenser
+      case "F2022C00587" => ContentsClenser
+      case "F2022C00585" => ContentsClenser
+      case "F2022C00582" => ContentsClenser
+      case "F2022C00575" => ContentsClenser
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }

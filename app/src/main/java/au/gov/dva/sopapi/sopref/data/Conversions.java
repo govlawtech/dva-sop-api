@@ -84,6 +84,8 @@ public class Conversions {
         return sb.toString();
     }
 
+
+
     public static String pdfToPlainText(byte[] pdf) throws IOException {
         RandomAccessBuffer randomAccessBuffer = new RandomAccessBuffer(pdf);
         PDFParser pdfParser = new PDFParser(randomAccessBuffer);

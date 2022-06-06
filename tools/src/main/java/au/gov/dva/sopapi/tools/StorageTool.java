@@ -80,6 +80,21 @@ public class StorageTool {
         }
     }
 
+    public void UpdateServiceDeterminationsSpecific(String registerId)
+    {
+        try {
+            AutoUpdate.updateServiceDeterminationsSpecific(repository,new FederalRegisterOfLegislationClient(),registerId);
+        }
+        catch (Exception e) {
+            logger.error("Exception occurred when attempting immediate Repository update.", e);
+        }
+
+        catch (Error e)
+        {
+            logger.error("Error occurred when attempting immediate Repository update.", e);
+        }
+    }
+
 
     public void UpdateServiceDeterminations()
     {

@@ -62,12 +62,13 @@
             </determination>
 
             <determination>
-                <federalRegisterOfLegislationReference>F2019L01191</federalRegisterOfLegislationReference>
+                <federalRegisterOfLegislationReference>F2022L00534</federalRegisterOfLegislationReference>
                 <commencementDate>2019-09-14</commencementDate>
                 <operations>
                     <operation>
                         <name>Highroad</name>
                         <startDate>2015-01-01</startDate>
+                        <endDate>2020-10-08</endDate>
                         <specifiedAreas>
                             <specifiedArea>Afghanistan and its superjacent airspace</specifiedArea>
                         </specifiedAreas>
@@ -630,7 +631,25 @@
         </warlikeDeterminations>
 
           <non-warlikeDeterminations>
+            
+              <determination>
+                  <federalRegisterOfLegislationReference>F2022L00516</federalRegisterOfLegislationReference>
+                  <commencementDate>2022-04-05</commencementDate>
+                  <operations>
+                      <operation>
+                          <name>Lilia</name>
+                          <startDate>2020-11-25</startDate>
+                          <specifiedAreas>
+                              <specifiedArea>The land, territorial waters and superjacent airspace of the Solomon Islands</specifiedArea>
+                          </specifiedAreas>
+                          <qualifications>
+                              <qualification>Defence Force contribution to stabilisation of the Solomon Islands</qualification>
+                          </qualifications>
 
+                      </operation>
+                  </operations>
+              </determination>
+              
             <determination>
                 <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
                 <commencementDate>2019-07-01</commencementDate>
