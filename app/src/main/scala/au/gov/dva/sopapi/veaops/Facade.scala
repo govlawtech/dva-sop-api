@@ -3,8 +3,11 @@ package au.gov.dva.sopapi.veaops
 import java.io.ByteArrayInputStream
 import java.time.{LocalDate, ZoneId}
 import java.util.Optional
-
 import au.gov.dva.sopapi.DateTimeUtils
+import au.gov.dva.sopapi.dtos.MilitaryOperation
+import au.gov.dva.sopapi.dtos.sopsupport.MilitaryOperationType
+import au.gov.dva.sopapi.interfaces.model.Deployment
+import au.gov.dva.sopapi.servicedeterminations.VeaServiceDeterminations
 import au.gov.dva.sopapi.veaops.interfaces.{VeaDeterminationOccurance, VeaOperationalServiceRepository}
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 import com.google.common.collect.ImmutableSet
@@ -12,6 +15,8 @@ import com.google.common.collect.ImmutableSet
 import scala.collection.JavaConverters._
 import scala.util.matching.Regex
 import au.gov.dva.sopapi.veaops.Extensions._
+
+import java.util
 
 // mainly for calling from Java
 object Facade {
@@ -56,9 +61,39 @@ object Facade {
     root
   }
 
+  private def getMatchingOperationsForSingleDeployment(deployment: Deployment, veaRepo: VeaOperationalServiceRepository): List[MilitaryOperation]  = {
+    // name matches and dates overlap
+    var testResults = veaRepo.getOperationalTestResults(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate().toScalaOption())
+    def determinationToTypeToMilitaryOperationType (veaDetermination: VeaDetermination) = {
+        veaDetermination match {
+          case _ : WarlikeDetermination => MilitaryOperationType.Warlike
+          case _ : NonWarlikeDetermination => MilitaryOperationType.NonWarlike
+          case _ : HazardousDetermination => MilitaryOperationType.Hazardous
+        }
+    }
+
+    def buildLegalSourceForDetermination (veaDetermination: VeaDetermination) = {
+      s"Federal Register of Legislation ID: ${veaDetermination.registerId}"
+    }
+
+    val opsFromDeterminations = testResults.matchingDeterminations
+      .map(det =>
+        new MilitaryOperation(det._2.getPrimaryName,det._2.startDate,Optional.ofNullable(det._2.endDate.orNull),
+          determinationToTypeToMilitaryOperationType(det._1),buildLegalSourceForDetermination(det._1)));
+
+    
+
+
+
+  }
+
+  def getMatchingOperationsForDeployments(deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository): util.List[VeaDeterminationOccurance] = {
+    deployments.asScala.toList.flatMap(d => getMatchingOperationsForSingleDeployment(d,veaRepo)).asJava
+  }
+
 
   def isOperational(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {
-    veaRepo.isOperational(identifierFromServiceHistory,startDate,endDate.toScalaOption()).isOperational
+    veaRepo.getOperationalTestResults(identifierFromServiceHistory,startDate,endDate.toScalaOption()).isOperational
   }
 
   def isWarlike(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {

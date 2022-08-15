@@ -4,6 +4,7 @@ import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.Factor;
+import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import com.google.common.collect.ImmutableList;
 import scala.util.Properties;
 
@@ -24,6 +25,8 @@ public class SopSupportCaseTrace implements CaseTrace {
     private Optional<String> conditionName = Optional.empty();
     private ImmutableList<Factor> _rhFactors = ImmutableList.of();
     private ImmutableList<Factor> _bopFactors = ImmutableList.of();
+
+    private Interval _testInterval;
 
 
     public SopSupportCaseTrace() {
@@ -174,6 +177,17 @@ public class SopSupportCaseTrace implements CaseTrace {
     public ImmutableList<Factor> getBopFactors() {
         return _bopFactors;
     }
+
+    @Override
+    public void setTestInterval(Interval testInterval) {
+        _testInterval = testInterval;
+    }
+
+    @Override
+    public Interval getTestInterval() {
+        return _testInterval;
+    }
+
 
     @Override
     public String toString() {

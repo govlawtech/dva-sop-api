@@ -23,7 +23,6 @@ public class SopSupportResponseDto {
     @JsonProperty("applicableInstrument")
     private final ApplicableInstrumentDto _applicableInstrumentDto;
 
-
     @JsonProperty("factors")
     private List<FactorWithInferredResultDto> _factors;
 

@@ -3,6 +3,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
@@ -33,6 +34,18 @@ public class ProcessingRuleFunctions {
 
     private static Logger logger = LoggerFactory.getLogger(ProcessingRuleFunctions.class.getSimpleName());
 
+
+    // Note: this assumes that conditions onset after the MRCA commencement date relate to MRCA service -- not strictly correct
+    // Also assumes no DRCA cases sent
+    public static Act InferApplicableAct(ServiceHistory serviceHistory, Condition condition) {
+        LocalDate onsetDate = condition.getStartDate();
+        LocalDate mrcaStartDate = LocalDate.of(2004,60,30);
+        if (onsetDate.isAfter(mrcaStartDate))
+        {
+            return Act.Mrca;
+        }
+        else return Act.Vea;
+    }
 
     public static Optional<LocalDate> getStartofService(ServiceHistory serviceHistory) {
         Optional<Service> earliestService = serviceHistory.getServices().stream()
@@ -72,6 +85,7 @@ public class ProcessingRuleFunctions {
             return lastService;
         }
     }
+
 
     public static long getNumberOfDaysOfServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<? extends HasDateRange> deploymentsOrService) {
         List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(new ArrayList<>(deploymentsOrService));
@@ -163,6 +177,8 @@ public class ProcessingRuleFunctions {
 
         return deployments;
     }
+
+
 
     public static Optional<Rank> getCFTSRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
 

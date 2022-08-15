@@ -84,6 +84,7 @@ public class ProcessingRuleBase {
 
         Long daysOfOperationalService = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(testInterval.getStart(),testInterval.getEnd(),isOperational);
 
+
         if (daysOfOperationalService >= Integer.MAX_VALUE) {
             throw new ProcessingRuleRuntimeException("Cannot handle days of operational service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs
         }
@@ -113,8 +114,6 @@ public class ProcessingRuleBase {
     protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, CaseTrace caseTrace) {
         return getApplicableSop(condition, serviceHistory,  isOperational, rhInterval, false,  caseTrace);
     }
-
-    //protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, BiFunction<>, CaseTrace caseTrace)
 
     protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
 

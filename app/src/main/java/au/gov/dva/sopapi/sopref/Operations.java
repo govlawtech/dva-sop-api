@@ -48,6 +48,7 @@ public class Operations {
 
     }
 
+
     public static Predicate<Deployment> getMRCAIsWarlikePredicate(ServiceDeterminationPair serviceDeterminationPair) {
         ImmutableList<Operation> warlikeOperations = serviceDeterminationPair.getWarlike().getOperations();
         return getPredicateForMrcaOperations(warlikeOperations);

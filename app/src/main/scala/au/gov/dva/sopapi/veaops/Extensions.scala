@@ -1,8 +1,8 @@
 package au.gov.dva.sopapi.veaops
 
 import java.time.{LocalDate, ZoneId}
-
 import au.gov.dva.sopapi.DateTimeUtils
+import au.gov.dva.sopapi.interfaces.model.Deployment
 import au.gov.dva.sopapi.veaops.interfaces.{VeaDeterminationOccurance, VeaOperationalServiceRepository}
 
 import scala.util.matching.Regex
@@ -44,9 +44,7 @@ object Extensions {
       def isOperational = matchingDeterminations.nonEmpty || matchingPeacekeepingActivities.nonEmpty
     }
 
-
-    def isOperational(identifierFromServiceHistory: String, startDate: LocalDate, endDate: Option[LocalDate] = None): VeaOperationalServiceTestResults = {
-
+    def getOperationalTestResults(identifierFromServiceHistory: String, startDate: LocalDate, endDate: Option[LocalDate] = None): VeaOperationalServiceTestResults = {
 
       val endDateOrNow = endDate.getOrElse(LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)))
 

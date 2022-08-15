@@ -1,13 +1,25 @@
 package au.gov.dva.sopapi.interfaces;
 
+import au.gov.dva.sopapi.dtos.MilitaryOperation;
 import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
+import au.gov.dva.sopapi.dtos.sopsupport.Act;
+import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
+import au.gov.dva.sopapi.exceptions.SopParserRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.sopref.Operations;
+import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
+import au.gov.dva.sopapi.veaops.Facade;
+import au.gov.dva.sopapi.veaops.Facade$;
+import au.gov.dva.sopapi.veaops.interfaces.VeaDeterminationOccurance;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 
 public interface ProcessingRule {
@@ -35,6 +47,48 @@ public interface ProcessingRule {
         }
 
         return recommendation;
+
+    }
+
+
+    default ImmutableList<MilitaryOperation> inferRelevantOperations(ServiceHistory serviceHistory, Condition condition, Repository repository,  Predicate<Deployment> isOperational, CaseTrace caseTrace)
+    {
+        // get test interval
+        // get operations in that interval
+        // pass in data on mrca or VEA operations
+
+        Interval relevantInterval = caseTrace.getTestInterval();
+        if (relevantInterval == null)
+        {
+            throw new DvaSopApiRuntimeException("Relevant interval not set in case trace.");
+        }
+        List<Deployment> operationDeployments =
+                ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
+                .stream().filter(isOperational)
+                .collect(Collectors.toList());
+
+        Act applicableAct = ProcessingRuleFunctions.InferApplicableAct(serviceHistory,condition);
+        if (applicableAct == Act.Vea)
+        {
+            Optional<VeaOperationalServiceRepository> veaOperationalServiceRepositoryOpt = repository.getVeaOperationalServiceRepository();
+            if (!veaOperationalServiceRepositoryOpt.isPresent())
+            {
+                throw new DvaSopApiRuntimeException("Must have VEA service determinations reference data.");
+            }
+            else {
+                VeaOperationalServiceRepository veaOperationalServiceRepository = veaOperationalServiceRepositoryOpt.get();
+                List<VeaDeterminationOccurance> matchingOperations = Facade.getMatchingOperationsForDeployments(operationDeployments, veaOperationalServiceRepository);
+
+
+            }
+
+        }
+
+        // find corresponding declared Operations
+        // need to determine case
+
+
+
 
     }
 
