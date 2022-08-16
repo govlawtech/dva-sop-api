@@ -69,7 +69,6 @@ public class ProcessingRuleFunctions {
         {
                 List<MilitaryActivity> matchingActivities = Facade.getMatchingActivities(operationDeployments, veaOperationalServiceRepository);
                 caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingActivities));
-
         }
 
         else if (applicableAct == Act.Mrca)
