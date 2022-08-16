@@ -75,11 +75,13 @@ public class DateTimeUtils {
         return LocalDate.of(zonedDateTime.getYear(),zonedDateTime.getMonth(),zonedDateTime.getDayOfMonth());
     }
 
-    public static Boolean IntervalIsInTestIntervalInclusive(LocalDate boundaryStartDate, LocalDate boundaryEndDate, LocalDate testStartDate, Optional<LocalDate> testEndDate)
+    public static Boolean OpenEndedTestIntervalOverlapsWithInterval(LocalDate boundaryStartDate, LocalDate boundaryEndDate, LocalDate testStartDate, Optional<LocalDate> testEndDate)
     {
+        if (testEndDate.isPresent() && testEndDate.get().isBefore(boundaryStartDate))
+            return false;
         if (testStartDate.isAfter(boundaryEndDate))
             return false;
-        else return !testEndDate.isPresent() || !testStartDate.isBefore(boundaryStartDate);
+        return true;
     }
 
     public static List<HasDateRange> flattenDateRanges(List<HasDateRange> toFlatten) {
@@ -95,9 +97,12 @@ public class DateTimeUtils {
                         || (first.getEndDate().isPresent() && next.getStartDate().isAfter(first.getEndDate().get()));
                 // i.e. if overlapping
                 if ( !notOverlapping ) {
+                    // use earlier start date
                     LocalDate newStart = first.getStartDate().isBefore(next.getStartDate())
                             ? first.getStartDate() : next.getStartDate();
                     Optional<LocalDate> newEnd = Optional.empty();
+
+                    //
                     if (first.getEndDate().isPresent() && next.getEndDate().isPresent()){
                         newEnd = first.getEndDate().get().isAfter(next.getEndDate().get())
                             ? first.getEndDate() : next.getEndDate();

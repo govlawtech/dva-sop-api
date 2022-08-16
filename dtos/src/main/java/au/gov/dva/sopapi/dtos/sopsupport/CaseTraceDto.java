@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.dtos.sopsupport;
 
 import au.gov.dva.sopapi.dtos.MilitaryActivity;
+import au.gov.dva.sopapi.dtos.MilitaryActivityDto;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.FactorDto;
@@ -12,6 +13,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CaseTraceDto {
 
@@ -52,7 +54,7 @@ public class CaseTraceDto {
     private String _logTrace;
 
     @JsonProperty("relevantOperations")
-    private List<MilitaryActivity> _relevantOperations;
+    private List<MilitaryActivityDto> _relevantOperations;
 
     public CaseTraceDto(){}
 
@@ -81,7 +83,7 @@ public class CaseTraceDto {
         _rhFactors = ImmutableList.copyOf(rhFactors);
         _bopFactors = ImmutableList.copyOf(bopFactors);
         _reasonings = ImmutableMap.copyOf(reasonings);
-        _relevantOperations = ImmutableList.copyOf(relevantOperations);
+        _relevantOperations = ImmutableList.copyOf(relevantOperations.stream().map(o -> o.toDto()).collect(Collectors.toList()));
         _logTrace = logTrace;
     }
 

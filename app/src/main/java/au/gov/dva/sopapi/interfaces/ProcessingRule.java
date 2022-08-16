@@ -8,7 +8,6 @@ import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.Operations;
-import au.gov.dva.sopapi.sopref.data.ServiceDeterminations;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
@@ -77,7 +76,7 @@ public interface ProcessingRule {
         List<Deployment> operationDeployments =
                 ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
                 .stream().filter(isOperationalPredicate)
-                        .filter(d -> DateTimeUtils.IntervalIsInTestIntervalInclusive(relevantInterval.getStart(),relevantInterval.getEnd(),d.getStartDate(),d.getEndDate()))
+                        .filter(d -> DateTimeUtils.OpenEndedTestIntervalOverlapsWithInterval(relevantInterval.getStart(),relevantInterval.getEnd(),d.getStartDate(),d.getEndDate()))
                 .collect(Collectors.toList());
 
         if (applicableAct == Act.Vea)

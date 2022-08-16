@@ -7,19 +7,15 @@ import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
-import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.Operations;
-import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.SatisfiedFactorWithApplicablePart;
 import au.gov.dva.sopapi.veaops.Facade;
 import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Tuple2;
@@ -27,9 +23,6 @@ import scala.Tuple2;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -69,7 +62,7 @@ public class ProcessingRuleFunctions {
         List<Deployment> operationDeployments =
                 ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
                         .stream().filter(isOperational)
-                        .filter(d -> DateTimeUtils.IntervalIsInTestIntervalInclusive(relevantInterval.getStart(),relevantInterval.getEnd(),d.getStartDate(),d.getEndDate()))
+                        .filter(d -> DateTimeUtils.OpenEndedTestIntervalOverlapsWithInterval(relevantInterval.getStart(),relevantInterval.getEnd(),d.getStartDate(),d.getEndDate()))
                         .collect(Collectors.toList());
 
         if (applicableAct == Act.Vea)
