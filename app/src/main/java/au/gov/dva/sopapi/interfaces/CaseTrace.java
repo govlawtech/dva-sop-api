@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.interfaces;
 
+import au.gov.dva.sopapi.dtos.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.model.Factor;
@@ -54,6 +55,9 @@ public interface CaseTrace {
 
     void setTestInterval(Interval testInterval);
     Interval getTestInterval();
+
+    ImmutableList<MilitaryActivity> getRelevantOperations();
+    void SetRelevantOperations(ImmutableList<MilitaryActivity> militaryActivities);
 
     default boolean isComplete() {
         if (!getReasonings().containsKey(ReasoningFor.ABORT_PROCESSING))

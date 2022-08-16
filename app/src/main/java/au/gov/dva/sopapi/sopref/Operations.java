@@ -1,10 +1,8 @@
 package au.gov.dva.sopapi.sopref;
 
+import au.gov.dva.sopapi.dtos.MilitaryActivity;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
-import au.gov.dva.sopapi.interfaces.model.Deployment;
-import au.gov.dva.sopapi.interfaces.model.Operation;
-import au.gov.dva.sopapi.interfaces.model.ServiceDetermination;
-import au.gov.dva.sopapi.interfaces.model.ServiceType;
+import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -14,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -65,10 +64,6 @@ public class Operations {
     }
 
 
-
-
-
-
     private static boolean datesAreConsistent(Deployment deployment, Operation operation)
     {
         if (deployment.getStartDate().isBefore(operation.getStartDate()))
@@ -111,7 +106,46 @@ public class Operations {
         return true;
     }
 
+    private static Boolean deploymentMatchesOperation(Operation operation, Deployment deployment) {
+        Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase());
+        Boolean datesAreConsistent = datesAreConsistent(deployment,operation);
+        return (deploymentNameToLowerContainsOpName && datesAreConsistent);
+    }
 
+    private static List<OperationAndLegalSourcePair> getMatchingOperations(ImmutableList<OperationAndLegalSourcePair> allOperations, Deployment deployment)
+    {
+        List<OperationAndLegalSourcePair> matching = allOperations.stream().filter(op -> deploymentMatchesOperation(op.get_operation(),deployment)).collect(Collectors.toList());
+        return matching;
+    }
+
+
+    public static List<OperationAndLegalSourcePair> getMatchingOperationsForDeployments(ImmutableSet<ServiceDetermination> serviceDeterminations, List<Deployment> deployments)
+    {
+        ServiceDeterminationPair serviceDeterminationPair = getLatestDeterminationPair(serviceDeterminations);
+
+        List<OperationAndLegalSourcePair> warlikeOps = serviceDeterminationPair.getWarlike().getOperations()
+                .stream().map(o -> new OperationAndLegalSourcePair(serviceDeterminationPair.getWarlike().getCitation(), o))
+                .collect(Collectors.toList());
+        List<OperationAndLegalSourcePair> nonWarlikeOps = serviceDeterminationPair.getNonWarlike().getOperations()
+                .stream().map(o -> new OperationAndLegalSourcePair(serviceDeterminationPair.getNonWarlike().getCitation(),o))
+                .collect(Collectors.toList());
+
+
+        ImmutableList<OperationAndLegalSourcePair> allOperations =  ImmutableList.copyOf(Iterables.concat(
+                warlikeOps,
+                nonWarlikeOps));
+
+
+        List<OperationAndLegalSourcePair> acc = new ArrayList<>();
+        for (Deployment d : deployments)
+        {
+            List<OperationAndLegalSourcePair> matching = getMatchingOperations(allOperations,d);
+            if (!matching.isEmpty())
+                acc.addAll(matching);
+        }
+        return acc;
+
+    }
 
 
     private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations) {
@@ -137,7 +171,6 @@ public class Operations {
 
         return (deployment -> {
 
-
             boolean nameMatches =  allToMatch.stream()
                         .anyMatch(s -> deployment
                                 .getOperationName()
@@ -149,14 +182,13 @@ public class Operations {
                 return false;
             }
 
-            boolean dateMatchRequired = mrcaOpertionNamesForWhichToValidateDates
-                    .stream()
-                    .map(s -> s.toLowerCase())
-                    .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s));
-
-
-            if (dateMatchRequired)
-            {
+//            boolean dateMatchRequired = mrcaOpertionNamesForWhichToValidateDates
+//                    .stream()
+//                    .map(s -> s.toLowerCase())
+//                    .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s));
+//
+//            if (dateMatchRequired)
+//            {
                 ImmutableList<Operation> operationsWithSameName = allOperations.stream()
                         .filter(operation -> deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
 
@@ -167,8 +199,8 @@ public class Operations {
                 else {
                     return false;
                 }
-            }
-            return true;
+//            }
+  //          return true;
         });
     }
 

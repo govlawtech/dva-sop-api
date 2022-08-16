@@ -1,7 +1,9 @@
 package au.gov.dva.sopapi;
 
 import au.gov.dva.sopapi.interfaces.model.HasDateRange;
+import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
 import au.gov.dva.sopapi.sopsupport.processingrules.HasDateRangeImpl;
+import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -71,6 +73,13 @@ public class DateTimeUtils {
     {
         ZonedDateTime zonedDateTime =  offsetDateTime.atZoneSameInstant(ZoneId.of(TZDB_REGION_CODE));
         return LocalDate.of(zonedDateTime.getYear(),zonedDateTime.getMonth(),zonedDateTime.getDayOfMonth());
+    }
+
+    public static Boolean IntervalIsInTestIntervalInclusive(LocalDate boundaryStartDate, LocalDate boundaryEndDate, LocalDate testStartDate, Optional<LocalDate> testEndDate)
+    {
+        if (testStartDate.isAfter(boundaryEndDate))
+            return false;
+        else return !testEndDate.isPresent() || !testStartDate.isBefore(boundaryStartDate);
     }
 
     public static List<HasDateRange> flattenDateRanges(List<HasDateRange> toFlatten) {

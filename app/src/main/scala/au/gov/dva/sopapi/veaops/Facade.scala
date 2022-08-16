@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream
 import java.time.{LocalDate, ZoneId}
 import java.util.Optional
 import au.gov.dva.sopapi.DateTimeUtils
-import au.gov.dva.sopapi.dtos.MilitaryOperation
+import au.gov.dva.sopapi.dtos.MilitaryActivity
 import au.gov.dva.sopapi.dtos.sopsupport.MilitaryOperationType
 import au.gov.dva.sopapi.interfaces.model.Deployment
 import au.gov.dva.sopapi.servicedeterminations.VeaServiceDeterminations
@@ -61,7 +61,7 @@ object Facade {
     root
   }
 
-  private def getMatchingOperationsForSingleDeployment(deployment: Deployment, veaRepo: VeaOperationalServiceRepository): List[MilitaryOperation]  = {
+  private def getMatchingActivitesForSingleDeployment(deployment: Deployment, veaRepo: VeaOperationalServiceRepository): List[MilitaryActivity]  = {
     // name matches and dates overlap
     var testResults = veaRepo.getOperationalTestResults(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate().toScalaOption())
     def determinationToTypeToMilitaryOperationType (veaDetermination: VeaDetermination) = {
@@ -72,23 +72,26 @@ object Facade {
         }
     }
 
-    def buildLegalSourceForDetermination (veaDetermination: VeaDetermination) = {
-      s"Federal Register of Legislation ID: ${veaDetermination.registerId}"
+    def buildLegalSourceForDetermination (registerId : String) = {
+      s"Federal Register of Legislation ID: $registerId"
     }
 
     val opsFromDeterminations = testResults.matchingDeterminations
       .map(det =>
-        new MilitaryOperation(det._2.getPrimaryName,det._2.startDate,Optional.ofNullable(det._2.endDate.orNull),
-          determinationToTypeToMilitaryOperationType(det._1),buildLegalSourceForDetermination(det._1)));
+        new MilitaryActivity(det._2.getPrimaryName,det._2.startDate,Optional.ofNullable(det._2.endDate.orNull),
+          determinationToTypeToMilitaryOperationType(det._1),buildLegalSourceForDetermination(det._1.registerId)));
 
-    
+    val matchingPeacekeeping = testResults.matchingPeacekeepingActivities
+      .map(pk =>
+        new MilitaryActivity(pk.getPrimaryName,pk.startDate,Optional.ofNullable(pk.endDate.orNull),MilitaryOperationType.Peacekeeping,pk.legalSource)
+      )
 
-
+    (opsFromDeterminations ++ matchingPeacekeeping)
 
   }
 
-  def getMatchingOperationsForDeployments(deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository): util.List[VeaDeterminationOccurance] = {
-    deployments.asScala.toList.flatMap(d => getMatchingOperationsForSingleDeployment(d,veaRepo)).asJava
+  def getMatchingActivities(deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository) : util.List[MilitaryActivity] = {
+    deployments.asScala.flatMap(d => getMatchingActivitesForSingleDeployment(d,veaRepo)).asJava
   }
 
 

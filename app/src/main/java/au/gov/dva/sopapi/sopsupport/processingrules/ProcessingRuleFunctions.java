@@ -2,16 +2,21 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
+import au.gov.dva.sopapi.dtos.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
+import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.interfaces.model.*;
+import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.SatisfiedFactorWithApplicablePart;
+import au.gov.dva.sopapi.veaops.Facade;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
@@ -45,6 +50,53 @@ public class ProcessingRuleFunctions {
             return Act.Mrca;
         }
         else return Act.Vea;
+    }
+
+    public static void inferRelevantOperations(ServiceHistory serviceHistory, Condition condition, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, Predicate<Deployment> isOperational, CaseTrace caseTrace)
+    {
+        // get test interval
+        // get operations in that interval
+        // pass in data on mrca or VEA operations
+
+        Interval relevantInterval = caseTrace.getTestInterval();
+        if (relevantInterval == null)
+        {
+            throw new DvaSopApiRuntimeException("Relevant interval not set in case trace.");
+        }
+
+        Act applicableAct = ProcessingRuleFunctions.InferApplicableAct(serviceHistory,condition);
+       // if (applicableAct == Act.Mrca)
+         //   isOperationalPredicate = rhPredicateFactory.createMrcaPredicate(condition.getSopPair().getConditionName());
+        //else if (applicableAct == Act.Vea)
+         //   isOperationalPredicate = rhPredicateFactory.createVeaPredicate(condition.getSopPair().getConditionName());
+        //else throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
+
+        // todo: deployments in interval
+        // deployments which overlap test interval
+        List<Deployment> operationDeployments =
+                ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
+                        .stream().filter(isOperational)
+                        .filter(d -> DateTimeUtils.IntervalIsInTestIntervalInclusive(relevantInterval.getStart(),relevantInterval.getEnd(),d.getStartDate(),d.getEndDate()))
+                        .collect(Collectors.toList());
+
+        if (applicableAct == Act.Vea)
+        {
+                List<MilitaryActivity> matchingActivities = Facade.getMatchingActivities(operationDeployments, veaOperationalServiceRepository);
+                caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingActivities));
+
+        }
+
+        else if (applicableAct == Act.Mrca)
+        {
+            List<OperationAndLegalSourcePair> matchingOps = Operations.getMatchingOperationsForDeployments(serviceDeterminations,operationDeployments);
+            List<MilitaryActivity> militaryActivities = matchingOps
+                    .stream()
+                    .map(o -> new MilitaryActivity(o.get_operation().getName(),o.get_operation().getStartDate(),o.get_operation().getEndDate(),o.get_operation().getServiceType().toMilitaryOperationType(), o.get_legalSource()))
+                    .collect(Collectors.toList());
+            caseTrace.SetRelevantOperations(ImmutableList.copyOf(militaryActivities));
+
+        }
+        throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
     }
 
     public static Optional<LocalDate> getStartofService(ServiceHistory serviceHistory) {

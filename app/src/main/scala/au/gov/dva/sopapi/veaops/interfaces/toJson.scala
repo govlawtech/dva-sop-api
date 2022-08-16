@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.veaops.interfaces
 
-import au.gov.dva.sopapi.dtos.MilitaryOperation
+import au.gov.dva.sopapi.dtos.MilitaryActivity
 import au.gov.dva.sopapi.veaops.{HazardousDetermination, NonWarlikeDetermination, VeaDetermination, WarlikeDetermination}
 import com.fasterxml.jackson.databind.JsonNode
 
@@ -19,8 +19,3 @@ trait toJson {
   }
 }
 
-trait toMilitaryOperation {
-  def toMilitaryOperation(veaDeterminationOccurance: VeaDeterminationOccurance) = {
-    new MilitaryOperation(veaDeterminationOccurance.getPrimaryName, veaDeterminationOccurance.startDate, veaDeterminationOccurance.endDate, veaDeterminationOccurance.
-  }
-}

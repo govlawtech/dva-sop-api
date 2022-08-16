@@ -134,6 +134,7 @@ public class DtoTransformations {
                 caseTrace.getRhFactors().stream().map(f -> fromFactor(f)).collect(Collectors.toList()),
                 caseTrace.getBopFactors().stream().map(f -> fromFactor(f)).collect(Collectors.toList()),
                 caseTrace.getReasonings(),
+                caseTrace.getRelevantOperations(),
                 caseTrace.getLoggingTraces());
     }
 

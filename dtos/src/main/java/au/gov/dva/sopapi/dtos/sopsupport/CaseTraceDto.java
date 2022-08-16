@@ -1,12 +1,11 @@
 package au.gov.dva.sopapi.dtos.sopsupport;
 
-import au.gov.dva.sopapi.dtos.MilitaryOperation;
+import au.gov.dva.sopapi.dtos.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopref.FactorDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
@@ -53,7 +52,7 @@ public class CaseTraceDto {
     private String _logTrace;
 
     @JsonProperty("relevantOperations")
-    private List<MilitaryOperation> _relevantOperations;
+    private List<MilitaryActivity> _relevantOperations;
 
     public CaseTraceDto(){}
 
@@ -68,7 +67,7 @@ public class CaseTraceDto {
                         List<FactorDto> rhFactors,
                         List<FactorDto> bopFactors,
                         Map<ReasoningFor, List<String>> reasonings,
-                        List<MilitaryOperation> relevantOperations,
+                        List<MilitaryActivity> relevantOperations,
                         String logTrace)
     {
         _conditionName = conditionName;

@@ -15,6 +15,8 @@ import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
+import au.gov.dva.sopapi.interfaces.ProcessingRule;
+import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
@@ -27,8 +29,10 @@ import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
 import au.gov.dva.sopapi.sopref.dependencies.DotToImage;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
+import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -295,7 +299,7 @@ public class Routes {
             IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
-            RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);
+            RulesResult rulesResult = runRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, rhPredicateFactory, cache.get_veaOperationalServiceRepository(), cache.get_allMrcaServiceDeterminations());
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
@@ -463,12 +467,14 @@ public class Routes {
         return sb.toString();
     }
 
-    public static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory) {
+    public static RulesResult runRules(RuleConfigurationRepository repository, SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations) {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
-        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
-                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
+        RulesResult rulesResult = RulesResult.applyRules(repository, sopSupportRequestDto, cache.get_allSopPairs(),
+                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), veaOperationalServiceRepository, serviceDeterminations, caseTrace);
+
+
         assert caseTrace.isComplete() : "Case trace not complete";
         return rulesResult;
 

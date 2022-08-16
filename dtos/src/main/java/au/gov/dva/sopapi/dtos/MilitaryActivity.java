@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.LocalDate;
 import java.util.Optional;
 
-public class MilitaryOperation {
+public class MilitaryActivity {
 
     @JsonProperty("name")
     private final String _name;
@@ -33,7 +33,7 @@ public class MilitaryOperation {
     private final String _legalSource;
 
     @JsonCreator
-    public MilitaryOperation(
+    public MilitaryActivity(
             @JsonProperty("name") String name,
             @JsonProperty("startDate") @JsonDeserialize(using = LocalDateDeserializer.class) @JsonSerialize(using = LocalDateSerializer.class) LocalDate startDate,
             @JsonProperty("endDate") @JsonDeserialize(using = LocalDateDeserializer.class) @JsonSerialize(using = LocalDateSerializer.class) Optional<LocalDate> endDate,

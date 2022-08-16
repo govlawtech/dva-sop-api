@@ -1,25 +1,27 @@
 package au.gov.dva.sopapi.interfaces;
 
-import au.gov.dva.sopapi.dtos.MilitaryOperation;
+import au.gov.dva.sopapi.DateTimeUtils;
+import au.gov.dva.sopapi.dtos.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
-import au.gov.dva.sopapi.exceptions.SopParserRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.Operations;
+import au.gov.dva.sopapi.sopref.data.ServiceDeterminations;
+import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import au.gov.dva.sopapi.veaops.Facade;
-import au.gov.dva.sopapi.veaops.Facade$;
-import au.gov.dva.sopapi.veaops.interfaces.VeaDeterminationOccurance;
 import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
 
 
 public interface ProcessingRule {
@@ -47,11 +49,10 @@ public interface ProcessingRule {
         }
 
         return recommendation;
-
     }
 
 
-    default ImmutableList<MilitaryOperation> inferRelevantOperations(ServiceHistory serviceHistory, Condition condition, Repository repository,  Predicate<Deployment> isOperational, CaseTrace caseTrace)
+    default void inferRelevantOperations(ServiceHistory serviceHistory, Condition condition, Repository repository, IRhPredicateFactory rhPredicateFactory, CaseTrace caseTrace)
     {
         // get test interval
         // get operations in that interval
@@ -62,12 +63,23 @@ public interface ProcessingRule {
         {
             throw new DvaSopApiRuntimeException("Relevant interval not set in case trace.");
         }
-        List<Deployment> operationDeployments =
-                ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
-                .stream().filter(isOperational)
-                .collect(Collectors.toList());
 
         Act applicableAct = ProcessingRuleFunctions.InferApplicableAct(serviceHistory,condition);
+        Predicate<Deployment> isOperationalPredicate;
+        if (applicableAct == Act.Mrca)
+            isOperationalPredicate = rhPredicateFactory.createMrcaPredicate(condition.getSopPair().getConditionName());
+        else if (applicableAct == Act.Vea)
+            isOperationalPredicate = rhPredicateFactory.createVeaPredicate(condition.getSopPair().getConditionName());
+        else throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
+
+        // todo: deployments in interval
+        // deployments which overlap test interval
+        List<Deployment> operationDeployments =
+                ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
+                .stream().filter(isOperationalPredicate)
+                        .filter(d -> DateTimeUtils.IntervalIsInTestIntervalInclusive(relevantInterval.getStart(),relevantInterval.getEnd(),d.getStartDate(),d.getEndDate()))
+                .collect(Collectors.toList());
+
         if (applicableAct == Act.Vea)
         {
             Optional<VeaOperationalServiceRepository> veaOperationalServiceRepositoryOpt = repository.getVeaOperationalServiceRepository();
@@ -77,19 +89,23 @@ public interface ProcessingRule {
             }
             else {
                 VeaOperationalServiceRepository veaOperationalServiceRepository = veaOperationalServiceRepositoryOpt.get();
-                List<VeaDeterminationOccurance> matchingOperations = Facade.getMatchingOperationsForDeployments(operationDeployments, veaOperationalServiceRepository);
-
-
+                List<MilitaryActivity> matchingActivities = Facade.getMatchingActivities(operationDeployments, veaOperationalServiceRepository);
+                caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingActivities));
             }
-
         }
 
-        // find corresponding declared Operations
-        // need to determine case
+        else if (applicableAct == Act.Mrca)
+        {
+            ImmutableSet<ServiceDetermination> serviceDeterminations =  repository.getServiceDeterminations();
+            List<OperationAndLegalSourcePair> matchingOps = Operations.getMatchingOperationsForDeployments(serviceDeterminations,operationDeployments);
+            List<MilitaryActivity> militaryActivities = matchingOps
+                    .stream()
+                    .map(o -> new MilitaryActivity(o.get_operation().getName(),o.get_operation().getStartDate(),o.get_operation().getEndDate(),o.get_operation().getServiceType().toMilitaryOperationType(), o.get_legalSource()))
+                    .collect(Collectors.toList());
+            caseTrace.SetRelevantOperations(ImmutableList.copyOf(militaryActivities));
 
-
-
-
+        }
+        throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
     }
 
 }

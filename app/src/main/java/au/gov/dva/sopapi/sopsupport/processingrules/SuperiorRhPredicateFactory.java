@@ -37,7 +37,6 @@ public class SuperiorRhPredicateFactory implements IRhPredicateFactory {
     }
 
 
-
     @Override
     public Predicate<Deployment> createMrcaPredicate(String conditionName) {
         if (namesOfMentalConditionsWhereWarlikeServiceIsRequired.contains(conditionName.toLowerCase())) {
