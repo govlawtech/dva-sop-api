@@ -15,7 +15,6 @@ import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
-import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.Repository;
@@ -29,7 +28,6 @@ import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
 import au.gov.dva.sopapi.sopref.dependencies.DotToImage;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
-import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
 import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
 import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
@@ -239,7 +237,9 @@ public class Routes {
 
             if (errors.size() > 0) {
                 setResponseHeaders(res, 400, MIME_TEXT);
-                return "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
+                String msg =  "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null,"SOP-API-BAD-REQUEST",msg,null);
+                return errorResponseBody.toJson();
             }
 
             ImmutableSet<SoP> matchingSops;
@@ -251,7 +251,9 @@ public class Routes {
 
             if (matchingSops.isEmpty()) {
                 setResponseHeaders(res, 404, MIME_TEXT);
-                return buildErrorMessageShowingRecognisedIcdCodesAndConditionNames(cache.get_allSops());
+                String msg = buildErrorMessageShowingRecognisedIcdCodesAndConditionNames(cache.get_allSops());
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null,"SOP-API-SOP-CONDITION-NOT-FOUND", msg,null);
+                return errorResponseBody.toJson();
             } else {
 
                 setResponseHeaders(res, 200, MIME_JSON);
@@ -276,20 +278,29 @@ public class Routes {
                 sopSupportRequestDto = SopSupportRequestDto.fromJsonString(clenseJson(req.body()));
             } catch (DvaSopApiDtoRuntimeException e) {
                 setResponseHeaders(res, 400, MIME_TEXT);
-                return String.format("Request body invalid: %s", e.getMessage());
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", e.getMessage(),null);
+
+                return errorResponseBody.toJson();
             }
 
             ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
             if (!semanticErrors.isEmpty()) {
                 setResponseHeaders(res, 400, MIME_TEXT);
-                return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(), semanticErrors));
+
+
+                String detailMessage = String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(), semanticErrors));
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", detailMessage,null);
+
+                return errorResponseBody.toJson();
             }
 
             if (sopSupportRequestDto.get_conditionDto().get_conditionName() == null) {
                 Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(), sopSupportRequestDto.get_conditionDto().get_icdCodeValue(), cache.get_allSopPairs());
                 if (!conditionNameFromICDCode.isPresent()) {
                     setResponseHeaders(res, 400, MIME_TEXT);
-                    return String.format("The given ICD code and version does not map to a single SoP.");
+                    String detailMessage = String.format("The given ICD code and version does not map to a single SoP.");
+                    ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", detailMessage,null);
+                    return errorResponseBody.toJson();
                 } else {
                     sopSupportRequestDto.get_conditionDto().set_conditionName(conditionNameFromICDCode.get());
                 }
@@ -433,39 +444,31 @@ public class Routes {
 
             try {
                 return handler.handle(req, res);
-            } catch (DvaSopApiDtoRuntimeException e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFormatError(e.getMessage());
+
             } catch (ServiceHistoryCorruptException e) {
                 logger.error("Service history corrupt.", e);
                 setResponseHeaders(res, 400, MIME_TEXT);
-                return e.getMessage();
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST","Service history corrupt: " + e.getMessage(), null);
+                return errorResponseBody.toJson();
             } catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return e.getMessage();
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-RULE-LOGIC-ERROR",null,null);
+                return errorResponseBody.toJson();
             } catch (Exception e) {
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-ERROR",null,null);
                 logger.error("Unknown exception", e);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return e.getMessage();
+                return errorResponseBody.toJson();
             } catch (Error e) {
                 logger.error("Unknown error", e);
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-ERROR",null,null);
                 setResponseHeaders(res, 500, MIME_TEXT);
-                return e.getMessage();
+                return errorResponseBody.toJson();
             }
         }));
     }
 
-    private static String buildIncorrectRequestFormatError(String detailedErrorMessage) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(detailedErrorMessage);
-        Optional<String> schema = generateSchemaForSopSupportRequestDto();
-        if (schema.isPresent()) {
-            sb.append("Request must conform to schema:\n");
-            sb.append(schema);
-        }
-        return sb.toString();
-    }
 
     public static RulesResult runRules(RuleConfigurationRepository repository, SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations) {
         CaseTrace caseTrace = new SopSupportCaseTrace();
@@ -579,7 +582,9 @@ public class Routes {
     }
 
     private static String buildAcceptableContentTypesError(String mimeType) {
-        return "Accept header in request must include '" + mimeType + "'.";
+        String msg =  "Accept header in request must include '" + mimeType + "'.";
+        ErrorResponseBody errorResponseBody = new ErrorResponseBody(null,"SOP-API-BAD-REQUEST", msg,null);
+        return errorResponseBody.toJson();
     }
 
     private static Boolean validateHeaders() {
