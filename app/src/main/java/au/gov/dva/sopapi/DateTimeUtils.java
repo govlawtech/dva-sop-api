@@ -86,9 +86,12 @@ public class DateTimeUtils {
                         || (first.getEndDate().isPresent() && next.getStartDate().isAfter(first.getEndDate().get()));
                 // i.e. if overlapping
                 if ( !notOverlapping ) {
+                    // use earlier start date
                     LocalDate newStart = first.getStartDate().isBefore(next.getStartDate())
                             ? first.getStartDate() : next.getStartDate();
                     Optional<LocalDate> newEnd = Optional.empty();
+
+                    //
                     if (first.getEndDate().isPresent() && next.getEndDate().isPresent()){
                         newEnd = first.getEndDate().get().isAfter(next.getEndDate().get())
                             ? first.getEndDate() : next.getEndDate();

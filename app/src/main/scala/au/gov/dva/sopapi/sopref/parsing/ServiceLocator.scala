@@ -198,6 +198,12 @@ object ServiceLocator {
       case "F2022C00585" => new SubstituteCommencementDateFactory("4 December 2018")
       case "F2022C00582" => new SubstituteCommencementDateFactory("4 December 2018")
       case "F2022C00575" => new SubstituteCommencementDateFactory("5 April 2021")
+      case "F2021C01296" => new SubstituteCommencementDateFactory("25 March 2019")
+      case "F2022C00733" => new SubstituteCommencementDateFactory("25 July 2022")
+      case "F2022C00733" => new SubstituteCommencementDateFactory("25 July 2022")
+      case "F2022C00732" => new SubstituteCommencementDateFactory("25 July 2022")
+      case "F2022C00734" => new SubstituteCommencementDateFactory("25 July 2022")
+      case "F2022C00686" => new SubstituteCommencementDateFactory("25 July 2022")
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
@@ -265,6 +271,12 @@ object ServiceLocator {
       case "F2022C00585" => ContentsClenser
       case "F2022C00582" => ContentsClenser
       case "F2022C00575" => ContentsClenser
+      case "F2021C01296" => ContentsClenser
+      case "F2022L00660" => LarynxNeoplasmTypoClenser
+      case "F2022C00733" => ContentsClenser
+      case "F2022C00732" => ContentsClenser
+      case "F2022C00734" => ContentsClenser
+      case "F2022C00686" => ContentsClenser
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }
