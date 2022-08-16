@@ -65,14 +65,7 @@ public class ProcessingRuleFunctions {
         }
 
         Act applicableAct = ProcessingRuleFunctions.InferApplicableAct(serviceHistory,condition);
-       // if (applicableAct == Act.Mrca)
-         //   isOperationalPredicate = rhPredicateFactory.createMrcaPredicate(condition.getSopPair().getConditionName());
-        //else if (applicableAct == Act.Vea)
-         //   isOperationalPredicate = rhPredicateFactory.createVeaPredicate(condition.getSopPair().getConditionName());
-        //else throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
 
-        // todo: deployments in interval
-        // deployments which overlap test interval
         List<Deployment> operationDeployments =
                 ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
                         .stream().filter(isOperational)

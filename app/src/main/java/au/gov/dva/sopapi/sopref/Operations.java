@@ -182,13 +182,13 @@ public class Operations {
                 return false;
             }
 
-//            boolean dateMatchRequired = mrcaOpertionNamesForWhichToValidateDates
-//                    .stream()
-//                    .map(s -> s.toLowerCase())
-//                    .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s));
-//
-//            if (dateMatchRequired)
-//            {
+            boolean dateMatchRequired = mrcaOpertionNamesForWhichToValidateDates
+                    .stream()
+                    .map(s -> s.toLowerCase())
+                    .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s));
+
+            if (dateMatchRequired)
+            {
                 ImmutableList<Operation> operationsWithSameName = allOperations.stream()
                         .filter(operation -> deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
 
@@ -199,8 +199,8 @@ public class Operations {
                 else {
                     return false;
                 }
-//            }
-  //          return true;
+             }
+            return true;
         });
     }
 
