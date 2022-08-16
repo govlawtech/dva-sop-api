@@ -44,7 +44,7 @@ public class ProcessingRuleFunctions {
     // Also assumes no DRCA cases sent
     public static Act InferApplicableAct(ServiceHistory serviceHistory, Condition condition) {
         LocalDate onsetDate = condition.getStartDate();
-        LocalDate mrcaStartDate = LocalDate.of(2004,60,30);
+        LocalDate mrcaStartDate = LocalDate.of(2004,6,30);
         if (onsetDate.isAfter(mrcaStartDate))
         {
             return Act.Mrca;
@@ -94,9 +94,10 @@ public class ProcessingRuleFunctions {
                     .map(o -> new MilitaryActivity(o.get_operation().getName(),o.get_operation().getStartDate(),o.get_operation().getEndDate(),o.get_operation().getServiceType().toMilitaryOperationType(), o.get_legalSource()))
                     .collect(Collectors.toList());
             caseTrace.SetRelevantOperations(ImmutableList.copyOf(militaryActivities));
-
         }
-        throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
+        else {
+            throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
+        }
     }
 
     public static Optional<LocalDate> getStartofService(ServiceHistory serviceHistory) {

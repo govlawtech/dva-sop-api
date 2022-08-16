@@ -25,7 +25,7 @@ public class Operations {
     public static Optional<ServiceDetermination> getLatestServiceDetermination(ImmutableSet<ServiceDetermination> allServiceDeterminations, ServiceType serviceType) {
         List<OffsetDateTime> commencementDates = allServiceDeterminations.stream().map(sd -> sd.getCommencementDate()).collect(Collectors.toList());
 
-        assert (commencementDates.size() == commencementDates.stream().distinct().count());
+        //assert (commencementDates.size() == commencementDates.stream().distinct().count());
 
         return allServiceDeterminations.stream()
                 .filter(sd -> sd.getServiceType().equals(serviceType))

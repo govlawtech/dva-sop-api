@@ -66,6 +66,7 @@ public class ProcessingRuleBase {
 
     protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, boolean defaultToNoneIfBoP, CaseTrace caseTrace) {
 
+        caseTrace.setTestInterval(rhInterval);
         Optional<Service> serviceDuringOrAfterWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
 
         if (!serviceDuringOrAfterWhichConditionStarts.isPresent())
@@ -83,7 +84,6 @@ public class ProcessingRuleBase {
         caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", condition.getStartDate()));
 
         Long daysOfOperationalService = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(testInterval.getStart(),testInterval.getEnd(),isOperational);
-
 
         if (daysOfOperationalService >= Integer.MAX_VALUE) {
             throw new ProcessingRuleRuntimeException("Cannot handle days of operational service more than " + Integer.MAX_VALUE);  // for the appeasement of find bugs

@@ -1,6 +1,8 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMockWithOnsetDate;
+import au.gov.dva.dvasopapi.tests.mocks.NonWarlikeServiceDeterminationMock;
+import au.gov.dva.dvasopapi.tests.mocks.WarlikeServiceDeterminationMock;
 import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
@@ -619,7 +621,6 @@ public class MultipleBranchesOfServiceTests {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,null,null)),isOperationalMock, createMockVeaOpServiceRepo(), createMockServiceDeterminations(), caseTrace);
 
-
         Assert.assertTrue(result.getCaseTrace().isComplete());
         Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
     }
@@ -638,8 +639,13 @@ public class MultipleBranchesOfServiceTests {
         };
     }
 
+
+
     ImmutableSet<ServiceDetermination> createMockServiceDeterminations() {
-        return ImmutableSet.of();
+        return ImmutableSet.of(
+                new NonWarlikeServiceDeterminationMock(),
+                new WarlikeServiceDeterminationMock()
+        );
     }
     VeaOperationalServiceRepository createMockVeaOpServiceRepo() {
         return new VeaOperationalServiceRepository() {
@@ -654,7 +660,6 @@ public class MultipleBranchesOfServiceTests {
             }
         };
     }
-
 
 
     @Test
