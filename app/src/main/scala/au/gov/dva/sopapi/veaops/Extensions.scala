@@ -24,6 +24,7 @@ object Extensions {
 
 
       if (toMatch.getPrimaryName.compareToIgnoreCase(identifierFromServiceHistory.trim) == 0) true
+      else if (identifierFromServiceHistory.toLowerCase().contains(toMatch.getPrimaryName.toLowerCase())) true
       else {
         val mappings = toMatch.getMappings
 
@@ -36,7 +37,6 @@ object Extensions {
 
         atLeastOnMappingMatches
       }
-
 
     }
 
