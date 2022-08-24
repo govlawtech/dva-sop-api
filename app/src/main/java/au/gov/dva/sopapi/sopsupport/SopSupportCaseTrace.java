@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopsupport;
 
-import au.gov.dva.sopapi.dtos.MilitaryActivity;
+import au.gov.dva.sopapi.interfaces.model.JustifiedMilitaryActivity;
+import au.gov.dva.sopapi.interfaces.model.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
@@ -28,6 +29,7 @@ public class SopSupportCaseTrace implements CaseTrace {
     private ImmutableList<Factor> _bopFactors = ImmutableList.of();
 
     private Interval _testInterval;
+    private ImmutableList<JustifiedMilitaryActivity> _justifiedMilitaryActivities = ImmutableList.of();
 
 
     public SopSupportCaseTrace() {
@@ -191,13 +193,13 @@ public class SopSupportCaseTrace implements CaseTrace {
 
     private ImmutableList<MilitaryActivity> _relevantOperations = ImmutableList.of();
     @Override
-    public ImmutableList<MilitaryActivity> getRelevantOperations() {
-            return _relevantOperations;
+    public ImmutableList<JustifiedMilitaryActivity> getRelevantOperations() {
+            return _justifiedMilitaryActivities;
     }
 
     @Override
-    public void SetRelevantOperations(ImmutableList<MilitaryActivity> militaryActivities) {
-        _relevantOperations = militaryActivities;
+    public void SetRelevantOperations(ImmutableList<JustifiedMilitaryActivity> justifiedMilitaryActivities) {
+        _justifiedMilitaryActivities = justifiedMilitaryActivities;
     }
 
 

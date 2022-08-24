@@ -2,7 +2,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
-import au.gov.dva.sopapi.dtos.MilitaryActivity;
+import au.gov.dva.sopapi.interfaces.model.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
@@ -45,12 +45,10 @@ public class ProcessingRuleFunctions {
         else return Act.Vea;
     }
 
+
+
     public static void inferRelevantOperations(ServiceHistory serviceHistory, Condition condition, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, Predicate<Deployment> isOperational, CaseTrace caseTrace)
     {
-        // get test interval
-        // get operations in that interval
-        // pass in data on mrca or VEA operations
-
         Interval relevantInterval = caseTrace.getTestInterval();
         if (relevantInterval == null)
         {
@@ -58,6 +56,7 @@ public class ProcessingRuleFunctions {
         }
 
         Act applicableAct = ProcessingRuleFunctions.InferApplicableAct(serviceHistory,condition);
+
 
         List<Deployment> operationDeployments =
                 ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
@@ -67,18 +66,14 @@ public class ProcessingRuleFunctions {
 
         if (applicableAct == Act.Vea)
         {
-                List<MilitaryActivity> matchingActivities = Facade.getMatchingActivities(operationDeployments, veaOperationalServiceRepository);
+                Iterable<JustifiedMilitaryActivity> matchingActivities = Facade.getMatchingActivities(operationDeployments, veaOperationalServiceRepository);
                 caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingActivities));
         }
 
         else if (applicableAct == Act.Mrca)
         {
-            List<OperationAndLegalSourcePair> matchingOps = Operations.getMatchingOperationsForDeployments(serviceDeterminations,operationDeployments);
-            List<MilitaryActivity> militaryActivities = matchingOps
-                    .stream()
-                    .map(o -> new MilitaryActivity(o.get_operation().getName(),o.get_operation().getStartDate(),o.get_operation().getEndDate(),o.get_operation().getServiceType().toMilitaryOperationType(), o.get_legalSource()))
-                    .collect(Collectors.toList());
-            caseTrace.SetRelevantOperations(ImmutableList.copyOf(militaryActivities));
+            List<JustifiedMilitaryActivity> matchingOps = Operations.getMatchingOperationsForDeployments(serviceDeterminations,operationDeployments);
+            caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingOps));
         }
         else {
             throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);

@@ -1,6 +1,5 @@
 package au.gov.dva.sopapi.sopref;
 
-import au.gov.dva.sopapi.dtos.MilitaryActivity;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -10,13 +9,16 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Tuple2;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Operations {
 
@@ -116,14 +118,14 @@ public class Operations {
         return (deploymentNameToLowerContainsOpName && datesAreConsistent);
     }
 
-    private static List<OperationAndLegalSourcePair> getMatchingOperations(ImmutableList<OperationAndLegalSourcePair> allOperations, Deployment deployment)
+    private static ImmutableList<OperationAndLegalSourcePair> getMatchingOperations(ImmutableList<OperationAndLegalSourcePair> allOperations, Deployment deployment)
     {
         List<OperationAndLegalSourcePair> matching = allOperations.stream().filter(op -> deploymentMatchesOperation(op.get_operation(),deployment)).collect(Collectors.toList());
-        return matching;
+         return ImmutableList.copyOf(matching);
     }
 
 
-    public static List<OperationAndLegalSourcePair> getMatchingOperationsForDeployments(ImmutableSet<ServiceDetermination> serviceDeterminations, List<Deployment> deployments)
+    public static List<JustifiedMilitaryActivity> getMatchingOperationsForDeployments(ImmutableSet<ServiceDetermination> serviceDeterminations, List<Deployment> deployments)
     {
         ServiceDeterminationPair serviceDeterminationPair = getLatestDeterminationPair(serviceDeterminations);
 
@@ -134,21 +136,45 @@ public class Operations {
                 .stream().map(o -> new OperationAndLegalSourcePair(serviceDeterminationPair.getNonWarlike().getCitation(),o))
                 .collect(Collectors.toList());
 
-
         ImmutableList<OperationAndLegalSourcePair> allOperations =  ImmutableList.copyOf(Iterables.concat(
                 warlikeOps,
                 nonWarlikeOps));
 
+        // get list of matching legal activities for each deployment
+        Stream<DeploymentAndMatchingOperations> deploymentAndMatchingOperationsList = deployments.stream()
+                .map(d -> new DeploymentAndMatchingOperations(d, getMatchingOperations(allOperations, d)));
 
-        List<OperationAndLegalSourcePair> acc = new ArrayList<>();
-        for (Deployment d : deployments)
+        List<OperationAndDeploymentPair> operationAndDeploymentPairs  = deploymentAndMatchingOperationsList
+                .flatMap(deploymentToOperations -> deploymentToOperations.getOperations()
+                        .stream().map(operation -> new OperationAndDeploymentPair(operation,deploymentToOperations.getDeployment())))
+                .collect(Collectors.toList());
+
+        Map<OperationAndLegalSourcePair,List<OperationAndDeploymentPair>> justifiedMilitaryActivitiesData =
+                operationAndDeploymentPairs
+                        .stream()
+                        .collect(Collectors.groupingBy(o -> o.getOperationAndLegalSourcePair()));
+
+        List<JustifiedMilitaryActivity> acc = new ArrayList<>();
+        for (OperationAndLegalSourcePair operationAndLegalSourcePair : justifiedMilitaryActivitiesData.keySet())
         {
-            List<OperationAndLegalSourcePair> matching = getMatchingOperations(allOperations,d);
-            if (!matching.isEmpty())
-                acc.addAll(matching);
+            acc.add(new JustifiedMilitaryActivity(
+                    new MilitaryActivity(
+                            operationAndLegalSourcePair.get_operation().getName(),
+                            operationAndLegalSourcePair.get_operation().getStartDate(),
+                            operationAndLegalSourcePair.get_operation().getEndDate(),
+                            operationAndLegalSourcePair.get_operation().getServiceType().toMilitaryOperationType(),
+                            operationAndLegalSourcePair.get_legalSource()
+                    ),
+                    justifiedMilitaryActivitiesData
+                            .get(operationAndLegalSourcePair)
+                            .stream()
+                            .map(i -> i.getDeployment())
+                            .collect(Collectors.toList())
+            ));
         }
-        return acc;
 
+        return acc;
+        
     }
 
 

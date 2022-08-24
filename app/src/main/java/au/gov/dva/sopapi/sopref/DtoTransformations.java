@@ -1,6 +1,8 @@
 package au.gov.dva.sopapi.sopref;
 
+import au.gov.dva.sopapi.dtos.DeploymentDto;
 import au.gov.dva.sopapi.dtos.IncidentType;
+import au.gov.dva.sopapi.dtos.JustifiedMilitaryActivityDto;
 import au.gov.dva.sopapi.dtos.sopref.*;
 import au.gov.dva.sopapi.dtos.sopref.DefinedTerm;
 import au.gov.dva.sopapi.dtos.sopref.FactorDto;
@@ -120,6 +122,25 @@ public class DtoTransformations {
 
     }
 
+    private static DeploymentDto deploymentToDto(Deployment deployment){
+        return new DeploymentDto(
+            deployment.getOperationName(),
+                deployment.getStartDate(),
+                deployment.getEndDate()
+        );
+    }
+
+    private static JustifiedMilitaryActivityDto justifiedMilitaryActivityToDto(JustifiedMilitaryActivity justifiedMilitaryActivity)
+    {
+        return new JustifiedMilitaryActivityDto(
+                justifiedMilitaryActivity.getMilitaryActivity().getName(),
+                justifiedMilitaryActivity.getMilitaryActivity().getStartDate(),
+                justifiedMilitaryActivity.getMilitaryActivity().getEndDate(),
+                justifiedMilitaryActivity.getMilitaryActivity().getMilitaryOperationType(),
+                justifiedMilitaryActivity.getMilitaryActivity().getLegalSource(),
+                justifiedMilitaryActivity.getRelevantDeployments().stream().map(d -> deploymentToDto(d)).collect(Collectors.toList())
+        );
+    }
     public static CaseTraceDto caseTraceDtoFromCaseTrace(CaseTrace caseTrace)
     {
         return new CaseTraceDto(
@@ -134,7 +155,7 @@ public class DtoTransformations {
                 caseTrace.getRhFactors().stream().map(f -> fromFactor(f)).collect(Collectors.toList()),
                 caseTrace.getBopFactors().stream().map(f -> fromFactor(f)).collect(Collectors.toList()),
                 caseTrace.getReasonings(),
-                caseTrace.getRelevantOperations(),
+                caseTrace.getRelevantOperations().stream().map(ma -> justifiedMilitaryActivityToDto(ma)).collect(Collectors.toList()),
                 caseTrace.getLoggingTraces());
     }
 

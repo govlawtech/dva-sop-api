@@ -1,18 +1,16 @@
 package au.gov.dva.sopapi.interfaces;
 
-import au.gov.dva.sopapi.dtos.MilitaryActivity;
+import au.gov.dva.sopapi.interfaces.model.JustifiedMilitaryActivity;
+import au.gov.dva.sopapi.interfaces.model.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.ReasoningFor;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.model.Factor;
 import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.ImmutableList;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
 
 public interface CaseTrace {
 
@@ -56,8 +54,8 @@ public interface CaseTrace {
     void setTestInterval(Interval testInterval);
     Interval getTestInterval();
 
-    ImmutableList<MilitaryActivity> getRelevantOperations();
-    void SetRelevantOperations(ImmutableList<MilitaryActivity> militaryActivities);
+    ImmutableList<JustifiedMilitaryActivity> getRelevantOperations();
+    void SetRelevantOperations(ImmutableList<JustifiedMilitaryActivity> justifiedMilitaryActivities);
 
     default boolean isComplete() {
         if (!getReasonings().containsKey(ReasoningFor.ABORT_PROCESSING))

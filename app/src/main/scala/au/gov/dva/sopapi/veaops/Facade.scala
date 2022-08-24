@@ -4,9 +4,8 @@ import java.io.ByteArrayInputStream
 import java.time.{LocalDate, ZoneId}
 import java.util.Optional
 import au.gov.dva.sopapi.DateTimeUtils
-import au.gov.dva.sopapi.dtos.MilitaryActivity
 import au.gov.dva.sopapi.dtos.sopsupport.MilitaryOperationType
-import au.gov.dva.sopapi.interfaces.model.Deployment
+import au.gov.dva.sopapi.interfaces.model.{Deployment, JustifiedMilitaryActivity, MilitaryActivity}
 import au.gov.dva.sopapi.servicedeterminations.VeaServiceDeterminations
 import au.gov.dva.sopapi.veaops.interfaces.{VeaDeterminationOccurance, VeaOperationalServiceRepository}
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
@@ -90,8 +89,17 @@ object Facade {
 
   }
 
-  def getMatchingActivities(deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository) : util.List[MilitaryActivity] = {
-    deployments.asScala.flatMap(d => getMatchingActivitesForSingleDeployment(d,veaRepo)).asJava
+
+
+
+
+  def getMatchingActivities(deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository)  = {
+
+    val deploymentToMilitaryActivityLists = deployments.asScala.map(d => (d,getMatchingActivitesForSingleDeployment(d,veaRepo)))
+    val deploymentToMilitaryActivity = deploymentToMilitaryActivityLists.flatMap( t =>  t._2.map(a => (t._1,a)))
+    val groupedByMilitaryActivity = deploymentToMilitaryActivity.groupBy(t => t._2)
+    val justifiedMilitaryActivities = groupedByMilitaryActivity.map(t => new JustifiedMilitaryActivity(t._1,t._2.map(i => i._1).asJava) )
+    justifiedMilitaryActivities.asJava
   }
 
 

@@ -1,10 +1,7 @@
 package au.gov.dva.sopapi.interfaces.model;
 
 
-import au.gov.dva.sopapi.dtos.MilitaryActivity;
-
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
 import java.util.Optional;
 
 public interface Operation {
