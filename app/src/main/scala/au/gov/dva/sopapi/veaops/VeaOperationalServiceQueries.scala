@@ -28,11 +28,11 @@ object VeaOperationalServiceQueries {
     ongoingAtDate
   }
 
-  def getPeacekeepingActivitiesInRange(startDate : LocalDate, endDate: Option[LocalDate], peacekeepingActivities: List[VeaPeacekeepingActivity]): List[VeaPeacekeepingActivity] = {
+  def getPeacekeepingConsistentWithDates(startDate : LocalDate, endDate: Option[LocalDate], peacekeepingActivities: List[VeaPeacekeepingActivity]): List[VeaPeacekeepingActivity] = {
     peacekeepingActivities.filter(a => DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new OpenEndedInterval(startDate,endDate),new OpenEndedInterval(a.startDate,a.endDate)))
   }
 
-  def getOpsAndActivitiesInRange(startOfTestRange: LocalDate, endOfTestRange: Option[LocalDate], allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaDeterminationOccurance]] = {
+  def getVeaOpsAndActivitiesConsistentWithDates(startOfTestRange: LocalDate, endOfTestRange: Option[LocalDate], allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaDeterminationOccurance]] = {
     allDeterminations
       .map(d => d -> getVeaOccurancesInInterval(startOfTestRange, endOfTestRange, d))
       .filter(i => i._2.nonEmpty)

@@ -99,10 +99,10 @@ class VeaOperationsTests extends FunSuite {
     val testDet2 = new NonWarlikeDetermination("F54545454", List(), List(testact))
     val testDets = List(testDet1, testDet2)
 
-    val testStartDate = LocalDate.of(2000, 1, 1)
-    val testEndDate = LocalDate.of(2018, 1, 1)
-    val results = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(testStartDate, Option(testEndDate), testDets)
-    assert(results.size == 2)
+    val testStartDate = LocalDate.of(2017, 1, 1)
+    val testEndDate = LocalDate.of(2017,12 , 31)
+    val results = VeaOperationalServiceQueries.getVeaOpsAndActivitiesConsistentWithDates(testStartDate, Option(testEndDate), testDets)
+    assert(results.size == 1)
   }
 
   test("Correct vea occurances in range: none in interval") {
@@ -112,7 +112,7 @@ class VeaOperationsTests extends FunSuite {
 
     val testStartDate = LocalDate.of(2000, 1, 1)
     val testEndDate = LocalDate.of(2001, 1, 1)
-    val results = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(testStartDate, Option(testEndDate), testDets)
+    val results = VeaOperationalServiceQueries.getVeaOpsAndActivitiesConsistentWithDates(testStartDate, Option(testEndDate), testDets)
     assert(results.size == 0)
   }
 
@@ -123,7 +123,7 @@ class VeaOperationsTests extends FunSuite {
 
     val testStartDate = LocalDate.of(2019, 1, 1)
     val testEndDate = LocalDate.of(2020, 1, 1)
-    val results = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(testStartDate, Option(testEndDate), testDets)
+    val results = VeaOperationalServiceQueries.getVeaOpsAndActivitiesConsistentWithDates(testStartDate, Option(testEndDate), testDets)
     assert(results.size == 1)
   }
 
@@ -194,12 +194,18 @@ class VeaOperationsTests extends FunSuite {
 
   test("Peacekeeping operations correctly classified") {
     val peackeepingID = "UNMISET"
-    // ends day before peackeeping op starts
+    // UNMISET starts at 2002-05-20, no end date
+    // ends day before peacekeeping op starts
     val activityEndsBeforePeackeepingStarts = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,19)))
     assert(!activityEndsBeforePeackeepingStarts.isOperational)
 
-    val activityEndsOnDayPeacekeepingStarts = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,20)))
-    assert(activityEndsOnDayPeacekeepingStarts.isOperational)
+    val activityEndsOnDayPeacekeepingStartsButStartBefore = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,20)))
+    assert(!activityEndsOnDayPeacekeepingStartsButStartBefore.isOperational)
+
+    val activityContainedWithin = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2002,5,20))
+    assert(activityContainedWithin.isOperational)
+
+
   }
 
   test("Regex mappings work for determinations")
@@ -227,13 +233,13 @@ class VeaOperationsTests extends FunSuite {
   }
 
 
-  test("Slipper IS matched overlapping one day at end of operation period") {
+  test("Slipper IS not matched if there is no end date") {
     //    <name>SLIPPER</name>
     //    <startDate>2001-10-11</startDate>
     //   <endDate>2009-07-30</endDate>
     val moniker = "OPERATION SLIPPER"
     val result = testRepo.getOperationalTestResults(moniker, LocalDate.of(2009, 7, 30))
-    assert(result.isOperational)
+    assert(!result.isOperational)
 
   }
 

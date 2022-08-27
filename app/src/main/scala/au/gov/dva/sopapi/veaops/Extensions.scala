@@ -50,11 +50,11 @@ object Extensions {
     def getOperationalTestResults(identifierFromServiceHistory: String, startDate: LocalDate, endDate: Option[LocalDate] = None): VeaOperationalServiceTestResults = {
 
 
-      val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(startDate, endDate, repo.getDeterminations.asScala.toList)
+      val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getVeaOpsAndActivitiesConsistentWithDates(startDate, endDate, repo.getDeterminations.asScala.toList)
 
       val flattenedDetrminationResults: List[(VeaDetermination, VeaDeterminationOccurance)] = determinationQueryResults.flatMap(t => t._2.map(o => (t._1, o))).toList
 
-      val peacekeepingResults: List[VeaPeacekeepingActivity] = VeaOperationalServiceQueries.getPeacekeepingActivitiesInRange(
+      val peacekeepingResults: List[VeaPeacekeepingActivity] = VeaOperationalServiceQueries.getPeacekeepingConsistentWithDates(
         startDate,
         endDate,
         repo.getPeacekeepingActivities.asList().asScala.toList)
@@ -75,7 +75,7 @@ object Extensions {
     def isWarlike(identifierFromServiceHistory: String, startDate: LocalDate, endDate: Option[LocalDate]): Boolean = {
       val endDateOrNow = endDate.getOrElse(LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)))
 
-      val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(startDate, endDate, repo.getDeterminations.asScala.toList)
+      val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getVeaOpsAndActivitiesConsistentWithDates(startDate, endDate, repo.getDeterminations.asScala.toList)
 
       val flattenedDetrminationResults: List[(VeaDetermination, VeaDeterminationOccurance)] = determinationQueryResults.flatMap(t => t._2.map(o => (t._1, o))).toList
 

@@ -23,7 +23,7 @@ object Facade {
 
 
   def getResponseRangeQuery(startDate: LocalDate, endDate: Optional[LocalDate], veaRepo : VeaOperationalServiceRepository ): JsonNode = {
-    val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(startDate, endDate.toScalaOption(), veaRepo.getDeterminations.asScala.toList)
+    val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getVeaOpsAndActivitiesConsistentWithDates(startDate, endDate.toScalaOption(), veaRepo.getDeterminations.asScala.toList)
 
     // warlike, non-warlike, hazardous, peacekeeping
 
@@ -33,7 +33,7 @@ object Facade {
     val section6Nonwarlike: List[(VeaDetermination, VeaDeterminationOccurance)] = flattenedDetrminationResults.filter(i => i._1.isInstanceOf[NonWarlikeDetermination])
     val hazardous: List[(VeaDetermination, VeaDeterminationOccurance)] = flattenedDetrminationResults.filter(i => i._1.isInstanceOf[HazardousDetermination])
 
-    val peacekeepingResults: List[VeaPeacekeepingActivity] = VeaOperationalServiceQueries.getPeacekeepingActivitiesInRange(
+    val peacekeepingResults: List[VeaPeacekeepingActivity] = VeaOperationalServiceQueries.getPeacekeepingConsistentWithDates(
       startDate,
       endDate.toScalaOption(),
       veaRepo.getPeacekeepingActivities.asList().asScala.toList)
