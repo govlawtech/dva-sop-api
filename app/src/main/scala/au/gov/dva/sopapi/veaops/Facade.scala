@@ -5,6 +5,7 @@ import java.time.{LocalDate, ZoneId}
 import java.util.Optional
 import au.gov.dva.sopapi.DateTimeUtils
 import au.gov.dva.sopapi.dtos.sopsupport.MilitaryOperationType
+import au.gov.dva.sopapi.interfaces.CaseTrace
 import au.gov.dva.sopapi.interfaces.model.{Deployment, JustifiedMilitaryActivity, MilitaryActivity}
 import au.gov.dva.sopapi.servicedeterminations.VeaServiceDeterminations
 import au.gov.dva.sopapi.veaops.interfaces.{VeaDeterminationOccurance, VeaOperationalServiceRepository}
@@ -21,8 +22,8 @@ import java.util
 object Facade {
 
 
-  def getResponseRangeQuery(startDate: LocalDate, endDate: LocalDate, veaRepo : VeaOperationalServiceRepository ): JsonNode = {
-    val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(startDate, endDate, veaRepo.getDeterminations.asScala.toList)
+  def getResponseRangeQuery(startDate: LocalDate, endDate: Optional[LocalDate], veaRepo : VeaOperationalServiceRepository ): JsonNode = {
+    val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(startDate, endDate.toScalaOption(), veaRepo.getDeterminations.asScala.toList)
 
     // warlike, non-warlike, hazardous, peacekeeping
 
@@ -34,7 +35,7 @@ object Facade {
 
     val peacekeepingResults: List[VeaPeacekeepingActivity] = VeaOperationalServiceQueries.getPeacekeepingActivitiesInRange(
       startDate,
-      endDate,
+      endDate.toScalaOption(),
       veaRepo.getPeacekeepingActivities.asList().asScala.toList)
 
 
@@ -91,8 +92,6 @@ object Facade {
 
 
 
-
-
   def getMatchingActivities(deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository)  = {
 
     val deploymentToMilitaryActivityLists = deployments.asScala.map(d => (d,getMatchingActivitesForSingleDeployment(d,veaRepo)))
@@ -103,9 +102,11 @@ object Facade {
   }
 
 
+  // just checks overlap with known operations - does not validate dates are consistent
   def isOperational(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {
     veaRepo.getOperationalTestResults(identifierFromServiceHistory,startDate,endDate.toScalaOption()).isOperational
   }
+
 
   def isWarlike(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {
     veaRepo.isWarlike(identifierFromServiceHistory,startDate,endDate.toScalaOption())
