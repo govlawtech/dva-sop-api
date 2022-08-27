@@ -475,7 +475,7 @@ public class Routes {
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
         RulesResult rulesResult = RulesResult.applyRules(repository, sopSupportRequestDto, cache.get_allSopPairs(),
-                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), veaOperationalServiceRepository, serviceDeterminations, caseTrace);
+                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto(),caseTrace), veaOperationalServiceRepository, serviceDeterminations, caseTrace);
 
 
         assert caseTrace.isComplete() : "Case trace not complete";

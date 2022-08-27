@@ -1,21 +1,20 @@
 package au.gov.dva.sopapi.sopref;
 
+import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
+import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Sets;
+import au.gov.dva.sopapi.sopsupport.processingrules.HasDateRangeImpl;
+import com.google.common.collect.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Tuple2;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -50,38 +49,33 @@ public class Operations {
     }
 
 
-    public static Predicate<Deployment> getMRCAIsWarlikePredicate(ServiceDeterminationPair serviceDeterminationPair) {
+    public static Predicate<Deployment> getMRCAIsWarlikePredicate(ServiceDeterminationPair serviceDeterminationPair, CaseTrace caseTrace) {
         ImmutableList<Operation> warlikeOperations = serviceDeterminationPair.getWarlike().getOperations();
-        return getPredicateForMrcaOperations(warlikeOperations);
+        return getPredicateForMrcaOperations(warlikeOperations, caseTrace);
 
     }
 
 
-    public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair) {
+    public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair, CaseTrace caseTrace) {
         ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
                 serviceDeterminationPair.getWarlike().getOperations(),
                 serviceDeterminationPair.getNonWarlike().getOperations()));
 
-        return getPredicateForMrcaOperations(allOperations);
+        return getPredicateForMrcaOperations(allOperations, caseTrace);
     }
 
 
-    private static boolean datesAreConsistent(Deployment deployment, Operation operation)
-    {
-        if (deployment.getStartDate().isBefore(operation.getStartDate()))
-        {
+    private static boolean datesAreConsistent(Deployment deployment, Operation operation) {
+        if (deployment.getStartDate().isBefore(operation.getStartDate())) {
             return false;
         }
 
-        if (!deployment.getEndDate().isPresent() && operation.getEndDate().isPresent())
-        {
+        if (!deployment.getEndDate().isPresent() && operation.getEndDate().isPresent()) {
             return false;
         }
 
-        if (deployment.getEndDate().isPresent() && operation.getEndDate().isPresent())
-        {
-            if (deployment.getEndDate().get().isAfter(operation.getEndDate().get()))
-            {
+        if (deployment.getEndDate().isPresent() && operation.getEndDate().isPresent()) {
+            if (deployment.getEndDate().get().isAfter(operation.getEndDate().get())) {
                 return false;
             }
         }
@@ -90,17 +84,15 @@ public class Operations {
     }
 
 
-    private static boolean operationWithConsistentDatesExist(Deployment deployment, ImmutableList<Operation> operations)
-    {
-        boolean matchFound = operations.stream().anyMatch(operation -> datesAreConsistent(deployment,operation));
-        if (!matchFound)
-        {
+    private static boolean operationWithConsistentDatesExist(Deployment deployment, ImmutableList<Operation> operations) {
+        boolean matchFound = operations.stream().anyMatch(operation -> datesAreConsistent(deployment, operation));
+        if (!matchFound) {
             StringBuilder warning = new StringBuilder();
             warning.append(String.format("Deployment dates not consistent with matching operations.%n"));
             warning.append(String.format("DEPLOYMENT:%n"));
-            warning.append(String.format("%s%n",deployment.toString()));
+            warning.append(String.format("%s%n", deployment.toString()));
             warning.append(String.format("OPERATIONS:%n"));
-            operations.forEach(operation -> warning.append(String.format("%s%n",operation.toString())));
+            operations.forEach(operation -> warning.append(String.format("%s%n", operation.toString())));
             logger.warn(warning.toString());
 
             return false;
@@ -114,29 +106,27 @@ public class Operations {
 
         Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())
                 || specialWhitelist.stream().anyMatch(wl -> operation.getName().toLowerCase().contains(wl));
-        Boolean datesAreConsistent = datesAreConsistent(deployment,operation);
+        Boolean datesAreConsistent = datesAreConsistent(deployment, operation);
         return (deploymentNameToLowerContainsOpName && datesAreConsistent);
     }
 
-    private static ImmutableList<OperationAndLegalSourcePair> getMatchingOperations(ImmutableList<OperationAndLegalSourcePair> allOperations, Deployment deployment)
-    {
-        List<OperationAndLegalSourcePair> matching = allOperations.stream().filter(op -> deploymentMatchesOperation(op.get_operation(),deployment)).collect(Collectors.toList());
-         return ImmutableList.copyOf(matching);
+    private static ImmutableList<OperationAndLegalSourcePair> getMatchingOperations(ImmutableList<OperationAndLegalSourcePair> allOperations, Deployment deployment) {
+        List<OperationAndLegalSourcePair> matching = allOperations.stream().filter(op -> deploymentMatchesOperation(op.get_operation(), deployment)).collect(Collectors.toList());
+        return ImmutableList.copyOf(matching);
     }
 
 
-    public static List<JustifiedMilitaryActivity> getMatchingOperationsForDeployments(ImmutableSet<ServiceDetermination> serviceDeterminations, List<Deployment> deployments)
-    {
+    public static List<JustifiedMilitaryActivity> getMatchingOperationsForDeployments(ImmutableSet<ServiceDetermination> serviceDeterminations, List<Deployment> deployments) {
         ServiceDeterminationPair serviceDeterminationPair = getLatestDeterminationPair(serviceDeterminations);
 
         List<OperationAndLegalSourcePair> warlikeOps = serviceDeterminationPair.getWarlike().getOperations()
                 .stream().map(o -> new OperationAndLegalSourcePair(serviceDeterminationPair.getWarlike().getCitation(), o))
                 .collect(Collectors.toList());
         List<OperationAndLegalSourcePair> nonWarlikeOps = serviceDeterminationPair.getNonWarlike().getOperations()
-                .stream().map(o -> new OperationAndLegalSourcePair(serviceDeterminationPair.getNonWarlike().getCitation(),o))
+                .stream().map(o -> new OperationAndLegalSourcePair(serviceDeterminationPair.getNonWarlike().getCitation(), o))
                 .collect(Collectors.toList());
 
-        ImmutableList<OperationAndLegalSourcePair> allOperations =  ImmutableList.copyOf(Iterables.concat(
+        ImmutableList<OperationAndLegalSourcePair> allOperations = ImmutableList.copyOf(Iterables.concat(
                 warlikeOps,
                 nonWarlikeOps));
 
@@ -144,19 +134,18 @@ public class Operations {
         Stream<DeploymentAndMatchingOperations> deploymentAndMatchingOperationsList = deployments.stream()
                 .map(d -> new DeploymentAndMatchingOperations(d, getMatchingOperations(allOperations, d)));
 
-        List<OperationAndDeploymentPair> operationAndDeploymentPairs  = deploymentAndMatchingOperationsList
+        List<OperationAndDeploymentPair> operationAndDeploymentPairs = deploymentAndMatchingOperationsList
                 .flatMap(deploymentToOperations -> deploymentToOperations.getOperations()
-                        .stream().map(operation -> new OperationAndDeploymentPair(operation,deploymentToOperations.getDeployment())))
+                        .stream().map(operation -> new OperationAndDeploymentPair(operation, deploymentToOperations.getDeployment())))
                 .collect(Collectors.toList());
 
-        Map<OperationAndLegalSourcePair,List<OperationAndDeploymentPair>> justifiedMilitaryActivitiesData =
+        Map<OperationAndLegalSourcePair, List<OperationAndDeploymentPair>> justifiedMilitaryActivitiesData =
                 operationAndDeploymentPairs
                         .stream()
                         .collect(Collectors.groupingBy(o -> o.getOperationAndLegalSourcePair()));
 
         List<JustifiedMilitaryActivity> acc = new ArrayList<>();
-        for (OperationAndLegalSourcePair operationAndLegalSourcePair : justifiedMilitaryActivitiesData.keySet())
-        {
+        for (OperationAndLegalSourcePair operationAndLegalSourcePair : justifiedMilitaryActivitiesData.keySet()) {
             acc.add(new JustifiedMilitaryActivity(
                     new MilitaryActivity(
                             operationAndLegalSourcePair.get_operation().getName(),
@@ -174,64 +163,46 @@ public class Operations {
         }
 
         return acc;
-        
+
     }
 
-
-    private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations) {
-
-        ImmutableSet<String> opNames = allOperations.stream()
-                .map(operation -> operation.getName())
-                .map(name -> name.toLowerCase())
-                .distinct()
-                .collect(Collectors.collectingAndThen(Collectors.toSet(), ImmutableSet::copyOf));
-
-        ImmutableSet<String> specialWhitelist = ImmutableSet.of(
-                "enduring freedom");
-
-        ImmutableList<String> mrcaOpertionNamesForWhichToValidateDates = ImmutableList.of(
-                "Paladin",
-                "Okra",
-                "Augury"
+    public static Boolean isServiceHistoryNameInOfficialOperationName(String serviceHistoryName, String officialOperationName) {
+        ImmutableMap<String, String> specialTransformationsOfOfficialName = ImmutableMap.of(
+                "Enduring Freedom—Afghanistan", "enduring freedom"
         );
+        String normalisedServiceHistoryName = serviceHistoryName.toLowerCase();
+        String normalisedOfficialName = specialTransformationsOfOfficialName.getOrDefault(officialOperationName, officialOperationName.toLowerCase());
+        return normalisedServiceHistoryName.contains(normalisedOfficialName);
+    }
 
-        Sets.SetView<String> allToMatch = Sets.union(opNames, specialWhitelist);
+    private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations, CaseTrace caseTrace) {
+
+        return deployment -> {
+            List<Operation> operationsWithMatchingName =
+                    allOperations.stream().filter(o -> isServiceHistoryNameInOfficialOperationName(deployment.getOperationName(), o.getName())).collect(Collectors.toList());
+
+            List<Operation> operationsWithMatchingNameAndDates =
+                    operationsWithMatchingName.stream()
+                            .filter(o -> DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new HasDateRangeImpl(deployment.getStartDate(), deployment.getEndDate()), new HasDateRangeImpl(o.getStartDate(), o.getEndDate())))
+                            .collect(Collectors.toList());
 
 
+            if (!operationsWithMatchingName.isEmpty() && !operationsWithMatchingNameAndDates.isEmpty()) {
+                StringBuilder logMessage = new StringBuilder();
+                logMessage.append("The dates of the deployment '" + deployment.getOperationName() + "' are not consistent with the dates of any matching known operations.");
+                logMessage.append("The start date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getStartDate()) + ".");
+                logMessage.append(deployment.getEndDate().isPresent() ? "The end date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getEndDate().get()) + "." : "The deployment has no end date (ongoing).");
 
-        return (deployment -> {
-
-            boolean nameMatches =  allToMatch.stream()
-                        .anyMatch(s -> deployment
-                                .getOperationName()
-                                .toLowerCase()
-                                .contains(s));
-
-            if (!nameMatches)
-            {
-                return false;
+                Function<Operation, String> prettyPrintOperation = op -> op.getName() + "," + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getStartDate()) + (op.getEndDate().isPresent() ? " to " + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getEndDate().get()) : " to present.");
+                String matchingOperationsString = String.join(";", operationsWithMatchingName.stream().map(o -> prettyPrintOperation.apply(o)).collect(Collectors.toList()));
+                logMessage.append(matchingOperationsString);
+                caseTrace.addLoggingTrace(logMessage.toString());
             }
 
-            boolean dateMatchRequired = mrcaOpertionNamesForWhichToValidateDates
-                    .stream()
-                    .map(s -> s.toLowerCase())
-                    .anyMatch(s -> deployment.getOperationName().toLowerCase().contains(s));
+            return !operationsWithMatchingNameAndDates.isEmpty();
 
-            if (dateMatchRequired)
-            {
-                ImmutableList<Operation> operationsWithSameName = allOperations.stream()
-                        .filter(operation -> deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
 
-                if (operationWithConsistentDatesExist(deployment,operationsWithSameName))
-                {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-             }
-            return true;
-        });
+        };
+
     }
-
 }
