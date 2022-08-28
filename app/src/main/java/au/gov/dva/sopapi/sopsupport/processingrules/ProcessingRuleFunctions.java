@@ -2,7 +2,6 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
-import au.gov.dva.sopapi.interfaces.model.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
@@ -120,8 +119,8 @@ public class ProcessingRuleFunctions {
     }
 
 
-    public static long getNumberOfDaysOfServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<? extends HasDateRange> deploymentsOrService) {
-        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(new ArrayList<>(deploymentsOrService));
+    public static long getNumberOfDaysOfServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<? extends MaybeOpenEndedInterval> deploymentsOrService) {
+        List<MaybeOpenEndedInterval> flattened = DateTimeUtils.flattenDateRanges(new ArrayList<>(deploymentsOrService));
         long days = flattened.stream()
                 .map(d -> getInclusiveDaysFromRangeInInterval(startDate, endDate, d))
                 .collect(Collectors.summingLong(value -> value));
@@ -130,7 +129,7 @@ public class ProcessingRuleFunctions {
     }
 
     // sorted latest first
-    public static ImmutableList<Interval> getIntervalsWithMaximumService(int intervalDurationInCalendarYears, LocalDate lowerBoundary, LocalDate upperBoundaryInclusive, ImmutableList<? extends HasDateRange> deploymentsOrService) {
+    public static ImmutableList<Interval> getIntervalsWithMaximumService(int intervalDurationInCalendarYears, LocalDate lowerBoundary, LocalDate upperBoundaryInclusive, ImmutableList<? extends MaybeOpenEndedInterval> deploymentsOrService) {
         List<Interval> testIntervals = Intervals.getSopFactorTestIntervalsJavaList(intervalDurationInCalendarYears, lowerBoundary, upperBoundaryInclusive);
         assert (testIntervals.size() > 0);
         if (testIntervals.size() > 1) {
@@ -157,7 +156,7 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    private static long getInclusiveDaysFromRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, HasDateRange dateRange) {
+    private static long getInclusiveDaysFromRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, MaybeOpenEndedInterval dateRange) {
 
         if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(intervalStartDate)) {
             logger.trace("date range end date is before start date, therefore returning 0 days.");

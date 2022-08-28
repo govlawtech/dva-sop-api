@@ -1,9 +1,7 @@
 package au.gov.dva.sopapi;
 
-import au.gov.dva.sopapi.interfaces.model.HasDateRange;
-import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
+import au.gov.dva.sopapi.interfaces.model.MaybeOpenEndedInterval;
 import au.gov.dva.sopapi.sopsupport.processingrules.HasDateRangeImpl;
-import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -84,15 +82,27 @@ public class DateTimeUtils {
         return true;
     }
 
-    public static List<HasDateRange> flattenDateRanges(List<HasDateRange> toFlatten) {
+    public static Boolean IsFirstOpenEndedIntervalWithinSecond(MaybeOpenEndedInterval first, MaybeOpenEndedInterval second)
+    {
+        if (first.getStartDate().isBefore(second.getStartDate()))
+            return false;
+        if (second.getEndDate().isPresent() && !first.getEndDate().isPresent())
+            return false;
+        if (first.getEndDate().isPresent() && second.getEndDate().isPresent() && first.getEndDate().get().isAfter(second.getEndDate().get()))
+            return false;
+        return true;
+    }
+
+
+    public static List<MaybeOpenEndedInterval> flattenDateRanges(List<MaybeOpenEndedInterval> toFlatten) {
         if (toFlatten == null || toFlatten.size() == 0) return new ArrayList<>();
-        ArrayList<HasDateRange> outputs = new ArrayList();
-        ArrayList<HasDateRange> inputs = new ArrayList(toFlatten);
+        ArrayList<MaybeOpenEndedInterval> outputs = new ArrayList();
+        ArrayList<MaybeOpenEndedInterval> inputs = new ArrayList(toFlatten);
         while (inputs.size() > 1) {
-            HasDateRange first = inputs.get(0);
+            MaybeOpenEndedInterval first = inputs.get(0);
             boolean notOverlapping = true;
             for(int i=1; i < inputs.size(); ++i) {
-                HasDateRange next = inputs.get(i);
+                MaybeOpenEndedInterval next = inputs.get(i);
                 notOverlapping = (next.getEndDate().isPresent() && first.getStartDate().isAfter(next.getEndDate().get()))
                         || (first.getEndDate().isPresent() && next.getStartDate().isAfter(first.getEndDate().get()));
                 // i.e. if overlapping
@@ -107,7 +117,7 @@ public class DateTimeUtils {
                         newEnd = first.getEndDate().get().isAfter(next.getEndDate().get())
                             ? first.getEndDate() : next.getEndDate();
                     }
-                    HasDateRange newDateRange = new HasDateRangeImpl(newStart, newEnd);
+                    MaybeOpenEndedInterval newDateRange = new HasDateRangeImpl(newStart, newEnd);
                     inputs.remove(i);
                     inputs.remove(0);
                     inputs.add(newDateRange);

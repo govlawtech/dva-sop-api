@@ -210,7 +210,7 @@ public class Routes  {
                 }
             }
 
-            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate, endDate, cache.get_veaOperationalServiceRepository());
+            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate, Optional.of(endDate), cache.get_veaOperationalServiceRepository());
             ObjectMapper om = new ObjectMapper();
             String jsonString = om.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse);
             setResponseHeaders(res, 200, MIME_JSON);
@@ -475,7 +475,7 @@ public class Routes  {
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
         RulesResult rulesResult = RulesResult.applyRules(repository, sopSupportRequestDto, cache.get_allSopPairs(),
-                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), veaOperationalServiceRepository, serviceDeterminations, caseTrace);
+                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto(),caseTrace), veaOperationalServiceRepository, serviceDeterminations, caseTrace);
 
 
         assert caseTrace.isComplete() : "Case trace not complete";

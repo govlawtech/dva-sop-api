@@ -5,11 +5,7 @@ import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
 import com.google.common.collect.ImmutableSet;
 
-import java.time.LocalDate;
-import java.time.OffsetDateTime;
-import java.util.Optional;
-
-public interface Service extends HasDateRange {
+public interface Service extends MaybeOpenEndedInterval {
     ServiceBranch getBranch();
     EmploymentType getEmploymentType();
     Rank getRank();

@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
-import au.gov.dva.sopapi.interfaces.model.HasDateRange;
+import au.gov.dva.sopapi.interfaces.model.MaybeOpenEndedInterval;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Created by mc on 27/06/17.
  */
-public class HasDateRangeImpl implements HasDateRange {
+public class HasDateRangeImpl implements MaybeOpenEndedInterval {
     private final LocalDate startDate;
     private final Optional<LocalDate> endDate;
 

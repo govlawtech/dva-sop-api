@@ -1,6 +1,7 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
+import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -28,21 +29,20 @@ public class SuperiorRhPredicateFactory implements IRhPredicateFactory {
     }
 
     @Override
-    public Predicate<Deployment> createMrcaOrVeaPredicate(ConditionDto conditionDto) {
+    public Predicate<Deployment> createMrcaOrVeaPredicate(ConditionDto conditionDto, CaseTrace caseTrace) {
         if (conditionDto.get_incidentDateRangeDto().get_startDate().isAfter(LocalDate.of(2004, 06, 30))) {
-            return createMrcaPredicate(conditionDto.get_conditionName());
+            return createMrcaPredicate(conditionDto.get_conditionName(), caseTrace);
         } else {
             return createVeaPredicate(conditionDto.get_conditionName());
         }
     }
 
-
     @Override
-    public Predicate<Deployment> createMrcaPredicate(String conditionName) {
+    public Predicate<Deployment> createMrcaPredicate(String conditionName, CaseTrace caseTrace) {
         if (namesOfMentalConditionsWhereWarlikeServiceIsRequired.contains(conditionName.toLowerCase())) {
-            return Operations.getMRCAIsWarlikePredicate(serviceDeterminationPair);
+            return Operations.getMRCAIsWarlikePredicate(serviceDeterminationPair, caseTrace);
         } else {
-            return Operations.getMRCAIsOperationalPredicate(serviceDeterminationPair);
+            return Operations.getMRCAIsOperationalPredicate(serviceDeterminationPair, caseTrace);
         }
     }
 
