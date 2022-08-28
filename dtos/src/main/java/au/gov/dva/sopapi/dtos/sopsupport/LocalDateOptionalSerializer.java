@@ -14,7 +14,6 @@ public class LocalDateOptionalSerializer extends JsonSerializer<Optional<LocalDa
 {
     @Override
     public void serialize(Optional<LocalDate> value, JsonGenerator gen, SerializerProvider serializerProvider) throws IOException, JsonProcessingException {
-        if (value.isPresent())
         {
             gen.writeString(value.get().format(DateTimeFormatter.ISO_LOCAL_DATE));
         }

@@ -64,7 +64,7 @@ import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
 import static spark.Spark.post;
 
-public class Routes {
+public class Routes  {
 
     private final static String MIME_JSON = "application/json";
     private final static String MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
