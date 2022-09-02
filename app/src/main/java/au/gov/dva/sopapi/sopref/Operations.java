@@ -101,11 +101,7 @@ public class Operations {
     }
 
     private static Boolean deploymentMatchesOperation(Operation operation, Deployment deployment) {
-
-        ImmutableSet<String> specialWhitelist = ImmutableSet.of("enduring freedom");
-
-        Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())
-                || specialWhitelist.stream().anyMatch(wl -> operation.getName().toLowerCase().contains(wl));
+        Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase());
         Boolean datesAreConsistent = datesAreConsistent(deployment, operation);
         return (deploymentNameToLowerContainsOpName && datesAreConsistent);
     }

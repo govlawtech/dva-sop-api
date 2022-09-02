@@ -36,6 +36,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 import com.google.common.collect.ImmutableList;
@@ -151,7 +152,7 @@ public class Routes {
 
         get(SharedConstants.Routes.GET_CONDITIONS, (req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -179,7 +180,7 @@ public class Routes {
 
         get(SharedConstants.Routes.GET_VEA_ACTIVITIES, (req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -222,7 +223,7 @@ public class Routes {
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
 
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -236,7 +237,7 @@ public class Routes {
             List<String> errors = getSopParamsValidationErrors(icdCodeValue, icdCodeVersion, standardOfProof, conditionName, incidentType);
 
             if (errors.size() > 0) {
-                setResponseHeaders(res, 400, MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_JSON);
                 String msg =  "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
                 ErrorResponseBody errorResponseBody = new ErrorResponseBody(null,"SOP-API-BAD-REQUEST",msg,null);
                 return errorResponseBody.toJson();
@@ -250,10 +251,9 @@ public class Routes {
             }
 
             if (matchingSops.isEmpty()) {
-                setResponseHeaders(res, 404, MIME_TEXT);
-                String msg = buildErrorMessageShowingRecognisedIcdCodesAndConditionNames(cache.get_allSops());
-                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null,"SOP-API-SOP-CONDITION-NOT-FOUND", msg,null);
-                return errorResponseBody.toJson();
+                setResponseHeaders(res, 200, MIME_JSON);
+                // return empty array  - MyService devs especially wanted this
+                return "{\"applicableFactors\": []}";
             } else {
 
                 setResponseHeaders(res, 200, MIME_JSON);
@@ -277,7 +277,7 @@ public class Routes {
             try {
                 sopSupportRequestDto = SopSupportRequestDto.fromJsonString(clenseJson(req.body()));
             } catch (DvaSopApiDtoRuntimeException e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_JSON);
                 ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", e.getMessage(),null);
 
                 return errorResponseBody.toJson();
@@ -285,7 +285,7 @@ public class Routes {
 
             ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
             if (!semanticErrors.isEmpty()) {
-                setResponseHeaders(res, 400, MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_JSON);
 
 
                 String detailMessage = String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(), semanticErrors));
@@ -297,7 +297,7 @@ public class Routes {
             if (sopSupportRequestDto.get_conditionDto().get_conditionName() == null) {
                 Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(), sopSupportRequestDto.get_conditionDto().get_icdCodeValue(), cache.get_allSopPairs());
                 if (!conditionNameFromICDCode.isPresent()) {
-                    setResponseHeaders(res, 400, MIME_TEXT);
+                    setResponseHeaders(res, 400, MIME_JSON);
                     String detailMessage = String.format("The given ICD code and version does not map to a single SoP.");
                     ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", detailMessage,null);
                     return errorResponseBody.toJson();
@@ -323,7 +323,7 @@ public class Routes {
             List<String> conditionNames = cache.get_conditionsList().stream().map(c -> c.get_conditionName()).sorted().collect(Collectors.toList());
             String conditionNamesStringList = String.join(scala.util.Properties.lineSeparator(), conditionNames);
             if (conditionName == null) {
-                setResponseHeaders(res, 400, MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_JSON);
                 StringBuilder sb = new StringBuilder();
                 sb.append("Missing: query parameter 'conditionName' with one of the following values:");
                 sb.append(scala.util.Properties.lineSeparator());
@@ -438,7 +438,7 @@ public class Routes {
         post(path, ((req, res) ->
         {
             if (validateHeaders() && !responseTypeAcceptable(req, responseMimeType)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(responseMimeType);
             }
 
@@ -447,23 +447,23 @@ public class Routes {
 
             } catch (ServiceHistoryCorruptException e) {
                 logger.error("Service history corrupt.", e);
-                setResponseHeaders(res, 400, MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_JSON);
                 ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST","Service history corrupt: " + e.getMessage(), null);
                 return errorResponseBody.toJson();
             } catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
+                setResponseHeaders(res, 500, MIME_JSON);
                 ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-RULE-LOGIC-ERROR",null,null);
                 return errorResponseBody.toJson();
             } catch (Exception e) {
                 ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-ERROR",null,null);
                 logger.error("Unknown exception", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
+                setResponseHeaders(res, 500, MIME_JSON);
                 return errorResponseBody.toJson();
             } catch (Error e) {
                 logger.error("Unknown error", e);
                 ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-ERROR",null,null);
-                setResponseHeaders(res, 500, MIME_TEXT);
+                setResponseHeaders(res, 500, MIME_JSON);
                 return errorResponseBody.toJson();
             }
         }));
@@ -546,7 +546,7 @@ public class Routes {
         response.status(statusCode);
 
         String responseType = mimeType;
-        if (responseType.equals(MIME_JSON) || responseType.equals(MIME_TEXT)) {
+        if (responseType.equals(MIME_JSON) || responseType.equals(MIME_JSON)) {
             responseType += "; charset=utf-8";
         }
         response.type(responseType);
