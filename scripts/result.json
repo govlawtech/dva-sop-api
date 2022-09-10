@@ -118,8 +118,8 @@
       } ]
     } ],
     "reasonings" : {
-      "STANDARD_OF_PROOF" : [ "Required number of days of operational service for Reasonable Hypothesis: 21.", "Actual number of days of operational service: 150." ],
-      "MEETING_FACTORS" : [ "Required days of continuous full time service: 120", "Actual days of continuous full time service: 151" ]
+      "MEETING_FACTORS" : [ "Required days of continuous full time service: 120", "Actual days of continuous full time service: 151" ],
+      "STANDARD_OF_PROOF" : [ "Required number of days of operational service for Reasonable Hypothesis: 21.", "Actual number of days of operational service: 150." ]
     },
     "logTrace" : "The start date for the test period for RH: 2022-03-18\r\nThe end date for the test period for RH: 2022-08-15\r\nRequired number of days of operational service for Reasonable Hypothesis: 21.\r\nActual number of days of operational service: 150.\r\nThe RH SoP is applicable as the actual number of days of operational service in the test period is greater than or equal to the required number.\r\nApplicable SoP: Statement of Principles concerning rotator cuff syndrome No. 100 of 2014.\r\nRequired days of continuous full time service: 120\r\nThe start date for the test period for counting days of CFTS: 2022-03-18\r\nThe end date for the test period for counting days of CFTS: 2022-08-15\r\nActual days of continuous full time service: 151\r\nActual number of days of continuous full time service is at least the required days.  According to configuration, the applicable factors are '6(b), 6(o)'.\r\n",
     "relevantOperations" : [ {
