@@ -61,9 +61,9 @@ object Facade {
     root
   }
 
-  private def getMatchingActivitesForSingleDeployment(deployment: Deployment, veaRepo: VeaOperationalServiceRepository): List[MilitaryActivity]  = {
+  private def getMatchingActivitesForSingleDeployment(validateDates: Boolean, deployment: Deployment, veaRepo: VeaOperationalServiceRepository): List[MilitaryActivity]  = {
     // name matches and dates overlap
-    var testResults = veaRepo.getOperationalTestResults(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate().toScalaOption())
+    var testResults = veaRepo.getOperationalTestResults(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate().toScalaOption(),validateDates)
     def determinationToTypeToMilitaryOperationType (veaDetermination: VeaDetermination) = {
         veaDetermination match {
           case _ : WarlikeDetermination => MilitaryOperationType.Warlike
@@ -92,9 +92,9 @@ object Facade {
 
 
 
-  def getMatchingActivities(deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository)  = {
+  def getMatchingActivities(validateDates: Boolean, deployments: util.List[Deployment], veaRepo: VeaOperationalServiceRepository)  = {
 
-    val deploymentToMilitaryActivityLists = deployments.asScala.map(d => (d,getMatchingActivitesForSingleDeployment(d,veaRepo)))
+    val deploymentToMilitaryActivityLists = deployments.asScala.map(d => (d,getMatchingActivitesForSingleDeployment(validateDates, d,veaRepo)))
     val deploymentToMilitaryActivity = deploymentToMilitaryActivityLists.flatMap( t =>  t._2.map(a => (t._1,a)))
     val groupedByMilitaryActivity = deploymentToMilitaryActivity.groupBy(t => t._2)
     val justifiedMilitaryActivities = groupedByMilitaryActivity.map(t => new JustifiedMilitaryActivity(t._1,t._2.map(i => i._1).asJava) )
@@ -102,14 +102,13 @@ object Facade {
   }
 
 
-  // just checks overlap with known operations - does not validate dates are consistent
-  def isOperational(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {
-    veaRepo.getOperationalTestResults(identifierFromServiceHistory,startDate,endDate.toScalaOption()).isOperational
+  def isOperational(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], validateDates: Boolean, veaRepo : VeaOperationalServiceRepository): Boolean = {
+    veaRepo.getOperationalTestResults(identifierFromServiceHistory,startDate,endDate.toScalaOption(), validateDates).isOperational
   }
 
 
-  def isWarlike(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], veaRepo : VeaOperationalServiceRepository): Boolean = {
-    veaRepo.isWarlike(identifierFromServiceHistory,startDate,endDate.toScalaOption())
+  def isWarlike(identifierFromServiceHistory : String, startDate : LocalDate, endDate : Optional[LocalDate], validateDates: Boolean, veaRepo : VeaOperationalServiceRepository): Boolean = {
+    veaRepo.getOperationalTestResults(identifierFromServiceHistory,startDate,endDate.toScalaOption(), validateDates).isWarlike
   }
 
   def deserialiseRepository(xmlBytes: Array[Byte]) : VeaOperationalServiceRepository = {
@@ -123,9 +122,6 @@ object Facade {
 
       override def getDeterminations: ImmutableSet[VeaDetermination] = ImmutableSet.copyOf(determinations.asJava.iterator())
     }
-
-
-
   }
 
 

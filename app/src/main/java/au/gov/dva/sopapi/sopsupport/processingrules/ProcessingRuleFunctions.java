@@ -65,7 +65,7 @@ public class ProcessingRuleFunctions {
 
         if (applicableAct == Act.Vea)
         {
-                Iterable<JustifiedMilitaryActivity> matchingActivities = Facade.getMatchingActivities(operationDeployments, veaOperationalServiceRepository);
+                Iterable<JustifiedMilitaryActivity> matchingActivities = Facade.getMatchingActivities(true,operationDeployments, veaOperationalServiceRepository);
                 caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingActivities));
         }
 

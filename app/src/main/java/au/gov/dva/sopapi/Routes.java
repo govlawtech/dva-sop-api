@@ -27,16 +27,15 @@ import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
 import au.gov.dva.sopapi.sopref.dependencies.DotToImage;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
-import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
+import au.gov.dva.sopapi.sopsupport.processingrules.IsOperationalPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
-import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
+import au.gov.dva.sopapi.sopsupport.processingrules.PredicateFactory;
 import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 import com.google.common.collect.ImmutableList;
@@ -307,7 +306,7 @@ public class Routes {
             }
 
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
-            IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
+            IsOperationalPredicateFactory rhPredicateFactory = new PredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
             RulesResult rulesResult = runRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, rhPredicateFactory, cache.get_veaOperationalServiceRepository(), cache.get_allMrcaServiceDeterminations());
@@ -470,12 +469,14 @@ public class Routes {
     }
 
 
-    public static RulesResult runRules(RuleConfigurationRepository repository, SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations) {
+    public static RulesResult runRules(RuleConfigurationRepository repository, SopSupportRequestDto sopSupportRequestDto, IsOperationalPredicateFactory rhPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations) {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
+
+        // todo: pass in predicate factory instead predicate
         RulesResult rulesResult = RulesResult.applyRules(repository, sopSupportRequestDto, cache.get_allSopPairs(),
-                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto(),caseTrace), veaOperationalServiceRepository, serviceDeterminations, caseTrace);
+                rhPredicateFactory, veaOperationalServiceRepository, serviceDeterminations, caseTrace);
 
 
         assert caseTrace.isComplete() : "Case trace not complete";

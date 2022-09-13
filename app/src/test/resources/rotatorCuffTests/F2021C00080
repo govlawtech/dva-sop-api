@@ -1,0 +1,171 @@
+{
+  "schemaVersion" : 2,
+  "registerId" : "F2021C00080",
+  "instrumentNumber" : "100/2014",
+  "citation" : "Statement of Principles concerning rotator cuff syndrome No. 100 of 2014",
+  "conditionName" : "rotator cuff syndrome",
+  "effectiveFrom" : "2014-11-17",
+  "standardOfProof" : "Reasonable Hypothesis",
+  "icdCodes" : [ {
+    "version" : "ICD-10-AM",
+    "code" : "M75.1"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M75.2"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M75.3"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M75.4"
+  }, {
+    "version" : "ICD-10-AM",
+    "code" : "M75.5"
+  } ],
+  "onsetFactors" : [ {
+    "paragraph" : "6(a)",
+    "text" : "having an injury to the affected shoulder within the three months\r\nbefore the clinical onset of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "an injury to the affected shoulder",
+      "definition" : "means an injury to the shoulder region\nthat causes the development, within the 24 hours of the injury being sustained,\nof pain, tenderness, and altered mobility or range of movement of the shoulder\njoint. In the case of sustained unconsciousness or the masking of pain by\nanalgesic medication, these symptoms and signs must appear on return to\nconsciousness or the withdrawal of the analgesic medication. These\nsymptoms and signs must last for a continuous period of at least seven days\nfollowing their onset, save for where medical intervention for the injury to that\nshoulder has occurred and that medical intervention involves either:\n(a) immobilisation of the shoulder by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that shoulder; or\n(c) surgery to that shoulder"
+    } ]
+  }, {
+    "paragraph" : "6(b)",
+    "text" : "performing any combination of:\r\n(i) repetitive or sustained activities of the affected shoulder when\r\nthe shoulder on the affected side is abducted or flexed by at\r\nleast 60 degrees; or\r\n(ii) forceful activities with the affected upper limb;\r\nfor at least 80 hours within a period of 120 consecutive days before the\r\nclinical onset of rotator cuff syndrome, and where the repetitive or\r\nsustained or forceful activities have not ceased more than 30 days\r\nbefore the clinical onset of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "forceful activities",
+      "definition" : "means tasks requiring the generation of force by the hand\nor arm:\n(a) equivalent to lifting or carrying loads of more than three kilograms; or\n(b) involving lifting or carrying an object greater than one kilogram in\nexcess of ten times per hour;\nNote: Use of crutches or other walking aids and hand propulsion of wheelchairs are included among the\ntypes of forceful activities that require generation of force by the hand or arm"
+    } ]
+  }, {
+    "paragraph" : "6(c)",
+    "text" : "performing repetitive or sustained activities of the affected shoulder\r\nwhen the shoulder on the affected side is abducted or flexed by at least\r\n60 degrees for at least 4 000 hours within the 15 years before the\r\nclinical onset of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(d)",
+    "text" : "lifting or carrying loads of at least 20 kilograms for at least 1 000 hours\r\nwithin the 15 years before the clinical onset of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(e)",
+    "text" : "using a hand-held, vibrating, percussive, industrial tool with the\r\naffected upper limb, for at least 2 000 hours within the 15 years before\r\nthe clinical onset of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(f)",
+    "text" : "having dialysis-related amyloidosis before the clinical onset of rotator\r\ncuff syndrome",
+    "definedTerms" : [ {
+      "term" : "dialysis-related amyloidosis",
+      "definition" : "means beta2-microglobulin amyloidosis\nsecondary to long-term haemodialysis or continuous ambulatory peritoneal\ndialysis"
+    } ]
+  }, {
+    "paragraph" : "6(g)",
+    "text" : "regularly using the upper limbs for weight-bearing for a continuous\r\nperiod of at least the one year before the clinical onset of rotator cuff\r\nsyndrome; or\r\nNote: Examples of situations in which the upper limbs may regularly be used for weight-\r\nbearing include transfers from a wheelchair to a chair or bed, and the use of crutches or other\r\nwalking aids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(h)",
+    "text" : "having anatomical narrowing of the subacromial space on the affected\r\nside at the time of the clinical onset of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "anatomical narrowing of the subacromial space",
+      "definition" : "means an acquired\nreduction in the space between the acromion and the upper end of the\nhumerus. Causes would include:\n(a) malunited fractures of the acromion, clavicle or greater tuberosity;\n(b) osteophytes or tumours projecting into the subacromial space; or\n(c) sutures, pins or wires from previous surgery"
+    } ]
+  }, {
+    "paragraph" : "6(i)",
+    "text" : "having excess laxity of the shoulder joint on the affected side for a\r\nperiod of at least the one year before the clinical onset of rotator cuff\r\nsyndrome",
+    "definedTerms" : [ {
+      "term" : "excess laxity of the shoulder joint",
+      "definition" : "means acquired excess instability of the\nglenohumeral joint as demonstrated by clinical testing or imaging, following\nshoulder dislocations or tears involving the glenoid labrum or glenohumeral\nligaments"
+    } ]
+  }, {
+    "paragraph" : "6(j)",
+    "text" : "having an infection of the subacromial bursa on the affected side at the\r\ntime of the clinical onset of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(k)",
+    "text" : "having rheumatoid arthritis involving the shoulder joint or associated\r\nbursae on the affected side before the clinical onset of rotator cuff\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(l)",
+    "text" : "having gout involving the affected shoulder at the time of the clinical\r\nonset of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(m)",
+    "text" : "having acquired scapular dyskinesis of the affected side at the time of\r\nthe clinical onset of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "acquired scapular dyskinesis",
+      "definition" : "means abnormal position or motion of the\nscapula, and may be evidenced clinically by winging of the scapula. Scapular\ndyskinesis occurs with injuries to the long thoracic and spinal accessory nerves\nand space occupying lesions in the scapulothoracic area"
+    } ]
+  } ],
+  "aggravationFactors" : [ {
+    "paragraph" : "6(n)",
+    "text" : "having an injury to the affected shoulder within the three months\r\nbefore the clinical worsening of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "an injury to the affected shoulder",
+      "definition" : "means an injury to the shoulder region\nthat causes the development, within the 24 hours of the injury being sustained,\nof pain, tenderness, and altered mobility or range of movement of the shoulder\njoint. In the case of sustained unconsciousness or the masking of pain by\nanalgesic medication, these symptoms and signs must appear on return to\nconsciousness or the withdrawal of the analgesic medication. These\nsymptoms and signs must last for a continuous period of at least seven days\nfollowing their onset, save for where medical intervention for the injury to that\nshoulder has occurred and that medical intervention involves either:\n(a) immobilisation of the shoulder by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that shoulder; or\n(c) surgery to that shoulder"
+    } ]
+  }, {
+    "paragraph" : "6(o)",
+    "text" : "performing any combination of:\r\n(i) repetitive or sustained activities of the affected shoulder when\r\nthe shoulder on the affected side is abducted or flexed by at\r\nleast 60 degrees; or\r\n(ii) forceful activities with the affected upper limb;\r\nfor at least 80 hours within a period of 120 consecutive days before the\r\nclinical worsening of rotator cuff syndrome, and where the repetitive or\r\nsustained or forceful activities have not ceased more than 30 days\r\nbefore the clinical worsening of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "forceful activities",
+      "definition" : "means tasks requiring the generation of force by the hand\nor arm:\n(a) equivalent to lifting or carrying loads of more than three kilograms; or\n(b) involving lifting or carrying an object greater than one kilogram in\nexcess of ten times per hour;\nNote: Use of crutches or other walking aids and hand propulsion of wheelchairs are included among the\ntypes of forceful activities that require generation of force by the hand or arm"
+    } ]
+  }, {
+    "paragraph" : "6(p)",
+    "text" : "performing repetitive or sustained activities of the affected shoulder\r\nwhen the shoulder on the affected side is abducted or flexed by at least\r\n60 degrees for at least 4 000 hours within the 15 years before the\r\nclinical worsening of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(q)",
+    "text" : "lifting or carrying loads of at least 20 kilograms for at least 1 000 hours\r\nwithin the 15 years before the clinical worsening of rotator cuff\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(r)",
+    "text" : "using a hand-held, vibrating, percussive, industrial tool with the\r\naffected upper limb, for at least 2 000 hours within the 15 years before\r\nthe clinical worsening of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(s)",
+    "text" : "having dialysis-related amyloidosis before the clinical worsening of\r\nrotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "dialysis-related amyloidosis",
+      "definition" : "means beta2-microglobulin amyloidosis\nsecondary to long-term haemodialysis or continuous ambulatory peritoneal\ndialysis"
+    } ]
+  }, {
+    "paragraph" : "6(t)",
+    "text" : "regularly using the upper limbs for weight-bearing for a continuous\r\nperiod of at least the one year before the clinical worsening of rotator\r\ncuff syndrome; or\r\nNote: Examples of situations in which the upper limbs may regularly be used for weight-\r\nbearing include transfers from a wheelchair to a chair or bed, and the use of crutches or other\r\nwalking aids",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(u)",
+    "text" : "having anatomical narrowing of the subacromial space on the affected\r\nside at the time of the clinical worsening of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "anatomical narrowing of the subacromial space",
+      "definition" : "means an acquired\nreduction in the space between the acromion and the upper end of the\nhumerus. Causes would include:\n(a) malunited fractures of the acromion, clavicle or greater tuberosity;\n(b) osteophytes or tumours projecting into the subacromial space; or\n(c) sutures, pins or wires from previous surgery"
+    } ]
+  }, {
+    "paragraph" : "6(v)",
+    "text" : "having excess laxity of the shoulder joint on the affected side for a\r\nperiod of at least the one year before the clinical worsening of rotator\r\ncuff syndrome",
+    "definedTerms" : [ {
+      "term" : "excess laxity of the shoulder joint",
+      "definition" : "means acquired excess instability of the\nglenohumeral joint as demonstrated by clinical testing or imaging, following\nshoulder dislocations or tears involving the glenoid labrum or glenohumeral\nligaments"
+    } ]
+  }, {
+    "paragraph" : "6(w)",
+    "text" : "having an infection of the subacromial bursa on the affected side at the\r\ntime of the clinical worsening of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(x)",
+    "text" : "having rheumatoid arthritis involving the shoulder joint or associated\r\nbursae on the affected side before the clinical worsening of rotator cuff\r\nsyndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(y)",
+    "text" : "having gout involving the affected shoulder at the time of the clinical\r\nworsening of rotator cuff syndrome",
+    "definedTerms" : [ ]
+  }, {
+    "paragraph" : "6(z)",
+    "text" : "having acquired scapular dyskinesis of the affected side at the time of\r\nthe clinical worsening of rotator cuff syndrome",
+    "definedTerms" : [ {
+      "term" : "acquired scapular dyskinesis",
+      "definition" : "means abnormal position or motion of the\nscapula, and may be evidenced clinically by winging of the scapula. Scapular\ndyskinesis occurs with injuries to the long thoracic and spinal accessory nerves\nand space occupying lesions in the scapulothoracic area"
+    } ]
+  }, {
+    "paragraph" : "6(aa)",
+    "text" : "inability to obtain appropriate clinical management for rotator cuff\r\nsyndrome",
+    "definedTerms" : [ ]
+  } ]
+}

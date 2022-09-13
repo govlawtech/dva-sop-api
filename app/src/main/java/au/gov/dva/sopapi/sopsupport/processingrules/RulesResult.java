@@ -6,7 +6,6 @@ import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
-import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
@@ -122,7 +121,7 @@ public class RulesResult {
         return rulesResult;
     }
 
-    private static RulesResult applyRulesForWearAndTearCondition(ConditionConfiguration conditionConfiguration, SoPPair soPPair, SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations)
+    private static RulesResult applyRulesForWearAndTearCondition(ConditionConfiguration conditionConfiguration, SoPPair soPPair, SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, Predicate<Deployment> isOperational , VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations)
     {
         CaseTrace localCt = new SopSupportCaseTrace();
         ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.getApplicableRuleConfigurations(soPPair.getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,localCt);
@@ -175,7 +174,7 @@ public class RulesResult {
     }
 
 
-    public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace) {
+    public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, IsOperationalPredicateFactory isOperationalPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace) {
 
         Optional<SoPPair> soPPair = ConditionFactory.getSopPairForConditionName(sopPairs,sopSupportRequestDto.get_conditionDto().get_conditionName());
 
@@ -210,9 +209,10 @@ public class RulesResult {
             return RulesResult.createEmpty(caseTrace);
         }
 
+        Predicate<Deployment> nonDateValidatingIsOperationalPredicate = isOperationalPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto(),false,caseTrace);
         if (conditionType == ConditionType.Acute)
         {
-            RulesResult rulesResult = applyRulesForAcuteCondition(sopSupportRequestDto, serviceHistory, soPPair.get(), isOperational, veaOperationalServiceRepository, serviceDeterminations,  caseTrace);
+            RulesResult rulesResult = applyRulesForAcuteCondition(sopSupportRequestDto, serviceHistory, soPPair.get(), nonDateValidatingIsOperationalPredicate , veaOperationalServiceRepository, serviceDeterminations,  caseTrace);
             return rulesResult;
         }
         else // (conditionType == ConditionType.WearAndTear)
@@ -220,7 +220,7 @@ public class RulesResult {
             assert conditionType == ConditionType.WearAndTear;
             Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
             assert conditionConfiguration.isPresent() : "Check whether wear and tear configuration present before getting.";
-            RulesResult rulesResult = applyRulesForWearAndTearCondition(conditionConfiguration.get(),soPPair.get(), sopSupportRequestDto,serviceHistory,isOperational, veaOperationalServiceRepository, serviceDeterminations);
+            RulesResult rulesResult = applyRulesForWearAndTearCondition(conditionConfiguration.get(),soPPair.get(), sopSupportRequestDto,serviceHistory,nonDateValidatingIsOperationalPredicate, veaOperationalServiceRepository, serviceDeterminations);
             return rulesResult;
         }
 

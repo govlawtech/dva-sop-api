@@ -32,6 +32,8 @@ object VeaOperationalServiceQueries {
     peacekeepingActivities.filter(a => DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new OpenEndedInterval(startDate,endDate),new OpenEndedInterval(a.startDate,a.endDate)))
   }
 
+
+
   def getVeaOpsAndActivitiesConsistentWithDates(startOfTestRange: LocalDate, endOfTestRange: Option[LocalDate], allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaDeterminationOccurance]] = {
     allDeterminations
       .map(d => d -> getVeaOccurancesInInterval(startOfTestRange, endOfTestRange, d))
@@ -47,14 +49,6 @@ object VeaOperationalServiceQueries {
 
 
   def isWithinInterval(startTestDate: LocalDate, endTestDate: Option[LocalDate], potentiallyOpenEndedInterval: HasDates): Boolean = {
-
     return DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new OpenEndedInterval(startTestDate,endTestDate),new OpenEndedInterval(potentiallyOpenEndedInterval.startDate,potentiallyOpenEndedInterval.endDate))
-    // open ended
-//    if (potentiallyOpenEndedInterval.endDate.isEmpty) {
-//      !endTestDate.isBefore(potentiallyOpenEndedInterval.startDate)
-//    }
-//    else { // closed ended
-//      !startTestDate.isAfter(potentiallyOpenEndedInterval.endDate.get) && !endTestDate.isBefore(potentiallyOpenEndedInterval.startDate)
-//    }
   }
 }
