@@ -306,6 +306,7 @@ public class Routes {
             }
 
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
+
             IsOperationalPredicateFactory rhPredicateFactory = new PredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
@@ -473,11 +474,8 @@ public class Routes {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
-
-        // todo: pass in predicate factory instead predicate
         RulesResult rulesResult = RulesResult.applyRules(repository, sopSupportRequestDto, cache.get_allSopPairs(),
                 rhPredicateFactory, veaOperationalServiceRepository, serviceDeterminations, caseTrace);
-
 
         assert caseTrace.isComplete() : "Case trace not complete";
         return rulesResult;

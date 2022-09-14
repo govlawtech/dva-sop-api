@@ -7,7 +7,7 @@ public class AppSettings {
 
 
     private static final String envVarName = "DEP_ENV";
-    private static final String adsBaseUrlEnvVarName = "ADS_URL";
+    private static final String deploymentDatesVerificationFeatureToggle = "VALIDATE_DEPLOYMENT_DATES";
 
     public static Boolean isEnvironmentSet(){
         return (System.getProperty(envVarName) != null || System.getenv(envVarName) != null);
@@ -31,10 +31,6 @@ public class AppSettings {
         }
     }
 
-    public static String getActDeterminationServiceBaseUrl()
-    {
-        return getPropertyValue(adsBaseUrlEnvVarName);
-    }
 
     public static String getCacheRefreshKey()
     {
@@ -50,6 +46,10 @@ public class AppSettings {
 
     }
 
+    public static Boolean shouldValidateDeploymentDatesForStp() {
+        String value = getPropertyValue(deploymentDatesVerificationFeatureToggle);
+        return value.toLowerCase().equals("true");
+    }
 
     private static Environment convertEnvironmentStringEnum(String environmentStringValue)
     {
@@ -78,7 +78,6 @@ public class AppSettings {
             }
             return value;
         }
-
     }
 
     public static String getBaseUrl() {

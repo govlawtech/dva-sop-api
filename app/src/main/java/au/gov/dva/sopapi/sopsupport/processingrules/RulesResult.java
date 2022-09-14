@@ -1,5 +1,6 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
+import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
@@ -210,6 +211,7 @@ public class RulesResult {
         }
 
         Predicate<Deployment> nonDateValidatingIsOperationalPredicate = isOperationalPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto(),false,caseTrace);
+        caseTrace.addLoggingTrace("Note: deployment dates have not been verified for consistency with matching operations for the purpose of determining a straight-thorough-processing recommendation.");
         if (conditionType == ConditionType.Acute)
         {
             RulesResult rulesResult = applyRulesForAcuteCondition(sopSupportRequestDto, serviceHistory, soPPair.get(), nonDateValidatingIsOperationalPredicate , veaOperationalServiceRepository, serviceDeterminations,  caseTrace);
