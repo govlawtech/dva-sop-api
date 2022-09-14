@@ -307,10 +307,10 @@ public class Routes {
 
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
 
-            IsOperationalPredicateFactory rhPredicateFactory = new PredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
+            IsOperationalPredicateFactory isOperationalPredicateFactory = new PredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
-            RulesResult rulesResult = runRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, rhPredicateFactory, cache.get_veaOperationalServiceRepository(), cache.get_allMrcaServiceDeterminations());
+            RulesResult rulesResult = runRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, isOperationalPredicateFactory, cache.get_veaOperationalServiceRepository(), cache.get_allMrcaServiceDeterminations());
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
@@ -470,12 +470,12 @@ public class Routes {
     }
 
 
-    public static RulesResult runRules(RuleConfigurationRepository repository, SopSupportRequestDto sopSupportRequestDto, IsOperationalPredicateFactory rhPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations) {
+    public static RulesResult runRules(RuleConfigurationRepository repository, SopSupportRequestDto sopSupportRequestDto, IsOperationalPredicateFactory isOperationalPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations) {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
         RulesResult rulesResult = RulesResult.applyRules(repository, sopSupportRequestDto, cache.get_allSopPairs(),
-                rhPredicateFactory, veaOperationalServiceRepository, serviceDeterminations, caseTrace);
+                isOperationalPredicateFactory, veaOperationalServiceRepository, serviceDeterminations, caseTrace);
 
         assert caseTrace.isComplete() : "Case trace not complete";
         return rulesResult;

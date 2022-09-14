@@ -2,6 +2,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
+import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
@@ -29,11 +30,11 @@ public class PredicateFactory implements IsOperationalPredicateFactory {
     }
 
     @Override
-    public Predicate<Deployment> createMrcaOrVeaPredicate(ConditionDto conditionDto, Boolean validateDates, CaseTrace caseTrace) {
-        if (conditionDto.get_incidentDateRangeDto().get_startDate().isAfter(LocalDate.of(2004, 06, 30))) {
-            return createMrcaPredicate(conditionDto.get_conditionName(), validateDates, caseTrace);
+    public Predicate<Deployment> createMrcaOrVeaPredicate(Condition condition, Boolean validateDates, CaseTrace caseTrace) {
+        if (condition.getStartDate().isAfter(LocalDate.of(2004, 06, 30))) {
+            return createMrcaPredicate(condition.getSopPair().getConditionName(), validateDates, caseTrace);
         } else {
-            return createVeaPredicate(conditionDto.get_conditionName(),validateDates);
+            return createVeaPredicate(condition.getSopPair().getConditionName(),validateDates);
         }
     }
 

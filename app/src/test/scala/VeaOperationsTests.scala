@@ -212,7 +212,7 @@ class VeaOperationsTests extends FunSuite {
   test("Regex mappings work for determinations")
   {
     val moniker = "ISAF"
-    val knownWarlike = testRepo.getOperationalTestResults(moniker,LocalDate.of(2003,8,11),None,false)
+    val knownWarlike = testRepo.getOperationalTestResults(moniker,LocalDate.of(2003,8,11),None,true)
     assert(knownWarlike.matchingDeterminations.head._1.registerId == "F2014L00151")
     assert(knownWarlike.isOperational)
   }
