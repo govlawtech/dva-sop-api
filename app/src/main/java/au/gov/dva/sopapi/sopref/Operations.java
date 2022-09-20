@@ -84,22 +84,6 @@ public class Operations {
     }
 
 
-    private static boolean operationWithConsistentDatesExist(Deployment deployment, ImmutableList<Operation> operations) {
-        boolean matchFound = operations.stream().anyMatch(operation -> datesAreConsistent(deployment, operation));
-        if (!matchFound) {
-            StringBuilder warning = new StringBuilder();
-            warning.append(String.format("Deployment dates not consistent with matching operations.%n"));
-            warning.append(String.format("DEPLOYMENT:%n"));
-            warning.append(String.format("%s%n", deployment.toString()));
-            warning.append(String.format("OPERATIONS:%n"));
-            operations.forEach(operation -> warning.append(String.format("%s%n", operation.toString())));
-            logger.warn(warning.toString());
-
-            return false;
-        }
-        return true;
-    }
-
     private static Boolean deploymentMatchesOperation(Operation operation, Deployment deployment) {
         Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase());
         Boolean datesAreConsistent = datesAreConsistent(deployment, operation);
@@ -187,8 +171,7 @@ public class Operations {
                             .filter(o -> DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new HasDateRangeImpl(deployment.getStartDate(), deployment.getEndDate()), new HasDateRangeImpl(o.getStartDate(), o.getEndDate())))
                             .collect(Collectors.toList());
 
-
-            if (!operationsWithMatchingName.isEmpty() && !operationsWithMatchingNameAndDates.isEmpty()) {
+            if (!operationsWithMatchingName.isEmpty() && operationsWithMatchingNameAndDates.isEmpty()) {
                 StringBuilder logMessage = new StringBuilder();
                 logMessage.append("The dates of the deployment '" + deployment.getOperationName() + "' are not consistent with the dates of any matching known operations.");
                 logMessage.append("The start date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getStartDate()) + ".");
