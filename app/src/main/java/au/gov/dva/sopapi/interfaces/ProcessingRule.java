@@ -1,26 +1,12 @@
 package au.gov.dva.sopapi.interfaces;
 
-import au.gov.dva.sopapi.DateTimeUtils;
-import au.gov.dva.sopapi.interfaces.model.MilitaryActivity;
 import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
-import au.gov.dva.sopapi.dtos.sopsupport.Act;
-import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.model.*;
-import au.gov.dva.sopapi.sopref.Operations;
-import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
-import au.gov.dva.sopapi.sopsupport.processingrules.Interval;
-import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
-import au.gov.dva.sopapi.veaops.Facade;
-import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 
 
 public interface ProcessingRule {

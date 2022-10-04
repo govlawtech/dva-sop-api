@@ -1,12 +1,12 @@
 package au.gov.dva.sopapi.sopsupport.processingrules;
 
+import au.gov.dva.sopapi.AppSettings;
 import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.CaseTraceDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportResponseDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.ApplicableInstrumentDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.FactorWithInferredResultDto;
-import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
@@ -44,10 +44,11 @@ public class RulesResult {
         return new RulesResult(Optional.of(condition),Optional.empty(),ImmutableList.of(), caseTrace, Recommendation.REJECT);
     }
 
-    private static RulesResult applyRulesForCondition(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace)
+    private static RulesResult applyRulesForCondition(Condition condition, ServiceHistory serviceHistory, IsOperationalPredicateFactory isOperationalPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace)
     {
             ProcessingRule processingRule = condition.getProcessingRule();
-            Optional<SoP> applicableSopOpt = processingRule.getApplicableSop(condition,serviceHistory,isOperational,caseTrace);
+            Predicate<Deployment> predicateForRecommendation = isOperationalPredicateFactory.createMrcaOrVeaPredicate(condition,false,caseTrace);
+            Optional<SoP> applicableSopOpt = processingRule.getApplicableSop(condition,serviceHistory,predicateForRecommendation,caseTrace);
             if (!applicableSopOpt.isPresent())
             {
                 caseTrace.addReasoningFor(ReasoningFor.ABORT_PROCESSING, "No applicable SoP.");
@@ -55,8 +56,9 @@ public class RulesResult {
             }
 
             ImmutableList<FactorWithSatisfaction> inferredFactors =  processingRule.getSatisfiedFactors(condition, applicableSopOpt.get(), serviceHistory, caseTrace);
-            Recommendation recommendation = processingRule.inferRecommendation(inferredFactors,serviceHistory,applicableSopOpt.get(),condition,isOperational,caseTrace);
-            ProcessingRuleFunctions.inferRelevantOperations(serviceHistory,condition,veaOperationalServiceRepository,serviceDeterminations,isOperational,caseTrace);
+            Recommendation recommendation = processingRule.inferRecommendation(inferredFactors,serviceHistory,applicableSopOpt.get(),condition,predicateForRecommendation,caseTrace);
+            Predicate<Deployment> predicateForReasons = isOperationalPredicateFactory.createMrcaOrVeaPredicate(condition,true,caseTrace);
+            ProcessingRuleFunctions.inferRelevantOperations(serviceHistory,condition,veaOperationalServiceRepository,serviceDeterminations,predicateForReasons,caseTrace);
 
             return new RulesResult(Optional.of(condition),applicableSopOpt,inferredFactors,caseTrace,recommendation);
     }
@@ -114,15 +116,15 @@ public class RulesResult {
         return results.stream().sorted(new ResultComparator()).collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
     }
 
-    private static RulesResult applyRulesForAcuteCondition(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, SoPPair soPPair, Predicate<Deployment> isOperational, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace)
+    private static RulesResult applyRulesForAcuteCondition(SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, SoPPair soPPair, IsOperationalPredicateFactory isOperationalPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace)
     {
         Optional<Condition> acuteConditionOptional = ConditionFactory.createAcuteCondition(soPPair, sopSupportRequestDto.get_conditionDto());
         assert acuteConditionOptional.isPresent() : "check config before creating";
-        RulesResult rulesResult = applyRulesForCondition(acuteConditionOptional.get(),serviceHistory,isOperational, veaOperationalServiceRepository, serviceDeterminations, caseTrace);
+        RulesResult rulesResult = applyRulesForCondition(acuteConditionOptional.get(),serviceHistory,isOperationalPredicateFactory, veaOperationalServiceRepository, serviceDeterminations, caseTrace);
         return rulesResult;
     }
 
-    private static RulesResult applyRulesForWearAndTearCondition(ConditionConfiguration conditionConfiguration, SoPPair soPPair, SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations)
+    private static RulesResult applyRulesForWearAndTearCondition(ConditionConfiguration conditionConfiguration, SoPPair soPPair, SopSupportRequestDto sopSupportRequestDto, ServiceHistory serviceHistory, IsOperationalPredicateFactory isOperationalPredicateFactory , VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations)
     {
         CaseTrace localCt = new SopSupportCaseTrace();
         ImmutableSet<ApplicableWearAndTearRuleConfiguration> wearAndTearRuleConfigurations = conditionConfiguration.getApplicableRuleConfigurations(soPPair.getConditionName(), sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate(),serviceHistory,localCt);
@@ -141,7 +143,7 @@ public class RulesResult {
 
         ImmutableList<RulesResult> wearAndTearRulesResults =
                 conditions.stream()
-                        .map(c -> applyRulesForCondition(c,serviceHistory,isOperational, veaOperationalServiceRepository, serviceDeterminations,  new SopSupportCaseTrace(c.getSopPair().getConditionName())))
+                        .map(c -> applyRulesForCondition(c,serviceHistory,isOperationalPredicateFactory, veaOperationalServiceRepository, serviceDeterminations,  new SopSupportCaseTrace(c.getSopPair().getConditionName())))
                         .collect(Collectors.collectingAndThen(Collectors.toList(),ImmutableList::copyOf));
         ImmutableList<RulesResult> orderedResults = orderResultsFromMostBeneficialToLeast(wearAndTearRulesResults);
         RulesResult bestResult = orderedResults.get(0);
@@ -175,7 +177,7 @@ public class RulesResult {
     }
 
 
-    public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, Predicate<Deployment> isOperational, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace) {
+    public static RulesResult applyRules(RuleConfigurationRepository ruleConfigurationRepository, SopSupportRequestDto sopSupportRequestDto, ImmutableSet<SoPPair> sopPairs, IsOperationalPredicateFactory isOperationalPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, CaseTrace caseTrace) {
 
         Optional<SoPPair> soPPair = ConditionFactory.getSopPairForConditionName(sopPairs,sopSupportRequestDto.get_conditionDto().get_conditionName());
 
@@ -210,9 +212,10 @@ public class RulesResult {
             return RulesResult.createEmpty(caseTrace);
         }
 
+        caseTrace.addLoggingTrace("Note: deployment dates have not been verified for consistency with matching operations for the purpose of determining a straight-thorough-processing recommendation.");
         if (conditionType == ConditionType.Acute)
         {
-            RulesResult rulesResult = applyRulesForAcuteCondition(sopSupportRequestDto, serviceHistory, soPPair.get(), isOperational, veaOperationalServiceRepository, serviceDeterminations,  caseTrace);
+            RulesResult rulesResult = applyRulesForAcuteCondition(sopSupportRequestDto, serviceHistory, soPPair.get(), isOperationalPredicateFactory  , veaOperationalServiceRepository, serviceDeterminations,  caseTrace);
             return rulesResult;
         }
         else // (conditionType == ConditionType.WearAndTear)
@@ -220,7 +223,7 @@ public class RulesResult {
             assert conditionType == ConditionType.WearAndTear;
             Optional<ConditionConfiguration> conditionConfiguration = ruleConfigurationRepository.getConditionConfigurationFor(soPPair.get().getConditionName());
             assert conditionConfiguration.isPresent() : "Check whether wear and tear configuration present before getting.";
-            RulesResult rulesResult = applyRulesForWearAndTearCondition(conditionConfiguration.get(),soPPair.get(), sopSupportRequestDto,serviceHistory,isOperational, veaOperationalServiceRepository, serviceDeterminations);
+            RulesResult rulesResult = applyRulesForWearAndTearCondition(conditionConfiguration.get(),soPPair.get(), sopSupportRequestDto,serviceHistory,isOperationalPredicateFactory, veaOperationalServiceRepository, serviceDeterminations);
             return rulesResult;
         }
 

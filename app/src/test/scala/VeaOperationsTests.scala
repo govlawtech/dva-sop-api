@@ -179,16 +179,17 @@ class VeaOperationsTests extends FunSuite {
   test("VEA operations correctly classified when operational") {
     // ISAF is warlike, starts on 2003-08-11
     val idOfOpThatIsWarlike = "INTERNATIONAL SECURITY ASSISTANCE FORCE"
-    val resultWhenStartDateIsOnstartDateOfOp = testRepo.getOperationalTestResults(idOfOpThatIsWarlike,LocalDate.of(2003,8,11))
+    val resultWhenStartDateIsOnstartDateOfOp = testRepo.getOperationalTestResults(idOfOpThatIsWarlike,LocalDate.of(2003,8,11), None,true)
     assert(resultWhenStartDateIsOnstartDateOfOp.isOperational)
 
-    val resultWhenStartDateIsBeforeStartDateOfOp = testRepo.getOperationalTestResults(idOfOpThatIsWarlike, LocalDate.of(2003,8,10))
-    assert(resultWhenStartDateIsBeforeStartDateOfOp.isOperational)
+    val resultWhenStartDateIsBeforeStartDateOfOp = testRepo.getOperationalTestResults(idOfOpThatIsWarlike, LocalDate.of(2003,8,10), None, true)
+    assert(!resultWhenStartDateIsBeforeStartDateOfOp.isOperational)
 
-    val resultWhenTestPeriodEndsBeforeStartDateofOp = testRepo.getOperationalTestResults(idOfOpThatIsWarlike, LocalDate.of(2003,8,9),Some(LocalDate.of(2003,8,10)))
+    val resultWhenTestPeriodEndsBeforeStartDateofOp = testRepo.getOperationalTestResults(idOfOpThatIsWarlike, LocalDate.of(2003,8,9),Some(LocalDate.of(2003,8,10)),true)
     assert(!resultWhenTestPeriodEndsBeforeStartDateofOp.isOperational)
 
-    val resultWhenTestPeriodEndsOnOpStartDate = testRepo.getOperationalTestResults(idOfOpThatIsWarlike, LocalDate.of(2003,8,9),Some(LocalDate.of(2003,8,11)))
+    // single day
+    val resultWhenTestPeriodEndsOnOpStartDate = testRepo.getOperationalTestResults(idOfOpThatIsWarlike, LocalDate.of(2003,8,11),Some(LocalDate.of(2003,8,11)),true)
     assert(resultWhenTestPeriodEndsOnOpStartDate.isOperational)
   }
 
@@ -196,13 +197,13 @@ class VeaOperationsTests extends FunSuite {
     val peackeepingID = "UNMISET"
     // UNMISET starts at 2002-05-20, no end date
     // ends day before peacekeeping op starts
-    val activityEndsBeforePeackeepingStarts = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,19)))
+    val activityEndsBeforePeackeepingStarts = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,19)),true)
     assert(!activityEndsBeforePeackeepingStarts.isOperational)
 
-    val activityEndsOnDayPeacekeepingStartsButStartBefore = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,20)))
+    val activityEndsOnDayPeacekeepingStartsButStartBefore = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2000,1,1),Some(LocalDate.of(2002,5,20)),true)
     assert(!activityEndsOnDayPeacekeepingStartsButStartBefore.isOperational)
 
-    val activityContainedWithin = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2002,5,20))
+    val activityContainedWithin = testRepo.getOperationalTestResults(peackeepingID,LocalDate.of(2002,5,20),None,true)
     assert(activityContainedWithin.isOperational)
 
 
@@ -211,14 +212,14 @@ class VeaOperationsTests extends FunSuite {
   test("Regex mappings work for determinations")
   {
     val moniker = "ISAF"
-    val knownWarlike = testRepo.getOperationalTestResults(moniker,LocalDate.of(2003,8,11))
+    val knownWarlike = testRepo.getOperationalTestResults(moniker,LocalDate.of(2003,8,11),None,true)
     assert(knownWarlike.matchingDeterminations.head._1.registerId == "F2014L00151")
     assert(knownWarlike.isOperational)
   }
 
   test("Regex mappings work for peacekeeeping activities")  {
     val moniker = "UNOMOZ"
-    val knownPeacekeeping = testRepo.getOperationalTestResults(moniker,LocalDate.of(1994,10,10))
+    val knownPeacekeeping = testRepo.getOperationalTestResults(moniker,LocalDate.of(1994,10,10),None,false)
     assert(knownPeacekeeping.isOperational)
   }
 
@@ -227,7 +228,7 @@ class VeaOperationsTests extends FunSuite {
   //    <startDate>2001-10-11</startDate>
    //   <endDate>2009-07-30</endDate>
     val moniker = "OPERATION SLIPPER"
-    val result = testRepo.getOperationalTestResults(moniker,LocalDate.of(2009,8,1))
+    val result = testRepo.getOperationalTestResults(moniker,LocalDate.of(2009,8,1),None,true)
     assert(!result.isOperational)
 
   }
@@ -238,7 +239,7 @@ class VeaOperationsTests extends FunSuite {
     //    <startDate>2001-10-11</startDate>
     //   <endDate>2009-07-30</endDate>
     val moniker = "OPERATION SLIPPER"
-    val result = testRepo.getOperationalTestResults(moniker, LocalDate.of(2009, 7, 30))
+    val result = testRepo.getOperationalTestResults(moniker, LocalDate.of(2009, 7, 30),None,true)
     assert(!result.isOperational)
 
   }
@@ -250,7 +251,7 @@ class VeaOperationsTests extends FunSuite {
     //    <startDate>2001-10-11</startDate>
     //   <endDate>2009-07-30</endDate>
     val moniker = "OPERATION SLIPPER"
-    val result = testRepo.getOperationalTestResults(moniker, LocalDate.of(2000, 1, 1),Option(LocalDate.of(2000,1,2)))
+    val result = testRepo.getOperationalTestResults(moniker, LocalDate.of(2000, 1, 1),Option(LocalDate.of(2000,1,2)),true)
     assert(!result.isOperational)
 
   }

@@ -49,19 +49,19 @@ public class Operations {
     }
 
 
-    public static Predicate<Deployment> getMRCAIsWarlikePredicate(ServiceDeterminationPair serviceDeterminationPair, CaseTrace caseTrace) {
+    public static Predicate<Deployment> getMRCAIsWarlikePredicate(ServiceDeterminationPair serviceDeterminationPair, Boolean validateDates, CaseTrace caseTrace) {
         ImmutableList<Operation> warlikeOperations = serviceDeterminationPair.getWarlike().getOperations();
-        return getPredicateForMrcaOperations(warlikeOperations, caseTrace);
+        return getPredicateForMrcaOperations(warlikeOperations, validateDates, caseTrace);
 
     }
 
 
-    public static Predicate<Deployment> getMRCAIsOperationalPredicate(ServiceDeterminationPair serviceDeterminationPair, CaseTrace caseTrace) {
+    public static Predicate<Deployment> getMRCAIsOperationalPredicate(Boolean validateDates, ServiceDeterminationPair serviceDeterminationPair, CaseTrace caseTrace) {
         ImmutableList<Operation> allOperations = ImmutableList.copyOf(Iterables.concat(
                 serviceDeterminationPair.getWarlike().getOperations(),
                 serviceDeterminationPair.getNonWarlike().getOperations()));
 
-        return getPredicateForMrcaOperations(allOperations, caseTrace);
+        return getPredicateForMrcaOperations(allOperations, validateDates, caseTrace);
     }
 
 
@@ -84,28 +84,8 @@ public class Operations {
     }
 
 
-    private static boolean operationWithConsistentDatesExist(Deployment deployment, ImmutableList<Operation> operations) {
-        boolean matchFound = operations.stream().anyMatch(operation -> datesAreConsistent(deployment, operation));
-        if (!matchFound) {
-            StringBuilder warning = new StringBuilder();
-            warning.append(String.format("Deployment dates not consistent with matching operations.%n"));
-            warning.append(String.format("DEPLOYMENT:%n"));
-            warning.append(String.format("%s%n", deployment.toString()));
-            warning.append(String.format("OPERATIONS:%n"));
-            operations.forEach(operation -> warning.append(String.format("%s%n", operation.toString())));
-            logger.warn(warning.toString());
-
-            return false;
-        }
-        return true;
-    }
-
     private static Boolean deploymentMatchesOperation(Operation operation, Deployment deployment) {
-
-        ImmutableSet<String> specialWhitelist = ImmutableSet.of("enduring freedom");
-
-        Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase())
-                || specialWhitelist.stream().anyMatch(wl -> operation.getName().toLowerCase().contains(wl));
+        Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase());
         Boolean datesAreConsistent = datesAreConsistent(deployment, operation);
         return (deploymentNameToLowerContainsOpName && datesAreConsistent);
     }
@@ -175,24 +155,28 @@ public class Operations {
         return normalisedServiceHistoryName.contains(normalisedOfficialName);
     }
 
-    private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations, CaseTrace caseTrace) {
+    private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations, Boolean validateDates, CaseTrace caseTrace) {
 
         return deployment -> {
             List<Operation> operationsWithMatchingName =
                     allOperations.stream().filter(o -> isServiceHistoryNameInOfficialOperationName(deployment.getOperationName(), o.getName())).collect(Collectors.toList());
+
+            if (!validateDates)
+            {
+                return !operationsWithMatchingName.isEmpty();
+            }
 
             List<Operation> operationsWithMatchingNameAndDates =
                     operationsWithMatchingName.stream()
                             .filter(o -> DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new HasDateRangeImpl(deployment.getStartDate(), deployment.getEndDate()), new HasDateRangeImpl(o.getStartDate(), o.getEndDate())))
                             .collect(Collectors.toList());
 
-
-            if (!operationsWithMatchingName.isEmpty() && !operationsWithMatchingNameAndDates.isEmpty()) {
+            if (!operationsWithMatchingName.isEmpty() && operationsWithMatchingNameAndDates.isEmpty()) {
                 StringBuilder logMessage = new StringBuilder();
                 logMessage.append("The dates of the deployment '" + deployment.getOperationName() + "' are not consistent with the dates of any matching known operations.");
                 logMessage.append("The start date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getStartDate()) + ".");
                 logMessage.append(deployment.getEndDate().isPresent() ? "The end date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getEndDate().get()) + "." : "The deployment has no end date (ongoing).");
-
+                logMessage.append("Candidate operations: ");
                 Function<Operation, String> prettyPrintOperation = op -> op.getName() + "," + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getStartDate()) + (op.getEndDate().isPresent() ? " to " + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getEndDate().get()) : " to present.");
                 String matchingOperationsString = String.join(";", operationsWithMatchingName.stream().map(o -> prettyPrintOperation.apply(o)).collect(Collectors.toList()));
                 logMessage.append(matchingOperationsString);
@@ -200,9 +184,6 @@ public class Operations {
             }
 
             return !operationsWithMatchingNameAndDates.isEmpty();
-
-
         };
-
     }
 }

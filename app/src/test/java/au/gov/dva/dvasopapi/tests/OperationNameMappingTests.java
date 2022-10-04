@@ -59,7 +59,7 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, true, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertFalse(result);
 
@@ -92,7 +92,7 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, true, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertFalse(result);
 
@@ -125,7 +125,7 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, true, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertTrue(result);
 
@@ -158,7 +158,7 @@ public class OperationNameMappingTests {
             }
         };
         ServiceDeterminationPair mock = new ServiceDeterminationPair(new ServiceDeterminationMockOperationLittenOnly(), new ServiceDeterminationMockOperationLittenOnly());
-        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mock, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(false, mock, new SopSupportCaseTrace());
 
         boolean result = underTest.test(testData);
         Assert.assertTrue(result);
@@ -203,7 +203,7 @@ public class OperationNameMappingTests {
                 return Optional.of(LocalDate.of(2009,7,30));
             }
         };
-        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(false, mockServiceDeterminationPair, new SopSupportCaseTrace());
         Boolean result = underTest.test(testDeployment);
         Assert.assertTrue(result);
 
@@ -239,7 +239,7 @@ public class OperationNameMappingTests {
 
 
         };
-        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(true, mockServiceDeterminationPair, new SopSupportCaseTrace());
         Boolean result = underTest.test(testDeployment);
         Assert.assertFalse(result);
 
@@ -276,7 +276,7 @@ public class OperationNameMappingTests {
                 return Optional.empty();
             }
         };
-        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(true, mockServiceDeterminationPair, new SopSupportCaseTrace());
         Boolean result = underTest.test(testDeployment);
         Assert.assertFalse(result);
 
@@ -401,7 +401,7 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, false, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertTrue(result == true);
 
@@ -440,7 +440,7 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair,false,  new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertTrue(result == true);
     }

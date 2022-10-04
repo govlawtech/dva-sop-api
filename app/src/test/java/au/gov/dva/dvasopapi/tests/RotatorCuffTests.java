@@ -145,8 +145,8 @@ public class RotatorCuffTests {
     }
 
     SoPPair buildApplicableSopPair() throws IOException {
-        SoP rhSop = deserialiseSopFromResources("rotatorCuffTests/F2020L00825");
-        SoP bopSop = deserialiseSopFromResources("rotatorCuffTests/F2014L01379");
+        SoP rhSop = deserialiseSopFromResources("rotatorCuffTests/F2021C00080");
+        SoP bopSop = deserialiseSopFromResources("rotatorCuffTests/F2021C00081");
         return new SoPPair(bopSop,rhSop);
     }
 
@@ -182,7 +182,7 @@ public class RotatorCuffTests {
     public void RotatorCuffOnsets30DaysAfterServiceEnds() throws IOException {
 
         LocalDate separationdate = LocalDate.of(2020,12,31);
-        LocalDate onsetDate = separationdate.plusDays(30);
+        LocalDate onsetDate = separationdate.plusDays(31);
         int daysAsNavyOfficer = 210;
         boolean result = isScenarioSatisfied(separationdate,daysAsNavyOfficer,onsetDate);
         Assert.assertTrue(result);
@@ -191,7 +191,7 @@ public class RotatorCuffTests {
     @Test
     public void RotatorCuffOnsets31DaysAfterServiceEnds() throws IOException {
         LocalDate separationdate = LocalDate.of(2020,12,31);
-        LocalDate onsetDate = separationdate.plusDays(31);
+        LocalDate onsetDate = separationdate.plusDays(32);
         int daysAsNavyOfficer = 210;
         boolean result = isScenarioSatisfied(separationdate,daysAsNavyOfficer,onsetDate);
         Assert.assertFalse(result);

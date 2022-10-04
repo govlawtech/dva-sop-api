@@ -1,6 +1,6 @@
 {
   "schemaVersion" : 2,
-  "registerId" : "F2014L01379",
+  "registerId" : "F2021C00081",
   "instrumentNumber" : "101/2014",
   "citation" : "Statement of Principles concerning rotator cuff syndrome No. 101 of 2014",
   "conditionName" : "rotator cuff syndrome",
@@ -27,14 +27,14 @@
     "text" : "having an injury to the affected shoulder within the 30 days before the\r\nclinical onset of rotator cuff syndrome",
     "definedTerms" : [ {
       "term" : "an injury to the affected shoulder",
-      "definition" : "means an injury to the shoulder region\nthat causes the development, within the 24 hours of the injury being sustained,\nof pain, tenderness, and altered mobility or range of movement of the shoulder\njoint. In the case of sustained unconsciousness or the masking of pain by\nanalgesic medication, these symptoms and signs must appear on return to\nconsciousness or the withdrawal of the analgesic medication. These symptoms\nand signs must last for a continuous period of at least seven days following\ntheir onset, save for where medical intervention for the injury to that shoulder\nhas occurred and that medical intervention involves either:\n(a) immobilisation of the shoulder by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that shoulder; or\n(c) surgery to that shoulder"
+      "definition" : "means an injury to the shoulder region\nthat causes the development, within the 24 hours of the injury being sustained,\nof pain, tenderness, and altered mobility or range of movement of the shoulder\njoint. In the case of sustained unconsciousness or the masking of pain by\nanalgesic medication, these symptoms and signs must appear on return to\nconsciousness or the withdrawal of the analgesic medication. These\nsymptoms and signs must last for a continuous period of at least seven days\nfollowing their onset, save for where medical intervention for the injury to that\nshoulder has occurred and that medical intervention involves either:\n(a) immobilisation of the shoulder by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that shoulder; or\n(c) surgery to that shoulder"
     } ]
   }, {
     "paragraph" : "6(b)",
     "text" : "performing any combination of:\r\n(i) repetitive or sustained activities of the affected shoulder when\r\nthe shoulder on the affected side is abducted or flexed by at\r\nleast 60 degrees; or\r\n(ii) forceful activities with the affected upper limb;\r\nfor at least 160 hours within a period of 210 consecutive days before\r\nthe clinical onset of rotator cuff syndrome, and where the repetitive or\r\nsustained or forceful activities have not ceased more than 30 days\r\nbefore the clinical onset of rotator cuff syndrome",
     "definedTerms" : [ {
       "term" : "forceful activities",
-      "definition" : "means tasks requiring the generation of force by the\nhand:\n(a) equivalent to lifting or carrying loads of more than three kilograms; or\n(b) involving lifting or carrying an object in the hand greater than one\nkilogram in excess of ten times per hour"
+      "definition" : "means tasks requiring the generation of force by the hand\nor arm:\n(a) equivalent to lifting or carrying loads of more than three kilograms; or\n(b) involving lifting or carrying an object greater than one kilogram in\nexcess of ten times per hour;\nNote: Use of crutches or other walking aids and hand propulsion of wheelchairs are included among the\ntypes of forceful activities that require generation of force by the hand or arm"
     } ]
   }, {
     "paragraph" : "6(c)",
@@ -49,11 +49,8 @@
     } ]
   }, {
     "paragraph" : "6(e)",
-    "text" : "regularly using the upper limbs for transfer for a continuous period of at\r\nleast the one year before the clinical onset of rotator cuff syndrome",
-    "definedTerms" : [ {
-      "term" : "regularly using the upper limbs for transfer",
-      "definition" : "means the use by a person of\ntheir upper limbs to transfer themselves (for example, from chair to bed), due\nto their inability to use their lower limbs for mobilisation (for example,\nparaplegia). It does not mean the temporary use of a wheelchair, such as when\nrecovering from a fracture or a sprain involving a lower limb"
-    } ]
+    "text" : "regularly using the upper limbs for weight-bearing for a continuous\r\nperiod of at least the one year before the clinical onset of rotator cuff\r\nsyndrome; or\r\nNote: Examples of situations in which the upper limbs may regularly be used for weight-\r\nbearing include transfers from a wheelchair to a chair or bed, and the use of crutches or other\r\nwalking aids",
+    "definedTerms" : [ ]
   }, {
     "paragraph" : "6(f)",
     "text" : "having anatomical narrowing of the subacromial space on the affected\r\nside at the time of the clinical onset of rotator cuff syndrome",
@@ -86,14 +83,14 @@
     "text" : "having an injury to the affected shoulder within the 30 days before the\r\nclinical worsening of rotator cuff syndrome",
     "definedTerms" : [ {
       "term" : "an injury to the affected shoulder",
-      "definition" : "means an injury to the shoulder region\nthat causes the development, within the 24 hours of the injury being sustained,\nof pain, tenderness, and altered mobility or range of movement of the shoulder\njoint. In the case of sustained unconsciousness or the masking of pain by\nanalgesic medication, these symptoms and signs must appear on return to\nconsciousness or the withdrawal of the analgesic medication. These symptoms\nand signs must last for a continuous period of at least seven days following\ntheir onset, save for where medical intervention for the injury to that shoulder\nhas occurred and that medical intervention involves either:\n(a) immobilisation of the shoulder by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that shoulder; or\n(c) surgery to that shoulder"
+      "definition" : "means an injury to the shoulder region\nthat causes the development, within the 24 hours of the injury being sustained,\nof pain, tenderness, and altered mobility or range of movement of the shoulder\njoint. In the case of sustained unconsciousness or the masking of pain by\nanalgesic medication, these symptoms and signs must appear on return to\nconsciousness or the withdrawal of the analgesic medication. These\nsymptoms and signs must last for a continuous period of at least seven days\nfollowing their onset, save for where medical intervention for the injury to that\nshoulder has occurred and that medical intervention involves either:\n(a) immobilisation of the shoulder by splinting, or similar external agent;\n(b) injection of corticosteroids or local anaesthetics into that shoulder; or\n(c) surgery to that shoulder"
     } ]
   }, {
     "paragraph" : "6(l)",
     "text" : "performing any combination of:\r\n(i) repetitive or sustained activities of the affected shoulder when\r\nthe shoulder on the affected side is abducted or flexed by at\r\nleast 60 degrees; or\r\n(ii) forceful activities with the affected upper limb;\r\nfor at least 160 hours within a period of 210 consecutive days before\r\nthe clinical worsening of rotator cuff syndrome, and where the\r\nrepetitive or sustained or forceful activities have not ceased more than\r\n30 days before the clinical worsening of rotator cuff syndrome",
     "definedTerms" : [ {
       "term" : "forceful activities",
-      "definition" : "means tasks requiring the generation of force by the\nhand:\n(a) equivalent to lifting or carrying loads of more than three kilograms; or\n(b) involving lifting or carrying an object in the hand greater than one\nkilogram in excess of ten times per hour"
+      "definition" : "means tasks requiring the generation of force by the hand\nor arm:\n(a) equivalent to lifting or carrying loads of more than three kilograms; or\n(b) involving lifting or carrying an object greater than one kilogram in\nexcess of ten times per hour;\nNote: Use of crutches or other walking aids and hand propulsion of wheelchairs are included among the\ntypes of forceful activities that require generation of force by the hand or arm"
     } ]
   }, {
     "paragraph" : "6(m)",
@@ -108,11 +105,8 @@
     } ]
   }, {
     "paragraph" : "6(o)",
-    "text" : "regularly using the upper limbs for transfer for a continuous period of at\r\nleast the one year before the clinical worsening of rotator cuff\r\nsyndrome",
-    "definedTerms" : [ {
-      "term" : "regularly using the upper limbs for transfer",
-      "definition" : "means the use by a person of\ntheir upper limbs to transfer themselves (for example, from chair to bed), due\nto their inability to use their lower limbs for mobilisation (for example,\nparaplegia). It does not mean the temporary use of a wheelchair, such as when\nrecovering from a fracture or a sprain involving a lower limb"
-    } ]
+    "text" : "regularly using the upper limbs for weight-bearing for a continuous\r\nperiod of at least the one year before the clinical worsening of rotator\r\ncuff syndrome; or\r\nNote: Examples of situations in which the upper limbs may regularly be used for weight-\r\nbearing include transfers from a wheelchair to a chair or bed, and the use of crutches or other\r\nwalking aids",
+    "definedTerms" : [ ]
   }, {
     "paragraph" : "6(p)",
     "text" : "having anatomical narrowing of the subacromial space on the affected\r\nside at the time of the clinical worsening of rotator cuff syndrome",
