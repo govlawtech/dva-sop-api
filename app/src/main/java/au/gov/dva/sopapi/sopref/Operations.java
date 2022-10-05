@@ -157,11 +157,18 @@ public class Operations {
 
     private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations, Boolean validateDates, CaseTrace caseTrace) {
 
+        // even if validateDates flag is false, we want to validate the dates for operations matching name Okra, Paladin and Augury.
+
+
         return deployment -> {
             List<Operation> operationsWithMatchingName =
                     allOperations.stream().filter(o -> isServiceHistoryNameInOfficialOperationName(deployment.getOperationName(), o.getName())).collect(Collectors.toList());
 
-            if (!validateDates)
+            ImmutableList<String> whiteListedOpsToValidate = ImmutableList.of("Augury", "Paladin","Okra");
+
+            Boolean deploymentShouldAlwaysBeValidated = whiteListedOpsToValidate.stream().anyMatch(op -> deployment.getOperationName().toLowerCase().contains(op.toLowerCase()));
+
+            if (!validateDates  && !deploymentShouldAlwaysBeValidated)
             {
                 return !operationsWithMatchingName.isEmpty();
             }
@@ -171,17 +178,19 @@ public class Operations {
                             .filter(o -> DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new HasDateRangeImpl(deployment.getStartDate(), deployment.getEndDate()), new HasDateRangeImpl(o.getStartDate(), o.getEndDate())))
                             .collect(Collectors.toList());
 
-            if (!operationsWithMatchingName.isEmpty() && operationsWithMatchingNameAndDates.isEmpty()) {
-                StringBuilder logMessage = new StringBuilder();
-                logMessage.append("The dates of the deployment '" + deployment.getOperationName() + "' are not consistent with the dates of any matching known operations.");
-                logMessage.append("The start date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getStartDate()) + ".");
-                logMessage.append(deployment.getEndDate().isPresent() ? "The end date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getEndDate().get()) + "." : "The deployment has no end date (ongoing).");
-                logMessage.append("Candidate operations: ");
-                Function<Operation, String> prettyPrintOperation = op -> op.getName() + "," + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getStartDate()) + (op.getEndDate().isPresent() ? " to " + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getEndDate().get()) : " to present.");
-                String matchingOperationsString = String.join(";", operationsWithMatchingName.stream().map(o -> prettyPrintOperation.apply(o)).collect(Collectors.toList()));
-                logMessage.append(matchingOperationsString);
-                caseTrace.addLoggingTrace(logMessage.toString());
-            }
+
+//            if (!operationsWithMatchingName.isEmpty() && operationsWithMatchingNameAndDates.isEmpty()) {
+//                StringBuilder logMessage = new StringBuilder();
+//                logMessage.append("The dates of the deployment '" + deployment.getOperationName() + "' are not consistent with the dates of any matching known operations.");
+//                logMessage.append("The start date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getStartDate()) + ".");
+//                logMessage.append(deployment.getEndDate().isPresent() ? "The end date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getEndDate().get()) + "." : "The deployment has no end date (ongoing).");
+//                logMessage.append("Candidate operations: ");
+//                Function<Operation, String> prettyPrintOperation = op -> op.getName() + "," + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getStartDate()) + (op.getEndDate().isPresent() ? " to " + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getEndDate().get()) : " to present.");
+//                String matchingOperationsString = String.join(";", operationsWithMatchingName.stream().map(o -> prettyPrintOperation.apply(o)).collect(Collectors.toList()));
+//                logMessage.append(matchingOperationsString);
+//                caseTrace.addLoggingTrace(logMessage.toString());
+//            }
+
 
             return !operationsWithMatchingNameAndDates.isEmpty();
         };
