@@ -168,10 +168,7 @@ public class Operations {
 
             Boolean deploymentShouldAlwaysBeValidated = whiteListedOpsToValidate.stream().anyMatch(op -> deployment.getOperationName().toLowerCase().contains(op.toLowerCase()));
 
-            if (!validateDates  && !deploymentShouldAlwaysBeValidated)
-            {
-                return !operationsWithMatchingName.isEmpty();
-            }
+
 
             List<Operation> operationsWithMatchingNameAndDates =
                     operationsWithMatchingName.stream()
@@ -179,18 +176,24 @@ public class Operations {
                             .collect(Collectors.toList());
 
 
-//            if (!operationsWithMatchingName.isEmpty() && operationsWithMatchingNameAndDates.isEmpty()) {
-//                StringBuilder logMessage = new StringBuilder();
-//                logMessage.append("The dates of the deployment '" + deployment.getOperationName() + "' are not consistent with the dates of any matching known operations.");
-//                logMessage.append("The start date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getStartDate()) + ".");
-//                logMessage.append(deployment.getEndDate().isPresent() ? "The end date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getEndDate().get()) + "." : "The deployment has no end date (ongoing).");
-//                logMessage.append("Candidate operations: ");
-//                Function<Operation, String> prettyPrintOperation = op -> op.getName() + "," + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getStartDate()) + (op.getEndDate().isPresent() ? " to " + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getEndDate().get()) : " to present.");
-//                String matchingOperationsString = String.join(";", operationsWithMatchingName.stream().map(o -> prettyPrintOperation.apply(o)).collect(Collectors.toList()));
-//                logMessage.append(matchingOperationsString);
-//                caseTrace.addLoggingTrace(logMessage.toString());
-//            }
 
+
+            if (!validateDates  && !deploymentShouldAlwaysBeValidated)
+            {
+                return !operationsWithMatchingName.isEmpty();
+            }
+
+            if (!operationsWithMatchingName.isEmpty() && operationsWithMatchingNameAndDates.isEmpty() && validateDates) {
+                StringBuilder logMessage = new StringBuilder();
+                logMessage.append("The dates of the deployment '" + deployment.getOperationName() + "' are not consistent with the dates of any matching known operations.");
+                logMessage.append(" The start date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getStartDate()) + ".");
+                logMessage.append(deployment.getEndDate().isPresent() ? " The end date of the deployment is " + DateTimeFormatter.ISO_LOCAL_DATE.format(deployment.getEndDate().get()) + "." : " The deployment has no end date (ongoing).");
+                logMessage.append(" Candidate operations: ");
+                Function<Operation, String> prettyPrintOperation = op -> op.getName() + " (" + op.getServiceType().toString() + ")" + ": " + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getStartDate()) + (op.getEndDate().isPresent() ? " to " + DateTimeFormatter.ISO_LOCAL_DATE.format(op.getEndDate().get()) : " to present");
+                String matchingOperationsString = String.join("; ", operationsWithMatchingName.stream().map(o -> prettyPrintOperation.apply(o)).collect(Collectors.toList()));
+                logMessage.append(matchingOperationsString);
+                caseTrace.addLoggingTrace(logMessage.toString());
+            }
 
             return !operationsWithMatchingNameAndDates.isEmpty();
         };
