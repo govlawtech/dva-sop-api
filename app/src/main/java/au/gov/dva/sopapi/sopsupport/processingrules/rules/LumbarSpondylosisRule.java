@@ -31,6 +31,7 @@ import java.util.function.Predicate;
         }
 
         IntervalSelector intervalSelector = new SlidingOperationalServicePeriodSelector(isOperational,10);
+        caseTrace.addLoggingTrace("For this condition, service within 'any ten year period' before clinical onset is relevant.  The days of service are taken from the ten year interval before condition onset with the most operational service.  If multiple ten year intervals have the same amount of operational service, the most recent is used.");
         Interval intervalForTestingRh = intervalSelector.getInterval(serviceHistory,condition.getStartDate());
         rhIntervalUsed = intervalForTestingRh;
         return super.getApplicableSop(condition,serviceHistory,isOperational,intervalForTestingRh,caseTrace);

@@ -56,7 +56,6 @@ public class ProcessingRuleFunctions {
 
         Act applicableAct = ProcessingRuleFunctions.InferApplicableAct(serviceHistory,condition);
 
-
         List<Deployment> operationDeployments =
                 ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
                         .stream().filter(isOperational)

@@ -81,7 +81,7 @@ public class ProcessingRuleBase {
 
         Interval testInterval = rhInterval;
         caseTrace.addLoggingTrace(String.format("The start date for the test period for RH: %s", testInterval.getStart()));
-        caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", condition.getStartDate()));
+        caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", testInterval.getEnd()));
 
         Long daysOfOperationalService = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(testInterval.getStart(),testInterval.getEnd(),isOperational);
 
@@ -141,7 +141,7 @@ public class ProcessingRuleBase {
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
 
         caseTrace.addLoggingTrace(String.format("The start date for the test period for counting days of CFTS: %s", testInterval.getStart()));
-        caseTrace.addLoggingTrace(String.format("The end date for the test period for counting days of CFTS: %s", condition.getStartDate()));
+        caseTrace.addLoggingTrace(String.format("The end date for the test period for counting days of CFTS: %s", testInterval.getEnd()));
 
         ImmutableList<Service> cftsServices = serviceHistory.getServices().stream()
                 .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)
