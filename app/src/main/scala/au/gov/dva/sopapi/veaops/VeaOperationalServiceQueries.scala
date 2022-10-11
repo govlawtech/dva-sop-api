@@ -15,6 +15,7 @@ class OpenEndedInterval(startDate: LocalDate, endDate: Option[LocalDate]) extend
 }
 
 object VeaOperationalServiceQueries {
+
   def getOpsAndActivitiesOnDate(testDate: LocalDate, allDeterminations: List[VeaDetermination]): Map[VeaDetermination, List[VeaDeterminationOccurance]] = {
     def getThingsAtDate(testDate: LocalDate, things: List[VeaDeterminationOccurance]): List[VeaDeterminationOccurance] =
       things

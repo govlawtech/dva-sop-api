@@ -6,10 +6,8 @@ import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableList;
-import com.microsoft.windowsazure.core.utils.BOMInputStream;
 import org.junit.Assert;
 import org.junit.Test;
-import org.scalactic.Bool;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -169,7 +167,7 @@ public class OperationNameMappingTests {
     public void EnduringFreedomMatched(){
         String officialName = "Enduring Freedom—Afghanistan";
         String testName =  "OPERATION ENDURING FREEDOM";
-        Boolean result = Operations.isServiceHistoryNameInOfficialOperationName(testName,officialName);
+        Boolean result = Operations.isOfficialNameInServiceHistoryName(testName,officialName);
         Assert.assertTrue(result);
     }
 
@@ -358,7 +356,7 @@ public class OperationNameMappingTests {
         List<String> isMatched = new ArrayList<>();
 
          for (String ishName : ishOperationNames) {
-             Boolean match = officialOperationNames.stream().anyMatch(on -> Operations.isServiceHistoryNameInOfficialOperationName(ishName,on));
+             Boolean match = officialOperationNames.stream().anyMatch(on -> Operations.isOfficialNameInServiceHistoryName(ishName,on));
              if (match)
              {
                  isMatched.add(ishName);

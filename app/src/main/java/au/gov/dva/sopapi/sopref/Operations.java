@@ -9,7 +9,6 @@ import au.gov.dva.sopapi.sopsupport.processingrules.HasDateRangeImpl;
 import com.google.common.collect.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import scala.Tuple2;
 
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
@@ -146,7 +145,7 @@ public class Operations {
 
     }
 
-    public static Boolean isServiceHistoryNameInOfficialOperationName(String serviceHistoryName, String officialOperationName) {
+    public static Boolean isOfficialNameInServiceHistoryName(String serviceHistoryName, String officialOperationName) {
         ImmutableMap<String, String> specialTransformationsOfOfficialName = ImmutableMap.of(
                 "Enduring Freedom—Afghanistan", "enduring freedom"
         );
@@ -162,7 +161,7 @@ public class Operations {
 
         return deployment -> {
             List<Operation> operationsWithMatchingName =
-                    allOperations.stream().filter(o -> isServiceHistoryNameInOfficialOperationName(deployment.getOperationName(), o.getName())).collect(Collectors.toList());
+                    allOperations.stream().filter(o -> isOfficialNameInServiceHistoryName(deployment.getOperationName(), o.getName())).collect(Collectors.toList());
 
             ImmutableList<String> whiteListedOpsToValidate = ImmutableList.of("Augury", "Paladin","Okra");
 
