@@ -167,7 +167,7 @@ public class OperationNameMappingTests {
     public void EnduringFreedomMatched(){
         String officialName = "Enduring Freedom—Afghanistan";
         String testName =  "OPERATION ENDURING FREEDOM";
-        Boolean result = Operations.isOfficialNameInServiceHistoryName(testName,officialName);
+        Boolean result = Operations.isNameMatch(testName,officialName);
         Assert.assertTrue(result);
     }
 
@@ -356,7 +356,7 @@ public class OperationNameMappingTests {
         List<String> isMatched = new ArrayList<>();
 
          for (String ishName : ishOperationNames) {
-             Boolean match = officialOperationNames.stream().anyMatch(on -> Operations.isOfficialNameInServiceHistoryName(ishName,on));
+             Boolean match = officialOperationNames.stream().anyMatch(on -> Operations.isNameMatch(ishName,on));
              if (match)
              {
                  isMatched.add(ishName);

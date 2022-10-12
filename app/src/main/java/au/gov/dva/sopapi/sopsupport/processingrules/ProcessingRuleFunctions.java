@@ -283,9 +283,3 @@ public class ProcessingRuleFunctions {
     }
 }
 
-
-
-
-
-
-

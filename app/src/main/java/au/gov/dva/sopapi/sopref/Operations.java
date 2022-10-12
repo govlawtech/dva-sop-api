@@ -9,12 +9,14 @@ import au.gov.dva.sopapi.sopsupport.processingrules.HasDateRangeImpl;
 import com.google.common.collect.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import scala.Tuple2;
 
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -65,28 +67,15 @@ public class Operations {
 
 
     private static boolean datesAreConsistent(Deployment deployment, Operation operation) {
-        if (deployment.getStartDate().isBefore(operation.getStartDate())) {
-            return false;
-        }
 
-        if (!deployment.getEndDate().isPresent() && operation.getEndDate().isPresent()) {
-            return false;
-        }
-
-        if (deployment.getEndDate().isPresent() && operation.getEndDate().isPresent()) {
-            if (deployment.getEndDate().get().isAfter(operation.getEndDate().get())) {
-                return false;
-            }
-        }
-
-        return true;
+        return DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new HasDateRangeImpl(deployment.getStartDate(),deployment.getEndDate()),new HasDateRangeImpl(operation.getStartDate(),operation.getEndDate()));
     }
 
 
     private static Boolean deploymentMatchesOperation(Operation operation, Deployment deployment) {
-        Boolean deploymentNameToLowerContainsOpName = deployment.getOperationName().toLowerCase().contains(operation.getName().toLowerCase());
+        Boolean nameMatch = isNameMatch(deployment.getOperationName(),operation.getName());
         Boolean datesAreConsistent = datesAreConsistent(deployment, operation);
-        return (deploymentNameToLowerContainsOpName && datesAreConsistent);
+        return (nameMatch && datesAreConsistent);
     }
 
     private static ImmutableList<OperationAndLegalSourcePair> getMatchingOperations(ImmutableList<OperationAndLegalSourcePair> allOperations, Deployment deployment) {
@@ -145,37 +134,55 @@ public class Operations {
 
     }
 
-    public static Boolean isOfficialNameInServiceHistoryName(String serviceHistoryName, String officialOperationName) {
-        ImmutableMap<String, String> specialTransformationsOfOfficialName = ImmutableMap.of(
-                "Enduring Freedom—Afghanistan", "enduring freedom"
-        );
-        String normalisedServiceHistoryName = serviceHistoryName.toLowerCase();
-        String normalisedOfficialName = specialTransformationsOfOfficialName.getOrDefault(officialOperationName, officialOperationName.toLowerCase());
-        return normalisedServiceHistoryName.contains(normalisedOfficialName);
+    private static ImmutableList<Tuple2<Pattern,String>> deploymentRegexToOpName = ImmutableList.of(
+            Tuple2.apply(Pattern.compile("enduring\\s+freedom",Pattern.CASE_INSENSITIVE),"Enduring Freedom—Afghanistan"),
+            Tuple2.apply(Pattern.compile("palate\\s*ii",Pattern.CASE_INSENSITIVE), "Palate II"),
+            Tuple2.apply(Pattern.compile("palate$",Pattern.CASE_INSENSITIVE),"Palate"),
+            Tuple2.apply(Pattern.compile("quickstep$",Pattern.CASE_INSENSITIVE),"Quickstep"),
+            Tuple2.apply(Pattern.compile("quickstep\\s*tonga",Pattern.CASE_INSENSITIVE),"Quickstep Tonga")
+    );
+
+    public static Boolean isNameMatch(String serviceHistoryName, String officialOperationName) {
+
+        // todo: move mappings to config
+
+        Optional<Tuple2<Pattern,String>> applicableMatchingRule = deploymentRegexToOpName.stream()
+                .filter(t -> t._1.matcher(serviceHistoryName).find())
+                   .findFirst();
+
+        Boolean shouldUseRegexMatchingExclusively = false;// applicableMatchingRule.isPresent();
+
+        if (shouldUseRegexMatchingExclusively) {
+
+            Boolean isMatch = applicableMatchingRule.get()._2.contentEquals(officialOperationName);
+            return  isMatch;
+        }
+        else {
+            Boolean serviceHistoryNameContainsOfficialName = serviceHistoryName.toLowerCase().contains(officialOperationName.toLowerCase());
+            return serviceHistoryNameContainsOfficialName;
+        }
+
     }
 
     private static Predicate<Deployment> getPredicateForMrcaOperations(ImmutableList<Operation> allOperations, Boolean validateDates, CaseTrace caseTrace) {
 
         // even if validateDates flag is false, we want to validate the dates for operations matching name Okra, Paladin and Augury.
-
+        // todo: move custom mappings to config
 
         return deployment -> {
+
+            // one pass
             List<Operation> operationsWithMatchingName =
-                    allOperations.stream().filter(o -> isOfficialNameInServiceHistoryName(deployment.getOperationName(), o.getName())).collect(Collectors.toList());
+                    allOperations.stream().filter(o -> isNameMatch(deployment.getOperationName(), o.getName())).collect(Collectors.toList());
 
             ImmutableList<String> whiteListedOpsToValidate = ImmutableList.of("Augury", "Paladin","Okra");
 
             Boolean deploymentShouldAlwaysBeValidated = whiteListedOpsToValidate.stream().anyMatch(op -> deployment.getOperationName().toLowerCase().contains(op.toLowerCase()));
 
-
-
             List<Operation> operationsWithMatchingNameAndDates =
                     operationsWithMatchingName.stream()
                             .filter(o -> DateTimeUtils.IsFirstOpenEndedIntervalWithinSecond(new HasDateRangeImpl(deployment.getStartDate(), deployment.getEndDate()), new HasDateRangeImpl(o.getStartDate(), o.getEndDate())))
                             .collect(Collectors.toList());
-
-
-
 
             if (!validateDates  && !deploymentShouldAlwaysBeValidated)
             {
