@@ -150,7 +150,7 @@ public class Operations {
                 .filter(t -> t._1.matcher(serviceHistoryName).find())
                    .findFirst();
 
-        Boolean shouldUseRegexMatchingExclusively = false;// applicableMatchingRule.isPresent();
+        Boolean shouldUseRegexMatchingExclusively = applicableMatchingRule.isPresent();
 
         if (shouldUseRegexMatchingExclusively) {
 
