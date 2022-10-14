@@ -138,14 +138,14 @@ public class ProcessingRuleFunctions {
 
             Comparator<Interval> latestFirst = (o1, o2) -> o2.getEnd().compareTo(o1.getEnd());
 
-            List<Interval> intervalsSortedByOpServiceThenLatest = testIntervals.stream()
+            List<Interval> intervalsSortedByServiceThenLatest = testIntervals.stream()
                     .sorted(longestFirst.thenComparing(latestFirst)).collect(Collectors.toList());
 
-            Interval head = intervalsSortedByOpServiceThenLatest.get(0);
+            Interval head = intervalsSortedByServiceThenLatest.get(0);
             long maxOpServiceDays = getNumberOfDaysOfServiceInInterval(head.getStart(), head.getEnd(), deploymentsOrService);
 
 
-            List<Interval> withLesserDropped = intervalsSortedByOpServiceThenLatest.stream()
+            List<Interval> withLesserDropped = intervalsSortedByServiceThenLatest.stream()
                     .filter(interval -> getNumberOfDaysOfServiceInInterval(interval.getStart(),
                             interval.getEnd(), deploymentsOrService) == maxOpServiceDays).collect(Collectors.toList());
 

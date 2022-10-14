@@ -23,9 +23,8 @@ object Extensions {
 
     private def idFromServiceHistoryMatches(identifierFromServiceHistory: String, toMatch: HasMappings) = {
 
-
       if (toMatch.getPrimaryName.compareToIgnoreCase(identifierFromServiceHistory.trim) == 0) true
-      else if (identifierFromServiceHistory.toLowerCase().contains(toMatch.getPrimaryName.toLowerCase())) true
+      else if (Operations.isNameMatch(identifierFromServiceHistory,toMatch.getPrimaryName)) true
       else {
         val mappings = toMatch.getMappings
 
