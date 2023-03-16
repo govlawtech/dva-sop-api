@@ -241,6 +241,8 @@ object ServiceLocator {
       case "F2022C00898" => new SubstituteCommencementDateFactory("19 September 2022")
       case "F2022C00900" => new SubstituteCommencementDateFactory("19 September 2022")
       case "F2022C00914" => new SubstituteCommencementDateFactory("19 September 2022")
+      case "F2022C01121" => new SubstituteCommencementDateFactory("21 November 2022")
+      case "F2022C01119" => new SubstituteCommencementDateFactory("21 November 2022")
       case _ =>
         if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015SoPFactory
         else PreAug2015SoPFactory
@@ -351,6 +353,8 @@ object ServiceLocator {
       case "F2022C00898" => ContentsClenser
       case "F2022C00900" => ContentsClenser
       case "F2022C00914" => ContentsClenser
+      case "F2022C01121" => ContentsClenser
+      case "F2022C01119" => ContentsClenser
 
       case _ => if (isNewSopFormat(SoPExtractorUtilities.unpackRegisterId(registerId))) PostAug2015Clenser else GenericClenser
     }

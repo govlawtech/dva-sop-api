@@ -309,4 +309,32 @@ class EdgeCaseTests extends FunSuite {
   {
     var r = ParserTestUtils.executeWholeParsingPipeline("F2022C00733","allSops/F2022C00733.pdf")
   }
+
+  test("hernia")
+  {
+
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2022L01373","allSops/F2022L01373.pdf")
+  }
+
+   test("acute stress disorder")
+  {
+
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2022L01377","allSops/F2022L01377.pdf")
+  }
+
+  test("malignant neplasm of unknown primary site")
+  {
+
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2022L01379","allSops/F2022L01379.pdf")
+  }
+
+  test("gingivitis")
+  {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2022C01121","allSops/F2022C01121.pdf")
+  }
+
+    test("hiatus hernia")
+  {
+    var r = ParserTestUtils.executeWholeParsingPipeline("F2022L00944","allSops/F2022L00944.pdf")
+  }
 }
