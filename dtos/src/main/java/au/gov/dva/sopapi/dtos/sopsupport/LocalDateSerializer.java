@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 public class LocalDateSerializer extends JsonSerializer<LocalDate>
 {
@@ -17,3 +18,5 @@ public class LocalDateSerializer extends JsonSerializer<LocalDate>
         gen.writeString(value.format(DateTimeFormatter.ISO_LOCAL_DATE));
     }
 }
+
+

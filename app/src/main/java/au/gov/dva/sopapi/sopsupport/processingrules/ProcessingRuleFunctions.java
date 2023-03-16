@@ -3,17 +3,18 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 import au.gov.dva.sopapi.DateTimeUtils;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
+import au.gov.dva.sopapi.dtos.sopsupport.Act;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.exceptions.DvaSopApiRuntimeException;
-import au.gov.dva.sopapi.interfaces.ActDeterminationServiceClient;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
-import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
+import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.datecalcs.Intervals;
 import au.gov.dva.sopapi.sopsupport.processingrules.rules.SatisfiedFactorWithApplicablePart;
+import au.gov.dva.sopapi.veaops.Facade;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import scala.Tuple2;
@@ -21,9 +22,6 @@ import scala.Tuple2;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -33,6 +31,52 @@ public class ProcessingRuleFunctions {
 
     private static Logger logger = LoggerFactory.getLogger(ProcessingRuleFunctions.class.getSimpleName());
 
+
+    // Note: this assumes that conditions onset after the MRCA commencement date relate to MRCA service -- not strictly correct
+    // Also assumes no DRCA cases sent
+    public static Act InferApplicableAct(ServiceHistory serviceHistory, Condition condition) {
+        LocalDate onsetDate = condition.getStartDate();
+        LocalDate mrcaStartDate = LocalDate.of(2004,6,30);
+        if (onsetDate.isAfter(mrcaStartDate))
+        {
+            return Act.Mrca;
+        }
+        else return Act.Vea;
+    }
+
+
+
+    public static void inferRelevantOperations(ServiceHistory serviceHistory, Condition condition, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations, Predicate<Deployment> isOperational, CaseTrace caseTrace)
+    {
+        Interval relevantInterval = caseTrace.getTestInterval();
+        if (relevantInterval == null)
+        {
+            throw new DvaSopApiRuntimeException("Relevant interval not set in case trace.");
+        }
+
+        Act applicableAct = ProcessingRuleFunctions.InferApplicableAct(serviceHistory,condition);
+
+        List<Deployment> operationDeployments =
+                ProcessingRuleFunctions.getCFTSDeployments(serviceHistory)
+                        .stream().filter(isOperational)
+                        .filter(d -> DateTimeUtils.OpenEndedTestIntervalOverlapsWithInterval(relevantInterval.getStart(),relevantInterval.getEnd(),d.getStartDate(),d.getEndDate()))
+                        .collect(Collectors.toList());
+
+        if (applicableAct == Act.Vea)
+        {
+                Iterable<JustifiedMilitaryActivity> matchingActivities = Facade.getMatchingActivities(true,operationDeployments, veaOperationalServiceRepository);
+                caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingActivities));
+        }
+
+        else if (applicableAct == Act.Mrca)
+        {
+            List<JustifiedMilitaryActivity> matchingOps = Operations.getMatchingOperationsForDeployments(serviceDeterminations,operationDeployments);
+            caseTrace.SetRelevantOperations(ImmutableList.copyOf(matchingOps));
+        }
+        else {
+            throw new DvaSopApiRuntimeException("Unrecognised Act: " + applicableAct);
+        }
+    }
 
     public static Optional<LocalDate> getStartofService(ServiceHistory serviceHistory) {
         Optional<Service> earliestService = serviceHistory.getServices().stream()
@@ -73,8 +117,9 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    public static long getNumberOfDaysOfServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<? extends HasDateRange> deploymentsOrService) {
-        List<HasDateRange> flattened = DateTimeUtils.flattenDateRanges(new ArrayList<>(deploymentsOrService));
+
+    public static long getNumberOfDaysOfServiceInInterval(LocalDate startDate, LocalDate endDate, ImmutableList<? extends MaybeOpenEndedInterval> deploymentsOrService) {
+        List<MaybeOpenEndedInterval> flattened = DateTimeUtils.flattenDateRanges(new ArrayList<>(deploymentsOrService));
         long days = flattened.stream()
                 .map(d -> getInclusiveDaysFromRangeInInterval(startDate, endDate, d))
                 .collect(Collectors.summingLong(value -> value));
@@ -83,7 +128,7 @@ public class ProcessingRuleFunctions {
     }
 
     // sorted latest first
-    public static ImmutableList<Interval> getIntervalsWithMaximumService(int intervalDurationInCalendarYears, LocalDate lowerBoundary, LocalDate upperBoundaryInclusive, ImmutableList<? extends HasDateRange> deploymentsOrService) {
+    public static ImmutableList<Interval> getIntervalsWithMaximumService(int intervalDurationInCalendarYears, LocalDate lowerBoundary, LocalDate upperBoundaryInclusive, ImmutableList<? extends MaybeOpenEndedInterval> deploymentsOrService) {
         List<Interval> testIntervals = Intervals.getSopFactorTestIntervalsJavaList(intervalDurationInCalendarYears, lowerBoundary, upperBoundaryInclusive);
         assert (testIntervals.size() > 0);
         if (testIntervals.size() > 1) {
@@ -93,14 +138,14 @@ public class ProcessingRuleFunctions {
 
             Comparator<Interval> latestFirst = (o1, o2) -> o2.getEnd().compareTo(o1.getEnd());
 
-            List<Interval> intervalsSortedByOpServiceThenLatest = testIntervals.stream()
+            List<Interval> intervalsSortedByServiceThenLatest = testIntervals.stream()
                     .sorted(longestFirst.thenComparing(latestFirst)).collect(Collectors.toList());
 
-            Interval head = intervalsSortedByOpServiceThenLatest.get(0);
+            Interval head = intervalsSortedByServiceThenLatest.get(0);
             long maxOpServiceDays = getNumberOfDaysOfServiceInInterval(head.getStart(), head.getEnd(), deploymentsOrService);
 
 
-            List<Interval> withLesserDropped = intervalsSortedByOpServiceThenLatest.stream()
+            List<Interval> withLesserDropped = intervalsSortedByServiceThenLatest.stream()
                     .filter(interval -> getNumberOfDaysOfServiceInInterval(interval.getStart(),
                             interval.getEnd(), deploymentsOrService) == maxOpServiceDays).collect(Collectors.toList());
 
@@ -110,7 +155,7 @@ public class ProcessingRuleFunctions {
         }
     }
 
-    private static long getInclusiveDaysFromRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, HasDateRange dateRange) {
+    private static long getInclusiveDaysFromRangeInInterval(LocalDate intervalStartDate, LocalDate intervalEndDate, MaybeOpenEndedInterval dateRange) {
 
         if (dateRange.getEndDate().isPresent() && dateRange.getEndDate().get().isBefore(intervalStartDate)) {
             logger.trace("date range end date is before start date, therefore returning 0 days.");
@@ -163,6 +208,8 @@ public class ProcessingRuleFunctions {
 
         return deployments;
     }
+
+
 
     public static Optional<Rank> getCFTSRankProximateToDate(ImmutableSet<Service> services, LocalDate testDate, CaseTrace caseTrace) {
 
@@ -235,10 +282,4 @@ public class ProcessingRuleFunctions {
         return sopSupportRequestDto.get_conditionDto().get_incidentDateRangeDto().get_startDate().isBefore(serviceHistory.getStartofService().get());
     }
 }
-
-
-
-
-
-
 

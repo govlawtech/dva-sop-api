@@ -3,7 +3,6 @@ package au.gov.dva.sopapi.interfaces;
 import au.gov.dva.sopapi.dtos.Recommendation;
 import au.gov.dva.sopapi.dtos.StandardOfProof;
 import au.gov.dva.sopapi.interfaces.model.*;
-import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
 import com.google.common.collect.ImmutableList;
 
 import java.util.Optional;
@@ -35,8 +34,10 @@ public interface ProcessingRule {
         }
 
         return recommendation;
-
     }
+
+
+
 
 }
 

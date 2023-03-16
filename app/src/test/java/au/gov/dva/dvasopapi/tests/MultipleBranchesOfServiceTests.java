@@ -1,13 +1,20 @@
 package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.LumbarSpondylosisConditionMockWithOnsetDate;
+import au.gov.dva.dvasopapi.tests.mocks.NonWarlikeServiceDeterminationMock;
+import au.gov.dva.dvasopapi.tests.mocks.OperationalServicePredicateFactoryMock;
+import au.gov.dva.dvasopapi.tests.mocks.WarlikeServiceDeterminationMock;
 import au.gov.dva.sopapi.dtos.*;
 import au.gov.dva.sopapi.dtos.sopsupport.SopSupportRequestDto;
 import au.gov.dva.sopapi.dtos.sopsupport.components.*;
 import au.gov.dva.sopapi.interfaces.*;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
+import au.gov.dva.sopapi.sopsupport.processingrules.IsOperationalPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
+import au.gov.dva.sopapi.veaops.VeaDetermination;
+import au.gov.dva.sopapi.veaops.VeaPeacekeepingActivity;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.junit.Assert;
@@ -597,7 +604,8 @@ public class MultipleBranchesOfServiceTests {
         return new ConditionDto(conditionName,IncidentType.Onset,null,null,new OnsetDateRangeDto(onsetDate,onsetDate),null);
     }
 
-    Predicate<Deployment> isOperationalMock = deployment -> deployment.getOperationName() == "OPERATIONAL";
+
+
 
 
     @Test
@@ -611,11 +619,10 @@ public class MultipleBranchesOfServiceTests {
 
         // 10 days RH service, 100 days CFTS for RH, double for BoP
         RuleConfigurationRepository mockRepo = createMockRulesConfigurationRepo(conditionName,seedDaysForRuleConfig);
-
+        IsOperationalPredicateFactory isOperationalPredicateFactoryMock = new OperationalServicePredicateFactoryMock();
         SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
         CaseTrace caseTrace = new SopSupportCaseTrace();
-        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,null,null)),isOperationalMock, caseTrace);
-
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,null,null)),isOperationalPredicateFactoryMock, createMockVeaOpServiceRepo(), createMockServiceDeterminations(), caseTrace);
 
         Assert.assertTrue(result.getCaseTrace().isComplete());
         Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
@@ -635,6 +642,29 @@ public class MultipleBranchesOfServiceTests {
         };
     }
 
+
+
+    ImmutableSet<ServiceDetermination> createMockServiceDeterminations() {
+        return ImmutableSet.of(
+                new NonWarlikeServiceDeterminationMock(),
+                new WarlikeServiceDeterminationMock()
+        );
+    }
+    VeaOperationalServiceRepository createMockVeaOpServiceRepo() {
+        return new VeaOperationalServiceRepository() {
+            @Override
+            public ImmutableSet<VeaDetermination> getDeterminations() {
+                return ImmutableSet.of();
+            }
+
+            @Override
+            public ImmutableSet<VeaPeacekeepingActivity> getPeacekeepingActivities() {
+                return ImmutableSet.of();
+            }
+        };
+    }
+
+
     @Test
     public void AcuteConditionRegressionTestForMultipleBranchesOfService() {
         String conditionName = "external burn";
@@ -646,9 +676,11 @@ public class MultipleBranchesOfServiceTests {
         // 10 days RH service, 100 days CFTS for RH, double for BoP
         RuleConfigurationRepository mockRepo = createMockEmptyRuleConfigRepo();
 
+        IsOperationalPredicateFactory isOperationalPredicateFactoryMock = new OperationalServicePredicateFactoryMock();
         SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
         CaseTrace caseTrace = new SopSupportCaseTrace();
-        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,"F2017C00862","F2017C00861")),isOperationalMock, caseTrace);
+
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,"F2017C00862","F2017C00861")),isOperationalPredicateFactoryMock, createMockVeaOpServiceRepo(), createMockServiceDeterminations(), caseTrace);
 
         Assert.assertTrue(result.getCaseTrace().isComplete());
         Assert.assertTrue(result.getRecommendation() == Recommendation.APPROVED);
@@ -667,7 +699,8 @@ public class MultipleBranchesOfServiceTests {
 
         SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDto(startOfServiceDate,daysInArmy,daysInAirForce));
         CaseTrace caseTrace = new SopSupportCaseTrace();
-        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,"F2017C00862","F2017C00861")),isOperationalMock, caseTrace);
+        IsOperationalPredicateFactory isOperationalPredicateFactoryMock = new OperationalServicePredicateFactoryMock();
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,"F2017C00862","F2017C00861")),isOperationalPredicateFactoryMock, createMockVeaOpServiceRepo(), createMockServiceDeterminations(), caseTrace);
 
         Assert.assertTrue(result.getCaseTrace().isComplete());
         Assert.assertTrue(result.getCaseTrace().getReasonings().containsKey(ReasoningFor.ABORT_PROCESSING));
@@ -687,7 +720,9 @@ public class MultipleBranchesOfServiceTests {
 
         SopSupportRequestDto mockRequest = new SopSupportRequestDto(createMockConditionDto(conditionName,onsetDate),createMockServiceHistoryDtoSingleBranch(startOfServiceDate,daysInArmy));
         CaseTrace caseTrace = new SopSupportCaseTrace();
-        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,null,null)),isOperationalMock, caseTrace);
+
+        IsOperationalPredicateFactory isOperationalPredicateFactoryMock = new OperationalServicePredicateFactoryMock();
+        RulesResult result = RulesResult.applyRules(mockRepo,mockRequest, ImmutableSet.of(createMockSopPair(conditionName,null,null)),isOperationalPredicateFactoryMock, createMockVeaOpServiceRepo(),createMockServiceDeterminations(), caseTrace);
 
 
         Assert.assertTrue(result.getCaseTrace().isComplete());

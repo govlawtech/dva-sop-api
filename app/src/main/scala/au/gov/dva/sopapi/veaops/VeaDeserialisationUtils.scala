@@ -18,7 +18,7 @@ object VeaDeserialisationUtils {
   def OperationFromXml(node: scala.xml.Node): VeaOperation = {
     val name = (node \ "name").text
     val startDate = LocalDate.parse((node \ "startDate").text, DateTimeFormatter.ISO_LOCAL_DATE)
-    val endDate = (node \ "endDate").headOption.map(i => LocalDate.parse(i.text, DateTimeFormatter.ISO_LOCAL_DATE))
+    val endDate = (node \  "endDate").headOption.map(i => LocalDate.parse(i.text, DateTimeFormatter.ISO_LOCAL_DATE))
     val specifiedAreas = VeaDeserialisationUtils.specifiedAreas(node)
     val qualifications = VeaDeserialisationUtils.qualifications(node)
     val mappings = GetMappings(node)

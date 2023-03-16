@@ -66,6 +66,7 @@ public class ProcessingRuleBase {
 
     protected Optional<SoP> getApplicableSop(Condition condition, ServiceHistory serviceHistory, Predicate<Deployment> isOperational, Interval rhInterval, boolean defaultToNoneIfBoP, CaseTrace caseTrace) {
 
+        caseTrace.setTestInterval(rhInterval);
         Optional<Service> serviceDuringOrAfterWhichConditionStarts = ProcessingRuleFunctions.identifyCFTSServiceDuringOrAfterWhichConditionOccurs(serviceHistory.getServices(), condition.getStartDate(), caseTrace);
 
         if (!serviceDuringOrAfterWhichConditionStarts.isPresent())
@@ -80,7 +81,7 @@ public class ProcessingRuleBase {
 
         Interval testInterval = rhInterval;
         caseTrace.addLoggingTrace(String.format("The start date for the test period for RH: %s", testInterval.getStart()));
-        caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", condition.getStartDate()));
+        caseTrace.addLoggingTrace(String.format("The end date for the test period for RH: %s", testInterval.getEnd()));
 
         Long daysOfOperationalService = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(testInterval.getStart(),testInterval.getEnd(),isOperational);
 
@@ -114,8 +115,6 @@ public class ProcessingRuleBase {
         return getApplicableSop(condition, serviceHistory,  isOperational, rhInterval, false,  caseTrace);
     }
 
-    //protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, Optional<? extends RuleConfigurationItem> applicableRuleConfigurationOptional, BiFunction<>, CaseTrace caseTrace)
-
     protected ImmutableList<FactorWithSatisfaction> getSatisfiedFactors(Condition condition, SoP applicableSop, ServiceHistory serviceHistory, Interval testInterval, ApplicableWearAndTearRuleConfiguration applicableWearAndTearRuleConfiguration, CaseTrace caseTrace) {
 
         assert applicableSop.getConditionName().equalsIgnoreCase(condition.getSopPair().getConditionName());
@@ -142,7 +141,7 @@ public class ProcessingRuleBase {
         caseTrace.addReasoningFor(ReasoningFor.MEETING_FACTORS, "Required days of continuous full time service: " + cftsDaysRequired);
 
         caseTrace.addLoggingTrace(String.format("The start date for the test period for counting days of CFTS: %s", testInterval.getStart()));
-        caseTrace.addLoggingTrace(String.format("The end date for the test period for counting days of CFTS: %s", condition.getStartDate()));
+        caseTrace.addLoggingTrace(String.format("The end date for the test period for counting days of CFTS: %s", testInterval.getEnd()));
 
         ImmutableList<Service> cftsServices = serviceHistory.getServices().stream()
                 .filter(s -> s.getEmploymentType() == EmploymentType.CFTS)

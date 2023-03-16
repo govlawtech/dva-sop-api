@@ -2,14 +2,12 @@ package au.gov.dva.dvasopapi.tests;
 
 import au.gov.dva.dvasopapi.tests.mocks.ServiceDeterminationMockOperationLittenOnly;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
-import au.gov.dva.sopapi.interfaces.model.Operation;
 import au.gov.dva.sopapi.sopref.Operations;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
-import au.gov.dva.sopapi.sopsupport.processingrules.ProcessingRuleFunctions;
+import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
 import com.google.common.collect.ImmutableList;
 import org.junit.Assert;
 import org.junit.Test;
-import scala.math.Ordering;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -17,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class OperationNameMappingTests {
 
@@ -58,15 +57,14 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, true, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
-        Assert.assertTrue(result);
+        Assert.assertFalse(result);
 
     }
 
     @Test
     public void PaladinNotMatchedBecauseNonWarlike() {
-
 
         Deployment mockDeployment = new Deployment() {
             @Override
@@ -85,16 +83,16 @@ public class OperationNameMappingTests {
                 return LocalDate.of(2003, 4, 21);
             }
 
-            // end of non-warlike palidin - correct dates
+            // end of non-warlike Paladin - correct dates, ends before warlike
             @Override
             public Optional<LocalDate> getEndDate() {
                 return Optional.of(LocalDate.of(2006, 7, 11));
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, true, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
-        Assert.assertTrue(result);
+        Assert.assertFalse(result);
 
     }
 
@@ -118,18 +116,19 @@ public class OperationNameMappingTests {
                 return LocalDate.of(2006, 7, 12);
             }
 
-            // end of warlike palidin - correct dates
+            // end of warlike paladin -- all within warlike op
             @Override
             public Optional<LocalDate> getEndDate() {
                 return Optional.of(LocalDate.of(2006, 8, 14));
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, true, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertTrue(result);
 
     }
+
 
 
     @Test
@@ -148,16 +147,16 @@ public class OperationNameMappingTests {
 
             @Override
             public LocalDate getStartDate() {
-                return null;
+                return LocalDate.of(2016,9,1);
             }
 
             @Override
             public Optional<LocalDate> getEndDate() {
-                return null;
+                return Optional.of(LocalDate.of(2016,9,5));
             }
         };
         ServiceDeterminationPair mock = new ServiceDeterminationPair(new ServiceDeterminationMockOperationLittenOnly(), new ServiceDeterminationMockOperationLittenOnly());
-        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mock);
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(false, mock, new SopSupportCaseTrace());
 
         boolean result = underTest.test(testData);
         Assert.assertTrue(result);
@@ -165,7 +164,124 @@ public class OperationNameMappingTests {
 
 
     @Test
-    public void CompareIshOperations() {
+    public void EnduringFreedomMatched(){
+        String officialName = "Enduring Freedom—Afghanistan";
+        String testName =  "OPERATION ENDURING FREEDOM";
+        Boolean result = Operations.isNameMatch(testName,officialName);
+        Assert.assertTrue(result);
+    }
+
+
+    @Test
+    public void BoundaryTestSlipperShouldMatchIfExactlyCoversWholeOp() {
+//        "name" : "Slipper",
+  //              "startDate" : "2001-10-11",
+    //            "endDate" : "2009-07-29" + 1,
+      //          "type" : "warlike"
+
+        // Deployed from beginning to end
+        Deployment testDeployment = new Deployment() {
+            @Override
+            public String getOperationName() {
+                return "Operation Slipper";
+            }
+
+            @Override
+            public String getEvent() {
+                return null;
+            }
+
+            @Override
+            public LocalDate getStartDate() {
+                return LocalDate.of(2001,10,11);
+            }
+
+            @Override
+            public Optional<LocalDate> getEndDate() {
+                return Optional.of(LocalDate.of(2009,7,30));
+            }
+        };
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(false, mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Boolean result = underTest.test(testDeployment);
+        Assert.assertTrue(result);
+
+    }
+
+    @Test
+    public void BoundaryTestSlipperIfOneDayTooLong() {
+//        "name" : "Slipper",
+        //              "startDate" : "2001-10-11",
+        //            "endDate" : "2009-07-29" + 1,
+        //          "type" : "warlike"
+
+        // Deployed from beginning to end
+        Deployment testDeployment = new Deployment() {
+            @Override
+            public String getOperationName() {
+                return "Operation Slipper";
+            }
+
+            @Override
+            public String getEvent() {
+                return null;
+            }
+
+            @Override
+            public LocalDate getStartDate() {
+                return LocalDate.of(2001,10,11);
+            }
+            @Override
+            public Optional<LocalDate> getEndDate() {
+                return Optional.of(LocalDate.of(2009,8,1));
+            }
+
+
+        };
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(true, mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Boolean result = underTest.test(testDeployment);
+        Assert.assertFalse(result);
+
+    }
+
+
+
+    @Test
+    public void BoundaryTestSlipperNOTMatchIfOpenEnded() {
+//        "name" : "Slipper",
+        //              "startDate" : "2001-10-11",
+        //            "endDate" : "2009-07-29",
+        //          "type" : "warlike"
+
+        // Deployed from beginning to end
+        Deployment testDeployment = new Deployment() {
+            @Override
+            public String getOperationName() {
+                return "Operation Slipper";
+            }
+
+            @Override
+            public String getEvent() {
+                return null;
+            }
+
+            @Override
+            public LocalDate getStartDate() {
+                return LocalDate.of(2001,10,11);
+            }
+
+            @Override
+            public Optional<LocalDate> getEndDate() {
+                return Optional.empty();
+            }
+        };
+        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(true, mockServiceDeterminationPair, new SopSupportCaseTrace());
+        Boolean result = underTest.test(testDeployment);
+        Assert.assertFalse(result);
+
+    }
+
+    @Test
+    public void TestNameMapping() {
         ImmutableList<String> ishOperationNames = ImmutableList.of(
                 "International Security Assistance Force",
                 "OP ACCORDION",
@@ -231,43 +347,28 @@ public class OperationNameMappingTests {
                 "UNTAG"
         );
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsOperationalPredicate(mockServiceDeterminationPair);
+        List<String> officialOperationNames = mockServiceDeterminationPair.getBoth().stream().flatMap(o -> o.getOperations().stream().map(i -> i.getName())).collect(Collectors.toList());
+
+
 
 
         List<String> notMatched = new ArrayList<>();
         List<String> isMatched = new ArrayList<>();
 
-        ishOperationNames.forEach(s -> {
-            boolean matched = underTest.test(new Deployment() {
-                @Override
-                public String getOperationName() {
-                    return s;
-                }
+         for (String ishName : ishOperationNames) {
+             Boolean match = officialOperationNames.stream().anyMatch(on -> Operations.isNameMatch(ishName,on));
+             if (match)
+             {
+                 isMatched.add(ishName);
+             }
+             else {
+                 notMatched.add(ishName);
+             }
+         }
 
-                @Override
-                public String getEvent() {
-                    return null;
-                }
-
-                @Override
-                public LocalDate getStartDate() {
-                    return LocalDate.of(2000, 1, 1);
-                }
-
-                @Override
-                public Optional<LocalDate> getEndDate() {
-                    return Optional.empty();
-                }
-            });
-
-            if (matched) isMatched.add(s);
-            else notMatched.add(s);
-
-        });
 
         System.out.println(String.format("MATCHED%n==========="));
         isMatched.stream().forEach(s -> System.out.println(s));
-
 
         System.out.println(String.format("NOT MATCHED%n=========="));
         notMatched.stream().forEach(s -> System.out.println(s));
@@ -298,7 +399,7 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair, false, new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertTrue(result == true);
 
@@ -337,7 +438,7 @@ public class OperationNameMappingTests {
             }
         };
 
-        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair);
+        Predicate<Deployment> underTest = Operations.getMRCAIsWarlikePredicate(mockServiceDeterminationPair,false,  new SopSupportCaseTrace());
         boolean result = underTest.test(mockDeployment);
         Assert.assertTrue(result == true);
     }

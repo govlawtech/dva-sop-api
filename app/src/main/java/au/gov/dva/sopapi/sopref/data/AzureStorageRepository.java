@@ -63,7 +63,7 @@ public class AzureStorageRepository implements Repository {
     private static final String RH_RULE_CONFIG_CSV_NAME = "rh.csv";
     private static final String BOP_RULE_CONFIG_CSV_NAME = "bop.csv";
     private static final String SOP_PDFS_CONTAINER_NAME = "soppdfs";
-    private static final String VEA_OPERATIONS_CONTAINER_NAME = "veadeterminations";
+    private static final String VEA_OPERATIONS_CONTAINER_NAME = "arkar";
     private static final String VEA_OPERATIONS_BLOB_NAME = "veaServiceReferenceData.xml";
     private static final String CURATED_TEXT_CONTAINER_NAME = "curatedtext";
     private static final String CURATED_TEXT_FACTOR_CSV_NAME = "hand-written-factor-text.csv";

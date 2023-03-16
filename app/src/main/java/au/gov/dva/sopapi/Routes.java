@@ -15,6 +15,7 @@ import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.SequelaeRequestDto;
 import au.gov.dva.sopapi.exceptions.ProcessingRuleRuntimeException;
 import au.gov.dva.sopapi.exceptions.ServiceHistoryCorruptException;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
+import au.gov.dva.sopapi.interfaces.RuleConfigurationRepository;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.interfaces.Repository;
 import au.gov.dva.sopapi.sopref.DtoTransformations;
@@ -26,9 +27,10 @@ import au.gov.dva.sopapi.sopref.data.sops.BasicICDCode;
 import au.gov.dva.sopapi.sopref.dependencies.Dependencies;
 import au.gov.dva.sopapi.sopref.dependencies.DotToImage;
 import au.gov.dva.sopapi.sopsupport.SopSupportCaseTrace;
-import au.gov.dva.sopapi.sopsupport.processingrules.IRhPredicateFactory;
+import au.gov.dva.sopapi.sopsupport.processingrules.IsOperationalPredicateFactory;
 import au.gov.dva.sopapi.sopsupport.processingrules.RulesResult;
-import au.gov.dva.sopapi.sopsupport.processingrules.SuperiorRhPredicateFactory;
+import au.gov.dva.sopapi.sopsupport.processingrules.PredicateFactory;
+import au.gov.dva.sopapi.veaops.interfaces.VeaOperationalServiceRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -62,7 +64,7 @@ import static java.util.stream.Collectors.toList;
 import static spark.Spark.get;
 import static spark.Spark.post;
 
-public class Routes {
+public class Routes  {
 
     private final static String MIME_JSON = "application/json";
     private final static String MIME_DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
@@ -149,7 +151,7 @@ public class Routes {
 
         get(SharedConstants.Routes.GET_CONDITIONS, (req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -177,7 +179,7 @@ public class Routes {
 
         get(SharedConstants.Routes.GET_VEA_ACTIVITIES, (req, res) -> {
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -208,7 +210,7 @@ public class Routes {
                 }
             }
 
-            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate, endDate, cache.get_veaOperationalServiceRepository());
+            JsonNode jsonResponse = au.gov.dva.sopapi.veaops.Facade.getResponseRangeQuery(startDate, Optional.of(endDate), cache.get_veaOperationalServiceRepository());
             ObjectMapper om = new ObjectMapper();
             String jsonString = om.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse);
             setResponseHeaders(res, 200, MIME_JSON);
@@ -220,7 +222,7 @@ public class Routes {
         get(SharedConstants.Routes.GET_SOPFACTORS, (req, res) -> {
 
             if (validateHeaders() && !responseTypeAcceptable(req, MIME_JSON)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(MIME_JSON);
             }
 
@@ -234,8 +236,10 @@ public class Routes {
             List<String> errors = getSopParamsValidationErrors(icdCodeValue, icdCodeVersion, standardOfProof, conditionName, incidentType);
 
             if (errors.size() > 0) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
+                setResponseHeaders(res, 400, MIME_JSON);
+                String msg =  "Your request is malformed: \r\n\r\n" + String.join("\r\n", errors);
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null,"SOP-API-BAD-REQUEST",msg,null);
+                return errorResponseBody.toJson();
             }
 
             ImmutableSet<SoP> matchingSops;
@@ -246,8 +250,9 @@ public class Routes {
             }
 
             if (matchingSops.isEmpty()) {
-                setResponseHeaders(res, 404, MIME_TEXT);
-                return buildErrorMessageShowingRecognisedIcdCodesAndConditionNames(cache.get_allSops());
+                setResponseHeaders(res, 200, MIME_JSON);
+                // return empty array  - MyService devs especially wanted this
+                return "{\"applicableFactors\": []}";
             } else {
 
                 setResponseHeaders(res, 200, MIME_JSON);
@@ -271,31 +276,41 @@ public class Routes {
             try {
                 sopSupportRequestDto = SopSupportRequestDto.fromJsonString(clenseJson(req.body()));
             } catch (DvaSopApiDtoRuntimeException e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return String.format("Request body invalid: %s", e.getMessage());
+                setResponseHeaders(res, 400, MIME_JSON);
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", e.getMessage(),null);
+
+                return errorResponseBody.toJson();
             }
 
             ImmutableList<String> semanticErrors = SemanticRequestValidation.getSemanticErrors(sopSupportRequestDto);
             if (!semanticErrors.isEmpty()) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(), semanticErrors));
+                setResponseHeaders(res, 400, MIME_JSON);
+
+
+                String detailMessage = String.format("Request body invalid: %n%s", String.join(scala.util.Properties.lineSeparator(), semanticErrors));
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", detailMessage,null);
+
+                return errorResponseBody.toJson();
             }
 
             if (sopSupportRequestDto.get_conditionDto().get_conditionName() == null) {
                 Optional<String> conditionNameFromICDCode = getConditionNameForICDCode(sopSupportRequestDto.get_conditionDto().get_icdCodeVersion(), sopSupportRequestDto.get_conditionDto().get_icdCodeValue(), cache.get_allSopPairs());
                 if (!conditionNameFromICDCode.isPresent()) {
-                    setResponseHeaders(res, 400, MIME_TEXT);
-                    return String.format("The given ICD code and version does not map to a single SoP.");
+                    setResponseHeaders(res, 400, MIME_JSON);
+                    String detailMessage = String.format("The given ICD code and version does not map to a single SoP.");
+                    ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST", detailMessage,null);
+                    return errorResponseBody.toJson();
                 } else {
                     sopSupportRequestDto.get_conditionDto().set_conditionName(conditionNameFromICDCode.get());
                 }
             }
 
             ServiceDeterminationPair serviceDeterminationPair = Operations.getLatestDeterminationPair(cache.get_allMrcaServiceDeterminations());
-            IRhPredicateFactory rhPredicateFactory = new SuperiorRhPredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
+
+            IsOperationalPredicateFactory isOperationalPredicateFactory = new PredicateFactory(serviceDeterminationPair, cache.get_veaOperationalServiceRepository());
             // todo: new up conditionFactory here
 
-            RulesResult rulesResult = runRules(sopSupportRequestDto, rhPredicateFactory);
+            RulesResult rulesResult = runRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, isOperationalPredicateFactory, cache.get_veaOperationalServiceRepository(), cache.get_allMrcaServiceDeterminations());
             SopSupportResponseDto sopSupportResponseDto = rulesResult.buildSopSupportResponseDto();
             setResponseHeaders(res, 200, MIME_JSON);
             return SopSupportResponseDto.toJsonString(sopSupportResponseDto);
@@ -308,7 +323,7 @@ public class Routes {
             List<String> conditionNames = cache.get_conditionsList().stream().map(c -> c.get_conditionName()).sorted().collect(Collectors.toList());
             String conditionNamesStringList = String.join(scala.util.Properties.lineSeparator(), conditionNames);
             if (conditionName == null) {
-                setResponseHeaders(res, 400, MIME_TEXT);
+                setResponseHeaders(res, 400, MIME_JSON);
                 StringBuilder sb = new StringBuilder();
                 sb.append("Missing: query parameter 'conditionName' with one of the following values:");
                 sb.append(scala.util.Properties.lineSeparator());
@@ -423,52 +438,45 @@ public class Routes {
         post(path, ((req, res) ->
         {
             if (validateHeaders() && !responseTypeAcceptable(req, responseMimeType)) {
-                setResponseHeaders(res, 406, MIME_TEXT);
+                setResponseHeaders(res, 406, MIME_JSON);
                 return buildAcceptableContentTypesError(responseMimeType);
             }
 
             try {
                 return handler.handle(req, res);
-            } catch (DvaSopApiDtoRuntimeException e) {
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return buildIncorrectRequestFormatError(e.getMessage());
+
             } catch (ServiceHistoryCorruptException e) {
                 logger.error("Service history corrupt.", e);
-                setResponseHeaders(res, 400, MIME_TEXT);
-                return e.getMessage();
+                setResponseHeaders(res, 400, MIME_JSON);
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-BAD-REQUEST","Service history corrupt: " + e.getMessage(), null);
+                return errorResponseBody.toJson();
             } catch (ProcessingRuleRuntimeException e) {
                 logger.error("Error applying rule.", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
-                return e.getMessage();
+                setResponseHeaders(res, 500, MIME_JSON);
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-RULE-LOGIC-ERROR",null,null);
+                return errorResponseBody.toJson();
             } catch (Exception e) {
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-ERROR",null,null);
                 logger.error("Unknown exception", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
-                return e.getMessage();
+                setResponseHeaders(res, 500, MIME_JSON);
+                return errorResponseBody.toJson();
             } catch (Error e) {
                 logger.error("Unknown error", e);
-                setResponseHeaders(res, 500, MIME_TEXT);
-                return e.getMessage();
+                ErrorResponseBody errorResponseBody = new ErrorResponseBody(null, "SOP-API-INTERNAL-ERROR",null,null);
+                setResponseHeaders(res, 500, MIME_JSON);
+                return errorResponseBody.toJson();
             }
         }));
     }
 
-    private static String buildIncorrectRequestFormatError(String detailedErrorMessage) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(detailedErrorMessage);
-        Optional<String> schema = generateSchemaForSopSupportRequestDto();
-        if (schema.isPresent()) {
-            sb.append("Request must conform to schema:\n");
-            sb.append(schema);
-        }
-        return sb.toString();
-    }
 
-    public static RulesResult runRules(SopSupportRequestDto sopSupportRequestDto, IRhPredicateFactory rhPredicateFactory) {
+    public static RulesResult runRules(RuleConfigurationRepository repository, SopSupportRequestDto sopSupportRequestDto, IsOperationalPredicateFactory isOperationalPredicateFactory, VeaOperationalServiceRepository veaOperationalServiceRepository, ImmutableSet<ServiceDetermination> serviceDeterminations) {
         CaseTrace caseTrace = new SopSupportCaseTrace();
         caseTrace.setConditionName(sopSupportRequestDto.get_conditionDto().get_conditionName());
 
-        RulesResult rulesResult = RulesResult.applyRules(cache.get_ruleConfigurationRepository(), sopSupportRequestDto, cache.get_allSopPairs(),
-                rhPredicateFactory.createMrcaOrVeaPredicate(sopSupportRequestDto.get_conditionDto()), caseTrace);
+        RulesResult rulesResult = RulesResult.applyRules(repository, sopSupportRequestDto, cache.get_allSopPairs(),
+                isOperationalPredicateFactory, veaOperationalServiceRepository, serviceDeterminations, caseTrace);
+
         assert caseTrace.isComplete() : "Case trace not complete";
         return rulesResult;
 
@@ -537,7 +545,7 @@ public class Routes {
         response.status(statusCode);
 
         String responseType = mimeType;
-        if (responseType.equals(MIME_JSON) || responseType.equals(MIME_TEXT)) {
+        if (responseType.equals(MIME_JSON) || responseType.equals(MIME_JSON)) {
             responseType += "; charset=utf-8";
         }
         response.type(responseType);
@@ -573,7 +581,9 @@ public class Routes {
     }
 
     private static String buildAcceptableContentTypesError(String mimeType) {
-        return "Accept header in request must include '" + mimeType + "'.";
+        String msg =  "Accept header in request must include '" + mimeType + "'.";
+        ErrorResponseBody errorResponseBody = new ErrorResponseBody(null,"SOP-API-BAD-REQUEST", msg,null);
+        return errorResponseBody.toJson();
     }
 
     private static Boolean validateHeaders() {

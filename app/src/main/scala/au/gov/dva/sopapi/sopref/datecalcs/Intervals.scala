@@ -17,6 +17,8 @@ object Intervals {
     r.asJava
   }
 
+
+
   def getSoPFactorTestIntervals(numberOfYears: Int, bracketIntervalStart: LocalDate, bracketIntervalEnd: LocalDate): List[Interval] = {
     if (bracketIntervalEnd.minusYears(numberOfYears).isBefore(bracketIntervalStart)) {
       return List( new Interval( bracketIntervalStart, bracketIntervalEnd))

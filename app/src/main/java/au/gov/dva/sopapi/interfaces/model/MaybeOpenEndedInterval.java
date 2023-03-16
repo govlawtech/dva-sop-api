@@ -3,7 +3,7 @@ package au.gov.dva.sopapi.interfaces.model;
 import java.time.LocalDate;
 import java.util.Optional;
 
-public interface HasDateRange {
+public interface MaybeOpenEndedInterval {
     LocalDate getStartDate();
     Optional<LocalDate> getEndDate();
 

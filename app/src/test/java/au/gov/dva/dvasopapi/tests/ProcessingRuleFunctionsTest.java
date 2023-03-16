@@ -3,6 +3,7 @@ package au.gov.dva.dvasopapi.tests;
 import au.gov.dva.sopapi.dtos.EmploymentType;
 import au.gov.dva.sopapi.dtos.Rank;
 import au.gov.dva.sopapi.dtos.ServiceBranch;
+import au.gov.dva.sopapi.interfaces.ProcessingRule;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.interfaces.model.Service;
@@ -34,12 +35,65 @@ public class ProcessingRuleFunctionsTest {
         );
     }
 
-    private Deployment makeDeployment(int beginYear, int beginMonth, int beginDay) {
-        return new DeploymentImpl(""
-                , LocalDate.of(beginYear, beginMonth, beginDay)
-                , Optional.empty()
-                ,"Within Specified Area"
-        );
+
+
+    @Test
+    public void SimpleTestWithOnlyOneDeployment() {
+        LocalDate testIntervalBeginning = LocalDate.of(2010,1,1);
+        LocalDate testIntevalEnd = LocalDate.of(2010,12,31);
+        Deployment singleDayDeployment = makeDeployment(2010,1,1,2010,1,2);
+        long result = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(testIntervalBeginning,testIntevalEnd,ImmutableList.of(singleDayDeployment));
+        // Includes end date
+        Assert.assertTrue(result == 2);
+    }
+
+    @Test
+    public void TestWithOverappingDeployments() {
+        LocalDate testIntervalBeginning = LocalDate.of(2010,1,1);
+        LocalDate testIntevalEnd = LocalDate.of(2010,1,3);
+        Deployment firstDeployment = makeDeployment(2010,1,1,2010, 1,2);
+        Deployment secondDeployment = makeDeployment(2010,1,2,2010,1,3);
+
+        long result = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(testIntervalBeginning,testIntevalEnd,ImmutableList.of(firstDeployment,secondDeployment));
+        // Includes end date
+        Assert.assertTrue(result == 3);
+    }
+
+
+    @Test
+    public void LayoshiTest() {
+        LocalDate serviceStartDate = LocalDate.of(2010,1,21);
+        LocalDate serviceEndDate = LocalDate.now();
+
+        Deployment a1 = makeDeployment(2012,11,30,2013,3,8);
+        Deployment a2 = makeDeployment(2013,3,18,2013,4,3);
+        Deployment r1 = makeDeployment(2015,12,4,2015,12,5);
+        Deployment r2 = makeDeployment(2015,12,5,2016,1,5);
+        Deployment r3 = makeDeployment(2016,1,5,2016,1,6);
+        Deployment r4 = makeDeployment(2016,1,6,2016,1,14);
+        Deployment r5 = makeDeployment(2016,1,14,2016,2,23);
+        Deployment r6 = makeDeployment(2016,2,23,2016,2,26);
+
+        // Expected:
+        // ANODE1 including end date: 99
+        // ANODE2 including end date: 17
+        // RESOLUTE1 to RESOLUTE6 including end date: 85
+        // total: 201
+
+        long result= ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(serviceStartDate,serviceEndDate,ImmutableList.of(a1,a2,r1,r2,r3,r4,r5,r6));
+
+        Assert.assertTrue(result == 201);
+
+    }
+
+    @Test
+    public void TestServiceBranchInterval()
+    {
+        LocalDate testIntervalBeginning = LocalDate.of(2010,1,1);
+        LocalDate testIntevalEnd = LocalDate.of(2010,12,31);
+        Service testService = makeService(2010,1,1,2010,1,2);
+        long days = ProcessingRuleFunctions.getNumberOfDaysOfServiceInInterval(testIntervalBeginning,testIntevalEnd,ImmutableList.of(testService));
+        Assert.assertTrue(days == 2);
     }
 
     @Test
@@ -87,6 +141,9 @@ public class ProcessingRuleFunctionsTest {
         );
     }
 
+
+
+
     @Test
     public void testGetDaysOfServiceInInterval() {
         ImmutableList<Service> testData =
@@ -126,5 +183,6 @@ public class ProcessingRuleFunctionsTest {
                 , testData);
         Assert.assertTrue(days == 30); // four days from the big service + 26 from the later services
     }
+
 
 }

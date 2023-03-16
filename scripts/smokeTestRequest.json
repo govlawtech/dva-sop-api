@@ -1,0 +1,36 @@
+{
+  "condition": {
+    "conditionName": "rotator cuff syndrome",
+    "incidentType": "onset",
+    "icdCodeVersion": null,
+    "icdCodeValue": null,
+    "onsetDates": {
+      "onsetRangeStartDate": "2022-08-15",
+      "onsetRangeEndDate": "2022-08-15"
+    },
+    "aggravationDates": null
+  },
+  "serviceHistory": {
+    "serviceSummaryInformation": {
+      "originalHireDate": "2000-01-01"
+    },
+    "serviceDetails": [
+      {
+        "serviceType": "Regular/Permanent Force",
+        "startDate": "2010-01-01",
+        "endDate": "2022-08-15",
+        "rank": "Officer",
+        "operationalService": [
+             {
+                 "assigned" : "2021-01-01",
+                 "description" : "Operation ORENDA",
+                 "event" : "Within Specified Area",
+                 "startDate" : "2021-01-01",
+                 "endDate" : "2022-08-14"
+      }
+        ],
+        "service": "Australian Army"
+      }
+    ]
+  }
+}

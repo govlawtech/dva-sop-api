@@ -46,6 +46,7 @@ public class AcuteConditionRule implements AcuteProcessingRule {
         }
 
         Interval intervalToCheckForOperationalService = _providerForIntervalToCheckForOperationalService.apply(condition);
+        caseTrace.setTestInterval(intervalToCheckForOperationalService);
         long numberOfDaysOfFullTimeOperationalServiceDaysInInterval = serviceHistory.getNumberOfDaysOfFullTimeOperationalService(intervalToCheckForOperationalService.getStart(), intervalToCheckForOperationalService.getEnd(), isOperational);
         if (numberOfDaysOfFullTimeOperationalServiceDaysInInterval >= Integer.MAX_VALUE)
             throw new ProcessingRuleRuntimeException("Number of operational days above max value.");

@@ -1,6 +1,6 @@
 package au.gov.dva.sopapi.interfaces.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
+import au.gov.dva.sopapi.dtos.sopsupport.MilitaryOperationType;
 
 public enum ServiceType {
     WARLIKE("warlike"),
@@ -32,6 +32,16 @@ public enum ServiceType {
     ServiceType(String text)
     {
         this.text = text;
+    }
+
+    public MilitaryOperationType toMilitaryOperationType()
+    {
+        if (this == ServiceType.WARLIKE)
+            return MilitaryOperationType.Warlike;
+        else if (this == ServiceType.NON_WARLIKE)
+            return MilitaryOperationType.NonWarlike;
+        else if (this == ServiceType.PEACETIME);
+            return MilitaryOperationType.Peacekeeping;
     }
 
 }

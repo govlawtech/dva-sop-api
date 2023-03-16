@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<veaServiceReferenceData
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="veaServiceReferenceData.xsd">
+<veaServiceReferenceData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="veaServiceReferenceData.xsd">
     <warlikeAndNonWarlike>
 
         <veaLegislativeReference>6F</veaLegislativeReference>
@@ -162,7 +160,7 @@
                         <startDate>2001-10-11</startDate>
                         <endDate>2014-12-31</endDate>
                         <specifiedAreas>
-                            <specifiedArea>[[<![CDATA[
+                            <specifiedArea>[[                                <![CDATA[
                                <kml xmlns="http://www.opengis.net/kml/2.2>
                                 	<Polygon>
 			<tessellate>1</tessellate>
@@ -314,7 +312,7 @@
                         <endDate>2003-07-22</endDate>
                         <specifiedAreas>
                             <specifiedArea>
-                                [[<![CDATA[
+                                [[                                <![CDATA[
 	 <kml xmlns="http://www.opengis.net/kml/2.2>
 	<Polygon>
 			<tessellate>1</tessellate>
@@ -630,26 +628,26 @@
 
         </warlikeDeterminations>
 
-          <non-warlikeDeterminations>
-            
-              <determination>
-                  <federalRegisterOfLegislationReference>F2022L00516</federalRegisterOfLegislationReference>
-                  <commencementDate>2022-04-05</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Lilia</name>
-                          <startDate>2020-11-25</startDate>
-                          <specifiedAreas>
-                              <specifiedArea>The land, territorial waters and superjacent airspace of the Solomon Islands</specifiedArea>
-                          </specifiedAreas>
-                          <qualifications>
-                              <qualification>Defence Force contribution to stabilisation of the Solomon Islands</qualification>
-                          </qualifications>
+        <non-warlikeDeterminations>
 
-                      </operation>
-                  </operations>
-              </determination>
-              
+            <determination>
+                <federalRegisterOfLegislationReference>F2022L00516</federalRegisterOfLegislationReference>
+                <commencementDate>2022-04-05</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Lilia</name>
+                        <startDate>2020-11-25</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>The land, territorial waters and superjacent airspace of the Solomon Islands</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Defence Force contribution to stabilisation of the Solomon Islands</qualification>
+                        </qualifications>
+
+                    </operation>
+                </operations>
+            </determination>
+
             <determination>
                 <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
                 <commencementDate>2019-07-01</commencementDate>
@@ -680,7 +678,7 @@
 
                                 ]]>
                             </specifiedArea>
-                      </specifiedAreas>
+                        </specifiedAreas>
                         <qualifications>
                             <qualification>Defence Force contribution to the maintenance of strategic stability in the wider Asia-Pacific region</qualification>
                         </qualifications>
@@ -882,40 +880,40 @@
                 </operations>
             </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Paladin</name>
-                          <startDate>2006-07-12</startDate>
-                          <endDate>2006-08-14</endDate>
-                          <specifiedAreas>
-                              <specifiedArea>The total land area, territorial waters and superjacent airspace within the internationally recognised boundaries of Israel, Jordan, Syria, Lebanon and Egypt, excluding the following area: Southern Lebanon bounded by 33°12′N 35°12′E, 33°10′N 35°20′E, 33°19′N 35°25′E, on the Litani River, then along the Litani River to 33°25′N 35°37′E, 33°22′N 35°49′E, on the Syria‑Lebanon border, then south to the junction of the Syria‑Lebanon‑Israel border, then east along the Lebanon‑Israel border to the coast, then north along the coast to 33°12′N 35°12′E</specifiedArea>
-                          </specifiedAreas>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the United Nations Truce Supervision Organization</qualification>
-                          </qualifications>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Paladin</name>
+                        <startDate>2006-07-12</startDate>
+                        <endDate>2006-08-14</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>The total land area, territorial waters and superjacent airspace within the internationally recognised boundaries of Israel, Jordan, Syria, Lebanon and Egypt, excluding the following area: Southern Lebanon bounded by 33°12′N 35°12′E, 33°10′N 35°20′E, 33°19′N 35°25′E, on the Litani River, then along the Litani River to 33°25′N 35°37′E, 33°22′N 35°49′E, on the Syria‑Lebanon border, then south to the junction of the Syria‑Lebanon‑Israel border, then east along the Lebanon‑Israel border to the coast, then north along the coast to 33°12′N 35°12′E</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the United Nations Truce Supervision Organization</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Paladin</name>
-                          <startDate>2006-08-15</startDate>
-                          <specifiedAreas>
-                              <specifiedArea>The total land area, territorial waters and superjacent airspace within the internationally recognised boundaries of Israel, Jordan, Syria, Lebanon and Egypt</specifiedArea>
-                          </specifiedAreas>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the United Nations Truce Supervision Organization</qualification>
-                          </qualifications>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Paladin</name>
+                        <startDate>2006-08-15</startDate>
+                        <specifiedAreas>
+                            <specifiedArea>The total land area, territorial waters and superjacent airspace within the internationally recognised boundaries of Israel, Jordan, Syria, Lebanon and Egypt</specifiedArea>
+                        </specifiedAreas>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the United Nations Truce Supervision Organization</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
 
             <determination>
                 <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
@@ -975,21 +973,21 @@
                 </operations>
             </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Spitfire</name>
-                          <startDate>1999-09-06</startDate>
-                          <endDate>1999-09-19</endDate>
-                          <specifiedAreas>
-                              <specifiedArea>East Timor</specifiedArea>
-                              <specifiedArea>The territorial sea of Indonesia adjacent to East Timor</specifiedArea>
-                          </specifiedAreas>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Spitfire</name>
+                        <startDate>1999-09-06</startDate>
+                        <endDate>1999-09-19</endDate>
+                        <specifiedAreas>
+                            <specifiedArea>East Timor</specifiedArea>
+                            <specifiedArea>The territorial sea of Indonesia adjacent to East Timor</specifiedArea>
+                        </specifiedAreas>
+                    </operation>
+                </operations>
+            </determination>
 
             <determination>
                 <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
@@ -1218,311 +1216,312 @@
                 </operations>
             </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Quickstep Tonga</name>
-                          <specifiedAreas>
-                              <specifiedArea>The sovereign territory of Tonga, including the land territory, internal waters, territorial sea and superjacent airspace of Tonga and the exclusive economic zone of Tonga and its superjacent airspace</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2006-11-18</startDate>
-                          <endDate>2006-11-30</endDate>
-                          <qualifications>
-                              <qualification>Defence Force operation to assist the Government of Tonga with the restoration of law and order in Tonga</qualification>
-                          </qualifications>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Quickstep Tonga</name>
+                        <specifiedAreas>
+                            <specifiedArea>The sovereign territory of Tonga, including the land territory, internal waters, territorial sea and superjacent airspace of Tonga and the exclusive economic zone of Tonga and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2006-11-18</startDate>
+                        <endDate>2006-11-30</endDate>
+                        <qualifications>
+                            <qualification>Defence Force operation to assist the Government of Tonga with the restoration of law and order in Tonga</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Hedgerow</name>
-                          <specifiedAreas>
-                              <specifiedArea>Sudan</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2008-07-28</startDate>
-                          <endDate>2011-06-23</endDate>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the hybrid United Nations and African Union mission in Darfur</qualification>
-                          </qualifications>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Hedgerow</name>
+                        <specifiedAreas>
+                            <specifiedArea>Sudan</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2008-07-28</startDate>
+                        <endDate>2011-06-23</endDate>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the hybrid United Nations and African Union mission in Darfur</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                    <activities>
-                        <activity>
-                            <shortName>Unified Protector</shortName>
-                            <qualifications>
-                                <qualification>Defence Force contribution to the NATO no‑fly zone and maritime enforcement operation against Libya</qualification>                                  </qualifications>
-                            <specifiedAreas>
-                                <specifiedArea>The international waters and superjacent airspace of the central southern Mediterranean Sea between 10°00′E and 28°00′E and south of 41°00′N, including portions of Italy, Greece, Turkey, Albania and all of Malta and north of Libya and its territorial waters and superjacent airspace</specifiedArea>
-                            </specifiedAreas>
-                            <startDate>2011-03-31</startDate>
-                            <endDate>2011-10-31</endDate>
-                            <mappings>
-                                    <mapping regex="(?i)Unified Protector(?-i)"></mapping>
-                            </mappings>
-                        </activity>
-                    </activities>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <activities>
+                    <activity>
+                        <shortName>Unified Protector</shortName>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the NATO no‑fly zone and maritime enforcement operation against Libya</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The international waters and superjacent airspace of the central southern Mediterranean Sea between 10°00′E and 28°00′E and south of 41°00′N, including portions of Italy, Greece, Turkey, Albania and all of Malta and north of Libya and its territorial waters and superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2011-03-31</startDate>
+                        <endDate>2011-10-31</endDate>
+                        <mappings>
+                            <mapping regex="(?i)Unified Protector(?-i)"></mapping>
+                        </mappings>
+                    </activity>
+                </activities>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Aslan</name>
-                      <qualifications>
-                          <qualification>Defence Force contribution to the United Nations Mission in the Republic of South Sudan</qualification>
-                      </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>South Sudan and its superjacent airspace</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2011-09-23</startDate>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Aslan</name>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the United Nations Mission in the Republic of South Sudan</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>South Sudan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2011-09-23</startDate>
+                    </operation>
+                </operations>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>Accordion</name>
-                            <qualifications>
-                                <qualification>Supporting operations in Bahrain, Qatar and the United Arab Emirates in relation to the Defence Force contribution to the International Coalition against Terrorism</qualification>
-                                </qualifications>
-                            <specifiedAreas>
-                                <specifiedArea>The area bounded by the land mass and superjacent airspaces of Bahrain, Qatar and the United Arab Emirates</specifiedArea>
-                            </specifiedAreas>
-                            <startDate>2014-07-01</startDate>
-                        </operation>
-                    </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Accordion</name>
+                        <qualifications>
+                            <qualification>Supporting operations in Bahrain, Qatar and the United Arab Emirates in relation to the Defence Force contribution to the International Coalition against Terrorism</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The area bounded by the land mass and superjacent airspaces of Bahrain, Qatar and the United Arab Emirates</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2014-07-01</startDate>
+                    </operation>
+                </operations>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                    <operations>
-                        <operation>
-                            <name>Manitou</name>
-                            <qualifications>
-                                <qualification>Maritime operations, including counter‑piracy operations</qualification>
-                            </qualifications>
-                            <specifiedAreas>
-                                <specifiedArea>The area comprising all sea and superjacent airspace of the Persian Gulf, the Gulf of Aden, the Red Sea and the Arabian Sea north of latitude 11°00′S and west of longitude 68°00′E, including the ports adjacent to that area, and the area within a 10 kilometre radius of each port</specifiedArea>
-                            </specifiedAreas>
-                            <startDate>2014-07-01</startDate>
-                            <endDate>2015-05-13</endDate>
-                        </operation>
-                    </operations>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Manitou</name>
+                        <qualifications>
+                            <qualification>Maritime operations, including counter‑piracy operations</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The area comprising all sea and superjacent airspace of the Persian Gulf, the Gulf of Aden, the Red Sea and the Arabian Sea north of latitude 11°00′S and west of longitude 68°00′E, including the ports adjacent to that area, and the area within a 10 kilometre radius of each port</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2014-07-01</startDate>
+                        <endDate>2015-05-13</endDate>
+                    </operation>
+                </operations>
 
-              </determination>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Manitou</name>
-                          <qualifications>
-                              <qualification>Maritime operations, including counter‑piracy operations</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>The area comprising all sea and superjacent airspace of the Persian Gulf, the Gulf of Oman, the Arabian Sea, the Gulf of Aden, the Red Sea, the Gulf of Suez, the Gulf of Aqaba and the Indian Ocean north of latitude 15°00′S and west of longitude 68°00′E including the ports adjacent to that area, and the area within a 10 kilometre radius of each port</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2015-05-14</startDate>
-                          <endDate>2016-11-13</endDate>
-                      </operation>
-                  </operations>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Manitou</name>
+                        <qualifications>
+                            <qualification>Maritime operations, including counter‑piracy operations</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The area comprising all sea and superjacent airspace of the Persian Gulf, the Gulf of Oman, the Arabian Sea, the Gulf of Aden, the Red Sea, the Gulf of Suez, the Gulf of Aqaba and the Indian Ocean north of latitude 15°00′S and west of longitude 68°00′E including the ports adjacent to that area, and the area within a 10 kilometre radius of each port</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2015-05-14</startDate>
+                        <endDate>2016-11-13</endDate>
+                    </operation>
+                </operations>
 
-              </determination>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Manitou</name>
-                          <qualifications>
-                              <qualification>Maritime operations, including counter‑piracy operations</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>The area comprising all sea and superjacent airspace of the Persian Gulf, the Gulf of Oman, the Gulf of Aden, the Gulf of Suez, the Gulf of Aqaba, the Red Sea, the Arabian Sea north of latitude 15°00′S and west of longitude 70°00′E and the Indian Ocean north of latitude 15°00′S and west of longitude 70°00′E, including the ports adjacent to that area, and the area within a 10 kilometre radius of each port</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2016-11-14</startDate>
-                      </operation>
-                  </operations>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Manitou</name>
+                        <qualifications>
+                            <qualification>Maritime operations, including counter‑piracy operations</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The area comprising all sea and superjacent airspace of the Persian Gulf, the Gulf of Oman, the Gulf of Aden, the Gulf of Suez, the Gulf of Aqaba, the Red Sea, the Arabian Sea north of latitude 15°00′S and west of longitude 70°00′E and the Indian Ocean north of latitude 15°00′S and west of longitude 70°00′E, including the ports adjacent to that area, and the area within a 10 kilometre radius of each port</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2016-11-14</startDate>
+                    </operation>
+                </operations>
 
-              </determination>
-
-
-              <determination>
-              <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-              <commencementDate>2019-03-26</commencementDate>
-              <operations>
-                  <operation>
-                      <name>Okra</name>
-                      <qualifications>
-                          <qualification>Defence Force contribution to the Iraq crisis</qualification>
-                      </qualifications>
-                      <specifiedAreas>
-                          <specifiedArea>The land area, territorial waters and superjacent airspace of Bahrain, Iraq, Jordan, Kuwait, Qatar and the United Arab Emirates, and the waters and superjacent airspace of the Persian Gulf</specifiedArea>
-                      </specifiedAreas>
-                      <startDate>2014-07-01</startDate>
-                      <endDate>2014-08-08</endDate>
-                  </operation>
-              </operations>
-
-          </determination>
-
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Okra</name>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the Iraq crisis</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>The land area, territorial waters and superjacent airspace of Albania, Bahrain, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Estonia, Hungary, Jordan, Kuwait, Montenegro, Poland, Qatar, Romania and the United Arab Emirates, and the waters and superjacent airspace of the Persian Gulf</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2014-08-09</startDate>
-                          <endDate>2015-09-08</endDate>
-                      </operation>
-                  </operations>
-
-              </determination>
-
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Okra</name>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the Iraq and Syria crisis</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>the land area, territorial waters and superjacent airspace of Albania, Bahrain, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Estonia, Hungary, Jordan, Kuwait, Montenegro, Poland, Qatar, Romania and the United Arab Emirates</specifiedArea>
-                              <specifiedArea>the waters and superjacent airspace of the Persian Gulf</specifiedArea>
-                              <specifiedArea>the land territory of Turkey east of longitude 35°00'E, including superjacent airspace and territorial waters</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2015-09-09</startDate>
-                          <endDate>2018-11-14</endDate>
-                      </operation>
-                  </operations>
-
-              </determination>
-
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Okra</name>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the Iraq and Syria crisis</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>the land area, territorial waters and superjacent airspace of Bahrain, Cyprus, Jordan, Kuwait, Qatar and the United Arab Emirates</specifiedArea>
-                              <specifiedArea>the waters and superjacent airspace of the Persian Gulf</specifiedArea>
-                              <specifiedArea>the land territory of Turkey east of longitude 35°00'E, including superjacent airspace and territorial waters</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2018-11-15</startDate>
-                      </operation>
-                  </operations>
-
-              </determination>
-
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Augury</name>
-                          <qualifications>
-                              <qualification>Supporting the Defence Force's understanding of Islamist terrorist threats to Australia and the region</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>Jordan and its superjacent airspace</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2014-07-04</startDate>
-                          <endDate>2016-04-27</endDate>
-                      </operation>
-                  </operations>
-
-              </determination>
-
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Augury</name>
-                          <qualifications>
-                              <qualification>Supporting the Defence Force’s understanding of Islamist terrorist threats to Australia and the region</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>The land area, territorial waters and superjacent airspace of Jordan and the United Arab Emirates</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2016-04-28</startDate>
-                      </operation>
-                  </operations>
-
-              </determination>
-
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Harwick</name>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the whole of government response to the MH17 air disaster in Ukraine</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                              <specifiedArea>Ukraine and its superjacent airspace</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2014-07-21</startDate>
-                          <endDate>2015-05-18</endDate>
-                      </operation>
-                  </operations>
-
-              </determination>
-
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <activities>
-                      <activity>
-                          <shortName>Anti-terror efforts in Libya</shortName>
-                          <qualifications>
-                              <qualification>Defence Force contribution to efforts against global terrorism</qualification>
-                          </qualifications>
-                          <specifiedAreas>
-                                  <specifiedArea>The land, territorial waters and superjacent airspace of Libya</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2016-05-16</startDate>
-                          <endDate>2016-08-02</endDate>
-                      </activity>
-                  </activities>
-              </determination>
+            </determination>
 
 
-              <determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Okra</name>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the Iraq crisis</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The land area, territorial waters and superjacent airspace of Bahrain, Iraq, Jordan, Kuwait, Qatar and the United Arab Emirates, and the waters and superjacent airspace of the Persian Gulf</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2014-07-01</startDate>
+                        <endDate>2014-08-08</endDate>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Okra</name>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the Iraq crisis</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The land area, territorial waters and superjacent airspace of Albania, Bahrain, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Estonia, Hungary, Jordan, Kuwait, Montenegro, Poland, Qatar, Romania and the United Arab Emirates, and the waters and superjacent airspace of the Persian Gulf</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2014-08-09</startDate>
+                        <endDate>2015-09-08</endDate>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Okra</name>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the Iraq and Syria crisis</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>the land area, territorial waters and superjacent airspace of Albania, Bahrain, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Estonia, Hungary, Jordan, Kuwait, Montenegro, Poland, Qatar, Romania and the United Arab Emirates</specifiedArea>
+                            <specifiedArea>the waters and superjacent airspace of the Persian Gulf</specifiedArea>
+                            <specifiedArea>the land territory of Turkey east of longitude 35°00'E, including superjacent airspace and territorial waters</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2015-09-09</startDate>
+                        <endDate>2018-11-14</endDate>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Okra</name>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the Iraq and Syria crisis</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>the land area, territorial waters and superjacent airspace of Bahrain, Cyprus, Jordan, Kuwait, Qatar and the United Arab Emirates</specifiedArea>
+                            <specifiedArea>the waters and superjacent airspace of the Persian Gulf</specifiedArea>
+                            <specifiedArea>the land territory of Turkey east of longitude 35°00'E, including superjacent airspace and territorial waters</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2018-11-15</startDate>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Augury</name>
+                        <qualifications>
+                            <qualification>Supporting the Defence Force's understanding of Islamist terrorist threats to Australia and the region</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Jordan and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2014-07-04</startDate>
+                        <endDate>2016-04-27</endDate>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Augury</name>
+                        <qualifications>
+                            <qualification>Supporting the Defence Force’s understanding of Islamist terrorist threats to Australia and the region</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The land area, territorial waters and superjacent airspace of Jordan and the United Arab Emirates</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2016-04-28</startDate>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Harwick</name>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the whole of government response to the MH17 air disaster in Ukraine</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>Ukraine and its superjacent airspace</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2014-07-21</startDate>
+                        <endDate>2015-05-18</endDate>
+                    </operation>
+                </operations>
+
+            </determination>
+
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <activities>
+                    <activity>
+                        <shortName>Anti-terror efforts in Libya</shortName>
+                        <qualifications>
+                            <qualification>Defence Force contribution to efforts against global terrorism</qualification>
+                        </qualifications>
+                        <specifiedAreas>
+                            <specifiedArea>The land, territorial waters and superjacent airspace of Libya</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2016-05-16</startDate>
+                        <endDate>2016-08-02</endDate>
+                    </activity>
+                </activities>
+            </determination>
+
+
+            <determination>
                 <federalRegisterOfLegislationReference>F2007L02362</federalRegisterOfLegislationReference>
                 <commencementDate>2006-07-01</commencementDate>
-                    <operations>
+                <operations>
                     <operation>
                         <name>VIGILANCE</name>
                         <startDate>2006-07-01</startDate>
@@ -1533,7 +1532,7 @@
 
             <determination>
                 <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                 <commencementDate>2019-03-26</commencementDate>
+                <commencementDate>2019-03-26</commencementDate>
                 <operations>
                     <operation>
                         <name>Vista</name>
@@ -1547,7 +1546,7 @@
                 </operations>
             </determination>
 
-              <determination>
+            <determination>
                 <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
                 <commencementDate>2019-03-26</commencementDate>
                 <operations>
@@ -1562,36 +1561,36 @@
                 </operations>
             </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Litten</name>
-                          <specifiedAreas>
-                              <specifiedArea>Libyan Territorial Waters</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2016-11-04</startDate>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Litten</name>
+                        <specifiedAreas>
+                            <specifiedArea>Libyan Territorial Waters</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2016-11-04</startDate>
+                    </operation>
+                </operations>
+            </determination>
 
-              <determination>
-                  <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
-                  <commencementDate>2019-03-26</commencementDate>
-                  <operations>
-                      <operation>
-                          <name>Fortitude</name>
-                          <specifiedAreas>
-                              <specifiedArea>The land, territorial waters and superjacent airspace of Israel, Syria, Jordan, Arab Republic of Egypt and Lebanon</specifiedArea>
-                          </specifiedAreas>
-                          <startDate>2019-04-30</startDate>
-                          <qualifications>
-                              <qualification>Defence Force contribution to the United Nations Disengagement Observer Force</qualification>
-                          </qualifications>
-                      </operation>
-                  </operations>
-              </determination>
+            <determination>
+                <federalRegisterOfLegislationReference>F2020C00220</federalRegisterOfLegislationReference>
+                <commencementDate>2019-03-26</commencementDate>
+                <operations>
+                    <operation>
+                        <name>Fortitude</name>
+                        <specifiedAreas>
+                            <specifiedArea>The land, territorial waters and superjacent airspace of Israel, Syria, Jordan, Arab Republic of Egypt and Lebanon</specifiedArea>
+                        </specifiedAreas>
+                        <startDate>2019-04-30</startDate>
+                        <qualifications>
+                            <qualification>Defence Force contribution to the United Nations Disengagement Observer Force</qualification>
+                        </qualifications>
+                    </operation>
+                </operations>
+            </determination>
 
         </non-warlikeDeterminations>
 

@@ -23,13 +23,13 @@ trait PreAugust2015SoPParser extends SoPParser with PreAug2015FactorsParser   {
 
 
   override def parseInstrumentNumber(citationSection: String): InstrumentNumber = {
-    val instrumentNumberRegex = """No\.?\s+([0-9]+)\s+of\s+([0-9]{4,4})""".r
+    val instrumentNumberRegex = """No\.?\s+([0-9]+)\s+(of\s+)?([0-9]{4,4})""".r
     val regexMatch = instrumentNumberRegex.findFirstMatchIn(citationSection)
     if (regexMatch.isEmpty)
       throw new SopParserRuntimeException("Cannot determine instrument number from this citation: " + citationSection)
 
     val number = regexMatch.get.group(1).toInt
-    val year = regexMatch.get.group(2).toInt
+    val year = regexMatch.get.group(3).toInt
     new ParsedInstrumentNumber(number.toInt, year.toInt)
   }
 

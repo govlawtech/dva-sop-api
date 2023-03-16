@@ -1,8 +1,9 @@
 package au.gov.dva.sopapi.veaops
 
 import java.time.{LocalDate, ZoneId}
-
 import au.gov.dva.sopapi.DateTimeUtils
+import au.gov.dva.sopapi.interfaces.model.Deployment
+import au.gov.dva.sopapi.sopref.Operations
 import au.gov.dva.sopapi.veaops.interfaces.{VeaDeterminationOccurance, VeaOperationalServiceRepository}
 
 import scala.util.matching.Regex
@@ -22,8 +23,8 @@ object Extensions {
 
     private def idFromServiceHistoryMatches(identifierFromServiceHistory: String, toMatch: HasMappings) = {
 
-
       if (toMatch.getPrimaryName.compareToIgnoreCase(identifierFromServiceHistory.trim) == 0) true
+      else if (Operations.isNameMatch(identifierFromServiceHistory,toMatch.getPrimaryName)) true
       else {
         val mappings = toMatch.getMappings
 
@@ -37,54 +38,42 @@ object Extensions {
         atLeastOnMappingMatches
       }
 
-
     }
 
-    case class VeaOperationalServiceTestResults(matchingDeterminations: List[(VeaDetermination, VeaDeterminationOccurance)], matchingPeacekeepingActivities: List[VeaPeacekeepingActivity]) {
+    case class VeaOperationalServiceTestResults(datesValidated: Boolean,matchingDeterminations: List[(VeaDetermination, VeaDeterminationOccurance)], matchingPeacekeepingActivities: List[VeaPeacekeepingActivity]) {
       def isOperational = matchingDeterminations.nonEmpty || matchingPeacekeepingActivities.nonEmpty
+      def isWarlike = matchingDeterminations.exists(d => d._1.isInstanceOf[WarlikeDetermination])
     }
 
+    def getOperationalTestResults(identifierFromServiceHistory: String, startDate: LocalDate, endDate: Option[LocalDate] = None, validateDates: Boolean): VeaOperationalServiceTestResults = {
 
-    def isOperational(identifierFromServiceHistory: String, startDate: LocalDate, endDate: Option[LocalDate] = None): VeaOperationalServiceTestResults = {
+      val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = {
+        validateDates match {
+          case true => VeaOperationalServiceQueries.getVeaOpsAndActivitiesConsistentWithDates(startDate, endDate, repo.getDeterminations.asScala.toList)
+          case false => repo.getDeterminations.asScala.map(d => (d,d.operations ++ d.activities)).toMap
+        }
+      }
 
+      val flattenedDeterminationResults: List[(VeaDetermination, VeaDeterminationOccurance)] = determinationQueryResults.flatMap(t => t._2.map(o => (t._1, o))).toList
 
-      val endDateOrNow = endDate.getOrElse(LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)))
+      val peacekeepingResults: List[VeaPeacekeepingActivity] = {
+        validateDates match {
+          case true => VeaOperationalServiceQueries.getPeacekeepingConsistentWithDates(
+            startDate,
+            endDate,
+            repo.getPeacekeepingActivities.asList().asScala.toList)
+          case false => repo.getPeacekeepingActivities.asScala.toList
+        }
+      }
 
-      val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(startDate, endDateOrNow, repo.getDeterminations.asScala.toList)
-
-      val flattenedDetrminationResults: List[(VeaDetermination, VeaDeterminationOccurance)] = determinationQueryResults.flatMap(t => t._2.map(o => (t._1, o))).toList
-
-      val peacekeepingResults: List[VeaPeacekeepingActivity] = VeaOperationalServiceQueries.getPeacekeepingActivitiesInRange(
-        startDate,
-        endDateOrNow,
-        repo.getPeacekeepingActivities.asList().asScala.toList)
-
-      val matchingDeterminations: List[(VeaDetermination, VeaDeterminationOccurance)] = flattenedDetrminationResults
+      val matchingDeterminations: List[(VeaDetermination, VeaDeterminationOccurance)] = flattenedDeterminationResults
         .filter(r => r._1.isInstanceOf[WarlikeDetermination] || r._1.isInstanceOf[NonWarlikeDetermination] || r._1.isInstanceOf[HazardousDetermination])
-        .filter(r => VeaOperationalServiceQueries.intervalsOverlap(startDate, endDateOrNow, r._2))
         .filter(r => idFromServiceHistoryMatches(identifierFromServiceHistory, r._2))
 
       val matchingPeacekeeping = peacekeepingResults
-        .filter(p => VeaOperationalServiceQueries.intervalsOverlap(startDate, endDateOrNow, p))
         .filter(p => idFromServiceHistoryMatches(identifierFromServiceHistory, p))
 
-      VeaOperationalServiceTestResults(matchingDeterminations, matchingPeacekeeping)
-    }
-
-
-    def isWarlike(identifierFromServiceHistory: String, startDate: LocalDate, endDate: Option[LocalDate]): Boolean = {
-      val endDateOrNow = endDate.getOrElse(LocalDate.now(ZoneId.of(DateTimeUtils.TZDB_REGION_CODE)))
-
-      val determinationQueryResults: Map[VeaDetermination, List[VeaDeterminationOccurance]] = VeaOperationalServiceQueries.getOpsAndActivitiesInRange(startDate, endDateOrNow, repo.getDeterminations.asScala.toList)
-
-      val flattenedDetrminationResults: List[(VeaDetermination, VeaDeterminationOccurance)] = determinationQueryResults.flatMap(t => t._2.map(o => (t._1, o))).toList
-
-      val matchingDeterminations = flattenedDetrminationResults
-        .filter(r => r._1.isInstanceOf[WarlikeDetermination])
-        .filter(r => VeaOperationalServiceQueries.intervalsOverlap(startDate, endDateOrNow, r._2))
-        .filter(r => idFromServiceHistoryMatches(identifierFromServiceHistory, r._2))
-
-      matchingDeterminations.nonEmpty
+      VeaOperationalServiceTestResults(validateDates, matchingDeterminations, matchingPeacekeeping)
     }
 
 

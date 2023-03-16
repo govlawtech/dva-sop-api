@@ -55,7 +55,6 @@ public class SopSupportRequestDto {
         }
     }
 
-
     public ConditionDto get_conditionDto() {
         return _conditionDto;
     }
