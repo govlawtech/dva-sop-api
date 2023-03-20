@@ -57,14 +57,19 @@ public class SopSupportServiceTests {
                                                         odtOf(2006, 7, 1),
                                                         "Operation WARDEN",
                                                         "Within Specified Area",
+                                                        new OperationTypeCode[0],
                                                         odtOf(2006, 7, 10),
-                                                        odtOf(2007, 7, 1)),
+                                                        odtOf(2007, 7, 1),
+                                                        new MetadataKvpDto[0]
+                                                        ),
                                                 new OperationalServiceDto(
                                                         odtOf(2009, 7, 1),
                                                         "Operation RIVERBANK",
                                                         "Within Specified Area",
+                                                        new OperationTypeCode[0],
                                                         odtOf(2009, 7, 10),
-                                                        odtOf(2010, 7, 1)
+                                                        odtOf(2010, 7, 1),
+                                                        new MetadataKvpDto[0]
                                                 )
                                         )
                                 )
@@ -102,14 +107,19 @@ public class SopSupportServiceTests {
                                                         odtOf(2006, 7, 1),
                                                         "Operation WARDEN",
                                                         "Within Specified Area",
+                                                        new OperationTypeCode[0],
                                                         odtOf(2006, 7, 10),
-                                                        odtOf(2007, 7, 1)),
+                                                        odtOf(2007, 7, 1),
+                                                        new MetadataKvpDto[0]
+                                                ),
                                                 new OperationalServiceDto(
                                                         odtOf(2009, 7, 1),
                                                         "Operation RIVERBANK",
                                                         "Within Specified Area",
+                                                        new OperationTypeCode[0],
                                                         odtOf(2009, 7, 10),
-                                                        odtOf(2010, 7, 1)
+                                                        odtOf(2010, 7, 1),
+                                                        new MetadataKvpDto[0]
                                                 )
                                         )
                                 )

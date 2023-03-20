@@ -2,6 +2,7 @@ package au.gov.dva.sopapi.sopsupport.processingrules;
 
 import au.gov.dva.sopapi.dtos.sopsupport.components.ConditionDto;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
+import au.gov.dva.sopapi.interfaces.model.CharacterisedDeployment;
 import au.gov.dva.sopapi.interfaces.model.Condition;
 import au.gov.dva.sopapi.interfaces.model.Deployment;
 import au.gov.dva.sopapi.sopref.Operations;
@@ -59,11 +60,29 @@ public class PredicateFactory implements IsOperationalPredicateFactory {
     }
 
     private Predicate<Deployment> buildIsOperationalVeaPredicate(Boolean validateDates) {
-        return deployment -> Facade.isOperational(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate(), validateDates, veaRepo);
+        return deployment ->
+        {
+            if (deployment instanceof CharacterisedDeployment && ((CharacterisedDeployment) deployment).getOperationTypeCodes().length > 0)
+            {
+                return Operations.isOperationalAccordingToOpCodes(((CharacterisedDeployment) deployment).getOperationTypeCodes());
+            }
+            else {
+                return Facade.isOperational(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate(), validateDates, veaRepo);
+            }
+        };
     }
 
     private Predicate<Deployment> buildIsWarlikeVeaPredicate(Boolean validateDates) {
-        return deployment -> Facade.isWarlike(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate(), validateDates, veaRepo);
+        return deployment ->
+        {
+            if (deployment instanceof CharacterisedDeployment && ((CharacterisedDeployment) deployment).getOperationTypeCodes().length > 0)
+            {
+                return Operations.isWarlikeAccordingToOpCodes(((CharacterisedDeployment) deployment).getOperationTypeCodes());
+            }
+            else {
+                return Facade.isWarlike(deployment.getOperationName(), deployment.getStartDate(), deployment.getEndDate(), validateDates, veaRepo);
+            }
+        };
     }
 
 }

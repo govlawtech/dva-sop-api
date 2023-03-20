@@ -13,6 +13,7 @@ import au.gov.dva.sopapi.dtos.sopsupport.inferredAcceptance.FactorLinkDto;
 import au.gov.dva.sopapi.interfaces.CaseTrace;
 import au.gov.dva.sopapi.interfaces.model.*;
 import au.gov.dva.sopapi.sopref.data.servicedeterminations.ServiceDeterminationPair;
+import au.gov.dva.sopapi.sopsupport.processingrules.CharacterisedDeploymentImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.DeploymentImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.ServiceHistoryImpl;
 import au.gov.dva.sopapi.sopsupport.processingrules.ServiceImpl;
@@ -27,13 +28,13 @@ import java.util.stream.Collectors;
 
 public class DtoTransformations {
 
-    public static FactorDto fromFactor(au.gov.dva.sopapi.interfaces.model.Factor factor) {
+    public static FactorDto fromFactor(Factor factor) {
         return new FactorDto(factor.getParagraph(), factor.getText(),
                 factor.getDefinedTerms().stream().map(t -> DtoTransformations.fromDefinedTerm(t)).collect(Collectors.toList()));
 
     }
 
-    public static FactorLinkDto fromFactorToLink(au.gov.dva.sopapi.interfaces.model.Factor factor) {
+    public static FactorLinkDto fromFactorToLink(Factor factor) {
 
         String conditionVariantName = factor.getConditionVariant().isPresent() ? factor.getConditionVariant().get().getName() : null;
         return new FactorLinkDto(factor.getParagraph(), factor.getText(),
@@ -58,7 +59,7 @@ public class DtoTransformations {
     public static SoPFactorsResponse fromSop(SoP sop,  IncidentType incidentType) {
 
 
-        ImmutableList<au.gov.dva.sopapi.interfaces.model.Factor> factorsToInclude = (incidentType == IncidentType.Aggravation) ?
+        ImmutableList<Factor> factorsToInclude = (incidentType == IncidentType.Aggravation) ?
                 sop.getAggravationFactors() : ((incidentType == IncidentType.Onset) ?
                 sop.getOnsetFactors() : ImmutableList.of());
 
@@ -104,10 +105,18 @@ public class DtoTransformations {
 
     private static Deployment deploymentFromDeploymentDto(OperationalServiceDto operationalServiceDto)
     {
-        return new DeploymentImpl(operationalServiceDto.get_description()
-                ,operationalServiceDto.get_startDate()
-                ,operationalServiceDto.get_endDate() != null ? Optional.of(operationalServiceDto.get_endDate()) : Optional.empty()
-                ,operationalServiceDto.get_event());
+        OperationTypeCode[] operationTypeCodes = operationalServiceDto.get_operationTypeCodes() != null ? operationalServiceDto.get_operationTypeCodes() : new OperationTypeCode[0];
+        MetadataKvpDto[] metadataKvpDtos = operationalServiceDto.get_metadata() != null ? operationalServiceDto.get_metadata() : new MetadataKvpDto[0];
+
+        return new CharacterisedDeploymentImpl(
+                    new DeploymentImpl(
+                        operationalServiceDto.get_description(),
+                        operationalServiceDto.get_startDate(),
+                        operationalServiceDto.get_endDate() != null ? Optional.of(operationalServiceDto.get_endDate()) : Optional.empty(),
+                        operationalServiceDto.get_event()),
+                    operationTypeCodes,
+                    metadataKvpDtos
+                );
 
     }
 
@@ -119,15 +128,31 @@ public class DtoTransformations {
                 serviceDto.get_startDate(),
                 serviceDto.get_endDate() != null ? Optional.of(serviceDto.get_endDate()): Optional.empty(),
                 serviceDto.get_operationalServiceDtos().stream().map(operationalServiceDto -> deploymentFromDeploymentDto(operationalServiceDto)).collect(Collectors.collectingAndThen(Collectors.toList(), ImmutableSet::copyOf)));
-
     }
 
     private static DeploymentDto deploymentToDto(Deployment deployment){
-        return new DeploymentDto(
-            deployment.getOperationName(),
-                deployment.getStartDate(),
-                deployment.getEndDate()
-        );
+
+        if (deployment instanceof CharacterisedDeployment)
+        {
+            CharacterisedDeployment characterisedDeployment = (CharacterisedDeployment) deployment;
+            return new DeploymentDto(
+                    characterisedDeployment.getOperationName(),
+                    characterisedDeployment.getStartDate(),
+                    characterisedDeployment.getEndDate(),
+                    characterisedDeployment.getOperationTypeCodes(),
+                    characterisedDeployment.getMetadata()
+            );
+        }
+        else
+        {
+            return new DeploymentDto(
+                    deployment.getOperationName(),
+                    deployment.getStartDate(),
+                    deployment.getEndDate(),
+                    new OperationTypeCode[0],
+                    new MetadataKvpDto[0]
+            );
+        }
     }
 
     private static JustifiedMilitaryActivityDto justifiedMilitaryActivityToDto(JustifiedMilitaryActivity justifiedMilitaryActivity)

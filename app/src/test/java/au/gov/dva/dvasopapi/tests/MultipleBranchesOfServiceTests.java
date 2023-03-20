@@ -200,6 +200,8 @@ public class MultipleBranchesOfServiceTests {
                                         return "Within specified area";
                                     }
 
+
+
                                     @Override
                                     public LocalDate getStartDate() {
                                         return getHireDate();
@@ -577,11 +579,11 @@ public class MultipleBranchesOfServiceTests {
                 ImmutableList.of(
                         new ServiceDto(ServiceBranch.ARMY,EmploymentType.CFTS,startDate,startDate.plusDays(daysInArmy),Rank.OtherRank,
                                 ImmutableList.of(
-                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate,startDate.plusDays(daysInArmy/10))
+                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area", new OperationTypeCode[0], startDate,startDate.plusDays(daysInArmy/10),new MetadataKvpDto[0])
                                 )),
                         new ServiceDto(ServiceBranch.RAAF,EmploymentType.CFTS,startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy + daysInAirForce),Rank.OtherRank,
                                 ImmutableList.of(
-                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy).plusDays(daysInAirForce/10))
+                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",new OperationTypeCode[0],startDate.plusDays(daysInArmy),startDate.plusDays(daysInArmy).plusDays(daysInAirForce/10), new MetadataKvpDto[0])
                                 )
                 )
         ));
@@ -594,7 +596,7 @@ public class MultipleBranchesOfServiceTests {
                 ImmutableList.of(
                         new ServiceDto(ServiceBranch.ARMY,EmploymentType.CFTS,startDate,startDate.plusDays(daysInArmy),Rank.OtherRank,
                                 ImmutableList.of(
-                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area",startDate,startDate.plusDays(daysInArmy/10))
+                                        new OperationalServiceDto(startDate,"OPERATIONAL","within specified area", new OperationTypeCode[0], startDate,startDate.plusDays(daysInArmy/10), new MetadataKvpDto[0])
                                 )
                 )));
     }
